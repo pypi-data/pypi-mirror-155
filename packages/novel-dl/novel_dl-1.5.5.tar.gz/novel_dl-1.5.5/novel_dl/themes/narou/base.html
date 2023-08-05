@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+
+<title>{{subtitle}} - {{title}}</title>
+
+<link rel="shortcut icon" href="static/narou.ico" />
+<link rel="icon" href="static/narou.ico" />
+<link rel="apple-touch-icon-precomposed" href="static/apple-touch-icon-precomposed.png" />
+
+<link rel="stylesheet" type="text/css" href="static/custom.css" media="screen,print" />
+<link rel="stylesheet" type="text/css" href="static/switch.css" media="all" />
+<link rel="stylesheet" type="text/css" href="static/reset.css" media="screen and (min-width:768px)" />
+<link rel="stylesheet" type="text/css" href="static/kotei.css" media="screen and (min-width:768px)" />
+<link rel="stylesheet" type="text/css" href="static/novel_smpview.css" media="screen and (max-width:767px)" />
+</head>
+
+<body>
+<div id="page_type" style="display: none">base</div>
+<div class="pc">
+{% include "base_body_pc.html" %}
+</div>
+
+<div class="sp">
+{% include "base_body_mobile.html" %}
+</div>
+
+<script src="static/custom.js"></script>
+</body>
+</html>
