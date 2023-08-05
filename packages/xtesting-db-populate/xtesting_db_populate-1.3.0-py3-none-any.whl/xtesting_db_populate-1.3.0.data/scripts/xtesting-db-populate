@@ -1,0 +1,30 @@
+#!python
+# -*- coding: utf-8 -*-
+# pylint: disable=C0103
+
+"""
+Populate testapi with testscases.
+"""
+
+import sys
+import xtesting_db_populate.config
+import xtesting_db_populate.api
+
+# Read argument to get optional place where is set testcases.yaml
+if len(sys.argv) > 1:
+    src_folder = sys.argv[1]
+else:
+    src_folder = '.'
+
+# Populate pods
+testapi_uri = xtesting_db_populate.config.get_testapi_url()
+pods = xtesting_db_populate.config.get_pods_list(src_folder)
+for pod in pods:
+    xtesting_db_populate.api.populate_pod(pod, testapi_uri)
+
+# Populate testcases
+tests = xtesting_db_populate.config.get_testcases(src_folder)
+for project in tests:
+    xtesting_db_populate.api.populate_project(project, testapi_uri)
+    for case in tests[project]:
+        xtesting_db_populate.api.populate_case(project, case, testapi_uri)
