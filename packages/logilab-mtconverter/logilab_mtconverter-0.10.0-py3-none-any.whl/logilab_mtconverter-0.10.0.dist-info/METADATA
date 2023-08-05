@@ -1,0 +1,52 @@
+Metadata-Version: 2.1
+Name: logilab-mtconverter
+Version: 0.10.0
+Summary: a library to convert from a MIME type to another
+Home-page: https://www.logilab.org/project/logilab-mtconverter
+Author: Nicolas Chauvat
+Author-email: contact@logilab.fr
+License: LGPL
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Requires-Python: >=3.6
+License-File: COPYING
+License-File: COPYING.LESSER
+Requires-Dist: setuptools
+Requires-Dist: logilab-common
+Requires-Dist: lxml
+Requires-Dist: html2text
+
+Logilab's mtconverter library
+=============================
+
+Logilab's mtconverter is a library to convert data from a MIME type to another.
+It is originally a backport of Zope's PortalTransforms tool with all Zope's 
+internal removed (e.g. most of the code).
+
+
+Installation
+------------
+Extract the tarball, jump into the created directory and run ::
+
+	python setup.py install
+
+For installation options, see ::
+
+	python setup.py install --help
+
+
+Comments, support, bug reports
+------------------------------
+Use the python-projects@logilab.org mailing list. Since we do not have
+publicly available bug tracker yet, bug reports should be emailed
+there too. 
+
+You can subscribe to this mailing list at
+http://www.logilab.org/mailinglists/python_projects/mailinglist_register_form
+
+Archives are available at 
+http://lists.logilab.org/pipermail/python-projects/
+
+
