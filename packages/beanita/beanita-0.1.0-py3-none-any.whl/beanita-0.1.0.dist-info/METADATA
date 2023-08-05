@@ -1,0 +1,48 @@
+Metadata-Version: 2.1
+Name: beanita
+Version: 0.1.0
+Summary: Local MongoDB-like database, based on Mongita and prepared to work with Beanie ODM
+Home-page: https://github.com/roman-right/beanita
+License: MIT
+Author: Roman Right
+Author-email: roman-right@protonmail.com
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: mongita (>=1.1.1,<2.0.0)
+Project-URL: Repository, https://github.com/roman-right/beanita
+Description-Content-Type: text/markdown
+
+## Beanita
+
+Local MongoDB-like database, based on [Mongita](https://github.com/scottrogowski/mongita) and prepared to work with [Beanie ODM](https://github.com/roman-right/beanie)
+
+I highly recommend using it only for experiment purposes. It is safer to use a real MongoDB database and for testing, and for production.
+
+### Init
+
+```python
+from beanie import init_beanie, Document
+from beanita import Client
+
+
+class Sample(Document):
+    name: str
+
+
+async def init_database():
+    cli = Client("LOCAL_DIRECTORY")
+    db = cli["DATABASE_NAME"]
+    await init_beanie(
+        database=db,
+        document_models=[Sample],
+    )
+```
+
+### Not supported
+
+- Links
+- Aggregations
+- Union Documents
+- other features, that were not implemented in Mongita
