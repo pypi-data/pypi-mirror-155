@@ -1,0 +1,5 @@
+labelPRBasedOnFilePath:
+  provider:Airflow:
+    - cortex_airflow/**/*
+  provider:Databricks:
+    - cortex_databricks/**/*
