@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: apis-import-project
+Version: 0.3.6
+Summary: Generic Django-App for APIS-instances to support importing new data manually with a streamlined workflow and some automation.
+Author: Gregor Pirgie
+Author-email: gregor.pirgie@oeaw.ac.at
+Requires-Python: >=3.8,<3.9
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
