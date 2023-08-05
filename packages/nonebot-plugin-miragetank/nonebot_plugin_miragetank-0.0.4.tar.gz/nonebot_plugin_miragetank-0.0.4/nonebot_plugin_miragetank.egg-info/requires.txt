@@ -1,0 +1,5 @@
+pillow>=8.4.0
+aiohttp
+numpy
+nonebot2>=2.0.0b1
+nonebot-adapter-onebot>=2.0.0b1
