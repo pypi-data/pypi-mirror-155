@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: ptwrkshpbasecode
+Version: 0.0.1
+Summary: temp package for workshop
+Author: 
+Author-email: 
+Description-Content-Type: text/x-rst
+Requires-Dist: azure.identity
+Requires-Dist: aiohttp
+Requires-Dist: Click
+Requires-Dist: azure.storage.blob
+Provides-Extra: dev
+Requires-Dist: pytest ; extra == 'dev'
+Requires-Dist: pytest-asyncio ; extra == 'dev'
+Requires-Dist: mypy ; extra == 'dev'
+
+temp package for workshop
