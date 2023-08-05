@@ -1,0 +1,46 @@
+---
+$schema: https://json-schema.org/draft/2020-12/schema
+id: laboro.module.specification.module.method.schema
+title: Laboro module method specification schema
+description: Laboro module method specification schema
+type: object
+properties:
+  name:
+    type: string
+  args:
+    type: array
+    uniqueItems: True
+    items:
+      type: array
+      uniqueItems: True
+      items:
+        type: object
+        properties:
+          name:
+            type: string
+          required:
+            type: string
+          excluded:
+            type: array
+            uniqueItems: True
+            items:
+              type: string
+          implied:
+            type: array
+            uniqueItems: True
+            items:
+              type: string
+          secret:
+            type: boolean
+        required:
+          - name
+          - required
+          - type
+          - excluded
+          - implied
+          - secret
+        additionalProperties: False
+required:
+  - name
+  - args
+additionalProperties: False
