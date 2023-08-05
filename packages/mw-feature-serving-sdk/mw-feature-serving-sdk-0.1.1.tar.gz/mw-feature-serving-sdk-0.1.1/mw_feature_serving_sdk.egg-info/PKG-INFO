@@ -1,0 +1,28 @@
+Metadata-Version: 2.1
+Name: mw-feature-serving-sdk
+Version: 0.1.1
+Summary: An SDK to access Mobilewalla's Feature Machine service
+Home-page: https://www.mobilewalla.com
+Author: Mobilewalla Feature Store
+Author-email: feature-store@mobilewalla.com
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+
+# Mobilewalla Feature Serving SDK
+
+## Getting started
+
+```python
+from mwfeatureserving import MwFeatureStore
+
+mwfs = MwFeatureStore(mwfs_api_base_url='Mobilewalla Feature Machine Base URL', 
+                      auth_key='Mobilewalla Feature Machine Auth Key')
+
+# Example data retrieval call: 
+online_features = mwfs.get_online_features_of_feature_group('Feature Group Name', 'Feature Group Version')
+```
+
+
+
