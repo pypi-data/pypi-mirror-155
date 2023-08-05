@@ -1,0 +1,67 @@
+Sifflet Provider for Apache Airflow
+=================================
+
+This package provides operators and hook that integrate [Sifflet](https://www.siffletdata.com/) into Apache Airflow.
+All classes for this provider package ar in the `sifflet_provider` Python package.
+
+## Installation
+
+You can install this package on top of an existing Airflow 2.1+ installation
+
+```shell
+pip install airflow-provider-sifflet
+```
+
+The package supports the following python versions: 3.7,3.8,3.9,3.10
+
+## Configuration
+
+In the Airflow user interface, configure a Connection for Sifflet.
+Configure the following fields:
+
+    Conn Id: sifflet_default
+    Conn Type: Sifflet
+    Sifflet Tenant: <Your tenant name>
+    Sifflet Token: <Your Sifflet access token>
+
+## Modules
+
+### Operators
+
+#### _SiffletDbtIngestOperator_
+
+`SiffletDbtIngestOperator` sends your DBT artifacts to the Sifflet application.
+
+Example usage:
+
+```python
+from sifflet_provider.operators.dbt import SiffletDbtIngestOperator
+
+sifflet_dbt_ingest = SiffletDbtIngestOperator(
+    task_id="sifflet_dbt_ingest",
+    input_folder="/app/dbt/dbt_project",
+    target="prod",
+    project_name="dbt_project",
+)
+```
+
+#### _SiffletRunRuleOperator_
+
+`SiffletRunRuleOperator` Run one or several Sifflet rules - requires rule id(s).
+
+Example usage:
+
+```python
+from sifflet_provider.operators.rule import SiffletRunRuleOperator
+
+sifflet_run_rule = SiffletRunRuleOperator(
+    task_id="sifflet_run_rule",
+    rule_ids=[
+        "3e2e2687-cd20-11ec-b38b-06bb20181849",
+        "3e19eb3e-cd20-11ec-b38b-06bb20181849",
+        "3e1a86f1-cd20-11ec-b38b-06bb20181849",
+        "3e2e1fc3-cd20-11ec-b38b-06bb20181849",
+    ],
+    error_on_rule_fail=True
+)
+```
