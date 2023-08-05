@@ -1,0 +1,16 @@
+README.md
+setup.py
+src/tf/__init__.py
+src/tf/api_methods.py
+src/tf/cli.py
+src/tf/cli_utils.py
+src/tf/scripts/build.sh
+src/tf/scripts/clean.sh
+src/tf/scripts/commit.sh
+src/tf/scripts/push.sh
+src/tf_cli.egg-info/PKG-INFO
+src/tf_cli.egg-info/SOURCES.txt
+src/tf_cli.egg-info/dependency_links.txt
+src/tf_cli.egg-info/entry_points.txt
+src/tf_cli.egg-info/requires.txt
+src/tf_cli.egg-info/top_level.txt
