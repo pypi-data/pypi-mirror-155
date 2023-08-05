@@ -1,0 +1,46 @@
+Metadata-Version: 2.1
+Name: uvitility
+Version: 0.0.1
+Summary: UVIT utility functions
+Home-page: https://github.com/prajwel/uvitility
+Author: Prajwel Joseph
+Author-email: prajwel.pj@gmail.com
+Project-URL: Bug Tracker, https://github.com/prajwel/uvitility/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy (>=1.13)
+Requires-Dist: matplotlib (>=2)
+Requires-Dist: astropy (>=2)
+
+# **UVITility**
+> A python package with UVIT related utility functions.
+
+
+You can install the UVITility Python package using the following command.
+
+```bash
+pip install uvitility --upgrade
+``` 
+	
+> **IMPORTANT:** Even if you have UVITility already installed, make sure you use the latest version by running the above command. Current version of UVITility is shown on the badge below: <br> <a href="https://pypi.org/project/uvitility/"><img src="https://img.shields.io/pypi/v/uvitility?style=for-the-badge"/></a>
+
+
+After installation, you can run UVITility on a Python command prompt or as a script. For example, 
+
+```python
+>>> import uvitility
+>>> uvitility.check_centroid_gaps('path to the L1 directory')
+```
+
+### Requirements
+
+UVITility works with Python 3.6 or later. UVITility depends on the following packages:
+
+* astropy
+* matplotlib
+* numpy
+
