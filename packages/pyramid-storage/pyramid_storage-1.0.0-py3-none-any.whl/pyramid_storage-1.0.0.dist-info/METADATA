@@ -1,0 +1,43 @@
+Metadata-Version: 2.1
+Name: pyramid-storage
+Version: 1.0.0
+Summary: File storage package for Pyramid
+Home-page: https://github.com/danjac/pyramid_storage/
+Author: Dan Jacob
+Author-email: danjac354@gmail.com
+License: BSD
+Platform: any
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Communications :: Email
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Framework :: Pyramid
+License-File: LICENSE.txt
+Requires-Dist: pyramid
+Provides-Extra: docs
+Requires-Dist: Sphinx ; extra == 'docs'
+Requires-Dist: docutils ; extra == 'docs'
+Requires-Dist: repoze.sphinx.autointerface ; extra == 'docs'
+Provides-Extra: gcloud
+Requires-Dist: google-cloud-storage ; extra == 'gcloud'
+Provides-Extra: s3
+Requires-Dist: boto ; extra == 's3'
+
+
+Links
+`````
+* `documentation
+  <http://pythonhosted.org/pyramid_storage/>`_
+* `development version
+  <https://github.com/danjac/pyramid_storage>`_
+
+
+
