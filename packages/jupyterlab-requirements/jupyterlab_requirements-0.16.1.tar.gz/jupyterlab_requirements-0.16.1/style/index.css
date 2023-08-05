@@ -1,0 +1,604 @@
+/* Buttons */
+
+.thoth-new-package-button {
+  background-color: rgb(200, 200, 200);
+  border-radius: 12px;
+  border: none;
+  color: rgb(2, 1, 1);
+  padding: 10px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.thoth-new-package-button:hover {
+  background-color: #444444;
+  color: white;
+}
+
+.thoth-save-button {
+  background-color: rgb(174, 0, 255);
+  border-radius: 12px;
+  border: none;
+  color: white;
+  padding: 10px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.thoth-save-button:hover {
+  background-color: #b421ad;
+  color: white;
+}
+
+.thoth-kernel-delete-button {
+  background-color: rgb(255, 17, 0);
+  border-radius: 12px;
+  border: none;
+  color: white;
+  padding: 10px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.thoth-kernel-delete-button:hover {
+  background-color: #b4212d;
+  color: white;
+}
+
+.thoth-install-button {
+  background-color: rgb(174, 0, 255);
+  border-radius: 12px;
+  border: none;
+  color: white;
+  padding: 10px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.thoth-install-button:hover {
+  background-color: #b421ad;
+  color: white;
+}
+
+.thoth-ok-button {
+  background-color: rgb(255, 187, 0);
+  border-radius: 12px;
+  border: none;
+  color: rgb(2, 1, 1);
+  padding: 10px 16px;
+  margin: 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.thoth-ok-button:hover {
+  background-color: #7a5d0e;
+  color: white;
+}
+
+.thoth-container-button {
+  height: 50px;
+  position: relative;
+}
+
+.thoth-container-button-centre {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+
+ /* Table */
+table.thoth-table {
+  width: 100%;
+}
+
+table.thoth-table, th, tr {
+  border-bottom: 1px solid black;
+}
+
+table.thoth-table th {
+  padding: 10px 12px;
+  font-weight: bold;
+  color: rgb(212, 151, 19);
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+.thoth-package-name-input {
+  background-color: rgb(255, 255, 255);
+  border-radius: 12px;
+  color: rgb(0, 0, 0);
+  padding: 10px 12px;
+  text-align: center;
+  min-width: 200px;
+}
+
+.thoth-package-dropdown {
+  background-color: rgb(255, 255, 255);
+  border-radius: 12px;
+  color: rgb(0, 0, 0);
+  padding: 10px 12px;
+  text-align: left;
+  border-style: solid;
+  border-width: 2px;
+  position: absolute;
+  width: 200px;
+  margin-top: 0.2rem;
+  border-color: #d8d8d8;
+  z-index: 1;
+  box-shadow: 2px 2px 5px #d8d8d8;
+  display: flex;
+  flex-direction: row;
+}
+
+.thoth-constraint-dropdown {
+  background-color: rgb(255, 255, 255);
+  border-radius: 12px;
+  color: rgb(0, 0, 0);
+  padding: 10px 12px;
+  text-align: left;
+  border-style: solid;
+  border-width: 2px;
+  position: fixed;
+  width: 200px;
+  margin-top: 0.2rem;
+  border-color: #d8d8d8;
+  z-index: 1;
+  box-shadow: 2px 2px 5px #d8d8d8;
+  max-height: 400px;
+  overflow-y: scroll;
+}
+
+.thoth-constraint-dropdown-version-list-element {
+  font-size: medium;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  align-items: center;
+}
+
+
+.thoth-constraint-dropdown-version-list {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0.25rem;
+}
+
+.thoth-constraint-dropdown-specifier {
+  background-color: rgb(255, 255, 255);
+  border-radius: 12px;
+  color: rgb(0, 0, 0);
+  padding: 5px 5px;
+  text-align: center;
+}
+
+.thoth-constraint-dropdown-degree {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  padding: 5px 5px;
+  border-style: solid;
+  border-radius: 12px;
+  border-color: rgba(255, 255, 255, 0);
+  font-size: medium;
+}
+
+.thoth-constraint-dropdown-degree-static {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  padding: 5px 5px;
+  border-style: solid;
+  border-radius: 12px;
+  border-color: rgba(255, 255, 255, 0);
+  font-size: medium;
+}
+
+.thoth-constraint-dropdown-degree:hover {
+  font-weight: bold;
+  border-color: #d8d8d8;
+}
+
+.thoth-constraint-dropdown-version {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.thoth-constraint-dropdown-btn {
+  border-radius: 12px;
+  padding: 3px 20px;
+}
+
+.thoth-constraint-dropdown-add {
+  background-color: #39c5af;
+}
+
+.thoth-constraint-dropdown-remove {
+  background-color: #E21B1B;
+}
+
+.thoth-package-dropdown-option {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+
+.thoth-package-dropdown-name {
+  font-weight: bold;
+}
+.thoth-package-dropdown-desc {
+  font-size: smaller;
+  color: grey;
+  margin-top: 0.5rem;
+}
+
+.thoth-constraint-input {
+  background-color: rgb(255, 255, 255);
+  border-radius: 12px;
+  color: rgb(0, 0, 0);
+  padding: 10px 12px;
+  text-align: center;
+  width: 200px;
+}
+
+.thoth-row-button {
+background-color: rgb(200, 200, 200);
+border-radius: 12px;
+border: black;
+color: rgb(2, 1, 1);
+padding: 10px 16px;
+text-align: center;
+text-decoration: none;
+font-size: 16px;
+}
+
+.thoth-row-button:hover {
+background-color: #444444;
+color: white;
+}
+
+.thoth-row-button-deactivated {
+background-color: rgb(109, 109, 109);
+border-radius: 12px;
+border: none;
+color: rgb(245, 245, 245);
+padding: 10px 16px;
+text-align: center;
+text-decoration: none;
+font-size: 16px;
+}
+
+/* Options */
+
+.thoth-kernel-name-input {
+  background-color: rgb(255, 255, 255);
+  border-radius: 12px;
+  width: 40%;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+ /* Form box */
+
+.thoth-form-box {
+  box-sizing: border-box;
+  margin-top: 2rem;
+  padding: 0;
+  /*background-color: #e4e4e4;*/
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
+}
+
+.form-grid p {
+  color: rgba(0,0,0,.6);
+  margin-bottom: 1rem;
+}
+
+.form-stack {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
+}
+
+ /* Inputs with options to select */
+
+ .thoth-inputs-options label{
+  display: block;
+  text-align: left;
+  font-size: 15px;
+  margin: 0 0 0 0;
+}
+
+.thoth-inputs-options select {
+  font-size: 15px;
+  text-align: center;
+  width: 100%;
+  background: white;
+  border: 1px solid #f7d43a;
+  border-radius: 4px;
+}
+
+ /* Inputs with text */
+
+.thoth-inputs-text label{
+  text-align: left;
+  font-size: 15px;
+  margin: 0 0 0 0;
+}
+
+.thoth-inputs-text input[type=text]{
+  font-size: 15px;
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+}
+
+
+/* Stylized inputs with text */
+
+.stylized-inputs #container {
+  height: 56px;
+  display: inline-flex;
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.stylized-inputs #outline {
+  display: flex;
+  position: absolute;
+  right: 0;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  text-align: left;
+  pointer-events: none;
+}
+
+.stylized-inputs .notched {
+  box-sizing: border-box;
+  height: 100%;
+  color: rgba(0,0,0,.38);
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+}
+
+.stylized-inputs .notched.left {
+  border-radius: 4px 0 0 4px;
+  border-left: 1px solid;
+  border-right: none;
+  width: 12px;
+}
+
+.stylized-inputs .notched.right {
+  border-radius: 0 4px 4px 0;
+  border-right: 1px solid;
+  border-left: none;
+  flex-grow: 1;
+}
+
+.stylized-inputs .notched.middle {
+  flex: 0 0 auto;
+  width: auto;
+  pointer-events: none;
+}
+
+.stylized-inputs .active .notched {
+  border-width: 2px;
+  border-color: rgba(174, 0, 255, .87);
+}
+
+.stylized-inputs .hover .notched {
+  color: rgba(0,0,0, 1);
+}
+
+.stylized-inputs .active .notched.middle,
+.stylized-inputs .notched.middle.not-empty {
+  border-top: none;
+}
+
+.stylized-inputs input{
+  display: flex;
+  padding: 12px 16px 14px;
+  border: none !important;
+  background-color: transparent;
+  z-index: 1;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.stylized-inputs label{
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+  left: 4px;
+  right: initial;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1),color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  color: rgba(0,0,0,.6);
+  font-size: 1rem;
+}
+
+.stylized-inputs label.not-empty {
+  transform: translateY(-34.75px) scale(.85);
+  left: 0;
+}
+
+.stylized-inputs .active label {
+  color: rgba(174, 0, 255, .87);
+  transform: translateY(-34.75px) scale(.85);
+  left: 0;
+}
+
+.stylized-inputs .helper-text {
+  color: rgba(0,0,0,.6);
+  margin-left: 16px;
+}
+.stylized-inputs .suffix {
+  margin-right: 16px;
+  color: rgba(0,0,0,.6);
+  text-align: right;
+  position: relative;
+  max-width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/*dropdown*/
+.stylized-inputs .dropdown {
+  transform-origin: center top;
+  left: 0;
+  top: 56px;
+  max-height: 336.219px;
+  box-shadow: 0 5px 5px -3px rgb(0 0 0 / 20%), 0 8px 10px 1px rgb(0 0 0 / 14%), 0 3px 14px 2px rgb(0 0 0 / 12%);
+  border-radius: 4px;
+  display: none;
+  width: 100%;
+}
+
+.stylized-inputs .dropdown ul {
+  padding: 0;
+}
+
+.stylized-inputs .dropdown li {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 16px;
+  overflow: hidden;
+  cursor: pointer;
+  height: 48px;
+  font-size: 1rem;
+}
+
+.stylized-inputs .dropdown li.selected {
+  background-color: rgba(174, 0, 255, .08) !important;
+}
+
+.stylized-inputs .dropdown li:hover {
+  background-color: rgba(0, 0, 0, .08);
+}
+
+.stylized-inputs .active .dropdown {
+  display: inline-block;
+  background-color: #fff;
+  z-index: 8;
+  position: absolute;
+}
+
+.stylized-inputs .selector {
+  width: 100%;
+  cursor: pointer;
+  padding: 12px 16px 14px;
+  border: none !important;
+  background-color: transparent;
+  z-index: 1;
+  font-size: 1rem;
+  display: flex;
+  align-self: center;
+}
+
+.stylized-inputs .selector:not(.not-empty) {
+  padding: 0;
+  height: 100%;
+}
+
+.stylized-inputs .icon {
+  left: auto;
+  right: 20px;
+  position: absolute;
+  bottom: 16px;
+  pointer-events: none;
+  color: rgba(0,0,0,.6);
+  font-size: 1rem;
+}
+
+.stylized-inputs .active .icon {
+  transform: rotate(180deg);
+  color: rgba(174, 0, 255, .87);
+  transition: transform .15s cubic-bezier(.4,0,.2,1);
+}
+
+.stylized-banner {
+  display: flex;
+  border-radius: 4px;
+  border-width: 1px;
+  border-style: solid;
+  flex-grow: 1;
+  margin-bottom: 1rem;
+  padding: 8px 0 8px 0;
+  max-width: fit-content;
+}
+
+.stylized-banner.error {
+  color: #d32f2f;
+  background-color: #fdeded;
+}
+
+.stylized-banner.warning {
+  color: #ed6c02;
+  background-color: #fff4e5;
+}
+
+.stylized-banner.info {
+  color: #0288d1;
+  background-color: #e5f6fd;
+}
+
+.stylized-banner.success {
+  color: #2e7d32;
+  background-color: #edf7ed;
+}
+
+.stylized-banner .icon {
+  margin-left: 16px;
+  font-weight: bold;
+  font-size: xx-large;
+  min-width: 16px;
+  text-align: end;
+}
+
+.stylized-banner .label {
+  margin-right: 90px;
+  margin-left: 24px;
+  align-self: center;
+}
+
+.stylized-banner .link {
+  display: flex;
+  white-space: nowrap;
+  align-items: center;
+  margin-right: 16px;
+  font-weight: bold;
+}

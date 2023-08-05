@@ -1,0 +1,2 @@
+[console_scripts]
+horus = jupyterlab_requirements.cli:cli

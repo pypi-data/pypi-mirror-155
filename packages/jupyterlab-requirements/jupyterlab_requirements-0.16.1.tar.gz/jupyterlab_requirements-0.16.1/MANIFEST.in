@@ -1,0 +1,34 @@
+include horus
+include mypy.ini
+include OWNERS
+include LICENSE
+include README.md
+include pyproject.toml
+include setup.py
+include Pipfile
+include Pipfile.lock
+include requirements.txt
+include package.json
+include install.json
+include ts*.json
+include preview.gif
+include tests/data/*.ipynb
+
+recursive-include tests *.py
+include tests/data/Pipfile
+include tests/data/Pipfile.lock
+
+graft jupyterlab_requirements/labextension
+
+# Javascript files
+graft src
+graft style
+prune **/node_modules
+prune lib
+
+# Patterns to exclude from any directory
+global-exclude *~
+global-exclude *.pyc
+global-exclude *.pyo
+global-exclude .git
+global-exclude .ipynb_checkpoints

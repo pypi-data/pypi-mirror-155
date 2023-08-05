@@ -1,0 +1,33 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+click = "*"
+invectio = "*"
+ipynbname = "*"
+ipykernel = "*"
+ipython = "<8.0.0"
+jupyterlab = ">=3.1.0,<4"
+pyyaml = "*"
+rich = "*"
+thamos = ">=1.25.0"
+thoth-python = ">=0.16.6"
+thoth-common = "*"
+virtualenv = "*"
+
+[dev-packages]
+jupyter_packaging = "~=0.10,<2"
+pytest = "*"
+pytest-timeout = "*"
+pytest-cov = "*"
+hypothesis-auto = "*"
+hypothesis = "*"
+pytest-mypy = "*"
+mypy = "*"
+pre-commit = "*"
+voluptuous = "*"
+
+[requires]
+python_version = "3.8"
