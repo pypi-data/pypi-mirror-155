@@ -1,0 +1,17 @@
+migro/__init__.py,sha256=gQd0tG_x8B2aYG5bDJwH1LuzWY3BjJ9jT_mxGnRNs28,105
+migro/cli.py,sha256=8IcceypIizr6fCQCI2emDBzR4VDELZR6-eh3kad6TZQ,6547
+migro/settings.py,sha256=J5TS3kyhwzdHKb7s5_bMvOVt1-6ukJnj0zP4zMbQHsE,573
+migro/filestack/__init__.py,sha256=cEgX821YM05PoqO9GdA0M4WZ7zYK0corgymBGkHa16s,96
+migro/filestack/utils.py,sha256=TyDXZdHTQdXGe3u-h7qIPLf5NvLyirpZpEn7Fc8Jf5g,452
+migro/uploader/__init__.py,sha256=ry62TvInGqBguQ_mQtURoquz6kf9W4wqhhEywHOQxMI,83
+migro/uploader/utils.py,sha256=3Y7GQv27BqDK4Jes1akCtNN1RIgb-US0gfNCgv9VoIw,2077
+migro/uploader/worker.py,sha256=NY6gQU_yoYuGuRNq71_mJUJPrjhG7TEZwmopS9rnKRw,8990
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/conftest.py,sha256=N2PLb1MBU9yV76eIy-827fLE0tZqVGK8GKzC-AWgsAQ,1015
+tests/test_uploader.py,sha256=ev-l44LTClfufzVMvCdnaiJhFQ1hT01nd6Bl_wJRQw0,1119
+uploadcare_migro-1.8.0.dist-info/LICENSE,sha256=uA5wGOJRkMzfVIWXVBvcmx8fWGzbtsaFN2Qc7FTXwCI,1081
+uploadcare_migro-1.8.0.dist-info/METADATA,sha256=g3dfxTRcG_jAjZcEAfzhr_xvvDKoQ8KTMeV-i8f_wzY,5422
+uploadcare_migro-1.8.0.dist-info/WHEEL,sha256=z9j0xAa_JmUKMpmz72K0ZGALSM_n-wQVmGbleXx2VHg,110
+uploadcare_migro-1.8.0.dist-info/entry_points.txt,sha256=VPYgoSrGk4YB6WzFu63tzyzwY92nMoeVGFEdShfPlAo,41
+uploadcare_migro-1.8.0.dist-info/top_level.txt,sha256=dmA0PXpRlfZYmyQ7TQnSJNtHZfP5R6E9613gDT8Vhps,12
+uploadcare_migro-1.8.0.dist-info/RECORD,,
