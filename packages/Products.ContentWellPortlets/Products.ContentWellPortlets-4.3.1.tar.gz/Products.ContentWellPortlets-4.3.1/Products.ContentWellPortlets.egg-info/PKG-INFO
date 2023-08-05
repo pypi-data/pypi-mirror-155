@@ -1,0 +1,269 @@
+Metadata-Version: 2.1
+Name: Products.ContentWellPortlets
+Version: 4.3.1
+Summary: A Plone product that enables you to add portlets to the central column in a page
+Home-page: http://weblion.psu.edu
+Author: WebLion
+Author-email: support@weblion.psu.edu
+License: GPL
+Description: Overview
+        ========
+        
+        * This product enables you to put portlets in places other than right and left
+          columns, specifically:
+        
+          * Underneath global nav but above portal-columns so it spans the width of the page
+          * above the main heading (h1) of the page
+          * at the base of the page, above the footer
+          * in the footer well
+        
+          In each area, you can add up to three columns of portlets.
+        
+        * You should use CSS (in the custom folder in portal_skins, or in your own
+          theme product) to configure how these portlets should appear relative to
+          each other and to the content.
+        
+        * This may allow you to create distinctive layouts for pages, folders etc
+          without having to write new zope page templates
+        
+        To install the product
+        ======================
+        * See docs/INSTALL.TXT for instructions
+        
+        
+        To add portlets above the content
+        =================================
+        1. Log into your Plone site as a Manager (or someone else with the "Portlets:
+           Manage portlets" permission)
+        2. Go to the place in your site where you want portlets. For example:
+           * If you want portlets on your home page only, go to http://yourSiteURL/front-page
+           * If you want portlets on your entire site, go to http://yourSiteURL
+        3. Bring up a management page by either
+           (a) Clicking the "add, edit or remove portlets link" [*]_; or
+           (b) Adding "/@@manage-portletsabovecontent" to the end of the URL and hitting "return"
+        4. You should see a management page entitled "Manage Portlets Above Content"
+           This gives you the option to add portlets in one or more of three columns: A, B and C
+           You can add as many portlets in each column as you like
+           Other commands (reordering, hiding, blocking portlets) are the same as for
+           the right and left columns
+        
+        .. [*] Note: if you are in a folder that has a default page, this will take
+               you to a screen where you can add portlets to that page. If you want to add
+               portlets to all the pages in the folder, make sure you are on the folder
+               rather than the default page (e.g. by clicking the "contents" tab) before
+               clicking the link.
+        
+        To add portlets below the content
+        =================================
+        Follow the above instructions, but instead of clicking the "add, edit or
+        remove portlets above content" link or adding /@@manage-portletsabovecontent
+        to the URL:
+        
+         (a) Click the "add, edit or remove portlets below the content" link; or
+         (b) Add /@@manage-portletsbelowcontent to the end of the URL
+        
+        
+        Technical details
+        =================
+        
+        * The product adds two new viewlets; within each of these are three portlet
+          managers (specified in portlets.xml) For details of exactly which viewlet
+          managers these viewlets slot into:
+        
+          * see configure.zcml in Products/ContentWellPortlets/browser
+          * or install the product, go to your Plone site and add /@@manage-viewlets to the URL
+        
+        Changelog
+        =========
+        
+        4.3.1 (2022-06-14)
+        ------------------
+        
+        - Import fix for plone 5.2
+          [gomez]
+        
+        4.3.0 (2015-07-02)
+        ------------------
+        
+        - Add upgrade step to update cssregistry.
+          [cah190]
+        
+        - Clear the title from the stylesheet registration, as this prevents this makes
+          this css resource an alternative stylesheet and prevents to be rendered in
+          browsers.
+          [thet]
+        
+        - Add a z3c.autoinclude.plugin entry point.
+          [thet]
+        
+        - Change CSS rendering mode to "link" to allow merging with other link-rendered
+          resources.
+          [thet]
+        
+        - Add a class to portlet managers, indicating how many portlets are in there.
+          The form is ``num-portlets-NUMBER``. This can be used to build grid layouts,
+          based on available css classes.
+          [thet]
+        
+        - Unify portlet manager templates to one template instead of five.
+          [thet]
+        
+        - Show links to portlet manager management views only in manage portlet view.
+          So, you have to visit @@manage-portlets or @@manage-content-type-portlets to
+          edit the ContentWellPortlets areas.
+          [thet]
+        
+        - Add contentwellportlets class to all portlet rows.
+          [thet]
+        
+        - Rename all porlet-well_manager classes to portlet-well_manager.
+          [thet]
+        
+        - Don't show ContentWellPortlets on views implementing IPloneControlPanelView.
+          Please note, that not all control panels implement this interface.
+          [thet]
+        
+        - Add content type portlets management screens for each ContentWellPortlets
+          area. These management screens are accessible from the
+          @@manage-content-type-portlets view, which must be called with the content
+          type as ``key`` request parameter. Open it from the @@types-controlpanel.
+          [thet]
+        
+        - Remove i18n folder. All translations are in locales folder already.
+          [thet]
+        
+        - Add uninstall profile.
+          [thet]
+        
+        
+        4.2.0 (2013-01-18)
+        ------------------
+        
+        - Adding PortletsBelowContentTitle based on Maurizio Lupo's code along with
+          upgrade step.
+          [cah190]
+        
+        - Replace migration code with ZCML upgrade step.
+          [cah190]
+        
+        - Merged Italian translation from Maurizio Lupo.  Thanks!
+          [cah190]
+        
+        
+        4.1.0 (2011-11-30)
+        ------------------
+        
+        - Added another portlet manager below the global nav but above portal-columns
+          [robzonenet]
+        
+        - Added upgrade step and improved renderer to fail gracefully when the upgrade
+          has not yet been run.
+          [cah190]
+        
+        
+        4.0.1 (2011-11-22)
+        ------------------
+        
+        - Fixed container link for footer portlets.
+          [robzonenet]
+        
+        
+        4.0 (2011-08-18)
+        ----------------
+        
+        * Portlet managers' css identifiers are now of the format
+          'AbovePortletManager1' instead of the previously used
+          'portletsAboveContentA'
+          [esteele]
+        
+        * Use Plone 4's deco.gs to handle layout automatically. Portlet managers will
+          now display as 1/[number of portlet managers with visible portlets] wide.
+          For example, if three of the six portlet managers have visible portlets,
+          each will fill 1/3 of the available area. Themes based on
+          plonetheme.sunburst will see the changes. Others will either need to use
+          sunburst's columns.css or manually align content using each portlet
+          manager's unique id.
+          [esteele]
+        
+        * Depend on 'Products.CMFPlone' instead of 'Plone'. See
+          http://dev.plone.org/plone/ticket/10877 for more information.
+          [esteele]
+        
+        3.0 (2011-03-09)
+        ----------------
+        
+        * Release 3.0 Final
+          [esteele]
+        
+        3.0b2 (2011-02-28)
+        ------------------
+        
+        * Change the way the footer portlets viewlet is registered so that it plays a
+          bit more nicely with themes.
+          [esteele]
+        
+        * Add a class="row" to the footer portlet template to prevent it from bleeding
+          into the content area.
+          [esteele]
+        
+        3.0b1 (2011-01-27)
+        ------------------
+        
+        * Pin to Plone 4.0 or better. Those looking for 3.x compatibility are best
+          sticking with ContentWellPortlets 2.0.
+          [esteele]
+        
+        * Added French translation
+          [kiorky,numahell]
+        
+        * Added Spanish translation
+          [macagua]
+        
+        * Added support for i18n
+          [macagua]
+        
+        2.1 (2010-06-21)
+        ----------------
+        
+        * Move "above" portlets to IAboveContent viewlet manager.
+          [esteele]
+        
+        * Tweak styling of "manage portlets" links, add managePortletsFallback class.
+          [esteele]
+        
+        2.0 (2009-10-12)
+        ----------------
+        
+        * Adds Footer portlets
+        * Adds extra portlet managers to each content well portlet area (6 per area:
+          above content, below content, and footer) - 18 total
+        * Included extra example css in README.txt
+        * Cleaned up manager UI
+        * Adds warning message when on a default view of a container.
+        
+        1.1 (2008-12-19)
+        ----------------
+        
+        * Added our own portlet manager renderer (closes ticket #952)
+        * Got rid of CSS associated with the previous (fudge) method of rendering we
+          were using
+        
+        1.0.1 (2008-12-17)
+        ------------------
+        
+        * Fixed an issue with an incomplete egg
+        
+        1.0 (2008-12-16)
+        ----------------
+        
+        * Initial release
+        
+        
+Keywords: plone portletmanager
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Framework :: Plone
+Classifier: License :: OSI Approved :: GNU General Public License v2 or later (GPLv2+)
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Provides-Extra: test
