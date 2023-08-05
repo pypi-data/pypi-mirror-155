@@ -1,0 +1,15 @@
+{% load static %}
+
+<div
+    class="wd-widget"
+    data-donate-pay-in
+    data-action-url="{% url 'wagtaildonate:donate-checkout' %}"
+    data-campaign-id="{{ page.pk }}"
+    data-show-other-amount-option
+    data-allow-single-donations
+    data-default-frequency="single"
+    data-minimum-single-amount="{{ minimum_payin_donation_amount }}"
+    data-maximum-single-amount="{{ maximum_payin_donation_amount }}"
+>
+</div>
+

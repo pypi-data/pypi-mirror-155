@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: wagtail-donate
+Version: 1.5.0rc2
+Summary: UNKNOWN
+Home-page: UNKNOWN
+Author: Torchbox
+Author-email: info@torchbox.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: License :: Other/Proprietary License
+Requires-Python: >=3.6
+Provides-Extra: testing
+Provides-Extra: docs
+License-File: LICENSE.txt
+
+Copyright (c) 2021 Torchbox
+
+This is not free software.
+
+You may not use, copy, modify, merge, publish, distribute, sublicense, and/or
+sell this software and associated documentation files without the express
+consent of Torchbox.
+
+

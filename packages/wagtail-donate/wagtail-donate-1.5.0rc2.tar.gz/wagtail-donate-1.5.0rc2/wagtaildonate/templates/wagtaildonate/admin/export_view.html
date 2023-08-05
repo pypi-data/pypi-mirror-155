@@ -1,0 +1,26 @@
+{% extends "wagtailadmin/base.html" %}
+{% load wagtailadmin_tags i18n %}
+{% block titletag %}{{ title }}{% endblock %}
+
+{% block content %}
+    {% include "wagtailadmin/shared/header.html" with title=title icon="download" %}
+
+    <div class="nice-padding">
+        <form method="POST" novalidate>
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <button class="button" type="submit" name="format" value="csv">Download CSV</button>
+            <button class="button" type="submit" name="format" value="xlsx">Download XLSX</button>
+        </form>
+    </div>
+{% endblock %}
+
+{% block extra_css %}
+    {{ form.media.css }}
+{% endblock %}
+
+{% block extra_js %}
+    {{ form.media.js }}
+{% endblock %}

@@ -1,0 +1,6 @@
+include LICENSE *.rst *.md
+graft wagtaildonate
+prune wagtaildonate/tests
+prune wagtaildonate/static_src
+global-exclude __pycache__
+global-exclude *.py[co]

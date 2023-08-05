@@ -1,0 +1,11 @@
+from wagtaildonate.wagtail_hooks.export import register_export_wagtail_hooks
+from wagtaildonate.wagtail_hooks.export_log import register_export_log_wagtail_hooks
+from wagtaildonate.wagtail_hooks.general import register_general_wagtail_hooks
+from wagtaildonate.wagtail_hooks.pay_in_events import (
+    register_pay_in_events_wagtail_hooks,
+)
+
+register_export_wagtail_hooks()
+register_general_wagtail_hooks()
+register_export_log_wagtail_hooks()
+register_pay_in_events_wagtail_hooks()

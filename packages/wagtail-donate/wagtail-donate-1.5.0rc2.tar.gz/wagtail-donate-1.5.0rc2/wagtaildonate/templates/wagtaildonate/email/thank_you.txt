@@ -1,0 +1,7 @@
+Hi {{ donation.first_name }},
+
+Thank you for your {% if donation.is_recurring %}monthly{% else %}one off{% endif %} donation of {{ donation.formatted_amount }}.
+{% if donation.gift_aid_declaration %}
+You have opted in to Gift Aid. Your donation amount is increased by 25%.
+{% endif %}
+{% if content %}{{ content }}{% endif %}

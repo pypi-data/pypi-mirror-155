@@ -1,0 +1,31 @@
+{% extends "wagtaildonate/base_donate.html" %}
+{% load static %}
+{% load wagtailimages_tags %}
+
+{% block extra_css %}
+    {{ block.super }}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'wagtaildonate/css/donate-form.css' %}">
+{% endblock %}
+
+{% block donate_content %}
+    <div class="wd-wrapper">
+        {# Main Hero Content #}
+        {% image page.hero_image width-1920 as hero_image_src %}
+        <div class="wd-hero {% if not hero_image_src.url %}wd-hero--placeholder{% endif %}" {% if hero_image_src.url %} style="background-image: url({{ hero_image_src.url }})" {% endif %}>
+        </div>
+
+        <div class="wd-widget-wrapper">
+            <h1 class="wd-widget-wrapper__title">{% firstof page.hero_summary_text page.title %}</h1>
+            <div class="wd-widget-wrapper__form">
+                {% include "wagtaildonate/includes/forms/donate_step_one.html" %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block extra_js %}
+    {{ block.super }}
+
+    <script src="{% static 'wagtaildonate/js/donate-form.js' %}" type="text/javascript"></script>
+{% endblock %}

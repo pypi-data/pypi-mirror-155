@@ -1,0 +1,55 @@
+{% extends "wagtaildonate/base_donate.html" %}
+{% load wagtailcore_tags static %}
+
+{% block extra_css %}
+    {{ block.super }}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'wagtaildonate/css/checkout.css' %}">
+{% endblock %}
+
+{% block donate_content %}
+
+<div class="wd-wrapper wd-wrapper--pushed">
+    <section class="wd-main">
+        <div class="wd-main__section">
+            <div class="wd-main__section-heading">
+
+                {# Logo #}
+                <img class="wd-main__logo" src='{% static "wagtaildonate/images/wagtail-logo.svg" %}' alt="Logo for Wagtail">
+
+                {# Main heading #}
+                <h1 class="wd-main__title">Thank you</h1>
+
+                {# Strapline #}
+                {% if thank_you_data.thank_you_strapline %}
+                    <div class="wd-main__centred-subtitle">
+                        {{ thank_you_data.thank_you_strapline|linebreaks }}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="wd-main__section">
+            <div class="wd-main__section-inner">
+
+                {# Donation information #}
+                <h2 class="wd-main__sub-heading">Donation details</h2>
+                <p>Donor: {{ donation_name }}</p>
+                <p>Donation amount: &pound;{{ donation_amount }}</p>
+
+                {% if gift_aid_declaration %}
+                    <p>You have opted in to Gift Aid. Your donation amount is increased by 25%.</p>
+                {% endif %}
+
+                {% if in_memory_of %}
+                    <p>Donation in memory of: {{ in_memory_of }}</p>
+                {% endif %}
+
+                <br />
+                {% include_block thank_you_data.thank_you_page_content %}
+
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
