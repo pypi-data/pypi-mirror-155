@@ -1,0 +1,136 @@
+Base: &base
+  IBOX_ENABLED: False
+  IBOX_PARAMETER:
+    - _AllocatedStorage:
+        Description: 'Storage Size in GB - empty for mapped value'
+    - _MaxAllocatedStorage:
+        Description: 'Max Storage Size in GB (Enable Storage Autoscaling)- empty for mapped value - 0 to disable'
+    - _DBInstanceClass:
+        Description: 'Instance Type - empty for mapped value'
+        AllowedValues: [
+          '', 'db.m3.medium', 'db.m3.large', 'db.m3.xlarge', 'db.m3.2xlarge',
+          'db.m4.large', 'db.m4.xlarge', 'db.m4.2xlarge', 'db.m4.4xlarge', 'db.m4.10xlarge',
+          'db.m5.large', 'db.m5.xlarge', 'db.m5.2xlarge', 'db.m5.4xlarge', 'db.m5.12xlarge',
+          'db.r3.large', 'db.r3.xlarge', 'db.r3.2xlarge', 'db.r3.4xlarge', 'db.r3.8xlarge',
+          'db.r5.large', 'db.r5.xlarge', 'db.r5.2xlarge', 'db.r5.4xlarge', 'db.r5.12xlarge',
+          'db.t2.micro', 'db.t2.small', 'db.t2.medium', 'db.t2.large',
+          'db.t3.micro', 'db.t3.small', 'db.t3.medium', 'db.t3.large']
+    - _DBName:
+        Description: 'Empty for mapped value'
+    - _DBSnapshotIdentifier:
+        Description: 'DB snapshot used to restore the DB instance - "none" for not using one - empty for mapped value'
+    - _DeletionProtection:
+        Description: 'empty for mapped value'
+        AllowedValues: ['', 'true', 'false']
+    - _SourceDBInstanceIdentifier:
+        Description: 'ID of the source DB instance to create ReadReplica - "none" for not using one - empty for mapped value'
+    - _Engine:
+        Description: 'Engine - empty for mapped value'
+        AllowedValues: [
+          '', 'mysql', 'mariadb', 'oracle-se1', 'oracle-se2', 'oracle-se', 'oracle-ee',
+          'sqlserver-ee', 'sqlserver-se', 'sqlserver-ex', 'sqlserver-web', 'postgres', 'aurora'
+        ]
+    - _EngineVersion:
+        Description: 'Engine Version - empty for mapped value'
+    - _MasterUsername:
+        Description: 'Username - empty for mapped value'
+    - _MasterUserPassword:
+        Description: 'Password - empty for mapped value'
+        NoEcho: true
+    - _MonitoringInterval:
+        Description: 'The interval, in seconds, for Enhanced Monitoring metrics - empty for mapped value - 0 to disable'
+        AllowedValues: ['', '0', '1', '5', '10', '15', '30', '60']
+    - _MultiAZ:
+        Description: 'Use multiple Availability Zone - empty for mapped value'
+        AllowedValues: ['', 'true', 'false']
+    - _PerformanceInsights:
+        Description: 'The amount of time, in days, to retain Performance Insights data - empty for mapped value - 0 to disable'
+    - _StorageType:
+        Description: 'empty for mapped value'
+        AllowedValues: ['', 'standard', 'gp2']
+  IBOX_CONDITION:
+    - _DBSnapshotIdentifier:
+        get_condition('', 'not_equals', 'none', f'{IBOX_RESNAME}DBSnapshotIdentifier')
+    - _SourceDBInstanceIdentifier:
+        get_condition('', 'not_equals', 'none', f'{IBOX_RESNAME}SourceDBInstanceIdentifier')
+    - _DBInstanceSkipProperties:
+        Or(Condition(f'{IBOX_RESNAME}DBSnapshotIdentifier'), Condition(f'{IBOX_RESNAME}SourceDBInstanceIdentifier'))
+    - _MonitoringInterval:
+        get_condition('', 'not_equals', '0', f'{IBOX_RESNAME}MonitoringInterval')
+    - _PerformanceInsights:
+        get_condition('', 'not_equals', '0', f'{IBOX_RESNAME}PerformanceInsights')
+    - _StorageAutoScaling:
+        get_condition('', 'not_equals', '0', f'{IBOX_RESNAME}MaxAllocatedStorage')
+  IBOX_OUTPUT:
+    - _AllocatedStorage:
+        Value: ${AllocatedStorage}
+    - _MaxAllocatedStorage:
+        Value: ${MaxAllocatedStorage}
+    - _DBInstanceClass:
+        Value: ${DBInstanceClass}
+    - _DBName:
+        Value: ${DBName}
+    - _DBSnapshotIdentifier:
+        Value: ${DBSnapshotIdentifier}
+    - _DeletionProtection:
+        Value: ${DeletionProtection}
+    - _Engine:
+        Value: ${Engine}
+    - _EngineVersion:
+        Value: ${EngineVersion}
+    - _MasterUsername:
+        Value: ${MasterUsername}
+    - _MonitoringInterval:
+        Value: ${MonitoringInterval}
+    - _MultiAZ:
+        Value: ${MultiAZ}
+    - _PerformanceInsightsRetentionPeriod:
+        Value: ${PerformanceInsightsRetentionPeriod}
+    - _PubliclyAccessible:
+        Value: ${PubliclyAccessible}
+    - _SourceDBInstanceIdentifier:
+        Value: ${SourceDBInstanceIdentifier}
+    - _StorageType:
+        Value: ${StorageType}
+  AllocatedStorage: 50
+  AllowMajorVersionUpgrade: true
+  DBInstanceClass: db.t3.micro
+  DBName: dbname
+  DBParameterGroupName: Ref('DBParameterGroup1')
+  DBSnapshotIdentifier: none
+  DeletionProtection: false
+  EnablePerformanceInsights:
+    If(f'{IBOX_RESNAME}PerformanceInsights', True, False)
+  MasterUsername: masterusername
+  MasterUserPassword: masteruserpassword
+  MaxAllocatedStorage: 0
+  MaxAllocatedStorage.IBOX_CODE:
+    If(f'{IBOX_RESNAME}StorageAutoScaling', get_endvalue(f'{IBOX_RESNAME}MaxAllocatedStorage'), Ref('AWS::NoValue'))
+  MonitoringInterval: 0
+  MonitoringRoleArn: If(f'{IBOX_RESNAME}MonitoringInterval', get_expvalue('RoleRDSEnhancedMonitoring'), Ref('AWS::NoValue'))
+  MultiAZ: false
+  PerformanceInsights: 0
+  PerformanceInsightsRetentionPeriod:
+    If(f'{IBOX_RESNAME}PerformanceInsights', get_endvalue(f'{IBOX_RESNAME}PerformanceInsights'), Ref('AWS::NoValue'))
+  SourceDBInstanceIdentifier: none
+  StorageType: gp2
+  VPCSecurityGroups:
+    - Ref(f'SecurityGroup{IBOX_RESNAME}')
+
+Mysql: &mysql
+  <<: *base
+  Engine: mysql
+  EngineVersion: '5.7'
+
+MysqlInternal:
+  <<: [*base, *mysql]
+  PubliclyAccessible: false
+  DBSubnetGroupName: get_expvalue('DBSubnetGroupPrivate')
+MysqlExternal:
+  <<: [*base, *mysql]
+  PubliclyAccessible: true
+  DBSubnetGroupName: get_expvalue('DBSubnetGroupPublic')
+
+global:
+  DBInstance:
+    - IBOX_BASE: *base

@@ -1,0 +1,8 @@
+IBoxLoader: !include [
+  iam/parameterstore.yml,
+  res-event/event_ec2.yml,
+  res-event/event_ecs.yml,
+]
+
+global:
+  StackName: r-event-01

@@ -1,0 +1,124 @@
+IBoxLoader: 
+  - !include
+      #- autoscaling/imageid-ecs.yml
+      - ecs/capacityprovider.yml
+      - ecs/daemon-reserver-cpu.yml
+      - ec2/bottlerocket.yml
+  - !exclude
+      - cloudfront/for-services.yml
+      - elasticloadbalancing/loadbalancer.yml
+
+global:
+  StackName: ecs
+  Parameter:
+    - LaunchTemplateDataImageIdLatest:
+        Description: 'Latest ecs ami available from SSM'
+        Default: '/aws/service/ecs/optimized-ami/amazon-linux-2/recommended/image_id'
+        AllowedValues:
+          - '/aws/service/ecs/optimized-ami/amazon-linux/recommended/image_id'
+          - '/aws/service/ecs/optimized-ami/amazon-linux-2/recommended/image_id'
+          - '/aws/service/ecs/optimized-ami/amazon-linux-2/arm64/recommended/image_id'
+          - '/aws/service/ecs/optimized-ami/amazon-linux-2022/recommended/image_id'
+          - '/aws/service/bottlerocket/aws-ecs-1/x86_64/latest/image_id'
+          - '/aws/service/bottlerocket/aws-ecs-1/arm64/latest/image_id'
+        Type: 'AWS::SSM::Parameter::Value<String>'
+    - ASGLifecycleHookECSDrainInstanceHeartbeatTimeout:
+        Description: 'ECSDrainInstance ASGLifecycleHook and Lambda HeartbeatTimeout - empty for default based on env/role'
+    - GPUInstance:
+        Description: 'Install Coda and nvidia-docker2'
+        AllowedValues: ['yes', 'no']
+        Default: 'no'
+  Condition:
+    - GPUInstance:
+        Equals(Ref('GPUInstance'), 'yes')
+  Output:
+    - Cluster:
+        Value: Ref('Cluster')
+        Export: Export(Sub('Cluster-${AWS::StackName}'))
+  Alarm:
+    - CPUHigh:
+        IBOX_ENABLED: False
+    - CPULow:
+        IBOX_ENABLED: False
+  ASGLifecycleHook:
+    - ECSDrainInstance:
+        AutoScalingGroupName: Ref('AutoScalingGroup')
+        DefaultResult: 'ABANDON'
+        HeartbeatTimeout: 3600
+        LifecycleTransition: 'autoscaling:EC2_INSTANCE_TERMINATING'
+        NotificationTargetARN: get_expvalue('SNSTopicECSDrainInstance')
+        RoleARN: get_expvalue('RoleASGLifecycleHookECSDrainInstance')
+  AutoScalingScalingPolicy:
+    - Custom:
+        IBOX_ENABLED: True
+        EstimatedInstanceWarmup: 60
+        TargetTrackingConfiguration:
+          CustomizedMetricSpecification:
+            MetricName: CPUUtilization
+            Statistic: Maximum
+            Unit: Percent
+          TargetValue: 60
+    - Down:
+        IBOX_ENABLED: False
+    - Up:
+        IBOX_ENABLED: False
+  Apps: {}
+  ECSCluster:
+    - Base:
+        IBOX_TITLE: Cluster
+        AgentCfg:
+          EcsEnableSpotInstanceDraining: true
+          EcsImagePullBehavior: once
+          EcsWarmPoolsCheck: true
+        ClusterAutoReduceTag.IBOX_AUTO_PO: {}
+        ClusterAutoReduceTag.IBOX_PCO:
+          IBOX_CONDITION:
+            - _ClusterAutoReduceTag:
+                get_condition('', 'equals', 'yes', f'{IBOX_RESNAME}ClusterAutoReduceTag')
+        ClusterAutoReduceTag: 'no'
+        Tags:
+          - ClusterAutoReduce:
+              IBOX_IF:
+                - _ClusterAutoReduceTag
+                - IBOX_IFVALUE
+                - Ref('AWS::NoValue')
+              Key: IBOX_CLUSTER_AUTO_REDUCE
+              Value: 'yes'
+  LaunchTemplate:
+    - Data:
+        BlockDeviceMappings:
+          - Xvda:
+              Ebs:
+                VolumeSize: 40
+  Listeners: []
+  RecordSet: []
+  Role:
+    - Instance:
+        ManagedPolicyArns++:
+          - get_expvalue('IAMPolicyEcs')
+  ScheduledAction:
+    - Rotate:
+        DesiredSize: CapacityDesired
+        MaxSize: CapacityMax
+        MinSize: CapacityMin
+        Recurrence: '45 5 * * *'
+  SecurityGroupIngress:
+    - ContainerInstanceExternal:
+        FromPort: 32768
+        GroupId: GetAtt('SecurityGroupInstancesRules', 'GroupId')
+        SourceSecurityGroupId: get_expvalue('SecurityGroupLoadBalancerApplicationExternal')
+        ToPort: 60999
+    - ContainerInstanceInternal:
+        FromPort: 32768
+        GroupId: GetAtt('SecurityGroupInstancesRules', 'GroupId')
+        SourceSecurityGroupId: get_expvalue('SecurityGroupLoadBalancerApplicationInternal')
+        ToPort: 60999
+
+dev: &cfg_dev
+  ASGLifecycleHook:
+    ECSDrainInstance:
+      HeartbeatTimeout: 900
+  LaunchTemplateData:
+    ImageId: latest
+
+stg: *cfg_dev

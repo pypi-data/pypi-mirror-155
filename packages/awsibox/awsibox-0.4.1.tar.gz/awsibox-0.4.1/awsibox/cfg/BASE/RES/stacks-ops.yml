@@ -1,0 +1,36 @@
+IBoxLoader:
+  - !include
+    - iam/policy-update_stack.yml
+    - lambda/layers.yml
+
+global:
+  StackName: sss
+  IAMPolicy:
+    - UpdateStack:
+        Roles:
+          - Ref('RoleLambdaStacksOps')
+        Statement:
+          - SSMEnvRole:
+              Action: 'ssm:GetParameter*'
+              Resource: 'arn:aws:ssm:*:*:parameter/buildkite/*'
+          - SSMRead:
+              Action:
+                - 'ssm:DescribeParameters'
+                - 'kms:ListAliases'
+              Resource: '*'
+          - KMSKey:
+              Action: 'kms:Decrypt'
+              Resource: get_expvalue('KeyParameterStore')
+  Lambda:
+    - StacksOps:
+        Code:
+          S3Bucket: Sub(cfg.BucketNameAppRepository)
+          S3Key: 'ibox-tools/stacks-ops/stacks-ops-01.zip'
+        Description: 'Stacks Operations'
+        Layers:
+          - LambdaLayerVersionPython37SSM
+        MemorySize: 128
+        Runtime: python3.9
+        Variables:
+          - CloudFormationNotificationArn: get_expvalue('SNSTopicCloudFormationNotification')
+        Timeout: 60

@@ -1,0 +1,15 @@
+IBoxLoader: !include
+  - ec2/securitygroup.yml
+  - route53/recordset.yml
+  - elasticache/cluster-and-replication-group.yml
+
+global:
+  R53RecordSet:
+    - CCHExternal:
+        IBOX_ENABLED: True
+    - CCHInternal:
+        IBOX_ENABLED: True
+    - CCHReadOnlyExternal:
+        IBOX_ENABLED: True
+    - CCHReadOnlyInternal:
+        IBOX_ENABLED: True

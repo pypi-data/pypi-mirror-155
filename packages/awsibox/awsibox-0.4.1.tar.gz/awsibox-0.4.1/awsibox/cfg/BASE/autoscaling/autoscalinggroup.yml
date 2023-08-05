@@ -1,0 +1,76 @@
+IBoxLoader: !include
+  - capacity.yml
+  #- imageid-ec2.yml
+  - launchtemplate.yml
+  - scalingpolicy.yml
+  - scheduledactions.yml
+
+global:
+  AutoScalingGroup:
+    - Base:
+        IBOX_TITLE: AutoScalingGroup
+        AvailabilityZones: GetAZs()
+        DesiredCapacity: get_endvalue('CapacityDesired')
+        MinSize: get_endvalue('CapacityMin')
+        CreationPolicy:
+          ResourceSignal:
+            Count: get_endvalue('CapacityDesired')
+            Timeout: PT15M
+        HealthCheckGracePeriod: 600
+        HealthCheckType: EC2
+        LaunchTemplate:
+          LaunchTemplateId: Ref('LaunchTemplate')
+          Version: GetAtt('LaunchTemplate', 'LatestVersionNumber')
+        MaxInstanceLifetime.IBOX_PCO:
+          IBOX_PARAMETER:
+            - _MaxInstanceLifetime:
+                Description: 'Empty for mapped value - 0 to disable'
+          IBOX_CONDITION:
+            - _MaxInstanceLifetime:
+                get_condition('', 'not_equals', '0', f'{IBOX_RESNAME}MaxInstanceLifetime')
+          IBOX_OUTPUT:
+            - _MaxInstanceLifetime:
+                Value: ${MaxInstanceLifetime}
+        MaxInstanceLifetime.IBOX_CODE: If(
+          f'{IBOX_RESNAME}MaxInstanceLifetime', get_endvalue(f'{IBOX_RESNAME}MaxInstanceLifetime'), Ref('AWS::NoValue'))
+        MaxInstanceLifetime: 0
+        MaxSize: get_endvalue('CapacityMax')
+        MetricsCollection:
+          - 0:
+              Granularity: 1Minute
+        Tags:
+          - Name:
+              Key: Name
+              Value: Ref('EnvRole')
+              PropagateAtLaunch: true
+          - EnvStackName:
+              Key: EnvStackName
+              Value: Ref('AWS::StackName')
+              PropagateAtLaunch: true
+        TerminationPolicies: ['OldestInstance']
+        UpdatePolicy:
+          AutoScalingReplacingUpdate:
+            IBOX_IF:
+              - WillReplace
+              - IBOX_IFVALUE
+              - Ref('AWS::NoValue')
+            WillReplace: true
+          AutoScalingRollingUpdate:
+            IBOX_IF:
+              - RollingUpdate
+              - IBOX_IFVALUE
+              - Ref('AWS::NoValue')
+            MaxBatchSize: 1
+            MinInstancesInService: get_endvalue('CapacityDesired')
+            MinSuccessfulInstancesPercent: 100 
+            PauseTime: PT20M
+            SuspendProcesses:
+              - HealthCheck
+              - ReplaceUnhealthy
+              - AlarmNotification
+              - ScheduledActions
+            WaitOnResourceSignals: true
+          AutoScalingScheduledAction:
+            IgnoreUnmodifiedGroupSizeProperties: true
+        VPCZoneIdentifier: Split(',', get_expvalue(cfg.VPCZoneIdentifier))
+  VPCZoneIdentifier: SubnetsPrivate

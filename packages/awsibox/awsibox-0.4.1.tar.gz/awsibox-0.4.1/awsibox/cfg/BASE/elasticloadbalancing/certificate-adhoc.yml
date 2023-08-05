@@ -1,0 +1,56 @@
+global:
+  Parameter:
+    - LoadBalancerSslCertificateAdHoc:
+        Description: 'Load Balancer External Ssl Certificate AdHoc - empty for mapped value'
+        AllowedValues: ['', 'yes', 'no']
+  Condition:
+    - LoadBalancerSslCertificateAdHoc:
+        And(
+          Condition('ListenerLoadBalancerHttpsPort'),
+          get_condition('', 'equals', 'yes', 'LoadBalancerSslCertificateAdHoc')
+        )
+  Output:
+    - LoadBalancerSslCertificateAdHoc:
+        Value: get_endvalue('LoadBalancerSslCertificateAdHoc')
+  Certificate:
+    - LoadBalancerAdHocExternal:
+        IBOX_ENABLED: True
+        Condition: LoadBalancerSslCertificateAdHoc
+        DomainName: Sub('${AWS::StackName}.${EnvRole}%s' % cfg.HostedZoneNameRegionEnv)
+        DomainValidationOptions:
+          - Full:
+              DomainName: Sub('${AWS::StackName}.${EnvRole}%s' % cfg.HostedZoneNameRegionEnv)
+              ValidationDomain: Sub(cfg.HostedZoneNameEnv)
+          - EnvRole:
+              DomainName: Sub('${EnvRole}.%s' % cfg.HostedZoneNameEnv)
+              ValidationDomain: Sub(cfg.HostedZoneNameEnv)
+          - Region:
+              DomainName: Sub('${EnvRole}.%s' % cfg.HostedZoneNameRegionEnv)
+              ValidationDomain: Sub(cfg.HostedZoneNameEnv)
+        SubjectAlternativeNames:
+          - Sub('${EnvRole}.%s' % cfg.HostedZoneNameEnv)
+          - Sub('${EnvRole}.%s' % cfg.HostedZoneNameRegionEnv)
+        ValidationMethod: 'EMAIL'
+  Listener:
+    - Classic:
+        SSLCertificateId:
+          If(
+            'ListenerLoadBalancerHttpsPort',
+            If(
+              'LoadBalancerSslCertificateAdHoc',
+               Ref('CertificateLoadBalancerAdHocExternal'),
+               get_endvalue('RegionalCertificateArn')
+            ), Ref('AWS::NoValue'))
+    - Https:
+        Certificates:
+          Regional:
+            CertificateArn:
+              If(
+                'LoadBalancerSslCertificateAdHoc',
+                Ref('CertificateLoadBalancerAdHocExternal'),
+                get_endvalue('RegionalCertificateArn'),
+              )
+        Port: get_endvalue('ListenerLoadBalancerHttpsPort')
+        Protocol: HTTPS
+        SslPolicy: get_endvalue('ListenerLoadBalancerSslPolicy')
+  LoadBalancerSslCertificateAdHoc: 'no'

@@ -1,0 +1,34 @@
+global:
+  Parameter:
+    - FargateSpot:
+        Description: 'Use Capacity Provider FARGATE_SPOT (Two services are created) - empty for default based on mapping'
+        AllowedValues: ['', 'yes', 'no']
+  Condition:
+    - FargateSpot:
+        And(
+          Condition('LaunchTypeFarGate'),
+          get_condition('', 'equals', 'yes', 'FargateSpot')
+        )
+    - FargateBase:
+        And(
+          Condition('LaunchTypeFarGate'),
+          get_condition('', 'equals', 'no', 'FargateSpot')
+        )
+  FargateSpot: 'no'
+  CCRFargateSpot: True
+  Service:
+    - Spot:
+        IBOX_ENABLED: True
+        Condition: FargateSpot
+        DependsOn: Service
+        Tags:
+          - ServiceBase:
+              Key: IBOXFARGATESPOTServiceBase
+              Value: GetAtt('Service', 'Name')
+  ScalableTarget:
+    - Service:
+        ResourceId:
+          If('FargateSpot',
+            get_subvalue('service/${1E}/${ServiceSpot.Name}', 'Cluster', 'ClusterStack'),
+            get_subvalue('service/${1E}/${Service.Name}', 'Cluster', 'ClusterStack')
+          )

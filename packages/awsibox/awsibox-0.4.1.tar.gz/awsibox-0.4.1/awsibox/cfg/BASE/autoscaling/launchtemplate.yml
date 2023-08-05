@@ -1,0 +1,132 @@
+IBoxLoader: !include [
+  #ephemeral.yml,
+]
+
+global:
+  Parameter:
+    - DoNotSignal:
+        Description: 'Do Not Signal ASG - WARNING need to manually exec cfn-signal!'
+        AllowedValues: ['yes', 'no']
+        Default: 'no'
+    - EfsMounts:
+        Description: 'Efs Mounts List'
+        Type: 'CommaDelimitedList'
+    - LaunchTemplateDataBlockDeviceMappingsAdditionalStorageEbsVolumeSize:
+        Description: 'Size in GiB of additional EBS storage - 0 to disable - empty for default'
+        AllowedValues: ['', '0', '4', '8', '16', '32', '64', '128', '256', '512', '1024']
+    - LaunchTemplateDataImageId:
+        Description: 'AMI ID - empty for default based on env/role/region'
+    - LaunchTemplateDataImageIdLatest:
+        Description: 'Latest Amazon Linux2 ami available from SSM'
+        Default: '/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2'
+        AllowedValues:
+          - '/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2'
+          - '/aws/service/ami-amazon-linux-latest/amzn2-ami-kernel-5.10-hvm-x86_64-gp2'
+          - '/aws/service/ami-amazon-linux-latest/amzn2-ami-kernel-5.10-hvm-arm64-gp2'
+          - '/aws/service/ami-amazon-linux-latest/al2022-ami-minimal-kernel-default-x86_64'
+        Type: 'AWS::SSM::Parameter::Value<String>'
+    - LaunchTemplateDataInstanceType:
+        Description: 'InstanceType - default for default based on env/role'
+        ConstraintDescription: 'must be a valid EC2 instance type.'
+        AllowedValues: cfg.INSTANCE_LIST
+        Default: 'default'
+    - LaunchTemplateDataKeyName:
+        Description: 'EC2 SSH Key - empty for default'
+    - LaunchTemplateDataInstanceMarketOptionsSpotOptionsMaxPrice:
+        Description: 'Maximum Spot Price of ASG - empty for default based on env/role - 0 to disable'
+    - LaunchTemplateDataBlockDeviceMappingsXvdaEbsVolumeSize:
+        Description: 'Size of HD in GB - empty for default based on env/role'
+  Condition:
+    - CloudFormationInit:
+        Equals(Ref('UpdateMode'), 'Cfn')
+    - DoNotSignal:
+        Equals(Ref('DoNotSignal'), 'yes')
+    - EfsMounts:
+         Not(Equals(Select('0', Ref('EfsMounts')), ''))
+    - LaunchTemplateDataBlockDeviceMappingsAdditionalStorage:
+        get_condition('', 'not_equals', '0', 'LaunchTemplateDataBlockDeviceMappingsAdditionalStorageEbsVolumeSize')
+    - LaunchTemplateDataBlockDeviceMappingsAdditionalStorageMount:
+        And(
+          Condition('LaunchTemplateDataBlockDeviceMappingsAdditionalStorage'),
+          get_condition('', 'equals', 'yes', 'LaunchTemplateDataBlockDeviceMappingsAdditionalStorageMount')
+        )
+    - LaunchTemplateDataImageIdLatest:
+        get_condition('', 'equals', 'latest', 'LaunchTemplateDataImageId')
+    - LaunchTemplateDataInstanceMarketOptionsSpotOptionsMaxPrice:
+        get_condition('', 'not_equals', '0', 'LaunchTemplateDataInstanceMarketOptionsSpotOptionsMaxPrice')
+  Output:
+    - DoNotSignal:
+        Value: Ref('DoNotSignal')
+    - EfsMounts:
+        Condition: 'EfsMounts'
+        Value: Join(',', Ref('EfsMounts'))
+    - LaunchTemplateDataImageId:
+        Value: cfg.Resources['LaunchTemplate'].LaunchTemplateData.ImageId
+    - LaunchTemplateDataInstanceType:
+        Value: get_endvalue('LaunchTemplateDataInstanceType')
+    - LaunchTemplateDataKeyName:
+        Value: get_endvalue('LaunchTemplateDataKeyName')
+    - LaunchTemplateDataBlockDeviceMappingsAdditionalStorageEbsVolumeSize:
+        Value: get_endvalue('LaunchTemplateDataBlockDeviceMappingsAdditionalStorageEbsVolumeSize')
+    - LaunchTemplateDataBlockDeviceMappingsXvdaEbsVolumeSize:
+        Value: get_endvalue('LaunchTemplateDataBlockDeviceMappingsXvdaEbsVolumeSize')
+  LaunchTemplate:
+    - Data:
+        BlockDeviceMappings:
+          - Xvda:
+              DeviceName: /dev/xvda
+              Ebs:
+                VolumeSize: 8
+                VolumeType: gp3
+          - AdditionalStorage:
+              IBOX_IF:
+                - LaunchTemplateDataBlockDeviceMappingsAdditionalStorage
+                - IBOX_IFVALUE
+                - Ref('AWS::NoValue')
+              DeviceName: /dev/xvdx
+              Ebs:
+                VolumeSize: 0
+                VolumeType: gp3
+              Mount: 'yes'
+        IamInstanceProfile:
+          Arn: GetAtt('InstanceProfile', 'Arn')
+        ImageId.IBOX_CODE: If(
+          'LaunchTemplateDataImageIdLatest', Ref('LaunchTemplateDataImageIdLatest'), get_endvalue('LaunchTemplateDataImageId'))
+        ImageId: latest
+        InstanceMarketOptions:
+          IBOX_IF:
+            - LaunchTemplateDataInstanceMarketOptionsSpotOptionsMaxPrice
+            - IBOX_IFVALUE
+            - Ref('AWS::NoValue')
+          MarketType: spot
+          SpotOptions:
+            MaxPrice: '0'
+        InstanceType: t3.micro
+        KeyName: none
+        Monitoring:
+          Enabled: false
+        NetworkInterfaces:
+          - eth0:
+              AssociatePublicIpAddress: false
+              DeviceIndex: 0
+              Groups:
+                - GetAtt('SecurityGroupInstancesRules', 'GroupId')
+        TagSpecifications:
+          - instance:
+              ResourceType: instance
+              Tags:
+                - Name:
+                    Key: Name
+                    Value: Ref('EnvRole')
+                - EnvStackName:
+                    Key: EnvStackName
+                    Value: Ref('AWS::StackName')
+          - volume:
+              ResourceType: volume
+              Tags:
+                - Name:
+                    Key: Name
+                    Value: Ref('EnvRole')
+                - EnvStackName:
+                    Key: EnvStackName
+                    Value: Ref('AWS::StackName')
