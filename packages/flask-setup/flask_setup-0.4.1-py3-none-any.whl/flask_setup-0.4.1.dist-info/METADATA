@@ -1,0 +1,49 @@
+Metadata-Version: 2.1
+Name: flask-setup
+Version: 0.4.1
+Summary: A simple tool to help you setup a flask project for web development, API development and just any basic app
+Home-page: https://github.com/mrteey/flask-setup
+Author: Nasir Mustapha
+Author-email: nasir@mrteey.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: typer
+
+# flask-setup #
+Flask Setup Tool
+
+# INSTALLATION #
+`$ pip install flask-setup`
+
+# USAGE #
+
+1. create a virtual environment and activate it, the run an fs command:
+   `$ fs command argument`
+
+# COMMANDS #
+
+1. build: Builds the project.
+    `$ fs build`
+
+2. add: Takes blueprint name e.g.
+    `$ fs add api` this will add a blueprint with the name 'api'
+
+3. remove: Takes blueprint name e.g.
+    `$ fs remove api` this will remove the blueprint with the name 'api'
+
+4.  install: pass this alongside a module e.g.:
+    `$ fs install flask` this will install flask and freeze to requirements file
+
+5.  uninstall: pass this alongside a module e.g.:
+    `$ fs uninstall flask` this will uninstall flask and freeze to requirements file
+
+6.  destroy: This will destroy the current project e.g.:
+    `$ fs destroy`
+
+7.  init: Initializes fs on an existing project with similar setup e.g.:
+    `$ fs init`
+
