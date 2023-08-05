@@ -1,0 +1,11 @@
+Click
+dtw
+matplotlib>=3.4
+numba
+numpy
+outlier-utils
+pyarrow
+pandas>=1.2
+scikit-learn
+scipy
+typing_extensions
