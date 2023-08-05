@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+src/tox_no_deps/__init__.py
+src/tox_no_deps/plugin.py
+src/tox_no_deps/version.py
+src/tox_no_deps.egg-info/PKG-INFO
+src/tox_no_deps.egg-info/SOURCES.txt
+src/tox_no_deps.egg-info/dependency_links.txt
+src/tox_no_deps.egg-info/entry_points.txt
+src/tox_no_deps.egg-info/requires.txt
+src/tox_no_deps.egg-info/top_level.txt
+src/tox_no_deps.egg-info/zip-safe
