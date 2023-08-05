@@ -1,0 +1,5 @@
+blessings~=1.7
+numpy
+
+[dev]
+pytest>=3.7
