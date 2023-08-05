@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: dgrpy-mongodb
+Version: 0.0.3
+Summary: mongodb module in python 3
+Home-page: https://github.com/donugr/dgrpy_mongodb
+Author: donugr
+Author-email: donugr@hotmail.com
+Project-URL: Bug Tracker, https://github.com/donugr/dgrpy_mongodb
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pymongo (>=3.0)
+
+# dgrpy_mongodb
+ mongodb module in python 3
