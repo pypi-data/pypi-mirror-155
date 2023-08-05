@@ -1,0 +1,3 @@
+[console_scripts]
+agnt = dtlpy_agent.cli.agnt:main
+
