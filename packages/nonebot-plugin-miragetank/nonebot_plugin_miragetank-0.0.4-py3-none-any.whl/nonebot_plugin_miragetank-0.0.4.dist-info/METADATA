@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: nonebot-plugin-miragetank
+Version: 0.0.4
+Summary: Generate miragetank photo
+Home-page: https://github.com/RafuiiChan/nonebot_plugin_miragetank
+Author: Yuyu1628
+Author-email: a1628420979@163.com
+License: GPL Licence
+Keywords: pip,nonebot_plugin_miragetank
+Platform: any
+Requires-Dist: pillow (>=8.4.0)
+Requires-Dist: aiohttp
+Requires-Dist: numpy
+Requires-Dist: nonebot2 (>=2.0.0b1)
+Requires-Dist: nonebot-adapter-onebot (>=2.0.0b1)
+
+Generate miragetank photo, for nonebot2 beta1(or higher)
+
