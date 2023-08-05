@@ -1,0 +1,3 @@
+[console_scripts]
+tilebench=tilebench.scripts.cli:cli
+
