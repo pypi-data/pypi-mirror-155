@@ -1,0 +1,15 @@
+LICENSE.txt
+README.md
+pyproject.toml
+setup.py
+cvapianalyser/CVApiAnalyser.py
+cvapianalyser/CommunityEdition.py
+cvapianalyser/__init__.py
+cvapianalyser/ce_coveragereport.html
+cvapianalyser.egg-info/PKG-INFO
+cvapianalyser.egg-info/SOURCES.txt
+cvapianalyser.egg-info/dependency_links.txt
+cvapianalyser.egg-info/entry_points.txt
+cvapianalyser.egg-info/requires.txt
+cvapianalyser.egg-info/top_level.txt
+cvapianalyser/templates/index.html

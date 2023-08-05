@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>API Shark - Test Coverage Report</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+	<script src="https://raw.githubusercontent.com/chartjs/Chart.js/master/test/utils.js"></script>
+    <style>
+    	canvas {
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+	}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: left;
+  padding: 16px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.fa-check {
+  color: green;
+}
+
+.fa-remove {
+  color: red;
+}
+.panel-body {
+  display: flex;
+  height: 180px;
+  justify-content: space-between;
+}
+span[class*=&quot;-os&quot;] {
+  font-size: 14px;
+  font-weight: 300;
+  font-size: 14px;
+  color: black;
+}
+span[class*=&quot;-os&quot;] span {
+  width: 9px;
+  height: 9px;
+  display: inline-block;
+  border-radius: 50%;
+  margin-right: 9px;
+}
+.categories {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-basis: 75%;
+  padding: 39px 50px 41px 26px;
+}
+.category {
+  display: flex;
+  flex-direction: column;
+}
+.category span:last-child {
+  font-weight: 300;
+  font-size: 14px;
+  opacity: 0.6;
+  color: #423937;
+  margin-bottom: 6px;
+}
+.category span:first-child {
+  font-size: 20px;
+  font-weight: 300;
+  color: black;
+}
+#myDIV {
+  width: 100%;
+  padding: 50px 0;
+  text-align: center;
+  background-color: lightblue;
+  margin-top: 20px;
+}
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: 5;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+.accordion1 {
+  background-color: #eee;
+  color: green;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: 10;
+  text-align: right;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <img src="https://www.cloudvector.com/wp-content/themes/cloudvector/images/logo.svg" width="100" height="100" align="right">
+    <center><h2>CloudVector API Shark - Test Coverage Report</h2></center>
+  <br>
+    <div class="panel-body" align="center">
+        <table>
+            <tr>
+                <td>
+                <div class="categories">
+                    <div class="category">
+                          <span>API Shark Test window: 08, Feb 2020 to 15, Feb 2020</span>
+                            <span>APIs: 164 | Parameters: 14 | APIs with Auth: 4 | API Calls: 75257</span>
+                    </div>
+                    <div class="category">
+                          <span>API Baseline file: input.json</span>
+                            <span>APIs: 5 | Parameters: 15 | APIs with Auth: 0 </span>
+                    </div>
+                </div>
+                </td>
+                <td>
+                    <div align="center">
+                          <span><h1>84/100</h1></span>
+                            <span>Overall Coverage Score</span>
+                    </div>
+                </td>
+            </tr>
+        </table><br>
+<!--            <div class="category">-->
+<!--              <span>5</span>-->
+<!--                <span>APIs in SPEC</span>-->
+<!--            </div>-->
+<!--            <div class="category">-->
+<!--              <span>164</span>-->
+<!--                <span>APIs captured in APIShark</span>-->
+<!--            </div>-->
+<!--           <div class="category">-->
+<!--              <font color="blue"><span>1</span></font>-->
+<!--                <span>APIs in SPEC but not APIShark</span>-->
+<!--            </div>-->
+<!--        <div class="category">-->
+<!--              <span>75257</span>-->
+<!--                <span>Events for APIs in SPEC and APIShark</span>-->
+<!--            </div>-->
+
+    </div><br><br><br><br>
+    <table><tr>
+        <td>    <div id="apicoveragechart" style="width:70% height:50%">
+		            <canvas id="apicoverage"></canvas>
+	            </div>
+        </td>
+                <td>    <div id="m_paramscoveragechart" style="width:70% height:50%">
+		            <canvas id="m_paramsoverage"></canvas>
+	            </div>
+        </td></tr><tr>
+                <td>    <div id="o_paramscoveragechart" style="width:70% height:50%">
+		            <canvas id="o_paramsoverage"></canvas>
+	            </div>
+        </td>
+                <td>    <div id="respcoveragechart" style="width:70% height:50%">
+		            <canvas id="respcoverage"></canvas>
+	            </div>
+        </td>
+        </tr></table>
+    <br>
+    <div id="chart-container"><canvas id="myChart" height="300"></canvas></div><br>
+    <div id="canvas-holder" style="width:70% height:50%">
+        <canvas id="paramchart_m"></canvas></div><hr>
+<!--    <table><tr><td><div id="canvas-holder" style="width:40% height:50%">-->
+<!--        <canvas id="paramchart_m"></canvas></div></td><td>-->
+<!--    <div id="canvas-holder1" style="width:40% height:50%">-->
+<!--        <canvas id="paramchart_o"></canvas>-->
+<!--	</div></td></tr>-->
+<!--    </table><hr>-->
+<script>
+var ctx = document.getElementById('myChart').getContext('2d');
+var color = Chart.helpers.color;
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['TotalAPIs', 'Total Mandatory Parameters', 'Response Codes', 'Total Optional Parameters', 'APIs with Auth','APIs with NoAuth'],
+        datasets: [{
+            label: 'Baseline',
+            data: [5,
+            14,
+            2,
+            1,
+            0,
+            4],
+            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+            borderColor: 'rgba(255, 99, 132, 1)',
+            borderWidth: 1
+        },
+        {
+            label: 'APIShark',
+            data: [164,
+            13,
+            5,
+            1,
+            4,
+            0
+            ],
+            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+            borderColor: 'rgba(54, 162, 235, 1)',
+            borderWidth: 1
+        }]
+    },
+    options: {
+    responsive: true,
+    maintainAspectRatio: false,
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+
+var ctx = document.getElementById('paramchart_m').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: ['1 parameter', '2 parameters', '3 parameters', '4 parameters','5+ parameters'],
+        datasets: [{
+            label: 'APIShark',
+            data: [1,
+            0,
+            0,
+            2,
+            1],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+    title: {
+						display: true,
+						text: 'Mandatory Parameters captured'
+					},
+    responsive: true,
+    maintainAspectRatio: false
+    }
+});
+
+<!--var ctx = document.getElementById('paramchart_o').getContext('2d');-->
+<!--var myChart = new Chart(ctx, {-->
+<!--    type: 'doughnut',-->
+<!--    data: {-->
+<!--        labels: ['1 parameter', '2 parameters', '3 parameters', '4 parameters','5+ parameters'],-->
+<!--        datasets: [{-->
+<!--            label: 'Baseline',-->
+<!--            data: [1,-->
+<!--            0,-->
+<!--            0,-->
+<!--            0,-->
+<!--            0],-->
+<!--            backgroundColor: [-->
+<!--                'rgba(255, 99, 132, 0.2)',-->
+<!--                'rgba(54, 162, 235, 0.2)',-->
+<!--                'rgba(255, 206, 86, 0.2)',-->
+<!--                'rgba(75, 192, 192, 0.2)',-->
+<!--                'rgba(153, 102, 255, 0.2)',-->
+<!--                'rgba(255, 159, 64, 0.2)'-->
+<!--            ],-->
+<!--            borderWidth: 1-->
+<!--        },-->
+<!--        {-->
+<!--            label: 'APIShark',-->
+<!--            data: [1,-->
+<!--            0,-->
+<!--            0,-->
+<!--            0,-->
+<!--            0],-->
+<!--            backgroundColor: [-->
+<!--                'rgba(255, 99, 132, 0.2)',-->
+<!--                'rgba(54, 162, 235, 0.2)',-->
+<!--                'rgba(255, 206, 86, 0.2)',-->
+<!--                'rgba(75, 192, 192, 0.2)',-->
+<!--                'rgba(153, 102, 255, 0.2)',-->
+<!--                'rgba(255, 159, 64, 0.2)'-->
+<!--            ],-->
+<!--            borderWidth: 1-->
+<!--        }]-->
+<!--    },-->
+<!--    options: {-->
+<!--    responsive: true,-->
+<!--    maintainAspectRatio: false,-->
+<!--        scales: {-->
+<!--            yAxes: [{-->
+<!--                ticks: {-->
+<!--                    beginAtZero: true-->
+<!--                }-->
+<!--            }]-->
+<!--        }-->
+<!--    }-->
+<!--});-->
+
+var ctx = document.getElementById('apicoverage').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: ['Covered', 'Missed'],
+        datasets: [{
+            label: 'Baseline',
+            data: [164,
+            1],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+            title: {
+						display: true,
+						text: 'API Coverage'
+					},
+					responsive: true,
+    maintainAspectRatio: false,
+    }
+});
+
+var ctx = document.getElementById('m_paramsoverage').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: ['Covered', 'Missed'],
+        datasets: [{
+            label: 'Baseline',
+            data: [13,
+            1],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+            title: {
+						display: true,
+						text: 'API Mandatory Parameters Coverage'
+					},
+					responsive: true,
+    maintainAspectRatio: false,
+    }
+});
+
+var ctx = document.getElementById('o_paramsoverage').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: ['Covered', 'Missed'],
+        datasets: [{
+            label: 'Baseline',
+            data: [1,
+            0],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+            title: {
+						display: true,
+						text: 'API Optional Parameters Coverage'
+					},
+					responsive: true,
+    maintainAspectRatio: false,
+    }
+});
+
+var ctx = document.getElementById('respcoverage').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: ['Covered', 'Missed'],
+        datasets: [{
+            label: 'Baseline',
+            data: [5,
+            2],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+            title: {
+						display: true,
+						text: 'API Optional Parameters Coverage'
+					},
+					responsive: true,
+    maintainAspectRatio: false,
+    }
+});
+
+</script>
+    	<div id="container" style="width: 100%;">
+    <p>API Coverage details:</p>
+    
+        
+    <button class="accordion"><a name="/oauth/token">/oauth/token</a>&nbsp;<font size="2" style="float: right;">
+        <i>mandatory: 5
+            
+            &nbsp;optional: 0
+            
+            | <i>Response Codes</i> 
+                        <i class="fa fa-check"></i>
+                    </i></font>
+    </button>
+<div class="panel">
+  <p>
+            <table>
+                <tr>
+                    <td>mandatory</td>
+                    <td>
+                    
+                        password
+                    
+                        
+                            
+                                <i class="fa fa-check"></i>
+                            
+                        
+                        &nbsp;-&nbsp;
+                    
+                    
+                        client_id
+                    
+                        
+                            
+                                <i class="fa fa-check"></i>
+                            
+                        
+                        &nbsp;-&nbsp;
+                    
+                    
+                        grant_type
+                    
+                        
+                            
+                                <i class="fa fa-check"></i>
+                            
+                        
+                        &nbsp;-&nbsp;
+                    
+                    
+                        email
+                    
+                        
+                            
+                                <i class="fa fa-check"></i>
+                            
+                        
+                        &nbsp;-&nbsp;
+                    
+                    
+                        client_secret
+                    
+                        
+                            
+                                <i class="fa fa-check"></i>
+                            
+                        
+                        &nbsp;-&nbsp;
+                    
+                    </td>
+                </tr>
+                <tr>
+                    <td>optional</td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Response Codes</td>
+                    <td>
+                            
+                                401 <i>?</i>
+                                    &nbsp;
+                            
+                                200 <i>?</i>
+                                    &nbsp;
+                            
+                        
+                    </td>
+                </tr>
+            </table>
+        </li>
+          <div class="progress">
+                <div class="progress-bar progress-bar-success progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+                        mandatory params (coverage: 100%)
+                </div>
+            </div>
+        <div class="progress">
+              <div class="progress-bar progress-bar-success progress-bar-info" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+                        optional params (coverage: 0%)
+                </div>
+            </div>
+</p>
+</div>
+        
+        
+    <button class="accordion"><a name="/transfers">/transfers</a>&nbsp;<font size="2" style="float: right;">
+        <i>mandatory: 4
+            
+                <font color="red">(1)</font>
+            
+            &nbsp;optional: 1
+            
+            | <i>Response Codes</i> 
+                        <i class="fa fa-check"></i>
+                    </i></font>
+    </button>
+<div class="panel">
+  <p>
+            <table>
+                <tr>
+                    <td>mandatory</td>
+                    <td>
+                    
+                        user_idw
+                    
+                        
+                            
+                                <i class="fa fa-remove"></i>
+                            
+                        
+                        &nbsp;-&nbsp;
+                    
+                    
+                        description
+                    
+                        
+                            
+                                <i class="fa fa-check"></i>
+                            
+                        
+                        &nbsp;-&nbsp;
+                    
+                    
+                        amount
+                    
+                        
+                            
+                                <i class="fa fa-check"></i>
+                            
+                        
+                        &nbsp;-&nbsp;
+                    
+                    
+                        account_id
+                    
+                        
+                            
+                                <i class="fa fa-check"></i>
+                            
+                        
+                        &nbsp;-&nbsp;
+                    
+                    </td>
+                </tr>
+                <tr>
+                    <td>optional</td>
+                    <td>
+                    
+                        beneficiary_id
+                    
+                        
+                            
+                                <i class="fa fa-check"></i>
+                            
+                        
+                        &nbsp;-&nbsp;
+                    
+                    </td>
+                </tr>
+                <tr>
+                    <td>Response Codes</td>
+                    <td>
+                            
+                                201 <i>?</i>
+                                    &nbsp;
+                            
+                        
+                    </td>
+                </tr>
+            </table>
+        </li>
+          <div class="progress">
+                <div class="progress-bar progress-bar-success progress-bar-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width:75%">
+                        mandatory params (coverage: 75%)
+                </div>
+            </div>
+        <div class="progress">
+              <div class="progress-bar progress-bar-success progress-bar-info" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+                        optional params (coverage: 100%)
+                </div>
+            </div>
+</p>
+</div>
+        
+        
+    <button class="accordion"><a name="/user_details">/user_details</a>&nbsp;<font size="2" style="float: right;">
+        <i>mandatory: 1
+            
+            &nbsp;optional: 0
+            
+            | <i>Response Codes</i> 
+                        <i class="fa fa-remove"></i>
+                    </i></font>
+    </button>
+<div class="panel">
+  <p>
+            <table>
+                <tr>
+                    <td>mandatory</td>
+                    <td>
+                    
+                        user_detail
+                    
+                        
+                            
+                                <i class="fa fa-check"></i>
+                            
+                        
+                        &nbsp;-&nbsp;
+                    
+                    </td>
+                </tr>
+                <tr>
+                    <td>optional</td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Response Codes</td>
+                    <td>
+                            
+                                200
+                                    
+                                        <i class="fa fa-check"></i>
+                                    
+                                    &nbsp;
+                            
+                                400
+                                    
+                                        <i class="fa fa-remove"></i>
+                                    
+                                    &nbsp;
+                            
+                        
+                    </td>
+                </tr>
+            </table>
+        </li>
+          <div class="progress">
+                <div class="progress-bar progress-bar-success progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+                        mandatory params (coverage: 100%)
+                </div>
+            </div>
+        <div class="progress">
+              <div class="progress-bar progress-bar-success progress-bar-info" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+                        optional params (coverage: 0%)
+                </div>
+            </div>
+</p>
+</div>
+        
+        
+        
+    <button class="accordion"><a name="/deposits">/deposits</a>&nbsp;<font size="2" style="float: right;">
+        <i>mandatory: 4
+            
+            &nbsp;optional: 0
+            
+            | <i>Response Codes</i> 
+                        <i class="fa fa-check"></i>
+                    </i></font>
+    </button>
+<div class="panel">
+  <p>
+            <table>
+                <tr>
+                    <td>mandatory</td>
+                    <td>
+                    
+                        description
+                    
+                        
+                            
+                                <i class="fa fa-check"></i>
+                            
+                        
+                        &nbsp;-&nbsp;
+                    
+                    
+                        amount
+                    
+                        
+                            
+                                <i class="fa fa-check"></i>
+                            
+                        
+                        &nbsp;-&nbsp;
+                    
+                    
+                        user_id
+                    
+                        
+                            
+                                <i class="fa fa-check"></i>
+                            
+                        
+                        &nbsp;-&nbsp;
+                    
+                    
+                        account_id
+                    
+                        
+                            
+                                <i class="fa fa-check"></i>
+                            
+                        
+                        &nbsp;-&nbsp;
+                    
+                    </td>
+                </tr>
+                <tr>
+                    <td>optional</td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Response Codes</td>
+                    <td>
+                            
+                                201 <i>?</i>
+                                    &nbsp;
+                            
+                        
+                    </td>
+                </tr>
+            </table>
+        </li>
+          <div class="progress">
+                <div class="progress-bar progress-bar-success progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+                        mandatory params (coverage: 100%)
+                </div>
+            </div>
+        <div class="progress">
+              <div class="progress-bar progress-bar-success progress-bar-info" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+                        optional params (coverage: 0%)
+                </div>
+            </div>
+</p>
+</div>
+        
+
+    <br><hr>
+    <h2>Missing API(s) details:</h2>
+        <button class="accordion">APIs in SPEC but not captured <b>(1)</b></button>
+<div class="panel">
+  <p>    
+            /user_detail&nbsp;|&nbsp;
+         </p>
+</div>
+    <hr>
+    <h2>Missing Parameter(s) details:</h2>
+
+    <button class="accordion">Missing 1 mandatory parameter <b>(1)</b></button>
+<div class="panel">
+  <p>    
+            
+         
+            
+                <a href="#/transfers">/transfers</a> &nbsp;|&nbsp;
+            
+         
+            
+         
+            
+         
+            
+         </p>
+</div>
+
+<button class="accordion">Missing 2 mandatory parameters <b>(0)</b></button>
+<div class="panel">
+  <p>    
+            
+         
+            
+         
+            
+         
+            
+         
+            
+         </p>
+</div>
+
+<button class="accordion">Missing 3 mandatory parameters <b>(0)</b></button>
+<div class="panel">
+    <p>    
+            
+         
+            
+         
+            
+         
+            
+         
+            
+         </p>
+</div>
+    <button class="accordion">Missing 4 mandatory parameters <b>(0)</b></button>
+<div class="panel">
+    <p>    
+            
+         
+            
+         
+            
+         
+            
+         
+            
+         </p>
+</div>
+    <button class="accordion">Missing 5 or more mandatory parameters <b>(0)</b></button>
+<div class="panel">
+    <p>    
+            
+         
+            
+         
+            
+         
+            
+         
+            
+         </p>
+</div>
+
+    <button class="accordion1">Missing 1 optional parameter <b>(0)</b></button>
+<div class="panel">
+      <p>    
+            
+         
+            
+         
+            
+         
+            
+         
+            
+         </p>
+</div>
+
+<button class="accordion1">Missing 2 optional parameters <b>(0)</b></button>
+<div class="panel">
+        <p>    
+            
+         
+            
+         
+            
+         
+            
+         
+            
+         </p>
+</div>
+
+<button class="accordion1">Missing 3 optional parameters <b>(0)</b></button>
+<div class="panel">
+      <p>    
+            
+         
+            
+         
+            
+         
+            
+         
+            
+         </p>
+</div>
+    <button class="accordion1">Missing 4 optional parameters <b>(0)</b></button>
+<div class="panel">
+          <p>    
+            
+         
+            
+         
+            
+         
+            
+         
+            
+         </p>
+</div>
+    <button class="accordion1">Missing 5 or more optional parameters <b>(0)</b></button>
+<div class="panel">
+      <p>    
+            
+         
+            
+         
+            
+         
+            
+         
+            
+         </p>
+</div>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+var acc1 = document.getElementsByClassName("accordion1");
+var i;
+
+for (i = 0; i < acc1.length; i++) {
+  acc1[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
+
+</div>
+<hr>
+    <center><h4> Community Edition: <a href="http://34.238.148.157:31316">http://34.238.148.157:31316</a>  </h4>
+    <h4> Recording:  </h4></center>
+<hr>
+</body>
+</html>
