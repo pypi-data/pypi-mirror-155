@@ -1,0 +1,57 @@
+Metadata-Version: 2.1
+Name: tox-no-deps
+Version: 0.2.0
+Summary: Skip the installation of all deps and extras of Tox environments
+Home-page: https://github.com/stanislavlevin/tox-no-deps
+Author: Stanislav Levin
+Maintainer: Stanislav Levin
+License: MIT
+Project-URL: Source, https://github.com/stanislavlevin/tox-no-deps
+Project-URL: Tracker, https://github.com/stanislavlevin/tox-no-deps/issues
+Keywords: virtual,environments,isolated,testing
+Platform: any
+Classifier: Development Status :: 4 - Beta
+Classifier: Framework :: tox
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Testing
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Utilities
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: tox
+Requires-Dist: pluggy
+Provides-Extra: testing
+Requires-Dist: pytest ; extra == 'testing'
+
+# tox-no-deps plugin ![CI](https://github.com/stanislavlevin/tox-no-deps/workflows/CI/badge.svg)
+
+This plugin skips the installation of all `deps` and `extras` of all the
+Tox environments. The dependencies of tested package if any are not touched.
+
+This is mostly used for testing purposes in ALTLinux during RPM build of Python
+packages to run integration tests against the repository packages.
+
+Usage
+-----
+
+Only the CLI option is supported, the configuration's one is considered
+ambiguous.
+
+```
+tox --no-deps
+```
+
+License
+-------
+
+Distributed under the terms of the **MIT** license, `tox-no-deps` is
+free and open source software.
+
+
