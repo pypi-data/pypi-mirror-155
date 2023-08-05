@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "ipython_pygments"
+version = "0.1.0"
+description = "Syntax highlighting for ipython"
+authors = ["Thomas MK <tmke@posteo.net>"]
+license = "BSD-3-Clause license"
+
+[tool.poetry.dependencies]
+python = "^3.6"
+Sphinx = ">=4.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
