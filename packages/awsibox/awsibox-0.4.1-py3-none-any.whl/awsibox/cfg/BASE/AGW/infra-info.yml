@@ -1,0 +1,75 @@
+IBoxLoader:
+  - !exclude
+    - cloudfront/for-services.yml
+
+global:
+  StackName: iif
+  ApiGatewayRestApi:
+    - Base:
+        Description: 'Infrastracture Informations'
+        Name: 'InfraInfo'
+        Stage: v1
+        BinaryMediaTypes: ['*/*']
+  CloudFront: IBOX_SKIP_FUNC
+  ApiGatewayResource:
+    - 01Root:
+        ParentId: GetAtt('ApiGatewayRestApi', 'RootResourceId')
+        PathPart: '{proxy+}'
+        Method:
+          - 01ANY:
+              ApiKeyRequired: false
+              AuthorizationType: NONE
+              HttpMethod: ANY
+              Integration:
+                ContentHandling: CONVERT_TO_TEXT
+                IntegrationHttpMethod: POST
+                IntegrationResponses:
+                  - 200:
+                      ResponseTemplates:
+                        dict([
+                          ('text/html', '{}'),
+                        ])
+                      StatusCode: '200'
+                Uri: 'arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${LambdaInfraInfo.Arn}/invocations'
+                PassthroughBehavior: WHEN_NO_MATCH
+                TimeoutInMillis: 29000
+                Type: AWS_PROXY
+              RequestParameters:
+                dict([
+                  ('method.request.path.proxy', True),
+                ])
+  ApiGatewayStage:
+    - v1:
+        CacheClusterEnabled: false
+        MethodSettings:
+          - 1:
+              CachingEnabled: false
+              DataTraceEnabled: false
+              HttpMethod: '*'
+              MetricsEnabled: true
+              ResourcePath: '/*'
+              ThrottlingBurstLimit: 5000
+              ThrottlingRateLimit: 10000
+        TracingEnabled: false
+  IAMPolicy:
+    - LambdaInfraInfo:
+        Roles:
+          - Ref('RoleLambdaInfraInfov1')
+        Statement:
+          - 1:
+              Action:
+                - 'cloudformation:DescribeStack*'
+                - 'ecs:ListClusters'
+                - 'ecs:ListServices'
+                - 'ecs:DescribeServices'
+                - 'application-autoscaling:DescribeScalableTargets'
+              Resource: '*'
+  Lambda:
+    - InfraInfov1:
+        Code:
+          S3Bucket: Sub(cfg.BucketNameAppRepository)
+          S3Key: 'ibox-tools/infra-info/infra-info-01.zip'
+        Description: 'Infrastracture Informations'
+        MemorySize: 128
+        Runtime: python3.9
+        Timeout: 60

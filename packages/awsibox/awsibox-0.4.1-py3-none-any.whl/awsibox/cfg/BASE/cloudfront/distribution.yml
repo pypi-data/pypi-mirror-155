@@ -1,0 +1,55 @@
+Distribution: &distribution
+  Enabled: true
+  HttpVersion: get_endvalue('CloudFrontHttpVersion')
+  Logging:
+    IBOX_IF:
+      - CloudFrontLogging
+      - IBOX_IFVALUE
+      - Ref('AWS::NoValue')
+    Bucket: Sub(f'{cfg.BucketNameLogs}.s3.amazonaws.com')
+    Prefix: Sub('${EnvRole}.${AWS::StackName}/')
+  PriceClass: PriceClass_100
+  ViewerCertificate:
+    AcmCertificateArn: If('CloudFrontAcmCertificate', get_endvalue('GlobalCertificateArn'), Ref('AWS::NoValue'))
+    CloudFrontDefaultCertificate: If('CloudFrontAcmCertificate', Ref('AWS::NoValue'), True)
+    SslSupportMethod: If('CloudFrontAcmCertificate', 'sni-only', Ref('AWS::NoValue'))
+    MinimumProtocolVersion: If('CloudFrontAcmCertificate', get_endvalue('CloudFrontMinimumProtocolVersion'), Ref('AWS::NoValue'))
+  WebACLId: get_endvalue('CloudFrontWebACLId', condition=True)
+
+Origin: &origin
+  IBOX_PARAMETER:
+    - _DomainName:
+        Description: 'empty for mapped value'
+  CustomOriginConfig:
+    IBOX_PARAMETER:
+      - _CustomOriginConfigHTTPSPort:
+          Description: 'empty for mapped value'
+    OriginProtocolPolicy: https-only
+  OriginPath: ''
+  S3OriginConfig:
+    IBOX_PARAMETER:
+      - _S3OriginConfigOriginAccessIdentity:
+          Description: 'empty for mapped value'
+
+LambdaFunctionAssociation: &lambda_function_association
+  IBOX_PARAMETER:
+    - _LambdaFunctionARN:
+        Description: LambdaAtEdge Version Arn - empty for mapped value - none to disable
+  IBOX_CONDITION:
+    - _LambdaFunctionARN:
+        get_condition('', 'not_equals', 'none', f'{IBOX_RESNAME}LambdaFunctionARN')
+  IBOX_OUTPUT:
+    - _LambdaFunctionARN:
+        Value: ${LambdaFunctionARN}
+  Condition: IBOX_RESNAMELambdaFunctionARN
+  EventType: viewer-request
+  LambdaFunctionARN: none
+
+
+global:
+  CloudFrontDistribution:
+    - IBOX_BASE: *distribution
+  CloudFrontOrigins:
+    - IBOX_BASE: *origin
+  LambdaFunctionAssociation:
+    - IBOX_BASE: *lambda_function_association

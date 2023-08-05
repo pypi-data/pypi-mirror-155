@@ -1,0 +1,12 @@
+global:
+  StackName: r-latedge-01
+  Lambda:
+    - AtEdgeAddHeaders:
+        AtEdge: True
+        Description: 'Lambda@Edge add Headers'
+        MemorySize: 128
+        Runtime: python3.9
+        Timeout: 10
+        Version: True
+        Variables: []
+        CacheControl: 31536000

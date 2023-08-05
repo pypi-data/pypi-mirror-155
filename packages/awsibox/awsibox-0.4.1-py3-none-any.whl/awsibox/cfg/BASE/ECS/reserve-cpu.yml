@@ -1,0 +1,24 @@
+IBoxLoader: !exclude
+  - application-autoscaling/scalingpolicy.yml
+  - autoscaling/capacity.yml
+  - elasticloadbalancing/base.yml
+  - ec2/securitygroup.yml
+  - cloudwatch/alarms.yml
+  - cloudfront/for-services.yml
+
+global:
+  StackName: rsc
+  ApplicationAutoScalingScalingPolicy: IBOX_SKIP_FUNC
+  ContainerDefinitions:
+    - 1:
+        Command: ['tail', '-f', '.dockerenv']
+        Cpu: 512
+        Image: 'amazonlinux:2'
+        Memory: 64
+  LaunchType: EC2
+  ScalableTarget: IBOX_SKIP_FUNC
+  Service:
+    - Base:
+        IBOX_ENABLED: False
+    - Daemon:
+        IBOX_ENABLED: True

@@ -1,0 +1,26 @@
+IBoxLoader: !include
+  - cloudfront/for-services.yml
+
+global:
+  Output:
+    - InvokeUrl:
+        Value: Sub('https://${ApiGatewayRestApi}.execute-api.${AWS::Region}.amazonaws.com/%s' % cfg.ApiGatewayRestApi['Base']['Stage'])
+  ApiGatewayRestApi:
+    - Base:
+        ApiKeySourceType: HEADER
+        BinaryMediaTypes:
+          - '*/*'
+        Description: 'Api-Gateway Description is missing'
+        EndpointConfiguration:
+          Types:
+            - REGIONAL
+        Name: 'Api-Gateway Name is missing'
+  CloudFront: 'yes'
+  CloudFrontAliasExtra:
+    - Cdn: Sub('${EnvRole}${RecordSetCloudFrontSuffix}.cdn.%s' % cfg.HostedZoneNameEnv)
+  CloudFrontOrigins:
+    - Default:
+        CustomOriginConfig:
+          HTTPSPort: '443'
+          HTTPPort: Ref('AWS::NoValue')
+        DomainName:  Sub('${ApiGatewayRestApi}.execute-api.${AWS::Region}.amazonaws.com')

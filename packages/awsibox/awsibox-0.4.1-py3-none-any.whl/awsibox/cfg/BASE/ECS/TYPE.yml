@@ -1,0 +1,105 @@
+IBoxLoader: !include
+  - autoscaling/capacity.yml
+  - application-autoscaling/scalingpolicy.yml
+  - application-autoscaling/scalabletarget.yml
+  - elasticloadbalancing/base.yml
+  - cloudwatch/alarms.yml
+  - cloudfront/for-services.yml
+  - ecs/ecs-task.yml
+  - ecs/ecs-service.yml
+
+global:
+  Parameter:
+    - LoadBalancerApplicationStack:
+        Description: 'LoadBalancer Application Stack to use - empty for default based on env/role'
+  SecurityGroupIngress:
+    - LoadBalancerApplicationHttpExternal:
+        IBOX_ENABLED: False
+        CidrIp: '0.0.0.0/0'
+        GroupId: get_expvalue(f'SecurityGroupLoadBalancerApplicationExternal', 'LoadBalancerApplicationStack')
+        FromPort: get_endvalue(f'ListenerLoadBalancerHttpPort')
+        ToPort: get_endvalue(f'ListenerLoadBalancerHttpPort')
+    - LoadBalancerApplicationHttpInternal:
+        IBOX_ENABLED: False
+        CidrIp: '0.0.0.0/0'
+        GroupId: get_expvalue(f'SecurityGroupLoadBalancerApplicationInternal', 'LoadBalancerApplicationStack')
+        FromPort: get_endvalue(f'ListenerLoadBalancerHttpPort')
+        ToPort: get_endvalue(f'ListenerLoadBalancerHttpPort')
+    - LoadBalancerApplicationHttpsExternal:
+        IBOX_ENABLED: False
+        CidrIp: '0.0.0.0/0'
+        GroupId: get_expvalue(f'SecurityGroupLoadBalancerApplicationExternal', 'LoadBalancerApplicationStack')
+        FromPort: get_endvalue(f'ListenerLoadBalancerHttpsPort')
+        ToPort: get_endvalue(f'ListenerLoadBalancerHttpsPort')
+  LaunchType: EC2
+  AlarmCPUBase: &cpu
+    IBOX_ENABLED: False
+    Dimensions:
+      - Cluster:
+          Name: ClusterName
+          Value: get_expvalue('Cluster', 'ClusterStack')
+      - Service:
+          Name: ServiceName
+          Value: GetAtt('Service', 'Name')
+    Namespace: 'AWS/ECS'
+  Alarm:
+    - CPUHigh:
+        <<: *cpu
+        AlarmActions: [Ref('ApplicationAutoScalingScalingPolicyUp')]
+    - CPULow:
+        <<: *cpu
+        AlarmActions: [Ref('ApplicationAutoScalingScalingPolicyDown')]
+  ElasticLoadBalancingV2TargetGroupECS:
+    - External: {}
+    - Internal: {}
+  ListenerRules:
+    - 1:
+        HostHeader: '*${EnvRole}.*'
+  LoadBalancerType: Application
+  LoadBalancerApplicationStack: alb-a
+  ApplicationAutoScalingScalingPolicy:
+    - Cpu:
+        IBOX_ENABLED: True
+    - Custom:
+        TargetTrackingScalingPolicyConfiguration:
+          CustomizedMetricSpecification:
+            Dimensions:
+              - Cluster:
+                  Name: ClusterName
+                  Value: get_expvalue('Cluster', 'ClusterStack')
+              - Service:
+                  Name: ServiceName
+                  Value: GetAtt('Service', 'Name')
+  ScalableTargetScheduledAction:
+    - Down:
+        CapacityMax: k
+        CapacityMin: k
+        Schedule: 'cron(00 22 * * ? *)'
+    - Up:
+        CapacityMax: k
+        CapacityMin: k
+        Schedule: 'cron(00 06 * * ? *)'
+  Service:
+    - Base:
+        IBOX_ENABLED: True
+
+dev: &cfg_dev
+  Alarm:
+    TargetExternal5XX:
+      EvaluationPeriods: 0
+    TargetInternal5XX:
+      EvaluationPeriods: 0
+  ScalableTargetScheduledAction:
+    Down:
+      CapacityMax: k
+      CapacityMin: k
+    Up:
+      CapacityMax: CapacityMax
+      CapacityMin: CapacityMin
+
+stg: *cfg_dev
+
+
+IBoxLoaderAfter: !include [
+  #ecs-fargate-spot.yml,
+]

@@ -1,0 +1,36 @@
+IBoxLoader:
+  - !exclude
+    - cloudfront/for-services.yml
+    - elasticloadbalancing/base.yml
+    - application-autoscaling/scalingpolicy.yml
+  - !include
+    - iam/policy-update_stack.yml
+
+global:
+  StackName: bkt
+  ApplicationAutoScalingScalingPolicy: IBOX_SKIP_FUNC
+  Capacity:
+    Desired: 3
+    Max: 4
+    Min: 3
+  ContainerDefinitions:
+    - 1:
+        Cpu: 128
+        Environment:
+          - AWSDEFAULTREGION:
+              Name: AWS_DEFAULT_REGION
+              Value: Ref('AWS::Region')
+        Memory: 128
+        MountPoints:
+          - DockerSock:
+              ReadOnly: false
+              SourceVolume: DockerSock
+              ContainerPath: /var/run/docker.sock
+  RepoName: get_subvalue('${1M}.${2M}.services.buildkite', ['BrandRegion', 'Brand'])
+  TaskDefinition:
+    - Base:
+        Volumes:
+          - DockerSock:
+              Name: DockerSock
+              Host:
+                SourcePath: '/var/run/docker.sock'

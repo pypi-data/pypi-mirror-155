@@ -1,0 +1,48 @@
+IBoxLoader:
+  - !exclude
+    - iam/ecs-exec.yml
+  - !include
+    - ecs/ecs-task.yml
+    - ecs/ecs-service.yml
+
+global:
+  Parameter:
+    - DaemonReserveCpu:
+        Description: 'Empty for mapped value'
+        AllowedValues: ['', 'yes', 'no']
+  Condition:
+    - DaemonReserveCpu:
+        get_condition('', 'equals', 'yes', 'DaemonReserveCpu')
+  Output:
+    - DaemonReserveCpu:
+        Value: get_endvalue('DaemonReserveCpu')
+  DaemonReserveCpu: 'no'
+  ContainerDefinitions:
+    - ReserveCpu:
+        Command: ['tail', '-f']
+        Cpu: 512
+        Image: 'busybox'
+        LogConfiguration: IBOX_SKIP_FUNC
+        Memory: 32
+  # Included yaml ecs/ecs-task.yml have changed ParameterStore Roles to RoleTask, need to restore it.
+  IAMPolicy:
+    - ParameterStore:
+        Roles:
+          - Ref('RoleInstance')
+  LaunchType: EC2
+  LogDriver: none
+  LogsLogGroup: IBOX_SKIP_FUNC
+  Role:
+    - Task:
+        Condition: DaemonReserveCpu
+  Service:
+    - Base:
+        IBOX_ENABLED: False
+    - Daemon:
+        IBOX_ENABLED: True
+        Condition: DaemonReserveCpu
+        Cluster: Ref('Cluster')
+        NetworkConfiguration: IBOX_SKIP_FUNC
+  TaskDefinition:
+    - Base:
+        Condition: DaemonReserveCpu

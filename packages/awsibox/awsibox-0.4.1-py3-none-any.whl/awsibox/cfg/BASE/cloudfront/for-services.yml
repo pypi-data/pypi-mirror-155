@@ -1,0 +1,57 @@
+IBoxLoader: !include
+  - base.yml
+  - route53/recordset.yml
+
+global:
+  Parameter:
+    - CloudFront:
+        Description: 'Create CloudFront Distribution - empty for default based on env/role'
+        AllowedValues: ['', 'yes', 'no']
+    - RecordSetCloudFrontSuffix:
+        Description: 'RecordSetCloudFront DNS Name Suffix - empty to disable'
+  Condition:
+    - CloudFrontAliasZone:
+        get_condition('', 'not_equals', 'none', 'CloudFrontAliasZone')
+    - CloudFrontDistribution:
+        get_condition('', 'equals', 'yes', 'CloudFront')
+    - RecordSetCloudFront:
+        And(
+          Condition('CloudFrontDistribution'),
+          get_condition('', 'equals', 'yes', 'RecordSetCloudFront')
+        )
+  Output:
+    - CloudFront:
+        Value: get_endvalue('CloudFront')
+    - RecordSetCloudFront:
+        Condition: RecordSetCloudFront
+        Value: Sub('${RecordSetCloudFront} --> ${CloudFrontDistribution.DomainName}')
+  CloudFront: 'no'
+  CloudFrontCacheBehaviors:
+    - 0:
+        TargetOriginId: Sub('${EnvRole}${RecordSetCloudFrontSuffix}.origin.%s' % cfg.HostedZoneNameEnv)
+  CloudFrontComment: Sub('${AWS::StackName}-${EnvRole}')
+  CloudFrontDistributionCondition: CloudFrontDistribution
+  CloudFrontOrigins:
+    - Default:
+        CustomOriginConfig:
+          HTTPSPort: get_endvalue('ListenerLoadBalancerHttpsPort')
+          HTTPPort:  get_endvalue('ListenerLoadBalancerHttpPort')
+        DomainName: get_endvalue('CloudFrontCacheBehaviors0TargetOriginId')
+        Id: get_endvalue('CloudFrontCacheBehaviors0TargetOriginId')
+  CloudFrontAliasExtra:
+    - Cdn: If('RecordSetCloudFront',
+              Sub('${EnvRole}${RecordSetCloudFrontSuffix}.cdn.%s' % cfg.HostedZoneNameEnv), Ref('RecordSetExternal'))
+    - Env: Sub('${EnvRole}${RecordSetCloudFrontSuffix}.%s' % cfg.HostedZoneNameEnv)
+    - Zone: If('CloudFrontAliasZone',
+              Sub('%s.%s' % (get_endvalue('CloudFrontAliasZone'), cfg.HostedZoneNameEnv)), Ref('AWS::NoValue'))
+  CloudFrontAliasZone: none
+  RecordSetCloudFront: 'yes'
+  R53RecordSet:
+    - CloudFront:
+        IBOX_ENABLED: True
+        IBOX_TITLE: RecordSetCloudFront
+
+
+IBoxLoaderAfter: !include [
+  #origin-adhoc.yml,
+]

@@ -1,0 +1,5 @@
+IBoxLoader:
+  - !include
+    - s3/bucket.yml
+
+global:

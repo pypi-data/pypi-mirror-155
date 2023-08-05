@@ -1,0 +1,46 @@
+IBoxLoader: !include [
+  ecs-taskdefinition.yml,
+  ecs-containerdefinition.yml,
+  iam/parameterstore.yml,
+  iam/ecs-exec.yml,
+  ec2/securitygroup.yml,
+]
+
+global:
+  Parameter:
+    - ClusterStack:
+        Description: 'Cluster Stack Name used to launch service on - empty for default based on env/role'
+    - DockerLabelLastUpdate:
+        Description: 'Use to force redeploy - can use: $(date +%F_%T)'
+    - LaunchType:
+        Description: RunTask LaunchType - empty for default based on env/role
+        AllowedValues: ['', 'EC2', 'FARGATE']
+    - LogDriver:
+        Description: 'Log driver for task container - empty for default'
+        AllowedValues: ['', 'none', 'awslogs', 'fluentd', 'gelf', 'journald', 'json-file', 'splunk', 'syslog']
+  Condition:
+    - LaunchTypeFarGate:
+        get_condition('', 'equals', 'FARGATE', 'LaunchType')
+    - LogConfiguration:
+        get_condition('', 'not_equals', 'none', 'LogDriver')
+  Output:
+    - LaunchType:
+        Value: get_endvalue('LaunchType')
+    - LogDriver:
+        Value: get_endvalue('LogDriver')
+  ClusterStack: ecs-a
+  LogDriver: awslogs
+  LogsLogGroup:
+    - Base:
+        IBOX_TITLE: LogsLogGroup
+        LogGroupName: Sub('/aws/ecs/${AWS::StackName}')
+        RetentionInDays: 30
+  IAMPolicy:
+    - ParameterStore:
+        Roles:
+          - Ref('RoleTask')
+  Role:
+    - Task:
+        ManagedPolicyArns:
+          - get_expvalue('IAMPolicyCloudWatchPutMetric')
+        Principal: ecs-tasks.amazonaws.com

@@ -1,0 +1,33 @@
+global:
+  StackName: r-ccr-rpl
+  Parameter:
+    - Mytest:
+        Description: 'ssm test to change'
+  Output:
+    - Mytest:
+        Value: Ref('Mytest')
+  Mytest: gatto
+  CCRReplicateRegions:
+    - 'eu-west-1'
+    - 'eu-central-1'
+  IAMPolicy:
+    - LambdaCCRStackReplicator:
+        Condition: 'LambdaCCRStackReplicator'
+        Roles:
+          - Ref('RoleLambdaCCRStackReplicator')
+        Statement:
+          - 1:
+              Action:
+                - '*'
+              Resource: '*'
+  Lambda:
+    - CCRStackReplicator:
+        Export: True
+        Code:
+          S3Bucket: Sub(cfg.BucketNameAppRepository)
+          S3Key: 'ibox-tools/stack-replicator/stack_replicator.zip'
+        Description: 'Replicate Stacks'
+        MemorySize: 128
+        Runtime: python3.9
+        Timeout: 300
+        Variables: []

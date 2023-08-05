@@ -1,0 +1,36 @@
+Metadata-Version: 2.1
+Name: awsibox
+Version: 0.4.1
+Summary: AWS Infrastructure in a Box
+Home-page: https://github.com/mello7tre/AwsIBox
+Author: Mello
+Author-email: mello+python@ankot.org
+License: OSI Approved :: Open Software License 3.0 (OSL-3.0)
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Open Software License 3.0 (OSL-3.0)
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: PyYAML (==5.*,>=5)
+Requires-Dist: python-minifier
+Requires-Dist: troposphere
+
+# AwsIBox
+AwsIBox - **AWS** **I**nfrastructure in a **Box**
+
+Work in progres...
+
+Guidelines:
+- Infrastructure as code.
+- Same cloudformation template for all environments and regions (Ex. development and production).
+- Scalable as needed.
+
+## Installation ##
+`pip install awsibox`
+
+## License ##
+
+This software is distributed under the terms of the MIT [license](LICENSE).
+
+

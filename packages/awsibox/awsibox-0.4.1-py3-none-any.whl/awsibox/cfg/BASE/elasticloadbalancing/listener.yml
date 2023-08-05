@@ -1,0 +1,116 @@
+Http: &http
+  IBOX_PARAMETER:
+    - ListenerLoadBalancerHttpPort:
+        Description: 'Http Port where Load Balancer listen - empty for default based on env/role'
+  Port: get_endvalue('ListenerLoadBalancerHttpPort')
+  Protocol: HTTP
+
+Https: &https
+  IBOX_PARAMETER:
+    - ListenerLoadBalancerHttpsPort:
+        Description: 'Http Port where Load Balancer listen - empty for default based on env/role'
+  Certificates:
+    Regional:
+      CertificateArn: get_endvalue('RegionalCertificateArn')
+  Port: get_endvalue('ListenerLoadBalancerHttpsPort')
+  Protocol: HTTPS
+  SslPolicy: get_endvalue('ListenerLoadBalancerSslPolicy')
+
+TCP: &tcp 
+  Protocol: TCP
+  Port: get_endvalue(f'{IBOX_REMAPNAME}LoadBalancerPort')
+  DefaultActions:
+    - TG:
+        Type: forward
+        TargetGroupArn: Ref(f'TargetGroup{IBOX_RESNAME}')
+
+External: &external
+  DefaultActions:
+    - TG:
+        Type: forward
+        TargetGroupArn: Ref(f'TargetGroupExternal')
+  LoadBalancerArn: Ref(f'LoadBalancerApplicationExternal')
+  
+Internal: &internal
+  DefaultActions:
+    - TG:
+        Type: forward
+        TargetGroupArn: Ref(f'TargetGroupInternal')
+  LoadBalancerArn: Ref(f'LoadBalancerApplicationInternal')
+
+HttpExternal: &httpexternal
+  <<: [*external, *http]
+
+HttpInternal: &httpinternal
+  <<: [*internal, *http]
+
+HttpsExternal: &httpsexternal
+  <<: [*external, *https]
+
+ALB: &alb
+  DefaultActions:
+    - 404:
+        FixedResponseConfig:
+          ContentType: 'text/plain'
+          MessageBody: "404 Not Found\n"
+          StatusCode: '404'
+        Type: 'fixed-response' 
+
+
+global:
+  Listener:
+    - Classic:
+        PolicyNames:
+          - If('LoadBalancerCookieSticky', 'LBCookieStickinessPolicy', Ref('AWS::NoValue'))
+        SSLCertificateId: get_endvalue('RegionalCertificateArn')
+  ListenerV2ECS:
+    - HttpExternal:
+        <<: *httpexternal
+        LoadBalancerArn: get_expvalue('LoadBalancerApplicationExternal', 'LoadBalancerApplicationStack')
+    - HttpInternal:
+        <<: *httpinternal
+        LoadBalancerArn: get_expvalue('LoadBalancerApplicationInternal', 'LoadBalancerApplicationStack')
+    - HttpsExternal:
+        <<: *httpsexternal
+        LoadBalancerArn: get_expvalue('LoadBalancerApplicationExternal', 'LoadBalancerApplicationStack')
+  ListenerV2EC2:
+    - HttpExternal:
+        <<: *httpexternal
+    - HttpInternal:
+        <<: *httpinternal
+    - HttpsExternal:
+        <<: *httpsexternal
+    - TCPExternal:
+       <<: *tcp
+       LoadBalancerArn: Ref(f'LoadBalancerNetworkExternal')
+    - TCPInternal:
+       <<: *tcp
+       LoadBalancerArn: Ref(f'LoadBalancerNetworkInternal')
+  ListenerV2ALB:
+    - HttpExternal:
+        <<: [*alb, *httpexternal]
+        IBOX_OUTPUT:
+          - _:
+              Condition: LoadBalancerApplicationExternal
+              Value: Ref(IBOX_RESNAME)
+              Export: Export(Sub('%s-${AWS::StackName}' % IBOX_RESNAME))
+        Condition: LoadBalancerApplicationExternal
+    - HttpInternal:
+        <<: [*alb, *httpinternal]
+        IBOX_OUTPUT:
+          - _:
+              Condition: LoadBalancerApplicationInternal
+              Value: Ref(IBOX_RESNAME)
+              Export: Export(Sub('%s-${AWS::StackName}' % IBOX_RESNAME))
+        Condition: LoadBalancerApplicationInternal
+    - HttpsExternal:
+        <<: [*alb, *httpsexternal]
+        IBOX_OUTPUT:
+          - _:
+              Condition: LoadBalancerApplicationExternal
+              Value: Ref(IBOX_RESNAME)
+              Export: Export(Sub('%s-${AWS::StackName}' % IBOX_RESNAME))
+        Condition: LoadBalancerApplicationExternal
+  ListenerLoadBalancerHttpPort: 80
+  ListenerLoadBalancerHttpsPort: 443
+  ListenerLoadBalancerSslPolicy: ELBSecurityPolicy-2016-08

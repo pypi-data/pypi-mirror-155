@@ -1,0 +1,53 @@
+global:
+  ECSCapacityProvider:
+    - Base:
+        IBOX_PARAMETER:
+          - _Enabled:
+              Description: 'Empty for mapped value'
+              AllowedValues: ['', 'yes', 'no']
+          - _AutoScalingGroupProviderManagedTerminationProtection:
+              Description: 'Empty for mapped value'
+              AllowedValues: ['', 'DISABLED', 'ENABLED']
+          - _AutoScalingGroupProviderManagedScalingMaximumScalingStepSize:
+              Description: 'Empty for mapped value'
+          - _AutoScalingGroupProviderManagedScalingMinimumScalingStepSize:
+              Description: 'Empty for mapped value'
+          - _AutoScalingGroupProviderManagedScalingTargetCapacity:
+              Description: 'Empty for mapped value'
+          - _AutoScalingGroupProviderManagedScalingStatus:
+              Description: 'Empty for mapped value'
+              AllowedValues: ['', 'DISABLED', 'ENABLED']
+        IBOX_CONDITION:
+          - _:
+              get_condition('', 'equals', 'yes', f'{IBOX_RESNAME}Enabled')
+        IBOX_OUTPUT:
+          - _:
+              Condition: IBOX_RESNAME
+              Value: >-
+                TerminationProtection= ${AutoScalingGroupProviderManagedTerminationProtection}
+                ,MaximumScalingStepSize= ${AutoScalingGroupProviderManagedScalingMaximumScalingStepSize}
+                ,MinimumScalingStepSize= ${AutoScalingGroupProviderManagedScalingMinimumScalingStepSize}
+                ,TargetCapacity= ${AutoScalingGroupProviderManagedScalingTargetCapacity}
+                ,Status= ${AutoScalingGroupProviderManagedScalingStatus}
+        Condition: IBOX_RESNAME
+        Enabled: 'no'
+        AutoScalingGroupProvider:
+          AutoScalingGroupArn: Ref('AutoScalingGroup')
+          ManagedTerminationProtection: DISABLED
+          ManagedScaling:
+            MaximumScalingStepSize: 10000
+            MinimumScalingStepSize: 1
+            Status: ENABLED
+            TargetCapacity: 75
+        # Trick - Without Name, it's generated starting from StackName, if StackName start with ecs is a problem
+        Name: Sub('CapacityProvider-${AWS::StackName}')
+  ECSClusterCapacityProviderAssociations:
+    - Base:
+        Condition: ECSCapacityProviderBase
+        CapacityProviders:
+          - Ref('ECSCapacityProviderBase')
+        Cluster: Ref('Cluster')
+        DefaultCapacityProviderStrategy:
+          - 0:
+              CapacityProvider: Ref('ECSCapacityProviderBase')
+              Weight: 1
