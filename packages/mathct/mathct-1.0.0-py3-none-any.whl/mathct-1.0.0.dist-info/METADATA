@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: mathct
+Version: 1.0.0
+Summary: Python Library to invoke 100+ mathematical constants
+Home-page: https://github.com/Dammonoit/mathct
+Author: Dharmendra Choudhary
+Author-email: dnc.1124@gmail.com
+License: MIT
+Project-URL: Bug Tracker, https://github.com/Dammonoit/mathct/issues
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.10
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+Python Library to invoke 100+ mathematical constants
+
