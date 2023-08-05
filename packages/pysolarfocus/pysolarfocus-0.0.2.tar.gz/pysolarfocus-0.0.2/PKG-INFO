@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: pysolarfocus
+Version: 0.0.2
+Summary: Unofficial, local Solarfocus client
+Home-page: https://github.com/lavermanjj/pysolarfocus
+License: Apache-2.0
+Keywords: solarfocus,api client
+Author: Jeroen Laverman
+Author-email: jjlaverman@web.de
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: pymodbus (>=2.5.3,<3.0.0)
+Project-URL: Repository, https://github.com/lavermanjj/pysolarfocus
+Description-Content-Type: text/markdown
+
+# pysolarfocus
