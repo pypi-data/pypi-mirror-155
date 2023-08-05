@@ -1,0 +1,19 @@
+print-status: False
+
+api:
+    server:
+        scheme: http
+    database:
+        dialect: ${DATABASE_DIALECT:sqlite}
+        settings:
+            check_same_thread: False
+
+queue:
+    message:
+        emitter:
+            url: ${QUEUE_MESSAGE_EMITTER_BASE_URL}:${api.server.port}${api.server.base-url}/message/emitter
+
+
+swagger:
+    schemes: [${api.server.scheme}] ###- bug
+    host: ${SWAGGER_HOST:${api.server.host}}:${api.server.port} ###- bug
