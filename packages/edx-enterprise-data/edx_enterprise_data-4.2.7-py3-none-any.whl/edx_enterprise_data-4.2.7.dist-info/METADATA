@@ -1,0 +1,41 @@
+Metadata-Version: 2.1
+Name: edx-enterprise-data
+Version: 4.2.7
+Summary: Enterprise Reporting
+Home-page: https://github.com/edx/edx-enterprise-data
+Author: edX
+Author-email: oscm@edx.org
+License: AGPL 3.0
+Platform: UNKNOWN
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 3.2
+Classifier: Framework :: Django :: 4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+License-File: LICENSE
+Requires-Dist: edx-rest-api-client
+Requires-Dist: edx-rbac
+Requires-Dist: django-fernet-fields
+Requires-Dist: rules
+Requires-Dist: edx-opaque-keys
+Requires-Dist: edx-django-utils
+Requires-Dist: Django
+Requires-Dist: factory-boy
+Requires-Dist: edx-drf-extensions
+Requires-Dist: requests
+Requires-Dist: django-model-utils
+Provides-Extra: reporting
+Requires-Dist: cryptography ; extra == 'reporting'
+Requires-Dist: PGPy ; extra == 'reporting'
+Requires-Dist: boto3 ; extra == 'reporting'
+Requires-Dist: snowflake-connector-python ; extra == 'reporting'
+Requires-Dist: py2neo ; extra == 'reporting'
+Requires-Dist: celery (==4.4.7) ; extra == 'reporting'
+Requires-Dist: paramiko ; extra == 'reporting'
+Requires-Dist: unicodecsv (==0.14.1) ; extra == 'reporting'
+Requires-Dist: vertica-python ; extra == 'reporting'
+Requires-Dist: pyminizip ; extra == 'reporting'
+Requires-Dist: awscli ; extra == 'reporting'
+
+UNKNOWN
+
