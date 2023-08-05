@@ -1,0 +1,3 @@
+[console_scripts]
+lxd-exporter = lxd_exporter:main
+
