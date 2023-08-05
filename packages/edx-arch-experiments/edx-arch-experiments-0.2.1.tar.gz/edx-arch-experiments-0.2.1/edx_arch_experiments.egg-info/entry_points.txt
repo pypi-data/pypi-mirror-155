@@ -1,0 +1,4 @@
+[lms.djangoapp]
+arch_experiments = edx_arch_experiments.apps:EdxArchExperimentsConfig
+kafka_consumer = edx_arch_experiments.kafka_consumer.apps:KafkaConsumerApp
+
