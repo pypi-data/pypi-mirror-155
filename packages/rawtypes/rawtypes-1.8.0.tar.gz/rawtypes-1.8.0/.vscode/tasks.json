@@ -1,0 +1,21 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "sphinx-autobuild",
+            "type": "shell",
+            "command": "sphinx-autobuild docs _build --open-browser --port=0",
+            "problemMatcher": [],
+            "isBackground": true
+        },
+        {
+            "label": "sphinx-apidoc",
+            "type": "shell",
+            "command": "sphinx-apidoc -f --separate -o docs/apidoc src/rawtypes -t docs/_templates/apidoc",
+            "problemMatcher": [],
+            "isBackground": true
+        }
+    ]
+}
