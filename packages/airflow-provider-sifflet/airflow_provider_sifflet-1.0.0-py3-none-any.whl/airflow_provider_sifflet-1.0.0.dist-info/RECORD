@@ -1,0 +1,12 @@
+sifflet_provider/__init__.py,sha256=J-pLxbqTpvxuHxHpeEVl3iTpJJ8NPnep4vtk-kfREBI,27
+sifflet_provider/get_provider_info.py,sha256=w2_-YnRhIEMjXu6UjAIRfN564xYyiuxzQHLqqGnpLFA,946
+sifflet_provider/hooks/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+sifflet_provider/hooks/sifflet_hook.py,sha256=niqJSuqjk_oq_z3Yjo-Crv4SRv-MhKoGKnAZWwIfpGg,1755
+sifflet_provider/operators/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+sifflet_provider/operators/dbt.py,sha256=CjEdUF0aoykTrrIuFze0wEe1yS4DLyRlpXJWarqzE3I,1497
+sifflet_provider/operators/rule.py,sha256=Kgs6FZ1ad9UTL-DkB8P_hPkcDlhqqyrB5WN7bSPyYSM,1327
+airflow_provider_sifflet-1.0.0.dist-info/METADATA,sha256=wjEHEmA70AcJRPRMOSzWNdjz-dTb-FY6k7TZKwX7d_k,2403
+airflow_provider_sifflet-1.0.0.dist-info/WHEEL,sha256=G16H4A3IeoQmnOrYV4ueZGKSjhipXx8zc8nu9FGlvMA,92
+airflow_provider_sifflet-1.0.0.dist-info/entry_points.txt,sha256=LA1ocMtNvl3sDH8AMSJyFYzR-2V1k7i5PwcvomFT1BA,95
+airflow_provider_sifflet-1.0.0.dist-info/top_level.txt,sha256=JT5q5oClInD9E0XBKPX2AQKc5__qJ4akJeImjanTi7c,17
+airflow_provider_sifflet-1.0.0.dist-info/RECORD,,
