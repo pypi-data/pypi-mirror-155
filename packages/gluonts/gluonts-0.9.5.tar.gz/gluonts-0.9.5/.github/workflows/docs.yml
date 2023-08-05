@@ -1,0 +1,44 @@
+name: Docs
+
+on: [push, pull_request]
+
+jobs:
+  docs-build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Set up Python 3.7
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.7
+
+    - name: Install dependencies
+      run: |
+        python -m pip install -U pip
+        pip install .
+        pip install -r requirements/requirements-docs.txt
+        pip install -r requirements/requirements-mxnet.txt
+        pip install -r requirements/requirements-pytorch.txt
+
+    - name: Install Pandoc
+      run: |
+        sudo apt-get install pandoc
+
+    - name: Build docs
+      run: |
+        make docs
+
+    - name: Configure AWS Credentials
+      if: ${{ github.event_name == 'push' }}
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.DOCS_AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.DOCS_AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-1
+
+    - name: Publish docs
+      if: ${{ github.event_name == 'push' }}
+      run: |
+        aws s3 sync docs/_build/html s3://gluon-ts/${GITHUB_REF#refs/heads/} --delete --grants full=id=db2be0c99f6a43966125f78e615a12abd95ff1257da4e4fa148631c0d73d25c8
