@@ -1,0 +1,4 @@
+numpy>=1.13
+zhinst>=22.02
+zhinst-toolkit>=0.3.3
+qcodes>=0.30.0

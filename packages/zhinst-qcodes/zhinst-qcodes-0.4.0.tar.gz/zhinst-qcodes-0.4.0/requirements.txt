@@ -1,0 +1,8 @@
+autoflake
+jinja2
+numpy
+black
+click
+setuptools
+zhinst-deviceutils
+zhinst-toolkit
