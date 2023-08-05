@@ -1,0 +1,250 @@
+syntax = "proto3";
+import "sarus_data_spec/protobuf/type.proto";
+import "sarus_data_spec/protobuf/path.proto";
+import "sarus_data_spec/protobuf/statistics.proto";
+
+message Transform {
+  // A dataset transform
+  string uuid = 1; // e.g. RFC 4122 id used to refer to the transform
+  string name = 2;
+  string doc = 3;
+  Spec spec = 4;
+  map<string, string> properties = 5; // Other properties
+  bool inversible = 6;
+  bool schema_preserving = 7;
+
+  // Definitions
+  message Spec {
+    oneof spec {
+      Identity identity = 1;
+      Variable variable = 2;
+      Composed composed = 3;
+      Project project = 4;
+      Filter filter = 5;
+      Shuffle shuffle = 6;
+      Join join = 7;
+      Cast cast = 8;
+      Sample sample = 9;
+      UserSettings user_settings = 10;
+      Protect protect_dataset=11;
+      External external = 12; // np transforms, pd transforms,...
+      Synthetic synthetic = 13;
+      Transcode transcode=14;
+      InverseTranscode inverse_transcode=15;
+    }
+  }
+
+  enum ExternalOp {
+      PD_MEAN = 0;
+      PD_STD = 1;
+      PD_LOC = 2;
+      PD_EQ = 3;
+      NP_MEAN = 4;
+      NP_STD = 5;
+      NP_ADD = 6;
+      NP_SUB = 7;
+      TF_BATCH = 8;
+      TF_MAP = 9;
+      SK_FIT = 10;
+      SK_DP_FIT = 11;
+      ADD = 12;
+      SUB = 13;
+      MUL = 14;
+      DIV = 15;
+      PD_ANY = 16;
+      INVERT = 17;
+      GETITEM = 18;
+      SK_SCALE = 19;
+      LEN = 20;
+      PD_PROFILE_REPORT = 21;
+      PD_DESCRIBE = 22;
+      PD_SELECT_DTYPES = 23;
+      PD_QUANTILE=24;
+      PD_SUM=25;
+      PD_FILLNA=26;
+      PD_ROUND=27;
+      PD_RENAME=28;
+      PD_COUNT=29;
+      PD_TRANSPOSE=30;
+      PD_UNIQUE=31;//class method
+      PD_VALUE_COUNTS=32;
+      PD_TO_DICT=33;
+      PD_APPLY=34;
+      PD_SUB=35;
+      PD_MEDIAN=36;
+      PD_ABS=37;
+      PD_MAD=38;
+      PD_SKEW=39;
+      PD_KURTOSIS=40;
+      PD_AGG=41;
+      PD_DROPLEVEL=42;
+      PD_SORT_VALUES=43;
+      PD_DROP=44;
+      PD_CORR=45;
+      GT=46;
+      GE=47;
+      LT=48;
+      LE=49;
+      NE=50;
+      POS=51;
+      NEG=52;
+      ABS=53;
+      ROUND=54;
+      MOD=55;
+      OR=56;
+      AND=57;
+
+      SK_ONEHOT = 99;
+      SK_PCA = 100;
+
+      // Cluster
+      SK_AFFINITY_PROPAGATION = 101;
+      SK_AGGLOMERATIVE_CLUSTERING = 102;
+      SK_BIRCH = 103;
+      SK_DBSCAN = 104;
+      SK_FEATURE_AGGLOMERATION = 105;
+      SK_KMEANS = 106;
+      SK_MINIBATCH_KMEANS = 107;
+      SK_MEAN_SHIFT = 108;
+      SK_OPTICS = 109;
+      SK_SPECTRAL_CLUSTERING = 110;
+      SK_SPECTRAL_BICLUSTERING = 58;
+      SK_SPECTRAL_COCLUSTERING = 59;
+
+      // ensemble
+      SK_ADABOOST_CLASSIFIER = 60;
+      SK_ADABOOST_REGRESSOR = 61;
+      SK_BAGGING_CLASSIFIER = 62;
+      SK_BAGGING_REGRESSOR = 63;
+      SK_EXTRA_TREES_REGRESSOR = 64;
+      SK_EXTRA_TREES_CLASSIFIER = 65;
+      SK_GRADIENT_BOOSTING_CLASSIFIER = 66;
+      SK_GRADIENT_BOOSTING_REGRESSOR = 67;
+      SK_ISOLATION_FOREST = 68;
+      SK_RANDOM_FOREST_CLASSIFIER = 69;
+      SK_RANDOM_FOREST_REGRESSOR = 70;
+      SK_RANDOM_TREES_EMBEDDING = 71;
+      SK_STACKING_CLASSIFIER = 72;
+      SK_STACKING_REGRESSOR = 73;
+      SK_VOTING_CLASSIFIER = 74;
+      SK_VOTING_REGRESSOR = 75;
+      SK_HIST_GRADIENT_BOOSTING_REGRESSOR = 76;
+      SK_HIST_GRADIENT_BOOSTING_CLASSIFIER = 77;
+
+      // Model selection
+      SK_CROSS_VAL_SCORE = 78;
+      SK_TRAIN_TEST_SPLIT = 79;
+      SK_REPEATED_STRATIFIED_KFOLD = 80;
+
+      // Metrics
+      SK_ACCURACY_SCORE = 81;
+      SK_AVERAGE_PRECISION_SCORE = 82;
+      SK_CLASSIFICATION_REPORT = 83;
+      SK_CONFUSION_MATRIX = 84;
+      SK_F1_SCORE = 85;
+      SK_PLOT_CONFUSION_MATRIX = 86;
+      SK_PRECISION_RECALL_CURVE = 87;
+      SK_PRECISION_SCORE = 88;
+      SK_RECALL_SCORE = 89;
+      SK_ROC_AUC_SCORE = 90;
+      SK_ROC_CURVE = 91;
+
+      // xgb
+      XGB_CLASSIFIER = 92;
+      XGB_CLASSIFIER_PREDICT = 93;
+
+      // Pandas
+      PD_GET_DUMMIES = 94;
+      PD_JOIN = 95;
+      PD_CONCAT = 96;
+
+      // ensemble predict
+      SK_RANDOM_FOREST_CLASSIFIER_PREDICT = 97;
+
+      SK_LABEL_ENCODER_FIT_TRANSFORM = 98;
+    };
+
+  message External {
+    bytes arguments = 1;
+    bytes named_arguments = 2;
+    ExternalOp op = 3;
+  };
+
+  message Identity {} // Does nothing
+
+  message Variable {
+    int32 position = 1;
+    string name = 2;
+  } // Numbered or named identity to use as input of the composed transform
+
+  message Composed {
+    string transform = 1; // Transform
+    repeated string arguments = 2; // Arguments of the current transform are transforms
+    map<string, string> named_arguments = 3;
+  }
+
+  message Project {
+     sarus_data_spec.Type projection = 1; // This should be a 'supertype' the type the data can project into.
+    // For product types (struct or tuple), this is a type with a subset of the fields
+    // For map types, this is a map type with subset (subtype) of key and superset (supertype) of value
+    // For union types, this is a type with more terms in the union
+    // To start wit let's simply use this with structs
+  }
+
+  message Filter {
+    sarus_data_spec.Type filter = 1; // This should be a 'subtype' the type the data can be retricted to.
+    // For union types, this is a type with less terms in the union.
+    // Optional types can for instance be filtered to non-optional
+    // Value type and Predicate types can be used to restrict values
+  }
+
+  message Shuffle {}
+
+  message Join {
+    sarus_data_spec.Type on = 1; // This should be a common 'supertype' between tables.
+  }
+
+  message Cast {
+    sarus_data_spec.Type type = 1; // Type to cast into.
+  }
+
+  message Sample {
+    // Sample a dataset
+    oneof proportion {
+      float fraction = 1;
+      int64 size = 2;
+    }
+  }
+
+  message SchemaInference {
+    CastPolicy cast_policy = 1;
+    enum CastPolicy {
+      NONE = 0;
+      MOST_LIKELY = 1;
+    }
+  }
+
+  message GroupBy {
+    string key = 1;
+  }
+
+  message Synthetic {}
+
+  message UserSettings {
+    sarus_data_spec.Type type = 1;
+  }
+  message Protect{
+    repeated sarus_data_spec.Path protected_entities=1;
+    repeated sarus_data_spec.Path public_entities=2;
+  }
+
+  message Transcode{
+    sarus_data_spec.Statistics statistics=1;
+    sarus_data_spec.Type data_type = 2;
+    sarus_data_spec.Path protected_path = 3;
+  }
+
+  message InverseTranscode{
+    Transcode transcode=1;
+  }
+}
