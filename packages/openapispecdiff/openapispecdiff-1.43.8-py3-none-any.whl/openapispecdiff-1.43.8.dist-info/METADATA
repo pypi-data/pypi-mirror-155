@@ -1,0 +1,42 @@
+Metadata-Version: 2.1
+Name: openapispecdiff
+Version: 1.43.8
+Summary: Difference between two OpenAPISpec files
+Author: Bala
+Author-email: balak@cloudvector.com
+Requires-Python: >=3.5,<4.0
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: openapi-core (==0.13.4)
+Requires-Dist: openapi-schema-validator (==0.1.1)
+Requires-Dist: openapi-spec-validator (==0.2.9)
+Requires-Dist: openapispecdiff
+Requires-Dist: prance (==0.21.8.0)
+
+# OpenAPISpecDiff
+
+OpenAPISpecDiff is a Python library for comparing two OpenAPI specs and identifying the difference between them. 
+
+Visit https://www.cloudvector.com/api-shark-free-observability-security-monitoring-tool/#apishark
+
+## Installation
+
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+
+```bash
+pip install openapispecdiff
+```
+
+## Usage
+
+```python openapispecdiff 
+
+****************************************************************************************************
+CloudVector APIShark - OpenAPI spec diff checker plugin
+****************************************************************************************************
+Enter absolute path to Old API SPEC: ../input.json
+Enter absolute path to new API SPEC : ../input1.json 
+```
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
