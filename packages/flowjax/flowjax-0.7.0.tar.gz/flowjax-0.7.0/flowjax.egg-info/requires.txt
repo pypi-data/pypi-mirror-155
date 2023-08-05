@@ -1,0 +1,8 @@
+jax
+jaxlib>=0.3
+equinox
+tqdm
+optax
+
+[dev]
+pytest
