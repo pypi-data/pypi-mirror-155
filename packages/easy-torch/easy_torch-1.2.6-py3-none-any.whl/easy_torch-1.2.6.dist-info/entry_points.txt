@@ -1,0 +1,3 @@
+[console_scripts]
+easytrain = easytorch.entry_points:easytrain
+
