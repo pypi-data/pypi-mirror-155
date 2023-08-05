@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: TEDEouS
+Version: 0.0.13
+Summary: TEDEouS - Torch Exhaustive Differential Equations Solver. Differential equation solver, based on pytorch library
+Home-page: https://github.com/ITMO-NSS-team/torch_DE_solver
+Author: Alexander Hvatov
+Author-email: itmo.nss.team@gmail.com
+Classifier: Development Status :: 3 - Alpha
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python:  >=3.8
+Description-Content-Type: text/x-rst
+
+Combines power of torch, numerical methods and math overall to conquer and solve ALL {O,P}DEs
+
+There are three examples to provide a little insight to an operator form
+
+- example_wave.py - Wave equation
+- example_KdV.py - Korteweg- de Vries equation
+- example_ODE.py - Legendre polynomial generator equation
+- example_schrodinger.py - Schrodinger equation
