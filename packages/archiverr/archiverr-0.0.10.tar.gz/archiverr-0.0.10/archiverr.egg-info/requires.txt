@@ -1,0 +1,9 @@
+setuptools>=62
+Flask>=2.1.1
+numpy>=1.22.3
+pandas>=1.4.2
+py7zr>=0.17.4
+toml>=0.10.0
+orjson>=3.6.7
+python-magic>=0.4.26
+progress>=1.6
