@@ -1,0 +1,15 @@
+LICENSE.txt
+README.md
+pyproject.toml
+setup.py
+barlaman/__init__.py
+barlaman/deputy.py
+barlaman/questions.py
+barlaman/schedule.py
+barlaman/transcript.py
+barlaman/utils.py
+barlaman.egg-info/PKG-INFO
+barlaman.egg-info/SOURCES.txt
+barlaman.egg-info/dependency_links.txt
+barlaman.egg-info/top_level.txt
+barlaman/data/__init__.py
