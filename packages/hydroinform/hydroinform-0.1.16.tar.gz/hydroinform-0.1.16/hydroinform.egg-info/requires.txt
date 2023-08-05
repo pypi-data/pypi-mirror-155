@@ -1,0 +1,8 @@
+pyshp>=2.1
+numpy
+matplotlib
+pythonnet
+netCDF4
+
+[:python_version < "3.4"]
+enum34
