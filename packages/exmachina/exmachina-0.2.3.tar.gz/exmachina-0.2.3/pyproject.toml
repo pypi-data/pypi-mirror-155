@@ -1,0 +1,78 @@
+[tool.poetry]
+name = "exmachina"
+version = "0.2.3"
+description = "botを作るためのフレームワークです"
+authors = ["agarichan"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/agarichan/exmachina"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+typing-extensions = "^3.10.0"
+rich = {version = "^10.1.0", optional = true}
+
+[tool.poetry.extras]
+rich = ["rich"]
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.1.1"
+pytest-cov = "^3.0.0"
+tox = "^3.24.5"
+pyright = "^1.1.235"
+black = "^22.3.0"
+flake8 = "^4.0.1"
+isort = "^5.10.1"
+tox-asdf = "^0.1.0"
+poethepoet = "^0.12.0"
+pyproject-flake8 = "^0.0.1-alpha.2"
+jupyter = "^1.0.0"
+notebook = "^6.4.10"
+pytest-asyncio = "^0.18.3"
+pytest-mock = "^3.7.0"
+
+[tool.poe.tasks]
+fmt = { shell = "isort src tests; black src tests" }
+lint = { shell = "pflake8 src tests && pyright src tests && black src tests --check && isort src tests --check-only" }
+test = { shell = "pytest && rm .coverage" }
+test-s = { shell = "pytest -s && rm .coverage" }
+tox = { shell = "tox && rm .coverage" }
+
+[tool.poetry-dynamic-versioning]
+enable = false
+style = "pep440"
+
+[tool.poetry-dynamic-versioning.substitution]
+files = ["src/*/__init__.py"]
+
+[tool.flake8]
+max-line-length = 120
+ignore = "E226,E302,E203,E41,W503,E722,E731"
+max-complexity = 10
+
+[tool.black]
+line-length = 120
+exclude = '''
+(
+    .mypy_cache
+    | .pytest_cache
+    | .tox
+    | .venv
+    | dist
+)
+'''
+
+[tool.isort]
+line_length = 120
+profile = "black"
+
+[tool.pyright]
+pythonVersion = "3.7"
+
+[tool.pytest.ini_options]
+addopts = "--cov=src --cov-report=term-missing:skip-covered --cov-report term --cov-report xml --asyncio-mode=strict"
+
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
