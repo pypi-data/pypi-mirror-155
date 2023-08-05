@@ -1,0 +1,18 @@
+Metadata-Version: 1.1
+Name: ccrawl
+Version: 1.7
+Summary: C source code crawler that creates a database of C-structures, prototypes and macros
+Home-page: https://github.com/bdcht/ccrawl
+Author: Axel Tillequin
+Author-email: bdcht3@gmail.com
+License: GPLv3
+Description: ccrawl uses clang to parse C files and collect a database of
+        filtered Structures/Unions, Enums, Macros and Functions prototypes.
+Keywords: Clang C C++ data-structures database
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Classifier: Topic :: Security
