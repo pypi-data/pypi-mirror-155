@@ -1,0 +1,10 @@
+_target_: nlhappy.datamodules.TripleExtractionDataModule
+
+dataset: 
+max_length: 
+batch_size: 
+plm: chinese-roberta-wwm-ext
+pin_memory: True
+num_workers: 2
+data_dir: ${data_dir}
+pretrained_dir: ${pretrained_dir}
