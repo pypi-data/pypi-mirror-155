@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: cloudshell-cumulus-linux
+Version: 2.0.0
+Summary: QualiSystems Python package
+Home-page: https://github.com/QualiSystems/cloudshell-cumulus-linux
+Author: QualiSystems
+Author-email: info@qualisystems.com
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: ~=3.7
+Requires-Dist: cloudshell-snmp (~=4.0)
+Requires-Dist: cloudshell-snmp-autoload (<2.0,>=1.0.3)
+Requires-Dist: cloudshell-cli (~=4.0)
+Requires-Dist: cloudshell-shell-connectivity-flow (~=3.0)
+Requires-Dist: cloudshell-shell-flows (~=2.0)
+Requires-Dist: attrs (~=21.0)
+
+UNKNOWN
+
