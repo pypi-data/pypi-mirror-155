@@ -1,0 +1,16 @@
+{% load static wagtaildonate_tags %}
+<noscript>Your browser does not support JavaScript!</noscript>
+<div data-load-donate-form="true"
+    data-configuration-url="{% url "wagtaildonate:api:configuration-donations" %}"
+    data-amount="{{ amount }}" data-frequency="{{ frequency }}" data-success-url="{{ success_url }}"
+    data-donation-page="{{ campaign_page.id }}">
+    <h1 class="wd-main__loading">
+        <span class="u u-sr-only">Loading…</span>
+    </h1>
+</div>
+
+{# Load payment methods JS #}
+{% address_lookups_assets %}
+{% payment_methods_assets frequency=frequency %}
+
+<script src="{% static 'wagtaildonate/js/checkout.js' %}" type="text/javascript"></script>

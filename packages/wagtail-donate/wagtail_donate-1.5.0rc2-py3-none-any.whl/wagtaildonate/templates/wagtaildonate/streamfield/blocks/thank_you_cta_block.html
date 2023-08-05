@@ -1,0 +1,13 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+<div class="call-to-action">
+
+    <h2>{{ value.title }}</h2>
+
+    {{ value.summary|richtext }}
+
+    {% image value.image fill-450x300 %}
+
+    <p><a href="{{ value.get_link_url }}">{{ value.get_link_text }}</a></p>
+
+</div>

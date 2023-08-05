@@ -1,0 +1,27 @@
+<div
+    class="wd-widget"
+    data-donate-amount-and-frequency-chooser
+    data-action-url="{% url 'wagtaildonate:donate-checkout' %}"
+    data-campaign-id="{{ page.pk }}"
+    {% if page.allow_single_donations %}
+    data-allow-single-donations
+    data-suggested-amounts-single="{{ suggested_amounts_single|join:"," }}"
+    {% endif %}
+    {% if page.allow_regular_donations %}
+    data-allow-regular-donations
+    data-suggested-amounts-regular="{{ suggested_amounts_regular|join:"," }}"
+    {% endif %}
+    {% if  page.show_other_amount_option %}
+    data-show-other-amount-option
+    {% endif %}
+    {% if page.default_donation_frequency == "regular" %}
+        data-default-frequency="monthly"
+    {% else %}
+        data-default-frequency="single"
+    {% endif %}
+    data-minimum-monthly-amount="{{ minimum_monthly_donation_amount }}"
+    data-maximum-monthly-amount="{{ maximum_monthly_donation_amount }}"
+    data-minimum-single-amount="{{ minimum_single_donation_amount }}"
+    data-maximum-single-amount="{{ maximum_single_donation_amount }}"
+    >
+</div>

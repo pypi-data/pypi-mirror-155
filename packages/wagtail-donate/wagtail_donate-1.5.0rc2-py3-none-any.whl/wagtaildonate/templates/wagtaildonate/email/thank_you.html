@@ -1,0 +1,7 @@
+<p>Hi {{ donation.first_name }},</p>
+
+<p>Thank you for your {% if donation.is_recurring %}monthly{% else %}one off{% endif %} donation of {{ donation.formatted_amount }}.</p>
+{% if donation.gift_aid_declaration %}
+<p>You have opted in to Gift Aid. Your donation amount is increased by 25%.</p>
+{% endif %}
+{% if content %}{{ content }}{% endif %}

@@ -1,0 +1,17 @@
+{% extends "wagtaildonate/base_donate.html" %}
+{% load wagtailcore_tags %}
+{% block donate_content %}
+    <h2>Thank you</h2>
+    {% if thank_you_data.thank_you_strapline %}
+        {{ thank_you_data.thank_you_strapline|linebreaks }}
+    {% endif %}
+    <div class="donation-details">
+        <h2>Fundraising details</h2>
+        <p>Fundraiser: {{ donation_name }}</p>
+        <p>Amount raised: &pound;{{ donation_amount }}</p>
+        {% if in_memory_of %}
+            <p>Raised in memory of: {{ in_memory_of }}</p>
+        {% endif %}
+    </div>
+    {% include_block thank_you_data.thank_you_page_content %}
+{% endblock %}

@@ -1,0 +1,41 @@
+Metadata-Version: 2.1
+Name: wagtail-donate
+Version: 1.5.0rc2
+Summary: UNKNOWN
+Home-page: UNKNOWN
+Author: Torchbox
+Author-email: info@torchbox.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: License :: Other/Proprietary License
+Requires-Python: >=3.6
+License-File: LICENSE.txt
+Requires-Dist: Wagtail (<4,>=2.9)
+Requires-Dist: djangorestframework (<4,>=3)
+Requires-Dist: braintree (<4,>=3.59.0)
+Requires-Dist: django-phonenumber-field[phonenumbers] (<=6.1.0,>=5)
+Requires-Dist: pycountry (<20,>=19)
+Requires-Dist: gocardless-pro (<2,>=1.17.0)
+Requires-Dist: premailer (<3.8,>=3.7)
+Provides-Extra: docs
+Requires-Dist: mkdocs (==1.2.4) ; extra == 'docs'
+Requires-Dist: mkdocs-material (==3.3.0) ; extra == 'docs'
+Requires-Dist: pymdown-extensions (==6.1) ; extra == 'docs'
+Provides-Extra: testing
+Requires-Dist: coverage (==5.0.3) ; extra == 'testing'
+Requires-Dist: beautifulsoup4 (==4.8.2) ; extra == 'testing'
+Requires-Dist: black (==22.3.0) ; extra == 'testing'
+Requires-Dist: isort (==4.3.21) ; extra == 'testing'
+Requires-Dist: flake8 (==3.7.9) ; extra == 'testing'
+Requires-Dist: factory-boy (==2.12.0) ; extra == 'testing'
+Requires-Dist: freezegun (==0.3.15) ; extra == 'testing'
+
+Copyright (c) 2021 Torchbox
+
+This is not free software.
+
+You may not use, copy, modify, merge, publish, distribute, sublicense, and/or
+sell this software and associated documentation files without the express
+consent of Torchbox.
+
+

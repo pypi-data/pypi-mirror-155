@@ -1,0 +1,53 @@
+{% extends "wagtaildonate/base_donate.html" %}
+{% load wagtailimages_tags static %}
+
+{% block extra_css %}
+    {{ block.super }}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'wagtaildonate/css/checkout.css' %}">
+{% endblock %}
+
+{% block donate_content %}
+
+<div class="wd-wrapper">
+
+    {# Main Hero Content #}
+    {% image campaign_page.checkout_hero_image width-1920 as hero_image_src %}
+    <div class="wd-hero {% if not hero_image_src.url %}wd-hero--placeholder{% endif %}" {% if hero_image_src.url %} style="background-image: url({{ hero_image_src.url }})" {% endif %}>
+    </div>
+
+    <section class="wd-main">
+        <div class="wd-main__section">
+            <div class="wd-main__section-heading">
+                <img class="wd-main__logo" src='{% static "wagtaildonate/images/wagtail-logo.svg" %}' alt="Logo for Wagtail">
+                <h1 class="wd-main__title">
+                    <img src="{% static "wagtaildonate/images/padlock.svg" %}" alt="Padlock icon" />
+                    {% firstof campaign_page.checkout_hero_summary_text campaign_page.hero_summary_text %}
+                </h1>
+            </div>
+        </div>
+
+        {# Main form #}
+        {% include "wagtaildonate/includes/checkout_form.html" %}
+    </section>
+
+    {% comment %}
+    <div>
+        <img src="{% static 'wagtaildonate/images/fundraising-regulator-logo.svg' %}" width="100px" alt="Registered with the Fundraising Regulator" />
+        <img src="{% static 'wagtaildonate/images/direct-debit.svg' %}" width="100px" alt="Direct Debit" />
+        <img src="{% static "wagtaildonate/images/padlock.svg" %}" width="20px" alt="Padlock icon" />
+    </div>
+    {% endcomment %}
+</div>
+{% endblock donate_content %}
+
+{% block extra_js %}
+    {{ block.super }}
+
+    {% if recaptcha_site_key %}
+        <script>
+            window.recaptchaSiteKey = "{{ recaptcha_site_key|escapejs }}"
+        </script>
+        <script src="https://www.google.com/recaptcha/api.js?render={{ recaptcha_site_key|urlencode }}"></script>
+    {% endif %}
+{% endblock %}
