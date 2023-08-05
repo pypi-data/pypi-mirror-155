@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: edx-enterprise-data
+Version: 4.2.7
+Summary: Enterprise Reporting
+Home-page: https://github.com/edx/edx-enterprise-data
+Author: edX
+Author-email: oscm@edx.org
+License: AGPL 3.0
+Platform: UNKNOWN
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 3.2
+Classifier: Framework :: Django :: 4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Provides-Extra: reporting
+License-File: LICENSE
+
+UNKNOWN
+
