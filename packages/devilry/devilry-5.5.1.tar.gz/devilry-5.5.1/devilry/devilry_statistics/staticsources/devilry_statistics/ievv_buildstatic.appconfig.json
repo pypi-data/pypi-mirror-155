@@ -1,0 +1,14 @@
+{
+  "appname": "devilry_statistics",
+  "appspecific_fields": {},
+  "destinationfolder": "/workspace/devilry/devilry_statistics/static/devilry_statistics/5.5.1",
+  "is_in_production_mode": true,
+  "keep_temporary_files": false,
+  "npmrun_jsbuild": {
+    "extra_import_aliases": {},
+    "import_paths": []
+  },
+  "sourcefolder": "/workspace/devilry/devilry_statistics/staticsources/devilry_statistics",
+  "static_url": "/static/devilry_statistics/5.5.1/",
+  "version": "5.5.1"
+}

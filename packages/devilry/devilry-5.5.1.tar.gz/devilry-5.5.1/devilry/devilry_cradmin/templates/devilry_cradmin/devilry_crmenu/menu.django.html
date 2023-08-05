@@ -1,0 +1,7 @@
+{% extends "cradmin_legacy/menu.django.html" %}
+
+{% block css-class %}
+    {{ block.super }}
+    devilry-cradmin-legacy-menu
+    devilry-cradmin-legacy-menu-{{ devilry_crmenu_devilryrole }}
+{% endblock css-class %}
