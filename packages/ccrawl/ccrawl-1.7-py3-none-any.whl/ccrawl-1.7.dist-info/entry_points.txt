@@ -1,0 +1,3 @@
+[console_scripts]
+ccrawl = ccrawl.main:cli
+
