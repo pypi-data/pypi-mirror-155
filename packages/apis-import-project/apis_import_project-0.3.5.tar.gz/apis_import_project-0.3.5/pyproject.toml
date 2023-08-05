@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "apis_import_project"
+version = "0.3.5"
+description = "Generic Django-App for APIS-instances to support importing new data manually with a streamlined workflow and some automation."
+authors = ["Gregor Pirgie <gregor.pirgie@oeaw.ac.at>"]
+
+[tool.poetry.dependencies]
+python = "~3.8"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
