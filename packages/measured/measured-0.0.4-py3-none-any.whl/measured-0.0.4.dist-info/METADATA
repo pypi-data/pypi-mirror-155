@@ -1,0 +1,45 @@
+Metadata-Version: 2.1
+Name: measured
+Version: 0.0.4
+Summary: Fast and Pythonic library for working with measurements and quantities
+Home-page: https://github.com/chrisguidry/measured
+Author: Chris Guidry
+Author-email: chris@theguidrys.us
+License: MIT
+Project-URL: Bug Tracker, https://github.com/chrisguidry/measured/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.8
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Framework :: Pytest
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Provides-Extra: dev
+Requires-Dist: black ; extra == 'dev'
+Requires-Dist: build ; extra == 'dev'
+Requires-Dist: cloudpickle ; extra == 'dev'
+Requires-Dist: flake8 ; extra == 'dev'
+Requires-Dist: flake8-black ; extra == 'dev'
+Requires-Dist: isort ; extra == 'dev'
+Requires-Dist: pydantic ; extra == 'dev'
+Requires-Dist: pytest ; extra == 'dev'
+Requires-Dist: pytest-black ; extra == 'dev'
+Requires-Dist: pytest-cov ; extra == 'dev'
+Requires-Dist: pytest-isort ; extra == 'dev'
+Requires-Dist: pytest-mypy ; extra == 'dev'
+Requires-Dist: pytest-flake8 ; extra == 'dev'
+Requires-Dist: pytest-xdist ; extra == 'dev'
+Requires-Dist: snakeviz ; extra == 'dev'
+Requires-Dist: tox ; extra == 'dev'
+Requires-Dist: typer ; extra == 'dev'
+Requires-Dist: tuna ; extra == 'dev'
+Requires-Dist: twine ; extra == 'dev'
+Requires-Dist: wheel ; extra == 'dev'
+
+# measured
+
+Fast and Pythonic library for working with measurements and quantities
