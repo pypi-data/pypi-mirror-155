@@ -1,0 +1,155 @@
+Metadata-Version: 2.1
+Name: pycrostates
+Version: 0.1.0
+Summary: A simple open source Python package for EEG microstate segmentation.
+Author-email: Victor Férat <victor.ferat@unige.ch>
+Maintainer-email: Victor Férat <victor.ferat@unige.ch>, Mathieu Scheltienne <mathieu.scheltienne@fcbg.ch>
+License: BSD 3-Clause License
+        
+        Copyright (c) 2020, Victor Férat
+        All rights reserved.
+        
+        Redistribution and use in source and binary forms, with or without
+        modification, are permitted provided that the following conditions are met:
+        
+        1. Redistributions of source code must retain the above copyright notice, this
+           list of conditions and the following disclaimer.
+        
+        2. Redistributions in binary form must reproduce the above copyright notice,
+           this list of conditions and the following disclaimer in the documentation
+           and/or other materials provided with the distribution.
+        
+        3. Neither the name of the copyright holder nor the names of its
+           contributors may be used to endorse or promote products derived from
+           this software without specific prior written permission.
+        
+        THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+        AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+        IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+        DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+        FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+        DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+        SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+        CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+        OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+        OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+        
+Project-URL: homepage, https://pycrostates.readthedocs.io/en/master/
+Project-URL: documentation, https://pycrostates.readthedocs.io/en/master/
+Project-URL: source, https://github.com/vferat/pycrostates
+Project-URL: tracker, https://github.com/vferat/pycrostates/issues
+Keywords: python,neuroscience,neuroimaging,eeg,microstates,brain
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Natural Language :: English
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy (>=1.20.0)
+Requires-Dist: scipy
+Requires-Dist: mne (>=1.0.0)
+Requires-Dist: joblib
+Requires-Dist: matplotlib
+Requires-Dist: sklearn
+Requires-Dist: pooch
+Requires-Dist: decorator
+Requires-Dist: jinja2
+Requires-Dist: importlib-metadata ; python_version < "3.8"
+Requires-Dist: importlib-resources ; python_version < "3.9"
+Provides-Extra: all
+Requires-Dist: pycrostates[build] ; extra == 'all'
+Requires-Dist: pycrostates[docs] ; extra == 'all'
+Requires-Dist: pycrostates[style] ; extra == 'all'
+Requires-Dist: pycrostates[test] ; extra == 'all'
+Provides-Extra: build
+Requires-Dist: build ; extra == 'build'
+Requires-Dist: twine ; extra == 'build'
+Provides-Extra: docs
+Requires-Dist: m2r2 ; extra == 'docs'
+Requires-Dist: nbsphinx ; extra == 'docs'
+Requires-Dist: numpydoc ; extra == 'docs'
+Requires-Dist: pandas ; extra == 'docs'
+Requires-Dist: pillow ; extra == 'docs'
+Requires-Dist: pydata-sphinx-theme ; extra == 'docs'
+Requires-Dist: pymatreader ; extra == 'docs'
+Requires-Dist: recommonmark ; extra == 'docs'
+Requires-Dist: sphinx ; extra == 'docs'
+Requires-Dist: sphinx-gallery ; extra == 'docs'
+Provides-Extra: style
+Requires-Dist: black ; extra == 'style'
+Requires-Dist: codespell ; extra == 'style'
+Requires-Dist: isort ; extra == 'style'
+Requires-Dist: flake8 ; extra == 'style'
+Requires-Dist: pydocstyle[toml] ; extra == 'style'
+Provides-Extra: test
+Requires-Dist: pymatreader ; extra == 'test'
+Requires-Dist: pytest (==7.0.1) ; extra == 'test'
+Requires-Dist: pytest-azurepipelines ; extra == 'test'
+Requires-Dist: pytest-cov ; extra == 'test'
+
+[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
+
+[![Build Status](https://dev.azure.com/vferat/pycrostates/_apis/build/status/vferat.pycrostates?branchName=main)](https://dev.azure.com/vferat/pycrostates/_build/latest?definitionId=1&branchName=main)
+[![codecov](https://codecov.io/gh/vferat/pycrostates/branch/master/graph/badge.svg?token=47COGGCGX8)](https://codecov.io/gh/vferat/pycrostates)
+[![Documentation Status](https://readthedocs.org/projects/pycrostates/badge/?version=latest)](https://pycrostates.readthedocs.io/en/latest/?badge=latest)
+
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/029e425f90614943b0a944e03922b637)](https://www.codacy.com/gh/vferat/pycrostates/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=vferat/pycrostates&amp;utm_campaign=Badge_Grade)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://pycqa.github.io/isort/)
+
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
+
+# Pycrostates
+---
+
+An open-source Python package for analyzing EEG microstates developed to work with [MNE-python](https://mne.tools/stable/index.html).
+
+## Documentation
+
+The documentation including tutorials and example can be found [here](https://pycrostates.readthedocs.io/en/master).
+
+## Installation
+
+Installation instructions can be found [here](https://pycrostates.readthedocs.io/en/master/install.html).
+
+---
+<p float="left">
+    <a href="https://www.unige.ch/medecine/neuf/en/researc/grecherche/christoph-michel/">
+        <img src="https://raw.githubusercontent.com/vferat/pycrostates/main/docs/_static/img/FBMLAB_logo.png" width="200" />
+    </a>
+    <a href="https://www.unige.ch/en/university/presentation/">
+        <img src="https://raw.githubusercontent.com/vferat/pycrostates/main/docs/_static/img/UNIGE_logo.png" width="300" />
+    </a>
+</p>
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://vferat.github.io/about/"><img src="https://avatars.githubusercontent.com/u/28844486?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Victor Férat</b></sub></a><br /><a href="https://github.com/vferat/pycrostates/commits?author=vferat" title="Tests">⚠️</a> <a href="https://github.com/vferat/pycrostates/commits?author=vferat" title="Code">💻</a> <a href="https://github.com/vferat/pycrostates/commits?author=vferat" title="Documentation">📖</a> <a href="#ideas-vferat" title="Ideas, Planning, & Feedback">🤔</a> <a href="#infra-vferat" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-vferat" title="Maintenance">🚧</a> <a href="#projectManagement-vferat" title="Project Management">📆</a> <a href="https://github.com/vferat/pycrostates/pulls?q=is%3Apr+reviewed-by%3Avferat" title="Reviewed Pull Requests">👀</a></td>
+    <td align="center"><a href="https://github.com/mscheltienne"><img src="https://avatars.githubusercontent.com/u/73893616?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Mathieu Scheltienne</b></sub></a><br /><a href="https://github.com/vferat/pycrostates/commits?author=mscheltienne" title="Code">💻</a> <a href="https://github.com/vferat/pycrostates/commits?author=mscheltienne" title="Documentation">📖</a> <a href="#ideas-mscheltienne" title="Ideas, Planning, & Feedback">🤔</a> <a href="#infra-mscheltienne" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-mscheltienne" title="Maintenance">🚧</a> <a href="#projectManagement-mscheltienne" title="Project Management">📆</a> <a href="https://github.com/vferat/pycrostates/pulls?q=is%3Apr+reviewed-by%3Amscheltienne" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/vferat/pycrostates/commits?author=mscheltienne" title="Tests">⚠️</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
