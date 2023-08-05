@@ -1,0 +1,9 @@
+CLinters>=1.3.0
+fasteners
+lizard
+
+[clang-format]
+clang-format
+
+[lizard]
+lizard
