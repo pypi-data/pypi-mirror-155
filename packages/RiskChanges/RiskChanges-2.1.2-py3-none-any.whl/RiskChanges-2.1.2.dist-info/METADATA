@@ -1,0 +1,37 @@
+Metadata-Version: 2.1
+Name: RiskChanges
+Version: 2.1.2
+Summary: Library for computation of Loss and risk for Changing Natural Hazards
+Home-page: https://github.com/RiskChanges/RiskChanges
+Author: Ashok Dahal, Tek Kshetri
+Author-email: ashokdahal.geo@gmail.com, iamtekson@gmail.com
+License: cc-by-4.0
+Keywords: Risk,Natural Hazard,Loss,RiskChanges,SDSS,Spatial Disaster Support System
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: Common Public License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Description-Content-Type: text/markdown
+Requires-Dist: gdal
+Requires-Dist: rasterio
+Requires-Dist: numpy
+Requires-Dist: rasterstats
+Requires-Dist: shapely
+Requires-Dist: owslib
+Requires-Dist: geoalchemy2
+Requires-Dist: sqlalchemy
+Requires-Dist: geopandas
+Requires-Dist: pandas
+
+# RiskChanges
+
+RiskChanges Development
+
+
