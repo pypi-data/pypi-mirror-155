@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/eptest/__init__.py
+src/eptest/codepackage.py
+src/eptest.egg-info/PKG-INFO
+src/eptest.egg-info/SOURCES.txt
+src/eptest.egg-info/dependency_links.txt
+src/eptest.egg-info/top_level.txt
