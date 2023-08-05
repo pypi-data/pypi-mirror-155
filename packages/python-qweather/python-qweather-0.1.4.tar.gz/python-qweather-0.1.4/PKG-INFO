@@ -1,0 +1,53 @@
+Metadata-Version: 2.1
+Name: python-qweather
+Version: 0.1.4
+Summary: Python API wrapper for https://qweather.com
+Home-page: https://github.com/dofine/python-qweather
+License: MIT
+Keywords: weather
+Author: dofine
+Author-email: dofine@users.noreply.github.com
+Requires-Python: >=3.7,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: pytest-asyncio (>=0.18.3,<0.19.0)
+Project-URL: Repository, https://github.com/dofine/python-qweather
+Description-Content-Type: text/markdown
+
+# Python API wrapper for [和风天气](https://qweather.com)
+
+
+## Features
+- [城市信息查询](https://dev.qweather.com/docs/api/geo/city-lookup/)
+- [实时天气](https://dev.qweather.com/docs/api/weather/weather-now/)
+- [逐天天气预报](https://dev.qweather.com/docs/api/weather/weather-daily-forecast/)
+- [实时空气质量](https://dev.qweather.com/docs/api/air/air-now/)
+
+## Usage
+暂时只支持异步（async）调用，因为最初是为集成在 homeassistant 开发的 :)
+
+### 实时天气
+```python
+import aiohttp
+import asyncio
+from python_qweather import QWeather
+
+async def test_now_weather():
+    async with aiohttp.ClientSession() as client_session:
+        q = QWeather(api_key=os.environ['QWEATHER_APIKEY'], session=client_session, location_key='101010100')
+        now_weather = await q.async_get_now_weather()
+        print(now_weather)
+
+asyncio.run(test_now_weather())
+```
+
+## TODO
+
+## Credits and Thanks
+- https://github.com/bieniu/accuweather
+
