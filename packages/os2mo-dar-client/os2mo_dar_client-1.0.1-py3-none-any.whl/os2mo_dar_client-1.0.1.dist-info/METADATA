@@ -1,0 +1,61 @@
+Metadata-Version: 2.1
+Name: os2mo-dar-client
+Version: 1.0.1
+Summary: OS2mo DAR Client is a client for DAWA / DAR
+Home-page: https://magenta.dk/
+License: MPL-2.0
+Keywords: os2mo,lora,dar,client
+Author: Magenta
+Author-email: info@magenta.dk
+Requires-Python: >=3.8,<4.0
+Classifier: License :: OSI Approved
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: aiohttp (>=3.7.4,<4.0.0)
+Requires-Dist: click (>=8.0.1,<9.0.0)
+Requires-Dist: more-itertools (>=8.8.0,<9.0.0)
+Requires-Dist: ra-utils (>=1,<2)
+Requires-Dist: tenacity (>=8.0.1,<9.0.0)
+Project-URL: Repository, https://git.magenta.dk/rammearkitektur/ra-utils
+Description-Content-Type: text/markdown
+
+<!--
+SPDX-FileCopyrightText: 2021 Magenta ApS <https://magenta.dk>
+SPDX-License-Identifier: MPL-2.0
+-->
+
+# OS2mo DAR Client
+
+OS2mo DAR Client is a client for [DAWA / DAR](https://dawadocs.dataforsyningen.dk/).
+
+## Requirements
+
+Python 3.8+
+
+Dependencies:
+
+* <a href="https://more-itertools.readthedocs.io/" class="external-link" target="_blank">More Itertools</a>
+* <a href="https://docs.aiohttp.org/en/stable/" class="external-link" target="_blank">AIOHTTP</a>
+* <a href="https://rammearkitektur.docs.magenta.dk/ra-utils/index.html" class="external-link" target="_blank">RA Utils</a>
+
+## Installation
+
+```console
+$ pip install os2mo-dar-client
+```
+
+## Usage
+```Python
+from os2mo_dar_client import DARClient
+
+darclient = DARClient()
+with darclient:
+    print(darclient.healthcheck())
+```
+
+## License
+
+This project is licensed under the terms of the MPL-2.0 license.
+
