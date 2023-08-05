@@ -1,0 +1,65 @@
+docstring_parser
+psygnal>=0.3.0
+qtpy>=1.7.0
+typing_extensions
+
+[dev]
+ipython
+black
+flake8
+flake8-docstrings
+flake8-typing-imports
+isort
+mypy
+pre-commit
+pydocstyle
+tox-conda
+tox
+pytest
+pytest-qt
+pytest-cov
+pytest-mypy-plugins
+numpy
+tqdm>=4.30.0
+pillow>=4.0
+matplotlib
+toolz
+pyqt5>=5.12.0
+
+[dev:python_version > "3.7"]
+pandas
+
+[image]
+pillow>=4.0
+
+[pyqt5]
+pyqt5>=5.12.0
+
+[pyside2]
+
+[pyside2:python_version == "3.7"]
+pyside2>=5.13
+
+[pyside2:python_version == "3.8"]
+pyside2>=5.14
+
+[pyside2:python_version >= "3.9"]
+pyside2>=5.15
+
+[testing]
+tox
+pytest
+pytest-qt
+pytest-cov
+pytest-mypy-plugins
+numpy
+tqdm>=4.30.0
+pillow>=4.0
+matplotlib
+toolz
+
+[testing:python_version > "3.7"]
+pandas
+
+[tqdm]
+tqdm>=4.30.0
