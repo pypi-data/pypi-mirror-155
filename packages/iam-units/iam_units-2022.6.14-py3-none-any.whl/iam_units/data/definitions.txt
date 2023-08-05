@@ -1,0 +1,73 @@
+# Energy
+
+# Energy content of coal by mass
+# Source: https://cngcenter.com/wp-content/uploads/2013/09/UnitsAndConversions.pdf
+#
+# - tonne_of_oil_equivalent is already defined in pint's default_en.txt
+
+tonne_of_coal_equivalent = 29.308 GJ = tce
+
+# Energy content of gasoline by volume
+# Source: https://theicct.org/sites/default/files/publications/GFEI_WP19_Final_V3_Web.pdf
+# page 24, footnote 23.
+
+litre_of_gasoline_equivalent = 33.5 * MJ = Lge = lge
+
+# Short form of Watt-annum
+Wa = watt * year
+
+
+# Mass
+
+# Override pint's default `kt` = knot [velocity] rather than kilo-tonne.
+# See https://github.com/IAMconsortium/units/issues/13
+
+kt = 1e6 * kilogram
+
+
+# Orders of magnitude (short scale) to be used as prefix for other units
+# https://en.wikipedia.org/wiki/Order_of_magnitude
+
+hundred = 1e2
+thousand = 1e3
+million = 1e6
+billion = 1e9
+trillion = 1e12
+quadrillion = 1e15
+
+
+# Currency
+
+# Based on Germany's GDP deflator, data from
+# https://data.worldbank.org/indicator/NY.GDP.DEFL.ZS?locations=DE
+
+EUR_2005 = [currency] = EUR
+EUR_2000 = 1.0564 * EUR_2005
+EUR_2010 = 0.9463 * EUR_2005
+EUR_2020 = 0.8017 * EUR_2005
+
+# Exchange rate EUR/USD in 2005, data from
+# https://data.oecd.org/conversion/exchange-rates.htm
+
+USD_2005 = 0.8038 * EUR_2005 = USD
+
+# United States' GDP deflator, data from
+# https://data.worldbank.org/indicator/NY.GDP.DEFL.ZS?locations=US
+
+USD_2010 = USD_2005 * 83.426 / 91.718
+
+
+# Transportation activity
+
+vehicle = [vehicle] = v
+passenger = [passenger] = p = pass
+tonne_freight = [tonne_freight] = tfr = tonnef
+vkm = vehicle * kilometer
+pkm = passenger * kilometer
+tkm = tonne_freight * kilometer
+@alias vkm = vkt = v km
+@alias pkm = pkt = p km
+@alias tkm = tkt = t km
+
+# Emissions of various greenhouse gases
+@import emissions/emissions.txt
