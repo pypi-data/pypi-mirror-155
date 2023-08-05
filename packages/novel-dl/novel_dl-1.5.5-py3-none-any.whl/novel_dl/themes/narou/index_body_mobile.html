@@ -1,0 +1,49 @@
+<div id="main_window">
+<div id="novel_contents">
+<div id="novel_color">
+
+<div class="novel_title">{{ title }}</div>
+<div class="novel_writername">
+作者：{%- if author[1] %}<a href="{{ author[1] }}">{{ author[0] }}</a>{% else %}{{ author[0] }}{%- endif %}
+</div><!--novel_writername-->
+<div id="novel_ex">
+{{desc|safe}}
+</div>
+
+<div class="novel_sublist">
+<ul>
+{%- for dex in index %}
+{%- if dex['type']=="chapter" %}
+<li class="chapter">{{dex['text']}}</li>
+{%- elif dex['type']=="episode" %}
+<li>
+<a href="{{dex['part']}}.html">{{dex['text']}}</a>
+<br />
+<span class="kaikou">{{dex['time'].strftime('%Y/%m/%d/ %H:%M')}}</span>
+</li>
+{%- endif %}
+{%- endfor %}
+</ul>
+</div><!--novel_sublist-->
+
+</div><!-- /#novel_color -->
+</div><!--novel_contents-->
+
+<!-- フッタここから -->
+<div class="upper"><a href="#top">▲ページの上部へ</a></div>
+<div id="footer">
+<div id="footernavi">
+<p>
+<a href="https://syosetu.com">小説家になろう</a>
+|
+<a href="https://kakuyomy.jp">カクヨム</a>
+|
+<a href="{{url}}">公式で読む</a>
+<form action="https://yomou.syosetu.com/search.php">
+<input name="word" size="14" type="text" />
+<input value="検索" type="submit" />
+</form>
+</div><!--footernavi-->
+</div><!--footer-->
+<!-- フッタここまで -->
+</div>

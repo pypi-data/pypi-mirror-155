@@ -1,0 +1,4 @@
+
+		[console_scripts]
+		novel-dl=novel_dl.main:command_line
+	
