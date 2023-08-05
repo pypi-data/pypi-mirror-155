@@ -1,0 +1,242 @@
+info:
+  description: This cube is the new api which will be integrated in CubicWeb 4.
+  license:
+    name: LGPL
+    url: https://www.gnu.org/licenses/lgpl-3.0.en.html
+  contact:
+    name: LOGILAB S.A. (Paris, FRANCE)
+    url: https://forge.extranet.logilab.fr/cubicweb/cubes/api
+    email: contact@logilab.fr
+  title: CubicWeb API
+  version: 0.1.0
+paths:
+  /schema:
+    x-pyramid-route-name: schema
+    get:
+      description: Returns this instance's Schema
+      responses:
+        '200':
+          description: This instance's Schema
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CWSchema'
+  /rql:
+    x-pyramid-route-name: rql
+    post:
+      description: Executes the given RQL query
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RqlParams'
+      responses:
+        '200':
+          description: The RQL result set
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+        '400':
+          description: The given RQL was badly formatted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorSchema'
+  /login:
+    x-pyramid-route-name: login
+    post:
+      description: Tries to log in the user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginParams'
+      responses:
+        '204':
+          description: Token has been created and returned in set-cookie header
+          headers:
+            Set-Cookie:
+              description: The created JWT
+              schema:
+                type: string
+        '401':
+          description: THe given login/password combo was not recognized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorSchema'
+  /transaction/begin:
+    x-pyramid-route-name: transaction/begin
+    post:
+      description: Starts a new transaction
+      responses:
+        '200':
+          description: The transaction's uuid
+          content:
+            application/json:
+              schema:
+                type: string
+  /transaction/execute:
+    x-pyramid-route-name: transaction/execute
+    post:
+      description: Executes the given rql query as part of a transaction
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TransactionExecuteParams'
+      responses:
+        '200':
+          description: The RQL result set
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+        '400':
+          description: The given RQL was badly formatted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorSchema'
+  /transaction/commit:
+    x-pyramid-route-name: transaction/commit
+    post:
+      description: Commits a transaction
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TransactionParams'
+      responses:
+        '200':
+          description: The transaction was successful
+  /transaction/rollback:
+    x-pyramid-route-name: transaction/rollback
+    post:
+      description: Rollback a transaction
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TransactionParams'
+      responses:
+        '200':
+          description: The transaction rollback was successful
+openapi: 3.0.3
+components:
+  schemas:
+    CWSchema:
+      type: object
+      properties:
+        entities:
+          type: array
+          items:
+            type: object
+            properties:
+              type:
+                type: string
+              description:
+                type: string
+              final:
+                type: boolean
+        relations_definitions:
+          type: array
+          items:
+            type: object
+            properties:
+              type:
+                type: string
+              description:
+                type: string
+              final:
+                type: boolean
+              subject:
+                type: string
+              object:
+                type: string
+              cardinality:
+                type: string
+              constraints:
+                type: array
+                nullable: true
+              default:
+                type: string
+                nullable: true
+    RqlParams:
+      type: object
+      properties:
+        query:
+          type: string
+          minLength: 1
+        params:
+          type: object
+          default: {}
+          additionalProperties:
+            nullable: true
+      required:
+        - query
+    LoginParams:
+      type: object
+      properties:
+        password:
+          type: string
+          minLength: 1
+        login:
+          type: string
+          minLength: 1
+      required:
+        - login
+        - password
+    TransactionParams:
+      type: object
+      properties:
+        uuid:
+          type: string
+          minLength: 32
+      required:
+        - uuid
+    TransactionExecuteParams:
+      type: object
+      properties:
+        query:
+          type: string
+          minLength: 1
+        params:
+          type: object
+          default: {}
+          additionalProperties:
+            nullable: true
+        uuid:
+          type: string
+          minLength: 32
+      required:
+        - query
+        - uuid
+    ErrorSchema:
+      type: object
+      properties:
+        code:
+          type: integer
+        title:
+          type: string
+        error:
+          type: object
+          properties:
+            data:
+              type: object
+            message:
+              type: string
+            title:
+              type: string
+          required:
+            - message
+            - title
+      required:
+        - code
+        - title
+        - error
