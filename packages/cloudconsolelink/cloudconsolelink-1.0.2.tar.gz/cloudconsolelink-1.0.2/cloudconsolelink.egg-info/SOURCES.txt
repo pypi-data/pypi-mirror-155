@@ -1,0 +1,15 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+cloudconsolelink/__init__.py
+cloudconsolelink.egg-info/PKG-INFO
+cloudconsolelink.egg-info/SOURCES.txt
+cloudconsolelink.egg-info/dependency_links.txt
+cloudconsolelink.egg-info/top_level.txt
+cloudconsolelink/clouds/__init__.py
+cloudconsolelink/clouds/aws/__init__.py
+cloudconsolelink/clouds/aws/links.py
+cloudconsolelink/clouds/azure/__init__.py
+cloudconsolelink/clouds/gcp/__init__.py
+cloudconsolelink/clouds/gcp/links.py
