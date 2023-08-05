@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/dict_from_dict/__init__.py
+src/dict_from_dict/argparse_helper.py
+src/dict_from_dict/cli.py
+src/dict_from_dict/main.py
+src/dict_from_dict.egg-info/PKG-INFO
+src/dict_from_dict.egg-info/SOURCES.txt
+src/dict_from_dict.egg-info/dependency_links.txt
+src/dict_from_dict.egg-info/entry_points.txt
+src/dict_from_dict.egg-info/requires.txt
+src/dict_from_dict.egg-info/top_level.txt
