@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: gadgetron-integration-tests
+Version: 0.0.2
+Home-page: https://github.com/gadgetron/gadgetron/tree/master/test/integration
+Author: Gadgetron
+Requires-Dist: h5py
+Requires-Dist: ismrmrd
+
