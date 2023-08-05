@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+requirements.txt
+setup.py
+reswarm/__init__.py
+reswarm/crossbar.py
+reswarm/reswarm.py
+reswarm.egg-info/PKG-INFO
+reswarm.egg-info/SOURCES.txt
+reswarm.egg-info/dependency_links.txt
+reswarm.egg-info/requires.txt
+reswarm.egg-info/top_level.txt
