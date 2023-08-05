@@ -1,0 +1,3 @@
+[console_scripts]
+section9-epub-maker = section9.epub_maker:main
+section9-pic-maker = section9.pic_maker:main

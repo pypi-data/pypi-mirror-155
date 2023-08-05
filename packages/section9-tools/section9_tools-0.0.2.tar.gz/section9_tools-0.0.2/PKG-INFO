@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: section9_tools
+Version: 0.0.2
+Summary: section9 daily tools
+Home-page: https://github.com/T-G-Family/section9-lib-tools
+Author: sunyi00
+Author-email: sunyi00@gmail.com
+Project-URL: Bug Tracker, https://github.com/T-G-Family/section9-lib-tools/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+Provides-Extra: test
+License-File: LICENSE
+
+# daily tools
+
+# venv
+
+    make venv
+    source ./venv/bin/activate
+    python -m pip install '.[dev,test]'
+
+# build and upload to pypi
+
+    python -m pip install --upgrade pip wheel
+    python -m pip install --upgrade build
+    python -m build
+    python -m twine upload --repository testpypi dist/*
+    python -m twine upload --repository pypi dist/*
