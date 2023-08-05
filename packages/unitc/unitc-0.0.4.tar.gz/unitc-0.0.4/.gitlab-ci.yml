@@ -1,0 +1,38 @@
+image: "python:3.8"
+
+before_script:
+  - python --version
+  - pip install -r requirements/dev.txt
+
+stages:
+  - Static Analysis
+  - Tests
+  - Deploy
+
+flake8:
+  stage: Static Analysis
+  script:
+  - flake8 src/unitc/*.py
+
+pylint:
+  stage: Static Analysis
+  script:
+  - pylint src/unitc/*.py
+  allow_failure: true
+
+tox:
+  stage: Tests
+  script:
+  - tox
+  
+pages:
+  stage: Deploy
+  script:
+  - cd docs && make html
+  after_script:
+  - mv docs/build/html ./public/
+  artifacts:
+    paths:
+    - public
+  rules:
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH

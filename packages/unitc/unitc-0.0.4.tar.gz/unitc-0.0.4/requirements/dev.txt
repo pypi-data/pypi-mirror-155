@@ -1,0 +1,13 @@
+numpy
+build
+flake8
+pylint
+pytest
+setuptools
+sphinx
+sphinxcontrib-napoleon
+sphinx-execute-code-python3
+sphinx-rtd-theme
+tox
+twine
+wheel
