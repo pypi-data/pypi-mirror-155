@@ -1,0 +1,3 @@
+[console_scripts]
+pr-st-cli=pr_st_cli.__main__:main
+
