@@ -1,0 +1,48 @@
+actions:
+  configuration:
+    input: null
+    output: .
+  frontmatter:
+    category:
+      default value: notes
+      key: category
+    index: (i)
+    share: share
+  weblink: null
+default:
+  configuration:
+    input: ./tests/input
+    output: ./tests/output
+  frontmatter:
+    category:
+      default value: notes
+      key: category
+    index: (i)
+    share: share
+  weblink: cc
+test_config:
+  configuration:
+    input: .\tests\output\input
+    output: .\mkdocs_obsidian_publish\tests\output\output
+  frontmatter:
+    category:
+      default value: notes
+      key: category
+    index: (i)
+    share: share
+  weblink: https://www.mara-li.fr/
+test_mini_config:
+  configuration:
+    input: null
+    output: .
+  frontmatter:
+    category:
+      default value: notes
+      key: category
+    index: (i)
+    share: share
+  weblink: null
+minimal:
+  convert:
+    admonition: false
+    hashtags: false
