@@ -1,0 +1,40 @@
+time_weather:
+  modules: [store, timesim, weather]
+  start_date: 2020-01-01 00:00:00+0100
+  end: 5*60*60
+  step_size: 60*60
+  store_params:
+    filename: time_weather.hdf5
+    overwrite: true
+  timesim_params:
+    time_schedule: 
+      - 2021-06-08 16:00:00+0200
+      - 2014-12-06 23:00:00+0100
+      - 2019-08-11 04:00:00+0200
+      - 2013-02-05 09:00:00+0100
+      - 2015-11-11 11:00:00+0100
+  weather_params:
+    bremen1:
+      weather_mapping:
+        WeatherCurrent: [{}]
+    bremen2:
+      with_timesim: true
+      weather_mapping:
+        WeatherCurrent: [{}]
+time_weather_der:
+  parent: time_weather
+  modules: [der]
+  store_params:
+    filename: time_weather_der.hdf5
+  der_params:
+    no_grid:
+      peak_mapping:
+        0: [[PV, 1], [PV, 1]]
+      weather_provider_mapping:
+        PV: [[bremen1, 0], [bremen2, 0]]
+        # PV: [bremen1, 0, 1, 1, 2, 0]
+
+
+
+
+  

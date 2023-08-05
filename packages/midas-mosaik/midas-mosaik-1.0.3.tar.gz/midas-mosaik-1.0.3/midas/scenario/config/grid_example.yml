@@ -1,0 +1,61 @@
+two_grid_example:
+  name: two_grid_example
+  parent: ~
+  modules: [store, powergrid, sndata, comdata]
+  step_size: 1*60
+  start_date: 2020-06-01 10:00:00+0100
+  end: 1*5*60*60
+  store_params:
+    filename: two_grid_example.hdf5
+    overwrite: true
+  powergrid_params:
+    midasmv:
+      gridfile: midasmv
+    midas_constr:
+      gridfile: midasmv
+      use_constraints: true
+      constraints:
+        - [load, 0.02]
+        - [line, 100]
+  sndata_params:
+    midasmv:
+      interpolate: True
+      load_scaling: 1.5
+      land_mapping:
+        1: [[0, 1.0], [2, 1.0], [3, 2.0], [6, 2.0], [7, 1.0]]
+        3: [[2, 1.0], [3, 1.0], [6, 1.0], [7, 1.0]]
+        4: [[0, 2.0], [3, 2.0], [7, 1.0]]
+        5: [[3, 2.0], [7, 1.0]]
+        6: [[0, 2.0], [3, 1.0]]
+        7: [[0, 2.0], [2, 1.0], [3, 2.0], [7, 1.0]]
+        8: [[0, 1.0], [3, 1.0], [6, 1.0]]
+        9: [[2, 1.0], [3, 1.0], [6, 2.0], [7, 1.0]]
+        10: [[0, 2.0], [2, 1.0], [3, 1.0], [6, 2.0], [7, 1.0]]
+        11: [[0, 1.0], [2, 1.0], [3, 1.0], [6, 2.0], [7, 1.0]]
+    midas_constr:
+      interpolate: True
+      load_scaling: 1.5
+      land_mapping:
+        1: [[0, 1.0], [2, 1.0], [3, 2.0], [6, 2.0], [7, 1.0]]
+        3: [[2, 1.0], [3, 1.0], [6, 1.0], [7, 1.0]]
+        4: [[0, 2.0], [3, 2.0], [7, 1.0]]
+        5: [[3, 2.0], [7, 1.0]]
+        6: [[0, 2.0], [3, 1.0]]
+        7: [[0, 2.0], [2, 1.0], [3, 2.0], [7, 1.0]]
+        8: [[0, 1.0], [3, 1.0], [6, 1.0]]
+        9: [[2, 1.0], [3, 1.0], [6, 2.0], [7, 1.0]]
+        10: [[0, 2.0], [2, 1.0], [3, 1.0], [6, 2.0], [7, 1.0]]
+        11: [[0, 1.0], [2, 1.0], [3, 1.0], [6, 2.0], [7, 1.0]]  
+  comdata_params:
+    midasmv:
+      interpolate: True
+      load_scaling: 1.5
+      mapping:
+        13: [[SuperMarket, 3.0]]
+        14: [[SmallHotel, 2.0]]
+    midas_constr:
+      interpolate: True
+      load_scaling: 1.5
+      mapping:
+        13: [[SuperMarket, 3.0]]
+        14: [[SmallHotel, 2.0]]
