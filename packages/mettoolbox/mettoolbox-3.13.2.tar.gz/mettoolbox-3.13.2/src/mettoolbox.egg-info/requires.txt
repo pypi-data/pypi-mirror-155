@@ -1,0 +1,16 @@
+tstoolbox>103.16.1
+solarpy
+standard-precip
+pydaymet
+pyet
+
+[dev]
+black
+cleanpy
+twine
+pytest
+coverage
+flake8
+pytest-cov
+pytest-mpl
+pre-commit
