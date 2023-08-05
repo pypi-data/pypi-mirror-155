@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+pyotb/__init__.py
+pyotb/apps.py
+pyotb/core.py
+pyotb/functions.py
+pyotb/helpers.py
+pyotb.egg-info/PKG-INFO
+pyotb.egg-info/SOURCES.txt
+pyotb.egg-info/dependency_links.txt
+pyotb.egg-info/top_level.txt
