@@ -1,0 +1,39 @@
+[tool.poetry]
+name = "openapispecdiff"
+version = "1.43.7"
+description = "Difference between two OpenAPISpec files"
+authors = ["Bala <balak@cloudvector.com>"]
+# New attributes
+license = "MIT"
+readme = "README.md"
+#homepage = "https://github.com/ArecaBay"
+#repository = "https://github.com/ArecaBay"
+keywords = ["openapispecdiff", "swaggerdiff", "swaggerplugin"]
+classifiers = [
+    "Environment :: Console",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Documentation",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: Quality Assurance",
+]
+include = [
+    "LICENSE",
+]
+
+[tool.poetry.dependencies]
+python = "^3.5"
+openapispecdiff = "*"
+prance = "0.21.8.0"
+openapi-core = "0.13.4"
+openapi-schema-validator = "0.1.1"
+openapi-spec-validator = "0.2.9"
+
+[tool.poetry.dev-dependencies]
+pex = "*"
+
+[tool.poetry.scripts]
+openapidiff = 'openapispecdiff.OpenApiSpecDiff:main'
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
