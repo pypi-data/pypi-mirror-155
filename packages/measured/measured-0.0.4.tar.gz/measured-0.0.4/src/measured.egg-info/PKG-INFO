@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: measured
+Version: 0.0.4
+Summary: Fast and Pythonic library for working with measurements and quantities
+Home-page: https://github.com/chrisguidry/measured
+Author: Chris Guidry
+Author-email: chris@theguidrys.us
+License: MIT
+Project-URL: Bug Tracker, https://github.com/chrisguidry/measured/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.8
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Framework :: Pytest
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+License-File: LICENSE.txt
+
+# measured
+
+Fast and Pythonic library for working with measurements and quantities
