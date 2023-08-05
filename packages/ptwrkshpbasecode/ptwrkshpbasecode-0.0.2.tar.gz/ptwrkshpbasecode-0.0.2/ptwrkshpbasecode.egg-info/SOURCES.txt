@@ -1,0 +1,12 @@
+setup.py
+ptwrkshpbasecode/__init__.py
+ptwrkshpbasecode.egg-info/PKG-INFO
+ptwrkshpbasecode.egg-info/SOURCES.txt
+ptwrkshpbasecode.egg-info/dependency_links.txt
+ptwrkshpbasecode.egg-info/entry_points.txt
+ptwrkshpbasecode.egg-info/requires.txt
+ptwrkshpbasecode.egg-info/top_level.txt
+ptwrkshpbasecode/client/__init__.py
+ptwrkshpbasecode/client/ptwrkshpclient.py
+ptwrkshpbasecode/server/__init__.py
+ptwrkshpbasecode/server/ptwrkshpserver.py

@@ -1,0 +1,9 @@
+azure.identity
+aiohttp
+Click
+azure.storage.blob
+
+[dev]
+pytest
+pytest-asyncio
+mypy
