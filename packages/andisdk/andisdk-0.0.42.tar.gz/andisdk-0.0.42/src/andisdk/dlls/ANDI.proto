@@ -1,0 +1,73 @@
+syntax = "proto3";
+
+package ANDI.RemoteControl;
+
+service RPC {
+    rpc OpenProject (Project) returns (Empty);
+    rpc CloseProject (Project) returns (Empty);
+    rpc ListProjects(Empty) returns (stream Project);
+
+    rpc StartScript (Script) returns (Empty);
+    rpc StopScript (Script) returns (Empty) ;
+    rpc RunScript (Script) returns (ScriptResult);
+    rpc GetScriptResult(Script) returns (ScriptResult);
+    rpc ListScripts(Query) returns (stream Script);
+
+    rpc StartNode (Node) returns (Empty);
+    rpc StopNode (Node) returns (Empty);
+    rpc ListNodes(Query) returns (stream Node);
+
+    // If the variable does not already exist, an exception would be thrown
+    rpc GetVariable (Variable) returns (VariableValue);
+    // If the variable does not already exist, an exception would be thrown
+    rpc SetVariable (VariableValue) returns (Empty);
+    // the query property `states` is ignored in this context
+    rpc ListVariables (Query) returns (stream VariableValue);
+
+    rpc Reset(Empty) returns (Empty);
+}
+
+message Project {
+    string path = 1;
+}
+
+message Script {
+    Project project = 1;
+    // If the script is in a script group, the name would be "group_name/script_name"
+    string name = 2;
+}
+
+message Node {
+    Project project = 1;
+    string name = 2;
+}
+
+message ScriptResult {
+    bool success = 1;
+    // Full output of the script
+    string output = 2;
+    // Possible values: CREATED, RUNNING, TERMINATED, BLOCKED, STOPPED, SUCCESS, FAIL, ERROR, ABORTED
+    string state = 5;
+}
+
+message Query {
+    // list of projects to search, if none specified, all projects would be searched
+    repeated Project projects = 1;
+    // list of script/node states to filter on, if none specifed, all scripts would be returned
+    repeated string states = 5;  
+}
+
+message Empty {
+
+}
+
+message Variable {
+    Project project  = 1;
+    string name = 2;
+}
+
+message VariableValue {
+    Variable variable = 1;
+    // The value is a JSON encoded string
+    string value = 2;
+}

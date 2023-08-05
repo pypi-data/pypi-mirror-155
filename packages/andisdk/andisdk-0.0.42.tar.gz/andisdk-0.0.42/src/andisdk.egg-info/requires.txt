@@ -1,0 +1,8 @@
+rich>=11.2
+
+[:python_version < "3.0"]
+pythonnet==2.5.2
+
+[:python_version >= "3.0"]
+pythonnet==3.0.0a2
+udsoncan==1.14
