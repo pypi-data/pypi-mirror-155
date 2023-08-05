@@ -1,0 +1,70 @@
+midasmv_constr:
+  name: midasmv_constr
+  parent: midasmv
+  modules: []
+  powergrid_params:
+    midasmv:
+      use_constraints: True
+      constraints: 
+        - [load, 0.02]
+        - [sgen, 0.05]
+        - [line, 100]
+
+midasmv_der_constr:
+  name: midasmv_der_constr
+  parent: midasmv_der
+  modules: []
+  powergrid_params:
+    midasmv:
+      use_constraints: True
+      constraints: 
+        - [load, 0.02]
+        - [sgen, 0.05]
+        - [line, 100]
+  store_params:
+    filename: midasmv_der_constr.hdf5
+
+
+four_bus_der_constr:
+  name: four_bus_der_constr
+  parent: four_bus_der
+  modules: []
+  powergrid_params:
+    four_bus:
+      use_constraints: True
+      constraints: 
+        - [load, 0.02]
+        - [sgen, 0.05]
+        - [line, 100]
+  store_params:
+    filename: four_bus_der_constr.hdf5
+
+
+midaslv_der_constr:
+  name: midaslv_der_constr
+  parent: midaslv_der
+  modules: []
+  powergrid_params:
+    midaslv:
+      use_constraints: True
+      constraints: 
+        - [load, 0.02]
+        - [sgen, 0.05]
+        - [line, 100]
+  store_params:
+    filename: midaslv_der_constr.hdf5
+
+
+bhv_constr:
+  name: bhv_constr
+  parent: bremerhavenmv
+  modules: []
+  powergrid_params:
+    bremerhaven:
+      use_constraints: True
+      constraints: 
+        - [load, 0.02]
+        - [sgen, 0.05]
+        - [line, 100]
+  store_params:
+    filename: bhv_constr.hdf5
