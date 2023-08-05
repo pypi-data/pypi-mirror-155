@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: wannierbuilder
+Version: 0.1.5
+Summary: Library for building Wannier functions
+Home-page: UNKNOWN
+Author: Xu He
+Author-email: mailhexu@gmail.com
+License: GPLv3
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+License-File: LICENSE
+Requires-Dist: ase (>=3.19netcdf4)
+Requires-Dist: matplotlib
+Requires-Dist: numpy (>=1.20)
+Requires-Dist: phonopy
+Requires-Dist: scipy
+Requires-Dist: sisl (>=0.10)
+
+UNKNOWN
+
