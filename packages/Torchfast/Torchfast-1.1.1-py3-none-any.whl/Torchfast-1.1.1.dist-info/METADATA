@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: Torchfast
+Version: 1.1.1
+Summary: A keras-like library for pytorch.
+Home-page: https://github.com/Legend94rz/fasttorch
+Author: Legend
+Author-email: legend94rz@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: tqdm
+Requires-Dist: scikit-learn
+Requires-Dist: tensorboard
+Requires-Dist: lmdb
+Requires-Dist: torch
+
+UNKNOWN
+
