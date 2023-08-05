@@ -1,0 +1,10 @@
+README.md
+setup.py
+src/pyvcon/__init__.py
+src/pyvcon/vcontacts_wrapper.py
+src/pyvcon.egg-info/PKG-INFO
+src/pyvcon.egg-info/SOURCES.txt
+src/pyvcon.egg-info/dependency_links.txt
+src/pyvcon.egg-info/top_level.txt
+src/pyvcon/vcontacts/Vcontacts.c
+src/pyvcon/vcontacts/Vpoly.h
