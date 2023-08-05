@@ -1,0 +1,2 @@
+[console_scripts]
+datgan = datgan.cli:main
