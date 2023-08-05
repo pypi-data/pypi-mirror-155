@@ -1,0 +1,16 @@
+owslib
+pygeos
+tqdm
+erddapy
+rioxarray
+skyfield
+netcdf4
+contextily
+geopandas
+
+[griddap]
+erddapy
+xarray
+
+[time]
+skyfield

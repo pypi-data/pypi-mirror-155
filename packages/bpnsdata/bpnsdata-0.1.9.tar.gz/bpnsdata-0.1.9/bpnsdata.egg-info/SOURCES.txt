@@ -1,0 +1,47 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+bpnsdata/__init__.py
+bpnsdata/ais.py
+bpnsdata/csv.py
+bpnsdata/emodnet.py
+bpnsdata/geolocation.py
+bpnsdata/griddap.py
+bpnsdata/meetnet_vlaamse_banken.py
+bpnsdata/raster.py
+bpnsdata/sea_data_manager.py
+bpnsdata/time.py
+bpnsdata/wrakken_bank.py
+bpnsdata.egg-info/PKG-INFO
+bpnsdata.egg-info/SOURCES.txt
+bpnsdata.egg-info/dependency_links.txt
+bpnsdata.egg-info/not-zip-safe
+bpnsdata.egg-info/requires.txt
+bpnsdata.egg-info/top_level.txt
+bpnsdata/data/Habitat Suitability2.dbf
+bpnsdata/data/Habitat Suitability2.prj
+bpnsdata/data/Habitat Suitability2.sbn
+bpnsdata/data/Habitat Suitability2.sbx
+bpnsdata/data/Habitat Suitability2.shp
+bpnsdata/data/Habitat Suitability2.shp.xml
+bpnsdata/data/Habitat Suitability2.shx
+bpnsdata/data/__init__.py
+bpnsdata/data/_readme.txt
+bpnsdata/data/basislijn_BE.cpg
+bpnsdata/data/basislijn_BE.dbf
+bpnsdata/data/basislijn_BE.prj
+bpnsdata/data/basislijn_BE.qpj
+bpnsdata/data/basislijn_BE.shp
+bpnsdata/data/basislijn_BE.shx
+bpnsdata/data/de421.bsp
+bpnsdata/data/seabedhabitat_BE.cpg
+bpnsdata/data/seabedhabitat_BE.dbf
+bpnsdata/data/seabedhabitat_BE.prj
+bpnsdata/data/seabedhabitat_BE.sbn
+bpnsdata/data/seabedhabitat_BE.sbx
+bpnsdata/data/seabedhabitat_BE.shp
+bpnsdata/data/seabedhabitat_BE.shp.xml
+bpnsdata/data/seabedhabitat_BE.shx
+tests/__init__.py
+tests/test_bpnsdata.py
