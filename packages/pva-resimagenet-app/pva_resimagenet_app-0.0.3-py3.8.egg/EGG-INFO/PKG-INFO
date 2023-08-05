@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: pva-resimagenet-app
+Version: 0.0.3
+Summary: An application that uses ResImageNet to restore old photos.
+Home-page: https://github.com/Tailtoon/ResImageNet
+Author: Vadim Pashkin
+Author-email: vaplev@mail.ru
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/Tailtoon/ResImageNet/issues
+Description: # ResImageNet application
+        
+        An application that uses ResImageNet to restore old photos.
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Requires-Python: ==3.8.10
+Description-Content-Type: text/markdown
