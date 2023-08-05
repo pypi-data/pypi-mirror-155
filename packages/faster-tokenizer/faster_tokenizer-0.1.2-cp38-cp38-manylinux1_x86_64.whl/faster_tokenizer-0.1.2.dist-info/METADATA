@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: faster-tokenizer
+Version: 0.1.2
+Summary: PaddleNLP Faster Tokenizer Library written in C++ 
+Home-page: https://github.com/PaddlePaddle/PaddleNLP/faster_tokenizer
+Author: PaddlePaddle Speech and Language Team
+Author-email: paddlesl@baidu.com
+License: Apache 2.0
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: C++
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Python: >=3.6
+Provides-Extra: test
+Requires-Dist: pytest (>=6.0) ; extra == 'test'
+
+PaddleNLP Faster Tokenizer Library written in C++ 
+
