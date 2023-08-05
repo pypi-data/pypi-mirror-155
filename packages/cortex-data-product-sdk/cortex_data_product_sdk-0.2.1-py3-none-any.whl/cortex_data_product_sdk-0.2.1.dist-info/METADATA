@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: cortex-data-product-sdk
+Version: 0.2.1
+Summary: Cortex Data Product SDK
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: awswrangler (<2.14.0,>=2.11.0)
+Requires-Dist: pyarrow (<5.1.0,>=4.0.1)
+Requires-Dist: python-version (>="3.7")
+
+# Cortex Data Product SDK
+teste2
