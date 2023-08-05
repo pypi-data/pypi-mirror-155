@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>API Shark - Test Coverage Report</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+    <script type="text/javascript" src="https://raw.githubusercontent.com/chartjs/Chart.js/master/test/utils.js"></script>
+<!--        <script src="https://github.com/chartjs/chartjs-plugin-datalabels/releases/download/v0.7.0/chartjs-plugin-datalabels.min.js"></script>-->
+    <style>
+        canvas {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+            border: 1px solid #ddd;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 16px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .fa-check {
+            color: green;
+        }
+
+        .fa-remove {
+            color: red;
+        }
+
+        .panel-body {
+            display: flex;
+            height: 180px;
+            justify-content: space-between;
+        }
+
+        span[class*=&quot;
+        -os&quot;
+        ] {
+            font-size: 14px;
+            font-weight: 300;
+            font-size: 14px;
+            color: black;
+        }
+
+        span[class*=&quot;
+        -os&quot;
+        ] span {
+            width: 9px;
+            height: 9px;
+            display: inline-block;
+            border-radius: 50%;
+            margin-right: 9px;
+        }
+
+        .categories {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-basis: 75%;
+            padding: 39px 50px 41px 26px;
+        }
+
+        .category {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .category span:last-child {
+            font-weight: 300;
+            font-size: 14px;
+            opacity: 0.6;
+            color: #423937;
+            margin-bottom: 6px;
+        }
+
+        .category span:first-child {
+            font-size: 20px;
+            font-weight: 300;
+            color: black;
+        }
+
+        #myDIV {
+            width: 100%;
+            padding: 50px 0;
+            text-align: center;
+            background-color: lightblue;
+            margin-top: 20px;
+        }
+
+        .accordion {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: 5;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+        }
+
+        .accordion1 {
+            background-color: #eee;
+            color: green;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: 10;
+            text-align: right;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+        }
+
+        .active,
+        .accordion:hover {
+            background-color: #ccc;
+        }
+
+        .panel {
+            padding: 0 18px;
+            display: none;
+            background-color: white;
+            overflow: hidden;
+        }
+
+        .some-page-wrapper {
+            margin: 15px;
+            background-color: red;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            flex-basis: 100%;
+            flex: 1;
+            flex-grow: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <br>
+    <div class="container">
+        <div align="right"><i>generated on {{ api_stats.get("recorded_on") }}</i></div>
+        <br>
+
+        <img src="https://www-cdn01.tivo.com/assets/brand-asset/images/Wordmark_black.jpg" width="130" height="100" align="left">
+        <!--  <img src="https://www.cloudvector.com/wp-content/uploads/2020/02/Cloud-Vector-Color-Logo-1.png" width="90" height="70" align="right">-->
+        <center>
+            <h2>CloudVector - Test Coverage Report</h2> </center>
+        <br>
+        <br>
+        <div class="panel-body">
+            <table>
+                <tr>
+                    <td>
+                        <div class="categories">
+                            <h4>Summary</h4>
+                            <div class="category">
+                                <span>API Test duration: {{ api_test_window }}</span>
+<!--                                <span>APIs: {{ api_stats.get("total_apis_captured",0) }} | Parameters: {{ total_mandatory_params.get("apishark",0) + total_optional_params.get("apishark",0)}} (M: {{ total_mandatory_params.get("apishark",0) }}; O: {{ total_optional_params.get("apishark",0) }}) | <br>-->
+<!--                                APIs with Auth: {{ api_security_details["apishark"]["auth"] }} | Response Codes: {{ api_stats.get("total_response_codes",0) }} | API Calls: {{ api_stats.get("total_api_events_captured",0) }}</span>-->
+                                <span>APIs: {{ api_stats.get("total_apis_captured",0) }} | Parameters: {{ all_params_captured }} | <br>
+                                APIs with Auth: {{ api_security_details["apishark"]["auth"] }} | Response Codes: {{ all_responses_captured }} | API Calls: {{ api_stats.get("total_api_events_captured",0) }}</span>
+                            </div>
+                            <div class="category">
+                                <span>API Baseline file: {{ input_api_spec }}</span>
+                                <span>APIs: {{ api_stats.get("total_apis_in_spec",0) }} | Parameters: {{ total_mandatory_params.get("inspec",0) + total_optional_params.get("inspec",0)}} (M: {{ total_mandatory_params.get("inspec",0) }}; O: {{ total_optional_params.get("inspec",0) }}) | <br>
+                  APIs with Auth: {{ api_security_details["inspec"]["auth"] }} | Response Codes: {{ api_spec_stats.get("total_response_codes",0) }} </span>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <!--                    <div align="center">-->
+                        <!--                          <span><h1>{{ api_stats.get("overall_coverage_score")|int }}</h1></span>-->
+                        <!--			  <span>Overall Coverage Score <br> (7 x APIsCovered + 2 x MandatoryParamsCovered + 1 x OptionalParamsCovered)</span>-->
+                        <!--                    </div>-->
+                        <div>
+                            <center>
+                                <h4>Coverage Highlights</h4></center>
+                            <br><span><center>APIs</center></span></div>
+                        <div align="left">
+                            <span><div id="totalapischart" style="position: relative; height:8vh; width:26vw;border:1px solid black;">
+                          <canvas id="totalapis"></canvas>
+                          </div></span></div>
+                        <!--                <div><span><center>Tested APIs</center></span></div>-->
+                        <br>
+                        <hr>
+                        <div align="left">
+                            <span><center>Mandatory Parameters Coverage of Tested APIs</center></span>
+                            <span><div id="mparamschart" style="position: relative; height:8vh; width:26vw;border:1px solid black;">
+                          <canvas id="mparams"></canvas>
+                          </div><br><br><br>
+                          <span><center>Optional Parameters Coverage of Tested APIs</center></span>
+                          <div id="oparamschart" style="position: relative; height:8vh; width:26vw;border:1px solid black;">
+                          <canvas id="oparams"></canvas>
+                          </div></span>
+                            <br>
+                            <br>
+                        </div>
+                    </td>
+
+                </tr>
+            </table>
+            <br>
+            <!--            <div class="category">-->
+            <!--              <span>{{ api_stats.get("total_apis_in_spec",0) }}</span>-->
+            <!--                <span>APIs in SPEC</span>-->
+            <!--            </div>-->
+            <!--            <div class="category">-->
+            <!--              <span>{{ api_stats.get("total_apis_captured",0) }}</span>-->
+            <!--                <span>APIs captured in APIShark</span>-->
+            <!--            </div>-->
+            <!--           <div class="category">-->
+            <!--              <font color="blue"><span>{{ api_stats.get("apis_in_spec_not_captured")|length }}</span></font>-->
+            <!--                <span>APIs in SPEC but not APIShark</span>-->
+            <!--            </div>-->
+            <!--        <div class="category">-->
+            <!--              <span>{{ api_stats.get("total_api_events_captured",0) }}</span>-->
+            <!--                <span>Events for APIs in SPEC and APIShark</span>-->
+            <!--            </div>-->
+
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div>
+            <h3>Coverage Insights for Tested APIs</h3></div>
+        <hr>
+        <div class="row">
+
+            <div id="m_paramscoveragechart" class="column">
+                <canvas id="m_paramsoverage" width="15" height="25"></canvas>
+            </div>
+            <div class="column">
+                <center>
+                    <br>
+                    <br>
+                    <br>
+                    <br><font size="1">APIs with Mandatory params fully covered</font>
+                    <br><font size="4" color="blue"> {{ api_stats.get("apis_in_spec_captured",0) - (api_stats.get("apis_missing_mandatory")|length ) -(api_spec_stats.get("apis_missing_mandatory")|length ) }}</font>
+                    <br>
+                    <br>
+                    <br>
+                    <br><font size="1">APIs that missed atleast one Mandatory param</font>
+                    <br><font size="4" color="red">{{ api_stats.get("apis_missing_mandatory")|length }}</font></center>
+            </div>
+            <div id="o_paramscoveragechart" class="column">
+                <canvas id="o_paramsoverage" width="15" height="25"></canvas>
+            </div>
+            <div class="column">
+                <center>
+                    <br>
+                    <br>
+                    <br>
+                    <br><font size="1">APIs with Optional params fully covered</font>
+                    <br><font size="4" color="blue"> {{ api_stats.get("apis_in_spec_captured",0) - (api_stats.get("apis_missing_optional")|length ) - (api_spec_stats.get("apis_missing_optional")|length)}}</font>
+                    <br>
+                    <br>
+                    <br>
+                    <br><font size="1">APIs that missed atleast one Optional params</font>
+                    <br><font size="4" color="red">{{ api_stats.get("apis_missing_optional")|length }}</font></center>
+            </div>
+            <div id="respcoveragechart" class="column">
+                <canvas id="respcoverage" width="15" height="25"></canvas>
+            </div>
+            <div class="column">
+                <center>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <font size="1">APIs with Resp codes fully covered</font>
+                    <br><font size="4" color="blue"> {{ api_stats.get("apis_in_spec_captured",0) - (api_stats.get("apis_missing_respcode")|length ) - (api_spec_stats.get("apis_missing_respcode")|length) }}</font>
+                    <br>
+                    <br>
+                    <br>
+                    <br><font size="1">APIs that missed atleast one Resp code</font>
+                    <br><font size="4" color="red">{{ api_stats.get("apis_missing_respcode")|length }}</font></center>
+            </div>
+        </div>
+        <br>
+        <!--    <div id="chart-container"><canvas id="myChart" height="300"></canvas></div><br>-->
+        <!--    <div id="canvas-holder" style="width:70% height:70%">-->
+        <!--        <canvas id="paramchart_m"></canvas></div><hr>-->
+        <!--    <table><tr><td><div id="canvas-holder" style="width:40% height:50%">-->
+        <!--        <canvas id="paramchart_m"></canvas></div></td><td>-->
+        <!--    <div id="canvas-holder1" style="width:40% height:50%">-->
+        <!--        <canvas id="paramchart_o"></canvas>-->
+        <!--	</div></td></tr>-->
+        <!--    </table><hr>-->
+        <script>
+            <!--Chart.types.Bar.extend({-->
+            <!--    name: "BarAlt",-->
+            <!--    initialize: function(data){-->
+            <!--        Chart.types.Bar.prototype.initialize.apply(this, arguments);-->
+            <!--        var xLabels = this.scale.xLabels;-->
+            <!--        for (var i = 0; i < xLabels.length; i++)-->
+            <!--            xLabels[i] = '';-->
+            <!--    }-->
+            <!--});-->
+
+            <!--var ctx = document.getElementById("totalapis").getContext("2d");-->
+            <!--var myBarChart = new Chart(ctx).BarAlt(data);-->
+
+            <!--var ctx = document.getElementById('myChart').getContext('2d');-->
+            <!--var color = Chart.helpers.color;-->
+            <!--var myChart = new Chart(ctx, {-->
+            <!--    type: 'bar',-->
+            <!--    data: {-->
+            <!--        labels: ['TotalAPIs', 'Total Mandatory Parameters', 'Response Codes', 'Total Optional Parameters', 'APIs with Auth','APIs with NoAuth'],-->
+            <!--        datasets: [{-->
+            <!--            label: 'Baseline',-->
+            <!--            data: [{{ api_stats.get("total_apis_in_spec",0) }},-->
+            <!--            {{ total_mandatory_params.get("inspec",0) }},-->
+            <!--            {{ api_spec_stats.get("total_response_codes",0) }},-->
+            <!--            {{ total_optional_params.get("inspec",0) }},-->
+            <!--            {{ api_security_details["inspec"]["auth"] }},-->
+            <!--            {{ api_security_details["inspec"]["noauth"] }}],-->
+            <!--            backgroundColor: 'rgba(0, 48, 87, 1)',-->
+            <!--            borderColor: 'rgba(0, 48, 87, 1)',-->
+            <!--            borderWidth: 1-->
+            <!--        },-->
+            <!--        {-->
+            <!--            label: 'API call traffic',-->
+            <!--            data: [{{ api_stats.get("total_apis_captured",0) }},-->
+            <!--            {{ total_mandatory_params.get("apishark",0) }},-->
+            <!--            {{ api_stats.get("total_response_codes",0) }},-->
+            <!--            {{ total_optional_params.get("apishark",0) }},-->
+            <!--            {{ api_security_details["apishark"]["auth"] }},-->
+            <!--            {{ api_security_details["apishark"]["noauth"] }}-->
+            <!--            ],-->
+            <!--            backgroundColor: 'rgba(117, 120, 123, 1)',-->
+            <!--            borderColor: 'rgba(117, 120, 123, 1)',-->
+            <!--            borderWidth: 1-->
+            <!--        }]-->
+            <!--    },-->
+            <!--    options: {-->
+            <!--    	title: {-->
+            <!--		display: true,-->
+            <!--	    	text: 'Traffic based statistics'-->
+            <!--    	},-->
+            <!--    responsive: true,-->
+            <!--    maintainAspectRatio: false,-->
+            <!--        scales: {-->
+            <!--            yAxes: [{-->
+            <!--                ticks: {-->
+            <!--                    beginAtZero: true-->
+            <!--                }-->
+            <!--            }]-->
+            <!--        }-->
+            <!--    },-->
+            <!--});-->
+
+            var ctx = document.getElementById('totalapis').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'horizontalBar',
+                data: {
+                    labels: ["APIs-Tested", "APIs-Missed"],
+                    datasets: [{
+                        label: 'APIs-Tested',
+                        display: false,
+                        backgroundColor: 'rgba(0, 48, 87, 1)',
+                        stack: 'Stack 0',
+                        data: [{{ api_stats.get("total_apis_captured", 0) }}]
+                    }, {
+                        label: 'APIs-Missed',
+                        display: false,
+                        backgroundColor: 'rgba(175, 39, 47, 1)',
+                        stack: 'Stack 0',
+                        data: [
+                            Math.abs({{ api_stats.get("total_apis_captured", 0) - api_stats.get("total_apis_in_spec", 0) }})
+                        ]
+                    }]
+                },
+                options: {
+                    title: {
+                        display: false,
+                        text: 'API Coverage'
+                    },
+                    legend: {
+                        display: true,
+                        position: 'right',
+                        align: "middle",
+                        labels: {
+                            generateLabels: function(chart) {
+                                var data = chart.data;
+                                if (data.labels.length && data.datasets.length) {
+                                    return data.labels.map(function(label, i) {
+                                        var meta = chart.getDatasetMeta(0);
+                                        var ds = data.datasets[0];
+                                        var arc = meta.data[i];
+                                        var custom = arc && arc.custom || {};
+                                        var getValueAtIndexOrDefault = Chart.helpers.getValueAtIndexOrDefault;
+                                        var arcOpts = chart.options.elements.arc;
+                                        var fill = custom.backgroundColor ? custom.backgroundColor : getValueAtIndexOrDefault(ds.backgroundColor, i, arcOpts.backgroundColor);
+                                        var stroke = custom.borderColor ? custom.borderColor : getValueAtIndexOrDefault(ds.borderColor, i, arcOpts.borderColor);
+                                        var bw = custom.borderWidth ? custom.borderWidth : getValueAtIndexOrDefault(ds.borderWidth, i, arcOpts.borderWidth);
+
+                                        // We get the value of the current label
+                                        if (label.indexOf("Missed") > 0) {
+                                            var value = chart.config.data.datasets[1].data[0];
+                                            var fill = "#af272f";
+                                        } else {
+                                            var value = chart.config.data.datasets[0].data[0];
+                                            var fill = "#003057";
+                                        }
+
+                                        return {
+                                            // Instead of `text: label,`
+                                            // We add the value to the string
+                                            text: label + " : " + value,
+                                            fillStyle: fill,
+                                            strokeStyle: stroke,
+                                            lineWidth: bw,
+                                            //hidden: isNaN(ds.data[i]) || meta.data[i].hidden,
+                                            index: i
+                                        };
+                                    });
+                                } else {
+                                    return [];
+                                }
+                            }
+                        }
+                    },
+                    tooltips: {
+                        enabled: false,
+                        mode: 'index',
+                        intersect: false
+                    },
+                    responsive: true,
+                    scales: {
+                        xAxes: [{
+                            display: false,
+                            stacked: true,
+                            gridLines: {}
+                        }],
+                        yAxes: [{
+                            display: false,
+                            stacked: true,
+                            gridLines: {}
+                        }]
+                    },
+                    plugins: {
+                        datalabels: {
+                            color: 'white',
+                        }
+                    }
+                }
+            });
+
+            var ctx = document.getElementById('mparams').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'horizontalBar',
+                data: {
+                    labels: ['(M) Tested', '(M) Missed'],
+                    datasets: [{
+                        label: 'Tested - Mandatory',
+                        display: false,
+                        backgroundColor: 'rgba(0, 48, 87, 1)',
+                        stack: 'Stack 0',
+                        data: [{{ api_stats.get("cumulative_total_mandatory", 0) }}]
+                    }, {
+                        label: 'Missed - Mandatory',
+                        display: false,
+                        backgroundColor: 'rgba(175, 39, 47, 1)',
+                        stack: 'Stack 0',
+                        data: [{{ api_stats.get("cumulative_total_mandatory_missing", 0) }}]
+                    }]
+                },
+                options: {
+                    title: {
+                        display: false,
+                        text: 'API Coverage'
+                    },
+                    legend: {
+                        display: true,
+                        position: 'right',
+                        align: "middle",
+                        labels: {
+                            generateLabels: function(chart) {
+                                var data = chart.data;
+                                if (data.labels.length && data.datasets.length) {
+                                    return data.labels.map(function(label, i) {
+                                        var meta = chart.getDatasetMeta(0);
+                                        var ds = data.datasets[0];
+                                        var arc = meta.data[i];
+                                        var custom = arc && arc.custom || {};
+                                        var getValueAtIndexOrDefault = Chart.helpers.getValueAtIndexOrDefault;
+                                        var arcOpts = chart.options.elements.arc;
+                                        var fill = custom.backgroundColor ? custom.backgroundColor : getValueAtIndexOrDefault(ds.backgroundColor, i, arcOpts.backgroundColor);
+                                        var stroke = custom.borderColor ? custom.borderColor : getValueAtIndexOrDefault(ds.borderColor, i, arcOpts.borderColor);
+                                        var bw = custom.borderWidth ? custom.borderWidth : getValueAtIndexOrDefault(ds.borderWidth, i, arcOpts.borderWidth);
+
+                                        // We get the value of the current label
+                                        if (label.indexOf("Missed") > 0) {
+                                            var value = chart.config.data.datasets[1].data[0];
+                                            var fill = "#af272f";
+                                        } else {
+                                            var value = chart.config.data.datasets[0].data[0];
+                                            var fill = "#003057";
+                                        }
+
+                                        return {
+                                            // Instead of `text: label,`
+                                            // We add the value to the string
+                                            text: label + " : " + value,
+                                            fillStyle: fill,
+                                            strokeStyle: stroke,
+                                            lineWidth: bw,
+                                            //hidden: isNaN(ds.data[i]) || meta.data[i].hidden,
+                                            index: i
+                                        };
+                                    });
+                                } else {
+                                    return [];
+                                }
+                            }
+                        }
+                    },
+                    tooltips: {
+                        enabled: false,
+                        mode: 'index',
+                        intersect: false
+                    },
+                    responsive: true,
+                    scales: {
+                        xAxes: [{
+                            display: false,
+                            stacked: true,
+                            gridLines: {}
+                        }],
+                        yAxes: [{
+                            display: false,
+                            stacked: true,
+                            gridLines: {}
+                        }]
+                    },
+                    plugins: {
+                        datalabels: {
+                            color: 'white',
+                        }
+                    }
+                }
+            });
+
+            var ctx = document.getElementById('oparams').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'horizontalBar',
+                data: {
+                    labels: ['(O) Tested', '(O) Missed'],
+                    datasets: [{
+                        label: 'Tested - Optional',
+                        display: false,
+                        backgroundColor: 'rgba(0, 48, 87, 1)',
+                        stack: 'Stack 0',
+                        data: [{{ api_stats.get("cumulative_total_optional", 0) }}]
+                    }, {
+                        label: 'Missed - Optional',
+                        display: false,
+                        backgroundColor: 'rgba(175, 39, 47, 1)',
+                        stack: 'Stack 0',
+                        data: [{{ api_stats.get("cumulative_total_optional_missing", 0) }}]
+                    }]
+                },
+                options: {
+                    title: {
+                        display: false,
+                        text: 'API Coverage'
+                    },
+                    legend: {
+                        display: true,
+                        position: 'right',
+                        align: 'middle',
+                        labels: {
+                            generateLabels: function(chart) {
+                                var data = chart.data;
+                                if (data.labels.length && data.datasets.length) {
+                                    return data.labels.map(function(label, i) {
+                                        var meta = chart.getDatasetMeta(0);
+                                        var ds = data.datasets[0];
+                                        var arc = meta.data[i];
+                                        var custom = arc && arc.custom || {};
+                                        var getValueAtIndexOrDefault = Chart.helpers.getValueAtIndexOrDefault;
+                                        var arcOpts = chart.options.elements.arc;
+                                        var fill = custom.backgroundColor ? custom.backgroundColor : getValueAtIndexOrDefault(ds.backgroundColor, i, arcOpts.backgroundColor);
+                                        var stroke = custom.borderColor ? custom.borderColor : getValueAtIndexOrDefault(ds.borderColor, i, arcOpts.borderColor);
+                                        var bw = custom.borderWidth ? custom.borderWidth : getValueAtIndexOrDefault(ds.borderWidth, i, arcOpts.borderWidth);
+
+                                        // We get the value of the current label
+                                        if (label.indexOf("Missed") > 0) {
+                                            var value = chart.config.data.datasets[1].data[0];
+                                            var fill = "#af272f";
+                                        } else {
+                                            var value = chart.config.data.datasets[0].data[0];
+                                            var fill = "#003057";
+                                        }
+
+                                        return {
+                                            // Instead of `text: label,`
+                                            // We add the value to the string
+                                            text: label + " : " + value,
+                                            fillStyle: fill,
+                                            strokeStyle: stroke,
+                                            lineWidth: bw,
+                                            //hidden: isNaN(ds.data[i]) || meta.data[i].hidden,
+                                            index: i
+                                        };
+                                    });
+                                } else {
+                                    return [];
+                                }
+                            }
+                        }
+                    },
+                    tooltips: {
+                        enabled: false,
+                        mode: 'index',
+                        intersect: false
+                    },
+                    responsive: true,
+                    scales: {
+                        xAxes: [{
+                            display: false,
+                            stacked: true,
+                            gridLines: {}
+                        }],
+                        yAxes: [{
+                            display: false,
+                            stacked: true,
+                            gridLines: {}
+                        }]
+                    },
+                    plugins: {
+                        datalabels: {
+                            color: 'white',
+                        }
+                    }
+                }
+            });
+
+            var ctx = document.getElementById('m_paramsoverage').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    datasets: [{
+                            label: 'APIs missing at least one Mandatory Param',
+                            display: false,
+                            backgroundColor: 'rgba(175, 39, 47, 1)',
+                            borderWidth: 1,
+                            stack: 'Stack 0',
+                            data: [{{ api_stats.get("apis_missing_mandatory")|length }}]
+                        }, {
+                            label: 'APIs with all Mandatory Params',
+                            display: false,
+                            backgroundColor: 'rgba(0, 48, 87, 1)',
+                            borderWidth: 1,
+                            stack: 'Stack 0',
+                            data: [{{ api_stats.get("apis_in_spec_captured",0) - (api_stats.get("apis_missing_mandatory")|length ) -(api_spec_stats.get("apis_missing_mandatory")|length ) }}]
+                        },
+                        <!--			{-->
+                        <!--				label: 'APIs with no Mandatory Params defined in spec',-->
+                        <!--				display: false,-->
+                        <!--				backgroundColor: 'rgba(275, 139, 47, 1)',-->
+                        <!--				stack: 'Stack 0',-->
+                        <!--				data: [-->
+                        <!--					{{ api_spec_stats.get("apis_missing_mandatory")|length }}-->
+                        <!--				]-->
+                        <!--			}-->
+                    ]
+                },
+                options: {
+                    title: {
+                        display: true,
+                        text: 'API Mandatory Params'
+                    },
+                    legend: {
+                        display: false,
+                        position: "bottom"
+                    },
+                    tooltips: {
+                        enabled: false,
+                        mode: 'index',
+                        intersect: false
+                    },
+                    responsive: true,
+                    scales: {
+                        xAxes: [{
+                            display: false,
+                            stacked: true,
+                            gridLines: {}
+                        }],
+                        yAxes: [{
+                            display: false,
+                            stacked: true,
+                            gridLines: {}
+                        }]
+                    },
+                    plugins: {
+                        datalabels: {
+                            display: true,
+                            color: 'white',
+                        }
+                    }
+                }
+            });
+
+            var ctx = document.getElementById('o_paramsoverage').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    datasets: [{
+                            label: 'APIs that missed at least one Optional Param',
+                            display: false,
+                            backgroundColor: 'rgba(175, 39, 47, 1)',
+                            stack: 'Stack 0',
+                            data: [{{ api_stats.get("apis_missing_optional") | length }}]
+                        }, {
+                            label: 'APIs with All Optional Params',
+                            display: false,
+                            backgroundColor: 'rgba(0, 48, 87, 1)',
+                            stack: 'Stack 0',
+                            data: [{{ api_stats.get("apis_in_spec_captured",0) - (api_stats.get("apis_missing_optional")|length ) - (api_spec_stats.get("apis_missing_optional")|length)}}]
+                        },
+                        <!--			{-->
+                        <!--				label: 'APIs with no Optional Params defined in spec',-->
+                        <!--				display: false,-->
+                        <!--				backgroundColor: 'rgba(275, 139, 47, 1)',-->
+                        <!--				stack: 'Stack 0',-->
+                        <!--				data: [-->
+                        <!--					{{ api_spec_stats.get("apis_missing_optional")|length }}-->
+                        <!--				]-->
+                        <!--			}-->
+                    ]
+                },
+                options: {
+                    title: {
+                        display: true,
+                        text: 'API Optional Params',
+                        fontSize: 12
+                    },
+                    legend: {
+                        display: false,
+                        position: "bottom",
+                        align: "start"
+                    },
+                    tooltips: {
+                        enabled: false,
+                        mode: 'index',
+                        intersect: false
+                    },
+                    responsive: true,
+                    scales: {
+                        xAxes: [{
+                            display: false,
+                            stacked: true,
+                            gridLines: {}
+                        }],
+                        yAxes: [{
+                            display: false,
+                            stacked: true,
+                            gridLines: {}
+                        }]
+                    },
+                    plugins: {
+                        datalabels: {
+                            display: true,
+                            color: 'white',
+                        }
+                    }
+                }
+            });
+
+            var ctx = document.getElementById('respcoverage').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    datasets: [{
+                        label: 'APIs that missed at least one  response code',
+                        display: false,
+                        backgroundColor: 'rgba(175, 39, 47, 1)',
+                        stack: 'Stack 0',
+                        data: [{{ api_stats.get("apis_missing_respcode") | length }}]
+                    }, {
+                        label: 'APIs that covered all response code(s)',
+                        display: false,
+                        backgroundColor: 'rgba(0, 48, 87, 1)',
+                        stack: 'Stack 0',
+                        data: [{{ api_stats.get("apis_in_spec_captured",0) - (api_stats.get("apis_missing_respcode")|length ) - (api_spec_stats.get("apis_missing_respcode")|length)}}]
+                    }]
+                },
+                options: {
+                    title: {
+                        display: true,
+                        text: 'API Response Codes'
+                    },
+                    legend: {
+                        display: false,
+                        position: "bottom"
+                    },
+                    tooltips: {
+                        enabled: false,
+                        mode: 'index',
+                        intersect: false
+                    },
+                    responsive: true,
+                    scales: {
+                        xAxes: [{
+                            display: false,
+                            stacked: true,
+                            gridLines: {}
+                        }],
+                        yAxes: [{
+                            display: false,
+                            stacked: true,
+                            gridLines: {}
+                        }]
+                    },
+                    plugins: {
+                        datalabels: {
+                            display: false,
+                            color: 'white',
+                        }
+                    }
+                }
+            });
+        </script>
+
+        <div id="container" style="width: 100%;">
+            <h3>Full Test Coverage Details</h3>
+            <hr>
+            <br>
+            <h4>APIs Missed in Test:</h4> {% for api, details in api_details.items() %} {% if api in api_stats.get("apis_in_spec_not_captured") %}
+            <button class="accordion"><a name="{{ api }}">{{ api }}</a>&nbsp;<font size="2" style="float: right;">
+                <i>Mandatory Parameters: {{ details.get("mandatory_params_in_spec")|length }}
+                    Optional Parameters: {{ details.get("optional_params_in_spec")|length }}
+                </i></font>
+            </button>
+            <div class="panel">
+                <p>
+                    <table>
+                        <tr>
+                            <td width="20%">Mandatory Parameters</td>
+                            <td width="80%">{% for param in (details.get("mandatory_params_in_spec")) %} {% if param not in ["_","coverage"] %} {{ param }} {% endif %} &nbsp;&nbsp; {% endfor %}
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td width="20%">Optional Parameters</td>
+                            <td width="80%">{% for param in (details.get("optional_params_in_spec")|unique) %} {% if param not in ["_","coverage"] %} {{ param }} {% endif %} &nbsp;&nbsp; {% endfor %}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="20%">Response Codes</td>
+                            <td width="80%">{% if details.get("respcode_inspec",[])|length ==0 %} {% for respcode in details.get("respcode_recorded",[]) %} {{ respcode }} <i>*</i> &nbsp; {% endfor %} {% endif %}
+                            </td>
+                        </tr>
+                    </table>
+                    </li>
+                </p>
+            </div>
+            {% endif %}{% endfor %}
+            <br>
+            <hr>
+            <h4>Tested APIs:</h4> {% for api, details in api_details.items() %} {% if api not in api_stats.get("apis_in_spec_not_captured") %}
+            <button class="accordion"><a name="{{ api }}">{{ api }}</a>&nbsp;<font size="2">(# API calls:{{ details.get("events_count") }})</font><font size="2" style="float: right;">
+                <i>Mandatory Parameters covered: {{ (details.get("mandatory_params_in_spec")|length)-details.get("mandatory_missing") }}/{{ details.get("mandatory_params_in_spec")|length }}</i>
+            {% if details.get("mandatory_missing") >0 %}
+                <i class="fa fa-remove"></i>
+            {% else %}
+                {% if (details.get("mandatory_params_in_spec")|length) >0 %}
+                    <i class="fa fa-check"></i>
+                {% endif %}
+            {% endif %}
+            &nbsp;Optional Parameters covered: {{ (details.get("optional_params_in_spec")|length)-details.get("optional_missing")}}/{{ details.get("optional_params_in_spec")|length }}
+            {% if details.get("optional_missing") >0 %}
+                <i class="fa fa-remove"></i>
+            {% else %}
+                {% if (details.get("optional_params_in_spec")|length) >0 %}
+                    <i class="fa fa-check"></i>
+                {% endif %}
+            {% endif %}
+            | <i>Response Codes covered</i> {% if (details.get("respcode_coverage")|int) >= 1 %}
+                        <i class="fa fa-check"></i>
+                    {% elif details.get("respcode_coverage") == "*" %}
+                        <i><font size="3">*</font></i>
+                {% else %}
+                <i class="fa fa-remove"></i> {% endif %}</i>
+                </font>
+            </button>
+            <div class="panel">
+                <p>
+                    <table>
+                        <tr>
+                            <td width="20%">Mandatory Parameters</td>
+                            <td width="80%">{% for param in details.get("mandatory_params_in_spec") %} {% if param not in ["_","coverage"] %} {{ param }} {% endif %} {% if details.get("mandatory") %} {% if details["mandatory"][param] == "recorded" and param not in ["_","coverage"] %}
+                                <i class="fa fa-check"></i> {% elif details["mandatory"][param] == "not recorded" and param not in ["_","coverage"] %}
+                                <i class="fa fa-remove"></i> {% endif %} {% else %}
+                                <i class="fa fa-remove"></i> {% endif %} &nbsp;&nbsp; {% endfor %}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="20%">Optional Parameters</td>
+                            <td width="80%">{% for param in details.get("optional_params_in_spec") %} {% if param not in ["_","coverage"] %} {{ param }} {% endif %} {% if details.get("optional") %} {% if details["optional"][param] == "recorded" and param not in ["_","coverage"] %}
+                                <i class="fa fa-check"></i> {% elif details["optional"][param] == "not recorded" and param not in ["_","coverage"] %}
+                                <i class="fa fa-remove"></i> {% endif %} {% else %}
+                                <i class="fa fa-remove"></i> {% endif %} &nbsp;&nbsp; {% endfor %}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="20%">Response Codes</td>
+                            <td width="80%">{% if details.get("respcode_inspec",[])|length ==0 %} {% else %} {% for respcode in details.get("respcode_inspec") %} {{ respcode }} {%if respcode in details.get("respcode_recorded") %}
+                                <i class="fa fa-check"></i> {% else %}
+                                <i class="fa fa-remove"></i> {% endif %} &nbsp; {% endfor %} {% endif %}
+                            </td>
+                        </tr>
+                    </table>
+                    </li>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-success" role="progressbar" aria-valuenow="{{ details['coverage']|int }}" aria-valuemin="0" aria-valuemax="100" style="width:{{ details['coverage']|int }}%">
+                            mandatory params (coverage: {{ details['coverage'] }}%)
+                        </div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-success progress-bar-info" role="progressbar" aria-valuenow="{{ details['optional_coverage']|int }}" aria-valuemin="0" aria-valuemax="100" style="width:{{ details['optional_coverage']|int }}%">
+                            optional params (coverage: {{ details['optional_coverage'] }}%)
+                        </div>
+                    </div>
+                </p>
+            </div>
+            {% endif %}{% endfor %}
+
+            <br>
+            <hr>
+            <h4> APIs recorded but not in Baseline:</h4> {% for api, method in api_details_captured.items() %}
+            {% if api not in api_details and api not in apis_whitelisted %}
+            <button class="accordion"><a name="{{ api }}">{{ api }}</a>&nbsp;<font size="2" style="float: right;">
+                {% for type,details in method.items() %}
+                <i>Parameters: {{ details.get("parameters")|length }}
+                </i></font>
+            </button>
+            <div class="panel">
+                <p>
+                    <table>
+                        <tr>
+                            <td width="20%">Parameters</td>
+                            <td width="80%">{% for param in (details.get("parameters")) %} {{ param.get("name") }} &nbsp; {% endfor %}{% endfor %}
+                            </td>
+                            <td></td>
+                        </tr>
+                    </table>
+                    </li>
+                </p>
+            </div>
+            {% endif %}
+            {% endfor %}
+
+
+            <br>
+            <hr>
+            <h4>APIs Whitelisted:</h4> {% for api, details in apis_whitelisted.items() %}
+            <button class="accordion"><a name="{{ api }}">{{ api }}</a>&nbsp;<font size="2" style="float: right;">
+                <i>Mandatory Parameters: {{ details.get("mandatory_params")|length }}
+                    Optional Parameters: {{ details.get("optional_params")|length }}
+                </i></font>
+            </button>
+            <div class="panel">
+                <p>
+                    <table>
+                        <tr>
+                            <td width="20%">Mandatory Parameters</td>
+                            <td width="80%">{% for param in (details.get("mandatory_params")) %} {% if param not in ["_","coverage"] %} {{ param }} {% endif %} &nbsp;&nbsp; {% endfor %}
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td width="20%">Optional Parameters</td>
+                            <td width="80%">{% for param in (details.get("optional_params")|unique) %} {% if param not in ["_","coverage"] %} {{ param }} {% endif %} &nbsp;&nbsp; {% endfor %}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="20%">Response Codes</td>
+                            <td width="80%">{% if details.get("respcodes",[])|length ==0 %} {% for respcode in details.get("respcodes",[]) %} {{ respcode }} <i>*</i> &nbsp; {% endfor %} {% endif %}
+                            </td>
+                        </tr>
+                    </table>
+                    </li>
+                </p>
+            </div>
+            {% endfor %}
+
+            <!--    <h4>APIs Missed in Test:</h4>-->
+            <!--        <button class="accordion">APIs in SPEC but not captured <b>({{ api_stats.get("apis_in_spec_not_captured")|length }})</b></button>-->
+            <!--<div class="panel">-->
+            <!--  <p>    {% for api in api_stats.get("apis_in_spec_not_captured") %}-->
+            <!--            {{ api }}&nbsp;|&nbsp;-->
+            <!--         {% endfor %}</p>-->
+            <!--</div>-->
+            <!--    <hr>-->
+            <!--    <h2>Missing Parameter(s) details:</h2>-->
+
+            <!--    <button class="accordion">Missing 1 mandatory parameter <b>({{ api_stats["total_mandatory_missing"]["one"] }})</b></button>-->
+            <!--<div class="panel">-->
+            <!--  <p>    {% for api, details in api_details.items() %}-->
+            <!--            {% if details.get("mandatory_missing",[]) == 1 %}-->
+            <!--                <a href="#{{ api }}">{{ api }}</a> &nbsp;|&nbsp;-->
+            <!--            {% endif %}-->
+            <!--         {% endfor %}</p>-->
+            <!--</div>-->
+
+            <!--<button class="accordion">Missing 2 mandatory parameters <b>({{ api_stats["total_mandatory_missing"]["two"] }})</b></button>-->
+            <!--<div class="panel">-->
+            <!--  <p>    {% for api, details in api_details.items() %}-->
+            <!--            {% if details.get("mandatory_missing",[]) == 2 %}-->
+            <!--                <a href="#{{ api }}">{{ api }}</a> &nbsp;|&nbsp;-->
+            <!--            {% endif %}-->
+            <!--         {% endfor %}</p>-->
+            <!--</div>-->
+
+            <!--<button class="accordion">Missing 3 mandatory parameters <b>({{ api_stats["total_mandatory_missing"]["three"] }})</b></button>-->
+            <!--<div class="panel">-->
+            <!--    <p>    {% for api, details in api_details.items() %}-->
+            <!--            {% if details.get("mandatory_missing",[]) == 3 %}-->
+            <!--                <a href="#{{ api }}">{{ api }}</a> &nbsp;|&nbsp;-->
+            <!--            {% endif %}-->
+            <!--         {% endfor %}</p>-->
+            <!--</div>-->
+            <!--    <button class="accordion">Missing 4 mandatory parameters <b>({{ api_stats["total_mandatory_missing"]["four"] }})</b></button>-->
+            <!--<div class="panel">-->
+            <!--    <p>    {% for api, details in api_details.items() %}-->
+            <!--            {% if details.get("mandatory_missing",[]) == 4 %}-->
+            <!--                <a href="#{{ api }}">{{ api }}</a> &nbsp;|&nbsp;-->
+            <!--            {% endif %}-->
+            <!--         {% endfor %}</p>-->
+            <!--</div>-->
+            <!--    <button class="accordion">Missing 5 or more mandatory parameters <b>({{ api_stats["total_mandatory_missing"]["five+"] }})</b></button>-->
+            <!--<div class="panel">-->
+            <!--    <p>    {% for api, details in api_details.items() %}-->
+            <!--            {% if details.get("mandatory_missing",[]) >= 5 %}-->
+            <!--                <a href="#{{ api }}">{{ api }}</a> &nbsp;|&nbsp;-->
+            <!--            {% endif %}-->
+            <!--         {% endfor %}</p>-->
+            <!--</div>-->
+
+            <!--    <button class="accordion1">Missing 1 optional parameter <b>({{ api_stats["total_optional_missing"]["one"] }})</b></button>-->
+            <!--<div class="panel">-->
+            <!--      <p>    {% for api, details in api_details.items() %}-->
+            <!--            {% if details.get("optional_missing",[]) == 1 %}-->
+            <!--                <a href="#{{ api }}">{{ api }}</a> &nbsp;|&nbsp;-->
+            <!--            {% endif %}-->
+            <!--         {% endfor %}</p>-->
+            <!--</div>-->
+
+            <!--<button class="accordion1">Missing 2 optional parameters <b>({{ api_stats["total_optional_missing"]["two"] }})</b></button>-->
+            <!--<div class="panel">-->
+            <!--        <p>    {% for api, details in api_details.items() %}-->
+            <!--            {% if details.get("optional_missing",[]) == 2 %}-->
+            <!--                <a href="#{{ api }}">{{ api }}</a> &nbsp;|&nbsp;-->
+            <!--            {% endif %}-->
+            <!--         {% endfor %}</p>-->
+            <!--</div>-->
+
+            <!--<button class="accordion1">Missing 3 optional parameters <b>({{ api_stats["total_optional_missing"]["three"] }})</b></button>-->
+            <!--<div class="panel">-->
+            <!--      <p>    {% for api, details in api_details.items() %}-->
+            <!--            {% if details.get("optional_missing",[]) == 3 %}-->
+            <!--                <a href="#{{ api }}">{{ api }}</a> &nbsp;|&nbsp;-->
+            <!--            {% endif %}-->
+            <!--         {% endfor %}</p>-->
+            <!--</div>-->
+            <!--    <button class="accordion1">Missing 4 optional parameters <b>({{ api_stats["total_optional_missing"]["four"] }})</b></button>-->
+            <!--<div class="panel">-->
+            <!--          <p>    {% for api, details in api_details.items() %}-->
+            <!--            {% if details.get("optional_missing",[]) == 4 %}-->
+            <!--                <a href="#{{ api }}">{{ api }}</a> &nbsp;|&nbsp;-->
+            <!--            {% endif %}-->
+            <!--         {% endfor %}</p>-->
+            <!--</div>-->
+            <!--    <button class="accordion1">Missing 5 or more optional parameters <b>({{ api_stats["total_optional_missing"]["five+"] }})</b></button>-->
+            <!--<div class="panel">-->
+            <!--      <p>    {% for api, details in api_details.items() %}-->
+            <!--            {% if details.get("optional_missing",[]) >= 5 %}-->
+            <!--                <a href="#{{ api }}">{{ api }}</a> &nbsp;|&nbsp;-->
+            <!--            {% endif %}-->
+            <!--         {% endfor %}</p>-->
+            <!--</div>-->
+
+            <script>
+                var acc = document.getElementsByClassName("accordion");
+                var i;
+
+                for (i = 0; i < acc.length; i++) {
+                    acc[i].addEventListener("click", function() {
+                        this.classList.toggle("active");
+                        var panel = this.nextElementSibling;
+                        if (panel.style.display === "block") {
+                            panel.style.display = "none";
+                        } else {
+                            panel.style.display = "block";
+                        }
+                    });
+                }
+                var acc1 = document.getElementsByClassName("accordion1");
+                var i;
+
+                for (i = 0; i < acc1.length; i++) {
+                    acc1[i].addEventListener("click", function() {
+                        this.classList.toggle("active");
+                        var panel = this.nextElementSibling;
+                        if (panel.style.display === "block") {
+                            panel.style.display = "none";
+                        } else {
+                            panel.style.display = "block";
+                        }
+                    });
+                }
+            </script>
+
+            <!--for (i = 0; i < acc1.length; i++) {-->
+            <!--  acc1[i].addEventListener("click", function() {-->
+            <!--    this.classList.toggle("active");-->
+            <!--    var panel = this.nextElementSibling;-->
+            <!--    if (panel.style.display === "block") {-->
+            <!--      panel.style.display = "none";-->
+            <!--    } else {-->
+            <!--      panel.style.display = "block";-->
+            <!--    }-->
+            <!--  });-->
+            <!--}-->
+            <!--</script>-->
+
+            <!--</div>-->
+            <hr>
+            <center>powered by
+                <br><img src="https://www.cloudvector.com/wp-content/uploads/2020/02/Cloud-Vector-Color-Logo-1.png" width="60" height="40"></center>
+            <center>
+                <h4> Community Edition: <a href="{{ ce_url }}">{{ ce_url }}</a>  </h4></center>
+            <!--    <h4> Recording: {{ ce_recorder }} </h4></center>-->
+            <hr>
+</body>
+
+</html>
