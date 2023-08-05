@@ -1,0 +1,37 @@
+Metadata-Version: 2.1
+Name: bbo-calibcam
+Version: 2.1.0
+Summary: Calibrate intrinsic and extrinsic parameters of cameras with charuco boards
+Home-page: https://github.com/bbo-lab/calibcam
+Author: BBO-lab @ caesar
+Author-email: kay-michael.voit@caesar.de
+License: BSD
+Description: # calibcam
+        A charuco based calibrator for camera setups (intrinsic and extrinsic coordinates).
+        
+        # Installation
+        
+        ## Windows
+        
+        1. (If not already done:) [Install Anaconda](https://docs.anaconda.com/anaconda/install/windows/)
+        2. Create conda env `conda env create -f https://raw.githubusercontent.com/bbo-lab/calibcam/main/environment.yml`
+        3. Switch to calibcam environment: `conda activate calibcam`
+        
+        
+        # Usage
+        
+        ## Windows
+        
+        1. From `[repository]/boards`, copy the appropriate board into the calibration video directory and rename to `board.npy`
+        2. Open Anaconda prompt via Start Menu
+        3. Switch to calibcam environment: `conda activate calibcam`
+        4. Run the program with `python -m calibcam --videos [LIST OF VIDEOS TO INCLUDE]`
+        
+        BBO internal MATLAB use only:
+        
+        Use MATLAB function `mcl = cameralib.helper.mcl_from_calibcam([PATH TO MAT FILE OUTPUT OF CALIBRATION])` from bboanlysis_m to generate an MCL file.
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Description-Content-Type: text/markdown
