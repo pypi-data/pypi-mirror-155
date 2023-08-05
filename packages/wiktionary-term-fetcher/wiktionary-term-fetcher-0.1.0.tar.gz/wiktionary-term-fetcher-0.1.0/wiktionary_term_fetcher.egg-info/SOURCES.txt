@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+wiktionary_fetcher/__init__.py
+wiktionary_fetcher/__main__.py
+wiktionary_term_fetcher.egg-info/PKG-INFO
+wiktionary_term_fetcher.egg-info/SOURCES.txt
+wiktionary_term_fetcher.egg-info/dependency_links.txt
+wiktionary_term_fetcher.egg-info/entry_points.txt
+wiktionary_term_fetcher.egg-info/top_level.txt

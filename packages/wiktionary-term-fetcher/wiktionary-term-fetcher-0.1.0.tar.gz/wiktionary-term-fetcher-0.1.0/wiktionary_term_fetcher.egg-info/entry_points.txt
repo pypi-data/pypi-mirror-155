@@ -1,0 +1,2 @@
+[console_scripts]
+wiktionary-fetcher = wiktionary_fetcher.__main__:main
