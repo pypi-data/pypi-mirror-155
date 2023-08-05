@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: goat-quantumcontrol
+Version: 0.0.3
+Summary: Python implementation of the quantum optimal control GOAT-algorithm
+Home-page: https://github.com/pmarkus-github/goat-quantumcontrol
+Author: Markus Plautz
+Author-email: <markus.plautz@gmx.at>
+License: UNKNOWN
+Keywords: python,quantum-control,goat,quantum-gates,quantum-computer
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+A package that allows you to use the GOAT-algorithm for the implementation of unitary gatesin quantum systems.
+
