@@ -1,0 +1,43 @@
+@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
+@prefix ricoform: <https://www.ica.org/standards/RiC/vocabularies/documentaryFormTypes#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<{{BASE_URL}}{{name}}> a rico:AgentName ;
+    rico:isOrWasAgentNameOf <{{BASE_URL}}{{eid}}#agent> ;
+    rico:textualValue "Entreprise" ;
+    rico:type "authorized" .
+
+<{{BASE_URL}}{{eid}}#inst> a rico:Instantiation ;
+    rico:identifier "C123" ;
+    rico:isInstantiationOf <{{BASE_URL}}{{eid}}> .
+
+<{{BASE_URL}}{{child_of}}#agent> rico:agentIsSourceOfAgentHierarchicalRelation <{{BASE_URL}}{{child_of}}#hierarchical_to_C123> ;
+    rico:hasOrHadSubordinate <{{BASE_URL}}{{eid}}#agent> .
+
+<{{BASE_URL}}{{parent_of}}#agent> rico:agentIsTargetOfAgentHierarchicalRelation <{{BASE_URL}}{{eid}}#hierarchical_to_P243> ;
+    rico:isOrWasSubordinateTo <{{BASE_URL}}{{eid}}#agent> .
+
+<{{BASE_URL}}{{eid}}> a rico:Record ;
+    rico:hasDocumentaryForm ricoform:AuthorityRecord ;
+    rico:describesOrDescribed <{{BASE_URL}}{{eid}}#agent> ;
+    rico:hasInstantiation <{{BASE_URL}}{{eid}}#inst> .
+
+<{{BASE_URL}}{{eid}}#hierarchical_to_P243> a rico:AgentHierarchicalRelation ;
+    rico:agentHierarchicalRelationHasSource <{{BASE_URL}}{{eid}}#agent> ;
+    rico:agentHierarchicalRelationHasTarget <{{BASE_URL}}{{parent_of}}#agent> .
+
+<{{BASE_URL}}{{child_of}}#hierarchical_to_C123> a rico:AgentHierarchicalRelation ;
+    rico:agentHierarchicalRelationHasSource <{{BASE_URL}}{{child_of}}#agent> ;
+    rico:agentHierarchicalRelationHasTarget <{{BASE_URL}}{{eid}}#agent> .
+
+<{{BASE_URL}}{{eid}}#agent> a rico:Agent,
+        rico:CorporateBody ;
+    rico:agentIsSourceOfAgentHierarchicalRelation <{{BASE_URL}}{{eid}}#hierarchical_to_P243> ;
+    rico:agentIsTargetOfAgentHierarchicalRelation <{{BASE_URL}}{{child_of}}#hierarchical_to_C123> ;
+    rico:beginningDate "2010-01-01"^^xsd:date ;
+    rico:isOrWasDescribedBy <{{BASE_URL}}{{eid}}> ;
+    rico:endDate "2050-05-02"^^xsd:date ;
+    rico:hasOrHadAgentName <{{BASE_URL}}{{name}}> ;
+    rico:hasOrHadSubordinate <{{BASE_URL}}{{parent_of}}#agent> ;
+    rico:isOrWasSubordinateTo <{{BASE_URL}}{{child_of}}#agent> ;
+    rico:name "Entreprise" .

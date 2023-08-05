@@ -1,0 +1,16 @@
+recursive-include cubicweb_eac/data *.gif *.jpg *.png *.ico *.css *.js *.xml
+recursive-include test/data *.xml *.xsd *.rdf *.csv *.ttl
+include test/*.py test/*.rst test/data/bootstrap_cubes
+include cubicweb_eac/i18n/*.po
+include cubicweb_eac/i18n/*.pot
+recursive-include cubicweb_eac *.py
+include doc/Makefile
+include doc/*.rst *.py
+include tox.ini
+include *.txt
+exclude __pkginfo__.py
+exclude .gitlab-ci.yml
+exclude .yamllint
+exclude .cube-doctor.yml
+exclude .gitlab-ci-extended.yml
+exclude CHANGELOG.md

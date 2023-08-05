@@ -1,0 +1,43 @@
+@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
+@prefix ricoform: <https://www.ica.org/standards/RiC/vocabularies/documentaryFormTypes#> .
+
+<{{BASE_URL}}{{name_eid}}> a rico:AgentName ;
+    rico:isOrWasAgentNameOf <{{BASE_URL}}{{eid}}#agent> ;
+    rico:textualValue "Famille Pigeon" ;
+    rico:type "authorized" .
+
+<{{BASE_URL}}{{eid}}#inst> a rico:Instantiation ;
+    rico:identifier "F123" ;
+    rico:isInstantiationOf <{{BASE_URL}}{{eid}}> .
+
+<{{BASE_URL}}{{eid}}> a rico:Record ;
+    rico:describesOrDescribed <{{BASE_URL}}{{eid}}#agent> ;
+    rico:hasDocumentaryForm ricoform:AuthorityRecord ;
+    rico:hasInstantiation <{{BASE_URL}}{{eid}}#inst> .
+
+<{{BASE_URL}}{{ar_eid}}#agent> rico:agentIsConnectedToAgentRelation <{{BASE_URL}}{{eid}}#family_to_F234> ;
+    rico:isAgentAssociatedWithAgent <{{BASE_URL}}{{eid}}#agent> .
+
+<{{BASE_URL}}{{p_eid}}#family_to_F123> a rico:MembershipRelation ;
+    rico:membershipRelationHasSource <{{BASE_URL}}{{eid}}#agent> ;
+    rico:membershipRelationHasTarget <{{BASE_URL}}{{p_eid}}#agent> .
+
+<{{BASE_URL}}{{p_eid}}#agent> rico:isOrWasMemberOf <{{BASE_URL}}{{eid}}#agent> ;
+    rico:personIsTargetOfMembershipRelation <{{BASE_URL}}{{p_eid}}#family_to_F123> .
+
+
+<{{BASE_URL}}{{eid}}#family_to_F234> a rico:AgentToAgentRelation ;
+    rico:agentRelationConnects <{{BASE_URL}}{{eid}}#agent>,
+        <{{BASE_URL}}{{ar_eid}}#agent> .
+
+<{{BASE_URL}}{{eid}}#agent> a rico:Agent,
+        rico:Family ;
+    rico:agentIsConnectedToAgentRelation <{{BASE_URL}}{{eid}}#family_to_F234> ;
+    rico:isOrWasDescribedBy <{{BASE_URL}}{{eid}}> ;
+    rico:hasOrHadAgentName <{{BASE_URL}}{{name_eid}}> ;
+    rico:isAgentAssociatedWithAgent <{{BASE_URL}}{{ar_eid}}#agent> ;
+    rico:groupIsSourceOfMembershipRelation <{{BASE_URL}}{{p_eid}}#family_to_F123> ;
+    rico:hasOrHadMember <{{BASE_URL}}{{p_eid}}#agent> ;
+    rico:name "Famille Pigeon" .
+
+

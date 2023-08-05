@@ -1,0 +1,70 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rico: <https://www.ica.org/standards/RiC/ontology#> .
+@prefix ricoform: <https://www.ica.org/standards/RiC/vocabularies/documentaryFormTypes#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<{{BASE_URL}}{{name}}> a rico:AgentName ;
+    rico:isOrWasAgentNameOf <{{BASE_URL}}{{eid}}#agent> ;
+    rico:textualValue "Jean Jacques" ;
+    rico:type "authorized" .
+
+<{{BASE_URL}}{{eid}}#inst> a rico:Instantiation ;
+    rico:identifier "A123" ;
+    rico:isInstantiationOf <{{BASE_URL}}{{eid}}> .
+
+<{{BASE_URL}}{{fam1}}#agent> rico:hasFamilyAssociationWith <{{BASE_URL}}{{eid}}#agent> ;
+    rico:personHasFamilyRelation <{{BASE_URL}}{{eid}}#family_to_B123> .
+
+<{{BASE_URL}}{{fam2}}#agent> rico:hasFamilyAssociationWith <{{BASE_URL}}{{eid}}#agent> ;
+    rico:personHasFamilyRelation <{{BASE_URL}}{{eid}}#family_to_B234> .
+
+<{{BASE_URL}}{{occupation}}> a rico:OccupationType ;
+    rdfs:label "fan de poules" ;
+    rico:isOrWasOccupationTypeOf <{{BASE_URL}}{{eid}}#agent> .
+
+<{{BASE_URL}}{{eid}}#family_to_B123> a rico:FamilyRelation ;
+    rico:familyRelationConnects <{{BASE_URL}}{{fam1}}#agent>,
+        <{{BASE_URL}}{{eid}}#agent> .
+
+<{{BASE_URL}}{{eid}}#family_to_B234> a rico:FamilyRelation ;
+    rico:familyRelationConnects <{{BASE_URL}}{{fam2}}#agent>,
+        <{{BASE_URL}}{{eid}}#agent> .
+
+<{{BASE_URL}}{{eid}}> a rico:Record ;
+    rico:describesOrDescribed <{{BASE_URL}}{{eid}}#agent> ;
+    rico:hasDocumentaryForm ricoform:AuthorityRecord ;
+    rico:hasInstantiation <{{BASE_URL}}{{eid}}#inst> .
+
+<{{BASE_URL}}{{family}}#agent> rico:groupIsSourceOfMembershipRelation <{{BASE_URL}}{{eid}}#family_to_F123> ;
+    rico:hasOrHadMember <{{BASE_URL}}{{eid}}#agent> .
+
+<{{BASE_URL}}{{eid}}#family_to_F123> a rico:MembershipRelation ;
+    rico:membershipRelationHasSource <{{BASE_URL}}{{family}}#agent> ;
+    rico:membershipRelationHasTarget <{{BASE_URL}}{{eid}}#agent> .
+
+<{{BASE_URL}}{{eid}}#agent> a rico:Agent,
+        rico:Person ;
+    rico:agentIsTargetOfPerformanceRelation _:N99fdb5f2c68c49ca964757cf2f695b1e ;
+    rico:birthDate "2010-01-01"^^xsd:date ;
+    rico:deathDate "2050-05-02"^^xsd:date ;
+    rico:isOrWasDescribedBy <{{BASE_URL}}{{eid}}> ;
+    rico:hasFamilyAssociationWith <{{BASE_URL}}{{fam1}}#agent>,
+        <{{BASE_URL}}{{fam2}}#agent> ;
+    rico:hasOrHadAgentName <{{BASE_URL}}{{name}}> ;
+    rico:hasOrHadOccupationOfType <{{BASE_URL}}{{occupation}}> ;
+    rico:isOrWasMemberOf <{{BASE_URL}}{{family}}#agent> ;
+    rico:name "Jean Jacques" ;
+    rico:performsOrPerformed _:N5264360765f4419fa567c3dff26adc17 ;
+    rico:personHasFamilyRelation <{{BASE_URL}}{{eid}}#family_to_B123>,
+        <{{BASE_URL}}{{eid}}#family_to_B234> ;
+    rico:personIsTargetOfMembershipRelation <{{BASE_URL}}{{eid}}#family_to_F123> .
+
+_:N5264360765f4419fa567c3dff26adc17 a rico:Activity ;
+    rico:activityIsSourceOfPerformanceRelation _:N99fdb5f2c68c49ca964757cf2f695b1e ;
+    rico:hasActivityType <{{BASE_URL}}{{occupation}}> ;
+    rico:isOrWasPerformedBy <{{BASE_URL}}{{eid}}#agent> .
+
+_:N99fdb5f2c68c49ca964757cf2f695b1e a rico:PerformanceRelation ;
+    rico:performanceRelationHasSource _:N5264360765f4419fa567c3dff26adc17 ;
+    rico:performanceRelationHasTarget <{{BASE_URL}}{{eid}}#agent> .
+

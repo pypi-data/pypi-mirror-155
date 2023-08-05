@@ -1,0 +1,12 @@
+@prefix schema: <http://schema.org/> .
+
+<{{BASE_URL}}{{eid}}> a schema:Person ;
+    schema:birthDate "2010-01-01" ;
+    schema:deathDate "2050-05-02" ;
+    schema:description "loutre gentille" ;
+    schema:hasOccupation "fan de poules" ;
+    schema:name "Jean Jacques" ;
+    schema:relatedTo "Titi",
+        "Toto", "Famille Poulet";
+    schema:url "{{BASE_URL}}{{eid}}" .
+
