@@ -1,0 +1,19 @@
+include tox.ini
+recursive-include doc *.xml
+recursive-include doc *.html
+include doc/*
+include ChangeLog
+include COPYING
+include COPYING.LESSER
+include README.rst
+recursive-include examples *.py
+include __pkginfo__.py
+include test/__profile__.py
+
+exclude announce.txt
+
+exclude .yamllint
+exclude .gitlab-ci.yml
+exclude .cube-doctor.yml
+exclude .hg-format-source
+include CHANGELOG.md
