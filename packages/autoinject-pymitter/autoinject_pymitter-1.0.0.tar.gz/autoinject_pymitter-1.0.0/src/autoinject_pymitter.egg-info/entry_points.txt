@@ -1,0 +1,2 @@
+[autoinject.registrars]
+pymitter = autoinject_pymitter:_register_event_emitter
