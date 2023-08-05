@@ -1,0 +1,101 @@
+{{py:
+from mapproxy.compat.modules import escape
+import textwrap
+
+wrapper = textwrap.TextWrapper(replace_whitespace=False, width=90,
+                               break_long_words=False)
+def strip(s):
+    return s.split('/')[1]
+
+menu_title = "WMS %s %s" % (layer.name,srs)
+jscript_functions=None
+}}
+{{def jscript_openlayers}}
+<script src="static/OpenLayers.js"></script>
+<script type="text/javascript">
+    var map;
+    function init(){
+        OpenLayers.Util.onImageLoadErrorColor = "transparent";
+
+        map = new OpenLayers.Map('map', {
+          maxResolution: {{res}},
+          maxExtent: new OpenLayers.Bounds({{', '.join(str(s) for s in bbox)}}),
+          projection: new OpenLayers.Projection("{{srs}}"),
+          numZoomLevels: 22
+        });
+        var layer = new OpenLayers.Layer.WMS( "WMS {{layer.name}}",
+            "../service?",
+            {layers: "{{layer.name}}", format: "{{format}}", srs:"{{srs}}",
+            {{if layer.dimensions}}{{for d in layer.dimensions.keys()}}"{{d}}": "{{layer.dimensions[d].default}}",{{endfor}}{{endif}}
+             exceptions: "application/vnd.ogc.se_inimage"{{if format == 'image/png'}}, transparent: true{{endif}}},
+            {singleTile: true, ratio: 1, isBaseLayer: true} );
+
+        map.addLayer(layer);
+        map.zoomToMaxExtent();
+
+        
+    }
+
+    function setDimension (layer, dimension, value) {
+            layer.params[dimension.toUpperCase()] = value;
+            layer.redraw();
+    }
+</script>
+{{enddef}}
+            <h2>Openlayers Client - Layer {{layer.name}}</h2>
+            <form action="" method="GET">
+                <table>
+                    <tr>
+                        <th>Coordinate System</th>
+                        <th>Image format</th>
+                        {{for dim in layer.dimensions}}
+                        <th>{{str(dim)}}</th>
+                        {{endfor}}
+                    </tr>
+                    <tr>
+                        <td>
+                            <select name="srs" onchange="this.form.submit()">
+                                {{for srs_name, srs_code in layer_srs(layer)}}
+                                    {{if srs_code == srs}}
+                                    <option selected value="{{srs_code}}">{{srs_name}}</option>
+                                    {{else}}
+                                    <option value="{{srs_code}}">{{srs_name}}</option>
+                                    {{endif}}
+                                {{endfor}}
+                            </select>
+                        </td>
+                        <td>
+                            <select name="format" onchange="this.form.submit()">
+                            {{for image_format in image_formats}}
+                                {{if image_format == format}}
+                                <option selected value="{{image_format}}">{{image_format | strip}}</option>
+                                {{else}}
+                                <option value="{{image_format}}">{{image_format | strip}}</option>
+                                {{endif}}
+                            {{endfor}}
+                            </select>
+                        </td>
+                        {{for dim in layer.dimensions}}
+                            <td>
+                            <select name="{{str(dim)}}" size="1" onchange="setDimension(map.layers[0], &quot;{{str(dim)}}&quot;, this.value);">
+                            {{for value in layer.dimensions[dim]}}
+                                {{if value == layer.dimensions[dim].default}}
+                                    <option value="{{value}}" selected="selected">{{value}}</option>
+                                {{else}}
+                                    <option value="{{value}}">{{value}}</option>
+                                {{endif}}
+                            {{endfor}}
+                            </select>
+                      </td>
+                      {{endfor}}
+                    </tr>
+                </table>
+                <input type="hidden" name="wms_layer" value="{{layer.name}}">
+              </form>
+            <div id='map'></div>
+            <h3>JavaScript code</h3>
+            <pre>
+{{for line in jscript_openlayers().split('\n')}}
+{{escape(wrapper.fill(line))}}
+{{endfor}}
+            </pre>
