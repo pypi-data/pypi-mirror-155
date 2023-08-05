@@ -1,0 +1,44 @@
+Metadata-Version: 2.1
+Name: requests-iam-session
+Version: 0.2.2
+Summary: AWSSession class that extends BaseUrlSession from requests and automatically authenticates through IAM.
+Home-page: https://github.com/epsyhealth/requests-iam-session
+License: MIT
+Keywords: aws,iam,requests
+Author: Epsy Engineering
+Author-email: engineering@epsyhealth.com
+Requires-Python: >=3.7,<4.0
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Requires-Dist: aws-requests-auth (>=0.4,<0.5)
+Requires-Dist: boto3 (>=1.16,<2.0)
+Requires-Dist: requests (>=2.0,<3.0)
+Requires-Dist: requests-toolbelt (>=0.9,<0.10)
+Project-URL: Repository, https://github.com/epsyhealth/requests-iam-session
+Description-Content-Type: text/markdown
+
+# requests-iam-session
+
+AWSSession class that extends [BaseUrlSession](https://toolbelt.readthedocs.io/en/latest/sessions.html) from [requests](https://docs.python-requests.org/en/master/) and automatically authenticates through IAM. 
+
+## Installation
+
+```
+poetry add requests-iam-session
+```
+
+## Usage example
+```python
+from requests_iam_session import AWSSession
+
+session = AWSSession("https://example.com/")
+response = session.get("/users/1")
+
+print(response.json())
+```
+
