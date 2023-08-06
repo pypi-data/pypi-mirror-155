@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: webvid
+Version: 0.0.7
+Summary: download videos from multiple websites
+Home-page: 
+Author: Subrata
+Author-email: subratamondal11@gmail.com
+Requires-Dist: selenium (==4.2.0)
+Requires-Dist: colorama (==0.4.4)
+Requires-Dist: ffmpeg-python (==0.2.0)
+Requires-Dist: m3u8 (==2.0.0)
+Requires-Dist: requests (==2.25.1)
+
