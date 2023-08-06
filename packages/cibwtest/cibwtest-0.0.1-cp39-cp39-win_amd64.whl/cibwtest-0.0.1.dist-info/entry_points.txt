@@ -1,0 +1,2 @@
+[console_scripts]
+cibwtest = cibwtest._cli:cli
