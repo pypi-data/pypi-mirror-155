@@ -1,0 +1,43 @@
+Metadata-Version: 2.1
+Name: LogColorHelper-jingle1267
+Version: 0.1.8
+Summary: Log with color for python.
+Home-page: https://github.com/jingle1267/LogColorHelper
+Author: jingle1267
+Author-email: jingle1267@163.com
+Project-URL: Bug Tracker, https://github.com/jingle1267/LogColorHelper/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# LogColorHelper
+
+Log with color for python.
+
+![preview](./preview.png)
+
+### How to use
+
+#### 1. Install
+
+```cmd
+python3 -m pip install LogColorHelper
+```
+
+#### 2. Import
+
+```python
+from ihongqiqu.LogColorHelper import LogColorHelper
+```
+
+#### 2. Use
+
+```python
+LogColorHelper.yellow('yellow log')
+LogColorHelper.green('green log')
+LogColorHelper.red('red log')
+LogColorHelper.p('normal log')
+```
