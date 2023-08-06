@@ -1,0 +1,18 @@
+[console_scripts]
+bcd = bin.bcdata:main
+bcpnp = bin.bcpnp:main
+clb = bin.language:main
+ds = bin.datasource:main
+excel = bin.excel:main
+exp = bin.experience:main
+files = utils.files:main
+lmia = bin.lmia:main
+mmc = bin.modelcheck:main
+pdf = utils.pdf:main
+pdff = bin.pdffiller:main
+pr = bin.pr:main
+prd = bin.prdata:main
+qa = bin.quickassess:main
+recruit = bin.recruit:main
+trv = bin.trv:main
+
