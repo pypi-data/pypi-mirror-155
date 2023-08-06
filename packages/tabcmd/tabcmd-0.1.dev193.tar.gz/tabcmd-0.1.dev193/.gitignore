@@ -1,0 +1,42 @@
+# general dev/ide files
+*.log
+*.vscode
+*.csv
+.idea
+*.DS_Store
+
+# python build files
+build/
+dist/
+*.egg-info/
+*.egg
+eggs/
+.eggs/
+__pycache__/
+*.pytest_cache
+*.pyc
+*.pkl
+.coverage
+
+# code coverage outputs
+.coverage
+pytest.xml
+
+# content
+# todo probably want to add a workbook and ds in /res for getting started easily
+*.pdf
+*.png
+*.twbx
+*.hyper
+*.twb
+*.twbr
+html
+*.html
+*.twbr
+_version.py
+**/credentials.py
+*.txt
+
+# doit
+.doit.*
+
