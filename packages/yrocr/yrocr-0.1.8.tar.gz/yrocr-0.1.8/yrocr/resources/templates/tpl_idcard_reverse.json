@@ -1,0 +1,41 @@
+{
+  "name": "身份证_反面",
+  "imageHeight": 3509,
+  "imageWidth": 2480,
+  "anchors": [
+    {
+      "text": "中华人民共和国",
+      "left": 743,
+      "top": 1179,
+      "width": 625,
+      "height": 86,
+      "prefix_match": "no"
+    },
+    {
+      "text": "居民身份证",
+      "left": 693,
+      "top": 1309,
+      "width": 729,
+      "height": 116,
+      "prefix_match": "no"
+    }
+  ],
+  "recognition_areas": [
+    {
+      "field_name": "签发机关",
+      "show_name": "issue_org",
+      "left": 604,
+      "top": 1618,
+      "width": 856,
+      "height": 82
+    },
+    {
+      "field_name": "有效期限",
+      "show_name": "validate_date",
+      "left": 604,
+      "top": 1739,
+      "width": 723,
+      "height": 102
+    }
+  ]
+}
