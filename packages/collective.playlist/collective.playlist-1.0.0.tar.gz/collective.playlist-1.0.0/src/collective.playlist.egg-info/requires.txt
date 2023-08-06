@@ -1,0 +1,10 @@
+plone.app.dexterity
+plone.api
+Products.GenericSetup>=1.8.2
+setuptools
+z3c.jbot
+
+[test]
+plone.testing>=5.0.0
+plone.app.testing[robot]
+plone.app.robotframework
