@@ -1,0 +1,53 @@
+Metadata-Version: 2.1
+Name: bored_api
+Version: 1.1.0
+Summary: The unofficial async API wrapper for http://www.boredapi.com/
+Home-page: https://github.com/Damego/async-bored-api
+Author: Damego
+Author-email: danyabatueff@gmail.com
+License: MIT License
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Topic :: Internet
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Utilities
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# async-bored-api
+The unofficial async API wrapper for http://www.boredapi.com/
+
+## Installing
+`pip install --upgrade bored_api`
+
+## Usage
+Here is simple example of usage.
+```py
+import asyncio
+
+import bored_api
+
+async def main():
+  client = bored_api.BoredClient()
+  activity = await client.get_by_type(bored_api.ActivityType.BUSYWORK)
+  print(activity.activity)
+
+asyncio.run(main())
+```
+
+## Documentation and API Reference:
+
+https://damego.gitbook.io/async-bored-api/
+
+
