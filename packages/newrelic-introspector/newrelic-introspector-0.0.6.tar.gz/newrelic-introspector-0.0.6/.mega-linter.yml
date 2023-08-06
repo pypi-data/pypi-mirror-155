@@ -1,0 +1,14 @@
+# Configuration file for Mega-Linter
+# See all available variables at https://nvuillam.github.io/mega-linter/configuration/ and in linters documentation
+
+APPLY_FIXES: none # all, none, or list of linter keys
+DEFAULT_BRANCH: main # Usually master or main
+ENABLE: # If you use ENABLE variable, all other languages/formats/tooling-formats will be disabled by default
+  - PYTHON
+  - DOCKERFILE
+  - YAML
+DISABLE_LINTERS:
+  - YAML_V8R
+SHOW_ELAPSED_TIME: true
+FILEIO_REPORTER: false
+FILTER_REGEX_EXCLUDE: (.*venv/.*)|(.*\.egg.*)
