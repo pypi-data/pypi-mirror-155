@@ -1,0 +1,16 @@
+.gitignore
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+.github/workflows/publish-to-test-pypi.yml
+jdutable/__init__.py
+jdutable/tableWriter.py
+jdutable/version.py
+jdutable.egg-info/PKG-INFO
+jdutable.egg-info/SOURCES.txt
+jdutable.egg-info/dependency_links.txt
+jdutable.egg-info/requires.txt
+jdutable.egg-info/top_level.txt
+jdutable.egg-info/zip-safe
