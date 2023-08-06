@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+src/ipidea_proxy/__init__.py
+src/ipidea_proxy/client.py
+src/ipidea_proxy.egg-info/PKG-INFO
+src/ipidea_proxy.egg-info/SOURCES.txt
+src/ipidea_proxy.egg-info/dependency_links.txt
+src/ipidea_proxy.egg-info/top_level.txt
