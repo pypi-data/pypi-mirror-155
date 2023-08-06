@@ -1,0 +1,76 @@
+Metadata-Version: 2.1
+Name: daxmod
+Version: 0.1.5
+Summary: Daxmod. A python toolbox for text classification
+Home-page: https://github.com/Authentic10/daxmod
+Download-URL: https://pypi.org/project/daxmod
+Author: Ahmed Tchagnaou
+Author-email: ahmed.tchagnaou@etu.univ-tours.fr
+License: BSD 2-Clause License
+Project-URL: Bug Tracker, https://github.com/Authentic10/daxmod/issues
+Keywords: python,text classification
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Topic :: Scientific/Engineering
+Classifier: License :: OSI Approved :: BSD License
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: joblib (>=1.1.0)
+Requires-Dist: numpy (>=1.21.4)
+Requires-Dist: pandas (>=1.3.4)
+Requires-Dist: scikit-learn (>=1.0.1)
+Provides-Extra: pretrained
+Requires-Dist: tensorflow (>=2.7.0) ; extra == 'pretrained'
+Requires-Dist: tensorflow-hub (>=0.12.0) ; extra == 'pretrained'
+Requires-Dist: tensorflow-text (>=2.7.3) ; extra == 'pretrained'
+
+# Daxmod
+
+daxmod is a Python module for text classification
+
+## Installation
+
+### Dependencies
+
+daxmod requires:
+
+- Python (>=3.8)
+
+- joblib (>=1.1.0)
+
+- numpy (>=1.21.4)
+
+- pandas (>=1.3.4)
+
+- scikit-learn (>=1.0.1)
+
+dependencies for pretrained models:
+
+- tensorflow (>=2.7.0)
+
+- tensorflow_hub (>=0.12.0)
+
+- tensorflow_text (>=2.7.3)
+
+### User installation
+
+#### Installation without pretrained dependencies
+
+```bash
+pip install -U daxmod
+```
+
+#### Installation with pretrained dependencies
+
+```bash
+pip install -U daxmod[pretrained]
+```
+
+### Source code
+
+```bash
+git clone https://github.com/Authentic10/daxmod.git
+```
