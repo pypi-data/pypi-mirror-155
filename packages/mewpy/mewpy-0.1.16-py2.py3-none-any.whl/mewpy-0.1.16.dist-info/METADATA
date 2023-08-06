@@ -1,0 +1,53 @@
+Metadata-Version: 2.1
+Name: mewpy
+Version: 0.1.16
+Summary: mewpy - Metabolic Engineering in Python 
+Home-page: https://github.com/BioSystemsUM/mewpy/
+Author: BiSBII CEB University of Minho
+Author-email: vpereira@ceb.uminho.pt
+License: Apache License Version 2.0
+Project-URL: Bug Tracker, https://github.com/BioSystemsUM/mewpy/issues
+Project-URL: Documentation, https://mewpy.readthedocs.io
+Keywords: strain optimization
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: cobra
+Requires-Dist: inspyred
+Requires-Dist: jmetalpy
+Requires-Dist: reframed
+Requires-Dist: networkx
+Requires-Dist: matplotlib (<3.3)
+Requires-Dist: joblib
+Requires-Dist: tdqm
+
+MEWpy
+======
+
+Metabolic Engineering Workbench 
+The Python framework under development will allow the strain design of single and microbial community cultures.
+This documents presents a brief description of the framework and the main options taken during the development.
+
+Documentation
+~~~~~~~~~~~~~
+
+For documentation and API please check: `https://mewpy.readthedocs.io <https://mewpy.readthedocs.io>`_
+
+
+Instalation
+~~~~~~~~~~~
+
+pip install mewpy
+
+
+Credits and License
+~~~~~~~~~~~~~~~~~~~
+
+Developed at:
+-  Centre of Biological Engineering, University of Minho (2019-)
+
+
+
