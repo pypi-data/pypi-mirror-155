@@ -1,0 +1,59 @@
+#!/usr/bin/env python3
+
+from restoreEpics import writeMatrix, restoreEpics
+import argparse
+import numpy as np
+import traceback
+
+
+def grabInputArgs():
+    parser = argparse.ArgumentParser(
+        description='This writes matrix coefficients from a text file to '
+                    'EPICS channels. Note that all indices start from 1 by '
+                    'convention for EPICS channels.'
+        )
+    parser.add_argument('inMatFile', type=str, help='Input Matrix file name')
+    parser.add_argument('basename', type=str, help='Matrix EPICS base name')
+    parser.add_argument('-r', '--rows', type=int,
+                        help='Number of rows to write. Default None(all)',
+                        default=None)
+    parser.add_argument('-c', '--cols', type=int,
+                        help='Number of columns to write. Default None(all)',
+                        default=None)
+    parser.add_argument('--firstRow', type=int,
+                        help='First index of output. Default 1',
+                        default=1)
+    parser.add_argument('--firstCol', type=int,
+                        help='First index of input. Default 1',
+                        default=1)
+    parser.add_argument('--fileRowInd', type=int,
+                        help='First row index in file. Default 1',
+                        default=1)
+    parser.add_argument('--fileColInd', type=int,
+                        help='First col index in file. Default 1',
+                        default=1)
+    parser.add_argument('-t', '--tramp', type=int,
+                        help='Ramping time when chaning values. Default 3',
+                        default=3)
+    parser.add_argument('-s', '--suffix', type=str,
+                        help='Any suffix after the matrix indices in channel '
+                             'names. Default is None.')
+
+    return parser.parse_args()
+
+
+if __name__ == '__main__':
+    args = grabInputArgs()
+    inpMat = np.loadtxt(args.inMatFile, ndmin=2)[args.fileRowInd-1:,
+                                                 args.fileColInd-1:]
+    if args.cols is not None:
+        inpMat = inpMat[:, :args.cols]
+    if args.rows is not None:
+        inpMat = inpMat[:args.rows, :]
+    try:
+        writeMatrix(basename=args.basename, inpMat=inpMat,
+                    firstRow=args.firstRow, firstCol=args.firstCol,
+                    suffix=args.suffix, tramp=args.tramp)
+    except BaseException:
+        restoreEpics()
+        traceback.print_exc()
