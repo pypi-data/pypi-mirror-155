@@ -1,0 +1,74 @@
+Metadata-Version: 2.1
+Name: hivemind
+Version: 1.1.0
+Summary: Decentralized deep learning in PyTorch
+Home-page: https://github.com/learning-at-home/hivemind
+Author: Learning@home & contributors
+Author-email: hivemind-team@hotmail.com
+License: MIT
+Keywords: pytorch,deep learning,machine learning,gpu,distributed computing,volunteer computing,dht
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Software Development
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+License-File: LICENSE
+Requires-Dist: PyYAML
+Requires-Dist: torch (>=1.6.0)
+Requires-Dist: numpy (>=1.17)
+Requires-Dist: scipy (>=1.2.1)
+Requires-Dist: prefetch-generator (>=1.0.1)
+Requires-Dist: msgpack (>=0.5.6)
+Requires-Dist: sortedcontainers
+Requires-Dist: uvloop (>=0.14.0)
+Requires-Dist: grpcio-tools (>=1.33.2)
+Requires-Dist: protobuf (>=3.12.2)
+Requires-Dist: configargparse (>=1.2.3)
+Requires-Dist: multiaddr (>=0.0.9)
+Requires-Dist: pymultihash (>=0.8.2)
+Requires-Dist: cryptography (>=3.4.6)
+Requires-Dist: pydantic (>=1.8.1)
+Provides-Extra: all
+Requires-Dist: pytest (==6.2.5) ; extra == 'all'
+Requires-Dist: pytest-forked ; extra == 'all'
+Requires-Dist: pytest-asyncio (==0.16.0) ; extra == 'all'
+Requires-Dist: pytest-cov ; extra == 'all'
+Requires-Dist: coverage (==6.0.2) ; extra == 'all'
+Requires-Dist: tqdm ; extra == 'all'
+Requires-Dist: scikit-learn ; extra == 'all'
+Requires-Dist: torchvision ; extra == 'all'
+Requires-Dist: black (==22.3.0) ; extra == 'all'
+Requires-Dist: isort (==5.10.1) ; extra == 'all'
+Requires-Dist: psutil ; extra == 'all'
+Requires-Dist: recommonmark (==0.5.0) ; extra == 'all'
+Requires-Dist: sphinx-rtd-theme (==0.4.3) ; extra == 'all'
+Requires-Dist: docutils (==0.16) ; extra == 'all'
+Requires-Dist: sphinx (==4.2.0) ; extra == 'all'
+Provides-Extra: dev
+Requires-Dist: pytest (==6.2.5) ; extra == 'dev'
+Requires-Dist: pytest-forked ; extra == 'dev'
+Requires-Dist: pytest-asyncio (==0.16.0) ; extra == 'dev'
+Requires-Dist: pytest-cov ; extra == 'dev'
+Requires-Dist: coverage (==6.0.2) ; extra == 'dev'
+Requires-Dist: tqdm ; extra == 'dev'
+Requires-Dist: scikit-learn ; extra == 'dev'
+Requires-Dist: torchvision ; extra == 'dev'
+Requires-Dist: black (==22.3.0) ; extra == 'dev'
+Requires-Dist: isort (==5.10.1) ; extra == 'dev'
+Requires-Dist: psutil ; extra == 'dev'
+Provides-Extra: docs
+Requires-Dist: recommonmark (==0.5.0) ; extra == 'docs'
+Requires-Dist: sphinx-rtd-theme (==0.4.3) ; extra == 'docs'
+Requires-Dist: docutils (==0.16) ; extra == 'docs'
+Requires-Dist: sphinx (==4.2.0) ; extra == 'docs'
+
+Decentralized deep learning in PyTorch. Built to train models on thousands of volunteers across the world.
