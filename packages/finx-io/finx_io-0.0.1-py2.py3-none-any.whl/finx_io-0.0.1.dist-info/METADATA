@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: finx-io
+Version: 0.0.1
+Summary: FinX API SDK
+Home-page: https://github.com/FinX-IO/sdk
+Author: FinX Capital Markets LLC
+Author-email: info@finx.io
+License: APGL3
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3
+License-File: LICENSE
+Requires-Dist: aiohttp
+Requires-Dist: asgiref
+Requires-Dist: asyncio
+Requires-Dist: lru-dict
+Requires-Dist: wsaccel
+Requires-Dist: websocket-client
+Requires-Dist: websockets
+
