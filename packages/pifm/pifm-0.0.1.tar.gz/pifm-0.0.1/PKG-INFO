@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: pifm
+Version: 0.0.1
+Summary: Python In-Formal Methods Library
+Author: Tom Kunc
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
+# Welcome to the pifm repository
+
+pifm is a tool to teach in-formal methods.
+
+## Initial setup
+
+To use the system, you can do the following:
+
+```sh
+$ git clone git@github.com:COMP6721UNSW/pifm.git pifm
+$ cd pifm
+$ run_pifm ./my_example.py
+```
+
+
