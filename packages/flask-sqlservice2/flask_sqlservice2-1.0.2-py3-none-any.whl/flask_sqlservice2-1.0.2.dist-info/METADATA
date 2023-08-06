@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: flask-sqlservice2
+Version: 1.0.2
+Summary: Flask extension for integration with sqlservice package > 2.0
+Author: Ahmad Yahia
+Keywords: flask,sql,extensions,sqlservice
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Documentation
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Python: >=3.7, <4
+Requires-Dist: sqlservice
+Requires-Dist: flask
+
