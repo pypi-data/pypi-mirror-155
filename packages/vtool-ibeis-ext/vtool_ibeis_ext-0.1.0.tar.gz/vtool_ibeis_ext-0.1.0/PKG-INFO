@@ -1,0 +1,38 @@
+Metadata-Version: 2.1
+Name: vtool_ibeis_ext
+Version: 0.1.0
+Summary: The vtool_ibeis_ext Module
+Home-page: https://github.com/Erotemic/vtool_ibeis_ext
+Author: Jon Crall
+Author-email: erotemic@gmail.com
+License: Apache 2
+Description: 
+        The vtool_ibeis_ext Module
+        ==========================
+        
+        Contains the binary spatial verification code used by vtool_ibeis
+        
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Utilities
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.7
+Description-Content-Type: text/x-rst
+Provides-Extra: all
+Provides-Extra: all-strict
+Provides-Extra: graphics
+Provides-Extra: graphics-strict
+Provides-Extra: headless
+Provides-Extra: headless-strict
+Provides-Extra: optional
+Provides-Extra: optional-strict
+Provides-Extra: runtime-strict
+Provides-Extra: tests
+Provides-Extra: tests-strict
