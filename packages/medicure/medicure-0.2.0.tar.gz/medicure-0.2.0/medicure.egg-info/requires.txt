@@ -1,0 +1,13 @@
+tmdbsimple
+pymediainfo
+click
+typer
+patch
+
+[develop]
+pre-commit
+
+[test]
+pytest
+pytest-cov
+varname
