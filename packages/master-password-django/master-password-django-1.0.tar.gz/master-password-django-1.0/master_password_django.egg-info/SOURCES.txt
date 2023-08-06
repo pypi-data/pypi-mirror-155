@@ -1,0 +1,14 @@
+LICENCE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+master_password/__init__.py
+master_password/auth/__init__.py
+master_password/auth/backends.py
+master_password_django.egg-info/PKG-INFO
+master_password_django.egg-info/SOURCES.txt
+master_password_django.egg-info/dependency_links.txt
+master_password_django.egg-info/requires.txt
+master_password_django.egg-info/top_level.txt
