@@ -1,0 +1,24 @@
+{
+  "unversionedId": "sdk-reference/soil/finder",
+  "id": "sdk-reference/soil/finder",
+  "isDocsHomePage": false,
+  "title": "soil.finder",
+  "description": "This module overrides Python&#x27;s import system",
+  "source": "@site/../docs/sdk-reference/soil/finder.md",
+  "slug": "/sdk-reference/soil/finder",
+  "permalink": "/docs/sdk-reference/soil/finder",
+  "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/sdk-reference/soil/finder.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "sidebar_label": "finder",
+  "sidebar": "docs",
+  "previous": {
+    "title": "soil.dictionary",
+    "permalink": "/docs/sdk-reference/soil/dictionary"
+  },
+  "next": {
+    "title": "soil.modulify",
+    "permalink": "/docs/sdk-reference/soil/modulify"
+  }
+}

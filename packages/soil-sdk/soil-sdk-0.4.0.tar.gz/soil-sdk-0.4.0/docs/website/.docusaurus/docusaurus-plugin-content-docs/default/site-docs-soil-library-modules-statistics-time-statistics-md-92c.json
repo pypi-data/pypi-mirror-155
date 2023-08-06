@@ -1,0 +1,24 @@
+{
+  "unversionedId": "soil-library/modules/statistics/time_statistics",
+  "id": "soil-library/modules/statistics/time_statistics",
+  "isDocsHomePage": false,
+  "title": "modules.statistics.time_statistics",
+  "description": "TimeStatistics Objects",
+  "source": "@site/../docs/soil-library/modules/statistics/time_statistics.md",
+  "slug": "/soil-library/modules/statistics/time_statistics",
+  "permalink": "/docs/soil-library/modules/statistics/time_statistics",
+  "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/soil-library/modules/statistics/time_statistics.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "sidebar_label": "time_statistics",
+  "sidebar": "docs",
+  "previous": {
+    "title": "modules.statistics.customstatistics",
+    "permalink": "/docs/soil-library/modules/statistics/customstatistics"
+  },
+  "next": {
+    "title": "data_structures.NBClusters",
+    "permalink": "/docs/soil-library/data_structures/NBClusters"
+  }
+}

@@ -1,0 +1,1745 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "loadedVersions": [
+        {
+          "versionName": "current",
+          "versionLabel": "Next",
+          "versionPath": "/docs",
+          "isLast": true,
+          "routePriority": -1,
+          "sidebarFilePath": "/mnt/a32aae17-c247-4851-b81b-2ab2970c96e0/amalfi/soil-sdk/docs/website/sidebars.js",
+          "docsDirPath": "/mnt/a32aae17-c247-4851-b81b-2ab2970c96e0/amalfi/soil-sdk/docs/docs",
+          "docsDirPathLocalized": "/mnt/a32aae17-c247-4851-b81b-2ab2970c96e0/amalfi/soil-sdk/docs/website/i18n/en/docusaurus-plugin-content-docs/current",
+          "mainDocId": "tutorial/get-started",
+          "sidebars": {
+            "docs": [
+              {
+                "collapsed": true,
+                "type": "category",
+                "label": "Tutorial",
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "tutorial/get-started"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "tutorial/scripts"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "tutorial/data"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "tutorial/data-structures"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "tutorial/modules"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "tutorial/logging"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "tutorial/alerts"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "tutorial/deployments"
+                  }
+                ]
+              },
+              {
+                "collapsed": true,
+                "type": "category",
+                "label": "SOIL Library",
+                "items": [
+                  {
+                    "collapsed": true,
+                    "items": [
+                      {
+                        "collapsed": true,
+                        "items": [
+                          {
+                            "type": "doc",
+                            "id": "soil-library/modules/experiment"
+                          },
+                          {
+                            "collapsed": true,
+                            "items": [
+                              {
+                                "type": "doc",
+                                "id": "soil-library/modules/clustering/NBClustering"
+                              },
+                              {
+                                "type": "doc",
+                                "id": "soil-library/modules/clustering/NBClustering_categorical"
+                              },
+                              {
+                                "collapsed": true,
+                                "items": [
+                                  {
+                                    "type": "doc",
+                                    "id": "soil-library/modules/clustering/SIDIWO/sidiwo"
+                                  }
+                                ],
+                                "label": "modules.clustering.SIDIWO",
+                                "type": "category"
+                              }
+                            ],
+                            "label": "modules.clustering",
+                            "type": "category"
+                          },
+                          {
+                            "collapsed": true,
+                            "items": [
+                              {
+                                "collapsed": true,
+                                "items": [
+                                  {
+                                    "type": "doc",
+                                    "id": "soil-library/modules/preprocessing/filters/row_filter"
+                                  },
+                                  {
+                                    "type": "doc",
+                                    "id": "soil-library/modules/preprocessing/filters/events_filter"
+                                  }
+                                ],
+                                "label": "modules.preprocessing.filters",
+                                "type": "category"
+                              }
+                            ],
+                            "label": "modules.preprocessing",
+                            "type": "category"
+                          },
+                          {
+                            "collapsed": true,
+                            "items": [
+                              {
+                                "type": "doc",
+                                "id": "soil-library/modules/itemsets/frequent_itemsets_compare"
+                              },
+                              {
+                                "type": "doc",
+                                "id": "soil-library/modules/itemsets/frequent_itemsets_hypergraph"
+                              }
+                            ],
+                            "label": "modules.itemsets",
+                            "type": "category"
+                          },
+                          {
+                            "collapsed": true,
+                            "items": [
+                              {
+                                "type": "doc",
+                                "id": "soil-library/modules/higher_order/Predictor"
+                              }
+                            ],
+                            "label": "modules.higher_order",
+                            "type": "category"
+                          },
+                          {
+                            "collapsed": true,
+                            "items": [
+                              {
+                                "type": "doc",
+                                "id": "soil-library/modules/statistics/customstatistics"
+                              },
+                              {
+                                "type": "doc",
+                                "id": "soil-library/modules/statistics/time_statistics"
+                              }
+                            ],
+                            "label": "modules.statistics",
+                            "type": "category"
+                          }
+                        ],
+                        "label": "modules",
+                        "type": "category"
+                      },
+                      {
+                        "collapsed": true,
+                        "items": [
+                          {
+                            "type": "doc",
+                            "id": "soil-library/data_structures/NBClusters"
+                          },
+                          {
+                            "type": "doc",
+                            "id": "soil-library/data_structures/hypergraph"
+                          },
+                          {
+                            "type": "doc",
+                            "id": "soil-library/data_structures/frequent_itemsets"
+                          },
+                          {
+                            "type": "doc",
+                            "id": "soil-library/data_structures/data_structure"
+                          },
+                          {
+                            "collapsed": true,
+                            "items": [
+                              {
+                                "type": "doc",
+                                "id": "soil-library/data_structures/predefined/object_ds"
+                              },
+                              {
+                                "type": "doc",
+                                "id": "soil-library/data_structures/predefined/pd_data_frame"
+                              },
+                              {
+                                "type": "doc",
+                                "id": "soil-library/data_structures/predefined/dict"
+                              },
+                              {
+                                "type": "doc",
+                                "id": "soil-library/data_structures/predefined/ndarray"
+                              },
+                              {
+                                "type": "doc",
+                                "id": "soil-library/data_structures/predefined/list"
+                              }
+                            ],
+                            "label": "data_structures.predefined",
+                            "type": "category"
+                          },
+                          {
+                            "collapsed": true,
+                            "items": [
+                              {
+                                "type": "doc",
+                                "id": "soil-library/data_structures/streams/patients"
+                              },
+                              {
+                                "type": "doc",
+                                "id": "soil-library/data_structures/streams/stream"
+                              }
+                            ],
+                            "label": "data_structures.streams",
+                            "type": "category"
+                          }
+                        ],
+                        "label": "data_structures",
+                        "type": "category"
+                      }
+                    ],
+                    "label": "Reference",
+                    "type": "category"
+                  }
+                ]
+              },
+              {
+                "collapsed": true,
+                "type": "category",
+                "label": "SDK Reference",
+                "items": [
+                  {
+                    "collapsed": true,
+                    "items": [
+                      {
+                        "collapsed": true,
+                        "items": [
+                          {
+                            "type": "doc",
+                            "id": "sdk-reference/soil/alerts/alerts"
+                          }
+                        ],
+                        "label": "soil.alerts",
+                        "type": "category"
+                      },
+                      {
+                        "collapsed": true,
+                        "items": [
+                          {
+                            "type": "doc",
+                            "id": "sdk-reference/soil/connectors/elastic_search"
+                          }
+                        ],
+                        "label": "soil.connectors",
+                        "type": "category"
+                      },
+                      {
+                        "collapsed": true,
+                        "items": [
+                          {
+                            "type": "doc",
+                            "id": "sdk-reference/soil/storage/base_storage"
+                          },
+                          {
+                            "type": "doc",
+                            "id": "sdk-reference/soil/storage/compound_storage"
+                          },
+                          {
+                            "type": "doc",
+                            "id": "sdk-reference/soil/storage/elasticsearch"
+                          },
+                          {
+                            "type": "doc",
+                            "id": "sdk-reference/soil/storage/object_storage"
+                          }
+                        ],
+                        "label": "soil.storage",
+                        "type": "category"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "sdk-reference/soil/alias"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "sdk-reference/soil/api"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "sdk-reference/soil/configuration"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "sdk-reference/soil/data"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "sdk-reference/soil/data_structure"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "sdk-reference/soil/decorator"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "sdk-reference/soil/dictionary"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "sdk-reference/soil/finder"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "sdk-reference/soil/modulify"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "sdk-reference/soil/pipeline"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "sdk-reference/soil/task"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "sdk-reference/soil/types"
+                      },
+                      {
+                        "type": "doc",
+                        "id": "sdk-reference/soil/utils"
+                      }
+                    ],
+                    "label": "soil",
+                    "type": "category"
+                  }
+                ]
+              }
+            ]
+          },
+          "permalinkToSidebar": {
+            "/docs/sdk-reference/soil/alerts/alerts": "docs",
+            "/docs/sdk-reference/soil/alias": "docs",
+            "/docs/sdk-reference/soil/api": "docs",
+            "/docs/sdk-reference/soil/configuration": "docs",
+            "/docs/sdk-reference/soil/connectors/elastic_search": "docs",
+            "/docs/sdk-reference/soil/data": "docs",
+            "/docs/sdk-reference/soil/data_structure": "docs",
+            "/docs/sdk-reference/soil/decorator": "docs",
+            "/docs/sdk-reference/soil/dictionary": "docs",
+            "/docs/sdk-reference/soil/finder": "docs",
+            "/docs/sdk-reference/soil/modulify": "docs",
+            "/docs/sdk-reference/soil/pipeline": "docs",
+            "/docs/sdk-reference/soil/storage/base_storage": "docs",
+            "/docs/sdk-reference/soil/storage/compound_storage": "docs",
+            "/docs/sdk-reference/soil/storage/elasticsearch": "docs",
+            "/docs/sdk-reference/soil/storage/object_storage": "docs",
+            "/docs/sdk-reference/soil/task": "docs",
+            "/docs/sdk-reference/soil/types": "docs",
+            "/docs/sdk-reference/soil/utils": "docs",
+            "/docs/soil-library/data_structures/data_structure": "docs",
+            "/docs/soil-library/data_structures/frequent_itemsets": "docs",
+            "/docs/soil-library/data_structures/hypergraph": "docs",
+            "/docs/soil-library/data_structures/NBClusters": "docs",
+            "/docs/soil-library/data_structures/predefined/dict": "docs",
+            "/docs/soil-library/data_structures/predefined/list": "docs",
+            "/docs/soil-library/data_structures/predefined/ndarray": "docs",
+            "/docs/soil-library/data_structures/predefined/object_ds": "docs",
+            "/docs/soil-library/data_structures/predefined/pd_data_frame": "docs",
+            "/docs/soil-library/data_structures/streams/patients": "docs",
+            "/docs/soil-library/data_structures/streams/stream": "docs",
+            "/docs/soil-library/modules/clustering/NBClustering": "docs",
+            "/docs/soil-library/modules/clustering/NBClustering_categorical": "docs",
+            "/docs/soil-library/modules/clustering/SIDIWO/sidiwo": "docs",
+            "/docs/soil-library/modules/experiment": "docs",
+            "/docs/soil-library/modules/higher_order/Predictor": "docs",
+            "/docs/soil-library/modules/itemsets/frequent_itemsets_compare": "docs",
+            "/docs/soil-library/modules/itemsets/frequent_itemsets_hypergraph": "docs",
+            "/docs/soil-library/modules/preprocessing/filters/events_filter": "docs",
+            "/docs/soil-library/modules/preprocessing/filters/row_filter": "docs",
+            "/docs/soil-library/modules/statistics/customstatistics": "docs",
+            "/docs/soil-library/modules/statistics/time_statistics": "docs",
+            "/docs/tutorial/alerts": "docs",
+            "/docs/tutorial/data": "docs",
+            "/docs/tutorial/data-structures": "docs",
+            "/docs/tutorial/deployments": "docs",
+            "/docs/tutorial/get-started": "docs",
+            "/docs/tutorial/logging": "docs",
+            "/docs/tutorial/modules": "docs",
+            "/docs/tutorial/scripts": "docs"
+          },
+          "docs": [
+            {
+              "unversionedId": "sdk-reference/soil/alerts/alerts",
+              "id": "sdk-reference/soil/alerts/alerts",
+              "isDocsHomePage": false,
+              "title": "soil.alerts.alerts",
+              "description": "This package contains calls for the alerts system.",
+              "source": "@site/../docs/sdk-reference/soil/alerts/alerts.md",
+              "slug": "/sdk-reference/soil/alerts/alerts",
+              "permalink": "/docs/sdk-reference/soil/alerts/alerts",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/sdk-reference/soil/alerts/alerts.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "alerts",
+              "sidebar": "docs",
+              "previous": {
+                "title": "data_structures.streams.stream",
+                "permalink": "/docs/soil-library/data_structures/streams/stream"
+              },
+              "next": {
+                "title": "soil.connectors.elastic_search",
+                "permalink": "/docs/sdk-reference/soil/connectors/elastic_search"
+              }
+            },
+            {
+              "unversionedId": "sdk-reference/soil/alias",
+              "id": "sdk-reference/soil/alias",
+              "isDocsHomePage": false,
+              "title": "soil.alias",
+              "description": "This package contains calls for soil alias data structures",
+              "source": "@site/../docs/sdk-reference/soil/alias.md",
+              "slug": "/sdk-reference/soil/alias",
+              "permalink": "/docs/sdk-reference/soil/alias",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/sdk-reference/soil/alias.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "alias",
+              "sidebar": "docs",
+              "previous": {
+                "title": "soil.storage.object_storage",
+                "permalink": "/docs/sdk-reference/soil/storage/object_storage"
+              },
+              "next": {
+                "title": "soil.api",
+                "permalink": "/docs/sdk-reference/soil/api"
+              }
+            },
+            {
+              "unversionedId": "sdk-reference/soil/api",
+              "id": "sdk-reference/soil/api",
+              "isDocsHomePage": false,
+              "title": "soil.api",
+              "description": "This package contains calls to the SOIL&#x27;s REST API",
+              "source": "@site/../docs/sdk-reference/soil/api.md",
+              "slug": "/sdk-reference/soil/api",
+              "permalink": "/docs/sdk-reference/soil/api",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/sdk-reference/soil/api.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "api",
+              "sidebar": "docs",
+              "previous": {
+                "title": "soil.alias",
+                "permalink": "/docs/sdk-reference/soil/alias"
+              },
+              "next": {
+                "title": "soil.configuration",
+                "permalink": "/docs/sdk-reference/soil/configuration"
+              }
+            },
+            {
+              "unversionedId": "sdk-reference/soil/configuration",
+              "id": "sdk-reference/soil/configuration",
+              "isDocsHomePage": false,
+              "title": "soil.configuration",
+              "description": "Defines the configuration for Soil",
+              "source": "@site/../docs/sdk-reference/soil/configuration.md",
+              "slug": "/sdk-reference/soil/configuration",
+              "permalink": "/docs/sdk-reference/soil/configuration",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/sdk-reference/soil/configuration.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "configuration",
+              "sidebar": "docs",
+              "previous": {
+                "title": "soil.api",
+                "permalink": "/docs/sdk-reference/soil/api"
+              },
+              "next": {
+                "title": "soil.data",
+                "permalink": "/docs/sdk-reference/soil/data"
+              }
+            },
+            {
+              "unversionedId": "sdk-reference/soil/connectors/elastic_search",
+              "id": "sdk-reference/soil/connectors/elastic_search",
+              "isDocsHomePage": false,
+              "title": "soil.connectors.elastic_search",
+              "description": "Package for Elastic Search Connector",
+              "source": "@site/../docs/sdk-reference/soil/connectors/elastic_search.md",
+              "slug": "/sdk-reference/soil/connectors/elastic_search",
+              "permalink": "/docs/sdk-reference/soil/connectors/elastic_search",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/sdk-reference/soil/connectors/elastic_search.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "elastic_search",
+              "sidebar": "docs",
+              "previous": {
+                "title": "soil.alerts.alerts",
+                "permalink": "/docs/sdk-reference/soil/alerts/alerts"
+              },
+              "next": {
+                "title": "soil.storage.base_storage",
+                "permalink": "/docs/sdk-reference/soil/storage/base_storage"
+              }
+            },
+            {
+              "unversionedId": "sdk-reference/soil/data",
+              "id": "sdk-reference/soil/data",
+              "isDocsHomePage": false,
+              "title": "soil.data",
+              "description": "Defines soil.data()",
+              "source": "@site/../docs/sdk-reference/soil/data.md",
+              "slug": "/sdk-reference/soil/data",
+              "permalink": "/docs/sdk-reference/soil/data",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/sdk-reference/soil/data.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "data",
+              "sidebar": "docs",
+              "previous": {
+                "title": "soil.configuration",
+                "permalink": "/docs/sdk-reference/soil/configuration"
+              },
+              "next": {
+                "title": "soil.data_structure",
+                "permalink": "/docs/sdk-reference/soil/data_structure"
+              }
+            },
+            {
+              "unversionedId": "sdk-reference/soil/data_structure",
+              "id": "sdk-reference/soil/data_structure",
+              "isDocsHomePage": false,
+              "title": "soil.data_structure",
+              "description": "This module implements a Data Structure",
+              "source": "@site/../docs/sdk-reference/soil/data_structure.md",
+              "slug": "/sdk-reference/soil/data_structure",
+              "permalink": "/docs/sdk-reference/soil/data_structure",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/sdk-reference/soil/data_structure.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "data_structure",
+              "sidebar": "docs",
+              "previous": {
+                "title": "soil.data",
+                "permalink": "/docs/sdk-reference/soil/data"
+              },
+              "next": {
+                "title": "soil.decorator",
+                "permalink": "/docs/sdk-reference/soil/decorator"
+              }
+            },
+            {
+              "unversionedId": "sdk-reference/soil/decorator",
+              "id": "sdk-reference/soil/decorator",
+              "isDocsHomePage": false,
+              "title": "soil.decorator",
+              "description": "soil.decorator package.",
+              "source": "@site/../docs/sdk-reference/soil/decorator.md",
+              "slug": "/sdk-reference/soil/decorator",
+              "permalink": "/docs/sdk-reference/soil/decorator",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/sdk-reference/soil/decorator.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "decorator",
+              "sidebar": "docs",
+              "previous": {
+                "title": "soil.data_structure",
+                "permalink": "/docs/sdk-reference/soil/data_structure"
+              },
+              "next": {
+                "title": "soil.dictionary",
+                "permalink": "/docs/sdk-reference/soil/dictionary"
+              }
+            },
+            {
+              "unversionedId": "sdk-reference/soil/dictionary",
+              "id": "sdk-reference/soil/dictionary",
+              "isDocsHomePage": false,
+              "title": "soil.dictionary",
+              "description": "This package contains calls for soil get dictionary",
+              "source": "@site/../docs/sdk-reference/soil/dictionary.md",
+              "slug": "/sdk-reference/soil/dictionary",
+              "permalink": "/docs/sdk-reference/soil/dictionary",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/sdk-reference/soil/dictionary.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "dictionary",
+              "sidebar": "docs",
+              "previous": {
+                "title": "soil.decorator",
+                "permalink": "/docs/sdk-reference/soil/decorator"
+              },
+              "next": {
+                "title": "soil.finder",
+                "permalink": "/docs/sdk-reference/soil/finder"
+              }
+            },
+            {
+              "unversionedId": "sdk-reference/soil/finder",
+              "id": "sdk-reference/soil/finder",
+              "isDocsHomePage": false,
+              "title": "soil.finder",
+              "description": "This module overrides Python&#x27;s import system",
+              "source": "@site/../docs/sdk-reference/soil/finder.md",
+              "slug": "/sdk-reference/soil/finder",
+              "permalink": "/docs/sdk-reference/soil/finder",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/sdk-reference/soil/finder.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "finder",
+              "sidebar": "docs",
+              "previous": {
+                "title": "soil.dictionary",
+                "permalink": "/docs/sdk-reference/soil/dictionary"
+              },
+              "next": {
+                "title": "soil.modulify",
+                "permalink": "/docs/sdk-reference/soil/modulify"
+              }
+            },
+            {
+              "unversionedId": "sdk-reference/soil/modulify",
+              "id": "sdk-reference/soil/modulify",
+              "isDocsHomePage": false,
+              "title": "soil.modulify",
+              "description": "This module defines the @modulify decorator.",
+              "source": "@site/../docs/sdk-reference/soil/modulify.md",
+              "slug": "/sdk-reference/soil/modulify",
+              "permalink": "/docs/sdk-reference/soil/modulify",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/sdk-reference/soil/modulify.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "modulify",
+              "sidebar": "docs",
+              "previous": {
+                "title": "soil.finder",
+                "permalink": "/docs/sdk-reference/soil/finder"
+              },
+              "next": {
+                "title": "soil.pipeline",
+                "permalink": "/docs/sdk-reference/soil/pipeline"
+              }
+            },
+            {
+              "unversionedId": "sdk-reference/soil/pipeline",
+              "id": "sdk-reference/soil/pipeline",
+              "isDocsHomePage": false,
+              "title": "soil.pipeline",
+              "description": "This module defines a Pipeline.",
+              "source": "@site/../docs/sdk-reference/soil/pipeline.md",
+              "slug": "/sdk-reference/soil/pipeline",
+              "permalink": "/docs/sdk-reference/soil/pipeline",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/sdk-reference/soil/pipeline.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "pipeline",
+              "sidebar": "docs",
+              "previous": {
+                "title": "soil.modulify",
+                "permalink": "/docs/sdk-reference/soil/modulify"
+              },
+              "next": {
+                "title": "soil.task",
+                "permalink": "/docs/sdk-reference/soil/task"
+              }
+            },
+            {
+              "unversionedId": "sdk-reference/soil/storage/base_storage",
+              "id": "sdk-reference/soil/storage/base_storage",
+              "isDocsHomePage": false,
+              "title": "soil.storage.base_storage",
+              "description": "Module for BaseStorage",
+              "source": "@site/../docs/sdk-reference/soil/storage/base_storage.md",
+              "slug": "/sdk-reference/soil/storage/base_storage",
+              "permalink": "/docs/sdk-reference/soil/storage/base_storage",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/sdk-reference/soil/storage/base_storage.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "base_storage",
+              "sidebar": "docs",
+              "previous": {
+                "title": "soil.connectors.elastic_search",
+                "permalink": "/docs/sdk-reference/soil/connectors/elastic_search"
+              },
+              "next": {
+                "title": "soil.storage.compound_storage",
+                "permalink": "/docs/sdk-reference/soil/storage/compound_storage"
+              }
+            },
+            {
+              "unversionedId": "sdk-reference/soil/storage/compound_storage",
+              "id": "sdk-reference/soil/storage/compound_storage",
+              "isDocsHomePage": false,
+              "title": "soil.storage.compound_storage",
+              "description": "Module for the compound storage",
+              "source": "@site/../docs/sdk-reference/soil/storage/compound_storage.md",
+              "slug": "/sdk-reference/soil/storage/compound_storage",
+              "permalink": "/docs/sdk-reference/soil/storage/compound_storage",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/sdk-reference/soil/storage/compound_storage.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "compound_storage",
+              "sidebar": "docs",
+              "previous": {
+                "title": "soil.storage.base_storage",
+                "permalink": "/docs/sdk-reference/soil/storage/base_storage"
+              },
+              "next": {
+                "title": "soil.storage.elasticsearch",
+                "permalink": "/docs/sdk-reference/soil/storage/elasticsearch"
+              }
+            },
+            {
+              "unversionedId": "sdk-reference/soil/storage/elasticsearch",
+              "id": "sdk-reference/soil/storage/elasticsearch",
+              "isDocsHomePage": false,
+              "title": "soil.storage.elasticsearch",
+              "description": "Module for Elasticsearch storage",
+              "source": "@site/../docs/sdk-reference/soil/storage/elasticsearch.md",
+              "slug": "/sdk-reference/soil/storage/elasticsearch",
+              "permalink": "/docs/sdk-reference/soil/storage/elasticsearch",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/sdk-reference/soil/storage/elasticsearch.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "elasticsearch",
+              "sidebar": "docs",
+              "previous": {
+                "title": "soil.storage.compound_storage",
+                "permalink": "/docs/sdk-reference/soil/storage/compound_storage"
+              },
+              "next": {
+                "title": "soil.storage.object_storage",
+                "permalink": "/docs/sdk-reference/soil/storage/object_storage"
+              }
+            },
+            {
+              "unversionedId": "sdk-reference/soil/storage/object_storage",
+              "id": "sdk-reference/soil/storage/object_storage",
+              "isDocsHomePage": false,
+              "title": "soil.storage.object_storage",
+              "description": "Module for Object Storage",
+              "source": "@site/../docs/sdk-reference/soil/storage/object_storage.md",
+              "slug": "/sdk-reference/soil/storage/object_storage",
+              "permalink": "/docs/sdk-reference/soil/storage/object_storage",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/sdk-reference/soil/storage/object_storage.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "object_storage",
+              "sidebar": "docs",
+              "previous": {
+                "title": "soil.storage.elasticsearch",
+                "permalink": "/docs/sdk-reference/soil/storage/elasticsearch"
+              },
+              "next": {
+                "title": "soil.alias",
+                "permalink": "/docs/sdk-reference/soil/alias"
+              }
+            },
+            {
+              "unversionedId": "sdk-reference/soil/task",
+              "id": "sdk-reference/soil/task",
+              "isDocsHomePage": false,
+              "title": "soil.task",
+              "description": "Package for soil.task",
+              "source": "@site/../docs/sdk-reference/soil/task.md",
+              "slug": "/sdk-reference/soil/task",
+              "permalink": "/docs/sdk-reference/soil/task",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/sdk-reference/soil/task.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "task",
+              "sidebar": "docs",
+              "previous": {
+                "title": "soil.pipeline",
+                "permalink": "/docs/sdk-reference/soil/pipeline"
+              },
+              "next": {
+                "title": "soil.types",
+                "permalink": "/docs/sdk-reference/soil/types"
+              }
+            },
+            {
+              "unversionedId": "sdk-reference/soil/types",
+              "id": "sdk-reference/soil/types",
+              "isDocsHomePage": false,
+              "title": "soil.types",
+              "description": "Types used by soil library",
+              "source": "@site/../docs/sdk-reference/soil/types.md",
+              "slug": "/sdk-reference/soil/types",
+              "permalink": "/docs/sdk-reference/soil/types",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/sdk-reference/soil/types.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "types",
+              "sidebar": "docs",
+              "previous": {
+                "title": "soil.task",
+                "permalink": "/docs/sdk-reference/soil/task"
+              },
+              "next": {
+                "title": "soil.utils",
+                "permalink": "/docs/sdk-reference/soil/utils"
+              }
+            },
+            {
+              "unversionedId": "sdk-reference/soil/utils",
+              "id": "sdk-reference/soil/utils",
+              "isDocsHomePage": false,
+              "title": "soil.utils",
+              "description": "This module defines some useful functions",
+              "source": "@site/../docs/sdk-reference/soil/utils.md",
+              "slug": "/sdk-reference/soil/utils",
+              "permalink": "/docs/sdk-reference/soil/utils",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/sdk-reference/soil/utils.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "utils",
+              "sidebar": "docs",
+              "previous": {
+                "title": "soil.types",
+                "permalink": "/docs/sdk-reference/soil/types"
+              }
+            },
+            {
+              "unversionedId": "soil-library/data_structures/data_structure",
+              "id": "soil-library/data_structures/data_structure",
+              "isDocsHomePage": false,
+              "title": "data_structures.data_structure",
+              "description": "DataStructure Objects",
+              "source": "@site/../docs/soil-library/data_structures/data_structure.md",
+              "slug": "/soil-library/data_structures/data_structure",
+              "permalink": "/docs/soil-library/data_structures/data_structure",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/soil-library/data_structures/data_structure.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "data_structure",
+              "sidebar": "docs",
+              "previous": {
+                "title": "data_structures.frequent_itemsets",
+                "permalink": "/docs/soil-library/data_structures/frequent_itemsets"
+              },
+              "next": {
+                "title": "data_structures.predefined.object_ds",
+                "permalink": "/docs/soil-library/data_structures/predefined/object_ds"
+              }
+            },
+            {
+              "unversionedId": "soil-library/data_structures/frequent_itemsets",
+              "id": "soil-library/data_structures/frequent_itemsets",
+              "isDocsHomePage": false,
+              "title": "data_structures.frequent_itemsets",
+              "description": "FrequentItemsets Objects",
+              "source": "@site/../docs/soil-library/data_structures/frequent_itemsets.md",
+              "slug": "/soil-library/data_structures/frequent_itemsets",
+              "permalink": "/docs/soil-library/data_structures/frequent_itemsets",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/soil-library/data_structures/frequent_itemsets.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "frequent_itemsets",
+              "sidebar": "docs",
+              "previous": {
+                "title": "data_structures.hypergraph",
+                "permalink": "/docs/soil-library/data_structures/hypergraph"
+              },
+              "next": {
+                "title": "data_structures.data_structure",
+                "permalink": "/docs/soil-library/data_structures/data_structure"
+              }
+            },
+            {
+              "unversionedId": "soil-library/data_structures/hypergraph",
+              "id": "soil-library/data_structures/hypergraph",
+              "isDocsHomePage": false,
+              "title": "data_structures.hypergraph",
+              "description": "Hypergraph Objects",
+              "source": "@site/../docs/soil-library/data_structures/hypergraph.md",
+              "slug": "/soil-library/data_structures/hypergraph",
+              "permalink": "/docs/soil-library/data_structures/hypergraph",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/soil-library/data_structures/hypergraph.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "hypergraph",
+              "sidebar": "docs",
+              "previous": {
+                "title": "data_structures.NBClusters",
+                "permalink": "/docs/soil-library/data_structures/NBClusters"
+              },
+              "next": {
+                "title": "data_structures.frequent_itemsets",
+                "permalink": "/docs/soil-library/data_structures/frequent_itemsets"
+              }
+            },
+            {
+              "unversionedId": "soil-library/data_structures/NBClusters",
+              "id": "soil-library/data_structures/NBClusters",
+              "isDocsHomePage": false,
+              "title": "data_structures.NBClusters",
+              "description": "NBClusters Objects",
+              "source": "@site/../docs/soil-library/data_structures/NBClusters.md",
+              "slug": "/soil-library/data_structures/NBClusters",
+              "permalink": "/docs/soil-library/data_structures/NBClusters",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/soil-library/data_structures/NBClusters.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "NBClusters",
+              "sidebar": "docs",
+              "previous": {
+                "title": "modules.statistics.time_statistics",
+                "permalink": "/docs/soil-library/modules/statistics/time_statistics"
+              },
+              "next": {
+                "title": "data_structures.hypergraph",
+                "permalink": "/docs/soil-library/data_structures/hypergraph"
+              }
+            },
+            {
+              "unversionedId": "soil-library/data_structures/predefined/dict",
+              "id": "soil-library/data_structures/predefined/dict",
+              "isDocsHomePage": false,
+              "title": "data_structures.predefined.dict",
+              "description": "Dict Objects",
+              "source": "@site/../docs/soil-library/data_structures/predefined/dict.md",
+              "slug": "/soil-library/data_structures/predefined/dict",
+              "permalink": "/docs/soil-library/data_structures/predefined/dict",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/soil-library/data_structures/predefined/dict.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "dict",
+              "sidebar": "docs",
+              "previous": {
+                "title": "data_structures.predefined.pd_data_frame",
+                "permalink": "/docs/soil-library/data_structures/predefined/pd_data_frame"
+              },
+              "next": {
+                "title": "data_structures.predefined.ndarray",
+                "permalink": "/docs/soil-library/data_structures/predefined/ndarray"
+              }
+            },
+            {
+              "unversionedId": "soil-library/data_structures/predefined/list",
+              "id": "soil-library/data_structures/predefined/list",
+              "isDocsHomePage": false,
+              "title": "data_structures.predefined.list",
+              "description": "List Objects",
+              "source": "@site/../docs/soil-library/data_structures/predefined/list.md",
+              "slug": "/soil-library/data_structures/predefined/list",
+              "permalink": "/docs/soil-library/data_structures/predefined/list",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/soil-library/data_structures/predefined/list.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "list",
+              "sidebar": "docs",
+              "previous": {
+                "title": "data_structures.predefined.ndarray",
+                "permalink": "/docs/soil-library/data_structures/predefined/ndarray"
+              },
+              "next": {
+                "title": "data_structures.streams.patients",
+                "permalink": "/docs/soil-library/data_structures/streams/patients"
+              }
+            },
+            {
+              "unversionedId": "soil-library/data_structures/predefined/ndarray",
+              "id": "soil-library/data_structures/predefined/ndarray",
+              "isDocsHomePage": false,
+              "title": "data_structures.predefined.ndarray",
+              "description": "Ndarray Objects",
+              "source": "@site/../docs/soil-library/data_structures/predefined/ndarray.md",
+              "slug": "/soil-library/data_structures/predefined/ndarray",
+              "permalink": "/docs/soil-library/data_structures/predefined/ndarray",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/soil-library/data_structures/predefined/ndarray.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "ndarray",
+              "sidebar": "docs",
+              "previous": {
+                "title": "data_structures.predefined.dict",
+                "permalink": "/docs/soil-library/data_structures/predefined/dict"
+              },
+              "next": {
+                "title": "data_structures.predefined.list",
+                "permalink": "/docs/soil-library/data_structures/predefined/list"
+              }
+            },
+            {
+              "unversionedId": "soil-library/data_structures/predefined/object_ds",
+              "id": "soil-library/data_structures/predefined/object_ds",
+              "isDocsHomePage": false,
+              "title": "data_structures.predefined.object_ds",
+              "description": "ObjectDS Objects",
+              "source": "@site/../docs/soil-library/data_structures/predefined/object_ds.md",
+              "slug": "/soil-library/data_structures/predefined/object_ds",
+              "permalink": "/docs/soil-library/data_structures/predefined/object_ds",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/soil-library/data_structures/predefined/object_ds.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "object_ds",
+              "sidebar": "docs",
+              "previous": {
+                "title": "data_structures.data_structure",
+                "permalink": "/docs/soil-library/data_structures/data_structure"
+              },
+              "next": {
+                "title": "data_structures.predefined.pd_data_frame",
+                "permalink": "/docs/soil-library/data_structures/predefined/pd_data_frame"
+              }
+            },
+            {
+              "unversionedId": "soil-library/data_structures/predefined/pd_data_frame",
+              "id": "soil-library/data_structures/predefined/pd_data_frame",
+              "isDocsHomePage": false,
+              "title": "data_structures.predefined.pd_data_frame",
+              "description": "PdDataFrame Objects",
+              "source": "@site/../docs/soil-library/data_structures/predefined/pd_data_frame.md",
+              "slug": "/soil-library/data_structures/predefined/pd_data_frame",
+              "permalink": "/docs/soil-library/data_structures/predefined/pd_data_frame",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/soil-library/data_structures/predefined/pd_data_frame.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "pd_data_frame",
+              "sidebar": "docs",
+              "previous": {
+                "title": "data_structures.predefined.object_ds",
+                "permalink": "/docs/soil-library/data_structures/predefined/object_ds"
+              },
+              "next": {
+                "title": "data_structures.predefined.dict",
+                "permalink": "/docs/soil-library/data_structures/predefined/dict"
+              }
+            },
+            {
+              "unversionedId": "soil-library/data_structures/streams/patients",
+              "id": "soil-library/data_structures/streams/patients",
+              "isDocsHomePage": false,
+              "title": "data_structures.streams.patients",
+              "description": "Patients Objects",
+              "source": "@site/../docs/soil-library/data_structures/streams/patients.md",
+              "slug": "/soil-library/data_structures/streams/patients",
+              "permalink": "/docs/soil-library/data_structures/streams/patients",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/soil-library/data_structures/streams/patients.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "patients",
+              "sidebar": "docs",
+              "previous": {
+                "title": "data_structures.predefined.list",
+                "permalink": "/docs/soil-library/data_structures/predefined/list"
+              },
+              "next": {
+                "title": "data_structures.streams.stream",
+                "permalink": "/docs/soil-library/data_structures/streams/stream"
+              }
+            },
+            {
+              "unversionedId": "soil-library/data_structures/streams/stream",
+              "id": "soil-library/data_structures/streams/stream",
+              "isDocsHomePage": false,
+              "title": "data_structures.streams.stream",
+              "description": "Stream Objects",
+              "source": "@site/../docs/soil-library/data_structures/streams/stream.md",
+              "slug": "/soil-library/data_structures/streams/stream",
+              "permalink": "/docs/soil-library/data_structures/streams/stream",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/soil-library/data_structures/streams/stream.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "stream",
+              "sidebar": "docs",
+              "previous": {
+                "title": "data_structures.streams.patients",
+                "permalink": "/docs/soil-library/data_structures/streams/patients"
+              },
+              "next": {
+                "title": "soil.alerts.alerts",
+                "permalink": "/docs/sdk-reference/soil/alerts/alerts"
+              }
+            },
+            {
+              "unversionedId": "soil-library/data_structures/streams/trajectory_clusters",
+              "id": "soil-library/data_structures/streams/trajectory_clusters",
+              "isDocsHomePage": false,
+              "title": "data_structures.streams.trajectory_clusters",
+              "description": "TrajectoryClusters Objects",
+              "source": "@site/../docs/soil-library/data_structures/streams/trajectory_clusters.md",
+              "slug": "/soil-library/data_structures/streams/trajectory_clusters",
+              "permalink": "/docs/soil-library/data_structures/streams/trajectory_clusters",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/soil-library/data_structures/streams/trajectory_clusters.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "trajectory_clusters"
+            },
+            {
+              "unversionedId": "soil-library/modules/clustering/NBClustering",
+              "id": "soil-library/modules/clustering/NBClustering",
+              "isDocsHomePage": false,
+              "title": "modules.clustering.NBClustering",
+              "description": "NBClustering Objects",
+              "source": "@site/../docs/soil-library/modules/clustering/NBClustering.md",
+              "slug": "/soil-library/modules/clustering/NBClustering",
+              "permalink": "/docs/soil-library/modules/clustering/NBClustering",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/soil-library/modules/clustering/NBClustering.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "NBClustering",
+              "sidebar": "docs",
+              "previous": {
+                "title": "modules.experiment",
+                "permalink": "/docs/soil-library/modules/experiment"
+              },
+              "next": {
+                "title": "modules.clustering.NBClustering_categorical",
+                "permalink": "/docs/soil-library/modules/clustering/NBClustering_categorical"
+              }
+            },
+            {
+              "unversionedId": "soil-library/modules/clustering/NBClustering_categorical",
+              "id": "soil-library/modules/clustering/NBClustering_categorical",
+              "isDocsHomePage": false,
+              "title": "modules.clustering.NBClustering_categorical",
+              "description": "NBClustering\\_categorical Objects",
+              "source": "@site/../docs/soil-library/modules/clustering/NBClustering_categorical.md",
+              "slug": "/soil-library/modules/clustering/NBClustering_categorical",
+              "permalink": "/docs/soil-library/modules/clustering/NBClustering_categorical",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/soil-library/modules/clustering/NBClustering_categorical.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "NBClustering_categorical",
+              "sidebar": "docs",
+              "previous": {
+                "title": "modules.clustering.NBClustering",
+                "permalink": "/docs/soil-library/modules/clustering/NBClustering"
+              },
+              "next": {
+                "title": "modules.clustering.SIDIWO.sidiwo",
+                "permalink": "/docs/soil-library/modules/clustering/SIDIWO/sidiwo"
+              }
+            },
+            {
+              "unversionedId": "soil-library/modules/clustering/SIDIWO/sidiwo",
+              "id": "soil-library/modules/clustering/SIDIWO/sidiwo",
+              "isDocsHomePage": false,
+              "title": "modules.clustering.SIDIWO.sidiwo",
+              "description": "MAP\\assign\\clusters\\_stm",
+              "source": "@site/../docs/soil-library/modules/clustering/SIDIWO/sidiwo.md",
+              "slug": "/soil-library/modules/clustering/SIDIWO/sidiwo",
+              "permalink": "/docs/soil-library/modules/clustering/SIDIWO/sidiwo",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/soil-library/modules/clustering/SIDIWO/sidiwo.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "sidiwo",
+              "sidebar": "docs",
+              "previous": {
+                "title": "modules.clustering.NBClustering_categorical",
+                "permalink": "/docs/soil-library/modules/clustering/NBClustering_categorical"
+              },
+              "next": {
+                "title": "modules.preprocessing.filters.row_filter",
+                "permalink": "/docs/soil-library/modules/preprocessing/filters/row_filter"
+              }
+            },
+            {
+              "unversionedId": "soil-library/modules/experiment",
+              "id": "soil-library/modules/experiment",
+              "isDocsHomePage": false,
+              "title": "modules.experiment",
+              "description": "Experiment Objects",
+              "source": "@site/../docs/soil-library/modules/experiment.md",
+              "slug": "/soil-library/modules/experiment",
+              "permalink": "/docs/soil-library/modules/experiment",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/soil-library/modules/experiment.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "experiment",
+              "sidebar": "docs",
+              "previous": {
+                "title": "Deployments",
+                "permalink": "/docs/tutorial/deployments"
+              },
+              "next": {
+                "title": "modules.clustering.NBClustering",
+                "permalink": "/docs/soil-library/modules/clustering/NBClustering"
+              }
+            },
+            {
+              "unversionedId": "soil-library/modules/higher_order/Predictor",
+              "id": "soil-library/modules/higher_order/Predictor",
+              "isDocsHomePage": false,
+              "title": "modules.higher_order.Predictor",
+              "description": "Predictor Objects",
+              "source": "@site/../docs/soil-library/modules/higher_order/Predictor.md",
+              "slug": "/soil-library/modules/higher_order/Predictor",
+              "permalink": "/docs/soil-library/modules/higher_order/Predictor",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/soil-library/modules/higher_order/Predictor.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "Predictor",
+              "sidebar": "docs",
+              "previous": {
+                "title": "modules.itemsets.frequent_itemsets_hypergraph",
+                "permalink": "/docs/soil-library/modules/itemsets/frequent_itemsets_hypergraph"
+              },
+              "next": {
+                "title": "modules.statistics.customstatistics",
+                "permalink": "/docs/soil-library/modules/statistics/customstatistics"
+              }
+            },
+            {
+              "unversionedId": "soil-library/modules/itemsets/frequent_itemsets_compare",
+              "id": "soil-library/modules/itemsets/frequent_itemsets_compare",
+              "isDocsHomePage": false,
+              "title": "modules.itemsets.frequent_itemsets_compare",
+              "description": "FrequentItemsetsCompare Objects",
+              "source": "@site/../docs/soil-library/modules/itemsets/frequent_itemsets_compare.md",
+              "slug": "/soil-library/modules/itemsets/frequent_itemsets_compare",
+              "permalink": "/docs/soil-library/modules/itemsets/frequent_itemsets_compare",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/soil-library/modules/itemsets/frequent_itemsets_compare.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "frequent_itemsets_compare",
+              "sidebar": "docs",
+              "previous": {
+                "title": "modules.preprocessing.filters.events_filter",
+                "permalink": "/docs/soil-library/modules/preprocessing/filters/events_filter"
+              },
+              "next": {
+                "title": "modules.itemsets.frequent_itemsets_hypergraph",
+                "permalink": "/docs/soil-library/modules/itemsets/frequent_itemsets_hypergraph"
+              }
+            },
+            {
+              "unversionedId": "soil-library/modules/itemsets/frequent_itemsets_hypergraph",
+              "id": "soil-library/modules/itemsets/frequent_itemsets_hypergraph",
+              "isDocsHomePage": false,
+              "title": "modules.itemsets.frequent_itemsets_hypergraph",
+              "description": "FrequentItemsetsHypergraph Objects",
+              "source": "@site/../docs/soil-library/modules/itemsets/frequent_itemsets_hypergraph.md",
+              "slug": "/soil-library/modules/itemsets/frequent_itemsets_hypergraph",
+              "permalink": "/docs/soil-library/modules/itemsets/frequent_itemsets_hypergraph",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/soil-library/modules/itemsets/frequent_itemsets_hypergraph.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "frequent_itemsets_hypergraph",
+              "sidebar": "docs",
+              "previous": {
+                "title": "modules.itemsets.frequent_itemsets_compare",
+                "permalink": "/docs/soil-library/modules/itemsets/frequent_itemsets_compare"
+              },
+              "next": {
+                "title": "modules.higher_order.Predictor",
+                "permalink": "/docs/soil-library/modules/higher_order/Predictor"
+              }
+            },
+            {
+              "unversionedId": "soil-library/modules/preprocessing/filters/events_filter",
+              "id": "soil-library/modules/preprocessing/filters/events_filter",
+              "isDocsHomePage": false,
+              "title": "modules.preprocessing.filters.events_filter",
+              "description": "EventsFilter Objects",
+              "source": "@site/../docs/soil-library/modules/preprocessing/filters/events_filter.md",
+              "slug": "/soil-library/modules/preprocessing/filters/events_filter",
+              "permalink": "/docs/soil-library/modules/preprocessing/filters/events_filter",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/soil-library/modules/preprocessing/filters/events_filter.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "events_filter",
+              "sidebar": "docs",
+              "previous": {
+                "title": "modules.preprocessing.filters.row_filter",
+                "permalink": "/docs/soil-library/modules/preprocessing/filters/row_filter"
+              },
+              "next": {
+                "title": "modules.itemsets.frequent_itemsets_compare",
+                "permalink": "/docs/soil-library/modules/itemsets/frequent_itemsets_compare"
+              }
+            },
+            {
+              "unversionedId": "soil-library/modules/preprocessing/filters/row_filter",
+              "id": "soil-library/modules/preprocessing/filters/row_filter",
+              "isDocsHomePage": false,
+              "title": "modules.preprocessing.filters.row_filter",
+              "description": "RowFilter Objects",
+              "source": "@site/../docs/soil-library/modules/preprocessing/filters/row_filter.md",
+              "slug": "/soil-library/modules/preprocessing/filters/row_filter",
+              "permalink": "/docs/soil-library/modules/preprocessing/filters/row_filter",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/soil-library/modules/preprocessing/filters/row_filter.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "row_filter",
+              "sidebar": "docs",
+              "previous": {
+                "title": "modules.clustering.SIDIWO.sidiwo",
+                "permalink": "/docs/soil-library/modules/clustering/SIDIWO/sidiwo"
+              },
+              "next": {
+                "title": "modules.preprocessing.filters.events_filter",
+                "permalink": "/docs/soil-library/modules/preprocessing/filters/events_filter"
+              }
+            },
+            {
+              "unversionedId": "soil-library/modules/statistics/customstatistics",
+              "id": "soil-library/modules/statistics/customstatistics",
+              "isDocsHomePage": false,
+              "title": "modules.statistics.customstatistics",
+              "description": "FirstLastEvent Objects",
+              "source": "@site/../docs/soil-library/modules/statistics/customstatistics.md",
+              "slug": "/soil-library/modules/statistics/customstatistics",
+              "permalink": "/docs/soil-library/modules/statistics/customstatistics",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/soil-library/modules/statistics/customstatistics.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "customstatistics",
+              "sidebar": "docs",
+              "previous": {
+                "title": "modules.higher_order.Predictor",
+                "permalink": "/docs/soil-library/modules/higher_order/Predictor"
+              },
+              "next": {
+                "title": "modules.statistics.time_statistics",
+                "permalink": "/docs/soil-library/modules/statistics/time_statistics"
+              }
+            },
+            {
+              "unversionedId": "soil-library/modules/statistics/time_statistics",
+              "id": "soil-library/modules/statistics/time_statistics",
+              "isDocsHomePage": false,
+              "title": "modules.statistics.time_statistics",
+              "description": "TimeStatistics Objects",
+              "source": "@site/../docs/soil-library/modules/statistics/time_statistics.md",
+              "slug": "/soil-library/modules/statistics/time_statistics",
+              "permalink": "/docs/soil-library/modules/statistics/time_statistics",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/soil-library/modules/statistics/time_statistics.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "time_statistics",
+              "sidebar": "docs",
+              "previous": {
+                "title": "modules.statistics.customstatistics",
+                "permalink": "/docs/soil-library/modules/statistics/customstatistics"
+              },
+              "next": {
+                "title": "data_structures.NBClusters",
+                "permalink": "/docs/soil-library/data_structures/NBClusters"
+              }
+            },
+            {
+              "unversionedId": "soil-library/modules/temporal/trajectories",
+              "id": "soil-library/modules/temporal/trajectories",
+              "isDocsHomePage": false,
+              "title": "modules.temporal.trajectories",
+              "description": "Trajectories Objects",
+              "source": "@site/../docs/soil-library/modules/temporal/trajectories.md",
+              "slug": "/soil-library/modules/temporal/trajectories",
+              "permalink": "/docs/soil-library/modules/temporal/trajectories",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/soil-library/modules/temporal/trajectories.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "trajectories"
+            },
+            {
+              "unversionedId": "tutorial/alerts",
+              "id": "tutorial/alerts",
+              "isDocsHomePage": false,
+              "title": "Alerts",
+              "description": "From a soil application it is possible to trigger events and be subscribed to them. For example a client may want to recieve an SMS when the expected bed occupancy for the emergency department is higher than 90% or we as app developers may want to recieve an email warning us that the data did not arrive today.",
+              "source": "@site/../docs/tutorial/alerts.md",
+              "slug": "/tutorial/alerts",
+              "permalink": "/docs/tutorial/alerts",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/tutorial/alerts.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "Alerts",
+              "sidebar": "docs",
+              "previous": {
+                "title": "Logging",
+                "permalink": "/docs/tutorial/logging"
+              },
+              "next": {
+                "title": "Deployments",
+                "permalink": "/docs/tutorial/deployments"
+              }
+            },
+            {
+              "unversionedId": "tutorial/data",
+              "id": "tutorial/data",
+              "isDocsHomePage": false,
+              "title": "Data",
+              "description": "Referencing data",
+              "source": "@site/../docs/tutorial/data.md",
+              "slug": "/tutorial/data",
+              "permalink": "/docs/tutorial/data",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/tutorial/data.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "Data",
+              "sidebar": "docs",
+              "previous": {
+                "title": "Scripts",
+                "permalink": "/docs/tutorial/scripts"
+              },
+              "next": {
+                "title": "Data Structures",
+                "permalink": "/docs/tutorial/data-structures"
+              }
+            },
+            {
+              "unversionedId": "tutorial/data-structures",
+              "id": "tutorial/data-structures",
+              "isDocsHomePage": false,
+              "title": "Data Structures",
+              "description": "Data Structures contain and pass the information between modules in a SOIL pipeline. They are defined in the datastructures package under the top level. A data structure is defined in a class that inherits from soil.datastructures.data_structure.DataStructure or from a class that inherits from it.",
+              "source": "@site/../docs/tutorial/data-structures.md",
+              "slug": "/tutorial/data-structures",
+              "permalink": "/docs/tutorial/data-structures",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/tutorial/data-structures.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "Data Structures",
+              "sidebar": "docs",
+              "previous": {
+                "title": "Data",
+                "permalink": "/docs/tutorial/data"
+              },
+              "next": {
+                "title": "Modules",
+                "permalink": "/docs/tutorial/modules"
+              }
+            },
+            {
+              "unversionedId": "tutorial/deployments",
+              "id": "tutorial/deployments",
+              "isDocsHomePage": false,
+              "title": "Deployments",
+              "description": "One of the Soil design principles is to make deployments easy and scalable. The same code should run in many deployments at the same time. Each deployment can have a different configuration. The configuration in a Soil app is located in soil.yml and the config folder.",
+              "source": "@site/../docs/tutorial/deployments.md",
+              "slug": "/tutorial/deployments",
+              "permalink": "/docs/tutorial/deployments",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/tutorial/deployments.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "Deployments",
+              "sidebar": "docs",
+              "previous": {
+                "title": "Alerts",
+                "permalink": "/docs/tutorial/alerts"
+              },
+              "next": {
+                "title": "modules.experiment",
+                "permalink": "/docs/soil-library/modules/experiment"
+              }
+            },
+            {
+              "unversionedId": "tutorial/get-started",
+              "id": "tutorial/get-started",
+              "isDocsHomePage": false,
+              "title": "Get Started",
+              "description": "Prerequisites",
+              "source": "@site/../docs/tutorial/get-started.mdx",
+              "slug": "/tutorial/get-started",
+              "permalink": "/docs/tutorial/get-started",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/tutorial/get-started.mdx",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "Get Started",
+              "sidebar": "docs",
+              "next": {
+                "title": "Scripts",
+                "permalink": "/docs/tutorial/scripts"
+              }
+            },
+            {
+              "unversionedId": "tutorial/logging",
+              "id": "tutorial/logging",
+              "isDocsHomePage": false,
+              "title": "Logging",
+              "description": "Activate logging",
+              "source": "@site/../docs/tutorial/logging.md",
+              "slug": "/tutorial/logging",
+              "permalink": "/docs/tutorial/logging",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/tutorial/logging.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "Logging",
+              "sidebar": "docs",
+              "previous": {
+                "title": "Modules",
+                "permalink": "/docs/tutorial/modules"
+              },
+              "next": {
+                "title": "Alerts",
+                "permalink": "/docs/tutorial/alerts"
+              }
+            },
+            {
+              "unversionedId": "tutorial/modules",
+              "id": "tutorial/modules",
+              "isDocsHomePage": false,
+              "title": "Modules",
+              "description": "The modules contain the instructions to transform the data. The signature of a module always is:",
+              "source": "@site/../docs/tutorial/modules.md",
+              "slug": "/tutorial/modules",
+              "permalink": "/docs/tutorial/modules",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/tutorial/modules.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "Modules",
+              "sidebar": "docs",
+              "previous": {
+                "title": "Data Structures",
+                "permalink": "/docs/tutorial/data-structures"
+              },
+              "next": {
+                "title": "Logging",
+                "permalink": "/docs/tutorial/logging"
+              }
+            },
+            {
+              "unversionedId": "tutorial/scripts",
+              "id": "tutorial/scripts",
+              "isDocsHomePage": false,
+              "title": "Scripts",
+              "description": "There are two categories of scripts one can write when developing a SOIL application: scripts that run when something happens for example when new data arrives and scripts that run on a schedule.",
+              "source": "@site/../docs/tutorial/scripts.md",
+              "slug": "/tutorial/scripts",
+              "permalink": "/docs/tutorial/scripts",
+              "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/tutorial/scripts.md",
+              "version": "current",
+              "lastUpdatedBy": "Author",
+              "lastUpdatedAt": 1539502055,
+              "sidebar_label": "Scripts",
+              "sidebar": "docs",
+              "previous": {
+                "title": "Get Started",
+                "permalink": "/docs/tutorial/get-started"
+              },
+              "next": {
+                "title": "Data",
+                "permalink": "/docs/tutorial/data"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "docusaurus-plugin-content-blog": {
+    "default": {
+      "blogPosts": [
+        {
+          "id": "New Version 1.0.0",
+          "metadata": {
+            "permalink": "/blog/2017/10/24/new-version-1.0.0",
+            "source": "@site/blog/2017-10-24-new-version-1.0.0.md",
+            "description": "This blog post will test file name parsing issues when periods are present.",
+            "date": "2017-10-24T00:00:00.000Z",
+            "tags": [],
+            "title": "New Version 1.0.0",
+            "readingTime": 0.065,
+            "truncated": false,
+            "nextItem": {
+              "title": "Adding RSS Support",
+              "permalink": "/blog/2017/09/26/adding-rss"
+            }
+          }
+        },
+        {
+          "id": "Adding RSS Support",
+          "metadata": {
+            "permalink": "/blog/2017/09/26/adding-rss",
+            "source": "@site/blog/2017-09-26-adding-rss.md",
+            "description": "This is a test post.",
+            "date": "2017-09-26T00:00:00.000Z",
+            "tags": [],
+            "title": "Adding RSS Support",
+            "readingTime": 0.055,
+            "truncated": false,
+            "prevItem": {
+              "title": "New Version 1.0.0",
+              "permalink": "/blog/2017/10/24/new-version-1.0.0"
+            },
+            "nextItem": {
+              "title": "Adding RSS Support - RSS Truncation Test",
+              "permalink": "/blog/2017/09/25/testing-rss"
+            }
+          }
+        },
+        {
+          "id": "Adding RSS Support - RSS Truncation Test",
+          "metadata": {
+            "permalink": "/blog/2017/09/25/testing-rss",
+            "source": "@site/blog/2017-09-25-testing-rss.md",
+            "description": "1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890",
+            "date": "2017-09-25T00:00:00.000Z",
+            "tags": [],
+            "title": "Adding RSS Support - RSS Truncation Test",
+            "readingTime": 0.065,
+            "truncated": true,
+            "prevItem": {
+              "title": "Adding RSS Support",
+              "permalink": "/blog/2017/09/26/adding-rss"
+            },
+            "nextItem": {
+              "title": "New Blog Post",
+              "permalink": "/blog/2017/04/10/blog-post-two"
+            }
+          }
+        },
+        {
+          "id": "New Blog Post",
+          "metadata": {
+            "permalink": "/blog/2017/04/10/blog-post-two",
+            "source": "@site/blog/2017-04-10-blog-post-two.md",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus elementum massa eget nulla aliquet sagittis. Proin odio tortor, vulputate ut odio in, ultrices ultricies augue. Cras ornare ultrices lorem malesuada iaculis. Etiam sit amet libero tempor, pulvinar mauris sed, sollicitudin sapien.",
+            "date": "2017-04-10T00:00:00.000Z",
+            "tags": [],
+            "title": "New Blog Post",
+            "readingTime": 2.31,
+            "truncated": true,
+            "prevItem": {
+              "title": "Adding RSS Support - RSS Truncation Test",
+              "permalink": "/blog/2017/09/25/testing-rss"
+            },
+            "nextItem": {
+              "title": "Blog Title",
+              "permalink": "/blog/2016/03/11/blog-post"
+            }
+          }
+        },
+        {
+          "id": "Blog Title",
+          "metadata": {
+            "permalink": "/blog/2016/03/11/blog-post",
+            "source": "@site/blog/2016-03-11-blog-post.md",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus elementum massa eget nulla aliquet sagittis. Proin odio tortor, vulputate ut odio in, ultrices ultricies augue. Cras ornare ultrices lorem malesuada iaculis. Etiam sit amet libero tempor, pulvinar mauris sed, sollicitudin sapien.",
+            "date": "2016-03-11T00:00:00.000Z",
+            "tags": [],
+            "title": "Blog Title",
+            "readingTime": 2.31,
+            "truncated": true,
+            "prevItem": {
+              "title": "New Blog Post",
+              "permalink": "/blog/2017/04/10/blog-post-two"
+            }
+          }
+        }
+      ],
+      "blogListPaginated": [
+        {
+          "metadata": {
+            "permalink": "/blog",
+            "page": 1,
+            "postsPerPage": 10,
+            "totalPages": 1,
+            "totalCount": 5,
+            "previousPage": null,
+            "nextPage": null,
+            "blogDescription": "Blog",
+            "blogTitle": "Blog"
+          },
+          "items": [
+            "New Version 1.0.0",
+            "Adding RSS Support",
+            "Adding RSS Support - RSS Truncation Test",
+            "New Blog Post",
+            "Blog Title"
+          ]
+        }
+      ],
+      "blogTags": {},
+      "blogTagsListPath": null
+    }
+  },
+  "docusaurus-plugin-content-pages": {
+    "default": [
+      {
+        "type": "jsx",
+        "permalink": "/",
+        "source": "@site/src/pages/index.js"
+      }
+    ]
+  },
+  "docusaurus-plugin-debug": {
+    "default": null
+  },
+  "docusaurus-theme-classic": {
+    "default": null
+  }
+}

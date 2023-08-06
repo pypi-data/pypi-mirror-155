@@ -1,0 +1,24 @@
+{
+  "unversionedId": "soil-library/data_structures/predefined/dict",
+  "id": "soil-library/data_structures/predefined/dict",
+  "isDocsHomePage": false,
+  "title": "data_structures.predefined.dict",
+  "description": "Dict Objects",
+  "source": "@site/../docs/soil-library/data_structures/predefined/dict.md",
+  "slug": "/soil-library/data_structures/predefined/dict",
+  "permalink": "/docs/soil-library/data_structures/predefined/dict",
+  "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/soil-library/data_structures/predefined/dict.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "sidebar_label": "dict",
+  "sidebar": "docs",
+  "previous": {
+    "title": "data_structures.predefined.pd_data_frame",
+    "permalink": "/docs/soil-library/data_structures/predefined/pd_data_frame"
+  },
+  "next": {
+    "title": "data_structures.predefined.ndarray",
+    "permalink": "/docs/soil-library/data_structures/predefined/ndarray"
+  }
+}

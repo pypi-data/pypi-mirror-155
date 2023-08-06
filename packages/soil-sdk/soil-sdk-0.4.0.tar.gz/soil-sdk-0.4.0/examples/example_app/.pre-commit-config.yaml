@@ -1,0 +1,42 @@
+#default_language_version:
+#    python: python3.7
+default_stages: [commit, push]
+repos:
+    -   repo: local
+        hooks:
+            -   id: pylint
+                name: pylint (linting)
+                entry: pylint
+                language: system
+                types: [python]
+                exclude: '(config/.*)|(docs/.*)|(.venv/.*)'
+                args: [--rcfile=setup.cfg]
+            -   id: flake8
+                name: flake8 (linting)
+                entry: flake8
+                language: system
+                types: [python]
+                exclude: '(config/.*)|(docs/.*)|(.venv/.*)'
+            -   id: bandit
+                name: bandit (security)
+                entry: bandit
+                language: system
+                types: [python]
+                exclude: '(test/.*)|(docs/.*)'
+                args: [--configfile, bandit.yml]
+            -   id: unittest
+                name: unittest (testing)
+                entry: bash -c 'PY_ENV=test coverage run --source=iris_dataset -m unittest discover test && git add .coverage'
+                language: system
+                pass_filenames: false
+            -   id: coverage
+                name: coverage (testing)
+                entry: coverage report -m
+                language: python
+                types: [python]
+                pass_filenames: false
+                verbose: true
+    -   repo: https://github.com/jazzband/pip-tools
+        rev: 6.1.0
+        hooks:
+            - id: pip-compile

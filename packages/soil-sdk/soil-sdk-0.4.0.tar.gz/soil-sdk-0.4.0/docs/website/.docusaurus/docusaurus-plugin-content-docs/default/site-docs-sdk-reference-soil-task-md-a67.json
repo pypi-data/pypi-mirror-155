@@ -1,0 +1,24 @@
+{
+  "unversionedId": "sdk-reference/soil/task",
+  "id": "sdk-reference/soil/task",
+  "isDocsHomePage": false,
+  "title": "soil.task",
+  "description": "Package for soil.task",
+  "source": "@site/../docs/sdk-reference/soil/task.md",
+  "slug": "/sdk-reference/soil/task",
+  "permalink": "/docs/sdk-reference/soil/task",
+  "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/sdk-reference/soil/task.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "sidebar_label": "task",
+  "sidebar": "docs",
+  "previous": {
+    "title": "soil.pipeline",
+    "permalink": "/docs/sdk-reference/soil/pipeline"
+  },
+  "next": {
+    "title": "soil.types",
+    "permalink": "/docs/sdk-reference/soil/types"
+  }
+}

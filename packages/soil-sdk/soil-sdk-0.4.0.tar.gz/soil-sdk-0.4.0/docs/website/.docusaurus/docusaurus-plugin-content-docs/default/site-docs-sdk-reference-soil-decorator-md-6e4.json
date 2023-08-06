@@ -1,0 +1,24 @@
+{
+  "unversionedId": "sdk-reference/soil/decorator",
+  "id": "sdk-reference/soil/decorator",
+  "isDocsHomePage": false,
+  "title": "soil.decorator",
+  "description": "soil.decorator package.",
+  "source": "@site/../docs/sdk-reference/soil/decorator.md",
+  "slug": "/sdk-reference/soil/decorator",
+  "permalink": "/docs/sdk-reference/soil/decorator",
+  "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/sdk-reference/soil/decorator.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "sidebar_label": "decorator",
+  "sidebar": "docs",
+  "previous": {
+    "title": "soil.data_structure",
+    "permalink": "/docs/sdk-reference/soil/data_structure"
+  },
+  "next": {
+    "title": "soil.dictionary",
+    "permalink": "/docs/sdk-reference/soil/dictionary"
+  }
+}

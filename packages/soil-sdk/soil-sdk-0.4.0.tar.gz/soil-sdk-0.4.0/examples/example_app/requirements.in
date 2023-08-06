@@ -1,0 +1,12 @@
+requests
+pbr
+flake8
+yapf
+bandit
+pre-commit
+pylint
+coverage
+soil-sdk
+pandas
+PyJWT
+sklearn

@@ -1,0 +1,439 @@
+{
+  "pluginId": "default",
+  "version": "current",
+  "label": "Next",
+  "isLast": true,
+  "docsSidebars": {
+    "docs": [
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "Tutorial",
+        "items": [
+          {
+            "type": "link",
+            "label": "Get Started",
+            "href": "/docs/tutorial/get-started"
+          },
+          {
+            "type": "link",
+            "label": "Scripts",
+            "href": "/docs/tutorial/scripts"
+          },
+          {
+            "type": "link",
+            "label": "Data",
+            "href": "/docs/tutorial/data"
+          },
+          {
+            "type": "link",
+            "label": "Data Structures",
+            "href": "/docs/tutorial/data-structures"
+          },
+          {
+            "type": "link",
+            "label": "Modules",
+            "href": "/docs/tutorial/modules"
+          },
+          {
+            "type": "link",
+            "label": "Logging",
+            "href": "/docs/tutorial/logging"
+          },
+          {
+            "type": "link",
+            "label": "Alerts",
+            "href": "/docs/tutorial/alerts"
+          },
+          {
+            "type": "link",
+            "label": "Deployments",
+            "href": "/docs/tutorial/deployments"
+          }
+        ]
+      },
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "SOIL Library",
+        "items": [
+          {
+            "collapsed": true,
+            "items": [
+              {
+                "collapsed": true,
+                "items": [
+                  {
+                    "type": "link",
+                    "label": "experiment",
+                    "href": "/docs/soil-library/modules/experiment"
+                  },
+                  {
+                    "collapsed": true,
+                    "items": [
+                      {
+                        "type": "link",
+                        "label": "NBClustering",
+                        "href": "/docs/soil-library/modules/clustering/NBClustering"
+                      },
+                      {
+                        "type": "link",
+                        "label": "NBClustering_categorical",
+                        "href": "/docs/soil-library/modules/clustering/NBClustering_categorical"
+                      },
+                      {
+                        "collapsed": true,
+                        "items": [
+                          {
+                            "type": "link",
+                            "label": "sidiwo",
+                            "href": "/docs/soil-library/modules/clustering/SIDIWO/sidiwo"
+                          }
+                        ],
+                        "label": "modules.clustering.SIDIWO",
+                        "type": "category"
+                      }
+                    ],
+                    "label": "modules.clustering",
+                    "type": "category"
+                  },
+                  {
+                    "collapsed": true,
+                    "items": [
+                      {
+                        "collapsed": true,
+                        "items": [
+                          {
+                            "type": "link",
+                            "label": "row_filter",
+                            "href": "/docs/soil-library/modules/preprocessing/filters/row_filter"
+                          },
+                          {
+                            "type": "link",
+                            "label": "events_filter",
+                            "href": "/docs/soil-library/modules/preprocessing/filters/events_filter"
+                          }
+                        ],
+                        "label": "modules.preprocessing.filters",
+                        "type": "category"
+                      }
+                    ],
+                    "label": "modules.preprocessing",
+                    "type": "category"
+                  },
+                  {
+                    "collapsed": true,
+                    "items": [
+                      {
+                        "type": "link",
+                        "label": "frequent_itemsets_compare",
+                        "href": "/docs/soil-library/modules/itemsets/frequent_itemsets_compare"
+                      },
+                      {
+                        "type": "link",
+                        "label": "frequent_itemsets_hypergraph",
+                        "href": "/docs/soil-library/modules/itemsets/frequent_itemsets_hypergraph"
+                      }
+                    ],
+                    "label": "modules.itemsets",
+                    "type": "category"
+                  },
+                  {
+                    "collapsed": true,
+                    "items": [
+                      {
+                        "type": "link",
+                        "label": "Predictor",
+                        "href": "/docs/soil-library/modules/higher_order/Predictor"
+                      }
+                    ],
+                    "label": "modules.higher_order",
+                    "type": "category"
+                  },
+                  {
+                    "collapsed": true,
+                    "items": [
+                      {
+                        "type": "link",
+                        "label": "customstatistics",
+                        "href": "/docs/soil-library/modules/statistics/customstatistics"
+                      },
+                      {
+                        "type": "link",
+                        "label": "time_statistics",
+                        "href": "/docs/soil-library/modules/statistics/time_statistics"
+                      }
+                    ],
+                    "label": "modules.statistics",
+                    "type": "category"
+                  }
+                ],
+                "label": "modules",
+                "type": "category"
+              },
+              {
+                "collapsed": true,
+                "items": [
+                  {
+                    "type": "link",
+                    "label": "NBClusters",
+                    "href": "/docs/soil-library/data_structures/NBClusters"
+                  },
+                  {
+                    "type": "link",
+                    "label": "hypergraph",
+                    "href": "/docs/soil-library/data_structures/hypergraph"
+                  },
+                  {
+                    "type": "link",
+                    "label": "frequent_itemsets",
+                    "href": "/docs/soil-library/data_structures/frequent_itemsets"
+                  },
+                  {
+                    "type": "link",
+                    "label": "data_structure",
+                    "href": "/docs/soil-library/data_structures/data_structure"
+                  },
+                  {
+                    "collapsed": true,
+                    "items": [
+                      {
+                        "type": "link",
+                        "label": "object_ds",
+                        "href": "/docs/soil-library/data_structures/predefined/object_ds"
+                      },
+                      {
+                        "type": "link",
+                        "label": "pd_data_frame",
+                        "href": "/docs/soil-library/data_structures/predefined/pd_data_frame"
+                      },
+                      {
+                        "type": "link",
+                        "label": "dict",
+                        "href": "/docs/soil-library/data_structures/predefined/dict"
+                      },
+                      {
+                        "type": "link",
+                        "label": "ndarray",
+                        "href": "/docs/soil-library/data_structures/predefined/ndarray"
+                      },
+                      {
+                        "type": "link",
+                        "label": "list",
+                        "href": "/docs/soil-library/data_structures/predefined/list"
+                      }
+                    ],
+                    "label": "data_structures.predefined",
+                    "type": "category"
+                  },
+                  {
+                    "collapsed": true,
+                    "items": [
+                      {
+                        "type": "link",
+                        "label": "patients",
+                        "href": "/docs/soil-library/data_structures/streams/patients"
+                      },
+                      {
+                        "type": "link",
+                        "label": "stream",
+                        "href": "/docs/soil-library/data_structures/streams/stream"
+                      }
+                    ],
+                    "label": "data_structures.streams",
+                    "type": "category"
+                  }
+                ],
+                "label": "data_structures",
+                "type": "category"
+              }
+            ],
+            "label": "Reference",
+            "type": "category"
+          }
+        ]
+      },
+      {
+        "collapsed": true,
+        "type": "category",
+        "label": "SDK Reference",
+        "items": [
+          {
+            "collapsed": true,
+            "items": [
+              {
+                "collapsed": true,
+                "items": [
+                  {
+                    "type": "link",
+                    "label": "alerts",
+                    "href": "/docs/sdk-reference/soil/alerts/alerts"
+                  }
+                ],
+                "label": "soil.alerts",
+                "type": "category"
+              },
+              {
+                "collapsed": true,
+                "items": [
+                  {
+                    "type": "link",
+                    "label": "elastic_search",
+                    "href": "/docs/sdk-reference/soil/connectors/elastic_search"
+                  }
+                ],
+                "label": "soil.connectors",
+                "type": "category"
+              },
+              {
+                "collapsed": true,
+                "items": [
+                  {
+                    "type": "link",
+                    "label": "base_storage",
+                    "href": "/docs/sdk-reference/soil/storage/base_storage"
+                  },
+                  {
+                    "type": "link",
+                    "label": "compound_storage",
+                    "href": "/docs/sdk-reference/soil/storage/compound_storage"
+                  },
+                  {
+                    "type": "link",
+                    "label": "elasticsearch",
+                    "href": "/docs/sdk-reference/soil/storage/elasticsearch"
+                  },
+                  {
+                    "type": "link",
+                    "label": "object_storage",
+                    "href": "/docs/sdk-reference/soil/storage/object_storage"
+                  }
+                ],
+                "label": "soil.storage",
+                "type": "category"
+              },
+              {
+                "type": "link",
+                "label": "alias",
+                "href": "/docs/sdk-reference/soil/alias"
+              },
+              {
+                "type": "link",
+                "label": "api",
+                "href": "/docs/sdk-reference/soil/api"
+              },
+              {
+                "type": "link",
+                "label": "configuration",
+                "href": "/docs/sdk-reference/soil/configuration"
+              },
+              {
+                "type": "link",
+                "label": "data",
+                "href": "/docs/sdk-reference/soil/data"
+              },
+              {
+                "type": "link",
+                "label": "data_structure",
+                "href": "/docs/sdk-reference/soil/data_structure"
+              },
+              {
+                "type": "link",
+                "label": "decorator",
+                "href": "/docs/sdk-reference/soil/decorator"
+              },
+              {
+                "type": "link",
+                "label": "dictionary",
+                "href": "/docs/sdk-reference/soil/dictionary"
+              },
+              {
+                "type": "link",
+                "label": "finder",
+                "href": "/docs/sdk-reference/soil/finder"
+              },
+              {
+                "type": "link",
+                "label": "modulify",
+                "href": "/docs/sdk-reference/soil/modulify"
+              },
+              {
+                "type": "link",
+                "label": "pipeline",
+                "href": "/docs/sdk-reference/soil/pipeline"
+              },
+              {
+                "type": "link",
+                "label": "task",
+                "href": "/docs/sdk-reference/soil/task"
+              },
+              {
+                "type": "link",
+                "label": "types",
+                "href": "/docs/sdk-reference/soil/types"
+              },
+              {
+                "type": "link",
+                "label": "utils",
+                "href": "/docs/sdk-reference/soil/utils"
+              }
+            ],
+            "label": "soil",
+            "type": "category"
+          }
+        ]
+      }
+    ]
+  },
+  "permalinkToSidebar": {
+    "/docs/sdk-reference/soil/alerts/alerts": "docs",
+    "/docs/sdk-reference/soil/alias": "docs",
+    "/docs/sdk-reference/soil/api": "docs",
+    "/docs/sdk-reference/soil/configuration": "docs",
+    "/docs/sdk-reference/soil/connectors/elastic_search": "docs",
+    "/docs/sdk-reference/soil/data": "docs",
+    "/docs/sdk-reference/soil/data_structure": "docs",
+    "/docs/sdk-reference/soil/decorator": "docs",
+    "/docs/sdk-reference/soil/dictionary": "docs",
+    "/docs/sdk-reference/soil/finder": "docs",
+    "/docs/sdk-reference/soil/modulify": "docs",
+    "/docs/sdk-reference/soil/pipeline": "docs",
+    "/docs/sdk-reference/soil/storage/base_storage": "docs",
+    "/docs/sdk-reference/soil/storage/compound_storage": "docs",
+    "/docs/sdk-reference/soil/storage/elasticsearch": "docs",
+    "/docs/sdk-reference/soil/storage/object_storage": "docs",
+    "/docs/sdk-reference/soil/task": "docs",
+    "/docs/sdk-reference/soil/types": "docs",
+    "/docs/sdk-reference/soil/utils": "docs",
+    "/docs/soil-library/data_structures/data_structure": "docs",
+    "/docs/soil-library/data_structures/frequent_itemsets": "docs",
+    "/docs/soil-library/data_structures/hypergraph": "docs",
+    "/docs/soil-library/data_structures/NBClusters": "docs",
+    "/docs/soil-library/data_structures/predefined/dict": "docs",
+    "/docs/soil-library/data_structures/predefined/list": "docs",
+    "/docs/soil-library/data_structures/predefined/ndarray": "docs",
+    "/docs/soil-library/data_structures/predefined/object_ds": "docs",
+    "/docs/soil-library/data_structures/predefined/pd_data_frame": "docs",
+    "/docs/soil-library/data_structures/streams/patients": "docs",
+    "/docs/soil-library/data_structures/streams/stream": "docs",
+    "/docs/soil-library/modules/clustering/NBClustering": "docs",
+    "/docs/soil-library/modules/clustering/NBClustering_categorical": "docs",
+    "/docs/soil-library/modules/clustering/SIDIWO/sidiwo": "docs",
+    "/docs/soil-library/modules/experiment": "docs",
+    "/docs/soil-library/modules/higher_order/Predictor": "docs",
+    "/docs/soil-library/modules/itemsets/frequent_itemsets_compare": "docs",
+    "/docs/soil-library/modules/itemsets/frequent_itemsets_hypergraph": "docs",
+    "/docs/soil-library/modules/preprocessing/filters/events_filter": "docs",
+    "/docs/soil-library/modules/preprocessing/filters/row_filter": "docs",
+    "/docs/soil-library/modules/statistics/customstatistics": "docs",
+    "/docs/soil-library/modules/statistics/time_statistics": "docs",
+    "/docs/tutorial/alerts": "docs",
+    "/docs/tutorial/data": "docs",
+    "/docs/tutorial/data-structures": "docs",
+    "/docs/tutorial/deployments": "docs",
+    "/docs/tutorial/get-started": "docs",
+    "/docs/tutorial/logging": "docs",
+    "/docs/tutorial/modules": "docs",
+    "/docs/tutorial/scripts": "docs"
+  }
+}

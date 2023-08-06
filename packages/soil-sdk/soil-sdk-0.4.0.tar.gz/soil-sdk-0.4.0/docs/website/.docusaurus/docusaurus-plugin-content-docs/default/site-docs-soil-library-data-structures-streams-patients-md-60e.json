@@ -1,0 +1,24 @@
+{
+  "unversionedId": "soil-library/data_structures/streams/patients",
+  "id": "soil-library/data_structures/streams/patients",
+  "isDocsHomePage": false,
+  "title": "data_structures.streams.patients",
+  "description": "Patients Objects",
+  "source": "@site/../docs/soil-library/data_structures/streams/patients.md",
+  "slug": "/soil-library/data_structures/streams/patients",
+  "permalink": "/docs/soil-library/data_structures/streams/patients",
+  "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/soil-library/data_structures/streams/patients.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "sidebar_label": "patients",
+  "sidebar": "docs",
+  "previous": {
+    "title": "data_structures.predefined.list",
+    "permalink": "/docs/soil-library/data_structures/predefined/list"
+  },
+  "next": {
+    "title": "data_structures.streams.stream",
+    "permalink": "/docs/soil-library/data_structures/streams/stream"
+  }
+}

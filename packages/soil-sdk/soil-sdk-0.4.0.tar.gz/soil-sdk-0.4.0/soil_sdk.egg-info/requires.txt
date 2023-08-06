@@ -1,0 +1,13 @@
+pbr
+flake8
+bandit
+pre-commit
+mypy
+pylint
+coverage
+pydoc-markdown
+types-PyYAML
+types-requests
+requests
+pyyaml==5.4.1
+PyJWT

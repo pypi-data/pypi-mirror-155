@@ -1,0 +1,24 @@
+{
+  "unversionedId": "tutorial/alerts",
+  "id": "tutorial/alerts",
+  "isDocsHomePage": false,
+  "title": "Alerts",
+  "description": "From a soil application it is possible to trigger events and be subscribed to them. For example a client may want to recieve an SMS when the expected bed occupancy for the emergency department is higher than 90% or we as app developers may want to recieve an email warning us that the data did not arrive today.",
+  "source": "@site/../docs/tutorial/alerts.md",
+  "slug": "/tutorial/alerts",
+  "permalink": "/docs/tutorial/alerts",
+  "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/tutorial/alerts.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "sidebar_label": "Alerts",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Logging",
+    "permalink": "/docs/tutorial/logging"
+  },
+  "next": {
+    "title": "Deployments",
+    "permalink": "/docs/tutorial/deployments"
+  }
+}

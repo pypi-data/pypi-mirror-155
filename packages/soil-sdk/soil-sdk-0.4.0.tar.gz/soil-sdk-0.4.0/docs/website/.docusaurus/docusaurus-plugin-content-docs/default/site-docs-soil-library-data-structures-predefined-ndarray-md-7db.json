@@ -1,0 +1,24 @@
+{
+  "unversionedId": "soil-library/data_structures/predefined/ndarray",
+  "id": "soil-library/data_structures/predefined/ndarray",
+  "isDocsHomePage": false,
+  "title": "data_structures.predefined.ndarray",
+  "description": "Ndarray Objects",
+  "source": "@site/../docs/soil-library/data_structures/predefined/ndarray.md",
+  "slug": "/soil-library/data_structures/predefined/ndarray",
+  "permalink": "/docs/soil-library/data_structures/predefined/ndarray",
+  "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/soil-library/data_structures/predefined/ndarray.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "sidebar_label": "ndarray",
+  "sidebar": "docs",
+  "previous": {
+    "title": "data_structures.predefined.dict",
+    "permalink": "/docs/soil-library/data_structures/predefined/dict"
+  },
+  "next": {
+    "title": "data_structures.predefined.list",
+    "permalink": "/docs/soil-library/data_structures/predefined/list"
+  }
+}

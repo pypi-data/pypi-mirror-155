@@ -1,0 +1,24 @@
+{
+  "unversionedId": "soil-library/modules/experiment",
+  "id": "soil-library/modules/experiment",
+  "isDocsHomePage": false,
+  "title": "modules.experiment",
+  "description": "Experiment Objects",
+  "source": "@site/../docs/soil-library/modules/experiment.md",
+  "slug": "/soil-library/modules/experiment",
+  "permalink": "/docs/soil-library/modules/experiment",
+  "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/soil-library/modules/experiment.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "sidebar_label": "experiment",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Deployments",
+    "permalink": "/docs/tutorial/deployments"
+  },
+  "next": {
+    "title": "modules.clustering.NBClustering",
+    "permalink": "/docs/soil-library/modules/clustering/NBClustering"
+  }
+}

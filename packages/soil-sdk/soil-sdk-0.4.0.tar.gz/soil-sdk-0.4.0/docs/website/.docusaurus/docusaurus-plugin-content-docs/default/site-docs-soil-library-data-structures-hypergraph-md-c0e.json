@@ -1,0 +1,24 @@
+{
+  "unversionedId": "soil-library/data_structures/hypergraph",
+  "id": "soil-library/data_structures/hypergraph",
+  "isDocsHomePage": false,
+  "title": "data_structures.hypergraph",
+  "description": "Hypergraph Objects",
+  "source": "@site/../docs/soil-library/data_structures/hypergraph.md",
+  "slug": "/soil-library/data_structures/hypergraph",
+  "permalink": "/docs/soil-library/data_structures/hypergraph",
+  "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/soil-library/data_structures/hypergraph.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "sidebar_label": "hypergraph",
+  "sidebar": "docs",
+  "previous": {
+    "title": "data_structures.NBClusters",
+    "permalink": "/docs/soil-library/data_structures/NBClusters"
+  },
+  "next": {
+    "title": "data_structures.frequent_itemsets",
+    "permalink": "/docs/soil-library/data_structures/frequent_itemsets"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "unversionedId": "tutorial/modules",
+  "id": "tutorial/modules",
+  "isDocsHomePage": false,
+  "title": "Modules",
+  "description": "The modules contain the instructions to transform the data. The signature of a module always is:",
+  "source": "@site/../docs/tutorial/modules.md",
+  "slug": "/tutorial/modules",
+  "permalink": "/docs/tutorial/modules",
+  "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/tutorial/modules.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "sidebar_label": "Modules",
+  "sidebar": "docs",
+  "previous": {
+    "title": "Data Structures",
+    "permalink": "/docs/tutorial/data-structures"
+  },
+  "next": {
+    "title": "Logging",
+    "permalink": "/docs/tutorial/logging"
+  }
+}

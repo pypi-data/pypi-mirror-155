@@ -1,0 +1,24 @@
+{
+  "unversionedId": "soil-library/data_structures/data_structure",
+  "id": "soil-library/data_structures/data_structure",
+  "isDocsHomePage": false,
+  "title": "data_structures.data_structure",
+  "description": "DataStructure Objects",
+  "source": "@site/../docs/soil-library/data_structures/data_structure.md",
+  "slug": "/soil-library/data_structures/data_structure",
+  "permalink": "/docs/soil-library/data_structures/data_structure",
+  "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/soil-library/data_structures/data_structure.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "sidebar_label": "data_structure",
+  "sidebar": "docs",
+  "previous": {
+    "title": "data_structures.frequent_itemsets",
+    "permalink": "/docs/soil-library/data_structures/frequent_itemsets"
+  },
+  "next": {
+    "title": "data_structures.predefined.object_ds",
+    "permalink": "/docs/soil-library/data_structures/predefined/object_ds"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "unversionedId": "sdk-reference/soil/utils",
+  "id": "sdk-reference/soil/utils",
+  "isDocsHomePage": false,
+  "title": "soil.utils",
+  "description": "This module defines some useful functions",
+  "source": "@site/../docs/sdk-reference/soil/utils.md",
+  "slug": "/sdk-reference/soil/utils",
+  "permalink": "/docs/sdk-reference/soil/utils",
+  "editUrl": "https://gitlab.com/amalfianalytics/soil/soil-sdk/-/tree/master/docs/docs/../docs/sdk-reference/soil/utils.md",
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055,
+  "sidebar_label": "utils",
+  "sidebar": "docs",
+  "previous": {
+    "title": "soil.types",
+    "permalink": "/docs/sdk-reference/soil/types"
+  }
+}

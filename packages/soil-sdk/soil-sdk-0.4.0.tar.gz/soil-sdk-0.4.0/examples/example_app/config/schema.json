@@ -1,0 +1,29 @@
+{
+  "_id": "_id",
+  "columns": {
+    "X_columns": {
+      "sepal_length": {
+        "name": "sepal_length",
+        "type": "float"
+      },
+      "sepal_width": {
+        "name": "sepal_width",
+        "type": "float"
+      },
+      "petal_length": {
+        "name": "petal_length",
+        "type": "float"
+      },
+      "petal_width": {
+        "name": "petal_width",
+        "type": "float"
+      }
+    },
+    "y_columns": {
+      "species": {
+        "name": "species",
+        "type": "str"
+      }
+    }
+  }
+}
