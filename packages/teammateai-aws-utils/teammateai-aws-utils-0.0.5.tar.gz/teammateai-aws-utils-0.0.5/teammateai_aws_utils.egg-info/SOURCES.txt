@@ -1,0 +1,11 @@
+README.md
+setup.py
+aws_utils/__init__.py
+aws_utils/cloudwatch.py
+aws_utils/dynamo.py
+aws_utils/s3.py
+teammateai_aws_utils.egg-info/PKG-INFO
+teammateai_aws_utils.egg-info/SOURCES.txt
+teammateai_aws_utils.egg-info/dependency_links.txt
+teammateai_aws_utils.egg-info/requires.txt
+teammateai_aws_utils.egg-info/top_level.txt
