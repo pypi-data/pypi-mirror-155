@@ -1,0 +1,76 @@
+{% extends 'timeseer.html' %}
+
+{% from 'macros.html' import alerter %}
+{% from 'configure.html' import configure_menu with context %}
+
+{% block menu %}
+{{ configure_menu('Data services') }}
+{% endblock %}
+
+{% block main %}
+<div class="ts-section py-3 my-3">
+    <div class="row align-items-center gx-2">
+        <div class="col-sm">
+            <h2 class="h4">Configure data service</h2>
+            <p class="h6 text-break">{{ data_service.name }}</p>
+        </div>
+        {% if data_service.origin.value == 'ui' %}
+        <div class="col-sm-auto">
+            <div class="btn-toolbar" role="toolbar">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="editDropdown" data-bs-toggle="dropdown">
+                        Edit
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="editDropdown">
+                        <li>
+                            <a class="dropdown-item {%if data_service.origin.value != "ui" %}disabled{% endif %}" href="{{ url_for('.rename_data_service', dataservicename=data_service.name, sourcename=source_name) }}">
+                                Rename
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item {%if data_service.origin.value != "ui" %}disabled{% endif %}"
+                            href="{{ url_for('.remove_data_service', dataservicename=data_service.name, sourcename=source_name) }}">
+                                Remove
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<div class="my-3 py-3">
+    {{ alerter() }}
+    <form id="dataserviceselection" method="POST" action="{{ url_for('.configure_data_service', dataservicename=data_service.name, sourcename=source_name) }}">
+        {% if source_name %}
+        <input type="hidden" name="sourcename" value="{{ source_name }}">
+        {% endif %}
+        <input type="hidden" name="dataservicename" value="{{ data_service.name }}">
+        <table class="ts-table  table table-borderless mt-3">
+            <thead class="table-secondary">
+                <tr class="border-bottom">
+                    <th scope="col">KPI set name</th>
+                </tr>
+            </thead>
+            <tr class="border-bottom">
+                <td>
+                    {% if data_service.origin.value == 'ui' %}
+                    <select class="form-select" name="kpisetname" id="KPISetSelect">
+                        {% for kpi_set in kpi_sets|sort(attribute='name') %}
+                        <option {% if kpi_set.db_id == data_service.kpi_set.db_id%}selected{% endif %}>{{ kpi_set.name }}</option>
+                        {% endfor %}
+                    </select>
+                    {% else %}
+                    {{ data_service.kpi_set.name }}
+                    {% endif %}
+                </td>
+            </tr>
+        </table>
+        {% if data_service.origin.value == 'ui' %}
+        <button type="submit" class="btn btn-primary">Update KPI set</button>
+        {% endif %}
+    </form>
+</div>
+{% endblock %}

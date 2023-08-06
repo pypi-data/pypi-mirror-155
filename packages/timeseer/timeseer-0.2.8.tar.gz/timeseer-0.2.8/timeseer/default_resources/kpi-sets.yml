@@ -1,0 +1,44 @@
+- name: Data quality fundamentals
+  type: Default KPI set
+  KPIS:
+  - consistency
+  - completeness
+  - validity
+  - integrity
+  - timeliness
+  - metadata
+  favorites:
+  - consistency
+  - completeness
+  - validity
+  - integrity
+  - timeliness
+  - metadata
+
+
+- name: Control loops
+  type: Control loop KPI set
+  KPIS:
+  - control loops
+  favorites:
+  - control loops
+
+
+- name: Data quality basics
+  type: KPI set
+  KPIS:
+  - accuracy
+  - consistency+
+  - completeness+
+  - validity+
+  - integrity+
+  - timeliness+
+  - metadata+
+  favorites:
+  - accuracy
+  - consistency+
+  - completeness+
+  - validity+
+  - integrity+
+  - timeliness+
+  - metadata+

@@ -1,0 +1,103 @@
+---
+- name: "Consistency"
+  type: KPI
+  weights:
+    "Values outside unit range": 1
+
+- name: "Completeness"
+  type: KPI
+  weights:
+    "NaNs": 1
+    "Data available": 1
+
+- name: "Validity"
+  type: KPI
+  weights:
+    "Out-of-bounds (lower, physical)": 1
+    "Out-of-bounds (upper, physical)": 1
+    "Values in dictionary": 1
+    "Data matches data type": 1
+
+- name: "Integrity"
+  type: KPI
+  weights:
+    "Source bad quality flags": 1
+    "No out-of-order samples": 1
+    "No duplicate timestamps": 1
+      
+- name: "Timeliness"
+  type: KPI
+  weights:
+    "Recently updated": 1
+
+- name: "Metadata"
+  type: KPI
+  weights:
+    "unit - physical": 1
+    "limits - physical": 1
+    "description": 1
+    "dictionary": 1
+
+- name: "Accuracy"
+  type: KPI
+  weights:
+    "Compression - flat archival rate": 1
+    "Compression - value dependent archival rate": 1
+
+- name: "Consistency+"
+  type: KPI
+  weights:
+    "Values outside unit range": 1
+    "improbable limits": 1
+
+- name: "Completeness+"
+  type: KPI
+  weights:
+    "NaNs": 1
+    "Data available": 1
+
+- name: "Validity+"
+  type: KPI
+  weights:
+    "Out-of-bounds (lower, physical)": 1
+    "Out-of-bounds (upper, physical)": 1
+    "Values in dictionary": 1
+    "Data matches data type": 1
+    "Out-of-bounds (lower)": 1
+    "Out-of-bounds (lower, accuracy)": 1
+    "Out-of-bounds (lower, physical, accuracy)": 1
+    "Out-of-bounds (upper)": 1
+    "Out-of-bounds (upper, accuracy)": 1
+    "Out-of-bounds (upper, physical, accuracy)": 1
+
+- name: "Integrity+"
+  type: KPI
+  weights:
+    "Source bad quality flags": 1
+    "No out-of-order samples": 1
+    "No duplicate timestamps": 1
+      
+- name: "Timeliness+"
+  type: KPI
+  weights:
+    "Recently updated": 1
+    "Increased archival step size": 1
+    "Stale data (distribution)": 1
+
+- name: "Metadata+"
+  type: KPI
+  weights:
+    "unit - physical": 1
+    "limits - physical": 1
+    "description": 1
+    "dictionary": 1
+    "interpolation type": 1
+    "unit - functional": 1
+    "limits - functional": 1
+
+- name: "Control loops"
+  type: KPI
+  weights:
+    "Control Loop Oscillation": 1
+    "Stiction": 1
+    "Saturation": 1
