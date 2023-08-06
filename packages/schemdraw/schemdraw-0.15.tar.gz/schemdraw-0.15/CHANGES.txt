@@ -1,0 +1,289 @@
+v0.15 - 20-Jun-2022
+
+    - Added DSP elements Circulator, Isolator, VGA
+    - Added ZLabel element for right-angle impedance arrow labels
+    - Changed DSP anchor names from 'in' to 'input' to avoid conflict with 'in' keyword
+    - Fixed styles with nested ElementDrawing elements
+    - Fixed zorder of filled elements in Matplotlib backend
+    - Added mathfont parameter to labels for specifying different font on math labels
+    - Added padx and pady parameters to Encircle elements
+    - Moved SVG backend configuration to svgconfig object and deprecated 'settextmode'.
+    - Added 'visible' parameter to Segment objects 
+
+
+v0.14 - 09-Jan-2022
+
+    - Added context manager to Drawing class.
+    - Added Wire element for quick 90-degree connections
+    - Added Encircle, EncircleBox, and Annotate elements
+    - Added Wheatstone, Rectifier, SparkGap elements
+    - Added "2T" version of transistor elements for placement as as two-terminal elements
+    - `tox` and `toy` methods automatically change drawing direction, removing need to specify `right()` and `tox()`, for example.
+    - Added `istart` and `iend` anchors to 2-Terminal elements for defining inner start and end points before lead extensions
+    - Added `dot` and `idot` methods to two-terminal elements
+    - Added '-o' and '-\|' arrow types to draw dot or endcap instead of arrow at the end of lines
+    - Added `leads` parameter to OpAmp for adding lead extensions
+    - Added `lead` parameter to Grounds, Vss, and Vdd
+    - Added optional `dx` and `dy` parameters to `to` and `at` methods for quick fine-tuning of placement
+    - Added optional `length` parameter to `up`, `down`, `left`, and `right` on two-terminal elements
+    - Improved placement of CurrentLabel arrows
+    - Fix default label position on Vss element
+    - Fix positioning of switch contact bubbles
+    - Fix text rotation in svg backend and path mode
+    - The `scale` method now maintains the length of two-terminal elements
+
+
+v0.13 - 19-Dec-2021
+
+    - Added Digital Timing Diagram elements
+    - Added Table and Kmap elements
+    - Added Arc2, Arc3, ArcN, ArcZ, ArcLoop elements, useful for state machine diagrams
+    - Added drop method to Element class to specify where to leave the drawing position
+    - Added move_from method to Drawing class to move relative to another element anchor
+    - Added more anchors to all flowchart elements
+    - Improved layout of flowchart elements. **May affect layout of some existing flowchart diagrams.**
+    - Added SegmentBezier for creating elements with curves
+    - Deprecated SegmentArrow in favor of Segment with arrow parameter
+
+
+v0.12 - 05-Nov-2021
+
+    - Fixed Arrow and LineDot element placement when placed with anchor
+    - Fixed copy/pickle of Element class
+    - Fixed importing * from schemdraw.elements
+
+
+v0.11 - 10-Jul-2021
+
+    - Fixed placing elements by anchor when anchors were defined using a tuple rather than Point
+    - SVG backend adds option for SVG1.x format for better compatibility with SVG renderers
+    - Restore compabitliiby with Python 3.7 via conditional import of typing_extensions.
+
+
+v0.10 - 30-Apr-2021
+
+    - Added options to place labels inside Mixer elements
+    - Fixed arrowhead overshoot
+    - Fixed get_imagedata function
+    - Update pip install to include optional dependencies
+    - Added ziamath optional dependency for rendering math in SVG backend
+    - Added LoopArrow as superclass of LoopCurrent, for placing a loop anywhere
+
+
+v0.9.1 - 30-Jan-2021
+
+    - Fixed missing module in setup.py.
+
+
+v0.9 - 30-Jan-2021
+
+    - Added optional SVG backend for drawing directly to an SVG image
+    - Implemented method-chaining "fluent" interface for building elements
+    - Added `elements.style` method for setting U.S. or European/IEC resistor style
+    - Added parameter for drawing schematic on existing matplotlib axis
+    - Added string parser for creating logic diagrams from expressions like "A or B"
+    - Fixed zooming of arc segments
+    - Added type annotations
+    - Added `Drawing.move` method for moving cursor by dx and dy.
+    - Drawing class implements += operator, so elements can be added by `Drawing += Element()`
+    - Removed dependency on Numpy
+    - Added Drawing.interactive` to allow element-by-element drawing with Matplotlib's plt.ion().
+    - Now requires Python 3.8+
+
+    - New Elements:
+        - CPE (Constant Phase Element)
+        - Varactor
+        - FuseIEEE
+        - FuseIEC
+        - SwitchRotary
+        - SwitchReed
+        - Jack
+        - Plug
+        - Ic555
+        - IcDIP
+        - SevenSegment
+        - Outlet Elements
+    
+    - Deprecations:
+        - `Element.add_label` is deprecated (use `Element.label`)
+        - `Drawing.loopI` is deprecated (add a `LoopCurrent` element)
+        - `Drawing.labelI` is deprecated (add a `CurrentLabel` element)
+        - `Drawing.labelI_inline` is deprecated (add a `CurrentLabelInline` element)
+
+
+
+v0.8 - 15-Aug-2020
+
+    - Changed Header anchors to `pinN` for consistency with Ic.
+    - Improved label placement with respect to anchor positions.
+    - Prevent duplicate figures from showing in Jupyter Element representation
+    - Improvements for headless server operation to prevent popup window
+    - Added some undocumented features to documentation
+    - Added `Drawing.get_imagedata` function for returning raw image bytes
+    - Fixed pip installation issue with module capitalization. Must import lowercase `schemdraw`.
+
+
+v0.7.1 - 26-Jun-2020
+
+    - Bug fix: restore usage outside of Jupyter, so that Matplotlib window is shown when calling Drawing.draw().
+
+
+v0.7 - 21-Jun-2020
+
+    - Dropped support for Python 2. Now requires 3.7+.
+    - Elements are now subclasses of Element. Previous (dict) element names are translated into
+      new class names. Any user-defined elements will need to be converted to classes.
+      The `group_elements` function is replaced with `ElementDrawing` class.      
+    - Allow `fontsize` or `size` keyword arguments interchangeably in Drawing and add_label
+    - Updated flow.Decision to use keyword arguments for labeling decision branches
+    - The Ic element label offset parameter changed from `lblofst` to `lofst` 
+      to avoid conflict with the main element label.
+    - Direct access to Drawing.fig and Drawing.ax are no longer available. Instead, Drawing.draw()
+      returns a schemdraw.Figure instance with fig and ax attributes.
+    - Implemented Jupyter representation functions for both Drawing and Element classes.
+
+    - New Elements:
+        - Coax
+        - Triax
+        - SwitchDpst
+        - SwitchDpdt
+        - Relay
+        - Optocoupler
+        - Arrow
+        - LineDot
+        - Breaker
+        - OrthoLines
+        - RightLines
+        - BusConnect
+        - BusLine
+        - Tag
+        - Photoresistor
+        - PhotoresistorBox
+        - Thermistor
+        - DiodeShockley
+        - PotBox
+        - RBoxVar
+        - Solar
+        - Neon
+        - SourceSquare
+        - AntennaLoop
+        - AntennaLoop2
+        - AudioJack
+        - Tgate
+        - Schmitt
+        - SchmittNot
+        - SchmittAnd
+        - SchmittNand
+
+
+v0.6.0, 11-Feb-2020
+
+    - Refactored internals to allow more control over individual components of drawing.
+      Should have no effect unless the user is accessing internal attributes of the Element object.
+      This also adds the `segments` list to the Element object, which allows finer control over 
+      individual bits of the drawing.
+    - Updated add_label so that "top" labels should always appear on top, regardless of flip/reverse
+    - Swapped the direction of current sources, so that a current source with direction "up" has the
+      arrow pointing up.
+    - Added "zorder" parameter in the element definition dictionary and `add` method
+    - Added `elements.ic` and `elements.multiplexer` functions as replacements to `blackbox` and `mux`.
+      These include more functionality such as adjusting indiviudal pin rotation, color, and inverter bubbles.
+    - Labels can be placed relative to an anchor position using the `add_label` method. This could be
+      useful, for example, in labeling pin numbers on a logic gate or opamp.
+    - Added new anchors to OPAMPs for power supply and offset nulls.      
+        
+    - New Elements:
+        - MIC
+        - MOTOR
+
+    - Documentation:
+        - Upgraded documentation to Sphinx and moved to readthedocs.org at https://schemdraw.readthedocs.io/en/latest/.
+        - Changed preferred import to `import SchemDraw.elements as elm`. Apparently some people still
+          use import * with pylab; this suggestion will help avoid conflicts.        
+
+
+v0.5.0, 21-Jul-2019
+    - Added flowcharting symbol methods to SchemDraw.flow module
+    - Added signal processing symbols to SchemDraw.dsp module
+    - Implemented fill parameter on Drawing.add to fill shapes and closed paths with a solid color
+    - New elements:
+        - Fuse
+        - CapacitorVar,
+        - DiodeTunnel
+        - Jfet
+        - Diac
+        - Triac
+        - SCR
+
+
+v0.4.0, 03-Nov-2018
+    - Fixed drawing of NOT and related gates to property extend the path
+    - Fixed arrow translation when grouping elements
+    - Fixed sidelabels and plabels of blackbox when empty
+    - Fixed arc drawing due to change in Matplotlib 2.2 on asymmetric partial arcs
+
+
+v0.3.0, 03-Jul-2017
+    - Added function for drawing multiplexers/demultiplexers
+    - Updates to labelI() method to allow reversing arrow and changing length
+    - Add CSS to documentation
+    - New elements:
+        - PHOTODIODE
+        - NFET4
+        - PFET4
+        - VSS
+        - VDD
+
+
+v0.2.2, 06-Mar-2016
+    - Documentation updates
+    - New elements:
+        - Transformer
+        - Josephson Junction (JJ)
+
+
+v0.2.1, 03-May-2015
+    - Fixed anchor names when element overwrites base anchor, such as BJT_PNP.
+    - Added showplot keyword to draw() for non-interactive mode.
+    - Added 2-collector BJT.
+    - Documentation: added gallery of schematics.
+
+
+v0.2.0, 29-Apr-2015
+    - Added default line width argument to drawing() class. Default width is now 1.5.
+    - Converted documentation to use all vector-based images
+    - Added XKCD-mode example
+    - New elements: 
+        - BATTERY
+        - BAT_CELL
+        - SPEAKER
+        - BUTTON
+        - BUTTON_NC
+        - XTAL
+        - MEMRISTOR,
+        - SCHOTTKY
+        - ZENER
+        - LED2
+
+
+v0.1.4, 30-Sep-2014
+    - Add function to group several elements into one
+    - Add blackbox() function to generate box elements with arbitrary inputs
+    - Allow element definition to specify label alignment
+    - Added linestyle to element kwargs and definition
+    - New elements:
+        - LED
+        - OPAMP_NOSIGN
+        - GAP_LABEL
+        - ELLIPSIS
+
+
+v0.1.3, 21-Sep-2014
+    - Added logic gate elements
+    - Added transparent and dpi options to save() function
+    - Fixed issues with zooming and rotating elements with arcs
+    - LaTeX typesetting uses sans-serif, regular fonts for consistency
+
+
+v0.1.0, 25-Aug-2014
+    - Initial Release

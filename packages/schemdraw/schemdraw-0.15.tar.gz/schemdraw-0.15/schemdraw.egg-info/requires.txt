@@ -1,0 +1,11 @@
+
+[:python_version < "3.8"]
+typing_extensions
+
+[matplotlib]
+matplotlib>=3
+
+[svgmath]
+ziafont>=0.4
+ziamath>=0.6
+latex2mathml
