@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: file-service-client
+Version: 2.1.0
+Summary: E360 File Service Client for Python
+Author: IQVIA
+Author-email: e360pypi@iqvia.com
+License: Apache License 2.0
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Requires-Python: >=3.7
+License-File: LICENSE.txt
+Requires-Dist: clients-core (<3,>=2.1.1)
+Requires-Dist: pydantic
+Requires-Dist: types-requests
+
