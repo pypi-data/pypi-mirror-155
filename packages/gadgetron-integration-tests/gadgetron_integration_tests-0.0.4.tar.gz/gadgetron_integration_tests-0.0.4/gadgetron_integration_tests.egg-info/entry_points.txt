@@ -1,0 +1,4 @@
+[console_scripts]
+gadgetron_get_integration_test_data = get_data:main
+gadgetron_run_integration_test = run_gadgetron_test:main
+gadgetron_run_integration_tests = run_tests:main
