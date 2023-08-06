@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "moosee"
+version = "0.1.0"
+description = ""
+authors = ["wvlab <wvlab@protonmail.com>"]
+maintainers = ["wvlab <wvlab@protonmail.com>"]
+license = "GPL-3.0-or-later"
+repository = "https://github.com/wvlab/moosee"
+classifiers = [
+    "Topic :: Development Status :: 1 - Planning"
+]
+
+[tool.poetry.scripts]
+moosee = 'moosee.__main__:start'
+
+[tool.poetry.dependencies]
+python = "^3.6"
+mss = { version = "^6.1.0", optional = true }
+opencv-python = "^4.6.0"
+keyboard = "^0.13.5"
+pynput = "^1.7.6"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
