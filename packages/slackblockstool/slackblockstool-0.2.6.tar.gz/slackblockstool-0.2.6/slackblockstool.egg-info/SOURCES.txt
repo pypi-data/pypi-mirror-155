@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+slackblockstool/__init__.py
+slackblockstool/blocks.py
+slackblockstool/event.py
+slackblockstool/parser.py
+slackblockstool/view.py
+slackblockstool.egg-info/PKG-INFO
+slackblockstool.egg-info/SOURCES.txt
+slackblockstool.egg-info/dependency_links.txt
+slackblockstool.egg-info/requires.txt
+slackblockstool.egg-info/top_level.txt
