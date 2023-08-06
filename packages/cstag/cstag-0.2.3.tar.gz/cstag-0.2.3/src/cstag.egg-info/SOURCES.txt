@@ -1,0 +1,13 @@
+LICENSE
+README.md
+setup.py
+src/cstag/__init__.py
+src/cstag/consensus.py
+src/cstag/lengthen.py
+src/cstag/mask.py
+src/cstag/shorten.py
+src/cstag/to_html.py
+src/cstag.egg-info/PKG-INFO
+src/cstag.egg-info/SOURCES.txt
+src/cstag.egg-info/dependency_links.txt
+src/cstag.egg-info/top_level.txt
