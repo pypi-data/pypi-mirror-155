@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00048.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>#{AR_PACKAGE}</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>#{COMPONENT}_BswImplementations</SHORT-NAME>
+          <ELEMENTS>
+            <BSW-IMPLEMENTATION>
+              <SHORT-NAME>Impl_Bsw_#{COMPONENT}</SHORT-NAME>
+              <CODE-DESCRIPTORS>
+                <CODE>
+                  <SHORT-NAME>SRC</SHORT-NAME>
+                  <ARTIFACT-DESCRIPTORS>
+                    <AUTOSAR-ENGINEERING-OBJECT>
+                      <SHORT-LABEL>EngObject</SHORT-LABEL>
+                      <CATEGORY>SWSRC</CATEGORY>
+                    </AUTOSAR-ENGINEERING-OBJECT>
+                  </ARTIFACT-DESCRIPTORS>
+                </CODE>
+              </CODE-DESCRIPTORS>
+              <RESOURCE-CONSUMPTION>
+                <SHORT-NAME>Resources</SHORT-NAME>
+                <MEMORY-SECTIONS>
+                  <MEMORY-SECTION>
+                    <SHORT-NAME>CODE</SHORT-NAME>
+                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/CODE</SW-ADDRMETHOD-REF>
+                  </MEMORY-SECTION>
+                </MEMORY-SECTIONS>
+              </RESOURCE-CONSUMPTION>
+              <SW-VERSION>1.0.0</SW-VERSION>
+              <VENDOR-ID>#{VENDOR_ID}</VENDOR-ID>
+              <AR-RELEASE-VERSION>4.4.0</AR-RELEASE-VERSION>
+              <BEHAVIOR-REF DEST="BSW-INTERNAL-BEHAVIOR">/#{AR_PACKAGE}/#{COMPONENT}_Bswmd/#{COMPONENT}/Bsw_#{COMPONENT}_IB</BEHAVIOR-REF>
+            </BSW-IMPLEMENTATION>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE>
+          <SHORT-NAME>#{COMPONENT}_Bswmd</SHORT-NAME>
+          <ELEMENTS>
+            <BSW-MODULE-DESCRIPTION>
+              <SHORT-NAME>#{COMPONENT}</SHORT-NAME>
+              <CATEGORY>BSW_MODULE</CATEGORY>
+              <MODULE-ID>255</MODULE-ID>
+              <PROVIDED-ENTRYS>
+                <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/#{AR_PACKAGE}/#{COMPONENT}_Bswmd/#{COMPONENT}_MainFunction</BSW-MODULE-ENTRY-REF>
+                </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+              </PROVIDED-ENTRYS>
+              <INTERNAL-BEHAVIORS>
+                <BSW-INTERNAL-BEHAVIOR>
+                  <SHORT-NAME>Bsw_#{COMPONENT}_IB</SHORT-NAME>
+                  <ENTITYS>
+                    <BSW-SCHEDULABLE-ENTITY>
+                      <SHORT-NAME>BswSchedEntity_MainFuntion</SHORT-NAME>
+                      <REENTRANCY-LEVEL>NON-REENTRANT</REENTRANCY-LEVEL>
+                      <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/#{AR_PACKAGE}/#{COMPONENT}_Bswmd/#{COMPONENT}_MainFunction</IMPLEMENTED-ENTRY-REF>
+                    </BSW-SCHEDULABLE-ENTITY>
+                  </ENTITYS>
+                  <EVENTS>
+                    <BSW-TIMING-EVENT>
+                      <SHORT-NAME>TimingEvent_MainFuntion</SHORT-NAME>
+                      <STARTS-ON-EVENT-REF DEST="BSW-SCHEDULABLE-ENTITY">/#{AR_PACKAGE}/#{COMPONENT}_Bswmd/#{COMPONENT}/Bsw_#{COMPONENT}_IB/BswSchedEntity_MainFuntion</STARTS-ON-EVENT-REF>
+                      <PERIOD>0.05</PERIOD>
+                    </BSW-TIMING-EVENT>
+                  </EVENTS>
+                </BSW-INTERNAL-BEHAVIOR>
+              </INTERNAL-BEHAVIORS>
+            </BSW-MODULE-DESCRIPTION>
+            <BSW-MODULE-ENTRY>
+              <SHORT-NAME>#{COMPONENT}_MainFunction</SHORT-NAME>
+              <SERVICE-ID>0</SERVICE-ID>
+              <IS-REENTRANT>false</IS-REENTRANT>
+              <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+              <CALL-TYPE>SCHEDULED</CALL-TYPE>
+              <EXECUTION-CONTEXT>TASK</EXECUTION-CONTEXT>
+              <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+            </BSW-MODULE-ENTRY>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00048.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>#{AR_PACKAGE}</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>#{COMPONENT}_PortInterfaces</SHORT-NAME>
+          <ELEMENTS>
+            <CLIENT-SERVER-INTERFACE>
+              <SHORT-NAME>IFCS_#{COMPONENT}</SHORT-NAME>
+              <IS-SERVICE>false</IS-SERVICE>
+              <OPERATIONS>
+                <CLIENT-SERVER-OPERATION>
+                  <SHORT-NAME>#{COMPONENT}_global_service</SHORT-NAME>
+                  <POSSIBLE-ERROR-REFS>
+                    <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/#{AR_PACKAGE}/#{COMPONENT}_PortInterfaces/IFCS_#{COMPONENT}/E_NOT_OK</POSSIBLE-ERROR-REF>
+                  </POSSIBLE-ERROR-REFS>
+                </CLIENT-SERVER-OPERATION>
+              </OPERATIONS>
+              <POSSIBLE-ERRORS>
+                <APPLICATION-ERROR>
+                  <SHORT-NAME>E_NOT_OK</SHORT-NAME>
+                  <ERROR-CODE>1</ERROR-CODE>
+                </APPLICATION-ERROR>
+              </POSSIBLE-ERRORS>
+            </CLIENT-SERVER-INTERFACE>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

@@ -1,0 +1,3 @@
+[console_scripts]
+eb-plugin = py_tresos.cli.eb_plugin_cli:main
+

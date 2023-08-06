@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00048.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>#{AR_PACKAGE}</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>#{COMPONENT}_SwComponentTypes</SHORT-NAME>
+          <ELEMENTS>
+            <COMPLEX-DEVICE-DRIVER-SW-COMPONENT-TYPE>
+              <SHORT-NAME>#{COMPONENT}</SHORT-NAME>
+              <PORTS>
+                <P-PORT-PROTOTYPE>
+                  <SHORT-NAME>PP_#{COMPONENT}_global_service</SHORT-NAME>
+                  <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/#{AR_PACKAGE}/#{COMPONENT}_PortInterfaces/IFCS_#{COMPONENT}</PROVIDED-INTERFACE-TREF>
+                </P-PORT-PROTOTYPE>
+              </PORTS>
+              <INTERNAL-BEHAVIORS>
+                <SWC-INTERNAL-BEHAVIOR>
+                  <SHORT-NAME>IB_#{COMPONENT}</SHORT-NAME>
+                  <EVENTS>
+                    <OPERATION-INVOKED-EVENT>
+                      <SHORT-NAME>oie_PP_#{COMPONENT}_alive_#{COMPONENT}_global_service</SHORT-NAME>
+                      <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/#{AR_PACKAGE}/#{COMPONENT}_SwComponentTypes/#{COMPONENT}/IB_#{COMPONENT}/Runnable_#{COMPONENT}</START-ON-EVENT-REF>
+                      <OPERATION-IREF>
+                        <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/#{AR_PACKAGE}/#{COMPONENT}_SwComponentTypes/#{COMPONENT}/PP_#{COMPONENT}_global_service</CONTEXT-P-PORT-REF>
+                        <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/#{AR_PACKAGE}/#{COMPONENT}_PortInterfaces/IFCS_#{COMPONENT}/#{COMPONENT}_global_service</TARGET-PROVIDED-OPERATION-REF>
+                      </OPERATION-IREF>
+                    </OPERATION-INVOKED-EVENT>
+                  </EVENTS>
+                  <HANDLE-TERMINATION-AND-RESTART>CAN-BE-TERMINATED-AND-RESTARTED</HANDLE-TERMINATION-AND-RESTART>
+                  <RUNNABLES>
+                    <RUNNABLE-ENTITY>
+                      <SHORT-NAME>Runnable_#{COMPONENT}</SHORT-NAME>
+                      <MINIMUM-START-INTERVAL>0.0</MINIMUM-START-INTERVAL>
+                      <SYMBOL>#{COMPONENT}_global_service</SYMBOL>
+                    </RUNNABLE-ENTITY>
+                  </RUNNABLES>
+                </SWC-INTERNAL-BEHAVIOR>
+              </INTERNAL-BEHAVIORS>
+            </COMPLEX-DEVICE-DRIVER-SW-COMPONENT-TYPE>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE>
+          <SHORT-NAME>#{COMPONENT}_SwcImplementations</SHORT-NAME>
+          <ELEMENTS>
+            <SWC-IMPLEMENTATION>
+              <SHORT-NAME>Impl_#{COMPONENT}</SHORT-NAME>
+              <LONG-NAME>
+                <L-4 L="FOR-ALL"></L-4>
+              </LONG-NAME>
+              <CODE-DESCRIPTORS>
+                <CODE>
+                  <SHORT-NAME>SRC</SHORT-NAME>
+                  <ARTIFACT-DESCRIPTORS>
+                    <AUTOSAR-ENGINEERING-OBJECT>
+                      <SHORT-LABEL>EngObject</SHORT-LABEL>
+                      <CATEGORY>SWSRC</CATEGORY>
+                    </AUTOSAR-ENGINEERING-OBJECT>
+                  </ARTIFACT-DESCRIPTORS>
+                </CODE>
+              </CODE-DESCRIPTORS>
+              <PROGRAMMING-LANGUAGE>C</PROGRAMMING-LANGUAGE>
+              <RESOURCE-CONSUMPTION>
+                <SHORT-NAME>Resources</SHORT-NAME>
+                <MEMORY-SECTIONS>
+                  <MEMORY-SECTION>
+                    <SHORT-NAME>CODE</SHORT-NAME>
+                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/CODE</SW-ADDRMETHOD-REF>
+                  </MEMORY-SECTION>
+                </MEMORY-SECTIONS>
+              </RESOURCE-CONSUMPTION>
+              <SW-VERSION>1.0.0</SW-VERSION>
+              <USED-CODE-GENERATOR></USED-CODE-GENERATOR>
+              <VENDOR-ID>#{VENDOR_ID}</VENDOR-ID>
+              <BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/#{AR_PACKAGE}/#{COMPONENT}_SwComponentTypes/#{COMPONENT}/IB_#{COMPONENT}</BEHAVIOR-REF>
+            </SWC-IMPLEMENTATION>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>
