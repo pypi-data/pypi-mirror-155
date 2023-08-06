@@ -1,0 +1,49 @@
+Metadata-Version: 2.1
+Name: reverse-read
+Version: 0.1
+Summary: A package for read reversed texts.
+Home-page: https://github.com/pourya90091/reverse-read
+Author: pourya90091
+Author-email: pourya90091@gmail.com
+Project-URL: Bug Tracker, https://github.com/pourya90091/reverse-read/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Reverse Read
+
+## installation
+
+install :
+
+```bash
+pip install reverse-read
+```
+
+import :
+
+```python
+from reverse_read.reverse_read import reverse_read
+```
+
+## reverse_read()
+
+Returns reversed text.
+
+```python
+# only the text-parameter is required
+
+print(reverse_read(
+    "text",
+    "side" # <0 or 1>
+))
+```
+
+## Example
+
+```python
+print(reverse_read("اثممخ")) # returns "hello"
+```

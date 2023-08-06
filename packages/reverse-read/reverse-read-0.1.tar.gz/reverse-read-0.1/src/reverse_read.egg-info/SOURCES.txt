@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/reverse_read/__init__.py
+src/reverse_read/data.py
+src/reverse_read/reverse_read.py
+src/reverse_read.egg-info/PKG-INFO
+src/reverse_read.egg-info/SOURCES.txt
+src/reverse_read.egg-info/dependency_links.txt
+src/reverse_read.egg-info/top_level.txt
