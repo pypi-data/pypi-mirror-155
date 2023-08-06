@@ -1,0 +1,35 @@
+Metadata-Version: 2.1
+Name: systematic-trading
+Version: 0.0.6
+Summary: A small toolbox to do systematic trading on futures.
+Home-page: https://github.com/edarchimbaud/systematic-trading
+Author: "Edouard d'Archimbaud"
+Author-email: edouard.darchimbaud@gmail.com
+Project-URL: Bug Tracker, https://github.com/edarchimbaud/systematic-trading/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: click
+Requires-Dist: methodtools
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: pandas-market-calendars
+Requires-Dist: python-dateutil
+Requires-Dist: requests
+Requires-Dist: tqdm
+Requires-Dist: twilio
+
+# Systematic Trading Package
+
+This is a simple systematic trading package.
+
+
+## Install
+
+```bash
+pip install systematic-trading
+```
+
