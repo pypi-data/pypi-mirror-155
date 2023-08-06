@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: konfug
+Version: 0.0.5
+Summary: The configuration source for all your projects
+Home-page: https://github.com/serpulga/konfug
+Author: Sergio Pulgarin
+Author-email: serpulga@gmail.com
+License: BSD
+Keywords: konfug,datastore,configuration
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Topic :: Software Development
+Requires-Python: >=3.6
+License-File: LICENSE
