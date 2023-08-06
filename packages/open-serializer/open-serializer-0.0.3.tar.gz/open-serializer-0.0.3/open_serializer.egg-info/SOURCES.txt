@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+open_serializer/__init__.py
+open_serializer.egg-info/PKG-INFO
+open_serializer.egg-info/SOURCES.txt
+open_serializer.egg-info/dependency_links.txt
+open_serializer.egg-info/requires.txt
+open_serializer.egg-info/top_level.txt
+open_serializer/serialization/__init__.py
+open_serializer/serialization/general.py
+open_serializer/serialization/handler.py
+open_serializer/serialization/helpers.py
+open_serializer/utils/__init__.py
+open_serializer/utils/dict_ops.py
