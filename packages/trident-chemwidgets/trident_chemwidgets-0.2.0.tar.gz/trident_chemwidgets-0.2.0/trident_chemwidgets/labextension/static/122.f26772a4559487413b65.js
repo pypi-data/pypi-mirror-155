@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktrident_chemwidgets=self.webpackChunktrident_chemwidgets||[]).push([[122],{2122:(t,e,r)=>{function n(){return n=Object.assign||function(t){for(var e=1;e<arguments.length;e++){var r=arguments[e];for(var n in r)Object.prototype.hasOwnProperty.call(r,n)&&(t[n]=r[n])}return t},n.apply(this,arguments)}r.d(e,{Z:()=>n})}}]);
