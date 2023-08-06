@@ -1,0 +1,5 @@
+global-include *.py *.png *.jpg
+include Module_list.txt
+graft sycc_config_image
+graft requires_LICENSE
+global-exclude .t.txt .v.txt .txt .net.txt
