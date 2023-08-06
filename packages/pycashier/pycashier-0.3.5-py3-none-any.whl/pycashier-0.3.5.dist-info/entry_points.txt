@@ -1,0 +1,3 @@
+[console_scripts]
+pycashier=pycashier.cli:main
+
