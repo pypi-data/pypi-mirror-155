@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: metric-vis
+Version: 0.0.3
+Summary: Metric Visualisation
+Home-page: https://github.com/felixzhu17/MetricVis
+Author: Felix Zhu
+Author-email: zhu.felix@outlook.com
+License: MIT
+Platform: UNKNOWN
+Requires-Dist: plotly
+Requires-Dist: plotly-express
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: nbformat
+
+# MetricVis
+
