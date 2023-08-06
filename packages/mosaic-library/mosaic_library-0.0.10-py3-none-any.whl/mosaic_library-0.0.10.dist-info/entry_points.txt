@@ -1,0 +1,2 @@
+[console_scripts]
+mosaic.py = mosaicking.mosaic:main
