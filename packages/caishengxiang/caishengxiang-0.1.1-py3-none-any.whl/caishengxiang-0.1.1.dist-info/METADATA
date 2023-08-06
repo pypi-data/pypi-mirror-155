@@ -1,0 +1,57 @@
+Metadata-Version: 2.1
+Name: caishengxiang
+Version: 0.1.1
+Summary: Python Boilerplate contains all the boilerplate you need to create a Python package.
+Home-page: https://github.com/caishengxiang
+Author: caishengxiang
+Author-email: wancheng3833@163.com
+License: UNKNOWN
+Keywords: caishengxiang
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Python: >=3.6
+Requires-Dist: requests
+
+caishengxiang
+-------------------
+
+您好,这是一个python新手学习项目，可以快速的学习使用python
+ - http请求
+ - 文件操作
+ - 性能测试
+ - 等等
+
+Hello, this is a python novice learning project, you can quickly learn to use python
+ - http request
+ - file operations
+ - performance test
+ - etc
+
+[联系作者]
+ - qq: 383301857
+ - mail: wancheng3833@163.com
+
+Installation / 安装
+--------------------------
+
+::
+
+    pip install caishengxiang
+
+
+History
+-----------
+
+0.1.0 (2022-6-17)
+------------------
+
+* First release on PyPI.
+
+
