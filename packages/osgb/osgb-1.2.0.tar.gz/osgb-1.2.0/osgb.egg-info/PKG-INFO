@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: osgb
+Version: 1.2.0
+Summary: osgb - high-precision geographic coordinate conversion for Great Britain, based on Ordnance Survey data
+Home-page: http://thurston.eml.cc
+Author: Toby Thurston
+Author-email: toby@cpan.org
+License: MIT Licence
+Keywords: GIS geographic coordinates conversion
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Scientific/Engineering :: GIS
+Description-Content-Type: text/markdown
+License-File: LICENCE.txt
+
+Python routines for working with grid references as defined by the Ordnance Survey of Great Britain (OSGB).
