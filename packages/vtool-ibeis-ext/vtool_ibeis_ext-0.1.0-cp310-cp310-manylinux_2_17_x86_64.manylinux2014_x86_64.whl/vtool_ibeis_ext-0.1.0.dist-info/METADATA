@@ -1,0 +1,208 @@
+Metadata-Version: 2.1
+Name: vtool-ibeis-ext
+Version: 0.1.0
+Summary: The vtool_ibeis_ext Module
+Home-page: https://github.com/Erotemic/vtool_ibeis_ext
+Author: Jon Crall
+Author-email: erotemic@gmail.com
+License: Apache 2
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Utilities
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.7
+Description-Content-Type: text/x-rst
+Requires-Dist: xdev ; python_version < "3.6" and python_version >= "2.7"
+Requires-Dist: ubelt ; python_version < "3.6" and python_version >= "2.7"
+Requires-Dist: scriptconfig ; python_version < "3.6" and python_version >= "2.7"
+Requires-Dist: rich ; python_version < "3.8" and python_version >= "3.6"
+Requires-Dist: toml ; python_version >= "2.7"
+Requires-Dist: xdev ; python_version >= "3.6"
+Requires-Dist: ubelt ; python_version >= "3.6"
+Requires-Dist: scriptconfig ; python_version >= "3.6"
+Requires-Dist: rich ; python_version >= "3.8"
+Provides-Extra: all
+Requires-Dist: xdoctest ; extra == 'all'
+Requires-Dist: pytest-timeout ; extra == 'all'
+Requires-Dist: codecov ; extra == 'all'
+Provides-Extra: all-strict
+Requires-Dist: xdoctest (==0.14.0) ; extra == 'all-strict'
+Requires-Dist: pytest-timeout (==1.4.2) ; extra == 'all-strict'
+Requires-Dist: codecov (==2.0.15) ; extra == 'all-strict'
+Requires-Dist: coverage (==4.5) ; (python_version < "2.7" and python_version >= "2.6") and extra == 'all-strict'
+Requires-Dist: pytest (<=4.6.11,==4.6.0) ; (python_version < "2.8.0" and python_version >= "2.7.0") and extra == 'all-strict'
+Requires-Dist: pytest-cov (==2.8.1) ; (python_version < "2.8.0" and python_version >= "2.7.0") and extra == 'all-strict'
+Requires-Dist: coverage (==5.3.1) ; (python_version < "3.10" and python_version >= "3.9") and extra == 'all-strict'
+Requires-Dist: pytest (==4.6.0) ; (python_version < "3.10.0" and python_version >= "3.7.0") and extra == 'all-strict'
+Requires-Dist: coverage (==5.3.1) ; (python_version < "3.4" and python_version >= "2.7") and extra == 'all-strict'
+Requires-Dist: coverage (==4.3.4) ; (python_version < "3.5" and python_version >= "3.4") and extra == 'all-strict'
+Requires-Dist: pytest (<=4.6.11,==4.6.0) ; (python_version < "3.5.0" and python_version >= "3.4.0") and extra == 'all-strict'
+Requires-Dist: pytest-cov (==2.8.1) ; (python_version < "3.5.0" and python_version >= "3.4.0") and extra == 'all-strict'
+Requires-Dist: xdev (==0.2.0) ; (python_version < "3.6" and python_version >= "2.7") and extra == 'all-strict'
+Requires-Dist: ubelt (==0.8.1) ; (python_version < "3.6" and python_version >= "2.7") and extra == 'all-strict'
+Requires-Dist: scriptconfig (==0.5.0) ; (python_version < "3.6" and python_version >= "2.7") and extra == 'all-strict'
+Requires-Dist: coverage (==5.3.1) ; (python_version < "3.6" and python_version >= "3.5") and extra == 'all-strict'
+Requires-Dist: pytest (<=6.1.2,==4.6.0) ; (python_version < "3.6.0" and python_version >= "3.5.0") and extra == 'all-strict'
+Requires-Dist: pytest-cov (==2.9.0) ; (python_version < "3.6.0" and python_version >= "3.5.0") and extra == 'all-strict'
+Requires-Dist: coverage (==6.1.1) ; (python_version < "3.7" and python_version >= "3.6") and extra == 'all-strict'
+Requires-Dist: pytest (==4.6.0) ; (python_version < "3.7.0" and python_version >= "3.6.0") and extra == 'all-strict'
+Requires-Dist: rich (==11.2.0) ; (python_version < "3.8" and python_version >= "3.6") and extra == 'all-strict'
+Requires-Dist: coverage (==6.1.1) ; (python_version < "3.8" and python_version >= "3.7") and extra == 'all-strict'
+Requires-Dist: coverage (==6.1.1) ; (python_version < "3.9" and python_version >= "3.8") and extra == 'all-strict'
+Requires-Dist: toml (==0.9.6) ; (python_version >= "2.7") and extra == 'all-strict'
+Requires-Dist: coverage (==6.1.1) ; (python_version >= "3.10") and extra == 'all-strict'
+Requires-Dist: pytest (==6.2.5) ; (python_version >= "3.10.0") and extra == 'all-strict'
+Requires-Dist: xdev (==0.3.0) ; (python_version >= "3.6") and extra == 'all-strict'
+Requires-Dist: ubelt (==1.0.0) ; (python_version >= "3.6") and extra == 'all-strict'
+Requires-Dist: scriptconfig (==0.6.0) ; (python_version >= "3.6") and extra == 'all-strict'
+Requires-Dist: pytest-cov (==3.0.0) ; (python_version >= "3.6.0") and extra == 'all-strict'
+Requires-Dist: rich (==12.4.4) ; (python_version >= "3.8") and extra == 'all-strict'
+Requires-Dist: coverage ; (python_version < "2.7" and python_version >= "2.6") and extra == 'all'
+Requires-Dist: pytest ; (python_version < "2.8.0" and python_version >= "2.7.0") and extra == 'all'
+Requires-Dist: pytest-cov ; (python_version < "2.8.0" and python_version >= "2.7.0") and extra == 'all'
+Requires-Dist: coverage ; (python_version < "3.10" and python_version >= "3.9") and extra == 'all'
+Requires-Dist: pytest ; (python_version < "3.10.0" and python_version >= "3.7.0") and extra == 'all'
+Requires-Dist: coverage ; (python_version < "3.4" and python_version >= "2.7") and extra == 'all'
+Requires-Dist: coverage ; (python_version < "3.5" and python_version >= "3.4") and extra == 'all'
+Requires-Dist: pytest ; (python_version < "3.5.0" and python_version >= "3.4.0") and extra == 'all'
+Requires-Dist: pytest-cov ; (python_version < "3.5.0" and python_version >= "3.4.0") and extra == 'all'
+Requires-Dist: xdev ; (python_version < "3.6" and python_version >= "2.7") and extra == 'all'
+Requires-Dist: ubelt ; (python_version < "3.6" and python_version >= "2.7") and extra == 'all'
+Requires-Dist: scriptconfig ; (python_version < "3.6" and python_version >= "2.7") and extra == 'all'
+Requires-Dist: coverage ; (python_version < "3.6" and python_version >= "3.5") and extra == 'all'
+Requires-Dist: pytest ; (python_version < "3.6.0" and python_version >= "3.5.0") and extra == 'all'
+Requires-Dist: pytest-cov ; (python_version < "3.6.0" and python_version >= "3.5.0") and extra == 'all'
+Requires-Dist: coverage ; (python_version < "3.7" and python_version >= "3.6") and extra == 'all'
+Requires-Dist: pytest ; (python_version < "3.7.0" and python_version >= "3.6.0") and extra == 'all'
+Requires-Dist: rich ; (python_version < "3.8" and python_version >= "3.6") and extra == 'all'
+Requires-Dist: coverage ; (python_version < "3.8" and python_version >= "3.7") and extra == 'all'
+Requires-Dist: coverage ; (python_version < "3.9" and python_version >= "3.8") and extra == 'all'
+Requires-Dist: toml ; (python_version >= "2.7") and extra == 'all'
+Requires-Dist: coverage ; (python_version >= "3.10") and extra == 'all'
+Requires-Dist: pytest ; (python_version >= "3.10.0") and extra == 'all'
+Requires-Dist: xdev ; (python_version >= "3.6") and extra == 'all'
+Requires-Dist: ubelt ; (python_version >= "3.6") and extra == 'all'
+Requires-Dist: scriptconfig ; (python_version >= "3.6") and extra == 'all'
+Requires-Dist: pytest-cov ; (python_version >= "3.6.0") and extra == 'all'
+Requires-Dist: rich ; (python_version >= "3.8") and extra == 'all'
+Provides-Extra: graphics
+Provides-Extra: graphics-strict
+Requires-Dist: opencv-python (==3.4.15.55) ; (python_version < "3.10" and python_version >= "3.9") and extra == 'graphics-strict'
+Requires-Dist: opencv-python (==3.1.0.0) ; (python_version < "3.4" and python_version >= "2.7") and extra == 'graphics-strict'
+Requires-Dist: opencv-python (==3.1.0.5) ; (python_version < "3.5" and python_version >= "3.4") and extra == 'graphics-strict'
+Requires-Dist: opencv-python (==3.1.0.2) ; (python_version < "3.6" and python_version >= "3.5") and extra == 'graphics-strict'
+Requires-Dist: opencv-python (==3.4.13.47) ; (python_version < "3.7" and python_version >= "3.6") and extra == 'graphics-strict'
+Requires-Dist: opencv-python (==3.4.15.55) ; (python_version < "3.8" and python_version >= "3.7") and extra == 'graphics-strict'
+Requires-Dist: opencv-python (==3.4.15.55) ; (python_version < "3.9" and python_version >= "3.8") and extra == 'graphics-strict'
+Requires-Dist: opencv-python (==4.5.4.58) ; (python_version >= "3.10") and extra == 'graphics-strict'
+Requires-Dist: opencv-python ; (python_version < "3.10" and python_version >= "3.9") and extra == 'graphics'
+Requires-Dist: opencv-python ; (python_version < "3.4" and python_version >= "2.7") and extra == 'graphics'
+Requires-Dist: opencv-python ; (python_version < "3.5" and python_version >= "3.4") and extra == 'graphics'
+Requires-Dist: opencv-python ; (python_version < "3.6" and python_version >= "3.5") and extra == 'graphics'
+Requires-Dist: opencv-python ; (python_version < "3.7" and python_version >= "3.6") and extra == 'graphics'
+Requires-Dist: opencv-python ; (python_version < "3.8" and python_version >= "3.7") and extra == 'graphics'
+Requires-Dist: opencv-python ; (python_version < "3.9" and python_version >= "3.8") and extra == 'graphics'
+Requires-Dist: opencv-python ; (python_version >= "3.10") and extra == 'graphics'
+Provides-Extra: headless
+Provides-Extra: headless-strict
+Requires-Dist: opencv-python-headless (==3.4.13.47) ; (python_version < "3.10" and python_version >= "3.9") and extra == 'headless-strict'
+Requires-Dist: opencv-python-headless (==3.4.2.16) ; (python_version < "3.4" and python_version >= "2.7") and extra == 'headless-strict'
+Requires-Dist: opencv-python-headless (==3.4.2.16) ; (python_version < "3.5" and python_version >= "3.4") and extra == 'headless-strict'
+Requires-Dist: opencv-python-headless (==3.4.11.39) ; (python_version < "3.6" and python_version >= "3.5") and extra == 'headless-strict'
+Requires-Dist: opencv-python-headless (==3.4.13.47) ; (python_version < "3.7" and python_version >= "3.6") and extra == 'headless-strict'
+Requires-Dist: opencv-python-headless (==3.4.13.47) ; (python_version < "3.8" and python_version >= "3.7") and extra == 'headless-strict'
+Requires-Dist: opencv-python-headless (==3.4.13.47) ; (python_version < "3.9" and python_version >= "3.8") and extra == 'headless-strict'
+Requires-Dist: opencv-python-headless (==4.5.4.58) ; (python_version >= "3.10") and extra == 'headless-strict'
+Requires-Dist: opencv-python-headless ; (python_version < "3.10" and python_version >= "3.9") and extra == 'headless'
+Requires-Dist: opencv-python-headless ; (python_version < "3.4" and python_version >= "2.7") and extra == 'headless'
+Requires-Dist: opencv-python-headless ; (python_version < "3.5" and python_version >= "3.4") and extra == 'headless'
+Requires-Dist: opencv-python-headless ; (python_version < "3.6" and python_version >= "3.5") and extra == 'headless'
+Requires-Dist: opencv-python-headless ; (python_version < "3.7" and python_version >= "3.6") and extra == 'headless'
+Requires-Dist: opencv-python-headless ; (python_version < "3.8" and python_version >= "3.7") and extra == 'headless'
+Requires-Dist: opencv-python-headless ; (python_version < "3.9" and python_version >= "3.8") and extra == 'headless'
+Requires-Dist: opencv-python-headless ; (python_version >= "3.10") and extra == 'headless'
+Provides-Extra: optional
+Provides-Extra: optional-strict
+Provides-Extra: runtime-strict
+Requires-Dist: xdev (==0.2.0) ; (python_version < "3.6" and python_version >= "2.7") and extra == 'runtime-strict'
+Requires-Dist: ubelt (==0.8.1) ; (python_version < "3.6" and python_version >= "2.7") and extra == 'runtime-strict'
+Requires-Dist: scriptconfig (==0.5.0) ; (python_version < "3.6" and python_version >= "2.7") and extra == 'runtime-strict'
+Requires-Dist: rich (==11.2.0) ; (python_version < "3.8" and python_version >= "3.6") and extra == 'runtime-strict'
+Requires-Dist: toml (==0.9.6) ; (python_version >= "2.7") and extra == 'runtime-strict'
+Requires-Dist: xdev (==0.3.0) ; (python_version >= "3.6") and extra == 'runtime-strict'
+Requires-Dist: ubelt (==1.0.0) ; (python_version >= "3.6") and extra == 'runtime-strict'
+Requires-Dist: scriptconfig (==0.6.0) ; (python_version >= "3.6") and extra == 'runtime-strict'
+Requires-Dist: rich (==12.4.4) ; (python_version >= "3.8") and extra == 'runtime-strict'
+Provides-Extra: tests
+Requires-Dist: xdoctest ; extra == 'tests'
+Requires-Dist: pytest-timeout ; extra == 'tests'
+Requires-Dist: codecov ; extra == 'tests'
+Provides-Extra: tests-strict
+Requires-Dist: xdoctest (==0.14.0) ; extra == 'tests-strict'
+Requires-Dist: pytest-timeout (==1.4.2) ; extra == 'tests-strict'
+Requires-Dist: codecov (==2.0.15) ; extra == 'tests-strict'
+Requires-Dist: coverage (==4.5) ; (python_version < "2.7" and python_version >= "2.6") and extra == 'tests-strict'
+Requires-Dist: pytest (<=4.6.11,==4.6.0) ; (python_version < "2.8.0" and python_version >= "2.7.0") and extra == 'tests-strict'
+Requires-Dist: pytest-cov (==2.8.1) ; (python_version < "2.8.0" and python_version >= "2.7.0") and extra == 'tests-strict'
+Requires-Dist: coverage (==5.3.1) ; (python_version < "3.10" and python_version >= "3.9") and extra == 'tests-strict'
+Requires-Dist: pytest (==4.6.0) ; (python_version < "3.10.0" and python_version >= "3.7.0") and extra == 'tests-strict'
+Requires-Dist: coverage (==5.3.1) ; (python_version < "3.4" and python_version >= "2.7") and extra == 'tests-strict'
+Requires-Dist: coverage (==4.3.4) ; (python_version < "3.5" and python_version >= "3.4") and extra == 'tests-strict'
+Requires-Dist: pytest (<=4.6.11,==4.6.0) ; (python_version < "3.5.0" and python_version >= "3.4.0") and extra == 'tests-strict'
+Requires-Dist: pytest-cov (==2.8.1) ; (python_version < "3.5.0" and python_version >= "3.4.0") and extra == 'tests-strict'
+Requires-Dist: coverage (==5.3.1) ; (python_version < "3.6" and python_version >= "3.5") and extra == 'tests-strict'
+Requires-Dist: pytest (<=6.1.2,==4.6.0) ; (python_version < "3.6.0" and python_version >= "3.5.0") and extra == 'tests-strict'
+Requires-Dist: pytest-cov (==2.9.0) ; (python_version < "3.6.0" and python_version >= "3.5.0") and extra == 'tests-strict'
+Requires-Dist: coverage (==6.1.1) ; (python_version < "3.7" and python_version >= "3.6") and extra == 'tests-strict'
+Requires-Dist: pytest (==4.6.0) ; (python_version < "3.7.0" and python_version >= "3.6.0") and extra == 'tests-strict'
+Requires-Dist: coverage (==6.1.1) ; (python_version < "3.8" and python_version >= "3.7") and extra == 'tests-strict'
+Requires-Dist: coverage (==6.1.1) ; (python_version < "3.9" and python_version >= "3.8") and extra == 'tests-strict'
+Requires-Dist: coverage (==6.1.1) ; (python_version >= "3.10") and extra == 'tests-strict'
+Requires-Dist: pytest (==6.2.5) ; (python_version >= "3.10.0") and extra == 'tests-strict'
+Requires-Dist: pytest-cov (==3.0.0) ; (python_version >= "3.6.0") and extra == 'tests-strict'
+Requires-Dist: coverage ; (python_version < "2.7" and python_version >= "2.6") and extra == 'tests'
+Requires-Dist: pytest ; (python_version < "2.8.0" and python_version >= "2.7.0") and extra == 'tests'
+Requires-Dist: pytest-cov ; (python_version < "2.8.0" and python_version >= "2.7.0") and extra == 'tests'
+Requires-Dist: coverage ; (python_version < "3.10" and python_version >= "3.9") and extra == 'tests'
+Requires-Dist: pytest ; (python_version < "3.10.0" and python_version >= "3.7.0") and extra == 'tests'
+Requires-Dist: coverage ; (python_version < "3.4" and python_version >= "2.7") and extra == 'tests'
+Requires-Dist: coverage ; (python_version < "3.5" and python_version >= "3.4") and extra == 'tests'
+Requires-Dist: pytest ; (python_version < "3.5.0" and python_version >= "3.4.0") and extra == 'tests'
+Requires-Dist: pytest-cov ; (python_version < "3.5.0" and python_version >= "3.4.0") and extra == 'tests'
+Requires-Dist: coverage ; (python_version < "3.6" and python_version >= "3.5") and extra == 'tests'
+Requires-Dist: pytest ; (python_version < "3.6.0" and python_version >= "3.5.0") and extra == 'tests'
+Requires-Dist: pytest-cov ; (python_version < "3.6.0" and python_version >= "3.5.0") and extra == 'tests'
+Requires-Dist: coverage ; (python_version < "3.7" and python_version >= "3.6") and extra == 'tests'
+Requires-Dist: pytest ; (python_version < "3.7.0" and python_version >= "3.6.0") and extra == 'tests'
+Requires-Dist: coverage ; (python_version < "3.8" and python_version >= "3.7") and extra == 'tests'
+Requires-Dist: coverage ; (python_version < "3.9" and python_version >= "3.8") and extra == 'tests'
+Requires-Dist: coverage ; (python_version >= "3.10") and extra == 'tests'
+Requires-Dist: pytest ; (python_version >= "3.10.0") and extra == 'tests'
+Requires-Dist: pytest-cov ; (python_version >= "3.6.0") and extra == 'tests'
+
+
+The vtool_ibeis_ext Module
+==========================
+
+|Pypi| |PypiDownloads| |GithubActions| |Codecov|
+
+Contains the binary spatial verification code used by vtool_ibeis
+ 
+ 
+.. |Pypi| image:: https://img.shields.io/pypi/v/vtool_ibeis_ext.svg
+    :target: https://pypi.python.org/pypi/vtool_ibeis_ext
+
+.. |PypiDownloads| image:: https://img.shields.io/pypi/dm/vtool_ibeis_ext.svg
+    :target: https://pypistats.org/packages/vtool_ibeis_ext
+
+.. |GithubActions| image:: https://github.com/Erotemic/vtool_ibeis_ext/actions/workflows/tests.yml/badge.svg?branch=main
+    :target: https://github.com/Erotemic/vtool_ibeis_ext/actions?query=branch%3Amain
+
+.. |Codecov| image:: https://codecov.io/github/Erotemic/vtool_ibeis_ext/badge.svg?branch=main&service=github
+    :target: https://codecov.io/github/Erotemic/vtool_ibeis_ext?branch=main
+
