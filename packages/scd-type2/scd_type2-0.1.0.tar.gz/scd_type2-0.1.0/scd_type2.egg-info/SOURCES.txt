@@ -1,0 +1,14 @@
+README.md
+setup.py
+scd_type2/__init__.py
+scd_type2/compare.py
+scd_type2/config.py
+scd_type2/utils.py
+scd_type2.egg-info/PKG-INFO
+scd_type2.egg-info/SOURCES.txt
+scd_type2.egg-info/dependency_links.txt
+scd_type2.egg-info/entry_points.txt
+scd_type2.egg-info/requires.txt
+scd_type2.egg-info/top_level.txt
+tests/__init__.py
+tests/test_compare_df.py

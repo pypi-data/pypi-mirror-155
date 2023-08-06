@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: scd-type2
+Version: 0.1.0
+Summary: Simplifies and unifies the logic for performing SCD type 2 data comparisons.
+Home-page: UNKNOWN
+Author: Zac Clery
+Author-email: zacclery@gmail.com
+License: UNKNOWN
+Keywords: scd type2 scd_type2 slowly changing dimensions slowly-changing-dimensions
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+
+### Slowly Changing Dimensions - Type 2
+
+Simplifies and unifies the logic for performing SCD type 2 data comparisons.
+
+**Stack:**
+* 'Python 3.9.10+'
+
+
+**Quick Start:**
+```commandline
+pip install scd_type2
+```
+
+
