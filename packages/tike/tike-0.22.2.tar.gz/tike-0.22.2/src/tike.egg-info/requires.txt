@@ -1,0 +1,12 @@
+cupy!=10.3.0,>=8.0
+matplotlib==3.*
+mpi4py==3.*
+numpy~=1.17
+opencv-python<5.0,>=3.4
+scipy==1.*
+
+[:python_version < "3.8"]
+importlib_metadata
+
+[:python_version < "3.9"]
+importlib_resources
