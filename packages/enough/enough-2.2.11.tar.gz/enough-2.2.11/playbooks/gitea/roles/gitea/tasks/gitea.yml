@@ -1,0 +1,59 @@
+---
+- name: apt-get install virtualenv python3-pip
+  apt:
+    name: [ virtualenv, python3-pip ]
+    state: present
+
+- name: pip install docker
+  pip:
+    name: docker
+
+- name: mkdir /srv/gitea
+  file:
+    state: directory
+    path: /srv/gitea
+    mode: 0755
+    owner: 1000
+    group: 1000
+  become: true
+
+- name: start gitea
+  docker_container:
+    name: gitea
+    image: "gitea/gitea:{{ gitea_version }}"
+    restart_policy: always
+    ports:
+      - "22:22"
+      - "8080:3000"
+    volumes:
+      - /srv/gitea:/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/ssl/certs:/etc/ssl/certs:ro
+      - /usr/local/share/ca-certificates/infrastructure:/usr/local/share/ca-certificates/infrastructure:ro
+    env:
+      USER_UID: "1000"
+      USER_GID: "1000"
+      GITEA__security__INSTALL_LOCK: "true"
+      GITEA__server__DOMAIN: "{{ gitea_host }}"
+      GITEA__server__SSH_DOMAIN: "{{ gitea_host }}"
+      GITEA__server__ROOT_URL: "https://{{ gitea_host }}/"
+      GITEA__service__DEFAULT_KEEP_EMAIL_PRIVATE: "true"
+      GITEA__service__ENABLE_NOTIFY_MAIL: "true"
+      GITEA__service__REGISTER_EMAIL_CONFIRM: "true"
+      GITEA__mailer__ENABLED: "true"
+      GITEA__mailer__FROM: "{{ gitea_mailer_from }}"
+      GITEA__mailer__MAILER_TYPE: "sendmail"
+      GITEA__mailer__SENDMAIL_PATH: "/usr/sbin/sendmail"
+      GITEA__mailer__SENDMAIL_ARGS: "-S {{ inventory_hostname }}.{{ domain }}:25 --"
+      GITEA__webhook__ALLOWED_HOST_LIST: "external,private,loopback"
+
+- name: cp setup-gitea.sh /srv/setup-gitea.sh
+  copy:
+    src: setup-gitea.sh
+    dest: /srv/setup-gitea.sh
+    mode: 0755
+
+- name: setup gitea, create or update admin user
+  shell: |
+    /srv/setup-gitea.sh "{{ gitea_user }}" "{{ gitea_password }}" "{{ gitea_email }}"

@@ -1,0 +1,8 @@
+---
+icinga-service-group:
+  hosts:
+    bind-host:
+
+hosteadashboard-service-group:
+  hosts:
+    hosteadashboard-host:

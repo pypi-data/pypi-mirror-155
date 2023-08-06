@@ -1,0 +1,12 @@
+---
+icinga-service-group:
+  hosts:
+    icinga-host:
+
+openvpnclient-service-group:
+  hosts:
+    icinga-host:
+
+openvpn-service-group:
+  hosts:
+    website-host:

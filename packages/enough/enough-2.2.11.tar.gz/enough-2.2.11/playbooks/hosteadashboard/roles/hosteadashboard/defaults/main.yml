@@ -1,0 +1,33 @@
+---
+#
+#######################################
+#
+# Database user
+#
+hosteadashboard_db_user: hosteadashboard
+#
+#
+#######################################
+#
+# Database password
+#
+#hosteadashboard_db_password: etiquofEtseudett
+#
+#
+#######################################
+#
+# Database name
+#
+hosteadashboard_db_name: hosteadashboard
+#
+####################################################
+#
+# Hostea dashboard version
+#
+hosteadashboard_version: "89a79f45ff7bedc6ec4bb252eba84c90fdb2ce2d"
+#
+####################################################
+#
+# String found on the website home page for monitoring
+#
+hosteadashboard_monitoring_string: "html"

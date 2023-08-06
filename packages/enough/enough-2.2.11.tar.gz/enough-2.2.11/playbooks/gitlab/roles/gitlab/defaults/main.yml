@@ -1,0 +1,8 @@
+---
+gitlab_version: 14.9.2
+gitlab_postgresql_version: 12-20200524
+gitlab_email: "gitlab@{{ gitlab_host }}"
+gitlab_shared_runners_registration_token: 67ubD8XznZ7X4hv4hj9t
+gitlab_secrets_db_key_base: PzHhJwWLbTgMFJKF7pMmWn9xfMvdqCTN9NVnPkwp97rFkpbCHL7KNMdwHFHkHRfs
+gitlab_secrets_otp_key_base: PzHhJwWLbTgMFJKF7pMmWn9xfMvdqCTN9NVnPkwp97rFkpbCHL7KNMdwHFHkHRfs
+gitlab_secrets_secret_key_base: PzHhJwWLbTgMFJKF7pMmWn9xfMvdqCTN9NVnPkwp97rFkpbCHL7KNMdwHFHkHRfs

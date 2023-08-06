@@ -1,0 +1,7 @@
+---
+- name: install hostea
+  hosts: hostea-service-group
+  become: true
+
+  roles:
+    - role: hostea

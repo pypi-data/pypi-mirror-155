@@ -1,0 +1,33 @@
+---
+#
+#######################################
+#
+# RAM (MB)
+#
+libvirt_ram: 2048
+#
+#######################################
+#
+# Disk
+#
+libvirt_disk: 10G
+#
+#######################################
+#
+# Number of vcpus
+#
+libvirt_cpus: 1
+#
+#######################################
+#
+# List of hosts that need backups
+#
+libvirt_pets: []
+#
+#######################################
+#
+libvirt_network_hypervisor_prefix: 10.0.48
+libvirt_network_external_name: enough-ext
+libvirt_network_external_prefix: 10.23.10
+libvirt_network_internal_name: enough-int
+libvirt_network_internal_prefix: 10.23.90

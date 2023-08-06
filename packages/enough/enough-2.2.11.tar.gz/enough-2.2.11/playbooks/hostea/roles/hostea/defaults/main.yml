@@ -1,0 +1,50 @@
+---
+#
+#######################################
+#
+# Gitea instance where hostea is deployed
+#
+hostea_gitea: "gitea.{{ domain }}"
+#
+#######################################
+#
+# Hostea Gitea project https://hostea_gitea/hostea_gitea_user/hostea_gitea_project
+#
+hostea_project: "hostea"
+#
+#######################################
+#
+# Woodpecker instance bound to hostea_gitea
+#
+hostea_woodpecker: "woodpecker.{{ domain }}"
+#
+#######################################
+#
+# Hostea user name on gitea 
+#
+hostea_user: hostea
+#
+#######################################
+#
+# Hostea user password
+#
+#hostea_password: ofoyts@DriUj2
+#
+#######################################
+#
+# Hostea user email
+#
+hostea_email: contact+hostea@enough.community
+#
+#######################################
+#
+# Admin user name on gitea
+#
+hostea_admin_user: root
+#
+#######################################
+#
+# Admin user password on gitea
+#
+#hostea_admin_password: utquofEtseudett
+#

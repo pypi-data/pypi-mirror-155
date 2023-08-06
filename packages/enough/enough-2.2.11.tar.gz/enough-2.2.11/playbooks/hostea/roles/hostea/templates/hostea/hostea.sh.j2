@@ -1,0 +1,35 @@
+#!/bin/bash
+
+set -e
+
+apt-get -qq update && apt-get -qq install --quiet -y rsync
+
+--- ? needs a deploy key to push the changes back : no since it is a private repo it already is available but where ?
+
+--- domain
+
+if inventory/group_vars/all/domain.yml does not exist, create one under test.enough.community
+mkdir -p /tmp/hostea/.enough/tmp
+rsync -av --delete --exclude=.git ./ /tmp/hostea/.enough/tmp
+
+--- bind-host
+
+if bind-host does not exist (cheap way to verify it exists ?)
+
+enough --domain tmp host delete bind-host
+
+? make ENOUGH_API_TOKEN available
+docker run -e ENOUGH_API_TOKEN=$ENOUGH_API_TOKEN  -v $HOME/.enough:/root/.enough --rm enoughcommunity/enough:latest --debug --domain tmp create test subdomain enough.community
+
+--- copy the changes back & push them 
+
+
+local domain=$(yq inventory/group_vars/all/domain.yml)
+
+mkdir -p /tmp/hostea/.enough/$domain
+rsync -av --delete --exclude=.git ./ /tmp/hostea/.enough/$domain
+
+eval "$(docker run --rm enoughcommunity/enough:latest install --no-tty)"
+export HOME=/tmp/hostea
+
+enough --domain $domain info

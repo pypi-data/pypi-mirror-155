@@ -1,0 +1,83 @@
+---
+#
+#######################################
+#
+# Public hostname of the Gitea instance
+#
+#
+gitea_host: "gitea.{{ domain }}"
+#
+#######################################
+#
+# Mailer from
+#
+#
+gitea_mailer_from: "noreply@enough.community"
+#
+#######################################
+#
+# SSH port of the Gitea instance
+#
+#
+gitea_ssh_port: "22"
+#
+#######################################
+#
+# Gitea version
+#
+#
+gitea_version: "1.16.8"
+#
+#######################################
+#
+# Admin user name
+#
+gitea_user: root
+#
+#######################################
+#
+# Admin user password
+#
+#gitea_password: etquofEtseudett
+#
+#######################################
+#
+# Admin user email
+#
+gitea_email: contact@enough.community
+#
+#######################################
+#
+# Unique hostname of the woodpecker server relative to {{ domain }}
+#
+woodpecker_hostname: "woodpecker"
+#
+#######################################
+#
+# Public hostname of the Woodpecker instance
+#
+woodpecker_host: "{{ woodpecker_hostname }}.{{ domain }}"
+#
+#######################################
+#
+# Gitea users with admin rights on woodpecker
+#
+woodpecker_admins: "{{ gitea_user }}"
+#
+#######################################
+#
+# Woodpecker shared agent secret `openssl rand -hex 32`
+#
+#woodpecker_agent_secret: c2cd326f7104c2ca93e6d22da0b28d1e33b4aeaa071c08945e0ade576b3192ce
+#
+#######################################
+#
+# Woodpecker version
+#
+woodpecker_version: "v0.15.2"
+#
+#######################################
+#
+# Woodpecker max procs
+#
+woodpecker_max_procs: 1

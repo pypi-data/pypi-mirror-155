@@ -1,0 +1,91 @@
+---
+- name: mkdir -p /srv/hosteadashboard
+  file:
+    path: "/srv/hosteadashboard"
+    state: directory
+    mode: 0755
+    owner: debian
+
+- name: apt-get install git
+  apt:
+    name: git
+    state: present
+
+- name: git clone https://gitea.hostea.org/Hostea/dashboard.git
+  git:
+    repo: https://gitea.hostea.org/Hostea/dashboard.git
+    dest: /srv/hosteadashboard/dashboard
+    version: "{{ hosteadashboard_version }}"
+    force: yes
+  become: False
+
+- name: apt install postgres
+  apt:
+    name:
+      - postgresql
+      - postgresql-contrib
+      - libpq-dev
+      - python3-psycopg2
+      - acl
+
+- name: listen on *
+  lineinfile:
+    path: /etc/postgresql/13/main/postgresql.conf
+    line: "listen_addresses = '*'"
+
+- name: allow all connexions
+  lineinfile:
+    path: /etc/postgresql/13/main/pg_hba.conf
+    line: "host all all 0.0.0.0/0 trust"
+
+- name: systemctl restart postgresql
+  service:
+    name: postgresql
+    state: restarted
+
+- name: create pg user
+  postgresql_user:
+    name: "{{ hosteadashboard_db_user }}"
+    password: "{{ hosteadashboard_db_password }}"
+    role_attr_flags: SUPERUSER
+  become_user: postgres
+
+- name: create pg database
+  postgresql_db:
+    login_user: "{{ hosteadashboard_db_user }}"
+    login_password: "{{ hosteadashboard_db_password }}"
+    login_host: localhost
+    name: "{{ hosteadashboard_db_name }}"
+
+- name: virtualenv /srv/hosteadashboard/venv
+  shell: |
+    virtualenv /srv/hosteadashboard/venv
+  args:
+    creates: /srv/hosteadashboard/venv
+  become: False
+
+- name: pip3 install -r /srv/hosteadashboard/dashboard/requirements.txt
+  shell: |
+    /srv/hosteadashboard/venv/bin/pip3 install -r /srv/hosteadashboard/dashboard/requirements.txt
+  become: False
+
+- name: manage.py migrate
+  shell: |
+    /srv/hosteadashboard/venv/bin/python3 manage.py migrate
+  args:
+    chdir: /srv/hosteadashboard/dashboard
+  environment:
+    DATABSE_URL: "postgres://{{ hosteadashboard_db_user }}:{{ hosteadashboard_db_password }}@localhost:5432/{{ hosteadashboard_db_name }}"
+    db: hostea-dashboard
+  become: False
+
+- name: install /etc/systemd/system/hosteadashboard.service
+  template:
+    src: unit.j2
+    dest: /etc/systemd/system/hosteadashboard.service
+
+- name: systemctl start hosteadashboard
+  systemd:
+    name: hosteadashboard
+    state: started
+    enabled: yes

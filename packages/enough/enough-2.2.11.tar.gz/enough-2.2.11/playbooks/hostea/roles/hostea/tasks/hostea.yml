@@ -1,0 +1,29 @@
+---
+- name: apt-get install git python3-requests python3-bs4 python3-yaml python3-furl python3-sh
+  apt:
+    name: [git, python3-requests, python3-bs4, python3-yaml, python3-furl, python3-sh]
+    state: present
+
+- name: cp hosteasetup.py /srv/hosteasetup.py
+  copy:
+    src: hosteasetup.py
+    dest: /srv/hosteasetup.py
+    mode: 0755
+
+- name: mkdir /srv/hostea
+  file:
+    path: /srv/hostea
+    state: directory
+    mode: 0755
+
+- name: copy templates to /srv/hostea to update the repository
+  template:
+    src: "hostea/{{ item }}.j2"
+    dest: "/srv/hostea/{{ item }}"
+    mode: 0444
+  loop:
+    - .woodpecker.yml
+
+- name: setup hostea
+  shell: |
+    /srv/hosteasetup.py --update-directory /srv/hostea --certs /usr/share/ca-certificates --debug "{{ hostea_gitea }}" "{{ hostea_admin_user }}" "{{ hostea_admin_password }}" "{{ hostea_user }}" "{{ hostea_password }}" "{{ hostea_email }}" "{{ hostea_project }}" "{{ hostea_woodpecker }}"
