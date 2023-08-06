@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: dict-util
+Version: 1.4.1
+Summary: python dict utility package
+Home-page: https://github.com/katsudonik/dict_util
+Author: katsudonik
+Author-email: kaikeda.work@gmail.com
+License: MIT
+Keywords: dict,df,dict to df,df to dict,compare dict
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.7
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: numpy
+Requires-Dist: pandas
+
+python dict utility package
+
+
