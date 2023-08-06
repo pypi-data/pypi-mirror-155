@@ -1,0 +1,432 @@
+[
+  {
+     "model":"bank.bank",
+     "pk":2,
+     "fields":{
+        "bank_code":"008",
+        "branch_code":"0017",
+        "short_name":"BANK MANDIRI",
+        "long_name":"PT. BANK MANDIRI (PERSERO) TBK"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":4,
+     "fields":{
+        "bank_code":"011",
+        "branch_code":"0042",
+        "short_name":"BANK DANAMON",
+        "long_name":"PT. BANK DANAMON INDONESIA Tbk."
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":5,
+     "fields":{
+        "bank_code":"013",
+        "branch_code":"0475",
+        "short_name":"PERMATA BANK",
+        "long_name":"PT. BANK PERMATA,TBK"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":6,
+     "fields":{
+        "bank_code":"014",
+        "branch_code":"0397",
+        "short_name":"BANK BCA",
+        "long_name":"PT. BANK CENTRAL ASIA Tbk."
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":7,
+     "fields":{
+        "bank_code":"016",
+        "branch_code":"0131",
+        "short_name":"BANK BII MAYBANK",
+        "long_name":"PT. BANK INTERNASIONAL INDONESIA Tbk."
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":8,
+     "fields":{
+        "bank_code":"019",
+        "branch_code":"0017",
+        "short_name":"BANK PANIN",
+        "long_name":"PT. PANIN BANK Tbk."
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":9,
+     "fields":{
+        "bank_code":"022",
+        "branch_code":"0026",
+        "short_name":"BANK CIMB NIAGA",
+        "long_name":"PT. BANK CIMB NIAGA TBK"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":11,
+     "fields":{
+        "bank_code":"028",
+        "branch_code":"0024",
+        "short_name":"BANK OCBC NISP",
+        "long_name":"PT. BANK OCBC NISP, Tbk."
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":12,
+     "fields":{
+        "bank_code":"031",
+        "branch_code":"0305",
+        "short_name":"BANK CITIBANK",
+        "long_name":"CITIBANK, NA"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":13,
+     "fields":{
+        "bank_code":"032",
+        "branch_code":"0308",
+        "short_name":"JP. MORGAN CHASE BANK N.A.",
+        "long_name":"KC JPMORGAN CHASE BANK, N.A"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":14,
+     "fields":{
+        "bank_code":"033",
+        "branch_code":"0301",
+        "short_name":"BANK OF AMERICA N.A.",
+        "long_name":"BANK OF AMERICA NA"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":15,
+     "fields":{
+        "bank_code":"036",
+        "branch_code":"0300",
+        "short_name":"BANK MULTICOR",
+        "long_name":"PT. BANK WINDU KENTJANA INTERNASIONAL, TBK"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":16,
+     "fields":{
+        "bank_code":"037",
+        "branch_code":"0028",
+        "short_name":"BANK ARTHA GRAHA",
+        "long_name":"PT. BANK ARTHA GRAHA INTERNASIONAL, TBK"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":35,
+     "fields":{
+        "bank_code":"095",
+        "branch_code":"0011",
+        "short_name":"JTRUST BANK",
+        "long_name":"PT. BANK JTRUST INDONESIA, TBK"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":36,
+     "fields":{
+        "bank_code":"097",
+        "branch_code":"0017",
+        "short_name":"BANK MAYAPADA",
+        "long_name":"PT. BANK MAYAPADA Tbk."
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":64,
+     "fields":{
+        "bank_code":"146",
+        "branch_code":"0047",
+        "short_name":"BANK OF INDIA INDONESIA",
+        "long_name":"PT. BANK OF INDIA INDONESIA, TBK"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":72,
+     "fields":{
+        "bank_code":"167",
+        "branch_code":"0015",
+        "short_name":"BANK QNB",
+        "long_name":"PT. BANK QNB INDONESIA,TBK"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":74,
+     "fields":{
+        "bank_code":"212",
+        "branch_code":"0027",
+        "short_name":"BANK WOORI SAUDARA",
+        "long_name":"PT. BANK WOORI SAUDARA INDONESIA 1906,TBK"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":79,
+     "fields":{
+        "bank_code":"426",
+        "branch_code":"0121",
+        "short_name":"BANK MEGA",
+        "long_name":"PT. BANK MEGA Tbk."
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":81,
+     "fields":{
+        "bank_code":"441",
+        "branch_code":"0010",
+        "short_name":"BANK BUKOPIN",
+        "long_name":"PT. BANK BUKOPIN Tbk."
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":82,
+     "fields":{
+        "bank_code":"451",
+        "branch_code":"0017",
+        "short_name":"BANK MANDIRI SYARIAH",
+        "long_name":"PT. BANK SYARIAH MANDIRI Tbk."
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":87,
+     "fields":{
+        "bank_code":"485",
+        "branch_code":"0010",
+        "short_name":"MNC BANK",
+        "long_name":"PT. BANK MNC INTERNASIONAL, TBK"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":90,
+     "fields":{
+        "bank_code":"494",
+        "branch_code":"0014",
+        "short_name":"BANK BRI AGRONIAGA",
+        "long_name":"PT. BANK RAKYAT INDONESIA AGRONIAGA, TBK"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":109,
+     "fields":{
+        "bank_code":"558",
+        "branch_code":"0017",
+        "short_name":"BANK EKSEKUTIF",
+        "long_name":"PT. BANK PUNDI INDONESIA, TBK"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":115,
+     "fields":{
+        "bank_code":"767",
+        "branch_code":"0000",
+        "short_name":"ARTAJASA PEMBAYARAN ELEK.",
+        "long_name":"PT.ARTAJASA PEMBAYARAN ELEK. (RTGS)"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":116,
+     "fields":{
+        "bank_code":"769",
+        "branch_code":"0000",
+        "short_name":"BPD JAMBI SYARIAH",
+        "long_name":"BPD JAMBI SYARIAH, JAM (RTGS)"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":119,
+     "fields":{
+        "bank_code":"777",
+        "branch_code":"0000",
+        "short_name":"BII UNIT SYARIAH",
+        "long_name":"BII UNIT SYARIAH,JKT"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":121,
+     "fields":{
+        "bank_code":"780",
+        "branch_code":"0000",
+        "short_name":"BANK CIMB NIAGA SYARIAH",
+        "long_name":"NIAGA SYARIAH,JKT"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":122,
+     "fields":{
+        "bank_code":"781",
+        "branch_code":"0000",
+        "short_name":"BPD KALSEL SYARIAH",
+        "long_name":"BPD KALSEL SYARIAH,BJM"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":123,
+     "fields":{
+        "bank_code":"782",
+        "branch_code":"0000",
+        "short_name":"BANK SUMUT SYARIAH",
+        "long_name":"BPD SUMUT SYARIAH,MDN"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":125,
+     "fields":{
+        "bank_code":"784",
+        "branch_code":"0000",
+        "short_name":"PERMATA SYARIAH",
+        "long_name":"PERMATA SYARIAH,JKT"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":126,
+     "fields":{
+        "bank_code":"785",
+        "branch_code":"0000",
+        "short_name":"BANK BTN SYARIAH",
+        "long_name":"BTN SYARIAH,JKT (RTGS)"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":127,
+     "fields":{
+        "bank_code":"786",
+        "branch_code":"0000",
+        "short_name":"BPD NAD",
+        "long_name":"BPD NAD,BDA (RTGS)"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":128,
+     "fields":{
+        "bank_code":"787",
+        "branch_code":"0000",
+        "short_name":"BANK SUMSEL SYARIAH",
+        "long_name":"BPD SUMSEL SYARIAH,PLG (RTGS)"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":129,
+     "fields":{
+        "bank_code":"788",
+        "branch_code":"0000",
+        "short_name":"KSEI JKT",
+        "long_name":"KSEI,JKT (RTGS)"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":130,
+     "fields":{
+        "bank_code":"789",
+        "branch_code":"0000",
+        "short_name":"BPD NTB SYARIAH",
+        "long_name":"PT BPD NTB SYARIAH,CKA"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":131,
+     "fields":{
+        "bank_code":"790",
+        "branch_code":"0000",
+        "short_name":"BPD KALTIM SYARIAH",
+        "long_name":"PT BPD KALTIM SYARIAH,SMD (RTGS)"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":132,
+     "fields":{
+        "bank_code":"791",
+        "branch_code":"0000",
+        "short_name":"BPD DIY SYARIAH",
+        "long_name":"BPD DIY SYARIAH,YOG (RTGS)"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":133,
+     "fields":{
+        "bank_code":"792",
+        "branch_code":"0000",
+        "short_name":"BANK SUMBAR SYARIAH",
+        "long_name":"BPD SUMBAR SYARIAH,PDG (RTGS)"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":134,
+     "fields":{
+        "bank_code":"793",
+        "branch_code":"0000",
+        "short_name":"FINNET",
+        "long_name":"PT FINNET INDONESIA (RTGS)"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":138,
+     "fields":{
+        "bank_code":"797",
+        "branch_code":"0000",
+        "short_name":"BPD KALBAR (RTGS)",
+        "long_name":"PT.BPD KALBAR (RTGS)"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":139,
+     "fields":{
+        "bank_code":"798",
+        "branch_code":"0000",
+        "short_name":"BANK SINARMAS SYARIAH",
+        "long_name":"PT.BANK SINAR MAS SYARIAH (RTGS)"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":140,
+     "fields":{
+        "bank_code":"799",
+        "branch_code":"0000",
+        "short_name":"BANK OCBC NISP SYARIAH",
+        "long_name":"OCBC NISP SYARIAH,JKT (RTGS)"
+     }
+  }
+]

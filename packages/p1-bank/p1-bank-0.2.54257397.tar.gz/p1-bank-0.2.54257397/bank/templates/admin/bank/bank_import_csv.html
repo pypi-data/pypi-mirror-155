@@ -1,0 +1,39 @@
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+    <div>
+        <p> Example: </p>
+        <textarea disabled rows="9" cols="50">
+bank_code,branch_code,short_name,long_name
+014,0397,BCA,PT. Bank Central Asia Tbk.
+009,0010,BNI,PT. Bank Negara Indonesia (Persero)
+002,0307,BRI,PT. Bank Rakyat Indonesia (Persero)
+200,0150,BTN,PT. Bank Tabungan Negara (Persero)
+022,0026,CIMB Niaga,PT. Bank CIMB Niaga Tbk.
+011,0042,Danamon,PT. Bank Danamon Indonesia Tbk.
+008,0017,Mandiri,PT. Bank Mandiri (Persero) Tbk.
+        </textarea>
+        <ul>
+        <li> Bank code is required.</li>
+        <li> If branch code is given,
+            <ul>
+                <li> will update corresponding bank code and branch, or </li>
+                <li> create new bank code and branch code. </li>
+            </ul>
+        </li>
+        <li> If branch code is not given,
+            <ul>
+                <li> will update ALL corresponding bank code, or </li>
+                <li> create new bank code with NULL branch code. </li>
+            </ul>
+        </li>
+        </ul>
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form }}
+                <button type="submit">Upload CSV</button>
+        </form>
+    </div>
+    <br />
+
+{% endblock %}

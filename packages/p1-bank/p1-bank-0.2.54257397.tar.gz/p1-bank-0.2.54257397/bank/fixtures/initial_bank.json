@@ -1,0 +1,1442 @@
+[
+  {
+     "model":"bank.bank",
+     "pk":1,
+     "fields":{
+        "bank_code":"002",
+        "branch_code":"0307",
+        "short_name":"BANK BRI",
+        "long_name":"PT. BANK RAKYAT INDONESIA (PERSERO)"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":2,
+     "fields":{
+        "bank_code":"008",
+        "branch_code":"0017",
+        "short_name":"BANK MANDIRI",
+        "long_name":"PT. BANK MANDIRI (PERSERO) TBK."
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":3,
+     "fields":{
+        "bank_code":"009",
+        "branch_code":"0010",
+        "short_name":"BANK BNI",
+        "long_name":"PT. BANK NEGARA INDONESIA (PERSERO)"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":4,
+     "fields":{
+        "bank_code":"011",
+        "branch_code":"0042",
+        "short_name":"BANK DANAMON",
+        "long_name":"PT. BANK DANAMON INDONESIA TBK."
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":5,
+     "fields":{
+        "bank_code":"013",
+        "branch_code":"0475",
+        "short_name":"PERMATA BANK",
+        "long_name":"PT. BANK PERMATA TBK."
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":6,
+     "fields":{
+        "bank_code":"014",
+        "branch_code":"0397",
+        "short_name":"BANK BCA",
+        "long_name":"PT. BANK CENTRAL ASIA TBK."
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":7,
+     "fields":{
+        "bank_code":"016",
+        "branch_code":"0131",
+        "short_name":"BANK BII MAYBANK",
+        "long_name":"PT. BANK INTERNASIONAL INDONESIA TBK."
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":8,
+     "fields":{
+        "bank_code":"019",
+        "branch_code":"0017",
+        "short_name":"BANK PANIN",
+        "long_name":"PT. PANIN BANK TBK."
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":9,
+     "fields":{
+        "bank_code":"022",
+        "branch_code":"0026",
+        "short_name":"BANK CIMB NIAGA",
+        "long_name":"PT. BANK CIMB NIAGA TBK."
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":10,
+     "fields":{
+        "bank_code":"023",
+        "branch_code":"0016",
+        "short_name":"BANK UOB",
+        "long_name":"PT. BANK UOB INDONESIA"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":11,
+     "fields":{
+        "bank_code":"028",
+        "branch_code":"0024",
+        "short_name":"BANK OCBC NISP",
+        "long_name":"PT. BANK OCBC NISP TBK."
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":12,
+     "fields":{
+        "bank_code":"031",
+        "branch_code":"0305",
+        "short_name":"BANK CITIBANK",
+        "long_name":"CITIBANK N.A."
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":13,
+     "fields":{
+        "bank_code":"032",
+        "branch_code":"0308",
+        "short_name":"JP. MORGAN CHASE BANK N.A.",
+        "long_name":"KC JPMORGAN CHASE BANK N.A"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":14,
+     "fields":{
+        "bank_code":"033",
+        "branch_code":"0301",
+        "short_name":"BANK OF AMERICA N.A.",
+        "long_name":"BANK OF AMERICA N.A."
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":15,
+     "fields":{
+        "bank_code":"036",
+        "branch_code":"0300",
+        "short_name":"BANK MULTICOR",
+        "long_name":"PT. BANK WINDU KENTJANA INTERNASIONAL TBK."
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":16,
+     "fields":{
+        "bank_code":"037",
+        "branch_code":"0028",
+        "short_name":"BANK ARTHA GRAHA",
+        "long_name":"PT. BANK ARTHA GRAHA INTERNASIONAL TBK."
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":17,
+     "fields":{
+        "bank_code":"040",
+        "branch_code":"0309",
+        "short_name":"BANGKOK BANK COMP",
+        "long_name":"BANGKOK BANK PUBLIC CO.LTD"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":18,
+     "fields":{
+        "bank_code":"041",
+        "branch_code":"0302",
+        "short_name":"BANK HSBC",
+        "long_name":"THE HONGKONG & SHANGHAI BANKING CORP. LTD."
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":19,
+     "fields":{
+        "bank_code":"042",
+        "branch_code":"0305",
+        "short_name":"BANK OF TOKYO MITSUBISHI UFJ",
+        "long_name":"THE BANK OF TOKYO MITSUBISHI UFJ LTD."
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":20,
+     "fields":{
+        "bank_code":"045",
+        "branch_code":"0304",
+        "short_name":"BANK SUMITOMO MITSUI INDONESIA",
+        "long_name":"PT. BANK SUMITOMO MITSUI INDONESIA"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":21,
+     "fields":{
+        "bank_code":"046",
+        "branch_code":"0307",
+        "short_name":"BANK DBS INDONESIA",
+        "long_name":"PT. BANK DBS INDONESIA"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":22,
+     "fields":{
+        "bank_code":"047",
+        "branch_code":"0300",
+        "short_name":"BANK RESONA PERDANIA",
+        "long_name":"PT. BANK RESONA PERDANIA"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":23,
+     "fields":{
+        "bank_code":"048",
+        "branch_code":"0303",
+        "short_name":"BANK MIZUHO INDONEISA",
+        "long_name":"PT. BANK MIZUHO INDONESIA"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":24,
+     "fields":{
+        "bank_code":"050",
+        "branch_code":"0306",
+        "short_name":"BANK STANDARD CHARTERED",
+        "long_name":"STANDARD CHARTERED BANK"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":25,
+     "fields":{
+        "bank_code":"052",
+        "branch_code":"0302",
+        "short_name":"BANK ABN AMRO",
+        "long_name":"THE ROYAL BANK OF SCOTLAND N.V."
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":26,
+     "fields":{
+        "bank_code":"054",
+        "branch_code":"0308",
+        "short_name":"BANK CAPITAL",
+        "long_name":"PT BANK CAPITAL INDONESIA"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":27,
+     "fields":{
+        "bank_code":"057",
+        "branch_code":"0307",
+        "short_name":"BANK BNP PARIBAS",
+        "long_name":"PT. BANK BNP PARIBAS INDONESIA"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":28,
+     "fields":{
+        "bank_code":"061",
+        "branch_code":"0306",
+        "short_name":"BANK ANZ",
+        "long_name":"PT. BANK ANZ INDONESIA"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":29,
+     "fields":{
+        "bank_code":"067",
+        "branch_code":"0304",
+        "short_name":"DEUTSCHE BANK",
+        "long_name":"DEUTSCHE BANK AG."
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":30,
+     "fields":{
+        "bank_code":"069",
+        "branch_code":"0300",
+        "short_name":"BANK OF CHINA",
+        "long_name":"BANK OF CHINA"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":31,
+     "fields":{
+        "bank_code":"076",
+        "branch_code":"0010",
+        "short_name":"BANK BUMI ARTA",
+        "long_name":"PT. BANK BUMI ARTA"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":32,
+     "fields":{
+        "bank_code":"087",
+        "branch_code":"0010",
+        "short_name":"BANK EKONOMI",
+        "long_name":"PT. BANK EKONOMI RAHARJA"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":33,
+     "fields":{
+        "bank_code":"088",
+        "branch_code":"0013",
+        "short_name":"BANK ANTAR DAERAH",
+        "long_name":"PT. BANK ANTAR DAERAH"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":34,
+     "fields":{
+        "bank_code":"089",
+        "branch_code":"0016",
+        "short_name":"BANK RABOBANK",
+        "long_name":"PT. BANK RABOBANK INTERNATIONAL INDONESIA"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":35,
+     "fields":{
+        "bank_code":"095",
+        "branch_code":"0011",
+        "short_name":"JTRUST BANK",
+        "long_name":"PT. BANK JTRUST INDONESIA TBK."
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":36,
+     "fields":{
+        "bank_code":"097",
+        "branch_code":"0017",
+        "short_name":"BANK MAYAPADA",
+        "long_name":"PT. BANK MAYAPADA TBK."
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":37,
+     "fields":{
+        "bank_code":"110",
+        "branch_code":"0323",
+        "short_name":"BANK BJB",
+        "long_name":"PT. BANK PEMBANGUNAN DAERAH  JABAR DAN BANTEN"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":38,
+     "fields":{
+        "bank_code":"111",
+        "branch_code":"0012",
+        "short_name":"BANK DKI",
+        "long_name":"PT. BANK DKI"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":39,
+     "fields":{
+        "bank_code":"112",
+        "branch_code":"0015",
+        "short_name":"BPD DIY",
+        "long_name":"PT. BANK PEMBANGUNAN DAERAH DIY"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":40,
+     "fields":{
+        "bank_code":"113",
+        "branch_code":"0348",
+        "short_name":"BANK JATENG",
+        "long_name":"PT. BANK PEMBANGUNAN DAERAH JAWA TENGAH"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":41,
+     "fields":{
+        "bank_code":"114",
+        "branch_code":"0383",
+        "short_name":"BANK JATIM",
+        "long_name":"PT. BANK PEMBANGUNAN DAERAH  JATIM"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":42,
+     "fields":{
+        "bank_code":"115",
+        "branch_code":"0014",
+        "short_name":"BPD JAMBI",
+        "long_name":"PT.BANK PEMBANGUNAN DAERAH JAMBI"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":43,
+     "fields":{
+        "bank_code":"116",
+        "branch_code":"0017",
+        "short_name":"BPD ACEH",
+        "long_name":"PT. BANK ACEH"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":44,
+     "fields":{
+        "bank_code":"117",
+        "branch_code":"0010",
+        "short_name":"BANK SUMUT",
+        "long_name":"PT. BANK PEMBANGUNAN DAERAH SUMUT"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":45,
+     "fields":{
+        "bank_code":"118",
+        "branch_code":"0013",
+        "short_name":"BANK NAGARI",
+        "long_name":"PT. BANK  NAGARI"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":46,
+     "fields":{
+        "bank_code":"119",
+        "branch_code":"0016",
+        "short_name":"BANK RIAU KEPRI",
+        "long_name":"PT. BANK PEMBANGUNAN DAERAH RIAU KEPRI"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":47,
+     "fields":{
+        "bank_code":"120",
+        "branch_code":"0016",
+        "short_name":"BANK SUMSELBAB",
+        "long_name":"PT. BPD SUMSEL DAN BABEL"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":48,
+     "fields":{
+        "bank_code":"121",
+        "branch_code":"0051",
+        "short_name":"BANK LAMPUNG",
+        "long_name":"PT.BANK PEMBANGUNAN DAERAH LAMPUNG"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":49,
+     "fields":{
+        "bank_code":"122",
+        "branch_code":"0012",
+        "short_name":"BPD KALSEL",
+        "long_name":"PT. BANK PEMBANGUNAN DAERAH KALSEL"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":50,
+     "fields":{
+        "bank_code":"123",
+        "branch_code":"0015",
+        "short_name":"BPD KALBAR",
+        "long_name":"PT.BANK PEMBANGUNAN DAERAH KALBAR"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":51,
+     "fields":{
+        "bank_code":"124",
+        "branch_code":"0018",
+        "short_name":"BPD KALTIM",
+        "long_name":"PT.BANK PEMBANGUNAN DAERAH KALTIM"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":52,
+     "fields":{
+        "bank_code":"125",
+        "branch_code":"0011",
+        "short_name":"BPD KALTENG",
+        "long_name":"PT. BPD KALIMANTAN TENGAH"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":53,
+     "fields":{
+        "bank_code":"126",
+        "branch_code":"0027",
+        "short_name":"BPD SULSELBAR",
+        "long_name":"PT. BANK SULSELBAR"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":54,
+     "fields":{
+        "bank_code":"127",
+        "branch_code":"0017",
+        "short_name":"BANK SULUT",
+        "long_name":"PT. BANK PEMBANGUNAN DAERAH  SULUT"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":55,
+     "fields":{
+        "bank_code":"128",
+        "branch_code":"0010",
+        "short_name":"BPD NTB",
+        "long_name":"PT. BANK PEMBANGUNAN DAERAH NTB"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":56,
+     "fields":{
+        "bank_code":"129",
+        "branch_code":"0013",
+        "short_name":"BPD BALI",
+        "long_name":"PT. BANK PEMBANGUNAN DAERAH BALI"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":57,
+     "fields":{
+        "bank_code":"130",
+        "branch_code":"0013",
+        "short_name":"BANK NTT",
+        "long_name":"PT.BANK PEMBANGUNAN DAERAH NTT"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":58,
+     "fields":{
+        "bank_code":"131",
+        "branch_code":"0016",
+        "short_name":"BANK MALUKU",
+        "long_name":"PT.BANK PEMBANGUNAN DAERAH MALUKU"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":59,
+     "fields":{
+        "bank_code":"132",
+        "branch_code":"0019",
+        "short_name":"BPD PAPUA",
+        "long_name":"PT.BANK PEMBANGUNAN DAERAH PAPUA"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":60,
+     "fields":{
+        "bank_code":"133",
+        "branch_code":"0012",
+        "short_name":"BANK BENGKULU",
+        "long_name":"PT. BPD BENGKULU"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":61,
+     "fields":{
+        "bank_code":"134",
+        "branch_code":"0015",
+        "short_name":"BPD SULAWESI TENGAH",
+        "long_name":"PT. BPD SULAWESI TENGAH"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":62,
+     "fields":{
+        "bank_code":"135",
+        "branch_code":"0018",
+        "short_name":"BANK SULTRA",
+        "long_name":"PT. BPD SULAWESI TENGGARA"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":63,
+     "fields":{
+        "bank_code":"145",
+        "branch_code":"0015",
+        "short_name":"BANK BNP",
+        "long_name":"PT. BANK NUSANTARA PARAHYANGAN"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":64,
+     "fields":{
+        "bank_code":"146",
+        "branch_code":"0047",
+        "short_name":"BANK OF INDIA INDONESIA",
+        "long_name":"PT. BANK OF INDIA INDONESIA TBK."
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":65,
+     "fields":{
+        "bank_code":"147",
+        "branch_code":"0011",
+        "short_name":"BANK MUAMALAT",
+        "long_name":"PT. BANK MUAMALAT INDONESIA"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":66,
+     "fields":{
+        "bank_code":"151",
+        "branch_code":"0010",
+        "short_name":"BANK MESTIKA",
+        "long_name":"PT. BANK MESTIKA DHARMA"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":67,
+     "fields":{
+        "bank_code":"152",
+        "branch_code":"0013",
+        "short_name":"BANK METRO EKSPRES",
+        "long_name":"PT. BANK METRO EKSPRES"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":68,
+     "fields":{
+        "bank_code":"153",
+        "branch_code":"0016",
+        "short_name":"BANK SINARMAS",
+        "long_name":"PT. BANK SINARMAS"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":69,
+     "fields":{
+        "bank_code":"157",
+        "branch_code":"0018",
+        "short_name":"BANK MASPION",
+        "long_name":"PT. BANK MASPION"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":70,
+     "fields":{
+        "bank_code":"161",
+        "branch_code":"0017",
+        "short_name":"BANK GANESHA",
+        "long_name":"PT. BANK GANESHA"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":71,
+     "fields":{
+        "bank_code":"164",
+        "branch_code":"0016",
+        "short_name":"BANK ICBC",
+        "long_name":"PT. BANK ICBC INDONESIA"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":72,
+     "fields":{
+        "bank_code":"167",
+        "branch_code":"0015",
+        "short_name":"BANK QNB",
+        "long_name":"PT. BANK QNB INDONESIA TBK."
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":73,
+     "fields":{
+        "bank_code":"200",
+        "branch_code":"0150",
+        "short_name":"BANK BTN",
+        "long_name":"PT. BANK TABUNGAN NEGARA (PERSERO)"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":74,
+     "fields":{
+        "bank_code":"212",
+        "branch_code":"0027",
+        "short_name":"BANK WOORI SAUDARA",
+        "long_name":"PT. BANK WOORI SAUDARA INDONESIA 1906 TBK."
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":75,
+     "fields":{
+        "bank_code":"213",
+        "branch_code":"0101",
+        "short_name":"BANK BTPN",
+        "long_name":"PT. BANK BTPN"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":76,
+     "fields":{
+        "bank_code":"405",
+        "branch_code":"0072",
+        "short_name":"BANK VICTORIA SYARIAH",
+        "long_name":"PT. BANK VICTORIA SYARIAH"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":77,
+     "fields":{
+        "bank_code":"422",
+        "branch_code":"0051",
+        "short_name":"BANK BRI SYARIAH",
+        "long_name":"PT. BANK SYARIAH BRI"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":78,
+     "fields":{
+        "bank_code":"425",
+        "branch_code":"0018",
+        "short_name":"BANK BJB SYARIAH",
+        "long_name":"PT. BANK JABAR BANTEN SYARIAH"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":79,
+     "fields":{
+        "bank_code":"426",
+        "branch_code":"0121",
+        "short_name":"BANK MEGA",
+        "long_name":"PT. BANK MEGA TBK."
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":80,
+     "fields":{
+        "bank_code":"427",
+        "branch_code":"0027",
+        "short_name":"BANK BNI SYARIAH",
+        "long_name":"PT BANK BNI SYARIAH"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":81,
+     "fields":{
+        "bank_code":"441",
+        "branch_code":"0010",
+        "short_name":"BANK BUKOPIN",
+        "long_name":"PT. BANK BUKOPIN TBK."
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":82,
+     "fields":{
+        "bank_code":"451",
+        "branch_code":"0017",
+        "short_name":"BANK MANDIRI SYARIAH",
+        "long_name":"PT. BANK SYARIAH MANDIRI TBK."
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":83,
+     "fields":{
+        "bank_code":"459",
+        "branch_code":"0011",
+        "short_name":"BANK BISNIS INTERNASIONAL",
+        "long_name":"PT. BANK BISNIS INTERNASIONAL"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":84,
+     "fields":{
+        "bank_code":"466",
+        "branch_code":"0019",
+        "short_name":"BANK ANDARA",
+        "long_name":"PT. BANK ANDARA"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":85,
+     "fields":{
+        "bank_code":"472",
+        "branch_code":"0014",
+        "short_name":"BANK JASA JAKARTA",
+        "long_name":"PT. BANK JASA JAKARTA"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":86,
+     "fields":{
+        "bank_code":"484",
+        "branch_code":"0017",
+        "short_name":"KEB HANA BANK",
+        "long_name":"PT. BANK KEB HANA INDONESIA"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":87,
+     "fields":{
+        "bank_code":"485",
+        "branch_code":"0010",
+        "short_name":"MNC BANK",
+        "long_name":"PT. BANK MNC INTERNASIONAL TBK."
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":88,
+     "fields":{
+        "bank_code":"490",
+        "branch_code":"0012",
+        "short_name":"BANK YUDHA BAKTI",
+        "long_name":"PT. BANK YUDHA BHAKTI"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":89,
+     "fields":{
+        "bank_code":"491",
+        "branch_code":"0015",
+        "short_name":"BANK MITRANIAGA",
+        "long_name":"PT. BANK MITRANIAGA"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":90,
+     "fields":{
+        "bank_code":"494",
+        "branch_code":"0014",
+        "short_name":"BANK ARGONIAGA",
+        "long_name":"PT. BANK RAKYAT INDONESIA ARGONIAGA TBK."
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":91,
+     "fields":{
+        "bank_code":"498",
+        "branch_code":"0016",
+        "short_name":"BANK SBI",
+        "long_name":"PT. BANK SBI INDONESIA"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":92,
+     "fields":{
+        "bank_code":"501",
+        "branch_code":"0011",
+        "short_name":"ROYAL BANK",
+        "long_name":"PT. BANK ROYAL INDONESIA"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":93,
+     "fields":{
+        "bank_code":"503",
+        "branch_code":"0017",
+        "short_name":"NOBU NATIONAL BANK",
+        "long_name":"PT. BANK NATIONALNOBU"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":94,
+     "fields":{
+        "bank_code":"506",
+        "branch_code":"0016",
+        "short_name":"BANK MEGA SYARIAH",
+        "long_name":"PT. BANK MEGA SYARIAH"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":95,
+     "fields":{
+        "bank_code":"513",
+        "branch_code":"0014",
+        "short_name":"BANK INA",
+        "long_name":"PT. BANK INA PERDANA"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":96,
+     "fields":{
+        "bank_code":"517",
+        "branch_code":"0016",
+        "short_name":"BANK PANIN SYARIAH",
+        "long_name":"PT. BANK PANIN SYARIAH"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":97,
+     "fields":{
+        "bank_code":"520",
+        "branch_code":"0012",
+        "short_name":"PRIMA MASTER BANK",
+        "long_name":"PT. PRIMA MASTER BANK"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":98,
+     "fields":{
+        "bank_code":"521",
+        "branch_code":"0031",
+        "short_name":"BANK SYARIAH BUKOPIN",
+        "long_name":"PT. BANK SYARIAH BUKOPIN"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":99,
+     "fields":{
+        "bank_code":"523",
+        "branch_code":"0011",
+        "short_name":"BANK SAHABAT SAMPOERNA",
+        "long_name":"PT. BANK SAHABAT SAMPOERNA"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":100,
+     "fields":{
+        "bank_code":"526",
+        "branch_code":"0010",
+        "short_name":"BANK DINAR",
+        "long_name":"PT. BANK DINAR INDONESIA"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":101,
+     "fields":{
+        "bank_code":"531",
+        "branch_code":"0012",
+        "short_name":"BANK AMAR",
+        "long_name":"PT. BANK AMAR INDONESIA"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":102,
+     "fields":{
+        "bank_code":"535",
+        "branch_code":"0014",
+        "short_name":"BANK KESEJAHTERAAN",
+        "long_name":"PT. BANK KESEJAHTERAAN EKONOMI"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":103,
+     "fields":{
+        "bank_code":"536",
+        "branch_code":"0017",
+        "short_name":"BANK BCA SYARIAH",
+        "long_name":"PT. BANK BCA SYARIAH"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":104,
+     "fields":{
+        "bank_code":"542",
+        "branch_code":"0012",
+        "short_name":"BANK ARTOS",
+        "long_name":"PT. BANK ARTOS INDONESIA"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":105,
+     "fields":{
+        "bank_code":"547",
+        "branch_code":"0046",
+        "short_name":"BANK BTPN SYARIAH",
+        "long_name":"PT. BANK TABUNGAN PENSIUNAN NASIONAL SYARIAH"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":106,
+     "fields":{
+        "bank_code":"548",
+        "branch_code":"0010",
+        "short_name":"BANK MAS",
+        "long_name":"PT. BANK MULTI ARTA SENTOSA"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":107,
+     "fields":{
+        "bank_code":"553",
+        "branch_code":"0012",
+        "short_name":"BANK MAYORA",
+        "long_name":"PT. BANK MAYORA"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":108,
+     "fields":{
+        "bank_code":"555",
+        "branch_code":"0018",
+        "short_name":"BANK INDEX",
+        "long_name":"BANK INDEX SELINDO"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":109,
+     "fields":{
+        "bank_code":"558",
+        "branch_code":"0017",
+        "short_name":"BANK EKSEKUTIF",
+        "long_name":"PT. BANK PUNID INDONESIA TBK."
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":110,
+     "fields":{
+        "bank_code":"559",
+        "branch_code":"0036",
+        "short_name":"CENTRATAMA NASIONAL BANK",
+        "long_name":"PT. CENTRATAMA NASIONAL BANK"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":111,
+     "fields":{
+        "bank_code":"562",
+        "branch_code":"0016",
+        "short_name":"BANK FAMA INTERNASIONAL",
+        "long_name":"PT. BANK FAMA INTERNATIONAL"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":112,
+     "fields":{
+        "bank_code":"564",
+        "branch_code":"0012",
+        "short_name":"BANK SINAR HARAPAN BALI",
+        "long_name":"PT. BANK SINAR HARAPAN BALI"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":113,
+     "fields":{
+        "bank_code":"566",
+        "branch_code":"0018",
+        "short_name":"BANK VICTORIA",
+        "long_name":"PT. BANK VICTORIA INTERNATIONAL"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":114,
+     "fields":{
+        "bank_code":"567",
+        "branch_code":"0011",
+        "short_name":"BANK HARDA",
+        "long_name":"PT. BANK HARDA INTERNATIONAL"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":115,
+     "fields":{
+        "bank_code":"767",
+        "branch_code":"0000",
+        "short_name":"ARTAJASA PEMBAYARAN ELEK.",
+        "long_name":"PT. ARTAJASA PEMBAYARAN ELEK. (RTGS)"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":116,
+     "fields":{
+        "bank_code":"769",
+        "branch_code":"0000",
+        "short_name":"BPD JAMBI SYARIAH",
+        "long_name":"BPD JAMBI SYARIAH (RTGS)"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":117,
+     "fields":{
+        "bank_code":"770",
+        "branch_code":"0000",
+        "short_name":"BPD SULSELBAR SYARIAH",
+        "long_name":"BPD SULSELBAR SYARIAH (RTGS)"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":118,
+     "fields":{
+        "bank_code":"771",
+        "branch_code":"0000",
+        "short_name":"BANK DANAMON SYARIAH",
+        "long_name":"DANAMON SYARIAH (RTGS)"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":119,
+     "fields":{
+        "bank_code":"777",
+        "branch_code":"0000",
+        "short_name":"BII UNIT SYARIAH",
+        "long_name":"BII UNIT SYARIAH JKT"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":120,
+     "fields":{
+        "bank_code":"778",
+        "branch_code":"0000",
+        "short_name":"BANK DKI SYARIAH",
+        "long_name":"BANK DKI UNIT USAHA SYARIAH"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":121,
+     "fields":{
+        "bank_code":"780",
+        "branch_code":"0000",
+        "short_name":"BANK CIMB NIAGA SYARIAH",
+        "long_name":"NIAGA SYARIAH JKT"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":122,
+     "fields":{
+        "bank_code":"781",
+        "branch_code":"0000",
+        "short_name":"BPD KALSEL SYARIAH",
+        "long_name":"BPD KALSEL SYARIAH BJM"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":123,
+     "fields":{
+        "bank_code":"782",
+        "branch_code":"0000",
+        "short_name":"BANK SUMUT SYARIAH",
+        "long_name":"BPD SUMUT SYARIAH"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":124,
+     "fields":{
+        "bank_code":"783",
+        "branch_code":"0000",
+        "short_name":"BANK RIAU SYARIAH",
+        "long_name":"BPD RIAU UNIT USAHA SYARIAH"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":125,
+     "fields":{
+        "bank_code":"784",
+        "branch_code":"0000",
+        "short_name":"PERMATA SYARIAH",
+        "long_name":"PERMATA SYARIAH JKT"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":126,
+     "fields":{
+        "bank_code":"785",
+        "branch_code":"0000",
+        "short_name":"BANK BTN SYARIAH",
+        "long_name":"BTN SYARIAH JKT (RTGS)"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":127,
+     "fields":{
+        "bank_code":"786",
+        "branch_code":"0000",
+        "short_name":"BPD NAD",
+        "long_name":"BPD NAD BDA (RTGS)"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":128,
+     "fields":{
+        "bank_code":"787",
+        "branch_code":"0000",
+        "short_name":"BANK SUMSEL SYARIAH",
+        "long_name":"BPD SUMSEL SYARIAH PLG (RTGS)"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":129,
+     "fields":{
+        "bank_code":"788",
+        "branch_code":"0000",
+        "short_name":"KSEI JKT",
+        "long_name":"KSEI JKT (RTGS)"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":130,
+     "fields":{
+        "bank_code":"789",
+        "branch_code":"0000",
+        "short_name":"BPD NTB SYARIAH",
+        "long_name":"PT. BPD NTB SYARIAH CKA"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":131,
+     "fields":{
+        "bank_code":"790",
+        "branch_code":"0000",
+        "short_name":"BPD KALTIM SYARIAH",
+        "long_name":"PT BPD KALTIM SYARIAH (RTGS)"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":132,
+     "fields":{
+        "bank_code":"791",
+        "branch_code":"0000",
+        "short_name":"BPD DIY SYARIAH",
+        "long_name":"BPD DIY SYARIAH (RTGS)"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":133,
+     "fields":{
+        "bank_code":"792",
+        "branch_code":"0000",
+        "short_name":"BANK SUMBAR SYARIAH",
+        "long_name":"BPD SUMBAR SYARIAH (RTGS)"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":134,
+     "fields":{
+        "bank_code":"793",
+        "branch_code":"0000",
+        "short_name":"FINNET",
+        "long_name":"PT. FINNET INDONESIA (RTGS)"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":135,
+     "fields":{
+        "bank_code":"794",
+        "branch_code":"0000",
+        "short_name":"BANK JATIM SYARIAH",
+        "long_name":"BPD JATIM SYARIAH (RTGS)"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":136,
+     "fields":{
+        "bank_code":"795",
+        "branch_code":"0000",
+        "short_name":"INDONESIA EXIMBANK",
+        "long_name":"INDONESIA EXIMBANK (RTGS)"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":137,
+     "fields":{
+        "bank_code":"796",
+        "branch_code":"0000",
+        "short_name":"BANK JATENG SYARIAH",
+        "long_name":"BPD JATENG SYARIAH (RTGS)"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":138,
+     "fields":{
+        "bank_code":"797",
+        "branch_code":"0000",
+        "short_name":"BPD KALBAR",
+        "long_name":"PT. BPD KALBAR (RTGS)"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":139,
+     "fields":{
+        "bank_code":"798",
+        "branch_code":"0000",
+        "short_name":"BANK SINARMAS SYARIAH",
+        "long_name":"PT. BANK SINAR MAS SYARIAH (RTGS)"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":140,
+     "fields":{
+        "bank_code":"799",
+        "branch_code":"0000",
+        "short_name":"BANK OCBC NISP SYARIAH",
+        "long_name":"OCBC NISP SYARIAH JKT (RTGS)"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":141,
+     "fields":{
+        "bank_code":"945",
+        "branch_code":"0305",
+        "short_name":"BANK AGRIS",
+        "long_name":"PT. BANK AGRIS"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":142,
+     "fields":{
+        "bank_code":"947",
+        "branch_code":"0302",
+        "short_name":"BANK MAYBANK SYARIAH",
+        "long_name":"PT. BANK MAYBANK SYARIAH INDONESIA"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":143,
+     "fields":{
+        "bank_code":"949",
+        "branch_code":"0307",
+        "short_name":"CTBC BANK",
+        "long_name":"PT. BANK CTBC INDONESIA"
+     }
+  },
+  {
+     "model":"bank.bank",
+     "pk":144,
+     "fields":{
+        "bank_code":"950",
+        "branch_code":"0307",
+        "short_name":"COMMONWEALTH BANK",
+        "long_name":"PT. BANK COMMONWEALTH"
+     }
+  }
+]
