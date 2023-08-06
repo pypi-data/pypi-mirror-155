@@ -1,0 +1,2 @@
+[console_scripts]
+noaawildfires = noaa_wildfires.cli:cmd
