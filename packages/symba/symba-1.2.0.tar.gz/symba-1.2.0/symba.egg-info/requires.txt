@@ -1,0 +1,5 @@
+cfractions<3.0.0,>=2.1.0
+reprit<1.0,>=0.8.0
+
+[:python_version < "3.7"]
+contextvars<3.0,>=2.4
