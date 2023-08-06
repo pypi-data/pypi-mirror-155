@@ -1,0 +1,107 @@
+# Prometheus Exporter for Alibaba Cloud
+
+## Quick Start
+[`原作者GitHub地址`](https://github.com/aylei/aliyun-exporter/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22)
+代码修改： 
+ - 添加自定义标签
+ - 根据标签push到~/metrics
+ - 添加日志打印
+ - 修复自定义标签自动匹配dict.key
+ - 配置文件重定义，增加【global_config;metrics-team,game_name-cluster】
+
+## Installation
+
+Python 3.5+ is required.
+
+```bash
+pip3 install alicloud-exporter
+```
+
+## Usage
+
+Config your credential and interested metrics:
+
+```yaml
+credential:
+  access_key_id: <YOUR_ACCESS_KEY_ID>
+  access_key_secret: <YOUR_ACCESS_KEY_SECRET>
+  region_id: <REGION_ID>
+
+metrics:
+  acs_cdn:
+  - name: QPS
+    team: 'team-name'
+  acs_mongodb:
+  - name: CPUUtilization
+    period: 300
+    measure: Maximum
+game_name:
+  dev:
+  - id_qazqweasd : 二_哈
+```
+```
+output-example:
+  aliyun_acs_ecs_dashboard_DiskWriteIOPS{altype="wx",app="yyds",cluster="dev",instanceId="i-a***d",name="web",region="CN",team="abc123***"} 66.6
+```
+
+Run the exporter:
+
+```bash
+> aliyun-exporter -p 9525 -c aliyun-exporter.yml
+```
+
+The default port is 9525, default config file location is `./aliyun-exporter.yml`.
+
+Visit metrics in [localhost:9525/metrics](http://localhost:9525/metrics)
+
+## Configuration
+
+```yaml
+rate_limit: 5 # request rate limit per second. default: 10
+credential:
+  access_key_id: <YOUR_ACCESS_KEY_ID> # required
+  access_key_secret: <YOUR_ACCESS_KEY_SECRET> # required
+  region_id: <REGION_ID> # default: 'cn-hangzhou'
+  
+metrics: # required, metrics specifications
+  acs_cdn: # required, Project Name of CloudMonitor
+  - name: QPS # required, Metric Name of CloudMonitor, belongs to a certain Project
+    rename: qps # rename the related prometheus metric. default: same as the 'name'
+    period: 60 # query period. default: 60
+    measure: Average # measure field in the response. default: Average
+
+info_metrics:
+  - ecs
+  - rds
+  - redis
+```
+
+Notes:
+
+* Find your target metrics using [Metrics Meta](#metrics-meta)
+* CloudMonitor API has an rate limit, tuning the `rate_limit` configuration if the requests are rejected.
+* CloudMonitor API also has an monthly quota for invocations (AFAIK, 5,000,000 invocations / month for free). Plan your usage in advance. 
+
+> Given that you have 50 metrics to scrape with 60s scrape interval, about 2,160,000 requests will be sent by the exporter for 30 days.
+
+## Special Project
+
+Some metrics are not included in the Cloud Monitor API. For these metrics, we keep the configuration abstraction consistent by defining special projects.
+
+Special Projects:
+
+* `rds_performance`: RDS performance metrics, available metric names: [Performance parameter table](https://www.alibabacloud.com/help/doc-detail/26316.htm?spm=a2c63.p38356.b99.361.694917e6Rtuu9i)
+
+> An example configuration file of special project is provided as `special-projects.yml`
+
+**Note**: special projects invokes different API with ordinary metrics, so it will not consume your Cloud Monitor API invocation quota. But the API of special projects could be slow, so it is recommended to separate special projects into a standalone exporter instance.
+
+## Metrics Meta
+
+`aliyun-exporter` shipped with a simple site hosting the metrics meta from the CloudMonitor API. You can visit the metric meta in [localhost:9525](http://localhost:9525) after launching the exporter.
+
+* `host:port` will host all the available monitor projects
+* `host:port/projects/{project}` will host the metrics meta of a certain project
+* `host:port/yaml/{project}` will host a config YAML of the project's metrics
+
+You can easily navigate in this pages by hyperlink.
