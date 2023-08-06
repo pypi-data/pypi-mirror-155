@@ -1,0 +1,3 @@
+[console_scripts]
+heaserver-organizations = heaserver.organization.service:main
+
