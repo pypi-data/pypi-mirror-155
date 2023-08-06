@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: jra-tools
+Version: 0.0.3
+Summary: Data Analisys Tools for JRDB
+Home-page: https://github.com/astroripple/jra-tools
+Author: Requrd
+Author-email: requrd1989@gmail.com
+Project-URL: Bug Tracker, https://github.com/astroripple/jra-tools/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# jra-tools
+For jrdb view.
+https://github.com/astroripple/horseview
+
+上記、horseviewで利用する各種ツール類を格納しています。
+
+## Develop
+作業ディレクトリでpython環境をDockerで再現すると使いやすい
+`docker run --rm -v `pwd`:/code -w /code -it python:3.7.9 bash`
