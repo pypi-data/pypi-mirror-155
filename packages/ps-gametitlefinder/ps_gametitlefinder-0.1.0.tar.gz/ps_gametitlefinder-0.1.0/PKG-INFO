@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: ps_gametitlefinder
+Version: 0.1.0
+Summary: A small tool that finds Playstation game titles given a game id
+Home-page: https://github.com/vladventura/ps_gametitlefinder
+Author: Vladimir Ventura
+Author-email: vladventura@outlook.es
+Project-URL: Bug Tracker, https://github.com/vladventura/ps_gametitlefinder/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Games/Entertainment
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Intended Audience :: Developers
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Playstation Game Title Finder
+
+Small tool where, given a playstation game id, we attempt to find the title of this game. I've made this out of frustration after having to constantly check the game name online after leaving a few backups run all night, and forgetting which game is which.
+
+For the time being, we only have access to ps3, psp, psm, psv and psx titles. Ps4 and ps5 will eventually come.
