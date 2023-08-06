@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: get-metars
+Version: 0.1.0
+Summary: Simple command line tool to download METAR's and TAF's for a given station and store them in text files.
+Home-page: https://github.com/diego-garro/tafver-metars
+License: MIT
+Author: diego-garro
+Author-email: diego.garromolina@yahoo.com
+Requires-Python: >=3.7,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: aiohttp (>=3.8.1,<4.0.0)
+Requires-Dist: beautifulsoup4 (>=4.11.1,<5.0.0)
+Requires-Dist: html5lib (>=1.1,<2.0)
+Requires-Dist: pydantic (>=1.9.1,<2.0.0)
+Requires-Dist: requests (>=2.27.1,<3.0.0)
+Requires-Dist: typer (>=0.4.1,<0.5.0)
+Project-URL: Repository, https://github.com/diego-garro/tafver-metars
