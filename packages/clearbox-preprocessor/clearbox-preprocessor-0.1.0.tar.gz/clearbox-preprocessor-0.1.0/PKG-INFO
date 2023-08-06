@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: clearbox-preprocessor
+Version: 0.1.0
+Summary: A very basic implementation of a preprocessor for tabular data.
+Home-page: https://github.com/clearbox-ai/preprocessor
+Author: Carmine D'Amico
+Author-email: carmine@clearbox.ai
+Maintainer: Carmine D'Amico
+Maintainer-email: carmine@clearbox.ai
+Requires-Python: >=3.9,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: numpy (>=1.22.4,<2.0.0)
+Requires-Dist: pandas (>=1.4.2,<2.0.0)
+Requires-Dist: scikit-learn (>=1.1.1,<2.0.0)
+Project-URL: Repository, https://github.com/clearbox-ai/preprocessor
+Description-Content-Type: text/markdown
+
+
