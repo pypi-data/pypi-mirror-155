@@ -1,0 +1,1 @@
+from smarthomeThailand.smarthome import SmartHome
