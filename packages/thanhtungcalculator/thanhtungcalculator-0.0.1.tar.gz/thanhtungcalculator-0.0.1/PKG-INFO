@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: thanhtungcalculator
+Version: 0.0.1
+Summary: A very basic calculator
+Home-page: UNKNOWN
+Author: Thanh Tung
+Author-email: thanhtung247@gmail.com
+License: MIT
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Education
+Classifier: Operating System :: Microsoft :: Windows :: Windows 10
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+License-File: LICENSE.txt
+
+This is a very simple calculator that takes 2 numbers and either add, subtract, multiply or divide them.
+
+
+
