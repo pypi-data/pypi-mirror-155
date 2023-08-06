@@ -1,0 +1,25 @@
+*.pyc
+*.pyo
+*~
+*.bak
+*.sw?
+Pipfile.lock
+
+# Distribution / packaging
+*.egg-info/
+*.eggs/
+build/
+dist/
+sdist/
+CHANGELOG.md
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+
+# Sphinx documentation
+docs/_build/
+
+# Development tooling
+.vscode/

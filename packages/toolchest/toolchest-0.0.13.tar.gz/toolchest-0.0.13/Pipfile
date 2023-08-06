@@ -1,0 +1,10 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+toolchest = {path = ".",editable = true}
+
+[dev-packages]
+toolchest = {path = ".", extras = ["test","docs","dist","devbase"], editable = true}
