@@ -1,0 +1,46 @@
+Metadata-Version: 2.1
+Name: nemo-bo
+Version: 0.1.5
+Summary: Multi-objective optimization of chemical processes with automated machine learning workflows
+Home-page: https://github.com/sustainable-processes/NEMO
+License: MIT
+Keywords: machine-learning,bayesian-optimization,multi-objective-optimization
+Author: Simon Sung
+Author-email: simon.sung06@gmail.com
+Requires-Python: >=3.7.0,<=3.9.13
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Dist: attrs (>=21.4.0,<22.0.0)
+Requires-Dist: botorch (>=0.6.4,<0.7.0)
+Requires-Dist: cython (>=0.29.30,<0.30.0)
+Requires-Dist: forestci (>=0.5.1,<0.6.0)
+Requires-Dist: gpytorch (>=1.6.0,<2.0.0)
+Requires-Dist: hyperopt (>=0.2.7,<0.3.0)
+Requires-Dist: matplotlib (>=3.5.2,<4.0.0)
+Requires-Dist: ngboost (>=0.3.12,<0.4.0)
+Requires-Dist: numba (>=0.55.1,<0.56.0)
+Requires-Dist: numpy (>=1.22.4,<2.0.0)
+Requires-Dist: openpyxl (>=3.0.9,<4.0.0)
+Requires-Dist: pandas (>=1.4.2,<2.0.0)
+Requires-Dist: pymoo (>=0.5.0,<0.6.0)
+Requires-Dist: scikit-learn (>=1.1.1,<2.0.0)
+Requires-Dist: scipy (>=1.8.1,<2.0.0)
+Requires-Dist: six (>=1.16.0,<2.0.0)
+Requires-Dist: smt (>=1.2.0,<2.0.0)
+Requires-Dist: tensorflow (>=2.9.1,<3.0.0)
+Requires-Dist: tensorflow-probability (>=0.17.0,<0.18.0)
+Requires-Dist: torch (>=1.11.0,<2.0.0)
+Requires-Dist: xgboost-distribution (>=0.2.4,<0.3.0)
+Project-URL: Repository, https://github.com/sustainable-processes/NEMO
+Description-Content-Type: text/markdown
+
+#nemo
+
+Multi-objective optimization of chemical processes with automated machine learning model selection
