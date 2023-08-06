@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+setup.cfg
+src/devops_unique_pack.egg-info/PKG-INFO
+src/devops_unique_pack.egg-info/SOURCES.txt
+src/devops_unique_pack.egg-info/dependency_links.txt
+src/devops_unique_pack.egg-info/top_level.txt
+src/unique_pack/__init__.py
+src/unique_pack/cli.py
