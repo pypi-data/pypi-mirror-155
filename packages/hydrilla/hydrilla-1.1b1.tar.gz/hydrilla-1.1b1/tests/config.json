@@ -1,0 +1,33 @@
+// SPDX-License-Identifier: CC0-1.0
+
+// Hydrilla development config file.
+//
+// Copyright (C) 2021, 2022 Wojtek Kosior
+//
+// Available under the terms of Creative Commons Zero v1.0 Universal.
+
+// this config is meant to be used in development environment; unlike
+// src/hydrilla/server/config.json, it shall not be included in distribution
+{
+    // Relative paths now get resolved from config's containing direcotry.
+    "malcontent_dir": "./sample_malcontent",
+
+    // Hydrilla will display this link to users as a place where they can
+    // obtain sources for its software. This config option is meant to ease
+    // compliance with the AGPL.
+    "hydrilla_project_url": "https://hydrillabugs.koszko.org/projects/hydrilla/wiki",
+
+    // Port to listen on (not relevant when Flask.test_client() is used).
+    "port": 10112,
+
+    // Use english for HTML files and generated messages.
+    "language": "en_US",
+
+    // Make Hydrilla error out on any warning
+    "werror": true
+
+    // With the below we can make hydrilla look for missing content items in
+    // another instance instead of just erroring/warning.
+    // TODO: feature not implemented
+    // ,"hydrilla_parent": "https://api.hydrilla.koszko.org/1.0/"
+}

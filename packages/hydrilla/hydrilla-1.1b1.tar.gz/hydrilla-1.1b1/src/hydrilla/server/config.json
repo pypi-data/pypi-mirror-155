@@ -1,0 +1,36 @@
+// SPDX-License-Identifier: CC0-1.0
+
+// Default Hydrilla config file.
+//
+// Copyright (C) 2021, 2022 Wojtek Kosior
+//
+// Available under the terms of Creative Commons Zero v1.0 Universal.
+
+{
+    // Relative path to directory from which Hydrilla will load packages
+    // metadata and serve files.
+    // Deliberately avoiding word "content", see:
+    // http://www.gnu.org/philosophy/words-to-avoid.en.html#Content
+    "malcontent_dir": "/var/lib/hydrilla/malcontent",
+
+    // Hydrilla will display this link to users as a place where they can
+    // obtain sources for its software. This config option is meant to ease
+    // compliance with the AGPL.
+    "hydrilla_project_url": "https://hydrillabugs.koszko.org/projects/hydrilla/wiki",
+
+    // Tell Hydrilla to look for additional configuration in those files, in
+    // this order. Raise an error if the file does not exist.
+    //"use_configs": ["/etc/hydrilla/config.json"],
+
+    // Same as above but don't raise an error if the file does not exist.
+    "try_configs": ["/etc/hydrilla/config.json"],
+
+    // What port to listen on (if not being run through WSGI).
+    "port": 10112,
+
+    // What localization to use for console messages and served HTML files.
+    "language": "en_US",
+
+    // Whether to exit upon emitting a warning.
+    "werror": false
+}

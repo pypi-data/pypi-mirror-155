@@ -1,0 +1,151 @@
+# SPDX-License-Identifier: CC0-1.0
+#
+# English (United States) translations for hydrilla.
+# Copyright (C) 2021, 2022 Wojtek Kosior <koszko@koszko.org>
+# Available under the terms of Creative Commons Zero v1.0 Universal.
+msgid ""
+msgstr ""
+"Project-Id-Version: hydrilla.builder 0.1\n"
+"Report-Msgid-Bugs-To: koszko@koszko.org\n"
+"POT-Creation-Date: 2022-05-31 18:21+0200\n"
+"PO-Revision-Date: 2022-02-12 00:00+0000\n"
+"Last-Translator: Wojtek Kosior <koszko@koszko.org>\n"
+"Language: en_US\n"
+"Language-Team: en_US <koszko@koszko.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: src/hydrilla/server/serve.py:127
+#, python-brace-format
+msgid "uuid_mismatch_{identifier}"
+msgstr "Two different uuids were specified for item '{identifier}'."
+
+#: src/hydrilla/server/serve.py:134
+#, python-brace-format
+msgid "version_clash_{identifier}_{version}"
+msgstr "Version '{version}' specified more than once for item '{identifier}'."
+
+#: src/hydrilla/server/serve.py:250 src/hydrilla/server/serve.py:262
+msgid "invalid_URL_{}"
+msgstr "Invalid URL/pattern: '{}'."
+
+#: src/hydrilla/server/serve.py:254
+msgid "disallowed_protocol_{}"
+msgstr "Disallowed protocol: '{}'."
+
+#: src/hydrilla/server/serve.py:307
+msgid "malcontent_dir_path_not_dir_{}"
+msgstr "Provided 'malcontent_dir' path does not name a directory: {}"
+
+#: src/hydrilla/server/serve.py:326
+msgid "couldnt_load_item_from_{}"
+msgstr "Couldn't load item from {}."
+
+#: src/hydrilla/server/serve.py:351
+msgid "item_{item}_in_file_{file}"
+msgstr "Item {item} incorrectly present under {file}."
+
+#: src/hydrilla/server/serve.py:357
+msgid "item_version_{ver}_in_file_{file}"
+msgstr "Item version {ver} incorrectly present under {file}."
+
+#: src/hydrilla/server/serve.py:380
+msgid "no_dep_{resource}_{ver}_{dep}"
+msgstr "Unknown dependency '{dep}' of resource '{resource}', version '{ver}'."
+
+#: src/hydrilla/server/serve.py:391
+msgid "no_payload_{mapping}_{ver}_{payload}"
+msgstr "Unknown payload '{payload}' of mapping '{mapping}', version '{ver}'."
+
+#: src/hydrilla/server/serve.py:403
+msgid "no_mapping_{required_by}_{ver}_{required}"
+msgstr "Unknown mapping '{required}' required by '{required_by}', version '{ver}'."
+
+#: src/hydrilla/server/serve.py:430
+msgid "couldnt_register_{mapping}_{ver}_{pattern}"
+msgstr ""
+"Couldn't register mapping '{mapping}', version '{ver}' (pattern "
+"'{pattern}')."
+
+#: src/hydrilla/server/serve.py:583 src/hydrilla/server/serve.py:606
+#: src/hydrilla/server/serve.py:650
+#, python-format
+msgid "%(prog)s_%(version)s_license"
+msgstr ""
+"%(prog)s %(version)s\n"
+"Copyright (C) 2021,2022 Wojtek Kosior and contributors.\n"
+"License GPLv3+: GNU AGPL version 3 or later "
+"<https://gnu.org/licenses/gpl.html>\n"
+"This is free software: you are free to change and redistribute it.\n"
+"There is NO WARRANTY, to the extent permitted by law."
+
+#: src/hydrilla/server/serve.py:592
+msgid "serve_hydrilla_packages_explain_wsgi_considerations"
+msgstr ""
+"Serve Hydrilla packages.\n"
+"\n"
+"This command is meant to be a quick way to run a local or development "
+"Hydrilla instance. For better performance, consider deployment using "
+"WSGI."
+
+#: src/hydrilla/server/serve.py:595
+msgid "directory_to_serve_from_overrides_config"
+msgstr ""
+"Directory to serve files from. Overrides value from the config file (if "
+"any)."
+
+#: src/hydrilla/server/serve.py:597
+msgid "project_url_to_display_overrides_config"
+msgstr ""
+"Project url to display on generated HTML pages. Overrides value from the "
+"config file (if any)."
+
+#: src/hydrilla/server/serve.py:599
+msgid "tcp_port_to_listen_on_overrides_config"
+msgstr ""
+"TCP port number to listen on (0-65535). Overrides value from the config "
+"file (if any)."
+
+#: src/hydrilla/server/serve.py:602
+msgid "path_to_config_file_explain_default"
+msgstr ""
+"Path to Hydrilla server configuration file (optional, by default Hydrilla"
+" loads its own config file, which in turn tries to load "
+"/etc/hydrilla/config.json)."
+
+#: src/hydrilla/server/serve.py:604
+msgid "language_to_use_overrides_config"
+msgstr ""
+"Language to use (also affects served HTML files). Overrides value from "
+"the config file (if any)."
+
+#: src/hydrilla/server/serve.py:607 src/hydrilla/server/serve.py:651
+msgid "version_printing"
+msgstr "Print version information and exit."
+
+#: src/hydrilla/server/serve.py:640
+msgid "config_option_{}_not_supplied"
+msgstr "Missing configuration option '{}'."
+
+#: src/hydrilla/server/serve.py:644
+msgid "serve_hydrilla_packages_wsgi_help"
+msgstr ""
+"Serve Hydrilla packages.\n"
+"\n"
+"This program is a WSGI script that runs Hydrilla repository behind an "
+"HTTP server like Apache2 or Nginx. You can configure Hydrilla through the"
+" /etc/hydrilla/config.json file."
+
+#. 'hydrilla' as a title
+#: src/hydrilla/server/templates/base.html:99
+#: src/hydrilla/server/templates/base.html:105
+msgid "hydrilla"
+msgstr "Hydrilla"
+
+#: src/hydrilla/server/templates/index.html:29
+msgid "hydrilla_welcome"
+msgstr "Welcome to Hydrilla!"
+

@@ -1,0 +1,146 @@
+.\" SPDX-License-Identifier: CC0-1.0
+.\"
+.\" Man page for Hydrilla server.
+.\"
+.\" Copyright (C) 2022 Wojtek Kosior <koszko@koszko.org>
+.\"
+.\" Available under the terms of Creative Commons Zero v1.0 Universal.
+
+.TH HYDRILLA 1 2022-06-14 "Hydrilla 1.1" "Hydrilla Manual"
+
+.SH NAME
+hydrilla \- Serve packages for the Haketilo browser extension
+
+.SH SYNOPSIS
+.B "hydrilla \-\-help"
+.br
+.B "hydrilla [\-m \fIDIRECTORY\/\fP] [\-h\ \fIURL\/\fP]"
+.B "[\-p\ \fIPORT\/\fP] [\-l \fILANGUAGE\/\fP]"
+.br
+.B "         [\-c \fICONFIG\/\fP]"
+.br
+(See the OPTIONS section for alternate option syntax with long option
+names.)
+
+.SH DESCRIPTION
+.I hydrilla
+is a command to start the Hydrilla repository software that serves Haketilo
+packages over HTTP.
+
+The primary method of running Hydrilla server is through a WSGI script.
+.I hydrilla
+command should only be used in local or development deployments.
+
+.SH OPTIONS
+.TP
+.B \-\^\-help
+Output a usage message and exit.
+
+.TP
+.BI \-m " DIRECTORY" "\fR,\fP \-\^\-malcontent\-dir=" DIRECTORY
+Look inside
+.I DIRECTORY
+for package files to serve. Use of the word \*(lqmalcontent\*(rq is a
+pun on widespread use of word
+.UR https://www.gnu.org/philosophy/words-to-avoid.en.html#Content
+\*(lqcontent\*(rq
+.UE
+with regard to works published online.
+
+This option, if present, overrides the property \*(lqmalcontent_dir\*(rq from
+Hydrilla config file. If the value is not specified on the command line nor in
+the config file, it defaults to \%\*(lq/var/lib/hydrilla/malcontent\*(rq.
+
+.TP
+.BI \-h " URL" "\fR,\fP \-\^\-hydrilla\-project\-url=" URL
+Use
+.I URL
+when placing a link to Hydrilla website in served HTML pages.
+
+This option, if present, overrides the property \*(lqhydrilla_project_url\*(rq
+from Hydrilla config file. If the value is not specified on the command line nor
+in the config file, it defaults to
+\%\*(lqhttps://hydrillabugs.koszko.org/projects/hydrilla/wiki\*(rq.
+
+.TP
+.BI \-p " PORT" "\fR,\fP \-\^\-port=" PORT
+Run the Hydrilla HTTP server on port
+.IR PORT .
+If
+.I PORT
+is 0, let
+.I hydrilla
+choose a random free port on the machine.
+
+This option, if present, overrides the property \*(lqport\*(rq from Hydrilla
+config file. If the value is not specified on the command line nor in the config
+file, it defaults to 10112.
+
+.TP
+.BI  \-l " LANGUAGE" "\fR,\fP \-\^\-language=" LANGUAGE
+Generate all user messages (including those on served HTML pages) using
+locale
+.IR LANGUAGE .
+
+.I LANGUAGE
+should be one of the locales supported by
+.IR hydrilla ,
+e.g. \*(lqen_US\*(rq.
+Otherwise,
+.I hydrilla
+will silently fall back to the en_US locale.
+
+This option, if present, overrides the property \*(lqlanguage\*(rq from Hydrilla
+config file. If the value is not specified on the command line nor in the config
+file, it defaults to \*(lqen_US\*(rq.
+
+.TP
+.BI \-c " CONFIG" "\fR,\fP \-\^\-config=" CONFIG
+Process the file at
+.I CONFIG
+as Hydrilla config file.
+.I CONFIG
+must exist in the filesystem and be readable to
+.IR hydrilla .
+
+If this option is not given,
+.I hydrilla
+loads its own, internal config file that in turn tries to load
+\%/etc/hydrilla/config.json.
+
+.TP
+.B \-\^\-version
+Show version information for this instance of
+.I hydrilla
+on the standard output and exit successfully.
+
+.SH "EXIT STATUS"
+The exit status is 0 if the server was started successfully and terminated
+manually by the user (i.e. through delivery of a SIGINT signal) or if the
+.B \-\^\-help
+option was passed. It is a number different from 0 if the server failed to
+start.
+Possible causes include
+.\"
+invalid command line arguments,
+.\"
+broken packages inside the provided
+.I DIRECTORY
+(may instead generate a warning message depending on the \*(lqwerror\*(rq
+config file option),
+.\"
+insufficient privileges to use the specified
+.I PORT
+and
+.\"
+invalid or unreadable config file.
+
+.SH "SEE ALSO"
+.SS "Manual Pages"
+.BR hydrilla-builder (1).
+
+.SS "Full Documentation"
+.UR https://hydrillabugs.koszko.org/projects/hydrilla/wiki
+Online documentation
+.UE
+is available on Hydrilla issue tracker.

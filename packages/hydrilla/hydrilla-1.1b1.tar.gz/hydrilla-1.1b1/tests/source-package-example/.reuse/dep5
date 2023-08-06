@@ -1,0 +1,10 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: Hydrilla source package example
+Upstream-Contact: Wojtek Kosior <koszko@koszko.org>
+Source: https://git.koszko.org/hydrilla-source-package-example
+
+# Sample paragraph, commented out:
+#
+# Files: src/*
+# Copyright: $YEAR $NAME <$CONTACT>
+# License: ...

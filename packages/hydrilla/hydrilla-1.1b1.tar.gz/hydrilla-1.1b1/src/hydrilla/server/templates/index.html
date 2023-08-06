@@ -1,0 +1,30 @@
+{# SPDX-License-Identifier: CC-BY-SA-4.0 OR AGPL-3.0-or-later
+
+HTML index page template.
+
+This file is part of Hydrilla
+
+Copyright (C) 2021 Wojtek Kosior
+
+This file is free cultural work: you can redistribute it with or
+without modification under the terms of the Creative Commons
+Attribution Share Alike 4.0 International as published by the
+Creative Commons Corporation.
+
+This file is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+Creative Commons Attribution Share Alike 4.0 International
+License for more details.
+
+
+I, Wojtek Kosior, thereby promise not to sue for violation of this
+file's license. Although I request that you do not make use this code
+in a proprietary program, I am not going to enforce this in court.
+#}
+
+{% extends 'base.html' %}
+{% block content %}
+  {{ super() }}
+  <h2>{{ _('hydrilla_welcome') }}</h2>
+{% endblock %}
