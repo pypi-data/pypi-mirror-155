@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: qaoalib
+Version: 0.1.4
+Summary: A package for QAOA Maxcut calculations
+Home-page: https://github.com/xenoicwyce/qaoalib
+Author: Xinwei Lee
+Author-email: xenoicwyce@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy (>=1.17)
+Requires-Dist: matplotlib
+Requires-Dist: networkx
+Requires-Dist: qiskit (>=0.25.0)
+
+# qaoalib
+A package for QAOA Maxcut Calculations.
+
+Packages required:
+- numpy
+- networkx
+- matplotlib
+- qiskit
+
+# How to install
+You can install from the PyPI:
+```
+pip install --upgrade qaoalib
+```
