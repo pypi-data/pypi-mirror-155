@@ -1,0 +1,78 @@
+#pragma once
+
+namespace eloquent {
+    namespace ml {
+
+        /**
+         * Declaration of `capture` function (needed for `autoCapture`)
+         */
+        void capture();
+
+        /**
+         * Print array to Serial
+         */
+        template<class T>
+        void printArray(T *array, uint16_t length) {
+            if (length == 0) {
+                return;
+            }
+
+            for (uint16_t i = 0; i < length - 1; i++) {
+                Serial.print(array[i]);
+                Serial.print(',');
+            }
+
+            Serial.print(array[length - 1]);
+            Serial.println();
+        }
+
+        /**
+         * Capture and send data over Serial
+         */
+        template<class T>
+        void autoCapture(T *features, uint16_t length) {
+            if (!Serial.available()) {
+                delay(1);
+                return;
+            }
+
+            if (Serial.readStringUntil('\n') != "capture") {
+                return;
+            }
+
+            capture();
+            printArray(features, length);
+        }
+
+        /**
+         * Assert that two arrays are equal
+         */
+        bool assertArrayMatch(float *test, float *actual, uint16_t length) {
+            for (uint16_t i = 0; i < length; i++) {
+                // if dealing with small numbers, test against a small threshold
+                if (abs(test[i]) < 1 && abs(test[i] - actual[i]) > 0.001) {
+                    Serial.print("\tMismatch at index ");
+                    Serial.print(i);
+                    Serial.print(": got ");
+                    Serial.print(actual[i]);
+                    Serial.print(" instead of ");
+                    Serial.println(test[i]);
+                    return false;
+                }
+
+                // if dealing with large numbers, test relative error
+                if (abs(test[i]) > 100 && abs(actual[i]) > 100 && abs((test[i] - actual[i]) / test[i]) > 0.003) {
+                    Serial.print("\tMismatch at index ");
+                    Serial.print(i);
+                    Serial.print(": got ");
+                    Serial.print(actual[i]);
+                    Serial.print(" instead of ");
+                    Serial.println(test[i]);
+                    return false;
+                }
+            }
+
+            return true;
+        }
+    }
+}
