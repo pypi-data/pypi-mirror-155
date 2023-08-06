@@ -1,0 +1,154 @@
+Metadata-Version: 2.1
+Name: tkinterie
+Version: 1.5.0
+Summary: tkinter-WebView widget, based on InternetExplorer.Application
+Home-page: UNKNOWN
+Author: Smart-Space
+Author-email: smart-space@qq.com
+License: MIT License
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Natural Language :: Chinese (Simplified)
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Topic :: Software Development :: Libraries
+Requires-Python: >=3.5
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: pythonnet
+
+# tkinterIE
+
+基于`InternetExplorer.Application`的WebView组件。
+
+## 使用方法
+
+```python
+WebView(master,width:int,height:int,url:str='',**kw)
+'''
+master::父组件
+width::初始宽度
+height::初始高度
+url::网址或html文件，可以为空
+**kw::其它Frame参数
+'''
+```
+
+例子：
+
+```python
+from tkinter import Tk
+from tkinterie.tkinterIE import WebView
+import clr
+clr.AddReference('System.Threading')
+from System.Threading import Thread,ApartmentState,ThreadStart
+
+def main():
+    a=Tk(classname='test tkinterie')
+    a.geometry('1200x700')
+    w=tkinterIE.WebView(a,1200,700,'www.baidu.com')
+    w.pack()
+    a.mainloop()
+
+if __name__=='__main__':
+    t = Thread(ThreadStart(main))
+    t.ApartmentState = ApartmentState.STA
+    t.Start()
+    t.Join()
+```
+
+> tkinter主窗口必须在STA线程模式下运行，防止WebBrowser卡死。
+
+---
+
+## 方法
+
+### navigate(url:str)
+
+指向一个网址或者是html文件路径。
+
+### goback()
+
+上一页
+
+### goforward()
+
+下一页
+
+### gosearch()
+
+返回默认搜索界面
+
+### gohome()
+
+返回初始界面
+
+### refresh()
+
+刷新当前界面
+
+---
+
+## 一些绑定事件
+
+本部分只作为参考，具体见微软发布的[说明文章](https://docs.microsoft.com/zh-cn/dotnet/api/?view=netframework-4.8&term=webbrow)。
+
+```python
+def main():
+    a=Tk()
+    a.geometry('1200x600')
+    w=WebView(a,1200,550,'www.baidu.com')
+    w.pack(side='bottom',fill='both')
+
+    w.ie.IsWebBrowserContextMenuEnabled=False#禁用快捷键、菜单
+    w.ie.Navigating+=before_navigate#打开新的链接
+    w.ie.NewWindow+=before_window#打开新的窗口
+    
+    a.mainloop()
+def before_navigate(sender,e):#显示新链接
+    print(e.Url)
+def before_window(sender,e):#在本控件打开新窗口
+    a=sender.Document.ActiveElement.GetAttribute("href")
+    sender.Navigate(a)
+    e.Cancel=True
+
+
+if __name__ == "__main__":
+    t = Thread(ThreadStart(main))
+    t.ApartmentState = ApartmentState.STA
+    t.Start()
+    t.Join()
+```
+
+
+
+---
+
+## What's new
+
+-1.5.0-
+
+Bind some method.
+
+-1.4.0-
+
+Add some example about binding some events of WebBowser in Python.
+
+-1.3.0-
+
+Use WinForms' WebBrowser, but it must runs in STA thread mode.
+
+-1.2.0-
+
+WebView will be destroyed when father widget destroys.
+
+-1.1.0-
+
+WebView can resize itself when father widget's size changes.
+
+-1.0.0-
+
+Upload to PYPI.
+
