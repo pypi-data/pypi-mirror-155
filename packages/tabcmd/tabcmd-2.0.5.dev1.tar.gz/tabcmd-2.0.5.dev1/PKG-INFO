@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: tabcmd
+Version: 2.0.5.dev1
+Summary: A command line client for working with Tableau Server.
+Home-page: https://github.com/tableau/tabcmd
+Author: Tableau
+Author-email: github@tableau.com
+License: MIT
+Requires-Python: >=3.7
+Provides-Extra: localize
+Provides-Extra: build
+Provides-Extra: package
+Provides-Extra: test
+License-File: LICENSE
+
+A command line client for working with Tableau Server.
