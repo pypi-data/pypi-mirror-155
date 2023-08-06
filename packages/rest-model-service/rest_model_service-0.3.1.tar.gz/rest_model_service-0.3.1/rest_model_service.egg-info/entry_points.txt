@@ -1,0 +1,2 @@
+[console_scripts]
+generate_openapi = rest_model_service.generate_openapi:main
