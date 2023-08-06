@@ -1,0 +1,10 @@
+#!python
+
+import jsii
+import sys
+
+__jsii_assembly__ = jsii.JSIIAssembly.load(
+    "aws-rfdk", "0.42.0", "aws_rfdk", "aws-rfdk@0.42.0.jsii.tgz"
+)
+
+__jsii_assembly__.invokeBinScript("aws-rfdk", "stage-deadline", sys.argv[1:])
