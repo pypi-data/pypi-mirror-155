@@ -1,0 +1,38 @@
+Metadata-Version: 2.1
+Name: refellips
+Version: 0.0.3
+Summary: Ellipsometry Analysis Package
+Home-page: https://github.com/refnx/refellips
+Author: "Hayden Robertson, Isaac Gresham, Andrew Nelson",
+Author-email: andyfaff+refellips@gmail.com
+License: BSD-3-Clause
+Project-URL: Bug Tracker, https://github.com/refnx/refellips/issues
+Project-URL: Source Code, https://github.com/refnx/refellips
+Platform: Windows
+Platform: Linux
+Platform: Solaris
+Platform: Mac OS-X
+Platform: Unix
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: Public Domain
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Chemistry
+Classifier: Topic :: Scientific/Engineering :: Physics
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: pandas
+Requires-Dist: refnx (>=0.1.27)
+
+# *refellips*
+
+![Github Action](https://github.com/refnx/refellips/workflows/Test/badge.svg)
+[![Documentation Status](https://readthedocs.org/projects/refellips/badge/?version=latest)](https://refellips.readthedocs.io/en/latest/?badge=latest)
+
+Spectroscopic ellipsometry data analysis in Python. Documentation at https://refellips.readthedocs.io.
