@@ -1,0 +1,10 @@
+id: 40123218-2b5e-11ec-8d3d-0242ac130003
+label: 'Extensible Markup Language'
+category: FORMATTING
+factory:
+  name: xml
+  classpath: 'drb_impl_xml.xml_node_factory:XmlNodeFactory'
+signatures:
+  - name: (?i).*\.xml
+  - python: |
+      return 'application/xml' in node.get_attribute('Content-Type')
