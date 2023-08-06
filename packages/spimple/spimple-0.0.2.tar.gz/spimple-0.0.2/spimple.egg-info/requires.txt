@@ -1,0 +1,6 @@
+omegaconf
+katbeam
+pytest>=6.2.2
+pyscilog>=0.1.2
+codex-africanus[complete]
+dask-ms[xarray]

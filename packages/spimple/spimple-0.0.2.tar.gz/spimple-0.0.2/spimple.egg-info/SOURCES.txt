@@ -1,0 +1,17 @@
+LICENSE
+README.md
+setup.py
+spimple/__init__.py
+spimple/utils.py
+spimple.egg-info/PKG-INFO
+spimple.egg-info/SOURCES.txt
+spimple.egg-info/dependency_links.txt
+spimple.egg-info/entry_points.txt
+spimple.egg-info/requires.txt
+spimple.egg-info/top_level.txt
+spimple/apps/__init__.py
+spimple/apps/image_convolver.py
+spimple/apps/power_beam_maker.py
+spimple/apps/spi_fitter.py
+tests/__init__.py
+tests/test_convolve2gaussres.py
