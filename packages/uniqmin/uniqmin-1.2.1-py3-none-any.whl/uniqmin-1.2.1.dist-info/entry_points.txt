@@ -1,0 +1,3 @@
+[console_scripts]
+uniqmin = uniqmin.__main__:main
+
