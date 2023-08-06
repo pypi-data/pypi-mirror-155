@@ -1,0 +1,11 @@
+compat-patcher-core>=1.2
+six
+
+[:python_version < "3.0"]
+Django<2
+
+[:python_version >= "3.0"]
+Django
+
+[comments]
+django-contrib-comments

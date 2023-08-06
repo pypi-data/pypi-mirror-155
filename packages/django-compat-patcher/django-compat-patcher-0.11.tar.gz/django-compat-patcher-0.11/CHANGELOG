@@ -1,0 +1,97 @@
+Version 0.11
+==================
+
+* add fixers for Django 3.2 and Django 4.0
+* drop support for python 2.7, 3.4 and 3.5 due to lack of Pip support
+
+
+Version 0.10
+==================
+
+* add more fixers for Django 3.0 and 3.1, especially old staticfiles tags
+
+
+Version 0.9
+==================
+
+* add testing for Python3.9 and Django3.1
+* add lots of trivial fixers for Django3.1 compatibility (mostly moved/deleted utilities)
+* add "unsafe" (disabled by default) fixers for removed postgres utils
+* add forward-compatibility fixer for signature "setup_test_environment(debug=None)" of Django1.11, to please pytest-django
+* add Django2.0 fixer to reallow direct assignment to reverse side of a related set
+
+
+Version 0.8
+==================
+
+* add lots of trivial fixers for Django3.0 compatibility
+* add fixer to preserve callability of user.is_authenticated and user.is_anonymous in Django>=2.0
+* add fixer for get_cache() removable in Django>=1.9
+* add "unsafe" (disabled by default) fixer to preserve optparse support in django>=1.0
+* update test coverage to python3.8 and Django3.0
+* allow passing DCP settings as ENV variables
+* add instructions on how to unintrusively patch Django via python-main-wrapper
+
+
+Version 0.7.1
+==================
+
+* fix missing dependency to compat-patcher-core
+
+
+Version 0.7
+==================
+
+* decouple DCP from the new core library, Compat-Patcher-Core
+
+
+Version 0.6
+==================
+
+* prevent tests from access DB
+* improve packaging metadata
+* make tests launchable via "python setup.py test"
+* normalize fixer names (might outdate some DCP_xxx user confs)
+
+
+Version 0.5
+==================
+
+* correct the check that all DCP warnings are emitted through its own utilities, not direct stdlib calls
+* add support for python 3.6 and 3.7, and django up to 2.2.1
+* add fixers for Django 2.0, 2.1 and 2.2
+
+
+Version 0.4
+==================
+
+* change semantics of fixer_applied_upto_django (new excludes specified version).
+* add forward-compatibility fixer for Django1.10.
+* add support for Django1.11, python3.6 and python3.7.
+
+
+Version 0.3
+==================
+
+* automatically skip fixers which would crash, when their target app is not in INSTALLED_APPS
+* fix regression with 2to3 tool
+* add test for django projects with minimal settings
+
+
+Version 0.2
+=================
+
+* tox integration, with a django test project
+* unify logging and warnings emitted by the patcher and misc fixers
+* new "import proxifier" system, supporting both py2k and py3k
+* lots of new backwards compatibility fixers, for django 1.6 to 1.10
+
+
+Version 0.1
+=================
+
+* generator for a README with the list of available fixers
+* algorithms to apply only relevant fixers, in a proper order
+* draft of py.test suite
+* first fixers, to test monkey-patching utilities
+* draft of dependency-injection architecture, to simplify the creation of fixers

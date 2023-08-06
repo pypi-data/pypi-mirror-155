@@ -1,0 +1,5 @@
+-r requirements-base.txt
+
+# External ports of contrib packages removed from django
+# Stored here because of conflicts with some django versions (see tox.ini)
+django-contrib-comments
