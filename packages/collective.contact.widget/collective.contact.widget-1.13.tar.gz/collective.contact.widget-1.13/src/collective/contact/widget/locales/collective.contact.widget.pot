@@ -1,0 +1,66 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-09-11 09:39+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: collective.contact.widget\n"
+
+#: ../widgets.py:90
+msgid "(nothing)"
+msgstr ""
+
+#: ../factory.py:36
+msgid "Contact"
+msgstr ""
+
+#: ../interfaces.py:34
+msgid "Contact content types that should be provided by autocompletion"
+msgstr ""
+
+#: ../factory.py:38
+msgid "Contact list"
+msgstr ""
+
+#: ../interfaces.py:33
+msgid "Contact types"
+msgstr ""
+
+#: ../widgets.py:136
+msgid "Fill your search here..."
+msgstr ""
+
+#: ../templates/contact_input.pt:8
+msgid "Filter:"
+msgstr ""
+
+#: ../configure.zcml:22
+msgid "Installs the collective.contact.widget package"
+msgstr ""
+
+#: ../interfaces.py:43
+msgid "Review states"
+msgstr ""
+
+#: ../interfaces.py:44
+msgid "Review states that should be visible"
+msgstr ""
+
+#: ../configure.zcml:22
+msgid "collective.contact.widget"
+msgstr ""
+
+#: ../widgets.py:49
+msgid "please wait"
+msgstr ""
