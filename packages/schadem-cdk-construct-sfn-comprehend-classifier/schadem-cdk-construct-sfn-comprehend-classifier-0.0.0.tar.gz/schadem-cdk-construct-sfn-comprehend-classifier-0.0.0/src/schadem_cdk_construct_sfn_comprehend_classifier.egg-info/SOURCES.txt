@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+src/schadem_cdk_construct_sfn_comprehend_classifier/__init__.py
+src/schadem_cdk_construct_sfn_comprehend_classifier/py.typed
+src/schadem_cdk_construct_sfn_comprehend_classifier.egg-info/PKG-INFO
+src/schadem_cdk_construct_sfn_comprehend_classifier.egg-info/SOURCES.txt
+src/schadem_cdk_construct_sfn_comprehend_classifier.egg-info/dependency_links.txt
+src/schadem_cdk_construct_sfn_comprehend_classifier.egg-info/requires.txt
+src/schadem_cdk_construct_sfn_comprehend_classifier.egg-info/top_level.txt
+src/schadem_cdk_construct_sfn_comprehend_classifier/_jsii/__init__.py
+src/schadem_cdk_construct_sfn_comprehend_classifier/_jsii/schadem-cdk-construct-sfn-comprehend-classifier@0.0.0.jsii.tgz
