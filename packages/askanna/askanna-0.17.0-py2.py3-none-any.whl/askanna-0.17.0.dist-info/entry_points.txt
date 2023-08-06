@@ -1,0 +1,4 @@
+[console_scripts]
+askanna = askanna.cli.tool:cli
+askanna-run-utils = askanna.cli.run_utils.tool:cli
+
