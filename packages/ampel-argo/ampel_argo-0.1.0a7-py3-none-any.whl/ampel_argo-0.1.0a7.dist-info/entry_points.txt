@@ -1,0 +1,3 @@
+[console_scripts]
+ampel-argo-render=ampel.argo.job:entrypoint
+
