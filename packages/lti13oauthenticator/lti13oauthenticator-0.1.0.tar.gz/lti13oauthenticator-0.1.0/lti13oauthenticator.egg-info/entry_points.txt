@@ -1,0 +1,2 @@
+[jupyterhub.authenticators]
+lti13 = lti13oauthenticator.lti13:LTI13OAuthenticator
