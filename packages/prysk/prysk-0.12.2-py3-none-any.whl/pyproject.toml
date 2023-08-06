@@ -1,0 +1,97 @@
+[build-system]
+requires = [
+    "poetry>=1.0.0",
+]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "prysk"
+version = "0.12.2"
+description = "Functional tests for command line applications"
+readme = "README.rst"
+license = "GNU GPLv2 or any later version"
+authors = [
+    "Nicola Coretti <nico.coretti@gmail.com>",
+    "Brodie Rao <brodie@bitheap.org>",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: GNU General Public License (GPL)",
+    "License :: OSI Approved :: GNU General Public License v2 or later (GPLv2+)",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Unix Shell",
+    "Topic :: Software Development :: Testing",
+]
+keywords = [
+    "test framework",
+    "snapshot testing",
+    "testing",
+    "cli",
+    "functional tests",
+]
+repository = "https://github.com/Nicoretti/prysk"
+homepage = "https://nicoretti.github.io/prysk/"
+include = [
+    ".coveragerc",
+    "noxfile.py",
+    "poetry.lock",
+    "*.rst",
+    "*.txt",
+    "*.toml",
+    "docs/*",
+    "contrib/*",
+    "scripts/*",
+    "examples/*",
+]
+exclude = [
+    "contrib/PKGBUILD",
+]
+
+[tool.poetry.scripts]
+prysk = "prysk:main"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+rich = "^12.4.4"
+
+[tool.poetry.dev-dependencies]
+tomli = "^2.0.1"
+tomli-w = "^1.0.0"
+pytest = "^7.0.1"
+sphinx-copybutton = "^0.5.0"
+check-manifest = "^0.47"
+black = "^22.1.0"
+coverage = "^6.4"
+isort = "^5.10.1"
+pylint = "^2.13.9"
+Sphinx = "^4.4.0"
+furo = "^2022.3.4"
+nox = "^2022.1.7"
+pre-commit = "^2.19.0"
+
+[tool.coverage.run]
+source = [
+    "prysk",
+]
+
+[tool.pylint.master]
+fail-under = 8
+
+[tool.pylint.format]
+max-line-length = 88
+max-module-lines = 800
+
+[tool.pylint.message_control]
+disable = "C0330, C0326"
+
+[tool.black]
+line-length = 88
+verbose = false
+include = "\\.pyi?$"
+
+[tool.isort]
+profile = "black"
