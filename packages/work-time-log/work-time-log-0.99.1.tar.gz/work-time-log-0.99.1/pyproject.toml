@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "work-time-log"
+version = "0.99.1"
+description = "Manual time tracking via a CLI that works similarly to git."
+authors = ["Valentin <noemail@example.com>"]
+readme = "README.md"
+packages = [
+    { include = "work.py", from = "src" },
+    { include = "work_components", from = "src" },
+]
+exclude = [ "src/work_components/test_*" ]
+
+[tool.poetry.scripts]
+work = "work:main"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
