@@ -1,0 +1,10 @@
+setuptools<=57
+pandas
+pyomo>=4.0
+PyMySQL
+biopython
+pyVCF
+mhcflurry<=1.4.3
+mhcnuggets
+keras<=2.3.1
+h5py<=2.10.0
