@@ -1,0 +1,46 @@
+Metadata-Version: 2.1
+Name: black-cgx
+Version: 0.1.0
+Summary: Black for cgx files
+License: MIT
+Author: Berend Klein Haneveld
+Author-email: berendkleinhaneveld@gmail.com
+Requires-Python: >=3.9,<4.0
+Classifier: Environment :: Console
+Classifier: Framework :: Black
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Software Development
+Requires-Dist: black (>=22.3)
+Requires-Dist: collagraph (>=0.4)
+Requires-Dist: tomli (>=1.1.0); python_version < "3.11"
+Description-Content-Type: text/markdown
+
+# Black-cgx
+
+Format CGX files with black.
+
+
+## Usage
+
+```sh
+# Install in your environment (for example with poetry)
+poetry add -D black-cgx
+# Show help for the tool
+poetry run black-cgx -h
+# By default, will format every cgx file in current folder (recursively)
+poetry run black-cgx
+# Just check if there would be any changes
+poetry run black-cgx --check
+# Format just a single file
+poetry run black-cgx my-component.cgx
+# Format a folder and file
+poetry run black-cgx ../folder_with_cgx_files my-component.cgx
+```
+
