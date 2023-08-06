@@ -1,0 +1,29 @@
+{% extends "admin/change_form.html" %}
+{% load i18n admin_urls %}
+
+
+{% block header_buttons %}
+  {{ block.super }}
+
+  <li class="nav-item d-lg-none">
+    {% url url opts|admin_urlname:'clear' object_id|admin_urlquote as clear_url %}
+    <a href="{% add_preserved_filters clear_url %}" class="nav-link"
+       data-toggle="tooltip" data-placement="bottom" data-trigger="hover"
+       data-html="true" title="{{ _("Clear queue") }}">
+      <i class="fa fa-refresh text-danger"></i>
+    </a>
+  </li>
+{% endblock %}
+
+
+{% block object-tools-items %}
+  {{ block.super }}
+
+  <li>
+    {% url opts|admin_urlname:'clear' object_id|admin_urlquote as clear_url %}
+    <a href="{% add_preserved_filters clear_url %}" class="btn btn-block btn-danger">
+      <i class="fa fa-refresh"></i>
+      <span>{{ _("Clear queue") }}</span>
+    </a>
+  </li>
+{% endblock %}
