@@ -1,0 +1,19 @@
+include *.txt
+include *.md
+include *.pkl
+recursive-include ./bookRecommender/*
+
+include bookRecommender/datasets/BX-Users.csv
+include bookRecommender/datasets/BX-Books.csv
+include bookRecommender/datasets/BX-Book-Ratings.csv
+include bookRecommender/trained_models/*.pkl
+include bookRecommender/VERSION
+include bookRecommender/config.yml
+
+include ./requirements/requirements.txt
+include ./requirements/test_requirements.txt
+exclude *.log
+exclude *.cfg
+
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
