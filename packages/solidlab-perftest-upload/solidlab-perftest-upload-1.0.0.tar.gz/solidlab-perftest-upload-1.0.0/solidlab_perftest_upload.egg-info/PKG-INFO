@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: solidlab-perftest-upload
+Version: 1.0.0
+Summary: SolidLab Perftest Upload
+Home-page: https://github.com/SolidLabResearch/solidlab-perftest-upload
+Author: Wim Van de Meerssche
+Author-email: wim.vandemeerssche@imec.be
+License: EUPL-1.2
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: License :: OSI Approved :: European Union Public Licence 1.2 (EUPL 1.2)
+Classifier: Programming Language :: Python :: 3 :: Only
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# SolidLab Perftest Upload
+
+A small cli to upload "artifacts" to PerfTests of [solidlab-perftest-server](https://github.com/SolidLabResearch/solidlab-perftest-server).
+
+
