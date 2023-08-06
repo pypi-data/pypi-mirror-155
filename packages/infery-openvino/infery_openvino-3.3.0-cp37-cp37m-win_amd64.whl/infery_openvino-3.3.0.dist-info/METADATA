@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: infery-openvino
+Version: 3.3.0
+Summary: Deci Run-Time Engine OpenVino Capabilities
+Home-page: https://deci.ai
+Author: Deci AI
+Author-email: rnd@deci.ai
+License: Apache License v2.0
+Keywords: Deci,AI,Inference,Deep Learning,OpenVino
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: psutil
+Requires-Dist: typing-extensions
+Requires-Dist: openvino (>=2022.1.0)
+Requires-Dist: cryptography
+Requires-Dist: requests
+Requires-Dist: numpy (<1.20)
+
+# infery
+
+## Introduction
+
+infery-openvino - A runtime inference solely with openvino capabilities.
+
+
+
