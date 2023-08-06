@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: Topsis-Pramit-101903198
+Version: 1.0.0
+Summary: Multi-Criteria Decision Making
+Author: Pramit
+License: MIT
+Keywords: python,best model,Topsis,multi-criteria decision making,assignment
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+A package to rank the models on the basis of TOPSIS method
