@@ -1,0 +1,3 @@
+[console_scripts]
+epythets = epythets.__init__:main
+
