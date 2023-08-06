@@ -1,0 +1,19 @@
+Metadata-Version: 1.1
+Name: postfoam
+Version: 0.1.4
+Summary: A python library for postporcessing openfoam simulations.
+Home-page: UNKNOWN
+Author: Ioannis Kyritsopoulos
+Author-email: yiagoskyrits@gmail.com
+License: MIT
+Description: # postfoam
+        A python library for postporcessing openfoam simulations. 
+        
+Keywords: OpenFOAM,postprocessing
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Scientific/Engineering
