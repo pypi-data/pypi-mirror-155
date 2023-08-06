@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: django-torque-enhanced-curation
+Version: 0.1.0
+Summary: django app for torque enhanced curation
+Home-page: https://code.librehq.com/ots/mediawiki/enhanced-curation
+Author: Open Tech Strategies, LLC
+Author-email: frankduncan@opentechstrategies.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+
+Django app for enhanced curation for torque
