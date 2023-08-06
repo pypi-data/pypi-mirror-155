@@ -1,0 +1,45 @@
+Metadata-Version: 2.1
+Name: crio_vault
+Version: 1.1.3
+Summary: Vault library
+Home-page: UNKNOWN
+Author: Crio_Developer
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+
+# Installation
+************
+pip install crio_vault
+
+
+# Get started
+***********
+
+# How to fetch keys required by a script from the AWS secret manager vault with this lib:
+
+from crio_vault import vault
+
+# Instantiate
+fetch = vault()
+
+# Call the fetch_and_store method
+fetch.fetch_and_store("test100", "prod")
+key = json.loads(os.getenv('TEST100_PROD_SHEET_KEY')) # dict
+token = os.getenv('TEST100_PROD_TOKEN') # string 
+
+# Print and check 
+print(key)
+print(type(key))
+print(token)
+print(type(token))
+
