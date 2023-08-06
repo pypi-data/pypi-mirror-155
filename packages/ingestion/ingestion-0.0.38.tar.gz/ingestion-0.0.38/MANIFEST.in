@@ -1,0 +1,7 @@
+include setup.py
+include ingestion/parametros.py
+include ingestion/start.py
+include ingestion/banco_dados/ssl_ca_file/iotbd.crt.pem
+
+
+
