@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: orbit_etl
+Version: 0.5
+Summary: Package for extracting data from MySQL and loading to GCS in CSV
+Home-page: https://github.com/orbitremit/orbit_etl
+Author: Benjamin Jeffrey
+Author-email: ben.jeffrey@orbitremit.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
+# orbit-etl
+Repository for a Python package to extract data from MySQL and load it into GCS. This removes the duplication of code in many of the Airflow DAGs defined in [airflow-orchestration](https://github.com/orbitremit/airflow-orchestration)
+
+## To Do
+- Linting
+- Unit testing
+- Documenting
+
