@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: password-compat
+Version: 0.2.1
+Summary: PHP's password_compat like library for Python
+Home-page: https://github.com/masinc/password_compat-python
+License: MIT OR Apache-2.0
+Author: masinc
+Author-email: masinc000@gmail.com
+Requires-Python: >=3.6,<4.0
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: bcrypt (>=3.2.0,<4.0.0)
