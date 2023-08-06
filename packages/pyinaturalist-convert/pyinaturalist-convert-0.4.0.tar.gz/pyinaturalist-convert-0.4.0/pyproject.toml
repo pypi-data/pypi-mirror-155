@@ -1,0 +1,112 @@
+[tool.poetry]
+name = "pyinaturalist-convert"
+version = "0.4.0"
+description = "Convert iNaturalist observation data to and from multiple formats"
+authors = ["Jordan Cook"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/pyinat/pyinaturalist-convert"
+repository = "https://github.com/pyinat/pyinaturalist-convert"
+documentation = "https://pyinaturalist-convert.readthedocs.io"
+keywords = ["inaturalist", "biodiversity", "export", "convert", "csv", "darwin-core", "dataframe", "gpx"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "Intended Audience :: Science/Research",
+    "Typing :: Typed",
+]
+include = [
+    { path = "*.md", format = "sdist"  },
+    { path = "*.yml", format = "sdist"  },
+    { path = "docs", format = "sdist" },
+    { path = "examples", format = "sdist" },
+    { path = "test", format = "sdist" }
+]
+
+[tool.poetry.dependencies]
+python                      = "^3.8"
+pyinaturalist               = ">=0.17.2"
+flatten-dict                = "^0.4.0"
+tablib                      = "^3.0"
+
+# Optional dependencies for specific data formats
+boto3                       = {optional=true, version=">=1.20"}
+geojson                     = {optional=true, version=">=2.5"}
+gpxpy                       = {optional=true, version="^1.4.2"}
+openpyxl                    = {optional=true, version=">=2.6"}
+pandas                      = {optional=true, version=">=1.2"}
+pyarrow                     = {optional=true, version=">=4.0"}
+sqlalchemy                  = {optional=true, version="^1.4.36"}
+tables                      = {optional=true, version=">=3.6"}
+xmltodict                   = {optional=true, version=">=0.12"}
+
+# Documentation dependencies
+furo                        = {optional=true, version="^2022.2.14.1"}
+myst-parser                 = {optional=true, version="^0.17.0"}
+sphinx                      = {optional=true, version="^4.2.0"}
+sphinx-autodoc-typehints    = {optional=true, version="^1.17"}
+sphinx-automodapi           = {optional=true, version="^0.14"}
+sphinx-copybutton           = {optional=true, version=">=0.5"}
+sphinx-inline-tabs          = {optional=true, version="^2022.1.2b11"}
+sphinx-panels               = {optional=true, version="^0.6.0"}
+
+[tool.poetry.extras]
+db         = ["sqlalchemy"]
+dwc        = ["xmltodict"]
+feather    = ["pandas", "pyarrow"]
+geojson    = ["geojson"]
+gpx        = ["gpxpy"]
+hdf        = ["pandas", "tables"]
+html       = ["jinja", "tablib[html]"]
+odp        = ["boto3"]
+parquet    = ["pandas", "pyarrow"]
+xlsx       = ["pandas", "openpyxl"]
+
+all = ["boto3", "geojson", "gpxpy", "openpyxl", "pandas", "pyarrow", "sqlalchemy", "tables", "tablib[all]", "xmltodict"]
+docs = ["furo", "myst-parser", "sphinx", "sphinx-autodoc-typehints", "sphinx-automodapi",
+        "sphinx-copybutton", "sphinx-inline-tabs", "sphinx-panels"]
+
+[tool.poetry.dev-dependencies]
+coverage = ">=6.3"
+nox = "^2022.1.7"
+nox-poetry = "^1.0.0"
+pre-commit = "^2.18"
+pyparsing = "^3.0"
+pytest = ">=7.0"
+pytest-cov = ">=3.0"
+pytest-xdist = ">=2.2"
+sqlalchemy2-stubs = ">=0.0.2-alpha.22"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+skip-string-normalization = true
+line-length = 100
+
+[tool.coverage.html]
+directory = 'test-reports'
+
+[tool.coverage.run]
+branch = true
+source = ['pyinaturalist_convert']
+
+[tool.coverage.report]
+exclude_lines = [
+    'pragma: no cover',
+    'if TYPE_CHECKING:',
+    'except ImportError:',
+]
+
+[tool.isort]
+profile = 'black'
+line_length = 100
+skip_gitignore = true
+skip = ['pyinaturalist_convert/__init__.py']
+known_first_party = ['test']
+
+[tool.mypy]
+ignore_missing_imports = true
+files = ['pyinaturalist_convert']
