@@ -1,0 +1,5 @@
+import imp
+
+from currencypairsdata.return_classes import AUDUSD_return
+from currencypairsdata.return_classes import GBPEUR_return
+from currencypairsdata.return_classes import USDINR_return
