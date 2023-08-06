@@ -1,0 +1,17 @@
+LICENSE
+README.md
+setup.py
+slightly_better_types/__init__.py
+slightly_better_types/function.py
+slightly_better_types/handlers.py
+slightly_better_types/parameter.py
+slightly_better_types/utils.py
+slightly_better_types.egg-info/PKG-INFO
+slightly_better_types.egg-info/SOURCES.txt
+slightly_better_types.egg-info/dependency_links.txt
+slightly_better_types.egg-info/requires.txt
+slightly_better_types.egg-info/top_level.txt
+tests/__init__.py
+tests/test_function.py
+tests/test_handlers.py
+tests/test_parameter.py
