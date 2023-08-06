@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+pyrostorage/__init__.py
+pyrostorage/client.py
+pyrostorage/exceptions.py
+pyrostorage/version.py
+pyrostorage.egg-info/PKG-INFO
+pyrostorage.egg-info/SOURCES.txt
+pyrostorage.egg-info/dependency_links.txt
+pyrostorage.egg-info/requires.txt
+pyrostorage.egg-info/top_level.txt
+pyrostorage.egg-info/zip-safe
