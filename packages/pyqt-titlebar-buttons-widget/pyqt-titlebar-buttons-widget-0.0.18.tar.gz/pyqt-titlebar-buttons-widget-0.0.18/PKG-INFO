@@ -1,0 +1,44 @@
+Metadata-Version: 2.1
+Name: pyqt-titlebar-buttons-widget
+Version: 0.0.18
+Summary: PyQt buttons (e.g. min/max/close) widget for title bar or menu bar
+Home-page: https://github.com/yjg30737/pyqt-titlebar-buttons-widget.git
+Author: Jung Gyu Yoon
+Author-email: yjg30737@gmail.com
+License: MIT
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+
+# pyqt-titlebar-buttons-widget
+PyQt buttons (e.g. min/max/close) widget for title bar or menu bar 
+
+## Requirements
+* PyQt5 >= 5.8
+
+## Setup
+`python -m pip install pyqt-titlebar-buttons-widget`
+
+## Included Packages
+* <a href="https://github.com/yjg30737/pyqt-svg-button.git">pyqt-svg-button</a>
+
+## Package Inherited by This
+* <a href="https://github.com/yjg30737/pyqt-windows-buttons-widget.git">pyqt-windows-buttons-widget</a>
+* <a href="https://github.com/yjg30737/pyqt-mac-buttons-widget.git">pyqt-mac-buttons-widget</a>
+
+## Class, Methods Overview
+* `TitlebarButtonsWidget(base_widget=None, hint=['min, 'max', 'close'])` - Constructor.
+* `getMinimizedBtn()`, `getMaximizedBtn()`, `getCloseBtn()`. I belive these three methods are quite self-explanatory.
+* `setButtonSize(w, h)`. Set the overall width/height, text/icon size of button.
+
+## Note
+This package was actually made for those two packages i mentioned. Reducing redundancy.
+
+<b>=== 2022/5/20 ===</b>
+
+I'm working on other features such as help/tack buttons.
+
+I could be working on adding another widgets(e.g. search bar) beside the buttons. So far i'm only working on the button because that seems to be the most generic feature.
+
+
