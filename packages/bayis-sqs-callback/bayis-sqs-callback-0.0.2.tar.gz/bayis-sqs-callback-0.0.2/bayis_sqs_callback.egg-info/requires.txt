@@ -1,0 +1,7 @@
+boto3
+
+[tests]
+hypothesis
+mock
+moto
+pytest
