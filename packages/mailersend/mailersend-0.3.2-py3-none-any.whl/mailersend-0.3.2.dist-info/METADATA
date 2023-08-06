@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: mailersend
+Version: 0.3.2
+Summary: The official MailerSend Python SDK
+Author: Igor Hrček
+Author-email: igor@mailerlite.com
+Requires-Python: >=3.6.1,<4.0.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: pre-commit (>=2.12.1,<3.0.0)
+Requires-Dist: requests (>=2.25.0,<3.0.0)
