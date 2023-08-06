@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: trk
+Version: 0.1.7
+Summary: 
+Author: nick
+Author-email: nickmcmillanproductions@gmail.com
+Requires-Python: >=3.8,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: archieml (>=0.3.5,<0.4.0)
+Requires-Dist: pandas (>=1.4.1,<2.0.0)
+Requires-Dist: plotext (>=4.2.0,<5.0.0)
+Requires-Dist: requests (>=2.27.1,<3.0.0)
+Requires-Dist: tabulate (>=0.8.9,<0.9.0)
+Requires-Dist: typer[all] (>=0.4.0,<0.5.0)
+Description-Content-Type: text/markdown
+
+# Trk: A CLI Time Tracker
+
+A handy cli time tracker
