@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: kalifast
+Version: 0.0.7
+Summary: Python package for kalifast record npp plugin
+Author-email: EISGE <a@eisge.com>
+Requires-Dist: wheel
+Provides-Extra: dev
