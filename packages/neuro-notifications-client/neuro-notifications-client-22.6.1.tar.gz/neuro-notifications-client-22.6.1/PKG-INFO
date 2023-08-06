@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: neuro-notifications-client
+Version: 22.6.1
+Summary: Notifications client for Neu.ro platform services
+Home-page: https://github.com/neuro-inc/neuro-notifications-client
+License: Apache 2
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Example
+
+```python
+async with Client(URL("http://localhost:8080")) as client:
+    await client.ping()
+    await client.notify(JobCannotStartQuotaReached("bob"))
+    await client.notify(JobCannotStartLackResources("job-lack-resources-1"))
+```
