@@ -1,0 +1,94 @@
+#!/usr/bin/python
+
+#
+# Project Librarian: Brandon Piotrzkowski
+#              Graduate Student
+#              UW-Milwaukee Department of Physics
+#              Center for Gravitation & Cosmology
+#              <brandon.piotrzkowski@ligo.org>
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+
+"""
+Script to execute the online spatiotemporal coincidence search between external
+triggers and internal gravitational wave candidate superevents
+"""
+__author__ = "Brandon Piotrzkowski <brandon.piotrzkowski@ligo.org>"
+
+
+
+# Global imports.
+import numpy as np
+from ligo.raven import search
+from ligo.skymap.io import read_sky_map
+
+import argparse
+
+# Command line options.
+# arguments
+parser = argparse.ArgumentParser(description='Calculate overlap between sky maps')
+parser.add_argument('-i', '--inputfiles', nargs='+', dest="inputfiles", type=str, required=True, metavar=('se_skymap_filename', 'ext_skymap_filename'),
+                    help="Paths to sky map(s), up to two.")
+parser.add_argument('-m', '--se_moc', dest="se_moc", action="store_true", help="Assume the superevent sky map is multi-ordered (MOC).")
+parser.add_argument('-M', '--ext_moc', dest="ext_moc", action="store_true", help="Assume the external sky map is multi-ordered (MOC).")
+parser.add_argument('-r', '--se_ring', dest="se_ring", action="store_true", help="Assume the superevent map uses RING ordering rather than nested.")
+parser.add_argument('-R', '--ext_ring', dest="ext_ring", action="store_true", help="Assume the external sky map uses RING ordering rather than nested.")
+parser.add_argument('-c', '--ra_dec', nargs=2, dest="ra_dec", type=float, metavar="ra dec",
+                    help="RA and dec of external sky map if a single pixel sky map.")
+args = parser.parse_args()
+print(args)
+
+# Check either one or two skymaps are given
+if not (0 < len(args.inputfiles) <= 2):
+#if not (len(args.inputfiles)==2 or (len(args.inputfiles)==1 and args.ra_dec)):
+    raise AssertionError('Please provide one or two sky map filenames')   
+
+if args.ra_dec:
+    ra, dec = args.ra_dec[0], args.ra_dec[1]
+else:
+    ra, dec = None, None
+
+try:
+    if args.ext_moc:
+        ext_table = read_sky_map(args.inputfiles[1], moc=args.ext_moc)
+        ext_skymap = ext_table['PROBDENSITY']
+        ext_uniq = ext_table['UNIQ']
+    else:
+        ext_skymap, header = read_sky_map(args.inputfiles[1], moc=args.ext_moc, nest=not args.ext_ring)
+        ext_uniq = []
+    if args.se_moc:
+        se_table = read_sky_map(args.inputfiles[0], moc=args.se_moc)
+        se_skymap = se_table['PROBDENSITY']
+        se_uniq = se_table['UNIQ']
+    else:
+        se_skymap, header = read_sky_map(args.inputfiles[0], moc=args.se_moc, nest=not args.se_ring)
+        se_uniq = []
+except IndexError:
+    if args.se_moc:
+        se_table = read_sky_map(args.inputfiles[0], moc=args.se_moc)
+        se_skymap = se_table['PROBDENSITY']
+        se_uniq = se_table['UNIQ']
+    else:
+        se_skymap, header = read_sky_map(args.inputfiles[0], moc=args.se_moc, nest=not args.se_ring)
+        se_uniq = []
+    ext_skymap = []
+    ext_uniq = []
+
+
+result = search.skymap_overlap_integral(se_skymap, ext_skymap,
+                                        se_skymap_uniq=se_uniq, ext_skymap_uniq=ext_uniq,
+                                        ra=ra, dec=dec,
+                                        se_nested=not args.se_ring, ext_nested=not args.ext_ring)
+print("Skymap overlap integral: {}".format(result))

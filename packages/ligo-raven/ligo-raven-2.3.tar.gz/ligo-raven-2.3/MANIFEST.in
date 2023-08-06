@@ -1,0 +1,5 @@
+include COPYING
+include bin/*
+prune doc/
+prune ligo/raven/tests/
+prune ligo_raven.egg-info/ 

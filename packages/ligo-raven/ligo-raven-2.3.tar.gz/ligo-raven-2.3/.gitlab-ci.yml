@@ -1,0 +1,113 @@
+include:
+  - project: emfollow/gitlab-ci-templates
+    file: lint.yml
+  - project: computing/gitlab-ci-templates
+    file: debian.yml
+  - project: computing/gitlab-ci-templates
+    file: python.yml
+
+
+stages:
+  - build
+  - test
+  - deploy
+
+image: python:3.8
+
+.install-cython: &install-cython
+  ${PYTHON} -m pip install cython
+
+
+# Build Python packages
+build:
+  stage: build
+  script:
+    - python setup.py sdist -d . bdist_wheel -d .
+  artifacts:
+    paths:
+      - '*.whl'
+      - '*.tar.gz'
+    expire_in: 1 day
+
+test:
+    stage: test
+    before_script:
+        - pip install --upgrade pip
+        - pip install .
+    script:
+        - python setup.py test
+
+# Generate documentation
+doc:
+  stage: test
+  extends:
+    - .debian:base
+    - .python:sphinx
+  # FIXME: temporarily set image to Python 3.9 because default `python` image
+  # is now Python 3.10 which lacks wheels for many packages right now.
+  image: python:3.9
+  variables:
+    SOURCEDIR: doc
+    REQUIREMENTS: .[doc]
+  before_script:
+    - *install-cython
+    - !reference [".debian:base", before_script]
+    - !reference [".python:sphinx", before_script]
+    - apt-get install -y -qq graphviz
+    - pip install -r doc-requirements.txt
+  needs: []
+
+pages:
+  stage: deploy
+  needs:
+    - doc
+  rules:
+    - if: $CI_COMMIT_TAG
+  script:
+    - mv html public
+  artifacts:
+    paths:
+      - public
+
+FAR_study:
+    stage: test
+    when: manual
+    before_script:
+        - pip install --upgrade pip
+        - pip install .
+    script:
+        - python ligo/raven/tests/FAR_study.py
+
+FAR_subgrb_study:
+    stage: test
+    when: manual
+    before_script:
+        - pip install --upgrade pip
+        - pip install .
+    script:
+        - python ligo/raven/tests/FAR_subgrb_study.py
+
+lint:
+  stage: test
+  variables:
+    GIT_STRATEGY: none
+  before_script:
+    - tar --strip-components 1 -xf *.tar.*
+  dependencies:
+    - build
+
+release:
+  # update readthedocs page
+  stage: deploy
+  image: python
+  variables:
+    GIT_STRATEGY: fetch
+  # only update if new tag
+  script:
+    - |
+      if [ -n "$READTHEDOCS_API_KEY" ]
+      then 
+         curl -X POST -d "branches=master" \
+         -d "token=$READTHEDOCS_API_KEY" \
+         "$READTHEDOCS_API_URL"
+      fi

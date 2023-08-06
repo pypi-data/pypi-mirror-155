@@ -1,0 +1,40 @@
+RAVEN installation instructions
+===============================
+
+Prerequisites
+-------------
+
+* Python 3.x
+  Should be provided by the distribution.
+
+* Numpy >= 1.4.1 and Scipy >= 0.7.2
+  Should be installable either via the distribution packaging system,
+  pip or easy_install.
+
+* LALSuite
+  See https://www.lsc-group.phys.uwm.edu/daswg/docs/howto/lal-install.html
+  for installation instructions. LALSuite must be configured with the
+  --enable-swig-python option.
+
+* HEALPy >= 1.4.1
+  See http://code.google.com/p/healpy/ for installation instructions.
+
+* VOEventLib
+  See http://www.astropython.org/resource/2011/5/VOEventLib for a source tarball,
+  or contact Roy Williams at roy.williams@ligo.org.
+
+
+Installing RAVEN
+----------------
+
+To install from the git repository hosted on versions.ligo.org, use the albert.einstein
+credentials via:
+
+    git clone https://versions.ligo.org/git/raven.git
+    cd raven
+    python setup.py build
+    python setup.py install --user
+    python setup.py test
+
+To install system-wide, replace the 'setup.py install' command with
+    sudo python setup.py install
