@@ -1,0 +1,2 @@
+[console_scripts]
+torch_kitti = torch_kitti.scripts.torch_kitti:main
