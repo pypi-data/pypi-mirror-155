@@ -1,0 +1,49 @@
+Metadata-Version: 2.1
+Name: DeepSurrogatepin
+Version: 0.12
+Summary: Deep surrogate model for the probability of informed trading model
+Home-page: https://github.com/GuillaumePv/pin_surrogate_model
+Author: Guillaume Pavé
+Author-email: guillaumepave@gmail.com
+License: MIT
+Keywords: Machine learning, market microstructure
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: tensorflow
+Requires-Dist: tqdm
+Requires-Dist: tensorflow-probability
+
+# Master thesis: Deep Structural estimation: with an application to market microstructure modelling
+
+This package proposes an easy application of the master thesis: "Deep Structural estimation: with an application to market microstructure modelling"
+
+## Authors
+
+- Guillaume Pavé (HEC Lausanne,guillaumepave@gmail.com)
+
+## Supervisors
+
+- Simon Scheidegger (Department of Economics, HEC Lausanne, simon.scheidegger@unil.ch)
+- Antoine Didisheim (Swiss Finance Institute, antoine.didisheim@unil.ch)
+
+## Instructions
+
+1) Download parameters of the surrogate (https://drive.google.com/drive/folders/1RTtYqOipJ-OJpveLu9Ui9NbYGvCDJtNL?usp=sharing)
+2) Create a folder "model_save" and put parameters inside
+3) Download training datatset "simulation_data_PIN.txt" from https://drive.google.com/file/d/1iUR-Zsd_UAo8bnZEMh5hpQ0SjYtpmtQA/view?usp=sharing
+4) Create a folder "data" and put the dataset inside.
+5) Now, you can use the train dataset or you could generate your own dataset (https://github.com/edwinhu/pin-code)
+
+Github project is available at: https://github.com/GuillaumePv/pin_surrogate_model
+If you find bugs, do not hesitate to create Issues inside of the github project.
