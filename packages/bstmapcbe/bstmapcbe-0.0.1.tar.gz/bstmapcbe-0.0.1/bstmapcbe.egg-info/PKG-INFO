@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: bstmapcbe
+Version: 0.0.1
+Summary: A Package used for finding the routes for important places in Coimbatore,India By Arjun K PSG ICE
+Home-page: UNKNOWN
+Author: Arjun K
+Author-email: arjunkrishnarajv@gmail.com
+License: MIT
+Keywords: map
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Education
+Classifier: Operating System :: Microsoft :: Windows :: Windows 10
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+License-File: LICENSE.txt
+
+This python package is developed by Arjun K PSG ICE (20-24) which can be used for searching the available places on the Coimbatore map
+Just call the startmap() to run our map
+
+Change Log
+====================
+
+0.0.1 (14/06/22)
+--------------------
+- First Release
+
