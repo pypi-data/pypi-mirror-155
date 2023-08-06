@@ -1,0 +1,356 @@
+#!/usr/bin/env python
+
+#######################################################################################################################################################
+#  Description: This Python script is used to parse value from the grimoire yaml file that contains different spells (Tasks) and modules in order to do 
+#               configuration management.
+#               
+#  Author: Arjun Babu (arbnair97@gmail.com)
+#  Created date: 03/06/2022
+#
+#  Usage:  Modify grimoire with the required values and run the below commands.
+#  Command: python gandalf.py --spell <grimoire yaml file>
+#  Python compatible version: 3.10.4
+#  
+#
+#  Modifications:
+#  1. 
+#
+#######################################################################################################################################################
+
+import argparse
+from itertools import *
+import json
+from pathlib import Path
+import yaml
+from yaml.loader import SafeLoader
+
+from modules.bedcCUModule import *
+from modules.bedcMGMTModule import *
+from modules.pipelineIncrement import *
+from modules.cmsDBBackup import *
+
+
+
+
+
+
+def main_function():
+
+    parse_inputs()
+    
+
+
+def parse_inputs():
+    '''
+    Info: This Function is used to parse the input values while executing the Python file.
+    '''
+    try:
+
+        parser = argparse.ArgumentParser()
+        parser.add_argument("--spells", type=str, required=False)
+        args = parser.parse_args()
+
+
+        yaml_file = args.spells
+        with open(yaml_file) as YamlFileRead:
+            yaml_data = yaml.load(YamlFileRead, Loader=SafeLoader)
+
+        if 'eks_level_folder_selection' in yaml_data:        
+            eks_level_folder_selection = yaml_data['eks_level_folder_selection']
+                
+        grimoire_count = json.dumps(yaml_data).count('grimoire')
+        spell_count = json.dumps(yaml_data['grimoire']).count('spell')
+
+
+        for grimoire_increment in range(0, grimoire_count):
+            print(f'\u001b[35m ################################################################################################################################')
+            print(f'\u001b[35m Performing Spells in Grimoire Number: {grimoire_increment + 1}')
+            print(f'\u001b[35m ################################################################################################################################')
+            print('\n')
+
+            used_spells = 0
+
+            for spell_increment in range(0, spell_count):
+                
+                spell_name = json.dumps(yaml_data['grimoire'][spell_increment]['spell'])
+                module_name = json.dumps(yaml_data['grimoire'][spell_increment]['module'])
+            
+                if module_name == '"mav_bedc_cu_module"':
+                    required = json.dumps(yaml_data['grimoire'][spell_increment]['attributes']['required'])
+                    if required == 'true':
+
+                        path = None
+                        delete_flag = None
+                        redeploy_flag = None
+                        sanity_check_flag = None
+                        validation_check_flag = None
+                        chart_version = None
+                        cnf_package_version = None
+
+                        if 'path' in yaml_data['grimoire'][spell_increment]['attributes']:
+                            path = json.dumps(yaml_data['grimoire'][spell_increment]['attributes']['path'])
+                        if 'delete' in yaml_data['grimoire'][spell_increment]['attributes']:
+                            delete_flag = json.dumps(yaml_data['grimoire'][spell_increment]['attributes']['delete']) 
+                        if 'redeploy' in yaml_data['grimoire'][spell_increment]['attributes']:
+                            redeploy_flag = json.dumps(yaml_data['grimoire'][spell_increment]['attributes']['redeploy'])
+                        if 'sanity_check' in yaml_data['grimoire'][spell_increment]['attributes']:
+                            sanity_check_flag = yaml_data['grimoire'][spell_increment]['attributes']['sanity_check']
+                        if 'validation_check' in yaml_data['grimoire'][spell_increment]['attributes']:
+                            validation_check_flag = yaml_data['grimoire'][spell_increment]['attributes']['validation_check']
+                        if 'new_chart_version' in yaml_data['grimoire'][spell_increment]['attributes']:
+                            chart_version = yaml_data['grimoire'][spell_increment]['attributes']['new_chart_version'] 
+                        if 'new_cnf_package_version' in yaml_data['grimoire'][spell_increment]['attributes']:
+                            cnf_package_version = yaml_data['grimoire'][spell_increment]['attributes']['new_cnf_package_version'] 
+
+                        eks_level_folders = eks_folder_path_finder(path, eks_level_folder_selection, yaml_data, spell_increment)
+
+                        print(f'\u001b[36m ################################################################################################################################')
+                        print(f'\u001b[36m PERFORMING SPELL: {spell_name}')
+                        print(f'\u001b[36m ################################################################################################################################')
+                        print('\n')
+                        print(f'\u001b[37m CHANGES:')
+                        print(f'\u001b[33m delete: {delete_flag}')
+                        print(f'\u001b[33m redeploy: {redeploy_flag}')
+                        print(f'\u001b[33m sanity_check: {sanity_check_flag}')
+                        print(f'\u001b[33m validation_check: {validation_check_flag}')
+                        print(f'\u001b[33m new_chart_version: {chart_version}')
+                        print(f'\u001b[33m new_cnf_package_version: {cnf_package_version}')
+                        print('\n')
+                        print(f'\u001b[36m ################################################################################################################################')
+
+                        mav_bedc_cu_module(delete_flag, redeploy_flag, sanity_check_flag, validation_check_flag, chart_version, cnf_package_version, eks_level_folders)
+                        used_spells += 1
+
+                        print(f'\u001b[32m ################################################################################################################################')
+                        print(f'\u001b[32m SPELL STATUS: SUCCEEDED')
+                        print(f'\u001b[32m ################################################################################################################################')
+                        print('\n')
+
+                if module_name == '"mav_bedc_cu_values_yaml_files"':
+                    required = json.dumps(yaml_data['grimoire'][spell_increment]['attributes']['required'])
+                    if required == 'true':
+                        path = json.dumps(yaml_data['grimoire'][spell_increment]['attributes']['path'])
+
+                        drop_version = None
+                        line_number = None
+                        change = None
+
+                        if 'drop_version' in yaml_data['grimoire'][spell_increment]['attributes']:
+                            drop_version = yaml_data['grimoire'][spell_increment]['attributes']['drop_version']
+                        if 'line_number' in yaml_data['grimoire'][spell_increment]['attributes']:
+                            line_number = yaml_data['grimoire'][spell_increment]['attributes']['line_number']
+                        if 'change' in yaml_data['grimoire'][spell_increment]['attributes']:
+                            change = yaml_data['grimoire'][spell_increment]['attributes']['change']
+
+                        eks_level_folders = eks_folder_path_finder(path, eks_level_folder_selection, yaml_data, spell_increment)
+                                                                             
+                        print(f'\u001b[36m ################################################################################################################################')
+                        print(f'\u001b[36m PERFORMING SPELL: {spell_name}')
+                        print(f'\u001b[36m ################################################################################################################################')
+                        print('\n')
+                        print(f'\u001b[37m CHANGES:')
+                        print(f'\u001b[33m drop_version: {drop_version}')
+                        print(f'\u001b[33m line_number: {line_number}')
+                        print(f'\u001b[33m change: {change}')
+                        print('\n')
+                        print(f'\u001b[36m ################################################################################################################################')
+                        mav_bedc_cu_values_yaml_files(change, drop_version, line_number, required, eks_level_folders)
+                        used_spells += 1
+                        print(f'\u001b[32m ################################################################################################################################')
+                        print(f'\u001b[32m SPELL STATUS: SUCCEEDED')
+                        print(f'\u001b[32m ################################################################################################################################')
+                        print('\n')
+
+                if module_name == '"mav_increment_pipeline_version"':
+                    required = json.dumps(yaml_data['grimoire'][spell_increment]['attributes']['required'])
+                    if required == 'true':
+                        path = json.dumps(yaml_data['grimoire'][spell_increment]['attributes']['path'])
+                
+                        eks_level_folders = eks_folder_path_finder(path, eks_level_folder_selection, yaml_data, spell_increment)
+                                                                             
+                        print(f'\u001b[36m ################################################################################################################################')
+                        print(f'\u001b[36m PERFORMING SPELL: {spell_name}')
+                        print(f'\u001b[36m ################################################################################################################################')
+                        print('\n')
+                        print(f'\u001b[37m CHANGES:')
+                        print(f'\u001b[33m Increment PIPELINE_ID.')
+                        print('\n')
+                        print(f'\u001b[36m ################################################################################################################################')
+                        increment_pipeline_version(eks_level_folders)
+                        used_spells += 1
+                        print(f'\u001b[32m ################################################################################################################################')
+                        print(f'\u001b[32m SPELL STATUS: SUCCEEDED')
+                        print(f'\u001b[32m ################################################################################################################################')
+
+                if module_name == '"mav_bedc_mgmt_module"':
+                    required = json.dumps(yaml_data['grimoire'][spell_increment]['attributes']['required'])
+                    if required == 'true':
+                        path = json.dumps(yaml_data['grimoire'][spell_increment]['attributes']['path'])
+
+                        release_name = None
+                        delete_flag = None
+                        redeploy_flag = None
+                        validation_check_flag = None
+                        chart_version = None
+                        cnf_package_version = None
+
+                        if 'release_name' in yaml_data['grimoire'][spell_increment]['attributes']:
+                            release_name = json.dumps(yaml_data['grimoire'][spell_increment]['attributes']['release_name'])
+                        if 'delete' in yaml_data['grimoire'][spell_increment]['attributes']:
+                            delete_flag = json.dumps(yaml_data['grimoire'][spell_increment]['attributes']['delete']) 
+                        if 'redeploy' in yaml_data['grimoire'][spell_increment]['attributes']:
+                            redeploy_flag = json.dumps(yaml_data['grimoire'][spell_increment]['attributes']['redeploy'])
+                        if 'validation_check' in yaml_data['grimoire'][spell_increment]['attributes']:
+                            validation_check_flag = yaml_data['grimoire'][spell_increment]['attributes']['validation_check']
+                        if 'new_chart_version' in yaml_data['grimoire'][spell_increment]['attributes']:
+                            chart_version = yaml_data['grimoire'][spell_increment]['attributes']['new_chart_version'] 
+                        if 'new_cnf_package_version' in yaml_data['grimoire'][spell_increment]['attributes']:
+                            cnf_package_version = yaml_data['grimoire'][spell_increment]['attributes']['new_cnf_package_version'] 
+
+                        eks_level_folders = eks_folder_path_finder(path, eks_level_folder_selection, yaml_data, spell_increment)
+
+                        print(f'\u001b[36m ################################################################################################################################')
+                        print(f'\u001b[36m PERFORMING SPELL: {spell_name}')
+                        print(f'\u001b[36m ################################################################################################################################')
+                        print('\n')
+                        print(f'\u001b[37m CHANGES:')
+                        print(f'\u001b[33m release_name: {release_name}')
+                        print(f'\u001b[33m delete: {delete_flag}')
+                        print(f'\u001b[33m redeploy: {redeploy_flag}')
+                        print(f'\u001b[33m validation_check: {validation_check_flag}')
+                        print(f'\u001b[33m new_chart_version: {chart_version}')
+                        print(f'\u001b[33m new_cnf_package_version: {cnf_package_version}')
+                        print('\n')
+                        print(f'\u001b[36m ################################################################################################################################')
+            
+                        mav_bedc_mgmt_module(release_name, delete_flag, redeploy_flag, validation_check_flag, chart_version, cnf_package_version, eks_level_folders)
+                        used_spells += 1
+
+                        print(f'\u001b[32m ################################################################################################################################')
+                        print(f'\u001b[32m SPELL STATUS: SUCCEEDED')
+                        print(f'\u001b[32m ################################################################################################################################')
+                        print('\n')
+                
+                if module_name == '"mav_bedc_mgmt_values_yaml_files"':
+                    required = json.dumps(yaml_data['grimoire'][spell_increment]['attributes']['required'])
+                    if required == 'true':
+                        path = json.dumps(yaml_data['grimoire'][spell_increment]['attributes']['path'])
+
+                        drop_version = None
+                        nf_type = None
+                        line_number = None
+                        change = None
+
+                        if 'drop_version' in yaml_data['grimoire'][spell_increment]['attributes']:
+                            drop_version = yaml_data['grimoire'][spell_increment]['attributes']['drop_version']
+                        if 'nf_type' in yaml_data['grimoire'][spell_increment]['attributes']:
+                            nf_type = yaml_data['grimoire'][spell_increment]['attributes']['nf_type']
+                        if 'line_number' in yaml_data['grimoire'][spell_increment]['attributes']:
+                            line_number = yaml_data['grimoire'][spell_increment]['attributes']['line_number']
+                        if 'change' in yaml_data['grimoire'][spell_increment]['attributes']:
+                            change = yaml_data['grimoire'][spell_increment]['attributes']['change']
+
+                        eks_level_folders = eks_folder_path_finder(path, eks_level_folder_selection, yaml_data, spell_increment)
+                                                                             
+                        print(f'\u001b[36m ################################################################################################################################')
+                        print(f'\u001b[36m PERFORMING SPELL: {spell_name}')
+                        print(f'\u001b[36m ################################################################################################################################')
+                        print('\n')
+                        print(f'\u001b[37m CHANGES:')
+                        print(f'\u001b[33m drop_version: {drop_version}')
+                        print(f'\u001b[33m line_number: {line_number}')
+                        print(f'\u001b[33m change: {change}')
+                        print('\n')
+                        print(f'\u001b[36m ################################################################################################################################')
+                        mav_bedc_mgmt_values_yaml_files(change, drop_version, line_number, required, eks_level_folders, nf_type)
+                        used_spells += 1
+                        print(f'\u001b[32m ################################################################################################################################')
+                        print(f'\u001b[32m SPELL STATUS: SUCCEEDED')
+                        print(f'\u001b[32m ################################################################################################################################')
+                        print('\n')
+
+                if module_name == '"mav_ndc_cms_backup"':
+                    required = json.dumps(yaml_data['grimoire'][spell_increment]['attributes']['required'])
+                    if required == 'true':
+                        path = json.dumps(yaml_data['grimoire'][spell_increment]['attributes']['path'])
+
+                        cms_namespace = None
+                        release_name = None
+
+                        if 'cms_namespace' in yaml_data['grimoire'][spell_increment]['attributes']:
+                            cms_namespace = yaml_data['grimoire'][spell_increment]['attributes']['cms_namespace']
+                        if 'release_name' in yaml_data['grimoire'][spell_increment]['attributes']:
+                            release_name = yaml_data['grimoire'][spell_increment]['attributes']['release_name']
+                                                                             
+                        print(f'\u001b[36m ################################################################################################################################')
+                        print(f'\u001b[36m PERFORMING SPELL: {spell_name}')
+                        print(f'\u001b[36m ################################################################################################################################')
+                        print('\n')
+                        print(f'\u001b[37m CHANGES:')
+                        print(f'\u001b[33m namespace: {cms_namespace}')
+                        print(f'\u001b[33m release_name: {release_name}')
+                        print('\n')
+                        print(f'\u001b[36m ################################################################################################################################')
+                        mav_ndc_cms_backup(cms_namespace, release_name, path)
+                        used_spells += 1
+                        print(f'\u001b[32m ################################################################################################################################')
+                        print(f'\u001b[32m SPELL STATUS: SUCCEEDED')
+                        print(f'\u001b[32m ################################################################################################################################')
+                        print('\n')
+
+
+            print(f'\u001b[35m ################################################################################################################################')
+            print(f'\u001b[35m Spells in Grimoire {grimoire_increment + 1} Conjured')
+            print(f'\u001b[37m Number of spells used: {used_spells}')
+            print(f'\u001b[35m ################################################################################################################################')
+            print('\n')
+
+
+    except Exception as e:
+        fatal_error(f'Exception caught while parsing the input values through yaml.load and triggering modules: {e}')
+    print()
+
+
+def eks_folder_path_finder(path, eks_level_folder_selection, yaml_data, spell_increment):
+    '''
+    Info: This Function is used to .
+    '''
+    try:
+        
+        env_path = yaml_data['grimoire'][spell_increment]['attributes']['path']
+
+        # Empty list created. Contents that fill the list will be decided by the below condition
+        eks_level_folders = []
+        eks_level_folder_selection_filtered = eks_level_folder_selection[:]
+        # Condition to check whether all the EKS cluster level folders are selected. 
+        if 'all' in eks_level_folder_selection:
+            for path in Path(env_path).iterdir():
+                if path.is_dir():
+                    eks_level_folders.append(path)
+        # Condition to check whether prefered few EKS cluster level folders (from eks_level_folder_selection list in input.py)  are selected. 
+        elif 'all' not in eks_level_folder_selection:
+            for list_iteration in range(len(eks_level_folder_selection)):
+                eks_level_folder_selection_filtered[list_iteration] = f'{env_path}{eks_level_folder_selection[list_iteration]}'
+
+            for folder_path in Path(env_path).iterdir():
+                if folder_path.is_dir():
+                    eks_level_folders.append(folder_path)
+            eks_level_folders = eks_level_folder_selection_filtered
+        
+        return eks_level_folders
+
+    except Exception as e:
+        fatal_error(f'Exception caught while : {e}')
+    print()
+
+
+
+
+
+def fatal_error(message):
+    print('\033[31mERROR: ' + message + '\033[0m')
+    exit  
+
+
+if __name__ == "__main__":
+    main_function()

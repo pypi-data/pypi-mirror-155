@@ -1,0 +1,222 @@
+
+
+Gandalf is an open-source tool that can be used for configuration management for any use cases. This is an open-source project however, authorization rights and confidential modules belongs to the owner itself. Self written modules based on Python3 works with the tool.
+
+
+[![PyPi Version Alt](https://badge.fury.io/py/yt2mp3.svg)](https://pypi.python.org/pypi/yt2mp3/)  
+[![Python Versions](https://img.shields.io/pypi/pyversions/yt2mp3.svg)](https://pypi.python.org/pypi/yt2mp3/)
+
+[![gandalf-cmt](https://img.shields.io/static/v1?label=gandalf-cmt&message=v1.2.23&color=yellowgreen)](https://pypi.org/project/gandalf-cmt/)
+[![release](https://img.shields.io/static/v1?label=release&message=v1.2.23&color=orange)](https://pypi.org/project/gandalf-cmt/1.2.23/)
+
+
+
+
+## Prerequisite: 
+Before using the tool, make sure to manually set environment in Windows to the path: `C:/Users/$USERNAME/AppData/Local/Programs/Python/Python<latest version>/Lib/gandalf-cli`. Perform this through the Windows UI. Will make this process easier and automnatic in future releases.
+
+## Command usage:
+`gandalf --spell [yaml file]`
+
+## Requirements
+* Python >= 3.9 
+
+## Modules
+
+|**Name**|**Type**|**Progress**|**Comments**|
+|------------------|------------|------------|------------|
+|[mav_bedc_cu_module](#mav_bedc_cu_module)|Confidential|Beta|Used for CUCP and CUUP based deployment configuration changes in application_config.json, config.json.|
+|[mav_bedc_cu_values_yaml_files](#mav_bedc_cu_values_yaml_files)|Confidential|Beta|Used to insert new line changes to values.yaml in CUCP and CUUP.|
+|[mav_bedc_mgmt_module](#mav_bedc_mgmt_module)|Confidential|Beta|Used for BEDC MGMT based deployment configuration changes in application_config.json, config.json.|
+|[mav_bedc_mgmt_values_yaml_files](#mav_bedc_mgmt_values_yaml_files)|Confidential|Beta|Used to insert new line changes to values.yaml in BEDC MGMT|
+|[mav_increment_pipeline_version](#mav_increment_pipeline_version)|Confidential|Beta|Used to incrementing PIPELINE_ID value in bulk-pipeline-trigger.json file.|
+  
+  
+## Module Parameters
+ 
+   
+### mav_bedc_cu_module<a id="mav_bedc_cu_module"></a>  
+  
+|**Parameter**|**Choices/Defaults**|**Comments**|
+|-------------|--------------------|------------|
+|**required** |**Choices:** **no** or  **yes**| If set to `no`, the spell will not work and if set to `yes`, the spell will be triggered.
+|**path**||If required was set to `yes`, then you will need to provide the path a value.|
+|**delete**|**Choices:** **false** or **true**| If delete is set to `false`, then HELM delete and redeploy wont happen. If delete is set to `yes`, then HELM delete and redeployment will happen.|
+|**redeploy**|**Choices:** **false** or **true**| If redeploy is set to `false`, then HELM upgrade wont happen. If redeploy is set to `yes`, then HELM updrade will happen.|
+|**sanity_check**|**Choices:** **disabled** or **enabled**| If sanity_check flag is set to `disabled`, then sanity check wont run. If sanity_check flag is set to `enabled`, then sanity check will run.|
+|**validation_check**|**Choices:** **disabled** or **enabled**| If validation_check flag is set to `disabled`, then validation check wont run. If validation_check flag is set to `enabled`, then validation check will run.|
+|**new_chart_version**||Provide the name of the new chart version|
+|**new_cnf_package_version**||Provide the name of the new cnf_package_version|
+  
+  
+### Example
+  
+```YAML
+---
+
+eks_level_folder_selection: all
+
+grimoire:
+
+  - spell: Update application_config.json and config.json
+    module: mav_bedc_cu_module
+    attributes:
+      required: yes
+      path: D:\Repo\config\prod
+      delete: false
+      redeploy: false
+      sanity_check: disabled
+      validation_check: disabled
+      new_chart_version: new_helm_chart
+      new_cnf_package_version: new_cnf_package.zip
+```
+  
+  
+
+### mav_bedc_cu_values_yaml_files<a id="mav_bedc_cu_values_yaml_files"></a>  
+  
+|**Parameter**|**Choices/Defaults**|**Comments**|
+|-------------|--------------------|------------|
+|**required** |**Choices:** **no** or  **yes**| If set to `no`, the spell will not work and if set to `yes`, the spell will be triggered.
+|**path**||If required was set to `yes`, then you will need to provide the path a value.|
+|**drop_version**||Provide the name of the drop.|
+|**line_number**||Provide the line number of the values.yaml.|
+|**change**||Provide the line change. Input will only accept one line at a time.|
+  
+
+### Example
+  
+```YAML
+---
+
+eks_level_folder_selection: all
+
+grimoire:
+
+  - spell: Updating values.yaml files with latest changes
+    module: mav_bedc_cu_values_yaml_files
+    attributes:
+      required: yes
+      path: D:\Repo\config\prod
+      drop_version: new_drop_version
+      line_number: 142
+      change: '      - destination: "10.0.0.1/0"
+      
+        '  
+```
+  
+  
+
+### mav_bedc_mgmt_module<a id="mav_bedc_mgmt_module"></a>  
+  
+|**Parameter**|**Choices/Defaults**|**Comments**|
+|-------------|--------------------|------------|
+|**required** |**Choices:** **no** or  **yes**| If set to `no`, the spell will not work and if set to `yes`, the spell will be triggered.
+|**path**||If required was set to `yes`, then you will need to provide the path a value.|
+|**release_name**||Provide the name of the release.|
+|**delete**|**Choices:** **false** or **true**| If delete is set to `false`, then HELM delete and redeploy wont happen. If delete is set to `yes`, then HELM delete and redeployment will happen.|
+|**redeploy**|**Choices:** **false** or **true**| If redeploy is set to `false`, then HELM upgrade wont happen. If redeploy is set to `yes`, then HELM updrade will happen.|
+|**validation_check**|**Choices:** **disabled** or **enabled**| If sanity_check flag is set to `disabled`, then validation check wont run. If validation_check flag is set to `enabled`, then validation check will run.|
+|**new_chart_version**||Provide the name of the new chart version|
+|**new_cnf_package_version**||Provide the name of the new cnf_package_version|
+  
+  
+### Example
+  
+```YAML
+---
+eks_level_folder_selection: all
+
+grimoire:
+
+  - spell: Updating application_config.json for NF1
+    module: mav_bedc_mgmt_module
+    attributes:
+      required: yes
+      path: D:\Repo\config\prod
+      release_name: mtcil
+      delete: true
+      redeploy: false
+      validation_check: disabled
+      new_chart_version: new_chart_03
+      new_cnf_package_version: new_cnf_package_v2.zip
+  
+  - spell: Updating application_config.json  NF2
+    module: mav_bedc_mgmt_module
+    attributes:
+      required: yes
+      path: D:\Repo\config\prod
+      release_name: admf
+      delete: true
+      redeploy: false
+      validation_check: disabled
+      new_chart_version: new_chart_03
+      new_cnf_package_version: new_cnf_package_v2.zip
+```
+  
+  
+  
+### mav_bedc_mgmt_values_yaml_files<a id="mav_bedc_mgmt_values_yaml_files"></a>
+  
+|**Parameter**|**Choices/Defaults**|**Comments**|
+|-------------|--------------------|------------|
+|**required** |**Choices:** **no** or  **yes**| If set to `no`, the spell will not work and if set to `yes`, the spell will be triggered.
+|**path**||If required was set to `yes`, then you will need to provide the path a value.|
+|**drop_version**||Provide the name of the drop.|
+|**line_number**||Provide the line number of the values.yaml.|
+|**nf_type**||Provide the name of the NF type.|
+|**change**||Provide the line change. Input will only accept one line at a time.|
+    
+
+### Example
+  
+```YAML
+---
+eks_level_folder_selection: all
+
+grimoire:
+  
+  - spell: Updating values.yaml files with latest changes for NF1
+    module: mav_bedc_mgmt_values_yaml_files
+    attributes:
+      required: yes
+      path: D:\Repo\config\prod
+      drop_version: drop17.8
+      nf_type: nf1
+      line_number: 142
+      change: '      - destination: "10.0.0.1/0"
+      
+        '
+```
+  
+  
+  
+### mav_increment_pipeline_version<a id="mav_increment_pipeline_version"></a>
+  
+|**Parameter**|**Choices/Defaults**|**Comments**|
+|-------------|--------------------|------------|
+|**required** |**Choices:** **no** or  **yes**| If set to `no`, the spell will not work and if set to `yes`, the spell will be triggered.
+|**path**||If required was set to `yes`, then you will need to provide the path a value.|
+  
+  
+### Example
+  
+```YAML
+---
+
+eks_level_folder_selection: all
+
+grimoire:
+
+  - spell: Update bulk_pipeline_trigger.json
+    module: mav_increment_pipeline_version
+    attributes:
+      required: yes
+      path: D:\Repo\config\prod
+```
+  
+
+
+
+
+
