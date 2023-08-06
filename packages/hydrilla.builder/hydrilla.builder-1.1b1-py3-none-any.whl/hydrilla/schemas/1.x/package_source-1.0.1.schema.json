@@ -1,0 +1,56 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://hydrilla.koszko.org/schemas/package_source-1.0.1.schema.json",
+    "title": "Package source",
+    "description": "Definition of a Hydrilla source package",
+    "type": "object",
+    "required": [
+	"$schema",
+	"source_name",
+	"copyright",
+	"upstream_url",
+	"definitions"
+    ],
+    "properties": {
+	"$schema": {
+	    "description": "Mark this instance as conforming to package source schema 1.x",
+	    "type": "string",
+	    "pattern": "^https://hydrilla\\.koszko\\.org/schemas/package_source-1\\.(([1-9][0-9]*|0)\\.)*schema\\.json$"
+	},
+	"source_name": {
+	    "$ref": "./common_definitions-1.0.1.schema.json#/definitions/source_name"
+	},
+	"copyright":  {
+	    "description": "Which files from the source package indicate its license terms and should be included in the distribution packages",
+	    "$ref": "./common_definitions-1.0.1.schema.json#/definitions/file_ref_list"
+	},
+	"upstream_url": {
+	    "description": "Where this software/work initially comes from",
+	    "type": "string"
+	},
+	"comment": {
+	    "$ref": "./common_definitions-1.0.1.schema.json#/definitions/comment"
+	},
+	"definitions": {
+	    "description": "Definitions of site resources and pattern->payload mappings",
+	    "type": "array",
+	    "items": {
+		"anyOf": [{
+		    "$ref": "./common_definitions-1.0.1.schema.json#/definitions/resource_definition_base"
+		}, {
+		    "$ref": "./common_definitions-1.0.1.schema.json#/definitions/mapping_definition_base"
+		}]
+	    }
+	},
+	"additional_files": {
+	    "description": "Files which should be included in the source archive produced by Hydrilla builder in addition to script and copyright files",
+	    "$ref": "./common_definitions-1.0.1.schema.json#/definitions/file_ref_list",
+	    "default": []
+	},
+	"reuse_generate_spdx_report": {
+	    "description": "Should report.spdx be automatically generated for the package using REUSE tool",
+	    "type": "boolean",
+	    "default": false
+	}
+    }
+}

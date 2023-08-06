@@ -1,0 +1,3 @@
+[console_scripts]
+hydrilla-builder = hydrilla.builder.build:perform
+

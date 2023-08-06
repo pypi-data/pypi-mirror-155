@@ -1,0 +1,141 @@
+# SPDX-License-Identifier: CC0-1.0
+#
+# English (United States) translations for hydrilla.builder.
+# Copyright (C) 2022 Wojtek Kosior <koszko@koszko.org>
+# Available under the terms of Creative Commons Zero v1.0 Universal.
+msgid ""
+msgstr ""
+"Project-Id-Version: hydrilla.builder 0.1.dev16+g4e46d7f.d20220211\n"
+"Report-Msgid-Bugs-To: koszko@koszko.org\n"
+"POT-Creation-Date: 2022-05-27 18:49+0200\n"
+"PO-Revision-Date: 2022-02-12 00:00+0000\n"
+"Last-Translator: Wojtek Kosior <koszko@koszko.org>\n"
+"Language: en_US\n"
+"Language-Team: en_US <koszko@koszko.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: src/hydrilla/builder/build.py:93 src/hydrilla/builder/local_apt.py:118
+#: src/hydrilla/builder/local_apt.py:410
+msgid "couldnt_execute_{}_is_it_installed"
+msgstr "Could not execute '{}'. Is the tool installed and reachable via PATH?"
+
+#: src/hydrilla/builder/build.py:97 src/hydrilla/builder/local_apt.py:122
+#: src/hydrilla/builder/local_apt.py:414
+msgid "command_{}_failed"
+msgstr "The following command finished execution with a non-zero exit status: {}"
+
+#: src/hydrilla/builder/build.py:171
+msgid "unknown_schema_package_source_{}"
+msgstr ""
+"The provided JSON at '{}' does not use any of the known package source "
+"JSON schemas."
+
+#: src/hydrilla/builder/build.py:207
+msgid "path_contains_double_dot_{}"
+msgstr ""
+"Attempt to load '{}' which includes a forbidden parent reference ('..') "
+"in the path."
+
+#: src/hydrilla/builder/build.py:214
+msgid "loading_{}_outside_package_dir"
+msgstr "Attempt to load '{}' which lies outside package source directory."
+
+#: src/hydrilla/builder/build.py:218
+msgid "loading_reserved_index_json"
+msgstr "Attempt to load 'index.json' which is a reserved filename."
+
+#: src/hydrilla/builder/build.py:225
+msgid "referenced_file_{}_missing"
+msgstr "Referenced file '{}' is missing."
+
+#: src/hydrilla/builder/build.py:362
+msgid "report_spdx_not_in_copyright_list"
+msgstr ""
+"Told to generate 'report.spdx' but 'report.spdx' is not listed among "
+"copyright files. Refusing to proceed."
+
+#: src/hydrilla/builder/build.py:433
+msgid "build_package_from_srcdir_to_dstdir"
+msgstr ""
+"Build Hydrilla package from `scrdir` and write the resulting files under "
+"`dstdir`."
+
+#: src/hydrilla/builder/build.py:435
+msgid "source_directory_to_build_from"
+msgstr "Source directory to build from."
+
+#: src/hydrilla/builder/build.py:437
+msgid "path_instead_of_index_json"
+msgstr ""
+"Path to file to be processed instead of index.json (if not absolute, "
+"resolved relative to srcdir)."
+
+#: src/hydrilla/builder/build.py:439
+msgid "path_instead_for_piggyback_files"
+msgstr ""
+"Path to a non-standard directory with foreign packages' archive files to "
+"use."
+
+#: src/hydrilla/builder/build.py:441
+msgid "built_package_files_destination"
+msgstr "Destination directory to write built package files to."
+
+#: src/hydrilla/builder/build.py:443
+#, python-format
+msgid "%(prog)s_%(version)s_license"
+msgstr ""
+"%(prog)s %(version)s\n"
+"Copyright (C) 2021,2022 Wojtek Kosior and contributors.\n"
+"License GPLv3+: GNU AGPL version 3 or later "
+"<https://gnu.org/licenses/gpl.html>\n"
+"This is free software: you are free to change and redistribute it.\n"
+"There is NO WARRANTY, to the extent permitted by law."
+
+#: src/hydrilla/builder/build.py:444
+msgid "version_printing"
+msgstr "Print version information and exit."
+
+#: src/hydrilla/builder/common_errors.py:62
+msgid "STDOUT_OUTPUT_heading"
+msgstr "## Command's standard output ##"
+
+#: src/hydrilla/builder/common_errors.py:65
+msgid "STDERR_OUTPUT_heading"
+msgstr "## Command's standard error output ##"
+
+#: src/hydrilla/builder/local_apt.py:147
+msgid "distro_{}_unknown"
+msgstr "Attempt to use an unknown software distribution '{}'."
+
+#: src/hydrilla/builder/local_apt.py:191
+msgid "couldnt_import_{}_is_it_installed"
+msgstr ""
+"Could not import '{}'. Is the module installed and visible to this Python"
+" instance?"
+
+#: src/hydrilla/builder/local_apt.py:199
+msgid "gpg_couldnt_recv_key_{}"
+msgstr "Could not import PGP key '{}'."
+
+#: src/hydrilla/builder/local_apt.py:313
+msgid "apt_install_output_not_understood"
+msgstr "The output of an 'apt-get install' command was not understood."
+
+#: src/hydrilla/builder/local_apt.py:339
+msgid "apt_download_gave_bad_filename_{}"
+msgstr "The 'apt-get download' command produced a file with unexpected name '{}'."
+
+#: src/hydrilla/builder/piggybacking.py:102
+msgid "loading_{}_outside_piggybacked_dir"
+msgstr ""
+"Attempt to load '{}' which lies outside piggybacked packages files root "
+"directory."
+
+#: src/hydrilla/util/_util.py:86
+msgid "bad_comment"
+msgstr "bad comment"
+

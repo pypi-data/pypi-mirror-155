@@ -1,0 +1,166 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://hydrilla.koszko.org/schemas/package_source-2.schema.json",
+    "title": "Package source",
+    "description": "Definition of a Hydrilla source package",
+    "type": "object",
+    "required": [
+	"$schema",
+	"source_name",
+	"copyright",
+	"upstream_url",
+	"definitions"
+    ],
+    "properties": {
+	"$schema": {
+	    "description": "Mark this instance as conforming to package source schema 2.x",
+	    "type": "string",
+	    "pattern": "^https://hydrilla\\.koszko\\.org/schemas/package_source-2\\.(([1-9][0-9]*|0)\\.)*schema\\.json$"
+	},
+	"source_name": {
+	    "$ref": "./common_definitions-2.schema.json#/definitions/source_name"
+	},
+	"copyright":  {
+	    "description": "Which files from the source package indicate its license terms and should be included in the distribution packages",
+	    "$ref": "./common_definitions-2.schema.json#/definitions/file_ref_list"
+	},
+	"upstream_url": {
+	    "description": "Where this software/work initially comes from",
+	    "type": "string"
+	},
+	"piggyback_on": {
+	    "description": "Specify packages from other software system that should be used for constructing this package",
+	    "anyOf": [{
+		"$ref": "#/definitions/piggyback_apt"
+	    }]
+	},
+	"comment": {
+	    "$ref": "./common_definitions-2.schema.json#/definitions/comment"
+	},
+	"definitions": {
+	    "description": "Definitions of site resources and pattern->payload mappings (possibly combined together)",
+	    "type": "array",
+	    "items": {
+		"$ref": "#/definitions/item_definition"
+	    }
+	},
+	"additional_files": {
+	    "description": "Files which should be included in the source archive produced by Hydrilla builder in addition to script and copyright files",
+	    "$ref": "./common_definitions-2.schema.json#/definitions/file_ref_list",
+	    "default": []
+	},
+	"reuse_generate_spdx_report": {
+	    "description": "Should report.spdx be automatically generated for the package using REUSE tool",
+	    "type": "boolean",
+	    "default": false
+	}
+    },
+    "definitions": {
+	"piggyback_apt": {
+	    "description": "Specify packages from APT software system that should be used for constructing this package",
+	    "type": "object",
+	    "required": [
+		"system",
+		"packages",
+		"dependencies"
+	    ],
+	    "properties": {
+		"system": {
+		    "description": "Which software system to use",
+		    "const": "apt"
+		},
+		"distribution": {
+		    "description": "Which pre-defined APT-based distribution to use (currently the only available one is Trisquel 10 Nabia)",
+		    "const": "nabia"
+		},
+		"sources_list": {
+		    "description": "What lines should be added to the sources.list file that will be generated; those will be used together with pre-defined lines for chosen distribution (if any)",
+		    "type": "array",
+		    "items": {
+			"description": "A sources.list line like \"deb-src http://archive.trisquel.info/trisquel/ nabia main\"",
+			"type": "string",
+			"pattern": "^deb(-src)?(\\s+[^\\s]+){3}$"
+		    },
+		    "default": []
+		},
+		"trusted_keys": {
+		    "description": "Fingerprints of additional PGP keys that should be used with supplied sources.list entries",
+		    "type": "array",
+		    "items": {
+			"description": "A PGP fingerprint (40 hexadecimal characters)",
+			"type": "string",
+			"pattern": "^[0-9A-E]{40}$"
+		    },
+		    "default": []
+		},
+		"packages": {
+		    "description": "Specifiers of packages that should be used, can include version constraints",
+		    "type": "array",
+		    "items": {
+			"description": "A package specifier like \"libjs-jquery=3.3.1~dfsg-3\"",
+			"type": "string"
+		    },
+		    "minItems": 1
+		},
+		"dependencies": {
+		    "description": "Boolean indicating whether dependent APT packages should also be downloaded and used",
+		    "type": "boolean"
+		},
+		"depend_on_base_packages": {
+		    "description": "Boolean indicating whether the resulting resource packages should depend on 'apt-common-licenses' Haketilo package",
+		    "type": "boolean",
+		    "default": true
+		}
+	    }
+	},
+	"item_definition": {
+	    "description": "Definition of either a site resource, a pattern->payload mapping or both combined together",
+	    "if": {
+		"type": "object",
+		"required": ["type"],
+		"properties": {
+		    "type": {
+			"const": "resource"
+		    }
+		}
+	    },
+	    "then": {
+		"$ref": "./common_definitions-2.schema.json#/definitions/resource_definition_base"
+	    },
+	    "else": {
+		"if": {
+		    "type": "object",
+		    "required": ["type"],
+		    "properties": {
+			"type": {
+			    "const": "mapping"
+			}
+		    }
+		},
+		"then": {
+		    "$ref": "./common_definitions-2.schema.json#/definitions/mapping_definition_base"
+		},
+		"else": {
+		    "allOf": [{
+			"type": "object",
+			"required": ["type"],
+			"properties": {
+			    "type": {
+				"const": "mapping_and_resource"
+			    }
+			}
+		    }, {
+			"$ref": "#/definitions/combined_mapping_resource_definition"
+		    }]
+		}
+	    }
+	},
+	"combined_mapping_resource_definition": {
+	    "allOf": [{
+		"$ref": "./common_definitions-2.schema.json#/definitions/mapping_definition_base"
+	    }, {
+		"$ref": "./common_definitions-2.schema.json#/definitions/resource_definition_base"
+	    }]
+	}
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://hydrilla.koszko.org/schemas/api_query_result-1.0.1.schema.json",
+    "title": "Query result",
+    "description": "Object with a list of references to mappings that contain payloads for requested URL",
+    "type": "object",
+    "required": ["$schema", "mappings"],
+    "properties": {
+	"$schema": {
+	    "description": "Mark this instance as conforming to query result schema 1.x",
+	    "type": "string",
+	    "pattern": "^https://hydrilla\\.koszko\\.org/schemas/api_query_result-1\\.(([1-9][0-9]*|0)\\.)*schema\\.json$"
+	},
+	"mappings": {
+	    "description": "References to mappings using at least one pattern that matches the requested URL",
+	    "type": "array",
+	    "items": {
+		"$ref": "./common_definitions-1.0.1.schema.json#/definitions/item_ref"
+	    }
+	},
+	"generated_by": {
+	    "$ref": "./common_definitions-1.0.1.schema.json#/definitions/generated_by"
+	}
+    }
+}

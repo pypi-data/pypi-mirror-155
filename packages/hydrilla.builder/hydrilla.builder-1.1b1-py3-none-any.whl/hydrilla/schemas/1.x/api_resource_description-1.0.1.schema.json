@@ -1,0 +1,26 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://hydrilla.koszko.org/schemas/api_resource_description-1.0.1.schema.json",
+    "title": "Resource description",
+    "description": "Definition of a Hydrilla resource, as served through HTTP API",
+    "allOf": [{
+	"$ref": "./common_definitions-1.0.1.schema.json#/definitions/resource_definition_base"
+    }, {
+	"$ref": "./common_definitions-1.0.1.schema.json#/definitions/item_definition"
+    }, {
+	"type": "object",
+	"required": ["$schema"],
+	"properties": {
+	    "$schema": {
+		"description": "Mark this instance as conforming to resource description schema 1.x",
+		"type": "string",
+		"pattern": "^https://hydrilla\\.koszko\\.org/schemas/api_resource_description-1\\.(([1-9][0-9]*|0)\\.)*schema\\.json$"
+	    },
+	    "scripts": {
+		"description": "Which files are resource's scripts and need to be installed",
+		"$ref": "./common_definitions-1.0.1.schema.json#/definitions/file_ref_list_sha256",
+		"default": []
+	    }
+	}
+    }]
+}
