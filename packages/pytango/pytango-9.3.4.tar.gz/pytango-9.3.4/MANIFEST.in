@@ -1,0 +1,15 @@
+include LICENSE.txt
+include Makefile
+include winsetup.py
+include CMakeLists.txt
+include cmake/*
+
+graft ext
+graft doc
+graft tests
+graft examples
+
+global-exclude *~
+global-exclude *.pyc
+global-exclude *.pyo
+exclude src/precompiled_header.hpp.gch
