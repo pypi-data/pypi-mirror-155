@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: pyesicentro
+Version: 0.0.6
+Summary: Python 3 module to use with ESI Centro Thermostats
+Home-page: UNKNOWN
+Author: John Matin McLaughlin
+Author-email: johnmartinmclaughlin@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Programming Language :: Python :: 3
+License-File: LICENSE
+
+A python module for accessing ESI Centro Thermostats.  This package was primarily created for use with HomeAssistant.
+
