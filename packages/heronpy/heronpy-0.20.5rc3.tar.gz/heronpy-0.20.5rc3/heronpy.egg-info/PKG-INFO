@@ -1,0 +1,19 @@
+Metadata-Version: 1.2
+Name: heronpy
+Version: 0.20.5rc3
+Summary: Python Topology API for Heron
+Home-page: https://github.com/apache/incubator-heron
+Author: Apache Heron (incubating)
+Author-email: dev@heron.apache.org
+License: Apache License v2.0
+Description: The heronpy package enables you to write Heron topologies in Python. Topologies can be run using a variety of schedulers, including Mesos/Aurora,Kubernetes, Mesos/Marathon, YARN, etc.
+Keywords: heron streaming analytics topology python
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Requires-Python: ~=3.4
