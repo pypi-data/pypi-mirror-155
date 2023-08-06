@@ -1,0 +1,134 @@
+Metadata-Version: 2.1
+Name: DMT-core
+Version: 1.6.1
+Summary: Device Modeling Toolkit Core
+Home-page: https://gitlab.com/dmt-development/dmt
+Author: M.Mueller, M.Krattenmacher
+Author-email: markus.mueller@semimod.de, mario.krattenmacher@semimod.de
+License: GNU GPLv3+
+Project-URL: Bug Tracker, https://gitlab.com/dmt-development/dmt
+Project-URL: Documentation, https://dmt-development.gitlab.io/dmt-core/
+Project-URL: Source Code, https://gitlab.com/dmt-development/dmt
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: scipy
+Requires-Dist: numpy
+Requires-Dist: scikit-rf
+Requires-Dist: reprint
+Requires-Dist: pandas
+Requires-Dist: joblib
+Requires-Dist: pytest
+Requires-Dist: pint
+Requires-Dist: pyyaml
+Requires-Dist: more-itertools
+Requires-Dist: colormath
+Requires-Dist: semver
+Requires-Dist: verilogae (>=0.9b4)
+Requires-Dist: h5py
+Provides-Extra: hdf5
+Requires-Dist: tables ; extra == 'hdf5'
+Provides-Extra: develop
+Requires-Dist: pylint ; extra == 'develop'
+Requires-Dist: black ; extra == 'develop'
+Provides-Extra: full
+Requires-Dist: pylatexenc ; extra == 'full'
+Requires-Dist: paramiko ; extra == 'full'
+Requires-Dist: pysmithplot-3.10 ; extra == 'full'
+Requires-Dist: pylint ; extra == 'full'
+Requires-Dist: black ; extra == 'full'
+Requires-Dist: scp ; extra == 'full'
+Requires-Dist: pyqtgraph ; extra == 'full'
+Requires-Dist: PySide2 ; extra == 'full'
+Requires-Dist: tables ; extra == 'full'
+Requires-Dist: pylatex ; extra == 'full'
+Requires-Dist: matplotlib ; extra == 'full'
+Provides-Extra: latex
+Requires-Dist: pylatex ; extra == 'latex'
+Requires-Dist: pylatexenc ; extra == 'latex'
+Provides-Extra: matplotlib
+Requires-Dist: matplotlib ; extra == 'matplotlib'
+Provides-Extra: pyqt5
+Requires-Dist: PyQt5 ; extra == 'pyqt5'
+Provides-Extra: pyqtgraph
+Requires-Dist: pyqtgraph ; extra == 'pyqtgraph'
+Provides-Extra: pyside2
+Requires-Dist: PySide2 ; extra == 'pyside2'
+Provides-Extra: remote
+Requires-Dist: paramiko ; extra == 'remote'
+Requires-Dist: scp ; extra == 'remote'
+Provides-Extra: smithplot
+Requires-Dist: matplotlib ; extra == 'smithplot'
+Requires-Dist: pysmithplot-3.10 ; extra == 'smithplot'
+
+# DMT-core
+
+[![pyversion](https://img.shields.io/badge/python->3.8-blue?logo=python)](https://docs.python.org/3.8/)
+[![Build Status](https://gitlab.com/dmt-development/dmt-core/badges/main/pipeline.svg)](https://gitlab.com/dmt-development/dmt-core/-/pipelines)
+[![Coverage](https://gitlab.com/dmt-development/dmt-core/-/jobs/artifacts/main/raw/badge_coverage.svg?job=test_DMT)](https://gitlab.com/dmt-development/dmt-core/-/jobs/artifacts/main/file/htmlcov/index.html?job=test_DMT)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![status](https://joss.theoj.org/papers/f9829bb4e4c10b85144b22f888756045/status.svg)](https://joss.theoj.org/papers/f9829bb4e4c10b85144b22f888756045)
+
+[![logo](https://gitlab.com/uploads/-/system/project/avatar/33580822/DMT_Logo_wText.png)](https://gitlab.com/uploads/-/system/project/avatar/33580822/DMT_Logo_wText.png)
+
+DeviceModelingToolkit (DMT) is a Python tool targeted at helping modeling engineers extract model parameters, run circuit and TCAD simulations and automate their infrastructure.
+
+See the [DMT-website](https://dmt-development.gitlab.io/dmt-core/index.html) for further information.
+
+## Installation
+
+After installing python 3.8 or later, simply install the release version using
+
+```bash
+
+    python3 -m pip install DMT-core[full]
+
+```
+
+For more information have a look at our [install guide](https://dmt-development.gitlab.io/dmt-core/installation/install_dmt.html)
+
+Currently DMT is developed mostly on Ubuntu using Python 3.10. So for the easiest install this is the best supported plattform.
+If you want or have to use Windows and MacOS there may be more dependency and installation issues, although needed projects we use support these plattforms. Please report these issues to us. In our install guide, we collect guides to solve the already known issues.
+
+## Questions, bugs and feature requests
+
+If you have any questions or issues regarding DMT, we kindly ask you to contact us. Either mail us directly or open an issue [here](https://gitlab.com/dmt-development/dmt-core/-/issues). There we have prepared [several templates](https://docs.gitlab.com/ee/user/project/description_templates.html#use-the-templates) for the description:
+
+* [Questions](https://gitlab.com/dmt-development/dmt-core/-/issues/new?issuable_template=question)
+* [Bug reports](https://gitlab.com/dmt-development/dmt-core/-/issues/new?issuable_template=bug_report)
+* [Feature requests](https://gitlab.com/dmt-development/dmt-core/-/issues/new?issuable_template=feature_request)
+
+## Authors
+
+- M. Müller | Markus.Mueller@semimod.de
+- M. Krattenmacher | Mario.Krattenmacher@semimod.de
+- P. Kuthe | jarodkuthe@protonmail.com
+
+### Contributing
+
+More contributors and merge-requests are always welcome. When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other method with the owners of this repository before making a change.
+
+Contact Markus or Mario, if you are interested to join the team permanently.
+
+### Pull Request Process
+
+If you want to supply a new feature, you have implemented in your fork, to DMT, we are looking forward to your [merge request](https://gitlab.com/dmt-development/dmt-core/-/merge_requests/new). There we have a template for the merge request, including a checklist of suggested steps.
+
+The steps are:
+
+1. Implement the new feature
+2. Add test cases for the new feature with a large coverage
+3. Add new python dependencies to `setup.py`
+4. If a interface is used, add a Dockerfile in which the interfaced software is installed and run the tests inside this Dockerfile
+5. Add additional documentation to the new features you implemented in the code and the documentation.
+6. Format the code using `black`
+7. Update the CHANGELOG with your changes and increase the version numbers in the changed files to the new version that this Pull Request would represent. The versioning scheme we use is [SemVer](http://semver.org/).
+
+
+## License
+
+This project is licensed under GLP-v3-or-later
+
+
