@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: beetlesafari
+Version: 0.4.0
+Summary: A napari plugin for loading and working with light sheet imaging data of developing embryos acquired using ClearControl, e.g. _Tribolium castaneum_.
+Home-page: https://github.com/haesleinhuepf/beetlesafari
+Author: Robert Haase
+Author-email: robert.haase@tu-dresden.de
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Framework :: napari
+Classifier: Intended Audience :: Science/Research
+Classifier: Development Status :: 3 - Alpha
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+A library for working with light sheet imaging data of developing embryos acquired using [ClearControl](https://github.com/ClearControl) at the [Center for Systems Biology Dresden](https://www.csbdresden.de/), e.g. _Tribolium castaneum_.
+
+# Installation
+```
+conda install -c conda-forge pyopencl
+pip install beetlesafari
+```
