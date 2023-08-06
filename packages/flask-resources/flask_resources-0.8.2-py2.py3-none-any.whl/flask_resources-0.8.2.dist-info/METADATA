@@ -1,0 +1,73 @@
+Metadata-Version: 2.1
+Name: flask-resources
+Version: 0.8.2
+Summary: "Flask Resources module to create REST APIs."
+Home-page: https://github.com/inveniosoftware/flask-resources
+Author: CERN
+Author-email: info@inveniosoftware.org
+License: MIT
+Keywords: flask TODO
+Platform: any
+Classifier: Development Status :: 3 - Alpha
+Requires-Python: >=3.7
+Requires-Dist: Flask (>=1.1.4)
+Requires-Dist: marshmallow (~=3.0)
+Requires-Dist: speaklater (<2.0,>=1.3)
+Provides-Extra: tests
+Requires-Dist: pytest-black (<0.3.10,>=0.3.0) ; extra == 'tests'
+Requires-Dist: check-manifest (>=0.42) ; extra == 'tests'
+Requires-Dist: coverage (<6,>=5.3) ; extra == 'tests'
+Requires-Dist: pytest (<7,>=6) ; extra == 'tests'
+Requires-Dist: pytest-cov (>=2.10.1) ; extra == 'tests'
+Requires-Dist: pytest-flask (>=1.0.0) ; extra == 'tests'
+Requires-Dist: pytest-isort (>=1.2.0) ; extra == 'tests'
+Requires-Dist: pytest-mock (>=1.6.0) ; extra == 'tests'
+Requires-Dist: pytest-pydocstyle (>=2.2.0) ; extra == 'tests'
+Requires-Dist: Sphinx (==4.2.0) ; extra == 'tests'
+
+..
+    Copyright (C) 2020 CERN.
+
+    Flask-Resources is free software; you can redistribute it and/or
+    modify it under the terms of the MIT License; see LICENSE file for more
+    details.
+
+===================
+ Flask-Resources
+===================
+
+.. image:: https://img.shields.io/travis/inveniosoftware/flask-resources.svg
+        :target: https://travis-ci.org/inveniosoftware/flask-resources
+
+.. image:: https://img.shields.io/coveralls/inveniosoftware/flask-resources.svg
+        :target: https://coveralls.io/r/inveniosoftware/flask-resources
+
+.. image:: https://img.shields.io/github/tag/inveniosoftware/flask-resources.svg
+        :target: https://github.com/inveniosoftware/flask-resources/releases
+
+.. image:: https://img.shields.io/pypi/dm/flask-resources.svg
+        :target: https://pypi.python.org/pypi/flask-resources
+
+.. image:: https://img.shields.io/github/license/inveniosoftware/flask-resources.svg
+        :target: https://github.com/inveniosoftware/flask-resources/blob/master/LICENSE
+
+A small library for implementing configurable REST APIs.
+
+Further documentation is available on
+https://flask-resources.readthedocs.io/
+
+..
+    Copyright (C) 2020 CERN.
+
+    Flask-Resources is free software; you can redistribute it and/or
+    modify it under the terms of the MIT License; see LICENSE file for more
+    details.
+
+Changes
+=======
+
+Version 0.1.0 (released TBD)
+
+- Initial public release.
+
+
