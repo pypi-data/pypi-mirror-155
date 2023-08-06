@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: aamrd
+Version: 22.4
+Summary: job scheduler
+Home-page: UNKNOWN
+Author: Xingeng Chen
+License: GNU Affero General Public License
+Keywords: Scheduler
+Platform: Any
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: dmprj
+
+# Overview
+
+Job scheduler abstraction for computation job submission and query.
+
+## License
+
+GNU Affero General Public License
+
+
