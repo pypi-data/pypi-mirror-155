@@ -1,0 +1,3 @@
+[console_scripts]
+sasctl = sasctl.utils.cli:main
+
