@@ -1,0 +1,15 @@
+ete3
+numpy
+six
+
+[dev]
+black
+flake8
+twine
+wheel
+
+[gfx]
+PyQt5
+
+[test]
+pytest
