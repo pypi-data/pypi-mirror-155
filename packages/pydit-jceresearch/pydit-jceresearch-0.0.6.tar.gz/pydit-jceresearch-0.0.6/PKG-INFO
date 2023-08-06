@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: pydit-jceresearch
+Version: 0.0.6
+Summary: Data cleansing tools for Internal Auditors
+License: MIT
+Keywords: internal audit,munging,cleansing,audit
+Author: jceresearch
+Author-email: jceresearch@users.noreply.github.com
+Requires-Python: >=3.8,<4.0
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: matplotlib
+Requires-Dist: myst-parser
+Requires-Dist: numpy (>=1.21.5,<2.0.0)
+Requires-Dist: openpyxl (>=3.0.0,<4.0.0)
+Requires-Dist: pandas (>=1.2.1,<2.0.0)
+Project-URL: Documentation, https://pydit.readthedocs.io/en/latest/
