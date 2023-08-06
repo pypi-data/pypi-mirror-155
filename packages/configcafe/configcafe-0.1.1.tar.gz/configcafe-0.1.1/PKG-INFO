@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: configcafe
+Version: 0.1.1
+Summary: Welcome to the config cafe!
+Author: J 'Indi' Harrington
+Requires-Python: >=3.10,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Requires-Dist: rich (>=12.4.4,<13.0.0)
