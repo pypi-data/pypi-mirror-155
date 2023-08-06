@@ -1,0 +1,8 @@
+python-dateutil
+more-itertools
+
+[test]
+pytest
+
+[testing]
+pytest
