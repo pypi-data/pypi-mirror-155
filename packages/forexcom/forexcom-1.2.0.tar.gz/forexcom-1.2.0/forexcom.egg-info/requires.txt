@@ -1,0 +1,8 @@
+certifi
+pandas
+
+[dev]
+flake8
+black
+isort
+pre-commit
