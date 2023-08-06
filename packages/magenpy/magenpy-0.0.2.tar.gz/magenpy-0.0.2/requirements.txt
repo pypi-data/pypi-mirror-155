@@ -1,0 +1,9 @@
+dask
+scipy
+numpy
+pandas
+pandas-plink==2.2.4
+psutil
+tqdm
+zarr
+requests

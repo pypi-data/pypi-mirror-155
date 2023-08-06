@@ -1,0 +1,15 @@
+dask
+scipy
+numpy
+pandas
+pandas-plink==2.2.4
+psutil
+tqdm
+zarr
+requests
+
+[full]
+Cython
+rechunker==0.4
+matplotlib
+seaborn
