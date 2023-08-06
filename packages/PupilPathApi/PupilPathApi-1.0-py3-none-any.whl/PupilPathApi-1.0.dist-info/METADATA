@@ -1,0 +1,59 @@
+Metadata-Version: 2.1
+Name: PupilPathApi
+Version: 1.0
+Summary: The one and only PupilPath api wrapper
+Home-page: UNKNOWN
+Author: Dark Studios
+License: UNKNOWN
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
+Requires-Dist: bs4
+Requires-Dist: requests
+
+# PupilPath API
+
+The only and only PupilPath API wrapper. This wrapper uses librarys ``Requests`` and ``BeautifulSoup``.
+
+## Installation
+
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the library.
+
+```bash
+pip install pupilpathapi
+```
+
+## Basic Usage
+
+```python
+import PupilPathApi as PupilPath
+
+
+user = PupilPath.User({
+    "Username" : "Username",
+    "Password" : "Password"
+})
+
+print(f"{user.StudentName} is in {user.ClassCount} classes")
+```
+
+```python
+user.StudentName # Returns the full name on the account
+user.ClassCount # Returns the number of classes assigned on the account
+
+user.GetClassData() # Returns a dictionary containing multiple lists e.g {"Title": [], "Teacher": [], "Department": [], "Average": []}
+user.GetGradeData() # Returns a dictionary containing the average and overall e.g {"Average" : 97, "Overall" : "Honors"}
+
+user.SendEmail(["bestfriend1@skedula.net", "bestfriend2@skedula.net"], {
+    "Subject" : "Hello there!",
+    
+    "Content" : "This was sent from <b>Code</b>" # Supports rich text
+})
+```
+
+## Contributing To The Development
+I want to see cool things you can do with this! To get in contact with me send me a DM on discord `Dlark#2510`. It would mean the world to me!
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
+
+
