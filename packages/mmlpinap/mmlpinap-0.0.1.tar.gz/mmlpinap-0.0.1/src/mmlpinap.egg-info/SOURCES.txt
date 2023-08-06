@@ -1,0 +1,13 @@
+LICENSE
+README.md
+setup.py
+src/data_generation/__init__.py
+src/data_generation/data_generation.py
+src/deep_expts/__init__.py
+src/deep_expts/deep_nn.py
+src/mmlpinap.egg-info/PKG-INFO
+src/mmlpinap.egg-info/SOURCES.txt
+src/mmlpinap.egg-info/dependency_links.txt
+src/mmlpinap.egg-info/top_level.txt
+src/wide_expts/__init__.py
+src/wide_expts/wide_nn.py
