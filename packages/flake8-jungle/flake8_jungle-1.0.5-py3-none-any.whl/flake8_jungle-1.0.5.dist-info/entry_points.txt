@@ -1,0 +1,3 @@
+[flake8.extension]
+JG=flake8_jungle:JungleStyleChecker
+
