@@ -1,0 +1,4 @@
+setuptools>=42
+wheel>=0.37.1
+requests>=2.27.1
+azure-eventhub>=5.7.0
