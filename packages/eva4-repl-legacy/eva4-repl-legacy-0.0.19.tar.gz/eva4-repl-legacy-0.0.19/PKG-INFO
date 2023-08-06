@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: eva4-repl-legacy
+Version: 0.0.19
+Summary: EVA ICS v4 legacy replication service
+Home-page: https://github.com/alttch/eva4
+Author: Bohemia Automation / Altertech
+Author-email: div@altertech.com
+License: Apache License 2.0
+Description: # EVA ICS v4 legacy replication between v4-v3
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Topic :: Communications
+Description-Content-Type: text/markdown
