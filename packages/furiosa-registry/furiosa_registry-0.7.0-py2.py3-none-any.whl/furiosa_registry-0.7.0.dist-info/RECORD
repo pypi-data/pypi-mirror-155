@@ -1,0 +1,16 @@
+furiosa/registry/__init__.py,sha256=-qA6Kbt0JWbL3GYXKH2tTVEfMtwt04fwaTMFtQIcMdA,212
+furiosa/registry/errors.py,sha256=FhSDeBz1LHgQelBP0wc8xm27t7zRqQ8X2n8A5ygjV8k,535
+furiosa/registry/git_version.txt,sha256=AbppcVGT7OnLyzfmbDZHWzpW-kcTQgaa6Snf43POwM0,14
+furiosa/registry/model.py,sha256=YXHXeE3P39WRaHIl57FtsB0gsh9dWGZ-zWZMlGQP0VU,1584
+furiosa/registry/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+furiosa/registry/utils.py,sha256=FyMZkAtEjk844HLFW9BvbXRrOJWjpolLG-sQpw4lilY,1926
+furiosa/registry/client/__init__.py,sha256=PjBekDRXAODYInIFqEA5D-KM2zQmkMIs1qNhmCwDrNE,2600
+furiosa/registry/client/transport/__init__.py,sha256=TOoWXVuCNb_cdtSfkXX8IsD5Q0plBaDu3JZrH3n13aI,2986
+furiosa/registry/client/transport/base.py,sha256=TNwbNC0NWsunINvu0_N_FbvYF-mG-PTIc99Lf24HKFY,2059
+furiosa/registry/client/transport/file.py,sha256=V_Wy_LlxiQNcY6QPpawXh-NkVv_wEUW0flyIhjtLjis,1543
+furiosa/registry/client/transport/github.py,sha256=x-EqEzsgmVA_YhBJXS72ly-TuMaeBTOch7ax972P5rQ,2720
+furiosa/registry/client/transport/http.py,sha256=vVWHvgtDIvqbM2KOHofovKCECJ3XogJ5v15AwbdFxuI,1569
+furiosa/registry/client/transport/s3.py,sha256=QP7IF8vsnBI2cZbBnqEySopPDolF3dv45D9LlrMAT2c,1293
+furiosa_registry-0.7.0.dist-info/WHEEL,sha256=96_DCfscDnVj9fVNwi1rfifiRwfpxLjwXWglVksjj_E,99
+furiosa_registry-0.7.0.dist-info/METADATA,sha256=D-H8bRuUNUoie3QD_TozVLwrIBsS6ITDj4Mls7mfhFs,3301
+furiosa_registry-0.7.0.dist-info/RECORD,,
