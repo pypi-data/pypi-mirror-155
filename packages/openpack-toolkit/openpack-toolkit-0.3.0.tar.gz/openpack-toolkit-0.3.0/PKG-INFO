@@ -1,0 +1,74 @@
+Metadata-Version: 2.1
+Name: openpack-toolkit
+Version: 0.3.0
+Summary: Toolkit for OpenPack Dataset
+Home-page: https://open-pack.github.io
+License: MIT
+Author: Yoshimura Naoya
+Requires-Python: >=3.7.11,<4.0.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: numpy (<1.22.0)
+Requires-Dist: omegaconf (>=2.2.2,<3.0.0)
+Requires-Dist: pandas (>=1.2.4)
+Requires-Dist: sklearn (>=0.0)
+Project-URL: Repository, https://github.com/open-pack/open-pack-toolkit
+Description-Content-Type: text/markdown
+
+# OpenPack Dataset Toolkit (optk)
+
+![OpenPack Challenge Logo](./img/OpenPackCHALLENG-black.png)
+
+[![Test](https://github.com/open-pack/openpack-toolkit/actions/workflows/test.yaml/badge.svg)](https://github.com/open-pack/openpack-toolkit/actions/workflows/test.yaml)
+[![API Docs - GitHub Pages](https://github.com/open-pack/openpack-toolkit/actions/workflows/deploy-docs.yaml/badge.svg)](https://github.com/open-pack/openpack-toolkit/actions/workflows/deploy-docs.yaml)
+
+"OpenPack Dataset" is a new large-scale multi modal dataset of manual packing process.
+OpenPack is an open access logistics-dataset for human activity recognition, which contains human movement and package information from 17 distinct subjects.
+This repository provide utilities to explore our exciting dataset.
+
+## Setup
+
+We provide some utility functions as python package. You can install via pip with the following command.
+
+```bash
+# Pip
+pip install openpack-toolkit
+
+# Poetry
+poetry add  openpack-toolkit
+```
+
+## Documentation
+
+- [Dataset Page](https://open-pack.github.io/)
+- [API Docs](https://open-pack.github.io/openpack-toolkit/openpack_toolkit/)
+
+### Dataset Descriptions
+
+- [Subjects & Recording Scenarios](./docs/USER.md)
+- [Activity Class Definition](./docs/ANNOTATION.md)
+- [Modality](./docs/DATA_STREAM.md)
+- [Data Split (Train/Val/Test/Submission)](./docs/DATA_SPLIT.md)
+
+## Examples (PyTorch)
+
+See [openpack-torch](https://github.com/open-pack/openpack-torch) for more dietail.
+
+- [U-Net with Accelration Data](https://github.com/open-pack/openpack-torch/tree/main/examples/unet)
+- [ST-GCN with Keypoints Data](https://github.com/open-pack/openpack-torch/tree/main/examples/st-gcn)
+
+## License
+
+openpack-toolkit has a MIT license, as found in the [LICENSE](./LICENCE) file.
+
+----
+
+## Generate Document
+
+```bash
+pdoc --html --output-dir docs --force openpack_toolkit/
+```
+
