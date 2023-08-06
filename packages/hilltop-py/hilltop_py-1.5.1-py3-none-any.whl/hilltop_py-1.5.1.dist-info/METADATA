@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: hilltop-py
+Version: 1.5.1
+Summary: Functions to access Hilltop data
+Home-page: https://github.com/mullenkamp/hilltop-py
+Author: Mike Kittridge
+Author-email: mullenkamp1@gmail.com
+License: Apache
+Keywords: hilltop
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+License-File: LICENSE.txt
+Requires-Dist: pandas
+
