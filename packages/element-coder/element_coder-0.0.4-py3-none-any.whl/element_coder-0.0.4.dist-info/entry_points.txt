@@ -1,0 +1,3 @@
+[console_scripts]
+element_coder.decode = element_coder.cli:decode_cli
+element_coder.encode = element_coder.cli:encode_cli
