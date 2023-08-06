@@ -1,0 +1,12 @@
+dj_ratelimit/__init__.py,sha256=tXFSLls1IwN0gZsMmHqwxIBC7TgiyZtpMUfCx_pL3eo,153
+dj_ratelimit/src/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+dj_ratelimit/src/bucket.py,sha256=CY-9Ja8BPcehILeaWGUSiYcx_ZQLCldDLjF5SbdY8oY,3113
+dj_ratelimit/src/redis_client.py,sha256=S8TzmrLVeiJXWqUhEmWplXNo3Z_io9kF4MFN6Pz0JFc,1666
+dj_ratelimit/tst/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+dj_ratelimit/tst/settings_default.py,sha256=nA-R640XWsG55cL74v9cgZsfJM2bLwNS5ljwrAg-tgU,138
+dj_ratelimit/tst/test_ratelimit.py,sha256=3tIt1uZLn1pIr0eg-3HE4a2W53WIA_CGM03THfyzdLY,5299
+dj_ratelimit-0.1.2.dist-info/LICENSE,sha256=vcExdlJK1vdlT-Kg8CGrlFQ4uklfHtD0I7w8Yf_a9c8,1052
+dj_ratelimit-0.1.2.dist-info/METADATA,sha256=CugXIN0EVuYiSdhfaTjWhbs_8GT7nrImh-66alTimnA,1013
+dj_ratelimit-0.1.2.dist-info/WHEEL,sha256=G16H4A3IeoQmnOrYV4ueZGKSjhipXx8zc8nu9FGlvMA,92
+dj_ratelimit-0.1.2.dist-info/top_level.txt,sha256=TmZKrmUGgG83rHVWcM5WwjSXOIVrsLMfM1-R95vjFS0,13
+dj_ratelimit-0.1.2.dist-info/RECORD,,
