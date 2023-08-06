@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "ccaerrors"
+version = "0.1.2"
+description = "universal error handling for python functions."
+authors = ["ccdale <chris.charles.allison+ccaerrors@gmail.com>"]
+license = "GPL-3.0-or-later"
+readme = "README.md"
+repository = "https://github.com/ccdale/ccaerrors.git"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[tool.poetry.dev-dependencies]
+pytest = "*"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
