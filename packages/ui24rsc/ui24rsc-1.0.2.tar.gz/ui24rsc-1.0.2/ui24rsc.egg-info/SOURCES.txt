@@ -1,0 +1,15 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+test/test_cli.py
+ui24rsc/__init__.py
+ui24rsc/__main__.py
+ui24rsc/cli.py
+ui24rsc/default-init.yml
+ui24rsc.egg-info/PKG-INFO
+ui24rsc.egg-info/SOURCES.txt
+ui24rsc.egg-info/dependency_links.txt
+ui24rsc.egg-info/entry_points.txt
+ui24rsc.egg-info/requires.txt
+ui24rsc.egg-info/top_level.txt
