@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: interactions-modmail
+Version: 1.0.0
+Summary: Modmail for interactions.py
+Home-page: https://github.com/EdVraz/interactions-modmail
+Author: EdVraz
+Author-email: edvraz12@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: discord-py-interactions (>=4.1.2)
+Requires-Dist: isodate
+Requires-Dist: python-dateutil
+Requires-Dist: dinteractions-Paginator
+Requires-Dist: interactions-get
+
+
+    A modmail for interactions.py
+
+
+    Use with `bot.load("interactions.ext.modmail")`
+
+    
