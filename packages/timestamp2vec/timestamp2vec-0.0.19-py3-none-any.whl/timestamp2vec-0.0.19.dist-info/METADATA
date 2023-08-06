@@ -1,0 +1,28 @@
+Metadata-Version: 2.1
+Name: timestamp2vec
+Version: 0.0.19
+Summary: Vectorizing Timestamps by means of a Variational Autoencoder
+Home-page: UNKNOWN
+Author: Gideon Rouwendaal
+Author-email: <gideon.rouwendaal@gmail.com>
+License: UNKNOWN
+Keywords: python,vector,time,timestamps
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Requires-Dist: keras
+Requires-Dist: matplotlib
+Requires-Dist: numpy
+Requires-Dist: tensorflow
+Requires-Dist: pathlib
+Requires-Dist: seaborn
+Requires-Dist: pandas
+Requires-Dist: datetime
+
+UNKNOWN
+
+
