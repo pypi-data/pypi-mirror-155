@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: docker-compose-diagram
+Version: 0.2.1
+Summary: 
+Author: Skonik
+Author-email: s.konik.dev@gmail.com
+Requires-Python: >=3.7,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: PyYAML (==5.3.1)
+Requires-Dist: click (>=8.0.3,<9.0.0)
+Requires-Dist: diagrams (>=0.20.0,<0.21.0)
+Requires-Dist: dockerfile-parse (>=1.2.0,<2.0.0)
+Requires-Dist: rich (>=12.2.0,<13.0.0)

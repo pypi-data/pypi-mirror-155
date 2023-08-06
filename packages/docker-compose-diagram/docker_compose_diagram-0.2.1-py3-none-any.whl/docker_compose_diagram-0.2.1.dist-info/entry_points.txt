@@ -1,0 +1,3 @@
+[console_scripts]
+compose-diagram=docker_compose_diagram:process_cli
+
