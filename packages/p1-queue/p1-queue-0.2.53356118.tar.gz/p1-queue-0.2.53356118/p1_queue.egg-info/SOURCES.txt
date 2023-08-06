@@ -1,0 +1,10 @@
+setup.py
+p1_queue/__init__.py
+p1_queue/base_consumer.py
+p1_queue/base_publisher.py
+p1_queue.egg-info/PKG-INFO
+p1_queue.egg-info/SOURCES.txt
+p1_queue.egg-info/dependency_links.txt
+p1_queue.egg-info/not-zip-safe
+p1_queue.egg-info/requires.txt
+p1_queue.egg-info/top_level.txt
