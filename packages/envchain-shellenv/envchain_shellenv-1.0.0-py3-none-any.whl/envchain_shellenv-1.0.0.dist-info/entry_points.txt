@@ -1,0 +1,4 @@
+[console_scripts]
+eesh=envchain_shellenv.cli:main_sync
+envchain-shellenv=envchain_shellenv.cli:main_sync
+
