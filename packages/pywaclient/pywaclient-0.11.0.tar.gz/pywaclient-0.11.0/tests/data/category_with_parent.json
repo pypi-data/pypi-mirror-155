@@ -1,0 +1,23 @@
+{
+  "id": "9fa4bd6c-a2c2-4159-8015-fc44b35d06a8",
+  "title": "TEST CATEGORY WITH PARENT",
+  "state": "private",
+  "views": null,
+  "description": null,
+  "excerpt": null,
+  "icon": null,
+  "position": null,
+  "url": "http://www.worldanvil.com/w/api-client-test-world-soullink/c/test-category-with-parent-category",
+  "parent_category": {
+    "id": "93acb705-2500-4f0d-92cc-e46e5db52589",
+    "title": "EMPTY TEST CATEGORY",
+    "slug": "empty-test-category-category",
+    "url": "http://www.worldanvil.com/w/api-client-test-world-soullink/c/empty-test-category-category"
+  },
+  "world": {
+    "id": "daae0a12-f3c3-4978-b571-b5313e3c1741",
+    "title": "API Client Test World",
+    "slug": "api-client-test-world-soullink",
+    "url": "http://www.worldanvil.com/w/api-client-test-world-soullink"
+  }
+}

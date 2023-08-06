@@ -1,0 +1,25 @@
+{
+  "id": "38206bac-46b2-4093-96bd-d0ec393218d4",
+  "title": "FULL TEST CATEGORY",
+  "state": "private",
+  "views": null,
+  "description": "Description",
+  "excerpt": "A test excerpt",
+  "icon": "ra ra-dragon",
+  "position": 200,
+  "url": "http://www.worldanvil.com/w/api-client-test-world-soullink/c/full-test-category-category",
+  "page_cover": {
+    "id": 1978662,
+    "url": "http://www.worldanvil.com/uploads/maps/cdb043d03bed7c8e3373d6716fc9cd4f.jpg"
+  },
+  "book_cover": {
+    "id": 1978662,
+    "url": "http://www.worldanvil.com/uploads/maps/cdb043d03bed7c8e3373d6716fc9cd4f.jpg"
+  },
+  "world": {
+    "id": "daae0a12-f3c3-4978-b571-b5313e3c1741",
+    "title": "API Client Test World",
+    "slug": "api-client-test-world-soullink",
+    "url": "http://www.worldanvil.com/w/api-client-test-world-soullink"
+  }
+}

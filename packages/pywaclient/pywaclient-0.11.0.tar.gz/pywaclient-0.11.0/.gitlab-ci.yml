@@ -1,0 +1,10 @@
+build-package:
+  stage: deploy
+  image: python:3.7
+  script:
+    - pip install twine
+    - python setup.py bdist_wheel
+    - python setup.py sdist
+    - python -m twine upload -u $TWINE_USERNAME -p $TWINE_PASSWORD --repository-url $TWINE_REPOSITORY_URL --non-interactive dist/*
+  only:
+    - tags
