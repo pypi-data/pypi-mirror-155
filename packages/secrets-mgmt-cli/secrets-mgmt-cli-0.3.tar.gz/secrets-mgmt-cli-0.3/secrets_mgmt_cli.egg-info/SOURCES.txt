@@ -1,0 +1,14 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+secrets_mgmt_cli/__init__.py
+secrets_mgmt_cli/__main__.py
+secrets_mgmt_cli/aws.py
+secrets_mgmt_cli/cli.py
+secrets_mgmt_cli.egg-info/PKG-INFO
+secrets_mgmt_cli.egg-info/SOURCES.txt
+secrets_mgmt_cli.egg-info/dependency_links.txt
+secrets_mgmt_cli.egg-info/entry_points.txt
+secrets_mgmt_cli.egg-info/requires.txt
+secrets_mgmt_cli.egg-info/top_level.txt

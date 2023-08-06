@@ -1,0 +1,5 @@
+click
+boto3>=1.24.9
+
+[test]
+pytest
