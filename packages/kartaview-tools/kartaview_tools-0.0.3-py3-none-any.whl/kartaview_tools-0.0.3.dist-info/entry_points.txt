@@ -1,0 +1,5 @@
+[console_scripts]
+kv_auth = kartaview_tools.kv_auth:main
+kv_sequence = kartaview_tools.kv_sequence:main
+kv_upload = kartaview_tools.kv_upload:main
+kv_vantrue_x4s = kartaview_tools.kv_vantrue_x4s:main
