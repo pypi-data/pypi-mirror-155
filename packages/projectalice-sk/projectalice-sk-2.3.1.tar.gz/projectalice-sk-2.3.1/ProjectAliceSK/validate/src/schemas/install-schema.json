@@ -1,0 +1,256 @@
+{
+	"definitions": {},
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://raw.githubusercontent.com/project-alice-powered-by-snips/ProjectAliceModules/master/Tools/JsonValidator/src/schemas/install-schema.json",
+	"type": "object",
+	"title": "Skill install file schema",
+	"required": [
+		"name",
+		"version",
+		"author",
+		"icon",
+		"maintainers",
+		"desc",
+		"aliceMinVersion",
+		"conditions"
+	],
+	"additionalProperties": false,
+	"properties": {
+	  "rebootAfterInstall": {
+		"$id": "#/properties/rebootAfterInstall",
+		"type": "boolean",
+		"title": "Reboot the device after installing this skill",
+		"default": false
+	  },
+	  "name": {
+		"$id": "#/properties/name",
+		"type": "string",
+		"title": "Name of the skill",
+		"default": "",
+		"examples": [
+		  "AliceCore"
+		],
+		"pattern": "^[A-Z][a-zA-Z0-9]+$"
+	  },
+		"speakableName": {
+		  "$id": "#/properties/speakableName",
+		  "type": "string",
+		  "title": "Name of the skill in a form a TTS can speak it",
+		  "default": "",
+		  "examples": [
+			"Alice core"
+		  ],
+		  "pattern": "^[a-zA-Z0-9 ]+$"
+		},
+		"version"      : {
+			"$id": "#/properties/version",
+			"type": "string",
+			"title": "Version of the skill",
+			"default": "",
+			"examples": [
+				"1.0.9"
+			],
+			"pattern": "^[0-9]+.[0-9]+.[0-9]+$"
+		},
+		"icon"         : {
+			"$id": "#/properties/icon",
+			"type": "string",
+			"title": "Skill icon",
+			"default": "",
+			"examples": [
+				"fas fa-user-alien"
+			],
+			"pattern": "^fa[a-zA-Z0-9 -]+$"
+		},
+		"category": {
+			"$id": "#/properties/category",
+			"type": "string",
+			"title": "Category",
+			"default": "undefined",
+			"examples": [
+				"weather",
+				"information",
+				"entertainment",
+				"music",
+				"game",
+				"kid",
+				"automation",
+				"assistance",
+				"security",
+				"planning",
+				"shopping",
+				"organisation",
+				"household",
+				"health"
+			],
+			"pattern": "^(?i)(alice|weather|information|entertainment|music|game|kid|automation|assistance|security|planning|shopping|organisation|robotics|household|health|undefined)$"
+		},
+		"author": {
+			"$id": "#/properties/author",
+			"type": "string",
+			"title": "Github username",
+			"default": "",
+			"examples": [
+				"ProjectAlice"
+			],
+			"pattern": "^[a-zA-Z0-9 ]+$"
+		},
+		"maintainers": {
+			"$id": "#/properties/maintainers",
+			"type": "array",
+			"title": "A place for maintainers to credit themselves",
+			"items": {
+				"$id": "#/properties/maintainers/items",
+				"type": "string",
+				"title": "Github username",
+				"default": "",
+				"examples": [
+					"Psychokiller1888",
+					"philipp2310"
+				],
+				"pattern": "^[a-zA-Z0-9 ]+$"
+			}
+		},
+		"desc": {
+			"$id": "#/properties/desc",
+			"type": "string",
+			"title": "Description of the skill",
+			"default": "",
+			"examples": [
+				"This skill is one of the standard skills and does support core functions such as adding users"
+			],
+			"minLength": 10
+		},
+		"aliceMinVersion": {
+			"$id": "#/properties/aliceMinVersion",
+			"type": "string",
+			"title": "The minimum Alice version required for this skill version to install",
+			"default": "",
+			"examples": [
+				"1.0.0-a3"
+			],
+			"pattern": "^[0-9]+.[0-9]+.[0-9]+(-((a)+|(b)+|(rc)+)[0-9]+)?$"
+		},
+		"systemRequirements": {
+			"$id"  : "#/properties/systemRequirements",
+			"type" : "array",
+			"title": "Add any requirements that need to be installed through apt-get",
+			"items": {
+				"$id"     : "#/properties/systemRequirements/items",
+				"type"    : "string",
+				"title"   : "apt-get package",
+				"default" : "",
+				"examples": [
+					"pyaudio"
+				],
+				"pattern" : "^(.*)$"
+			}
+		},
+		"script": {
+			"$id"     : "#/properties/script",
+			"type"    : "string",
+			"title"   : "A script to be run after skill installation",
+			"default" : "",
+			"examples": [
+				"postinstall.sh",
+				"checkDependancies.sh"
+			],
+			"pattern" : "^[a-z-A-Z0-9]+.sh$"
+		},
+		"pipRequirements": {
+			"$id": "#/properties/pipRequirements",
+			"type": "array",
+			"title": "Add any requirements that need to be installed through PIP",
+			"items": {
+				"$id": "#/properties/pipRequirements/items",
+				"type": "string",
+				"title": "PIP packages, supporting versioning",
+				"default": "",
+				"examples": [
+					"BringApi>=0.0.3"
+				],
+				"pattern": "^(.*)$"
+			}
+		},
+		"conditions": {
+			"$id": "#/properties/conditions",
+			"type": "object",
+			"title": "Conditions for the skill to start",
+			"properties": {
+				"lang": {
+					"$id": "#/properties/conditions/properties/lang",
+					"type": "array",
+					"title": "List of supported languages for this skill",
+					"items": {
+						"$id"     : "#/properties/conditions/properties/lang/items",
+						"type"    : "string",
+						"title"   : "Language code",
+						"default" : "",
+						"examples": [
+							"en",
+							"de"
+						],
+						"pattern" : "^(en)|(de)|(fr)|(it)|(pl)|(pt)|(pt_br)|(es)$"
+					}
+				},
+				"skill": {
+					"$id": "#/properties/conditions/properties/skill",
+					"type": "array",
+					"title": "List of required skills to start this one",
+					"items": {
+						"$id": "#/properties/conditions/properties/skills/items",
+						"type": "string",
+						"title": "Required skill definition",
+						"default": "",
+						"examples": [
+							"Telemetry"
+						],
+						"pattern": "^[A-Z][a-zA-Z0-9]+$"
+					}
+				},
+				"online": {
+					"$id": "#/properties/conditions/properties/online",
+					"type": "boolean",
+					"title": "If this skill needs Alice to be able to access internet",
+					"default": true
+				},
+				"asrArbitraryCapture": {
+					"$id": "#/properties/conditions/properties/asrArbitraryCapture",
+					"type": "boolean",
+					"title": "If this skill requires an ASR that is able to capture arbitrary text, like Google ASR, unlike Snips ASR",
+					"default": true
+				},
+				"activeManager": {
+					"$id": "#/properties/conditions/properties/activeManager",
+					"type": "array",
+					"title": "List of managers that need to be active for this skill to run",
+					"items": {
+						"$id": "#/properties/conditions/properties/activeManager/items",
+						"type": "string",
+						"title": "Manager name",
+						"default": "",
+						"examples": [
+							"TelemetryManager"
+						],
+						"pattern": "^[A-Z][a-zA-Z]+$"
+					}
+				},
+				"notSkill": {
+					"$id": "#/properties/conditions/properties/notSkill",
+					"type": "array",
+					"title": "List of skills that are incompatible with this one",
+					"items": {
+						"$id": "#/properties/conditions/properties/notSkill/items",
+						"type": "string",
+						"title": "Skill name",
+						"default": "",
+						"examples": [
+							"Psychokiller1888/Netatmo"
+						],
+						"pattern": "^[a-zA-Z0-9]+/[A-Z][a-zA-Z0-9]+$"
+					}
+				}
+			}
+		}
+	}
+}

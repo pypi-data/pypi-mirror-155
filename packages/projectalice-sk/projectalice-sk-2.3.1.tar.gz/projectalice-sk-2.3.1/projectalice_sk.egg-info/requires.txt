@@ -1,0 +1,12 @@
+AliceGit
+jsonschema>=3.0.0
+click
+unidecode
+requests
+InquirerPy~=0.3.1
+jinja2
+pytest~=6.2.5
+coverage~=6.2
+pytest-cov~=3.0.0
+coveralls~=3.3.1
+types-requests
