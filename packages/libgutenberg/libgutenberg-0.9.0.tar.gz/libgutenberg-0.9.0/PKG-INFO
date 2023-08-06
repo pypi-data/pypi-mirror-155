@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: libgutenberg
+Version: 0.9.0
+Summary: Common files used by Project Gutenberg python projects.
+Home-page: https://github.com/gutenbergtools/libgutenberg/
+Author: Marcello Perathoner
+Maintainer: Eric Hellman
+Maintainer-email: eric@hellman.net
+License: GPL v3
+Keywords: project gutenberg
+Platform: OS-independent
+Classifier: Intended Audience :: Other Audience
+Classifier: License :: OSI Approved :: GNU General Public License (GPL)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Provides-Extra: postgres
+Provides-Extra: covers
+License-File: LICENSE
+
+Useless as standalone install. Used only as requirement for other packages.
+
