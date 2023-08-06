@@ -1,0 +1,225 @@
+:py:mod:`rhino_health.lib.endpoints.cohort.cohort_endpoints`
+============================================================
+
+.. py:module:: rhino_health.lib.endpoints.cohort.cohort_endpoints
+
+.. autoapi-nested-parse::
+
+   
+   ..
+       !! processed by numpydoc !!
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   rhino_health.lib.endpoints.cohort.cohort_endpoints.CohortFutureEndpoints
+
+
+
+
+.. py:class:: CohortEndpoints(session)
+
+   Bases: :py:obj:`CohortEndpoints`
+
+   
+
+
+
+   Endpoints available to interact with Cohorts on the Rhino Platform
+
+
+
+
+
+
+
+
+
+
+   .. rubric:: Notes
+
+   You should access these endpoints from the RhinoSession object
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:method:: export_cohort(self, cohort_uid: str, output_location: str, output_format: str)
+
+      
+      Sends a export cohort request to the ON-PREM instance holding the specified COHORT_UID.
+      The file will be exported to OUTPUT_LOCATION on the on-prem instance in OUTPUT_FORMAT
+
+      .. warning:: This feature is under development and the interface may change
+
+      :Parameters:
+
+          **cohort_uid: str**
+              UID for the cohort to export information on
+
+          **output_location: str**
+              Path to output the exported data to on the remote on-prem instance
+
+          **output_format: str**
+              The format to export the cohort data in
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: sync_cohort_info(self, cohort_uid: str)
+
+      
+      Initializes a data sync from the relevant on-prem instance for the provided COHORT_UID
+
+      .. warning:: This feature is under development and the interface may change
+
+      :Parameters:
+
+          **cohort_uid: str**
+              UID for the cohort to sync info
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: remove_cohort(self, cohort_uid: str)
+
+      
+      Remove a cohort with COHORT_UID from the system
+
+      .. warning:: This feature is under development and the interface may change
+
+      :Parameters:
+
+          **cohort_uid: str**
+              UID for the cohort to remove
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: get_cohort(self, cohort_uid: str)
+
+      
+
+      Returns a Cohort dataclass
+
+
+      :Parameters:
+
+          **cohort_uid: str**
+              UID for the cohort
+
+      :Returns:
+
+          cohort: Cohort
+              Cohort dataclass
+
+
+
+
+
+
+
+
+
+
+      .. rubric:: Examples
+
+      >>> session.cohort.get_cohort(my_cohort_uid)
+      Cohort()
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: get_cohort_metric(self, cohort_uid: str, metric_configuration) -> rhino_health.lib.metrics.base_metric.MetricResponse
+
+      
+
+      Queries the cohort with COHORT_UID on-prem and returns the result based on the METRIC_CONFIGURATION
+
+
+      :Parameters:
+
+          **cohort_uid: str**
+              UID for the cohort to query metrics against
+
+          **metric_configuration:**
+              Configuration for the query to run
+
+      :Returns:
+
+          metric_response: MetricResponse
+              A response object containing the result of the query
+
+
+
+
+
+
+
+      .. seealso::
+
+          
+          :obj:`rhino_health.lib.metrics`
+              Dataclasses specifying possible metric configurations to send
+          :obj:`rhino_health.lib.metrics.base_metric.MetricResponse`
+              Response object
+          
+          
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+

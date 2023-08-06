@@ -1,0 +1,99 @@
+:py:mod:`rhino_health.lib.endpoints.dataschema.dataschema_endpoints`
+====================================================================
+
+.. py:module:: rhino_health.lib.endpoints.dataschema.dataschema_endpoints
+
+.. autoapi-nested-parse::
+
+   
+   ..
+       !! processed by numpydoc !!
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   rhino_health.lib.endpoints.dataschema.dataschema_endpoints.DataschemaFutureEndpoints
+
+
+
+
+.. py:class:: DataschameEndpoints(session)
+
+   Bases: :py:obj:`DataschemaEndpoints`
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:method:: remove_dataschema(self, dataschema_uid: str)
+
+      
+      Removes a Dataschema with the DATASCHAMA_UID from the system
+      .. warning:: This feature is under development and incomplete
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: get_dataschemas(self, datascehama_uids: Optional[List[str]] = None) -> List[rhino_health.lib.endpoints.dataschema.dataschema_dataclass.Dataschema]
+
+      
+
+      Gets the Dataschemas with the specified DATASCHEMA_UIDS
+
+      .. warning:: This feature is under development and the interface may change
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+

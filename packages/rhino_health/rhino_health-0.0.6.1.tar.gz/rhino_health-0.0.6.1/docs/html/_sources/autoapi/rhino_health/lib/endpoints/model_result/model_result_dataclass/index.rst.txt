@@ -1,0 +1,360 @@
+:py:mod:`rhino_health.lib.endpoints.model_result.model_result_dataclass`
+========================================================================
+
+.. py:module:: rhino_health.lib.endpoints.model_result.model_result_dataclass
+
+.. autoapi-nested-parse::
+
+   
+   ..
+       !! processed by numpydoc !!
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   rhino_health.lib.endpoints.model_result.model_result_dataclass.ModelResult
+
+
+
+
+.. py:class:: ModelResult(**data)
+
+   Bases: :py:obj:`rhino_health.lib.dataclass.RhinoBaseModel`
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:attribute:: uid
+      :annotation: :str
+
+      
+      The unique ID of the ModelResult
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: action_type
+      :annotation: :str
+
+      
+      The type of action preformed
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: status
+      :annotation: :str
+
+      
+      The action status
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: start_time
+      :annotation: :str
+
+      
+      The action start time
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: end_time
+      :annotation: :Any
+
+      
+      The action end time
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: input_cohorts
+      :annotation: :List[str]
+
+      
+      The input cohort
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: output_cohorts
+      :annotation: :List[str]
+
+      
+      The output cohort
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: aimodel_uid
+      :annotation: :typing_extensions.Annotated[dict, Field(alias='aimodel')]
+
+      
+      The relevant aimodel object
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: result_info
+      :annotation: :Optional[str]
+
+      
+      The run result info
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: results_report
+      :annotation: :Optional[str]
+
+      
+      The run result report
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: report_images
+      :annotation: :List[Any]
+
+      
+      The run result images
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: model_params_external_storage_path
+      :annotation: :Optional[str]
+
+      
+      The external storage path
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: aimodel(self)
+      :property:
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+

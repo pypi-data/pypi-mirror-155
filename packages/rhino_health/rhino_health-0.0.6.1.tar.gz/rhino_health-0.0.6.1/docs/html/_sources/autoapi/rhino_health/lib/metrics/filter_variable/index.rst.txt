@@ -1,0 +1,513 @@
+:py:mod:`rhino_health.lib.metrics.filter_variable`
+==================================================
+
+.. py:module:: rhino_health.lib.metrics.filter_variable
+
+.. autoapi-nested-parse::
+
+   
+   ..
+       !! processed by numpydoc !!
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   rhino_health.lib.metrics.filter_variable.FilterType
+   rhino_health.lib.metrics.filter_variable.FilterRangePair
+   rhino_health.lib.metrics.filter_variable.FilterBetweenRange
+   rhino_health.lib.metrics.filter_variable.FilterVariable
+
+
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   rhino_health.lib.metrics.filter_variable.OptionalFilterVariableType
+
+
+.. py:class:: FilterType
+
+   Bases: :py:obj:`enum.Enum`
+
+   
+   Enum/Constants to specify the type of filtering to perform. Supported filtering methods are listed below
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:attribute:: EQUAL
+      :annotation: = =
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: IN
+      :annotation: = in
+
+      
+      Filter data
+
+
+
+
+
+
+
+
+
+
+
+      .. rubric:: Notes
+
+      filter_value should be a list which can be checked against using `pd.Series.isin() <https://pandas.pydata.org/docs/reference/api/pandas.Series.isin.html>`_
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: GREATER_THAN
+      :annotation: = >
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: LESS_THAN
+      :annotation: = <
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: GREATER_THAN_EQUAL
+      :annotation: = >=
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: LESS_THAN_EQUAL
+      :annotation: = <=
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: BETWEEN
+      :annotation: = between
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+.. py:class:: FilterRangePair
+
+   Bases: :py:obj:`pydantic.BaseModel`
+
+   
+   Specifies the upper or lower range to check against when using ranges instead of a fixed number
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:attribute:: filter_value
+      :annotation: :Any
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: filter_type
+      :annotation: :FilterType
+
+      
+      .. warning:: FilterType.BETWEEN and FilterType.IN are not supported in FilterRangePair
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+.. py:class:: FilterBetweenRange
+
+   Bases: :py:obj:`pydantic.BaseModel`
+
+   
+   Specifies the upper and lower range to check against when using ranges instead of a fixed number
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:attribute:: lower
+      :annotation: :FilterRangePair
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: upper
+      :annotation: :FilterRangePair
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+.. py:class:: FilterVariable
+
+   Bases: :py:obj:`pydantic.BaseModel`
+
+   
+   Defines filter logic to compare data against.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:attribute:: data_column
+      :annotation: :str
+
+      
+      The column in the remote cohort df to get data from after filtering
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: filter_column
+      :annotation: :str
+
+      
+      The column in the remote cohort df to check against
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: filter_value
+      :annotation: :Union[Any, FilterBetweenRange]
+
+      
+      The value to match against or a FilterBetweenRange if filter_type is FilterType.BETWEEN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: filter_type
+      :annotation: :Optional[FilterType]
+
+      
+      The type of filtering to perform. Defaults to FilterType.EQUAL
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+.. py:data:: OptionalFilterVariableType
+   
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+

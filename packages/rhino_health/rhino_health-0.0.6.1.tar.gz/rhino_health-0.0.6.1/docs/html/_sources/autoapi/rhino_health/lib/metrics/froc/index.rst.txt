@@ -1,0 +1,214 @@
+:py:mod:`rhino_health.lib.metrics.froc`
+=======================================
+
+.. py:module:: rhino_health.lib.metrics.froc
+
+.. autoapi-nested-parse::
+
+   
+   ..
+       !! processed by numpydoc !!
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   rhino_health.lib.metrics.froc.FRoc
+   rhino_health.lib.metrics.froc.FRocWithCI
+
+
+
+
+.. py:class:: FRoc
+
+   Bases: :py:obj:`rhino_health.lib.metrics.base_metric.BaseMetric`
+
+   
+   Performs a Free-response Receiver Operating Characteristic calculation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:attribute:: y_true_variable
+      :annotation: :rhino_health.lib.metrics.filter_variable.FilterVariable
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: y_pred_variable
+      :annotation: :rhino_health.lib.metrics.filter_variable.FilterVariable
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: specimen_variable
+      :annotation: :rhino_health.lib.metrics.filter_variable.FilterVariable
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: seed
+      :annotation: :Optional[int]
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+.. py:class:: FRocWithCI
+
+   Bases: :py:obj:`FRoc`
+
+   
+   Performs a Free-response Receiver Operating Characteristic calculation with Bootstrapping using Confidence Intervals
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:attribute:: confidence_interval
+      :annotation: :int
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: bootstrap_iterations
+      :annotation: :Optional[int]
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+

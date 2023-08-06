@@ -1,0 +1,455 @@
+:py:mod:`rhino_health.lib.endpoints.cohort.cohort_dataclass`
+============================================================
+
+.. py:module:: rhino_health.lib.endpoints.cohort.cohort_dataclass
+
+.. autoapi-nested-parse::
+
+   
+   ..
+       !! processed by numpydoc !!
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   rhino_health.lib.endpoints.cohort.cohort_dataclass.FutureCohort
+
+
+
+
+.. py:class:: Cohort(**data)
+
+   Bases: :py:obj:`Cohort`
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:attribute:: uid
+      :annotation: :str
+
+      
+       The unique ID of the Cohort
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: name
+      :annotation: :str
+
+      
+       The name of the Cohort
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: description
+      :annotation: :str
+
+      
+       The description of the Cohort
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: base_version_uid
+      :annotation: :Optional[str]
+
+      
+       The original Cohort this Cohort is a new version of, if applicable
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: version
+      :annotation: :Optional[int] = 0
+
+      
+       Which revision this Cohort is
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: date_added
+      :annotation: :str
+
+      
+       When this Cohort was added
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: num_cases
+      :annotation: :int
+
+      
+       The number of cases in the cohort
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: cohort_info
+      :annotation: :Optional[dict]
+
+      
+       Sanitized metadata information about the cohort.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: import_status
+      :annotation: :str
+
+      
+       The import status of the cohort
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: project_uid
+      :annotation: :str
+
+      
+       The unique ID of the Project this Cohort belongs to.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: workgroup_uid
+      :annotation: :str
+
+      
+       The unique ID of the Workgroup this Cohort belongs to
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: data_schema_uid
+      :annotation: :str
+
+      
+       The unique ID of the DataSchema this Cohort follows
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: data_schema_info
+      :annotation: :dict
+
+      
+       Metadata about the DataSchema for this cohort.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: create(self)
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: get_metric(self, metric_configuration)
+
+      
+      Queries on-prem and returns the result based on the METRIC_CONFIGURATION for this cohort.
+
+
+
+
+
+
+
+
+
+
+      .. seealso::
+
+          
+          :obj:`rhino_health.lib.endpoints.cohort.cohort_endpoints.CohortEndpoints.get_cohort_metric`
+              Full documentation
+          
+          
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: project(self)
+      :property:
+
+      
+
+
+      Get the project of this Cohort
+
+      .. warning:: Be careful when calling this for newly created objects.
+          The project associated with the PROJECT_UID must already exist on the platform.
+
+      .. warning:: The result of this function is cached.
+          Be careful calling this function after making changes to the project
+
+
+      :Returns:
+
+          project: Project
+              A DataClass representing the Project of the user's primary workgroup
+
+
+
+
+
+
+
+      .. seealso::
+
+          
+          :obj:`rhino_health.lib.endpoints.project.project_dataclass`
+              Project Dataclass
+          
+          
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+

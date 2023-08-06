@@ -1,0 +1,144 @@
+:py:mod:`rhino_health.lib.constants`
+====================================
+
+.. py:module:: rhino_health.lib.constants
+
+.. autoapi-nested-parse::
+
+   Constants that are used in the rest of the system
+
+   ..
+       !! processed by numpydoc !!
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   rhino_health.lib.constants.ApiEnvironment
+
+
+
+
+.. py:class:: ApiEnvironment
+
+   
+   Which environment you are hitting. By default you should be using PROD_API_URL
+
+
+
+
+
+
+
+
+
+
+
+
+
+   .. rubric:: Examples
+
+   >>> from rhino_health import LOCALHOST_API_URL, PROD_API_URL, PROD_API_URL
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:attribute:: LOCALHOST_API_URL
+      :annotation: = http://localhost:8080/api/
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: DEV_URL
+      :annotation: = https://dev.rhinohealth.com/api/
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: DEMO_DEV_URL
+      :annotation: = https://demo-dev.rhinohealth.com/api/
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: PROD_API_URL
+      :annotation: = https://prod.rhinohealth.com/api/
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+

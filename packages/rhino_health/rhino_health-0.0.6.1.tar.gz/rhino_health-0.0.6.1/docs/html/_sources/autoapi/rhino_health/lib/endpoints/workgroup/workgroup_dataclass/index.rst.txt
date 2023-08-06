@@ -1,0 +1,168 @@
+:py:mod:`rhino_health.lib.endpoints.workgroup.workgroup_dataclass`
+==================================================================
+
+.. py:module:: rhino_health.lib.endpoints.workgroup.workgroup_dataclass
+
+.. autoapi-nested-parse::
+
+   
+   ..
+       !! processed by numpydoc !!
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   rhino_health.lib.endpoints.workgroup.workgroup_dataclass.FutureWorkgroup
+
+
+
+
+.. py:class:: Workgroup(**data)
+
+   Bases: :py:obj:`Workgroup`
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:attribute:: users
+      :annotation: :List[FutureUser]
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: admins
+      :annotation: :List[FutureUser]
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: uid
+      :annotation: :str
+
+      
+       The unique ID of the Workgroup
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: name
+      :annotation: :str
+
+      
+       The name of the Workgroup
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: org_name
+      :annotation: :str
+
+      
+       The organization name of the Workgroup
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+

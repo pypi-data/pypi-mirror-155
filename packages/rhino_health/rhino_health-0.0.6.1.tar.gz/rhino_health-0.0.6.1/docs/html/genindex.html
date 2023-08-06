@@ -1,0 +1,1322 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index &#8212; Rhino SDK 0.0.6.1 documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="canonical" href="http://127.0.0.1:8000/genindex.html" />
+    <link rel="index" title="Index" href="#" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+<a class="navbar-brand" href="index.html">
+<p class="title">Rhino SDK</p>
+</a>
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="autoapi/index.html">
+  API Reference
+ </a>
+</li>
+
+    
+    <li class="nav-item">
+        <a class="nav-link nav-external" href="https://pypi.org/project/rhino_health/">Releases<i class="fas fa-external-link-alt"></i></a>
+    </li>
+    
+    <li class="nav-item">
+        <a class="nav-link nav-external" href="https://pandas.pydata.org/pandas-docs/stable/">Pandas Docs<i class="fas fa-external-link-alt"></i></a>
+    </li>
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <div class="dropdown" id="version_switcher">
+    <button type="button" class="btn btn-primary btn-sm navbar-btn dropdown-toggle" id="version_switcher_button" data-toggle="dropdown">
+        v0.0.6.1  <!-- this text may get changed later by javascript -->
+        <span class="caret"></span>
+    </button>
+    <div id="version_switcher_menu" class="dropdown-menu list-group-flush py-0" aria-labelledby="version_switcher_button">
+    <!-- dropdown will be populated by javascript on page load -->
+    </div>
+</div>
+
+<!-- NOTE: this JS must live here (not in our global JS file) because it relies
+     on being processed by Jinja before it is run (specifically for replacing
+     variables genindex and {'json_url': 'https://rhino_health.github.io/rhino_sdk/_static/switcher.json', 'version_match': 'v0.0.6.1'}.
+-->
+
+<script type="text/javascript">
+// Check if corresponding page path exists in other version of docs
+// and, if so, go there instead of the homepage of the other docs version
+function checkPageExistsAndRedirect(event) {
+    const currentFilePath = "genindex.html",
+          tryUrl = event.target.getAttribute("href");
+    let otherDocsHomepage = tryUrl.replace(currentFilePath, "");
+    $.ajax({
+        type: 'HEAD',
+        url: tryUrl,
+        // if the page exists, go there
+        success: function() {
+            location.href = tryUrl;
+        }
+    }).fail(function() {
+        location.href = otherDocsHomepage;
+    });
+    // this prevents the browser from following the href of the clicked node
+    // (which is fine because this function takes care of redirecting)
+    return false;
+}
+
+// Populate the version switcher from the JSON config file
+(function () {
+    $.getJSON("https://rhino_health.github.io/rhino_sdk/_static/switcher.json", function(data, textStatus, jqXHR) {
+        const currentFilePath = "genindex.html";
+        // create links to the corresponding page in the other docs versions
+        $.each(data, function(index, entry) {
+            // if no custom name specified (e.g., "latest"), use version string
+            if (!("name" in entry)) {
+                entry.name = entry.version;
+            }
+            // create the node
+            const node = document.createElement("a");
+            node.setAttribute("class", "list-group-item list-group-item-action py-1");
+            node.textContent = `${entry.name}`;
+            node.setAttribute("href", `${entry.url}${currentFilePath}`);
+            // on click, AJAX calls will check if the linked page exists before
+            // trying to redirect, and if not, will redirect to the homepage
+            // for that version of the docs.
+            node.onclick = checkPageExistsAndRedirect;
+            // Add dataset values for the version and name in case people want
+            // to apply CSS styling based on this information.
+            node.dataset["versionName"] = entry.name;
+            node.dataset["version"] = entry.version;
+
+            $("#version_switcher_menu").append(node);
+            // replace dropdown button text with the preferred display name of
+            // this version, rather than using sphinx's  variable.
+            // also highlight the dropdown entry for the currently-viewed
+            // version's entry
+            if (entry.version == "v0.0.6.1") {
+                node.classList.add("active");
+                let btn = document.getElementById("version_switcher_button");
+                btn.innerText = btn.dataset["activeVersionName"] = entry.name;
+                btn.dataset["activeVersion"] = entry.version;
+            }
+        });
+    });
+})();
+</script>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://pypi.org/project/rhino_health/" rel="noopener" target="_blank" title="PyPI"><span><i class="fas fa-box"></i></span>
+            <label class="sr-only">PyPI</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://pandas.pydata.org" rel="noopener" target="_blank" title="Pandas"><img src="_static/pandas-square.svg" class="icon-link-image" alt="Pandas"/></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    
+  </div>
+</nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+
+<h1 id="index">Index</h1>
+
+<div class="genindex-jumpbox">
+ <a href="#A"><strong>A</strong></a>
+ | <a href="#B"><strong>B</strong></a>
+ | <a href="#C"><strong>C</strong></a>
+ | <a href="#D"><strong>D</strong></a>
+ | <a href="#E"><strong>E</strong></a>
+ | <a href="#F"><strong>F</strong></a>
+ | <a href="#G"><strong>G</strong></a>
+ | <a href="#I"><strong>I</strong></a>
+ | <a href="#L"><strong>L</strong></a>
+ | <a href="#M"><strong>M</strong></a>
+ | <a href="#N"><strong>N</strong></a>
+ | <a href="#O"><strong>O</strong></a>
+ | <a href="#P"><strong>P</strong></a>
+ | <a href="#R"><strong>R</strong></a>
+ | <a href="#S"><strong>S</strong></a>
+ | <a href="#T"><strong>T</strong></a>
+ | <a href="#U"><strong>U</strong></a>
+ | <a href="#V"><strong>V</strong></a>
+ | <a href="#W"><strong>W</strong></a>
+ | <a href="#Y"><strong>Y</strong></a>
+ 
+</div>
+<h2 id="A">A</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/rhino_health/lib/endpoints/model_result/model_result_dataclass/index.html#rhino_health.lib.endpoints.model_result.model_result_dataclass.ModelResult.action_type">action_type (rhino_health.lib.endpoints.model_result.model_result_dataclass.ModelResult attribute)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/project/project_dataclass/index.html#rhino_health.lib.endpoints.project.project_dataclass.Project.add_collaborator">add_collaborator() (rhino_health.lib.endpoints.project.project_dataclass.Project method)</a>
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/endpoints/project/project_endpoints/index.html#rhino_health.lib.endpoints.project.project_endpoints.ProjectEndpoints.add_collaborator">(rhino_health.lib.endpoints.project.project_endpoints.ProjectEndpoints method)</a>
+</li>
+      </ul></li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/dataschema/dataschema_dataclass/index.html#rhino_health.lib.endpoints.dataschema.dataschema_dataclass.Dataschema.admins">admins (rhino_health.lib.endpoints.dataschema.dataschema_dataclass.Dataschema attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/endpoints/workgroup/workgroup_dataclass/index.html#rhino_health.lib.endpoints.workgroup.workgroup_dataclass.Workgroup.admins">(rhino_health.lib.endpoints.workgroup.workgroup_dataclass.Workgroup attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/project/project_endpoints/index.html#rhino_health.lib.endpoints.project.project_endpoints.ProjectEndpoints.aggregate_cohort_metric">aggregate_cohort_metric() (rhino_health.lib.endpoints.project.project_endpoints.ProjectEndpoints method)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/index.html#rhino_health.lib.endpoints.aimodel.AIModel">AIModel (class in rhino_health.lib.endpoints.aimodel)</a>
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/aimodel_dataclass/index.html#rhino_health.lib.endpoints.aimodel.aimodel_dataclass.AIModel">(class in rhino_health.lib.endpoints.aimodel.aimodel_dataclass)</a>
+</li>
+      </ul></li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/model_result/model_result_dataclass/index.html#rhino_health.lib.endpoints.model_result.model_result_dataclass.ModelResult.aimodel">aimodel (rhino_health.lib.endpoints.model_result.model_result_dataclass.ModelResult property)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/aimodel_dataclass/index.html#rhino_health.lib.endpoints.aimodel.aimodel_dataclass.AIModelRunInput.aimodel_uid">aimodel_uid (rhino_health.lib.endpoints.aimodel.aimodel_dataclass.AIModelRunInput attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/aimodel_dataclass/index.html#rhino_health.lib.endpoints.aimodel.aimodel_dataclass.AIModelTrainInput.aimodel_uid">(rhino_health.lib.endpoints.aimodel.aimodel_dataclass.AIModelTrainInput attribute)</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/index.html#rhino_health.lib.endpoints.aimodel.AIModelRunInput.aimodel_uid">(rhino_health.lib.endpoints.aimodel.AIModelRunInput attribute)</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/endpoints/model_result/model_result_dataclass/index.html#rhino_health.lib.endpoints.model_result.model_result_dataclass.ModelResult.aimodel_uid">(rhino_health.lib.endpoints.model_result.model_result_dataclass.ModelResult attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/aimodel_endpoints/index.html#rhino_health.lib.endpoints.aimodel.aimodel_endpoints.AIModelEndpoints">AIModelEndpoints (class in rhino_health.lib.endpoints.aimodel.aimodel_endpoints)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/index.html#rhino_health.lib.endpoints.aimodel.AIModelRunInput">AIModelRunInput (class in rhino_health.lib.endpoints.aimodel)</a>
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/aimodel_dataclass/index.html#rhino_health.lib.endpoints.aimodel.aimodel_dataclass.AIModelRunInput">(class in rhino_health.lib.endpoints.aimodel.aimodel_dataclass)</a>
+</li>
+      </ul></li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/aimodel_dataclass/index.html#rhino_health.lib.endpoints.aimodel.aimodel_dataclass.AIModelTrainInput">AIModelTrainInput (class in rhino_health.lib.endpoints.aimodel.aimodel_dataclass)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/constants/index.html#rhino_health.lib.constants.ApiEnvironment">ApiEnvironment (class in rhino_health.lib.constants)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/rest_api/api_response/index.html#rhino_health.lib.rest_api.api_response.APIResponse">APIResponse (class in rhino_health.lib.rest_api.api_response)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="B">B</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/index.html#rhino_health.lib.endpoints.aimodel.AIModel.base_version_uid">base_version_uid (rhino_health.lib.endpoints.aimodel.AIModel attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/aimodel_dataclass/index.html#rhino_health.lib.endpoints.aimodel.aimodel_dataclass.AIModel.base_version_uid">(rhino_health.lib.endpoints.aimodel.aimodel_dataclass.AIModel attribute)</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/endpoints/cohort/cohort_dataclass/index.html#rhino_health.lib.endpoints.cohort.cohort_dataclass.Cohort.base_version_uid">(rhino_health.lib.endpoints.cohort.cohort_dataclass.Cohort attribute)</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/endpoints/dataschema/dataschema_dataclass/index.html#rhino_health.lib.endpoints.dataschema.dataschema_dataclass.Dataschema.base_version_uid">(rhino_health.lib.endpoints.dataschema.dataschema_dataclass.Dataschema attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/rhino_health/lib/metrics/base_metric/index.html#rhino_health.lib.metrics.base_metric.BaseMetric">BaseMetric (class in rhino_health.lib.metrics.base_metric)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/metrics/filter_variable/index.html#rhino_health.lib.metrics.filter_variable.FilterType.BETWEEN">BETWEEN (rhino_health.lib.metrics.filter_variable.FilterType attribute)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/metrics/froc/index.html#rhino_health.lib.metrics.froc.FRocWithCI.bootstrap_iterations">bootstrap_iterations (rhino_health.lib.metrics.froc.FRocWithCI attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/metrics/roc_auc/index.html#rhino_health.lib.metrics.roc_auc.RocAucWithCI.bootstrap_iterations">(rhino_health.lib.metrics.roc_auc.RocAucWithCI attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="C">C</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/rhino_health/lib/metrics/aggregate_metrics/index.html#rhino_health.lib.metrics.aggregate_metrics.calculate_aggregate_metric">calculate_aggregate_metric() (in module rhino_health.lib.metrics.aggregate_metrics)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/aimodel_dataclass/index.html#rhino_health.lib.endpoints.aimodel.aimodel_dataclass.ModelTypes.CLARA_TRAIN">CLARA_TRAIN (rhino_health.lib.endpoints.aimodel.aimodel_dataclass.ModelTypes attribute)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/cohort/cohort_dataclass/index.html#rhino_health.lib.endpoints.cohort.cohort_dataclass.Cohort">Cohort (class in rhino_health.lib.endpoints.cohort.cohort_dataclass)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/cohort/cohort_dataclass/index.html#rhino_health.lib.endpoints.cohort.cohort_dataclass.Cohort.cohort_info">cohort_info (rhino_health.lib.endpoints.cohort.cohort_dataclass.Cohort attribute)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/cohort/cohort_endpoints/index.html#rhino_health.lib.endpoints.cohort.cohort_endpoints.CohortEndpoints">CohortEndpoints (class in rhino_health.lib.endpoints.cohort.cohort_endpoints)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/project/project_dataclass/index.html#rhino_health.lib.endpoints.project.project_dataclass.Project.collaborating_workgroups">collaborating_workgroups() (rhino_health.lib.endpoints.project.project_dataclass.Project method)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/project/project_dataclass/index.html#rhino_health.lib.endpoints.project.project_dataclass.Project.collaborating_workgroups_uids">collaborating_workgroups_uids (rhino_health.lib.endpoints.project.project_dataclass.Project attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/rhino_health/lib/metrics/froc/index.html#rhino_health.lib.metrics.froc.FRocWithCI.confidence_interval">confidence_interval (rhino_health.lib.metrics.froc.FRocWithCI attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/metrics/roc_auc/index.html#rhino_health.lib.metrics.roc_auc.RocAucWithCI.confidence_interval">(rhino_health.lib.metrics.roc_auc.RocAucWithCI attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/aimodel_dataclass/index.html#rhino_health.lib.endpoints.aimodel.aimodel_dataclass.AIModelTrainInput.config_fed_client">config_fed_client (rhino_health.lib.endpoints.aimodel.aimodel_dataclass.AIModelTrainInput attribute)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/aimodel_dataclass/index.html#rhino_health.lib.endpoints.aimodel.aimodel_dataclass.AIModelTrainInput.config_fed_server">config_fed_server (rhino_health.lib.endpoints.aimodel.aimodel_dataclass.AIModelTrainInput attribute)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/metrics/basic/index.html#rhino_health.lib.metrics.basic.Count">Count (class in rhino_health.lib.metrics.basic)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/cohort/cohort_dataclass/index.html#rhino_health.lib.endpoints.cohort.cohort_dataclass.Cohort.create">create() (rhino_health.lib.endpoints.cohort.cohort_dataclass.Cohort method)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/aimodel_endpoints/index.html#rhino_health.lib.endpoints.aimodel.aimodel_endpoints.AIModelEndpoints.create_aimodel">create_aimodel() (rhino_health.lib.endpoints.aimodel.aimodel_endpoints.AIModelEndpoints method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="D">D</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/rhino_health/lib/metrics/base_metric/index.html#rhino_health.lib.metrics.base_metric.BaseMetric.data">data() (rhino_health.lib.metrics.base_metric.BaseMetric method)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/metrics/filter_variable/index.html#rhino_health.lib.metrics.filter_variable.FilterVariable.data_column">data_column (rhino_health.lib.metrics.filter_variable.FilterVariable attribute)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/metrics/base_metric/index.html#rhino_health.lib.metrics.base_metric.BaseMetric.data_filters">data_filters (rhino_health.lib.metrics.base_metric.BaseMetric attribute)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/cohort/cohort_dataclass/index.html#rhino_health.lib.endpoints.cohort.cohort_dataclass.Cohort.data_schema_info">data_schema_info (rhino_health.lib.endpoints.cohort.cohort_dataclass.Cohort attribute)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/cohort/cohort_dataclass/index.html#rhino_health.lib.endpoints.cohort.cohort_dataclass.Cohort.data_schema_uid">data_schema_uid (rhino_health.lib.endpoints.cohort.cohort_dataclass.Cohort attribute)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/rest_api/api_response/index.html#rhino_health.lib.rest_api.api_response.APIResponse.DataClass">DataClass (rhino_health.lib.rest_api.api_response.APIResponse attribute)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/metrics/base_metric/index.html#rhino_health.lib.metrics.base_metric.DataFilter">DataFilter (class in rhino_health.lib.metrics.base_metric)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/dataschema/dataschema_endpoints/index.html#rhino_health.lib.endpoints.dataschema.dataschema_endpoints.DataschameEndpoints">DataschameEndpoints (class in rhino_health.lib.endpoints.dataschema.dataschema_endpoints)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/dataschema/dataschema_dataclass/index.html#rhino_health.lib.endpoints.dataschema.dataschema_dataclass.Dataschema">Dataschema (class in rhino_health.lib.endpoints.dataschema.dataschema_dataclass)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/cohort/cohort_dataclass/index.html#rhino_health.lib.endpoints.cohort.cohort_dataclass.Cohort.date_added">date_added (rhino_health.lib.endpoints.cohort.cohort_dataclass.Cohort attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/endpoints/dataschema/dataschema_dataclass/index.html#rhino_health.lib.endpoints.dataschema.dataschema_dataclass.Dataschema.date_added">(rhino_health.lib.endpoints.dataschema.dataschema_dataclass.Dataschema attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/rhino_health/lib/endpoints/dataschema/dataschema_dataclass/index.html#rhino_health.lib.endpoints.dataschema.dataschema_dataclass.Dataschema.delete">delete() (rhino_health.lib.endpoints.dataschema.dataschema_dataclass.Dataschema method)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/constants/index.html#rhino_health.lib.constants.ApiEnvironment.DEMO_DEV_URL">DEMO_DEV_URL (rhino_health.lib.constants.ApiEnvironment attribute)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/index.html#rhino_health.lib.endpoints.aimodel.AIModel.description">description (rhino_health.lib.endpoints.aimodel.AIModel attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/aimodel_dataclass/index.html#rhino_health.lib.endpoints.aimodel.aimodel_dataclass.AIModel.description">(rhino_health.lib.endpoints.aimodel.aimodel_dataclass.AIModel attribute)</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/endpoints/cohort/cohort_dataclass/index.html#rhino_health.lib.endpoints.cohort.cohort_dataclass.Cohort.description">(rhino_health.lib.endpoints.cohort.cohort_dataclass.Cohort attribute)</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/endpoints/dataschema/dataschema_dataclass/index.html#rhino_health.lib.endpoints.dataschema.dataschema_dataclass.Dataschema.description">(rhino_health.lib.endpoints.dataschema.dataschema_dataclass.Dataschema attribute)</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/endpoints/project/project_dataclass/index.html#rhino_health.lib.endpoints.project.project_dataclass.Project.description">(rhino_health.lib.endpoints.project.project_dataclass.Project attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="autoapi/rhino_health/lib/constants/index.html#rhino_health.lib.constants.ApiEnvironment.DEV_URL">DEV_URL (rhino_health.lib.constants.ApiEnvironment attribute)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/metrics/base_metric/index.html#rhino_health.lib.metrics.base_metric.GroupingData.dropna">dropna (rhino_health.lib.metrics.base_metric.GroupingData attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="E">E</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/rhino_health/lib/endpoints/model_result/model_result_dataclass/index.html#rhino_health.lib.endpoints.model_result.model_result_dataclass.ModelResult.end_time">end_time (rhino_health.lib.endpoints.model_result.model_result_dataclass.ModelResult attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/rhino_health/lib/metrics/filter_variable/index.html#rhino_health.lib.metrics.filter_variable.FilterType.EQUAL">EQUAL (rhino_health.lib.metrics.filter_variable.FilterType attribute)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/cohort/cohort_endpoints/index.html#rhino_health.lib.endpoints.cohort.cohort_endpoints.CohortEndpoints.export_cohort">export_cohort() (rhino_health.lib.endpoints.cohort.cohort_endpoints.CohortEndpoints method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="F">F</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/rhino_health/lib/metrics/base_metric/index.html#rhino_health.lib.metrics.base_metric.DataFilter.filter_column">filter_column (rhino_health.lib.metrics.base_metric.DataFilter attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/metrics/filter_variable/index.html#rhino_health.lib.metrics.filter_variable.FilterVariable.filter_column">(rhino_health.lib.metrics.filter_variable.FilterVariable attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="autoapi/rhino_health/lib/metrics/base_metric/index.html#rhino_health.lib.metrics.base_metric.DataFilter.filter_type">filter_type (rhino_health.lib.metrics.base_metric.DataFilter attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/metrics/filter_variable/index.html#rhino_health.lib.metrics.filter_variable.FilterRangePair.filter_type">(rhino_health.lib.metrics.filter_variable.FilterRangePair attribute)</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/metrics/filter_variable/index.html#rhino_health.lib.metrics.filter_variable.FilterVariable.filter_type">(rhino_health.lib.metrics.filter_variable.FilterVariable attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="autoapi/rhino_health/lib/metrics/base_metric/index.html#rhino_health.lib.metrics.base_metric.DataFilter.filter_value">filter_value (rhino_health.lib.metrics.base_metric.DataFilter attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/metrics/filter_variable/index.html#rhino_health.lib.metrics.filter_variable.FilterRangePair.filter_value">(rhino_health.lib.metrics.filter_variable.FilterRangePair attribute)</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/metrics/filter_variable/index.html#rhino_health.lib.metrics.filter_variable.FilterVariable.filter_value">(rhino_health.lib.metrics.filter_variable.FilterVariable attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/rhino_health/lib/metrics/filter_variable/index.html#rhino_health.lib.metrics.filter_variable.FilterBetweenRange">FilterBetweenRange (class in rhino_health.lib.metrics.filter_variable)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/metrics/filter_variable/index.html#rhino_health.lib.metrics.filter_variable.FilterRangePair">FilterRangePair (class in rhino_health.lib.metrics.filter_variable)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/metrics/filter_variable/index.html#rhino_health.lib.metrics.filter_variable.FilterType">FilterType (class in rhino_health.lib.metrics.filter_variable)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/metrics/filter_variable/index.html#rhino_health.lib.metrics.filter_variable.FilterVariable">FilterVariable (class in rhino_health.lib.metrics.filter_variable)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/metrics/froc/index.html#rhino_health.lib.metrics.froc.FRoc">FRoc (class in rhino_health.lib.metrics.froc)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/metrics/froc/index.html#rhino_health.lib.metrics.froc.FRocWithCI">FRocWithCI (class in rhino_health.lib.metrics.froc)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/user/user_dataclass/index.html#rhino_health.lib.endpoints.user.user_dataclass.User.full_name">full_name (rhino_health.lib.endpoints.user.user_dataclass.User attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="G">G</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/aimodel_dataclass/index.html#rhino_health.lib.endpoints.aimodel.aimodel_dataclass.ModelTypes.GENERALIZED_COMPUTE">GENERALIZED_COMPUTE (rhino_health.lib.endpoints.aimodel.aimodel_dataclass.ModelTypes attribute)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/rhino_session/index.html#rhino_health.lib.rhino_session.RhinoSession.get">get() (rhino_health.lib.rhino_session.RhinoSession method)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/aimodel_endpoints/index.html#rhino_health.lib.endpoints.aimodel.aimodel_endpoints.AIModelEndpoints.get_aimodel">get_aimodel() (rhino_health.lib.endpoints.aimodel.aimodel_endpoints.AIModelEndpoints method)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/cohort/cohort_endpoints/index.html#rhino_health.lib.endpoints.cohort.cohort_endpoints.CohortEndpoints.get_cohort">get_cohort() (rhino_health.lib.endpoints.cohort.cohort_endpoints.CohortEndpoints method)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/cohort/cohort_endpoints/index.html#rhino_health.lib.endpoints.cohort.cohort_endpoints.CohortEndpoints.get_cohort_metric">get_cohort_metric() (rhino_health.lib.endpoints.cohort.cohort_endpoints.CohortEndpoints method)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/project/project_endpoints/index.html#rhino_health.lib.endpoints.project.project_endpoints.ProjectEndpoints.get_cohorts">get_cohorts() (rhino_health.lib.endpoints.project.project_endpoints.ProjectEndpoints method)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/project/project_endpoints/index.html#rhino_health.lib.endpoints.project.project_endpoints.ProjectEndpoints.get_collaborating_workgroups">get_collaborating_workgroups() (rhino_health.lib.endpoints.project.project_endpoints.ProjectEndpoints method)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/dataschema/dataschema_endpoints/index.html#rhino_health.lib.endpoints.dataschema.dataschema_endpoints.DataschameEndpoints.get_dataschemas">get_dataschemas() (rhino_health.lib.endpoints.dataschema.dataschema_endpoints.DataschameEndpoints method)</a>
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/endpoints/project/project_endpoints/index.html#rhino_health.lib.endpoints.project.project_endpoints.ProjectEndpoints.get_dataschemas">(rhino_health.lib.endpoints.project.project_endpoints.ProjectEndpoints method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/rhino_health/lib/endpoints/cohort/cohort_dataclass/index.html#rhino_health.lib.endpoints.cohort.cohort_dataclass.Cohort.get_metric">get_metric() (rhino_health.lib.endpoints.cohort.cohort_dataclass.Cohort method)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/model_result/model_result_endpoints/index.html#rhino_health.lib.endpoints.model_result.model_result_endpoints.ModelResultEndpoints.get_model_result">get_model_result() (rhino_health.lib.endpoints.model_result.model_result_endpoints.ModelResultEndpoints method)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/metrics/filter_variable/index.html#rhino_health.lib.metrics.filter_variable.FilterType.GREATER_THAN">GREATER_THAN (rhino_health.lib.metrics.filter_variable.FilterType attribute)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/metrics/filter_variable/index.html#rhino_health.lib.metrics.filter_variable.FilterType.GREATER_THAN_EQUAL">GREATER_THAN_EQUAL (rhino_health.lib.metrics.filter_variable.FilterType attribute)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/metrics/base_metric/index.html#rhino_health.lib.metrics.base_metric.BaseMetric.group_by">group_by (rhino_health.lib.metrics.base_metric.BaseMetric attribute)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/metrics/base_metric/index.html#rhino_health.lib.metrics.base_metric.GroupingData">GroupingData (class in rhino_health.lib.metrics.base_metric)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/metrics/base_metric/index.html#rhino_health.lib.metrics.base_metric.GroupingData.groupings">groupings (rhino_health.lib.metrics.base_metric.GroupingData attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="I">I</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/rhino_health/lib/endpoints/cohort/cohort_dataclass/index.html#rhino_health.lib.endpoints.cohort.cohort_dataclass.Cohort.import_status">import_status (rhino_health.lib.endpoints.cohort.cohort_dataclass.Cohort attribute)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/metrics/filter_variable/index.html#rhino_health.lib.metrics.filter_variable.FilterType.IN">IN (rhino_health.lib.metrics.filter_variable.FilterType attribute)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/aimodel_dataclass/index.html#rhino_health.lib.endpoints.aimodel.aimodel_dataclass.AIModelRunInput.input_cohort_uids">input_cohort_uids (rhino_health.lib.endpoints.aimodel.aimodel_dataclass.AIModelRunInput attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/aimodel_dataclass/index.html#rhino_health.lib.endpoints.aimodel.aimodel_dataclass.AIModelTrainInput.input_cohort_uids">(rhino_health.lib.endpoints.aimodel.aimodel_dataclass.AIModelTrainInput attribute)</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/index.html#rhino_health.lib.endpoints.aimodel.AIModelRunInput.input_cohort_uids">(rhino_health.lib.endpoints.aimodel.AIModelRunInput attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/rhino_health/lib/endpoints/model_result/model_result_dataclass/index.html#rhino_health.lib.endpoints.model_result.model_result_dataclass.ModelResult.input_cohorts">input_cohorts (rhino_health.lib.endpoints.model_result.model_result_dataclass.ModelResult attribute)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/index.html#rhino_health.lib.endpoints.aimodel.AIModel.input_data_schema">input_data_schema (rhino_health.lib.endpoints.aimodel.AIModel attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/aimodel_dataclass/index.html#rhino_health.lib.endpoints.aimodel.aimodel_dataclass.AIModel.input_data_schema">(rhino_health.lib.endpoints.aimodel.aimodel_dataclass.AIModel attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="L">L</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/rhino_health/lib/metrics/filter_variable/index.html#rhino_health.lib.metrics.filter_variable.FilterType.LESS_THAN">LESS_THAN (rhino_health.lib.metrics.filter_variable.FilterType attribute)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/metrics/filter_variable/index.html#rhino_health.lib.metrics.filter_variable.FilterType.LESS_THAN_EQUAL">LESS_THAN_EQUAL (rhino_health.lib.metrics.filter_variable.FilterType attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/rhino_health/lib/constants/index.html#rhino_health.lib.constants.ApiEnvironment.LOCALHOST_API_URL">LOCALHOST_API_URL (rhino_health.lib.constants.ApiEnvironment attribute)</a>
+</li>
+      <li><a href="autoapi/rhino_health/index.html#rhino_health.login">login() (in module rhino_health)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/metrics/filter_variable/index.html#rhino_health.lib.metrics.filter_variable.FilterBetweenRange.lower">lower (rhino_health.lib.metrics.filter_variable.FilterBetweenRange attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="M">M</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/rhino_health/lib/metrics/basic/index.html#rhino_health.lib.metrics.basic.Mean">Mean (class in rhino_health.lib.metrics.basic)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/metrics/base_metric/index.html#rhino_health.lib.metrics.base_metric.MetricResponse">MetricResponse (class in rhino_health.lib.metrics.base_metric)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/metrics/base_metric/index.html#rhino_health.lib.metrics.base_metric.MetricResultDataType">MetricResultDataType (in module rhino_health.lib.metrics.base_metric)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/model_result/model_result_dataclass/index.html#rhino_health.lib.endpoints.model_result.model_result_dataclass.ModelResult.model_params_external_storage_path">model_params_external_storage_path (rhino_health.lib.endpoints.model_result.model_result_dataclass.ModelResult attribute)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/model_result/model_result_dataclass/index.html#rhino_health.lib.endpoints.model_result.model_result_dataclass.ModelResult">ModelResult (class in rhino_health.lib.endpoints.model_result.model_result_dataclass)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/model_result/model_result_endpoints/index.html#rhino_health.lib.endpoints.model_result.model_result_endpoints.ModelResultEndpoints">ModelResultEndpoints (class in rhino_health.lib.endpoints.model_result.model_result_endpoints)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/aimodel_dataclass/index.html#rhino_health.lib.endpoints.aimodel.aimodel_dataclass.ModelTypes">ModelTypes (class in rhino_health.lib.endpoints.aimodel.aimodel_dataclass)</a>
+</li>
+      <li>
+    module
+
+      <ul>
+        <li><a href="autoapi/rhino_health/index.html#module-rhino_health">rhino_health</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/index.html#module-rhino_health.lib">rhino_health.lib</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/constants/index.html#module-rhino_health.lib.constants">rhino_health.lib.constants</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/dataclass/index.html#module-rhino_health.lib.dataclass">rhino_health.lib.dataclass</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/endpoints/index.html#module-rhino_health.lib.endpoints">rhino_health.lib.endpoints</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/index.html#module-rhino_health.lib.endpoints.aimodel">rhino_health.lib.endpoints.aimodel</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/aimodel_dataclass/index.html#module-rhino_health.lib.endpoints.aimodel.aimodel_dataclass">rhino_health.lib.endpoints.aimodel.aimodel_dataclass</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/aimodel_endpoints/index.html#module-rhino_health.lib.endpoints.aimodel.aimodel_endpoints">rhino_health.lib.endpoints.aimodel.aimodel_endpoints</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/endpoints/cohort/index.html#module-rhino_health.lib.endpoints.cohort">rhino_health.lib.endpoints.cohort</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/endpoints/cohort/cohort_dataclass/index.html#module-rhino_health.lib.endpoints.cohort.cohort_dataclass">rhino_health.lib.endpoints.cohort.cohort_dataclass</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/endpoints/cohort/cohort_endpoints/index.html#module-rhino_health.lib.endpoints.cohort.cohort_endpoints">rhino_health.lib.endpoints.cohort.cohort_endpoints</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/endpoints/dataschema/index.html#module-rhino_health.lib.endpoints.dataschema">rhino_health.lib.endpoints.dataschema</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/endpoints/dataschema/dataschema_dataclass/index.html#module-rhino_health.lib.endpoints.dataschema.dataschema_dataclass">rhino_health.lib.endpoints.dataschema.dataschema_dataclass</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/endpoints/dataschema/dataschema_endpoints/index.html#module-rhino_health.lib.endpoints.dataschema.dataschema_endpoints">rhino_health.lib.endpoints.dataschema.dataschema_endpoints</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/endpoints/endpoint/index.html#module-rhino_health.lib.endpoints.endpoint">rhino_health.lib.endpoints.endpoint</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/endpoints/model_result/index.html#module-rhino_health.lib.endpoints.model_result">rhino_health.lib.endpoints.model_result</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/endpoints/model_result/model_result_dataclass/index.html#module-rhino_health.lib.endpoints.model_result.model_result_dataclass">rhino_health.lib.endpoints.model_result.model_result_dataclass</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/endpoints/model_result/model_result_endpoints/index.html#module-rhino_health.lib.endpoints.model_result.model_result_endpoints">rhino_health.lib.endpoints.model_result.model_result_endpoints</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/endpoints/project/index.html#module-rhino_health.lib.endpoints.project">rhino_health.lib.endpoints.project</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/endpoints/project/project_dataclass/index.html#module-rhino_health.lib.endpoints.project.project_dataclass">rhino_health.lib.endpoints.project.project_dataclass</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/endpoints/project/project_endpoints/index.html#module-rhino_health.lib.endpoints.project.project_endpoints">rhino_health.lib.endpoints.project.project_endpoints</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/endpoints/user/index.html#module-rhino_health.lib.endpoints.user">rhino_health.lib.endpoints.user</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/endpoints/user/user_dataclass/index.html#module-rhino_health.lib.endpoints.user.user_dataclass">rhino_health.lib.endpoints.user.user_dataclass</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/endpoints/workgroup/index.html#module-rhino_health.lib.endpoints.workgroup">rhino_health.lib.endpoints.workgroup</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/endpoints/workgroup/workgroup_dataclass/index.html#module-rhino_health.lib.endpoints.workgroup.workgroup_dataclass">rhino_health.lib.endpoints.workgroup.workgroup_dataclass</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/endpoints/workgroup/workgroup_endpoints/index.html#module-rhino_health.lib.endpoints.workgroup.workgroup_endpoints">rhino_health.lib.endpoints.workgroup.workgroup_endpoints</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/metrics/index.html#module-rhino_health.lib.metrics">rhino_health.lib.metrics</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/metrics/aggregate_metrics/index.html#module-rhino_health.lib.metrics.aggregate_metrics">rhino_health.lib.metrics.aggregate_metrics</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/metrics/base_metric/index.html#module-rhino_health.lib.metrics.base_metric">rhino_health.lib.metrics.base_metric</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/metrics/basic/index.html#module-rhino_health.lib.metrics.basic">rhino_health.lib.metrics.basic</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/metrics/filter_variable/index.html#module-rhino_health.lib.metrics.filter_variable">rhino_health.lib.metrics.filter_variable</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/metrics/froc/index.html#module-rhino_health.lib.metrics.froc">rhino_health.lib.metrics.froc</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/metrics/roc_auc/index.html#module-rhino_health.lib.metrics.roc_auc">rhino_health.lib.metrics.roc_auc</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/rest_api/index.html#module-rhino_health.lib.rest_api">rhino_health.lib.rest_api</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/rest_api/api_request/index.html#module-rhino_health.lib.rest_api.api_request">rhino_health.lib.rest_api.api_request</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/rest_api/api_response/index.html#module-rhino_health.lib.rest_api.api_response">rhino_health.lib.rest_api.api_response</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/rest_api/error_handler/index.html#module-rhino_health.lib.rest_api.error_handler">rhino_health.lib.rest_api.error_handler</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/rest_api/request_adapter/index.html#module-rhino_health.lib.rest_api.request_adapter">rhino_health.lib.rest_api.request_adapter</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/rest_api/rhino_authenticator/index.html#module-rhino_health.lib.rest_api.rhino_authenticator">rhino_health.lib.rest_api.rhino_authenticator</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/rest_handler/index.html#module-rhino_health.lib.rest_handler">rhino_health.lib.rest_handler</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/rhino_client/index.html#module-rhino_health.lib.rhino_client">rhino_health.lib.rhino_client</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/rhino_session/index.html#module-rhino_health.lib.rhino_session">rhino_health.lib.rhino_session</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/utils/index.html#module-rhino_health.lib.utils">rhino_health.lib.utils</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="N">N</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/index.html#rhino_health.lib.endpoints.aimodel.AIModel.name">name (rhino_health.lib.endpoints.aimodel.AIModel attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/aimodel_dataclass/index.html#rhino_health.lib.endpoints.aimodel.aimodel_dataclass.AIModel.name">(rhino_health.lib.endpoints.aimodel.aimodel_dataclass.AIModel attribute)</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/endpoints/cohort/cohort_dataclass/index.html#rhino_health.lib.endpoints.cohort.cohort_dataclass.Cohort.name">(rhino_health.lib.endpoints.cohort.cohort_dataclass.Cohort attribute)</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/endpoints/dataschema/dataschema_dataclass/index.html#rhino_health.lib.endpoints.dataschema.dataschema_dataclass.Dataschema.name">(rhino_health.lib.endpoints.dataschema.dataschema_dataclass.Dataschema attribute)</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/endpoints/project/project_dataclass/index.html#rhino_health.lib.endpoints.project.project_dataclass.Project.name">(rhino_health.lib.endpoints.project.project_dataclass.Project attribute)</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/endpoints/workgroup/workgroup_dataclass/index.html#rhino_health.lib.endpoints.workgroup.workgroup_dataclass.Workgroup.name">(rhino_health.lib.endpoints.workgroup.workgroup_dataclass.Workgroup attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/rhino_health/lib/endpoints/cohort/cohort_dataclass/index.html#rhino_health.lib.endpoints.cohort.cohort_dataclass.Cohort.num_cases">num_cases (rhino_health.lib.endpoints.cohort.cohort_dataclass.Cohort attribute)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/dataschema/dataschema_dataclass/index.html#rhino_health.lib.endpoints.dataschema.dataschema_dataclass.Dataschema.num_cohorts">num_cohorts (rhino_health.lib.endpoints.dataschema.dataschema_dataclass.Dataschema attribute)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/aimodel_dataclass/index.html#rhino_health.lib.endpoints.aimodel.aimodel_dataclass.ModelTypes.NVIDIA_FLARE">NVIDIA_FLARE (rhino_health.lib.endpoints.aimodel.aimodel_dataclass.ModelTypes attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="O">O</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/rhino_health/lib/metrics/filter_variable/index.html#rhino_health.lib.metrics.filter_variable.OptionalFilterVariableType">OptionalFilterVariableType (in module rhino_health.lib.metrics.filter_variable)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/workgroup/workgroup_dataclass/index.html#rhino_health.lib.endpoints.workgroup.workgroup_dataclass.Workgroup.org_name">org_name (rhino_health.lib.endpoints.workgroup.workgroup_dataclass.Workgroup attribute)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/metrics/base_metric/index.html#rhino_health.lib.metrics.base_metric.MetricResponse.output">output (rhino_health.lib.metrics.base_metric.MetricResponse attribute)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/aimodel_dataclass/index.html#rhino_health.lib.endpoints.aimodel.aimodel_dataclass.AIModelRunInput.output_cohort_names_suffix">output_cohort_names_suffix (rhino_health.lib.endpoints.aimodel.aimodel_dataclass.AIModelRunInput attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/index.html#rhino_health.lib.endpoints.aimodel.AIModelRunInput.output_cohort_names_suffix">(rhino_health.lib.endpoints.aimodel.AIModelRunInput attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/rhino_health/lib/endpoints/model_result/model_result_dataclass/index.html#rhino_health.lib.endpoints.model_result.model_result_dataclass.ModelResult.output_cohorts">output_cohorts (rhino_health.lib.endpoints.model_result.model_result_dataclass.ModelResult attribute)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/index.html#rhino_health.lib.endpoints.aimodel.AIModel.output_data_schema">output_data_schema (rhino_health.lib.endpoints.aimodel.AIModel attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/aimodel_dataclass/index.html#rhino_health.lib.endpoints.aimodel.aimodel_dataclass.AIModel.output_data_schema">(rhino_health.lib.endpoints.aimodel.aimodel_dataclass.AIModel attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="P">P</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/rhino_health/lib/rhino_session/index.html#rhino_health.lib.rhino_session.RhinoSession.post">post() (rhino_health.lib.rhino_session.RhinoSession method)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/user/user_dataclass/index.html#rhino_health.lib.endpoints.user.user_dataclass.User.primary_workgroup">primary_workgroup() (rhino_health.lib.endpoints.user.user_dataclass.User method)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/dataschema/dataschema_dataclass/index.html#rhino_health.lib.endpoints.dataschema.dataschema_dataclass.Dataschema.primary_workgroup_uid">primary_workgroup_uid (rhino_health.lib.endpoints.dataschema.dataschema_dataclass.Dataschema attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/endpoints/project/project_dataclass/index.html#rhino_health.lib.endpoints.project.project_dataclass.Project.primary_workgroup_uid">(rhino_health.lib.endpoints.project.project_dataclass.Project attribute)</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/endpoints/user/user_dataclass/index.html#rhino_health.lib.endpoints.user.user_dataclass.User.primary_workgroup_uid">(rhino_health.lib.endpoints.user.user_dataclass.User attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="autoapi/rhino_health/lib/constants/index.html#rhino_health.lib.constants.ApiEnvironment.PROD_API_URL">PROD_API_URL (rhino_health.lib.constants.ApiEnvironment attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/rhino_health/lib/endpoints/project/project_dataclass/index.html#rhino_health.lib.endpoints.project.project_dataclass.Project">Project (class in rhino_health.lib.endpoints.project.project_dataclass)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/cohort/cohort_dataclass/index.html#rhino_health.lib.endpoints.cohort.cohort_dataclass.Cohort.project">project (rhino_health.lib.endpoints.cohort.cohort_dataclass.Cohort property)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/index.html#rhino_health.lib.endpoints.aimodel.AIModel.project_uid">project_uid (rhino_health.lib.endpoints.aimodel.AIModel attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/aimodel_dataclass/index.html#rhino_health.lib.endpoints.aimodel.aimodel_dataclass.AIModel.project_uid">(rhino_health.lib.endpoints.aimodel.aimodel_dataclass.AIModel attribute)</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/endpoints/cohort/cohort_dataclass/index.html#rhino_health.lib.endpoints.cohort.cohort_dataclass.Cohort.project_uid">(rhino_health.lib.endpoints.cohort.cohort_dataclass.Cohort attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/dataschema/dataschema_dataclass/index.html#rhino_health.lib.endpoints.dataschema.dataschema_dataclass.Dataschema.project_uids">project_uids (rhino_health.lib.endpoints.dataschema.dataschema_dataclass.Dataschema attribute)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/project/project_endpoints/index.html#rhino_health.lib.endpoints.project.project_endpoints.ProjectEndpoints">ProjectEndpoints (class in rhino_health.lib.endpoints.project.project_endpoints)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="R">R</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/rhino_health/lib/endpoints/cohort/cohort_endpoints/index.html#rhino_health.lib.endpoints.cohort.cohort_endpoints.CohortEndpoints.remove_cohort">remove_cohort() (rhino_health.lib.endpoints.cohort.cohort_endpoints.CohortEndpoints method)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/project/project_dataclass/index.html#rhino_health.lib.endpoints.project.project_dataclass.Project.remove_collaborator">remove_collaborator() (rhino_health.lib.endpoints.project.project_dataclass.Project method)</a>
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/endpoints/project/project_endpoints/index.html#rhino_health.lib.endpoints.project.project_endpoints.ProjectEndpoints.remove_collaborator">(rhino_health.lib.endpoints.project.project_endpoints.ProjectEndpoints method)</a>
+</li>
+      </ul></li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/dataschema/dataschema_endpoints/index.html#rhino_health.lib.endpoints.dataschema.dataschema_endpoints.DataschameEndpoints.remove_dataschema">remove_dataschema() (rhino_health.lib.endpoints.dataschema.dataschema_endpoints.DataschameEndpoints method)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/model_result/model_result_dataclass/index.html#rhino_health.lib.endpoints.model_result.model_result_dataclass.ModelResult.report_images">report_images (rhino_health.lib.endpoints.model_result.model_result_dataclass.ModelResult attribute)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/model_result/model_result_dataclass/index.html#rhino_health.lib.endpoints.model_result.model_result_dataclass.ModelResult.result_info">result_info (rhino_health.lib.endpoints.model_result.model_result_dataclass.ModelResult attribute)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/model_result/model_result_dataclass/index.html#rhino_health.lib.endpoints.model_result.model_result_dataclass.ModelResult.results_report">results_report (rhino_health.lib.endpoints.model_result.model_result_dataclass.ModelResult attribute)</a>
+</li>
+      <li>
+    rhino_health
+
+      <ul>
+        <li><a href="autoapi/rhino_health/index.html#module-rhino_health">module</a>
+</li>
+      </ul></li>
+      <li>
+    rhino_health.lib
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/index.html#module-rhino_health.lib">module</a>
+</li>
+      </ul></li>
+      <li>
+    rhino_health.lib.constants
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/constants/index.html#module-rhino_health.lib.constants">module</a>
+</li>
+      </ul></li>
+      <li>
+    rhino_health.lib.dataclass
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/dataclass/index.html#module-rhino_health.lib.dataclass">module</a>
+</li>
+      </ul></li>
+      <li>
+    rhino_health.lib.endpoints
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/endpoints/index.html#module-rhino_health.lib.endpoints">module</a>
+</li>
+      </ul></li>
+      <li>
+    rhino_health.lib.endpoints.aimodel
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/index.html#module-rhino_health.lib.endpoints.aimodel">module</a>
+</li>
+      </ul></li>
+      <li>
+    rhino_health.lib.endpoints.aimodel.aimodel_dataclass
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/aimodel_dataclass/index.html#module-rhino_health.lib.endpoints.aimodel.aimodel_dataclass">module</a>
+</li>
+      </ul></li>
+      <li>
+    rhino_health.lib.endpoints.aimodel.aimodel_endpoints
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/aimodel_endpoints/index.html#module-rhino_health.lib.endpoints.aimodel.aimodel_endpoints">module</a>
+</li>
+      </ul></li>
+      <li>
+    rhino_health.lib.endpoints.cohort
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/endpoints/cohort/index.html#module-rhino_health.lib.endpoints.cohort">module</a>
+</li>
+      </ul></li>
+      <li>
+    rhino_health.lib.endpoints.cohort.cohort_dataclass
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/endpoints/cohort/cohort_dataclass/index.html#module-rhino_health.lib.endpoints.cohort.cohort_dataclass">module</a>
+</li>
+      </ul></li>
+      <li>
+    rhino_health.lib.endpoints.cohort.cohort_endpoints
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/endpoints/cohort/cohort_endpoints/index.html#module-rhino_health.lib.endpoints.cohort.cohort_endpoints">module</a>
+</li>
+      </ul></li>
+      <li>
+    rhino_health.lib.endpoints.dataschema
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/endpoints/dataschema/index.html#module-rhino_health.lib.endpoints.dataschema">module</a>
+</li>
+      </ul></li>
+      <li>
+    rhino_health.lib.endpoints.dataschema.dataschema_dataclass
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/endpoints/dataschema/dataschema_dataclass/index.html#module-rhino_health.lib.endpoints.dataschema.dataschema_dataclass">module</a>
+</li>
+      </ul></li>
+      <li>
+    rhino_health.lib.endpoints.dataschema.dataschema_endpoints
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/endpoints/dataschema/dataschema_endpoints/index.html#module-rhino_health.lib.endpoints.dataschema.dataschema_endpoints">module</a>
+</li>
+      </ul></li>
+      <li>
+    rhino_health.lib.endpoints.endpoint
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/endpoints/endpoint/index.html#module-rhino_health.lib.endpoints.endpoint">module</a>
+</li>
+      </ul></li>
+      <li>
+    rhino_health.lib.endpoints.model_result
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/endpoints/model_result/index.html#module-rhino_health.lib.endpoints.model_result">module</a>
+</li>
+      </ul></li>
+      <li>
+    rhino_health.lib.endpoints.model_result.model_result_dataclass
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/endpoints/model_result/model_result_dataclass/index.html#module-rhino_health.lib.endpoints.model_result.model_result_dataclass">module</a>
+</li>
+      </ul></li>
+      <li>
+    rhino_health.lib.endpoints.model_result.model_result_endpoints
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/endpoints/model_result/model_result_endpoints/index.html#module-rhino_health.lib.endpoints.model_result.model_result_endpoints">module</a>
+</li>
+      </ul></li>
+      <li>
+    rhino_health.lib.endpoints.project
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/endpoints/project/index.html#module-rhino_health.lib.endpoints.project">module</a>
+</li>
+      </ul></li>
+      <li>
+    rhino_health.lib.endpoints.project.project_dataclass
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/endpoints/project/project_dataclass/index.html#module-rhino_health.lib.endpoints.project.project_dataclass">module</a>
+</li>
+      </ul></li>
+      <li>
+    rhino_health.lib.endpoints.project.project_endpoints
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/endpoints/project/project_endpoints/index.html#module-rhino_health.lib.endpoints.project.project_endpoints">module</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    rhino_health.lib.endpoints.user
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/endpoints/user/index.html#module-rhino_health.lib.endpoints.user">module</a>
+</li>
+      </ul></li>
+      <li>
+    rhino_health.lib.endpoints.user.user_dataclass
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/endpoints/user/user_dataclass/index.html#module-rhino_health.lib.endpoints.user.user_dataclass">module</a>
+</li>
+      </ul></li>
+      <li>
+    rhino_health.lib.endpoints.workgroup
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/endpoints/workgroup/index.html#module-rhino_health.lib.endpoints.workgroup">module</a>
+</li>
+      </ul></li>
+      <li>
+    rhino_health.lib.endpoints.workgroup.workgroup_dataclass
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/endpoints/workgroup/workgroup_dataclass/index.html#module-rhino_health.lib.endpoints.workgroup.workgroup_dataclass">module</a>
+</li>
+      </ul></li>
+      <li>
+    rhino_health.lib.endpoints.workgroup.workgroup_endpoints
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/endpoints/workgroup/workgroup_endpoints/index.html#module-rhino_health.lib.endpoints.workgroup.workgroup_endpoints">module</a>
+</li>
+      </ul></li>
+      <li>
+    rhino_health.lib.metrics
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/metrics/index.html#module-rhino_health.lib.metrics">module</a>
+</li>
+      </ul></li>
+      <li>
+    rhino_health.lib.metrics.aggregate_metrics
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/metrics/aggregate_metrics/index.html#module-rhino_health.lib.metrics.aggregate_metrics">module</a>
+</li>
+      </ul></li>
+      <li>
+    rhino_health.lib.metrics.base_metric
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/metrics/base_metric/index.html#module-rhino_health.lib.metrics.base_metric">module</a>
+</li>
+      </ul></li>
+      <li>
+    rhino_health.lib.metrics.basic
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/metrics/basic/index.html#module-rhino_health.lib.metrics.basic">module</a>
+</li>
+      </ul></li>
+      <li>
+    rhino_health.lib.metrics.filter_variable
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/metrics/filter_variable/index.html#module-rhino_health.lib.metrics.filter_variable">module</a>
+</li>
+      </ul></li>
+      <li>
+    rhino_health.lib.metrics.froc
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/metrics/froc/index.html#module-rhino_health.lib.metrics.froc">module</a>
+</li>
+      </ul></li>
+      <li>
+    rhino_health.lib.metrics.roc_auc
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/metrics/roc_auc/index.html#module-rhino_health.lib.metrics.roc_auc">module</a>
+</li>
+      </ul></li>
+      <li>
+    rhino_health.lib.rest_api
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/rest_api/index.html#module-rhino_health.lib.rest_api">module</a>
+</li>
+      </ul></li>
+      <li>
+    rhino_health.lib.rest_api.api_request
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/rest_api/api_request/index.html#module-rhino_health.lib.rest_api.api_request">module</a>
+</li>
+      </ul></li>
+      <li>
+    rhino_health.lib.rest_api.api_response
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/rest_api/api_response/index.html#module-rhino_health.lib.rest_api.api_response">module</a>
+</li>
+      </ul></li>
+      <li>
+    rhino_health.lib.rest_api.error_handler
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/rest_api/error_handler/index.html#module-rhino_health.lib.rest_api.error_handler">module</a>
+</li>
+      </ul></li>
+      <li>
+    rhino_health.lib.rest_api.request_adapter
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/rest_api/request_adapter/index.html#module-rhino_health.lib.rest_api.request_adapter">module</a>
+</li>
+      </ul></li>
+      <li>
+    rhino_health.lib.rest_api.rhino_authenticator
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/rest_api/rhino_authenticator/index.html#module-rhino_health.lib.rest_api.rhino_authenticator">module</a>
+</li>
+      </ul></li>
+      <li>
+    rhino_health.lib.rest_handler
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/rest_handler/index.html#module-rhino_health.lib.rest_handler">module</a>
+</li>
+      </ul></li>
+      <li>
+    rhino_health.lib.rhino_client
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/rhino_client/index.html#module-rhino_health.lib.rhino_client">module</a>
+</li>
+      </ul></li>
+      <li>
+    rhino_health.lib.rhino_session
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/rhino_session/index.html#module-rhino_health.lib.rhino_session">module</a>
+</li>
+      </ul></li>
+      <li>
+    rhino_health.lib.utils
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/utils/index.html#module-rhino_health.lib.utils">module</a>
+</li>
+      </ul></li>
+      <li><a href="autoapi/rhino_health/lib/rhino_session/index.html#rhino_health.lib.rhino_session.RhinoSession">RhinoSession (class in rhino_health.lib.rhino_session)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/metrics/roc_auc/index.html#rhino_health.lib.metrics.roc_auc.RocAuc">RocAuc (class in rhino_health.lib.metrics.roc_auc)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/metrics/roc_auc/index.html#rhino_health.lib.metrics.roc_auc.RocAucWithCI">RocAucWithCI (class in rhino_health.lib.metrics.roc_auc)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/aimodel_endpoints/index.html#rhino_health.lib.endpoints.aimodel.aimodel_endpoints.AIModelEndpoints.run_aimodel">run_aimodel() (rhino_health.lib.endpoints.aimodel.aimodel_endpoints.AIModelEndpoints method)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/aimodel_dataclass/index.html#rhino_health.lib.endpoints.aimodel.aimodel_dataclass.AIModelRunInput.run_params">run_params (rhino_health.lib.endpoints.aimodel.aimodel_dataclass.AIModelRunInput attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/index.html#rhino_health.lib.endpoints.aimodel.AIModelRunInput.run_params">(rhino_health.lib.endpoints.aimodel.AIModelRunInput attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="S">S</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/rhino_health/lib/metrics/froc/index.html#rhino_health.lib.metrics.froc.FRoc.seed">seed (rhino_health.lib.metrics.froc.FRoc attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/metrics/roc_auc/index.html#rhino_health.lib.metrics.roc_auc.RocAuc.seed">(rhino_health.lib.metrics.roc_auc.RocAuc attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/project/project_dataclass/index.html#rhino_health.lib.endpoints.project.project_dataclass.Project.slack_channel">slack_channel (rhino_health.lib.endpoints.project.project_dataclass.Project attribute)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/metrics/froc/index.html#rhino_health.lib.metrics.froc.FRoc.specimen_variable">specimen_variable (rhino_health.lib.metrics.froc.FRoc attribute)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/metrics/aggregate_metrics/index.html#rhino_health.lib.metrics.aggregate_metrics.standard_deviation">standard_deviation() (in module rhino_health.lib.metrics.aggregate_metrics)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/metrics/basic/index.html#rhino_health.lib.metrics.basic.StandardDeviation">StandardDeviation (class in rhino_health.lib.metrics.basic)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/model_result/model_result_dataclass/index.html#rhino_health.lib.endpoints.model_result.model_result_dataclass.ModelResult.start_time">start_time (rhino_health.lib.endpoints.model_result.model_result_dataclass.ModelResult attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/rhino_health/lib/endpoints/model_result/model_result_dataclass/index.html#rhino_health.lib.endpoints.model_result.model_result_dataclass.ModelResult.status">status (rhino_health.lib.endpoints.model_result.model_result_dataclass.ModelResult attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/endpoints/project/project_dataclass/index.html#rhino_health.lib.endpoints.project.project_dataclass.Project.status">(rhino_health.lib.endpoints.project.project_dataclass.Project attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="autoapi/rhino_health/lib/metrics/aggregate_metrics/index.html#rhino_health.lib.metrics.aggregate_metrics.sum_aggregation">sum_aggregation() (in module rhino_health.lib.metrics.aggregate_metrics)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/metrics/aggregate_metrics/index.html#rhino_health.lib.metrics.aggregate_metrics.SUPPORTED_AGGREGATE_METRICS">SUPPORTED_AGGREGATE_METRICS (in module rhino_health.lib.metrics.aggregate_metrics)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/rhino_session/index.html#rhino_health.lib.rhino_session.RhinoSession.switch_user">switch_user() (rhino_health.lib.rhino_session.RhinoSession method)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/aimodel_dataclass/index.html#rhino_health.lib.endpoints.aimodel.aimodel_dataclass.AIModelRunInput.sync">sync (rhino_health.lib.endpoints.aimodel.aimodel_dataclass.AIModelRunInput attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/index.html#rhino_health.lib.endpoints.aimodel.AIModelRunInput.sync">(rhino_health.lib.endpoints.aimodel.AIModelRunInput attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/cohort/cohort_endpoints/index.html#rhino_health.lib.endpoints.cohort.cohort_endpoints.CohortEndpoints.sync_cohort_info">sync_cohort_info() (rhino_health.lib.endpoints.cohort.cohort_endpoints.CohortEndpoints method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="T">T</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/aimodel_dataclass/index.html#rhino_health.lib.endpoints.aimodel.aimodel_dataclass.AIModelRunInput.timeout_seconds">timeout_seconds (rhino_health.lib.endpoints.aimodel.aimodel_dataclass.AIModelRunInput attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/aimodel_dataclass/index.html#rhino_health.lib.endpoints.aimodel.aimodel_dataclass.AIModelTrainInput.timeout_seconds">(rhino_health.lib.endpoints.aimodel.aimodel_dataclass.AIModelTrainInput attribute)</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/index.html#rhino_health.lib.endpoints.aimodel.AIModelRunInput.timeout_seconds">(rhino_health.lib.endpoints.aimodel.AIModelRunInput attribute)</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/metrics/base_metric/index.html#rhino_health.lib.metrics.base_metric.BaseMetric.timeout_seconds">(rhino_health.lib.metrics.base_metric.BaseMetric attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/rhino_health/lib/rest_api/api_response/index.html#rhino_health.lib.rest_api.api_response.APIResponse.to_dataclass">to_dataclass() (rhino_health.lib.rest_api.api_response.APIResponse method)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/rest_api/api_response/index.html#rhino_health.lib.rest_api.api_response.APIResponse.to_dataclasses">to_dataclasses() (rhino_health.lib.rest_api.api_response.APIResponse method)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/aimodel_endpoints/index.html#rhino_health.lib.endpoints.aimodel.aimodel_endpoints.AIModelEndpoints.train_aimodel">train_aimodel() (rhino_health.lib.endpoints.aimodel.aimodel_endpoints.AIModelEndpoints method)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/project/project_dataclass/index.html#rhino_health.lib.endpoints.project.project_dataclass.Project.type">type (rhino_health.lib.endpoints.project.project_dataclass.Project attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="U">U</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/index.html#rhino_health.lib.endpoints.aimodel.AIModel.uid">uid (rhino_health.lib.endpoints.aimodel.AIModel attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/aimodel_dataclass/index.html#rhino_health.lib.endpoints.aimodel.aimodel_dataclass.AIModel.uid">(rhino_health.lib.endpoints.aimodel.aimodel_dataclass.AIModel attribute)</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/endpoints/cohort/cohort_dataclass/index.html#rhino_health.lib.endpoints.cohort.cohort_dataclass.Cohort.uid">(rhino_health.lib.endpoints.cohort.cohort_dataclass.Cohort attribute)</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/endpoints/dataschema/dataschema_dataclass/index.html#rhino_health.lib.endpoints.dataschema.dataschema_dataclass.Dataschema.uid">(rhino_health.lib.endpoints.dataschema.dataschema_dataclass.Dataschema attribute)</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/endpoints/model_result/model_result_dataclass/index.html#rhino_health.lib.endpoints.model_result.model_result_dataclass.ModelResult.uid">(rhino_health.lib.endpoints.model_result.model_result_dataclass.ModelResult attribute)</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/endpoints/project/project_dataclass/index.html#rhino_health.lib.endpoints.project.project_dataclass.Project.uid">(rhino_health.lib.endpoints.project.project_dataclass.Project attribute)</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/endpoints/user/user_dataclass/index.html#rhino_health.lib.endpoints.user.user_dataclass.User.uid">(rhino_health.lib.endpoints.user.user_dataclass.User attribute)</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/endpoints/workgroup/workgroup_dataclass/index.html#rhino_health.lib.endpoints.workgroup.workgroup_dataclass.Workgroup.uid">(rhino_health.lib.endpoints.workgroup.workgroup_dataclass.Workgroup attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/rhino_health/lib/metrics/filter_variable/index.html#rhino_health.lib.metrics.filter_variable.FilterBetweenRange.upper">upper (rhino_health.lib.metrics.filter_variable.FilterBetweenRange attribute)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/user/user_dataclass/index.html#rhino_health.lib.endpoints.user.user_dataclass.User">User (class in rhino_health.lib.endpoints.user.user_dataclass)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/project/project_dataclass/index.html#rhino_health.lib.endpoints.project.project_dataclass.Project.users">users (rhino_health.lib.endpoints.project.project_dataclass.Project attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/endpoints/workgroup/workgroup_dataclass/index.html#rhino_health.lib.endpoints.workgroup.workgroup_dataclass.Workgroup.users">(rhino_health.lib.endpoints.workgroup.workgroup_dataclass.Workgroup attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="V">V</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/aimodel_dataclass/index.html#rhino_health.lib.endpoints.aimodel.aimodel_dataclass.AIModelTrainInput.validation_cohort_uids">validation_cohort_uids (rhino_health.lib.endpoints.aimodel.aimodel_dataclass.AIModelTrainInput attribute)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/aimodel_dataclass/index.html#rhino_health.lib.endpoints.aimodel.aimodel_dataclass.AIModelTrainInput.validation_cohorts_inference_suffix">validation_cohorts_inference_suffix (rhino_health.lib.endpoints.aimodel.aimodel_dataclass.AIModelTrainInput attribute)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/metrics/basic/index.html#rhino_health.lib.metrics.basic.Count.variable">variable (rhino_health.lib.metrics.basic.Count attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/metrics/basic/index.html#rhino_health.lib.metrics.basic.Mean.variable">(rhino_health.lib.metrics.basic.Mean attribute)</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/metrics/basic/index.html#rhino_health.lib.metrics.basic.StandardDeviation.variable">(rhino_health.lib.metrics.basic.StandardDeviation attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/index.html#rhino_health.lib.endpoints.aimodel.AIModel.version">version (rhino_health.lib.endpoints.aimodel.AIModel attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/endpoints/aimodel/aimodel_dataclass/index.html#rhino_health.lib.endpoints.aimodel.aimodel_dataclass.AIModel.version">(rhino_health.lib.endpoints.aimodel.aimodel_dataclass.AIModel attribute)</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/endpoints/cohort/cohort_dataclass/index.html#rhino_health.lib.endpoints.cohort.cohort_dataclass.Cohort.version">(rhino_health.lib.endpoints.cohort.cohort_dataclass.Cohort attribute)</a>
+</li>
+        <li><a href="autoapi/rhino_health/lib/endpoints/dataschema/dataschema_dataclass/index.html#rhino_health.lib.endpoints.dataschema.dataschema_dataclass.Dataschema.version">(rhino_health.lib.endpoints.dataschema.dataschema_dataclass.Dataschema attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="W">W</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/rhino_health/lib/metrics/aggregate_metrics/index.html#rhino_health.lib.metrics.aggregate_metrics.weighted_average">weighted_average() (in module rhino_health.lib.metrics.aggregate_metrics)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/workgroup/workgroup_dataclass/index.html#rhino_health.lib.endpoints.workgroup.workgroup_dataclass.Workgroup">Workgroup (class in rhino_health.lib.endpoints.workgroup.workgroup_dataclass)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/rhino_health/lib/endpoints/cohort/cohort_dataclass/index.html#rhino_health.lib.endpoints.cohort.cohort_dataclass.Cohort.workgroup_uid">workgroup_uid (rhino_health.lib.endpoints.cohort.cohort_dataclass.Cohort attribute)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/user/user_dataclass/index.html#rhino_health.lib.endpoints.user.user_dataclass.User.workgroups">workgroups() (rhino_health.lib.endpoints.user.user_dataclass.User method)</a>
+</li>
+      <li><a href="autoapi/rhino_health/lib/endpoints/user/user_dataclass/index.html#rhino_health.lib.endpoints.user.user_dataclass.User.workgroups_uids">workgroups_uids (rhino_health.lib.endpoints.user.user_dataclass.User attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="Y">Y</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/rhino_health/lib/metrics/froc/index.html#rhino_health.lib.metrics.froc.FRoc.y_pred_variable">y_pred_variable (rhino_health.lib.metrics.froc.FRoc attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/metrics/roc_auc/index.html#rhino_health.lib.metrics.roc_auc.RocAuc.y_pred_variable">(rhino_health.lib.metrics.roc_auc.RocAuc attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autoapi/rhino_health/lib/metrics/froc/index.html#rhino_health.lib.metrics.froc.FRoc.y_true_variable">y_true_variable (rhino_health.lib.metrics.froc.FRoc attribute)</a>
+
+      <ul>
+        <li><a href="autoapi/rhino_health/lib/metrics/roc_auc/index.html#rhino_health.lib.metrics.roc_auc.RocAuc.y_true_variable">(rhino_health.lib.metrics.roc_auc.RocAuc attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+<footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2022, Rhino Health.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

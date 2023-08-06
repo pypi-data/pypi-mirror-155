@@ -1,0 +1,171 @@
+:py:mod:`rhino_health.lib.metrics.basic`
+========================================
+
+.. py:module:: rhino_health.lib.metrics.basic
+
+.. autoapi-nested-parse::
+
+   
+   ..
+       !! processed by numpydoc !!
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   rhino_health.lib.metrics.basic.Count
+   rhino_health.lib.metrics.basic.Mean
+   rhino_health.lib.metrics.basic.StandardDeviation
+
+
+
+
+.. py:class:: Count
+
+   Bases: :py:obj:`rhino_health.lib.metrics.base_metric.BaseMetric`
+
+   
+   Returns the count of entries for a specified VARIABLE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:attribute:: variable
+      :annotation: :rhino_health.lib.metrics.filter_variable.OptionalFilterVariableType
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+.. py:class:: Mean
+
+   Bases: :py:obj:`rhino_health.lib.metrics.base_metric.BaseMetric`
+
+   
+   Returns the mean value of a specified VARIABLE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:attribute:: variable
+      :annotation: :rhino_health.lib.metrics.filter_variable.OptionalFilterVariableType
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+.. py:class:: StandardDeviation
+
+   Bases: :py:obj:`rhino_health.lib.metrics.base_metric.BaseMetric`
+
+   
+   Returns the standard deviation of a specified VARIABLE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:attribute:: variable
+      :annotation: :rhino_health.lib.metrics.filter_variable.OptionalFilterVariableType
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+

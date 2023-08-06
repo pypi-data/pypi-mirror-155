@@ -1,0 +1,400 @@
+:py:mod:`rhino_health.lib.metrics.base_metric`
+==============================================
+
+.. py:module:: rhino_health.lib.metrics.base_metric
+
+.. autoapi-nested-parse::
+
+   
+   ..
+       !! processed by numpydoc !!
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   rhino_health.lib.metrics.base_metric.DataFilter
+   rhino_health.lib.metrics.base_metric.GroupingData
+   rhino_health.lib.metrics.base_metric.BaseMetric
+   rhino_health.lib.metrics.base_metric.MetricResponse
+
+
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   rhino_health.lib.metrics.base_metric.MetricResultDataType
+
+
+.. py:class:: DataFilter
+
+   Bases: :py:obj:`pydantic.BaseModel`
+
+   
+   A filter to be applied on the entire Cohort
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:attribute:: filter_column
+      :annotation: :str
+
+      
+      The column in the remote cohort df to check against
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: filter_value
+      :annotation: :Union[Any, rhino_health.lib.metrics.filter_variable.FilterBetweenRange]
+
+      
+      The value to match against or a FilterBetweenRange if filter_type is FilterType.BETWEEN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: filter_type
+      :annotation: :Optional[rhino_health.lib.metrics.filter_variable.FilterType]
+
+      
+      The type of filtering to perform. Defaults to FilterType.EQUAL
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+.. py:class:: GroupingData
+
+   Bases: :py:obj:`pydantic.BaseModel`
+
+   
+   Configuration for grouping metric results
+
+
+
+
+
+
+
+
+
+
+   .. seealso::
+
+       
+       :obj:`pandas.groupby`
+           Implementation used for grouping. `See documentation <https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.groupby.html>`_
+       
+       
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:attribute:: groupings
+      :annotation: :List[str] = []
+
+      
+      A list of columns to group metric results by
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: dropna
+      :annotation: :Optional[bool] = True
+
+      
+      Should na values be dropped if in a grouping key
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+.. py:class:: BaseMetric
+
+   Bases: :py:obj:`pydantic.BaseModel`
+
+   
+   Parameters available for every metric
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:attribute:: data_filters
+      :annotation: :Optional[List[DataFilter]] = []
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: group_by
+      :annotation: :Optional[GroupingData]
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: timeout_seconds
+      :annotation: :Optional[float] = 600.0
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: data(self)
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+.. py:data:: MetricResultDataType
+   
+
+   
+   Dict[str, Any]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:class:: MetricResponse(**data)
+
+   Bases: :py:obj:`pydantic.BaseModel`
+
+   
+   Standardized response from querying metrics against a Cohort
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:attribute:: output
+      :annotation: :MetricResultDataType
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+

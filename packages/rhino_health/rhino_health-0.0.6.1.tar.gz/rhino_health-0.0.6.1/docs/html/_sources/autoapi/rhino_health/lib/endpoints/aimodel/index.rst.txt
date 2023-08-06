@@ -1,0 +1,438 @@
+:py:mod:`rhino_health.lib.endpoints.aimodel`
+============================================
+
+.. py:module:: rhino_health.lib.endpoints.aimodel
+
+.. autoapi-nested-parse::
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   aimodel_dataclass/index.rst
+   aimodel_endpoints/index.rst
+
+
+Package Contents
+----------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   rhino_health.lib.endpoints.aimodel.AIModel
+   rhino_health.lib.endpoints.aimodel.AIModelRunInput
+
+
+
+
+.. py:class:: AIModel(*args, **kwargs)
+
+   Bases: :py:obj:`AIModelCreateInput`
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:attribute:: uid
+      :annotation: :str
+
+      
+       The unique ID of the AIModel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: name
+      :annotation: :str
+
+      
+       The name of the AIModel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: description
+      :annotation: :str
+
+      
+       The description of the AIModel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: version
+      :annotation: :int
+
+      
+       The version of the AIModel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: base_version_uid
+      :annotation: :Optional[str] = 
+
+      
+       The first version of the AIModel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: input_data_schema
+      :annotation: :str
+
+      
+       The schema pre-run of the input cohorts
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: output_data_schema
+      :annotation: :str
+
+      
+       The schema post-run of the output cohorts
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: project_uid
+      :annotation: :typing_extensions.Annotated[str, Field(alias='project')]
+
+      
+       The AIModel project
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+.. py:class:: AIModelRunInput(*args, **kwargs)
+
+   Bases: :py:obj:`rhino_health.lib.dataclass.RhinoBaseModel`
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:attribute:: aimodel_uid
+      :annotation: :str
+
+      
+       The unique ID of the AIModel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: input_cohort_uids
+      :annotation: :List[str]
+
+      
+       A list of the input cohort uids
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: output_cohort_names_suffix
+      :annotation: :str
+
+      
+       The suffix given to all output cohorts
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: run_params
+      :annotation: :Optional[str] = {}
+
+      
+       The run params code you want to run on the cohorts
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: timeout_seconds
+      :annotation: :Optional[int] = 600
+
+      
+       The time before a timeout is declared for the run
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: sync
+      :annotation: :Optional[bool] = True
+
+      
+       If True wait for run to end if False let it run in the background
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+

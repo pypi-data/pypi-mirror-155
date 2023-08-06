@@ -1,0 +1,223 @@
+:py:mod:`rhino_health.lib.endpoints.user.user_dataclass`
+========================================================
+
+.. py:module:: rhino_health.lib.endpoints.user.user_dataclass
+
+.. autoapi-nested-parse::
+
+   
+   ..
+       !! processed by numpydoc !!
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   rhino_health.lib.endpoints.user.user_dataclass.FutureUser
+
+
+
+
+.. py:class:: User(**data)
+
+   Bases: :py:obj:`User`
+
+   
+
+   DataClass representing a User on the Rhino platform.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:attribute:: uid
+      :annotation: :str
+
+      
+       Unique ID of the user
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: full_name
+      :annotation: :str
+
+      
+       The full name of the user
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: primary_workgroup_uid
+      :annotation: :str
+
+      
+       The Unique ID of the Primary Workgroup of the user
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: workgroups_uids
+      :annotation: :List[str]
+
+      
+       Additional workgroup unique IDs the user belongs to
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: primary_workgroup(self)
+
+      
+      Get the primary workgroup of this user
+
+      .. warning:: Be careful when calling this for newly created objects.
+          The workgroup associated with the PRIMARY_WORKGROUP_UID must already exist on the platform.
+
+      .. warning:: The result of this function is cached.
+          Be careful calling this function after making changes to the primary workgroup
+
+
+      :Returns:
+
+          primary_workgroup: Workgroup
+              A DataClass representing the Workgroup of the user's primary workgroup
+
+
+
+
+
+
+
+      .. seealso::
+
+          
+          :obj:`rhino_health.lib.endpoints.workgroup.workgroup_dataclass`
+              Workgroup Dataclass
+          
+          
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: workgroups(self)
+
+      
+      Get the non primary workgroups of this user
+
+      .. warning:: Be careful when calling this for newly created objects.
+          The workgroups associated with the WORKGROUP_UIDS must already exist on the platform.
+
+      .. warning:: The result of this function is cached.
+          Be careful calling this function after making changes to the workgroups
+
+
+      :Returns:
+
+          workgroups: List[Workgroup]
+              An array of DataClasses representing the additional workgroups the user is a member of
+
+
+
+
+
+
+
+      .. seealso::
+
+          
+          :obj:`rhino_health.lib.endpoints.workgroup.workgroup_dataclass`
+              Workgroup Dataclass
+          
+          
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+

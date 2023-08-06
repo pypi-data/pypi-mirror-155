@@ -1,0 +1,191 @@
+:py:mod:`rhino_health.lib.metrics.roc_auc`
+==========================================
+
+.. py:module:: rhino_health.lib.metrics.roc_auc
+
+.. autoapi-nested-parse::
+
+   
+   ..
+       !! processed by numpydoc !!
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   rhino_health.lib.metrics.roc_auc.RocAuc
+   rhino_health.lib.metrics.roc_auc.RocAucWithCI
+
+
+
+
+.. py:class:: RocAuc
+
+   Bases: :py:obj:`rhino_health.lib.metrics.base_metric.BaseMetric`
+
+   
+   Performs a Receiver Operating Characteristic calculation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:attribute:: y_true_variable
+      :annotation: :Union[str, rhino_health.lib.metrics.filter_variable.FilterVariable]
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: y_pred_variable
+      :annotation: :Union[str, rhino_health.lib.metrics.filter_variable.FilterVariable]
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: seed
+      :annotation: :Optional[int]
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+.. py:class:: RocAucWithCI
+
+   Bases: :py:obj:`RocAuc`
+
+   
+   Performs a Receiver Operating Characteristic calculation with Bootstrapping using Confidence Intervals
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:attribute:: confidence_interval
+      :annotation: :int
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: bootstrap_iterations
+      :annotation: :Optional[int]
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
