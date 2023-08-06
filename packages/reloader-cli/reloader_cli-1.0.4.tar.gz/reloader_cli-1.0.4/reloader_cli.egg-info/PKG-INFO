@@ -1,0 +1,99 @@
+Metadata-Version: 2.1
+Name: reloader-cli
+Version: 1.0.4
+Summary: Help in fine tuning your changes with this minimalist CLI tool that reloads your python script after every save.
+Author-email: Aman Ahmed Siddiqui <aasiddiqui40@gmail.com>
+License: MIT License
+        
+        Copyright (c) 2022
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+Project-URL: Homepage, https://github.com/sid-am-ahd935/reloader_cli
+Keywords: debugger,reloader,cli_tool
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Provides-Extra: build
+Provides-Extra: dev
+License-File: LICENSE
+
+
+# reloader-cli
+
+Help in fine tuning your changes with this minimalist CLI tool that reloads your python script after every save.
+
+
+
+#
+[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/sid-am-ahd935/reloader_cli/blob/main/LICENSE)
+[![Tests Passing](https://img.shields.io/badge/tests-passing-green)](https://github.com/sid-am-ahd935/reloader_cli/tree/main/tests)
+[![Coverage 100%](https://img.shields.io/badge/coverage-100%25-green)](https://github.com/sid-am-ahd935/reloader_cli/blob/main/coverage.json)
+#
+## Installation
+
+Install reloader-cli with pip
+
+```bash
+  pip install reloader-cli
+```
+    
+## Usage/Examples
+
+To use this tool, simply install it via pip and run
+```bash
+  reloader [my_app.py] [main]
+```
+By default this tool targets the run() function inside your app.py script.
+## Running Tests
+
+To run tests and see code coverage, run the following command:
+
+```bash
+  coverage run -m pytest && coverage report -m
+```
+Or if only to run tests, run:
+```bash
+  pytest
+```
+
+Keep in mind the following modules are required for running these commands:
+```
+  coverage
+  pytest
+```
+
+## License
+
+To view the license for using this tool, visit this link here: [MIT](https://github.com/sid-am-ahd935/reloader_cli/blob/main/LICENSE)
+
+
+## Authors
+
+- [@Aman Ahmed Siddiqui](https://www.github.com/sid-am-ahd935)
+
+
+## Support and Suggestions
+
+For any type of related support or you have some suggestions in mind, email me at aasiddiqui40@gmail.com.
+
+## Debugging
+
+For debugging this tool, search for 'debugging' inside the file, and follow the instructions in the comments.
