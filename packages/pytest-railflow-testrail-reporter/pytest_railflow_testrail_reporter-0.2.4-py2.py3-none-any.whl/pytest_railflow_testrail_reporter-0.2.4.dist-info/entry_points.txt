@@ -1,0 +1,3 @@
+[pytest11]
+pytest_railflow_testrail_reporter = pytest_railflow_testrail_reporter.plugin
+
