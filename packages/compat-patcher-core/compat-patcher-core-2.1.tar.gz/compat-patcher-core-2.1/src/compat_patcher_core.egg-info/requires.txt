@@ -1,0 +1,9 @@
+six
+
+[build_sphinx]
+sphinx
+sphinx_rtd_theme
+
+[run_pylint]
+pylint
+pylint-quotes
