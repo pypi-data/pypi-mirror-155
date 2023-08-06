@@ -1,0 +1,8 @@
+epicscorelibs<7.0.6.99.3,>=7.0.6.99.2.0
+pvxslibs<0.4.0a1,>=0.3.1a1
+numpy>=1.21.6
+nose2>=0.8.0
+ply
+
+[qt]
+qtpy
