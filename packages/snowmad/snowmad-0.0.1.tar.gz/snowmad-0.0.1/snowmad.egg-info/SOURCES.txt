@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.cfg
+snowmad/__init__.py
+snowmad/example_creds.config
+snowmad/terraform_transcribe.py
+snowmad.egg-info/PKG-INFO
+snowmad.egg-info/SOURCES.txt
+snowmad.egg-info/dependency_links.txt
+snowmad.egg-info/top_level.txt
