@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: Bonsu
+Version: 3.4.5
+Summary: Bonsu - The Interactive Phase Retrieval Suite
+Home-page: https://github.com/bonsudev/bonsu
+Author: Marcus C. Newton
+Author-email: Bonsu.Devel@gmail.com
+Maintainer: Marcus C. Newton
+License: GPL3
+Requires: wx (>=4.0.0)
+Requires: numpy (>=1.12.0)
+Requires: vtk (>=5.4.2)
+Requires: h5py
+Requires: pillow
+Requires: wheel
+Requires-Python: >=3.7
+Requires-Dist: wxpython (>=4.0.0)
+Requires-Dist: numpy (>=1.12.0)
+Requires-Dist: vtk (>=5.4.2)
+Requires-Dist: h5py
+Requires-Dist: pillow
+
+ Bonsu is a collection of tools and algorithms primarily for
+	the reconstruction of phase information from diffraction intensity measurements.
+	
