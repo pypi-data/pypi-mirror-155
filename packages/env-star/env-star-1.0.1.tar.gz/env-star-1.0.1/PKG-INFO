@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: env-star
+Version: 1.0.1
+Summary: a minimalist config manager
+Home-page: https://github.com/gustcorrea/mytest
+Author: Gustavo Correa
+Author-email: self.gustavocorrea@gmail.com
+License: MIT
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.10
+License-File: LICENSE
