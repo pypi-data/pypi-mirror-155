@@ -1,0 +1,15 @@
+
+[clean]
+
+[full]
+numpy
+tqdm
+opencv_python
+apscheduler
+numexpr
+
+[light]
+numpy
+tqdm
+opencv_python
+apscheduler
