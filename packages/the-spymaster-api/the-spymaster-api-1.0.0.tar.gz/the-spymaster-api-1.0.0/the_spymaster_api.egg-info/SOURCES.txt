@@ -1,0 +1,15 @@
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+the_spymaster_api/__init__.py
+the_spymaster_api/client.py
+the_spymaster_api.egg-info/PKG-INFO
+the_spymaster_api.egg-info/SOURCES.txt
+the_spymaster_api.egg-info/dependency_links.txt
+the_spymaster_api.egg-info/requires.txt
+the_spymaster_api.egg-info/top_level.txt
+the_spymaster_api/structs/__init__.py
+the_spymaster_api/structs/base.py
+the_spymaster_api/structs/request.py
+the_spymaster_api/structs/response.py
