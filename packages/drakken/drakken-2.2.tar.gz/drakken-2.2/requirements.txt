@@ -1,0 +1,8 @@
+mako
+parse
+# Requests is used for testing only.
+requests
+requests-wsgi-adapter
+sqlalchemy
+setuptools
+webob
