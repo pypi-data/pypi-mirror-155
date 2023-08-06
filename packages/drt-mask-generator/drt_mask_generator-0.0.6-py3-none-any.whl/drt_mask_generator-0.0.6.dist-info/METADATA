@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: drt-mask-generator
+Version: 0.0.6
+Summary: Tool for mask creating
+Home-page: https://github.com/dimiaa/drt-mask-generator
+Author: Dmitry Trokhachev
+Author-email: dimiaa573@gmail.com
+Project-URL: Bug Tracker, https://github.com/dimiaa/drt-mask-generator/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6,<3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: PySide2
+Requires-Dist: shiboken2
+
+Tool for manual selection of defects
