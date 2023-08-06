@@ -1,0 +1,10 @@
+README.md
+setup.py
+addcomments/__init__.py
+addcomments.egg-info/PKG-INFO
+addcomments.egg-info/SOURCES.txt
+addcomments.egg-info/dependency_links.txt
+addcomments.egg-info/top_level.txt
+addcomments/management/__init__.py
+addcomments/management/commands/__init__.py
+addcomments/management/commands/addcolumncomments.py
