@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: Tipo
+Version: 0.0.62
+Summary: The Tipo Library consists of great AI tools
+Home-page: UNKNOWN
+Author: Liam Nordvall
+Author-email: <liam_nordvall@hotmail.com>
+License: UNKNOWN
+Keywords: python,deeplearning,AI,machine learning
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: gs
+
+UNKNOWN
+
