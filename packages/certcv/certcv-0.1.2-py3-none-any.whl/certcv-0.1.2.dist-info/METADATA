@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: certcv
+Version: 0.1.2
+Summary: "A copy/paster quick-tool for adding private keys and certificate keys to the openVPN configuration file."
+Home-page: https://github.com/LukeHankey/certcv
+Author: Luke Hankey
+Author-email: lukehankey@gmail.com
+License: MIT
+Project-URL: Bug Tracker, https://github.com/LukeHankey/certcv/issues
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+[![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=shield)](https://circleci.com/gh/circleci/circleci-docs)
+
+## CertCV: An easy Certificate copy-paster
+
+This tool is intended for use with openVPN configuration files where you would need to copy a certificate key and a private key to the config file for each client. Automating this process is my goal to save on time, whether it be just one client file or multiple client users.
