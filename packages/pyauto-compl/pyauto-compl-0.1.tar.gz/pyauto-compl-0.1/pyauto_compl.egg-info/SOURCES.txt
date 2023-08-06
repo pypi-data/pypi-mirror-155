@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+autocompl/__init__.py
+autocompl/compl.py
+autocompl/prefix_tree.py
+autocompl/words.py
+pyauto_compl.egg-info/PKG-INFO
+pyauto_compl.egg-info/SOURCES.txt
+pyauto_compl.egg-info/dependency_links.txt
+pyauto_compl.egg-info/top_level.txt

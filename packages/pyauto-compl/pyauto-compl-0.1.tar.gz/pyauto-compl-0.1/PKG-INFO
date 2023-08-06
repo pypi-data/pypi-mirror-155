@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: pyauto-compl
+Version: 0.1
+Summary: Library for auto complete in Python. It comes with set of standard english words for quick start.
+Home-page: https://github.com/farkon00/pyauto-compl
+Author: farkon00
+Author-email: sammer2016sammer@gmail.com
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Pyauto-compl
+
+__Pyauto-compl__ - library for auto complete in Python. It comes with set of standard english words for quick start.
+
+# Quick start
+```shell
+pip install pyauto-compl
+```
+
+```python
+from autocompl.compl import AutoComplete 
+
+compl = AutoComplete() # Gonna load minified words, around 274411 words
+print("Loaded words")
+completions = compl.get_completions("appl") # Returns list of completions
+print(completions)
+```
