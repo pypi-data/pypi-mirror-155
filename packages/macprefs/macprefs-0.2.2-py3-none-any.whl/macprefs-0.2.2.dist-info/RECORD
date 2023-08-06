@@ -1,0 +1,17 @@
+macprefs/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+macprefs/command.py,sha256=SJUoK9EpC146S3OnSeEwhqw9PpCMUOIFRylKN8YANCg,11263
+macprefs/constants.py,sha256=xi1qbJtmQ0u4PWt-Pq1aDTL4L3LH8yYlz30wc-STG6s,144
+macprefs/mp_typing.py,sha256=M5LnmWZOU2mMTe_RFseQYhRpIIITfNp2720UlRhs7gc,644
+macprefs/plist2defaults.py,sha256=qHSrJEwYusa_raoOSBwpmx5Off2zJAE9gei_pZoCYXQ,3491
+macprefs/processing.py,sha256=a4OxP-T36wBptm6UWfI6CT8tqsRcC5fZfWXA2dYDQ3g,1719
+macprefs/shell.py,sha256=wf2I9XMVWl8maDFB8e_txrGE4PO4nC51oIke1iAO8H4,2062
+macprefs/utils.py,sha256=qucyoCWDHMkB2-WlxLjiDv0C5o3PDkaOk4n9qfILFv4,1802
+macprefs/filters/__init__.py,sha256=cIzuoDMrt1VDDPj4dR58gCmQtUwMDKSxL-gxUHIhVMc,222
+macprefs/filters/bad_domains.py,sha256=BIZzeAG5CzYQENmxkexUGmYDPUuue_AevwxOTnbAvOA,4074
+macprefs/filters/bad_keys.py,sha256=o3_-JzYmJ_sA-07Io7eTBCRppIS2m96OBApuqjKU9lU,7332
+macprefs/filters/bad_keys_re.py,sha256=2FGFdF0ePpWyZSN6MW3y-NnbWXM4vS5zAsLsiYLlEUM,918
+macprefs-0.2.2.dist-info/METADATA,sha256=CG1h4p3vt4vggEExM7807wEQj0wBjntXL9hmKJNiYzE,2363
+macprefs-0.2.2.dist-info/WHEEL,sha256=G16H4A3IeoQmnOrYV4ueZGKSjhipXx8zc8nu9FGlvMA,92
+macprefs-0.2.2.dist-info/entry_points.txt,sha256=EvTpSTPNRbrhdSqgrJi_7AXf5CZNNJSPDF8fcNsuuho,107
+macprefs-0.2.2.dist-info/top_level.txt,sha256=bEXN3-zN5T2J_IlNlJG0ihDbNVKIOrzA4ww0QRQIqWQ,9
+macprefs-0.2.2.dist-info/RECORD,,
