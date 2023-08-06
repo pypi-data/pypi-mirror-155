@@ -1,0 +1,16 @@
+sqlalchemy
+pandas
+numpy
+boto3
+google-cloud-bigquery
+google-api-python-client
+google-cloud-bigquery-storage
+google-cloud-secret-manager
+google-cloud-resource-manager
+pybigquery
+pyarrow
+snowflake-connector-python
+snowflake-sqlalchemy
+requests
+pg8000
+pymysql
