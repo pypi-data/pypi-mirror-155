@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "more_cli"
+version = "0.3.5"
+description = ""
+authors = ["chrbrauer <christoph@5xbrauer.de>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pyfiglet = "*"
+inquirer = "*"
+requests = "*"
+pick = "*"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[tool.poetry.scripts]
+more-cli = 'more_cli.main:main'
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
