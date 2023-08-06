@@ -1,0 +1,35 @@
+Metadata-Version: 2.1
+Name: lsst-ctrl-mpexec
+Version: 24.0.0a20222500
+Summary: Pipeline execution infrastructure for the Rubin Science Pipelines
+Home-page: https://github.com/lsst/ctrl_mpexec
+Author: Rubin Observatory Data Management
+Author-email: dm-admin@lists.lsst.org
+License: GPLv3+ License
+Keywords: lsst
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Topic :: Scientific/Engineering :: Astronomy
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+Requires-Dist: lsst-utils
+Requires-Dist: lsst-daf-butler
+Requires-Dist: lsst-pex-config
+Requires-Dist: lsst-pipe-base
+Requires-Dist: click
+Requires-Dist: astropy
+Requires-Dist: pydantic
+Requires-Dist: networkx
+Requires-Dist: psutil
+
+###########
+ctrl_mpexec
+###########
+
+``ctrl_mpexec`` is a package in the `LSST Science Pipelines <https://pipelines.lsst.io>`_.
+
+It provides a PipelineTask execution framework for single-node processing.
