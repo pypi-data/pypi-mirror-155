@@ -1,0 +1,42 @@
+
+{% load i18n %}
+
+<div data-role="qtip-{{ object.id }}">
+    {% if object.has_article %}
+        <span class="text-success">
+            <i class="fa fa-check-circle"></i>
+        </span>
+    {% else %}
+        <span class="text-danger">
+            <i class="fa fa-remove"></i>
+        </span>
+    {% endif %}
+</div>
+
+{% if object.has_article %}
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            $('[data-role=qtip-{{ object.id }}]').qtip({
+                content: {
+                    ajax: {
+                        url: '{% url 'tecdoc:hint' object.supplier_id object.article_number %}'
+                    },
+                    text: '{% trans 'Loading...' %}'
+                },
+                position: {
+                    my: 'top right',
+                    at: 'bottom left'
+                },
+                style: {
+                    classes: 'qtip-light'
+                },
+                show: {
+                    event: 'click'
+                },
+                hide: {
+                    event: 'unfocus'
+                }
+            });
+        });
+    </script>
+{% endif %}

@@ -1,0 +1,54 @@
+
+{% load i18n %}
+
+<div style="width: 260px; max-height: 600px; overflow-y: auto;">
+    <div class="my-3">
+        <strong>{{ article.description }}</strong>
+    </div>
+
+    <div>{% trans 'Characteristics' %}</div>
+    <table class="table table-dark table-sm">
+        <tr>
+            <td>{% trans 'Supplier' %}</td>
+            <td>{{ supplier.description }}</td>
+        </tr>
+        <tr>
+            <td>{% trans 'Code' %}</td>
+            <td>{{ article.article_number }}</td>
+        </tr>
+        {% for attribute in article.get_attributes %}
+            <tr>
+                <td>{{ attribute.description }}</td>
+                <td>{{ attribute.value }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <div>{% trans 'OE-Articles' %}</div>
+    <table class="table table-dark table-sm">
+        {% for oe_article in oe_articles %}
+            <tr>
+                <td>
+                    {{ oe_article.manufacturer }}
+                </td>
+                <td>
+                    {{ oe_article.oen_br }}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <div>{% trans 'Apply for' %}</div>
+    <table class="table table-dark table-sm">
+        {% for manufacturer in manufacturers %}
+            <tr>
+                <td>
+                    <strong>{{ manufacturer.description }}</strong>
+                    {% for model in manufacturer.models %}
+                        {{ model.description }}{% if not forloop.last %}, {% endif %}
+                    {% endfor %}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
