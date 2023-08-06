@@ -1,0 +1,35 @@
+Metadata-Version: 2.1
+Name: witness-etl
+Version: 0.0.1
+Summary: A minimal ETL library.
+Author: Eugene Popov
+Author-email: evgeniypalych@gmail.com
+License: Apache License 2.0
+Project-URL: Source Code, https://github.com/eppv/witness
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3.9
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# witness
+
+A minimal ETL library.
+Intended to be simple and concise.
+
+## Get started
+
+Installation:
+```
+python3 -m pip install witness-etl
+```
+
+
+## Contacts
+
+evgeniypalych@gmail.com
+
+
