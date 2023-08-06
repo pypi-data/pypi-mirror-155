@@ -1,0 +1,193 @@
+:py:mod:`rhino_health.lib.endpoints.aimodel.aimodel_endpoints`
+==============================================================
+
+.. py:module:: rhino_health.lib.endpoints.aimodel.aimodel_endpoints
+
+.. autoapi-nested-parse::
+
+   
+   ..
+       !! processed by numpydoc !!
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   rhino_health.lib.endpoints.aimodel.aimodel_endpoints.AIModelEndpoints
+
+
+
+
+.. py:class:: AIModelEndpoints(session)
+
+   Bases: :py:obj:`rhino_health.lib.endpoints.endpoint.Endpoint`
+
+   
+
+
+   Rhino SDK LTS supported endpoints
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:method:: get_aimodel(self, aimodel_uid: str)
+
+      
+      Returns a AIModel dataclass
+
+
+      :Parameters:
+
+          **aimodel_uid: str**
+              UID for the aimodel
+
+      :Returns:
+
+          aimodel: AIModel
+              AIModel dataclass
+
+
+
+
+
+
+
+
+
+
+      .. rubric:: Examples
+
+      >>> session.aimodel.get_aimodel(my_aimodel_uid)
+      AIModel()
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: create_aimodel(self, aimodel: rhino_health.lib.endpoints.aimodel.aimodel_dataclass.AIModelCreateInput)
+
+      
+      Returns a AIModel dataclass
+
+
+      :Parameters:
+
+          **aimodel: AIModelCreateInput**
+              AIModelCreateInput data class
+
+      :Returns:
+
+          aimodel: AIModel
+              AIModel dataclass
+
+
+
+
+
+
+
+
+
+
+      .. rubric:: Examples
+
+      >>> session.aimodel.create_aimodel(create_aimodel_input)
+      AIModelCreateInput()
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: run_aimodel(self, aimodel: rhino_health.lib.endpoints.aimodel.aimodel_dataclass.AIModelRunInput)
+
+      
+
+      Returns a model_action_uid
+
+
+      :Parameters:
+
+          **aimodel: AIModelRunInput**
+              RunAIModelInput data class
+
+      :Returns:
+
+          model_action_uid: str
+              ..
+
+
+
+
+
+
+
+
+
+
+      .. rubric:: Examples
+
+      >>> session.aimodel.run_aimodel(run_aimodel_input)
+      AIModelRunInput()
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: train_aimodel(self, aimodel: rhino_health.lib.endpoints.aimodel.aimodel_dataclass.AIModelTrainInput)
+
+      
+
+      Returns a dict {status, d}
+
+
+      :Parameters:
+
+          **aimodel: AIModelTrainInput**
+              AIModelTrainInput data class
+
+      :Returns:
+
+          model_action_uid: str
+              ..
+
+
+
+
+
+
+
+
+
+
+      .. rubric:: Examples
+
+      >>> session.aimodel.train_aimodel(run_nvflare_aimodel_input)
+      AIModelTrainInput()
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+

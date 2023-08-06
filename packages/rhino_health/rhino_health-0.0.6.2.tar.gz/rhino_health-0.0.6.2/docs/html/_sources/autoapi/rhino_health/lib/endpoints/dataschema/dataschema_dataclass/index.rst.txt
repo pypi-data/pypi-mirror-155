@@ -1,0 +1,310 @@
+:py:mod:`rhino_health.lib.endpoints.dataschema.dataschema_dataclass`
+====================================================================
+
+.. py:module:: rhino_health.lib.endpoints.dataschema.dataschema_dataclass
+
+.. autoapi-nested-parse::
+
+   
+   ..
+       !! processed by numpydoc !!
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   rhino_health.lib.endpoints.dataschema.dataschema_dataclass.FutureDataschema
+
+
+
+
+.. py:class:: Dataschema(**data)
+
+   Bases: :py:obj:`Dataschema`
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:attribute:: admins
+      :annotation: :List[FutureUser]
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: project_uids
+      :annotation: :List[str]
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: primary_workgroup_uid
+      :annotation: :str
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: uid
+      :annotation: :Optional[str]
+
+      
+       The Unique ID of the Dataschema
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: name
+      :annotation: :str
+
+      
+       The name of the Dataschema
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: description
+      :annotation: :str
+
+      
+       The description of the Dataschema
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: base_version_uid
+      :annotation: :Optional[str]
+
+      
+       If this Dataschema is a new version of another Dataschema, the original Unique ID of the base Dataschema.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: version
+      :annotation: :Optional[int] = 0
+
+      
+       The revision of this Dataschema
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: created_at
+      :annotation: :str
+
+      
+       When this Dataschema was created
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: num_cohorts
+      :annotation: :int
+
+      
+       The number of cohorts using this Dataschema
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: delete(self)
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+

@@ -1,0 +1,142 @@
+:py:mod:`rhino_health.lib.rest_api.api_response`
+================================================
+
+.. py:module:: rhino_health.lib.rest_api.api_response
+
+.. autoapi-nested-parse::
+
+   
+   ..
+       !! processed by numpydoc !!
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   rhino_health.lib.rest_api.api_response.APIResponse
+
+
+
+
+.. py:class:: APIResponse(session, request_response)
+
+   
+   An internal representation of a HTTP response from the cloud API
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   :Attributes:
+
+       **session: RhinoSession**
+           The RhinoSession that triggered this request
+
+       **raw_response: requests.Response**
+           A `requests.Response <https://docs.python-requests.org/en/latest/api/#requests.Response>`_ object.
+
+       **status_code: int**
+           The status code of the response
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:attribute:: DataClass
+      
+
+      
+      A Type Hint representing a DataClass in the system.
+
+
+
+
+
+
+
+
+
+
+      .. seealso::
+
+          
+          :obj:`rhino_health.lib.endpoints.cohort.cohort_dataclass`
+              Example Cohort dataclass
+          
+          
+      .. rubric:: Notes
+
+      Dataclasses are how we represent input and output objects in the SDK. They provide validation,
+      and convenience functions for you to interact with the objects. Example dataclasses include our metrics
+      as well as various endpoint dataclasses.
+
+      All SDK dataclasses extend `pydantic <https://pydantic-docs.helpmanual.io/>`_ and have access to functionality
+      found within the library.
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: to_dataclass(self, dataclass: Type[DataClass]) -> DataClass
+
+      
+      Convenience class to convert the cloud API response to an expected Dataclass
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: to_dataclasses(self, dataclass: Type[DataClass]) -> List[DataClass]
+
+      
+      Convenience class to convert the cloud API response to multiple expected Dataclasses
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+

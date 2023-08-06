@@ -1,0 +1,352 @@
+:py:mod:`rhino_health.lib.endpoints.project.project_dataclass`
+==============================================================
+
+.. py:module:: rhino_health.lib.endpoints.project.project_dataclass
+
+.. autoapi-nested-parse::
+
+   
+   ..
+       !! processed by numpydoc !!
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   rhino_health.lib.endpoints.project.project_dataclass.FutureProject
+
+
+
+
+.. py:class:: Project(**data)
+
+   Bases: :py:obj:`Project`
+
+   
+
+   DataClass representing a Project on the Rhino platform.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:attribute:: users
+      :annotation: :List[rhino_health.lib.endpoints.user.user_dataclass.FutureUser]
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: uid
+      :annotation: :str
+
+      
+       The unique ID of the Project
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: name
+      :annotation: :str
+
+      
+       The name of the Project
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: description
+      :annotation: :str
+
+      
+       The description of the Project
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: type
+      :annotation: :str
+
+      
+       The type of the Project
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: slack_channel
+      :annotation: :str
+
+      
+       Slack Channel URL for communications for the Project
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: primary_workgroup_uid
+      :annotation: :str
+
+      
+       The unique ID of the Project's Primary Workgroup
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: collaborating_workgroups_uids
+      :annotation: :List[str]
+
+      
+       A list of unique IDs of the Project's collaborating Workgroups
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:attribute:: status
+      :annotation: :Dict
+
+      
+       The status of the Workgroup
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: collaborating_workgroups(self)
+
+      
+      Get the Collaborating Workgroup DataClass of this Project
+
+      .. warning:: Be careful when calling this for newly created objects.
+          The workgroups associated with the COLLABORATING_WORKGROUP_UIDS must already exist on the platform.
+
+      .. warning:: The result of this function is cached.
+          Be careful calling this function after making changes to the collaborating workgroups
+
+
+      :Returns:
+
+          collaborating_workgroups: List[Workgroup]
+              A List of DataClasses representing the Collaborating Workgroups of the Project
+
+
+
+
+
+
+
+      .. seealso::
+
+          
+          :obj:`rhino_health.lib.endpoints.workgroup.workgroup_dataclass`
+              Workgroup Dataclass
+          
+          
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: add_collaborator(self, collaborator_or_uid)
+
+      
+      Adds COLLABORATOR_OR_UID as a collaborator to this project
+
+      .. warning:: This feature is under development and the interface may change
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: remove_collaborator(self, collaborator_or_uid)
+
+      
+      Removes COLLABORATOR_OR_UID as a collaborator from this project
+
+      .. warning:: This feature is under development and the interface may change
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+

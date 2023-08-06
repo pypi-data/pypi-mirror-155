@@ -1,0 +1,191 @@
+:py:mod:`rhino_health.lib.endpoints.project.project_endpoints`
+==============================================================
+
+.. py:module:: rhino_health.lib.endpoints.project.project_endpoints
+
+.. autoapi-nested-parse::
+
+   
+   ..
+       !! processed by numpydoc !!
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   rhino_health.lib.endpoints.project.project_endpoints.ProjectFutureEndpoints
+
+
+
+
+.. py:class:: ProjectEndpoints(session)
+
+   Bases: :py:obj:`ProjectEndpoints`
+
+   
+
+
+
+   Endpoints available to interact with Projects on the Rhino Platform
+
+
+
+
+
+
+
+
+
+
+   .. rubric:: Notes
+
+   You should access these endpoints from the RhinoSession object
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:method:: get_cohorts(self, project_uid: str) -> List[rhino_health.lib.endpoints.cohort.cohort_dataclass.Cohort]
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: get_dataschemas(self, project_uid: str) -> List[rhino_health.lib.endpoints.dataschema.dataschema_dataclass.FutureDataschema]
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: get_collaborating_workgroups(self, project_uid: str)
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: add_collaborator(self, project_uid: str, collaborating_workgroup_uid: str)
+
+      
+      Adds COLLABORATING_WORKGROUP_UID as a collaborator to PROJECT_UID
+
+      .. warning:: This feature is under development and the interface may change
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: remove_collaborator(self, project_uid: str, collaborating_workgroup_uid: str)
+
+      
+      Removes COLLABORATING_WORKGROUP_UID as a collaborator from PROJECT_UID
+
+      .. warning:: This feature is under development and the interface may change
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: aggregate_cohort_metric(self, cohort_uids: List[str], metric_configuration) -> rhino_health.lib.metrics.base_metric.MetricResponse
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+

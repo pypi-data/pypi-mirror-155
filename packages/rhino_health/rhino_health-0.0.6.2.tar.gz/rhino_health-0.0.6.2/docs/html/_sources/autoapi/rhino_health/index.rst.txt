@@ -1,0 +1,109 @@
+:py:mod:`rhino_health`
+======================
+
+.. py:module:: rhino_health
+
+.. autoapi-nested-parse::
+
+   
+   Entry point to using the Rhino Health Python SDK.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+Subpackages
+-----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   lib/index.rst
+
+
+Package Contents
+----------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   rhino_health.login
+
+
+
+.. py:function:: login(username, password, otp_code=None, rhino_api_url=ApiEnvironment.PROD_API_URL, sdk_version=SDKVersion.PREVIEW)
+
+   
+   Login to the Rhino platform and get a RhinoSession to interact with the rest of the system.
+
+
+   :Parameters:
+
+       **username: str**
+           The email you are logging in with
+
+       **password: str**
+           The password you are logging in with
+
+       **otp_code: Optional[str]**
+           If 2FA is enabled for the account, the One Time Password code from your 2FA device
+
+       **rhino_api_url: Optional[ApiEnvironment]**
+           Which rhino environent you are working in.
+
+       **sdk_version: Optional[SDKVersion]**
+           Used internally for future backwards compatibility. Use the default
+
+   :Returns:
+
+       session: RhinoSession
+           A session object to interact with the cloud API
+
+
+
+
+
+
+
+   .. seealso::
+
+       
+       :obj:`rhino_health.lib.constants.ApiEnvironment`
+           List of supported environments
+       :obj:`rhino_health.lib.rhino_session.RhinoSession`
+           Session object with accessible endpoints
+       
+       
+
+
+   .. rubric:: Examples
+
+   >>> import rhino_health
+   >>> my_username = "rhino_user@rhinohealth.com" # Replace me
+   >>> my_password = "ASecurePasswordYouSet321" # Replace me
+   >>> session = rhino_health.login(username=my_username, password=my_password, otp_code=otp_code)
+   RhinoSession()
+
+
+
+   ..
+       !! processed by numpydoc !!
+

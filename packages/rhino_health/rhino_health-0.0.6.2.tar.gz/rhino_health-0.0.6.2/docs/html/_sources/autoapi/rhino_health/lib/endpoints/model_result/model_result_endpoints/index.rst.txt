@@ -1,0 +1,84 @@
+:py:mod:`rhino_health.lib.endpoints.model_result.model_result_endpoints`
+========================================================================
+
+.. py:module:: rhino_health.lib.endpoints.model_result.model_result_endpoints
+
+.. autoapi-nested-parse::
+
+   
+   ..
+       !! processed by numpydoc !!
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   rhino_health.lib.endpoints.model_result.model_result_endpoints.ModelResultEndpoints
+
+
+
+
+.. py:class:: ModelResultEndpoints(session)
+
+   Bases: :py:obj:`rhino_health.lib.endpoints.endpoint.Endpoint`
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:method:: get_model_result(self, model_result_uid: str)
+
+      
+      Returns a ModelResult dataclass
+
+
+      :Parameters:
+
+          **model_result_uid: str**
+              UID for the ModelResult
+
+      :Returns:
+
+          model_result: ModelResult
+              ModelResult dataclass
+
+
+
+
+
+
+
+
+
+
+      .. rubric:: Examples
+
+      >>> session.aimodel.get_model_result(model_result_uid)
+      ModelResult()
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+

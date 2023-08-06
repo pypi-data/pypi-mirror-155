@@ -1,0 +1,149 @@
+:py:mod:`rhino_health.lib.metrics.aggregate_metrics`
+====================================================
+
+.. py:module:: rhino_health.lib.metrics.aggregate_metrics
+
+.. autoapi-nested-parse::
+
+   
+   ..
+       !! processed by numpydoc !!
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   rhino_health.lib.metrics.aggregate_metrics.sum_aggregation
+   rhino_health.lib.metrics.aggregate_metrics.weighted_average
+   rhino_health.lib.metrics.aggregate_metrics.standard_deviation
+   rhino_health.lib.metrics.aggregate_metrics.calculate_aggregate_metric
+
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   rhino_health.lib.metrics.aggregate_metrics.SUPPORTED_AGGREGATE_METRICS
+
+
+.. py:function:: sum_aggregation(metric: str, metric_results: List[rhino_health.lib.metrics.base_metric.MetricResultDataType]) -> rhino_health.lib.metrics.base_metric.MetricResultDataType
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: weighted_average(metric: str, metric_results: List[rhino_health.lib.metrics.base_metric.MetricResultDataType], count_variable='variable') -> rhino_health.lib.metrics.base_metric.MetricResultDataType
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: standard_deviation(metric: str, metric_results: List[rhino_health.lib.metrics.base_metric.MetricResultDataType]) -> rhino_health.lib.metrics.base_metric.MetricResultDataType
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:data:: SUPPORTED_AGGREGATE_METRICS
+   
+
+   
+   A dictionary of metrics we currently support aggregating to configuration information.
+   See the keys for the latest list of metrics.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: calculate_aggregate_metric(metric_configuration, metric_results: List[rhino_health.lib.metrics.base_metric.MetricResultDataType]) -> rhino_health.lib.metrics.base_metric.MetricResultDataType
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
