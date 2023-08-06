@@ -1,0 +1,3 @@
+[console_scripts]
+label_centerlines = label_centerlines.cli:main
+

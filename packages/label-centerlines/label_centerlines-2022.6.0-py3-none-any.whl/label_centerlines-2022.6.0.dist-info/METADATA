@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: label-centerlines
+Version: 2022.6.0
+Summary: extract centerlines from polygons
+Home-page: https://github.com/ungarj/label_centerlines
+Author: Joachim Ungar
+Author-email: joachim.ungar@gmail.com
+License: MIT
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Scientific/Engineering :: GIS
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.6
+License-File: LICENSE.rst
+Requires-Dist: click
+Requires-Dist: Fiona (>=1.7.0)
+Requires-Dist: networkx (>=2.1)
+Requires-Dist: scipy (>=0.17)
+Requires-Dist: Shapely (>=1.5)
+Requires-Dist: tqdm
+
+UNKNOWN
+
