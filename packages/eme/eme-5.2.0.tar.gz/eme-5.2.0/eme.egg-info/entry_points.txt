@@ -1,0 +1,3 @@
+[console_scripts]
+eme = eme._tools.cli:main
+
