@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+src/zdxtools/__init__.py
+src/zdxtools/hello_zdx.py
+src/zdxtools.egg-info/PKG-INFO
+src/zdxtools.egg-info/SOURCES.txt
+src/zdxtools.egg-info/dependency_links.txt
+src/zdxtools.egg-info/top_level.txt
+src/zdxtools/spider_tools/__init__.py
+src/zdxtools/spider_tools/spider.py
