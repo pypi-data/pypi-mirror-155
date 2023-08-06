@@ -1,0 +1,46 @@
+Metadata-Version: 2.1
+Name: hivemcapi
+Version: 2.1
+Summary: A api rapper for the hivemc api
+Home-page: https://github.com/Nagol12344/HiveMCapi/
+Author: Nagol12344
+Author-email: Hidden@hidden.com
+License: MIT
+Download-URL: https://github.com/Nagol12344/HiveMCapi/releases/latest/
+Project-URL: Bug Tracker, https://github.com/Nagol12344/HiveMCapi/issues
+Keywords: hivemc,api,hivemcapi
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Description-Content-Type: text/markdown
+Requires-Dist: requests
+
+[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/) [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE) [![PyPi](https://badgen.net/badge/icon/pypi?icon=pypi&label)](https://pypi.org/project/hivemcapi/)
+
+# A hive mc api wrapper
+
+### How to import it
+To import it:
+```python
+import hivemcapi
+```
+or if you just want to use one game
+```python
+from hivemcapi import skywars
+```
+
+### Docs
+Im still making the docs, check back later.
+
+
+
