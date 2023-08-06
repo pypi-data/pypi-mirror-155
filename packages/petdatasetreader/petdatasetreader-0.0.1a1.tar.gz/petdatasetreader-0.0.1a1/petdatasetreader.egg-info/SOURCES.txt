@@ -1,0 +1,12 @@
+LICENSE.txt
+README.rst
+setup.py
+petdatasetreader.egg-info/PKG-INFO
+petdatasetreader.egg-info/SOURCES.txt
+petdatasetreader.egg-info/dependency_links.txt
+petdatasetreader.egg-info/requires.txt
+petdatasetreader.egg-info/top_level.txt
+petreader/RelationsExtraction.py
+petreader/TokenClassification.py
+petreader/__init__.py
+petreader/labels.py
