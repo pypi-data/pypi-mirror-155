@@ -1,0 +1,3 @@
+[console_scripts]
+dc_cli = src.dc_cli:main
+
