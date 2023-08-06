@@ -1,0 +1,8 @@
+prefix=/__w/torcharrow/torcharrow/build/lib.linux-x86_64-3.7/torcharrow
+libdir=${prefix}/lib64
+includedir=${prefix}/include
+
+Name: xsimd
+Description: xsimd provides a unified means for using SIMD features for library authors..
+Version: 8.0.5
+Cflags: -I${includedir}
