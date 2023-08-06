@@ -1,0 +1,14 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+friendly_idle/__init__.py
+friendly_idle/__main__.py
+friendly_idle/patch_idle.py
+friendly_idle/patching_hook.py
+friendly_idle.egg-info/PKG-INFO
+friendly_idle.egg-info/SOURCES.txt
+friendly_idle.egg-info/dependency_links.txt
+friendly_idle.egg-info/entry_points.txt
+friendly_idle.egg-info/requires.txt
+friendly_idle.egg-info/top_level.txt
