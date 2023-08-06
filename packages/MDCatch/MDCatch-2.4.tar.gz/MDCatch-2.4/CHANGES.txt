@@ -1,0 +1,116 @@
+2.4:
+    - upgrade to PyQt6
+2.3: fix the crash due to zero wait time in prep scheme
+2.2b2: Cryolo script updates:
+    1) cryolo 1.8+ required
+    2) input is a star file
+    3) use scratch SSD for filtered mics
+    4) use --skip and --write_empty to skip done mics
+    5) register output in .Nodes for Relion GUI
+    6) watch mode deprecated
+2.2b1: Helical picking mode added
+2.1.1:
+    - Fix: Falcon 4 non-EER movies case now works
+2.1:
+    - Cryolo / LoGpicker added back as an option
+    - Add input picker model for crYOLO / Topaz
+    - Watcher mode not tested yet
+    - fix calculation of number of EER frames
+    - add 3D steps switch (not used yet)
+2.0:
+    - Relion 4.0 support with the new scheduler, old Schedules removed, Relion 3.x is not supported!
+    - Topaz / 2D cls selection is now run by Relion
+    - tif/mrc parsers updated, add EER support
+1.1: fix installer
+1.0:
+    - separate mdoc parser, enable bigtiff header parser
+    - add Cryoassess for 2D cls sorting, use it by default
+    - create backup_selection.star so that user can see selected 2D classes
+    - create .gui_projectdir to automatically "start" a new project
+    - create .gui_manualpickjob.star so that user can visualize picking
+    - sortcl2d job check for accuracy
+    - add FEI MRC2 extended header support
+    - replace Ctffind & Gctf paths by shell vars
+    - switch off debug for release
+    - update Scipion template
+    - update documentation
+0.9.10:
+    - cleanup filtered mics for topaz and cryolo
+    - add distance arg = half box size (when provided) to cryolo job
+    - remove wait time
+    - add a counter to stop preprocess schedule if no new mics after 2 hours
+0.9.9:
+    - add different picker options: cryolo, topaz, logpicker
+    - add back the boxsize options to GUI
+    - simplified Schedules: preprocess (3 options) and class2d. No cryolo retraining is used for now.
+    - add parser tests
+0.9.8:
+    - update Scipion template, fixes for SerialEM option after 0.9.7
+    - prints job time for external jobs
+    - fix "wrong" cryolo model, gpu args
+    - add topaz external job (not ready yet)
+    - fix save_noDW
+    - use MPIs for ctffind job
+0.9.7:
+    - set ACL
+    - move more vars to config file
+    - major Schedules update for relion 3.1: logpicker replaced by cryolo, cinderella added
+    - replace symlink by copy for small files
+    - remove boxsizes and until_ctf options
+    - speed up recursive file search (replace os.walk by iglob)
+    - fix gain file detection
+    - fix wrong mask size
+    - update README
+    - add daemon mode
+    - fix schedules abort/stop
+    - new deps: emtable, watchdog
+0.9.6:
+    - remove box sizes, replace LoGpicker by cryolo
+    - big schedules update
+    - username requirement removed (to be reimplemented)
+    - minor Qt5 fixes, replace Help button by a tooltip
+0.9.5:
+    - add mrc and bigtiff parsers. Xml metadata is preferred over mrc.
+    - parsing functions moved to utils/
+0.9.4:
+    - fix pixel size for super-res
+0.9.3:
+    - first version for PyPi
+0.9.2:
+    - Scipion 3 scheduling works, however relion 3.1 is not ready for streaming
+    - added more parameters to xml parser: VPP options, gun lens, spot size, beam size
+    - fix "do until ctf"
+0.9.1:
+    - refactored xml parser, now it should not depend on EPU version
+    - launching Relion schedules in a separate subprocess, return shell immediately
+    - code clean up
+    - fix wrong ptcl diameter for preprocess schedule
+    - remove shell=True to increase security
+    - initial preparation for scipion 3 workflow
+    - created SCOPE_DICT, now parser is not LMB-specific
+0.9:
+    - config reorganized
+    - add user id check
+    - create Relion project dir username_scope_date_time
+    - add class2d schedule
+0.8:
+    - fix EPU xml pattern
+    - add particle size for LogPicker
+    - calculate box size params based on particle size
+    - create project path with links to movies
+0.7:
+    - add extra mdoc params
+    - check if Images-DicsX exists in the path
+    - remove Help button from GUI window
+    - add scipion pipeline
+    - separate schedule setup fro mthe parser
+0.6:
+    - add MTF dict
+    - add Relion Schedules
+0.5:
+    - separate parser code from GUI
+    - switch to QWizard
+0.4:
+    - add BigTiff parser
+    - add gain ref and counting mode detection
+    - guess folder name with movies
