@@ -1,0 +1,15 @@
+Django<4.1,>=3.0
+requests_oauthlib
+
+[test]
+pytest==7.1.1
+pytest-cov
+pytest-django
+flake8==4.0.1
+requests_mock
+codecov
+build
+twine
+wheel
+setuptools
+raven
