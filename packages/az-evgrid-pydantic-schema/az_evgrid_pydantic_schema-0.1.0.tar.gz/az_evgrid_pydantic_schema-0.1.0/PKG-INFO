@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: az-evgrid-pydantic-schema
+Version: 0.1.0
+Summary: Azure Event Grid の event schema  を Pydantic Model で提供
+Home-page: https://github.com/nnashiki/az-evgrid-pydantic-schema
+Author: Niten Nashiki
+Author-email: n.nashiki.work@gmail.com
+Requires-Python: >=3.9,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: datamodel-code-generator (>=0.13.0,<0.14.0)
+Requires-Dist: pydantic (>=1.9.1,<2.0.0)
+Project-URL: Repository, https://github.com/nnashiki/az-evgrid-pydantic-schema
+Description-Content-Type: text/markdown
+
+使い方は [GitHubRepository](https://github.com/nnashiki/az-evgrid-pydantic-schema) をご参照ください。
+
