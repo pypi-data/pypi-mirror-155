@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: AA-module
+Version: 1.1.10
+Summary: Module for performing various archetypal analyses.
+Home-page: https://github.com/anden1305/AAM-Module
+Author: Andreas Bigom, Michael Harborg, Oliver Elmgren & Marcus Presutti
+Author-email: andreasbigom@gmail.com
+License: MIT
+Project-URL: repository, https://github.com/anden1305/AAM-Module
+Keywords: Archetypal Analysis
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9.7
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: matplotlib
+Requires-Dist: torch
+Requires-Dist: scipy
+Requires-Dist: sklearn
+
+This module can be used to perform, evaluate and analyse Conventional Archetypal Analysis, Ordinal Archetypal Analysis and Response Bias Ordinal Archetypal Analysis. The module is developed by Andreas Bigom, Michael Harborg, Marcus Presutti and Oliver Elmgren in a collaboration between the Technical University of Denmark and Copenhagen Business School in order to enable students to analyse human questionnaire data in an effective and meaningful way.
