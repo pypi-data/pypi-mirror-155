@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: rxnplot
+Version: 0.9.0
+Summary: Chemical rection energy diagram tool
+Home-page: https://github.com/qcuaeh/rxnplot
+License: LGPLv3+
+Keywords: reaction plot jupyter
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)
+Classifier: Operating System :: POSIX
+Requires-Python: >=3.3
+License-File: LICENSE
+Requires-Dist: IPython
+Requires-Dist: cairosvg
+
