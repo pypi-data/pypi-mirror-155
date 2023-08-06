@@ -1,0 +1,3 @@
+[console_scripts]
+nornir-app = nornir_apps.cli:cli
+nornir-apps = nornir_apps.cli:cli
