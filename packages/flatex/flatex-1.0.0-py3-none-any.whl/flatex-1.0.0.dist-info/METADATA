@@ -1,0 +1,36 @@
+Metadata-Version: 2.1
+Name: flatex
+Version: 1.0.0
+Summary: A tool to flatten LaTeX files with include directives
+Home-page: https://github.com/borgmanJeremy/flatex
+Author: Jeremy Borgman
+Author-email: borgman.jeremy@pm.me
+Project-URL: Bug Tracker, https://github.com/borgmanJeremy/flatex/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 3 - Alpha
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Flatex
+This is inspired by the C program "flatex" for flattening a LaTex project that uses include statements. It is not a fully backwards compatible bug for bug re-implementation.
+
+## Basic usage
+The basic way to use this program is to navigate to the directory with your highest level .tex file and simply call 
+
+```
+python <top_level.tex>
+```
+
+Then this program will output a fully expanded version
+
+## Caveats
+This will not handle nested include statements
+
+## Testing
+To run unit tests run the following command from the root of the project
+```
+python3 -m unittest tests.test_flatex
+```
