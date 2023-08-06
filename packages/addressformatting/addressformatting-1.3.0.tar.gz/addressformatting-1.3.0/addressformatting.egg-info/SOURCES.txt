@@ -1,0 +1,14 @@
+LICENSE.txt
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+addressformatting/__init__.py
+addressformatting/format.py
+addressformatting/util.py
+addressformatting.egg-info/PKG-INFO
+addressformatting.egg-info/SOURCES.txt
+addressformatting.egg-info/dependency_links.txt
+addressformatting.egg-info/requires.txt
+addressformatting.egg-info/top_level.txt
+addressformatting/data/worldwide.yml
