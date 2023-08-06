@@ -1,0 +1,94 @@
+Metadata-Version: 2.1
+Name: planetmint-cryptoconditions
+Version: 0.9.8
+Summary: Multi-algorithm, multi-level, multi-signature format for expressing conditions and fulfillments according to the Interledger Protocol (ILP).
+Home-page: https://github.com/planetmint/cryptoconditions/
+Author: Cryptoconditions Contributors
+Author-email: contact@ipdb.global
+License: MIT
+Keywords: cryptoconditions,interledger,merkle tree,ed25519,threshold signatures,hash lock,zenroom
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Database
+Classifier: Topic :: Database :: Database Engines/Servers
+Classifier: Topic :: Software Development
+Classifier: Natural Language :: English
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: POSIX :: Linux
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+License-File: LICENSE-docs
+Requires-Dist: PyNaCl (==1.4.0)
+Requires-Dist: base58 (==2.1.0)
+Requires-Dist: capturer (==3.0)
+Requires-Dist: cryptography (==3.4.7)
+Requires-Dist: pyasn1 (==0.4.8)
+Requires-Dist: zenroom (==2.1.0.dev1654703596)
+Provides-Extra: dev
+Requires-Dist: Sphinx (>=1.3.5) ; extra == 'dev'
+Requires-Dist: coverage ; extra == 'dev'
+Requires-Dist: hypothesis ; extra == 'dev'
+Requires-Dist: ipdb ; extra == 'dev'
+Requires-Dist: ipython ; extra == 'dev'
+Requires-Dist: pep8 ; extra == 'dev'
+Requires-Dist: pyflakes ; extra == 'dev'
+Requires-Dist: pylint ; extra == 'dev'
+Requires-Dist: pytest ; extra == 'dev'
+Requires-Dist: pytest-cov ; extra == 'dev'
+Requires-Dist: pytest-xdist ; extra == 'dev'
+Requires-Dist: recommonmark (>=0.4.0) ; extra == 'dev'
+Requires-Dist: sphinx-press-theme (==0.8.0) ; extra == 'dev'
+Requires-Dist: sphinxcontrib-napoleon (>=0.4.4) ; extra == 'dev'
+Requires-Dist: twine ; extra == 'dev'
+Provides-Extra: docs
+Requires-Dist: Sphinx (>=1.3.5) ; extra == 'docs'
+Requires-Dist: recommonmark (>=0.4.0) ; extra == 'docs'
+Requires-Dist: sphinx-press-theme (==0.8.0) ; extra == 'docs'
+Requires-Dist: sphinxcontrib-napoleon (>=0.4.4) ; extra == 'docs'
+Provides-Extra: test
+Requires-Dist: coverage ; extra == 'test'
+Requires-Dist: hypothesis ; extra == 'test'
+Requires-Dist: pep8 ; extra == 'test'
+Requires-Dist: pyflakes ; extra == 'test'
+Requires-Dist: pylint ; extra == 'test'
+Requires-Dist: pytest ; extra == 'test'
+Requires-Dist: pytest-cov ; extra == 'test'
+Requires-Dist: pytest-xdist ; extra == 'test'
+Requires-Dist: twine ; extra == 'test'
+
+.. image:: https://badge.fury.io/py/planetmint-cryptoconditions.svg
+        :target: https://badge.fury.io/py/planetmint-cryptoconditions
+
+.. image:: https://app.travis-ci.com/planetmint/cryptoconditions.svg?branch=main
+        :target: https://app.travis-ci.com/planetmint/cryptoconditions
+
+.. image:: https://codecov.io/gh/planetmint/cryptoconditions/branch/main/graph/badge.svg?token=2Bo1knLW0Q
+        :target: https://codecov.io/gh/planetmint/cryptoconditions
+    
+The cryptoconditions Package
+============================
+
+A Python implementation of the Crypto-Conditions spec: a multi-algorithm, multi-level, multi-signature format for expressing conditions and fulfillments.
+
+This implementation doesn't implement the entire Crypto-Conditions spec. It implements the conditions needed by Planetmint, and some others. It's compliant with `version 02 <https://tools.ietf.org/html/draft-thomas-crypto-conditions-02>`_ and `version 03 <https://tools.ietf.org/html/draft-thomas-crypto-conditions-02>`_ of the spec.
+
+See also: the `rfcs/crypto-conditions repository <https://github.com/rfcs/crypto-conditions>`_.
+
+Installation
+------------
+
+To install latest release from PyPI:
+
+.. code-block:: bash
+
+    $ pip install planetmint-cryptoconditions
+
+Documentation
+-------------
+
+See `https://cryptoconditions.readthedocs.io/en/latest/ <https://cryptoconditions.readthedocs.io/en/latest/>`_.
+
+
