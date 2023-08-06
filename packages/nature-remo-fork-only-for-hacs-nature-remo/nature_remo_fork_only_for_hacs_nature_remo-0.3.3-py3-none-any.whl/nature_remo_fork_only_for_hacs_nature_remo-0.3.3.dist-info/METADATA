@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: nature-remo-fork-only-for-hacs-nature-remo
+Version: 0.3.3
+Summary: Python client for Nature Remo API
+Home-page: https://github.com/kkiyama117/nature-remo
+Author: Shinya Fujino
+Author-email: shf0811@gmail.com
+License: MIT
+Keywords: Nature Remo
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Topic :: Home Automation
+Classifier: Topic :: Internet
+Description-Content-Type: text/markdown
+Requires-Dist: marshmallow (>=3.7.1)
+Requires-Dist: requests (>=2.27.0)
+Requires-Dist: click (>=7.1.2)
+
+# THIS IS ONLY THE FORK OF [NATURE REMO PACKAGE](https://github.com/morinokami/nature-remo.git)
+
+!DO NOT USE THIS FORK, I don't perceive any problems when using this. Use original one if you want!
+
+!Please not asking any question and send  any issue encountered while using this fork!
+
+
