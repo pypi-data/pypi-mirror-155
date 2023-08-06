@@ -1,0 +1,2 @@
+[console_scripts]
+nc2geojson = nc2gj.nc2geojson:main
