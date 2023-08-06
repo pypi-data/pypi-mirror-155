@@ -1,0 +1,1 @@
+Tool for manual selection of defects
