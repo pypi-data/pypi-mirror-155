@@ -1,0 +1,47 @@
+Metadata-Version: 2.1
+Name: ra-utils
+Version: 1.1.0
+Summary: Utilities for OS2mo/LoRa
+Home-page: https://magenta.dk/
+License: MPL-2.0
+Keywords: os2mo,lora
+Author: Magenta
+Author-email: info@magenta.dk
+Requires-Python: >=3.8,<4.0
+Classifier: License :: OSI Approved
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Provides-Extra: all
+Provides-Extra: frozendict
+Provides-Extra: headers
+Provides-Extra: jinja
+Provides-Extra: pydantic
+Provides-Extra: sentry
+Requires-Dist: Jinja2 (>=3.0.1,<4.0.0); extra == "jinja" or extra == "all"
+Requires-Dist: frozendict (==2.1.0); extra == "frozendict" or extra == "all"
+Requires-Dist: more-itertools (>=8.8.0,<9.0.0)
+Requires-Dist: pydantic (>=1.8.2,<2.0.0); extra == "pydantic" or extra == "sentry" or extra == "headers" or extra == "all"
+Requires-Dist: requests (>=2.26.0,<3.0.0); extra == "headers" or extra == "all"
+Requires-Dist: sentry-sdk (>=1.5.12,<2.0.0); extra == "sentry" or extra == "all"
+Requires-Dist: structlog (>=21.5.0,<22.0.0)
+Requires-Dist: types-requests (>=2.25.0,<3.0.0); extra == "headers" or extra == "all"
+Project-URL: Repository, https://git.magenta.dk/rammearkitektur/ra-utils
+Description-Content-Type: text/markdown
+
+<!--
+SPDX-FileCopyrightText: 2021 Magenta ApS <https://magenta.dk>
+SPDX-License-Identifier: MPL-2.0
+-->
+
+
+# RA Utils
+
+Various code utilities for OS2mo/LoRa
+
+## License
+- This project: [MPL-2.0](MPL-2.0.txt)
+
+This project uses [REUSE](https://reuse.software) for licensing. All licenses can be found in the [LICENSES folder](LICENSES/) of the project.
+

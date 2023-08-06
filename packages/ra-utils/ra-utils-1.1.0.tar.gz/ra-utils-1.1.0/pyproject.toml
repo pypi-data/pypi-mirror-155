@@ -1,0 +1,51 @@
+[tool.poetry]
+name = "ra-utils"
+version = "1.1.0"
+description = "Utilities for OS2mo/LoRa"
+authors = ["Magenta <info@magenta.dk>"]
+license = "MPL-2.0"
+readme = "README.md"
+homepage = "https://magenta.dk/"
+repository = "https://git.magenta.dk/rammearkitektur/ra-utils"
+keywords = ["os2mo", "lora"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+more-itertools = "^8.8.0"
+Jinja2 = { version = "^3.0.1", optional = true }
+pydantic = { version = "^1.8.2", optional = true }
+requests = { version = "^2.26.0", optional = true }
+types-requests = { version = "^2.25.0", optional = true }
+sentry-sdk = {version = "^1.5.12", optional = true}
+frozendict = "2.1.0"
+structlog = "^21.5.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.4"
+black = "^22.3.0"
+flake8 = "^3.9.1"
+mypy = "^0.812"
+reorder-python-imports = "^2.5.0"
+pre-commit = "^2.12.1"
+parameterized = "^0.8.1"
+hypothesis = "^6.13.1"
+pytest-cov = "^2.12.1"
+pytest-mock = "3.6.1"
+mkdocs-material = "^7.2.1"
+mkdocstrings = "^0.15.2"
+
+[tool.poetry.extras]
+jinja = ["Jinja2"]
+pydantic = ["pydantic"]
+frozendict = ["frozendict"]
+sentry = ["sentry-sdk", "pydantic"]
+headers = ["pydantic", "requests", "types-requests"]
+all = ["Jinja2", "pydantic", "requests", "types-requests", "frozendict", "sentry-sdk"]
+
+[tool.autopub]
+git-username = "MagentaBot"
+git-email = "info@magenta.dk"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
