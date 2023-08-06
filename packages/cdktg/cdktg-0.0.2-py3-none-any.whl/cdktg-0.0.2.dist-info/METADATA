@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: cdktg
+Version: 0.0.2
+Summary: cdktg
+Home-page: https://github.com/hupe1980/cdk-threagile.git
+Author: hupe1980
+License: MIT
+Project-URL: Source, https://github.com/hupe1980/cdk-threagile.git
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: JavaScript
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Typing :: Typed
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: License :: OSI Approved
+Requires-Python: ~=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: constructs (<11.0.0,>=10.1.42)
+Requires-Dist: jsii (<2.0.0,>=1.61.0)
+Requires-Dist: publication (>=0.0.3)
+
+# replace this
+
+
