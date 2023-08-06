@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: django-graphbox
+Version: 1.0.0
+Summary: Package for easy building GraphQL API with Django
+Home-page: https://90horasporsemana.com
+Author: Yeison Fernandez
+Author-email: contacto@90horasporsemana.com
+License: MIT
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 3.2
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Topic :: Software Development :: Libraries :: Application Frameworks
+Requires-Python: >=3.6
+Requires-Dist: Django (>=3.2)
+Requires-Dist: graphene-django (>=2.15.0)
+Requires-Dist: graphene-file-upload (>=1.2.2)
+Requires-Dist: pyjwt (>=2.3.0)
+Requires-Dist: urllib3 (>=1.25.3)
+Requires-Dist: uuid (>=1.30)
+Requires-Dist: pillow (>=9.1.1)
+
