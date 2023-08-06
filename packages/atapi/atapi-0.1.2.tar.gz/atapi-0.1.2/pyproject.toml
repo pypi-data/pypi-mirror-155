@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "atapi"
+description = "Algorithmic Trading Framework"
+readme = "README.md"
+license = { file = "LICENSE.txt" }
+dynamic = ["version"]
+requires-python = ">=3.8"
+authors = [{ name = "Miron Tewfik", email = "miron@street.yoga" }]
+dependencies = ["pandas", "binance-connector", "scipy", "requests"]
+
+[project.optional-dependencies]
+dev = ["flake8", "pytest"]
+
+[project.urls]
+homepage = "https://street.yoga"
+documentation = "https://github.com/streetyoga/atapi/wiki/Documentation"
+repository = "https://github.com/streetyoga/atapi"
+
+[tool.setuptools]
+packages = ["atapi", "atapi.comp"]
+
+[tool.setuptools_scm]

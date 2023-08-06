@@ -1,0 +1,8 @@
+pandas
+binance-connector
+scipy
+requests
+
+[dev]
+flake8
+pytest
