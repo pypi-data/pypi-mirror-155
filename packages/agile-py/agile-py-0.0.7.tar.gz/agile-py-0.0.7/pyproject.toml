@@ -1,0 +1,25 @@
+[tool.black]
+line-length = 100
+target-version = [ "py38",]
+include = "\\.pyi?$"
+exclude = '''
+# Specify the files/dirs that should be ignored by the black formatter
+/(
+    \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
+
+[tool.pytest.ini_options]
+pythonpath = [ ".", "src",]

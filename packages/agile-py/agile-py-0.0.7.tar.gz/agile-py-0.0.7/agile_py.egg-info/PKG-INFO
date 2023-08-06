@@ -1,0 +1,37 @@
+Metadata-Version: 2.1
+Name: agile-py
+Version: 0.0.7
+Summary: agile python project utilities
+Home-page: https://github.com/Janus-Shiau/agile-py
+Author: Jia-Yau Shiau
+Author-email: jiayau.shiau@gmail.com
+License: Apache Software License (Apache-2.0)
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# AgilePy
+
+## What is it?
+
+Agile-py is a Python package to quickly kick off and python project.
+
+## Main Features
+
+- **Inintialize** project with `pyproject.toml`, `.pre-commit-config.yaml`, `.gitignore`, and vscode setting.
+
+## Where to get it
+
+Agile-py can be installed from PyPI using `pip`:
+
+```bash
+pip install agile-py
+```
+
+## Interface
+
+### Initialize python project
+
+```bash
+agpy init
+```
