@@ -1,0 +1,12 @@
+# Output writer - where to save results to?
+writer:
+  #type: JsonWriter
+  #args:
+  #  # File path for the results
+  #  file: scraped-numbers.json
+  type: StdoutWriter
+
+enabled_providers:
+  - www.receivesms.co
+  - receive-smss.com
+  #- receive-sms-online.info
