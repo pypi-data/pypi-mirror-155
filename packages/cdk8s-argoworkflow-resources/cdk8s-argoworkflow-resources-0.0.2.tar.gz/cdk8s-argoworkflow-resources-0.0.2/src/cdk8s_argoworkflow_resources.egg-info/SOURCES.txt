@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+src/cdk8s_argoworkflow_resources/__init__.py
+src/cdk8s_argoworkflow_resources/py.typed
+src/cdk8s_argoworkflow_resources.egg-info/PKG-INFO
+src/cdk8s_argoworkflow_resources.egg-info/SOURCES.txt
+src/cdk8s_argoworkflow_resources.egg-info/dependency_links.txt
+src/cdk8s_argoworkflow_resources.egg-info/requires.txt
+src/cdk8s_argoworkflow_resources.egg-info/top_level.txt
+src/cdk8s_argoworkflow_resources/_jsii/__init__.py
+src/cdk8s_argoworkflow_resources/_jsii/cdk8s-argoworkflow-resources@0.0.2.jsii.tgz
+src/cdk8s_argoworkflow_resources/k8s/__init__.py
