@@ -1,0 +1,13 @@
+.gitignore
+LICENSE
+README.md
+development.md
+setup.py
+cdict/__init__.py
+cdict/main.py
+cdict/todos.md
+cdict.egg-info/PKG-INFO
+cdict.egg-info/SOURCES.txt
+cdict.egg-info/dependency_links.txt
+cdict.egg-info/top_level.txt
+tests/test_main.py
