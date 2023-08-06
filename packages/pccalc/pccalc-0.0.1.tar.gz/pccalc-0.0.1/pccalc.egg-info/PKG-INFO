@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: pccalc
+Version: 0.0.1
+Summary: Calculate Primer Concentrations for RT-PCR
+Home-page: UNKNOWN
+Author: Emma Courtney
+Author-email: <emmaclairecourtney@gmail.com>
+License: UNKNOWN
+Keywords: python,first package
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Education
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+
+Calculates dilution coefficients based on measured concentrations for a desired molarity to be used in RT-PCR.
+
