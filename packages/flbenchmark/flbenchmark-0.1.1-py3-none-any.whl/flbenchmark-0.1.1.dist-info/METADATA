@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: flbenchmark
+Version: 0.1.1
+Summary: flbenchmark
+Home-page: https://github.com/AI-secure/FLBenchmark-toolkit
+Author: stneng
+Author-email: git@stneng.com
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >=3.6
+Requires-Dist: pandas (>=0.25)
+Requires-Dist: numpy (>=1.18)
+Requires-Dist: scipy
+Requires-Dist: Pillow
+
+UNKNOWN
+
