@@ -1,0 +1,9 @@
+click==8.1.3
+nornir==3.3.0
+nornir-napalm==0.2.0
+nornir-utils==0.2.0
+rich==10.16.2
+
+[test]
+pytest
+pytest-cov
