@@ -1,0 +1,16 @@
+README.md
+setup.py
+pulumi_azure_justrun/__init__.py
+pulumi_azure_justrun/_enums.py
+pulumi_azure_justrun/_utilities.py
+pulumi_azure_justrun/containerapp.py
+pulumi_azure_justrun/provider.py
+pulumi_azure_justrun/pulumi-plugin.json
+pulumi_azure_justrun/py.typed
+pulumi_azure_justrun/webapp.py
+pulumi_azure_justrun.egg-info/PKG-INFO
+pulumi_azure_justrun.egg-info/SOURCES.txt
+pulumi_azure_justrun.egg-info/dependency_links.txt
+pulumi_azure_justrun.egg-info/not-zip-safe
+pulumi_azure_justrun.egg-info/requires.txt
+pulumi_azure_justrun.egg-info/top_level.txt
