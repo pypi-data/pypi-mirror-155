@@ -1,0 +1,6 @@
+[console_scripts]
+black-widow = black_widow:main
+
+[gui_scripts]
+black-widow-gui = black_widow:main_gui
+
