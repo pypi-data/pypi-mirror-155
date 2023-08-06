@@ -1,0 +1,4 @@
+[console_scripts]
+cylinter = cylinter.cylinter:main
+prep = cylinter.prep:main
+
