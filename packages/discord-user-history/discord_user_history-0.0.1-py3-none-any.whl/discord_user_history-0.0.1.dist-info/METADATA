@@ -1,0 +1,70 @@
+Metadata-Version: 2.1
+Name: discord-user-history
+Version: 0.0.1
+Summary: Python package for using the discord-user-history service.
+Home-page: https://github.com/IamPekka058/py-discord-user-history
+Author: IamPekka058
+Author-email: iampekka058@gmail.com
+Project-URL: Bug Tracker, https://github.com/IamPekka058/py-discord-user-history/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# py-discord-user-history
+This package helps to communicate between a python discord bot and our service api. To use the package you'll need a verification token.
+You can request verification tokens via email. (iampekka058@gmail.com) 
+
+### Install the package
+```python
+pip install discord-user-history
+```
+
+## Documentation
+The Package is in an early state of development. The documentation will be edited soon.
+
+### User Object
+You can create a User type object. The User object has 3 attributes.
+- uuid (A uniqe id given by discord)
+- name (Name users can choose by themselves e.g. IamPekka058)
+- id (Id nitro users can choose their id by themselves e.g. #0000)
+```python
+from User import User
+
+user = User(uuid, name, id)
+```
+
+### getUser(uuid)
+Returns an User type object with information, if user with given uuid exists. If no user exists the method returns None.
+```python
+from HistoryService import HistoryService
+
+service = HistoryService(token)
+user = service.getUser(uuid)
+```
+
+### existsUser(uuid)
+Returns a bool, indicating if a user with given uuid exists. If no user exists the method returns False.
+```python
+from HistoryService import HistoryService
+
+service = HistoryService(token)
+statement = service.existsUser(uuid)
+```
+
+### createUser(uuid)
+```python
+from HistoryService import HistoryService
+
+service = HistoryService(token)
+service.createUser(uuid)
+```
+
+### registerChanges(uuid, id, name)
+```python
+from HistoryService import HistoryService
+
+service = HistoryService(token)
+service.registerChanges(uuid, new_profile_id, new_profile_name)
+```
