@@ -1,0 +1,5 @@
+[console_scripts]
+predict-model=mlops_build.predict_model:main
+train-model=mlops_build.train_model:main
+validate-model=mlops_build.validate_model:main
+
