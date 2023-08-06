@@ -1,0 +1,6 @@
+include CONTRIBUTING.rst requirements.txt CHANGELOG.rst LICENSE.txt README.rst tests.py
+recursive-include pyworldpostal *
+recursive-exclude pyworldpostal *.pyc
+recursive-exclude pyworldpostal *.pyo
+recursice-exclude dist *
+recursice-exclude pyworldpostal.egg-info *
