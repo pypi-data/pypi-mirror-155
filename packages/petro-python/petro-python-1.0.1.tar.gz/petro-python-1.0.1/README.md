@@ -1,0 +1,77 @@
+# petroPython
+
+## v1.0.0
+
+### A python package  created by Ahmed alkhatim for petroleum computations with two sub modules for 
+- Reservoir
+- Production
+### Beside :
+- Oilfied Module: for gitting general and quick information about oilfield data
+
+
+
+<!-- ![image](https://cloud.githubusercontent.com/assets/1942359/5570181/f656a484-8f7d-11e4-8ec2-558d022b13d3.png) -->
+
+## Installation
+
+
+<!--     To install the latest release version: -->
+
+    pip install petroPython 
+
+
+## How it works
+
+
+```python
+import petroPython as ptr
+
+```
+
+<!-- * Now you can convert contents: `ipymd.convert(contents, from_='notebook', to='my_format')` or any other combination. -->
+
+### Initializing an Oil Field module
+
+```python
+  field = ptr.OilField("path_to_file")
+```
+
+  > The `OilField` module instantiate an OilField class and then `an_oil_field` variable can access all the API of of `OilField` such as:
+  
+  * field.wells
+  * field.number_of_wells
+  * field.n_production_wells
+  * field.injection_wells
+  * field.n_injection_wells
+  * field.converted_wells
+  * as well as quick_view() method that give a quick view about your field
+  
+
+
+### Exapmle
+for Volve dataset the output will be 
+
+```python
+  volve = ptr.OilField(file)
+  
+  volve.number_of_wells  # 7
+
+  volve.production_wells
+  # array(['15/9-F-1 C', '15/9-F-11', '15/9-F-12', '15/9-F-14', '15/9-F-15 D', '15/9-F-5'], dtype=object)
+  
+  volve.n_production_wells # 6
+
+  volve.injection_wells
+  # array(['15/9-F-4', '15/9-F-5'], dtype=object)
+
+  volve.n_injection_wells # 2
+
+  volve.converted_wells 
+  # ['15/9-F-5']
+
+  volve.quick_view()
+  # number_of_wells : 7 number_of_columns : 18 number_of_records: 15634
+  
+```
+
+ 
