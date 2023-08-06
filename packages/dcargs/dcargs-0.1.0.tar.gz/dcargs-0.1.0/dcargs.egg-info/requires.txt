@@ -1,0 +1,12 @@
+docstring_parser
+typing_extensions>=4.0.0
+pyyaml
+termcolor
+
+[testing]
+pytest
+pytest-cov
+attrs
+
+[type-checking]
+mypy
