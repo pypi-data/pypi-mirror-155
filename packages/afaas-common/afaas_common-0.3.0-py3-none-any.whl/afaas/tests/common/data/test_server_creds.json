@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "cradle-bio",
+  "private_key_id": "11efb6037003b4103e86729d12334ad3818ce487",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDgUgdLXVc1FDR4\niyCxQ+zTK+Fyed794l46ZIISEu2KM675tJCq49tnGWax2nH6OW2Vd7/1jyYjWy/Y\nlNWqy7Ru95NjXcOu2GfIDe+/j2CPp3a4TMMlhChAcDuYezowQx+ZdYmXuvoLPl86\njuKT2QQtIL4DoogI8XaOuPXtE1egrUmulUAsj+hEqqf8nZu4/IeFCxhfY+2v2gnI\njgpPoLOyqsmywQdBDhXeB77LPi+QHI/QDmhoS5dAn3r7HBHlF2SKI5/M9dn3Lj0M\n/TacSDgACx1+0sjwCw4o+8lXkjNSGQ6htRw11VKnq5T1SHCuN0OSmaZp9y9ROJDn\nakKF/Bs7AgMBAAECggEAAOU70eMkHEFo5G71vmS9hThHkSoj7ufZXlVN0oGl1hk6\nYmp18LYHXMtGOCvdj9UXaPMq0Eb2EJ+7nf7EUuq3JEizt9xv5yVix8gMPQLMV5oE\nJM5Ohx36Nu8xF3zl/vRS+T7nlxe+XwDJH/mM0eHvY/GdklddeYpUxVMw6XVqXPdT\n++hDp5UIycW+O7zwoI3dSSSKEYCDn4z1VzSTze1bsXozXBhzxmrFuC4LbHkn+XJf\noR2IooZcs0evPRAgeRq9iylves+uizobOZ0dpoLqG3mA0XpU1t5qjzc9GToXYXeQ\nDw8LHRLmyxDXvouXVA9q0KTeuvg7JJckf9+32S7oTQKBgQD05aKEHOFg5KGjDm3g\nwPx3eOGhxn+450UAZ1FFARC3x1S5aOIMCgH5bgqRtcaSXYxWzqsZWYKQL9laRvjW\nwXIu9lD1hraXkcd4jUSRv8Zy7hTF2dGYJroK5JNtwb27hXHG4tayKfeOmtUu4Vmf\nULaQJHCBATkIrana29fAYMVz/wKBgQDqfZL+UXC8MEXmuPUmLiewCKLsXRCNqNzL\ndk1XmI5KJZwGwcO1YF81b/Kw9BBfql4GS29nkqzdOrFJxzAiZQ3E+f5KIoj0otlO\nGKPIEs6v+grueAIFlqvDGOWFslksgKdPLuvyATI25hsjNgRcY5GRLOfsbfH1V6hk\nRAGuxBYoxQKBgCnmhEjQXCtk0tcAKAKVYlzanNg+CypKv36TLs98oCyheTiD3nEq\n4S2ZC0vk6wWt5c4QbCvZKcKbvTd5/ydXT78DO9TWaLVEJvnUSdAaHM0bOQik/Pxo\nW9pzQ1o7FMhZy564vv0auxV2HlV4Dwp4F9RPt8QKvoRimjYs+RwcMoxnAoGAaaLw\nmYlu1BibJPml1vFsB62cWAcE8gxki3RcG14qm9SdmZ2o4QjtW1F3b6hDyBUkDonl\nQi+dmHxcafRGBvinX1mP6S3trOfAJaKMBhIS8sweKJf/sSzTbCzHGZfi/F1pAg8N\nVBSd3oWDLDWleUmRxmkIgkZ1fiVjQugwKd9EbFECgYAQYjSFxR7d0TsIxUmBCF3q\ns5/jrhr6WMEnGOIKde3ZfrkNm+GZq8eDrKSmdRCgAg1+MPvlP2aPxQ5pvYHPawUq\nBw3n/Au8XRKQAtLcOH5BFQIvGvk/dXHA1/2O0vaIcOyg4u/PVht/tK1TE8F33/it\nJ77s2dJxB2DmoCtzVgh4rA==\n-----END PRIVATE KEY-----\n",
+  "client_email": "afaas-test@cradle-bio.iam.gserviceaccount.com",
+  "client_id": "111086696184959715955",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/afaas-test%40cradle-bio.iam.gserviceaccount.com"
+}
