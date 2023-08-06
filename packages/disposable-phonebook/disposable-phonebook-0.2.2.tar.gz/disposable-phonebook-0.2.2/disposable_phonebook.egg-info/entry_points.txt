@@ -1,0 +1,3 @@
+[console_scripts]
+dphonebook = dphonebook.cli:main
+
