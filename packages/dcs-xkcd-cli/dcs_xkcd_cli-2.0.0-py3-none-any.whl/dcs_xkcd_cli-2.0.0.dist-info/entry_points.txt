@@ -1,0 +1,3 @@
+[console_scripts]
+xkcd=xkcd_cli.xkcd:main
+
