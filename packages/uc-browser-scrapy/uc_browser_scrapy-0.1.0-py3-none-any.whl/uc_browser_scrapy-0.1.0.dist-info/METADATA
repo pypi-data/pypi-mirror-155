@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: uc-browser-scrapy
+Version: 0.1.0
+Summary: 
+Author: Thiago Oliveira
+Author-email: thiceconelo@gmail.com
+Requires-Python: >=3.8,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: Scrapy (>=2.6.1,<3.0.0)
+Requires-Dist: uc-browser (>=0.2.4,<0.3.0)
