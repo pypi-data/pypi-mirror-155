@@ -1,0 +1,30 @@
+[bob.pad.cli]
+statistics = bob.pad.face.script.statistics:statistics
+
+[bob.pad.config]
+casia-fasd = bob.pad.face.config.casia_fasd
+casia-surf = bob.pad.face.config.casia_surf
+deep-pix-bis = bob.pad.face.config.deep_pix_bis
+mask-attack = bob.pad.face.config.mask_attack
+oulu-npu = bob.pad.face.config.oulu_npu
+replay-attack = bob.pad.face.config.replay_attack
+replay-mobile = bob.pad.face.config.replay_mobile
+svm-frames = bob.pad.face.config.svm_frames
+swan = bob.pad.face.config.swan
+
+[bob.pad.database]
+casia-fasd = bob.pad.face.config.casia_fasd:database
+casia-surf = bob.pad.face.config.casia_surf:database
+mask-attack = bob.pad.face.config.mask_attack:database
+oulu-npu = bob.pad.face.config.oulu_npu:database
+replay-attack = bob.pad.face.config.replay_attack:database
+replay-mobile = bob.pad.face.config.replay_mobile:database
+swan = bob.pad.face.config.swan:database
+
+[bob.pad.pipeline]
+deep-pix-bis = bob.pad.face.config.deep_pix_bis:pipeline
+svm-frames = bob.pad.face.config.svm_frames:pipeline
+
+[console_scripts]
+
+
