@@ -1,0 +1,46 @@
+Metadata-Version: 2.1
+Name: ccaerrors
+Version: 0.1.2
+Summary: universal error handling for python functions.
+Home-page: https://github.com/ccdale/ccaerrors.git
+License: GPL-3.0-or-later
+Author: ccdale
+Author-email: chris.charles.allison+ccaerrors@gmail.com
+Requires-Python: >=3.10,<4.0
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Project-URL: Repository, https://github.com/ccdale/ccaerrors.git
+Description-Content-Type: text/markdown
+
+# ccaerrors
+
+Universal error handling for python functions.
+
+## Usage
+
+```
+import sys
+
+from ccaerrors import errorNotify
+
+def somefunction():
+    try:
+        pass
+    except Exception as e:
+        errorNotify(sys.exc_info()[2], e)
+
+```
+
+### `errorNotify`
+
+print the function name and the Exception details to stdout.
+
+### `errorRaise`
+
+print the function name and the Exception details to stdout and also re-raise the Exception
+
+### `errorExit`
+
+print the function name and the Exception details to stdout. Exit the script by calling `sys.exit()`.
+
