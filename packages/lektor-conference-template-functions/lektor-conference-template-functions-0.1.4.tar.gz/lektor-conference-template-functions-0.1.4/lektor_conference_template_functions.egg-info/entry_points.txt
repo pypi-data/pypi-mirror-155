@@ -1,0 +1,3 @@
+[lektor.plugins]
+conference-template-functions = conference_template_functions:ConferenceTemplatePlugin
+
