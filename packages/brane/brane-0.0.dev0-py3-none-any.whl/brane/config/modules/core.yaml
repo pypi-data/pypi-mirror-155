@@ -1,0 +1,53 @@
+TextIO:
+    name: textio
+    file_read_method_name: read
+    file_open_for_read: true
+    file_write_method_name: write
+    file_open_for_write: true
+
+Json:
+    module_name: json
+
+    file_open_for_read: true
+    module_read_method_name: load
+
+    file_open_for_write: true
+    module_write_method_name: dump
+    file_arg_first: false
+    base_kwargs_write:
+        indent: 2
+
+Wave:
+    module_name: wave
+
+    file_open_for_read: true
+    module_read_method_name: open
+
+    # write is not supported yet
+
+Csv:
+    module_name: csv
+
+    file_open_for_read: true
+    module_read_method_name: reader
+    transform_info:
+        - builtins
+        - list
+
+    file_open_for_write: true
+    module_write_method_name: writer
+    writer_method_name: writerows
+
+Pickle:
+    module_name: pickle
+
+    file_open_for_read: true
+    module_read_method_name: load
+    open_mode_for_read:
+        mode: rb
+
+    file_open_for_write: true
+    module_write_method_name: dump
+    open_mode_for_write:
+        mode: wb
+    file_arg_first: false

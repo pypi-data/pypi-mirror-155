@@ -1,0 +1,32 @@
+TextIO_TXT:
+    format_name: TXT
+    module_name: TextIO
+    object_type_info:
+        - builtins
+        - str
+    priority: 50
+
+Pickle_PKL:
+    format_name: PKL
+    module_name: Pickle
+    object_type_info:
+        - builtins
+        - object
+    priority: 0
+
+
+Csv_CSV:
+    format_name: CSV
+    module_name: Csv
+    object_type_info:
+        - builtins
+        - list
+    priority: 10
+
+Json_JSON:
+    format_name: JSON
+    module_name: Json
+    object_type_info:
+        - builtins
+        - dict
+    priority: 30
