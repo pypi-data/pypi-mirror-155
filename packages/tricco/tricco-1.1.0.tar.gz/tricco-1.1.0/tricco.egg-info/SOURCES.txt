@@ -1,0 +1,17 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+tricco/__init__.py
+tricco/compute.py
+tricco/cubulation_functions.py
+tricco/grid_functions.py
+tricco/prepare.py
+tricco.egg-info/PKG-INFO
+tricco.egg-info/SOURCES.txt
+tricco.egg-info/dependency_links.txt
+tricco.egg-info/requires.txt
+tricco.egg-info/top_level.txt
+tricco/alternatives/__init__.py
+tricco/alternatives/nwx.py
+tricco/alternatives/ownbfs.py
