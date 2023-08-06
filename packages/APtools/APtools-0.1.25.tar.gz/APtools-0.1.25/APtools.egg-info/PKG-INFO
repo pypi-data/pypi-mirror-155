@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: APtools
+Version: 0.1.25
+Summary: A collection of tools for accelerator physics
+Home-page: https://github.com/AngelFP/APtools
+Author: Angel Ferran Pousa
+Author-email: angel.ferran.pousa@desy.de,
+License: GPLv3
+Classifier: Development Status :: 3 - Alpha
+Classifier: Programming Language :: Python :: 3
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Physics
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown; charset=UTF-8
+License-File: LICENSE
+
+
+[![tests badge](https://github.com/AngelFP/APtools/actions/workflows/test-package.yml/badge.svg)](https://github.com/AngelFP/APtools/actions)
+[![CodeFactor](https://www.codefactor.io/repository/github/angelfp/aptools/badge/master)](https://www.codefactor.io/repository/github/angelfp/aptools/overview/master)
+[![PyPI](https://img.shields.io/pypi/v/aptools.svg)](https://pypi.org/project/APtools/)
+[![License](https://img.shields.io/github/license/AngelFP/APtools)](https://github.com/AngelFP/APtools/blob/master/LICENSE)
+
+<p align="center">
+  <img alt="aptools logo" src="docs/logo/aptools_logo.png" width="300px" />
+</p>
+
+
+
+## Overview
+![APtools overview](docs/images/aptools_overview.png "APtools overview")
