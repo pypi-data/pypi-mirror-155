@@ -1,0 +1,6 @@
+Sphinx>=0.6
+requests
+
+[doc]
+sphinx-copybutton
+furo

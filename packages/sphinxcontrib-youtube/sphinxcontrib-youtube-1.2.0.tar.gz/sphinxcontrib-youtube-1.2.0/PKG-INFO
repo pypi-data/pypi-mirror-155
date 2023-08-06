@@ -1,0 +1,28 @@
+Metadata-Version: 2.1
+Name: sphinxcontrib-youtube
+Version: 1.2.0
+Summary: Sphinx "youtube" extension
+Home-page: https://github.com/sphinx-contrib/youtube
+Author: Chris Pickel
+Author-email: sfiera@gmail.com
+Maintainer: David A. Ham
+Maintainer-email: david.ham@imperial.ac.uk
+License: BSD
+Platform: any
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Documentation
+Classifier: Topic :: Utilities
+Provides-Extra: doc
+License-File: LICENCE
+
+
+This package contains the youtube Sphinx extension.
+
+The extension defines the directives, "youtube" and "vimeo", for embedding
+YouTube and Vimeo videos, respectively.
