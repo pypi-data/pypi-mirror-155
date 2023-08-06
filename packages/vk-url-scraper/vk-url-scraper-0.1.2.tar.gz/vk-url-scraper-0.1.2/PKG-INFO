@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: vk-url-scraper
+Version: 0.1.2
+Summary: UNKNOWN
+Home-page: https://github.com/bellingcat/vk-url-scraper
+Author: Bellingcat
+Author-email: tech@bellingcat.com
+License: Apache
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+License-File: LICENSE
+
+# vk-url-scraper
+
+
