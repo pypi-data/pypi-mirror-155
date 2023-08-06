@@ -1,0 +1,16 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+jellysub/__init__.py
+jellysub/__main__.py
+jellysub/app.py
+jellysub/jellyfin.py
+jellysub.egg-info/PKG-INFO
+jellysub.egg-info/SOURCES.txt
+jellysub.egg-info/dependency_links.txt
+jellysub.egg-info/entry_points.txt
+jellysub.egg-info/requires.txt
+jellysub.egg-info/top_level.txt
+tests/__init__.py
+tests/test_app.py
