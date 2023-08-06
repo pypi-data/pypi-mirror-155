@@ -1,0 +1,5 @@
+[plover.meta]
+number_format_insert = plover_number_format:number_format_insert
+number_format_roman = plover_number_format:number_format_roman
+number_word_conversion = plover_number_format:number_word_conversion
+retro_insert_currency = plover_number_format:retro_insert_currency
