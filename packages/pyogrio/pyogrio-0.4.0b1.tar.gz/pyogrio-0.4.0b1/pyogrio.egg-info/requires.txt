@@ -1,0 +1,16 @@
+certifi
+numpy
+
+[benchmark]
+pytest-benchmark
+
+[dev]
+Cython
+
+[geopandas]
+pygeos
+geopandas
+
+[test]
+pytest
+pytest-cov
