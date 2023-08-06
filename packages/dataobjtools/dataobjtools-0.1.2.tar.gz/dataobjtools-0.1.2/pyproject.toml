@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "dataobjtools"
+version = "0.1.2"
+description = "Data Object helpers for Dicts and Lists for searching, managing,  manipulating etc"
+authors = ["pub12 <pubudu79@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
