@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="44.599998mm"
+   height="12.522698mm"
+   viewBox="0 0 44.599999 12.522699"
+   version="1.1"
+   id="svg1041"
+   sodipodi:docname="segment_ba.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1043"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="2.8284271"
+     inkscape:cx="117.5565"
+     inkscape:cy="0.35355339"
+     inkscape:window-width="1918"
+     inkscape:window-height="1000"
+     inkscape:window-x="1906"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="segBA"
+     scale-x="1" />
+  <defs
+     id="defs1038" />
+  <g
+     inkscape:label="Capa 1"
+     id="layer1"
+     transform="translate(-57.88648,-154.37478)"
+     style="display:inline">
+    <g
+       id="segBA"
+       style="display:inline"
+       transform="matrix(98.500102,0,0,-98.500102,102.24023,89.857211)"
+       inkscape:label="SegmentBA">
+      <polygon
+         id="gSeg_23"
+         points="-0.393297,-0.675694 -0.337778,-0.666365 -0.281624,-0.662045 -0.225319,-0.660446 -0.168991,-0.660042 -0.112661,-0.66 -0.0563303,-0.66 -4.44089e-16,-0.66 -3.13638e-16,-0.754 -0.410967,-0.779528 -0.446939,-0.692683 "
+         style="display:inline;fill:#eeeeee;stroke:#a9a9a9;stroke-width:0.005"
+         inkscape:label="SegmentBody" />
+      <polyline
+         points="-0.446939,-0.692683 -0.393297,-0.675694 -0.337778,-0.666365 -0.281624,-0.662045 -0.225319,-0.660446 -0.168991,-0.660042 -0.112661,-0.66 -0.0563303,-0.66 -4.44089e-16,-0.66 "
+         style="display:inline;fill:#eeeeee;stroke:#ff8800;stroke-width:0.01;stroke-opacity:1"
+         id="polyline221"
+         inkscape:label="SegmentBorder" />
+      <polygon
+         points="-0.399684,-0.754505 -0.391998,-0.720798 -0.421267,-0.702398 "
+         style="fill:#cccccc;stroke-width:0"
+         id="polygon223"
+         inkscape:label="SegmentDirection" />
+    </g>
+  </g>
+</svg>

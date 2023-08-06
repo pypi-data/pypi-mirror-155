@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44.599998 12.522673"
+   width="44.599998mm"
+   height="12.522673mm">
+  <g
+     id="gSeg_AB"
+     transform="matrix(98.499898,0,0,-98.499898,-64.763683,-64.517433)">
+    <polygon
+       id="segBody"
+       points="0.885319,-0.660446 0.941624,-0.662045 0.997778,-0.666365 1.0533,-0.675694 1.10694,-0.692683 1.07097,-0.779528 0.66,-0.754 0.66,-0.66 0.71633,-0.66 0.772661,-0.66 0.828991,-0.660042 "
+       style="display:inline;fill:#eeeeee;stroke:#a9a9a9;stroke-width:0.005" />
+    <polyline
+       id="segBorder"
+       points="0.66,-0.66 0.71633,-0.66 0.772661,-0.66 0.828991,-0.660042 0.885319,-0.660446 0.941624,-0.662045 0.997778,-0.666365 1.0533,-0.675694 1.10694,-0.692683 "
+       style="fill:#eeeeee;stroke:#ff8800;stroke-width:0.01;stroke-opacity:1" />
+    <polygon
+       id="segDir"
+       points="0.7,-0.707 0.68,-0.6788 0.68,-0.7352 "
+       style="fill:#cccccc;stroke-width:0" />
+  </g>
+</svg>
