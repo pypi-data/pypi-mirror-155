@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: bulk
+Version: 0.0.3
+Summary: UNKNOWN
+Home-page: UNKNOWN
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: typer (>=0.4.1)
+Requires-Dist: bokeh (>=2.4.3)
+Requires-Dist: pandas (>=1.0.0)
+Provides-Extra: dev
+Requires-Dist: pytest-playwright (==0.3.0) ; extra == 'dev'
+
+UNKNOWN
+
+
