@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: mauspaf
+Version: 0.0.4
+Summary: Mass properties analysis.
+Home-page: https://gitlab.com/mnn/mauspaf
+Author: M. Nuño
+Author-email: mnunos@outlook.com
+Project-URL: Documentation, https://mnn.gitlab.io/mauspaf/
+Project-URL: Source, https://gitlab.com/mnn/mauspaf
+Project-URL: Bug Reports, https://gitlab.com/mnn/mauspaf/-/issues
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Programming Language :: Python
+Requires-Python: >=3.6
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+
+MAUSPAF
+=========
+
+MauSPAF (from the German **MAssen- Und SchwerPunktsAnalyse für die Flugzeugentwicklung**) is a program used to perform mass properties analysis. While originally developed for aircraft design, it can be used to manage mass properties mass, position and inertias of any technical system.
+
