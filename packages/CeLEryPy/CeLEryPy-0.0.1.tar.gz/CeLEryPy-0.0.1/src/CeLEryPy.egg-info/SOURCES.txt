@@ -1,0 +1,17 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/CeLEryPy/ClusterVAE.py
+src/CeLEryPy/DNN.py
+src/CeLEryPy/SpaCluster.py
+src/CeLEryPy/__init__.py
+src/CeLEryPy/datasetgenemap.py
+src/CeLEryPy/layers.py
+src/CeLEryPy/types_.py
+src/CeLEryPy/util.py
+src/CeLEryPy/util_Mouse.py
+src/CeLEryPy.egg-info/PKG-INFO
+src/CeLEryPy.egg-info/SOURCES.txt
+src/CeLEryPy.egg-info/dependency_links.txt
+src/CeLEryPy.egg-info/top_level.txt
