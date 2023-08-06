@@ -1,0 +1,40 @@
+Metadata-Version: 2.1
+Name: furlong
+Version: 0.0.1
+Summary: Turn any CLI into a client-server architecture and skip Python's slow startup
+Project-URL: Documentation, https://github.com/unknown/furlong#readme
+Project-URL: Issues, https://github.com/unknown/furlong/issues
+Project-URL: Source, https://github.com/unknown/furlong
+Author-email: Alin Panaitiu <alin@panaitiu.com>
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+
+# furlong
+
+[![PyPI - Version](https://img.shields.io/pypi/v/furlong.svg)](https://pypi.org/project/furlong)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/furlong.svg)](https://pypi.org/project/furlong)
+
+-----
+
+**Table of Contents**
+
+- [Installation](#installation)
+- [License](#license)
+
+## Installation
+
+```console
+pip install furlong
+```
+
+## License
+
+`furlong` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.

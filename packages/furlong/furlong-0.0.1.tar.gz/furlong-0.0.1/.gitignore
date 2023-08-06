@@ -1,0 +1,15 @@
+develop.yml
+*.sublime-workspace
+yabai.sublime-project
+stackline.sublime-project
+geoservice.sublime-project
+comfy*.sublime-project
+.DS_Store
+run
+traces.sqlite*
+__pycache__
+*.dwarf
+*.o
+restore.sh
+*_dump.db
+.python-version
