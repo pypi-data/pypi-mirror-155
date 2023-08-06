@@ -1,0 +1,36 @@
+[tool.poetry]
+name = "roxie-api"
+version = "0.0.5"
+description = "A Python API for ROXIE to build a model data input, modify cable database file, and control simulation with a tool adapter"
+authors = ["mmaciejewski <michal.maciejewski@ief.ee.ethz.ch>"]
+license = "MIT"
+readme = "README.md"
+repository = "https://gitlab.cern.ch/roxie/roxie-api"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Intended Audience :: Education",
+    "Operating System :: OS Independent",
+]
+packages = [
+    { include = "roxieapi" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pandas = "^1.4.1"
+requests = "^2.27.1"
+plotly = "^5.6.0"
+pydantic = "^1.9.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.0.1"
+mypy = "^0.931"
+types-requests = "^2.27.10"
+flake8 = "^4.0.1"
+black = "^22.1.0"
+pytest-cov = "^3.0.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
