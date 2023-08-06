@@ -1,0 +1,8 @@
+[console_scripts]
+scandb-compare = scandb.compare:compare_cli
+scandb-importer = scandb.importer.cli:importer_cli
+scandb-report = scandb.report.cli:report_cli
+scandb-services = scandb.services.cli:services_cli
+scandb-statistics = scandb.statistics.cli:statistics_cli
+scandb-vulns = scandb.vulns.cli:vulns_cli
+
