@@ -1,0 +1,9 @@
+django-appconf
+django-ipware
+django-recaptcha
+jsonfield
+unidecode
+tablib[xlsx,yaml]
+hashids
+requests
+django-cms>=3.0
