@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: python-qa
+Version: 0.0.4
+Summary: Simplify the QA of your product
+Home-page: https://github.com/Starkov-EG/python-qa
+Author: Starkov E.G.
+Author-email: Starkov.Ev.Ge@gmail.com
+License: Apache 2.0
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development :: Quality Assurance
+Classifier: Topic :: Software Development :: Testing
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# python-qa
+This library will make your testing easy and simple!
