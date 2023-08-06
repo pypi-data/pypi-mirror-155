@@ -1,0 +1,6 @@
+{
+  "name"         : "package_name",
+  "_cleaned_name": "{{ angreal.name|lower|replace(' ', '-') }}",
+  "author"       : "joesmith",
+  "author_email" : "joesmit@email.com"
+}
