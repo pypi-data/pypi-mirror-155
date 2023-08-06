@@ -1,0 +1,33 @@
+Metadata-Version: 2.1
+Name: abstra-cli
+Version: 0.1.0
+Summary: Abstra CLI
+Home-page: https://github.com/abstra-app/abstra-cli
+License: MIT
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
+
+# abstra-cli
+
+## Install
+Download from pip (preferably using pipx):
+```sh
+pip[x] install abstra-cli
+```
+
+
+
+## Commands
+
+### Configure
+``` sh
+abstra-cli configure API_TOKEN
+```
+Authenticates the CLI with the token. Stores credentials at `~/.abstra/config.json`.
+
+### Upload
+``` sh
+abstra-cli upload DIRECTORY
+```
+Uploads the contents of the directory to the workspace. 
+
