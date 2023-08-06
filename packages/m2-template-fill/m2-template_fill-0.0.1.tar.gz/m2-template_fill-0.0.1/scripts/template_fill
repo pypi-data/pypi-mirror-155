@@ -1,0 +1,8 @@
+import m2.template_fill
+import sys
+
+if __name__ == '__main__':
+    if len(sys.argv) < 3:
+        print('Usage: {} [template_file] [data_files...]'.format(sys.argv[0]))
+        sys.exit()
+    print(m2.template_fill.template_fill(sys.argv[1], sys.argv[2:]))

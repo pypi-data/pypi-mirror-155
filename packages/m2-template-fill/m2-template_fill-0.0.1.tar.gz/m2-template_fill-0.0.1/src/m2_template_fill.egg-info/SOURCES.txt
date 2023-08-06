@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+scripts/template_fill
+src/m2/__init__.py
+src/m2/template_fill/__init__.py
+src/m2_template_fill.egg-info/PKG-INFO
+src/m2_template_fill.egg-info/SOURCES.txt
+src/m2_template_fill.egg-info/dependency_links.txt
+src/m2_template_fill.egg-info/requires.txt
+src/m2_template_fill.egg-info/top_level.txt
