@@ -1,0 +1,6 @@
+#!python
+
+import scing.core
+
+if __name__ == "__main__":
+    scing.core.main()
