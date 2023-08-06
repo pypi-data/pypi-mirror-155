@@ -1,0 +1,3 @@
+[console_scripts]
+pynsn = pynsn.gui:start
+
