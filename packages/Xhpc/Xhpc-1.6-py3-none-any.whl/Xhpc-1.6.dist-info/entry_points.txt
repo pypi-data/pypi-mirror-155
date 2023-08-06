@@ -1,0 +1,2 @@
+[console_scripts]
+Xhpc = Xhpc.scripts._standalone_xhpc:standalone_xhpc
