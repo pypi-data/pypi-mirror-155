@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: urtools
+Version: 0.0.3
+Summary: Custom functions and other utilities that I find useful and use across many projects.
+Home-page: 
+Author: MatthewBaggins
+Author-email: bagginsmatthew@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
+# urtools
+
+Custom functions and other utilities that I find useful and use across many projects. Not all of them were created by me. Pieces of code borrowed from various people across the internet are annotated with a comment `# source: <URL>`.
+
+## Install
+
+Requires Python >= 3.8
+
+```sh
+python -m pip install urtools
+```
+
+## TODO
+
+- [ ] Documentation
+- [ ] 
