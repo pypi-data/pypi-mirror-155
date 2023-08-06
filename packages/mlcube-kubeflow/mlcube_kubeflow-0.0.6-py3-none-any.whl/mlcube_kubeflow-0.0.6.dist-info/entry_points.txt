@@ -1,0 +1,4 @@
+
+        [console_scripts]
+        mlcube_kubeflow=mlcube_kubeflow.main:cli
+    
