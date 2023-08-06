@@ -1,0 +1,189 @@
+Metadata-Version: 2.1
+Name: cbc
+Version: 0.0.7
+Summary: Count Blood Cells
+Home-page: https://github.com/nemo256/cbc
+Author: nemo256 (Amine Neggazi)
+Author-email: <neggazimedlamine@gmail.com>
+Keywords: python,artificial intelligence,deep learning,blood cells,image segmentation,unet
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+License-File: AUTHORS
+Requires-Dist: absl-py
+Requires-Dist: alabaster
+Requires-Dist: astunparse
+Requires-Dist: attrs
+Requires-Dist: Babel
+Requires-Dist: bleach
+Requires-Dist: build
+Requires-Dist: cachetools
+Requires-Dist: cbc
+Requires-Dist: certifi
+Requires-Dist: cffi
+Requires-Dist: charset-normalizer
+Requires-Dist: commonmark
+Requires-Dist: cryptography
+Requires-Dist: cycler
+Requires-Dist: docutils
+Requires-Dist: flatbuffers
+Requires-Dist: fonttools
+Requires-Dist: gast
+Requires-Dist: google-auth
+Requires-Dist: google-auth-oauthlib
+Requires-Dist: google-pasta
+Requires-Dist: grpcio
+Requires-Dist: h5py
+Requires-Dist: idna
+Requires-Dist: imagesize
+Requires-Dist: importlib-metadata
+Requires-Dist: iniconfig
+Requires-Dist: jeepney
+Requires-Dist: Jinja2
+Requires-Dist: keras
+Requires-Dist: Keras-Preprocessing
+Requires-Dist: keyring
+Requires-Dist: kiwisolver
+Requires-Dist: libclang
+Requires-Dist: Markdown
+Requires-Dist: MarkupSafe
+Requires-Dist: matplotlib
+Requires-Dist: numpy
+Requires-Dist: oauthlib
+Requires-Dist: opencv-python
+Requires-Dist: opt-einsum
+Requires-Dist: packaging
+Requires-Dist: pep517
+Requires-Dist: Pillow
+Requires-Dist: pkginfo
+Requires-Dist: pluggy
+Requires-Dist: protobuf
+Requires-Dist: py
+Requires-Dist: pyasn1
+Requires-Dist: pyasn1-modules
+Requires-Dist: pycparser
+Requires-Dist: Pygments
+Requires-Dist: pyparsing
+Requires-Dist: python-dateutil
+Requires-Dist: pytz
+Requires-Dist: readme-renderer
+Requires-Dist: requests
+Requires-Dist: requests-oauthlib
+Requires-Dist: requests-toolbelt
+Requires-Dist: rfc3986
+Requires-Dist: rich
+Requires-Dist: rsa
+Requires-Dist: scipy
+Requires-Dist: SecretStorage
+Requires-Dist: six
+Requires-Dist: snowballstemmer
+Requires-Dist: Sphinx
+Requires-Dist: sphinxcontrib-applehelp
+Requires-Dist: sphinxcontrib-devhelp
+Requires-Dist: sphinxcontrib-htmlhelp
+Requires-Dist: sphinxcontrib-jsmath
+Requires-Dist: sphinxcontrib-qthelp
+Requires-Dist: sphinxcontrib-serializinghtml
+Requires-Dist: tensorboard
+Requires-Dist: tensorboard-data-server
+Requires-Dist: tensorboard-plugin-wit
+Requires-Dist: tensorflow
+Requires-Dist: tensorflow-addons
+Requires-Dist: tensorflow-estimator
+Requires-Dist: tensorflow-io-gcs-filesystem
+Requires-Dist: termcolor
+Requires-Dist: tomli
+Requires-Dist: twine
+Requires-Dist: typeguard
+Requires-Dist: typing-extensions
+Requires-Dist: urllib3
+Requires-Dist: webencodings
+Requires-Dist: Werkzeug
+Requires-Dist: wrapt
+Requires-Dist: zipp
+
+# Count Blood Cells
+Count red, white blood cells to detect various diseases such as blood cancer (leukemia), lower red blood cells count (anemia)...
+
+![Sample](sample.png)
+
+<!-- TABLE OF CONTENTS -->
+## Table of Contents
+
+* [Project Structure](#project-structure)
+* [Install](#install)
+* [Usage](#usage)
+* [Develop](#develop)
+* [License](#license)
+
+## Project Structure
+```
+cbc/
+|-- data/
+|   |-- plt/...
+|   |-- rbc/...
+|   |-- wbc/...
+|
+|-- docs/...
+|
+|-- models/...
+|
+|-- output/
+|   |-- plt/...
+|   |-- rbc/...
+|   |-- wbc/...
+|
+|-- AUTHORS
+|-- cbc
+|-- LICENSE
+|-- README.md
+|-- TODO.md
+|-- requirements.txt 
+|-- setup.py
+```
+
+## Install
+- Install straight from PyPI using pip:
+```
+$ pip install cbc
+```
+## Usage
+> Please read `cbc --help` before using it
+> -o flag is optional (defaults to out/ directory)
+- Count blood cells (-r for red and -w for white):
+```
+$ cbc -r <blood-cell-image>
+```
+- Predict blood cell image:
+```
+$ cbc predict -r <blood-cell-image>
+```
+- Train a new model:
+```
+$ cbc train -r <model-name>
+```
+
+## Develop
+- Download the project:
+```
+$ git clone https://github.com/nemo256/cbc
+$ cd cbc 
+```
+- Activate virtual environment:
+```
+$ python -m venv venv
+$ source venv/bin/activate
+$ pip install -r requirements.txt
+```
+- Now just adapt the code to your need and then run using the command:
+```
+$ chmod +x cbc
+$ ./cbc
+```
+
+## License
+- Please read [cbc/LICENSE](https://github.com/nemo256/cbc/LICENSE)
