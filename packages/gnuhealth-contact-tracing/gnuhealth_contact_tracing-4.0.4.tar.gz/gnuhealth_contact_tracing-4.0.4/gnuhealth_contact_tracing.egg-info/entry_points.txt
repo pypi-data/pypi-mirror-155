@@ -1,0 +1,4 @@
+
+    [trytond.modules]
+    health_contact_tracing = trytond.modules.health_contact_tracing
+    
