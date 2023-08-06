@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: lacibus
+Version: 1.0.3
+Summary: Python interface to the Soda data content management system
+Home-page: https://gitlab.com/lacibus/sodapy/
+Author: Chris Harding
+Author-email: chris@lacibus.net
+Project-URL: Documentation, https://lacibus.gitlab.io/sodapy/lacibus.html
+Project-URL: Issue Tracker, https://gitlab.com/lacibus/sodapy/-/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v2 (LGPLv2)
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Python Soda Data Content Management System Interface
+
+This is a Python interface to the Soda Data Content Management System.  
