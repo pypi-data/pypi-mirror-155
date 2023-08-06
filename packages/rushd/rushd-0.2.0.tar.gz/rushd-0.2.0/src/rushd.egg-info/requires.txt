@@ -1,0 +1,17 @@
+pyyaml
+pandas
+matplotlib
+scipy
+
+[:python_version < "3.8"]
+typing-extensions
+
+[dev]
+pyarrow
+pytest
+pytest-pep8
+pytest-cov
+pytest-mock
+pre-commit
+build
+twine
