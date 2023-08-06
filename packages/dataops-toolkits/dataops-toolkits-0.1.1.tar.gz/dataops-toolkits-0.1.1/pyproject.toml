@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "dataops-toolkits"
+version = "0.1.1"
+description = "Gadget Collection of DataOps in MLOps"
+authors = ["yuiant <gyuiant@gmail.com>"]
+license = "MIT"
+readme="README.md"
+homepage="https://github.com/yuiant/dataops"
+repository="https://github.com/yuiant/dataops"
+include=['LICENSE','README.md']
+
+
+[tool.poetry.dependencies]
+python = "^3.7"
+label-studio = "1.5.0"
+
+[tool.poetry.dev-dependencies]
+
+[tool.poetry.scripts]
+jsonconvert="dataops_toolkits.scripts.jsonconvert:main"
+
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
