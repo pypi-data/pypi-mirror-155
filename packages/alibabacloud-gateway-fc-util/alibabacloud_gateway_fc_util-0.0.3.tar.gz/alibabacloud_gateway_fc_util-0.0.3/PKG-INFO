@@ -1,0 +1,113 @@
+Metadata-Version: 2.1
+Name: alibabacloud_gateway_fc_util
+Version: 0.0.3
+Summary: Alibaba Cloud FC Util Library for Python
+Home-page: https://github.com/aliyun/alibabacloud-gateway
+Author: Alibaba Cloud SDK
+Author-email: sdk-team@alibabacloud.com
+License: Apache License 2.0
+Description: ## README
+        
+        ### Installation
+        
+        + install with `pip` tool.
+        
+        ```bash
+        # install alibabacloud_fc_open20210406
+        pip install -U alibabacloud_fc_open20210406
+        ```
+        
+        ### Usage
+        
+        + Invoke HTTP Trigger
+        
+        ```python
+        # -*- coding: utf-8 -*-
+        import os
+        
+        from alibabacloud_fc_open20210406.client import Client
+        from alibabacloud_tea_openapi import models as open_api_models
+        
+        ak = os.getenv('ak')
+        sk = os.getenv('sk')
+        
+        client = Client(config=open_api_models.Config(access_key_id=ak,
+                                                      access_key_secret=sk,
+                                                      region_id='cn-hangzhou'))
+        
+        resp = client.invoke_httptrigger(url="https://xxx.fcapp.run/action?key=value",
+                                         method="GET", 
+                                         body="anything".encode(encoding='utf-8'),
+                                         headers={"k1": "v1", "k2": "v2"})
+        ```
+        
+        + Invoke Anonymous HTTP Trigger
+        
+        ```python
+        import os
+        
+        from alibabacloud_fc_open20210406.client import Client
+        from alibabacloud_tea_openapi import models as open_api_models
+        
+        ak = os.getenv('ak')
+        sk = os.getenv('sk')
+        
+        client = Client(config=open_api_models.Config(access_key_id=ak,
+                                                      access_key_secret=sk,
+                                                      region_id='cn-hangzhou'))
+        
+        resp = client.invoke_anonymous_httptrigger(url="https://xxx.fcapp.run/action?key=value",
+                                         method="GET", 
+                                         body="anything".encode(encoding='utf-8'),
+                                         headers={"k1": "v1", "k2": "v2"})
+        
+        
+        ```
+        
+        
+        + Integration with your own http_client
+        
+        ```python
+        
+        import requests
+        import os
+        
+        from alibabacloud_fc_open20210406.client import Client
+        from alibabacloud_tea_openapi import models as open_api_models
+        
+        ak = os.getenv('ak')
+        sk = os.getenv('sk')
+        client = Client(config=open_api_models.Config(access_key_id=ak,
+                                                      access_key_secret=sk,
+                                                      region_id='cn-hangzhou'))
+        
+        # build your own request
+        req = requests.Request(
+            url='https://xxx.fcapp.run/action?key=value',
+            method='GET'
+        )
+        req = client.sign_request(req)
+        with requests.Session() as s:
+            prep=s.prepare_request(req)
+            resp = s.send(prep)
+        
+        ```
+        
+        
+        
+        
+        
+Keywords: alibabacloud,gateway,fc,util
+Platform: any
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Software Development
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
