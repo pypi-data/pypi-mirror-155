@@ -1,0 +1,16 @@
+MANIFEST.in
+README.md
+setup.py
+pdf2doi/__init__.py
+pdf2doi/config.py
+pdf2doi/finders.py
+pdf2doi/main.py
+pdf2doi/settings.ini
+pdf2doi/utils_registry.py
+pdf2doi.egg-info/PKG-INFO
+pdf2doi.egg-info/SOURCES.txt
+pdf2doi.egg-info/dependency_links.txt
+pdf2doi.egg-info/entry_points.txt
+pdf2doi.egg-info/not-zip-safe
+pdf2doi.egg-info/requires.txt
+pdf2doi.egg-info/top_level.txt
