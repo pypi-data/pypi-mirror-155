@@ -1,0 +1,67 @@
+
+## Description
+Just base core for simple telegram bots.
+
+## How to create a bot
+```
+class AwesomeBot(Bot):
+
+    def __init__(self, token: str):
+        super().__init__(token)
+
+    def init_controllers(self):
+        UserController(self)
+
+    def handle(self, e):
+        self.send_message(12345, traceback.format_exc())
+        return True
+
+class UserController(Controller):
+
+    def __init__(self, bot: Bot):
+        super().__init__(bot)
+
+    @message_handler(commands=["start"], chat_types=["private"])
+    def start_handler(self, message: Message):
+        self.bot.send_message(message.chat.id, "Hello!")
+```
+
+## How to use database
+```
+db = DataBase("users.db", "structure.sql")
+```
+You can provide structure.sql to handle the case where the database doesn't exist.
+It should contain some scripts to define tables or any other what you need.
+
+## How to use service
+```
+class DAO:
+
+    def __init__(self, db: DataBase):
+        self.db = db
+
+    def get_all_users(self):
+        return self.db.fetchall("SELECT id, username, money FROM users")
+
+    def find_user_by_id(self, user_id: int):
+        return self.db.fetchone("SELECT id, username, money FROM users WHERE id = ?", user_id)
+
+class UserInfo:
+
+    def __init__(self, data: dict):
+        self.user_id: int = data.get("id")
+        self.username: int = data.get("username")
+        self.money: float = data.get("money")
+
+class UserService(Service[UserInfo]):
+
+    def __init__(self, dao: DAO):
+        super().__init__(UserInfo, ["id", "username", "money"])
+        self.dao = dao
+
+    def get_all(self):
+        return self.to_objects(self.dao.get_all_users())
+
+    def find_by_id(self, user_id: int):
+        return self.to_object(self.dao.find_user_by_id(user_id))
+```
