@@ -1,0 +1,48 @@
+Metadata-Version: 2.1
+Name: shittywebserver
+Version: 0.0.5
+Summary: A tiny misbehaving web API server, for testing web consuming apps.
+Home-page: https://git.connect.dzd-ev.de/dzdpythonmodules/shittywebserver
+Author: TB
+Author-email: tim.bleimehl@helmholtz-muenchen.de
+License: MIT
+Platform: UNKNOWN
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: uvicorn[standard]
+Requires-Dist: fastapi[all]
+Requires-Dist: DZDConfigs
+
+# ShittyWebserver
+
+An tiny WebAPI that does some normal things and some weird thing for testing web consuming code.
+
+- [ShittyWebserver](#shittywebserver)
+  - [API](#api)
+  - [Run](#run)
+    - [Python](#python)
+    - [Docker](#docker)
+
+## API
+
+[OpenAPI Doc](/docs/openapi.json#/)
+
+## Run
+
+### Python
+
+`pip install shittywebserver`
+
+```python
+from shittywebserver import run_shitty_webserver
+run_shitty_webserver(
+    host = "0.0.0.0",
+    port = 8000,
+    run_in_subprocess = False)
+```
+### Docker
+
+`docker pull registry-gl.connect.dzd-ev.de:443/dzdpythonmodules/shittywebserver:prod`
+
+`docker run -p 8000:8000 registry-gl.connect.dzd-ev.de:443/dzdpythonmodules/shittywebserver:prod`
+
