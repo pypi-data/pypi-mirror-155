@@ -1,0 +1,40 @@
+Metadata-Version: 2.1
+Name: itkwidgets
+Version: 1.0a4
+Summary: itkwidgets: Interactive widgets to visualize images, point sets, and 3D geometry on the web.
+Keywords: jupyter,jupyterlab-extension,widgets,itk,imaging,visualization,webgl,webgpu
+Author-email: Matt McCormick <matt.mccormick@kitware.com>
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python
+Classifier: Development Status :: 3 - Alpha
+Classifier: Framework :: IPython
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Multimedia :: Graphics
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Dist: itkwasm
+Requires-Dist: imjoy
+Requires-Dist: imjoy-rpc >= 0.5.13
+Requires-Dist: imjoy-utils >= 0.1.2
+Requires-Dist: numcodecs
+Requires-Dist: zarr
+Requires-Dist: sphinx ; extra == "doc"
+Requires-Dist: imjoy-jupyterlab-extension >=0.1.13 ; extra == "jupyterlab"
+Requires-Dist: pytest >=2.7.3 ; extra == "test"
+Project-URL: Documentation, https://itkwidgets.readthedocs.io/en/latest/
+Project-URL: Home, https://itkwidgets.readthedocs.io/en/latest/
+Project-URL: Source, https://github.com/InsightSoftwareConsortium/itkwidgets
+Provides-Extra: doc
+Provides-Extra: jupyterlab
+Provides-Extra: test
+
+# itkwidgets
+
+Interactive widgets to visualize images, point sets, and 3D geometry on the web.
+
