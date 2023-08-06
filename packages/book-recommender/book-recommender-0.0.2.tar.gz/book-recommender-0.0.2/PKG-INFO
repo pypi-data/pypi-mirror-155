@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: book-recommender
+Version: 0.0.2
+Summary: Example recommender system for books.
+Home-page: https://github.com/Yana999/BookRecommeder
+Author: Abdramanova Yana (Yana999) and Egorova Alexandra (AlexaEgorova)
+Author-email: abdramanova.yana@yandex.ru
+License: BSD-3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.10.0
+Description-Content-Type: text/markdown
+
+Example recommender system for books.
