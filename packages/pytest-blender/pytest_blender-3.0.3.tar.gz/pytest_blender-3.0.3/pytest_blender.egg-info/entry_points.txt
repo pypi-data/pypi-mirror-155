@@ -1,0 +1,6 @@
+[console_scripts]
+pytest-blender = pytest_blender.__main__:main
+
+[pytest11]
+pytest-blender = pytest_blender.plugin
+
