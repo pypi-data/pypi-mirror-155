@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: TrackCobra
+Version: 0.3.0
+Summary: Short EveryThing In Seconds
+Home-page: https://github.com/MrGps1
+Author: Mr GPS
+Author-email: MrGps00@gmail.com
+Project-URL: Bug Tracker, https://github.com/MrGps1/TrackCobra
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+## from TrackCobra import Connection
+#### Connection.Bin("bin","help // if you not commands")
+###
+## from TrackCobra import Login
+#### There are many websites for login like Netflix, Instagram, Noon, Github....
+#### Login.Github("email","pass")
+###
+## from TrackCobra import User
+#### check user if true/false by simple code and there are many websites like pypi, github
+#### User.Pypi("user")
+#### User.Github("user")
+###
+## from TrackCobra.Html5 import *
+#### button(name="name", id="id", __class__="class", text="text", style="style")
+#### run(port=0000, auto_open=None)
+###
+# There are many.. to write --> https://github.com/MrGps1/TrackCobra
