@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: django-compressor-parceljs
+Version: 2.3.5
+Summary: Compresses JS, JS frameworks, CSS, SASS, LESS, SCSS into cached files.
+Home-page: https://django-compressor-parceljs.readthedocs.io/en/latest/
+Author: Ezeudoh Tochukwu
+Author-email: ezeudoh.tochukwu@gmail.com
+License: MIT
+Platform: UNKNOWN
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Internet :: WWW/HTTP
+Requires-Dist: django-appconf (>=1.0)
+Requires-Dist: rcssmin (==1.0.6)
+Requires-Dist: rjsmin (==1.1.0)
+Requires-Dist: six (>=1.12.0)
+
+Documentation is available on Github page
+[Django-Compressor-parceljs](https://github.com/eadwinCode/django-compressor-parceljs)
+
+
