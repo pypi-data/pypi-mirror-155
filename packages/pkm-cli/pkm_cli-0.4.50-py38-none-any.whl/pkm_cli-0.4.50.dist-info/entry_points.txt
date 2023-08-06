@@ -1,0 +1,3 @@
+[console_scripts]
+pkm = pkm_cli.main:main
+
