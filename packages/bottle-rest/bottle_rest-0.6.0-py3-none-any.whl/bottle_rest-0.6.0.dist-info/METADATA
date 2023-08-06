@@ -1,0 +1,115 @@
+Metadata-Version: 2.1
+Name: bottle-rest
+Version: 0.6.0
+Summary: Decorators to make REST easier in Bottle.
+Home-page: https://github.com/Bystroushaak/rbottle
+Author: Bystroushaak
+Author-email: bystrousak@kitakitsune.org
+License: MIT
+Platform: UNKNOWN
+Classifier: Framework :: Bottle
+Classifier: Topic :: Internet :: WWW/HTTP :: WSGI
+Classifier: Topic :: Internet :: WWW/HTTP :: WSGI :: Application
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.8
+Classifier: License :: OSI Approved :: MIT License
+License-File: LICENSE.txt
+Requires-Dist: setuptools
+Requires-Dist: bottle
+Provides-Extra: docs
+Requires-Dist: sphinx ; extra == 'docs'
+Requires-Dist: sphinxcontrib-napoleon ; extra == 'docs'
+Provides-Extra: test
+Requires-Dist: pytest ; extra == 'test'
+
+Introduction
+============
+
+.. image:: https://badge.fury.io/py/bottle-rest.png
+    :target: https://pypi.python.org/pypi/bottle-rest
+
+.. image:: https://img.shields.io/pypi/dm/bottle-rest.svg
+    :target: https://pypi.python.org/pypi/bottle-rest
+
+.. image:: https://readthedocs.org/projects/bottle-rest/badge/?version=latest
+    :target: http://bottle-rest.readthedocs.org/
+
+.. image:: https://img.shields.io/github/issues/Bystroushaak/bottle-rest.svg
+    :target: https://github.com/Bystroushaak/bottle-rest/issues
+
+.. image:: https://img.shields.io/pypi/l/bottle-rest.svg
+
+This package is used to make easier creating REST applications using
+`Bottle <http://bottlepy.org>`_ web framework.
+
+Documentation
+-------------
+
+Full module documentation and description can be found at Read the Docs:
+
+- http://bottle-rest.readthedocs.org/
+
+
+Changelog
+=========
+
+0.6.0
+-----
+    - Added `@get_to_params`.
+    - Code reformatted.
+    - Removed support for py2.7.
+
+0.5.2
+-----
+    - Change in the JSON imports that makes it easier to override the json encoder/decoder, if necessary. (by https://github.com/eevleevs in #11)
+
+0.5.1
+-----
+    - Provided default for raw_data (by https://github.com/eevleevs in #10)
+
+0.5.0
+-----
+    - Added support for python 3 (#9).
+    - Added support for file-like objects (#7).
+
+0.4.3
+-----
+    - Fixed separator in JSON prettify.
+
+0.4.2
+-----
+    - Fixed #8 - deprecation warning when accessing the Exception.message property.
+
+0.4.1
+-----
+    - Merged #5 to fix ``docs/__init__.py``, which didn't work at Python 3.
+    - Rewritten ``docs/__init__.py``, when the merge for Python 3 broken Python 2 support.
+
+0.4.0
+-----
+    - Added ``pretty_dump()`` decorator.
+
+0.3.2
+-----
+    - Fixed bug in @wraps, caused by some strange python behaviour.
+
+0.3.1
+-----
+    - Fixed bug in documentation.
+
+0.3.0
+-----
+    - As suggested in #3 - project renamed from ``rbottle`` to ``bottle-rest``.
+
+0.2.0
+-----
+    - Fixed some bugs, added optional return_json=True parameters.
+    - Added pretty print for returned JSON.
+
+0.1.0
+-----
+    - Project created.
+
+
