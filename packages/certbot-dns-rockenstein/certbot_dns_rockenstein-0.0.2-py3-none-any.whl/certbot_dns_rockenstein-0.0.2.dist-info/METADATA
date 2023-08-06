@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: certbot-dns-rockenstein
+Version: 0.0.2
+Summary: rockenstein DNS Authenticator plugin for Certbot
+Home-page: https://www.rockenstein.de
+Author: Frank Mueller
+Author-email: fm@rockenstein.de
+License-File: LICENSE
+Requires-Dist: certbot
+Requires-Dist: requests
+
