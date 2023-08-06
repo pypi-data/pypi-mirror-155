@@ -1,0 +1,186 @@
+Metadata-Version: 2.1
+Name: cbc
+Version: 1.1.0
+Summary: Count Blood Cells
+Home-page: https://github.com/nemo256/cbc
+Author: nemo256 (Amine Neggazi)
+Author-email: <neggazimedlamine@gmail.com>
+Keywords: python,artificial intelligence,deep learning,blood cells,image segmentation,unet
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+License-File: AUTHORS
+Requires-Dist: absl-py (==1.1.0)
+Requires-Dist: alabaster (==0.7.12)
+Requires-Dist: astunparse (==1.6.3)
+Requires-Dist: attrs (==21.4.0)
+Requires-Dist: Babel (==2.10.1)
+Requires-Dist: bleach (==5.0.0)
+Requires-Dist: build (==0.8.0)
+Requires-Dist: cachetools (==5.2.0)
+Requires-Dist: certifi (==2022.5.18.1)
+Requires-Dist: cffi (==1.15.0)
+Requires-Dist: charset-normalizer (==2.0.12)
+Requires-Dist: commonmark (==0.9.1)
+Requires-Dist: cryptography (==37.0.2)
+Requires-Dist: cycler (==0.11.0)
+Requires-Dist: docutils (==0.18.1)
+Requires-Dist: flatbuffers (==1.12)
+Requires-Dist: fonttools (==4.33.3)
+Requires-Dist: gast (==0.4.0)
+Requires-Dist: google-auth (==2.6.6)
+Requires-Dist: google-auth-oauthlib (==0.4.6)
+Requires-Dist: google-pasta (==0.2.0)
+Requires-Dist: grpcio (==1.46.3)
+Requires-Dist: h5py (==3.7.0)
+Requires-Dist: idna (==3.3)
+Requires-Dist: imagesize (==1.3.0)
+Requires-Dist: importlib-metadata (==4.11.4)
+Requires-Dist: iniconfig (==1.1.1)
+Requires-Dist: jeepney (==0.8.0)
+Requires-Dist: Jinja2 (==3.1.2)
+Requires-Dist: keras (==2.9.0)
+Requires-Dist: Keras-Preprocessing (==1.1.2)
+Requires-Dist: keyring (==23.5.1)
+Requires-Dist: kiwisolver (==1.4.2)
+Requires-Dist: libclang (==14.0.1)
+Requires-Dist: Markdown (==3.3.7)
+Requires-Dist: MarkupSafe (==2.1.1)
+Requires-Dist: matplotlib (==3.5.2)
+Requires-Dist: numpy (==1.22.4)
+Requires-Dist: oauthlib (==3.2.0)
+Requires-Dist: opencv-python (==4.5.5.64)
+Requires-Dist: opt-einsum (==3.3.0)
+Requires-Dist: packaging (==21.3)
+Requires-Dist: pep517 (==0.12.0)
+Requires-Dist: Pillow (==9.1.1)
+Requires-Dist: pkginfo (==1.8.2)
+Requires-Dist: pluggy (==1.0.0)
+Requires-Dist: protobuf (==3.19.4)
+Requires-Dist: py (==1.11.0)
+Requires-Dist: pyasn1 (==0.4.8)
+Requires-Dist: pyasn1-modules (==0.2.8)
+Requires-Dist: pycparser (==2.21)
+Requires-Dist: Pygments (==2.12.0)
+Requires-Dist: pyparsing (==3.0.9)
+Requires-Dist: python-dateutil (==2.8.2)
+Requires-Dist: pytz (==2022.1)
+Requires-Dist: readme-renderer (==35.0)
+Requires-Dist: requests (==2.27.1)
+Requires-Dist: requests-oauthlib (==1.3.1)
+Requires-Dist: requests-toolbelt (==0.9.1)
+Requires-Dist: rfc3986 (==2.0.0)
+Requires-Dist: rich (==12.4.4)
+Requires-Dist: rsa (==4.8)
+Requires-Dist: scipy (==1.8.1)
+Requires-Dist: SecretStorage (==3.3.2)
+Requires-Dist: six (==1.16.0)
+Requires-Dist: snowballstemmer (==2.2.0)
+Requires-Dist: Sphinx (==5.0.1)
+Requires-Dist: sphinxcontrib-applehelp (==1.0.2)
+Requires-Dist: sphinxcontrib-devhelp (==1.0.2)
+Requires-Dist: sphinxcontrib-htmlhelp (==2.0.0)
+Requires-Dist: sphinxcontrib-jsmath (==1.0.1)
+Requires-Dist: sphinxcontrib-qthelp (==1.0.3)
+Requires-Dist: sphinxcontrib-serializinghtml (==1.1.5)
+Requires-Dist: tensorboard (==2.9.0)
+Requires-Dist: tensorboard-data-server (==0.6.1)
+Requires-Dist: tensorboard-plugin-wit (==1.8.1)
+Requires-Dist: tensorflow (==2.9.1)
+Requires-Dist: tensorflow-addons (==0.17.0)
+Requires-Dist: tensorflow-estimator (==2.9.0)
+Requires-Dist: tensorflow-io-gcs-filesystem (==0.26.0)
+Requires-Dist: termcolor (==1.1.0)
+Requires-Dist: tomli (==2.0.1)
+Requires-Dist: twine (==4.0.1)
+Requires-Dist: typeguard (==2.13.3)
+Requires-Dist: typing-extensions (==4.2.0)
+Requires-Dist: urllib3 (==1.26.9)
+Requires-Dist: webencodings (==0.5.1)
+Requires-Dist: Werkzeug (==2.1.2)
+Requires-Dist: wrapt (==1.14.1)
+Requires-Dist: zipp (==3.8.0)
+
+# Count Blood Cells
+Count red, white blood cells to detect various diseases such as blood cancer (leukemia), lower red blood cells count (anemia)...
+
+<!-- TABLE OF CONTENTS -->
+## Table of Contents
+
+* [Project Structure](#project-structure)
+* [Install](#install)
+* [Usage](#usage)
+* [Develop](#develop)
+* [License](#license)
+
+## Project Structure
+```
+cbc/
+|-- data/
+|   |-- plt/...
+|   |-- rbc/...
+|   |-- wbc/...
+|
+|-- docs/...
+|
+|-- models/...
+|
+|-- output/
+|   |-- plt/...
+|   |-- rbc/...
+|   |-- wbc/...
+|
+|-- AUTHORS
+|-- cbc
+|-- LICENSE
+|-- README.md
+|-- TODO.md
+|-- requirements.txt 
+|-- setup.py
+```
+
+## Install
+- Install straight from PyPI using pip:
+```
+$ pip install cbc
+```
+## Usage
+> Please read `cbc --help` before using it
+> -o flag is optional (defaults to out/ directory)
+- Count blood cells (-r for red and -w for white):
+```
+$ cbc -r <blood-cell-image>
+```
+- Predict red blood cells (use Circle Hough Tranform and Connected Component Labeling with otsu's thresholding):
+```
+$ cbc -r -CHT -CCL -t <blood-cell-image>
+```
+- Predict white blood cells (with custom output directory):
+```
+$ cbc -w <blood-cell-image> -o outdir/
+```
+
+## Develop
+- Download the project:
+```
+$ git clone https://github.com/nemo256/cbc
+$ cd cbc 
+```
+- Activate virtual environment:
+```
+$ python -m venv venv
+$ source venv/bin/activate
+$ pip install -r requirements.txt
+```
+- Now just adapt the code to your needs and then run using the command:
+```
+$ chmod +x cbc
+$ ./cbc
+```
+
+## License
+- Please read [cbc/LICENSE](https://github.com/nemo256/cbc/blob/master/LICENSE)
