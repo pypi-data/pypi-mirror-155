@@ -1,0 +1,2 @@
+[console_scripts]
+dad = python_inspector.resolve_cli:resolve_dependencies
