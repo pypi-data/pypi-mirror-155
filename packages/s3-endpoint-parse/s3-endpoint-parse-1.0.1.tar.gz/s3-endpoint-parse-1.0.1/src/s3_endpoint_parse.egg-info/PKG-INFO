@@ -1,0 +1,33 @@
+Metadata-Version: 2.1
+Name: s3-endpoint-parse
+Version: 1.0.1
+Summary: Flexibly extract information from S3 endpoint URL/URI strings
+Home-page: https://github.com/pckilgore/s3_endpoint_parse
+Author: Patrick C. Kilgore
+Author-email: pypy-contact-s3-endpoint-parse@pck.email
+License: MIT
+Project-URL: Bug Tracker, https://github.com/pckilgore/s3_endpoint_parse/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# s3-endpoint-parse
+
+Flexibly parses S3 URL/URIs, including legacy formats and new fips / dualstack
+formats.
+
+Returns a dict:
+```
+{
+  "match": bool       # True if library matched
+  "protocol": string  # May be empty
+  "bucket": string    # Set if match is True
+  "key": string       # May be empty
+  "region": string    # May be empty
+}
+```
+
+See /tests for examples.
