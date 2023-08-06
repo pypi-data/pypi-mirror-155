@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+Jigsaw.egg-info/PKG-INFO
+Jigsaw.egg-info/SOURCES.txt
+Jigsaw.egg-info/dependency_links.txt
+Jigsaw.egg-info/top_level.txt
+jigsaw/Plugin.py
+jigsaw/PluginLoader.py
+jigsaw/__init__.py
