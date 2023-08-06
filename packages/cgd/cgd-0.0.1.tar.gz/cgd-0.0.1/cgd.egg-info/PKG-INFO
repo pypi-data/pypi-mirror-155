@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: cgd
+Version: 0.0.1
+Summary: A auxiliary tool for algorithm competition questioner.
+Home-page: https://github.com/malanore-z/cgd
+Author: malanore.z
+Author-email: malanore.z@gmail.com
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/malanore-z/cgd/issues
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
+# CGD
+
+*Compile-Generate-Diff*
+
+`python -m cgd subcommand args...`
+
+## Compile
+
+## Generate
+
+## Diff
+
+
