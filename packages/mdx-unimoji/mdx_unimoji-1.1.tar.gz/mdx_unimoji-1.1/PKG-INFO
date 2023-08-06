@@ -1,0 +1,87 @@
+Metadata-Version: 2.1
+Name: mdx_unimoji
+Version: 1.1
+Summary: Python-Markdown extension that replaces common smileys with their Unicode emoji emoticons. ;)
+Home-page: https://github.com/kernc/mdx_unimoji
+Author: Jack Nicholson
+Author-email: kern.ce.ce++@gmail.com
+License: GPLv3+
+Description: 
+        Unicode Emojis for Python-Markdown
+        ==================================
+        
+        Converts defined emoticon symbols to Unicode emojis, supported on a
+        variety of devices [1].
+        
+        [1]: http://apps.timwhitlock.info/emoji/tables/unicode#block-1-emoticons
+        
+        Usage:
+        
+        ```python
+        >>> from __future__ import print_function
+        >>> from markdown import markdown
+        >>> text = 'I <3 you! :P'
+        >>> print(markdown(text, ['mdx_unimoji']))    # doctest: +NORMALIZE_WHITESPACE
+        <p>I <span class="emoji" style="color:red">❤</span> you! <span class="emoji">😛</span></p>
+        ```
+        
+        **NOTE**: The emojis are only replaced when whitespace-delimited on both sides!
+        
+        The following options are accepted:
+        
+         - `emoji`, the emoticon-to-list-of-aliases mapping,
+         - `span_class`, the class name of the encompassing `<span>` element
+           (default: 'emoji'). No element is created if `None`.
+        
+        An example with these custom settings:
+        
+        ```python
+        >>> from mdx_unimoji import UnimojiExtension
+        >>> img_heart = '<img alt="love" src="heart.png"/>'
+        >>> img_tongue = '<img alt=":P" src="tongue.png"/>'
+        >>> overrides = UnimojiExtension.EMOJI
+        >>> overrides.update({img_heart: ['<3'],
+        ...                   img_tongue: ':p :P :-p :-P'.split()})
+        >>> print(markdown(text,
+        ...                extensions=[UnimojiExtension(span_class='other',
+        ...                                             emoji=overrides)]))
+        ... # doctest: +NORMALIZE_WHITESPACE
+        <p>I <img alt="love" class="other" src="heart.png" /> you! \
+        <img alt=":P" class="other" src="tongue.png" /></p>
+        ```
+        
+        You can use the `span_class` value in your CSS, e.g.:
+        
+            .emoji {
+                font-family: "Apple Color Emoji", "Segoe UI Emoji",
+                             "Noto Color Emoji", EmojiSymbols, "DejaVu Sans", Symbola;
+            }
+        
+        Install
+        -------
+        
+        To install and make available to Markdown, you can issue:
+        
+            pip install mdx_unimoji
+        
+        or
+        
+            pip install --upgrade git+git://github.com/kernc/mdx_unimoji.git
+        
+        Then use the above provided examples to figure your way around.
+        
+        HF!
+        
+Keywords: markdown unicode emoji emoticon
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Environment :: Web Environment
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content :: Message Boards
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content :: News/Diary
+Classifier: Topic :: Text Processing :: Filters
+Classifier: Topic :: Text Processing :: Markup :: HTML
+Description-Content-Type: text/markdown
