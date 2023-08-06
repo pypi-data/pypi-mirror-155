@@ -1,0 +1,16 @@
+COPYING
+README.md
+setup.cfg
+setup.py
+openbk/__init__.py
+openbk/extract.py
+openbk.egg-info/PKG-INFO
+openbk.egg-info/SOURCES.txt
+openbk.egg-info/dependency_links.txt
+openbk.egg-info/requires.txt
+openbk.egg-info/top_level.txt
+openbk/statement/__init__.py
+openbk/statement/flows.py
+openbk/statement/transactions.py
+openbk/utils/__init__.py
+openbk/utils/categories.py
