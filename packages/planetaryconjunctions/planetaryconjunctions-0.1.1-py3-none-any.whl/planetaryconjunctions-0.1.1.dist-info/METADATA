@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: planetaryconjunctions
+Version: 0.1.1
+Summary: planetaryconjunctions
+License: GNU
+Keywords: astronomy
+License-File: LICENSE
+Requires-Dist: skyfield (>=1.4)
+Requires-Dist: pytz (>=2022.1)
+Requires-Dist: pandas (>=1.4)
+
