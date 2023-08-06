@@ -1,0 +1,42 @@
+[tool.poetry]
+
+name = "typefit"
+version = "0.4.2"
+
+description = "Fits JSON values into Python type-anotated objects"
+license = "WTFPL"
+authors = [
+    "Rémy Sanchez <remy.sanchez@hyperthese.net>"
+]
+
+readme = "README.md"
+
+repository = "https://github.com/Xowap/typefit/"
+homepage = "https://github.com/Xowap/typefit/"
+
+keywords = ["typing", "json", "api"]
+
+
+[tool.poetry.dependencies]
+
+python = "^3.7"
+pendulum = "<3.0.0"
+httpx = ">=0.22,<2.0.0"
+pygments = "<3.0.0"
+
+
+[tool.poetry.dev-dependencies]
+
+pytest = "^6.2.4"
+ipython = "*"
+sphinx = "^4.0.2"
+importlib-metadata = "^0.23.0"
+isort = "^5.8.0"
+black = "^21.5b2"
+httpbin = "^0.7.0"
+werkzeug = "<2.1.0"
+
+[build-system]
+
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.masonry.api"
