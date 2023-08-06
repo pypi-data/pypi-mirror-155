@@ -1,0 +1,9 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "pipeline": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

@@ -1,0 +1,2 @@
+recursive-include afwizard/schema *.json
+recursive-include afwizard/jupyter *.ipynb

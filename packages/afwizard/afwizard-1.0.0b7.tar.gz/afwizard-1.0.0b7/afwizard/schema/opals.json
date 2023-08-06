@@ -1,0 +1,84 @@
+{
+  "anyOf": [
+    {
+      "additionalProperties": false,
+      "properties": {
+        "_backend": {
+          "const": "opals",
+          "type": "string"
+        },
+        "debugOutFile": {
+          "description": "Outputs a xyz file containing all points classified as ground",
+          "title": "debug ground points file",
+          "type": "string"
+        },
+        "filter": {
+          "description": "If a filter string is specified, point classification is only carried out for the set points selected by the filter condition",
+          "title": "(tree of )filter(s) to select search points",
+          "type": "string"
+        },
+        "inFile": {
+          "description": "The path to the opals datamanager whose point data are being classified",
+          "title": "input ODM file",
+          "type": "string"
+        },
+        "interpolation": {
+          "default": "plane",
+          "description": "The interpolation methods are ordered by their polynomial degree. In case adapting is chosen, a suitable interpolator is determined by the module, Higher degree interpolation is only used, if lower degree surfaces are too rigid.",
+          "enum": [
+            "plane",
+            "paraboloid",
+            "adapting"
+          ],
+          "title": "robust interpolation method",
+          "type": "string"
+        },
+        "maxIter": {
+          "default": 100,
+          "description": "Robust interpolation is performed iteratively. In each iteration the individual point weights are adapted based on the residuals (i.e. vertical distance between point and intermediate surface. The process of surface interpolation and re-weighting is repeated until the surface changes are below a threshold or the maximum number of iterations is reached.",
+          "title": "maximum number of iterations",
+          "type": "integer"
+        },
+        "maxSigma": {
+          "default": 0.5,
+          "description": "If the standard deviation of a unit observation of the robust interpolation (i.e. sigma_0 ) exceeds the specified value, the classification of the affected points remains unchanged.",
+          "title": "maximum allowed sigma of interpolation",
+          "type": "number"
+        },
+        "penetration": {
+          "default": 20,
+          "description": "The laser signal is partly or totally reflected at semi-transparent objects like vegetation. Therefore, not all laser pulses reach the ground. The penetration rate is used in the course of the robust interpolation for apriori estimating a reasonable initial course of the local surfaces",
+          "title": "estimated penetration rate [%]",
+          "type": "integer"
+        },
+        "robustWFAdpation": {
+          "default": "adapting",
+          "description": "The module supports different adaption functions",
+          "title": "adaption of the robust weight function",
+          "type": "string"
+        },
+        "searchRadius": {
+          "default": 3,
+          "description": "Only points within the given search radius are considered for the local robust interpolation.If the search area contains too few points for successful interpolation, the classification of the respective points remains unchanged.",
+          "title": "search radius for point selection",
+          "type": "number"
+        },
+        "sigmaApriori": {
+          "default": "0.15",
+          "description": "Either a constant accuracy representing all data points or a user-defined formula (using the generic filter syntax) may be applied. It is important thatthe a specified formula provide realistic accuracy values, otherwise therobust interpolation concept will not work properly.",
+          "title": "a-priori sigma of points",
+          "type": "string"
+        },
+        "type": {
+          "const": "RobFilter",
+          "type": "string"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "title": "RobFilter Module (OPALS)",
+      "type": "object"
+    }
+  ]
+}

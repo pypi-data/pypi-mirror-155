@@ -1,0 +1,6 @@
+[console_scripts]
+afwizard = afwizard.__main__:main
+copy_afwizard_notebooks = afwizard.paths:copy_notebooks
+extract_opals_schema = afwizard.opals:_automated_opals_schema
+upgrade_filter_library = afwizard.library:upgrade_filter_library
+
