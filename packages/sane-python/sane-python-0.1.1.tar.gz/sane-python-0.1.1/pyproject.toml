@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "sane-python"
+version = "0.1.1"
+description = "Simple Array of Numbers Encoding in Python"
+authors = ["Viktor Kronvall <viktor.kronvall@gmail.com>"]
+license = "BSD3"
+
+[tool.poetry.scripts]
+sane_identity = "sane_python.io:array_identity"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+numpy = "^1.22.3"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
