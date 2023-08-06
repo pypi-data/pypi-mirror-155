@@ -1,0 +1,15 @@
+pillow>=9.1.1
+requests>=2.26.0
+types-pillow
+types-requests>=2.27.11
+
+[dev]
+black
+flake8
+isort
+mypy
+pre-commit
+pytest
+pytest-cov
+setuptools>=46.4.0
+types-setuptools
