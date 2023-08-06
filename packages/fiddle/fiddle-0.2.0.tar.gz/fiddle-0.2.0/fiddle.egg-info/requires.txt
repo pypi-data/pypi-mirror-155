@@ -1,0 +1,8 @@
+dm-tree
+typing-extensions
+
+[testing]
+absl-py
+pytest
+pytype
+seqio-nightly
