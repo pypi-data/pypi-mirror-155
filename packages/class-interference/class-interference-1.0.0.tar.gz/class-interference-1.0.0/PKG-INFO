@@ -1,0 +1,56 @@
+Metadata-Version: 2.1
+Name: class-interference
+Version: 1.0.0
+Summary: Monkey patching utilities for classes
+Home-page: https://github.com/reartnew/class-interference
+License: MIT
+Author: Artem Novikov
+Author-email: artnew@list.ru
+Requires-Python: >=3.8,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Typing :: Typed
+Project-URL: Repository, https://github.com/reartnew/class-interference
+Description-Content-Type: text/markdown
+
+# class-interference
+
+Monkey patching utilities for classes.
+
+## Installation
+
+```shell
+pip install class-interference
+```
+
+# Usage example
+
+```python
+from class_interference import Extension, inject, extend_all
+
+
+class LibraryClass:
+    def library_method(self, *args, **kwargs):
+        return None
+
+
+class LibraryClassExtension(LibraryClass, Extension):
+    @inject
+    def library_method(self, *args, **kwargs):
+        original_value = self.super_ext.library_method(*args, **kwargs)
+        if original_value is None:
+            raise ValueError
+        return original_value
+
+
+extend_all()
+
+if __name__ == "__main__":
+    library_class_instance = LibraryClass()
+    library_class_instance.library_method()  # raises ValueError
+
+```
+
