@@ -1,0 +1,44 @@
+[tool.poetry]
+name = "omnio"
+version = "1.2.2"
+description = "Python library for opening URIs as streaming file-like objects"
+authors = ["Bob Green <rgreen@aquent.com>"]
+readme = "README.md"
+repository = "https://github.com/scoutexchange/omnio"
+license = "MIT"
+classifiers = ['Development Status :: 5 - Production/Stable',
+               'Intended Audience :: Developers',
+               'Programming Language :: Python',
+               'License :: OSI Approved :: MIT License',
+               'Natural Language :: English',
+               'Operating System :: OS Independent',
+               'Programming Language :: Python',
+               'Programming Language :: Python :: 3',
+               'Programming Language :: Python :: 3.7',
+               'Programming Language :: Python :: 3.8',
+               'Programming Language :: Python :: 3.9',
+               'Programming Language :: Python :: 3.10',
+               'Topic :: Internet :: WWW/HTTP',
+               'Topic :: Software Development :: Libraries :: Python Modules',
+               'Topic :: Utilities']
+packages = [
+    { include = "omnio" },
+    { include = "README.md" },
+    { include = "LICENSE" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+boto3 = "^1.10"
+requests = "^2.22"
+
+[tool.poetry.dev-dependencies]
+black = {version = "~22.3.0", allow-prereleases = true}
+pytest = "^6.2.5"
+flake8 = "^3.7"
+pytest-cov = "^2.8"
+responses = "^0.10.6"
+
+[build-system]
+requires = ["poetry>=1.1.13"]
+build-backend = "poetry.masonry.api"
