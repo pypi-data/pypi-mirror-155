@@ -1,0 +1,7 @@
+fs~=2.2
+pysmb!=1.1.26,!=1.1.29,<=1.2.8,>=1.1.22
+six~=1.10
+setuptools>=38.3.0
+
+[:python_version < "3"]
+configparser~=3.2
