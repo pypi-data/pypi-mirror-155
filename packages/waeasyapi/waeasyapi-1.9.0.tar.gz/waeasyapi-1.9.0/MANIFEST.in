@@ -1,0 +1,8 @@
+include LICENSE, CHANGELOG.md, README.md
+recursive-include tests *
+recursive-include waeasyapi *
+recursive-include examples *
+recursive-exclude waeasyapi *.pyc
+recursive-exclude docs *.pyo
+recursive-exclude tests *.pyc
+recursive-exclude tests *.pyo
