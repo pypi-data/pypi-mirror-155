@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: pilot-platform-common
+Version: 0.0.33
+Summary: Generates entity ID and connects with Vault (secret engine) to retrieve credentials
+Author: Indoc Research
+Author-email: etaylor@indocresearch.org
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+License-File: LICENSE
+Requires-Dist: python-dotenv (==0.19.1)
+Requires-Dist: httpx (==0.23.0)
+Requires-Dist: aioredis (>=2.0.0<3.0.0.)
+Requires-Dist: aioboto3 (==9.6.0)
+Requires-Dist: xmltodict (==0.13.0)
+Requires-Dist: minio (==7.1.8)
+
+UNKNOWN
+
