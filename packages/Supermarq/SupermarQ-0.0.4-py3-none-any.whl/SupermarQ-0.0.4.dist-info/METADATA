@@ -1,0 +1,65 @@
+Metadata-Version: 2.1
+Name: SupermarQ
+Version: 0.0.4
+Summary: SupermarQ is a scalable, application-centric quantum benchmarking suite.
+Home-page: https://github.com/SupertechLabs/SupermarQ
+Author: Super.tech
+Author-email: pranav@super.tech
+License: Apache 2
+Platform: UNKNOWN
+Requires-Python: >=3.8.0
+Description-Content-Type: text/markdown
+Requires-Dist: cirq-superstaq (~=0.1.25)
+Requires-Dist: qiskit-superstaq (~=0.1.21)
+Requires-Dist: scikit-learn (~=1.1.1)
+Provides-Extra: dev_env
+Requires-Dist: black (~=22.3.0) ; extra == 'dev_env'
+Requires-Dist: flake8-import-order (~=0.18.1) ; extra == 'dev_env'
+Requires-Dist: flake8 (~=3.8.4) ; extra == 'dev_env'
+Requires-Dist: mypy (==0.910) ; extra == 'dev_env'
+Requires-Dist: pylint (~=2.6.0) ; extra == 'dev_env'
+Requires-Dist: pytest-cov (~=2.11.1) ; extra == 'dev_env'
+Requires-Dist: pytest (~=6.1.2) ; extra == 'dev_env'
+
+<p align="center">
+  <img width="300" src="https://raw.githubusercontent.com/SupertechLabs/SupermarQ/main/static/SupermarQ_Logo.png">
+</p>
+
+---
+![Continuous Integration](https://github.com/SupertechLabs/SupermarQ/actions/workflows/ci.yml/badge.svg)
+
+
+# SupermarQ: A Scalable Quantum Benchmark Suite
+
+[SupermarQ](https://arxiv.org/abs/2202.11045) is a suite of application-oriented benchmarks used to measure the performance of quantum computing systems.
+
+## Installation
+
+The SupermarQ package is available via `pip` and can be installed in your current Python environment with the command:
+
+```
+pip install supermarq
+```
+
+## Using SupermarQ
+
+The benchmarks are defined as classes within `supermarq/benchmarks/`. Each application
+defines two methods; `circuit` and `score`. These methods are used to generate the benchmarking circuit and evaluate its performance
+after execution on hardware.
+
+The quantum benchmarks within SupermarQ are designed to be scalable, meaning that the benchmarks can be
+instantiated and generated for a wide range of circuit sizes and depths.
+
+The [`examples/ghz_example.py`](examples/ghz_example.py) file contains an end-to-end example of how to execute the GHZ benchmark
+using [SuperstaQ](https://superstaq.super.tech/). The general workflow is as follows:
+
+```python
+import supermarq
+
+ghz = supermarq.benchmarks.ghz.GHZ(num_qubits=3)
+ghz_circuit = ghz.circuit()
+counts = execute_circuit_on_quantum_hardware(ghz_circuit) # For example, via AWS Braket, IBM Qiskit, or SuperstaQ
+score = ghz.score(counts)
+```
+
+
