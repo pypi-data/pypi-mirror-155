@@ -1,0 +1,3 @@
+[console_scripts]
+asynchron=asynchron.codegen.cli.click_impl:cli
+
