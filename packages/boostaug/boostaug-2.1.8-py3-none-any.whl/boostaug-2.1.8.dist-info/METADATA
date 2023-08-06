@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: boostaug
+Version: 2.1.8
+Summary: UNKNOWN
+Home-page: https://github.com/yangheng95/BoostAug
+Author: Yang Heng
+Author-email: hy345@exeter.ac.uk
+License: MIT
+Platform: UNKNOWN
+Requires-Python: >3.8
+Requires-Dist: pyabsa (>=1.14.8)
+Requires-Dist: textattack
+Requires-Dist: nlpaug
+Requires-Dist: tensorflow-text
+
+UNKNOWN
+
