@@ -1,0 +1,66 @@
+Metadata-Version: 2.1
+Name: pystrapi
+Version: 3.1.0
+Summary: Work with Strapi from Python via REST API
+Home-page: https://github.com/NoamNol/py-strapi
+License: MIT
+Keywords: strapi,cms,api,rest
+Author: Noam Nol
+Author-email: noamnol19@gmail.com
+Requires-Python: >=3.7,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: aiohttp
+Project-URL: Repository, https://github.com/NoamNol/py-strapi
+Description-Content-Type: text/markdown
+
+# PyStrapi
+
+Work with Strapi from Python via REST API
+
+## Install
+
+```bash
+pip install pystrapi
+```
+
+## Documentation
+
+[Full API Reference](./docs)
+
+## Examples
+
+Quick start:
+
+```python
+import asyncio
+from pystrapi import StrapiClient
+
+async def main():
+    strapi = StrapiClient(strapi_url)
+    await strapi.authorize(your_identifier, your_password) # optional
+    users = await strapi.get_entries('users', filters={'username': {'$eq': 'Pavel'}})
+    user_id = users['data'][0]['id']
+    await strapi.update_entry('users', user_id, data={'username': 'Mark'})
+
+asyncio.run(main())
+```
+
+## Development
+
+### Lint
+Run [prospector](https://prospector.landscape.io/):
+```
+prospector
+```
+
+### Create new release
+
+Push changes to 'main' branch following [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
+
+
