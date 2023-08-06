@@ -1,0 +1,38 @@
+Metadata-Version: 2.1
+Name: pgb-broker-utils
+Version: 0.2.34
+Summary: Tools used by the Pitt-Google astronomical alert broker.
+Home-page: https://github.com/mwvgroup/Pitt-Google-Broker
+Author: Troy Raen
+Author-email: troy.raen@pitt.edu
+Keywords: astronomy,alert broker
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Astronomy
+Classifier: Topic :: Scientific/Engineering :: Physics
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: astropy
+Requires-Dist: fastavro
+Requires-Dist: google-cloud-bigquery
+Requires-Dist: google-cloud-logging
+Requires-Dist: google-cloud-storage (>=1.38)
+Requires-Dist: google-cloud-pubsub
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: PyYAML (>=5.3)
+Requires-Dist: six (>=1.15)
+Requires-Dist: typing
+
+# `pgb_broker_utils`
+
+- `pip install pgb_broker_utils`
+- `import broker_utils`
+
+Note that the schema maps are stored in a Cloud Storage bucket and are not packaged with this module.
+This has the following benefits:
+1. Schema maps can be updated easily by uploading new files to the bucket.
+2. Broker instances can use different schema maps; each instance loads them from their own `broker_files` bucket.
