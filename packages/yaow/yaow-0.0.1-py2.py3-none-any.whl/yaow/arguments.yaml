@@ -1,0 +1,40 @@
+---
+username:
+  help: Username to connect to. The script will prompt for the password and store it in the keychain.
+  type: str
+server:
+  help: Server to connect to. Example https://1.1.1.1/vpn
+  type: str
+servercert:
+  help: "Example: pin-sha256:k+H........="
+  type: str
+group:
+  help: Group name when connecting. Passed to --authgroup=
+  type: str
+script:
+  help: Script argument to pass to openconnect.
+  type: str
+totp:
+  help: TOTP 2-factor authentication
+  action: 'store_true'
+  default: false
+email:
+  help: Email mfa authentication
+  type: str
+  default: ''
+folder:
+  help: Email folder to watch for mfa token.
+  type: str
+  default: mfafolder
+regex:
+  help: Regular expression to match the mfa token.
+  type: str
+  default: '([0-9]{4,10})'
+backupKeyringFile:
+  help: Keyring file location if your os doesn't have a keyring installed. Defaults to /keyring.json.
+  type: str
+  default: /keyring.json
+debug:
+  help: Enable debug traceback.
+  action: 'store_true'
+  default: false
