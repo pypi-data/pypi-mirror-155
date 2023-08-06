@@ -1,0 +1,266 @@
+gssvar,s,q,r
+wrkstat,retired,,working fulltime
+HRS1,e,c,c
+PRESTG105PLUS,c,c,c
+SPHRS1,e,,a
+SPHRS2,e,,d
+COHRS2,e,,c
+SPOCC10,e,,d
+pawrkslf,someone else,,self-employed
+PAOCC10,d,,b
+PAPRES105PLUS,b,,e
+PAIND10,c,d,e
+mawrkslf,self-employed,,self-employed
+MAPRES10,c,c,b
+age,c,,b
+speduc,e,,d
+degree,high school,high school,junior college
+padeg,high school,graduate,bachelor
+madeg,high school,,junior college
+race,white,,black
+RES16,50000 to 250000,town lt 50000,50000 to 250000
+mawrkgrw,yes,,no
+INCOM16,above average,far below average,below average
+parborn,both in u.s,both in u.s,both in u.s
+babies,c,,e
+teens,c,c,c
+unrelat,e,,d
+earnrs,b,,e
+region,new england,,e. sou. central
+xnorcsiz,"suburb, med city","city,50-250000","city,10-49999"
+size,56,,787
+VOTE12,did not vote,,did not vote
+IF12WHO,obama,,other
+PRES16,iap,,trump
+natspac,too much,,about right
+natheal,too little,,about right
+natdrug,too little,,too little
+natarms,about right,,about right
+nataid,about right,,about right
+natfare,too little,too little,too little
+natsoc,too little,too little,about right
+natmass,too little,,about right
+eqwlth,e,,d
+tax,too high,,too high
+libath,remove,not remove,remove
+spkrac,allowed,not allowed,not allowed
+librac,remove,not remove,remove
+spkcom,not allowed,allowed,not allowed
+spkmil,allowed,allowed,not allowed
+colmil,not allowed,allowed,allowed
+libmil,remove,not remove,remove
+libhomo,remove,,remove
+colmslm,not allowed,"yes, allowed","yes, allowed"
+libmslm,remove,remove,not remove
+cappun,favor,oppose,favor
+relig,catholic,,catholic
+reliten,not very strong,,not very strong
+pray,once a day,,once a week
+popespks,uncertain true or false,uncertain true or false,certainly false
+RELIG16,catholic,,hinduism
+prayer,disapprove,,disapprove
+bible,word of god,,word of god
+racopen,owner decides,,owner decides
+affrmact,oppose pref,,strongly oppose pref
+wrkwayup,agree strongly,agree strongly,disagree strongly
+health,poor,,excellent
+life,routine,exciting,dull
+socrel,once a year,,sev times a year
+class,working class,,upper class
+satfin,not at all sat,,not at all sat
+finalter,worse,,better
+finrela,below average,,above average
+getahead,hard work,hard work,both equally
+fepol,disagree,,agree
+abhlth,yes,yes,yes
+abany,no,no,no
+sexeduc,favor,favor,oppose
+divlaw,easier,easier,more difficult
+teensex,always wrong,,sometimes wrong
+homosex,not wrong at all,,sometimes wrong
+LETDIE1,yes,yes,yes
+SUICIDE3,no,,yes
+SUICIDE4,no,,no
+HUNT1,neither hunts,neither hunts,both hunt
+news,less than once wk,once a week,never
+tvhours,d,c,d
+coop,"friendly,interested","friendly,interested","restless,impatient"
+form,standard <x>,alternate <y>,alternate <y>
+fechld,disagree,,agree
+fepresch,disagree,disagree,agree
+fefam,disagree,,agree
+RACDIF3,no,,yes
+helppoor,e,,c
+helpnot,e,,b
+numcong,e,c,d
+wlthwhts,c,,c
+wlthhsps,c,,e
+workhsps,c,c,e
+intlwhts,c,c,e
+liveblks,oppose,neither favor nor oppose,favor
+marblk,neither favor nor oppose,,favor
+marhisp,neither favor nor oppose,,strongly favor
+marwht,neither favor nor oppose,,strongly favor
+discaffm,somewhat unlikely,,somewhat likely
+CLOSETO3,e,,b
+CLOSETO4,e,e,e
+CLOSETO5,e,e,e
+SEETALK1,e,e,d
+SEETALK4,e,,e
+SEVERE2,e,,c
+DANGSLF2,e,,d
+DANGSLF3,e,e,c
+DANGSLF4,e,e,c
+relpersn,modrte religious,,very religious
+compuse,no,,no
+emailmin,c,c,c
+emailhr,c,,e
+waypaid,e,,c
+physhlth,e,,e
+usetech,e,,b
+ntwkhard,e,,d
+lifenow,e,,e
+disrspct,a few times a year,,a few times a month
+notsmart,less than once a year,less than once a year,a few times a month
+hlthmntl,fair,,fair
+satsoc,good,,very good
+actssoc,good,very good,poor
+fatigue,moderate,,none
+abfelegl,it depends,should,it depends
+abmoral,it depends,morally opposed,not morally opposed
+ABHELP1,no,no,yes
+ABHELP2,no,no,yes
+ABHELP4,no,,yes
+ABMEDGOV1,a woman and her medical professional should decide,,the government should decide
+extrayr,e,,a
+yearval,e,,e
+newsfrom,tv,the internet,family
+scifrom,newspapers,,friends colleagues
+seeksci,the internet,,magazines
+toofast,disagree,,strongly disagree
+scibnfts,benefits greater,,about equal if volunteered
+ODDS1,no,,no
+hotcore,True,,True
+boyorgrl,True,,False
+earthsun,sun around earth,,earth around sun
+hsbio,no,yes,no
+hschem,no,,yes
+hsphys,no,yes,no
+nanowill,harmful results greater,benefits greater,harmful results greater
+nanoharm,strongly in favor,slightly in favor,strongly in favor
+intintl,not at all interested,,very interested
+intfarm,moderately interested,very interested,very interested
+inttech,moderately interested,not at all interested,moderately interested
+intmil,not at all interested,,moderately interested
+visnhist,c,c,d
+vissci,c,,c
+scientod,disagree,,disagree
+scientbe,strongly agree,,strongly agree
+compwage,e,,c
+numorg,e,c,e
+marcohab,"not married, no cohabitating partner",married,"not married, missing on cohabitating"
+trcourts,e,,d
+intcntct,e,,c
+healthissp,poor,very good,excellent
+meovrwrk,disagree,,neither agree nor disagree
+hapunhap,fairly happy,,not very happy
+XMARSEX1,always wrong,,always wrong
+concong,very little confidence,,a great deal of confidence
+conbiz,some confidence,a great deal of confidence,very little confidence
+conchurh,a great deal of confidence,some confidence,complete confidence
+concourt,some confidence,very little confidence,some confidence
+conschls,some confidence,a great deal of confidence,some confidence
+clergvte,strongly agree,,strongly disagree
+godchnge,"believe now, always have",,"believe now, didn't used to"
+afterlif,"yes, probably",,"yes, definitely"
+hell,"yes, probably",,"no, definitely not"
+miracles,"yes, probably",,"no, definitely not"
+theism,agree,,strongly disagree
+nihilism,disagree,,strongly agree
+marelkid,catholic,catholic,orthodox-christian
+parelkid,catholic,protestant,buddhism
+religkid,catholic,,protestant
+relscrpt,yes,,yes
+trustsci,not agree/dsagre,,strong disagree
+relmarry,probably accept,,definitely not accept
+RELEXT1,probably not,,definitely not
+RELEXT3,probably not,,definitely not
+relgeneq,treats men better than women,,treats men better than women
+relobjct,yes,yes,no
+makefrnd,agree,agree,neither agree nor disagree
+relgenbar,neither agree nor disagree,strongly disagree,neither agree nor disagree
+govvsrel,agree,,strongly agree
+relpast,disagree,strongly disagree,agree
+relrlvnt,disagree,,strongly agree
+muslims,neither positive nor negative,,somewhat negative
+hindus,neither positive nor negative,,neither positive nor negative
+nukegen,extremely dangerous,not dangerous,very dangerous
+indusgen,very dangerous,very dangerous,not dangerous
+watergen,somewhat dangerous,,somewhat dangerous
+tempgen,very dangerous,,not dangerous
+nummen,e,,e
+HIVTEST1,e,e,c
+GENETST1,not very much,not very much,not very much
+GENESELF2,yes,,yes
+realrinc,e,,d
+coninc,c,,c
+conrinc,e,,e
+hispanic,not hispanic,,salvadorian
+mnthsusa,e,,c
+vetyears,none,,less than 2 yrs
+dwelown,pays rent,,other
+worda,correct,correct,incorrect
+wordd,correct,,correct
+worde,correct,incorrect,correct
+wordi,correct,correct,correct
+wordsum,c,c,a
+MAR1,divorced,,never married
+OLD2,e,,e
+OLD5,e,,e
+OLD6,e,e,e
+OLD7,e,,e
+OLD12,e,,e
+hefinfo,1st person,1st person,2nd person
+hhrace,white,,amer indian
+hhtype,"1adlt,0kids",,"3adlts,3mar,sp,rel,0kids"
+HHTYPE1,single adult,"married couple, no children","married couple, no children"
+visitors,no visitors,,no visitors
+dateintv,810,526,1030
+ISCO88,c,,c
+PAISCO88,c,c,b
+MAISCO88,c,,c
+SPISCO88,e,,d
+PAISCO08,"metal finishing, plating and coating machine operators",,personnel and careers professionals
+SEI10,c,d,b
+SEI10EDUC,c,c,b
+MASEI10,c,,e
+MASEI10EDUC,c,c,c
+MASEI10INC,b,c,d
+SPSEI10INC,e,,d
+COSEI10,e,,c
+COPRES10,e,e,d
+COPRES105PLUS,e,,c
+zodiac,leo,,libra
+WHOELSE1,no,,yes
+WHOELSE2,no,,no
+WHOELSE3,no,,no
+WHOELSE4,no,yes,yes
+WHOELSE5,no,no,yes
+WHOELSE6,yes,,no
+feelevel,d,,b
+intage,68,,61
+intethn,white,,hispanic
+intsex,female,,male
+intyrs,23,,5
+consent,r consents to recording interview,r consents to recording interview,r consents to recording interview
+ballot,ballot a,,ballot c
+issp,did issp,did issp,didnt do issp
+phase,phase one - initial cases,,phase two - sub sampled cases
+spaneng,english,,spanish
+huadd,yes,yes,no
+kidsinhh,no,,yes
+respond,high,,low
+neisafe,somewhat safe,,very safe
+wtssnr,c,,c
+vstrat,3301,,3363
+vpsu,2,,1
