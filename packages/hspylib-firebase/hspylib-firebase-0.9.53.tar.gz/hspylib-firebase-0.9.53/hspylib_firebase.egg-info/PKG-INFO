@@ -1,0 +1,33 @@
+Metadata-Version: 2.1
+Name: hspylib-firebase
+Version: 0.9.53
+Summary: HomeSetup - Firebase integration
+Home-page: https://github.com/yorevs/hspylib
+Author: Hugo Saporetti Junior
+Author-email: yorevs@hotmail.com
+License: MIT
+Project-URL: GitHub, https://github.com/yorevs/hspylib
+Project-URL: PyPi, https://pypi.org/project/hspylib-firebase/
+Keywords: firebase,google,integration,application
+Platform: Darwin
+Platform: Linux
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: Unix
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+
+# HomeSetup - Firebase integration
+
+## Upload and Download files to/from your firebase database
+
+[![License](https://badgen.net/badge/license/MIT/gray)](LICENSE.md)
+[![Release](https://badgen.net/badge/release/v0.9.53/gray)](CHANGELOG.md#unreleased)
+[![PyPi](https://badgen.net/badge/icon/python?icon=pypi&label)](https://pypi.org/project/hspylib-firebase)
+[![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/yorevs/hspylib)
+[![Gitter](https://badgen.net/badge/icon/gitter?icon=gitter&label)](https://gitter.im/hspylib/community)
+[![Donate](https://badgen.net/badge/paypal/donate/yellow)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=J5CDEFLF6M3H4)
