@@ -1,0 +1,37 @@
+Metadata-Version: 2.1
+Name: pydiverse.pipetest
+Version: 0.0.1
+Summary: An adaption layer for pydiverse.pipedag that simplyfies execution of pipedag steps as unit tests with cache invalidation awareness.
+Home-page: https://github.com/pydiverse/pydiverse.pipetest
+Author: QuantCo, Inc.
+Author-email: noreply@quantco.com
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# pydiverse.pipetest
+
+[![CI](https://github.com/pydiverse/pydiverse.pipetest/actions/workflows/ci.yml/badge.svg)](https://github.com/pydiverse/pydiverse.pipetest/actions/workflows/ci.yml)
+
+An adaption layer for pydiverse.pipedag that simplyfies execution of pipedag steps as unit tests with cache invalidation awareness.
+
+## Installation
+
+You can install the package in development mode using:
+
+```bash
+git clone https://github.com/pydiverse/pydiverse.pipetest.git
+cd pydiverse.pipetest
+
+# create and activate a fresh environment named pydiverse.pipetest
+# see environment.yml for details
+mamba env create
+conda activate pydiverse.pipetest
+
+pre-commit install
+pip install --no-build-isolation -e .
+```
