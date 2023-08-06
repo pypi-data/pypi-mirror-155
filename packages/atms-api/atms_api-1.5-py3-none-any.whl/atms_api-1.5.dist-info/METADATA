@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: atms-api
+Version: 1.5
+Summary: Helper functions to interact with the WisDOT ATMS API
+Home-page: UNKNOWN
+Author: Glenn Vorhes
+Author-email: gavorhes@wisc.edu
+License: MIT
+Platform: UNKNOWN
+Requires-Python: >=3.3
+Requires-Dist: requests
+Requires-Dist: typing
+Requires-Dist: xmltodict
+Requires-Dist: dicttoxml
+
+UNKNOWN
+
+
