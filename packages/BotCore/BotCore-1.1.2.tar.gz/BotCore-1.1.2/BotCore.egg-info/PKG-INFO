@@ -1,0 +1,98 @@
+Metadata-Version: 2.1
+Name: BotCore
+Version: 1.1.2
+Summary: Base core for telegram bots.
+Home-page: https://gitlab.com/Tullp/botcore
+Author: Maks Vinnytskyi
+Author-email: ownerofforest@gmail.com
+License: MIT
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
+License-File: license.txt
+
+
+## Description
+Just base core for simple telegram bots.
+
+## How to create a bot
+```
+class AwesomeBot(Bot):
+
+    def __init__(self, token: str):
+        super().__init__(token)
+
+    def init_controllers(self):
+        UserController(self)
+
+    def handle(self, e):
+        self.send_message(12345, traceback.format_exc())
+        return True
+
+class UserController(Controller):
+
+    def __init__(self, bot: Bot):
+        super().__init__(bot)
+
+    @message_handler(commands=["start"], chat_types=["private"])
+    def start_handler(self, message: Message):
+        self.bot.send_message(message.chat.id, "Hello!")
+```
+
+## How to use database
+```
+db = DataBase("users.db", "structure.sql")
+db.update("CREATE TABLE test (id INTEGER PRIMARY KEY, x TEXT)")
+db.update("INSERT INTO test (id, x) VALUES (?, ?)", 0, "some text")
+print(db.fetchall("SELECT * FROM test"))
+print(db.fetchone("SELECT * FROM test WHERE id = ?", 0))
+```
+You can provide structure.sql to handle the case where the database doesn't exist.
+It should contain some scripts to define tables or any other what you need.
+
+## How to use service
+```
+
+database.update("CREATE TABLE users (id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT, money REAL)")
+
+class UserInfo(ModelInfo):
+
+    id: int
+    username: str
+    money: float
+
+    @classmethod
+    def table(cls):
+        return "users"
+
+    @classmethod    
+    def fields(cls):
+        return "id", "username", "money"
+
+class UserDao(DAO):
+
+    def __init__(self, database: DataBase):
+        super().__init__(database, UserInfo)
+
+    def find_by_username(self, username: str):
+        return self.database.fetchone("SELECT * FROM users WHERE username = ?", username)
+
+    def users_without_money():
+        return self.database.fetchall("SELECT * FROM users WHERE money = 0")
+
+class UserService(Service[UserInfo, UserDao]):
+
+    def __init__(self, dao: UserDao):
+        super().__init__(UserInfo, dao)
+
+    def find_by_username(self, username: str):
+        return self.to_object(self.dao.find_by_username(username))
+
+    def users_without_money(self, user_id: int):
+        return self.to_objects(self.dao.users_without_money())
+
+service = UserService(UserDao(database))
+user_id = service.create(username="some_username", money=10)
+print(service.getall())
+service.delete(user_id)
+```
+
