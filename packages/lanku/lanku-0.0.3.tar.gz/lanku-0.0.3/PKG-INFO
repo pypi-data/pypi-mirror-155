@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: lanku
+Version: 0.0.3
+Summary: LANK User
+Home-page: https://github.com/lannocc/lanku
+Author: LANNOCC (Shawn A. Wilson)
+Author-email: lannocc@yahoo.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# lanku
+
+## LANK User
+
+User interface which utilizes the LANK protocol.
+
+## Installation
+
+It is easy to install lanku using pip:
+```
+pip install lanku
+```
+
+## Usage
+
+Once installed, simply run the `lanku` command from any terminal.
+
