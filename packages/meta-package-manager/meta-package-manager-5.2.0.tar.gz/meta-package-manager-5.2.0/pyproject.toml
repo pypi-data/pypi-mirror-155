@@ -1,0 +1,157 @@
+[tool.poetry]
+# Docs: https://python-poetry.org/docs/pyproject/
+name = "meta-package-manager"
+version = "5.2.0"
+description = "🎁 a wrapper around all package managers"
+license = 'GPL-2.0-or-later'
+authors = ["Kevin Deldycke <kevin@deldycke.com>"]
+readme = "readme.md"
+homepage = 'https://github.com/kdeldycke/meta-package-manager'
+repository = 'https://github.com/kdeldycke/meta-package-manager'
+documentation = 'https://kdeldycke.github.io/meta-package-manager'
+keywords = [
+    'CLI',
+    'apm',
+    'apt',
+    'apt-mint',
+    'atom',
+    'brew',
+    'cargo',
+    'cask',
+    'choco',
+    'chocotaley',
+    'composer',
+    'dnf',
+    'emerge',
+    'flatpak',
+    'gem',
+    'homebrew',
+    'mac app store',
+    'macos',
+    'mas',
+    'node',
+    'npm',
+    'opkg',
+    'package',
+    'pacman',
+    'php composer',
+    'pip',
+    'pipx',
+    'plugin',
+    'portage',
+    'ruby',
+    'rust',
+    'snap',
+    'steamcmd',
+    'visual studio code',
+    'vscode',
+    'xbar',
+    'swiftbar',
+    'yarn',
+    'yay',
+    'yum',
+    'zypper',
+]
+classifiers = [
+    # See: https://pypi.org/pypi?%3Aaction=list_classifiers
+    'Development Status :: 5 - Production/Stable',
+    'Environment :: Console',
+    'Environment :: MacOS X',
+    'Environment :: Plugins',
+    'Intended Audience :: Developers',
+    'Intended Audience :: Information Technology',
+    'Intended Audience :: System Administrators',
+    'Operating System :: MacOS :: MacOS X',
+    'Operating System :: Microsoft :: Windows',
+    'Operating System :: POSIX :: Linux',
+    'Programming Language :: Python :: Implementation :: CPython',
+    'Topic :: Software Development :: Libraries :: Python Modules',
+    'Topic :: System :: Archiving :: Packaging',
+    'Topic :: System :: Installation/Setup',
+    'Topic :: System :: Software Distribution',
+    'Topic :: Utilities',
+]
+
+[tool.poetry.urls]
+"Funding" = "https://github.com/sponsors/kdeldycke"
+"Issues" = "https://github.com/kdeldycke/meta-package-manager/issues"
+"Changelog" = "https://kdeldycke.github.io/meta-package-manager/changelog.html"
+
+[tool.poetry.dependencies]
+# List of python versions and their support status:
+# https://en.wikipedia.org/wiki/History_of_Python#Support
+python = "^3.7"
+boltons = "^21.0.0"
+click = "^8.1.2"
+click-extra = "^2.1.1"
+tabulate = { extras = ["widechars"], version = "^0.8.9" }
+tomli = { version = "^2.0.1", python = "< 3.11" }
+tomli_w = "^1.0.0"
+xmltodict = "^0.13.0"
+
+[tool.poetry.dev-dependencies]
+bump2version = "^1.0.1"
+coverage = { extras = ["toml"], version = "^6.4" }
+furo = "^2022.6.4"
+myst-parser = "^0.18.0"
+pytest = "^7.1.1"
+# More pytest plugins at: https://docs.pytest.org/en/latest/reference/plugin_list.html
+pytest-cov = "^3.0.0"
+pytest-randomly = "^3.12.0"
+pytest-xdist = { extras = ["psutil"], version = "^2.5.0" }
+pyyaml = "^6.0"
+sphinx = "^4.5.0"
+sphinx-click = "^4.1.0"
+sphinx-copybutton = "^0.5.0"
+sphinx-design = "^0.1.0"
+sphinx-issues = "^3.0.1"
+sphinxext-opengraph = "^0.6.3"
+
+[tool.poetry.scripts]
+mpm = 'meta_package_manager.cli:mpm'
+
+[tool.black]
+# "You should include all Python versions that you want your code to run under."
+# Source: https://github.com/psf/black/issues/751
+target-version = ['py37', 'py38', 'py39', 'py310']
+
+[tool.pylint.MASTER]
+# http://pylint.pycqa.org/en/latest/technical_reference/features.html
+[tool.pylint."messages control"]
+# List messages with: $ pylint --list-msgs
+# C0114: missing-module-docstring
+# W0511: fixme
+# W1203: logging-fstring-interpolation
+disable = "C0114, W0511, W1203"
+
+[tool.pytest.ini_options]
+# https://docs.pytest.org/en/latest/customize.html#pyproject-toml
+# --full-trace: have a full traceback printed on KeyboardInterrupt
+addopts = "--numprocesses auto --dist loadgroup --durations=10 --cov-report term --cov=meta_package_manager"
+xfail_strict = true
+
+[tool.coverage.paths]
+# https://coverage.readthedocs.io/en/latest/config.html
+source = ["meta_package_manager"]
+[tool.coverage.run]
+source = ["meta_package_manager"]
+branch = true
+omit = ["*/tests/*"]
+[tool.coverage.report]
+omit = ["*/tests/*"]
+precision = 2
+
+[tool.check-wheel-contents]
+ignore = [
+    # W002: Wheel contains duplicate files:
+    #   meta_package_manager/managers/__init__.py
+    #   meta_package_manager/tests/__init__.py
+    "W002",
+    # W004: Module is not located at importable path:
+    #   meta_package_manager/bar_plugin/meta_package_manager.7h.py
+    "W004",
+]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
