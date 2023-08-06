@@ -1,0 +1,5 @@
+[console_scripts]
+node = nodejs.node:main
+npm = nodejs.npm:main
+npx = nodejs.npx:main
+corepack = nodejs.corepack:main
