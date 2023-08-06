@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+ctermgl.pxd
+pyproject.toml
+setup.py
+termgl.c
+termgl.pyx
+TermGL/lib/termgl.h
+TermGL/src/termgl.c
+termgl.egg-info/PKG-INFO
+termgl.egg-info/SOURCES.txt
+termgl.egg-info/dependency_links.txt
+termgl.egg-info/requires.txt
+termgl.egg-info/top_level.txt
