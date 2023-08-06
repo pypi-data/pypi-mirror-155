@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: pyhesaff
+Version: 2.0.1
+Summary: Routines for computation of hessian affine keypoints in images.
+Home-page: https://github.com/Erotemic/hesaff
+Author: Krystian Mikolajczyk, Michal Perdoch, Jon Crall, Avi Weinstock
+Author-email: erotemic@gmail.com
+Maintainer: Jon Crall
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.6
+Provides-Extra: all
+Provides-Extra: tests
