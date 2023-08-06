@@ -1,0 +1,5 @@
+[tool.black]
+include = 'terminhtml_recorder.*\.pyi?$|tests.*\.pyi?$'
+
+[tool.isort]
+profile = "black"
