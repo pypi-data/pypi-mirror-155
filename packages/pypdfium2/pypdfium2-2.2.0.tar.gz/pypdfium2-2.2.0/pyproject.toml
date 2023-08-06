@@ -1,0 +1,19 @@
+# SPDX-FileCopyrightText: 2022 geisserml <geisserml@gmail.com>
+# SPDX-License-Identifier: Apache-2.0 OR BSD-3-Clause
+
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = [
+    "setuptools>=46.1.0",
+    "setuptools-scm",
+    "build",
+    "wheel",
+    "ctypesgen",
+]
+
+[tool.pytest.ini_options]
+filterwarnings = [
+    # capture distutils deprecation warning triggered by importing the "wheel" package
+    # we are currently not aware of any other way to exert precise control on wheel tags
+    "ignore:The distutils package is deprecated:DeprecationWarning",
+]

@@ -1,0 +1,70 @@
+# SPDX-FileCopyrightText: 2022 geisserml <geisserml@gmail.com>
+# SPDX-License-Identifier: Apache-2.0 OR BSD-3-Clause
+
+name: Release
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  
+  release:
+    
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+    
+    steps:
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      
+      - name: Install/update setup dependencies
+        run: |
+          python3 -m pip install -U pip
+          python3 -m pip install -U setuptools setuptools-scm build wheel
+      
+      - name: Check out ctypesgen
+        uses: actions/checkout@v3
+        with:
+          repository: ctypesgen/ctypesgen
+          ref: '2120dbf9a5086a21c48e5a002b1f274f3716b7ec'
+          path: ctypesgen
+      
+      - name: Install ctypesgen
+        run: |
+          cd ctypesgen/
+          python3 -m pip install .
+      
+      - name: Check out pypdfium2
+        uses: actions/checkout@v3
+        with:
+          repository: ${{ github.repository }}
+          fetch-depth: 0
+      
+      - name: Install/update pypdfium2 dependencies
+        run: |
+          python3 -m pip install -U .[utilities,test,inserttext,converters]
+          rm -rf ./data/.presetup_done.txt
+      
+      - name: Run packaging script
+        run: make packaging
+      
+      - name: Prepare release description
+        run: python3 setupsrc/pl_setup/mk_releasenotes.py
+      
+      - name: Publish to GitHub
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: 'dist/*'
+          bodyFile: 'RELEASE.md'
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Publish to TestPyPI
+        run: twine upload -u __token__ -p ${{ secrets.TESTPYPI_TOKEN }} --verbose --repository-url "https://test.pypi.org/legacy/" dist/*
+      
+      - name: Publish to PyPI
+        run: twine upload -u __token__ -p ${{ secrets.PYPI_TOKEN }} --verbose dist/*
