@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: census-error-analyzer
+Version: 0.0.4
+Summary: Analyze the margin of error in U.S. census data
+Home-page: https://palewi.re/docs/census-error-analyzer/
+Author: Ben Welsh
+Author-email: b@palewi.re
+License: MIT
+Project-URL: Maintainer, https://github.com/datadesk
+Project-URL: Source, https://github.com/datadesk/census-error-analyzer
+Project-URL: Tracker, https://github.com/datadesk/census-error-analyzer/issues
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+### Links
+
+* Docs: [palewi.re/docs/census-error-analyzer/](https://palewi.re/docs/census-error-analyzer/)
+* Issues: [github.com/datadesk/census-error-analyzer/issues](https://github.com/datadesk/census-error-analyzer/issues)
+* Packaging: [pypi.python.org/pypi/census-error-analyzer](https://pypi.python.org/pypi/census-error-analyzer)
+* Testing: [github.com/datadesk/census-error-analyzer/actions](https://github.com/datadesk/census-error-analyzer/actions)
