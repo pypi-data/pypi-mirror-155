@@ -1,0 +1,5 @@
+parsimonious
+
+[tests]
+pytest
+pytest-cov

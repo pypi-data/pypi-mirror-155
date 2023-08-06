@@ -1,0 +1,28 @@
+Metadata-Version: 2.1
+Name: ingreedypy
+Version: 1.3.6
+Summary: ingreedy-py parses recipe ingredient lines into a object
+Home-page: https://github.com/openculinary/ingreedy-py
+Author: Scott Cooper
+Author-email: scttcper@gmail.com
+License: UNKNOWN
+Description: # ingreedy-py
+        python port of https://github.com/iancanderson/ingreedy-js
+        
+        ## Installation
+        ```bash
+        $ pip install ingreedypy
+        ```
+        
+        ## Local Testing
+        ```bash
+        $ pip install -e .[tests]
+        $ py.test --cov=ingreedypy ingreedytest.py
+        ```
+        
+Keywords: ingreedy,ingreedypy,recipe,parser
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Provides-Extra: tests
