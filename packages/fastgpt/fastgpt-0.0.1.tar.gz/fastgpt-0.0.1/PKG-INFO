@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: fastgpt
+Version: 0.0.1
+Summary: boost inference speed of GPT models in transformers by onnxruntime
+Home-page: https://github.com/LowinLi/fastgpt
+Author: LowinLi
+Author-email: lowinli@outlook.com
+License: MIT License
+Project-URL: Repo, https://github.com/LowinLi/fastgpt
+Project-URL: Bug Tracker, https://github.com/LowinLi/fastgpt/issues
+Description: # fastgpt
+        
+Keywords: GPT,ONNX,onnxruntime,NLP,model hubtransformer,quantization,text generation,summarization,translation,q&a,qg,machine learning,fast inference,CausalLM
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.5
+Description-Content-Type: text/markdown

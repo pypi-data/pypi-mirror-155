@@ -1,0 +1,13 @@
+setup.cfg
+setup.py
+fastgpt/__init__.py
+fastgpt/model_wrapper.py
+fastgpt/onnx_exporter.py
+fastgpt/onnx_text_generate.py
+fastgpt.egg-info/PKG-INFO
+fastgpt.egg-info/SOURCES.txt
+fastgpt.egg-info/dependency_links.txt
+fastgpt.egg-info/requires.txt
+fastgpt.egg-info/top_level.txt
+test/__init__.py
+test/model_test.py
