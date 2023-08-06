@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: odoo12-addons-oca-helpdesk
+Version: 12.0.20220615.0
+Summary: Meta package for oca-helpdesk Odoo addons
+Home-page: UNKNOWN
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Framework :: Odoo
+Classifier: Framework :: Odoo :: 12.0
+Requires-Dist: odoo12-addon-helpdesk-mgmt
+Requires-Dist: odoo12-addon-helpdesk-mgmt-fieldservice
+Requires-Dist: odoo12-addon-helpdesk-mgmt-partner-sequence
+Requires-Dist: odoo12-addon-helpdesk-mgmt-project
+Requires-Dist: odoo12-addon-helpdesk-mgmt-sla
+Requires-Dist: odoo12-addon-helpdesk-mgmt-timesheet
+Requires-Dist: odoo12-addon-helpdesk-mgmt-timesheet-time-control
+Requires-Dist: odoo12-addon-helpdesk-motive
+Requires-Dist: odoo12-addon-helpdesk-type
+
+UNKNOWN
+
