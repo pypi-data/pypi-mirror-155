@@ -1,0 +1,40 @@
+Metadata-Version: 2.1
+Name: pyionosphere
+Version: 0.0.3b2
+Summary: pyIonosphere is a Python3 package (library)  of the Earth's ionosphere models.
+Home-page: https://gitlab.com/zolotov/pyionosphere/
+Author: Oleg Zolotov, Denis Sakaev
+Author-email: zolotovo@gmail.com
+License: Apache Software License
+Keywords: ionosphere of the Earth,model,pyIonosphere
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Physics
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3 :: Only
+License-File: LICENSE.txt
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: xarray
+Requires-Dist: pyfiri
+Requires-Dist: pydanilov
+Requires-Dist: pyimaz
+
+
+pyIonosphere is a Python3 package (library) of the Earth's ionosphere models.
+
+It contains:
+
+ - pyfiri - FIRI-2018 non-disturbed non-auroral ionosphere D-region model;
+
+ - pydanilov - Danilov non-disturbed non-auroral ionosphere D-region model;
+
+ - pyimaz - IMAZ non-disturbed high-latitude ionosphere D-region model. 
+
+
