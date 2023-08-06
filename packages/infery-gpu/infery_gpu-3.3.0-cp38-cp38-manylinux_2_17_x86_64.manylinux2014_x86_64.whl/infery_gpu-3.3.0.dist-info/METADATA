@@ -1,0 +1,127 @@
+Metadata-Version: 2.1
+Name: infery-gpu
+Version: 3.3.0
+Summary: Deci Run-Time Engine
+Home-page: https://deci.ai
+Author: Deci AI
+Author-email: rnd@deci.ai
+License: Apache License v2.0
+Keywords: Deci,AI,Inference,Deep Learning
+Requires-Python: >=3.7.5
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pydantic (~=1.9.0)
+Requires-Dist: psutil
+Requires-Dist: requests
+Requires-Dist: onnx
+Requires-Dist: torch (>=1.8.1)
+Requires-Dist: openvino (>=2022.1.0)
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: cryptography
+Requires-Dist: GPUtil (==1.4.0)
+Requires-Dist: nvidia-pyindex (==1.0.8)
+Requires-Dist: nvidia-tensorrt (==8.0.1.6)
+Requires-Dist: onnxruntime-gpu (<1.11.0,>=1.10.0)
+Requires-Dist: tensorflow-gpu (!=2.6,>=2.4.0)
+Requires-Dist: pycuda (>=2021.1)
+
+# Infery
+Infery is a Python runtime engine that lets you quickly run inference locally with only 3 simple commands.<br>
+Infery supports all major deep learning frameworks with a unified and simple API.
+
+## Prerequisites 
+You can find a list of dependencies and prerequisites at https://docs.deci.ai/docs/infery-pre-requisites
+## Installation
+https://docs.deci.ai/docs/installing-infery
+
+## Usage
+![Infery Usage](https://deci.ai/wp-content/uploads/2021/06/Infery-Fig1.png)
+
+
+#### 1. Load an example model
+```python
+>>> import infery, numpy as np
+>>> model = infery.load(model_path='MyNewTask_1_0.onnx', framework_type='onnx', inference_hardware='gpu')
+```
+
+#### 2. Predict with a random numpy input
+
+```python
+>>> inputs = [np.random.random(shape).astype('float32') for shape in [[1, 243, 30, 40], [1, 172, 60, 80], [1, 102, 120, 160], [1, 64, 240, 320], [1, 153, 15, 20]]]
+>>> model.predict(inputs)
+[array([[[[-3.5920768, -3.5920792, -3.592102 , ..., -3.592099 ,
+           -3.5920944, -3.5920882],
+          [-3.592076 , -3.5919113, -3.592086 , ..., -3.5921211,
+           -3.5921066, -3.5920937],
+          [-3.592083 , -3.592073 , -3.5920823, ..., -3.5921297,
+           -3.592109 , -3.5920937],
+          ...,
+          [-3.5920753, -3.5917826, -3.591444 , ..., -3.580754 ,
+           -3.5816329, -3.582549 ],
+          [-3.592073 , -3.5917459, -3.591257 , ..., -3.5817945,
+           -3.5820704, -3.5835373],
+          [-3.592073 , -3.5920737, -3.5920737, ..., -3.5853324,
+           -3.5845006, -3.5856297]],
+ 
+         [[-5.862198 , -5.8567815, -5.851764 , ..., -5.86396  ,
+           -5.8639617, -5.865011 ],
+          [-5.858771 , -5.8493323, -5.841462 , ..., -5.8617773,
+           -5.8614554, -5.8633246],
+          [-5.8560567, -5.844124 , -5.8351245, ..., -5.8598166,
+           -5.859674 , -5.8624067],
+          ...,
+          [-5.8608136, -5.854358 , -5.8467784, ..., -5.8504496,
+           -5.8563104, -5.8615303],
+          [-5.86313  , -5.8587003, -5.8531966, ..., -5.8534794,
+           -5.8581944, -5.8625536],
+          [-5.865306 , -5.8623176, -5.8593984, ..., -5.8581495,
+           -5.861572 , -5.865295 ]],
+ 
+         [[-8.843734 , -8.840406 , -8.837172 , ..., -8.840413 ,
+           -8.842026 , -8.843931 ],
+          [-8.840792 , -8.836787 , -8.831037 , ..., -8.836103 ,
+           -8.839954 , -8.842534 ],
+          [-8.838855 , -8.833998 , -8.82706  , ..., -8.835106 ,
+           -8.839087 , -8.841538 ],
+          ...,
+          [-8.842419 , -8.840865 , -8.838625 , ..., -8.83943  ,
+           -8.843677 , -8.845087 ],
+          [-8.844379 , -8.84402  , -8.843141 , ..., -8.84185  ,
+           -8.844696 , -8.845202 ],
+          [-8.844775 , -8.845572 , -8.845177 , ..., -8.843876 ,
+           -8.8444395, -8.845926 ]]]], dtype=float32)]
+```
+
+#### 3. Benchmark the model on the current hardware
+```python
+>>> model.benchmark(batch_size=1)
+-INFO- Benchmarking the model in batch size 1 and dimensions [(243, 30, 40), (172, 60, 80), (102, 120, 160), (64, 240, 320), (153, 15, 20)]... 
+<ModelBenchmarks: {
+    "batch_size": 1,
+    "batch_inf_time": "6.57 ms",
+    "batch_inf_time_variance": "0.02 ms",
+    "memory": "1536.00 mb",
+    "pre_inference_memory_used": "1536.00 mb",
+    "post_inference_memory_used": "1536.00 mb",
+    "total_memory_size": "7982.00 mb",
+    "throughput": "152.32 fps",
+    "sample_inf_time": "6.57 ms",
+    "include_io": true,
+    "framework_type": "onnx",
+    "framework_version": "1.10.0",
+    "inference_hardware": "GPU",
+    "date": "11:16:55__02-03-2022",
+    "ctime": 1643879815,
+    "h_to_d_mean": null,
+    "d_to_h_mean": null,
+    "h_to_d_variance": null,
+    "d_to_h_variance": null
+}>
+```
+
+## Documentation:
+https://docs.deci.ai/docs/infery
+
+
+
