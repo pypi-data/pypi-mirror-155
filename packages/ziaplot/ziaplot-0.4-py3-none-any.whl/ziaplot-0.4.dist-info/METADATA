@@ -1,0 +1,50 @@
+Metadata-Version: 2.1
+Name: ziaplot
+Version: 0.4
+Summary: Draw light-weight plots, graphs, and charts
+Home-page: https://ziaplot.readthedocs.io/
+Author: Collin J. Delker
+Author-email: ziaplot@collindelker.com
+License: UNKNOWN
+Project-URL: Source, https://bitbucket.org/cdelker/ziaplot
+Keywords: plot,chart,graph,smith chart,bar,pie
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Scientific/Engineering :: Visualization
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Provides-Extra: cairo
+Requires-Dist: cairosvg ; extra == 'cairo'
+Provides-Extra: math
+Requires-Dist: ziamath (>=0.6) ; extra == 'math'
+Requires-Dist: ziafont (>=0.4) ; extra == 'math'
+Requires-Dist: latex2mathml ; extra == 'math'
+
+# ziaplot
+
+Ziaplot is for easy, lightweight, and Pythonic plotting of data in SVG format.
+
+In ziaplot, a plot is made from one or more Series added to an Axis.
+Below, a Line series is added to an XyPlot axis.
+
+        import ziaplot as zp
+        p = zp.XyPlot()
+        p += zp.Line([1, 2, 3], [1, 4, 9])
+        p
+
+Ziaplot can plot discrete XY data, callable functions, histograms, pie charts, and bar charts.
+Data can also be displayed in polar form or on a Smith Chart.
+
+
