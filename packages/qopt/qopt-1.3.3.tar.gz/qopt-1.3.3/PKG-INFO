@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: qopt
+Version: 1.3.3
+Summary: Qubit Simulation and Optimal Control for Quantum Systems
+Home-page: https://github.com/qutech/qopt
+Author: Julian Teske
+Author-email: j.teske@fz-juelich.de
+License: GLP3
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Scientific/Engineering :: Physics
+Provides-Extra: doc
+Provides-Extra: qopt_tests
