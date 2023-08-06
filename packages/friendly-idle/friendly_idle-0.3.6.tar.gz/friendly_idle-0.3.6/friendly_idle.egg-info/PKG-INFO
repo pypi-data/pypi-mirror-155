@@ -1,0 +1,48 @@
+Metadata-Version: 2.1
+Name: friendly-idle
+Version: 0.3.6
+Summary: Customized version of IDLE for friendly/friendly-traceback.
+Home-page: https://github.com/friendly-traceback/friendly_idle
+Author: Andre Roberge
+Author-email: Andre.Roberge@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Intended Audience :: Education
+Classifier: Topic :: Education
+Classifier: Topic :: Software Development :: Interpreters
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# friendly_idle
+
+This provides a "live patched" [1] version of IDLE to include friendly/friendly-traceback.
+
+Install using the usual `pip install friendly_idle`.
+
+Requires either Python 3.8.10+, or Python >= 3.9.5.  (It has not been tested with Python 3.11.)
+
+You can launch it from a terminal using `friendly_idle`.
+
+![image](https://user-images.githubusercontent.com/629698/174356637-2bf86ecd-a817-4189-89eb-3939c4122dd9.png)
+
+That's it. From there on, if your code triggers a traceback, you will be able to get
+interactive help from the embedded version of friendly/friendly-traceback.
+
+![image](https://user-images.githubusercontent.com/629698/174356738-58d3af3f-a8ac-469a-b98e-16648961916b.png)
+
+
+Please see https://friendly-traceback.github.io/docs/index.html for information about friendly/friendly-traceback.
+
+---
+
+[1] By "live patched", I mean that it uses regular IDLE but patches a few modules as they are imported.
+
+
