@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: CGLib
+Version: 1.0.1
+Summary: Computational geometry algorithms library
+Home-page: https://github.com/OGKG/CGLib
+Author: artandfi&Chmele&MaksymRud&DeerInBlack
+Author-email: artyom.fisunenko@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+License-File: LICENSE
