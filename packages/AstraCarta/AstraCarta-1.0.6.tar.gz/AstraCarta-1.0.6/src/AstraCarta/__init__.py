@@ -1,0 +1,1 @@
+from AstraCarta.AstraCarta import __main__
