@@ -1,0 +1,17 @@
+#!/bin/bash
+export GITHUB_ORGANIZATION={github_org:}
+export GITHUB_TOKEN={github_token:}
+export MassSpecDBVersion={massspec_db_version:}
+export CONDA_ENV={conda_env_name:}
+export CONDA_DISTRO={conda_distro:}
+export APPLICATION_ID={app_id:}
+export QT_API={qt_api:}
+
+export PYCHRON_APPNAME={app_name:}
+export PYCHRON_DATABASE_UPDATE={update_db:}
+export PYCHRON_ALEMBIC_URL={alembic_url:}
+export PYCHRON_USE_LOGIN=0
+
+export PYTHONPATH={pychron_path:}
+
+{conda_distro:}/envs/{conda_env_name:}/bin/pythonw {pychron_path:}/launchers/launcher.py

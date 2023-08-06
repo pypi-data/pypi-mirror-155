@@ -1,0 +1,34 @@
+- plugin: MassSpec
+  tests: []
+- plugin: ArArConstants
+  tests: []
+- plugin: ArgusSpectrometer
+  tests:
+  - test_communication
+  - test_intensity
+- plugin: ClientExtractionLine
+  tests: []
+- plugin: DVC
+  tests:
+  - test_database
+  - test_dvc_fetch_meta
+- plugin: GitHub
+  tests:
+  - test_api
+- plugin: Experiment
+  tests: []
+- plugin: PyScript
+  tests: []
+- plugin: Pipeline
+  tests: []
+- plugin: Entry
+  tests: []
+- plugin: LabspyClient
+  tests: []
+- plugin: Update
+  tests: []
+- plugin: Email
+  tests: []
+- plugin: FusionsCO2
+  tests:
+  - test_communication

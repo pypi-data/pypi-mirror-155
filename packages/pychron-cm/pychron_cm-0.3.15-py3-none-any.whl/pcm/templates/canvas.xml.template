@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<root>
+    <!-- Spectrometer -->
+    <spectrometer>Spec
+        <translation>-24,0</translation><dimension>8,8</dimension><color>85,110,180</color>
+    </spectrometer>
+
+    <!-- Valves -->
+    <valve>A
+        <translation>-23,-3</translation>
+    </valve>
+    <valve>B
+        <translation>-14,3</translation>
+    </valve>
+
+    <!-- pump -->
+    <ionpump>IonPump
+        <translation>-24,-8</translation><dimension>8,3</dimension><color>234,165,57</color>
+    </ionpump>
+
+    <!-- connections -->
+    <connection orientation="vertical"><start>A</start><end>Spec</end></connection>
+    <connection orientation="vertical"><start>A</start><end>IonPump</end></connection>
+    <connection orientation="horizontal"><start>B</start><end>Spec</end></connection>
+</root>
