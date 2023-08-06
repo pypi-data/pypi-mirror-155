@@ -1,0 +1,41 @@
+Metadata-Version: 2.1
+Name: jjowl
+Version: 0.2.12
+Summary: VERY EXPERIMENTAL :  module for opinied command line processing of OWL ontologies
+Author-email: JJoao <jj@di.uminho.pt>
+Description-Content-Type: text/markdown
+Classifier: License :: OSI Approved :: MIT License
+Requires-Dist: rdflib
+Requires-Dist: jjcli
+Requires-Dist: owlrl
+Requires-Dist: unidecode
+Requires-Dist: pyyaml
+Project-URL: Home, https://natura.di.uminho.pt/jjowl
+
+jjowl - opinied python module for processing OWL ontologies
+
+# Synopsis
+
+    owlcat  a.ttl b.owl c.ttl > all.ttl
+    owlclass a.ttl     show class taxonomy
+    owlgrep pattern a.ttl
+    owllabel2term a.ttl > new.ttl    - new URIRef from rfds:label
+    owlexpand a.ttl  - expand and pretty print
+
+    owlxdxf  a.ttl  -- Build a XDXF dictionary (seealso goldendict)
+
+Converter Any to turtle
+
+    jjtable2ttl
+    jjyaml2ttl
+    jjtmd2ttl
+
+As a module:
+
+    import jjowl
+    ... FIXME
+
+# Description
+
+
+
