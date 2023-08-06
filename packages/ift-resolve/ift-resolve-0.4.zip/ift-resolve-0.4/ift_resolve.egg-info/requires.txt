@@ -1,0 +1,12 @@
+ducc0>=0.23.0
+nifty8>=8.0
+numpy
+
+[full]
+astropy
+h5py
+matplotlib
+mpi4py
+pytest
+pytest-cov
+python-casacore
