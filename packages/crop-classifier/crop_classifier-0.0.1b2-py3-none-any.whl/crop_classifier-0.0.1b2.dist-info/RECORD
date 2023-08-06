@@ -1,0 +1,15 @@
+unsupcc/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+unsupcc/executer.py,sha256=oUdWmqZNOLgWAHEW2BaKJQ-bfE6Wq_ev76y3RqhEVNo,1993
+unsupcc/classification/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+unsupcc/classification/crop_classifier.py,sha256=AmgRltbsQ-nbW8jwkfDlPvDj0tyrHACcA8mNSNX1y2M,1798
+unsupcc/satellite/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+unsupcc/satellite/indices.py,sha256=jIgC5SIcjGxqE2N9m8qSF7Lq2wga9yyoD2ne5eJEdjg,4346
+unsupcc/satellite/sentinel2.py,sha256=FAFA_YNZFfAgJFDwXzg9vuOUJCA4trTW1tqvV7Sz_tM,5481
+unsupcc/utils/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+unsupcc/utils/helper.py,sha256=OsPRXJ-XRqtsLEsbKxw8QaBUhLqQI5lRU46SkP9wq50,3366
+unsupcc/utils/raster.py,sha256=gDruCAiLrPlAYUOspOV20eNqksJXesWDFJMShDK6zRE,2508
+crop_classifier-0.0.1b2.dist-info/LICENSE.txt,sha256=x4XSS-Rtpj7Ir7qqgTv_wiOYsazr02-aBFmUcZJIxnM,45
+crop_classifier-0.0.1b2.dist-info/METADATA,sha256=Vg_EuXinqCcRu1AnR2OX2mTjJ2bIMpPkZQyIHv1I3EY,1324
+crop_classifier-0.0.1b2.dist-info/WHEEL,sha256=G16H4A3IeoQmnOrYV4ueZGKSjhipXx8zc8nu9FGlvMA,92
+crop_classifier-0.0.1b2.dist-info/top_level.txt,sha256=Wj0uy7SL5oV5W7E2b9Q8sWXkQq8EovVXXC3Oh3kWmCs,8
+crop_classifier-0.0.1b2.dist-info/RECORD,,
