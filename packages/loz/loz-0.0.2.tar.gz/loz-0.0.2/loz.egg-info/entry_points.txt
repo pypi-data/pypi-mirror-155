@@ -1,0 +1,3 @@
+[console_scripts]
+loz = loz.__main__:cli
+

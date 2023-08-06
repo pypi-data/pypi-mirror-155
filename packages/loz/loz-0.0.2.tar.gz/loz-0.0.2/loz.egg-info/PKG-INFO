@@ -1,0 +1,36 @@
+Metadata-Version: 2.1
+Name: loz
+Version: 0.0.2
+Summary: loz - password manager
+Home-page: https://gitlab.com/nul.one/loz
+Author: Predrag Mandic
+Author-email: predrag@nul.one
+License: BSD
+Download-URL: https://gitlab.com/nul.one/loz/-/archive/0.0.2/loz-0.0.2.tar.gz
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Information Technology
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Natural Language :: English
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Topic :: Security
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+License-File: AUTHORS
+
+
+loz
+==================================================
+
+Console password manager.
+
+Requirements
+-------------------------
+
+- Python 3.10+
+
+
+
