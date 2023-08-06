@@ -1,0 +1,8 @@
+datasette
+sqlite-utils>=3.27
+datasette-low-disk-space-hook
+
+[test]
+pytest
+pytest-asyncio
+pytest-httpx

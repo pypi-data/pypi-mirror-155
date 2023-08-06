@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.py
+datasette_socrata/__init__.py
+datasette_socrata.egg-info/PKG-INFO
+datasette_socrata.egg-info/SOURCES.txt
+datasette_socrata.egg-info/dependency_links.txt
+datasette_socrata.egg-info/entry_points.txt
+datasette_socrata.egg-info/requires.txt
+datasette_socrata.egg-info/top_level.txt
+datasette_socrata/templates/datasette_socrata.html
+datasette_socrata/templates/datasette_socrata_error.html
