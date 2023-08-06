@@ -1,0 +1,3 @@
+[console_scripts]
+e4clim-create-project = e4clim.bin.init:create_project
+
