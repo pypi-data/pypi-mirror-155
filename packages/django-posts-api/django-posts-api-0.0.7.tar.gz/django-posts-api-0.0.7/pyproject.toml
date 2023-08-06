@@ -1,0 +1,60 @@
+[build-system]
+requires      = ["setuptools>=62.6.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "django-posts-api"
+version = "0.0.7"
+description = "A small example plugin package"
+readme = "README.md"
+authors = [{ name = "Fadi Ghattas", email = "fadoghattas100@outlook.com" }]
+license = { file = "LICENSE" }
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+]
+keywords = ["posts-api", "tutorial"]
+dependencies = ["html2text", 'tomli; python_version < "3.11"']
+requires-python = ">=3.8"
+
+    [project.optional-dependencies]
+    build = ["build", "twine"]
+    dev   = ["black", "bumpver", "isort", "mypy", "pytest"]
+
+    [project.scripts]
+    realpython = "django_posts_api.__main__:main"
+
+    [project.urls]
+    repository    = "https://github.com/fadighattas100/django_posts_api"
+    documentation = "https://github.com/fadighattas100/django_posts_api"
+
+
+[tool.bumpver]
+current_version = "0.0.7"
+version_pattern = "MAJOR.MINOR.PATCH"
+commit_message  = "bump version {old_version} -> {new_version}"
+commit          = true
+tag             = true
+push            = false
+
+    [tool.bumpver.file_patterns]
+    "pyproject.toml" = [
+        'current_version = "{version}"',
+        'version = "{version}"',
+    ]
+    "src/django_posts_api/__init__.py" = ["{version}"]
+    "src/django_posts_api/__main__.py" = ["- django-posts-api v{version}"]
+
+[tool.isort]
+profile                   = "black"
+import_heading_stdlib     = "Standard library imports"
+import_heading_thirdparty = "Third party imports"
+import_heading_firstparty = "django_posts_api imports"
+
+[tool.mypy]
+strict = true
+
+#    [[tool.mypy.overrides]]
+#    module                 = "feedparser"
+#    ignore_missing_imports = true
