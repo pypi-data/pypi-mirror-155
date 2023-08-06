@@ -1,0 +1,41 @@
+Metadata-Version: 2.1
+Name: curl_navi
+Version: 0.0.2
+Summary: "A minimal example of nbdev using code from Allen Downey's Think Python 2nd Ed"
+Home-page: https://github.com/yelloooowww/curl_navi/tree/master/
+Author: yellow
+Author-email: yellow.gdr09g@nctu.edu.tw
+License: Apache Software License 2.0
+Keywords: nbdev
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: License :: OSI Approved :: Apache Software License
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+License-File: LICENSE
+
+# Curl_Navi
+> Class and function for curriculum learning
+
+
+This file will become your README and also the index of your documentation.
+
+## Install
+
+`pip3 install curl_navi`
+
+## How to use
+
+Take a look at Evaluation function
+
+`cd ~/curl_navi`
+
+
