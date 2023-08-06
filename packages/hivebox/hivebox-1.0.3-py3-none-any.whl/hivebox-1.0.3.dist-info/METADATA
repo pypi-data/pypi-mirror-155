@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: hivebox
+Version: 1.0.3
+Summary: HiveBox is a toolset helping in AI/ML/CV and other tasks
+Home-page: https://gitlab.com/hivecv/hivebox
+Author: HiveCV
+Author-email: lukasz@hivecv.com
+License: UNKNOWN
+Keywords: hive box
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy (>=1.21)
+Requires-Dist: opencv-python (>4)
+Requires-Dist: opencv-contrib-python (>4)
+Requires-Dist: pytube (>=11.0.1)
+Requires-Dist: depthai (>2)
+Requires-Dist: requests (>2.27)
+Requires-Dist: PyYAML (>=6)
+Requires-Dist: boto3 (>1.22)
+
+# HiveBox
+
+Toolset used in various tasks
+
+
