@@ -1,0 +1,3 @@
+[console_scripts]
+fetch-radio-cmat2aset=fetch_radio_cmat2aset.__main__:app
+
