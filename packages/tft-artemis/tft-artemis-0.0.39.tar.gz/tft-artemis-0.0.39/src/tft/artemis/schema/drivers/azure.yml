@@ -1,0 +1,40 @@
+$schema: http://json-schema.org/draft-07/schema#
+description: Azure pool driver schema
+
+type: object
+
+properties:
+
+  capabilities:
+    type: object
+
+  cost:
+    type: object
+
+  password:
+    type: string
+
+  patch-images:
+    type: array
+
+  post-install-script:
+    type: string
+
+  resource-group:
+    type: string
+
+  resources:
+    type: object
+
+  use-only-when-addressed:
+    type: boolean
+
+  username:
+    type: string
+
+additionalProperties: false
+
+required:
+- password
+- resource-group
+- username

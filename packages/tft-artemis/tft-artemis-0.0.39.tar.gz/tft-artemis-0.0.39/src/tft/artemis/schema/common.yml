@@ -1,0 +1,358 @@
+$schema: http://json-schema.org/draft-07/schema#
+description: Server configuration schema
+type: object
+
+definitions:
+  custom_flavor:
+    type: object
+
+    properties:
+      name:
+        type: string
+
+      base:
+        type: string
+
+      disk:
+        "$ref": "#/definitions/patch_flavor_disks"
+
+    required:
+      - name
+      - base
+
+    additionalProperties: false
+
+  patch_flavor_cpu:
+    type: object
+
+    properties:
+      family:
+        type: integer
+
+      family-name:
+        type: string
+
+      model:
+        type: integer
+
+      model-name:
+        type: string
+
+    required: []
+    additionalProperties: false
+
+  patch_flavor_disk_expansion:
+    type: object
+
+    properties:
+      max-count:
+        type: integer
+        minimum: 1
+
+      min-size:
+        type: string
+
+      max-size:
+        type: string
+
+    required:
+      - max-count
+      - min-size
+      - max-size
+
+  patch_flavor_disk:
+    type: object
+
+    oneOf:
+      - properties:
+          size:
+            type: string
+
+        required: []
+        additionalProperties: false
+
+      - properties:
+          additional-disks:
+            "$ref": "#/definitions/patch_flavor_disk_expansion"
+
+        additionalProperties: false
+
+  patch_flavor_disks:
+    type: array
+    items:
+      "$ref": "#/definitions/patch_flavor_disk"
+
+  patch_flavor:
+    type: object
+
+    properties:
+      name:
+        type: string
+
+      name-regex:
+        type: string
+        format: regex
+
+      cpu:
+        "$ref": "#/definitions/patch_flavor_cpu"
+
+      disk:
+        "$ref": "#/definitions/patch_flavor_disks"
+
+    oneOf:
+      - required:
+        - name
+      - required:
+        - name-regex
+
+    additionalProperties: false
+
+  pool_capabilities_disable_guest_log_item:
+    type: object
+
+    properties:
+      log-name:
+        type: string
+
+      content-type:
+        type: string
+        enum:
+          - blob
+          - url
+
+    required:
+      - log-name
+      - content-type
+
+    additionalProperties: false
+
+  patch_image_ssh:
+    type: object
+
+    properties:
+      username:
+        type: string
+
+      port:
+        type: integer
+
+    required: []
+    additionalProperties: false
+
+  patch_image:
+    type: object
+
+    properties:
+      name:
+        type: string
+
+      name-regex:
+        type: string
+        format: regex
+
+      ssh:
+        "$ref": "#/definitions/patch_image_ssh"
+
+    oneOf:
+      - required:
+        - name
+      - required:
+        - name-regex
+
+    additionalProperties: false
+
+properties:
+
+  users:
+    type: array
+
+    items:
+      type: object
+      properties:
+
+        name:
+          type: string
+
+        role:
+          type: string
+          enum:
+            - admin
+            - user
+
+      required:
+        - name
+
+    minItems: 1
+
+  ssh-keys:
+    type: array
+
+    items:
+      type: object
+
+      properties:
+
+        name:
+          type: string
+
+        owner:
+          type: string
+
+        private:
+          type: string
+
+        public:
+          type: string
+
+        fingerprint:
+          type: string
+
+      required:
+        - name
+        - owner
+        - private
+        - public
+
+    minItems: 1
+
+  priority-groups:
+    type: array
+
+    items:
+      type: object
+
+      properties:
+        name:
+          type: string
+
+      required:
+       - name
+
+  guest_tags:
+    type: object
+
+    patternProperties:
+      ^.*$:
+        type: string
+
+  pools:
+    type: array
+
+    items:
+      type: object
+
+      properties:
+
+        driver:
+          type: string
+
+        guest_tags:
+          type: object
+
+          patternProperties:
+            ^.*$:
+              type: string
+
+        name:
+          type: string
+
+        parameters:
+          type: object
+
+          properties:
+
+            capabilities:
+              type: object
+
+              properties:
+
+                supported-architectures:
+                  anyOf:
+                    - type: array
+                      items:
+                        type: string
+                    - type: string
+                      enum:
+                        - "any"
+
+                disable-guest-logs:
+                  type: array
+                  items:
+                    "$ref": "#/definitions/pool_capabilities_disable_guest_log_item"
+
+              required:
+                - supported-architectures
+
+            custom-flavors:
+              type: array
+              items:
+                "$ref": "#/definitions/custom_flavor"
+
+            patch-flavors:
+              type: array
+              items:
+                "$ref": "#/definitions/patch_flavor"
+
+            patch-images:
+              type: array
+              items:
+                "$ref": "#/definitions/patch_image"
+
+            use-only-when-addressed:
+              type: boolean
+              default: false
+
+            cost:
+              type: object
+
+              properties:
+                disk:
+                  type: number
+                  multipleOf: 0.0001
+                network-interface:
+                  type: number
+                  multipleOf: 0.0001
+                static-ip:
+                  type: number
+                  multipleOf: 0.0001
+                virtual-machine:
+                  type: number
+                  multipleOf: 0.0001
+                virtual-network:
+                  type: number
+                  multipleOf: 0.0001
+
+            resources:
+              type: object
+
+              properties:
+                limits:
+                  type: object
+                  properties:
+                    instances:
+                      type: integer
+                    cores:
+                      type: integer
+                    memory:
+                      type: integer
+                    diskspace:
+                      type: integer
+                    snapshot:
+                      type: integer
+
+                  required: []
+
+
+          required:
+            - capabilities
+
+      required:
+        - name
+        - driver
+        - parameters
+
+additionalProperties: false
+
+required:
+  - users
+  - ssh-keys
