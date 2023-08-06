@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.cfg
+src/petro_py/__init__.py
+src/petro_py/oilField/__init__.py
+src/petro_py/oilField/general_info.py
+src/petro_py/oilField/oilfield.py
+src/petro_py/production/__init__.py
+src/petro_py/production/production.py
+src/petro_py/reservoir/__init__.py
+src/petro_py/reservoir/reservoir.py
+src/petro_python.egg-info/PKG-INFO
+src/petro_python.egg-info/SOURCES.txt
+src/petro_python.egg-info/dependency_links.txt
+src/petro_python.egg-info/top_level.txt
