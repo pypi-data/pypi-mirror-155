@@ -1,0 +1,48 @@
+Metadata-Version: 2.1
+Name: vsdpir
+Version: 2.2.0
+Summary: DPIR function for VapourSynth
+Home-page: https://github.com/HolyWu/vs-dpir
+Author: HolyWu
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Topic :: Multimedia :: Video
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: requests
+Requires-Dist: tqdm
+Requires-Dist: VapourSynth (>=55)
+Requires-Dist: vsutil
+
+# DPIR
+Plug-and-Play Image Restoration with Deep Denoiser Prior, based on https://github.com/cszn/DPIR.
+
+
+## Dependencies
+- [NumPy](https://numpy.org/install)
+- [ONNX Runtime](https://onnxruntime.ai/). CUDA and TensorRT require `onnxruntime-gpu`, while DirectML requires `onnxruntime-directml`. Note that only one of `onnxruntime`, `onnxruntime-gpu` and `onnxruntime-directml` should be installed at a time in any one environment.
+- [VapourSynth](http://www.vapoursynth.com/) R55 or newer.
+- (Optional) [CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit)
+- (Optional) [cuDNN](https://developer.nvidia.com/cudnn)
+- (Optional) [TensorRT](https://developer.nvidia.com/tensorrt)
+
+
+## Installation
+```
+pip install --upgrade vsdpir
+python -m vsdpir
+```
+
+
+## Usage
+```python
+from vsdpir import DPIR
+
+ret = DPIR(clip)
+```
+
+See `__init__.py` for the description of the parameters.
