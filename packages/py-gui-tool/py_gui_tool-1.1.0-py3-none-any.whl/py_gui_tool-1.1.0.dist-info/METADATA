@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: py-gui-tool
+Version: 1.1.0
+Summary: PyGui is an easy to use gui.
+License: MIT
+Author: hostedposted
+Author-email: hostedpostedsite@gmail.com
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: PyOpenGL (>=3.1.6,<4.0.0)
+Requires-Dist: glfw (>=2.5.3,<3.0.0)
+Requires-Dist: imgui[glfw] (>=1.4.1,<2.0.0)
+Description-Content-Type: text/markdown
+
+# PyGUI
+
+Our docs are at https://hostedposted.github.io/py-gui/latest.
+
