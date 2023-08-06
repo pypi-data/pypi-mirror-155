@@ -1,0 +1,3 @@
+[console_scripts]
+ds5ctl=ds5ctl.gui:run_gui
+
