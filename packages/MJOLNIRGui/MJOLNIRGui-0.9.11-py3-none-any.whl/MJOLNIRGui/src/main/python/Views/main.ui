@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>950</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>340</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>16777215</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MJOLNIRGui</string>
+  </property>
+  <property name="windowOpacity">
+   <double>1.000000000000000</double>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QScrollArea" name="scrollArea">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="lineWidth">
+       <number>0</number>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOn</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>781</width>
+         <height>822</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <property name="spacing">
+           <number>6</number>
+          </property>
+          <property name="sizeConstraint">
+           <enum>QLayout::SetNoConstraint</enum>
+          </property>
+          <item>
+           <widget class="QWidget" name="fixedOpen" native="true">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>300</height>
+             </size>
+            </property>
+            <property name="toolTip">
+             <string>Manage datasets and their datafiles</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="collapsibleContainer" native="true">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <property name="spacing">
+       <number>10</number>
+      </property>
+      <property name="leftMargin">
+       <number>10</number>
+      </property>
+      <property name="topMargin">
+       <number>6</number>
+      </property>
+      <property name="rightMargin">
+       <number>10</number>
+      </property>
+      <item>
+       <widget class="QProgressBar" name="progressBar">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>Current progress of action</string>
+        </property>
+        <property name="statusTip">
+         <string>Current progress of action</string>
+        </property>
+        <property name="value">
+         <number>0</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <property name="spacing">
+         <number>10</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QTextBrowser" name="textBrowser">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>45</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>Log of messages from the gui</string>
+          </property>
+          <property name="statusTip">
+           <string>Log of messages from the gui</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="log_reset_btn">
+          <property name="toolTip">
+           <string>Clear log</string>
+          </property>
+          <property name="statusTip">
+           <string>Clear log</string>
+          </property>
+          <property name="text">
+           <string>Clear</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionSave_GUI_state"/>
+    <addaction name="actionLoad_GUI_state"/>
+    <addaction name="separator"/>
+    <addaction name="actionGenerate_View3d_script"/>
+    <addaction name="actionGenerate_QELine_script"/>
+    <addaction name="actionGenerate_QPlane_script"/>
+    <addaction name="actionGenerate_1d_script"/>
+    <addaction name="separator"/>
+    <addaction name="actionClose_Windows"/>
+    <addaction name="actionSettings"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAbout"/>
+    <addaction name="actionHelp"/>
+    <addaction name="actionSubtraction"/>
+   </widget>
+   <widget class="QMenu" name="menuTools">
+    <property name="title">
+     <string>Tools</string>
+    </property>
+    <addaction name="action_masking_gui"/>
+    <addaction name="actionPrediction_Tool"/>
+    <addaction name="actionCalculate_Molecular_Weight"/>
+    <addaction name="actionNeutron_Calculations"/>
+    <addaction name="actionGenerate_Normalization"/>
+    <addaction name="actionElectronic_Logbook"/>
+    <addaction name="actionSubtraction_Of_DataSets"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuTools"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionSave_GUI_state">
+   <property name="text">
+    <string>Save GUI state</string>
+   </property>
+  </action>
+  <action name="actionLoad_GUI_state">
+   <property name="text">
+    <string>Load GUI state</string>
+   </property>
+  </action>
+  <action name="actionGenerate_View3d_script">
+   <property name="text">
+    <string>Generate View3D script</string>
+   </property>
+  </action>
+  <action name="actionGenerate_QELine_script">
+   <property name="text">
+    <string>Generate QE Cut script</string>
+   </property>
+  </action>
+  <action name="actionGenerate_QPlane_script">
+   <property name="text">
+    <string>Generate QPlane script</string>
+   </property>
+  </action>
+  <action name="actionGenerate_1d_script">
+   <property name="text">
+    <string>Generate 1D script</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionOpen_mask_gui">
+   <property name="text">
+    <string>Open Mask GUI</string>
+   </property>
+  </action>
+  <action name="actionLoad_mask">
+   <property name="text">
+    <string>Load Mask</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionHelp">
+   <property name="text">
+    <string>Help</string>
+   </property>
+  </action>
+  <action name="actionChange_Theme">
+   <property name="text">
+    <string>Change Theme</string>
+   </property>
+  </action>
+  <action name="actionSettings">
+   <property name="text">
+    <string>Settings</string>
+   </property>
+  </action>
+  <action name="actionClose_Windows">
+   <property name="text">
+    <string>Close Windows</string>
+   </property>
+  </action>
+  <action name="actionPrediction_Tool">
+   <property name="text">
+    <string>Prediction Tool</string>
+   </property>
+  </action>
+  <action name="actionCalculate_Molecular_Weight">
+   <property name="text">
+    <string>Calculate Molecular Weight</string>
+   </property>
+  </action>
+  <action name="actionNeutron_Calculations">
+   <property name="text">
+    <string>Neutron Calculations</string>
+   </property>
+  </action>
+  <action name="actionGenerate_Normalization">
+   <property name="text">
+    <string>Generate Normalization</string>
+   </property>
+  </action>
+  <action name="actionElectronic_Logbook">
+   <property name="text">
+    <string>Electronic Logbook</string>
+   </property>
+  </action>
+  <action name="actionSubtraction_Of_DataSets">
+   <property name="text">
+    <string>Subtraction of DataSets</string>
+   </property>
+  </action>
+  <action name="actionSubtraction">
+   <property name="text">
+    <string>Subtraction</string>
+   </property>
+  </action>
+  <action name="actionCheck_Update">
+   <property name="text">
+    <string>Check Update</string>
+   </property>
+  </action>
+  <action name="action_masking_gui">
+   <property name="text">
+    <string>Masking Gui</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
