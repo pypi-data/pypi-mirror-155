@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: ds-caselaw-utils
+Version: 0.1.3
+Summary: Utilities for the National Archives Caselaw project
+Home-page: https://github.com/nationalarchives/ds-caselaw-utils
+License: MIT
+Keywords: national archives,caselaw
+Author: David McKee
+Author-email: dragon@dxw.com
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.9
+Description-Content-Type: text/markdown
+
+# Caselaw utility functions
+
+pypi name: [ds-caselaw-utils](https://pypi.org/project/ds-caselaw-utils)
+python import name: `ds_caselaw_utils`
+
+This repo contains functions of general use throughout the National Archives Caselaw project
+so that we can have a single point of truth potentially across many repositories.
+
+## Examples
+
+```
+from ds_caselaw_utils import neutral_url
+neutral_url("[2022] EAT 1")  # '/eat/2022/4'
+```
+
