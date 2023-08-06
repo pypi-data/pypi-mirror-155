@@ -1,0 +1,2 @@
+[console_scripts]
+revive_streak = snapstreak_revive.command_line:revive_streak

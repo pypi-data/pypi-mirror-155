@@ -1,0 +1,47 @@
+Metadata-Version: 2.1
+Name: snapstreak-revive
+Version: 0.0.1
+Summary: Automatically enters required information on the Snapchat support website to retrieve snapstreaks.
+Home-page: https://github.com/RoastSea8/Snapchat-Streak-Revival
+Author: RoastSea8 (Aditya Tomar)
+Author-email: aditya26042005@gmail.com
+License: MIT
+Keywords: snapchat,streaks,revive streaks,chromedriver,automation,selenium
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Topic :: Software Development :: Testing
+Classifier: Topic :: System :: Installation/Setup
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: selenium
+Requires-Dist: chromedriver-autoinstall
+
+# Snapchat-Streak-Revival
+- Restore streaks 🔥 in a convenient manner
+    - Enter information required by Snapchat's support website only **once**.
+    - Have the program automatically enter all these details thereafter.
+
+## Install:
+#### Python 3.6 or higher is required
+```sh
+pip install snapstreak_revive
+```
+
+## Usage:
+- To restore streaks, run `revive_streak` in command line.
+
+## Prospects:
+- Adding CAPTCHA bypass to further increase convenience
+
+
