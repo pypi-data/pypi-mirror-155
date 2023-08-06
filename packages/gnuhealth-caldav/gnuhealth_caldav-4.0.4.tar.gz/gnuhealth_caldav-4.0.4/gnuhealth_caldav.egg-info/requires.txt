@@ -1,0 +1,5 @@
+PyWebDAV3-GNUHealth>=0.10.1
+gnuhealth_webdav3_server
+
+[test]
+health_caldav
