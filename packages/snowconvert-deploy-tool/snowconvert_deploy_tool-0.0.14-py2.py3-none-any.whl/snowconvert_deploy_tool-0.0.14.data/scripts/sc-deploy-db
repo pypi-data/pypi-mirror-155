@@ -1,0 +1,632 @@
+#!python
+# -*- coding: utf-8 -*-
+# pylint: disable=line-too-long
+"""
+Created on Tue May 12 15:23:49 2020
+
+@author: afeher, mrojas, jwelsh
+"""
+
+import sys
+import configparser
+import threading
+import queue
+import time
+import json
+import os
+import re
+import argparse
+from datetime import datetime
+from os import path
+import math
+from collections import Counter
+import glob
+import shutil
+import snowflake.connector
+
+category_queries = {
+    "table"            : "select TABLE_CATALOG     AS DB,TABLE_SCHEMA     AS SCHEMA,TABLE_NAME     AS NAME from information_schema.tables where TABLE_SCHEMA <> 'INFORMATION_SCHEMA' AND TABLE_TYPE='BASE TABLE'",
+    "view"             : "select TABLE_CATALOG     AS DB,TABLE_SCHEMA     AS SCHEMA,TABLE_NAME     AS NAME from information_schema.tables where TABLE_SCHEMA <> 'INFORMATION_SCHEMA' AND TABLE_TYPE='VIEW'",
+    "function"         : "select FUNCTION_CATALOG  AS DB,FUNCTION_SCHEMA  AS SCHEMA,FUNCTION_NAME  AS NAME from information_schema.functions",
+    "procedure"        : "select PROCEDURE_CATALOG AS DB,PROCEDURE_SCHEMA AS SCHEMA,PROCEDURE_NAME AS NAME from information_schema.procedures",
+    "package_function" : "select FUNCTION_CATALOG  AS DB,FUNCTION_SCHEMA  AS SCHEMA,FUNCTION_NAME  AS NAME from information_schema.functions",
+    "package_procedure": "select PROCEDURE_CATALOG AS DB,PROCEDURE_SCHEMA AS SCHEMA,PROCEDURE_NAME AS NAME from information_schema.procedures"
+
+}
+
+
+
+def sync_object_category(conn,category_name, input_dir, target_dir,files_in_db_but_not_in_workdir):
+    """
+    Code for Folder Sync
+    Usually you will work your code from another folder
+    and after working with that folder you would like to
+    copy all the files that were deployed
+    currently this process will assume that if the file is in the DB then
+    it is deployed.
+    In the future we will include some mechanism to determine if the file matches the DB
+    """
+    print(f"Syncronizing {os.path.join(input_dir,category_name)} with {os.path.join(target_dir,category_name)}")
+    with open(os.path.join(args.LogPath,f"sync_{category_name}.log"),"w") as f_sync_log:
+        files = glob.glob(os.path.join(input_dir,category_name,"**","*.sql"), recursive=True)
+        file_count = len(files)
+        if file_count:
+            print(f"{file_count} {category_name}(s) found")
+            f_sync_log.write(f"{file_count} {category_name}(s) found\n")
+            db_infered_files = []
+            # Create a cursor object.
+            cur = conn.cursor()
+            if category_name in category_queries:
+                sql = category_queries[category_name]
+                cur.execute(sql)
+                # Fetch the result set from the cursor and deliver it as the Pandas DataFrame.
+                df_category = cur.fetch_pandas_all()
+                # Now we will process all objects
+                for index, row in df_category.iterrows():
+                    schema = row.SCHEMA
+                    name   = row.NAME
+                    relative_file = os.path.join(category_name,schema,name + ".sql")
+                    source_path = os.path.join(input_dir,relative_file)
+                    target_path = os.path.join(target_dir,relative_file)
+                    db_infered_files.append(relative_file)
+                    if os.path.exists(source_path):
+                        print(".",end="",flush=True)
+                        # let's copy it
+                        dirname_target = os.path.dirname(target_path)
+                        # make sure that the target exists
+                        os.makedirs(dirname_target, exist_ok=True)
+                        # copy the file
+                        shutil.copy2(source_path, target_path)
+                    else:
+                        print("X",end="",flush=True)
+                        files_in_db_but_not_in_workdir.append((category_name,schema,name))
+                print("\nSync done")
+                if len(files_in_db_but_not_in_workdir):
+                    f_sync_log.write(f"{category_name} items found in DB but with no corresponding file\n")
+                    f_sync_log.write("================================================================\n")
+                    for (category_name,schema,name) in files_in_db_but_not_in_workdir:
+                        f_sync_log.write(f"{category_name}    {schema}    {name}\n")
+                    f_sync_log.write("================================================================\n")
+                # After copying eveything that was on input and DB, we will report anything that
+                # is not in DB but is on this folder
+                full_db_infered_files = [os.path.join(input_dir,x) for x in db_infered_files]
+                files_in_input_not_in_db = [x for x in files if x not in full_db_infered_files]
+                if len(files_in_input_not_in_db):
+                    print(f"There were {len(files_in_input_not_in_db)} files that were found in {input_script} but are not on the database")
+
+                    f_sync_log.write(f"{category_name} items found in {input_dir} but with no corresponding db object\n")
+                    f_sync_log.write("================================================================\n")
+                    for file in files_in_input_not_in_db:
+                        f_sync_log.write(f"{file}\n")
+                    f_sync_log.write("================================================================\n")
+        else:
+            print(f"No {category_name}s where found")
+            f_sync_log.write(f"No {category_name}s where found\n")
+
+
+
+def sync_db(conn, input_dir, target_dir,category_arg):
+    """
+        Syncs a workdir with a target dir
+    """
+    categories = category_arg.split(",")
+    files_in_db_not_in_workdir = []
+    if len(categories):
+        for cat in categories:
+            if cat in category_queries:
+                sync_object_category(conn, cat, input_dir, target_dir,files_in_db_not_in_workdir)
+    print("Sync DB process completed")
+
+
+def thread_function(con, index, max_stmnt, stmnt_q, created_q, failed_q, done_q):
+    cur = con.cursor()
+    ebuf = []
+    cur.execute("set quoted_identifiers_ignore_case = TRUE")
+    cur.execute("alter session set TIMESTAMP_TYPE_MAPPING = TIMESTAMP_LTZ")
+    while True:
+        if (stmnt_q.qsize() > 0) and ((created_q.qsize() + failed_q.qsize()) < max_stmnt):
+            (file,stmnt) = stmnt_q.get()
+            try:
+                cur.execute(stmnt)
+                created_q.put({"stmnt":stmnt,"file":file})
+            except snowflake.connector.errors.ProgrammingError as e_stmt:
+                ebuf.append({"error_msg":e_stmt, "statement":stmnt, "file":file})
+                failed_q.put(ebuf[len(ebuf)-1])
+        else:
+            break
+    cur.close()
+    done_q.put(index)
+    return
+
+
+def msg_thread_function(parallelism, msg_freq, session_id, no_of_stmnts,
+created_q, failed_q, done_q):
+    run_dict = {
+                "start_time": datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
+                "session_id": session_id,
+                "number_of_statements": no_of_stmnts,
+                "number_of_created": 0,
+                "number_of_failed": 0,
+                "end_time": ""
+               }
+    c = 0
+    f = 0
+    print("Start time : ", run_dict["start_time"], "\n")
+    print("Session ID : ", run_dict["session_id"])
+    print("Parallelism: ", '{:5d}'.format(parallelism))
+    print("# of stmts : ", '{:5d}'.format(run_dict["number_of_statements"]))
+    print("Created.   : ", '{:5d}'.format(c), " Failed In Run:", '{:5d}'.format(f), end = "\r", flush = True)
+    if msg_freq:
+        time.sleep(msg_freq)
+    while done_q.qsize() < parallelism:
+        c = created_q.qsize()
+        f = failed_q.qsize()
+        print("Created.   : ", '{:5d}'.format(c), " Failed In Run:", '{:5d}'.format(f), end = "\r", flush = True)
+        if msg_freq:
+            time.sleep(msg_freq)
+
+    #time.sleep(2)
+    run_dict["number_of_created"] = created_q.qsize()
+    run_dict["number_of_failed"] = failed_q.qsize()
+    run_dict["end_time"] = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+    print("                Total Created: ", '{:5d}'.format(run_dict["number_of_created"]), " Failed In Run:", '{:5d}'.format(run_dict["number_of_failed"]), end = "\r", flush = True)
+    print("\n")
+    print("            End time: ", run_dict["end_time"])
+    print("\n")
+    #time.sleep(20)
+    while not done_q.empty():
+        done_q.get()
+    done_q.put(run_dict)
+    return
+
+def get_object_key(file):
+    pattern = r"<sc-\w+>\s*(\w+.\w+)\s*</sc-\w+>"
+    f = re.search(pattern, file)
+    key = "@@nokey"
+    if f:
+        key = f.groups()[0]
+    return key
+
+def remove_error_msg(msg):
+    ret = msg
+    i = msg.find("<sc")
+    j = msg.find("</sc")
+    k = msg[i:j].find("Error")
+    if k > -1:
+        ret = msg[0:i+k] + msg[j:]
+    i = ret.find("<sc")
+    j = ret.find("</sc")
+    k = ret[i:j].rfind("\n")
+    if k != -1:
+        ret = ret[0:k] + ret[k+1:]
+    return ret
+
+
+
+def init(input_directory, workspace, split, splitpattern, object_type):
+    delimiter = "@@SPLIT@@"
+    def split_match(match):
+        whole_match = match.group()
+        if split == 2:
+            return whole_match + delimiter
+        # or by default split before
+        return delimiter + whole_match
+    def empty_block(block):
+        if block is None:
+            return True
+        stripped = block.strip()
+        if stripped == '':
+            return True
+        lines = stripped.split('\n')
+        lines = [x for x in lines if not x.strip()=='' and not x.startswith("--")]
+        return len(lines) == 0
+
+    #creates queue object with all statements
+    stmnt_q = queue.Queue()
+    qualified_exclude_dirs = [os.path.join(input_directory,x) for x in exclude_dirs]
+    if split == 1:
+        print(f'Using SPLIT PATTERN BEFORE [{splitpattern}]')
+    if split == 2:
+        print(f'Using SPLIT PATTERN AFTER [{splitpattern}]')
+    for dirpath, _ , files in os.walk(input_directory):
+        print(f'Processing directory: {dirpath}')
+        if dirpath in qualified_exclude_dirs:
+            print(f'Directory {dirpath} was excluded')
+        else:
+            for file_name in files:
+                _, fextension = os.path.splitext(file_name)
+                fextension = fextension.lower()
+                if fextension == ".sql":
+                    full_path = os.path.join(dirpath,file_name)
+                    addfile = True
+
+                    if len(object_type) > 0:
+                        parts = full_path.split(os.sep)
+                        if parts[len(parts)-2] != object_type:
+                            addfile = False
+
+                    if addfile:
+
+                        f = open(full_path)
+                        # queuing a tuple (path, contents, errors)
+                        contents = f.read()
+                        # remove BOM
+                        if contents[0] == '\ufeff':
+                            contents = contents[1:]
+                        if split:
+                            print(f"Processing file {full_path} ",end="")
+                            # we need to remove empty comments because they can cause problems when splitting
+                            contents_with_split_marks = re.sub(splitpattern, split_match,contents)
+                            has_parts = len(contents_with_split_marks) > len(contents)
+                            if has_parts:
+                                # First we split and remove empty
+                                result_parts = [ x for x in contents_with_split_marks.split(delimiter) if not empty_block(x)]
+                                # Finally add this to the staments that will be deployed
+                                print(f" {len(result_parts)} fragment(s) found")
+                                for sql_part in result_parts:
+                                    stmnt_q.put((full_path,sql_part))
+                            else:
+                                print("no parts, adding whole script")
+                                stmnt_q.put((full_path,contents))
+                        else:
+                            print(f"Processing file {full_path}")
+                            stmnt_q.put((full_path,contents))
+                        f.close()
+    return stmnt_q
+
+
+def calc_par(no_of_stmnts, parallelism):
+    ret = parallelism
+    if (no_of_stmnts/30) <= parallelism:
+        ret = math.ceil(no_of_stmnts/30)
+    return ret
+
+
+
+def decode_error(argument):
+    switcher = {
+        603: "PROCESS_ABORTED_DUE_TO_ERROR",
+        900: "EMPTY_SQL_STATEMENT",
+        904: "INVALID_IDENTIFIER",
+        939: "TOO_MANY_ARGUMENTS_FOR_FUNCTION",
+        979: "INVALID_GROUP_BY_CLAUSE",
+        1002: "SYNTAX_ERROR_1",
+        1003: "SYNTAX_ERROR_2",
+        1007: "INVALID_TYPE_FOR_PARAMETER",
+        1038: "CANNOT_CONVERT_PARAMETER",
+        1044: "INVALID_ARG_TYPE_FOR_FUNCTION",
+        1104: "COLUMN_IN_SELECT_NOT_AGGREGATE_OR_IN_GROUP_BY",
+        1789: "INVALID_RESULT_COLUMNS_FOR_SET_OPERATION",
+        2001: "OBJECT_DOES_NOT_EXIST_1",
+        2003: "OBJECT_DOES_NOT_EXIST_2",
+        2016: "EXTRACT_DOES_NOT_SUPPORT_VARCHAR",
+        2022: "MISSING_COLUMN_SPECIFICATION",
+        2025: "DUPLICATE_COLUMN_NAME",
+        2026: "INVALID_COLUMN_DEFINITION_LIST",
+        2028: "AMBIGUOUS_COLUMN_NAME",
+        2262: "DATA TYPE MISMATCH WITH DEFAULT VALUE",
+        2040: "UNSUPPORTED_DATA_TYPE",
+        2140: "UNKNOWN_FUNCTION",
+        2141: "UNKNOWN_USER_DEFINED_FUNCTION",
+        2143: "UNKNOWN_USER_DEFINED_TABLE_FUNCTION",
+        2151: "INVALID_COMPONENT_FOR_FUNCTION_TRUNC",
+        2212: "MATERIALIZED_VIEW_REFERENCES_MORE_THAN_1_TABLE",
+        2401: "LIKE_ANY_DOES_NOT_SUPPORT_COLLATION",
+        2402: "LTRIM_WITH_COLLATION_REQUIRES_WHITESPACE_ONLY",
+        90105: "CANNOT_PERFORM_CREATE_VIEW",
+        90216: "INVALID_UDF_FUNCTION_NAME"
+    }
+    return switcher.get(argument, "nothing")
+
+def open_connection() -> snowflake.connector.SnowflakeConnection:
+    print(f"Connecting account:{sf_account} database: {sf_db} role: {sf_role} warehouse: {sf_warehouse} user: {sf_user} auth: {sf_authenticator}")
+    try:
+        if sf_authenticator:
+            conn = snowflake.connector.connect (
+                account   = sf_account,
+                user      = sf_user,
+                password  = sf_password,
+                database  = sf_db,
+                role      = sf_role,
+                schema    = sf_schema,
+                warehouse = sf_warehouse,
+                application = "mobilize.net",
+                authenticator = sf_authenticator)
+        else:
+            conn = snowflake.connector.connect (
+                account   = sf_account,
+                user      = sf_user,
+                password  = sf_password,
+                database  = sf_db,
+                role      = sf_role,
+                schema    = sf_schema,
+                warehouse = sf_warehouse,
+                application = "mobilize.net")
+        return conn
+    except Exception as e_connection:
+        print("Aborting!!. Error opening connection")
+        print(e_connection)
+        exit(1)
+
+def main(con,input_script, workspace, split, splitpattern, object_type):
+    if not os.path.exists(out_path):
+        os.makedirs(out_path)
+    global parallelism
+    stmnt_q = init(input_script, workspace, split, splitpattern, object_type)
+    created_q = queue.Queue()
+    failed_q = queue.Queue()
+    done_q = queue.LifoQueue()
+
+    no_of_stmnts = stmnt_q.qsize()
+
+    tot_created_last_run_end = 0
+
+    stmnt_q_cur_run = stmnt_q
+    no_of_stmnts_cur_run = no_of_stmnts
+
+    run_num = 1
+
+    while True:
+        print("\n")
+        print("Recursive Run", run_num, "...")
+        parallelism_val = calc_par(no_of_stmnts_cur_run, parallelism)
+        threads = list()
+        for index in range(parallelism_val):
+            x = threading.Thread(target=thread_function, args=(con, index, max_stmnt, stmnt_q_cur_run, created_q, failed_q, done_q, ))
+            threads.append(x)
+            x.start()
+        x = threading.Thread(target=msg_thread_function, args=(parallelism_val, msg_freq, con.session_id, no_of_stmnts_cur_run, created_q, failed_q, done_q, ))
+        threads.append(x)
+        x.start()
+        for index, thread in enumerate(threads):
+            thread.join()
+        if failed_q.qsize() == 0:
+            print("All objects successfully created.")
+            con.close()
+            break
+        if created_q.qsize() == tot_created_last_run_end:
+            print("No new objects created in previous run. Ending recursive runs.")
+            con.close()
+            break
+        tot_created_last_run_end = created_q.qsize()
+        stmnt_q_cur_run = queue.Queue()
+        for stmnt in list(failed_q.queue):
+            y = remove_error_msg(stmnt["statement"])
+            stmnt_q_cur_run.put((stmnt["file"],y))
+
+        no_of_stmnts_cur_run = failed_q.qsize()
+        failed_q = queue.Queue()
+        run_num = run_num + 1
+
+    print("Creating output files...")
+    for info in list(done_q.queue):
+        if isinstance(info,dict):
+            for item, val in info.items():  # dct.iteritems() in Python 2
+                print("{} : {}".format(item.ljust(20), val))
+    execution_summary = 1
+    # Sometimes there is an int
+    while isinstance(execution_summary, int):
+        execution_summary = done_q.get()
+
+    session_id = execution_summary["session_id"]
+
+    list_created = list(created_q.queue)
+    if len(list_created):
+        outfilename = os.path.join(out_path, f"created_{session_id}.sql")
+        f = open(outfilename,"w")
+        outfilename = os.path.join(out_path, f"created_{session_id}.csv")
+        fcsv = open(outfilename,"w")
+        for e in list_created:
+            fcsv.write(e["file"] + "\n")
+            f.write(remove_error_msg(e["stmnt"]) + "\n")
+        f.close()
+        fcsv.close()
+
+    errno_dict = {}
+    error_list = []
+
+    list_failed = list(failed_q.queue)
+    if len(list_failed):
+        outfilename = os.path.join(out_path, f"failed_{session_id}.sql")
+        f = open(outfilename,"w")
+        for em in list_failed:
+            f.write(remove_error_msg(em["statement"]))
+            f.write("\n")
+
+            if errno_dict.get(em["error_msg"].errno) != None:
+
+                error_file = errno_dict.get(em["error_msg"].errno)
+
+            else:
+                error_name = str(decode_error(em["error_msg"].errno))
+                error_file = open(os.path.join(out_path,"error_" + str(execution_summary["session_id"]) + "_" + error_name + ".sql"), "w+")
+                errno_dict[em["error_msg"].errno] = error_file
+
+            i = em["statement"].find("</sc")
+            error_file.write(em["statement"][0:i] + "\n")
+            error_file.write('Error {0} ({1}): {2} ({3})'.format(em["error_msg"].errno, em["error_msg"].sqlstate, em["error_msg"].msg, em["error_msg"].sfqid))
+            error_file.write(em["statement"][i:])
+
+
+        for stmnt in list_failed:
+            error_name = str(decode_error(stmnt["error_msg"].errno))
+            error_list.append((stmnt["file"],error_name,stmnt["error_msg"].errno,stmnt["error_msg"].sqlstate,stmnt["error_msg"].msg,stmnt["error_msg"].sfqid,stmnt['statement']))
+
+    freq = Counter(error_list)
+
+    outfilename = os.path.join(out_path, f"error_summary_{session_id}.sql")
+    f = open(outfilename, "w+")
+    f.write(str(freq))
+    f.close()
+
+    f = open(os.path.join(out_path , "error_list_summary.txt"), "w+")
+    for (file,error_name,errno, sqlstate, msg, sfqid,statement) in error_list:
+        msg = msg.replace('\n',' ')
+        report = f"ERROR ({error_name}) in FILE:[{file}] ERR:{errno} SQLSTATE: {sqlstate} MSG: {msg} QUERYID: {sfqid}"
+        f.write(report + "\n")
+    f.close()
+
+    f = open(os.path.join(out_path, f"error_list_summary_{session_id}.csv"), "w+")
+    f.write("key,path,error,message\n")
+    for (file,error_name,errno, sqlstate, msg, sfqid,statement) in error_list:
+        msg = msg.replace('\n',' ')
+        key = get_object_key(statement)
+        msg = msg.replace(",","-")
+        report = f"{key},{file},{error_name},{msg}"
+        f.write(report + "\n")
+    f.close()
+
+    for key in errno_dict:
+
+        errno_dict[key].close()
+
+    outfilename = os.path.join(out_path, f"execution_summary_{session_id}.json")
+    f = open(outfilename, "w+")
+    f.write(json.dumps(execution_summary,indent=2, sort_keys=True))
+    f.close()
+
+    ## Process done
+    print("\nDone")
+    sys.exit(len(error_list))
+    return
+
+def str2bool(v):
+    if isinstance(v, bool):
+        return v
+    if v.lower() in ('yes', 'true', 't', 'y', '1'):
+        return True
+    elif v.lower() in ('no', 'false', 'f', 'n', '0'):
+        return False
+    else:
+        raise argparse.ArgumentTypeError('Boolean value expected.')
+
+if __name__ == "__main__":
+
+    parser = argparse.ArgumentParser(description="""
+    SnowConvertStudio Deployment Script
+    ===================================
+
+    This script helps you to deploy a collection of .sql files to a Snowflake Account.
+
+    The tool will look for settings like:
+    - Snowflake Account
+    - Snowflake Warehouse
+    - Snowflake Role
+    - Snowflake Database
+
+    If the tool can find a config_snowsql.ini file in the current directory or in the workspace\\config_snowsql.ini location or ~/.snowsql/config
+    it will read those parameters from there.""",formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument("-A"            ,"--Account",  dest="Account",   help = "Snowflake Account")
+    parser.add_argument("-D"            ,"--Database", dest="Database",  help = "Snowflake Database")
+    parser.add_argument("-S"            ,"--Schema",   dest="Schema",    help = "Snowflake initial schema")
+    parser.add_argument("-WH"           ,"--Warehouse",dest="Warehouse", help = "Snowflake Warehouse")
+    parser.add_argument("-R"            ,"--Role",     dest="Role",      help = "Snowflake Role")
+    parser.add_argument("-U"            ,"--User",     dest="User",      help = "Snowflake User")
+    parser.add_argument("-P"            ,"--Password", dest="Password",  help = "Password")
+    parser.add_argument("-W"            ,"--Workspace",dest="Workspace", help = "Path for workspace root. Defaults to current dir", default=os.getcwd())
+    parser.add_argument("-I"            ,"--InPath",   dest="InPath",required=True,  help = "Path for SQL scripts")
+    parser.add_argument("--activeConn",                dest="ActiveConn",required=False,  help = "When given, it will be used to select connection parameters from ~/.snowsql/config or config_snowsql.ini")
+    parser.add_argument("--authenticator",             dest="authenticator", help = "Use the authenticator with you want to use a different authentication mechanism")
+    parser.add_argument("-L","--LogPath",              dest="LogPath",   help = "Path for process logs. Defaults to current dir",default=os.path.join(os.getcwd(),"logs"))
+    parser.add_argument("--SplitBefore", help = "Regular expression that can be used to split code in fragments starting **BEFORE** the matching expression")
+    parser.add_argument("--SplitAfter",  help = "Regular expression that can be used to split code in fragments starting **AFTER** the matching expression")
+    parser.add_argument("--ObjectType",  help = "Object Type to deploy table,view,procedure,function,macro", nargs='?', default="")
+    parser.add_argument("--sync-folder",required=False, help = "Syncronizes a work folder with a target folder")
+    parser.add_argument("--sync-folder-target",required=False,  help = "Target folder where the lastest version of the scripts is kept")
+    parser.add_argument("--sync-folder-categories",required=False,  help = "It is expected that the workdir will organize code in folders like [table,view,function,macro,procedure]. This parameter is a comma separated list of the categories you would like to sync")
+
+
+    args = parser.parse_args()
+
+    if args.InPath and path.exists(args.InPath):
+        input_script = args.InPath
+        print(f"Using InputPath = {input_script}")
+    else:
+        print("Input Path for SQL scripts does not exist.")
+        sys.exit(0)
+
+    config = configparser.ConfigParser()
+# pylint: disable-msg=C0103
+    msg_freq    = 10
+    max_stmnt   = sys.maxsize
+    parallelism = 0
+    exclude_dirs= []
+    ini_path = None
+
+    # declare and initialize variables
+    sf_account       = None
+    sf_warehouse     = None
+    sf_role          = None
+    sf_db            = None
+    sf_user          = None
+    sf_password      = None
+    sf_authenticator = None
+    sf_application   = None
+    sf_role          = None
+
+    # First try to find a config_snowsql.ini file
+    if args.Workspace and os.path.exists(os.path.join(args.Workspace,'config_snowsql.ini')):
+        ini_path = os.path.join(args.Workspace,'config_snowsql.ini')
+    if not ini_path and os.path.exists('config_snowsql.ini'):
+        ini_path = 'config_snowsql.ini'
+    if not ini_path:
+        ini_path = os.path.expanduser("~/.snowsql/config")
+        if not os.path.exists(ini_path):
+            print(f"ERROR: Ini at {ini_path} was not found")
+    # First initialize all vars
+    sf_password      = args.Password     
+    sf_account       = args.Account      
+    sf_warehouse     = args.Warehouse    
+    sf_role          = args.Role         
+    sf_db            = args.Database     
+    sf_schema        = args.Schema       
+    sf_authenticator = args.authenticator
+
+
+
+    # if an ini file was found read some settings from there
+    # we avoid reading user and password from this file
+    connectionSettingsSection = None
+    if ini_path and config.read(ini_path):
+        connectionSettingsSection = "connections"
+        if args.ActiveConn:
+            if args.ActiveConn != "default":
+                connectionSettingsSection = "connections." + args.ActiveConn
+        sf_password      = args.Password       or (config[connectionSettingsSection]['accountname']   if 'accountname'   in config[connectionSettingsSection] else None)
+        sf_account       = args.Account        or (config[connectionSettingsSection]['accountname']   if 'accountname'   in config[connectionSettingsSection] else None)
+        sf_warehouse     = args.Warehouse      or (config[connectionSettingsSection]['warehousename'] if 'warehousename' in config[connectionSettingsSection] else None)
+        sf_role          = args.Role           or (config[connectionSettingsSection]['rolename']      if 'rolename'      in config[connectionSettingsSection] else None)
+        sf_db            = args.Database       or (config[connectionSettingsSection]['dbname']        if 'dbname'        in config[connectionSettingsSection] else None)
+        sf_schema        = args.Schema         or (config[connectionSettingsSection]['schemaname']    if 'schemaname'    in config[connectionSettingsSection] else None)
+        sf_authenticator = args.authenticator  or (config[connectionSettingsSection]['authenticator'] if 'authenticator' in config[connectionSettingsSection] else None)
+
+    # If some settings are still pending try the arguments or environment variables
+    sf_account      = args.Account or sf_account or os.getenv("SNOW_ACCOUNT") or os.getenv("SNOWSQL_ACCOUNT")
+    sf_warehouse    = args.Warehouse or sf_warehouse or os.getenv("SNOW_WAREHOUSE") or os.getenv("SNOWSQL_WAREHOUSE")
+    sf_role         = args.Role or sf_role or os.getenv("SNOW_ROLE") or os.getenv("SNOWSQL_ROLE")
+    sf_db           = args.Database or sf_db or os.getenv("SNOW_DATABASE") or os.getenv("SNOWSQL_DATABASE")
+    sf_user         = args.User or os.getenv("SNOW_USER") or os.getenv("SNOWSQL_USER")
+    sf_password     = args.Password or os.getenv("SNOW_PASSWORD") or os.getenv("SNOWSQL_PWD")
+    sf_schema       = args.Schema or os.getenv("SNOW_SCHEMA") or os.getenv("SNOWSQL_SCHEMA")
+
+    out_path     = args.LogPath
+    msg_freq     = int(os.getenv('CI_MSG_FREQ') or 0)
+    parallelism  = 20
+    exclude_dirs = []
+    split = None
+    if args.SplitBefore:
+        split = 1
+    else:
+        if args.SplitAfter:
+            split = 2
+    if not sf_password and not sf_authenticator and not args.ActiveConn:
+        from getpass import getpass
+        sf_password = getpass()
+    con = open_connection()
+    if args.sync_folder_target:
+        workdir = input_script
+        target_dir = args.sync_folder_target
+        categories = args.sync_folder_categories
+        sync_db(con,workdir, target_dir, categories)
+    else:
+        main(con,input_script, args.Workspace, split,args.SplitBefore or args.SplitAfter,args.ObjectType)
