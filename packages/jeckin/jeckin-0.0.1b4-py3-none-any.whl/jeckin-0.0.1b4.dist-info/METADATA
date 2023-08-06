@@ -1,0 +1,38 @@
+Metadata-Version: 2.1
+Name: jeckin
+Version: 0.0.1b4
+Summary: http injector
+Keywords: python,http,http injector
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Requires-Python: >=3.7, <4
+Description-Content-Type: text/markdown
+
+# jeckin
+[![Upload Python Package](https://github.com/aarestu/jeckin/actions/workflows/python-publish.yml/badge.svg)](https://github.com/aarestu/jeckin/actions/workflows/python-publish.yml)
+
+HTTP Injector
+
+## Requirement
+1. python >= 3. < 4
+2. on your OS you need to install ssh, sshpass and corkscrew, for Windows user you can install via cygwin
+
+## Installation
+```
+$ pip install jeckin
+```
+
+## Usage
+Generate template config file
+```
+jeckin myconfig.hj
+```
+
+Run service
+```
+jeckin myconfig.hj
+```
