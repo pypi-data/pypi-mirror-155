@@ -1,0 +1,192 @@
+Metadata-Version: 2.1
+Name: jarvis-ui
+Version: 0.1.8
+Summary: Jarvis UI to perform voice commands via API calls.
+Home-page: https://github.com/thevickypedia/Jarvis_UI
+Author: Vignesh Sivanandha Rao
+Author-email: svignesh1793@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/thevickypedia/Jarvis_UI/archive/main.zip
+Project-URL: Source, https://github.com/thevickypedia/Jarvis_UI
+Project-URL: Docs, https://thevickypedia.github.io/Jarvis_UI
+Project-URL: Bug Tracker, https://github.com/thevickypedia/Jarvis_UI/issues
+Keywords: python,natural-language-processing,text-to-speech,speech-recognition,jarvis,hotword-detection,virtual-assistant,multiprocessing,threadpool
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Information Technology
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Topic :: Multimedia :: Sound/Audio :: Speech
+Classifier: Topic :: Scientific/Engineering :: Human Machine Interfaces
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Multimedia :: Sound/Audio :: Conversion
+Classifier: Natural Language :: English
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pvporcupine (==1.9.5)
+Requires-Dist: packaging (==21.3)
+Requires-Dist: SpeechRecognition (==3.8.1)
+Requires-Dist: pydantic (==1.9.0)
+Requires-Dist: pyttsx3 (==2.90)
+Requires-Dist: requests (>=2.28.0)
+Requires-Dist: pydantic[dotenv]
+Requires-Dist: pydantic[email]
+
+![Python](https://img.shields.io/badge/python-3.8%20%7C%203.9%20%7C%203.10-blue)
+
+**Deployments**
+
+[![pages-build-deployment](https://github.com/thevickypedia/Jarvis_UI/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/thevickypedia/Jarvis_UI/actions/workflows/pages/pages-build-deployment)
+[![pypi](https://github.com/thevickypedia/Jarvis_UI/actions/workflows/python-publish.yml/badge.svg)](https://github.com/thevickypedia/Jarvis_UI/actions/workflows/python-publish.yml)
+
+# Jarvis UI
+
+Connects to [`Jarvis`](https://github.com/thevickypedia/Jarvis/blob/master/api/fast.py) running in the backend to process request and response via API calls.
+
+#### Mandatory Env Vars:
+- `REQUEST_URL`: URL to which the API call has to be made. Can be `localhost` or a `tunneled` URL.
+- `TOKEN`: Authentication token.
+
+#### Optional Env Vars:
+Click [here](https://github.com/thevickypedia/Jarvis#env-variables), for more information.
+- `REQUEST_TIMEOUT`: Defaults to `5`
+- `SPEECH_TIMEOUT`: Defaults to `5`
+- `SENSITIVITY`: Defaults to `0.5`
+- `VOICE_TIMEOUT`: Defaults to `3`
+- `VOICE_PHRASE_LIMIT`: Defaults to `3`
+- `LEGACY_WAKE_WORDS`: Defaults to `jarvis`
+
+Refer Jarvis' [README](https://github.com/thevickypedia/Jarvis/blob/master/README.md) for more information on setting up the backend server.
+
+### Coding Standards
+Docstring format: [`Google`](https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings) <br>
+Styling conventions: [`PEP 8`](https://www.python.org/dev/peps/pep-0008/) <br>
+Clean code with pre-commit hooks: [`flake8`](https://flake8.pycqa.org/en/latest/) and 
+[`isort`](https://pycqa.github.io/isort/)
+
+### Linting
+`PreCommit` will ensure linting, and the doc creation are run on every commit.
+
+**Requirement**
+<br>
+`pip install --no-cache --upgrade sphinx pre-commit recommonmark`
+
+**Usage**
+<br>
+`pre-commit run --all-files`
+
+### Pypi Package
+[![pypi-module](https://img.shields.io/badge/Software%20Repository-pypi-1f425f.svg)](https://packaging.python.org/tutorials/packaging-projects/)
+
+[https://pypi.org/project/jarvis-ui/](https://pypi.org/project/jarvis-ui/)
+
+### Runbook
+[![made-with-sphinx-doc](https://img.shields.io/badge/Code%20Docs-Sphinx-1f425f.svg)](https://www.sphinx-doc.org/en/master/man/sphinx-autogen.html)
+
+[https://thevickypedia.github.io/Jarvis_UI/](https://thevickypedia.github.io/Jarvis_UI/)
+
+## License & copyright
+
+&copy; Vignesh Sivanandha Rao
+
+Licensed under the [MIT License](https://github.com/thevickypedia/Jarvis_UI/blob/main/LICENSE)
+
+
+Change Log
+==========
+
+0.1.7 (06/15/2022)
+------------------
+- Change path when doc generation is run
+- Update README.md
+- Add LICENSE and update setup.py
+
+0.1.6 (06/15/2022)
+------------------
+- Add template for feature request
+
+0.1.5 (06/15/2022)
+------------------
+- Add template for bug report
+
+0.1.4 (06/15/2022)
+------------------
+- Store exceptions in a dictionary
+- Remove env var for docs_generation
+
+0.1.3 (06/15/2022)
+------------------
+- Fix classifier in setup.py
+
+0.1.2 (06/15/2022)
+------------------
+- Fix branch name in python-publish.yml
+- Update setup.py, README.md, version.py
+- Have an env var DOCS_GENERATION to filter default actions
+
+0.1.1 (06/15/2022)
+------------------
+- Make Jarvis_UI as a pypi package
+- Add CHANGELOG
+- Update shpinx docs
+- Update docstrings and type hints
+
+0.1.0 (06/14/2022)
+------------------
+- Filter non-compatible words before making API calls
+- Store all requirements in a config class during startup
+- Remove unnecessary args in speaker.py
+
+0.0.9 (06/13/2022)
+------------------
+- Send payload as json instead of query string
+- Have optional acknowledgement played for delay keywords
+
+0.0.8 (06/12/2022)
+------------------
+- Remove unused fileio resources
+- Change base log file type hint from FilePath to str
+
+0.0.7 (06/12/2022)
+------------------
+- Onboard custom `PlayAudio` module
+- Close `audio_stream` before opening `Microphone`
+- Fix install.sh
+- Convert mp3 to wav files
+
+0.0.6 (06/11/2022)
+------------------
+- Increase delay timeout to 30 seconds
+- Log it and have an acknowledgement
+- Have a new variable for speech timeout
+
+0.0.5 (06/11/2022)
+------------------
+- Use speech synthesis running on server
+- Avoid spinning up a docker in client
+- Validate mandatory args during startup
+- Update README.md
+
+0.0.4 (06/11/2022)
+------------------
+- Get keywords before proceeding
+- Load log file paths into a models.py
+- Add .pre-commit-config.yaml
+
+0.0.3 (06/10/2022)
+------------------
+- Move api_handler.py to its own module for future iterations
+
+0.0.2 (06/10/2022)
+------------------
+- Jarvis to run via api calls
+
+0.0.1 (06/09/2022)
+------------------
+- Replicate necessary parts from Jarvis repo
+
+
