@@ -1,0 +1,216 @@
+Metadata-Version: 2.1
+Name: pydaisi
+Version: 0.3.0.8
+Summary: A Python interface for the Daisi Platform
+Home-page: https://github.com/BelmontTechnology/PyDaisi
+Author: Daisi Technology, Inc.
+Author-email: eng@daisi.io
+License: Apache License 2.0
+Keywords: Daisi SDK
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests
+Requires-Dist: httpx
+Requires-Dist: python-dotenv
+Requires-Dist: dill
+Requires-Dist: rich
+Requires-Dist: requests-toolbelt
+Requires-Dist: trio
+Requires-Dist: tqdm
+
+# Simples steps for using the PyDaisi SDK
+
+## Preliminary tasks
+
+### Install with PIP
+
+- `pip install pydaisi`
+
+### (Optional) Set your personal access token
+
+Create your personal access token
+
+- Browse to your [Daisi Settings](https://app.daisi.io/my-tokens/api)
+
+Set it in the environment:
+
+```bash
+export DAISI_ACCESS_TOKEN=a1b2c3d4e5f67890abcdef124567890
+```
+
+or in a `.env` file:
+
+```bash
+DAISI_ACCESS_TOKEN=a1b2c3d4e5f67890abcdef124567890
+```
+
+## Using PyDaisi
+
+### Normal calls
+
+You can call the Daisi function, it will run until complete, and the result will be available in the `value` attribute when it has returned.
+
+```python
+from pydaisi import Daisi
+
+# instantiate a Daisi object
+daisi = Daisi("Titanic Statistics")
+# call a Daisi function. You can also use positional parameters: daisi.median("Age")
+med = daisi.median(field="Age")
+print(f"Median Age of Titanic Passengers was: {med.value}")
+print(f"10th Percentile of Titanic Passengers' Ages was: {daisi.percentile('Age', .1).value}")
+```
+
+## Parallel Execution
+
+You may also use helper functions to execute many calls from your synchronous code
+
+```python
+from pydaisi import Daisi
+
+with Daisi("Titanic Statistics") as my_daisi:
+    calls = []
+    calls.append(my_daisi.mean("Age"))
+    calls.append(my_daisi.median("Age"))
+    calls.append(my_daisi.percentile("Age"))
+    print(Daisi.run_parallel(*calls))
+```
+
+## Map Execution
+
+You can pass a list of arguments all at once, to avoid the overhead of multiple requests to the API:
+
+```python
+from pydaisi import Daisi
+
+with Daisi("Add Two Numbers") as my_daisi:
+    dbe = my_daisi.map(func="compute", args_list=[{"firstNumber": 5, "secondNumber": x} for x in range(10)])
+    print(dbe.value)
+```
+
+## Execution Status
+
+A Daisi's status can be accessed with the `status` property:
+
+```python
+from pydaisi import Daisi
+
+with Daisi("Add Two Numbers") as my_daisi:
+    de = my_daisi.compute(firstNumber=5, secondNumber=6)
+    print(de.status)
+```
+
+## Execution Logs
+
+A Daisi's logs can be accessed with the `logs` property:
+
+```python
+from pydaisi import Daisi
+import time
+
+with Daisi("Live Logging") as my_daisi:
+    de = my_daisi.live_log_test(firstNumber=5, secondNumber=6, delay=3)
+    de.start()
+    time.sleep(2)
+    print(de.logs)
+```
+
+## Remote Results
+
+You need not fetch the full data of a Daisi Execution in order to chain it to the computation of another daisi! Consider this example:
+
+```python
+from pydaisi import Daisi
+
+# Connect to the Serialization Daisi
+d3 = Daisi("Daisi Serialize")
+
+# Import numpy and define the MapStack class that we will use as an example of custom serialization
+import numpy as np
+
+class MapStack:
+    def __init__(self, nx, ny):
+        self.nx = nx
+        self.ny = ny
+        self.nb_layers = None
+        self.maps = []
+
+    def add_layer(self, map):
+        if len(map.shape) == 2 and map.shape[0] == self.ny and map.shape[1] == self.nx:
+            self.maps.append(map)
+            self.nb_layers = len(self.maps)
+            return "Map sucessfully added."
+        else:
+            return "Could not add map. Incompatible dimensions."
+
+# Initialize a new MapStack object with 10 layers
+nx = 200
+ny = 200
+ms = MapStack(nx, ny)
+for i in range(10):
+    ms.add_layer(np.random.rand(nx, ny))
+
+# Compute the daisi, adding a new layer
+d3_execution = d3.compute(map_stack=ms, map=np.random.rand(nx, ny))
+d3_execution.value_id
+
+# Compute the daisi, adding a another new layer
+d3_execution2 = d3.compute(map_stack=d3_execution, map=np.random.rand(nx, ny))
+d3_execution2.value
+```
+
+## Set and monitor workers
+`daisi.workers.set` will set the number of workers to the specified value, i.e. if the available worker is too many, it will delete the extra workers, vice versa
+```python
+from pydaisi import Daisi
+
+daisi = Daisi('Add Two Numbers')
+
+# before set workers
+print(daisi.workers.number)
+
+# asynchronous call
+worker_number = 50
+daisi.workers.set(worker_number)
+
+# after set workers, it will take a while to delete or create workers
+print(daisi.workers.number)
+
+# check the status of the workers update, i.e. increasing, decreasing, ready_to_update
+print(daisi.workers.status)
+```
+
+## Using ShareDataClient
+#### personal access token is required for share data access
+```python
+from pydaisi import SharedDataClient
+sd = SharedDataClient()
+
+# load the root directory
+folder = sd.Folder("/")
+
+# create new folder relative to folder
+new_folder = folder.create("new_folder")
+
+# upload file
+sd.upload_file("/shared data/folder/path", "/local/file/path")
+sd.put_object("/shared data/folder/path", <object bytes>, "file name")
+
+# download file
+sd.download_file("/shared data/file/path", "/local/path")
+obj = sd.download_fileobj("/shared data/file/path")
+
+# list contents
+folder = sd.Folder("/shared data/folder/path")
+for f in folder.list():
+    print(f.name)
+
+# delete a file
+file = sd.File("/shared data/file/path")
+file.delete()
+
+# delete a folder 
+folder = sd.Folder("/shared data/folder/path")
+folder.delete()
+```
