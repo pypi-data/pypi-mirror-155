@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+src/cdk_github.egg-info/PKG-INFO
+src/cdk_github.egg-info/SOURCES.txt
+src/cdk_github.egg-info/dependency_links.txt
+src/cdk_github.egg-info/requires.txt
+src/cdk_github.egg-info/top_level.txt
+src/cdkgithub/__init__.py
+src/cdkgithub/py.typed
+src/cdkgithub/_jsii/__init__.py
+src/cdkgithub/_jsii/cdk-github@0.0.16.jsii.tgz
