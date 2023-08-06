@@ -1,0 +1,21 @@
+Products.GenericSetup>=1.8.2
+authomatic
+cryptography
+plone.api
+plone.app.changeownership
+pyjwt
+requests
+setuptools
+z3c.jbot
+
+[:python_version == "2.7"]
+pas.plugins.authomatic<=1.0b1
+
+[:python_version >= "3.6"]
+pas.plugins.authomatic>=1.0b2
+
+[test]
+plone.app.contenttypes
+plone.app.robotframework[debug]
+plone.app.testing
+plone.testing
