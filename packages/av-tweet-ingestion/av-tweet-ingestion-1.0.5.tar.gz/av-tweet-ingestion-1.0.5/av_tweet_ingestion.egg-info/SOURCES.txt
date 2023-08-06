@@ -1,0 +1,14 @@
+README.md
+setup.py
+av_tweet_ingestion.egg-info/PKG-INFO
+av_tweet_ingestion.egg-info/SOURCES.txt
+av_tweet_ingestion.egg-info/dependency_links.txt
+av_tweet_ingestion.egg-info/requires.txt
+av_tweet_ingestion.egg-info/top_level.txt
+ingestion/__init__.py
+ingestion/apis.py
+ingestion/exceptions.py
+ingestion/ingestors.py
+ingestion/logconfig.py
+ingestion/main.py
+ingestion/writers.py
