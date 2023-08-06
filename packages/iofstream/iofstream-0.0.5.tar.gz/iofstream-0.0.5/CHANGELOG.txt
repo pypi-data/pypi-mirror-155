@@ -1,0 +1,18 @@
+Change Log
+==========
+
+0.0.1(6/11/2022)
+----------------
+- First Release
+
+0.0.2(6/11/2022)
+- Fixed Import Error
+
+0.0.3(6/11/2022)
+- Added Read Function
+
+0.0.4(6/11/2022)
+- Added Unlist Parameter To All Functions That Read The File. The Unlist Parameter Makes It So That You Can Convert The (Readed) Text List To A Regular String
+
+0.0.5(6/16/2022)
+- Added Logger With Log Class Functionalities
