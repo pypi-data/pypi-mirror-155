@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: coota
+Version: 1.0.2
+Summary: A powerful data-generating library.
+Home-page: https://github.com/atatc/coota
+Author: ATATC
+Author-email: futerry@outlook.com
+License: Apache License 2.0
+Description: **COOTA**(Come Out Of Thin Air) is a powerful data-generating python library. By supporting generator nesting, it allows you to generate a variety of data that shows great randomness. It also supports making generators conform to a certain distribution and associating two generators.
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
