@@ -1,0 +1,39 @@
+Metadata-Version: 2.1
+Name: do-random
+Version: 0.0.4
+Summary: random and random
+Home-page: https://github.com/HowieHz/do_random
+Author: HowieHz
+License: UNKNOWN
+Project-URL: Bug Reports, https://github.com/HowieHz/do_random/issues
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+
+# do_random
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/do_random)
+
+random and random
+
+>pip install do_random
+
+一个包用于随机的处理数据
+
+## 包一览
+string 字符串随机处理
+
+    shuffle 打乱字符串
+
+    drop 随机丢弃一些字符
+
+
