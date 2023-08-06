@@ -1,0 +1,42 @@
+[tool.poetry]
+name = "raclients"
+version = "1.2.5"
+description = "Clients for OS2mo/LoRa"
+authors = ["Magenta <info@magenta.dk>"]
+license = "MPL-2.0"
+readme = "README.md"
+homepage = "https://magenta.dk/"
+repository = "https://git.magenta.dk/rammearkitektur/ra-clients"
+keywords = ["os2mo", "lora"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+more-itertools = "^8.13.0"
+tqdm = "^4.64.0"
+pydantic = "^1.9.1"
+fastapi = "^0.78.0"
+ramodels = "^7.0.2"
+httpx = "^0.23.0"
+Authlib = "^1.0.1"
+gql = "^3.3.0"
+structlog = "^21.5.0"
+tenacity = "^8.0.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.1.2"
+pytest-asyncio = "^0.18.3"
+black = "^22.3.0"
+flake8 = "^4.0.1"
+mypy = "^0.961"
+reorder-python-imports = "^3.1.0"
+pre-commit = "^2.19.0"
+respx = "^0.19.2"
+pytest-cov = "^3.0.0"
+
+[tool.autopub]
+git-username = "MagentaBot"
+git-email = "info@magenta.dk"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
