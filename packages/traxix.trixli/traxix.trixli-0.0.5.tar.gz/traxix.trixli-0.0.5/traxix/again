@@ -1,0 +1,28 @@
+#!/usr/bin/env python
+
+import os
+from fire import Fire
+
+from traxix.utils import _match, _compile_re, colorize
+
+
+def again(*args, **kwargs):
+    compiled_re = _compile_re(regexps=args)
+    compiled_re_neg = _compile_re(regexps=kwargs.keys())
+
+    history_path = f"{os.path.expanduser('~')}/.bash_history"
+    commands = set()
+    with open(history_path, "rb") as history:
+        for line in history:
+            try:
+                arg = line.decode("utf-8").strip()
+                if _match(string=arg, regexps=compiled_re):
+                    commands.add(colorize(arg, compiled_re))
+            except UnicodeDecodeError:
+                pass
+
+    print("\n".join(commands))
+
+
+if __name__ == "__main__":
+    Fire(again)

@@ -1,0 +1,96 @@
+#!/usr/bin/env python
+
+import os
+import json
+from fire import Fire
+import boto3
+import datetime
+
+from tabulate import tabulate
+
+
+def match_tags(instance, tags: list):
+    if tags is None:
+        return True
+
+    count = 0
+
+    for tag_user in tags:
+        for tag_instance in instance["Tags"]:
+            if tag_user in tag_instance["Value"]:
+                count += 1
+                break
+    return count == len(tags)
+
+
+def get_tag(instance, tag):
+    for tag_instance in instance["Tags"]:
+        if tag in tag_instance["Key"]:
+            return tag_instance["Value"]
+
+    print("Could not find", tag, "in", instance)
+    return None
+
+
+def filter_instance(instance, fields):
+    instance_data = {}
+
+    for field in fields:
+        if field == "ip":
+            instance_data["ip"] = instance.get("PublicIpAddress")
+            continue
+
+        if field == "tags":
+            instance_data["tags"] = instance.get("Tags")
+            continue
+
+        instance_data[field] = get_tag(instance=instance, tag=field)
+
+    return instance_data
+
+
+def _json_converters(o):
+    if isinstance(o, (datetime.date, datetime.datetime)):
+        return o.isoformat()
+
+
+def update_list(output_path):
+    client = boto3.client("ec2")
+    response = client.describe_instances(
+        Filters=[],
+    )
+
+    json.dump(response, open(output_path, "w"), indent=2, default=_json_converters)
+    return response
+
+
+def load_list(db_path, update=False):
+    if not update:
+        try:
+            return json.load(open(db_path, "r"))
+        except FileNotFoundError:
+            load_list(db_path=db_path, update=True)
+
+    return update_list(output_path=db_path)
+
+
+def list_instances(
+    *tags,
+    fields: list = ["Name", "ip"],
+    update=False,
+    db_path="~/.trixli.instances.json"
+):
+    db_path = os.path.expanduser(db_path)
+
+    response = load_list(db_path=db_path)
+    instances = []
+    for resa in response["Reservations"]:
+        for instance in resa["Instances"]:
+            if match_tags(instance=instance, tags=tags):
+                instances.append(filter_instance(instance=instance, fields=fields))
+
+    print(tabulate(instances))
+
+
+if __name__ == "__main__":
+    Fire(list_instances)

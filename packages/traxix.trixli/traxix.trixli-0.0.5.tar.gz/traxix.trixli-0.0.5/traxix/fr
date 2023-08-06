@@ -1,0 +1,43 @@
+#!/usr/bin/env python
+
+import os
+import re
+from fire import Fire
+
+from traxix.utils import _f, _match, _compile_re, colorize
+
+
+def fr(*regexps, e=None, p=".", ml: int = 200):
+    """
+    Equivalent to find $p -name "*\.$e" -exec grep -nH $regexps '{}' \;
+    but shorter and allow multiple regexps
+
+    Args
+    e: extension of files
+    p: path from where to walk
+    ml: max line length
+    """
+    if e:
+        e = e + "$"
+    else:
+        e = ".*"
+
+    compiled_re = [re.compile("(" + str(regexp) + ")") for regexp in regexps]
+
+    for path in _f(e, p=p):
+        if not os.path.isfile(path):
+            continue
+        with open(path, "r") as fp:
+            line_number = 1
+            try:
+                for line in fp:
+                    if _match(string=line, regexps=compiled_re):
+                        line = colorize(line.strip(), compiled_re)
+                        response = f"{path}:{line_number}> {line}"
+                        print(response[:ml])
+            except UnicodeDecodeError as error:
+                pass
+
+
+if __name__ == "__main__":
+    Fire(fr)

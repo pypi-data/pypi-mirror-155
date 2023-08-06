@@ -1,0 +1,17 @@
+MANIFEST.in
+requirements.txt
+setup.py
+traxix/__init__.py
+traxix/again
+traxix/ansi.py
+traxix/ec2l
+traxix/f
+traxix/fe
+traxix/fp
+traxix/fr
+traxix/utils.py
+traxix.trixli.egg-info/PKG-INFO
+traxix.trixli.egg-info/SOURCES.txt
+traxix.trixli.egg-info/dependency_links.txt
+traxix.trixli.egg-info/requires.txt
+traxix.trixli.egg-info/top_level.txt
