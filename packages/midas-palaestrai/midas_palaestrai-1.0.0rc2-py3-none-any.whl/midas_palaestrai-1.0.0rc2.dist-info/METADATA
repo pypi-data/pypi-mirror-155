@@ -1,0 +1,43 @@
+Metadata-Version: 2.1
+Name: midas-palaestrai
+Version: 1.0.0rc2
+Summary: This package contains everything needed to use midas with palaestrAI.
+Home-page: https://gitlab.com/midas-mosaik/midas-palaestrai
+Author: Stephan Balduin
+Author-email: stephan.balduin@offis.de
+License: LGPL
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v2 (LGPLv2)
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: mosaik-api
+Provides-Extra: dev
+Requires-Dist: flake8 ; extra == 'dev'
+Requires-Dist: pytest ; extra == 'dev'
+Requires-Dist: coverage ; extra == 'dev'
+Requires-Dist: black (==22.3.0) ; extra == 'dev'
+Requires-Dist: setuptools ; extra == 'dev'
+Requires-Dist: twine ; extra == 'dev'
+Requires-Dist: wheel ; extra == 'dev'
+Requires-Dist: palaestrai ; extra == 'dev'
+
+# MIDAS Palaestrai Adapter
+
+## Description
+This package contains everything needed to use midas with palaestrAI.
+
+## License
+This software is released under the GNU Lesser General Public License (LGPL). See the license file for more information about the details.
+
+
