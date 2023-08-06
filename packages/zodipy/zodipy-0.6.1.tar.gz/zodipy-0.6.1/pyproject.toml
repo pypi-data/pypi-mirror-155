@@ -1,0 +1,41 @@
+[tool.poetry]
+name = "zodipy"
+homepage = "https://github.com/MetinSa/zodipy"
+version = "0.6.1"
+description = "ZodiPy is a python tool that simulates the Zodiacal emission."
+authors = ["Metin San <metinisan@gmail.com>"]
+readme = "README.md"
+license = "GPL-3.0"
+exclude = ["zodipy/dirbe"]
+
+[tool.poetry.dependencies]
+python = ">=3.8, <=3.10"
+numpy = "^1.22.3"
+healpy = "^1.15.0"
+astropy = ">=5.0.1"
+jplephem = "^2.17"
+typing-extensions = "^4.1.1"
+quadpy = "^0.16.13"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.4"
+black = "^22.3.0"
+mypy = "^0.910"
+tox = "^3.24.3"
+mkdocs = "^1.2.1"
+mkdocstrings = "^0.15.2"
+mkdocs-material = "^7.1.10"
+Jinja2 = "<3.1.0"
+pygments =">=2.10, <2.12"
+pymdown-extensions = "<9.4"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.mypy]
+disable_error_code = ["misc"]
+overrides = [
+    { module = "healpy.*", ignore_missing_imports = true },
+    { module = "astropy.*", ignore_missing_imports = true },
+]
