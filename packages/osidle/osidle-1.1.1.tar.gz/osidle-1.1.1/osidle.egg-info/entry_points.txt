@@ -1,0 +1,4 @@
+[console_scripts]
+osidle = osidle.analysis:osidle_analysis
+osidle-packdb = osidle.packdb:osidle_packdb
+osidled = osidle.monitor:osidle_monitor
