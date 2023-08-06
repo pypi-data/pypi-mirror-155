@@ -1,0 +1,23 @@
+{
+	"os_arch": "x86_64",
+	"tmp_path": "/tmp",
+	"tmp_slpkg": "/tmp/slpkg",
+	"build_path": "/tmp/slpkg/build",
+	"lib_path": "/var/lib/slpkg",
+	"etc_path": "/etc/slpkg",
+	"db_path": "/var/lib/slpkg/database",
+	"sbo_repo_path": "/var/lib/slpkg/repository",
+	"log_packages": "/var/log/packages",
+	"database": "database.slpkg",
+	"repo_version": "15.0",
+	"sbo_url": "http://slackbuilds.org/slackbuilds/15.0",
+	"sbo_txt": "SLACKBUILDS.TXT",
+	"tar_suffix": ".tar.gz",
+	"pkg_suffix": ".tgz",
+	"repo_tag": "_SBo",
+	"installpkg": "upgradepkg --install-new",
+	"reinstall": "upgradepkg --reinstall",
+	"removepkg": "removepkg",
+	"colors": "on",
+	"wget_options": "-c -N"
+}

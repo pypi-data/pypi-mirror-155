@@ -1,0 +1,85 @@
+.TH slpkg 1 "Orestiada, Greece" "slpkg 4.1.0" dslackw
+.SH NAME
+.P
+slpkg - [OPTIONS] <packages>
+.SH SYNAPSES
+.P
+slpkg [-h|-v] [update] [build] [install] [remove] [search] [clean-logs] --yes --resolve-off --reinstall
+.SH DESCRIPTION
+.P
+Slpkg is a software package manager that installs, updates, and removes packages on Slackware based systems. It automatically computes dependencies and figures out what things should occur to install packages. Slpkg makes it easier to maintain groups of machines without having to manually update.
+.P
+Slpkg works in accordance with the standards of the organization SlackBuilds.org to build packages. Also uses the Slackware Linux instructions for installation, upgrading or removing packages.
+.SH OPTIONS
+.P
+update
+.RS
+Updates the package list and the database.
+.RE
+.P
+build
+.RS
+Builds the scripts and puts them in the /tmp directory.
+.RE
+.P
+install
+.RS
+Builds and installs the packages in the correct order and also logs the packages with dependencies to use for removal.
+.RE
+.P
+remove
+.RS
+Removes packages with dependencies if the packages was installed with slpkg install method.
+.RE
+.P
+search
+.RS
+Search packages by name and view everything in your terminal.
+.RE
+.P
+clean-logs
+.RS
+Purge logs of dependencies.
+.RE
+.P
+--yes
+.RS
+Answer Yes to all questions.
+.RE
+.P
+--jobs
+.RS
+Acceleration of SlackBuild scripts. When the --jobs flag is set, slpkg automatically detects the number of processors and enters it into the MAKEFLAGS variable. Some SlackBuilds fail when 
+MAKEFLAGS is declared or the number of processors (-j) is greater than one.
+.RE
+.P
+--resolve-off
+.RS
+Turns off dependency resolving.
+.RE
+.P
+--reinstall
+.RS
+Use this option if you want to upgrade all packages even if the same version is already installed. Do not skip installed packages.
+.RE
+.P
+-h | --help
+.RS
+Show help informatio and exit.
+.RE
+.P
+-v | --version
+.RS
+Print version and exit.
+.RE
+.SH CONFIGURATION FILES
+.P
+Configuration file in the /etc/slpkg/slpkg.json file.
+.RE
+Blacklist file in the /etc/slpkg/blacklist.json file.
+.SH REPORT BUGS
+.P
+Please report any found to https://gitlab.com/dslackw/slpkg/-/issues.
+.SH AUTHOR
+.P
+Dimitris Zlatanidis <d.zlatanidis@gmail.com>
