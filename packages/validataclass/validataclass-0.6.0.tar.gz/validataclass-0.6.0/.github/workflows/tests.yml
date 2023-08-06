@@ -1,0 +1,75 @@
+# GitHub Actions workflow for running unit tests (using tox, pytest and flake8) on each push or pull request to main.
+
+name: Unit tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    name: Run unit tests (Python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version:
+          - '3.7'
+          - '3.8'
+          - '3.9'
+          - '3.10'
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: pip install --upgrade pip tox
+
+      - name: Run unit tests with tox
+        # Run tox using the version of Python in `PATH`
+        run: tox -e clean,py,flake8,report -- --junit-xml=reports/pytest_${{ matrix.python-version }}.xml
+
+      - name: Upload test result artifacts
+        uses: actions/upload-artifact@v3
+        if: success() || failure()
+        with:
+          # This will add every pytest_VERSION.yml to the same artifact file
+          name: pytest-results
+          path: reports/pytest_${{ matrix.python-version }}.xml
+
+  report:
+    name: Publish unit test reports
+    runs-on: ubuntu-latest
+
+    # Job depends on test results
+    needs: test
+
+    # Do not run this job in pull requests from a forked repository (because the test-reporter would fail)
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Download test result artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: pytest-results
+          path: reports/
+
+      - name: Publish unit test reports
+        uses: dorny/test-reporter@v1
+        if: success() || failure()
+        with:
+          name: Pytest Report
+          path: reports/pytest_*.xml
+          reporter: java-junit
