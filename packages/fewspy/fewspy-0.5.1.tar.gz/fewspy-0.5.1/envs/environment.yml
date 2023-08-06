@@ -1,0 +1,15 @@
+name: fewspy
+
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - aiohttp
+  - jupyter
+  - pandas
+  - geopandas
+  - requests
+  - mkdocs
+  - pip:
+    - fewspy
