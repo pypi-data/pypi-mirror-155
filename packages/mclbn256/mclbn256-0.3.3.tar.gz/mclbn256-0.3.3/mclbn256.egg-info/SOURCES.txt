@@ -1,0 +1,16 @@
+LICENSE
+README.rst
+pyproject.toml
+setup.cfg
+setup.py
+./mclbn256/__init__.py
+./mclbn256/libmclbn256.dylib
+./mclbn256/libmclbn256.so
+./mclbn256/mclbn256.py
+./mclbn256/lib/__init__.py
+./mclbn256/lib/libmcl.dylib
+./mclbn256/lib/libmcl.so
+mclbn256.egg-info/PKG-INFO
+mclbn256.egg-info/SOURCES.txt
+mclbn256.egg-info/dependency_links.txt
+mclbn256.egg-info/top_level.txt
