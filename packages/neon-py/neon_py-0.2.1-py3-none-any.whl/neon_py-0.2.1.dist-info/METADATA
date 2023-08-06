@@ -1,0 +1,81 @@
+Metadata-Version: 2.1
+Name: neon-py
+Version: 0.2.1
+Summary: NEON parser for Python
+Author-email: Pavel Dedik <dedikx@gmail.com>
+License: BSD
+Project-URL: Homepage, https://github.com/paveldedik/neon-py
+Keywords: neon,parser,config file
+Classifier: Programming Language :: Python
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Utilities
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: python-dateutil
+Requires-Dist: more-itertools
+Provides-Extra: test
+Requires-Dist: pytest ; extra == 'test'
+Provides-Extra: testing
+Requires-Dist: pytest ; extra == 'testing'
+
+NEON for Python
+===============
+
+[![Test](https://github.com/paveldedik/neon-py/actions/workflows/test.yml/badge.svg)](https://github.com/paveldedik/neon-py/actions/workflows/test.yml)
+
+NEON is very similar to YAML. The main difference is that the NEON supports
+"entities"(so can be used e.g.to parse phpDoc annotations) and tab characters
+for indentation. NEON syntax is a little simpler.
+
+Example of Neon code:
+
+```yaml
+# neon example
+
+name: Homer
+
+address:
+
+    street: 742 Evergreen Terrace
+    city: Springfield
+
+children:
+
+    + Bart
+    + Lisa
+    + Maggie
+
+entity: Column(type=integer)
+```
+
+Installation
+------------
+
+To install NEON parser for Python, simply run:
+
+```bash
+pip install neon-py
+```
+
+Quick start
+-----------
+
+Decoding NEON config files is super easy:
+
+```python
+import neon
+
+with open('/path/to/config.neon', 'r') as fd:
+    config = neon.decode(fd.read())
+```
+
+Links
+-----
+
+* [Neon sandbox](http://ne-on.org)
+* [Neon for PHP](https://github.com/nette/neon)
+* [Neon for Javascript](https://github.com/matej21/neon-js)
