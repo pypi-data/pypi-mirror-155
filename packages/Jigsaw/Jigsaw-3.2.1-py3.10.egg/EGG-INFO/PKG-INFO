@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: Jigsaw
+Version: 3.2.1
+Summary: A plugin framework for Python3.6+
+Home-page: https://github.com/nint8835/jigsaw
+Author: nint8835
+Author-email: riley@rileyflynn.me
+License: MIT
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Plugins
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Topic :: Utilities
+License-File: LICENSE
+
+A plugin framework for Python3.6+
+
