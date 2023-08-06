@@ -1,0 +1,11 @@
+.*.swp
+.tox
+.cache
+*.py[cod]
+__pycache__
+*.egg
+*.egg-info
+.idea
+build
+dist
+.tmp
