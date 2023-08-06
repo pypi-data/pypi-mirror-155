@@ -1,0 +1,117 @@
+Metadata-Version: 2.1
+Name: gnuhealth-client
+Version: 4.0.1
+Summary: The GNU Health GTK client
+Home-page: http://www.gnuhealth.org
+Download-URL: https://ftp.gnu.org/gnu/health
+Author: GNU Solidario
+Author-email: health@gnu.org
+License: GPL v3+
+Keywords: eHealth ERM HMIS LIMS
+Platform: any
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: X11 Applications :: GTK
+Classifier: Framework :: Tryton
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Intended Audience :: Healthcare Industry
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: GNU General Public License (GPL)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Scientific/Engineering :: Bio-Informatics
+Classifier: Topic :: Scientific/Engineering :: Medical Science Apps.
+Requires-Python: >=3.6,<4
+Provides-Extra: calendar
+License-File: LICENSE
+License-File: COPYING
+
+The GNU Health GTK Client
+=======================================================================
+
+The GTK client allows to connect to the GNU Health HMIS component server from the
+desktop.
+
+
+Installation
+------------
+You can install the GNU Health HMIS client via pip::
+
+ $ pip3 install --user --upgrade gnuhealth-client
+
+
+Technology
+----------
+The GNU Health HMIS client is a Python 3 application that derives from the Tryton GTK client, with specific
+features of GNU Health and healthcare sector.
+
+The default profile
+-------------------
+The GNU Health client comes with a pre-defined profile, which points to
+the GNU Health community demo server::
+
+ Server : federation.gnuhealth.org
+ Port : 8000
+ User : admin
+ Passwd : gnusolidario
+
+
+GNU Health Plugins
+------------------
+You can download GNU Health plugins for specific functionality.
+
+For example:
+
+* The GNU Health **Crypto** plugin to digitally sign documents using GNUPG
+* The GNU Health **Camera** to use cameras and store them directly 
+  on the system (person registration, histological samples, etc..)
+* The **Federation Record Locator**, that communicates with **thalamus**
+  and interacts with the GNU Health Information System and Person Master Index.
+
+More information about the GNU Health plugins at :
+
+https://en.wikibooks.org/wiki/GNU_Health/Plugins
+  
+
+The GNU Health client configuration file
+----------------------------------------
+The default configuration file resides in::
+
+ $HOME/.config/gnuhealth/<version>/gnuhealth-client.conf
+
+Using a custom greeter / banner
+-------------------------------
+You can customize the login greeter banner to fit your institution.
+
+In the section [client] include the banner param with the absolute path
+of the png file.
+
+Something like::
+
+ [client]
+ banner = /home/yourlogin/myhospitalbanner.png
+
+The default resolution of the banner is 500 x 128 pixels. Adjust yours
+to approximately this size.
+
+Development
+-----------
+The development of the GNU Health client will be done on GNU Savannah, 
+using the Mercurial repository.
+
+Tasks, bugs and mailing lists will be on health-dev@gnu.org , for development.
+
+General questions can be done on health@gnu.org mailing list.
+
+Homepage
+--------
+https://www.gnuhealth.org
+
+
+Documentation
+-------------
+The GNU Health GTK documentation will be at the corresponding
+chapter in the GNU Health Wikibook
+
+https://en.wikibooks.org/wiki/GNU_Health
+
+
