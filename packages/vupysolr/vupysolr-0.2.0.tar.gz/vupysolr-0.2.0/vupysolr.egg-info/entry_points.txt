@@ -1,0 +1,3 @@
+[console_scripts]
+vupysolr = vupysolr.__main__:main
+
