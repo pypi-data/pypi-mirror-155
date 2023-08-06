@@ -1,0 +1,66 @@
+{
+    "workspace": {
+        "blocks": {
+            "blocks": [
+                {
+                    "enabled": false,
+                    "fields": {
+                        "VAR": {
+                            "id": "a)B%~C/=|}|hxi:V56@`"
+                        }
+                    },
+                    "id": "N{@ehqQ-}B_XQ:ouBtAk",
+                    "inputs": {
+                        "VALUE": {
+                            "block": {
+                                "fields": {
+                                    "OP": "ADD"
+                                },
+                                "id": "w7[n#^fN_.=KKSmj;.!e",
+                                "inputs": {
+                                    "A": {
+                                        "block": {
+                                            "fields": {
+                                                "VAR": {
+                                                    "id": "a)B%~C/=|}|hxi:V56@`"
+                                                }
+                                            },
+                                            "id": "LP``);:OozpoEgo5DgQ5",
+                                            "type": "variables_get"
+                                        }
+                                    },
+                                    "B": {
+                                        "block": {
+                                            "fields": {
+                                                "NUM": 100
+                                            },
+                                            "id": "B{%tV,X|T7ITr!;%Epqn",
+                                            "type": "math_number"
+                                        }
+                                    }
+                                },
+                                "type": "math_arithmetic"
+                            }
+                        }
+                    },
+                    "type": "variables_set",
+                    "x": 114,
+                    "y": 140
+                }
+            ],
+            "languageVersion": 0
+        },
+        "variables": [
+            {
+                "id": "a)B%~C/=|}|hxi:V56@`",
+                "name": "my_var"
+            }
+        ]
+    },
+    "envs": [
+        {}
+    ],
+    "expected_results": [
+        {}
+    ]
+}

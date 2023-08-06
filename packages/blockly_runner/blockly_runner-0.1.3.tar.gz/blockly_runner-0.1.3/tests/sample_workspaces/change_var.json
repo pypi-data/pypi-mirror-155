@@ -1,0 +1,47 @@
+{
+    "workspace": {
+        "blocks": {
+            "blocks": [
+                {
+                    "fields": {
+                        "VAR": {
+                            "id": "a)B%~C/=|}|hxi:V56@`"
+                        }
+                    },
+                    "id": "Pujdj,(tQWFKi;7cUkY.",
+                    "inputs": {
+                        "DELTA": {
+                            "shadow": {
+                                "fields": {
+                                    "NUM": 5
+                                },
+                                "id": "dmIzraYX.~@%DbNbLhE[",
+                                "type": "math_number"
+                            }
+                        }
+                    },
+                    "type": "math_change",
+                    "x": 350,
+                    "y": 65
+                }
+            ],
+            "languageVersion": 0
+        },
+        "variables": [
+            {
+                "id": "a)B%~C/=|}|hxi:V56@`",
+                "name": "my_var"
+            }
+        ]
+    },
+    "envs": [
+        {
+            "my_var": 10
+        }
+    ],
+    "expected_results": [
+        {
+            "my_var": 15
+        }
+    ]
+}
