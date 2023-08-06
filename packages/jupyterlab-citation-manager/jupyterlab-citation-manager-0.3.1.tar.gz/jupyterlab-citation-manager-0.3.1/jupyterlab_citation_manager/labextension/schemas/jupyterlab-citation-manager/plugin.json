@@ -1,0 +1,57 @@
+{
+  "jupyter.lab.shortcuts": [
+    {
+      "command": "cm:insert-citation",
+      "keys": ["Alt C"],
+      "selector": ".jp-Notebook"
+    },
+    {
+      "command": "cm:insert-bibliography",
+      "keys": ["Alt B"],
+      "selector": ".jp-Notebook"
+    },
+    {
+      "command": "cm:change-bibliography-style",
+      "keys": ["Alt S"],
+      "selector": ".jp-Notebook"
+    },
+    {
+      "command": "cm:update-references",
+      "keys": ["Alt U"],
+      "selector": ".jp-Notebook"
+    }
+  ],
+  "jupyter.lab.setting-icon": "citation:bibliography",
+  "jupyter.lab.setting-icon-label": "Citation Manager",
+  "title": "Citation Manager",
+  "description": "Citation Manager settings.",
+  "type": "object",
+  "properties": {
+    "defaultStyle": {
+      "title": "Default Citation Style",
+      "type": "string",
+      "default": "apa.csl",
+      "description": "The default citation style, one of the styles in the Citation Style Language (CSL) repository."
+    },
+    "linkToBibliography": {
+      "title": "Link citations to bibliography",
+      "type": "boolean",
+      "default": true,
+      "description": "Should citations link to the bibliography? Only available for HTML output format."
+    },
+    "hyperlinksInBibliography": {
+      "title": "Hyperlinks in bibliography",
+      "type": "boolean",
+      "default": true,
+      "description": "Whether links and DOIs in bibliography should be clickable (if the output format supports it)."
+    },
+    "outputFormat": {
+      "title": "The default format of citations and bibliography",
+      "type": "string",
+      "default": "html",
+      "description": "One of: html, text, rtf, asciidoc, fo, latex. Only `html` and `latex` are supported.",
+      "enum": ["html", "text", "rtf", "asciidoc", "fo", "latex"]
+    }
+  },
+  "additionalProperties": false
+}
