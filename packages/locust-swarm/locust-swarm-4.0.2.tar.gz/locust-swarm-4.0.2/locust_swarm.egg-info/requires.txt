@@ -1,0 +1,4 @@
+keyring==21.4.0
+locust-plugins>=2.2.2
+psutil
+ConfigArgParse>=1.0
