@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: fparser
+Version: 0.0.16
+Summary: The fparser Project
+Home-page: https://github.com/stfc/fparser
+Author: Andrew Porter
+Author-email: trackstand.andy@gmail.com
+License: OSI Approved :: BSD 3-Clause License
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Fortran
+Classifier: Programming Language :: Python
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Software Development
+Classifier: Topic :: Utilities
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS
+Provides-Extra: doc
+License-File: LICENSE
+
+The fparser project is created to develop a parser for
+Fortran 77..2008 code. It is based on the work of Pearu Peterson in
+the F2PY project (http://www.f2py.com).
+
+See https://github.com/stfc/fparser for more information.
