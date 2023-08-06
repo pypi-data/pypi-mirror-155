@@ -1,0 +1,16 @@
+freud_api_crawler/__init__.py,sha256=1ZUNuwlHXhppN1rNF7SvM2rCXHv_dKlCVQN0at5V590,144
+freud_api_crawler/entities.py,sha256=KoSKhaf0u8m6nm4g0kvPGA4fheOeMajFNHg2Q_3IFUE,1482
+freud_api_crawler/file_utils.py,sha256=HBE6yDh91cszq-OADC7CcSeww1lo9L0CgPYzOqHDZe0,1014
+freud_api_crawler/freud_api_crawler.py,sha256=S0V3oBO7E4oeaS0mVpC3bjkBo42QG5bUYmIrEMDeEmU,17750
+freud_api_crawler/string_utils.py,sha256=boTxSFLO1aKPA_4G8_5zF-2m1pdy9ur_AFyOl0TbEhU,1674
+freud_api_crawler/tei_utils.py,sha256=9orTK6bq8PK9_ipVeLVsSUvkj9N2M18emkkqBOskSmU,298
+freud_api_crawler/fixtures/make_tei.xslt,sha256=JFeTHKx63GAnqYgVNRt7TshZaTn5Fofm7_IQqQRFdE0,4885
+freud_api_crawler/fixtures/tei_dummy.xml,sha256=LzumjZxyJQ-nl7O775WDWtp3UOWhxG7WEa6gvTH2dHc,528
+freud_api_crawler-1.7.1.data/data/freud_api_crawler/fixtures/make_tei.xslt,sha256=JFeTHKx63GAnqYgVNRt7TshZaTn5Fofm7_IQqQRFdE0,4885
+freud_api_crawler-1.7.1.data/data/freud_api_crawler/fixtures/tei_dummy.xml,sha256=LzumjZxyJQ-nl7O775WDWtp3UOWhxG7WEa6gvTH2dHc,528
+freud_api_crawler-1.7.1.dist-info/LICENSE,sha256=lHlwOTiT0S2MzMU2VMJIwJE_fb1SWrkLMdtWPz5PuoQ,1073
+freud_api_crawler-1.7.1.dist-info/METADATA,sha256=XafNWC8fyCjeWF7B5HcJrjCOoa_YjjHpg8C9_RCQHCM,2680
+freud_api_crawler-1.7.1.dist-info/WHEEL,sha256=G16H4A3IeoQmnOrYV4ueZGKSjhipXx8zc8nu9FGlvMA,92
+freud_api_crawler-1.7.1.dist-info/entry_points.txt,sha256=xVVNjCgmqpkT5iiBA25shQ8JHpkgm9ZekRJdRx2ix0s,165
+freud_api_crawler-1.7.1.dist-info/top_level.txt,sha256=VO-I615IbN9OmAsiD6ASkgNO0KXxOYbf7zhk6AMrhzk,18
+freud_api_crawler-1.7.1.dist-info/RECORD,,
