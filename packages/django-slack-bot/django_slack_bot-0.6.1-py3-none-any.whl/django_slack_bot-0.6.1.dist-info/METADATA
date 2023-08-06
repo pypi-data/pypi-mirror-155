@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: django-slack-bot
+Version: 0.6.1
+Summary: Helpers for integrating Slack + Django
+Home-page: UNKNOWN
+Author: Paul Traylor
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Framework :: Django
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Description-Content-Type: text/markdown
+Requires-Dist: Django (>=3.2)
+Requires-Dist: aiohttp
+Requires-Dist: slack-sdk (>=3.5.1)
+Requires-Dist: importlib-metadata (>=1.0) ; python_version < "3.8"
+Provides-Extra: dev
+Requires-Dist: black ; extra == 'dev'
+Requires-Dist: flake8 ; extra == 'dev'
+
+# dsbot
+
+
