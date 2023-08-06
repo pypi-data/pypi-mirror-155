@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "circe-ui-CERTIC"
+version = "0.0.2"
+description = "Circe Web UI"
+authors = ["Mickaël Desfrênes <mickael.desfrenes@unicaen.fr>"]
+license = "MIT"
+packages = [
+    { include = "circe_ui"},
+]
+[tool.poetry.dependencies]
+python = "^3.9"
+circe-client-CERTIC = ">=0.0.7"
+argh = ">=0.26.2"
+sanic = ">=22.3.2"
+itsdangerous = ">=2.1.2"
+aiofiles = ">=0.8.0"
+python-dotenv = ">=0.20.0"
+
+[tool.poetry.dev-dependencies]
+black = ">=22.3.0"
+
+[tool.poetry.scripts]
+circeui = "circe_ui.__main__:run_cli"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
