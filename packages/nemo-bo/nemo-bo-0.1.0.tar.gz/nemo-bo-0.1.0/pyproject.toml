@@ -1,0 +1,51 @@
+[tool.poetry]
+name = "nemo-bo"
+version = "0.1.0"
+description = "Multi-objective optimization of chemical processes with automated machine learning model selection"
+authors = ["Simon Sung <simon.sung06@gmail.com>"]
+license = "MIT"
+readme = 'README.md'
+repository = "https://github.com/sustainable-processes/NEMO"
+homepage = "https://github.com/sustainable-processes/NEMO"
+keywords = ["machine-learning", "bayesian-optimization", "multi-objective-optimization"]
+classifiers = [
+    "Programming Language :: Python :: 3.10",
+    "License :: OSI Approved :: MIT License",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+# For opt
+matplotlib = "^3.5.2"
+numpy = "^1.21.6"
+pandas = "^1.4.2"
+torch = "^1.11.0"
+botorch = "^0.6.4"
+smt = "^1.2.0"
+scikit-learn = "^1.1.1"
+
+# For models
+gpytorch = "^1.6.0"
+hyperopt = "^0.2.7"
+ngboost = "^0.3.12"
+six = "^1.16.0"
+tensorflow = "^2.9.1"
+tensorflow-probability = "^0.17.0"
+forestci = "^0.5.1"
+xgboost-distribution = "^0.2.4"
+
+# For acquisition functions
+scipy = "^1.8.1"
+pymoo = "^0.5.0"
+
+[tool.poetry.dev-dependencies]
+# Tests
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
