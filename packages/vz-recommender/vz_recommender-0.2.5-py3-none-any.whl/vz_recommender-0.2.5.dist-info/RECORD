@@ -1,0 +1,17 @@
+vz_recommender/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+vz_recommender/models/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+vz_recommender/models/bottom.py,sha256=0TRLXsioOrx8sFQByV83ggdxqSTqXWIH73qTPlPqcL0,13995
+vz_recommender/models/bst.py,sha256=Wb9N_32P6sAH_4ckL65HcgYyaJjqiUbsBfus8SjJJEw,2031
+vz_recommender/models/candidate_gen.py,sha256=Z2mTtT1hU-D7uG6KM0Zr6FrI8O8Km8XYuLJvFe2X0hE,3617
+vz_recommender/models/mmoe.py,sha256=nscy_F-3r3AJQ9IheVzGBKrul4K7S9AJpAKOaYXyv1c,4418
+vz_recommender/models/multitask.py,sha256=q7XRgju5WgBdN0LobpGoH7DZ_C-VeC9LH0EHs-J8Vk0,3832
+vz_recommender/models/txt.py,sha256=0w561HdGfRX6gUGFgjdwQbYekhFO0Ka4f2GjFRPYydc,9445
+vz_recommender/utils/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+vz_recommender/utils/callbacks_base.py,sha256=NJ2S0mxqrBHdA5eEm8-oYJT0XIz55Er1K5TagFSeJJs,7226
+vz_recommender/utils/loggers_base.py,sha256=nFCccTq-bCUdkrpTpdZbXnkUi3C5KkKNsX67aj3F7zI,4517
+vz_recommender/utils/utils.py,sha256=SPLDiKzgeFJKCJl5PHlurdRKN_7CbEPh5W1UJwZzzbA,5327
+vz_recommender-0.2.5.dist-info/LICENSE,sha256=fvg0jZ_OoWfr62DLyF0Ho7jG2u2vG8Xem8rGRNiLv0s,567
+vz_recommender-0.2.5.dist-info/METADATA,sha256=0GyiKRqki9MPxETMut26cL5iBIaZzHQ6BGw8--y1-nQ,711
+vz_recommender-0.2.5.dist-info/WHEEL,sha256=G16H4A3IeoQmnOrYV4ueZGKSjhipXx8zc8nu9FGlvMA,92
+vz_recommender-0.2.5.dist-info/top_level.txt,sha256=exiaYOYv6kBgyFSv-jNuxdo8dinBJwB2cSYV2zNGk7E,15
+vz_recommender-0.2.5.dist-info/RECORD,,
