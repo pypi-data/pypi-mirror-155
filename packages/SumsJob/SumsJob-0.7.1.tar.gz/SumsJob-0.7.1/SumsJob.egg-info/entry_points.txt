@@ -1,0 +1,6 @@
+[console_scripts]
+sacct = sumsjob.sacct:main
+scancel = sumsjob.scancel:main
+sinfo = sumsjob.sinfo:main
+srun = sumsjob.srun:main
+
