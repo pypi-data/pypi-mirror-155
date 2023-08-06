@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: pms5003-async
+Version: 0.0.1.dev0
+Summary: PMS5003 Air Quality Sensor with asyncio
+Home-page: https://github.com/devinrsmith/pms5003-async
+Author: Devin Smith
+Author-email: devinsmith@deephaven.io
+Project-URL: Source Code, https://github.com/devinrsmith/pms5003-async
+Project-URL: Bug Tracker, https://github.com/devinrsmith/pms5003-async/issues
+Keywords: sensor,pms5003
+Platform: any
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 3 - Alpha
+Description-Content-Type: text/markdown
+Requires-Dist: aioserial
+
+# pms5003-async
+
+Work in progress
