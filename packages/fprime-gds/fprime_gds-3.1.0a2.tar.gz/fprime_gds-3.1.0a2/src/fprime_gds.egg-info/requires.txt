@@ -1,0 +1,15 @@
+flask<2.0.0,>=1.1.2
+flask_compress<2.0,>=1.11
+pyzmq<23.0.0,>=22.3.0
+pexpect<5.0.0,>=4.8.0
+pytest<7.0.0,>=6.2.4
+flask_restful<1.0.0,>=0.3.8
+fprime-tools>=3.1.0a1
+argcomplete<2.0.0,>=1.12.3
+Jinja2<3.0.0,>=2.11.3
+
+[test-api-xls]
+openpyxl
+
+[uart-adapter]
+pyserial
