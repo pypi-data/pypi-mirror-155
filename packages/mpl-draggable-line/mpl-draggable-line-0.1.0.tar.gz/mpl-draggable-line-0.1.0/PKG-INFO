@@ -1,0 +1,39 @@
+Metadata-Version: 2.1
+Name: mpl-draggable-line
+Version: 0.1.0
+Summary: Draggable Line Widget for matplotlib
+Home-page: https://github.com/ianhi/mpl-draggable-line
+Author: Ian Hunt-Isaak
+Author-email: ianhuntisaak@gmail.com
+License: BSD license
+Project-URL: Source Code, https://github.com/ianhi/mpl-draggable-line
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Provides-Extra: testing
+Provides-Extra: dev
+Provides-Extra: doc
+License-File: LICENSE
+
+# mpl-draggable-line
+
+[![License](https://img.shields.io/pypi/l/mpl-draggable-line.svg?color=green)](https://github.com/ianhi/mpl-draggable-line/raw/main/LICENSE)
+[![PyPI](https://img.shields.io/pypi/v/mpl-draggable-line.svg?color=green)](https://pypi.org/project/mpl-draggable-line)
+[![Python Version](https://img.shields.io/pypi/pyversions/mpl-draggable-line.svg?color=green)](https://python.org)
+[![CI](https://github.com/ianhi/mpl-draggable-line/actions/workflows/ci/badge.svg)](https://github.com/ianhi/mpl-draggable-line/actions)
+[![codecov](https://codecov.io/gh/ianhi/mpl-draggable-line/branch/master/graph/badge.svg)](https://codecov.io/gh/ianhi/mpl-draggable-line)
+
+Draggable Line Widget for matplotlib
+
+```bash
+pip install mpl-draggable-line
+```
+
+![a line being dragged around in an empty plot](docs/_static/simple-demo.apng)
+
