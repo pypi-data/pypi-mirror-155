@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: qbert
+Version: 0.1.7
+Summary: a dead simple task queue backed by postgres
+Home-page: https://github.com/backwardspy/qbert
+Author: backwardspy
+Author-email: backwardspy@gmail.com
+Requires-Python: >=3.10,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Requires-Dist: piccolo[orjson,postgres] (>=0.74.4)
+Requires-Dist: pydantic (>=1.9.1,<2.0.0)
+Requires-Dist: ulid-py (>=1.1.0,<2.0.0)
+Project-URL: Repository, https://github.com/backwardspy/qbert
+Description-Content-Type: text/markdown
+
+![q*bert sprite](https://github.com/backwardspy/qbert/blob/master/docs/qbert.png)
+
+# qbert
+
+a dead simple task queue backed by postgres
+
+very informal testing suggests a max performance around 100 jobs per second per worker on my machine.
+
+## usage
+
+add `qbert.piccolo_app` to your `APP_REGISTRY` as per [the documentation](https://piccolo-orm.readthedocs.io/en/latest/piccolo/projects_and_apps/piccolo_apps.html).
+
+see [example.py](example.py) for queue interaction examples.
+
