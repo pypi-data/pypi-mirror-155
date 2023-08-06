@@ -1,0 +1,15 @@
+pandas
+
+[s3]
+fsspec[s3]>=2022.5.0
+
+[test]
+coverage
+fastparquet
+pyarrow
+moto
+pytest
+fsspec[s3]>=2022.5.0
+
+[xlsx]
+openpyxl
