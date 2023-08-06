@@ -1,0 +1,138 @@
+---
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: laboro.config.workflow.schema
+title: Laboro workflow
+description: Laboro workflow
+type: object
+properties:
+  name:
+    type: string
+  packages:
+    type: array
+    uniqueItems: True
+    items:
+      type: string
+  workspace:
+    type: object
+    properties:
+      delete_on_exit:
+        type: boolean
+    required:
+      - delete_on_exit
+    additionalProperties: False
+  steps:
+    type: array
+    uniqueItems: True
+    items:
+      $schema: https://json-schema.org/draft/2020-12/schema
+      $id: laboro.config.workflow.step.schema
+      title: Laboro workflow step
+      description: Laboro workflow step
+      type: object
+      properties:
+        name:
+          type: string
+        when:
+          items:
+            type: string
+        loop:
+          type:
+            - string
+            - integer
+        actions:
+          type: array
+          uniqueItems: True
+          items:
+            $schema: https://json-schema.org/draft/2020-12/schema
+            $id: laboro.config.workflow.step.action.schema
+            title: Laboro workflow step action
+            description: Laboro workflow step action
+            type: object
+            properties:
+              name:
+                type: string
+              when:
+                type: string
+              loop:
+                type:
+                  - string
+                  - integer
+              object:
+                $schema: https://json-schema.org/draft/2020-12/schema
+                $id: laboro.config.workflow.step.action.object.schema
+                title: Laboro workflow step action object
+                description: Laboro workflow step action object
+                type: object
+                properties:
+                  name:
+                    type: string
+                  module:
+                    type: string
+                  class:
+                    type: string
+                  args:
+                    type:
+                      - object
+                      - "null"
+                  instantiate:
+                    type: boolean
+                  methods:
+                    type: array
+                    uniqueItems: True
+                    items:
+                      $schema: https://json-schema.org/draft/2020-12/schema
+                      $id: laboro.config.workflow.step.action.object.method.schema
+                      title: Laboro workflow step action object method
+                      description: Laboro workflow step action object method
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                        when:
+                          type: string
+                        loop:
+                          type:
+                            - string
+                            - integer
+                        args:
+                          type:
+                            - object
+                            - "null"
+                        output:
+                          type:
+                            - string
+                            - "null"
+                      required:
+                        - name
+                        - args
+                        - output
+                      additionalProperties: False
+                anyOf:
+                  - not:
+                      properties:
+                        instantiate:
+                          const: True
+                      required:
+                        - instantiate
+                  - required:
+                      - args
+                required:
+                  - name
+                  - module
+                  - class
+                  - methods
+                additionalProperties: False
+            required:
+              - name
+              - object
+            additionalProperties: False
+      required:
+        - name
+        - actions
+      additionalProperties: False
+required:
+  - name
+  - packages
+  - workspace
+  - steps
+additionalProperties: False
