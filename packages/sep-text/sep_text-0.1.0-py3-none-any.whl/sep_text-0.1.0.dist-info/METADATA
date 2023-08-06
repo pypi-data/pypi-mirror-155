@@ -1,0 +1,52 @@
+Metadata-Version: 2.1
+Name: sep-text
+Version: 0.1.0
+Summary: Separate two texts, paragraph by paragraph
+Home-page: https://github.com/ffreemt/sep-text
+License: MIT
+Author: ffreemt
+Requires-Python: >=3.8.3,<4.0.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: fastlid (>=0.1.7,<0.2.0)
+Requires-Dist: icecream (>=2.1.1,<3.0.0)
+Requires-Dist: install (>=1.3.5,<2.0.0)
+Requires-Dist: logzero (>=1.7.0,<2.0.0)
+Requires-Dist: set-loglevel (>=0.1.2,<0.2.0)
+Requires-Dist: typer (>=0.4.1,<0.5.0)
+Project-URL: Repository, https://github.com/ffreemt/sep-text
+Description-Content-Type: text/markdown
+
+# sep-text
+[![pytest](https://github.com/ffreemt/sep-text/actions/workflows/routine-tests.yml/badge.svg)](https://github.com/ffreemt/sep-text/actions)[![python](https://img.shields.io/static/v1?label=python+&message=3.8%2B&color=blue)](https://www.python.org/downloads/)[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)[![PyPI version](https://badge.fury.io/py/sep_text.svg)](https://badge.fury.io/py/sep_text)
+
+Separate two texts, paragraph by paragraph
+
+## Install it
+
+```shell
+pip install sep-text
+
+# pip install git+https://github.com/ffreemt/sep-text
+# poetry add git+https://github.com/ffreemt/sep-text
+# git clone https://github.com/ffreemt/sep-text && cd sep-text
+```
+
+If your environment does not have a C compiler, install fasttext.whl first. You can find fasttext.whl from [https://www.lfd.uci.edu/~gohlke/pythonlibs/](https://www.lfd.uci.edu/~gohlke/pythonlibs/).
+
+## Use it
+```python
+from sep_text import sep_text
+
+print(sep_text("This is a text\nMachen wir etwas"))
+# ('Machen wir etwas', 'This is a text')
+
+print(sep_text.langs)
+# ['de', 'en']
+
+print(sep_text.conf)
+# [0.994, 0.004]
+```
+
