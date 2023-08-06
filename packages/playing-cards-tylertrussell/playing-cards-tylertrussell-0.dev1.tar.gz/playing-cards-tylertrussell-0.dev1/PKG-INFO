@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: playing-cards-tylertrussell
+Version: 0.dev1
+Summary: Basic playing cards
+Home-page: https://www.github.com/tylertrussell/hanabi-cards
+Author: Tyler Trussell
+Author-email: tigertrussell+pypi@gmail.com
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Cards
+
+A simple playing cards library for Python
