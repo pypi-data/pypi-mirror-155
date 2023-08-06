@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<title>covfee admin panel</title>
+		<style>
+			body { margin: 0; }
+			canvas { display: block; }
+		</style>
+	</head>
+	<body>
+		{% include 'externals.html' %}
+		<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/josedvq/covfee@master/docs/static/img/favicon.ico" />
+		<div id="app"></div>
+		<script>
+			const Constants = {{constants | safe}}
+		</script>
+		<script src="{{bundle_url}}/admin.js"></script>
+	</body>
+</html>

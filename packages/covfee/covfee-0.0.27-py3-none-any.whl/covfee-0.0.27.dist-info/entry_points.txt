@@ -1,0 +1,3 @@
+[console_scripts]
+covfee = covfee.cli.commands.launch:covfee_cli
+covfee-dev = covfee.cli.commands.dev:covfee_dev_cli
