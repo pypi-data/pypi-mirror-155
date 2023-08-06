@@ -1,0 +1,2 @@
+[certbot.plugins]
+certbot-dns-rockenstein = certbot_dns_rockenstein.certbot_dns_rockenstein:Authenticator
