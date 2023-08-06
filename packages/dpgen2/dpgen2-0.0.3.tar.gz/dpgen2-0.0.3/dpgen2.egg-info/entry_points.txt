@@ -1,0 +1,2 @@
+[console_scripts]
+dpgen2 = dpgen2.entrypoint.main:main
