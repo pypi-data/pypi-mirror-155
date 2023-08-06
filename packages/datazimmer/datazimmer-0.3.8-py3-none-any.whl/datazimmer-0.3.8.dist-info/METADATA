@@ -1,0 +1,99 @@
+Metadata-Version: 2.1
+Name: datazimmer
+Version: 0.3.8
+Summary: sscu-budapest utilities for scientific data engineering
+Author-email: Social Science Computing Unit Budapest <borza.endre@krtk.hu>
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: flit
+Requires-Dist: twisted
+Requires-Dist: wheel>=0.37.0
+Requires-Dist: pip>=22.0.0
+Requires-Dist: setuptools>=60.0.0
+Requires-Dist: requests
+Requires-Dist: dvc[s3,ssh]
+Requires-Dist: paramiko
+Requires-Dist: parquetranger>=0.1.0
+Requires-Dist: colassigner>=0.2.2
+Requires-Dist: pyyaml
+Requires-Dist: structlog
+Requires-Dist: black>=21.5b0
+Requires-Dist: isort
+Requires-Dist: flake8
+Requires-Dist: sqlalchemy
+Requires-Dist: toml
+Requires-Dist: pyinstrument
+Requires-Dist: tqdm
+Requires-Dist: typer
+Requires-Dist: pandas<1.4.0
+Requires-Dist: cookiecutter
+Requires-Dist: sqlmermaid
+Requires-Dist: cron-descriptor
+Requires-Dist: metazimmer
+Requires-Dist: sphinx ; extra == "doc"
+Requires-Dist: pandoc ; extra == "doc"
+Requires-Dist: graphviz ; extra == "doc"
+Requires-Dist: sphinx-automodapi ; extra == "doc"
+Requires-Dist: sphinx-rtd-theme ; extra == "doc"
+Requires-Dist: myst-parser ; extra == "doc"
+Requires-Dist: pygments ; extra == "doc"
+Requires-Dist: jupyter ; extra == "doc"
+Requires-Dist: toml ; extra == "doc"
+Requires-Dist: pandas_profiling ; extra == "explorer"
+Requires-Dist: jupyter-book==0.12.2 ; extra == "explorer"
+Requires-Dist: sphinxcontrib-mermaid ; extra == "explorer"
+Requires-Dist: beautifulsoup4 ; extra == "explorer"
+Requires-Dist: html5lib ; extra == "explorer"
+Requires-Dist: psycopg2 ; extra == "full"
+Requires-Dist: branthebuilder ; extra == "test"
+Project-URL: Homepage, https://github.com/sscu-budapest/datazimmer
+Provides-Extra: doc
+Provides-Extra: explorer
+Provides-Extra: full
+Provides-Extra: test
+
+# datazimmer
+
+[![Documentation Status](https://readthedocs.org/projects/datazimmer/badge/?version=latest)](https://datazimmer.readthedocs.io/en/latest)
+[![codeclimate](https://img.shields.io/codeclimate/maintainability/sscu-budapest/datazimmer.svg)](https://codeclimate.com/github/sscu-budapest/datazimmer)
+[![codecov](https://img.shields.io/codecov/c/github/sscu-budapest/datazimmer)](https://codecov.io/gh/sscu-budapest/datazimmer)
+[![pypi](https://img.shields.io/pypi/v/datazimmer.svg)](https://pypi.org/project/datazimmer/)
+
+Some utility function to help with
+
+- setting up data environments
+- simplified dvc pipeline registry
+
+these are used in the [project-template](https://github.com/sscu-budapest/project-template)
+
+Make sure that `python` points to `python>=3.8` and you have `pip` and `git`
+
+## Functions
+
+### Tinker
+
+> check out a table or few, with a notebook and some basic analysis to help
+
+### Engineer Research
+
+
+## Lookahead
+
+- overlapping names convention
+- resolve naming confusion with colassigner, colaccessor and table feature / composite type / index base classes
+- abstract composite type + subclass of entity class
+  - import ACT, inherit from it and specify 
+  - importing composite type is impossible now if it contains foreign key :(
+- automatic filter for env creation based on foreign key metadata
+- add option to infer data type of assigned feature
+  - can be problematic b/c pandas int/float/nan issue
+- sharing functions among projects
+  - functions specific to processing certain composite / named types
+  - e.g. function dealing with fitting into a limit in dogshow project 1
+- create similar sets of features in a dry way
+- detecting reliance of composite type given by assigner
+  - can wait, as initial import is just the assigner transformed to accessor
+- overlapping in entities
+  - detect / signal the same type of entity
+- properly assert importing
+
