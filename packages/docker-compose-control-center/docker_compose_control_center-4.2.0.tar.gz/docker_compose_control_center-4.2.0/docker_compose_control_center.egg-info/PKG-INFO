@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: docker-compose-control-center
+Version: 4.2.0
+Summary: Docker Compose Control Center is a small utility web application. It allows for control of docker containers, and specifically services created with docker-compose
+Home-page: https://github.com/usnistgov/docker-control-center
+Author: Center for Nanoscale Science and Technology
+Author-email: CNSTapplications@nist.gov
+License: Public domain
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Intended Audience :: System Administrators
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: Developers
+Classifier: License :: Public Domain
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.7
+Requires-Python: >=3.7
+License-File: LICENSE.md
+
+Find out more about Docker Compose Control Center on the Github project page https://github.com/usnistgov/docker-control-center
