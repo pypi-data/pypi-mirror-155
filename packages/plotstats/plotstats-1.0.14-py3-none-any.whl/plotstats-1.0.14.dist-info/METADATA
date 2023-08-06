@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: plotstats
+Version: 1.0.14
+Summary: A basic module for statistic works!
+Author: Amirreza Soltani
+Author-email: charleswestmorelandPB1@gmail.com
+Keywords: python,statistics,visualization,data grouping,plenty,relative plenty,batch centers
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: matplotlib
+
+This is a basic module for basic statistic works.
+created by: Amirreza  Soltani
+I've created this module for my math homeworks! but I thought it's better to publish this module for my classmates!
+But other people may use it; I'm not sure :)
