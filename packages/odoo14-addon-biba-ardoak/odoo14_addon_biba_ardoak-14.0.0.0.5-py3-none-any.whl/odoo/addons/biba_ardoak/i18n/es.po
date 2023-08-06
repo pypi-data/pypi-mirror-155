@@ -1,0 +1,95 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* biba_ardoak
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-04 15:21+0000\n"
+"PO-Revision-Date: 2022-02-04 15:21+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: biba_ardoak
+#: model:mail.template,subject:biba_ardoak.delivery_note_mail_template
+msgid "${object.company_id.name} Delivery Order"
+msgstr "${object.company_id.name} Albaranes"
+
+#. module: biba_ardoak
+#: model_terms:ir.ui.view,arch_db:biba_ardoak.view_form_stock_picking_button
+msgid "Add to batch"
+msgstr "Agrupación de albaranes"
+
+#. module: biba_ardoak
+#: model:ir.actions.report,name:biba_ardoak.action_report_picking_batch_delivery_note
+msgid "Batch Transfer Delivery Note"
+msgstr "Albarán"
+
+#. module: biba_ardoak
+#: model_terms:ir.ui.view,arch_db:biba_ardoak.view_form_send_delivery_note
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: biba_ardoak
+#: model:ir.model.fields,field_description:biba_ardoak.field_send_delivery_note_wizard__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: biba_ardoak
+#: model:ir.model.fields,field_description:biba_ardoak.field_send_delivery_note_wizard__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: biba_ardoak
+#: code:addons/biba_ardoak/wizards/send_delivery_note/send_delivery_note.py:0
+#, python-format
+msgid "Delivery Note"
+msgstr "Albarán"
+
+#. module: biba_ardoak
+#: model:ir.model.fields,field_description:biba_ardoak.field_sale_order_line__display_name
+#: model:ir.model.fields,field_description:biba_ardoak.field_send_delivery_note_wizard__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: biba_ardoak
+#: code:addons/biba_ardoak/models/stock_picking_batch.py:0
+#, python-format
+msgid "Email sent to the storehouse."
+msgstr "Correo electrónico enviado al almacén."
+
+#. module: biba_ardoak
+#: model:ir.model.fields,field_description:biba_ardoak.field_sale_order_line____last_update
+#: model:ir.model.fields,field_description:biba_ardoak.field_send_delivery_note_wizard____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: biba_ardoak
+#: model:ir.model.fields,field_description:biba_ardoak.field_send_delivery_note_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Última modificación por"
+
+#. module: biba_ardoak
+#: model_terms:ir.ui.view,arch_db:biba_ardoak.account_invoice_report_search_supplier
+msgid "Move Type"
+msgstr "Tipo de Movimiento"
+
+#. module: biba_ardoak
+#: model:ir.model.fields,field_description:biba_ardoak.field_send_delivery_note_wizard__write_date
+msgid "Last Updated on"
+msgstr "Última modificación en"
+
+#. module: biba_ardoak
+#: model_terms:ir.ui.view,arch_db:biba_ardoak.account_invoice_report_search_supplier
+msgid "Product"
+msgstr "Producto"
+
+#. module: biba_ardoak
+#: model:ir.model,name:biba_ardoak.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Línea de pedido de venta"

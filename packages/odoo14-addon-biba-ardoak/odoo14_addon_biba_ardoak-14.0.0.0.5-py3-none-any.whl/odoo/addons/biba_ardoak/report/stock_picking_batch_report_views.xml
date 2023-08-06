@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="action_report_picking_batch_delivery_note" model="ir.actions.report">
+            <field name="name">Batch Transfer Delivery Note</field>
+            <field name="model">stock.picking.batch</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">biba_ardoak.report_picking_batch_delivery_note</field>
+            <field name="report_file">biba_ardoak.report_picking_batch_delivery_note</field>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>

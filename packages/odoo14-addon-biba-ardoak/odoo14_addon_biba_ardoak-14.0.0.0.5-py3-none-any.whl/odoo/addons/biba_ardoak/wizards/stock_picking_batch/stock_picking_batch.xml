@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <record id="view_form_stock_picking_button" model="ir.ui.view">
+    <field name="name">view.form.stock.picking.button</field>
+    <field name="model">stock.picking</field>
+    <field name="inherit_id" ref="stock.view_picking_form"/>
+    <field name="arch" type="xml">
+      <button name="action_cancel" position="after">
+        <button name="%(stock_picking_batch.stock_picking_to_batch_action_stock_picking)d"
+                string="Add to batch"
+                type="action"
+                context="{'default_active_id': active_id}"/>
+        </button>
+    </field>
+  </record>
+
+</odoo>

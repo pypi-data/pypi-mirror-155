@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+  <data noupdate="1">
+    <record id="storehouse_email" model="ir.config_parameter">
+      <field name="key">biba_ardoak.storehouse_email</field>
+      <field name="value">pedidos@distock.eu</field>
+    </record>
+  </data>
+</odoo>

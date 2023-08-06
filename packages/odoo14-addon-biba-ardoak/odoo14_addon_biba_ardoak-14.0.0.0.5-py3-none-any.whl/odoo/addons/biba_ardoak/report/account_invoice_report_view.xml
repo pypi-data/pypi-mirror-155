@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="account_invoice_report_search_supplier" model="ir.ui.view">
+            <field name="name">account.invoice.report.search.supplier</field>
+            <field name="model">account.invoice.report</field>
+            <field name="inherit_id" ref="account.view_account_invoice_report_search" />
+            <field name="arch" type="xml">
+                <xpath expr="//search/group/filter[@name='partner_id']" position="before">
+                    <separator orientation="vertical" />
+                    <filter string="Move type" name='move_type' context="{'group_by':'move_type'}"/>
+                </xpath>
+                <xpath expr="//search/group/filter[@name='partner_id']" position="after">
+                    <filter string="Product" name='product_id' context="{'group_by':'product_id'}"/>
+                    <separator orientation="vertical" />
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

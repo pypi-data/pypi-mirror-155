@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="view_external_layout_standard">
+      <field name="name">external_layout_standard</field>
+      <field name="inherit_id" ref="web.external_layout_standard" />
+      <field name="arch" type="xml">
+        <xpath expr="//t[@t-call='web.address_layout']/.." position="attributes">
+          <attribute name="class" />
+        </xpath>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="view_report_saleorder_document">
+      <field name="name">report_saleorder_document</field>
+      <field name="inherit_id" ref="sale.report_saleorder_document" />
+      <field name="arch" type="xml">
+        <xpath expr="//p[@t-field='doc.note']" position="attributes">
+          <attribute name="style">display: none;</attribute>
+        </xpath>
+        <xpath expr="//div[@class='page']" position="before">
+          <div class="pt-5 pb-5">
+            <div class="address row">
+              <t t-if="doc.note or doc.partner_id.comment">
+                <div name="internal_notes_doc" class="col-6">
+                  <p t-field="doc.note" />
+                </div>
+                <div name="internal_notes_partner" class="col-5 offset-1">
+                  <p t-field="doc.partner_id.comment" />
+                </div>
+              </t>
+            </div>
+          </div>
+        </xpath>
+      </field>
+    </record>
+</odoo>
