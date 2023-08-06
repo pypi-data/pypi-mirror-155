@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: test-syncthing
+Version: 2.4.2
+Summary: Python bindings to the Syncthing REST interface, targeting v0.14.44
+Home-page: https://github.com/blakev/python-syncthing
+Author: Blake VandeMerwe
+Author-email: blakev@null.net
+License: The MIT License
+Keywords: syncthing,sync,rest,backup,api
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Topic :: System :: Archiving :: Mirroring
+Provides-Extra: dev
+License-File: LICENSE

@@ -1,0 +1,7 @@
+python-dateutil<=2.8.2,>=2.8.1
+requests<=2.28.0,>=2.24.0
+
+[dev]
+sphinx
+sphinxcontrib-napoleon
+sphinx_rtd_theme

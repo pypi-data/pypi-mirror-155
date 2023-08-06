@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+syncthing/__init__.py
+syncthing/meta.py
+test_syncthing.egg-info/PKG-INFO
+test_syncthing.egg-info/SOURCES.txt
+test_syncthing.egg-info/dependency_links.txt
+test_syncthing.egg-info/requires.txt
+test_syncthing.egg-info/top_level.txt
+test_syncthing.egg-info/zip-safe
