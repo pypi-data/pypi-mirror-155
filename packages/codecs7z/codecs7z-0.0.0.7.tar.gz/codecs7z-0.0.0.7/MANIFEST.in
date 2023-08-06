@@ -1,0 +1,7 @@
+include pyproject.toml
+include monkeypatch_distutils.py
+include cmake/*
+include src/*
+recursive-include src/p7zip *.h
+recursive-exclude src/p7zip/CPP/7zip/Archive *
+recursive-exclude src/p7zip/CPP/7zip/UI *
