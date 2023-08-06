@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: pdfbrain
+Version: 0.0.4
+Summary: Parsing PDF files with pdfium
+Home-page: https://github.com/innodatalabs/pdfbrain
+Author: Mike Kroutikov
+Author-email: mkroutikov@innodata.com
+License: MIT
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: Pillow (~=8.3.2)
+Requires-Dist: pypdfium2 (~=2.2.0)
+
+# PDF Brain
+A Python PDF parsing library based on pdfium
+
+## License
+MIT
+
+
+
