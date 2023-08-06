@@ -1,0 +1,10 @@
+lsst-resources
+lsst-utils
+lsst-daf-butler
+lsst-pex-config
+pydantic
+networkx
+pyyaml>=5.1
+numpy>=1.17
+boto3
+botocore

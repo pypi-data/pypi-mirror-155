@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: lsst-pipe-base
+Version: 24.0.0a20222500
+Summary: Pipeline infrastructure for the Rubin Science Pipelines
+Home-page: https://github.com/lsst/pipe_base
+Author: Rubin Observatory Data Management
+Author-email: dm-admin@lists.lsst.org
+License: GPLv3+ License
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Topic :: Scientific/Engineering :: Astronomy
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# pipe_base
+
+Pipeline infrastructure code for the [Rubin Science Pipelines](https://pipelines.lsst.io).
