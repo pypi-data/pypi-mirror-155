@@ -1,0 +1,2 @@
+[console_scripts]
+varfish-cli = varfish_cli.__main__:main
