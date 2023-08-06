@@ -1,0 +1,3 @@
+[console_scripts]
+taxontabletools = taxontabletools.__main__:main
+
