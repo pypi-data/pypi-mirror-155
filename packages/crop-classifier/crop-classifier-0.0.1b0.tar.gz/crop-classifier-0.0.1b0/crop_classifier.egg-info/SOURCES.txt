@@ -1,0 +1,17 @@
+LICENSE.txt
+README.md
+setup.py
+crop_classifier.egg-info/PKG-INFO
+crop_classifier.egg-info/SOURCES.txt
+crop_classifier.egg-info/dependency_links.txt
+crop_classifier.egg-info/top_level.txt
+unsupcc/__init__.py
+unsupcc/executer.py
+unsupcc/classification/__init__.py
+unsupcc/classification/crop_classifier.py
+unsupcc/satellite/__init__.py
+unsupcc/satellite/indices.py
+unsupcc/satellite/sentinel2.py
+unsupcc/utils/__init__.py
+unsupcc/utils/helper.py
+unsupcc/utils/raster.py
