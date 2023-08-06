@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: startggapi
+Version: 0.1.2
+Summary: StartGGApi is a thin wrapper on top of the StartGG GraphQL APIs
+Home-page: https://github.com/Caja-de-Dano/StartGG-API
+Author: Lucky Daisy LLC
+License: MIT
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Provides-Extra: dev
+License-File: LICENSE
+
+Start.gg GraphQL wrapper

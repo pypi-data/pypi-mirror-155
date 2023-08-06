@@ -1,0 +1,17 @@
+LICENSE
+README.md
+setup.py
+src/startggapi/__init__.py
+src/startggapi/__version__.py
+src/startggapi/startggapi.py
+src/startggapi.egg-info/PKG-INFO
+src/startggapi.egg-info/SOURCES.txt
+src/startggapi.egg-info/dependency_links.txt
+src/startggapi.egg-info/requires.txt
+src/startggapi.egg-info/top_level.txt
+src/startggapi/_apis/BaseApi.py
+src/startggapi/_apis/EntrantApi.py
+src/startggapi/_apis/EventApi.py
+src/startggapi/_apis/QueryStrings.py
+src/startggapi/_apis/TournamentApi.py
+src/startggapi/_apis/__init__.py
