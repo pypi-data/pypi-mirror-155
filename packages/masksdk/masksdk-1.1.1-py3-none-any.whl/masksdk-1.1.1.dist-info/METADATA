@@ -1,0 +1,60 @@
+Metadata-Version: 2.1
+Name: masksdk
+Version: 1.1.1
+Summary: sdk for mask
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: Pillow
+Requires-Dist: requests
+Provides-Extra: tests
+Requires-Dist: numpy ; extra == 'tests'
+Requires-Dist: opencv-python ; extra == 'tests'
+Requires-Dist: Pillow ; extra == 'tests'
+Requires-Dist: requests ; extra == 'tests'
+Requires-Dist: setuptools ; extra == 'tests'
+
+# image-obfuscation-sdk
+
+an obfuscation server contains two parts. one is inference, another is mask
+
+this repo stands for the mask part standalone SDK
+
+# TODO
+
+1. add resize mask technology
+2. more lightweight API, such as numpy-op directly instead of PIL-op
+
+# How to
+
+```python
+import io
+from masksdk.call_infer_and_mask import mask_one_image, ModelName, MaskName
+
+# conf
+infer_host = 'your_ip:your_port'
+
+# mask in local and infer in server
+raw_img_file = 'path_to_your_image_file/image_file_name.jpg'
+with open(raw_img_file, "rb") as img_content:
+    mask_img, bbox = mask_one_image(
+        infer_host=infer_host,
+        image_file=io.BytesIO(img_content.read()),
+        model_names=[ModelName.face_ai, ModelName.plate_ai],
+        mask_name=MaskName.blur,
+        degree=0.5,
+        down_sampling_ratio=1,
+        pixel_gap=10,
+        api_version='v2',
+    )
+
+# show
+mask_img.show()
+print('bbox={}'.format(bbox))
+```
+
