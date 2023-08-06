@@ -1,0 +1,37 @@
+QCheckBox {
+    background-color: #1d1f21;
+    color: #c5c8c6;
+}
+
+QCheckBox:disabled {
+  color: #aaaaaa;
+}
+
+QCheckBox:enabled {
+  background-color: #1d1f21;
+  color: #c5c8c6;
+}
+
+QCheckBox::indicator {
+    width: 25px;
+    height: 25px;
+    image: url(%__here__%/checkbox-enabled.png);
+}
+
+QCheckBox::indicator:checked {
+    width: 25px;
+    height: 25px;
+    image: url(%__here__%/checkbox-enabled-checked.png);
+}
+
+QCheckBox::indicator:disabled {
+    width: 25px;
+    height: 25px;
+    image: url(%__here__%/checkbox-disabled.png);
+}
+
+QCheckBox::indicator:disabled:checked {
+    width: 25px;
+    height: 25px;
+    image: url(%__here__%/checkbox-disabled-checked.png);
+}
