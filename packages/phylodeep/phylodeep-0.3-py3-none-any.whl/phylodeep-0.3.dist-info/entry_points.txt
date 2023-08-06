@@ -1,0 +1,6 @@
+[console_scripts]
+checkdeep = phylodeep.checkdeep:main
+modeldeep = phylodeep.modeldeep:main
+paramdeep = phylodeep.paramdeep:main
+subtree_picker = phylodeep.tree_utilities:subtree_picker_main
+
