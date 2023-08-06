@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+npm_calmarendian_date/__init__.py
+npm_calmarendian_date/c_date_config.py
+npm_calmarendian_date/calmarendian_date.py
+npm_calmarendian_date/date_elements.py
+npm_calmarendian_date/string_conversions.py
+npm_calmarendian_date.egg-info/PKG-INFO
+npm_calmarendian_date.egg-info/SOURCES.txt
+npm_calmarendian_date.egg-info/dependency_links.txt
+npm_calmarendian_date.egg-info/top_level.txt
+npm_calmarendian_date/exceptions/__init__.py
+npm_calmarendian_date/exceptions/date_exceptions.py
