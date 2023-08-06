@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: snpmerge
+Version: 0.2.0
+Summary: 高效的,低内存合并snp文件
+Author: similarface,yangwubing
+Requires-Python: >=3.8,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: loguru (>=0.6.0,<0.7.0)
+Requires-Dist: pandas (>=1.4.2,<2.0.0)
+Requires-Dist: tqdm (>=4.64.0,<5.0.0)
