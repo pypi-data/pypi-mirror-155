@@ -1,0 +1,81 @@
+global:
+  default_inherits: default
+
+tools:
+  default:
+    cores: 2
+    mem: 8
+    env: {}
+    scheduling:
+      require: []
+      prefer:
+        - general
+      accept:
+      reject:
+        - pulsar
+    rules: []
+
+  bwa:
+    scheduling:
+      require:
+        - pulsar
+  trinity:
+    scheduling:
+      require:
+        - pulsar
+      prefer:
+        - highmem
+users:
+  default:
+    cores: 3
+    mem: 8
+    env: {}
+    scheduling:
+      require: []
+      prefer:
+        - general
+      accept:
+      reject:
+        - pulsar
+    rules: []
+  fairycake@vortex.org:
+    scheduling:
+      require:
+        - pulsar
+  arthur@vortex.org:
+    scheduling:
+      require:
+        - earth
+  improbable@vortex.org:
+    scheduling:
+      require:
+        - pulsar
+      reject:
+        - pulsar
+  .*@vortex.org:
+    scheduling:
+      require:
+        - pulsar
+
+destinations:
+  local:
+    cores: 4
+    mem: 16
+    scheduling:
+      prefer:
+        - general
+  k8s_environment:
+    cores: 16
+    mem: 64
+    gpus: 2
+    scheduling:
+      prefer:
+        - pulsar
+  another_k8s_environment:
+    cores: 16
+    mem: 64
+    gpus: 2
+    scheduling:
+      prefer:
+        - pulsar
+        - highmem

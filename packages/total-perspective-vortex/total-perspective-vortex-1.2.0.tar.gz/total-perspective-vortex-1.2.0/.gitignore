@@ -1,0 +1,10 @@
+total_perspective_vortex.egg-info
+.tox
+.coverage
+.idea
+dist/
+build/
+.vscode/
+*.pyc
+activate.sh
+__pycache__

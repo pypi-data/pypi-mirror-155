@@ -1,0 +1,44 @@
+Metadata-Version: 2.1
+Name: total-perspective-vortex
+Version: 1.2.0
+Summary: A library for routing entities (jobs, users or groups) to destinations in Galaxy
+Home-page: https://github.com/galaxyproject/total-perspective-vortex
+Author: Galaxy and GVL projects
+Author-email: help@genome.edu.au
+License: MIT
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+Provides-Extra: test
+License-File: LICENSE
+
+[![Tests](https://github.com/galaxyproject/total-perspective-vortex/actions/workflows/tests.yaml/badge.svg)](https://github.com/galaxyproject/total-perspective-vortex/actions/workflows/tests.yaml)
+[![Coverage Status](https://coveralls.io/repos/github/galaxyproject/total-perspective-vortex/badge.svg?branch=main)](https://coveralls.io/github/galaxyproject/total-perspective-vortex?branch=main)
+[![Documentation Status](https://readthedocs.org/projects/total-perspective-vortex/badge/?version=latest)](http://total-perspective-vortex.readthedocs.org/en/latest/?badge=latest)
+
+## <img src="https://raw.githubusercontent.com/galaxyproject/total-perspective-vortex/main/docs/images/tpv-logo-wide.png" width="800" height="100">
+
+TotalPerspectiveVortex (TPV) provides an installable set of dynamic rules for the
+[Galaxy application](https://galaxyproject.org/) that can route entities (Tools, Users, Roles) to appropriate
+job destinations based on a configurable yaml file.
+
+### Installing latest development version
+
+```python
+pip install total-perspective-vortex
+```
+
+### Documentation
+
+[http://total-perspective-vortex.readthedocs.org](http://total-perspective-vortex.readthedocs.org/en/latest/?badge=latest)
+
+

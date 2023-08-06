@@ -1,0 +1,30 @@
+global:
+  default_inherits: default
+
+tools:
+  default:
+    cores: 2
+    mem: 8
+    env: {}
+    scheduling:
+      require: []
+      prefer:
+        - general
+      accept:
+      reject:
+        - offline
+    rules: []
+
+destinations:
+  local:
+    cores: 4
+    mem: 16
+    scheduling:
+      reject:
+        - offline
+      prefer:
+        - general
+  k8s_environment:
+    cores: 16
+    mem: 64
+    gpus: 2

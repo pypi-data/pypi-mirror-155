@@ -1,0 +1,44 @@
+global:
+  default_inherits: default
+  context:
+    test_var_remote: "remote var"
+    test_var_override: "remote value"
+
+tools:
+  default:
+    cores: 2
+    mem: 8
+    env: {}
+    params:
+      custom_context_remote: "{test_var_remote}"
+      custom_context_override: "{test_var_override}"
+    rules:
+      - if: input_size < 5
+        fail: We don't run piddling datasets
+  bwa:
+    env:
+      TEST_JOB_SLOTS: "{cores*2}"
+    rules:
+      - id: highmem_rule
+        if: input_size > 40
+        fail: a different kind of error
+    scheduling:
+      require:
+        - pulsar
+  hisat2:
+    env:
+      MORE_JOB_SLOTS: "{cores*2}"
+    rules:
+      - id: highmem_rule
+        if: input_size > 40
+        cores: 4
+  hisat.*:
+    env:
+      MORE_JOB_SLOTS: "{cores*3}"
+    rules:
+      - id: highmem_rule
+        if: input_size > 40
+        cores: 5
+        scheduling:
+          require:
+            - highmem

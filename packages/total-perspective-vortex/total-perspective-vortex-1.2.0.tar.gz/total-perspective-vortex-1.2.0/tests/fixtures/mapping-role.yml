@@ -1,0 +1,95 @@
+global:
+  default_inherits: default
+
+tools:
+  default:
+    cores: 2
+    mem: 8
+    env:
+      TOOL_AND_ROLE_DEFINED: "tool"
+      TOOL_AND_USER_DEFINED: "tool"
+      TOOL_USER_AND_ROLE_DEFINED: "tool"
+    scheduling:
+      require: []
+      prefer:
+        - general
+      accept:
+      reject:
+        - pulsar
+    rules: []
+  bwa:
+    scheduling:
+      require:
+        - pulsar
+users:
+  default:
+    cores: 3
+    mem: 8
+    env: {}
+    scheduling:
+      require: []
+      prefer:
+        - general
+      accept:
+    rules: []
+  fairycake@vortex.org:
+    env:
+      TOOL_AND_USER_DEFINED: "user"
+      TOOL_USER_AND_ROLE_DEFINED: "user"
+      USER_AND_ROLE_DEFINED: "user"
+    scheduling:
+      require:
+        - pulsar
+  arthur@vortex.org:
+    scheduling:
+      require:
+        - earth
+  improbable@vortex.org:
+    scheduling:
+      require:
+        - pulsar
+      reject:
+        - pulsar
+  .*@vortex.org:
+    scheduling:
+      require:
+        - pulsar
+
+roles:
+  default:
+    cores: 8
+    mem: 8
+    env: []
+    scheduling:
+      require:
+        - general
+    rules: []
+  training:
+    scheduling:
+      require:
+        - pulsar
+  newtraining2021.*:
+    env:
+      TOOL_AND_ROLE_DEFINED: "role"
+      TOOL_USER_AND_ROLE_DEFINED: "role"
+      USER_AND_ROLE_DEFINED: "role"
+    scheduling:
+      prefer:
+        - pulsar
+      reject:
+        - general
+
+destinations:
+  local:
+    cores: 4
+    mem: 16
+    scheduling:
+      prefer:
+        - general
+  k8s_environment:
+    cores: 16
+    mem: 64
+    gpus: 2
+    scheduling:
+      prefer:
+        - pulsar

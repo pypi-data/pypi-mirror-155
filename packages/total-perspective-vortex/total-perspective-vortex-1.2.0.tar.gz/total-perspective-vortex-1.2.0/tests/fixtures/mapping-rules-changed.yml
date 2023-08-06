@@ -1,0 +1,79 @@
+global:
+  default_inherits: default
+
+tools:
+  default:
+    cores: 2
+    mem: cores * 3
+    env:
+      TEST_JOB_SLOTS: "{cores}"
+    params:
+      native_spec: "--mem {mem} --cores {cores}"
+    scheduling:
+      require: []
+      prefer:
+        - general
+      accept:
+      reject:
+        - pulsar
+    rules:
+      - if: input_size < 5
+        fail: We don't run piddling datasets
+  bwa:
+    scheduling:
+      require:
+        - pulsar
+    rules:
+      - if: input_size <= 10
+        cores: 4
+        mem: cores * 4
+      - if: input_size > 10 and input_size < 20
+        scheduling:
+          require:
+            - highmem
+      - if: input_size >= 20
+        fail: Too much data, shouldn't run
+users:
+  fairycake@vortex.org:
+    env:
+      TEST_JOB_SLOTS_USER: "{cores*2}"
+    params:
+      native_spec_user: "--mem {mem} --cores {cores}"
+    scheduling:
+      require:
+        - pulsar
+  arthur@vortex.org:
+    scheduling:
+      require:
+        - earth
+    rules:
+      - if: True
+        cores: 6
+        mem: cores * 6
+      - if: input_size >= 5
+        fail: Just because
+  improbable@vortex.org:
+    scheduling:
+      require:
+        - pulsar
+      reject:
+        - pulsar
+  .*@vortex.org:
+    scheduling:
+      require:
+        - pulsar
+
+destinations:
+  local:
+    cores: 4
+    mem: 16
+    scheduling:
+      prefer:
+        - general
+  k8s_environment:
+    cores: 16
+    mem: 64
+    gpus: 2
+    scheduling:
+      prefer:
+        - pulsar
