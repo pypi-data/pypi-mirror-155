@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.py
+dj_ratelimit/__init__.py
+dj_ratelimit.egg-info/PKG-INFO
+dj_ratelimit.egg-info/SOURCES.txt
+dj_ratelimit.egg-info/dependency_links.txt
+dj_ratelimit.egg-info/requires.txt
+dj_ratelimit.egg-info/top_level.txt
+dj_ratelimit/tst/__init__.py
+dj_ratelimit/tst/settings_default.py
+dj_ratelimit/tst/test_ratelimit.py

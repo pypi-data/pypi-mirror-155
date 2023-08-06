@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: dj_ratelimit
+Version: 0.1.1
+Summary: Redis backed library implementing a django ratelimit
+Home-page: https://github.com/conorbergman/py-ratelimit
+Author: Conor Bergman
+Author-email: conorbergman@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+License-File: LICENSE
+
+dj-ratelimit is a redis backed ratelimit for django requests. To use set the following
+environment variables in your django settings:
+
+    - ENVIRONMENT: default 'local'
+    - DJ_RATELIMIT_REDIS_ADDRESS: default 'localhost'
+    - DJ_RATELIMIT_REDIS_PORT: default '6379'
+
+For more information see project github page 'py-ratelimit'
+
+

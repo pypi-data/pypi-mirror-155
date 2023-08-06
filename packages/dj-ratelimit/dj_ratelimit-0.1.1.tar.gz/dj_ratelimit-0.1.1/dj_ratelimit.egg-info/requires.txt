@@ -1,0 +1,7 @@
+Django>=4.0.5
+djangorestframework>=3.12.4
+redis>=4.3.1
+fakeredis
+freezegun>=1.2.1
+pytest>=6.2.5
+requests-mock>=1.8.0
