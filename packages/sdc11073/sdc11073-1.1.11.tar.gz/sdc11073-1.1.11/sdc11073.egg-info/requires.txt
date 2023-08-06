@@ -1,0 +1,4 @@
+lxml>=2.3
+
+[:platform_system != "Windows"]
+netifaces
