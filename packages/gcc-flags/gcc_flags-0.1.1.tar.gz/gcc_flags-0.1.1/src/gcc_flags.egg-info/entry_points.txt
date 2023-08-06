@@ -1,0 +1,2 @@
+[console_scripts]
+gcc_flags = gcc_flags.__main__:main

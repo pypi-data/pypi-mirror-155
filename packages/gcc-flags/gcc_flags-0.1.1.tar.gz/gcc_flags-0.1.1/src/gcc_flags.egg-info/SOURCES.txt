@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+src/gcc_flags/__init__.py
+src/gcc_flags/__main__.py
+src/gcc_flags/gcc_flags.py
+src/gcc_flags.egg-info/PKG-INFO
+src/gcc_flags.egg-info/SOURCES.txt
+src/gcc_flags.egg-info/dependency_links.txt
+src/gcc_flags.egg-info/entry_points.txt
+src/gcc_flags.egg-info/requires.txt
+src/gcc_flags.egg-info/top_level.txt
