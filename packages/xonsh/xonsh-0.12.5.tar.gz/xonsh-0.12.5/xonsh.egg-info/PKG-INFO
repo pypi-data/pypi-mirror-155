@@ -1,0 +1,121 @@
+Metadata-Version: 2.1
+Name: xonsh
+Version: 0.12.5
+Summary: Python-powered, cross-platform, Unix-gazing shell
+Author: Anthony Scopatz
+Author-email: scopatz@gmail.com
+Maintainer: Anthony Scopatz
+Maintainer-email: scopatz@gmail.com
+License: Copyright 2015-2016, the xonsh developers. All rights reserved.
+        
+        Redistribution and use in source and binary forms, with or without modification, are
+        permitted provided that the following conditions are met:
+        
+           1. Redistributions of source code must retain the above copyright notice, this list of
+              conditions and the following disclaimer.
+        
+           2. Redistributions in binary form must reproduce the above copyright notice, this list
+              of conditions and the following disclaimer in the documentation and/or other materials
+              provided with the distribution.
+        
+        THIS SOFTWARE IS PROVIDED BY THE XONSH DEVELOPERS ``AS IS'' AND ANY EXPRESS OR IMPLIED
+        WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+        FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE XONSH DEVELOPERS OR
+        CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+        CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+        SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+        ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+        NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+        ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+        
+        The views and conclusions contained in the software and documentation are those of the
+        authors and should not be interpreted as representing official policies, either expressed
+        or implied, of the stakeholders of the xonsh project or the employers of xonsh developers.
+        
+Project-URL: Homepage, https://xon.sh
+Project-URL: documentation, https://xon.sh/contents.html
+Project-URL: repository, https://github.com/xonsh/xonsh
+Project-URL: changelog, https://github.com/xonsh/xonsh/blob/main/CHANGELOG.rst
+Project-URL: Issue tracker, https://github.com/xonsh/xonsh/issues
+Platform: Cross Platform
+Requires-Python: >=3.8
+Description-Content-Type: text/x-rst
+Provides-Extra: ptk
+Provides-Extra: pygments
+Provides-Extra: mac
+Provides-Extra: linux
+Provides-Extra: proctitle
+Provides-Extra: full
+Provides-Extra: format
+Provides-Extra: lint
+Provides-Extra: bestshell
+Provides-Extra: test
+Provides-Extra: dev
+Provides-Extra: doc
+License-File: AUTHORS.rst
+
+xonsh
+=====
+
+.. class:: center
+
+    **xonsh** is a Python-powered, cross-platform, Unix-gazing shell language and command prompt.
+
+    The language is a superset of Python 3.6+ with additional shell primitives.
+    xonsh (pronounced *conch*) is meant for the daily use of experts and novices alike.
+
+    .. image:: https://raw.githubusercontent.com/xonsh/xonsh/main/docs/_static/xonsh5.png
+            :alt: What is xonsh?
+            :align: center
+
+.. class:: center
+
+    If you like xonsh, :star: the repo, `write a tweet`_ and stay tuned by watching releases.
+
+    .. image:: https://badges.gitter.im/xonsh/xonsh.svg
+            :target: https://gitter.im/xonsh/xonsh?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
+            :alt: Join the chat at https://gitter.im/xonsh/xonsh
+
+    .. image:: https://img.shields.io/badge/%23xonsh%3Afeneas.org-Matrix-green
+            :target: https://matrix.to/#/#xonsh:feneas.org
+            :alt: Matrix room: #xonsh:feneas.org
+
+    .. image:: https://travis-ci.org/xonsh/xonsh.svg?branch=main
+            :target: https://travis-ci.org/xonsh/xonsh
+            :alt: Travis
+
+    .. image:: https://ci.appveyor.com/api/projects/status/github/xonsh/xonsh?svg=true
+            :target: https://ci.appveyor.com/project/xonsh/xonsh
+            :alt: Appveyor
+
+    .. image:: https://img.shields.io/badge/Google%20Cloud%20Shell-xonsh-green
+            :target: https://ssh.cloud.google.com/cloudshell/editor?cloudshell_git_repo=https://github.com/xonsh/xonsh.git
+            :alt: Open in Google Cloud Shell
+    .. image:: https://codecov.io/gh/xonsh/xonsh/branch/master/graphs/badge.svg?branch=main
+            :target: https://codecov.io/github/xonsh/xonsh?branch=main
+            :alt: codecov.io
+
+First steps
+***********
+
+Visit https://xon.sh for more information:
+
+- `Installation <https://xon.sh/contents.html#installation>`_ - using packages, docker or AppImage.
+- `Tutorial <https://xon.sh/tutorial.html>`_ - step by step introduction in xonsh.
+- `Xontribs <https://xon.sh/xontribs.html>`_ or `Github Xontribs <https://github.com/topics/xontrib>`_ - list of awesome xonsh extensions.
+
+Projects that use xonsh
+***********************
+
+- `gitsome <https://github.com/donnemartin/gitsome>`_: A supercharged Git/shell autocompleter with GitHub integration.
+- `rever <https://regro.github.io/rever-docs/>`_: Cross-platform software release tool.
+- `Regro autotick bot <https://github.com/regro/cf-scripts>`_: Regro Conda-Forge autoticker.
+- `xxh <https://github.com/xxh/xxh>`_: Using xonsh wherever you go through the ssh.
+
+
+The xonsh shell community
+*************************
+
+The xonsh shell is developed by a community of volunteers and has no organization that can get grants, donations or additional support. There are two major ways to help the xonsh shell: to spread the good word about xonsh in the world (`write a tweet`_) and to help improve the xonsh shell (`solve an issue <https://github.com/xonsh/xonsh/issues?q=is%3Aissue+is%3Aopen+sort%3Areactions-%2B1-desc>`_). We welcome new contributors!
+
+.. _write a tweet: https://twitter.com/intent/tweet?text=xonsh%20is%20a%20Python-powered,%20cross-platform,%20Unix-gazing%20shell%20language%20and%20command%20prompt.&url=https://github.com/xonsh/xonsh
