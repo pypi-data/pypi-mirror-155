@@ -1,0 +1,3 @@
+[console_scripts]
+git-ripper=git_ripper.cli:main
+
