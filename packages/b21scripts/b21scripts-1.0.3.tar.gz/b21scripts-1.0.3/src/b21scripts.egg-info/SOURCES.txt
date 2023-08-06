@@ -1,0 +1,14 @@
+LICENCE
+README.md
+pyproject.toml
+setup.cfg
+src/b21scripts/__init__.py
+src/b21scripts.egg-info/PKG-INFO
+src/b21scripts.egg-info/SOURCES.txt
+src/b21scripts.egg-info/dependency_links.txt
+src/b21scripts.egg-info/requires.txt
+src/b21scripts.egg-info/top_level.txt
+src/b21scripts/readwrite/__init__.py
+src/b21scripts/readwrite/dat.py
+src/b21scripts/readwrite/interface.py
+src/b21scripts/readwrite/pdb.py
