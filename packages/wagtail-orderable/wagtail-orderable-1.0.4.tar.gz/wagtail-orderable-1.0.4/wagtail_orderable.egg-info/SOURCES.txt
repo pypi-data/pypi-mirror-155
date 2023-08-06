@@ -1,0 +1,17 @@
+LICENSE.txt
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+wagtail_orderable.egg-info/PKG-INFO
+wagtail_orderable.egg-info/SOURCES.txt
+wagtail_orderable.egg-info/dependency_links.txt
+wagtail_orderable.egg-info/requires.txt
+wagtail_orderable.egg-info/top_level.txt
+wagtailorderable/__init__.py
+wagtailorderable/models.py
+wagtailorderable/__pycache__/__init__.cpython-310.pyc
+wagtailorderable/modeladmin/__init__.py
+wagtailorderable/modeladmin/mixins.py
+wagtailorderable/static/wagtailorderable/modeladmin/css/orderablemixin.css
+wagtailorderable/static/wagtailorderable/modeladmin/js/orderablemixin.js
