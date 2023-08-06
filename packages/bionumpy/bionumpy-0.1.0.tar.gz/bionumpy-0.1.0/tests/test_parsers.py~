@@ -1,0 +1,15 @@
+import numpy as np
+
+def chunk_from_text(text):
+    return np.from_buffer(bytes(text, encoding="utf8"), dtype=np.uint8)
+
+def test_fastq_buffer():
+    t = """@headerishere
+CTTGTTGA
++
+!!!!!!!!
+@anotherheader
+CGG
++
+!!!
+"""

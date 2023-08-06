@@ -1,0 +1,4 @@
+import pytest
+
+def chunk_from_text(text):
+    return np.frombuffer(bytes(text, encoding="utf8"), dtype=np.uint8)
