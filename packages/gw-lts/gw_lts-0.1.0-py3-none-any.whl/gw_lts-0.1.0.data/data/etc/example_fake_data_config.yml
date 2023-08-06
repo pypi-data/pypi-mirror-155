@@ -1,0 +1,74 @@
+### configuration file
+
+#--------------------------------------------------------------
+### startup dag configuration
+
+tag: a_unique_tag
+ifos: H1,L1,V1
+
+# current working directory
+analysis_dir: #path to analysis dir
+
+data-source:
+  - fake-data
+injections: injections/fake-data_injections.xml.gz
+kafka_server: #kafka server
+
+condor:
+  accounting_group_user: albert.einstein
+  accounting_group: # accounting group
+  backend: condor
+  universe: local
+
+#--------------------------------------------------------------
+#### jobs
+jobs:
+  send_inj_stream:
+    far_threshold: 0.000278 # 1 per hour
+    inj_rate: 20. # 1 per 20 sec
+
+  inspinjmsg_find:
+    input_topic:
+      - inj_events
+      - inj_stream
+
+  inj_missed_found:
+    input_topic:
+      - events
+      - missed_inj
+    far_threshold: 0.000278
+
+  vt:
+    input_topic:
+      - events
+    far_threshold: 0.000278
+    bootstrap-vt: True
+
+  p_astro:
+    input_topic:
+      - events
+
+  skymap:
+    input_topic:
+      - events
+    output: skymaps
+  
+  snr_consistency:
+    input_topic:
+      - injsnr
+      - recsnr
+
+  inj_accuracy:
+    input_topic:
+      - events
+    input_params:
+      -  mchirp
+      -  eta
+      -  end_time
+
+#--------------------------------------------------------------
+#### web
+
+metrics:
+  fake-data:
+    config: # ligo-scald configuration file

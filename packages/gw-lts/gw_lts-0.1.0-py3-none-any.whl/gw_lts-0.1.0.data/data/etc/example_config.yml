@@ -1,0 +1,99 @@
+### configuration file
+#
+#--------------------------------------------------------------
+### startup dag configuration
+
+tag: a_unique_tag
+ifos: H1,L1,V1
+
+# analysis_dir: use the search run
+# directory if source is gstlal,
+# otherwise use CWD
+analysis_dir: #path to analysis dir
+
+# source options: fake-data,
+# gstlal, pycbc, or mbta,
+# can be given multiple times
+data-source:
+  - search_pipeline1
+  - search_pipeline2
+injections: # injection set
+kafka_server: #kafka server 
+# gracedb group: gracedb,
+# gracedb-playground or
+# gracedb-test
+group: # gracedb server
+
+condor:
+  accounting_group_user: albert.einstein
+  accounting_group: # accounting group
+  backend: condor
+  universe: local
+
+#--------------------------------------------------------------
+#### jobs
+jobs:
+  send_inj_stream:
+    far_threshold: 0.000278 # 1 per hour
+    time-offset: # time injections are shifted by
+
+  inspinjmsg_find:
+    input_topic:
+      - inj_events
+      - inj_stream
+
+  igwn_alert_listener:
+    gdb-topic:
+      - # scimma topic1
+      - # scimma topic2
+
+  inj_missed_found:
+    input_topic:
+      - events
+      - missed_inj
+    far_threshold: 0.000278
+
+  vt:
+    input_topic:
+      - events
+    far_threshold: 0.000278
+    bootstrap-vt: True
+
+  latency:
+    input_topic:
+      - events
+
+  p_astro:
+    input_topic:
+      - events
+
+  skymap:
+    input_topic:
+      - events
+    output: skymaps
+    gdb-skymaps: True
+  
+  snr_consistency:
+    input_topic:
+      - injsnr_found
+      - recsnr_found
+
+  inj_accuracy:
+    input_topic:
+      - events
+    input_params:
+      -  mchirp
+      -  eta
+      -  end_time
+
+#--------------------------------------------------------------
+#### web
+
+# add a scald configuration file
+# for each search pipeline listed
+# under data-source
+metrics:
+  search_pipeline1:
+    config: # ligo-scald configuration file
+  search_pipeline2:
+    config: # ligo-scald configuration file

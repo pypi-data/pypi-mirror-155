@@ -1,0 +1,12 @@
+[console_scripts]
+igwn-alert-listener = gw.lts.igwn_alert_listener:main
+inj-accuracy = gw.lts.inj_accuracy:main
+inj-missed-found = gw.lts.inj_missed_found:main
+inspinjmsg-find = gw.lts.inspinjmsg_find:main
+latency = gw.lts.latency:main
+likelihood = gw.lts.likelihood:main
+p-astro = gw.lts.p_astro:main
+send-inj-stream = gw.lts.send_inj_stream:main
+skymap = gw.lts.skymap:main
+snr-consistency = gw.lts.snr_consistency:main
+vt = gw.lts.vt:main
