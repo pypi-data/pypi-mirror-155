@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: gtcp
+Version: 0.0.1
+Summary: Simple and secure TCP framework
+Home-page: UNKNOWN
+Author: Keizou Wang
+Author-email: keizouw8@gmail.com
+License: UNKNOWN
+Keywords: python,tcp,crypto,sockets
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: Apache Software License
+License-File: LICENSE
+
+Simple TCP framework with secure event based messaging
+
