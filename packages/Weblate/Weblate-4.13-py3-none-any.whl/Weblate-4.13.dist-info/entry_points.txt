@@ -1,0 +1,2 @@
+[console_scripts]
+weblate = weblate.runner:main

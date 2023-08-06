@@ -1,0 +1,397 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Weblate <noreply@weblate.org>, 2020.
+# Sveinn í Felli <sv1@fellsnet.is>, 2020, 2022.
+# Anonymous <noreply@weblate.org>, 2020.
+# Þórhalla Guðmundsdóttir Beck <plergux@outlook.com>, 2020, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: Weblate 4.13\n"
+"Report-Msgid-Bugs-To: https://github.com/WeblateOrg/weblate/issues\n"
+"POT-Creation-Date: 2022-05-27 06:01+0000\n"
+"PO-Revision-Date: 2022-04-12 11:59+0000\n"
+"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
+"Language-Team: Icelandic <https://hosted.weblate.org/projects/weblate/"
+"javascript/is/>\n"
+"Language: is\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n % 10 != 1 || n % 100 == 11;\n"
+"X-Generator: Weblate 4.12-dev\n"
+
+#: weblate/static/editor/base.js:90
+msgid "Please select target plural by clicking."
+msgstr "Vinsamlegast veldu fleirtölutakmark með því að smella."
+
+#: weblate/static/editor/base.js:170
+#, javascript-format
+msgid "Cmd+%s"
+msgstr "Cmd+%s"
+
+#: weblate/static/editor/base.js:172
+#, javascript-format
+msgid "Ctrl+%s"
+msgstr "Ctrl+%s"
+
+#: weblate/static/editor/full.js:228
+msgid "The request for machine translation has failed:"
+msgstr "Beiðni um vélræna þýðingu mistókst:"
+
+#: weblate/static/editor/full.js:241
+#, javascript-format
+msgid "The request for machine translation using %s has failed:"
+msgstr "Beiðni um vélræna þýðingu með %s mistókst:"
+
+#: weblate/static/editor/full.js:275
+#, javascript-format
+msgid "Cmd+M then %s"
+msgstr "Cmd+M og síðan %s"
+
+#: weblate/static/editor/full.js:277
+#, javascript-format
+msgid "Ctrl+M then %s"
+msgstr "Ctrl+M og síðan %s"
+
+#: weblate/static/editor/full.js:379
+#, javascript-format
+msgid "Press Cmd+I then %s to dismiss this."
+msgstr "Ýttu á Cmd+I og síðan %s til að loka þessu."
+
+#: weblate/static/editor/full.js:384
+#, javascript-format
+msgid "Press Ctrl+I then %s to dismiss this."
+msgstr "Ýttu á Ctrl+I og síðan %s til að loka þessu."
+
+#: weblate/static/editor/full.js:520
+msgid "Copy"
+msgstr "Afrita"
+
+#: weblate/static/editor/full.js:526
+msgid "Copy and save"
+msgstr "Afrita og vista"
+
+#: weblate/static/editor/zen.js:101
+msgid "There are some unsaved changes, are you sure you want to leave?"
+msgstr "Það á eftir að vista nokkrar breytingar, viltu örugglega hætta?"
+
+#: weblate/static/loader-bootstrap.js:156
+msgid "Error loading search results!"
+msgstr "Villa við að hlaða inn leitarniðurstöðum!"
+
+#: weblate/static/loader-bootstrap.js:160
+msgid "No new matching source strings found."
+msgstr "Engir samsvarandi frumtextastrengir fundust."
+
+#: weblate/static/loader-bootstrap.js:230
+msgid "Sort this column"
+msgstr "Raða þessum dálki"
+
+#: weblate/static/loader-bootstrap.js:469
+msgid "Error while loading page:"
+msgstr "Villa við að hlaða inn síðu:"
+
+#: weblate/static/loader-bootstrap.js:627
+#: weblate/static/loader-bootstrap.js:634
+msgid "Sunday"
+msgstr "Sunnudagur"
+
+#: weblate/static/loader-bootstrap.js:628
+msgid "Monday"
+msgstr "Mánudagur"
+
+#: weblate/static/loader-bootstrap.js:629
+msgid "Tuesday"
+msgstr "Þriðjudagur"
+
+#: weblate/static/loader-bootstrap.js:630
+msgid "Wednesday"
+msgstr "Miðvikudagur"
+
+#: weblate/static/loader-bootstrap.js:631
+msgid "Thursday"
+msgstr "Fimmtudagur"
+
+#: weblate/static/loader-bootstrap.js:632
+msgid "Friday"
+msgstr "Föstudagur"
+
+#: weblate/static/loader-bootstrap.js:633
+msgid "Saturday"
+msgstr "Laugardagur"
+
+#: weblate/static/loader-bootstrap.js:637
+#: weblate/static/loader-bootstrap.js:644
+msgctxt "Short (for example three letter) name of day in week"
+msgid "Sun"
+msgstr "sun"
+
+#: weblate/static/loader-bootstrap.js:638
+msgctxt "Short (for example three letter) name of day in week"
+msgid "Mon"
+msgstr "mán"
+
+#: weblate/static/loader-bootstrap.js:639
+msgctxt "Short (for example three letter) name of day in week"
+msgid "Tue"
+msgstr "þri"
+
+#: weblate/static/loader-bootstrap.js:640
+msgctxt "Short (for example three letter) name of day in week"
+msgid "Wed"
+msgstr "mið"
+
+#: weblate/static/loader-bootstrap.js:641
+msgctxt "Short (for example three letter) name of day in week"
+msgid "Thu"
+msgstr "fim"
+
+#: weblate/static/loader-bootstrap.js:642
+msgctxt "Short (for example three letter) name of day in week"
+msgid "Fri"
+msgstr "fös"
+
+#: weblate/static/loader-bootstrap.js:643
+msgctxt "Short (for example three letter) name of day in week"
+msgid "Sat"
+msgstr "lau"
+
+#: weblate/static/loader-bootstrap.js:647
+#: weblate/static/loader-bootstrap.js:654
+msgctxt "Minimal (for example two letter) name of day in week"
+msgid "Su"
+msgstr "Su"
+
+#: weblate/static/loader-bootstrap.js:648
+msgctxt "Minimal (for example two letter) name of day in week"
+msgid "Mo"
+msgstr "Má"
+
+#: weblate/static/loader-bootstrap.js:649
+msgctxt "Minimal (for example two letter) name of day in week"
+msgid "Tu"
+msgstr "Þr"
+
+#: weblate/static/loader-bootstrap.js:650
+msgctxt "Minimal (for example two letter) name of day in week"
+msgid "We"
+msgstr "Mi"
+
+#: weblate/static/loader-bootstrap.js:651
+msgctxt "Minimal (for example two letter) name of day in week"
+msgid "Th"
+msgstr "Fi"
+
+#: weblate/static/loader-bootstrap.js:652
+msgctxt "Minimal (for example two letter) name of day in week"
+msgid "Fr"
+msgstr "Fö"
+
+#: weblate/static/loader-bootstrap.js:653
+msgctxt "Minimal (for example two letter) name of day in week"
+msgid "Sa"
+msgstr "La"
+
+#: weblate/static/loader-bootstrap.js:657
+msgid "January"
+msgstr "janúar"
+
+#: weblate/static/loader-bootstrap.js:658
+msgid "February"
+msgstr "febrúar"
+
+#: weblate/static/loader-bootstrap.js:659
+msgid "March"
+msgstr "mars"
+
+#: weblate/static/loader-bootstrap.js:660
+msgid "April"
+msgstr "apríl"
+
+#: weblate/static/loader-bootstrap.js:661
+msgid "May"
+msgstr "maí"
+
+#: weblate/static/loader-bootstrap.js:662
+msgid "June"
+msgstr "júní"
+
+#: weblate/static/loader-bootstrap.js:663
+msgid "July"
+msgstr "júlí"
+
+#: weblate/static/loader-bootstrap.js:664
+msgid "August"
+msgstr "ágúst"
+
+#: weblate/static/loader-bootstrap.js:665
+msgid "September"
+msgstr "september"
+
+#: weblate/static/loader-bootstrap.js:666
+msgid "October"
+msgstr "október"
+
+#: weblate/static/loader-bootstrap.js:667
+msgid "November"
+msgstr "nóvember"
+
+#: weblate/static/loader-bootstrap.js:668
+msgid "December"
+msgstr "desember"
+
+#: weblate/static/loader-bootstrap.js:671
+msgctxt "Short name of month"
+msgid "Jan"
+msgstr "jan"
+
+#: weblate/static/loader-bootstrap.js:672
+msgctxt "Short name of month"
+msgid "Feb"
+msgstr "feb"
+
+#: weblate/static/loader-bootstrap.js:673
+msgctxt "Short name of month"
+msgid "Mar"
+msgstr "mar"
+
+#: weblate/static/loader-bootstrap.js:674
+msgctxt "Short name of month"
+msgid "Apr"
+msgstr "apr"
+
+#: weblate/static/loader-bootstrap.js:675
+msgctxt "Short name of month"
+msgid "May"
+msgstr "maí"
+
+#: weblate/static/loader-bootstrap.js:676
+msgctxt "Short name of month"
+msgid "Jun"
+msgstr "jún"
+
+#: weblate/static/loader-bootstrap.js:677
+msgctxt "Short name of month"
+msgid "Jul"
+msgstr "júl"
+
+#: weblate/static/loader-bootstrap.js:678
+msgctxt "Short name of month"
+msgid "Aug"
+msgstr "ágú"
+
+#: weblate/static/loader-bootstrap.js:679
+msgctxt "Short name of month"
+msgid "Sep"
+msgstr "sep"
+
+#: weblate/static/loader-bootstrap.js:680
+msgctxt "Short name of month"
+msgid "Oct"
+msgstr "okt"
+
+#: weblate/static/loader-bootstrap.js:681
+msgctxt "Short name of month"
+msgid "Nov"
+msgstr "nóv"
+
+#: weblate/static/loader-bootstrap.js:682
+msgctxt "Short name of month"
+msgid "Dec"
+msgstr "des"
+
+#: weblate/static/loader-bootstrap.js:684
+msgid "Today"
+msgstr "Í dag"
+
+#: weblate/static/loader-bootstrap.js:685
+msgid "Clear"
+msgstr "Hreinsa"
+
+#: weblate/static/loader-bootstrap.js:814
+msgid "Text copied to clipboard."
+msgstr "Texti afritaður á klippispjald."
+
+#: weblate/static/loader-bootstrap.js:818
+msgid "Please press Ctrl+C to copy."
+msgstr "Ýttu á Ctrl+C til að afrita."
+
+#: weblate/static/loader-bootstrap.js:842
+msgid "Search…"
+msgstr "Leita…"
+
+#: weblate/static/loader-bootstrap.js:843
+msgid "Available:"
+msgstr "Tiltækt:"
+
+#: weblate/static/loader-bootstrap.js:844
+msgid "Chosen:"
+msgstr "Valið:"
+
+#: weblate/static/loader-bootstrap.js:1118
+msgid "Weblate is now scanning the repository, please be patient."
+msgstr "Weblate er núna að yfirfara gagnasafnið, vertu þolinmóð/ur."
+
+#: weblate/static/loader-bootstrap.js:1181
+msgctxt "Alert to user when opening browser developer console"
+msgid "Stop!"
+msgstr ""
+
+#: weblate/static/loader-bootstrap.js:1187
+msgid ""
+"This is a browser feature intended for developers. If someone told you to "
+"copy-paste something here, they are likely trying to compromise your Weblate "
+"account."
+msgstr ""
+
+#: weblate/static/loader-bootstrap.js:1194
+msgid "See https://en.wikipedia.org/wiki/Self-XSS for more information."
+msgstr ""
+
+#: weblate/static/zammad.js:3
+msgid "Weblate feedback"
+msgstr "Weblate umsagnir"
+
+#: weblate/static/zammad.js:4
+msgid "Get help"
+msgstr "Fá aðstoð"
+
+#: weblate/static/zammad.js:6
+#, javascript-format
+msgid ""
+"Thank you for your inquiry (#%s)! We'll contact you as soon as possible."
+msgstr ""
+"Þakka þér fyrir orðsendinguna (#%s)! Við verðum í sambandi eins fljótt og "
+"mögulegt er."
+
+#: weblate/static/zammad.js:13
+msgid "Subject"
+msgstr "Viðfangsefni"
+
+#: weblate/static/zammad.js:21
+msgid "Your name"
+msgstr "Nafnið þitt"
+
+#: weblate/static/zammad.js:29
+msgid "Your e-mail"
+msgstr "Tölvupóstfangið þitt"
+
+#: weblate/static/zammad.js:37
+msgid "Message"
+msgstr "Skilaboð"
+
+#: weblate/static/zammad.js:41
+msgid ""
+"Please contact us in English, otherwise we might be unable to process your "
+"request."
+msgstr ""
+"Vinsamlegast sendu okkur skilaboð á ensku, annars er óvíst að við getum "
+"meðhöndlað beiðni þína."
+
+#: weblate/static/zammad.js:47
+msgid "Attachments"
+msgstr "Viðhengi"
+
+#~ msgid "Add to screenshot"
+#~ msgstr "Bæta á skjámynd"
