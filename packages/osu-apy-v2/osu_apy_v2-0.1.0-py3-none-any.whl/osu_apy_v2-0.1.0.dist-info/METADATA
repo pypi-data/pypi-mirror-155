@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: osu-apy-v2
+Version: 0.1.0
+Summary: 
+Author: Eulentier161
+Author-email: eulentier161@gmail.com
+Requires-Python: >=3.10,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Requires-Dist: pyaml (>=21.10.1,<22.0.0)
+Requires-Dist: requests (>=2.28.0,<3.0.0)
