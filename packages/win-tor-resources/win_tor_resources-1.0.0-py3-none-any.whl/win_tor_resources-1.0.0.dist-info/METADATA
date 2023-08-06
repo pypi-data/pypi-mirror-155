@@ -1,0 +1,63 @@
+Metadata-Version: 2.1
+Name: win-tor-resources
+Version: 1.0.0
+Summary: Tor resources for python in windows
+Home-page: https://github.com/jakbin
+Author: Jak Bin
+License: MIT License
+Keywords: tor,windows,python,tor-binary
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: Microsoft :: Windows
+Requires-Python: >=3
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# win-tor-resources
+
+Run your flask website in tor using flask_tor.It doesn’t interfere with other tor processes on your computer, so you can use the Tor Browser or the system tor on their own.
+
+ [![PyPI version](https://badge.fury.io/py/win-tor-resources.svg)](https://badge.fury.io/py/win-tor-resources)
+ [![Downloads](https://pepy.tech/badge/win-tor-resources/month)](https://pepy.tech/project/win-tor-resources)
+ [![Downloads](https://static.pepy.tech/personalized-badge/win-tor-resources?period=total&units=international_system&left_color=green&right_color=blue&left_text=Total%20Downloads)](https://pepy.tech/project/win-tor-resources)
+ ![Python 3](https://img.shields.io/badge/python-3-yellow.svg)
+
+
+### Disclaimer:-
+Use it only for educational purpose.
+
+## Features
+- No need root permission
+- Multiple instances
+
+## Compatability
+Python 3.6+ is required.
+
+## Installation
+
+```bash
+pip install win-tor-resources
+```
+
+## Quickstart
+1. Import with ```from flask_tor import run_with_tor``` .
+2. call function `run_with_tor()` , store as variable and give it as port argument in flask app.
+
+```python
+# flask_tor_example.py
+from flask import Flask
+from flask_tor import run_with_tor
+
+app = Flask(__name__)
+port = run_with_tor()
+
+@app.route("/")
+def hello():
+    return "Hello World!"
+
+if __name__ == '__main__':
+    app.run(port=port)
+```
+
+
