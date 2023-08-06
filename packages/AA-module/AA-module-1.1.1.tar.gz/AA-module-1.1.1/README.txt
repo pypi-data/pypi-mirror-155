@@ -1,0 +1,3 @@
+# `AA MODULE`
+
+This module can be used to perform, evaluate and analyse Conventional Archetypal Analysis, Ordinal Archetypal Analysis and Response Bias Ordinal Archetypal Analysis. The module is developed by Andreas Bigom, Michael Harborg, Marcus Presutti and Oliver Elmgren in a collaboration between the Technical University of Denmark and Copenhagen Business School in order to enable students to analyse human questionnaire data in an effective and meaningful way.
