@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: pydregiondata
+Version: 0.0.1a6
+Summary: pyDRegionData is a Python3 ,data description Earth's ionosphere D-Region.
+Home-page: https://gitlab.com/shve.ktr/pydregiondata
+Author: Ekaterina Shvets
+Author-email: shve.ktr@gmail.com
+License: Apache Software License
+Keywords: lower ionosphere of the Earth,D-region,D-layer,observational data
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Physics
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3 :: Only
+Requires-Dist: scipy
+Requires-Dist: xarray
+Requires-Dist: pandas
+Requires-Dist: numpy
+
+
+Here is long project description
+
+
