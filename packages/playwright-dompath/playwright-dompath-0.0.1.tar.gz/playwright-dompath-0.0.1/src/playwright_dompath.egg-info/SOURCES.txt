@@ -1,0 +1,12 @@
+LICENSE.md
+README.md
+pyproject.toml
+setup.py
+src/playwright_dompath/__init__.py
+src/playwright_dompath/dompath_async.py
+src/playwright_dompath/dompath_sync.py
+src/playwright_dompath.egg-info/PKG-INFO
+src/playwright_dompath.egg-info/SOURCES.txt
+src/playwright_dompath.egg-info/dependency_links.txt
+src/playwright_dompath.egg-info/requires.txt
+src/playwright_dompath.egg-info/top_level.txt
