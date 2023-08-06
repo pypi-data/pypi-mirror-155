@@ -1,0 +1,3 @@
+[console_scripts]
+loopgrpcclient_cli=loopgrpc.client:cli
+
