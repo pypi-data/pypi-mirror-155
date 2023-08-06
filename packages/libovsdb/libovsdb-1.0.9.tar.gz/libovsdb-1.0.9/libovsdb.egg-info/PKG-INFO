@@ -1,0 +1,162 @@
+Metadata-Version: 1.0
+Name: libovsdb
+Version: 1.0.9
+Summary: An OVSDB Library written in python.
+Home-page: https://github.com/guoyoooping/libovsdb
+Author: Yongping Guo
+Author-email: guoyoooping@163.com
+License: GPLv3
+Description: ovsdb
+        *********
+        
+        An OVSDB Library written in python.
+        
+        1. Introduction
+        ===============
+        
+        OVSDB is the Open vSwitch Database Protocol. It's defined in RFC 7047 It's used
+        mainly but not limited for managing the configuration of Open vSwitch and OVN.
+        Recently vendors have begun implementing OVSDB in their Ethernet switches
+        firmware. Some of those vendor data plane implementations are already running
+        OVS under the hood so the implementation should be relatively painless.
+        
+        This is for operation on ovsdb protocol, not only for Open vSwitch and OVN. Any
+        project with ovsdb protocol can leverage this library.
+        
+        To use this lib, only need the ovsdb-server running. Take OVS as exampne, if
+        you’re running OVS version 1.10 or later, you can do this using ovs-appctl::
+        
+            ovs-appctl -t ovsdb-server ovsdb-server/add-remote ptcp:6632
+        
+        Quick API Examples
+        ==================
+        
+        Connect to the ovsdb server::
+        
+            #from libovsdb import libovsdb
+            #ovsdb_server = 'tcp:192.168.1.11:6641'
+            ovsdb_server = 'unix:/usr/local/var/run/ovn/ovnnb_db.sock'
+            db = libovsdb.OVSDBConnection(ovsdb_server, "OVN_Northbound")
+            print(db.list_dbs())
+        
+        The result is::
+        
+            {'id': 0, 'result': ['OVN_Northbound', '_Server'], 'error': None}
+        
+        Basic transaction
+        -----------------
+        
+        insert a row, create a transaction and add op into it,then commit::
+        
+            #from libovsdb import libovsdb
+            #ovsdb_server = 'tcp:192.168.1.11:6641'
+            ovsdb_server = 'unix:/usr/local/var/run/ovn/ovnnb_db.sock'
+            db = libovsdb.OVSDBConnection(ovsdb_server, "OVN_Northbound")
+            tx = db.transact()
+        
+            name = tx.insert(table = "Logical_Switch_Port",
+                            row = {"name":"ls1-lsp0"})
+            tx.mutate(table = "Logical_Switch",
+                      where = [["name", "==", "ls1"]],
+                      mutations = [tx.make_mutations("ports", "insert", {"named-uuid": name})])
+            response = tx.commit()
+        
+            print("%s" %(response["result"]))
+        
+        delete a row, create a transaction and add op into it,then commit::
+        
+            # Get the uuid in other way, since it's needed in mutate op.
+            uuid = 03934fdf-6087-48e7-b5ce-54d4d76e4368
+            tx.delete(table = "Logical_Switch_Port",
+                    where = [["uuid", "==", uuid]])
+            tx.mutate(table = "Logical_Switch",
+                      where = [["name", "==", "ls1"]],
+                      mutations = [tx.make_mutations("ports", "delete", {"uuid": uuid})])
+            response = tx.commit()
+        
+            print("%s" %(response["result"]))
+        
+        update a row, create a transaction and add op into it,then commit::
+        
+            #from libovsdb import libovsdb
+            #ovsdb_server = 'tcp:192.168.1.11:6641'
+            ovsdb_server = 'unix:/usr/local/var/run/ovn/ovnnb_db.sock'
+            db = libovsdb.OVSDBConnection(ovsdb_server, "OVN_Northbound")
+            tx = db.transact()
+        
+            tx.update(table = "Logical_Switch_Port",
+                    row = {"addresses": "00:00:00:00:00:05"},
+                    where = [["name", "==", "ls1-lsp0"]])
+            response = tx.commit()
+        
+            print("%s" %(response["result"]))
+        
+        query some rows, create a transaction and add op into it,then commit::
+        
+            #from libovsdb import libovsdb
+            #ovsdb_server = 'tcp:192.168.1.11:6641'
+            ovsdb_server = 'unix:/usr/local/var/run/ovn/ovnnb_db.sock'
+            db = libovsdb.OVSDBConnection(ovsdb_server, "OVN_Northbound")
+            tx = db.transact()
+        
+            response = tx.row_select(table = "Logical_Switch",
+            columns = ["_uuid", "name"],
+            where = [["name", "==", "ls1"]])
+            response = tx.commit()
+        
+            print("%s" %(response["result"]))
+        
+        Easy wapper
+        -----------------
+        
+        for easy use, I give some wrapper for quick test, for example::
+        
+            #from libovsdb import libovsdb
+            #ovsdb_server = 'tcp:192.168.1.11:6641'
+            ovsdb_server = 'unix:/usr/local/var/run/ovn/ovnnb_db.sock'
+            db = libovsdb.OVSDBConnection(ovsdb_server, "OVN_Northbound")
+            tx = db.transact()
+        
+            tx.row_insert(table = "Logical_Switch", row = {"name":"ls1"})
+            tx.row_insert(table = "Logical_Switch_Port",
+                    row = {"name":"ls1-lsp0"},
+                    referby = ["Logical_Switch", "ls1", "ports"])
+            tx.row_update(table = "Logical_Switch_Port",
+                    row = {"addresses": "00:00:00:00:00:05"},
+                    where = [["name", "==", "ls1-lsp0"]])
+            tx.row_select(table = "Logical_Switch",
+                    columns = ["_uuid", "name"],
+                    where = [["name", "==", "ls1"]])
+            response = tx.commit()
+            print("%s" %(response["result"]))
+        
+            tx.row_delete(table = "Logical_Switch_Port",
+                    where = [["name", "==", "ls1-lsp0"]],
+                    referby = ["Logical_Switch", "ls1", "ports"])
+            tx.commit()
+        
+        Release Notes
+        =============
+        
+        1.0.8: Add dryrun option: Don't really run the ovsdb command, just print it.
+        1.0.9: Add new API::
+        
+            OVSDBConnection().insert (self, table, row, **kwargs)
+            OVSDBConnection().delete (self, table, where, **kwargs)
+            OVSDBConnection().update (self, table, row, where, **kwargs)
+            OVSDBConnection().update (self, table, row, where, **kwargs)
+            OVSDBConnection().select (self, table, where, **kwargs):
+        
+        .. References
+        .. ==========
+        .. 
+        ..  * ovsdb.py, https://gist.github.com/ashw7n/9108384
+        ..  * OVSDB client in Python,
+        ..    https://fredhsu.wordpress.com/2013/10/15/ovsdb-client-in-python/
+        ..  * ovsdbapp,
+        ..    https://rodolfo-alonso.com/ovsdbapp-your-library-for-open-vswitch-and-ovn
+        ..  * Socket Programming in Python (Guide), https://realpython.com/python-sockets/
+        ..  * socket — Low-level networking interface,
+        ..    https://docs.python.org/3/library/socket.html
+        
+Platform: UNKNOWN
