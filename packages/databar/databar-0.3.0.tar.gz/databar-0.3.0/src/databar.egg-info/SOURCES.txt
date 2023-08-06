@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+src/databar/__init__.py
+src/databar/connection.py
+src/databar/helpers.py
+src/databar/table.py
+src/databar.egg-info/PKG-INFO
+src/databar.egg-info/SOURCES.txt
+src/databar.egg-info/dependency_links.txt
+src/databar.egg-info/requires.txt
+src/databar.egg-info/top_level.txt
+tests/__init__.py
+tests/test_metadata.py
+tests/test_table.py
