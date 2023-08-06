@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: aiorestlight
+Version: 0.1.1
+Summary: Provides a client for integrating with LED light strips (basic and addressable) exposed via a REST API. Designed to work with the npm package @jms777/light-controller.
+Home-page: https://github.com/jms737/aiorestlight
+Author: Jeremy Sapsed
+Author-email: dev@jsapsed.co.uk
+Project-URL: Bug Tracker, https://github.com/jms737/aiorestlight/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# aiorestlight
+PyPi package for communicating with lights over a REST API
+
+Designed to work with the npm package [@jms777/light-controller](https://www.npmjs.com/package/@jms777/light-controller).
