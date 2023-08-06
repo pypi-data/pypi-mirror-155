@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: lolcatfigletgnuplotprint
+Version: 0.0.1
+Summary: A simple commandline output utility package for printing simple messages and linear xy-plot data with colours and style
+Author: Lassi Piironen
+Classifier: Programming Language :: Python :: 3.10
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+
+# Lolcatfigletgnuplotprint
+
+A simple commandline output utility package for printing simple messages and linear xy-plot data with colours and style
+
+## Usage
+
+```
+docker run -it --rm lsipii/lolcatfigletgnuplotprint --help
+```
+
+## Example output
+
+![Example output](./resourses/example-cli-output.png)
