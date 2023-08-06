@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: python_export_file_info
+Version: 0.0.1
+Summary: CSV Files List Generator from Folders with Subfolders
+Home-page: https://github.com/sannjayy/python_export_file_info
+Author: Sanjay Sikdar
+Author-email: hello@znas.in
+License: MIT
+Project-URL: Bug Reports, https://github.com/sannjayy/python_export_file_info/issues
+Project-URL: Funding, https://www.paypal.com/paypalme/znasofficial
+Project-URL: Say Thanks!, https://saythanks.io/to/sannjayy
+Project-URL: Source, https://github.com/sannjayy/python_export_file_info/
+Keywords: python,export,fileinfo
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.7, <4
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# CSV Files List Generator from Folders with Subfolders
+
+
+
