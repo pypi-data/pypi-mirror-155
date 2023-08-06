@@ -1,0 +1,14 @@
+LICENSE.md
+README.md
+pyproject.toml
+setup.cfg
+src/arxiv_rename/__init__.py
+src/arxiv_rename/__main__.py
+src/arxiv_rename/arxiv_detect.py
+src/arxiv_rename/arxiv_rename.py
+src/arxiv_rename/arxiv_watcher.py
+src/arxiv_rename.egg-info/PKG-INFO
+src/arxiv_rename.egg-info/SOURCES.txt
+src/arxiv_rename.egg-info/dependency_links.txt
+src/arxiv_rename.egg-info/requires.txt
+src/arxiv_rename.egg-info/top_level.txt
