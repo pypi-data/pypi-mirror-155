@@ -1,0 +1,6 @@
+[console_scripts]
+cutevariant-cli = cutevariant.core.cli:main
+
+[gui_scripts]
+cutevariant = cutevariant.__main__:main
+
