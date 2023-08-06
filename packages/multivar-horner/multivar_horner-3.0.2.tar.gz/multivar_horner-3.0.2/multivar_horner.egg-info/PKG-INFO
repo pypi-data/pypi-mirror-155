@@ -1,0 +1,37 @@
+Metadata-Version: 2.1
+Name: multivar-horner
+Version: 3.0.2
+Summary: python package implementing a multivariate Horner scheme for efficiently evaluating multivariate polynomials
+Home-page: https://github.com/jannikmi/multivar_horner
+Author: Jannik Michelfeit
+Author-email: python@michelfe.it
+License: MIT licence
+Project-URL: Source Code, https://github.com/jannikmi/multivar_horner
+Project-URL: Documentation, https://multivar_horner.readthedocs.io/en/latest/
+Project-URL: Changelog, https://github.com/jannikmi/multivar_horner/blob/master/CHANGELOG.rst
+Description: python package implementing a multivariate Horner scheme for efficiently evaluating multivariate polynomials 
+        
+        for more refer to the documentation: https://multivar_horner.readthedocs.io/en/latest/
+Keywords: math mathematics polynomial polynomials polynomial-evaluation multivariate multivariate-polynomials horner horner-scheme factorisation factorization
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Classifier: Topic :: Scientific/Engineering :: Physics
+Requires-Python: >=3.7
+Description-Content-Type: text/x-rst
+Provides-Extra: numba
