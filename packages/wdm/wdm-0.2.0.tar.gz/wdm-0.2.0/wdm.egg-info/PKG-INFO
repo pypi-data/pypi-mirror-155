@@ -1,0 +1,65 @@
+Metadata-Version: 2.1
+Name: wdm
+Version: 0.2.0
+Summary: webOS device manager
+Home-page: https://github.com/webosose-emulator/wdm
+Author: Heegoo Han
+Author-email: hghan9@gmail.com
+License: MIT license
+Keywords: wdm
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Requires-Python: >=3.6
+License-File: LICENSE
+License-File: AUTHORS.rst
+
+===
+wdm
+===
+
+
+.. image:: https://img.shields.io/pypi/v/wdm.svg
+        :target: https://pypi.python.org/pypi/wdm
+
+.. image:: https://readthedocs.org/projects/wdm/badge/?version=latest
+        :target: https://wdm.readthedocs.io/en/latest/?version=latest
+        :alt: Documentation Status
+
+
+
+
+webOS device manager
+
+
+* Free software: MIT license
+* Documentation: https://wdm.readthedocs.io.
+
+
+Features
+--------
+
+* TODO
+
+Credits
+-------
+
+This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+
+.. _Cookiecutter: https://github.com/audreyr/cookiecutter
+.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+
+
+=======
+History
+=======
+
+0.1.0 (2022-05-03)
+------------------
+
+* First release on PyPI.
