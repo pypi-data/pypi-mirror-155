@@ -1,0 +1,20 @@
+[bob.cli]
+fusion = bob.fusion.base.script.fusion:fusion
+
+[bob.fusion.algorithm]
+gmm = bob.fusion.base.config.algorithm.gmm:algorithm
+gmm-tanh = bob.fusion.base.config.algorithm.gmm:algorithm_tanh
+llr = bob.fusion.base.config.algorithm.llr_skl:algorithm
+llr-tanh = bob.fusion.base.config.algorithm.llr_skl:algorithm_tanh
+mean = bob.fusion.base.config.algorithm.mean:algorithm
+mean-tanh = bob.fusion.base.config.algorithm.mean:algorithm_tanh
+plr-2 = bob.fusion.base.config.algorithm.plr_2:algorithm
+plr-2-tanh = bob.fusion.base.config.algorithm.plr_2:algorithm_tanh
+plr-3 = bob.fusion.base.config.algorithm.plr_3:algorithm
+plr-3-tanh = bob.fusion.base.config.algorithm.plr_3:algorithm_tanh
+
+[bob.fusion.cli]
+boundary = bob.fusion.base.script.boundary:boundary
+fuse = bob.fusion.base.script.fuse:fuse
+resource = bob.fusion.base.script.resource:resource
+
