@@ -1,0 +1,7 @@
+include LICENSE
+include README.rst
+recursive-include django_pdr/js *
+recursive-include django_pdr/management *
+recursive-include django_pdr/migrations *
+recursive-include django_pdr/sql *
+recursive-include docs *
