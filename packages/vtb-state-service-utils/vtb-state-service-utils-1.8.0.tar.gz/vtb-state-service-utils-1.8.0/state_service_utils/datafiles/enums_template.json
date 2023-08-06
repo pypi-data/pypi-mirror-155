@@ -1,0 +1,116 @@
+[
+    {
+        "id": "5dbc5fb5-11b0-4fb4-af27-cd0a91511fbd",
+        "name": "EventState",
+        "data": {
+            "ON": "on",
+            "OFF": "off",
+            "REBOOT": "reboot",
+            "DELETED": "deleted"
+        },
+        "directory": "6fe7fe1e-aa22-451b-8788-b8a9b0276049"
+    },
+    {
+        "id": "e593952f-de30-442f-b594-fa3ea591a4ef",
+        "name": "ActionFolderStatus",
+        "data": {
+            "CHANGED": "changed"
+        },
+        "directory": "6fe7fe1e-aa22-451b-8788-b8a9b0276049"
+    },
+    {
+        "id": "34b6bd67-3067-434b-8970-449b82c7d6de",
+        "name": "EventType",
+        "data": {
+            "VM": "vm",
+            "ACL": "acl",
+            "APP": "app",
+            "VDC": "vdc",
+            "TOPIC": "topic",
+            "ROUTER": "router",
+            "CLUSTER": "cluster",
+            "LICENSE": "license",
+            "PROJECT": "project"
+        },
+        "directory": "6fe7fe1e-aa22-451b-8788-b8a9b0276049"
+    },
+    {
+        "id": "a6bdcc5c-f27d-4587-b11b-7f7cab1eed84",
+        "name": "EventProvider",
+        "data": {
+            "KAFKA": "kafka",
+            "NGINX": "nginx",
+            "REDIS": "redis",
+            "DOCKER": "docker",
+            "VCLOUD": "vcloud",
+            "NUTANIX": "nutanix",
+            "VSPHERE": "vsphere",
+            "RABBITMQ": "rabbitmq",
+            "OPENSHIFT": "openshift",
+            "OPENSTACK": "openstack",
+            "TARANTOOL": "tarantool",
+            "KUBERNETES": "kubernetes",
+            "POSTGRESQL": "postgresql"
+        },
+        "directory": "6fe7fe1e-aa22-451b-8788-b8a9b0276049"
+    },
+    {
+        "id": "bf38c27f-c01a-46f7-9495-6360754665b2",
+        "name": "ActionType",
+        "data": {
+            "DEPLOY": "deploy",
+            "BILLING": "billing"
+        },
+        "directory": "6fe7fe1e-aa22-451b-8788-b8a9b0276049"
+    },
+    {
+        "id": "b8b30951-c2d9-4b0b-a475-78c7037c1c77",
+        "name": "ActionDeploy",
+        "data": {
+            "RUN": "run",
+            "ROLLBACK": "rollback",
+            "RUN_NODE": "run_node",
+            "ROLLBACK_NODE": "rollback_node"
+        },
+        "directory": "6fe7fe1e-aa22-451b-8788-b8a9b0276049"
+    },
+    {
+        "id": "47c3c5ef-c3d2-4b24-807d-cd3999b57e6f",
+        "name": "ActionDeployStatus",
+        "data": {
+            "ERROR": "error",
+            "STARTED": "started",
+            "COMPLETED": "completed"
+        },
+        "directory": "6fe7fe1e-aa22-451b-8788-b8a9b0276049"
+    },
+    {
+        "id": "751d234a-be30-4e7b-8302-61f45dba05ec",
+        "name": "ActionBilling",
+        "data": {
+            "FOLDER": "folder"
+        },
+        "directory": "6fe7fe1e-aa22-451b-8788-b8a9b0276049"
+    },
+    {
+        "id": "4a1d006e-dcd7-4953-b5b5-0d17a41a142d",
+        "name": "ActionStatus",
+        "data": {
+            "ERROR": "error",
+            "STARTED": "started",
+            "COMPLETED": "completed"
+        },
+        "directory": "6fe7fe1e-aa22-451b-8788-b8a9b0276049"
+    },
+    {
+        "id": "d432835e-5e34-495a-87da-3e69839f20a7",
+        "name": "EventSubType",
+        "data": {
+            "STATE": "state",
+            "CONFIG": "config",
+            "PARENT": "parent",
+            "PROVIDER": "provider"
+        },
+        "directory": "6fe7fe1e-aa22-451b-8788-b8a9b0276049"
+    }
+]
