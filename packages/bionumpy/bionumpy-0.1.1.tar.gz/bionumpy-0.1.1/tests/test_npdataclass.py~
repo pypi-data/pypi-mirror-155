@@ -1,0 +1,13 @@
+import pytest
+import numpy as np
+import dataclasses
+from bionumpy.npdataclass import NpDataClass
+
+
+@dataclasses.dataclass
+class DummyClass(NpDataClass):
+    data1: np.ndarray
+    data2: np.ndarray
+
+
+@py

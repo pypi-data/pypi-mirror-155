@@ -1,0 +1,14 @@
+from chromosome_map import ChromosomeMap
+
+@ChromosomeMap
+def filter_on_intervals(entry, sorted_intervals):
+    starts, ends = (sorted_intervals.starts, sorted_intervals.ends)
+    idx = np.minimum(np.searchsorted(starts, entry.position, side="left"), starts.size-1)
+    return entry[(entry.position >= starts[idx]) & (entry.position < ends[idx])]
+
+@ChromosomeMap()
+def get_snps(variants):
+    snps = variants[variants.is_snp()]
+    snps.ref_seq = snps.ref_seq.ravel()# to_numpy_array().ravel()
+    snps.alt_seq = snps.alt_seq.ravel()# to_numpy_array().ravel()
+    return snps
