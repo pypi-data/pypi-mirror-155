@@ -1,0 +1,51 @@
+[tool.pylint."MESSAGES CONTROL"]
+disable = """
+    unsubscriptable-object,
+    missing-class-docstring,
+    too-many-ancestors,
+    too-many-arguments,
+    too-many-instance-attributes,
+    broad-except,
+    abstract-method
+"""
+
+[tool.poetry]
+name = "buildbot-fossil"
+version = "1.1"
+description = "Fossil version control plugin for Buildbot"
+license = "GPL-2.0-only"
+authors = ["Jakob Stoklund Olesen <stoklund@2pi.dk>"]
+readme = "README.md"
+homepage = "https://github.com/stoklund/buildbot-fossil"
+repository = "https://github.com/stoklund/buildbot-fossil"
+documentation = "https://buildbot-fossil.readthedocs.io/"
+keywords = ["Buildbot", "Fossil SCM"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Build Tools",
+    "Topic :: Software Development :: Testing",
+]
+
+[tool.poetry.plugins."buildbot.changes"]
+FossilPoller = "buildbot_fossil.changes:FossilPoller"
+
+[tool.poetry.plugins."buildbot.steps"]
+Fossil = "buildbot_fossil.steps:Fossil"
+
+[tool.poetry.dependencies]
+python = "^3.6"
+buildbot = "^3"
+treq = ">=20"
+
+[tool.poetry.dev-dependencies]
+buildbot = {path = "../buildbot/master", develop = true}
+mock = "^4.0.3"
+pylint = "*"
+Sphinx = "*"
+sphinx-autobuild = "*"
+sphinx-rtd-theme = "*"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

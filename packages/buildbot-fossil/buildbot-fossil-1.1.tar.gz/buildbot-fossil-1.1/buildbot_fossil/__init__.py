@@ -1,0 +1,1 @@
+"""Fossil plugin for Buildbot"""
