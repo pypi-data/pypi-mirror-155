@@ -1,0 +1,18 @@
+[openstack.cli.extension]
+lease = esileapclient.osc.plugin
+
+[openstack.lease.v1]
+esi_lease_create = esileapclient.osc.v1.lease:CreateLease
+esi_lease_delete = esileapclient.osc.v1.lease:DeleteLease
+esi_lease_list = esileapclient.osc.v1.lease:ListLease
+esi_lease_show = esileapclient.osc.v1.lease:ShowLease
+esi_mdc_lease_list = esileapclient.osc.v1.mdc.mdc_lease:MDCListLease
+esi_mdc_offer_claim = esileapclient.osc.v1.mdc.mdc_offer:MDCClaimOffer
+esi_mdc_offer_list = esileapclient.osc.v1.mdc.mdc_offer:MDCListOffer
+esi_node_list = esileapclient.osc.v1.node:ListNode
+esi_offer_claim = esileapclient.osc.v1.offer:ClaimOffer
+esi_offer_create = esileapclient.osc.v1.offer:CreateOffer
+esi_offer_delete = esileapclient.osc.v1.offer:DeleteOffer
+esi_offer_list = esileapclient.osc.v1.offer:ListOffer
+esi_offer_show = esileapclient.osc.v1.offer:ShowOffer
+
