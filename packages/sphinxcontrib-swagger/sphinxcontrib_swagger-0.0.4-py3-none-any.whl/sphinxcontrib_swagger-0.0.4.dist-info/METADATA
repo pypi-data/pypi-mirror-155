@@ -1,0 +1,42 @@
+Metadata-Version: 2.1
+Name: sphinxcontrib-swagger
+Version: 0.0.4
+Summary: Create Swagger documentation from openapi and embed it into exiting document.
+Home-page: https://github.com/radi85/sphinx-swagger
+Author: Radico
+License: MIT
+Project-URL: Documentation, https://sphinx-swagger.readthedocs.io/index.html
+Project-URL: Source Code, https://github.com/radi85/sphinx-swagger
+Keywords: sphinx openapi swagger rest api docs
+Classifier: Topic :: Documentation
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+License-File: LICENSE
+Requires-Dist: sphinx
+Requires-Dist: jinja2
+Requires-Dist: jsonschema
+Requires-Dist: PyYAML
+
+Sphinxcontrib-Swagger
+======================
+
+Sphinx extension to render swagger page and embed it into an exiting document.
+
+.. code:: bash
+
+    pip install sphinxcontrib-swagger
+
+or via source on github
+
+::
+
+    $ git clone https://github.com/radi85/sphinxcontrib-swagger.git
+    $ cd sphinxcontrib-swagger
+    $ python setup.py install
