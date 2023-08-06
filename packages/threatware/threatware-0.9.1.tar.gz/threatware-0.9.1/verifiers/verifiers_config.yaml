@@ -1,0 +1,66 @@
+---
+verifiers-config:
+  output:
+    template-text-file: "verifiers/verifiers_texts.yaml"
+  common:
+    default-verifier-tag-mapping: "verifiers/default_tag_mapping.yaml"
+    errors:
+      default-severity: error
+      #location-text: "{}"
+      #entry-text: "For entry with '{}' equal to '{}'"
+    strip-context:
+      start-char: "("
+      end-char: ")"
+    exclude:
+      tag-prefix: "exclude"
+    references:
+      doc-tag-prefix: "ref"
+      templ-tag-prefix: "tref"
+    component-tags:
+      component-data-tag: components-details-data
+      component-in-scope-tag: in-scope
+      component-in-scope-value: {{ translate.yes }}
+    asset-tags:
+      asset-data-tag:
+        - functional-asset-data
+        - technical-asset-data
+      asset-location-tag: storage-location
+    threat-tags:
+      threats-data-tag: threats-and-controls-data
+      threat-asset-tag: threat-asset
+      threat-component-tag: threat-component
+      threat-description-tag: threat-description
+      threat-control-tag: threat-control
+    # 'grouped-text' gets copied from verifiers_texts.yaml
+  coverage-validation:
+  field-validation-mandatory:
+    default: True
+    exceptions-tag: "not-mandatory"
+  field-validation-conditional-mandatory:
+    tags:
+    # The following pairs of tag define a tag that is mandatory if another tag has a value
+      - tag: "tech-stack"
+        depends-on: "in-scope"
+        depends-on-value: {{ translate.yes }}
+      - tag: "version-approver"
+        depends-on: "version-status"
+        depends-on-value: {{ translate.approved }}
+      - tag: "version-approved-date"
+        depends-on: "version-approver"
+  field-validation-uniqueness:
+    unique-tag-prefix: "unique"
+    tags:
+      # Any key tagged with this tag must have a value that is document unique amongst all values for keys with this tag
+      - tag: document-unique
+  field-validation-value:
+    validator-config:
+      validator-values-yaml-path: "./verifiers/verifiers_values.yaml"
+    not-mandatory-tag: "not-mandatory"  
+    tags:
+      - tag: validate-as-version
+      - tag: validate-as-date
+      - tag: validate-as-single-entry
+      - tag: validate-as-yes-no
+      - tag: validate-as-CIA
+      - tag: validate-from-template
+  reference-validation:
