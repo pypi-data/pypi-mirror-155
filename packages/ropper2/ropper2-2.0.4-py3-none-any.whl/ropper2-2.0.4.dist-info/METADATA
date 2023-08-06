@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: ropper2
+Version: 2.0.4
+Summary: Show information about files in different file formats and find gadgets to build rop chains for different architectures.
+Home-page: https://pypi.org/project/ropper2/
+Author: Sascha Schirra with serfend with serfend
+Author-email: serfend@foxmail.com
+License: BSD
+Platform: UNKNOWN
+Classifier: Topic :: Security
+Classifier: Environment :: Console
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python
+Classifier: Intended Audience :: Developers
+License-File: COPYING
+License-File: AUTHORS
+Requires-Dist: filebytes (>=0.10.0)
+
+UNKNOWN
+
