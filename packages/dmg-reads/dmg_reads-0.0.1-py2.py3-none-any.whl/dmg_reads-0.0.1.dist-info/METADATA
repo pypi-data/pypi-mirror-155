@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: dmg-reads
+Version: 0.0.1
+Summary: A simple tool to extract damaged reads from BAM files
+Home-page: https://github.com/genomewalker/dmg-reads
+Author: Antonio Fernandez-Guerra
+Author-email: antonio@metagenomics.eu
+License: MIT
+Keywords: dmg-reads,GTDB
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+License-File: LICENSE
+Requires-Dist: pandas (>=1.4.2)
+Requires-Dist: tqdm (==4.50.0)
+Requires-Dist: pysam (>=0.17.0)
+Requires-Dist: numpy (>=1.21.2)
+Requires-Dist: biopython (>=1.79)
+
+UNKNOWN
+
