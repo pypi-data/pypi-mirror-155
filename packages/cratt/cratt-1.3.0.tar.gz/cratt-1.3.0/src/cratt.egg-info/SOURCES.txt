@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/cratt/__init__.py
+src/cratt/__main__.py
+src/cratt/cli.py
+src/cratt/cra.py
+src/cratt/template.py
+src/cratt.egg-info/PKG-INFO
+src/cratt.egg-info/SOURCES.txt
+src/cratt.egg-info/dependency_links.txt
+src/cratt.egg-info/entry_points.txt
+src/cratt.egg-info/top_level.txt
