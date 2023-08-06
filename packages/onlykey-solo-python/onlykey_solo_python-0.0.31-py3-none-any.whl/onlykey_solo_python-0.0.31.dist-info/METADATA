@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: onlykey-solo-python
+Version: 0.0.31
+Summary: Python library for OnlyKey with Solo FIDO2
+Home-page: https://github.com/trustcrypto/onlykey-solo-python
+Author: CryptoTrust
+Author-email: admin@crp.to
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Classifier: License :: OSI Approved :: MIT License
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Dist: click >= 7.1
+Requires-Dist: cryptography
+Requires-Dist: ecdsa
+Requires-Dist: fido2 >= 1.0.0
+Requires-Dist: intelhex
+Requires-Dist: pyserial
+Requires-Dist: pyusb
+Requires-Dist: requests
+
+See https://github.com/trustcrypto/python-onlykey
+
