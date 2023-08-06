@@ -1,0 +1,3 @@
+[console_scripts]
+phytest=phytest.cli:app
+
