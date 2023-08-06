@@ -1,0 +1,5 @@
+[console_scripts]
+aardpcapsscan = aardwolf.examples.aardpcapscan:main
+aardploginscan = aardwolf.examples.aardploginscan:main
+aardpscreenshot = aardwolf.examples.aardpscreenshot:main
+
