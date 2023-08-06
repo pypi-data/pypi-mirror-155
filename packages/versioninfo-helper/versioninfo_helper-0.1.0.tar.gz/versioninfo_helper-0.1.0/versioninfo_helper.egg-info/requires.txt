@@ -1,0 +1,4 @@
+pyinstaller>=5
+
+[:python_version < "3.11"]
+typing-extensions<5.0,>=4.2.0
