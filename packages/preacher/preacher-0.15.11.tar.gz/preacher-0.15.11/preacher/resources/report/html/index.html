@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+{% from "./macros/scenario.html" import show_scenario %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Preacher Test Report</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.6.3/css/foundation.min.css">
+  <style>
+    /**
+     * Color palette: https://vuetifyjs.com/ja/styles/colors
+     */
+    main {
+      padding: 0.4em 0.2em;
+    }
+
+    .badge {
+      border-radius: 0.5em;
+      color: #ffffff;
+    }
+    .badge.status-SKIPPED {
+      background-color: #757575; /* grey darken-1 */
+    }
+    .badge.status-SUCCESS {
+      background-color: #43A047; /* green darken-1 */
+    }
+    .badge.status-UNSTABLE {
+      background-color: #FFB300; /* amber darken-1 */
+    }
+    .badge.status-FAILURE {
+      background-color: #E53935; /* red darken-1 */
+    }
+
+    .accordion {
+      background: none;
+    }
+    .accordion-title {
+      padding: 0.6em;
+      color: #0a0a0a;
+      font-size: inherit;
+    }
+    .accordion-content {
+      border: none;
+      padding-top: 0rem;
+      padding-right: 0rem;
+      padding-bottom: 0rem;
+      background-color: inherit;
+    }
+    .accordion-content .accordion-title {
+      border-right: none;
+    }
+    :last-child>.accordion-content:last-child,
+    :last-child:not(.is-active)>.accordion-title {
+      border-bottom: none;
+    }
+
+    .accordion-item.status-SKIPPED {
+      background-color: #FAFAFA; /* grey lighten-5 */
+    }
+    .accordion-item.status-SKIPPED>.accordion-title {
+      background-color: #E0E0E0; /* grey lighten-2 */
+    }
+
+    .accordion-item.status-SUCCESS {
+      background-color: #E8F5E9; /* green lighten-5 */
+    }
+    .accordion-item.status-SUCCESS>.accordion-title {
+      background-color: #81C784; /* green lighten-2 */
+    }
+
+    .accordion-item.status-UNSTABLE {
+      background-color: #FFF8E1; /* amber lighten-5 */
+    }
+    .accordion-item.status-UNSTABLE>.accordion-title {
+      background-color: #FFD54F; /* amber lighten-2 */
+    }
+
+    .accordion-item.status-FAILURE {
+      background-color: #FFEBEE; /* red lighten-5 */
+    }
+    .accordion-item.status-FAILURE>.accordion-title {
+      background-color: #E57373; /* red lighten-2 */
+    }
+
+    dl {
+      margin-top: 0.25rem;
+      margin-left: 0.25rem;
+    }
+  </style>
+</head>
+
+<body>
+
+<header data-sticky-container>
+  <div class="title-bar" data-sticky data-options="marginTop:0;">
+    <div class="title-bar-left">
+      <h1 class="h3">Preacher Test Report</h1>
+    </div>
+    <div class="title-bar-right">
+      <div style="display: inline-block">
+        <div class="button-group small" style="margin-top: 0.2em; margin-bottom: 0.2em">
+          <button class="status-toggle button secondary hollow" data-status="SKIPPED">SKIPPED</button>
+          <button class="status-toggle button success" data-status="SUCCESS">SUCCESS</button>
+          <button class="status-toggle button warning" data-status="UNSTABLE">UNSTABLE</button>
+          <button class="status-toggle button alert" data-status="FAILURE">FAILURE</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <ul class="scenarios accordion" data-accordion data-multi-expand="true" data-allow-all-closed="true">
+    {% for scenario in scenarios %}
+    {{ show_scenario(scenario) }}
+    {% endfor %}
+  </ul>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.6.3/js/foundation.min.js"></script>
+<script>
+const activatingMatrix = {
+  SKIPPED: {
+    SKIPPED: true,
+    SUCCESS: true,
+    UNSTABLE: true,
+    FAILURE: true
+  },
+  SUCCESS: {
+    SKIPPED: false,
+    SUCCESS: true,
+    UNSTABLE: true,
+    FAILURE: true
+  },
+  UNSTABLE: {
+    SKIPPED: false,
+    SUCCESS: false,
+    UNSTABLE: true,
+    FAILURE: true
+  },
+  FAILURE: {
+    SKIPPED: false,
+    SUCCESS: false,
+    UNSTABLE: false,
+    FAILURE: true
+  }
+}
+
+function toggleStatus(status) {
+  const activatingMap = activatingMatrix[status]
+  for (targetStatus in activatingMap) {
+    const activating = activatingMap[targetStatus]
+    $(`.status-${targetStatus}`).toggle(activating)
+    $(`.status-toggle[data-status=${targetStatus}]`).toggleClass('hollow', !activating)
+  }
+}
+
+toggleStatus('SUCCESS')
+$('.status-toggle').click(function () {
+  const status = $(this).data('status')
+  toggleStatus(status)
+})
+
+$(document).foundation()
+$('.scenarios').foundation('down', $('.status-UNSTABLE,.status-FAILURE').children('.accordion-content'))
+</script>
+
+</body>
+
+</html>

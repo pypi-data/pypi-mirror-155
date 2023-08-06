@@ -1,0 +1,38 @@
+{% from "./macros/verification.html" import show_verification %}
+
+{% macro show_request(request) %}
+  <dl>
+    <div class="grid-x">
+      <dt class="cell small-4 medium-2 large-1">Method</dt>
+      <dd class="cell small-8 medium-10 large-11">{{ request.method }}</dd>
+    </div>
+    <div class="grid-x">
+      <dt class="cell small-4 medium-2 large-1">URL</dt>
+      <dd class="cell small-8 medium-10 large-11">
+        <a href="{{request.url}}" target="_blank">
+          {{ request.url }}
+        </a>
+      </dd>
+    </div>
+    {% if request.headers %}
+      <div class="grid-x">
+        <dt class="cell small-4 medium-2 large-1">Headers</dt>
+        <dd class="cell small-8 medium-10 large-11">{{ show_headers(request.headers) }}</dd>
+      </div>
+    {% endif %}
+    {% if request.body %}
+      <div class="grid-x">
+        <dt class="cell small-4 medium-2 large-1">Body</dt>
+        <dd class="cell small-8 medium-10 large-11"><pre>{{ request.body }}</pre></dd>
+      </div>
+    {% endif %}
+  </dl>
+{% endmacro %}
+
+{% macro show_headers(headers) %}
+  <ul>
+    {% for name, value in headers.items() %}
+      <li>{{ name }}: {{ value }}</li>
+    {% endfor %}
+  </ul>
+{% endmacro %}
