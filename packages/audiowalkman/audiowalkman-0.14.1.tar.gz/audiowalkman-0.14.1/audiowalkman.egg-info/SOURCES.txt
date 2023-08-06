@@ -1,0 +1,13 @@
+LICENSE
+README.md
+setup.py
+audiowalkman.egg-info/PKG-INFO
+audiowalkman.egg-info/SOURCES.txt
+audiowalkman.egg-info/dependency_links.txt
+audiowalkman.egg-info/entry_points.txt
+audiowalkman.egg-info/requires.txt
+audiowalkman.egg-info/top_level.txt
+walkman/modules/__init__.py
+walkman/modules/abc.py
+walkman/modules/base.py
+walkman/modules/buildins.py
