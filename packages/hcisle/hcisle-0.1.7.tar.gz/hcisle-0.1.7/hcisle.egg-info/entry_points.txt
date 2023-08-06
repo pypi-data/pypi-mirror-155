@@ -1,0 +1,2 @@
+[console_scripts]
+hcisle = hcilib.__main__:main
