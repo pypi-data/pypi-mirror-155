@@ -1,0 +1,57 @@
+{
+  "mobilenetv2_keras.h5":
+  {
+    "framework": "keras"
+  },
+  "resnet50_onnx.onnx":
+  {
+    "framework": "onnx"
+  },
+  "resnet101_openvino.pkl":
+  {
+    "framework": "openvino",
+    "batch_size": 16
+  },
+  "resnet50_tf2.zip":
+  {
+    "framework": "tf2"
+  },
+  "bisenetv1_1024x2048.onnx":
+  {
+    "framework": "onnx"
+  },
+  "deci_net_1_10_ckpt.onnx":
+  {
+    "framework": "onnx"
+  },
+  "efficientnet_b3_10_ckpt.onnx":
+  {
+    "framework": "onnx"
+  },
+  "mobilenet_v3_small_10_ckpt.pkl":
+  {
+    "framework": "openvino",
+    "batch_size": 64
+  },
+  "STDC1-Seg50.onnx":
+  {
+    "framework": "onnx",
+    "batch_size": 1
+  },
+  "mobilenetv2_torchscript.pth":
+  {
+    "framework": "torchscript",
+    "input_dims": [[3, 32, 32]]
+  },
+  "yolov3_static.onnx":
+  {
+    "framework": "onnx",
+    "batch_size": 1
+  },
+  "multi_input_decoder.onnx":
+  {
+    "framework": "onnx",
+    "batch_size": 1,
+    "input_dims": [[243, 30, 40], [172, 60, 80], [102, 120, 160], [64, 240, 320], [153, 15, 20]]
+  }
+}
