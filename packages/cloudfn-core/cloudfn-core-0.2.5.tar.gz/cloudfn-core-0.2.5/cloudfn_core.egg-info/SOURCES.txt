@@ -1,0 +1,12 @@
+setup.py
+cloudfn/core/__init__.py
+cloudfn/core/cli.py
+cloudfn/core/data.py
+cloudfn/core/io.py
+cloudfn/core/util.py
+cloudfn_core.egg-info/PKG-INFO
+cloudfn_core.egg-info/SOURCES.txt
+cloudfn_core.egg-info/dependency_links.txt
+cloudfn_core.egg-info/entry_points.txt
+cloudfn_core.egg-info/not-zip-safe
+cloudfn_core.egg-info/top_level.txt
