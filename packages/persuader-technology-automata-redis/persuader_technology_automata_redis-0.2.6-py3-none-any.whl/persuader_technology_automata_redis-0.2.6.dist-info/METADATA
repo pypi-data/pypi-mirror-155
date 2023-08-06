@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: persuader-technology-automata-redis
+Version: 0.2.6
+Summary: Automata Redis
+Author: Persuader Technology
+Author-email: software@persuader.technology
+License: UNLICENSE
+Classifier: Programming Language :: Python :: 3
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: redis (==4.3.3)
+Requires-Dist: persuader-technology-automata-core (>=0.5.1)
+Requires-Dist: persuader-technology-automata-utilities (>=0.1.1)
+Requires-Dist: persuader-technology-automata-logger (>=0.0.4)
+
+# Automata Redis 
+both for conventional key-value & timeseries data.
+
+## Packaging
+`python3 -m build`
+
+## Commands
+1. Timeseries Range (open ended) `TS.RANGE [KEY] 0 +`
+2. Timeseries Range (latest value summarized) `TS.GET [KEY]`
