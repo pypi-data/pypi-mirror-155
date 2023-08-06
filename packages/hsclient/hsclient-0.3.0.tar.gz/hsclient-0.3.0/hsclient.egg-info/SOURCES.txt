@@ -1,0 +1,14 @@
+LICENSE.txt
+README.md
+setup.cfg
+setup.py
+hsclient/__init__.py
+hsclient/hydroshare.py
+hsclient/json_models.py
+hsclient/oauth2_model.py
+hsclient/utils.py
+hsclient.egg-info/PKG-INFO
+hsclient.egg-info/SOURCES.txt
+hsclient.egg-info/dependency_links.txt
+hsclient.egg-info/requires.txt
+hsclient.egg-info/top_level.txt
