@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: sqlite-clean
+Version: 0.0.2
+Summary: A SQLite data validation and cleanup tool.
+License: Apache-2.0
+Author: d33bs
+Author-email: dave.bunten@cuanschutz.edu
+Requires-Python: >=3.7.2,<4.0.0
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: SQLAlchemy (>=1.4.37,<2.0.0)
