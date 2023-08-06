@@ -1,0 +1,294 @@
+# py-docker-shell
+
+Con esta librerias podras consultar el estado del de tu enjambre de docker de una forma facil y efectiva, 
+se alimenta del propio [SDK docker en python](https://docker-py.readthedocs.io/en/stable/).
+
+
+## Quick Start
+Posee una clase `SummaryInfo` con tres potentes metodos para mostrar el estado de cada elementos.
+
+## Status Cluster
+
+Para el caso de la información sobre el cluster retorna en un diccionario los siguientes datos:  
+    - `total_nodes`: El numero de nodos del que se compone el cluster, aqui se cuenta aquellos nodos que estan 
+                     en ejecución, apagados o con algun tipo de error.  
+    - `total_reades`: Represeta el número de nodos que está activo o `state=running`  
+    - `workers['total']`: Representa el número total de tipo de nodo worker que posee el cluster  
+    - `workers['ready']`: Representa el número total de workers que están activos  
+    - `managers['total']`: Representa el número total de tipo de nodo manager que posee el cluster  
+    - `managers['ready']`: Representa el número total de managers que están activos  
+    - `status`: Representa el estado del cluster `[OK|WARNING|KO]`, a continuación explicaremos que se considero
+                para evaluar dicho estado  
+### Nota
+
+Un cluster como bien sabemos es un grupo de máquinas que actuan como una sola con el fin de ocultar el hecho de ser
+varias máquinas para obtener la ventaja de que gracias a sus mecanismos de cluster las maquinas individualmente puedan
+ser tolerante a fallos ya que otra maquina del grupo se ocupara del trabajo de dicha máquina que sufre la falla.  
+
+Sabiendo esta primisa en docker existen dos roles de maquinas diferentes `Managers y Workers` sin entrar mucho en detalle
+los manager son los jefes del cluster y por ese motivo docker recomienda que un al menos existan 3 máquinas de este tipo.
+
+En primer lugar cuando una maquina manager del nodo se cae dicha gestion que hacia dicha maquina ha de reorganizarce y
+para ellos se necesita como minimo otra maquina, ademas de esto existe un proceso interno en el cual,
+siempre una máquina es la `Leader` y existe otra preparada para tomar el relevo para que esto ocurra internamente hay 
+un proceso de votación que ha de ser impar y dado que 1 maquina no es valido ya que si se cae no hay reemplazo lo minimo
+fiable son 3 maquinas `manager`.
+
+Los workers suele ejecutar tareas. Existen tareas que unicamente se ejecutan en los workers por lo que logico pensar
+que de nada vale tener una única máquina de este tipo, por lo tanto consideramos que como minimo deben existir 2 para 
+tomar el relevo.  
+
+### Status Cluster - OK
+
+Se entiende por un cluster saludable aquel que por razones antes mencionadas posee al menos 3 `Managers` y 2 `Workers`
+y todas las máquinas están en el estado de `ready`
+
+### Status Cluster - WARNING
+
+En pocas palabras este estado significa que el cluster está comprometido que es diferente a estar inoperativo.  
+Cuando el cluster deja de ser tolerante a fallos se considera `Comprometido - WARNING`
+
+---  
+
+Ejemplos 1:  
+Para un cluster de `3 Manager y 2 Workers` si alguna de los dos tipos de máquinas cae el cluster 
+seguira funcionando pero ya otro fallo puede compremeter el cluster.  
+
+Se nos cae un `Manager` y tendriamos `2 Manager y 2 Workers` en el caso de que fallara otro `Manager`
+el cluster pese a tener aun una maquina `Manager` seria par y no puede llegar a un conceso no se asignaria
+un lider y el cluster entra en estado inconsistente. No obstante podria caerse un nodo `Worker` y seguiria
+estando operativo pero debido a que no sabemos cual es la maquina que fallara levantamos la alerta.
+
+Ejemplos 2:
+Para un cluster de `1 Manager y 1 Workers` automaticamente entra en estado de alerta ya que cualquier caida
+de alguna de las maquina el cluster estaría comprometido.
+
+Ejemplos 3:
+Para un cluster mayores de `3 Manager y 2 Workers` desde el momento que el todas las maquinas no esten operativas
+entra en estado de alerta pese a que de no estar todas operativas puedan aun ser tolerante a fallos con el fin 
+de revisarlas y dejarlas en estado optimo.
+
+### Status Cluster - ERROR
+
+Cualquier cluster que no tenga al menos un tipo de cada máquina directamente lo catalogamos como 
+inconsistente.
+
+```python
+import json
+from py_docker import SummaryInfo
+
+if __name__ == '__main__':
+    data: dict = SummaryInfo.cluster_status()
+    print(json.dumps(data, indent=3))
+```
+```json
+{
+   "status_cluster": {
+      "total_nodes": 5,
+      "total_readys": 5,
+      "workers": {
+         "total": 2,
+         "ready": 2
+      },
+      "managers": {
+         "total": 3,
+         "ready": 3
+      },
+      "status": "OK"
+   }
+}
+
+```
+## Status Service  
+
+Existen dos conceptos rc = running containers o "contenedores en ejecución" y dc = desired container o "contenedores
+deseados".  
+
+## Status Services - OK
+
+Un servicio se considera saludable cuando rc == dc
+
+## Status Services - WARNING
+
+Un servicio se considera comprometido cuando rc > 1 Y dc < rc. Es decir que aun existe algun contenedor
+dando el servicio pero por alguna razón en algún nodo no se puede ejecutar dicho servicio por lo que
+se podría estar comprometido en caso de dichos servicios restantes caigan en la maquina que no puede ejecutar dicho 
+servicio
+
+## Status Services - KO
+
+Un servicio se considera Fallido cuando rc == 0. Dado que un servicio al menos debe tener un contenedor sirviendo
+dicho servicio no se contempla que un servicio con 0 contenedores esté operando correctamente.
+
+
+```python
+import json
+from py_docker import SummaryInfo
+
+if __name__ == '__main__':
+    data: dict = SummaryInfo.services_status()
+    print(json.dumps(data, indent=3))
+```
+
+```json
+{
+   "services": [
+      {
+         "id_service": "01d21zx1sme1xhdijsw948mpo",
+         "replicas": 15,
+         "running": 15,
+         "status": "OK"
+      },
+      {
+         "id_service": "1z1nlvwth223o3mhk7r9k2t0q",
+         "replicas": 5,
+         "running": 5,
+         "status": "OK"
+      }
+   ],
+   "status": "OK"
+}
+```
+
+
+## Nodes Info
+Obtiene información sobre los nodos, no evalua ningun tipo de estado unicamente da información sobre cada nodo.
+
+```python
+import json
+from py_docker import SummaryInfo
+
+if __name__ == '__main__':
+    data: dict = SummaryInfo.nodes_info()
+    print(json.dumps(data, indent=3))
+
+```
+
+```json
+{
+   "nodes": [
+      {
+         "id": "ixjkfsxuk4wfidyyb2ntlav1q",
+         "hostname": "worker-01",
+         "engine_version": "19.03.12",
+         "status": "ready"
+      },
+      {
+         "id": "l5e3ei2c4t6q344774njpmrhl",
+         "hostname": "manager-02",
+         "engine_version": "19.03.12",
+         "status": "ready",
+         "manager_status": "reachable",
+         "manager_addr": "192.168.56.120:2377"
+      },
+      {
+         "id": "mn587vd6x7og5fdu8qb7b8ecq",
+         "hostname": "manager-03",
+         "engine_version": "19.03.12",
+         "status": "ready",
+         "manager_status": "reachable",
+         "manager_addr": "192.168.56.121:2377"
+      },
+      {
+         "id": "pvnw1fwejkknzokxl8i4e7vhe",
+         "hostname": "worker-02",
+         "engine_version": "19.03.12",
+         "status": "ready"
+      },
+      {
+         "id": "w3ut3mx7ad32keuu7yav5hw45",
+         "hostname": "manager-01",
+         "engine_version": "19.03.12",
+         "status": "ready",
+         "manager_status": "reachable",
+         "manager_addr": "192.168.56.119:2377"
+      }
+   ]
+}
+```
+
+
+## Full Status
+Agrupa las opciones anteriores en un solo caso
+```python
+import json
+from py_docker import SummaryInfo
+
+if __name__ == '__main__':
+    data: dict = SummaryInfo.generic_status()
+    print(json.dumps(data, indent=3))
+
+```
+```json
+{
+   "status_cluster": {
+      "total_nodes": 5,
+      "total_readys": 5,
+      "workers": {
+         "total": 2,
+         "ready": 2
+      },
+      "managers": {
+         "total": 3,
+         "ready": 3
+      },
+      "status": "OK"
+   },
+   "nodes": [
+      {
+         "id": "ixjkfsxuk4wfidyyb2ntlav1q",
+         "hostname": "worker-01",
+         "engine_version": "19.03.12",
+         "status": "ready"
+      },
+      {
+         "id": "l5e3ei2c4t6q344774njpmrhl",
+         "hostname": "manager-02",
+         "engine_version": "19.03.12",
+         "status": "ready",
+         "manager_status": "reachable",
+         "manager_addr": "192.168.56.120:2377"
+      },
+      {
+         "id": "mn587vd6x7og5fdu8qb7b8ecq",
+         "hostname": "manager-03",
+         "engine_version": "19.03.12",
+         "status": "ready",
+         "manager_status": "reachable",
+         "manager_addr": "192.168.56.121:2377"
+      },
+      {
+         "id": "pvnw1fwejkknzokxl8i4e7vhe",
+         "hostname": "worker-02",
+         "engine_version": "19.03.12",
+         "status": "ready"
+      },
+      {
+         "id": "w3ut3mx7ad32keuu7yav5hw45",
+         "hostname": "manager-01",
+         "engine_version": "19.03.12",
+         "status": "ready",
+         "manager_status": "reachable",
+         "manager_addr": "192.168.56.119:2377"
+      }
+   ],
+   "services": [
+      {
+         "id_service": "01d21zx1sme1xhdijsw948mpo",
+         "replicas": 15,
+         "running": 15,
+         "status": "OK"
+      },
+      {
+         "id_service": "1z1nlvwth223o3mhk7r9k2t0q",
+         "replicas": 5,
+         "running": 5,
+         "status": "OK"
+      }
+   ],
+   "status": "OK"
+}
+
+Process finished with exit code 0
+
+```
