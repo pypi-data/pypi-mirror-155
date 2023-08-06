@@ -1,0 +1,9 @@
+
+[build]
+twine
+build
+
+[dev]
+black
+pytest
+coverage
