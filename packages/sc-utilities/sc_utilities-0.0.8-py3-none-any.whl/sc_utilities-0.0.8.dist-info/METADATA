@@ -1,0 +1,57 @@
+Metadata-Version: 2.1
+Name: sc-utilities
+Version: 0.0.8
+Summary: Some Python Utilities, Such as file, logging and singleton
+Home-page: https://github.com/Scott-Lau/sc-utilities
+Author: Scott Lau
+Author-email: exceedego@126.com
+License: MIT
+Keywords: Python Utilities Singleton
+Platform: POSIX
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development
+Classifier: Topic :: Utilities
+Requires-Python: >=3.6
+License-File: LICENSE
+
+.. image:: https://badge.fury.io/py/sc-utilities.svg
+    :target: https://badge.fury.io/py/sc-utilities
+.. image:: https://img.shields.io/pypi/pyversions/sc-utilities
+    :alt: PyPI - Python Version
+
+A simple python utilities
+========================================
+
+This project provides some simple python utilities, such as logging, files and singleton.
+
+
+Installation
+------------
+
+It is possible to install the tool with `pip`::
+
+    pip install sc-utilities
+
+Configuration
+-------------
+
+None
+
+Dependencies
+------------
+
+None
+
+License
+-------
+
+The script is released under the MIT License.  The MIT License is registered
+with and approved by the Open Source Initiative [1]_.
+
+.. [1] https://opensource.org/licenses/MIT
