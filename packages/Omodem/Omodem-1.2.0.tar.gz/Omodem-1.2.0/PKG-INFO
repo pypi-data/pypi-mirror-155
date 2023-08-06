@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: Omodem
+Version: 1.2.0
+Summary: Manage orange modem
+Author: Pinokaille
+License: MIT
+Description-Content-Type: text/markdown
+
+# **OModem-Manager**
+### An orange modem manager (Doesn't work with Livebox)
+
+## **install :**
+```bash
+pip install omodem
+usage : orange or python -m orange
+```
+## **update :**
+
+```bash
+pip install omodem -U
+```
+
+![exemple](https://i.imgur.com/OyFTBCS.png)
