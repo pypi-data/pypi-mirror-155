@@ -1,0 +1,6 @@
+[console_scripts]
+pubtools-exodus-push = pubtools.exodus._tasks.push:entry_point
+
+[pubtools.hooks]
+pubtools-exodus-pulp = pubtools.exodus._hooks.pulp
+
