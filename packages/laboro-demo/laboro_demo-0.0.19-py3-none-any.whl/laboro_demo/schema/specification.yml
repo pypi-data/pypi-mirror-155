@@ -1,0 +1,108 @@
+---
+class: Demo
+methods:
+  - name: self_test
+    args: []
+  - name: show_argument
+    args:
+      - name: argument
+        required: True
+        type: str
+        implied: []
+        excluded: []
+        secret: False
+  - name: show_list
+    args:
+      - name: arg_list
+        required: True
+        type: list
+        implied: []
+        excluded: []
+        secret: False
+  - name: show_dict
+    args:
+      - name: arg_dict
+        required: True
+        type: dict
+        implied: []
+        excluded: []
+        secret: False
+  - name: show_dict_value
+    args:
+      - name: arg_dict
+        required: True
+        type: dict
+        implied: []
+        excluded: []
+        secret: False
+      - name: key
+        required: True
+        type: str
+        implied: []
+        excluded: []
+        secret: False
+  - name: show_value
+    args:
+      - name: value
+        required: True
+        type: any
+        implied: []
+        excluded: []
+        secret: False
+  - name: get_value_from_dict
+    args:
+      - name: key
+        required: True
+        type: str
+        implied: []
+        excluded: []
+        secret: False
+args:
+  - name: is_demo
+    required: True
+    type: bool
+    implied: []
+    excluded: []
+    secret: False
+  - name: name
+    required: True
+    type: str
+    excluded: []
+    implied: []
+    secret: False
+  - name: password
+    required: True
+    type: str
+    excluded: []
+    implied: []
+    secret: True
+  - name: list_only
+    required: False
+    type: bool
+    excluded:
+      - dict_only
+      - demo_dict
+    implied:
+      - demo_list
+    secret: False
+  - name: demo_list
+    required: False
+    type: list
+    excluded: []
+    implied: []
+    secret: False
+  - name: dict_only
+    required: False
+    type: bool
+    excluded:
+      - list_only
+      - demo_list
+    implied:
+      - demo_dict
+    secret: False
+  - name: demo_dict
+    required: False
+    type: dict
+    excluded: []
+    implied: []
+    secret: False

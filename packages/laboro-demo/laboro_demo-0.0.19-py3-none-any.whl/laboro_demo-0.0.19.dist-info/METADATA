@@ -1,0 +1,42 @@
+Metadata-Version: 2.1
+Name: laboro-demo
+Version: 0.0.19
+Summary: The Laboro demonstration module
+Home-page: https://git.mcos.nc/laboro/laboro_demo
+Author: Michaël Costa
+Author-email: michael.costa@mcos.nc
+Project-URL: Bug Tracker, https://git.mcos.nc/laboro/laboro_demo/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Libraries :: Application Frameworks
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: Environment :: Console
+Classifier: Development Status :: 3 - Alpha
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: laboro (>=0.0.55)
+Provides-Extra: dev
+Requires-Dist: flake8 (>=4.0.1) ; extra == 'dev'
+Requires-Dist: pylint (>=2.12.2) ; extra == 'dev'
+Requires-Dist: yamllint (>=1.26.0) ; extra == 'dev'
+Requires-Dist: autopep8 (>=1.6.0) ; extra == 'dev'
+Requires-Dist: Sphinx (>=4.5.0) ; extra == 'dev'
+Requires-Dist: sphinx-rtd-theme (>=1.0.0) ; extra == 'dev'
+Requires-Dist: sphinxcontrib-napoleon (>=0.7) ; extra == 'dev'
+Requires-Dist: auto-changelog (>=0.5.3) ; extra == 'dev'
+Provides-Extra: tests
+Requires-Dist: pytest (>=7.1.2) ; extra == 'tests'
+Requires-Dist: pytest-cov (>=3.0.0) ; extra == 'tests'
+
+---
+gitea: none
+include_toc: true
+---
+![Build Status](https://drone.mcos.nc/api/badges/laboro/laboro_demo/status.svg) ![License](https://img.shields.io/static/v1?label=license&color=orange&message=MIT) ![Language](https://img.shields.io/static/v1?label=language&color=informational&message=Python)
+
+# laboro_demo
+
+The Laboro demonstration module
