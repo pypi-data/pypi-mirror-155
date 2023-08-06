@@ -1,0 +1,5 @@
+[wai.annotations.plugins]
+from-subdir-ac = wai.annotations.subdir.specifier:SubDirACInputFormatSpecifier
+from-subdir-ic = wai.annotations.subdir.specifier:SubDirInputFormatSpecifier
+to-subdir-ac = wai.annotations.subdir.specifier:SubDirACOutputFormatSpecifier
+to-subdir-ic = wai.annotations.subdir.specifier:SubDirOutputFormatSpecifier

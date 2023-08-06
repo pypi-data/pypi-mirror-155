@@ -1,0 +1,34 @@
+Metadata-Version: 2.1
+Name: wai.annotations.subdir
+Version: 1.0.1
+Summary: Sub-directory audio/image classification format plugins for wai.annotations.
+Home-page: https://github.com/waikato-datamining/wai-annotations-subdir
+Author: Corey Sterling
+Author-email: coreytsterling@gmail.com
+License: Apache License Version 2.0
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Classifier: Programming Language :: Python :: 3
+License-File: LICENSE
+
+Sub-directory audio/image classification format plugins for wai.annotations.
+
+* `from-subdir-ac`: reads audio files from sub-directories named after their class labels
+* `from-subdir-ic`: reads images from sub-directories named after their class labels
+* `to-subdir-ac`: writes audio files to sub-directories named after their class labels
+* `to-subdir-ic`: writes images to sub-directories named after their class labels
+
+Changelog
+=========
+
+1.0.1 (2022-06-21)
+------------------
+
+- added reader/writer for audio classification: `from-subdir-ac` and `to-subdir-ac`
+
+
+1.0.0 (2021-05-20)
+------------------
+
+- Initial release after separation from wai.annotations main repo.
