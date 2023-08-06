@@ -1,0 +1,24 @@
+name: TdZdd test
+
+on:
+  push:
+    branches: [main, develop]
+    paths:
+    - '**.cpp'
+    - '**.hpp'
+
+jobs:
+  test-tdzdd:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install dependencies
+      run: |
+        sudo apt-get install -y make gcc g++
+    - name: Test
+      run: |
+        cd xtal_tdzdd/test
+        cmake -S . -B build
+        cmake --build build
+        cd build
+        ctest -vv

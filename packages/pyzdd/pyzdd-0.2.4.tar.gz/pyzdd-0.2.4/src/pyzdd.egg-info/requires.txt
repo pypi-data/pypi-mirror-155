@@ -1,0 +1,16 @@
+setuptools
+setuptools_scm
+wheel
+networkx>=2.0
+
+[dev]
+ipython
+pre-commit
+black
+versioneer
+pytest
+pytest-cov
+flake8
+mypy
+isort
+pyupgrade
