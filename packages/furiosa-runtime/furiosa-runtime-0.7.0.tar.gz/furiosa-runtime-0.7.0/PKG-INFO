@@ -1,0 +1,36 @@
+Metadata-Version: 2.1
+Name: furiosa-runtime
+Version: 0.7.0
+Summary: Provide high-level Python APIs to access Furiosa AI's NPUs and its eco-system
+Author-email: "FurioaAI, Inc." <pkg@furiosa.ai>
+Requires-Python: ~=3.7
+Description-Content-Type: text/markdown
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Dist: furiosa-common == 0.7.*
+Requires-Dist: cffi ~= 1.14
+Requires-Dist: numpy ~=1.21.5
+Requires-Dist: mnist ; extra == "test"
+Requires-Dist: onnxruntime ~= 1.11.1 ; extra == "test"
+Project-URL: Bug Tracker, https://github.com/furiosa-ai/furiosa-sdk/issues
+Project-URL: Documentation, https://furiosa-ai.github.io/docs
+Project-URL: Home, https://furiosa.ai
+Project-URL: Source Code, https://github.com/furiosa-ai/furiosa-sdk
+Provides-Extra: test
+
+# Package `furiosa.runtime`
+
+This is a part of [Furiosa SDK] and provides high-level Python APIs to access
+FuriosaAI's NPUs and ecosystem.
+
+[Furiosa SDK]: https://pypi.org/project/furiosa-sdk/
+
