@@ -1,0 +1,12 @@
+httpx>=0.22
+platformdirs
+python-slugify
+thefuzz
+
+[:python_version < "3.8"]
+importlib-metadata
+
+[tests]
+freezegun
+pytest
+pytest-cov
