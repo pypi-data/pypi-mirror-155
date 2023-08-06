@@ -1,0 +1,3 @@
+[console_scripts]
+magzdb = magzdb.cli:main
+
