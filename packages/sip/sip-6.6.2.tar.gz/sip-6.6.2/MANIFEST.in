@@ -1,0 +1,4 @@
+include ChangeLog LICENSE* NEWS
+include code_generator/*.h
+graft doc
+graft examples
