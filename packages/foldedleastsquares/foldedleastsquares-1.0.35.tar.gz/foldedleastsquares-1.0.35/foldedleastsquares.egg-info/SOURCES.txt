@@ -1,0 +1,85 @@
+.directory
+.gitignore
+.travis.yml
+CODE_OF_CONDUCT.md
+CONTRIBUTING.md
+LICENSE
+MANIFEST.in
+PULL_REQUEST_TEMPLATE.md
+README.md
+setup.py
+.github/ISSUE_TEMPLATE/bug_report.md
+.github/ISSUE_TEMPLATE/documentation.md
+.github/ISSUE_TEMPLATE/feature_request.md
+docs/source/Changelog.rst
+docs/source/Command.rst
+docs/source/FAQ.rst
+docs/source/Installation.rst
+docs/source/Python interface.rst
+docs/source/animation.gif
+docs/source/conf.py
+docs/source/faq_1.png
+docs/source/faq_2.png
+docs/source/fig_histo_teff.png
+docs/source/frontpage_rescaled.png
+docs/source/index.rst
+docs/source/logo.png
+foldedleastsquares/JAA546A14limb1-4.csv
+foldedleastsquares/__init__.py
+foldedleastsquares/catalog.py
+foldedleastsquares/command_line.py
+foldedleastsquares/core.py
+foldedleastsquares/fap.csv
+foldedleastsquares/grid.py
+foldedleastsquares/helpers.py
+foldedleastsquares/interpolation.py
+foldedleastsquares/ld_claret_tess.csv
+foldedleastsquares/main.py
+foldedleastsquares/results.py
+foldedleastsquares/stats.py
+foldedleastsquares/tls_constants.py
+foldedleastsquares/validate.py
+foldedleastsquares/version.py
+foldedleastsquares.egg-info/PKG-INFO
+foldedleastsquares.egg-info/SOURCES.txt
+foldedleastsquares.egg-info/dependency_links.txt
+foldedleastsquares.egg-info/entry_points.txt
+foldedleastsquares.egg-info/requires.txt
+foldedleastsquares.egg-info/top_level.txt
+foldedleastsquares/template_generator/__init__.py
+foldedleastsquares/template_generator/default_transit_template_generator.py
+foldedleastsquares/template_generator/tailed_transit_template_generator.py
+foldedleastsquares/template_generator/transit_template_generator.py
+foldedleastsquares/tests/EPIC201367065.csv
+foldedleastsquares/tests/EPIC201367065_detrended.csv
+foldedleastsquares/tests/EPIC206154641.csv
+foldedleastsquares/tests/run_tests.bat
+foldedleastsquares/tests/run_tests.sh
+foldedleastsquares/tests/test_FAP.py
+foldedleastsquares/tests/test_catalog_data.py
+foldedleastsquares/tests/test_cleaned_array.py
+foldedleastsquares/tests/test_duration_grid.py
+foldedleastsquares/tests/test_multi_planet.py
+foldedleastsquares/tests/test_period_grid.py
+foldedleastsquares/tests/test_resample.py
+foldedleastsquares/tests/test_shapes.py
+foldedleastsquares/tests/test_stats_gap.py
+foldedleastsquares/tests/test_synthetic.py
+foldedleastsquares/tests/test_transit_depth_min.py
+foldedleastsquares/tests/test_uncertainties.py
+foldedleastsquares/tests/test_validation.py
+foldedleastsquares/tests/tls_config.cfg
+tutorials/01 Quick start with synthetic data.ipynb
+tutorials/02 Starter's guide - K2-3b, a red dwarf with a planet.ipynb
+tutorials/03 Multiple planets - K2-3, a red dwarf with 3 Super-Earths.ipynb
+tutorials/04 Exploring the TLS spectra and statistics.ipynb
+tutorials/05 Custom transit shapes - Example of the grazing planet WASP-75.ipynb
+tutorials/06 Comparison between TLS and BLS.ipynb
+tutorials/07 The influence of limb darkening values.ipynb
+tutorials/08 Edge effect jitter correction.ipynb
+tutorials/09 Optimal period grid and optimal duration grid.ipynb
+tutorials/10 Measurement uncertainties.ipynb
+tutorials/11 A planet from TESS with TLS.ipynb
+tutorials/12 A comet-like transit from Kepler KIC 12557548 with TLS.ipynb
+tutorials/13 Flares detection from TESS Proxima Centauri data.ipynb
+tutorials/data_per_t14.csv
