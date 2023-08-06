@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.md
+package.json
+setup.py
+dash_qr_manager/DashQrGenerator.py
+dash_qr_manager/DashQrReader.py
+dash_qr_manager/__init__.py
+dash_qr_manager/_imports_.py
+dash_qr_manager/dash_qr_manager.min.js
+dash_qr_manager/dash_qr_manager.min.js.map
+dash_qr_manager/metadata.json
+dash_qr_manager/package-info.json
+dash_qr_manager.egg-info/PKG-INFO
+dash_qr_manager.egg-info/SOURCES.txt
+dash_qr_manager.egg-info/dependency_links.txt
+dash_qr_manager.egg-info/top_level.txt
