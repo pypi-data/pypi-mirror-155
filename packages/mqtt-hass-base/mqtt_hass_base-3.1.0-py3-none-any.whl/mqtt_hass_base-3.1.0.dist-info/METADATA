@@ -1,0 +1,33 @@
+Metadata-Version: 2.1
+Name: mqtt-hass-base
+Version: 3.1.0
+Summary: Bases to build mqtt daemon compatible with Home Assistant",
+Home-page: UNKNOWN
+Author: Thibault Cohe
+Author-email: titilambert@gmail.com
+License: MIT
+Project-URL: Source Code, http://gitlab.com/ttblt-hass/mqtt_hass_base
+Keywords: homeassistant mqtt lib
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: paho-mqtt (==1.6.1)
+Requires-Dist: typing-extensions (==4.2.0)
+Requires-Dist: homeassistant (==2022.6.6)
+
+# MQTT HASS BASE
+
+Small python lib to create quickly daemons which interact with HomeAssistant through MQTT.
+
+[![Latest Release](https://gitlab.com/ttblt-hass/mqtt-hass-base/-/badges/release.svg)](https://gitlab.com/ttblt-hass/mqtt-hass-base/-/releases)
+[![pipeline status](https://gitlab.com/ttblt-hass/mqtt-hass-base/badges/master/pipeline.svg)](https://gitlab.com/ttblt-hass/mqtt-hass-base/-/commits/master)
+[![coverage report](https://gitlab.com/ttblt-hass/mqtt-hass-base/badges/master/coverage.svg)](https://gitlab.com/ttblt-hass/mqtt-hass-base/-/commits/master)
+
+## Documentation
+
+**TODO**
+
+
