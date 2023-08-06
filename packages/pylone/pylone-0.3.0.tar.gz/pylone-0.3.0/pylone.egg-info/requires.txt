@@ -1,0 +1,5 @@
+python-dotenv>=0.10.5
+PyInquirer>=1.0.3
+requests==2.27.1
+boto3>=1.10.24
+PyYAML>=3.13
