@@ -1,0 +1,49 @@
+Metadata-Version: 2.1
+Name: blctools
+Version: 0.0.5
+Summary: Tools to work with data inside BLCs MS Sharepoint Cloud
+Home-page: https://github.com/DiegoRioboCabot/blctools
+Author: Diego Riobo Cabot
+Author-email: riobocabotd@gmail.com
+Project-URL: Bug Tracker, https://github.com/DiegoRioboCabot/blctools/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# BLC Data Analytics tools package
+
+Data Analytics helper functions to work with inside BLC's Cloud system.
+
+# Changelog
+## Version 0.0.1
+ Basic functionality is up and running
+### blctools.dir
+* General functions that help to find directories inside BLC's working framework
+* General functions that help filter files
+
+### blctools.fechas 
+* Date functions such as a daily iterator based on the datetime module
+* Monthly iterator
+* Other date functions related to format adjustment useful in the Argentinian Electricity Market (CAMMESA)
+
+### blctools.api 
+* General functions to download common reports and tables from CAMMESA's API, without username and password.
+
+### blctools.dte 
+* Added functionality to process CAMMESA's DTE
+
+### blctools.ppo 
+* Added functionality to process CAMMESA's PPO
+
+### blctools.eo 
+* Just one function for now (wind direction to wind rose)
+
+## Version 0.0.2 ~ 0.0.4
+Fixed the install issues
+
+## Version 0.0.5
+* Most of the code is Object Oriented now.
+* CAMMESA's forecasts have been added.
