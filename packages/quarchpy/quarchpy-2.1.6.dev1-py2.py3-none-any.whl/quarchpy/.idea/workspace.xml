@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3dc4db25-83e0-499b-9463-b659a8e1e458" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Docs/CHANGES.rst" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/CHANGES.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Docs/_build/doctrees/CHANGES.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/_build/doctrees/CHANGES.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Docs/_build/doctrees/environment.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/_build/doctrees/environment.pickle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Docs/_build/doctrees/source/changelog.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/_build/doctrees/source/changelog.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Docs/_build/doctrees/source/quarchpy.connection_specific.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/_build/doctrees/source/quarchpy.connection_specific.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Docs/_build/doctrees/source/quarchpy.device.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/_build/doctrees/source/quarchpy.device.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Docs/_build/doctrees/source/quarchpy.qis.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/_build/doctrees/source/quarchpy.qis.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Docs/_build/doctrees/source/quarchpy.qps.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/_build/doctrees/source/quarchpy.qps.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Docs/_build/html/CHANGES.html" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/_build/html/CHANGES.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Docs/_build/html/_sources/CHANGES.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/_build/html/_sources/CHANGES.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Docs/_build/html/genindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/_build/html/genindex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Docs/_build/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/_build/html/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Docs/_build/html/objects.inv" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/_build/html/objects.inv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Docs/_build/html/searchindex.js" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/_build/html/searchindex.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Docs/_build/html/source/changelog.html" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/_build/html/source/changelog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Docs/_build/html/source/quarchpy.connection_specific.html" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/_build/html/source/quarchpy.connection_specific.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Docs/_build/html/source/quarchpy.device.html" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/_build/html/source/quarchpy.device.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Docs/_build/html/source/quarchpy.qis.html" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/_build/html/source/quarchpy.qis.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Docs/_build/html/source/quarchpy.qps.html" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/_build/html/source/quarchpy.qps.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_version.py" beforeDir="false" afterPath="$PROJECT_DIR$/_version.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config_files/Card_Modules/QTL2034-xx - M.2 M-Key Vertical Module Config v4.001 c1.1.qfg" beforeDir="false" afterPath="$PROJECT_DIR$/config_files/Card_Modules/QTL2034-xx - M.2 M-Key Vertical Module Config v4.001 c1.1.qfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config_files/Card_Modules/QTL2395-03 - GEN4 M.2 M-Key Vertical Breaker Module w Triggering Config v5.001 c1.3.qfg" beforeDir="false" afterPath="$PROJECT_DIR$/config_files/Card_Modules/QTL2395-03 - GEN4 M.2 M-Key Vertical Breaker Module w Triggering Config v5.001 c1.3.qfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config_files/Card_Modules/QTL2395-xx - GEN4 M.2 M-Key Vertical Breaker Module w Triggering Config v5.000 c1.1.qfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/connection_specific/QPS/build.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/connection_specific/QPS/qis/qis.jar" beforeDir="false" afterPath="$PROJECT_DIR$/connection_specific/QPS/qis/qis.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connection_specific/QPS/qps.jar" beforeDir="false" afterPath="$PROJECT_DIR$/connection_specific/QPS/qps.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connection_specific/connection_QIS.py" beforeDir="false" afterPath="$PROJECT_DIR$/connection_specific/connection_QIS.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/device/quarchQPS.py" beforeDir="false" afterPath="$PROJECT_DIR$/device/quarchQPS.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2AePUkfVE5KZFRbklbk9ofBxGv4" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="settings.editor.selected.configurable" value="MTHome" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3dc4db25-83e0-499b-9463-b659a8e1e458" name="Changes" comment="" />
+      <created>1655367095647</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1655367095647</updated>
+    </task>
+    <servers />
+  </component>
+</project>
