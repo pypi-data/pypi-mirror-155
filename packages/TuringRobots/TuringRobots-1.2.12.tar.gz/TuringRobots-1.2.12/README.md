@@ -1,0 +1,66 @@
+# TuringRobots
+
+## What?
+
+Simple dialogue test Turing robot.
+
+## Install
+
+```cmd
+pip install TuringRobots
+```
+
+## Usage/Example
+
+```python
+from TuringRobots import TuringRobots
+
+while True:
+    userinput = input(":>>>")
+    if userinput == "0":
+        break
+    else:
+        code, content = TuringRobots(userinput, over_print=False)
+        print("回答:", content)
+```
+
+## Exception return code
+
+| 5000 | 无解析结果                |
+| ---- | ------------------------- |
+| 6000 | 暂不支持该功能            |
+| 4000 | 请求参数格式错误          |
+| 4001 | 加密方式错误              |
+| 4002 | 无功能权限                |
+| 4003 | 该apikey没有可用请求次数  |
+| 4005 | 无功能权限                |
+| 4007 | apikey不合法              |
+| 4100 | userid获取失败            |
+| 4200 | 上传格式错误              |
+| 4300 | 批量操作超过限制          |
+| 4400 | 没有上传合法 userid       |
+| 4500 | userid申请个数超过限制    |
+| 4600 | 输入内容为空              |
+| 4602 | 输入文本内容超长(上限150) |
+| 7002 | 上传信息失败              |
+| 8008 | 服务器错误                |
+| 0    | 上传成功                  |
+
+## ChangeLog
+
+-   Put forward the idea of「提出想法」：June 18, 2022「2022年06月18日」
+-   Starting date「首发日期」：June 20, 2022「2022年06月20日」
+
+## Error
+
+失效请提交 issue。
+
+>   Invalid please submit issue.
+
+>   AI悦创·推出辅导班啦，包括「Python 语言辅导班、C++ 辅导班、java 辅导班、算法/数据结构辅导班、少儿编程、pygame 游戏开发」，全部都是一对一教学：一对一辅导 + 一对一答疑 + 布置作业 + 项目实践等。当然，还有线下线上摄影课程、Photoshop、Premiere 一对一教学、QQ、微信在线，随时响应！微信：Jiabcdefh
+>
+>   C++ 信息奥赛题解，长期更新！长期招收一对一中小学信息奥赛集训，莆田、厦门地区有机会线下上门，其他地区线上。微信：Jiabcdefh
+
+![在这里插入图片描述](https://bornforthis.cn/gzh.jpg)
+
+![在这里插入图片描述](https://bornforthis.cn/zsxq.jpg)
