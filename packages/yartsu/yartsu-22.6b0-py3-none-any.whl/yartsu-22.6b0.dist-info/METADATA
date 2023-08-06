@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: yartsu
+Version: 22.6b0
+Summary: yartsu, another rich terminal screenshot utility
+License: MIT
+Author-email: Daylin Morgan <daylinmorgan@gmail.com>
+Requires-Python: >=3.7
+Requires-Dist: importlib-metadata>=4.11.4; python_version < "3.8"
+Requires-Dist: rich>=12.3.0
