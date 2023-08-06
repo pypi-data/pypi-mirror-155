@@ -1,0 +1,6 @@
+aiida-core~=1.6
+aiida-quantumespresso~=3.5.2
+
+[dev]
+bumpver==2021.1114
+pre-commit==2.11.1
