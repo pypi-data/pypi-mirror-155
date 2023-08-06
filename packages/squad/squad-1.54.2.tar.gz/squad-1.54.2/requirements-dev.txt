@@ -1,0 +1,13 @@
+-r requirements.txt
+babel
+flake8
+ipython
+pickleshare
+Werkzeug
+django-debug-toolbar
+django_extensions
+pytest
+pytest-django
+pytest-cov
+requests-mock
+squad-linaro-plugins
