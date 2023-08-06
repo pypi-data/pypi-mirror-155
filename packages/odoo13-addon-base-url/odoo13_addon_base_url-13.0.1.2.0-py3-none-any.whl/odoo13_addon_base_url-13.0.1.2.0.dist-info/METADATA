@@ -1,0 +1,64 @@
+Metadata-Version: 2.1
+Name: odoo13-addon-base-url
+Version: 13.0.1.2.0
+Summary: keep history of url for products & categories
+Home-page: https://github.com/shopinvader/odoo-shopinvader
+Author: Akretion, ACSONE SA/NV
+License: AGPL-3
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Framework :: Odoo
+Classifier: Framework :: Odoo :: 13.0
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3
+Requires-Python: >=3.5
+Requires-Dist: odoo (<13.1dev,>=13.0a)
+Requires-Dist: python-slugify (>=3.0.2)
+
+.. image:: https://img.shields.io/badge/licence-AGPL--3-blue.svg
+   :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
+   :alt: License: AGPL-3
+
+=========
+ Base URL
+=========
+
+This module helps to manage url with these features:
+
+* automatic builder according to models
+* slugify string to get url
+* redirection
+* store url by backends depending on your connections apps
+* languages 
+
+
+Installation
+============
+
+To install this module, you need to:
+
+#. (root) pip install slugify
+
+
+Known issues / Roadmap
+======================
+
+Update README with the last model of README when migration to v11 in OCA
+
+
+Credits
+=======
+
+
+Contributors
+------------
+
+* Monsieur B <monsieurb@saaslys.com>
+* Sebastien Beau <sebastien.beau@akretion.com>
+
+
+Maintainer
+----------
+
+* Akretion
+
+
