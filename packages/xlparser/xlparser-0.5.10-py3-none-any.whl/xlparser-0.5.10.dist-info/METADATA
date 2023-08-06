@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: xlparser
+Version: 0.5.10
+Summary: Parse excel(xlsx/xls/csv) to other format(csv, xlsx, json).
+License: MIT
+Author: ahuigo
+Author-email: 1781999+ahuigo@users.noreply.github.com
+Requires-Python: >=3.7
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: click (>=8.1.3,<9.0.0)
+Requires-Dist: openpyxl (>=3.0.10,<4.0.0)
+Requires-Dist: python-dateutil (>=2.8.2,<3.0.0)
+Requires-Dist: xlrd (>=2.0.1,<3.0.0)
