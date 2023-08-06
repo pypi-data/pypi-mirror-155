@@ -1,0 +1,27 @@
+private-endpoint
+****************
+
+
+Description
+===========
+
+A private endpoint. For more information about private endpoints, see
+About Private Endpoints.
+
+
+Available Commands
+==================
+
+* change-compartment
+
+* create
+
+* delete
+
+* get
+
+* get-reachable-ip
+
+* list
+
+* update
