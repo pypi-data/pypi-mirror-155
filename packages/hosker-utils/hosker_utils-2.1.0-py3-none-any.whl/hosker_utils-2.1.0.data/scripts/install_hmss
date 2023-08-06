@@ -1,0 +1,19 @@
+#!python
+
+"""
+This code defines a script which installs His Majesty's Software Suite.
+"""
+
+# Bespoke imports.
+from hosker_utils.hm_software_installer import install_hmss
+
+###################
+# RUN AND WRAP UP #
+###################
+
+def run():
+    """ Run this file. """
+    install_hmss()
+
+if __name__ == "__main__":
+    run()
