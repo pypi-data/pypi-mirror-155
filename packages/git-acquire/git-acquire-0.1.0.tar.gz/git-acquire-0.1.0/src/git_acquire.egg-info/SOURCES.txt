@@ -1,0 +1,14 @@
+README.md
+pyproject.toml
+setup.cfg
+LICENSES/Apache-2.0.txt
+LICENSES/CC-BY-4.0.txt
+LICENSES/CC0-1.0.txt
+src/git_acquire/__init__.py
+src/git_acquire/__main__.py
+src/git_acquire/acquire.py
+src/git_acquire.egg-info/PKG-INFO
+src/git_acquire.egg-info/SOURCES.txt
+src/git_acquire.egg-info/dependency_links.txt
+src/git_acquire.egg-info/entry_points.txt
+src/git_acquire.egg-info/top_level.txt

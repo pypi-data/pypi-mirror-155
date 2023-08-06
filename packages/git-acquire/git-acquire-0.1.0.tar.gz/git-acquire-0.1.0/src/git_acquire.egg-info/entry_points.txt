@@ -1,0 +1,2 @@
+[console_scripts]
+git-acquire = git_acquire.__main__:main
