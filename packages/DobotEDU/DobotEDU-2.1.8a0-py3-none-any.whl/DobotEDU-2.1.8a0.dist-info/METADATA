@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: DobotEDU
+Version: 2.1.8a0
+Summary: Dobotlink communication module
+Home-page: UNKNOWN
+Author: songlijun
+Author-email: songlijun@dobot.cc
+License: Apache Licence
+Keywords: DobotEDU,Dobotlink
+Platform: any
+Description-Content-Type: text/markdown
+Requires-Dist: opencv-python (==4.5.1.48)
+Requires-Dist: sounddevice (==0.4.1)
+Requires-Dist: soundfile (==0.10.3.post1)
+Requires-Dist: DobotRPC (==4.8.5)
+Requires-Dist: requests (==2.25.1)
+Requires-Dist: playsound (==1.2.2)
+Requires-Dist: scipy (==1.6.0)
+Requires-Dist: openpyxl (==3.0.6)
+
+***This version is relevant for Dobotlink 5.0.0***
+
+
