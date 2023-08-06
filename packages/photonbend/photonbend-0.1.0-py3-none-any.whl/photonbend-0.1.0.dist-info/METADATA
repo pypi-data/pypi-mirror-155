@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: photonbend
+Version: 0.1.0
+Summary: photonbend deals with camera pictures (especially fisheye) and some projections like equirectangular
+License: MIT
+Author: Edson Moreira
+Author-email: w.moreirae@gmail.com
+Requires-Python: >=3.8,<3.11
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: Pillow (>=9.0.1,<10.0.0)
+Requires-Dist: click (>=8.0.4,<9.0.0)
+Requires-Dist: numba (>=0.55.1,<0.56.0)
+Requires-Dist: numpy (>=1.18,<1.22)
+Requires-Dist: scipy (>=1.8.0,<2.0.0)
