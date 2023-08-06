@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: OpcDa
+Version: 1.0.1
+Summary: Package to OPC
+Home-page: https://github.com/PockusaevAndrey/pyOpcDa
+Author: Pockusaev Andrey
+Author-email: pockusaevandrey@yandex.ru
+License: MIT
+Keywords: OPCDA
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Description-Content-Type: text/markdown
+
+# OPC DA 2.0 Python Wrapper
+
+This lib Realize Standard OPC DA 2.0 system interface
+
+#### Install
+```bash
+pip install OpcDa
+```
+
