@@ -1,0 +1,66 @@
+Metadata-Version: 2.1
+Name: drakken
+Version: 2.2b2
+Summary: Python web framework
+Home-page: https://seagrape.us/drakken.html
+Author: Craig Howard
+Author-email: craig@seagrape.us
+License: MIT
+Keywords: Minimalist Python web framework
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: mako
+Requires-Dist: parse
+Requires-Dist: requests
+Requires-Dist: requests-wsgi-adapter
+Requires-Dist: sqlalchemy
+Requires-Dist: webob
+
+# Drakken
+
+A minimalist [WSGI] web framework written in [Python]. Uses the [SQLAlchemy] database toolkit, the [Mako] template engine, and the [WebOb] WSGI library.
+
+## How To Get It
+
+- [Project page](https://seagrape.us/drakken.html)
+- [Docs](https://seagrape.us/drakken-docs/index.html)
+- [Release history](https://seagrape.us/drakken-history.html)
+
+## How To Install It
+
+    pip3 install drakken
+
+## Quickstart
+
+1. Create a file **demo.py** and paste the following code into it:
+
+        from drakken.core import Drakken
+        app = Drakken()
+
+        @app.route('/')
+        def home(request, response):
+            response.text = 'Hello from the HOME page'
+
+        if __name__ == "__main__":
+            app.runserver()
+
+2. Launch demo.py:
+
+        python3 demo.py
+
+3. Visit the demo app's [home page](http://127.0.0.1:8000). You should see a web page with the message **Hello from the HOME page**.
+
+## License
+
+[MIT License].
+
+## Contact Me
+
+Bug reports and patches can be sent to <craig@seagrape.us>.
+
+[WSGI]: https://seagrape.us/blog/wsgi.html
+[SQLAlchemy]: https://www.sqlalchemy.org
+[Mako]: https://www.makotemplates.org
+[Python]: https://www.python.org
+[WebOb]: https://webob.org
+[MIT License]: https://seagrape.us/MIT-license.html
