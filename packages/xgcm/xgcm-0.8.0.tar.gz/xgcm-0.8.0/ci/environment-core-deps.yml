@@ -1,0 +1,18 @@
+# our test environment for core dependencies only (atm this excludes numba),
+# using the latest stable versions of packages.
+name: test_env_xgcm
+channels:
+  - conda-forge
+dependencies:
+  - codecov
+  - dask
+  - numpy
+  - scipy
+  - pip
+  - pre-commit
+  - pytest
+  - pytest-cov
+  - pytest-xdist
+  - python=3.9
+  - xarray
+  - typing_extensions
