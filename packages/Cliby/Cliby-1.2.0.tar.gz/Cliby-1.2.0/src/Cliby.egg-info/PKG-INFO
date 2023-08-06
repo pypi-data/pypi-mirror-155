@@ -1,0 +1,38 @@
+Metadata-Version: 2.1
+Name: Cliby
+Version: 1.2.0
+Summary: Simplify C libaries in python
+Author-email: Jun Ru Chen <junru.chen.2007@gmail.com>
+License: MIT License
+        Copyright (c) 2022 Jun Ru Chen
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+Project-URL: Homepage, https://github.com/Shrimp33/Cliby
+Keywords: C
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# ****Cliby****
+### C libaries in python simplified
+### Compile your C files to be accessible with one command
+## Just run ```makelib``` in cmd to compile your files, and define input and output
+```
+makelib <C source file> <Your desired output directory>
+```
+### Then, just import the generated library with python's built-in in ctypes
+```
+```
