@@ -1,0 +1,2 @@
+[console_scripts]
+neat = neat_ml.cli:cli
