@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: py-media-player
+Version: 1.0.0
+Summary: Media player library
+Author: Wallee (Red-exe-Engineer)
+Keywords: python,audio,audio player,video,video player,cross platform
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+
+A cross platform audio and video player Python library
