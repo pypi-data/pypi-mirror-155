@@ -1,0 +1,3 @@
+[console_scripts]
+ds=docker_snapshot:execute_cli
+

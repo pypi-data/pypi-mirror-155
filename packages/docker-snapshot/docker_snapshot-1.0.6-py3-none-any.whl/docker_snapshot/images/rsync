@@ -1,0 +1,6 @@
+FROM alpine
+
+RUN apk add rsync
+
+CMD ["sh", "-c", "trap 'exit 0' TERM && while :; do :; done"]
+
