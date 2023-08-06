@@ -1,0 +1,4 @@
+[console_scripts]
+ieee-patch=ieee_patch.patch:main
+xml-pretty-print=ieee_patch.xml_pretty_print:main
+
