@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "integer-pairing"
+version = "1.0.0"
+description = ""
+authors = ["Nejc Ševerkar <nseverkar@gmail.com>"]
+repository = "https://github.com/kuco23/integer-pairing/"
+license = "MIT"
+readme = "README.md"
+keywords = ["Pairing Functions"]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+]
+include = ["LICENSE"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
