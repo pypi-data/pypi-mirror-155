@@ -1,0 +1,11 @@
+{% extends "backoffice/sidebar.html" %}
+{% load humanize %}
+{% load i18n %}
+
+{% block content %}
+    <div class="has-box">
+        <div class="title is-4">
+            {% blocktrans %}Welcome to {{ backoffice_title }}'s backoffice panel{% endblocktrans %}
+        </div>
+    </div>
+{% endblock content %}
