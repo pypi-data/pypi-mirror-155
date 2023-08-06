@@ -1,0 +1,17 @@
+forexcom/__init__.py,sha256=_2zmNFFYZ0bFWoKlb9H_KX6pbaBQ3hzDmlp0xfX-ADQ,180
+forexcom/client.py,sha256=pz2RnhMceDhHCbvmucCrOUeebeS73sOUteaYi1FxH64,9231
+forexcom/exceptions.py,sha256=d0jAC7Q5clOb10bkkXvcE6QPJKi1tZI2LmzF5TjrePU,569
+forexcom/lightstream.py,sha256=Ep51jql9uxywD86PaBf39fiBOPSbuCeKhjU6W_sYTUI,13793
+forexcom/rest.py,sha256=JQVbZJv34URRz2HB--nDI4wmRlXyY_YIb0BW_-cNzeI,8915
+forexcom/utils.py,sha256=hNKPCdP1nyeYB75sxfv_9cxQzlh68oahN-UIf0FR8Ok,2535
+forexcom/models/__init__.py,sha256=Qq51doP96-KhJSjgSLxZmjMkLRgiw5-cUJVemQ0wL2M,284
+forexcom/models/currencies.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+forexcom/models/enums.py,sha256=vEclwr0SaAnLAXCiDF8TZXaRiZZOtVv_1XdLjPlJLD0,1692
+forexcom/models/orders.py,sha256=3fvru4LGUOCbCeME59rq99LHA90Fp7VAWEvvqSZFlPQ,1704
+forexcom/models/prices.py,sha256=mr2UczqlU494OMg_aWwG_FtSrjEk6GxHGufRPfXBsfk,1225
+forexcom/models/subscribers.py,sha256=jrBPZ25HZIkfPugL7fjX2x5YaVzEqZAOnex71gQD0ek,2238
+forexcom-1.2.0a1.dist-info/LICENSE,sha256=EVI1sn130uKNg4FhJ2GiRTKmG_aFETs5ngDF8MR9FzI,1070
+forexcom-1.2.0a1.dist-info/METADATA,sha256=uOS_zomOHNeH7qRLPAQFYiDi4jRjR5glyErSSJHkXIU,9900
+forexcom-1.2.0a1.dist-info/WHEEL,sha256=G16H4A3IeoQmnOrYV4ueZGKSjhipXx8zc8nu9FGlvMA,92
+forexcom-1.2.0a1.dist-info/top_level.txt,sha256=Op0qsW8VB4Dhdv88AB1G0qv7Kdh81Gp90NRJ86qlK-c,9
+forexcom-1.2.0a1.dist-info/RECORD,,
