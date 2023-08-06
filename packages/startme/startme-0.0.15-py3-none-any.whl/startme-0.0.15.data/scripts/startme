@@ -1,0 +1,74 @@
+#!python
+import argparse
+import sys
+import os
+
+import importlib
+
+
+from startme.starter import Starter
+
+
+
+def get_args():
+
+    if os.getenv('STARTME_HOOK'):
+        def_hook = os.getenv('STARTME_HOOK').split(' ')
+    else:
+        def_hook = None
+
+    parser = argparse.ArgumentParser(description='systemd/cron alternative for python virtual environment')
+    parser.add_argument('--hook', default=def_hook, nargs='+', metavar=('METHOD', 'ARG'), help='use this hook with arguments')
+    parser.add_argument('--systemd', metavar='NAME', help='install as systemd service to start on boot, provide NAME e.g. startme-project1')
+    parser.add_argument('--mods', '-m', metavar='PATH', nargs='*', help='path to modules to import (for development/testing)')
+    return parser.parse_args()
+
+
+
+def systemd(name):
+    service = f"""
+# put this content to systemd .service file, e.g.:
+# {__file__} --systemd {name} | sudo tee /etc/systemd/system/startme-{name}.service
+# sudo systemctl daemon-reload 
+# sudo systemctl enable startme-{name}.service
+# sudo systemctl start startme-{name}.service
+
+[Unit]
+Description=Startme python virtualenv systemd/cron ({name}) 
+
+[Service]
+ExecStart={sys.executable} -u {os.path.realpath(__file__)}
+EnvironmentFile=-/etc/default/startme-{name}
+Restart=on-failure
+Type=simple
+
+User=www-data
+Group=www-data
+
+[Install]
+WantedBy=multi-user.target
+"""
+
+    print(service)
+
+def reschedule(sch, j):
+    sch_time = j.reschedule()
+    if sch_time:
+        sch[j] = sch_time
+    else:
+        print("Delete job", j)
+        del sch[j]
+
+
+def main():
+
+    args = get_args()
+
+    if args.systemd:
+        systemd(args.systemd)
+        return
+
+    starter = Starter(hook=args.hook, mods=args.mods)
+    starter.run()
+
+main()
