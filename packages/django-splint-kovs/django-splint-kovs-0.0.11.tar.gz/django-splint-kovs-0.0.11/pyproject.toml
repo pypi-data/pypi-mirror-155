@@ -1,0 +1,10 @@
+[build-system]
+requires = [
+    "setuptools>=42",
+    "django>=2.2.11",
+    "Pillow>=8.0.0",
+    "djangorestframework>=3.11.0",
+    "django-import-export>=2.4.0",
+    "django-filter>=2.2.0",
+]
+build-backend = "setuptools.build_meta"
