@@ -1,0 +1,49 @@
+#!/usr/bin/env python3
+#
+# Author: Yipeng Sun
+# License: BSD 2-clause
+# Last Change: Wed Feb 16, 2022 at 04:13 PM -0500
+
+from pyTuplingUtils.utils import extract_uid
+from pyTuplingUtils.argparse import single_ntuple_parser_no_output
+from pyTuplingUtils.boolean.eval import BooleanEvaluator
+
+
+def parse_input(descr='''
+dump runNumber-eventNumber id for all events, and count number of unique events.
+'''):
+    parser = single_ntuple_parser_no_output(descr)
+
+    parser.add_argument('--runNumber',
+                        nargs='?',
+                        default='runNumber',
+                        help='branch name contains runNumber.')
+
+    parser.add_argument('--eventNumber',
+                        nargs='?',
+                        default='eventNumber',
+                        help='branch name contains eventNumber.')
+
+    parser.add_argument('-c', '--cuts', default=None,
+                        help='specify optional cuts.')
+
+    return parser
+
+
+if __name__ == '__main__':
+    args = parse_input().parse_args()
+    ntp = args.ref
+
+    if args.cuts:
+        exe = BooleanEvaluator(ntp, args.ref_tree)
+        cond = exe.eval(args.cuts)
+    else:
+        cond = True
+
+    _, _, num_of_evt, num_of_ids, num_of_dupl_ids, num_of_evt_w_dupl_id = \
+        extract_uid(ntp, args.ref_tree, args.runNumber, args.eventNumber, cond)
+    print('Num of events: {}, Num of IDs: {}, Num of UIDs: {}'.format(
+        num_of_evt, num_of_ids, num_of_ids-num_of_dupl_ids))
+    print('Num of duplicated IDs: {}, Num of duplicated events: {}, duplicate rate: {:.2f}%'.format(
+        num_of_dupl_ids, num_of_evt_w_dupl_id,
+        num_of_evt_w_dupl_id/num_of_evt*100))
