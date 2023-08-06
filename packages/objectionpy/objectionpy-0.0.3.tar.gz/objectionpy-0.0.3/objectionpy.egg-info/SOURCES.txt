@@ -1,0 +1,17 @@
+LICENSE.txt
+README.md
+setup.cfg
+setup.py
+objectionpy/__init__.py
+objectionpy/_utils.py
+objectionpy/_version.py
+objectionpy/assets.py
+objectionpy/enums.py
+objectionpy/frames.py
+objectionpy/objection.py
+objectionpy/preset.py
+objectionpy.egg-info/PKG-INFO
+objectionpy.egg-info/SOURCES.txt
+objectionpy.egg-info/dependency_links.txt
+objectionpy.egg-info/requires.txt
+objectionpy.egg-info/top_level.txt
