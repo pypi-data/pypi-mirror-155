@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: fuzzpyxl
+Version: 0.0.4
+Summary: Helper functions to easily search for Excel-Cells by value, color, formatting or else
+Home-page: https://github.com/JonasHablitzel/fuzzpyxl
+License: MIT
+Keywords: Excel,Search
+Author: Jonas Hablitzel
+Requires-Python: >=3.7,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: colormath (>=3.0.0,<4.0.0)
+Requires-Dist: openpyxl (>=3.0,<4.0)
+Project-URL: Repository, https://github.com/JonasHablitzel/fuzzpyxl

@@ -1,0 +1,37 @@
+[tool.poetry]
+name = "fuzzpyxl"
+version = "0.0.4"
+license = "MIT"
+repository = "https://github.com/JonasHablitzel/fuzzpyxl"
+keywords = ["Excel","Search"]
+description = "Helper functions to easily search for Excel-Cells by value, color, formatting or else"
+authors = ["Jonas Hablitzel"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+openpyxl = "^3.0"
+colormath = "^3.0.0"
+
+[tool.poetry.dev-dependencies]
+mypy = "^0.942"
+black = "^22.3.0"
+pylint = "^2.13.4"
+pytest = "^7.1.1"
+pytest-cov = "^3.0.0"
+anybadge = "^1.9.0"
+openpyxl-stubs = "^0.1.21"
+mkdocs = "^1.3.0"
+mkdocs-material = "^8.2.9"
+mkdocstrings = {extras = ["python"], version = "^0.18.1"}
+
+[tool.poetry.scripts]
+test = 'ci.scripts:test'
+test_report = 'ci.scripts:test_report'
+lint = 'ci.scripts:lint'
+lint_badge = 'ci.scripts:lint_badge'
+typecheck = 'ci.scripts:typecheck'
+typecheck_badge = 'ci.scripts:typecheck_badge'
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
