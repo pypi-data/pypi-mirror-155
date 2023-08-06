@@ -1,0 +1,3 @@
+[console_scripts]
+crau = crau.cli:cli
+

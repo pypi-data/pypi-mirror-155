@@ -1,0 +1,15 @@
+LICENSE
+README.md
+setup.py
+crau/__init__.py
+crau/__main__.py
+crau/cli.py
+crau/spider.py
+crau/utils.py
+crau/version.py
+crau.egg-info/PKG-INFO
+crau.egg-info/SOURCES.txt
+crau.egg-info/dependency_links.txt
+crau.egg-info/entry_points.txt
+crau.egg-info/requires.txt
+crau.egg-info/top_level.txt
