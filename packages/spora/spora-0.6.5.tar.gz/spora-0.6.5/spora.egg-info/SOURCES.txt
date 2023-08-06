@@ -1,0 +1,15 @@
+LICENSE
+README.md
+setup.py
+spora/__init__.py
+spora/config.py
+spora/init_defaults.py
+spora/main.py
+spora.egg-info/PKG-INFO
+spora.egg-info/SOURCES.txt
+spora.egg-info/dependency_links.txt
+spora.egg-info/entry_points.txt
+spora.egg-info/requires.txt
+spora.egg-info/top_level.txt
+spora/workflows/spora.smk
+spora/workflows/spora_summary_report.Rmd
