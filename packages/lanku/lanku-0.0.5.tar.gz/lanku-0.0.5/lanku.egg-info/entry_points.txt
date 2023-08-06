@@ -1,0 +1,2 @@
+[console_scripts]
+lanku = lanku.__main__:run
