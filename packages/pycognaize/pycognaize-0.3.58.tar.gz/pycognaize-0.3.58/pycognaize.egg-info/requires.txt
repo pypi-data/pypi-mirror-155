@@ -1,0 +1,13 @@
+pandas
+pymongo
+requests
+cloudstorageio
+simplejson
+numpy
+matplotlib
+seaborn
+opencv-python
+pymupdf==1.19.4
+
+[:python_version <= "3.6"]
+dataclasses
