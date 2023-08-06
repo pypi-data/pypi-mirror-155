@@ -1,0 +1,5 @@
+[console_scripts]
+createsuperuser=server:createsuperuser
+migrate=server:migrate
+server=server:main
+
