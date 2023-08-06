@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: flowhigh
+Version: 1.0
+Summary: Python SDK for SQLAnalyzer
+Home-page: 
+Author: 
+Author-email: 
+Project-URL: Documentation, https://sonra.io
+Project-URL: Source, https://sonra.io
+Keywords: SQLAnalyzer SDK Python
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Python: >= 3.7
+Description-Content-Type: text/markdown
+Requires-Dist: requests (>=2.14.0)
+
+Python SDK for SQLAnalyzer

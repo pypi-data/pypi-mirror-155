@@ -1,0 +1,2 @@
+[console_scripts]
+flowhigh = flowhigh.extraction.extractor:main
