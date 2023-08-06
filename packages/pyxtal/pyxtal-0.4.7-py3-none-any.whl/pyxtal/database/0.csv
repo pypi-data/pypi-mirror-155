@@ -1,0 +1,4 @@
+Spg,Symbol,P,P^-1
+1,P 1,"a,b,c","a,b,c"       
+2,P -1,"a,b,c","a,b,c"          
+3:b,P 1 2 1,"a,b,c","a,b,c"     
