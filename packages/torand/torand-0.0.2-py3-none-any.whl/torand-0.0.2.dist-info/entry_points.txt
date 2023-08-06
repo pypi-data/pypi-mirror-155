@@ -1,0 +1,2 @@
+[console_scripts]
+torand = torand.__main__:cli
