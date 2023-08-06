@@ -1,0 +1,111 @@
+Metadata-Version: 2.1
+Name: oemof.tools
+Version: 0.4.2
+Summary: Tiny tools of the oemof project.
+Home-page: https://github.com/oemof/oemof-tools
+Author: oemof-developer-group
+Author-email: contact@oemof.org
+License: MIT
+Project-URL: Documentation, https://oemof-tools.readthedocs.io/
+Project-URL: Changelog, https://oemof-tools.readthedocs.io/en/latest/changelog.html
+Project-URL: Issue Tracker, https://github.com/oemof/oemof-tools/issues
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: Unix
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Topic :: Utilities
+Requires-Python: >=3.8
+Description-Content-Type: text/x-rst
+Provides-Extra: dev
+License-File: LICENSE
+License-File: AUTHORS.rst
+
+========
+Overview
+========
+
+
+
+Tiny tools of the oemof project.
+
+* Free software: MIT license
+
+Installation
+============
+
+::
+
+    pip install oemof.tools
+
+You can also install the in-development version with::
+
+    pip install https://github.com/oemof/oemof-tools/archive/dev.zip
+
+
+Documentation
+=============
+
+
+https://oemof-tools.readthedocs.io/
+
+
+Development
+===========
+
+To run the all tests run::
+
+    tox
+
+Note, to combine the coverage data from all the tox environments run:
+
+.. list-table::
+    :widths: 10 90
+    :stub-columns: 1
+
+    - - Windows
+      - ::
+
+            set PYTEST_ADDOPTS=--cov-append
+            tox
+
+    - - Other
+      - ::
+
+            PYTEST_ADDOPTS=--cov-append tox
+
+
+
+Changelog
+=========
+
+0.4.2 (2022-06-15)
+------------------
+
+* Add Python support for Python 3.10 and drop support for 3.7
+* Move CI from Appveyor and Travis to Github Actions
+* Use `Black Code Style <https://black.readthedocs.io>`_ for oemof.tools
+* Change default logging level for file logging from DEBUG to WARNING
+
+0.4.1 (2021-02-21)
+------------------
+
+* Fix compatibility problem (by naming submodules in init script)
+
+
+0.4.0 (2020-05-11)
+------------------
+
+* Move the code of the oemof.tools repository to a stand-alone repository.
+* Use cookiecutter to create a wider testing structure and a more standardised
+  package structure.
+* Switch from nose to pytest
+* Remove the version or commit logger
+* Add test to increase test coverage
