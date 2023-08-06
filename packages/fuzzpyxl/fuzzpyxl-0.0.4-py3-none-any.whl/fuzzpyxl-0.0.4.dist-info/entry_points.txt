@@ -1,0 +1,8 @@
+[console_scripts]
+lint=ci.scripts:lint
+lint_badge=ci.scripts:lint_badge
+test=ci.scripts:test
+test_report=ci.scripts:test_report
+typecheck=ci.scripts:typecheck
+typecheck_badge=ci.scripts:typecheck_badge
+
