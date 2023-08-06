@@ -1,0 +1,2 @@
+[console_scripts]
+dafact = dafact.__main__:main
