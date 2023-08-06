@@ -1,0 +1,93 @@
+[build-system]
+requires = [
+    "setuptools>=42",
+    "wheel"
+]
+build-backend = "setuptools.build_meta"
+
+[tool.black]
+verbose = true
+color = true
+target_version = ["py36", "py37", "py38", "py39", "py310"]
+line_length = 88
+
+[tool.isort]
+verbose = true
+profile = "black"
+skip_gitignore = true
+line_length = 88
+
+[tool.mypy]
+cache_dir = "~/.cache/mypy"
+html_report = "docs/source/_static/mypy"
+warn_unused_configs = true
+disallow_any_generics = true
+disallow_subclassing_any = true
+disallow_untyped_calls = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_return_any = true
+no_implicit_reexport = true
+strict_equality = true
+
+[tool.pytest.ini_options]
+cache_dir = "~/.cache/pytest"
+addopts = "-ra --verbose --color=yes"
+testpaths = ["test/unit_tests"]
+
+[tool.coverage.run]
+branch = true
+parallel = true
+source = ["tubthumper"]
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 100
+exclude_lines = [
+    # typing-related code
+    "^ +\\.\\.\\.$",
+]
+
+[tool.coverage.html]
+directory = "docs/source/_static/coverage"
+
+[tool.tox]
+legacy_tox_ini = """
+[tox]
+envlist = py36, py37, py38, py39, py310, pypy3, coverage-report
+isolated_build = true
+toxworkdir = {homedir}/.cache/tox
+
+[testenv]
+deps = -r{toxinidir}/requirements/test_requirements.txt
+setenv = PYTHONHASHSEED = 0
+commands = coverage run -m pytest {posargs}
+
+[testenv:coverage-report]
+deps = coverage[toml]
+skip_install = true
+depends = py36, py37, py38, py39, py310, pypy3
+ignore_errors = true
+commands =
+    coverage combine
+    coverage report
+    coverage html
+
+[gh-actions]
+python =
+    3.6: py36
+    3.7: py37
+    3.8: py38
+    3.9: py39
+    3.10: py310
+    pypy-3: pypy3
+"""
+
+[tool.check-wheel-contents]
+toplevel = "tubthumper"
+package = "tubthumper"
