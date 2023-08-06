@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: GISxml2csv
+Version: 1.2.0
+Summary: Script for converting xml documents into csvs where the key col is a coordinate for spatial plotting in GIS
+Author: Guy Hall
+License: MIT
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE.md
+
+# xml2csv
