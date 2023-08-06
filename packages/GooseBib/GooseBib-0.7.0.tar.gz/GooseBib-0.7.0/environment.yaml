@@ -1,0 +1,17 @@
+channels:
+- conda-forge
+dependencies:
+- arxiv
+- bibtexparser
+- click
+- docopt
+- gitpython
+- numpy
+- python
+- pyyaml
+- requests
+- setuptools_scm
+- sphinx
+- sphinx-argparse
+- sphinx_rtd_theme
+- tqdm
