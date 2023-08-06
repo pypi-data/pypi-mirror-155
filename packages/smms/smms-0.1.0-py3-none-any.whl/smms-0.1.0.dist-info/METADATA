@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: smms
+Version: 0.1.0
+Summary: unofficial python SDK for SM.MS
+Home-page: https://github.com/CNSeniorious000/SMMS4py
+Author: MuspiMerol
+Author-email: wjj123345567@iCloud.com
+License: MIT License
+Description-Content-Type: text/markdown
+License-File: license
+Requires-Dist: requests
+Requires-Dist: orjson
+Requires-Dist: cachetools
+Requires-Dist: setuptools
+
+# python SDK for SM.MS
