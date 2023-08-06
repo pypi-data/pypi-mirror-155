@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: bob.bio.video
+Version: 6.0.0
+Summary: Run biometric recognition algorithms on videos
+Home-page: https://gitlab.idiap.ch/bob/bob.bio.video
+Author: The biometric person recognition group at Idiap, Switzerland
+Author-email: bob-devel@googlegroups.com
+License: BSD
+Keywords: bob
+Platform: UNKNOWN
+Classifier: Framework :: Bob
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+License-File: LICENSE
+
+Video support to PipelineSimple
+

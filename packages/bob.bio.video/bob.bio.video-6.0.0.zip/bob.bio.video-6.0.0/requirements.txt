@@ -1,0 +1,9 @@
+setuptools
+numpy
+h5py
+scikit-learn
+bob.extension
+bob.io.base
+imageio-ffmpeg
+bob.bio.base
+bob.bio.face
