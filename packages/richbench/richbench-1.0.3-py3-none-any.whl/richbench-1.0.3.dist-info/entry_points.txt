@@ -1,0 +1,3 @@
+[console_scripts]
+richbench=richbench.__main__:main
+
