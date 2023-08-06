@@ -1,0 +1,24 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/__pycache__": true,
+        "**/*.pyc": true,
+        "webvisualizercore/**": true,
+        "3rdparty/**": true,
+        "*.egg-info/**": true,
+        "build/**": true,
+        ".pytest_cache/**": true,
+        "dist/**": true
+    },
+    "python.linting.pylintArgs": [
+        "--generate-members"
+    ],
+    "python.formatting.provider": "black",
+    "python.formatting.blackArgs": [
+        "--line-length=100"
+    ],
+    "python.formatting.blackPath": "/home/jiayau/anaconda3/envs/tf-2.2/bin/black",
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
+    "files.trimTrailingWhitespace": true
+}
