@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: anaml-client
+Version: 0.19.0
+Summary: Python SDK for Anaml
+Home-page: https://anaml.com
+Author: Simple Machines
+Author-email: hello@simplemachines.com.au
+License: Copyright 2020 Simple Machines Pty Ltd. All Rights Reserved
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: License :: Other/Proprietary License
+Requires-Python: >=3.7.10
+Description-Content-Type: text/markdown
+Provides-Extra: testing
+Provides-Extra: plotting
+Provides-Extra: pandas
+Provides-Extra: spark
+Provides-Extra: aws
+Provides-Extra: google
+
+
+The Anaml Python SDK makes it easy to interact with the [Anaml][1] feature
+engineering platform from Python. The SDK provides datatypes and methods to
+interact with the Anaml REST API and to load Anaml feature data into Pandas
+and/or Spark data frames.
+
+[1]: https://www.anaml.com/
+
+
