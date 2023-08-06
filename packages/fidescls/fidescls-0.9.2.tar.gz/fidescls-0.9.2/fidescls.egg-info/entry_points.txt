@@ -1,0 +1,3 @@
+[console_scripts]
+fidescls = fidescls.cli.context:cli
+

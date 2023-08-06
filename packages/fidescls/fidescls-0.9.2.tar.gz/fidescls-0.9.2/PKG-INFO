@@ -1,0 +1,44 @@
+Metadata-Version: 2.1
+Name: fidescls
+Version: 0.9.2
+Summary: CLI for Fidescls
+Home-page: https://github.com/ethyca/fidescls
+Author: Ethyca, Inc.
+Author-email: fidesteam@ethyca.com
+License: Apache License 2.0
+Description: # Installation from PyPI
+        
+        Fidescls is available as an independent package [published on PyPI](https://pypi.org/project/fidescls/).
+        
+        ## Basic Installation
+        
+        To install Fidescls as a python package, run:
+        ```sh
+        pip install fidescls
+        ```
+        
+        This will install the latest version that has been published to PyPi.
+        
+        ### Dependencies
+        Fidescls depends on [Spacy trained pipelines](https://spacy.io/models/en)
+        which must be installed after running the pip install mentioned above.
+        In particular, the required trained pipelines are: `en_core_web_sm`,
+        and `en_core_web_lg`.  These can be installed by executing the following
+        commands in the environment in which Fidescls has been installed:
+        
+        ```bash
+        python -m spacy download en_core_web_sm
+        
+        python -m spacy download en_core_web_lg
+        ```
+        
+        ## Next Steps
+        Once installed, you may use the [fidescls module](../guides/module.md) to begin classifying PII within your own projects.
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Software Development :: Libraries
+Requires-Python: >=3.8, <4
+Description-Content-Type: text/markdown

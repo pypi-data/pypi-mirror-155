@@ -1,0 +1,11 @@
+black==20.8b1
+ipython==8
+mypy==0.931
+pre-commit
+pylint==2.12
+pytest==6.2
+xenon==0.7.3
+pytest-cov
+pytest-mock
+requests-mock
+starlette
