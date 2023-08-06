@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: saneround
+Version: 0.0.0
+Summary: Python package providing sane round() instead of official insane round().
+Home-page: https://github.com/yamaimo/saneround
+Author: yamaimo
+Author-email: hello@yamaimo.dev
+License: MIT License
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Provides-Extra: develop
+Requires-Dist: pysen[lint] ; extra == 'develop'
+
+# saneround
+Python package providing sane round() instead of official insane round().
