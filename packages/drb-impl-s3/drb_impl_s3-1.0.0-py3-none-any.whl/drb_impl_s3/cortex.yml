@@ -1,0 +1,11 @@
+id: 4ab73f92-bbff-11ec-8422-0242ac120002
+label: 'Amazon Simple Storage Service'
+category: CONTAINER
+factory:
+  name: aws3
+  classpath: 'drb_impl_s3.s3_node_factory:S3NodeFactory'
+signatures:
+  - python: |
+        return '+s3' in node.path.scheme 
+
+
