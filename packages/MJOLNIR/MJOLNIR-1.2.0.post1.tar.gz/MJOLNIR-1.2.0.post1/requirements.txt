@@ -1,0 +1,11 @@
+pytest
+pycodestyle
+pytest-cov
+python-coveralls
+matplotlib
+numpy
+h5py
+scipy
+datetime
+shapely
+pyperclip
