@@ -1,0 +1,8 @@
+#ifndef FSIM_RUNTIME_VERSION_HH
+#define FSIM_RUNTIME_VERSION_HH
+
+namespace fsim::runtime {
+auto constexpr VERSION = R"(${FSIM_VERSION})";
+}  // namespace fsim::runtime
+
+#endif  // FSIM_RUNTIME_VERSION_HH
