@@ -1,0 +1,7 @@
+numpy
+pandas
+scikit-learn
+sqlalchemy
+
+[collate]
+cytominer-database==0.3.4
