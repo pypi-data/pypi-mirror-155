@@ -1,0 +1,33 @@
+
+[project]
+name = "graphlib2"
+repository = "https://github.com/adriangb/graphlib2"
+description = "Rust port of the Python stdlib graphlib modules"
+authors = [
+    {name = "Adrian Garcia Badaracco"}
+]
+documentation = "https://github.com/adriangb/README.md"
+license = { text = "MIT" }
+classifiers=[
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Software Development",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "typing-extensions>=3; python_version < '3.8'",
+]
+requires-python = ">=3.7"
+
+[build-system]
+requires = ["maturin>=0.13.0b6<14"]
+build-backend = "maturin"
+
+[tool.maturin]
+sdist-include = ["Cargo.lock"]
+strip = true
+
+[tool.isort]
+profile = "black"
