@@ -1,0 +1,13 @@
+LICENSE
+README.rst
+pyproject.toml
+setup.cfg
+setup.py
+src/optotrak/__init__.py
+src/optotrak/__version__
+src/optotrak.egg-info/PKG-INFO
+src/optotrak.egg-info/SOURCES.txt
+src/optotrak.egg-info/dependency_links.txt
+src/optotrak.egg-info/requires.txt
+src/optotrak.egg-info/top_level.txt
+test/test_optotrak.py
