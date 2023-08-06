@@ -1,0 +1,41 @@
+Metadata-Version: 2.1
+Name: ospgrid
+Version: 0.5
+Summary: 2D grid analysis wrapper for OpenSeesPy
+Home-page: https://ccaprani.github.io/ospgrid/
+Author: Colin Caprani
+Author-email: colin.caprani@monash.edu
+License: GNU General Public License v3.0
+Project-URL: Documentation, https://ccaprani.github.io/ospgrid/
+Project-URL: Source, https://github.com/ccaprani/ospgrid/
+Project-URL: Tracker, https://github.com/ccaprani/ospgrid/issues/
+Classifier: Development Status :: 3 - Alpha
+Classifier: Topic :: Scientific/Engineering
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Science/Research
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Natural Language :: English
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: matplotlib
+Requires-Dist: numpy
+Requires-Dist: openseespy
+Requires-Dist: opsvis (>=1.0)
+Provides-Extra: test
+Requires-Dist: pytest (>=6.2.2) ; extra == 'test'
+
+# ospgrid - An OpenSeesPy wrapper for plane grids
+
+![ospgrid logo](https://raw.githubusercontent.com/ccaprani/ospgrid/main/docs/source/images/ospgrid_logo.png)
+
+`ospgrid` is a plane grid analysis wrapper for OpenSeesPy. 
+It offers a user-friendly interface to OpenSeesPy for the analysis of plane grids subjected to nodal loading.
+It also produces output suitable for education (i.e. stiffness matrices, and force vectors).
+
