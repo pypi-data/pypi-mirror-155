@@ -1,0 +1,34 @@
+protocol = "lightcon-topas4-motor"
+doc = """
+Expose a single light conversion motor as a yaq daemon.
+"""
+traits = ["has-limits", "is-discrete", "is-homeable", "is-daemon"]
+hardware = ["lightcon:topas-800", "lightcon.topas-c"]
+
+[links]
+source = "https://github.com/yaq-project/yaqd-lightcon"
+bugtracker = "https://github.com/yaq-project/yaqd-lightcon/issues"
+manufacturer = "http://topas4info.lightcon.com/"
+
+[installation]
+PyPI = "https://pypi.org/project/yaqd-lightcon"
+conda-forge = "https://anaconda.org/conda-forge/yaqd-lightcon"
+
+[config]
+topas4_host.type = "string"
+topas4_host.default = "127.0.0.1"
+topas4_host.doc = "Host/IP of the wintopas4 server"
+
+topas4_port.type = "int"
+topas4_port.default = 8000
+topas4_port.doc = "IP port of the wintopas4 server"
+
+motor_index.type = "int"
+motor_index.default = 1
+motor_index.doc = "Index of the motor within the topas4 device"
+
+serial.addendum = "Topas4 motor daemons MUST specify the serial number"
+identifiers.addendum = "Topas4 motor daemons ignore identifiers config. Native 'named positions' are used instead"
+
+
+
