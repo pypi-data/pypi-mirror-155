@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+picchick/__init__.py
+picchick/__main__.py
+picchick/cli.py
+picchick/devices.py
+picchick/hexfile.py
+picchick/programmer.py
+picchick.egg-info/PKG-INFO
+picchick.egg-info/SOURCES.txt
+picchick.egg-info/dependency_links.txt
+picchick.egg-info/entry_points.txt
+picchick.egg-info/requires.txt
+picchick.egg-info/top_level.txt
