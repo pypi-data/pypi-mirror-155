@@ -1,0 +1,80 @@
+Metadata-Version: 2.1
+Name: python_royce_bulksms
+Version: 1.0.2
+Summary: Kenya Bulksms gateway to Integrate bulksms into Python project in under 2 minutes.
+Home-page: https://github.com/royceltd/python-royce-bulksms
+Author: Royce Ltd
+Author-email: developer@roycetechnologies.co.ke
+Project-URL: Bug Tracker, https://github.com/royceltd/python-royce-bulksms/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Python Bulksms package
+ Integrate bulk sms into your python project in under 2 minutes
+
+## Steps
+- Install this package
+- Open A free account [here](https://bulksms.roycetechnlogies.co.ke)
+- Generate API key under API menu
+- use our default sender ID  `RoyceLtd`
+
+## Installation
+
+
+``` 
+pip install python-royce-bulksms
+ ```
+ Ensure that `requests` package is installed 
+``` 
+pip install requests
+ ```
+
+ # How to use the package
+
+```
+from bulksms import sendSMS
+
+sendSMS(phone_number,message,sender_id,api_key)
+
+```
+
+## Sample response
+```
+{
+    'message': 'Messages sent successfully', 
+    'code': 1, 'status': 'Sent To Network', 
+    'response_description': 'Sent To Network', 
+    'message_id': '968c1d13-ef31-4e04-a46b-8b7cd0d392fa'
+}
+
+```
+
+# Delivery Report
+```
+from bulksms import deliveryReport
+
+deliveryReport(message_id,api_key)
+
+```
+
+
+
+## Sample Response
+
+```
+{
+    'message': 'Message delivery report', 
+    'code': 1, 'response_code': 1001, 
+    'status': 'Message delivery report',
+     'delivery_status': 'DeliveredToTerminal', 
+     'delivery_tat': '5s', 
+     'delivery_time': '2022-06-15 12:51:11', 
+     'message_id': '968c255e-4b03-40da-9762-786793cf1cd8'
+}
+```
+
+For support call +254 713 727 937 email developer@roycetechnologies.co.ke
