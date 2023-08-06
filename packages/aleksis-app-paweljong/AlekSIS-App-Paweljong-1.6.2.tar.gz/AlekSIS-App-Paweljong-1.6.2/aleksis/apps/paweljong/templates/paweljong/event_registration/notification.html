@@ -1,0 +1,20 @@
+{% extends "core/base.html" %}
+{% load material_form i18n any_js %}
+
+{% block page_title %}{% blocktrans %}Send notification{% endblocktrans %}{% endblock %}
+{% block browser_title %}{% blocktrans %}Send notification{% endblocktrans %}{% endblock %}
+
+{% block extra_head %}
+    {{ form.media.css }}
+{% endblock %}
+
+{% block content %}
+
+  <form method="post">
+    {% csrf_token %}
+    {% form form=form %}{% form %}
+    {% include "core/partials/save_button.html" %}
+  </form>
+  {{ form.media.js }}
+
+{% endblock %}

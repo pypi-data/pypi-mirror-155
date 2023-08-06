@@ -1,0 +1,19 @@
+{# -*- engine:django -*- #}
+
+{% if states %}
+  {% for state in states %}
+    <div class="chip white-text" style="background-color: {{ state.colour|default:"black" }};">
+      {{ state }}
+      {% if small %}
+        <small>({{ small }})</small>
+      {% endif %}
+    </div>
+  {% endfor %}
+{% else %}
+  <div class="chip white-text" style="background-color: {{ state.colour|default:"black" }};">
+    {{ state.name }}
+    {% if small %}
+      <small>({{ small }})</small>
+    {% endif %}
+  </div>
+{% endif %}

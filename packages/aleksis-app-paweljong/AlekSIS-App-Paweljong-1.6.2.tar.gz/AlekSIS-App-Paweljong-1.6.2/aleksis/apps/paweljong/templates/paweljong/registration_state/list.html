@@ -1,0 +1,14 @@
+{% extends "core/base.html" %}
+{% load material_form i18n %}
+
+{% load render_table from django_tables2 %}
+
+{% block page_title %}{% blocktrans %}Registration states{% endblocktrans %}{% endblock %}
+{% block browser_title %}{% blocktrans %}Registration states{% endblocktrans %}{% endblock %}
+
+{% block content %}
+
+    <a class="btn colour-primary waves-effect waves-light" href="{% url 'create_registration_state' %}">{% trans "Create registration state" %}</a>
+    {% render_table table %}
+
+{% endblock %}

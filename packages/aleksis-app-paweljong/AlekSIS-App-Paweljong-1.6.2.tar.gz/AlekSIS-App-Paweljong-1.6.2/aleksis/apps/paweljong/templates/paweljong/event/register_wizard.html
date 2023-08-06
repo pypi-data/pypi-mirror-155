@@ -1,0 +1,47 @@
+{% extends "core/base.html" %}
+{% load material_form i18n %}
+
+{% block browser_title %}{% trans "Registration" %}: {{ event.display_name }}{% endblock %}
+{% block page_title %}{% trans "Registration" %}: {{ event.display_name }}{% endblock %}
+
+{% block content %}
+ <div class="row">
+  <div class="col s12">
+   <div class="card info">
+    <div class="card-content">
+     <span class="card-title">{{ info_title }}</span>
+     <p>
+       {{ info_text | safe }}
+     </p>
+    </div>
+   </div>
+  </div>
+ </div>
+
+ <form method="post" enctype="multipart/form-data">
+     {% csrf_token %}
+     {{ wizard.form.media }}
+     {{ wizard.management_form }}
+     {% if wizard.form.forms %}
+         {{ wizard.form.management_form }}
+         {% for form in wizard.form.forms %}
+             {% form form=form %}{% endform %}
+         {% endfor %}
+     {% else %}
+         {% form form=wizard.form %}{% endform %}
+     {% endif %}
+ 
+     {% if wizard.steps.prev %}
+         <button type="submit" value="{{ wizard.steps.first }}" class="btn waves-effect waves-light color-primary" name="wizard_goto_step">
+             <i class="material-icons left">first_page</i>
+             {% trans "first step" %}
+         </button>
+         <button type="submit" value="{{ wizard.steps.prev }}" class="btn waves-effect waves-light color-secondary" name="wizard_goto_step">
+             <i class="material-icons left">arrow_back_ios</i>
+             {% trans "previous step" %}
+         </button>
+     {% endif %}
+     {% trans "Next" as caption %}
+     {% include "core/partials/save_button.html" with caption=caption icon="navigate_next" %}
+ </form>
+{% endblock %}

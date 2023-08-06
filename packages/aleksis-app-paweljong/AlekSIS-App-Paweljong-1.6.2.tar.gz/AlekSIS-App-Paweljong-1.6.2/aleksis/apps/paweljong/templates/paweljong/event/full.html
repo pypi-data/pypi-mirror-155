@@ -1,0 +1,70 @@
+{% extends "core/base.html" %}
+{% load material_form i18n any_js coerce static html_helpers %}
+
+{% block browser_title %}{% blocktrans %}Event{% endblocktrans %} {{ event.display_name }}{% endblock %}
+
+{% block extra_head %}
+  <link rel="stylesheet" href="{% static 'css/paweljong.css' %}"/>
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+ <div class="container">
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title">
+       {{ event.display_name }}
+      </span>
+      <div class="row">
+        <div class="col s12">
+          <p>{{ event.description }}</p>
+          <table>
+            <tr>
+              <td><i class="material-icons small">event</i></td>
+              <td>{{ event.date_event }}</td>
+              <td><i class="material-icons small">location_on</i></td>
+              <td>{{ event.place }}</td>
+            </tr>
+            <tr>
+              <td><i class="material-icons small">edit_calendar</i></td>
+              <td colspan="2">{% trans "Registration open until" %}:</td>
+              <td>{{ event.date_registration }}</td>
+            </tr>
+            <tr>
+              <td><i class="material-icons small">money</i></td>
+              <td colspan="2">{% trans "Participation fee (all inclusive)" %}</td>
+              <td>{{ event.cost }}</td>
+            </tr>
+            <tr>
+              <td><i class="material-icons small">group</i></td>
+              <td>{{ event.linked_group.members.count }}</td>
+              <td colspan="2">{% trans "of" %} {{ event.max_participants }}</td>
+            </tr>
+            <tr>
+              <td colspan="4">
+                <div class="progress">
+                  <div class="determinate" style="min-width: 2em;width:{{ event.booked_percentage|coerce_max:100|floatformat:0 }}%">
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="card-action">
+      {% if can_register and not is_authenticated %}
+        <a href="{% url "register_event_by_slug_start" event.slug %}">{% trans "Register now" %}</a>
+      {% elif can_register and is_authenticated %}
+        <a href="{% url "register_event_by_slug" event.slug %}">{% trans "Register now" %}</a>
+      {% else %}
+        <a href="#">{% trans "Not available" %}</a>
+      {% endif %}
+    </div>
+  </div>
+
+  {{ event.information|add_class_to_el:"ul, browser-default"|safe }}
+ </div>
+</div>
+{% endblock %}
