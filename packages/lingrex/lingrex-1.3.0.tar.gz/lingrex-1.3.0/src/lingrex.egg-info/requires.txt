@@ -1,0 +1,14 @@
+lingpy>=2.6.8
+
+[dev]
+wheel
+twine
+tox
+black
+flake8
+
+[test]
+pytest
+coverage
+pytest-mock
+pytest-cov
