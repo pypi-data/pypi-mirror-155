@@ -1,0 +1,87 @@
+[build-system]
+requires = [ "poetry>=1.0.0",]
+build-backend = "poetry.masonry.api"
+
+[tool.black]
+line-length = 110
+target-version = [ "py37", "py38",]
+include = "\\.pyi?$"
+exclude = """
+/(
+   \\.eggs
+ | \\.git
+ | \\.hg
+ | \\.mypy_cache
+ | \\.tox
+ | \\.venv
+ | _build
+ | buck-out
+ | build
+ | dist
+ # The following are specific to Black, you probably don't want those.
+ | blib2to3
+ | tests/data
+ | profiling
+)/
+"""
+# We use preview style for formatting Black itself. If you
+# want stable formatting across releases, you should keep
+# this off.
+preview = true
+
+[tool.poetry]
+name = "ql-orange"
+version = "1.4.0-rc.1"
+description = "Orange is a fork of Black Python code formatter maintained by Quantlane."
+authors = [ "quantlane.com <info@quantlane.com>",]
+repository = "https://gitlab.com/quantlane/meta/orange"
+readme = "README.md"
+include = [ "pyproject.toml",]
+
+packages = [
+    {include = "black", from = "src"},
+    {include = "blib2to3", from = "src"}
+]
+
+[[tool.poetry.source]]
+name = "quantlane-repository"
+url = "https://pypi-experimental.int.quantlane.com/pypi/"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+click = ">=8.0.0"
+platformdirs = ">=2"
+tomli = ">=1.1.0"
+typed-ast = {version = ">=1.4.2", python = "<3.8" }
+pathspec = ">=0.9.0"
+typing_extensions = { version = ">=3.10.0.0", python = "<3.10" }
+mypy_extensions = ">=0.4.3"
+ipython = { version = ">=7.8.0", optional = true }
+tokenize-rt = { version = ">=3.2.0", optional = true }
+aiohttp = { version = ">=3.7.4", optional = true}
+
+[tool.poetry.extras]
+jupyter = ["ipython", "tokenize-rt"]
+d = ["aiohttp"]
+
+[tool.poetry.dev-dependencies]
+pre-commit = "*"
+coverage = "*"
+docutils = "==0.15"
+flake8 = "*"
+flake8-bugbear = "*"
+readme_renderer = "*"
+Sphinx = ">=3.1.2"
+MyST-Parser = ">=0.13.7"
+sphinxcontrib-programoutput = ">=0.17"
+setuptools = ">=39.2.0"
+setuptools-scm = "*"
+twine = ">=1.11.0"
+pytest = "5.3.2"
+ql-cq = ">=1.2.0"
+types-dataclasses = "^0.6.0"
+types-typed-ast = "==1.4.5"
+types-PyYAML = "^5.4.11"
+
+[tool.poetry.scripts]
+orange = "black:patched_main"
