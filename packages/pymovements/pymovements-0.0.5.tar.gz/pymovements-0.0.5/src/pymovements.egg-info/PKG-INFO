@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: pymovements
+Version: 0.0.5
+Summary: Package for processing eye tracking data
+Home-page: https://github.com/aeye-lab/pymovements
+Author: Daniel Krakowczyk
+Author-email: daniel.krakowczyk@uni-potsdam.de
+Project-URL: Bug Tracker, https://github.com/aeye-lab/pymovements/issues
+Project-URL: Source Code, https://github.com/aeye-lab/pymovements
+Project-URL: Documentation, https://pymovements.readthedocs.io/en/latest
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Provides-Extra: test
+Provides-Extra: docs
+License-File: LICENSE
+License-File: COPYING
+License-File: COPYING.LESSER
+
+# PyMovements
+
+This is a python package for extracting oculomotoric event information from eye tracking signals.
