@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: imdb-assetscraper
+Version: 0.5.6
+Summary: imdb_assetscraper
+Home-page: https://github.com/stefanseltmann77/imdb_scraper
+Author: Stefan Seltmann
+Author-email: s.seltmann06@web.de
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License (GPL)
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+Requires-Dist: beautifulsoup4
+
+################
+IMDBAssetScraper
+################
+
+Scraper for Movie assets on IMDB.
