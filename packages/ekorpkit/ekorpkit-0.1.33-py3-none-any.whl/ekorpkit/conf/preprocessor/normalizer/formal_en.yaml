@@ -1,0 +1,5 @@
+defaults:
+  - default
+
+ftfy:
+  unescape_html: "auto"

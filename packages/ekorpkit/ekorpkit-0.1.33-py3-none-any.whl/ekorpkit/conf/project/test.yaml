@@ -1,0 +1,13 @@
+# @package _global_
+defaults:
+  - default
+  - override /mode: debug
+
+project: _test_
+dir:
+  workspace: ./data/tmp/.ekorpkit
+env:
+  os:
+    WANDB_API_KEY:
+  distributed_framework:
+    backend: joblib

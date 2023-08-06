@@ -1,0 +1,12 @@
+defaults:
+  - /_func_: merge_dataframe
+
+filepath:
+filetype:
+data_dir: ${oc.select:task.data_dir, .}
+data_file:
+how: inner
+merge_on:
+left_on:
+right_on:
+verbose: ${oc.select:..verbose, true}

@@ -1,0 +1,7 @@
+defaults:
+  - /_func_: normalize
+  - /preprocessor/normalizer: default
+
+apply_to: ${oc.select:..apply_to, text}
+verbose: ${oc.select:..verbose, true}
+use_batcher: ${oc.select:..use_batcher, true}

@@ -1,0 +1,454 @@
+Metadata-Version: 2.1
+Name: ekorpkit
+Version: 0.1.33
+Summary: eKorpkit provides a flexible interface for NLP and ML research pipelines such as extraction, transformation, tokenization, training, and visualization.
+Home-page: https://github.com/entelecheia/ekorpkit
+Author: Young Joon Lee
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: numpy
+Requires-Dist: tqdm
+Requires-Dist: openpyxl
+Requires-Dist: pandas
+Requires-Dist: hydra-core (>=1.2.0)
+Requires-Dist: hydra-colorlog
+Requires-Dist: python-dotenv
+Requires-Dist: gdown
+Requires-Dist: chardet
+Requires-Dist: rehash
+Requires-Dist: requests
+Requires-Dist: scipy
+Requires-Dist: cached-path
+Requires-Dist: pytablewriter (>=0.64.0)
+Provides-Extra: all
+Requires-Dist: zstandard ; extra == 'all'
+Requires-Dist: jsonlines ; extra == 'all'
+Requires-Dist: fugashi ; extra == 'all'
+Requires-Dist: fredapi ; extra == 'all'
+Requires-Dist: lsh ; extra == 'all'
+Requires-Dist: datasets ; extra == 'all'
+Requires-Dist: mecab-ko-dic ; extra == 'all'
+Requires-Dist: matplotlib ; extra == 'all'
+Requires-Dist: rich ; extra == 'all'
+Requires-Dist: kaleido ; extra == 'all'
+Requires-Dist: jsonpath-ng ; extra == 'all'
+Requires-Dist: nasdaq-data-link ; extra == 'all'
+Requires-Dist: emoji ; extra == 'all'
+Requires-Dist: flaml ; extra == 'all'
+Requires-Dist: cssutils ; extra == 'all'
+Requires-Dist: pysbd ; extra == 'all'
+Requires-Dist: google-cloud-storage (>=2.0.0) ; extra == 'all'
+Requires-Dist: nltk ; extra == 'all'
+Requires-Dist: loky ; extra == 'all'
+Requires-Dist: html-to-json ; extra == 'all'
+Requires-Dist: pysimdjson ; extra == 'all'
+Requires-Dist: tomotopy ; extra == 'all'
+Requires-Dist: orjson ; extra == 'all'
+Requires-Dist: datasketch ; extra == 'all'
+Requires-Dist: pynori ; extra == 'all'
+Requires-Dist: pyLDAvis ; extra == 'all'
+Requires-Dist: google-api-python-client ; extra == 'all'
+Requires-Dist: py7zr ; extra == 'all'
+Requires-Dist: p-tqdm ; extra == 'all'
+Requires-Dist: pathos ; extra == 'all'
+Requires-Dist: seaborn ; extra == 'all'
+Requires-Dist: sacremoses ; extra == 'all'
+Requires-Dist: mecab-python3 ; extra == 'all'
+Requires-Dist: tensorflow ; extra == 'all'
+Requires-Dist: wget ; extra == 'all'
+Requires-Dist: soynlp ; extra == 'all'
+Requires-Dist: joblib ; extra == 'all'
+Requires-Dist: beautifulsoup4 ; extra == 'all'
+Requires-Dist: yellowbrick ; extra == 'all'
+Requires-Dist: ftfy ; extra == 'all'
+Requires-Dist: plotly ; extra == 'all'
+Requires-Dist: simpletransformers ; extra == 'all'
+Requires-Dist: wordcloud ; extra == 'all'
+Provides-Extra: automl
+Requires-Dist: yellowbrick ; extra == 'automl'
+Requires-Dist: flaml ; extra == 'automl'
+Provides-Extra: beautifulsoup4
+Requires-Dist: beautifulsoup4 ; extra == 'beautifulsoup4'
+Provides-Extra: bok
+Requires-Dist: pyhwp ; extra == 'bok'
+Provides-Extra: cssutils
+Requires-Dist: cssutils ; extra == 'cssutils'
+Provides-Extra: database
+Requires-Dist: pymongo ; extra == 'database'
+Provides-Extra: dataset
+Requires-Dist: zstandard ; extra == 'dataset'
+Requires-Dist: jsonlines ; extra == 'dataset'
+Requires-Dist: lsh ; extra == 'dataset'
+Requires-Dist: datasets ; extra == 'dataset'
+Requires-Dist: jsonpath-ng ; extra == 'dataset'
+Requires-Dist: emoji ; extra == 'dataset'
+Requires-Dist: pysbd ; extra == 'dataset'
+Requires-Dist: google-cloud-storage (>=2.0.0) ; extra == 'dataset'
+Requires-Dist: tensorflow-datasets ; extra == 'dataset'
+Requires-Dist: loky ; extra == 'dataset'
+Requires-Dist: pysimdjson ; extra == 'dataset'
+Requires-Dist: datasketch ; extra == 'dataset'
+Requires-Dist: orjson ; extra == 'dataset'
+Requires-Dist: p-tqdm ; extra == 'dataset'
+Requires-Dist: py7zr ; extra == 'dataset'
+Requires-Dist: pathos ; extra == 'dataset'
+Requires-Dist: wget ; extra == 'dataset'
+Requires-Dist: joblib ; extra == 'dataset'
+Requires-Dist: beautifulsoup4 ; extra == 'dataset'
+Requires-Dist: ftfy ; extra == 'dataset'
+Provides-Extra: datasets
+Requires-Dist: datasets ; extra == 'datasets'
+Provides-Extra: datasketch
+Requires-Dist: datasketch ; extra == 'datasketch'
+Provides-Extra: ddbackend
+Requires-Dist: modin ; extra == 'ddbackend'
+Requires-Dist: ray ; extra == 'ddbackend'
+Provides-Extra: doc
+Requires-Dist: plotly ; extra == 'doc'
+Requires-Dist: seaborn ; extra == 'doc'
+Requires-Dist: matplotlib ; extra == 'doc'
+Requires-Dist: rich ; extra == 'doc'
+Requires-Dist: kaleido ; extra == 'doc'
+Provides-Extra: edgar
+Requires-Dist: pathos ; extra == 'edgar'
+Requires-Dist: cssutils ; extra == 'edgar'
+Provides-Extra: emoji
+Requires-Dist: emoji ; extra == 'emoji'
+Provides-Extra: exhaustive
+Requires-Dist: zstandard ; extra == 'exhaustive'
+Requires-Dist: jsonlines ; extra == 'exhaustive'
+Requires-Dist: pubmed-parser ; extra == 'exhaustive'
+Requires-Dist: modin ; extra == 'exhaustive'
+Requires-Dist: fugashi ; extra == 'exhaustive'
+Requires-Dist: fredapi ; extra == 'exhaustive'
+Requires-Dist: lsh ; extra == 'exhaustive'
+Requires-Dist: datasets ; extra == 'exhaustive'
+Requires-Dist: mecab-ko-dic ; extra == 'exhaustive'
+Requires-Dist: matplotlib ; extra == 'exhaustive'
+Requires-Dist: rich ; extra == 'exhaustive'
+Requires-Dist: kaleido ; extra == 'exhaustive'
+Requires-Dist: jsonpath-ng ; extra == 'exhaustive'
+Requires-Dist: nasdaq-data-link ; extra == 'exhaustive'
+Requires-Dist: emoji ; extra == 'exhaustive'
+Requires-Dist: flaml ; extra == 'exhaustive'
+Requires-Dist: fasttext-langdetect ; extra == 'exhaustive'
+Requires-Dist: cssutils ; extra == 'exhaustive'
+Requires-Dist: pysbd ; extra == 'exhaustive'
+Requires-Dist: google-cloud-storage (>=2.0.0) ; extra == 'exhaustive'
+Requires-Dist: nltk ; extra == 'exhaustive'
+Requires-Dist: loky ; extra == 'exhaustive'
+Requires-Dist: tensorflow-datasets ; extra == 'exhaustive'
+Requires-Dist: html-to-json ; extra == 'exhaustive'
+Requires-Dist: pyhwp ; extra == 'exhaustive'
+Requires-Dist: ray ; extra == 'exhaustive'
+Requires-Dist: pysimdjson ; extra == 'exhaustive'
+Requires-Dist: pdfplumber ; extra == 'exhaustive'
+Requires-Dist: namu-wiki-extractor ; extra == 'exhaustive'
+Requires-Dist: tomotopy ; extra == 'exhaustive'
+Requires-Dist: orjson ; extra == 'exhaustive'
+Requires-Dist: datasketch ; extra == 'exhaustive'
+Requires-Dist: pynori ; extra == 'exhaustive'
+Requires-Dist: pyLDAvis ; extra == 'exhaustive'
+Requires-Dist: google-api-python-client ; extra == 'exhaustive'
+Requires-Dist: py7zr ; extra == 'exhaustive'
+Requires-Dist: p-tqdm ; extra == 'exhaustive'
+Requires-Dist: mail-parser ; extra == 'exhaustive'
+Requires-Dist: pathos ; extra == 'exhaustive'
+Requires-Dist: seaborn ; extra == 'exhaustive'
+Requires-Dist: guesslang ; extra == 'exhaustive'
+Requires-Dist: sacremoses ; extra == 'exhaustive'
+Requires-Dist: mecab-python3 ; extra == 'exhaustive'
+Requires-Dist: tensorflow ; extra == 'exhaustive'
+Requires-Dist: wget ; extra == 'exhaustive'
+Requires-Dist: soynlp ; extra == 'exhaustive'
+Requires-Dist: pymongo ; extra == 'exhaustive'
+Requires-Dist: joblib ; extra == 'exhaustive'
+Requires-Dist: beautifulsoup4 ; extra == 'exhaustive'
+Requires-Dist: yellowbrick ; extra == 'exhaustive'
+Requires-Dist: ftfy ; extra == 'exhaustive'
+Requires-Dist: plotly ; extra == 'exhaustive'
+Requires-Dist: wikiextractor ; extra == 'exhaustive'
+Requires-Dist: simpletransformers ; extra == 'exhaustive'
+Requires-Dist: wordcloud ; extra == 'exhaustive'
+Requires-Dist: numba ; extra == 'exhaustive'
+Provides-Extra: fasttext-langdetect
+Requires-Dist: fasttext-langdetect ; extra == 'fasttext-langdetect'
+Provides-Extra: fetch
+Requires-Dist: wget ; extra == 'fetch'
+Requires-Dist: zstandard ; extra == 'fetch'
+Requires-Dist: py7zr ; extra == 'fetch'
+Provides-Extra: flaml
+Requires-Dist: flaml ; extra == 'flaml'
+Provides-Extra: fomc
+Requires-Dist: nasdaq-data-link ; extra == 'fomc'
+Requires-Dist: pdfplumber ; extra == 'fomc'
+Requires-Dist: fredapi ; extra == 'fomc'
+Provides-Extra: fred
+Requires-Dist: fredapi ; extra == 'fred'
+Provides-Extra: fredapi
+Requires-Dist: fredapi ; extra == 'fredapi'
+Provides-Extra: ftfy
+Requires-Dist: ftfy ; extra == 'ftfy'
+Provides-Extra: fugashi
+Requires-Dist: fugashi ; extra == 'fugashi'
+Provides-Extra: google-api-python-client
+Requires-Dist: google-api-python-client ; extra == 'google-api-python-client'
+Provides-Extra: google-cloud-storage
+Requires-Dist: google-cloud-storage (>=2.0.0) ; extra == 'google-cloud-storage'
+Provides-Extra: guesslang
+Requires-Dist: guesslang ; extra == 'guesslang'
+Provides-Extra: html
+Requires-Dist: html-to-json ; extra == 'html'
+Provides-Extra: html-to-json
+Requires-Dist: html-to-json ; extra == 'html-to-json'
+Provides-Extra: hwp
+Requires-Dist: pyhwp ; extra == 'hwp'
+Provides-Extra: joblib
+Requires-Dist: joblib ; extra == 'joblib'
+Provides-Extra: jsonlines
+Requires-Dist: jsonlines ; extra == 'jsonlines'
+Provides-Extra: jsonpath-ng
+Requires-Dist: jsonpath-ng ; extra == 'jsonpath-ng'
+Provides-Extra: kaleido
+Requires-Dist: kaleido ; extra == 'kaleido'
+Provides-Extra: langdetect
+Requires-Dist: fasttext-langdetect ; extra == 'langdetect'
+Provides-Extra: loky
+Requires-Dist: loky ; extra == 'loky'
+Provides-Extra: lsh
+Requires-Dist: lsh ; extra == 'lsh'
+Provides-Extra: mail
+Requires-Dist: mail-parser ; extra == 'mail'
+Provides-Extra: mail-parser
+Requires-Dist: mail-parser ; extra == 'mail-parser'
+Provides-Extra: matplotlib
+Requires-Dist: matplotlib ; extra == 'matplotlib'
+Provides-Extra: mecab
+Requires-Dist: mecab-ko-dic ; extra == 'mecab'
+Requires-Dist: mecab-python3 ; extra == 'mecab'
+Provides-Extra: mecab-ko-dic
+Requires-Dist: mecab-ko-dic ; extra == 'mecab-ko-dic'
+Provides-Extra: mecab-python3
+Requires-Dist: mecab-python3 ; extra == 'mecab-python3'
+Provides-Extra: model
+Requires-Dist: google-api-python-client ; extra == 'model'
+Requires-Dist: yellowbrick ; extra == 'model'
+Requires-Dist: flaml ; extra == 'model'
+Requires-Dist: google-cloud-storage (>=2.0.0) ; extra == 'model'
+Requires-Dist: simpletransformers ; extra == 'model'
+Requires-Dist: datasets ; extra == 'model'
+Requires-Dist: tensorflow ; extra == 'model'
+Provides-Extra: modin
+Requires-Dist: modin ; extra == 'modin'
+Provides-Extra: namu-wiki-extractor
+Requires-Dist: namu-wiki-extractor ; extra == 'namu-wiki-extractor'
+Provides-Extra: nasdaq
+Requires-Dist: nasdaq-data-link ; extra == 'nasdaq'
+Provides-Extra: nasdaq-data-link
+Requires-Dist: nasdaq-data-link ; extra == 'nasdaq-data-link'
+Provides-Extra: nltk
+Requires-Dist: nltk ; extra == 'nltk'
+Provides-Extra: numba
+Requires-Dist: numba ; extra == 'numba'
+Provides-Extra: orjson
+Requires-Dist: orjson ; extra == 'orjson'
+Provides-Extra: p_tqdm
+Requires-Dist: p-tqdm ; extra == 'p_tqdm'
+Provides-Extra: parser
+Requires-Dist: jsonlines ; extra == 'parser'
+Requires-Dist: pubmed-parser ; extra == 'parser'
+Requires-Dist: jsonpath-ng ; extra == 'parser'
+Requires-Dist: fasttext-langdetect ; extra == 'parser'
+Requires-Dist: cssutils ; extra == 'parser'
+Requires-Dist: pyhwp ; extra == 'parser'
+Requires-Dist: loky ; extra == 'parser'
+Requires-Dist: html-to-json ; extra == 'parser'
+Requires-Dist: pysimdjson ; extra == 'parser'
+Requires-Dist: pdfplumber ; extra == 'parser'
+Requires-Dist: namu-wiki-extractor ; extra == 'parser'
+Requires-Dist: orjson ; extra == 'parser'
+Requires-Dist: p-tqdm ; extra == 'parser'
+Requires-Dist: mail-parser ; extra == 'parser'
+Requires-Dist: pathos ; extra == 'parser'
+Requires-Dist: joblib ; extra == 'parser'
+Requires-Dist: beautifulsoup4 ; extra == 'parser'
+Requires-Dist: ftfy ; extra == 'parser'
+Requires-Dist: wikiextractor ; extra == 'parser'
+Provides-Extra: pathos
+Requires-Dist: pathos ; extra == 'pathos'
+Provides-Extra: pdfplumber
+Requires-Dist: pdfplumber ; extra == 'pdfplumber'
+Provides-Extra: plotly
+Requires-Dist: plotly ; extra == 'plotly'
+Provides-Extra: pubmed
+Requires-Dist: pubmed-parser ; extra == 'pubmed'
+Provides-Extra: pubmed_parser
+Requires-Dist: pubmed-parser ; extra == 'pubmed_parser'
+Provides-Extra: py7zr
+Requires-Dist: py7zr ; extra == 'py7zr'
+Provides-Extra: pyldavis
+Requires-Dist: pyLDAvis ; extra == 'pyldavis'
+Provides-Extra: pyhwp
+Requires-Dist: pyhwp ; extra == 'pyhwp'
+Provides-Extra: pymongo
+Requires-Dist: pymongo ; extra == 'pymongo'
+Provides-Extra: pynori
+Requires-Dist: pynori ; extra == 'pynori'
+Provides-Extra: pysbd
+Requires-Dist: pysbd ; extra == 'pysbd'
+Provides-Extra: pysimdjson
+Requires-Dist: pysimdjson ; extra == 'pysimdjson'
+Provides-Extra: ray
+Requires-Dist: ray ; extra == 'ray'
+Provides-Extra: rich
+Requires-Dist: rich ; extra == 'rich'
+Provides-Extra: sacremoses
+Requires-Dist: sacremoses ; extra == 'sacremoses'
+Provides-Extra: seaborn
+Requires-Dist: seaborn ; extra == 'seaborn'
+Provides-Extra: simpletransformers
+Requires-Dist: simpletransformers ; extra == 'simpletransformers'
+Provides-Extra: soynlp
+Requires-Dist: soynlp ; extra == 'soynlp'
+Provides-Extra: tensorflow
+Requires-Dist: tensorflow ; extra == 'tensorflow'
+Provides-Extra: tensorflow-datasets
+Requires-Dist: tensorflow-datasets ; extra == 'tensorflow-datasets'
+Provides-Extra: tokenize
+Requires-Dist: pynori ; extra == 'tokenize'
+Requires-Dist: emoji ; extra == 'tokenize'
+Requires-Dist: fugashi ; extra == 'tokenize'
+Requires-Dist: ftfy ; extra == 'tokenize'
+Requires-Dist: sacremoses ; extra == 'tokenize'
+Requires-Dist: pysbd ; extra == 'tokenize'
+Requires-Dist: nltk ; extra == 'tokenize'
+Requires-Dist: mecab-python3 ; extra == 'tokenize'
+Requires-Dist: mecab-ko-dic ; extra == 'tokenize'
+Requires-Dist: soynlp ; extra == 'tokenize'
+Provides-Extra: tokenize-en
+Requires-Dist: nltk ; extra == 'tokenize-en'
+Requires-Dist: pysbd ; extra == 'tokenize-en'
+Provides-Extra: tomotopy
+Requires-Dist: tomotopy ; extra == 'tomotopy'
+Provides-Extra: topic
+Requires-Dist: tomotopy ; extra == 'topic'
+Requires-Dist: wordcloud ; extra == 'topic'
+Requires-Dist: pyLDAvis ; extra == 'topic'
+Provides-Extra: transformers
+Requires-Dist: google-api-python-client ; extra == 'transformers'
+Requires-Dist: google-cloud-storage (>=2.0.0) ; extra == 'transformers'
+Requires-Dist: simpletransformers ; extra == 'transformers'
+Requires-Dist: datasets ; extra == 'transformers'
+Requires-Dist: tensorflow ; extra == 'transformers'
+Provides-Extra: visualize
+Requires-Dist: plotly ; extra == 'visualize'
+Requires-Dist: wordcloud ; extra == 'visualize'
+Requires-Dist: seaborn ; extra == 'visualize'
+Requires-Dist: matplotlib ; extra == 'visualize'
+Requires-Dist: rich ; extra == 'visualize'
+Requires-Dist: kaleido ; extra == 'visualize'
+Provides-Extra: wget
+Requires-Dist: wget ; extra == 'wget'
+Provides-Extra: wiki
+Requires-Dist: namu-wiki-extractor ; extra == 'wiki'
+Requires-Dist: wikiextractor ; extra == 'wiki'
+Provides-Extra: wikiextractor
+Requires-Dist: wikiextractor ; extra == 'wikiextractor'
+Provides-Extra: wordcloud
+Requires-Dist: wordcloud ; extra == 'wordcloud'
+Provides-Extra: yellowbrick
+Requires-Dist: yellowbrick ; extra == 'yellowbrick'
+Provides-Extra: zstandard
+Requires-Dist: zstandard ; extra == 'zstandard'
+
+# ekorpkit 【iːkɔːkɪt】 : **eKo**nomic **R**esearch **P**ython Tool**kit**
+
+[![PyPI version](https://badge.fury.io/py/ekorpkit.svg)](https://badge.fury.io/py/ekorpkit) [![Jupyter Book Badge](https://jupyterbook.org/en/stable/_images/badge.svg)](https://entelecheia.github.io/ekorpkit-book/) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6497226.svg)](https://doi.org/10.5281/zenodo.6497226) [![release](https://github.com/entelecheia/ekorpkit/actions/workflows/release.yaml/badge.svg)](https://github.com/entelecheia/ekorpkit/actions/workflows/release.yaml) [![CodeQL](https://github.com/entelecheia/ekorpkit/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/entelecheia/ekorpkit/actions/workflows/codeql-analysis.yml) [![test](https://github.com/entelecheia/ekorpkit/actions/workflows/test.yaml/badge.svg)](https://github.com/entelecheia/ekorpkit/actions/workflows/test.yaml) [![CircleCI](https://circleci.com/gh/entelecheia/ekorpkit/tree/main.svg?style=shield)](https://circleci.com/gh/entelecheia/ekorpkit/tree/main) [![codecov](https://codecov.io/gh/entelecheia/ekorpkit/branch/main/graph/badge.svg?token=8I4ORHRREL)](https://codecov.io/gh/entelecheia/ekorpkit) [![markdown-autodocs](https://github.com/entelecheia/ekorpkit/actions/workflows/markdown-autodocs.yaml/badge.svg)](https://github.com/entelecheia/ekorpkit/actions/workflows/markdown-autodocs.yaml)
+
+eKorpkit provides a flexible interface for NLP and ML research pipelines such as extraction, transformation, tokenization, training, and visualization. Its powerful config composition is backed by [Hydra](https://hydra.cc/).
+
+## Key features
+
+### Easy Configuration
+
+- You can compose your configuration dynamically, enabling you to easily get the perfect configuration for each research. 
+- You can override everything from the command line, which makes experimentation fast, and removes the need to maintain multiple similar configuration files. 
+- With a help of the **eKonf** class, it is also easy to compose configurations in a jupyter notebook environment.
+
+### No Boilerplate
+
+- eKorpkit lets you focus on the problem at hand instead of spending time on boilerplate code like command line flags, loading configuration files, logging etc.
+
+### Workflows
+
+- A workflow is a configurable automated process that will run one or more jobs.
+- You can divide your research into several unit jobs (tasks), then combine those jobs into one workflow.
+- You can have multiple workflows, each of which can perform a different set of tasks.
+
+### Sharable and Reproducible
+
+- With eKorpkit, you can easily share your datasets and models.
+- Sharing configs along with datasets and models makes every research reproducible.
+- You can share each unit jobs or an entire workflow.
+
+### Pluggable Architecture
+
+- eKorpkit has a pluggable architecture, enabling it to combine with your own implementation.
+
+## [Tutorials](https://entelecheia.github.io/ekorpkit-book)
+
+Tutorials for [ekorpkit](https://github.com/entelecheia/ekorpkit) package can be found at https://entelecheia.github.io/ekorpkit-book/
+
+## [Installation](https://entelecheia.github.io/ekorpkit-book/docs/basics/install.html)
+
+Install the latest version of ekorpit:
+
+```bash
+pip install ekorpkit
+```
+
+To install all extra dependencies,
+
+```bash
+pip install ekorpkit[all]
+```
+
+## [The eKorpkit Corpus](https://github.com/entelecheia/ekorpkit/blob/main/docs/corpus/README.md)
+
+The eKorpkit Corpus is a large, diverse, bilingual (ko/en) language modelling dataset.
+
+![ekorpkit corpus](https://github.com/entelecheia/ekorpkit/blob/main/docs/figs/ekorpkit_corpus.png?raw=true)
+
+## Citation
+
+```tex
+@software{lee_2022_6497226,
+  author       = {Young Joon Lee},
+  title        = {eKorpkit: eKonomic Research Python Toolkit},
+  month        = apr,
+  year         = 2022,
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.6497226},
+  url          = {https://doi.org/10.5281/zenodo.6497226}
+}
+```
+
+```tex
+@software{lee_2022_ekorpkit,
+  author       = {Young Joon Lee},
+  title        = {eKorpkit: eKonomic Research Python Toolkit},
+  month        = apr,
+  year         = 2022,
+  publisher    = {GitHub},
+  url          = {https://github.com/entelecheia/ekorpkit}
+}
+```
+
+## License
+
+- eKorpkit is licensed under the Creative Commons License(CCL) 4.0 [CC-BY](https://creativecommons.org/licenses/by/4.0). This license covers the eKorpkit package and all of its components.
+- Each corpus adheres to its own license policy. Please check the license of the corpus before using it!
+
+

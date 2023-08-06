@@ -1,0 +1,12 @@
+defaults:
+  - /_func_: general_function
+  - /_method_: replace
+
+apply_to: ${oc.select:..apply_to, ''}
+parameters:
+  to_replace:
+  value:
+  limit:
+  regex: false
+  method:
+verbose: ${oc.select:..verbose, true}

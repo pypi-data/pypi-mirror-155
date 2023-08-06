@@ -1,0 +1,22 @@
+defaults:
+  - /info: default
+  - ngram: default
+  - score_function: npmi
+  - scores: default
+  - candidates: default
+  - postag: default
+  - ngramize: default
+  - /data: concat
+  - /preprocessor/tokenizer: simple
+  - /auto: load
+  - /force: train
+
+_target_: ekorpkit.models.ngram.base.Ngrams
+_method_:
+  - initialize
+name: ngram
+auto:
+  load: true
+force_train: false
+progress_per: 1000
+verbose: ${oc.select:..verbose,false}

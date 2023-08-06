@@ -1,0 +1,4 @@
+[console_scripts]
+ekorpkit = ekorpkit.cli:hydra_main
+ekorpkit-run = ekorpkit.run:main
+

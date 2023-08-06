@@ -1,0 +1,21 @@
+postags:
+noun_postags:
+  - NNG
+  - NNP
+  - XSN
+  - SL
+  - XR
+  - NNB
+  - NR
+stop_postags:
+  - SP
+  - SF
+  - SE
+  - SSO
+  - SSC
+  - SC
+  - SY
+  - SH
+strip_pos: true
+postag_delim: /
+postag_length:

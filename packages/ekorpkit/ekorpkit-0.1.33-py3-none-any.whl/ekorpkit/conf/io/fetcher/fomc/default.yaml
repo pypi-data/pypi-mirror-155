@@ -1,0 +1,10 @@
+defaults:
+  - _base
+  - /meta/econ_series: fomc
+  - /meta/recessions: usa 
+  - /meta/unconventionals: fomc
+  - override articles: default
+
+
+_target_: ekorpkit.io.fetch.fomc.FOMC
+content_type: fomc_base

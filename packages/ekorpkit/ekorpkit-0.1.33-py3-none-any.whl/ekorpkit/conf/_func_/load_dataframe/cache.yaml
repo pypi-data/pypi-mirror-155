@@ -1,0 +1,6 @@
+defaults:
+  - /cache: file
+
+_partial_: false
+_target_: ekorpkit.io.file.load_data
+filename: .cache.path

@@ -1,0 +1,7 @@
+defaults:
+  - datasets
+  - /_method_: load_and_concatenate
+
+_target_: ekorpkit.datasets.datasets.Datasets
+name:
+data_dir: ${dir.dataset}/simple

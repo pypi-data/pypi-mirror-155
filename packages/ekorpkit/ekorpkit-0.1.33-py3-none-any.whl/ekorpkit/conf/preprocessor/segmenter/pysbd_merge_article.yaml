@@ -1,0 +1,6 @@
+defaults:
+  - pysbd
+
+merge:
+  merge_lines: true
+  merge_level: article

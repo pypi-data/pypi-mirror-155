@@ -1,0 +1,33 @@
+defaults:
+  - _build_classification
+  - override /io/loader: hfds
+
+name: sst2
+domain: general
+lang: en
+
+io:
+  data_sources:
+    train: train
+    test: test
+    dev: validation
+  loader:
+    name: glue
+    subset: sst2
+
+pipeline:
+  _transform_:
+    - rename_columns
+    - replace
+  rename_columns:
+    new_names:
+      sentence: text
+      label: labels
+      idx: id
+  replace:
+    apply_to: labels
+    parameters:
+      to_replace:
+        0: negative
+        1: positive
+        -1: null

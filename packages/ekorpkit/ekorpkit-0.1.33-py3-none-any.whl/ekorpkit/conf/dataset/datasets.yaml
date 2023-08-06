@@ -1,0 +1,7 @@
+defaults:
+  - default
+
+_target_: ekorpkit.datasets.datasets.Datasets
+name:
+datasets:
+data_dir: ${dir.dataset}/dataset

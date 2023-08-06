@@ -1,0 +1,8 @@
+defaults:
+  - ftfy: default
+  - spaces: default
+  - special_characters: default
+
+_target_: ekorpkit.preprocessors.normalizer.Normalizer
+hanja2hangle: false
+num_repeats: 2

@@ -1,0 +1,6 @@
+defaults:
+  - default
+  - barplot: default
+
+name: BarPlot
+plot: ${.barplot}

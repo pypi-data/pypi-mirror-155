@@ -1,0 +1,5 @@
+defaults:
+  - _build
+  - loader: dataframe
+
+data_dir: ${dir.archive}/datasets/source/simple/${.name}

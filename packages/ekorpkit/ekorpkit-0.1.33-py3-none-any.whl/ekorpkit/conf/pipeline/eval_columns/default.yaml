@@ -1,0 +1,7 @@
+defaults:
+  - /_func_: eval_columns
+
+expressions:
+engine: python
+eval_at: dataframe
+verbose: ${oc.select:..verbose, false}
