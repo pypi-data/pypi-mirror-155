@@ -1,0 +1,14 @@
+ affine
+ dask
+ dask-geopandas
+ dask-image
+ fiona
+ geopandas
+ numba
+ numpy==1.21.5
+ pandas
+ pygeos
+ pyproj
+ rioxarray
+ scipy
+ xarray
