@@ -1,0 +1,14 @@
+six
+h5py
+particletools
+crflux>1.0.4
+scipy
+numpy
+tqdm
+requests
+
+[CUDA]
+cupy-cuda112==9.2.0
+
+[MKL]
+mkl==2020.0
