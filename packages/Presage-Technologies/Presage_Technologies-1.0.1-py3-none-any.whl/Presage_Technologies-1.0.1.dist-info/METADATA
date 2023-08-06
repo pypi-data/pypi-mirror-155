@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: Presage-Technologies
+Version: 1.0.1
+Summary: A Python client to interface with Presage Technologies' API services.
+Home-page: https://github.com/Presage-Security/presage_technologies
+Author: Presage Technologies
+Author-email: support@presagetech.com
+Project-URL: Bug Tracker, https://github.com/Presage-Security/presage_technologies/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+License-File: LICENSE.txt
+Requires-Dist: requests
+
