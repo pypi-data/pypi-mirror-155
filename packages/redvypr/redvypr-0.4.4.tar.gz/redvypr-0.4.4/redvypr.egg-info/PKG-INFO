@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: redvypr
+Version: 0.4.4
+Summary: redvypr: REaltime Data Viewer and PRocessor (in PYthon)
+Home-page: https://github.com/redvypr/redvypr
+Author: Peter Holtermann
+Author-email: peter.holtermann@systemausfall.org
+License: GPLv03
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Topic :: Scientific/Engineering
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3 :: Only
+Requires-Python: >=3.5
+License-File: LICENSE
+
+redvypr: REaltime Data Viewer and PRocessor (in PYthon). Python based software to read, process, fuse, distribute, save and visualize data from various sensors.
+
