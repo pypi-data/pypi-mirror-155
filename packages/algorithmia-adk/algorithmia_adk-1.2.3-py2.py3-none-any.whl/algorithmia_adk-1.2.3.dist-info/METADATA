@@ -1,0 +1,28 @@
+Metadata-Version: 2.1
+Name: algorithmia-adk
+Version: 1.2.3
+Summary: Algorithmia Python ADK client
+Home-page: http://github.com/algorithmiaio/algorithmia-adk-python
+Author: Algorithmia
+Author-email: support@algorithmia.com
+License: MIT
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: pyaml (<21.11,>=21.10)
+Requires-Dist: six
+
+Algorithm Development Kit code used for creating Python algorithms on Algorithmia. Used by the Algorithmia client
+
+
