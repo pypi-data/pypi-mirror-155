@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: doltcli-ex
+Version: 0.1.12
+Summary: Enhanced Dolt CLI
+Home-page: https://github.com/yuiant/doltcli-ex
+License: MIT
+Author: yuiant
+Author-email: gyuiant@gmail.com
+Requires-Python: >=3.7,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: doltpy (==2.0.13)
+Requires-Dist: pandas
+Project-URL: Repository, https://github.com/yuiant/doltcli-ex

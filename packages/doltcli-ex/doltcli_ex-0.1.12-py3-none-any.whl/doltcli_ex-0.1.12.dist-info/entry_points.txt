@@ -1,0 +1,4 @@
+[console_scripts]
+doltadd=doltcli_ex.scripts.add:main
+doltrm=doltcli_ex.scripts.rm:main
+
