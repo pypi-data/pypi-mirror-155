@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "makenew-pypackage"
+version = "3.18.1"
+description = "Package skeleton for a Python module."
+authors = ["Evan Sosenko <razorx@evansosenko.com>"]
+license = "MIT"
+readme = "README.rst"
+homepage = "https://github.com/makenew/pypackage"
+repository = "https://github.com/makenew/pypackage"
+include = ['poetry.lock']
+
+[tool.poetry.dependencies]
+python = "^3.10.0"
+
+[tool.poetry.dev-dependencies]
+black = "^22.3.0"
+bump2version = "^1.0.0"
+pylint = "^2.4.0"
+pytest = "^7.1.1"
+pytest-cov = "^3.0.0"
+pytest-runner = "^6.0.0"
+pytest-watch = "^4.2.0"
+twine = "^4.0.0"
+wheel = "^0.34.0"
+
+[build-system]
+requires = ["poetry>=1.0"]
+build-backend = "poetry.masonry.api"
