@@ -1,0 +1,4 @@
+[asreview.entry_points]
+metrics = asreviewcontrib.insights.entrypoint:MetricsEntryPoint
+plot = asreviewcontrib.insights.entrypoint:PlotEntryPoint
+
