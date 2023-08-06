@@ -1,0 +1,3 @@
+[console_scripts]
+heaserver-buckets = heaserver.bucket.service:main
+
