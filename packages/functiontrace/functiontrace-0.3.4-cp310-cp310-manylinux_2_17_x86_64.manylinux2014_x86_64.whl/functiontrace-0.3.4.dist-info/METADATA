@@ -1,0 +1,49 @@
+Metadata-Version: 2.1
+Name: functiontrace
+Version: 0.3.4
+Summary: A profiling tool that traces your application's execution
+Home-page: https://functiontrace.com
+Author: Matt Bryant, Alistair Dobke
+Author-email: functiontrace@programsareproofs.com
+License: The Prosperity Public License 3.0.0
+Keywords: profiler,debugger
+Platform: Unix
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Debuggers
+Classifier: License :: Free for non-commercial use
+Classifier: Operating System :: Unix
+Classifier: Environment :: Console
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: Implementation :: CPython
+
+Py-Functiontrace
+================
+The Python module for Functiontrace (https://functiontrace.com).
+
+Dependencies
+------------
+
+The FunctionTrace server must be installed for this package to work.
+See installation instructions at https://functiontrace.com#installation.
+
+Usage
+-----
+
+To use, add `-m functiontrace` to the Python script you want to profile.  For example:
+
+.. code:: sh
+
+    $ python foo.py
+
+should be run as
+
+.. code:: sh
+
+    $ python -m functiontrace foo.py
+
+To see the various arguments, run
+
+.. code:: sh
+
+    $ python -m functiontrace --help
