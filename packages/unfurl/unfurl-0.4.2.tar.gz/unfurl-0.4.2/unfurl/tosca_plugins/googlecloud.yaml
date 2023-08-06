@@ -1,0 +1,215 @@
+# Copyright (c) 2021 Adam Souzis
+# SPDX-License-Identifier: MIT
+tosca_definitions_version: tosca_simple_unfurl_1_0_0
+metadata:
+  template_name: Google Cloud Platform
+  template_author: onecommons.org
+  template_version: 0.1.0
+
+imports:
+  - repository: unfurl
+    file: tosca_plugins/artifacts.yaml # makes sure gcloud is installed
+
+node_types:
+  unfurl.nodes.GoogleCloudObject:
+    derived_from: unfurl.nodes.CloudObject
+    requirements:
+      - cloud:
+          node: unfurl.nodes.GoogleCloudProject
+          relationship: unfurl.relationships.ConnectsTo.GoogleCloudProject
+          occurrences: [0, 1] # make optional so we aren't forced to always explicitly declare this
+
+  unfurl.nodes.GoogleCloudProject:
+    derived_from: unfurl.nodes.CloudAccount
+    properties:
+      name:
+        description: "User defined name of the project"
+        type: string
+      project_id:
+        type: string
+        default:
+          eval: name
+      organization_id:
+        type: integer
+        required: false
+        default:
+          eval: .parent::.ancestors::organization_id
+      billing_account:
+        type: string
+        required: false
+        default:
+          eval: .parent::.ancestors::billing_account
+      folder_id:
+        type: integer
+        required: false
+        default:
+          eval: .parent[.type=unfurl.nodes.GoogleCloudFolder]::id
+      activate_apis:
+        type: list
+        default: []
+
+    attributes:
+      project_number:
+        type: integer
+        required: false
+      service_account_id:
+        type: string
+        required: false
+      account_id:
+        type: string
+        default:
+          eval: project_id
+      service_account_email:
+        type: string
+        required: false
+    requirements:
+      - host:
+          relationship: tosca.relationships.HostedOn
+          node: unfurl.nodes.GoogleCloudResource
+          occurrences: [0, 1]
+
+    interfaces:
+      Standard:
+        operations:
+          delete:
+          configure:
+      Install:
+        operations:
+          check:
+      defaults:
+        implementation:
+          className: unfurl.configurators.terraform.TerraformConfigurator
+        inputs:
+          # XXX use yaml so we can merge in extra params directly to the project_factory module
+          main: |
+            module "project-factory" {
+              source  = "terraform-google-modules/project-factory/google"
+              version = "~> 10.1"
+
+              name              = "{{ SELF.name }}"
+              billing_account   = "{{ SELF.billing_account }}"
+              activate_apis = {{ SELF.activate_apis | mapValue | to_json }}
+              {%if SELF.folder_id %}
+                folder_id = "{{ SELF.folder_id }}"
+                org_id = ""
+              {% elif SELF.organization_id %}
+                org_id = "{{ SELF.organization_id }}"
+              {% endif %}
+            }
+
+            output "project_id" {
+              value       = module.project-factory.project_id
+            }
+
+            output "project_number" {
+              value       = module.project-factory.project_number
+            }
+
+            output "project_name" {
+              value       = module.project-factory.project_name
+            }
+
+            output "service_account_name" {
+              value       = module.project-factory.service_account_name
+            }
+
+            output "service_account_id" {
+              value       = module.project-factory.service_account_id
+            }
+
+            output "service_account_email" {
+              value       = module.project-factory.service_account_email
+            }
+
+          resultTemplate: |
+            # merge all outputs into attributes
+            attributes:
+              <<: {{ outputs | mapValue | to_json }}
+
+  unfurl.nodes.GoogleCloudServiceKey:
+    derived_from: unfurl.nodes.GoogleCloudObject
+    properties:
+      account_id:
+        type: string
+      filename:
+        type: string
+        default: # XXX replace('@', '-') | replace('.iam.gserviceaccount.com', '')
+          eval:
+            {
+              concat:
+                [{ get_property: [SELF, account_id] }, "-credentials.json"],
+            }
+      download_location:
+        type: string
+        default: secrets
+    interfaces:
+      Standard:
+        create:
+          # Downloads key to {instance-name}/secretes/{seed-service-account-credentials.json
+          implementation:
+            primary: gcloud
+            preConditions:
+              properties:
+                account_id:
+                  type: string
+          inputs:
+            command: >
+              gcloud iam service-accounts keys create "{{ SELF.filename | abspath(SELF.download_location) }}"
+               --iam-account "{{SELF.account_id}}" --user-output-enabled false
+
+  #  https://cloud.google.com/resource-manager/
+  unfurl.nodes.GoogleCloudResource:
+    derived_from: unfurl.nodes.GoogleCloudObject
+    properties:
+      display_name:
+        description: "User defined name of the resource"
+        type: string
+      id:
+        type: integer
+      type:
+        type: string
+      name:
+        type: string
+        default:
+          {
+            concat:
+              [{ get_property: [SELF, type] }, /, { get_property: [SELF, id] }],
+          }
+      billing_account:
+        type: string
+        required: false
+        description: Default billing account for projects in this resource
+    capabilities:
+      host:
+        type: tosca.capabilities.Container
+        valid_source_types: [unfurl.nodes.GoogleCloudResource]
+
+  unfurl.nodes.GoogleCloudOrganization:
+    derived_from: unfurl.nodes.GoogleCloudResource
+    properties:
+      type:
+        type: string
+        default: "organization"
+      organization_id: # alias id for easy lookup
+        type: integer
+        default:
+          eval: id
+      parent:
+        type: string
+        default:
+          eval: .parent::.name
+
+  unfurl.nodes.GoogleCloudFolder:
+    derived_from: unfurl.nodes.GoogleCloudResource
+    properties:
+      type:
+        type: string
+        default: "folder"
+      parent:
+        type: string
+        default:
+          eval: .parent::.name
+    requirements:
+      - host:
+          relationship: tosca.relationships.HostedOn
+          node: unfurl.nodes.GoogleCloudResource
