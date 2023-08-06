@@ -1,0 +1,16 @@
+README.md
+pyproject.toml
+setup.py
+qbeast_sharing/__init__.py
+qbeast_sharing/_yarl_patch.py
+qbeast_sharing/converter.py
+qbeast_sharing/delta_sharing.py
+qbeast_sharing/protocol.py
+qbeast_sharing/reader.py
+qbeast_sharing/rest_client.py
+qbeast_sharing/version.py
+qbeast_sharing.egg-info/PKG-INFO
+qbeast_sharing.egg-info/SOURCES.txt
+qbeast_sharing.egg-info/dependency_links.txt
+qbeast_sharing.egg-info/requires.txt
+qbeast_sharing.egg-info/top_level.txt
