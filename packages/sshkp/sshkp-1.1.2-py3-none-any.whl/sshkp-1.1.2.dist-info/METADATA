@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: sshkp
+Version: 1.1.2
+Summary: Script to execute an SSH command using a password from a KeePass database
+Home-page: https://github.com/dmotte/sshkp
+Author: dmotte
+License: MIT
+Keywords: ssh database script password environment-variables keepass sshpass pykeepass sshkp kdbx command cli
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Environment :: Console
+Classifier: Natural Language :: English
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Topic :: Terminals
+Classifier: Topic :: Utilities
+Requires-Python: >=3.8.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pykeepass (>=4.0.1)
+
+
+[![GitHub release workflow](https://img.shields.io/github/workflow/status/dmotte/sshkp/release?logo=github&label=release&style=flat-square)](https://github.com/dmotte/sshkp/actions)
+[![PyPI](https://img.shields.io/pypi/v/sshkp?logo=python&style=flat-square)](https://pypi.org/project/sshkp/)
+
+Script to execute an **SSH command** using a password from a **KeePass database**.
+
+Please refer to the [GitHub repository](https://github.com/dmotte/sshkp) for more information.
