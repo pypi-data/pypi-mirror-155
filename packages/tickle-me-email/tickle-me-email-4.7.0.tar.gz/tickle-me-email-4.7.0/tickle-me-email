@@ -1,0 +1,746 @@
+#!/usr/bin/env python3
+#
+# tickle-me-email
+# Copyright (C) 2014, 2015, 2016, 2017, 2018, 2019 Chris Lamb <chris@chris-lamb.co.uk>
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+import re
+import os
+import sys
+import time
+import email
+import inspect
+import imaplib
+import smtplib
+import logging
+import argparse
+import datetime
+import mimetypes
+import email.utils
+import configparser
+import email.header
+import email.message
+import email.encoders
+import email.utils
+import email.mime.audio
+import email.mime.base
+import email.mime.text
+import email.mime.image
+import email.mime.multipart
+
+from xdg import BaseDirectory
+
+re_uid = re.compile(r"\d+ \(UID (?P<uid>\d+)\)")
+re_imap_list = re.compile(r'^.* "[\./]" (?P<name>.*)$')
+
+ACTIONS = (
+    "list",
+    "move",
+    "sendmail",
+    "send-later",
+    "rotate",
+    "create-folders",
+    "todo",
+    "draft",
+    "sent",
+    "sent-history",
+    "mbox",
+    "subjects",
+    "config",
+)
+
+
+class CommandError(Exception):
+    pass
+
+
+class Options:
+    pass
+
+
+class Command:
+    def __init__(self):
+        self.log = None
+        self.imap = None
+        self.smtp = None
+        self.options = Options()
+
+    def main(self):
+        parser = argparse.ArgumentParser()
+        parser.add_argument(
+            "--verbosity", dest="verbosity", type=int, default=0
+        )
+        parser.add_argument("action", help="action", choices=ACTIONS)
+        parser.add_argument("arg", nargs="*")
+
+        self.options = parser.parse_args()
+
+        args = self.options.arg
+
+        self.setup_config(parser)
+        self.setup_logging()
+
+        action = self.options.action
+
+        fn = getattr(self, "handle_{}".format(action.replace("-", "_")))
+        spec = inspect.getfullargspec(fn)
+
+        num_required = (
+            len(spec.args) - len(spec.defaults or ()) - 1
+        )  # ignore "self"
+        if not spec.varargs and num_required < len(args):
+            parser.error(
+                "invalid number of arguments for action {}".format(action)
+            )
+
+        try:
+            fn(*args)
+            self.disconnect()
+        except CommandError as exc:
+            self.log.error(exc)
+            return 1
+
+        return 0
+
+    # Actions #################################################################
+
+    def handle_list(self):
+        self.connect_imap()
+
+        for x in self.imap.list()[1]:
+            m = re_imap_list.match(x.decode("utf-8"))
+
+            if m is not None:
+                val = m.group("name")
+                if val.startswith('"') and val.endswith('"'):
+                    val = val[1:-1]
+                print(val)
+
+    def handle_move(self, src, dst):
+        self.connect_imap()
+
+        if not self.select_mailbox(src):
+            # No messages
+            return
+
+        messages = self.get_messages()
+
+        for idx in messages:
+            self.move_message(self.get_uid(idx), dst)
+
+        self.log.info(
+            "Moved %d message(s) from %s -> %s", len(messages), src, dst
+        )
+
+    def handle_rotate(self, template, start, stop, target):
+        self.connect_imap()
+
+        start, stop = int(start), int(stop)
+
+        def render(x):
+            try:
+                return template % x
+            except TypeError:
+                return template
+
+        # Rotate to final target
+        self.handle_move(render(start), target)
+
+        for x in range(start, stop):
+            self.handle_move(render(x + 1), render(x))
+
+    def handle_create_folders(self, template, start, count):
+        self.connect_imap()
+
+        for x in range(int(start), int(start) + int(count)):
+            try:
+                target = template % x
+            except TypeError:
+                target = template
+
+            self.log.info("Creating %s", target)
+            self.imap.create(target)
+
+    def handle_sendmail(self, filename='-'):
+        if filename is None or filename == '-':
+            self.log.debug("Sending message from stdin")
+            raw = sys.stdin.read()
+        else:
+            self.log.debug("Sending message from %s", filename)
+            with open(filename) as f:
+                raw = f.read()
+
+        msg = email.message_from_string(raw)
+
+        if self.options.sendmail_attachment:
+            msg = self.add_attachment(msg, self.options.sendmail_attachment)
+
+        self.connect_smtp()
+        self.sendmail(msg)
+
+        self.connect_imap()
+        response = self.imap.append(
+            self.quote(self.options.imap_sent_items),
+            r"\SEEN",
+            imaplib.Time2Internaldate(time.time()),
+            msg.as_string().encode("utf-8"),
+        )
+        self.check_response(response, "Error adding message to sent items")
+
+    def handle_send_later(self, src, *args):
+        count = max(0, int(args[0]) if args else sys.maxsize)
+
+        self.connect_imap()
+        if not self.select_mailbox(src):
+            # No messages
+            return
+
+        # Limit number of messages
+        to_send = self.get_messages()
+        to_send = to_send[:count]
+
+        for idx in to_send:
+            self.connect_smtp()
+
+            uid = self.get_uid(idx)
+            msg = email.message_from_string(
+                self.fetch(idx, "(RFC822)")[1].decode("utf-8")
+            )
+
+            # Don't reveal the original date
+            del msg["date"]
+
+            self.sendmail(msg)
+
+            # Delete message
+            self.delete_message(uid)
+
+    def handle_todo(self, *args):
+        self.connect_imap()
+
+        if not args:
+            if not self.select_mailbox(self.options.todo_mailbox):
+                # No messages
+                return
+
+            criterion = "(FROM {})".format(self.quote(self.options.todo_email))
+
+            subjects = [
+                x[len(self.options.todo_prefix) :].strip()
+                for x in self.get_field("Subject", criterion)
+            ]
+
+            for x in subjects:
+                print(" \xe2\x80\xa2 {}".format(x))
+
+            return
+
+        args = self.rewrite_args(args)
+
+        self.log.debug("Creating TODO message")
+
+        subject = "{}{}".format(self.options.todo_prefix, " ".join(args))
+
+        msg = email.message.Message()
+        msg["To"] = self.options.todo_email
+        msg["From"] = self.options.todo_email
+        msg["Subject"] = subject
+        msg["Message-Id"] = email.utils.make_msgid()
+        msg.set_payload(subject)
+
+        self.log.debug(
+            "Adding TODO message to mailbox %r", self.options.todo_mailbox
+        )
+
+        response = self.imap.append(
+            self.quote(self.options.todo_mailbox),
+            r"\SEEN" if self.options.todo_read else "",
+            imaplib.Time2Internaldate(time.time()),
+            msg.as_string().encode("utf-8"),
+        )
+
+        self.check_response(response, "Error adding TODO item")
+
+    def handle_subjects(self):
+        self.connect_imap()
+
+        if not self.select_mailbox(self.options.subjects_mailbox):
+            # No messages
+            return
+
+        for x in self.get_field("Subject"):
+            print(x.replace("\n", " ").replace("\r", " "))
+
+    def handle_sent(self):
+        self.connect_imap()
+
+        num_today = 0
+        today = datetime.date.today().strftime("%d-%b-%Y").lstrip("0")
+        num_sent = self.select_mailbox(self.options.imap_sent_items)
+
+        for x in self.get_field(
+            "Subject", "(ON {})".format(self.quote(today))
+        ):
+            print(
+                " \xe2\x80\xa2 {}".format(
+                    x.replace("\n", " ").replace("\r", " ")
+                )
+            )
+            num_today += 1
+
+        print(
+            "\nI: Total sent: {} - sent today: {}".format(num_sent, num_today)
+        )
+
+    def handle_sent_history(self, *args):
+        self.connect_imap()
+
+        days = int(args[0]) if args else 7
+
+        self.select_mailbox(self.options.imap_sent_items)
+
+        for x in range(days):
+            dt = datetime.date.today() - datetime.timedelta(days=x)
+
+            fmt = dt.strftime("%d-%b-%Y").lstrip("0")
+            num_sent = len(
+                self.get_messages("(ON {})".format(self.quote(fmt)))
+            )
+
+            print("{} {}".format(dt.strftime("%Y-%m-%d"), num_sent))
+
+    def handle_mbox(self, *args):
+        self.connect_imap()
+
+        args = self.rewrite_args(args)
+
+        self.log.debug("Adding mbox to %r", self.options.mbox_mailbox)
+
+        content = " ".join(args)
+        msg = email.message_from_string(content)
+
+        dt = email.utils.parsedate(msg["Date"])
+        if dt is None:
+            dt = datetime.datetime.utcnow().timetuple()
+
+        response = self.imap.append(
+            self.options.mbox_mailbox,
+            "",
+            time.mktime(dt),
+            content.encode('utf-8'),
+        )
+
+        self.check_response(response, "Error adding mbox item")
+
+    def handle_draft(self, *args):
+        self.connect_imap()
+
+        self.log.debug("Creating draft message")
+
+        msg = email.message.Message()
+        msg["Message-Id"] = email.utils.make_msgid()
+
+        for k, v in (
+            ("To", self.options.draft_to),
+            ("Cc", self.options.draft_cc),
+            ("Bcc", self.options.draft_bcc),
+            ("Subject", self.options.draft_subject),
+        ):
+            if v:
+                msg[k] = v
+
+        args = self.rewrite_args(args)
+        msg.set_payload(" ".join(args))
+
+        if self.options.draft_attachment:
+            msg = self.add_attachment(msg, self.options.draft_attachment)
+
+        for x in self.options.draft_extra_headers.split("\\n"):
+            if not x:
+                continue
+            k, v = x.split(": ", 1)
+            msg[k] = v
+
+        self.log.debug(
+            "Adding draft message to mailbox %r", self.options.draft_mailbox
+        )
+
+        response = self.imap.append(
+            self.quote(self.options.draft_mailbox),
+            r"\DRAFT",
+            imaplib.Time2Internaldate(time.time()),
+            msg.as_string().encode('utf-8'),
+        )
+
+        self.check_response(response, "Error adding draft item")
+
+    def handle_config(self):
+        for x in ("imap", "smtp"):
+            print("{}\n{}\n".format(x.upper(), "=" * len(x)))
+
+            for y in ("server", "username", "password", "secure"):
+                print(
+                    "{:>9}: {!r}".format(
+                        y, getattr(self.options, "{}_{}".format(x, y))
+                    )
+                )
+            print()
+
+        print("TODO")
+        print("====")
+        print()
+        for x in ("mailbox", "email", "prefix"):
+            print(
+                "{:>9}: {!r}".format(
+                    x, getattr(self.options, "todo_{}".format(x))
+                )
+            )
+
+    # Setup ###################################################################
+
+    def setup_config(self, parser):
+        c = configparser.ConfigParser()
+
+        c.read(
+            [
+                os.path.join(x, "tickle-me-email", "tickle-me-email.cfg")
+                for x in (BaseDirectory.xdg_config_home, "/etc")
+            ]
+        )
+
+        def from_config(method, section, option):
+            try:
+                return getattr(c, method)(section, option)
+            except (configparser.NoSectionError, configparser.NoOptionError):
+                return None
+
+        for x in ("imap", "smtp"):
+            for y in ("server", "username", "password"):
+                val = None
+
+                # Try config file
+                val = from_config("get", x, y)
+
+                # Allow os.environ to override
+                try:
+                    val = os.environ["{}_{}".format(x.upper(), y.upper())]
+                except KeyError:
+                    pass
+
+                if val is None:
+                    parser.error(
+                        "missing {!r} config option for {}".format(
+                            y, x.upper()
+                        )
+                    )
+
+                setattr(self.options, "{}_{}".format(x, y), val)
+
+            # Check secure flag, allowing environment to override
+            val = from_config("getboolean", x, "secure") or False
+
+            try:
+                k = os.environ["{}_SECURE".format(x.upper())].lower()
+
+                val = {"true": True, "false": False}[k]
+            except KeyError:
+                pass
+
+            setattr(self.options, "{}_secure".format(x), val)
+
+        for type_, x, y, default in (
+            (str, "todo", "email", "TODO <nobody@example.com>"),
+            (str, "todo", "prefix", "TODO: "),
+            (str, "todo", "mailbox", "INBOX"),
+            (bool, "todo", "read", "0"),
+            (str, "imap", "sent_items", "INBOX.Sent Items"),
+            (str, "mbox", "mailbox", "INBOX"),
+            (str, "draft", "to", ""),
+            (str, "draft", "cc", ""),
+            (str, "draft", "bcc", ""),
+            (str, "draft", "subject", ""),
+            (str, "draft", "mailbox", "INBOX.Drafts"),
+            (str, "draft", "attachment", None),
+            (str, "draft", "extra_headers", ""),
+            (str, "sendmail", "attachment", None),
+            (str, "subjects", "mailbox", "INBOX"),
+        ):
+            val = from_config("get", x, y) or default
+
+            try:
+                val = os.environ["{}_{}".format(x.upper(), y.upper())]
+            except KeyError:
+                pass
+
+            if type_ is bool:
+                val = val.lower() in ("1", "true", "yes")
+
+            setattr(self.options, "{}_{}".format(x, y), val)
+
+    def setup_logging(self):
+        self.log = logging.getLogger()
+        self.log.setLevel(
+            {0: logging.WARNING, 1: logging.INFO, 2: logging.DEBUG}[
+                self.options.verbosity
+            ]
+        )
+
+        handler = logging.StreamHandler(sys.stderr)
+        handler.setFormatter(
+            logging.Formatter("%(asctime).19s %(levelname).1s %(message)s")
+        )
+        self.log.addHandler(handler)
+
+    # Connect #################################################################
+
+    def connect_imap(self):
+        if self.imap is not None:
+            return
+
+        klass = (
+            imaplib.IMAP4_SSL if self.options.imap_secure else imaplib.IMAP4
+        )
+
+        self.log.debug(
+            "Connecting to IMAP server %s using %s",
+            self.options.imap_server,
+            klass,
+        )
+        self.imap = klass(self.options.imap_server)
+
+        self.log.debug("Logging into IMAP server")
+        self.imap.login(self.options.imap_username, self.options.imap_password)
+
+    def connect_smtp(self):
+        if self.smtp is not None:
+            return
+
+        klass = smtplib.SMTP_SSL if self.options.smtp_secure else smtplib.SMTP
+
+        self.log.debug(
+            "Connecting to SMTP server %s using %s",
+            self.options.smtp_server,
+            klass,
+        )
+        self.smtp = klass(self.options.smtp_server)
+
+        self.log.debug("Logging into SMTP server")
+        self.smtp.login(self.options.smtp_username, self.options.smtp_password)
+
+    def disconnect(self):
+        self.log.debug("Disconnecting")
+
+        if self.smtp is not None:
+            self.smtp.quit()
+
+        if self.imap is not None:
+            try:
+                self.imap.close()
+                self.imap.logout()
+            except self.imap.error:
+                pass
+
+    # Utilities ###############################################################
+
+    def flag_message(self, uid, name, enable):
+        self.log.debug(
+            "%s flag %r on UID %s",
+            "Setting" if enable else "Unsetting",
+            name,
+            uid,
+        )
+
+        response = self.imap.uid(
+            "STORE",
+            str(uid),
+            "+FLAGS" if enable else "-FLAGS",
+            r"(\{})".format(name),
+        )
+
+        self.check_response(response, "Error setting {} flag".format(name))
+
+    def move_message(self, uid, target):
+        self.log.debug("Copying message %s to %r", uid, target)
+
+        self.check_response(
+            self.imap.uid("COPY", str(uid), self.quote(target)),
+            "Error copying message",
+        )
+
+        self.delete_message(uid)
+
+    def delete_message(self, uid):
+        self.flag_message(uid, "Deleted", True)
+        self.imap.expunge()
+
+    def select_mailbox(self, mailbox):
+        """
+        Returns the number of messages in the mailbox.
+        """
+
+        self.log.debug("Selecting mailbox %r", mailbox)
+
+        response = self.imap.select(self.quote(mailbox))
+
+        self.check_response(
+            response, "Error selecting mailbox {!r}".format(mailbox)
+        )
+
+        return int(self.parse(response))
+
+    def get_messages(self, criterion="ALL"):
+        self.log.debug("Searching for messages matching %r", criterion)
+
+        response = self.imap.sort('DATE', 'UTF-8', criterion)
+
+        self.check_response(response, "Error searching for messages")
+
+        data = self.parse(response)
+
+        # Work in reverse as we could changing stuff, altering indices
+        return [int(x) for x in reversed(data.split())]
+
+    def fetch(self, idx, parts):
+        self.log.debug("Fetching message idx %d with parts %r", idx, parts)
+        response = self.imap.fetch(str(idx), parts)
+
+        self.check_response(response, "Error fetching messages")
+
+        return self.parse(response)
+
+    def get_uid(self, idx):
+        txt = self.fetch(idx, "(UID)")
+
+        m = re_uid.match(txt.decode("utf-8"))
+
+        if m is None:
+            raise CommandError("Could not parse UID from {!r}".format(txt))
+
+        return int(m.group("uid"))
+
+    def get_field(self, field, criterion="ALL"):
+        for idx in self.get_messages(criterion):
+            raw = self.fetch(
+                idx,
+                "(BODY.PEEK[HEADER.FIELDS ({})])".format(self.quote(field)),
+            )[1].decode("utf-8")
+
+            if raw == "\r\n":
+                continue
+
+            val = email.message_from_string(raw)[field]
+
+            # https://stackoverflow.com/questions/7331351/python-email-header-decoding-utf-8
+            val = str(
+                email.header.make_header(email.header.decode_header(val))
+            )
+
+            yield val
+
+    def parse(self, val):
+        return val[1][0]
+
+    def check_response(self, response, msg):
+        if response[0] == "OK":
+            return
+
+        suffix = " ".join(x.decode("utf-8") for x in response[1])
+
+        raise CommandError("{}: {}".format(msg, suffix))
+
+    def quote(self, val):
+        return '"{}"'.format(val.replace("\\", "\\\\").replace('"', '\\"'))
+
+    def sendmail(self, msg):
+        # Set some defaults
+        for k, v in {
+            'From': '',
+            'Date': email.utils.format_datetime(datetime.datetime.utcnow()),
+            'Subject': '',
+        }.items():
+            if k not in msg:
+                msg[k] = v
+
+        recipients = set(
+            y
+            for x in ("to", "cc", "bcc")
+            for _, y in email.utils.getaddresses(msg.get_all(x, []))
+        )
+
+        self.log.info(
+            "Sending message %r to %s", msg["subject"], ", ".join(recipients)
+        )
+
+        self.smtp.sendmail(msg["from"], recipients, msg.as_string())
+
+    def add_attachment(self, msg, filename):
+        if not msg.is_multipart():
+            old_msg = msg
+
+            msg = email.mime.multipart.MIMEMultipart()
+
+            for k, v in old_msg.items():
+                msg[k] = v
+
+            msg.attach(
+                email.mime.text.MIMEText(old_msg.get_payload(), "plain")
+            )
+
+        basename = os.path.basename(filename)
+        with open(filename, "rb") as f:
+            data = f.read()
+
+        ctype, encoding = mimetypes.guess_type(basename)
+        if ctype is None or encoding is not None:
+            # No guess could be made *or* the file is encoded
+            ctype = "application/octet-stream"
+
+        maintype, subtype = ctype.split("/", 1)
+
+        if maintype == "text":
+            try:
+                data = data.decode('utf-8')
+            except UnicodeDecodeError:
+                pass
+            else:
+                attachment = email.mime.text.MIMEText(data, _subtype=subtype)
+
+        if maintype == "audio":
+            attachment = email.mime.audio.MIMEAudio(data, _subtype=subtype)
+        elif maintype == "image":
+            attachment = email.mime.image.MIMEImage(data, _subtype=subtype)
+        else:
+            attachment = email.mime.base.MIMEBase(maintype, subtype)
+            attachment.set_payload(data)
+            email.encoders.encode_base64(attachment)
+
+        attachment.add_header(
+            "Content-Disposition", "attachment", filename=basename
+        )
+
+        msg.attach(attachment)
+
+        return msg
+
+    def rewrite_args(self, args):
+        if args == ("-",) or args == ():
+            return (sys.stdin.read(),)
+        return args
+
+if __name__ == "__main__":
+    try:
+        sys.exit(Command().main())
+    except KeyboardInterrupt:
+        sys.exit(2)
