@@ -1,0 +1,108 @@
+Metadata-Version: 2.1
+Name: wdmtoolbox
+Version: 12.9.4
+Summary: Read and write Watershed Data Management (WDM) files
+Home-page: http://timcera.bitbucket.io/wdmtoolbox/docs/index.html
+Author: Tim Cera, PE
+Author-email: tim@cerazone.net
+License: BSD
+Keywords: WDM watershed data_management data hydrology hydrological simulation fortran HSPF
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Intended Audience :: Developers
+Classifier: Environment :: Console
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.7.1
+Description-Content-Type: text/x-rst
+License-File: LICENSE.txt
+License-File: AUTHORS.rst
+Requires-Dist: tstoolbox (>=103)
+Requires-Dist: filelock
+Provides-Extra: dev
+Requires-Dist: black ; extra == 'dev'
+Requires-Dist: cleanpy ; extra == 'dev'
+Requires-Dist: twine ; extra == 'dev'
+Requires-Dist: pytest ; extra == 'dev'
+Requires-Dist: coverage ; extra == 'dev'
+Requires-Dist: flake8 ; extra == 'dev'
+Requires-Dist: pytest-cov ; extra == 'dev'
+Requires-Dist: pytest-mpl ; extra == 'dev'
+Requires-Dist: pre-commit ; extra == 'dev'
+Requires-Dist: black-nbconvert ; extra == 'dev'
+Requires-Dist: blacken-docs ; extra == 'dev'
+Requires-Dist: velin ; extra == 'dev'
+Requires-Dist: isort ; extra == 'dev'
+Requires-Dist: pyroma ; extra == 'dev'
+Requires-Dist: pyupgrade ; extra == 'dev'
+Requires-Dist: commitizen ; extra == 'dev'
+
+.. image:: https://github.com/timcera/wdmtoolbox/actions/workflows/python-package.yml/badge.svg
+    :target: https://github.com/timcera/wdmtoolbox/actions/workflows/python-package.yml
+    :height: 20
+
+.. image:: https://coveralls.io/repos/timcera/wdmtoolbox/badge.png?branch=master
+    :target: https://coveralls.io/r/timcera/wdmtoolbox?branch=master
+    :height: 20
+
+.. image:: https://img.shields.io/pypi/v/wdmtoolbox.svg
+    :alt: Latest release
+    :target: https://pypi.python.org/pypi/wdmtoolbox
+
+.. image:: http://img.shields.io/badge/license-BSD-lightgrey.svg
+    :alt: BSD-3 clause license
+    :target: https://pypi.python.org/pypi/wdmtoolbox/
+
+.. image:: http://img.shields.io/pypi/dd/wdmtoolbox.svg
+    :alt: wdmtoolbox downloads
+    :target: https://pypi.python.org/pypi/wdmtoolbox/
+
+wdmtoolbox
+==========
+The `wdmtoolbox` is a Python script and library to read/write/manage Watershed
+Data Management (WDM) files used for time-series in hydrology and hydrological
+simulation.  WDM files are used in the Hydrological Simulation Program -
+FORTRAN (HSPF) and the Better Assessment of Science Integrating point and
+Non-point Sources (BASINS).  HSPF is a part of the BASINS system.
+
+BASINS, HSPF, and various utilities are available at
+https://github.com/respec/BASINS/releases
+
+For HSPF I also have developed:
+
+* hspfbintoolbox to extract data from the HSPF binary output file
+  https://timcera.bitbucket.io/hspfbintoolbox/docs/index.html
+  install with `pip install hspfbintoolbox`
+* hspf_utils to create water balance tables of the entire model, or particular
+  years, and to create a CSV file useful to join to a GIS layer to map model
+  results.
+  https://timcera.bitbucket.io/hspf_utils/docs/index.html
+  install with `pip install hspf_utils`
+
+Installation for the Impatient
+==============================
+::
+
+    pip install wdmtoolbox
+
+For Windows should use the `conda` environment and install as many of the
+required libraries with `conda install ...` before using `pip`..
+
+Compile From Source
+-------------------
+To compile from source you need a "C" compiler (gcc on Linux, Visual Studio
+2019 for Windows), a FORTRAN compiler (gfortran on Linux, MSYS2/MINGW gfortran
+on Windows), Python 3.7, 3.8, or 3.9 with "numpy" installed to be able to access
+`f2py`.
+
+Additional Software
+===================
+https://timcera.bitbucket.io/index.html
