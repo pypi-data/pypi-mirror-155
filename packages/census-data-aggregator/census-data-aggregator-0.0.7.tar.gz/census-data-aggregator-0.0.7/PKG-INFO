@@ -1,0 +1,28 @@
+Metadata-Version: 2.1
+Name: census-data-aggregator
+Version: 0.0.7
+Summary: Combine U.S. census data responsibly
+Home-page: https://palewi.re/docs/census-data-aggregator/
+Author: Ben Welsh
+Author-email: b@palewi.re
+License: MIT
+Project-URL: Maintainer, https://github.com/datadesk
+Project-URL: Source, https://github.com/datadesk/census-data-aggregator
+Project-URL: Tracker, https://github.com/datadesk/census-data-aggregator/issues
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: License :: OSI Approved :: MIT License
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+### Links
+
+* Docs: [palewi.re/docs/census-data-aggregator/](https://palewi.re/docs/census-data-aggregator/)
+* Issues: [github.com/datadesk/census-data-aggregator/issues](https://github.com/datadesk/census-data-aggregator/issues)
+* Packaging: [pypi.python.org/pypi/census-data-aggregator](https://pypi.python.org/pypi/census-data-aggregator)
+* Testing: [github.com/datadesk/census-data-aggregator/actions](https://github.com/datadesk/census-data-aggregator/actions)
