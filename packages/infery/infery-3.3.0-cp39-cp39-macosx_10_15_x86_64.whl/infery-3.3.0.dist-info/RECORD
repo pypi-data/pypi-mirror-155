@@ -1,0 +1,16 @@
+infery.cpython-39-darwin.so,sha256=kwxwNVSdCmrFSSF8hnELQKUZkE594lAsISrD2NziARA,2237976
+infery.pyi,sha256=yKYJGscKJIiKdx9DY1AF55s0hhFYVrzuVg79Jwngsh8,2551
+tests.cpython-39-darwin.so,sha256=6rknR-qxEEtESSuzUG3kB3JEsq0hs1UbNrgdJhby3n0,1958984
+tests.pyi,sha256=AkVwaN8LYCy4v9ekbpch4wokOubPPANNk3CCfAIiqa0,2938
+infery/py.typed,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+tests/infery_tool/model_metadata_example.json,sha256=qtS4B2jDEkzpuCDft_nVQ1zSgE98FSLkI01zLheXfIY,989
+tests/installation_tests/venv_test_runner.sh,sha256=zdwlVLwIrnBwkpJB_uzAk7tojy8DcOd5kglN4CHwQLE,2185
+tests/installation_tests/requirements/empty.requirements.txt,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/installation_tests/requirements/torch_numpy_1_20.requirements.txt,sha256=GTD_MHQkQKdSndABFUjOpfQavxyYJsxXPxR8CrAjwTg,18
+tests/installation_tests/requirements/torch_numpy_1_20.with_infery.requirements.txt,sha256=dxvkEfhYDYbrqBllfmP3QUvbOIeRh5Ajuy0a54swXj4,26
+tests/installation_tests/requirements/torch_numpy_1_20.with_infery_gpu.requirements.txt,sha256=r7wyjmGcahVdBpy_HsU_Rm5LFxhJ6ftGPX2H4I5thlo,30
+infery-3.3.0.dist-info/LICENSE,sha256=xbk3exNmWGQ0V59U9TUVZts5p2BI-mzMEdSMc_GldQ4,11342
+infery-3.3.0.dist-info/METADATA,sha256=wlv4QnlCmV3JCiDTvlTnFEFnDSJmYe2m1mUH8A-1gPA,4343
+infery-3.3.0.dist-info/WHEEL,sha256=-JQORYkApKBbggxqsZJ0CP7mUV5QvZJGGrbjV47FQ8w,104
+infery-3.3.0.dist-info/top_level.txt,sha256=W4SjdZWE39rdkEfVRcpvypJPYLe0ug4Ln3kP9OUZYu8,13
+infery-3.3.0.dist-info/RECORD,,
