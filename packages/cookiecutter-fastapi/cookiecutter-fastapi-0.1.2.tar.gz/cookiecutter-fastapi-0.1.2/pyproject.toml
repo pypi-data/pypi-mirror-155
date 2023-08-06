@@ -1,0 +1,41 @@
+[tool.poetry]
+name = "cookiecutter-fastapi"
+version = "0.1.2"
+description = "Cookiecutter for fastapi projects"
+readme = "README.md"
+authors = ["Tobi-De <tobidegnon@protonmail.com>"]
+license = "MIT"
+repository = "https://github.com/Tobi-De/cookiecutter-fastapi"
+homepage = "https://github.com/Tobi-De/cookiecutter-fastapi"
+keywords = ["fastapi", "python", "cookiecutter", "project template", "tortoise-orm", "beanie", "SQLModel"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Framework :: Django :: 3.2",
+    "Intended Audience :: Developers",
+    "Natural Language :: English",
+    "License :: OSI Approved :: BSD License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Topic :: Software Development",
+]
+packages=[
+    { include = "tests" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+cookiecutter = "^2.1.1"
+pytest-cookies = "^0.6.1"
+pytest = "^7.1.2"
+
+[tool.poetry.dev-dependencies]
+
+[tool.pytest]
+norecursedirs = ["app*"]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
