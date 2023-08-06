@@ -1,0 +1,17 @@
+hostname: grizdbinstance.c3prl6czsxrm.us-east-1.rds.amazonaws.com
+username: grizlisu
+password: 's16#pr1Q!Rghx$'
+database: grizlifields
+port: 5432
+
+# hostname: grizdbinstance.c3prl6czsxrm.us-east-1.rds.amazonaws.com
+# username: grizli_rw
+# password: cC9gzZ!x9328sW
+# database: grizlifields
+# port: 5432
+
+hostname: grizdbinstance.c3prl6czsxrm.us-east-1.rds.amazonaws.com
+username: redshift_fit_public
+password: grizli_public_db
+database: grizlifields
+port: 5432
