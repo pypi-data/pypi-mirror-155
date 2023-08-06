@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: graphsrv
+Version: 2.1.1
+Summary: serve embeddable graphs
+Home-page: https://github.com/20c/graphsrv
+Author: Twentieth Century
+Author-email: code@20c.com
+License: LICENSE.txt
+Download-URL: https://github.com/20c/graphsrv/2.1.1
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: License :: OSI Approved :: Apache Software License
+Requires-Dist: vodka (<4,>=3)
+Requires-Dist: Jinja2 (<4,>=3)
+Requires-Dist: Flask (<3,>=2)
+
+UNKNOWN
+
+
