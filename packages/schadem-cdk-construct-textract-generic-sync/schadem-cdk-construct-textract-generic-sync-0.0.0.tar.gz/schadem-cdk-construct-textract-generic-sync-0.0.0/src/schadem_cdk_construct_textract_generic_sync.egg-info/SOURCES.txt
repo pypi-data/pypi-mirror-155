@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+src/schadem_cdk_construct_textract_generic_sync/__init__.py
+src/schadem_cdk_construct_textract_generic_sync/py.typed
+src/schadem_cdk_construct_textract_generic_sync.egg-info/PKG-INFO
+src/schadem_cdk_construct_textract_generic_sync.egg-info/SOURCES.txt
+src/schadem_cdk_construct_textract_generic_sync.egg-info/dependency_links.txt
+src/schadem_cdk_construct_textract_generic_sync.egg-info/requires.txt
+src/schadem_cdk_construct_textract_generic_sync.egg-info/top_level.txt
+src/schadem_cdk_construct_textract_generic_sync/_jsii/__init__.py
+src/schadem_cdk_construct_textract_generic_sync/_jsii/schadem-cdk-construct-textract-generic-sync@0.0.0.jsii.tgz
