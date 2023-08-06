@@ -1,0 +1,13 @@
+prefix=/usr/local
+exec_prefix=/usr/local/bin
+libdir=/usr/local/lib64
+includedir=/usr/local/include
+
+Name: libhelicsSharedLib
+Description: HELICS C shared library
+URL: www.helics.org
+Version: 2.8.1
+Libs: -L${libdir} -lhelicsSharedLib
+Libs.private:  
+Requires.private: 
+Cflags: -I${includedir} 
