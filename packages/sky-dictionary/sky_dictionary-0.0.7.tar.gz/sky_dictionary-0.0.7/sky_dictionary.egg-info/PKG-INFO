@@ -1,0 +1,94 @@
+Metadata-Version: 2.1
+Name: sky-dictionary
+Version: 0.0.7
+Summary: 字段配置模块
+Home-page: UNKNOWN
+Author: sunkaiyan
+Author-email: sky4834@163.com
+License: apache 3.0
+Description: # 安装前必看
+        
+        ## 安装步骤
+        
+        - 配置 INSTALLED_APPS 添加'django_simple_api;
+        
+        
+        - 配置配置setting   中间件
+          'django.middleware.security.SecurityMiddleware',
+        
+        
+        
+        # 接口：
+        
+        configure 全部配置
+        
+        - **接口URL：** `http://127.0.0.1:8000/dictionary/configure/`
+        - **请求方式：** `GET`
+        - **Content-Type：** `multipart/form-data`
+        
+        成功响应示例
+        
+        ```json
+        {"err": 0,"msg": "ok", //返回文字描述"data": {"45888": {"45456": "{name:123456}"}} //返回数据}
+        ```
+        
+        ------
+        
+        _configure 按照group查找
+        
+        - **接口状态：** `已完成`
+        - **接口URL：** `http://127.0.0.1:8000/dictionary/configure/45888/`
+        - **请求方式：** `GET`
+        - **Content-Type：** `multipart/form-data`
+        
+        成功响应示例
+        
+        ```json
+        {"err": 0,"msg": "ok", //返回文字描述"data": {"45456": "{name:123456}"} //返回数据}
+        ```
+        
+        ------
+        
+        _configure 按照/group/key查找
+        
+        - **接口状态：** `已完成`
+        - **接口URL：** `http://127.0.0.1:8000/dictionary/configure/45888/45456/`
+        - **请求方式：** `GET`
+        - **Content-Type：** `multipart/form-data`
+        
+        成功响应示例
+        
+        ```json
+        {"err": 0,"msg": "ok", //返回文字描述"data": {"45456": "{name:123456}"} //返回数据}
+        ```
+        
+        #### 字段描述
+        
+        | 参数名     | 示例值        | 参数类型 | 参数描述       |
+        | :--------- | :------------ | :------- | :------------- |
+        | err        | 0             | Number   | `-`            |
+        | msg        | ok            | String   | `返回文字描述` |
+        | -data      | -             | Object   | `返回数据`     |
+        | data.45456 | {name:123456} | String   | `-`            |
+        
+        
+        
+        # SQL
+        
+        ```mysql
+        CREATE TABLE `dictionary_configure` (
+          `id` bigint(20) NOT NULL AUTO_INCREMENT,
+          `group` varchar(128) NOT NULL,
+          `key` varchar(128) NOT NULL,
+          `value` longtext NOT NULL,
+          `description` varchar(255) NOT NULL,
+          PRIMARY KEY (`id`) USING BTREE,
+          UNIQUE KEY `dictionary_configure_group_key_d0e0a692_uniq` (`group`,`key`) USING BTREE,
+          KEY `dictionary_configure_group_09d9ee65` (`group`) USING BTREE,
+          KEY `dictionary_configure_key_52d53a3c` (`key`) USING BTREE
+        ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
+        ```
+        
+        
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
