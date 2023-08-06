@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: ideenergy
+Version: 1.0.0a3
+Summary: Interface to i-de.es energy data
+Home-page: https://github.com/ldotlopez/ideenergy
+Author: Luis López
+Author-email: luis@cuarentaydos.com
+Project-URL: Bug Tracker, https://github.com/ldotlopez/ideenergy/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: aiohttp
+Requires-Dist: attrs (==21.2.0)
+Provides-Extra: mqtt
+Requires-Dist: paho-mqtt (>=1.6.1) ; extra == 'mqtt'
+
+# ideenergy
+
+[![Upload Python Package](https://github.com/ldotlopez/ideenergy/actions/workflows/python-publish.yml/badge.svg)](https://github.com/ldotlopez/ideenergy/actions/workflows/python-publish.yml) 
+[![CodeQL](https://github.com/ldotlopez/ideenergy/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/ldotlopez/ideenergy/actions/workflows/codeql-analysis.yml)
+
+Programmatic access to consumer energy consumption from https://www.i-de.es/ (Spanish energy distributor)
+
+**Useful links**
+
+  * [Related Home-Assistant component](https://github.com/ldotlopez/ha-ideenergy)
+  * [Documentation about other distributors](https://www.genbeta.com/web/como-saber-consumo-electrico-tiempo-real-casa)
