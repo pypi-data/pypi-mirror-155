@@ -1,0 +1,105 @@
+Metadata-Version: 2.1
+Name: DI-engine
+Version: 0.4.0
+Summary: Decision AI Engine
+Home-page: https://github.com/opendilab/DI-engine
+Author: OpenDILab Contributors
+Author-email: opendilab.contact@gmail.com
+License: Apache License, Version 2.0
+Keywords: Decision AI Engine
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.6
+License-File: LICENSE
+Requires-Dist: numpy (>=1.18.0)
+Requires-Dist: requests (>=2.25.1)
+Requires-Dist: six
+Requires-Dist: gym (==0.20.0)
+Requires-Dist: torch (<=1.10.0,>=1.1.0)
+Requires-Dist: pyyaml (<6.0)
+Requires-Dist: easydict (==1.9)
+Requires-Dist: protobuf (<=3.20.1)
+Requires-Dist: tensorboardX (<=2.2,>=2.1)
+Requires-Dist: matplotlib
+Requires-Dist: seaborn
+Requires-Dist: yapf (==0.29.0)
+Requires-Dist: responses (~=0.12.1)
+Requires-Dist: flask (~=1.1.2)
+Requires-Dist: MarkupSafe (<=2.0.1)
+Requires-Dist: lz4
+Requires-Dist: cloudpickle
+Requires-Dist: tabulate
+Requires-Dist: sortedcontainers
+Requires-Dist: click (==7.1.2)
+Requires-Dist: URLObject (~=2.4.3)
+Requires-Dist: urllib3 (>=1.26.5)
+Requires-Dist: readerwriterlock
+Requires-Dist: opencv-python
+Requires-Dist: enum-tools
+Requires-Dist: scipy
+Requires-Dist: trueskill
+Requires-Dist: h5py
+Requires-Dist: rich
+Requires-Dist: mpire (>=2.3.5)
+Requires-Dist: pynng
+Requires-Dist: pettingzoo (==1.12.0)
+Requires-Dist: pyglet (>=1.4.0)
+Requires-Dist: redis
+Requires-Dist: DI-treetensor (>=0.2.1)
+Requires-Dist: DI-toolkit (>=0.0.2)
+Requires-Dist: hbutils (>=0.5.0)
+Requires-Dist: moviepy
+Requires-Dist: hbutils
+Provides-Extra: bsuite_env
+Requires-Dist: bsuite ; extra == 'bsuite_env'
+Provides-Extra: common_env
+Requires-Dist: ale-py (==0.7.0) ; extra == 'common_env'
+Requires-Dist: autorom ; extra == 'common_env'
+Requires-Dist: box2d-py ; extra == 'common_env'
+Requires-Dist: cmake (>=3.18.4) ; extra == 'common_env'
+Requires-Dist: opencv-python ; extra == 'common_env'
+Provides-Extra: dist
+Requires-Dist: redis (==3.5.3) ; extra == 'dist'
+Requires-Dist: redis-py-cluster (==2.1.0) ; extra == 'dist'
+Provides-Extra: envpool
+Requires-Dist: envpool ; extra == 'envpool'
+Provides-Extra: fast
+Requires-Dist: numpy-stl ; extra == 'fast'
+Requires-Dist: numba (>=0.53.0) ; extra == 'fast'
+Provides-Extra: gfootball_env
+Requires-Dist: gfootball ; extra == 'gfootball_env'
+Requires-Dist: kaggle-environments ; extra == 'gfootball_env'
+Provides-Extra: k8s
+Requires-Dist: kubernetes ; extra == 'k8s'
+Provides-Extra: minigrid_env
+Requires-Dist: gym-minigrid ; extra == 'minigrid_env'
+Provides-Extra: procgen_env
+Requires-Dist: procgen ; extra == 'procgen_env'
+Provides-Extra: slimevolleygym_env
+Requires-Dist: slimevolleygym ; extra == 'slimevolleygym_env'
+Provides-Extra: smac_env
+Requires-Dist: pysc2 ; extra == 'smac_env'
+Provides-Extra: style
+Requires-Dist: yapf (==0.29.0) ; extra == 'style'
+Requires-Dist: flake8 ; extra == 'style'
+Provides-Extra: test
+Requires-Dist: coverage (>=5) ; extra == 'test'
+Requires-Dist: mock (>=4.0.3) ; extra == 'test'
+Requires-Dist: pytest (~=6.2.5) ; extra == 'test'
+Requires-Dist: pytest-cov (~=3.0.0) ; extra == 'test'
+Requires-Dist: pytest-mock (~=3.6.1) ; extra == 'test'
+Requires-Dist: pytest-xdist (>=1.34.0) ; extra == 'test'
+Requires-Dist: pytest-rerunfailures (~=10.2) ; extra == 'test'
+Requires-Dist: pytest-timeout (~=2.0.2) ; extra == 'test'
+
+UNKNOWN
+
