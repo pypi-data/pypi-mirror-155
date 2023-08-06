@@ -1,0 +1,2 @@
+[console_scripts]
+retrieve-mets = mets_retriever.cli:retriever
