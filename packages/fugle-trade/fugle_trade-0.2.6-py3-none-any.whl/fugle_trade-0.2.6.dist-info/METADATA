@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: fugle-trade
+Version: 0.2.6
+Summary: 
+Author: bistin
+Author-email: bistin@fugle.tw
+Requires-Python: >=3.7,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: fugle-trade-core (==0.2.5)
+Requires-Dist: keyring (==23.5.0)
+Requires-Dist: keyrings.cryptfile (==1.3.8)
+Requires-Dist: websocket-client (==1.2.1)
