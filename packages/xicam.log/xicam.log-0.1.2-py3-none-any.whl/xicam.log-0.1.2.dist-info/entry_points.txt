@@ -1,0 +1,3 @@
+[xicam.plugins.GUIPlugin]
+logging = xicam.log:LogPlugin
+
