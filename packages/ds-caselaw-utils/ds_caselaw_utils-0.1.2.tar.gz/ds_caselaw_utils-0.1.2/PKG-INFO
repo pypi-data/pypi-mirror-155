@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: ds-caselaw-utils
+Version: 0.1.2
+Summary: Utilities for the National Archives Caselaw project
+License: MIT
+Author: David McKee
+Author-email: dragon@dxw.com
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.9
