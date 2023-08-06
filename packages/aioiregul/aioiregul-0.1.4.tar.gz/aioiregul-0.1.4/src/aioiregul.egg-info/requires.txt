@@ -1,0 +1,14 @@
+BeautifulSoup4
+aiohttp
+python-slugify
+
+[all]
+BeautifulSoup4
+aiohttp
+python-slugify
+
+[test]
+FastAPI
+uvicorn
+pytest-asyncio
+pytest-xdist

@@ -1,0 +1,47 @@
+Metadata-Version: 2.1
+Name: aioiregul
+Version: 0.1.4
+Summary: Asynchronous library to get data from IRegul systems
+Home-page: https://github.com/PoppyPop/aioiregul
+Author: PoppyPop
+Author-email: skytep@gmail.com
+Project-URL: Bug Tracker, https://github.com/PoppyPop/aioiregul/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: Topic :: Home Automation
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Provides-Extra: all
+Provides-Extra: test
+License-File: LICENSE
+
+# aioiregul
+
+## Asynchronous library to get data from Iregul systems
+
+## This library is under development
+
+Requires Python 3 and uses asyncio, aiohttp and BeautifulSoup4.
+
+```python
+import aioiregul
+import aiohttp
+import asyncio
+
+async def main():
+    opt = aioiregul.ConnectionOptions(username='User', password='Pass')
+
+    dev = aioiregul.Device(opt)
+
+    res = await dev.collect()
+
+    print(res)
+
+loop = asyncio.get_event_loop()
+loop.run_until_complete(main())
+```
