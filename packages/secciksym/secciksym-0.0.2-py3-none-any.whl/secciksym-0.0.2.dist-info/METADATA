@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: secciksym
+Version: 0.0.2
+Summary: This package helps to get CIK number which is used by SEC EDGAR database using ticker.
+Home-page: https://github.com/chinni505/Symbol-ticker-to-SEC-CIK-number-finder
+Author: Chinnapa
+Author-email: chinni505@gmail.com
+Project-URL: Bug Tracker, https://github.com/chinni505/Symbol-ticker-to-SEC-CIK-number-finder/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+
+If you want to SEC CIK number for your stock ticker, this module will help you.
