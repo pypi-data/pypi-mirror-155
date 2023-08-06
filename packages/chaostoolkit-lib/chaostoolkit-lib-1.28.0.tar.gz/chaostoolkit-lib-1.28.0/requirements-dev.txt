@@ -1,0 +1,16 @@
+black
+callee
+chardet
+coverage
+flake8
+freezegun
+hvac
+isort
+jsonpath2
+pytest~=6.2
+pytest-cov
+pytest-sugar
+ply
+pyhcl
+requests-mock
+responses
