@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/easy_predictor/__init__.py
+src/easy_predictor/classification.py
+src/easy_predictor/linear.py
+src/easy_predictor.egg-info/PKG-INFO
+src/easy_predictor.egg-info/SOURCES.txt
+src/easy_predictor.egg-info/dependency_links.txt
+src/easy_predictor.egg-info/top_level.txt

@@ -1,0 +1,39 @@
+Metadata-Version: 2.1
+Name: easy_predictor
+Version: 0.0.1
+Summary: Perform regression/classification prediction on Excel dataset
+Home-page: https://github.com/Tho100/easy_regression
+Author: Hafiy Danish
+Author-email: nfrealyt@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Easy Predictor 
+
+Perform regression prediction on small Excel dataset in one line!
+
+# Side Note
+
+Currently only two columns are allowed be use on the prediction (Independent & Dependent variable).
+
+## Instruction
+
+1. Linear Regression Prediction
+
+```python
+from easy_predictor import linear 
+
+dataset = "path_to_excel_file"
+linear.predict(dataset,column_x,column_y,value: int)
+```
+2. Text Classification Prediction
+
+```python
+from easy_predictor import classification
+
+dataset = "path_to_excel_file"
+classification.predict(dataset,column_x,column_y,value: str)
