@@ -1,0 +1,11 @@
+absl-py
+dill
+gpflow>=2.5.2
+gpflux>=0.2.3
+numpy
+tensorflow>=2.4
+tensorflow-probability>=0.12
+greenlet>=1.1.0
+
+[plotting]
+seaborn
