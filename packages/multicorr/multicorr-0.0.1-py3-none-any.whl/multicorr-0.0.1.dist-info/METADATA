@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: multicorr
+Version: 0.0.1
+Summary: Description: multicorrelation to identify multicollinearity
+Home-page: UNKNOWN
+Author: sarath babu
+Author-email: babusarath05@gmail.com
+License: UNKNOWN
+Requires-Dist: pandas
+Requires-Dist: multicorr
+
+
+#multi_corr helps to identify multicollinearity in a simple and straight manner.
+
