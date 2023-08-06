@@ -1,0 +1,16 @@
+LICENSE.md
+README.md
+setup.py
+docs/source/conf.py
+tangram/__init__.py
+tangram/_version.py
+tangram/mapping_optimizer.py
+tangram/mapping_utils.py
+tangram/plot_utils.py
+tangram/utils.py
+tangram_sc.egg-info/PKG-INFO
+tangram_sc.egg-info/SOURCES.txt
+tangram_sc.egg-info/dependency_links.txt
+tangram_sc.egg-info/requires.txt
+tangram_sc.egg-info/top_level.txt
+tests/tangram_test.py
