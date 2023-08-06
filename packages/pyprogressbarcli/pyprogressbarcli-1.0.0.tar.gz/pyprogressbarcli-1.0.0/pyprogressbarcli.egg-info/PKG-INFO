@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: pyprogressbarcli
+Version: 1.0.0
+Summary: pyprogressbarcli is a utility to print progress bar in CLI
+Author: Sumit Shrivastava
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# pyprogressbar
+pyprogressbar is a utility / class that can be used to print a progress bar on the command line in the python
