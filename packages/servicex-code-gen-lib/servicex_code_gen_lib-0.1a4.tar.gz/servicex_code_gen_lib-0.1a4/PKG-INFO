@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: servicex_code_gen_lib
+Version: 0.1a4
+Summary: Library for creating ServiceX Code Generators
+Home-page: https://github.com/ssl-hep/ServiceX_Code_Generator_lib
+Author: Ben Galewsky (IRIS-HEP/NCSA/University of Illinois)
+Author-email: bengal1@illinois.edu
+Maintainer: Ben Galewsky (IRIS-HEP/NCSA/University of Illinois)
+Maintainer-email: bengal1@illinois.edu
+License: BSD
+Description: # ServiceX Code Generator Library
+        This library provides common code for creating Code Generator services for 
+        ServiceX.
+        
+        
+Platform: Any
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development
+Classifier: Topic :: Utilities
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.7, <3.11
+Description-Content-Type: text/markdown
+Provides-Extra: test

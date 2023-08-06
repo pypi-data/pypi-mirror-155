@@ -1,0 +1,11 @@
+README.md
+setup.cfg
+setup.py
+servicex_code_gen_lib.egg-info/PKG-INFO
+servicex_code_gen_lib.egg-info/SOURCES.txt
+servicex_code_gen_lib.egg-info/dependency_links.txt
+servicex_code_gen_lib.egg-info/requires.txt
+servicex_code_gen_lib.egg-info/top_level.txt
+servicex_codegen/__init__.py
+servicex_codegen/code_generator.py
+servicex_codegen/post_operation.py
