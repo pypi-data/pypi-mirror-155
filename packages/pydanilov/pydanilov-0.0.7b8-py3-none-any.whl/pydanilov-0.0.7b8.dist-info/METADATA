@@ -1,0 +1,52 @@
+Metadata-Version: 2.1
+Name: pydanilov
+Version: 0.0.7b8
+Summary: pyDanilov is a Python3 implementation of the Danilov model, a semi-empirical model of the non-auroral Earth's ionosphere D-Region.
+Home-page: https://gitlab.com/zolotov/pydanilov
+Author: Denis Sakaev, Oleg Zolotov
+Author-email: denissackaev@yandex.ru
+License: Apache Software License
+Keywords: lower ionosphere of the Earth,D-region,D-layer,model
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Physics
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3 :: Only
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: numpy
+
+
+pyDanilov is a Python3 implementation of the Danilov model,
+a semi-empirical model of the non-auroral Earth's ionosphere D-Region.
+Reference: Danilov, Rodevich, and Smirnova, Adv. Space Res.  
+15, #2, 165, 1995,   https://doi.org/10.1016/S0273-1177(99)80042-8
+
+Input:
+- z    - solar zenith angle in degrees   
+- it   - season (month)   
+- f    - F10.7 solar radio flux (daily)
+- vKp  - Kp magnetic index (3-hour)
+- f5SW - indicator for Stratospheric Warming (SW) conditions
+=0 no SW, =0.5 minor SW, =1 major SW
+- f6WA - indicator for Winter Anomaly (WA) conditions
+ =0 no WA, =0.5 weak WA, =1 strong WA
+
+Criteria for SW and WA indicators:
+- SW minor:  Temperature increase at the 30 hPa level by 10 deg.
+- SA major:  The same but by 20 degrees.
+- WA weak:   An increase of the absorption in the 2-2.8 MHz range at short A3 paths by 15 dB
+- WA strong: The same by 30 dB.
+
+Only for month 12 to 2 (winter).
+
+Output:
+- numpy array of electron density [m-3] at h=60,65,70,75,80,85, and 90km
+
+
