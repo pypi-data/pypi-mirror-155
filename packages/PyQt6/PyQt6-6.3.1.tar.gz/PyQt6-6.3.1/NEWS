@@ -1,0 +1,73 @@
+v6.3.1 17th June 2022
+  - Added qRegisterResourceData() and qUnregisterResourceData() to QtCore to
+    help in supporting legacy resource files from PyQt5.
+  - Requires v13.4 of the sip module which adds support for enums with missing
+    members and the sip.array support.
+  - Reverted the Qt.GestureType related changes made in v6.2.3 as they are no
+    longer necessary with the support for missing enum members.
+  - The QEvent constructor that takes an int argument is now deprecated.
+  - Refactored the draw methods of QPainter to accept sip.array objects of
+    appropriate types.  Such arrays, once initialised, can be used very
+    efficiently as they do not require repeated conversion from the usual
+    Python collection types.
+  - Added resize() to QPolygon, QPolygonF and QXmlStreamAttributes.
+  - Bug fixes.
+
+v6.3.0 1st April 2022
+  - Added support for Qt v6.3.
+  - Bug fixes.
+
+v6.2.3 1st February 2022
+  - All Qt.GestureType callable arguments will also accept an int.  All
+    callables that return a Qt::GestureType in C++ will return an int (which
+    can be compared with a Qt.GestureType member).
+  - Bug fixes.
+
+v6.2.2 1st December 2021
+  - Added the missing QBluetoothUuid constructors.
+  - Added the missing QMediaPlayer loop-related methods.
+  - Bug fixes.
+
+v6.2.1 28th October 2021
+  - Bug fixes.
+
+v6.2.0 30th September 2021
+  - Added support for Qt v6.2 including the QtBluetooth, QtMultimedia,
+    QtMultimediaWidgets, QtNfc, QtPositioning, QtRemoteObjects, QtSensors,
+    QtSerialPort, QtWebChannel and QtWebSockets modules.
+  - Added support for QAxContainer on Windows.
+  - Ported the QtMultimedia examples from PyQt5.
+  - Bug fixes.
+
+v6.1.2 9th July 2021
+  - Bug fixes.
+
+v6.1.1 13th June 2021
+  - Added the missing QtCore.QXmlStreamAttributes class.
+  - Added the missing QtQml.QQmlExtensionPlugin class.
+  - Added the --exclude command line option to pylupdate6.
+  - pylupdate6 now handles PEP 263 embedded source encodings in .py files.
+  - Bug fixes.
+
+v6.1.0 6th May 2021
+  - Added support for Qt v6.1.
+  - All flag-based enums have been renamed so that they use the name of the Qt
+    enum rather than the name of the Qt QFlag.
+  - An integer ARGB value can now be used whenever a QColor is expected.
+
+v6.0.3 5th March 2021
+  - Bug fixes.
+
+v6.0.2 23rd February 2021
+  - Bug fixes.
+
+v6.0.1 5th February 2021
+  - Added QSocketNotifier.
+  - The Qt Designer and qmlscene plugins now work when installed in a venv.
+  - Ported some of the PyQt5 examples.
+  - Wheels now assume that the corresponding Qt libraries are in an external
+    wheel rather than being bundled.
+  - Bug fixes.
+
+v6.0.0 4th January 2021
+  - The first release of PyQt6.
