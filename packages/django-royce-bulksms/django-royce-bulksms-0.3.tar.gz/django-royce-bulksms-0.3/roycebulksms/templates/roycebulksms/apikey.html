@@ -1,0 +1,72 @@
+{% extends 'roycebulksms/base.html' %}
+
+{% block content %}
+
+
+<div class="container">
+<form action="api-key" method="post">
+    <div class="row">
+        <div class="col-sm-5">
+            
+                {% csrf_token %}
+               
+            <div class="form-group">
+                <label>
+                    Api Key
+                </label>
+                {{ form.api_key }}
+            </div>
+                
+
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-sm-4">
+            <input type="submit" value="Add API Key" class="btn btn-primary">
+
+
+        </div>
+
+    </div>
+    <br />
+</form>
+
+<div class="row table-responsive">
+
+    <table class="table table-bordered">
+        <tr>
+            <th>
+                Api Key
+            </th>
+            <th>
+                Date
+            </th>
+            <th>
+                Action
+            </th>
+        </tr>
+
+        {%for apikey in apikeys %}
+        <tr>
+            <td>
+                {{apikey.api_key}}
+            </td>
+            <td>
+                {{apikey.created_at}}
+            </td>
+            <td>
+                
+                <a href="{% url 'dl-api-key' apikey.id  %}" class="btn btn-warning btn-sm">Delete</a>
+            </td>
+        </tr>
+
+        {% endfor %}
+        
+    </table>
+
+</div>
+
+</div>
+
+{% endblock %}

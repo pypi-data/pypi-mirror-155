@@ -1,0 +1,73 @@
+{% extends 'roycebulksms/base.html' %}
+
+{% block content %}
+
+
+<div class="container">
+<form action="groups" method="post">
+    <div class="row">
+        <div class="col-sm-5">
+            
+                {% csrf_token %}
+               
+            <div class="form-group">
+                <label>
+                   Group Name
+                </label>
+                {{ form.group_name }}
+            </div>
+                
+
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-sm-4">
+            <input type="submit" value="Add Group" class="btn btn-primary">
+
+
+        </div>
+
+    </div>
+    <br />
+    
+</form>
+
+<div class="row table-responsive">
+
+    <table class="table table-bordered">
+        <tr>
+            <th>
+                Group Name
+            </th>
+            <th>
+                Date
+            </th>
+            <th>
+                Action
+            </th>
+        </tr>
+
+        {%for group in groups %}
+        <tr>
+            <td>
+                {{group.group_name}}
+            </td>
+            <td>
+                {{group.created_at}}
+            </td>
+            <td>
+                
+                <a href="{% url 'dl-group' group.id  %}" class="btn btn-warning btn-sm">Delete</a>
+            </td>
+        </tr>
+
+        {% endfor %}
+        
+    </table>
+
+</div>
+
+</div>
+
+{% endblock %}

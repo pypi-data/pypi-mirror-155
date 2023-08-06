@@ -1,0 +1,95 @@
+Metadata-Version: 2.1
+Name: django-royce-bulksms
+Version: 0.3
+Summary: A Django app to Integrate bulk sms into Django system. It also comes with UI.
+Home-page: https://github.com/royceltd/django-royce-bulksms
+Author: Royce Ltd
+Author-email: developer@roycetechnologies.co.ke
+License: BSD-3-Clause  # Example license
+Project-URL: Bug Tracker, https://github.com/royceltd/django-royce-bulksms/issues
+Description: Django Royce Bulksms
+        =====
+        
+        Integrate Bulk sms into your project in under 2 minutes
+        
+        
+        Quick start
+        -----------
+        Install the package
+        ```
+          pip install django-royce-bulksms
+        ```
+        
+        1. Add ```roycebulksms``` to your INSTALLED_APPS setting like this
+            ```
+            INSTALLED_APPS = [
+                ...
+                'roycebulksms',
+            ]
+            ```
+        
+        2. Include the roycebulksms URLconf in your project urls. py like this
+            ```
+            path('bulksms/', include('roycebulksms.urls')),
+            ```
+        
+        3. Run ``python manage.py migrate`` to create the BulkSms models.
+        
+        4. Start the development server and visit http://127.0.0.1:8000/admin/
+            (you'll need to be authenticated to access bulk sms UI).
+        
+        5. Visit http://127.0.0.1:8000/polls/ to participate in the poll.
+        
+        Package setup
+        -
+        - Install this package
+        - Open A free account [here](https://bulksms.roycetechnlogies.co.ke)
+        - Generate API key under API menu
+        - use our default sender ID  `RoyceLtd`
+        
+        How to use this package
+        -
+        ### Using User interface
+        
+        - Add Your API key and Sender Id under settings menu
+        - Under Bulk SMS clieck send to phone number. Eneter your phone number to test the integration
+        - All SMS sent by the system(both In UI and in Views) will be under Outbox menu
+        
+        ### Sending from a View
+        
+        ```
+        from roycebulksms.views import sendText
+        
+        def index(request):
+            sendText('number',message,sender_id)
+            
+        
+        ```
+        example
+        ```
+        from roycebulksms.views import sendText
+        
+        def index(request):
+            
+            res=sendText('0713727937','Hello from my App','RoyceLtd')
+        
+        ```
+        
+        For support  call/whatsapp 0713 727 937 email: developer@roycetechnologies.co.ke
+        
+Platform: UNKNOWN
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 2.0
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown

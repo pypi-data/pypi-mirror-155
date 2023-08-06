@@ -1,0 +1,51 @@
+{% extends 'roycebulksms/base.html' %}
+{% block content %}
+   <div class="container">
+
+      <form action="/bulksms/send-to-groups" method="POST">
+         {% csrf_token %}
+
+      <div class="row">
+         <div class="col-sm-4">
+            <div class="row">
+               <div class="col-sm-12">
+                  <div class="form-group">
+                     <label for="">Sender Id</label>
+                     {{form.sender_id}}
+      
+                  </div>
+
+               </div>
+
+            </div>
+            <div class="row">
+               <div class="col-sm-12">
+                  <div class="form-group">
+                     <label for="">Message</label>
+                     {{form.text}}
+      
+                  </div>
+
+               </div>
+
+            </div>
+            
+         </div>
+         <div class="col-sm-3">
+            <div class="form-group">
+               <label for="">Select Contacts </label>
+               {{form.phone_nubers}}
+
+            </div>
+         </div>
+
+      </div>
+      <br />
+      <div class="row">
+         <div class="col-sm-6">
+         <center>   <input type="submit" class="btn btn-success" value="Send text" /></center>
+         </div>
+      </div>
+   </form>
+   </div>
+{% endblock %}

@@ -1,0 +1,155 @@
+{% extends 'roycebulksms/base.html' %}
+
+{% block content %}
+
+
+<div class="container">
+    
+<form action="contacts" method="post">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="form-group">
+                <label>
+                   Group Name <i style="color: red;"><small>*</small> </i>
+                </label>
+                {{ form.group_name }}
+            </div>
+                
+
+        </div>
+        <div class="col-sm-4">
+            <div class="form-group">
+                <label>
+                   First Name 
+                </label>
+                {{ form.first_name }}
+            </div>
+                
+
+        </div>
+        <div class="col-sm-4">
+            <div class="form-group">
+                <label>
+                   Other Names <i style="color: red;"><small>*</small> </i>
+                </label>
+                {{ form.other_names }}
+            </div>
+                
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="form-group">
+                <label>
+                   Phone Number <i style="color: red;"><small>*</small> </i>
+                </label>
+                {{ form.phone_number }}
+            </div>
+                
+
+        </div>
+        <div class="col-sm-4">
+            <div class="form-group">
+                <label>
+                   Phone 2
+                </label>
+                {{ form.alt_phone_number }}
+            </div>
+                
+
+        </div>
+        <div class="col-sm-4">
+            <div class="form-group">
+                <label>
+                   Email 
+                </label>
+                {{ form.email }}
+            </div>
+                
+
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-sm-4">
+            <input type="submit" value="Add Contact" class="btn btn-primary">
+
+
+        </div>
+
+    </div>
+    <br />
+    
+</form>
+
+<div class="row table-responsive">
+
+    <table class="table table-bordered">
+        <tr>
+            <th>
+                Group
+            </th>
+            <th>
+                First Name
+            </th>
+            <th>
+                Other Name
+            </th>
+            <th>
+                Phone
+            </th>
+            <th>
+               Alt. Phone
+            </th>
+            <th>
+               Email
+            </th>
+            
+            <th>
+                Date
+            </th>
+            <th>
+                Action
+            </th>
+        </tr>
+
+        {%for contact in contacts %}
+        <tr>
+            <td>
+                {{contact.group_id.group_name}}
+            </td>
+            <td>
+                {{contact.first_name}}
+            </td>
+            <td>
+                {{contact.other_name}}
+            </td>
+            <td>
+                {{contact.phone_number}}
+            </td>
+            <td>
+                {{contact.alt_phone_number}}
+            </td>
+            <td>
+                {{contact.email}}
+            </td>
+            <td>
+                {{contact.created_at}}
+            </td>
+            <td>
+                
+                <a href="{% url 'dl-contact' contact.id  %}" class="btn btn-warning btn-sm">Delete</a>
+            </td>
+        </tr>
+
+        {% endfor %}
+        
+    </table>
+
+</div>
+
+</div>
+
+{% endblock %}
