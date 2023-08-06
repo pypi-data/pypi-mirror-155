@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pyproject.toml Reference &#8212; PyQt-builder v1.13.0 Documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/riverbank.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="pyqtbuild Module Reference" href="pyqtbuild_api.html" />
+    <link rel="prev" title="Command Line Tools" href="command_line_tools.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pyqtbuild_api.html" title="pyqtbuild Module Reference"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="command_line_tools.html" title="Command Line Tools"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PyQt-builder v1.13.0 Documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="file docutils literal notranslate"><span class="pre">pyproject.toml</span></code> Reference</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="pyproject-toml-reference">
+<h1><code class="file docutils literal notranslate"><span class="pre">pyproject.toml</span></code> Reference<a class="headerlink" href="#pyproject-toml-reference" title="Permalink to this headline">¶</a></h1>
+<p>PyQt-builder adds the following keys to those <a class="reference external" href="https://www.riverbankcomputing.com/static/Docs/sip/pyproject_toml.html">implemented by SIP</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Individual projects may also add their own project-specific keys.</p>
+</div>
+<div class="section" id="tool-sip-builder-section">
+<h2><code class="docutils literal notranslate"><span class="pre">[tool.sip.builder]</span></code> Section<a class="headerlink" href="#tool-sip-builder-section" title="Permalink to this headline">¶</a></h2>
+<p>Unless stated otherwise, all values are strings.  Unless stated otherwise, the
+values of all list options may contain environment markers as defined in <a class="reference external" href="https://www.python.org/dev/peps/pep-0508/">PEP
+508</a>.</p>
+<dl class="simple">
+<dt><strong>jobs</strong></dt><dd><p>The integer value is the number of make jobs that will be run in parallel
+(on Linux and macOS).  There is also a corresponding command line option.</p>
+</dd>
+<dt><strong>make</strong></dt><dd><p>The boolean value specifies if <strong class="program">make</strong> (or <strong class="program">nmake</strong> on
+Windows) is executed automatically.  By default it is executed
+automatically.  There is also a corresponding command line option for
+<strong class="program">sip-build</strong>.</p>
+</dd>
+<dt><strong>qmake</strong></dt><dd><p>The value is the full path name of the <strong class="program">qmake</strong> executable.  By
+default it is assumed to be on <span class="target" id="index-0"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PATH</span></code>.  There is also a
+corresponding command line option.</p>
+</dd>
+<dt><strong>qmake-settings</strong></dt><dd><p>The value is a list of strings, usually of the form <code class="docutils literal notranslate"><span class="pre">NAME</span> <span class="pre">+=</span> <span class="pre">VALUE</span></code>, that
+are added to any <strong class="program">qmake</strong> <code class="file docutils literal notranslate"><span class="pre">.pro</span></code> file that is created.  There
+is also a corresponding command line option.</p>
+</dd>
+<dt><strong>spec</strong></dt><dd><p>The value is passed as the <code class="docutils literal notranslate"><span class="pre">-spec</span></code> argument to <strong class="program">qmake</strong> whenever
+it is executed by the builder.  There is also a corresponding command line
+option.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="tool-sip-project-section">
+<h2><code class="docutils literal notranslate"><span class="pre">[tool.sip.project]</span></code> Section<a class="headerlink" href="#tool-sip-project-section" title="Permalink to this headline">¶</a></h2>
+<p>The key/values in this section apply to the project as a whole.  Unless stated
+otherwise, all values are strings.  Unless stated otherwise, the values of all
+list options may contain environment markers as defined in <a class="reference external" href="https://www.python.org/dev/peps/pep-0508/">PEP 508</a>.</p>
+<dl class="simple">
+<dt><strong>android-abis</strong></dt><dd><p>The value is a list of target Android ABIs (e.g. armeabi-v7a, arm64-v8a).
+There is also a corresponding command line option.</p>
+</dd>
+<dt><strong>link-full-dll</strong></dt><dd><p>The boolean value specifies if, on Windows, the full Python DLL should be
+linked against rather than the limited API DLL.  There is also a
+corresponding command line option.</p>
+</dd>
+<dt><strong>py-pylib-dir</strong></dt><dd><p>The value is the name of the directory containing the target Python
+interpreter library.  By default this is determined dynamically from the
+Python installation.</p>
+</dd>
+<dt><strong>py-pylib-lib</strong></dt><dd><p>The value is the name of the target Python interpreter library.  By default
+this is determined dynamically from the Python installation.</p>
+</dd>
+<dt><strong>py-pylib-shlib</strong></dt><dd><p>The value is the name of the target Python interpreter library if it is a
+shared library.  By default this is determined dynamically from the Python
+installation.</p>
+</dd>
+<dt><strong>qml-debug</strong></dt><dd><p>The boolean value specifies if the QML debugging infrastructure should be
+enabled.  There is also a corresponding command line option.</p>
+</dd>
+<dt><strong>tag-prefix</strong></dt><dd><p>The value is the prefix of the timeline tag to use (with the Qt version
+automatically appended).  By default the value of the <code class="docutils literal notranslate"><span class="pre">name</span></code> key in the
+<code class="docutils literal notranslate"><span class="pre">[tool.sip.metadata]</span></code> section of <code class="file docutils literal notranslate"><span class="pre">pyproject.toml</span></code> is used with any
+leading <code class="docutils literal notranslate"><span class="pre">Py</span></code> removed.</p>
+</dd>
+<dt><strong>target-qt-dir</strong></dt><dd><p>The value specifies the name of the directory where the Qt libraries will
+be found.  By default the location of the Qt libraries being built against
+is used.  If Qt libraries to be included by running <strong class="program">pyqt-bundle</strong>
+are to be used then the value should be <code class="file docutils literal notranslate"><span class="pre">Qt/lib</span></code>.  There is also a
+corresponding command line option for <strong class="program">sip-wheel</strong>.</p>
+</dd>
+<dt><strong>tests-dir</strong></dt><dd><p>The value is the name of the directory, relative to the directory
+containing <code class="file docutils literal notranslate"><span class="pre">pyproject.toml</span></code>, containing any external test programs.
+The default value is <code class="file docutils literal notranslate"><span class="pre">config-tests</span></code>.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="bindings-sections">
+<h2>Bindings Sections<a class="headerlink" href="#bindings-sections" title="Permalink to this headline">¶</a></h2>
+<p>Unless stated otherwise, all values are strings.  Unless stated otherwise, the
+values of all list options may contain environment markers as defined in <a class="reference external" href="https://www.python.org/dev/peps/pep-0508/">PEP
+508</a>.</p>
+<dl class="simple">
+<dt><strong>qmake-CONFIG</strong></dt><dd><p>The value is a list of modifications to make to the <code class="docutils literal notranslate"><span class="pre">CONFIG</span></code> value in all
+generated <code class="file docutils literal notranslate"><span class="pre">.pro</span></code> files.  An element may start with <code class="docutils literal notranslate"><span class="pre">-</span></code> to specify
+that the value should be removed.</p>
+</dd>
+<dt><strong>qmake-QT</strong></dt><dd><p>The value is a list of modifications to make to the <code class="docutils literal notranslate"><span class="pre">QT</span></code> value in all
+generated <code class="file docutils literal notranslate"><span class="pre">.pro</span></code> files.  An element may start with <code class="docutils literal notranslate"><span class="pre">-</span></code> to specify
+that the value should be removed.</p>
+</dd>
+<dt><strong>test-headers</strong></dt><dd><p>The value is a list of <code class="file docutils literal notranslate"><span class="pre">.h</span></code> header files to include in any internal
+test program.</p>
+</dd>
+<dt><strong>test-statement</strong></dt><dd><p>The value is a C++ statement that will be included in any internal test
+program.</p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><code class="file docutils literal notranslate"><span class="pre">pyproject.toml</span></code> Reference</a><ul>
+<li><a class="reference internal" href="#tool-sip-builder-section"><code class="docutils literal notranslate"><span class="pre">[tool.sip.builder]</span></code> Section</a></li>
+<li><a class="reference internal" href="#tool-sip-project-section"><code class="docutils literal notranslate"><span class="pre">[tool.sip.project]</span></code> Section</a></li>
+<li><a class="reference internal" href="#bindings-sections">Bindings Sections</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="command_line_tools.html"
+                        title="previous chapter">Command Line Tools</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pyqtbuild_api.html"
+                        title="next chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyqtbuild</span></code> Module Reference</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pyqtbuild_api.html" title="pyqtbuild Module Reference"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="command_line_tools.html" title="Command Line Tools"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PyQt-builder v1.13.0 Documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="file docutils literal notranslate"><span class="pre">pyproject.toml</span></code> Reference</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022 Riverbank Computing Limited.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.2.0.
+    </div>
+  </body>
+</html>

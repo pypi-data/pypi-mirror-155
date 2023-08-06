@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>An Example &#8212; PyQt-builder v1.13.0 Documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/riverbank.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Bundling Qt Using pyqt-bundle" href="pyqtbundle.html" />
+    <link rel="prev" title="pyqtbuild Module Reference" href="pyqtbuild_api.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pyqtbundle.html" title="Bundling Qt Using pyqt-bundle"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pyqtbuild_api.html" title="pyqtbuild Module Reference"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PyQt-builder v1.13.0 Documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">An Example</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="an-example">
+<h1>An Example<a class="headerlink" href="#an-example" title="Permalink to this headline">¶</a></h1>
+<p>In this section we walk through the <code class="file docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file for the
+PyQtChart project.  PyQtChart is the set of bindings for the QtCharts v5
+library and is built on top of PyQt5.  It comprises a single extension module.
+The simplicitly of PyQtChart means that there is no need to provide any
+additional code in a <code class="file docutils literal notranslate"><span class="pre">project.py</span></code> file.</p>
+<p>If you want to look at a more complicated examples that require a
+<code class="file docutils literal notranslate"><span class="pre">project.py</span></code> file then the QScintilla Python bindings and PyQt itself are
+good examples.</p>
+<p>We show PyQtChart’s <code class="file docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file (downloadable from
+<a class="reference download internal" download="" href="_downloads/522adf759addbd3b193c74ca85243f7d/pyproject.toml"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a>) in its entirety below.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Specify the build system requirements.</span>
+<span class="p">[</span><span class="n">build</span><span class="o">-</span><span class="n">system</span><span class="p">]</span>
+<span class="n">requires</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;sip &gt;=5.3, &lt;7&quot;</span><span class="p">,</span> <span class="s2">&quot;PyQt-builder &gt;=1.6, &lt;2&quot;</span><span class="p">]</span>
+<span class="n">build</span><span class="o">-</span><span class="n">backend</span> <span class="o">=</span> <span class="s2">&quot;sipbuild.api&quot;</span>
+
+<span class="c1"># Specify the PEP 566 metadata for the project.</span>
+<span class="p">[</span><span class="n">tool</span><span class="o">.</span><span class="n">sip</span><span class="o">.</span><span class="n">metadata</span><span class="p">]</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;PyQtChart&quot;</span>
+<span class="n">version</span> <span class="o">=</span> <span class="s2">&quot;5.15.2&quot;</span>
+<span class="n">summary</span> <span class="o">=</span> <span class="s2">&quot;Python bindings for the Qt Charts library&quot;</span>
+<span class="n">home</span><span class="o">-</span><span class="n">page</span> <span class="o">=</span> <span class="s2">&quot;https://www.riverbankcomputing.com/software/pyqtchart/&quot;</span>
+<span class="n">author</span> <span class="o">=</span> <span class="s2">&quot;Riverbank Computing Limited&quot;</span>
+<span class="n">author</span><span class="o">-</span><span class="n">email</span> <span class="o">=</span> <span class="s2">&quot;info@riverbankcomputing.com&quot;</span>
+<span class="n">license</span> <span class="o">=</span> <span class="s2">&quot;GPL v3&quot;</span>
+<span class="n">requires</span><span class="o">-</span><span class="n">dist</span> <span class="o">=</span> <span class="s2">&quot;PyQt5 (&gt;=5.15)&quot;</span>
+<span class="n">description</span><span class="o">-</span><span class="n">file</span> <span class="o">=</span> <span class="s2">&quot;README&quot;</span>
+
+<span class="c1"># Specify a PyQt-based project.</span>
+<span class="p">[</span><span class="n">tool</span><span class="o">.</span><span class="n">sip</span><span class="p">]</span>
+<span class="n">project</span><span class="o">-</span><span class="n">factory</span> <span class="o">=</span> <span class="s2">&quot;pyqtbuild:PyQtProject&quot;</span>
+
+<span class="c1"># Configure the project.</span>
+<span class="p">[</span><span class="n">tool</span><span class="o">.</span><span class="n">sip</span><span class="o">.</span><span class="n">project</span><span class="p">]</span>
+<span class="n">tag</span><span class="o">-</span><span class="n">prefix</span> <span class="o">=</span> <span class="s2">&quot;QtChart&quot;</span>
+
+<span class="c1"># Define and configure each set of bindings.</span>
+<span class="p">[</span><span class="n">tool</span><span class="o">.</span><span class="n">sip</span><span class="o">.</span><span class="n">bindings</span><span class="o">.</span><span class="n">QtChart</span><span class="p">]</span>
+<span class="n">qmake</span><span class="o">-</span><span class="n">QT</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;charts&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>We will now explain each section in turn.  We assume you are familiar with the
+examples described in the <a class="reference external" href="https://www.riverbankcomputing.com/static/Docs/sip/examples.html">SIP documentation</a>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">[build-system]</span></code> section is used to specify the build system package
+requirements.  For projects using SIP this will include the version
+requirements of the <code class="docutils literal notranslate"><span class="pre">sip</span></code> project.  For PyQt projects it must also include
+the version requirements of the <code class="docutils literal notranslate"><span class="pre">PyQt-builder</span></code> project.  Both SIP and
+PyQt-builder use semantic versioning so it is important that an upper version
+number is specified for each that will exclude future incompatible versions.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>So why does <code class="docutils literal notranslate"><span class="pre">sip</span></code> specify an upper version of 7 rather than 6?  The
+answer is that it is known that PyQtChart does not use any SIP v5 features
+that have been removed in SIP v6.</p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">[tool.sip.metadata]</span></code> section specifies the meta-data for the project.
+The <code class="docutils literal notranslate"><span class="pre">requires-dist</span></code> key is used to specify the minimum version of PyQt that
+is required.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">[tool.sip]</span></code> section is used to configure the build system itself and we
+use the <code class="docutils literal notranslate"><span class="pre">project-factory</span></code> key to specify that the
+<a class="reference internal" href="pyqtbuild_api.html#pyqtbuild.PyQtProject" title="pyqtbuild.PyQtProject"><code class="xref py py-class docutils literal notranslate"><span class="pre">PyQtProject</span></code></a> class is used to implement the concept of a
+project in the build system.  This class implements the many PyQt-specific
+features of the build system including the definition of additional
+PyQt-specific keys in the <code class="file docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file itself.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">[tool.sip.project]</span></code> section is used to specify one such PyQt-specific
+key <code class="docutils literal notranslate"><span class="pre">tag-prefix</span></code>.  Current versions of PyQtChart use SIP’s <code class="docutils literal notranslate"><span class="pre">%Timeline</span></code>
+directive to define tags that are of the form <code class="docutils literal notranslate"><span class="pre">QtChart_x_y_0</span></code> where <em>x</em> and
+<em>y</em> correspond to the major and minor versions of PyQtChart and, consequently,
+Qt.  Projects that follow this convention do not need to use the <code class="docutils literal notranslate"><span class="pre">tags</span></code> key
+in the bindings sections to specify the particular <code class="docutils literal notranslate"><span class="pre">%Timeline</span></code> tag to use and
+can leave it to the build system to determine it dynamically from the version
+of Qt being used.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">[tool.sip.bindings.QtChart]</span></code> section makes use of another PyQt-specific
+key added by PyQt-builder.  This specifies that <code class="docutils literal notranslate"><span class="pre">charts</span></code> is added to the
+<code class="docutils literal notranslate"><span class="pre">QT</span></code> variable in any generated <code class="docutils literal notranslate"><span class="pre">.pro</span></code> file for this set of bindings.  This
+is all that <strong class="program">qmake</strong> needs in order to locate the header files and
+libraries of QtCharts.</p>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pyqtbuild_api.html"
+                        title="previous chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyqtbuild</span></code> Module Reference</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pyqtbundle.html"
+                        title="next chapter">Bundling Qt Using <strong class="program">pyqt-bundle</strong></a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pyqtbundle.html" title="Bundling Qt Using pyqt-bundle"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="pyqtbuild_api.html" title="pyqtbuild Module Reference"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PyQt-builder v1.13.0 Documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">An Example</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022 Riverbank Computing Limited.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.2.0.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Command Line Tools &#8212; PyQt-builder v1.13.0 Documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/riverbank.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="pyproject.toml Reference" href="pyproject_toml.html" />
+    <link rel="prev" title="Introduction" href="introduction.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pyproject_toml.html" title="pyproject.toml Reference"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="introduction.html" title="Introduction"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PyQt-builder v1.13.0 Documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Command Line Tools</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="command-line-tools">
+<h1>Command Line Tools<a class="headerlink" href="#command-line-tools" title="Permalink to this headline">¶</a></h1>
+<p>PyQt-builder adds the following command line options to <a class="reference external" href="https://www.riverbankcomputing.com/static/Docs/sip/command_line_tools.html">SIP’s build tools</a>.
+Unless stated otherwise, each option is added to all of the build tools.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Individual projects may also add their own project-specific command line
+options.</p>
+</div>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-android-abi">
+<span class="sig-name descname"><span class="pre">--android-abi</span></span><span class="sig-prename descclassname"> <span class="pre">ABI</span></span><a class="headerlink" href="#cmdoption-android-abi" title="Permalink to this definition">¶</a></dt>
+<dd><p>The target Android ABI.  This option may be given any number of times.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-jobs">
+<span class="sig-name descname"><span class="pre">--jobs</span></span><span class="sig-prename descclassname"> <span class="pre">N</span></span><a class="headerlink" href="#cmdoption-jobs" title="Permalink to this definition">¶</a></dt>
+<dd><p>On Linux and macOS N make jobs will be run in parallel.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-link-full-dll">
+<span class="sig-name descname"><span class="pre">--link-full-dll</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-link-full-dll" title="Permalink to this definition">¶</a></dt>
+<dd><p>On Windows the full Python API and the limited API (as used by PyQt) are
+implemented in different DLLs.  Normally the limited DLL is linked (unless
+a debug version of the Python interpreter is being used.  This option
+forces the full API DLL to be linked instead.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-no-make">
+<span class="sig-name descname"><span class="pre">--no-make</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-no-make" title="Permalink to this definition">¶</a></dt>
+<dd><p>Do not automatically invoke <strong class="program">make</strong> or <strong class="program">nmake</strong>.
+(<strong class="program">sip-build</strong> only.)</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-qmake">
+<span class="sig-name descname"><span class="pre">--qmake</span></span><span class="sig-prename descclassname"> <span class="pre">FILE</span></span><a class="headerlink" href="#cmdoption-qmake" title="Permalink to this definition">¶</a></dt>
+<dd><p>Qt’s <strong class="program">qmake</strong> program is used to determine how your Qt installation
+is laid out.  Normally <strong class="program">qmake</strong> is found on your <span class="target" id="index-0"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PATH</span></code>.
+This option can be used to specify a particular instance of
+<strong class="program">qmake</strong> to use.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-qmake-setting">
+<span class="sig-name descname"><span class="pre">--qmake-setting</span></span><span class="sig-prename descclassname"> <span class="pre">'NAME</span> <span class="pre">+=</span> <span class="pre">VALUE'</span></span><a class="headerlink" href="#cmdoption-qmake-setting" title="Permalink to this definition">¶</a></dt>
+<dd><p>The setting will be added to any <strong class="program">qmake</strong> <code class="file docutils literal notranslate"><span class="pre">.pro</span></code> file that is
+created.  This option may be given any number of times.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-qml-debug">
+<span class="sig-name descname"><span class="pre">--qml-debug</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-qml-debug" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable the QML debugging infrastructure.  This should not be enabled in a
+production environment.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-spec">
+<span class="sig-name descname"><span class="pre">--spec</span></span><span class="sig-prename descclassname"> <span class="pre">SPEC</span></span><a class="headerlink" href="#cmdoption-spec" title="Permalink to this definition">¶</a></dt>
+<dd><p>The argument <code class="docutils literal notranslate"><span class="pre">-spec</span> <span class="pre">SPEC</span></code> will be passed to <strong class="program">qmake</strong>.  The
+default behaviour is platform specific.  On Windows
+the value that is chosen is correct for the version of Python that is
+being used.  (However if you have built Python yourself then you may need
+to explicitly specify <code class="docutils literal notranslate"><span class="pre">SPEC</span></code>.)  On macOS <code class="docutils literal notranslate"><span class="pre">macx-xcode</span></code> will be avoided
+if possible.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-target-qt-dir">
+<span class="sig-name descname"><span class="pre">--target-qt-dir</span></span><span class="sig-prename descclassname"> <span class="pre">DIR</span></span><a class="headerlink" href="#cmdoption-target-qt-dir" title="Permalink to this definition">¶</a></dt>
+<dd><p>The extension modules will be re-targeted to expect the Qt libraries to be
+installed in DIR when the wheel is installed.  (<strong class="program">sip-wheel</strong> only.)</p>
+</dd></dl>
+
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="introduction.html"
+                        title="previous chapter">Introduction</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pyproject_toml.html"
+                        title="next chapter"><code class="file docutils literal notranslate"><span class="pre">pyproject.toml</span></code> Reference</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pyproject_toml.html" title="pyproject.toml Reference"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="introduction.html" title="Introduction"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PyQt-builder v1.13.0 Documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Command Line Tools</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022 Riverbank Computing Limited.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.2.0.
+    </div>
+  </body>
+</html>

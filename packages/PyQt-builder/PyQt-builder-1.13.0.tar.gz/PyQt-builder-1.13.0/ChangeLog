@@ -1,0 +1,1514 @@
+2022-06-06  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, pyqtbuild/bundle/packages/pyqt6_webengine.py:
+	Fix the missing translations from PyQt6-WebEngine.
+	[068a418ac90b] [1.13.0]
+
+2022-05-17  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, pyqtbuild/builder.py:
+	The default ABI versions are now v12.11 and v13.4.
+	[45bb2785fa46]
+
+2022-05-13  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, pyqtbuild/bundle/packages/pyqt5.py:
+	Fixed a syntax regression.
+	[42b3c6a05629]
+
+2022-04-18  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/bundle/abstract_package.py,
+	pyqtbuild/bundle/packages/pyqt3d.py,
+	pyqtbuild/bundle/packages/pyqt5.py,
+	pyqtbuild/bundle/packages/pyqtchart.py,
+	pyqtbuild/bundle/packages/pyqtdatavisualization.py,
+	pyqtbuild/bundle/packages/pyqtnetworkauth.py,
+	pyqtbuild/bundle/packages/pyqtpurchasing.py,
+	pyqtbuild/bundle/qt_metadata.py:
+	Removed support for versions of Qt older than v5.15.
+	[bd1cfdc9b537]
+
+	* pyqtbuild/bundle/dlls/openssl-32/libeay32.dll,
+	pyqtbuild/bundle/dlls/openssl-32/ssleay32.dll,
+	pyqtbuild/bundle/dlls/openssl-64/libeay32.dll,
+	pyqtbuild/bundle/dlls/openssl-64/ssleay32.dll:
+	Removed the OpenSSL DLLs not used by currently supported versions of
+	Python and Qt.
+	[d3ed99301b00]
+
+	* NEWS, setup.py:
+	Python v3.7 is the minimum supported version.
+	[df64b05608f8]
+
+	* Merged the 1.12-maint branch.
+	[32ee66dabb93]
+
+2021-10-28  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgtags:
+	Added tag 1.12.2 for changeset 3f1d1850862b
+	[42e269a7a226] <1.12-maint>
+
+2021-10-25  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/bundle/qt_metadata.py:
+	Restored the simple fixing of macOS executables rather than use
+	install_name_tool.
+	[3f1d1850862b] [1.12.2] <1.12-maint>
+
+	* NEWS, pyqtbuild/bundle/qt_metadata.py:
+	More fixes for QtWebEngineProcess on Apple silicon.
+	[6c097652c3bc] <1.12-maint>
+
+	* pyqtbuild/bundle/qt_metadata.py:
+	Backed out changeset 7739df0ce040 Stripping redundant architectures
+	doesn't affect the code signing problem.
+	[318ca59c290a] <1.12-maint>
+
+2021-10-24  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/bundle/qt_metadata.py:
+	Don't strip redundant architectures from executables in Qt wheels.
+	[7739df0ce040] <1.12-maint>
+
+	* pyqtbuild/bundle/qt_wheel.py:
+	Arm64 Qt wheels have a minimum SDK version of 11.0 as this seems to
+	be required by pip.
+	[9ecfc89021b6] <1.12-maint>
+
+	* NEWS, pyqtbuild/bundle/packages/pyqt6.py:
+	Include the WlShellIntegration library in a Qt installation.
+	[743a4eb473c8] <1.12-maint>
+
+2021-10-23  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, pyqtbuild/bundle/packages/pyqt6.py:
+	Include the WaylandClientEglHwIntegration library in a Qt
+	installation.
+	[3673458d28d0] <1.12-maint>
+
+2021-10-12  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgtags:
+	Added tag 1.12.1 for changeset 1b94d1df9598
+	[388e90335809] <1.12-maint>
+
+	* NEWS, pyqtbuild/bundle/bundle.py:
+	Fixed a syntax error in pyqt-bundle.
+	[1b94d1df9598] [1.12.1] <1.12-maint>
+
+	* .hgtags:
+	Added tag 1.12.0 for changeset a8e714b1af6a
+	[fdaf18dae011]
+
+2021-10-11  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, doc/pyqtbundle.rst, pyqtbuild/bundle/abstract_package.py,
+	pyqtbuild/bundle/bundle.py, pyqtbuild/bundle/bundle_main.py,
+	pyqtbuild/bundle/packages/pyqt.py, pyqtbuild/bundle/qt_metadata.py,
+	pyqtbuild/bundle/qt_wheel.py, pyqtbuild/bundle/qt_wheel_main.py:
+	Added support for the --arch option to pyqt-bundle and pyqt-qt-
+	wheel.
+	[a8e714b1af6a] [1.12.0]
+
+2021-10-05  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, pyqtbuild/builder.py, pyqtbuild/project.py, setup.py:
+	Build universal2 binaries when using Python 3.10 and Qt v6.2.
+	[2cbfd9cfac73]
+
+2021-09-30  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgtags:
+	Added tag 1.11.0 for changeset 128fd244a822
+	[543a47e6bc23]
+
+2021-09-25  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, pyqtbuild/bundle/packages/pyqt6_webengine.py:
+	Fixed a native path inconsistency.
+	[128fd244a822] [1.11.0]
+
+2021-09-22  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/bundle/packages/pyqt6.py:
+	Enable QtBluetooth and QtNfc.
+	[a67741107958]
+
+	* NEWS, pyqtbuild/bundle/packages/pyqt6.py:
+	Added support for bundling QAxContainer.
+	[d30022bc29ee]
+
+2021-09-21  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, pyqtbuild/bundle/packages/pyqt6_webengine.py:
+	Fixed the PyQt6-WebEngine-Qt wheel so that QtWebEngineProcess can
+	find its resources on Windows.
+	[59e15a25db3d]
+
+2021-09-19  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/bundle/qt_metadata.py:
+	Fixes for Python v3.6.
+	[c0ad44be7b76]
+
+	* NEWS, pyqtbuild/bundle/qt_metadata.py, pyqtbuild/bundle/verbose.py:
+	Qt libraries have the arm64 code removed when bundling or creating
+	Qt wheels.
+	[7b6bfb3c29d4]
+
+2021-09-18  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/bundle/packages/pyqt.py:
+	Don't bundle the OpenSSL libraries for Qt v6.2.0 and later.
+	[eb435cbe95e9]
+
+	* NEWS, pyqtbuild/bundle/qt_metadata.py:
+	Fixed the bundling of non-debug DLLs that end with a 'd' (ie. the
+	TLS plugins).
+	[533def3bd075]
+
+2021-09-15  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, pyqtbuild/builder.py:
+	Fixes for MinGW support.
+	[24f5bfc4de7a]
+
+2021-08-25  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, pyqtbuild/bundle/packages/__init__.py,
+	pyqtbuild/bundle/packages/pyqt6_webengine.py:
+	Added support for PyQt6-WebEngine.
+	[1075fbb452ce]
+
+2021-08-02  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/bundle/packages/pyqt6.py:
+	More Qt metadata fixes.
+	[517e02292b51]
+
+	* pyqtbuild/bundle/packages/pyqt6.py:
+	Further updates to the Qt metadata for Qt v6.2.0beta2.
+	[eaa269cc0b01]
+
+2021-08-01  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, pyqtbuild/bundle/packages/pyqt6.py:
+	Updated the Qt metadata for v6.2.0.
+	[8aa4f13e15fb]
+
+2021-07-16  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, pyqtbuild/bundle/packages/pyqt6.py:
+	Fixed the changed Qt library names in v6.2.0.
+	[e1ac73ff29ce]
+
+2021-07-12  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* Merged the 1.10-maint branch.
+	[9ca728c89b53]
+
+2021-07-04  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgtags:
+	Added tag 1.10.3 for changeset a5437106d445
+	[8b4126f4e0c2] <1.10-maint>
+
+	* NEWS, pyqtbuild/bundle/qt_wheel.py:
+	Handle the change in the name of the Qt architecture for macOS in Qt
+	v6.1.2.
+	[a5437106d445] [1.10.3] <1.10-maint>
+
+	* .hgtags:
+	Added tag 1.10.2 for changeset 5e954acdcd2b
+	[8d2dbe6e75c0] <1.10-maint>
+
+2021-06-23  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, pyqtbuild/bundle/packages/pyqt6.py:
+	Bundle the QtQuickLayouts library.
+	[5e954acdcd2b] [1.10.2] <1.10-maint>
+
+2021-06-21  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* README, setup.cfg:
+	Fixes to the README and meta-data.
+	[2b5944870fef] <1.10-maint>
+
+2021-06-20  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* doc/conf.py, doc/index.rst:
+	Tweaked the documentation title.
+	[8080d24b2d87] <1.10-maint>
+
+2021-06-08  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgtags:
+	Added tag 1.10.1 for changeset 8686906e1af7
+	[cd2073872d3d] <1.10-maint>
+
+2021-05-13  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, pyqtbuild/builder.py:
+	The default sip module ABI version is now the minimum required by
+	current PyQt versions rather than the latest available from SIP.
+	[8686906e1af7] [1.10.1] <1.10-maint>
+
+2021-05-07  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgtags:
+	Added tag 1.10.0 for changeset b48ea1df701b
+	[c687f6d9c0e6]
+
+2021-04-10  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/bundle/packages/__init__.py:
+	Fixed the handling of PyQt6-Charts and PyQt6-DataVisualization.
+	[b48ea1df701b] [1.10.0]
+
+	* NEWS, pyqtbuild/bundle/packages/pyqt6.py:
+	Added support for bundling Qt v6.1.
+	[8fd15d2e2f4d]
+
+	* pyqtbuild/bundle/qt_wheel.py, pyqtbuild/bundle/qt_wheel_main.py:
+	Added the --suffix option to pyqt-qt-wheel.
+	[8f4974553cec]
+
+	* doc/pyqtbundle.rst:
+	Updated the docs in relation to building the additional Qt6
+	libraries as v6.1.0 now includes them in the online installer.
+	[9e1acdcfe449]
+
+2021-03-30  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, pyqtbuild/bundle/packages/pyqt6_charts.py,
+	pyqtbuild/bundle/packages/pyqt6_datavisualization.py:
+	Added support for bundling QtCharts and QtDataVisualization for Qt6.
+	[74c285998502]
+
+2021-03-29  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* doc/pyqtbundle.rst:
+	Fixed a docs typo.
+	[c2f71cdb8cbd]
+
+	* doc/pyqtbundle.rst:
+	Updated the docs for building the Qt additional libraries with
+	cmake.
+	[fa1a757eea40]
+
+	* Merged the 1.9-maint branch.
+	[40faf05c32ca]
+
+2021-03-14  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* doc/pyqtbundle.rst:
+	Fixed a documentation typo.
+	[811c1333e722] <1.9-maint>
+
+2021-03-02  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgtags:
+	Added tag 1.9.1 for changeset 99dbf7f8c33c
+	[dbc5b47324a0] <1.9-maint>
+
+	* NEWS:
+	Released as v1.9.1.
+	[99dbf7f8c33c] [1.9.1] <1.9-maint>
+
+	* pyqtbuild/bundle/qt_wheel.py,
+	pyqtbuild/bundle/qt_wheel_distinfo/METADATA:
+	Fixed the name in the meta-data of a Qt wheel.
+	[5ce175b51818] <1.9-maint>
+
+	* pyqtbuild/bundle/qt_wheel.py:
+	Fixed the name of a Qt wheel.
+	[b4be05cac0d6] <1.9-maint>
+
+	* NEWS, pyqtbuild/bundle/abstract_package.py:
+	Handle the changed Qt installation directory used in newer PyQt
+	releases.
+	[ef7fa24f4c28] <1.9-maint>
+
+2021-02-22  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgtags:
+	Added tag 1.9.0 for changeset de8775a53a87
+	[82511d30da8f]
+
+	* NEWS:
+	Released as v1.9.0.
+	[de8775a53a87] [1.9.0]
+
+	* NEWS:
+	Updated the NEWS file.
+	[a3908330c638]
+
+2021-02-15  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/builder.py, pyqtbuild/project.py:
+	The minimum glibc version for Qt6 is v2.28.
+	[e821b89d6da5]
+
+	* pyqtbuild/builder.py:
+	The minimum macOS version for Qt6 is v10.14.
+	[2da0eb4c6a8d]
+
+2021-02-10  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/bundle/abstract_package.py, pyqtbuild/bundle/qt_wheel.py:
+	Completed the support for PyQt5 having external Qt wheels.
+	[7d1ddf9b785d]
+
+2021-02-09  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/bundle/abstract_package.py,
+	pyqtbuild/bundle/packages/pyqt5.py, pyqtbuild/bundle/qt_metadata.py,
+	pyqtbuild/bundle/qt_wheel.py:
+	Suppress the pyqt-bundle warning if legacy bindings (ie.
+	QtNetworkAuth) are missing from PyQt5.
+	[fe54749aa7d2]
+
+	* pyqtbuild/bundle/packages/pyqt6_networkauth.py,
+	pyqtbuild/bundle/packages/pyqtnetworkauth.py:
+	Tidy ups to the NetworkAuth support.
+	[abc779c028e6]
+
+	* pyqtbuild/bundle/packages/__init__.py,
+	pyqtbuild/bundle/packages/pyqt5.py,
+	pyqtbuild/bundle/packages/pyqtnetworkauth.py:
+	Added support for bundling PyQtNetworkAuth.
+	[b45e586058c4]
+
+2021-02-05  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgtags:
+	Added tag 1.8.0 for changeset 5f7636c716f1
+	[d9a3f36369b6]
+
+	* NEWS:
+	Released as v1.8.0.
+	[5f7636c716f1] [1.8.0]
+
+2021-02-04  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS:
+	Updated the NEWS file.
+	[933fedbd6b29]
+
+2021-01-21  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* doc/pyqtbundle.rst:
+	Updated the pyqt-bundle docs so that it doesn't assume that current
+	GPL PyQt wheels have Qt bundled.
+	[b2f89d11c370]
+
+	* pyqtbuild/bundle/abstract_package.py:
+	chrpath and install_name_tool are no longer required when bundling
+	Qt v5.15 or later (because wheels build for those versions of Qt
+	must have been built with the --target-qt-dir option).
+	[19e58b9f50d3]
+
+2021-01-17  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/bundle/bundle.py:
+	pyqt-bundle will remove any existing dependency on an external Qt
+	wheel.
+	[6e93218ded71]
+
+	* pyqtbuild/bundle/bundle.py, pyqtbuild/bundle/wheel.py:
+	Fixed a pyqt-bundle regression.
+	[d939ce2c9233]
+
+2021-01-15  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/bundle/bundle.py, pyqtbuild/bundle/qt_wheel.py,
+	pyqtbuild/bundle/wheel.py:
+	Refactored the wheel writing.
+	[4136df7ff7b5]
+
+	* pyqtbuild/bundle/abstract_package.py, pyqtbuild/bundle/bundle.py,
+	pyqtbuild/bundle/bundle_main.py, pyqtbuild/bundle/main.py,
+	pyqtbuild/bundle/packages/pyqt6_networkauth.py,
+	pyqtbuild/bundle/packages/pyqtchart.py,
+	pyqtbuild/bundle/packages/pyqtdatavisualization.py,
+	pyqtbuild/bundle/qt_metadata.py, pyqtbuild/bundle/qt_wheel.py,
+	pyqtbuild/bundle/qt_wheel_distinfo/LICENSE,
+	pyqtbuild/bundle/qt_wheel_distinfo/METADATA,
+	pyqtbuild/bundle/qt_wheel_distinfo/WHEEL,
+	pyqtbuild/bundle/qt_wheel_main.py, setup.py:
+	Implemented the pyqt-qt-wheel utility for creating wheels containing
+	subsets of Qt as required by different PyQt packages.
+	[bd24a674d700]
+
+2021-01-04  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgtags:
+	Added tag 1.7.0 for changeset b19af28441b3
+	[d2d78572cba2]
+
+	* NEWS:
+	Released as v1.7.0.
+	[b19af28441b3] [1.7.0]
+
+	* NEWS:
+	Updated the NEWS file.
+	[9e30bf25253b]
+
+	* doc/example.rst, doc/pyqtbundle.rst:
+	Documentation updates for Qt6.
+	[5f8ca2a3cc4d]
+
+2020-12-31  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/bundle/packages/__init__.py,
+	pyqtbuild/bundle/packages/pyqt6_3d.py:
+	Fixes for bundling PyQt6-3D.
+	[e479c80e25ee]
+
+2020-12-30  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/bundle/packages/pyqt6_3d.py:
+	Updates to the bundling of Qt3D.
+	[20d9cc02f9d8]
+
+2020-12-29  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, pyqtbuild/bundle/packages/pyqt6_3d.py:
+	Added support for bundling PyQt6-3D.
+	[4b8aad2bc4d6]
+
+	* NEWS, pyqtbuild/bundle/packages/pyqt6_networkauth.py:
+	Added support for bundling PyQt6-NetworkAuth.
+	[49da6243673c]
+
+	* pyqtbuild/bundle/bundle.py, pyqtbuild/bundle/packages/__init__.py,
+	pyqtbuild/bundle/packages/pyqt6.py:
+	Fix pyqt-bundle for wheel's with '_' in their name.
+	[2928103b69c1]
+
+2020-12-22  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/bundle/packages/pyqt6.py, pyqtbuild/bundle/qt_metadata.py:
+	Bundling on macOS tested.
+	[b050de5bc1e7]
+
+	* pyqtbuild/bundle/packages/pyqt6.py:
+	Updated the PyQt6 support based on visual inspection.
+	[2f5ff1788acf]
+
+	* pyqtbuild/bundle/packages/__init__.py,
+	pyqtbuild/bundle/packages/pyqt.py,
+	pyqtbuild/bundle/packages/pyqt5.py,
+	pyqtbuild/bundle/packages/pyqt6.py:
+	Initial support for bundling Qt6.
+	[2c9440e4dda3]
+
+2020-11-23  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgtags:
+	Added tag 1.6.0 for changeset abe9cee4d3e6
+	[65900c8c5204]
+
+	* NEWS:
+	Released as v1.6.0.
+	[abe9cee4d3e6] [1.6.0]
+
+	* pyqtbuild/builder.py:
+	Fixed the handling of jobs on Windows.
+	[943d3750f33c]
+
+	* NEWS:
+	Updated the NEWS file.
+	[7551f6a9d012]
+
+2020-11-22  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* LICENSE, LICENSE-GPL2, LICENSE-GPL3, MANIFEST.in,
+	pyqtbuild/__init__.py, pyqtbuild/bindings.py, pyqtbuild/builder.py,
+	pyqtbuild/bundle/__init__.py, pyqtbuild/bundle/abstract_package.py,
+	pyqtbuild/bundle/bundle.py, pyqtbuild/bundle/main.py,
+	pyqtbuild/bundle/packages/__init__.py,
+	pyqtbuild/bundle/packages/pyqt3d.py,
+	pyqtbuild/bundle/packages/pyqt5.py,
+	pyqtbuild/bundle/packages/pyqtchart.py,
+	pyqtbuild/bundle/packages/pyqtdatavisualization.py,
+	pyqtbuild/bundle/packages/pyqtpurchasing.py,
+	pyqtbuild/bundle/packages/pyqtwebengine.py,
+	pyqtbuild/bundle/qt_metadata.py, pyqtbuild/bundle/verbose.py,
+	pyqtbuild/installable.py, pyqtbuild/project.py, setup.py:
+	Make sure the SIP license is applied throughout.
+	[0ff5302ef64b]
+
+2020-10-28  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/builder.py:
+	Implement the 'extra-compile-args', 'extra-link-args' and 'extra-
+	objects' bindings options added to SIP v5.5.0.
+	[15865ad3162f]
+
+2020-10-22  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* doc/example.rst, doc/pyproject.toml:
+	Completed the documentation.
+	[6650cfa0dc42]
+
+2020-10-21  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* doc/command_line_tools.rst, doc/pyproject_toml.rst,
+	doc/pyqtbuild_api.rst:
+	Documentation updates.
+	[c088fcd63e1a]
+
+2020-10-20  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgignore, MANIFEST.in, doc/command_line_tools.rst, doc/conf.py,
+	doc/example.rst, doc/index.rst, doc/introduction.rst,
+	doc/pyproject_toml.rst, doc/pyqtbuild_api.rst, doc/pyqtbundle.rst,
+	doc/riverbank/layout.html, doc/riverbank/static/logo.png,
+	doc/riverbank/static/logo_tn.png,
+	doc/riverbank/static/riverbank.css, doc/riverbank/theme.conf:
+	Added the initial documentation.
+	[c5cd00e49b9f]
+
+	* pyqtbuild/project.py:
+	Fixed a cosmetic ordering of options.
+	[5096bae28bad]
+
+2020-09-18  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/builder.py, pyqtbuild/project.py:
+	Refactored the handling of options dependent on the Qt
+	configuration.
+	[143e52e14aa8]
+
+2020-09-17  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS:
+	Updated the NEWS file.
+	[136b9d362bf1]
+
+	* NEWS, pyqtbuild/builder.py:
+	Added the 'jobs' builder option.
+	[5f8d0a164fbe]
+
+	* Merged the 1.5-maint branch.
+	[2e9b74df0e64]
+
+	* pyqtbuild/project.py:
+	Default values based on the major version of Qt are provided for the
+	name and ABI version of the sip module.
+	[3b7404fdc36d] <1.5-maint>
+
+	* pyqtbuild/builder.py, setup.py:
+	Honour the Buildable.exceptions attribute introduced in SIP v5.5.
+	[fcf890ccdc38] <1.5-maint>
+
+2020-09-12  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/project.py:
+	Fixed a comment.
+	[df7651562224] <1.5-maint>
+
+2020-09-11  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/builder.py:
+	The target platform from qmake must unconditionally replace any
+	existing value.
+	[a5d380bb07da] <1.5-maint>
+
+	* pyqtbuild/builder.py:
+	The default value of py_platform is now taken from qmake and the
+	"standard" platform names 'android', 'ios' and 'wasm' are now
+	supported.
+	[7aaba7aae64a] <1.5-maint>
+
+2020-08-29  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgtags:
+	Added tag 1.5.0 for changeset 8e0faadc6db2
+	[c1758499d8df]
+
+	* NEWS:
+	Released as v1.5.0.
+	[8e0faadc6db2] [1.5.0]
+
+	* NEWS:
+	Updated the NEWS file.
+	[1b7b42cd8124]
+
+2020-08-26  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/builder.py:
+	Honor the '--no-distinfo' option implemented in SIP v5.4.
+	[a320cac2b87e]
+
+2020-08-22  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/project.py:
+	'sip-module' must be explicitly set for SIP v6.
+	[fd8d1674d987]
+
+	* setup.py:
+	SIP v5.4 or later is required.
+	[b38ced43ce26]
+
+	* NEWS:
+	Updated the NEWS file.
+	[f36120984573]
+
+	* pyqtbuild/builder.py, pyqtbuild/project.py:
+	Added the android_abis project option.
+	[624776b8674b]
+
+2020-08-21  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/__init__.py:
+	Added PYQTBUILD_VERSION and PYQTBUILD_VERSION_STR to the public API.
+	[353865f125ac]
+
+	* Merged the 1.4-maint branch.
+	[ef85f07d1942]
+
+2020-08-13  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* setup.py:
+	Added 'packaging' as a dependency.
+	[51c74ea6e372] <1.4-maint>
+
+2020-08-04  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/builder.py:
+	Ensure that sip-distinfo is invoked with an absolute path.
+	[ac87b1c7b183] <1.4-maint>
+
+2020-06-16  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/bundle/packages/pyqt5.py:
+	Bundle the QtRemoteObjects QML support.
+	[211e2ec36373] <1.4-maint>
+
+	* NEWS, pyqtbuild/bundle/packages/pyqt5.py:
+	Added support for bundling QtTextToSpeech.
+	[a1f9c8e00a92] <1.4-maint>
+
+2020-06-01  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/project.py:
+	Fixed a typo.
+	[31b9b7502179] <1.4-maint>
+
+2020-05-31  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgtags:
+	Added tag 1.4.0 for changeset e5e35d1489d1
+	[f1b51b361929]
+
+	* NEWS:
+	Released as v1.4.0.
+	[e5e35d1489d1] [1.4.0]
+
+	* pyqtbuild/bundle/packages/pyqt5.py:
+	Fixed a trivial syntax error.
+	[6ca18c2682d9]
+
+2020-05-29  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS:
+	Updated the NEWS file.
+	[c066fe69033d]
+
+	* pyqtbuild/bundle/packages/pyqt5.py:
+	Added support for bundling QtQuick3D.
+	[5bc1cd06f2f3]
+
+	* pyqtbuild/bundle/dlls/msvc-32/msvcp140_1.dll,
+	pyqtbuild/bundle/dlls/msvc-32/msvcp140_2.dll,
+	pyqtbuild/bundle/dlls/msvc-64/msvcp140_1.dll,
+	pyqtbuild/bundle/dlls/msvc-64/msvcp140_2.dll,
+	pyqtbuild/bundle/dlls/msvc-64/vcruntime140_1.dll:
+	Added the additional MSVC 2019 DLLs.
+	[24217d67f77f]
+
+2020-05-28  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/bundle/dlls/msvc-32/concrt140.dll,
+	pyqtbuild/bundle/dlls/msvc-32/msvcp140.dll,
+	pyqtbuild/bundle/dlls/msvc-32/vcruntime140.dll,
+	pyqtbuild/bundle/dlls/msvc-64/concrt140.dll,
+	pyqtbuild/bundle/dlls/msvc-64/msvcp140.dll,
+	pyqtbuild/bundle/dlls/msvc-64/vcruntime140.dll:
+	Updated to the MSVC 2019 redistributables.
+	[eb9bb5aa2f94]
+
+2020-05-09  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* setup.py:
+	SIP v5.3 is now a minimum requirement.
+	[bebd3f449c9e]
+
+2020-05-08  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/project.py:
+	Set the minimum macOS version according to the version of Qt being
+	used.
+	[e55728bba8c2]
+
+	* NEWS, pyqtbuild/builder.py:
+	Use the get_sip_distinfo_command_line() method to build the sip-
+	distinfo command line.
+	[c9916fd5f1bf]
+
+2020-05-07  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, pyqtbuild/bundle/abstract_package.py,
+	pyqtbuild/bundle/bundle.py, pyqtbuild/bundle/main.py,
+	pyqtbuild/bundle/qt_metadata.py:
+	Added the --ignore-missing command line option to pyqt-bundle.
+	[e299fd675ab3]
+
+	* NEWS, pyqtbuild/builder.py, setup.py:
+	Addes support for the 'gui-scripts' project option.
+	[39e8ff64ee86]
+
+	* Merged the 1.3-maint branch.
+	[36b65c03ce42]
+
+2020-04-20  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgtags:
+	Added tag 1.3.2 for changeset b220cd480d08
+	[3b885f53c45d] <1.3-maint>
+
+	* NEWS:
+	Released as v1.3.2.
+	[b220cd480d08] [1.3.2] <1.3-maint>
+
+2020-04-19  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/bundle/bundle.py:
+	Handle bundling when there is no existing Qt target directory.
+	[7aabfeb73579] <1.3-maint>
+
+2020-04-10  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgtags:
+	Added tag 1.3.1 for changeset 99ac13fd1674
+	[46519b5be7b7] <1.3-maint>
+
+	* NEWS:
+	Released as v1.3.1.
+	[99ac13fd1674] [1.3.1] <1.3-maint>
+
+	* rb-product:
+	Fixed the name of the product plugin.
+	[61e2753c5cdb] <1.3-maint>
+
+	* NEWS:
+	Updated the NEWS file.
+	[e8373e2c7474] <1.3-maint>
+
+	* pyqtbuild/bundle/bundle.py:
+	Make sure any existing 'qsci' directory doesn't get removed when
+	bundling.
+	[e5110a3b8904] <1.3-maint>
+
+2020-04-08  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* MANIFEST.in:
+	Added MANIFEST.in to make sure pyproject.toml is included when using
+	setuptools earlier than v43.
+	[d6272a9eac24] <1.3-maint>
+
+2020-04-02  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgtags:
+	Added tag 1.3.0 for changeset 190c52385eaf
+	[afed0a7a5544]
+
+	* NEWS:
+	Released as v1.3.0.
+	[190c52385eaf] [1.3.0]
+
+	* pyqtbuild/bundle/abstract_package.py, pyqtbuild/bundle/bundle.py,
+	pyqtbuild/bundle/packages/pyqt5.py:
+	Fixed the bundling of the MSVC runtime.
+	[cc0f7223dd63]
+
+	* NEWS:
+	Updated the NEWS file.
+	[848d1f5fdec5]
+
+2020-03-14  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/builder.py:
+	Really make sure sip-distinfo isn't invoked before everything else
+	is installed.
+	[e4fabef7b626]
+
+2020-03-13  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/builder.py:
+	Make sure sip-mkdistinfo isn't run until all other installs have
+	completed.
+	[7c7bf6bad83d]
+
+2020-02-16  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, pyqtbuild/bundle/abstract_package.py,
+	pyqtbuild/bundle/bundle.py, pyqtbuild/bundle/main.py:
+	Added the --exclude command line option to pyqt-bundle to exclude
+	one or more sets of bindings from a wheel.
+	[f749e6708e1d]
+
+	* pyqtbuild/bundle/dlls/msvc_runtime/concrt140.dll,
+	pyqtbuild/bundle/dlls/msvc_runtime/msvcp140.dll,
+	pyqtbuild/bundle/dlls/msvc_runtime/vcruntime140.dll:
+	Merged the 1.2-maint branch.
+	[94b5f413ca6e]
+
+	* pyqtbuild/bundle/abstract_package.py, pyqtbuild/bundle/bundle.py,
+	pyqtbuild/bundle/main.py, pyqtbuild/bundle/qt_metadata.py:
+	Improved the error message when something is missing from a Qt
+	installation being bundled.
+	[a181b889cdec] <1.2-maint>
+
+2020-02-10  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/builder.py:
+	Added a missing $$quote().
+	[7a207eee0b6a] <1.2-maint>
+
+2020-02-02  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, pyqtbuild/bundle/dlls/msvc-32/concrt140.dll,
+	pyqtbuild/bundle/dlls/msvc-32/msvcp140.dll,
+	pyqtbuild/bundle/dlls/msvc-32/vcruntime140.dll,
+	pyqtbuild/bundle/dlls/msvc-64/concrt140.dll,
+	pyqtbuild/bundle/dlls/msvc-64/msvcp140.dll,
+	pyqtbuild/bundle/dlls/msvc-64/vcruntime140.dll,
+	pyqtbuild/bundle/dlls/msvc_runtime/concrt140.dll,
+	pyqtbuild/bundle/dlls/msvc_runtime/msvcp140.dll,
+	pyqtbuild/bundle/dlls/msvc_runtime/vcruntime140.dll,
+	pyqtbuild/bundle/packages/pyqt5.py:
+	Added the missing 32 bit MSVC DLLs.
+	[4d9610c63267] <1.2-maint>
+
+2020-01-06  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS:
+	Fixed the name of the new project option added in v1.2.0 in the NEWS
+	file.
+	[fe750e18c64f] <1.2-maint>
+
+2020-01-05  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgtags:
+	Added tag 1.2.0 for changeset d47ec469bed6
+	[7d1d3b17f5ed]
+
+	* NEWS:
+	Released as v1.2.0.
+	[d47ec469bed6] [1.2.0]
+
+	* pyqtbuild/builder.py:
+	Improve the implementation of setting rpath on Linux.
+	[cf75fe8f7695]
+
+2020-01-04  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/bundle/packages/pyqtwebengine.py,
+	pyqtbuild/bundle/qt_metadata.py:
+	Always bundle a framework's Resources directory.
+	[7b120942bb91]
+
+	* NEWS, pyqtbuild/builder.py, pyqtbuild/bundle/abstract_package.py,
+	pyqtbuild/project.py:
+	Implemented the 'target-qt-dir' user project option to sip-wheel.
+	[2b2af5cd056c]
+
+2020-01-02  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/project.py:
+	Specify GLIBC v2.7 as the minimum version required.
+	[32abca9f61e0]
+
+	* setup.py:
+	SIP v5.1 is required.
+	[5a450b7b2977]
+
+	* Merged the 1.1-maint branch.
+	[8051618e660c]
+
+2019-12-31  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/builder.py:
+	Fixed a typo in the previous sip-distinfo fix.
+	[e93d7e804b70] <1.1-maint>
+
+	* NEWS:
+	Updated the NEWS file.
+	[4306d4238bcc] <1.1-maint>
+
+	* pyqtbuild/bundle/packages/pyqt5.py:
+	Include pylupdate and pyrcc in the Qt meta-data so that their RPATHs
+	get fixed.
+	[2b4e34489980] <1.1-maint>
+
+2019-12-28  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/builder.py:
+	Fix the invocation of sip-distinfo when using pip to do a source
+	install.
+	[585d263bd191] <1.1-maint>
+
+2019-12-17  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgtags:
+	Added tag 1.1.0 for changeset b0546518d825
+	[3261b929a85e]
+
+	* NEWS:
+	Released as v1.1.0.
+	[b0546518d825] [1.1.0]
+
+	* pyqtbuild/bindings.py:
+	Make sure Windows configuration tests find the Qt DLLs.
+	[41e4b19a2471]
+
+	* pyqtbuild/builder.py:
+	Don't assume that sip-distinfo is on PATH.
+	[5b4eb7ac2b58]
+
+2019-12-16  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS:
+	Updated the NEWS file.
+	[5a74e9744260]
+
+	* pyqtbuild/builder.py:
+	Fixed the version script to use the buildable's target rather than
+	its name.
+	[d34a30d3dd2e]
+
+2019-12-15  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgignore, pyqtbuild/bundle/packages/pyqt5.py:
+	Added support for bundling Qt v5.14.
+	[0496a3754a5e]
+
+	* Merged the 1.0-maint branch.
+	[00d25230c7bc]
+
+2019-11-02  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgtags:
+	Added tag 1.0.1 for changeset 26ce0f1ad24e
+	[c196fbb546f7] <1.0-maint>
+
+	* NEWS:
+	Released as v1.0.1.
+	[26ce0f1ad24e] [1.0.1] <1.0-maint>
+
+	* pyqtbuild/bundle/abstract_package.py:
+	More fixes for older Python versions.
+	[1ad98ce3308e] <1.0-maint>
+
+	* pyqtbuild/bundle/abstract_package.py:
+	More fixes for older versions of Python.
+	[767620326c66] <1.0-maint>
+
+	* NEWS:
+	Updated the NEWS file.
+	[3f81617b20d3] <1.0-maint>
+
+	* pyqtbuild/bundle/abstract_package.py:
+	Fixed for running under Python v3.5 and v3.6.
+	[6756a501d138] <1.0-maint>
+
+2019-10-03  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgtags:
+	Added tag 1.0.0 for changeset 5562305b4e91
+	[c80b11c9b0fe]
+
+	* NEWS:
+	Released as v1.0.0.
+	[5562305b4e91] [1.0.0]
+
+	* README:
+	Fixed the documentation link in the REAME.
+	[63781bb47e68]
+
+	* NEWS:
+	Added the NEWS file.
+	[0d76e5142c7b]
+
+	* setup.py:
+	Added the dependency on SIP v5.
+	[5426008ebcac]
+
+2019-09-29  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/builder.py:
+	Fixed a syntax error.
+	[a76fc4aeb99d]
+
+2019-09-28  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/builder.py:
+	Changes for the latest sip v5 API changes.
+	[71c493d43ab2]
+
+2019-09-27  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/builder.py:
+	Changes for the latest sip v5 API changes.
+	[7f658e50d05e]
+
+	* pyqtbuild/builder.py:
+	Allow multiple requires-dist.
+	[016dfd09b12e]
+
+2019-09-25  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/bundle/abstract_package.py:
+	Suppress the output of chrpath.
+	[d9b97b4f8c57]
+
+2019-09-24  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/bundle/abstract_package.py:
+	Call chrpath consistently.
+	[e0aeebe4fc96]
+
+2019-09-22  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/builder.py:
+	Fixed a regression.
+	[f9df4e57c9f2]
+
+	* pyqtbuild/project.py:
+	No longer any need for special handling of dunder-init.
+	[94d18b7a88dd]
+
+	* pyqtbuild/bindings.py, pyqtbuild/builder.py, pyqtbuild/project.py:
+	More fixes for sip v5 API changes.
+	[0db061092e2f]
+
+	* pyqtbuild/builder.py, pyqtbuild/project.py:
+	Further updates for sip v5 API changes.
+	[883f79ba0eda]
+
+	* pyqtbuild/bindings.py, pyqtbuild/builder.py, pyqtbuild/project.py:
+	Updates for latest sip v5 API changes.
+	[f91c7e00d31b]
+
+2019-09-18  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/bundle/abstract_package.py:
+	Fixed the re-targeting of macOS bindings when there is nothing to
+	do.
+	[d5c69627f18f]
+
+	* pyqtbuild/bundle/abstract_package.py,
+	pyqtbuild/bundle/qt_metadata.py:
+	pyqt-bundle now fixes the rpaths for the bundled Qt installation.
+	[a730c2eec869]
+
+	* pyqtbuild/bundle/abstract_package.py:
+	Fixes for pyqt-bundle.
+	[094ec2c06f64]
+
+2019-09-17  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/bundle/qt_metadata.py:
+	More pyqt-bundle fixes.
+	[cd72aa84c646]
+
+	* pyqtbuild/bundle/abstract_package.py, pyqtbuild/bundle/bundle.py,
+	pyqtbuild/bundle/main.py, pyqtbuild/bundle/packages/pyqt5.py,
+	pyqtbuild/bundle/qt_metadata.py, pyqtbuild/bundle/verbose.py:
+	Bug fixes for pyqt-bundle.
+	[50cce241ba85]
+
+	* pyqtbuild/bundle/abstract_package.py, pyqtbuild/bundle/bundle.py,
+	pyqtbuild/bundle/packages/__init__.py,
+	pyqtbuild/bundle/packages/pyqt3d.py,
+	pyqtbuild/bundle/packages/pyqt5.py,
+	pyqtbuild/bundle/packages/pyqtchart.py,
+	pyqtbuild/bundle/packages/pyqtdatavisualization.py,
+	pyqtbuild/bundle/packages/pyqtpurchasing.py,
+	pyqtbuild/bundle/packages/pyqtwebengine.py,
+	pyqtbuild/bundle/qt_metadata.py:
+	Completed the initial implementation of pyqt-bundle.
+	[5d5650099b23]
+
+2019-09-15  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/bundle/abstract_package.py, pyqtbuild/bundle/bundle.py,
+	pyqtbuild/bundle/packages/pyqt5.py, pyqtbuild/bundle/qt_metadata.py:
+	Implemented the stub of the Qt bundling.
+	[643a9b50f773]
+
+	* pyqtbuild/bundle/abstract_package.py, pyqtbuild/bundle/bundle.py,
+	pyqtbuild/bundle/dlls/msvc_runtime/concrt140.dll,
+	pyqtbuild/bundle/dlls/msvc_runtime/msvcp140.dll,
+	pyqtbuild/bundle/dlls/msvc_runtime/vcruntime140.dll,
+	pyqtbuild/bundle/dlls/openssl-32/libcrypto-1_1.dll,
+	pyqtbuild/bundle/dlls/openssl-32/libeay32.dll,
+	pyqtbuild/bundle/dlls/openssl-32/libssl-1_1.dll,
+	pyqtbuild/bundle/dlls/openssl-32/ssleay32.dll,
+	pyqtbuild/bundle/dlls/openssl-64/libcrypto-1_1-x64.dll,
+	pyqtbuild/bundle/dlls/openssl-64/libeay32.dll,
+	pyqtbuild/bundle/dlls/openssl-64/libssl-1_1-x64.dll,
+	pyqtbuild/bundle/dlls/openssl-64/ssleay32.dll,
+	pyqtbuild/bundle/packages/pyqt5.py, setup.py:
+	Implemented the bundling of OpenSSL and the MSVC runtime.
+	[918b767959dc]
+
+	* pyqtbuild/bundle/bundle.py:
+	pyqt-bundle now writes the updated wheel.
+	[a55b2fc2b556]
+
+	* pyqtbuild/bundle/__init__.py, pyqtbuild/bundle/abstract_package.py,
+	pyqtbuild/bundle/bundle.py, pyqtbuild/bundle/main.py,
+	pyqtbuild/bundle/packages/__init__.py,
+	pyqtbuild/bundle/packages/pyqt5.py, setup.py:
+	Implemented the skeleton of pyqt-bundle.
+	[6f8d787ace28]
+
+2019-09-14  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/builder.py:
+	Added support for the sip module dependency.
+	[96a48a9410ca]
+
+	* pyqtbuild/bindings.py, pyqtbuild/builder.py:
+	Fixes for the refactor or configuration tests.
+	[2b95606183b9]
+
+2019-09-06  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/bindings.py, pyqtbuild/builder.py:
+	Implemented build_executable().
+	[02168619dfac]
+
+2019-09-04  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/bindings.py, pyqtbuild/builder.py:
+	Removed wrapped_library as it is no longer needed by QScintilla.
+	[6c85fcb7a569]
+
+	* pyqtbuild/bindings.py, pyqtbuild/builder.py, pyqtbuild/project.py:
+	Various fixes for building QScintilla.
+	[a44e8bd90eac]
+
+2019-09-03  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/bindings.py, pyqtbuild/builder.py:
+	Added QmakeBuilder.qt_version_str. Added
+	PyQtBindings.wrapped_library.
+	[2704fef2996d]
+
+	* pyqtbuild/bindings.py:
+	Internal test programs can now be run.
+	[b3cd403c22ea]
+
+	* pyqtbuild/project.py:
+	Project.version is now Project.version_str.
+	[71306f1b3550]
+
+2019-08-29  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/bindings.py:
+	Fixed the setting of timeline tags dependent on the Qt version.
+	[b1a3eca5e055]
+
+	* pyqtbuild/bindings.py:
+	Removed the support for backstops.
+	[33d7d183f2f1]
+
+	* pyqtbuild/bindings.py, pyqtbuild/builder.py, pyqtbuild/project.py:
+	Refactored apply_defaults() calls. Provided a default value of sip-
+	module.
+	[d2e21f18f907]
+
+2019-08-28  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/__init__.py, pyqtbuild/bindings.py, pyqtbuild/builder.py,
+	pyqtbuild/project.py:
+	Removed PyQtBindingsMetadata and added corresponding options.
+	[09b66513493e]
+
+2019-08-27  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* pyqtbuild/bindings.py:
+	Configuration tests are now optional.
+	[7f3bcabe5f53]
+
+2019-08-26  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgignore, PyQt5_builder/__init__.py, PyQt5_builder/bindings.py,
+	PyQt5_builder/builder.py, PyQt5_builder/bundle/__init__.py,
+	PyQt5_builder/bundle/bundle.py, PyQt5_builder/bundle/main.py,
+	PyQt5_builder/installable.py, PyQt5_builder/project.py, README,
+	pyqtbuild/__init__.py, pyqtbuild/bindings.py, pyqtbuild/builder.py,
+	pyqtbuild/bundle/__init__.py, pyqtbuild/bundle/bundle.py,
+	pyqtbuild/bundle/main.py, pyqtbuild/installable.py,
+	pyqtbuild/project.py, rb-product, setup.cfg, setup.py:
+	The module name is now pyqtbuild rather than PyQt5_builder.
+	[16b380986a9a]
+
+2019-08-24  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt5_builder/bindings.py, PyQt5_builder/builder.py:
+	Moved run_command() to sip5.
+	[7767e993f878]
+
+	* PyQt5_builder/builder.py:
+	Handle the Wheel object passed to build_project() and
+	install_project().
+	[dc0a046a3a4f]
+
+2019-08-23  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt5_builder/builder.py:
+	Fixes for building wheels.
+	[b58c1d668ebf]
+
+	* PyQt5_builder/project.py:
+	Fixed the project options's applicable tools.
+	[3cb34a0cf879]
+
+	* PyQt5_builder/builder.py:
+	Always use Unix path separators in .pro files.
+	[1013205f8a21]
+
+	* PyQt5_builder/builder.py:
+	Handle the explicit target of a buildable.
+	[485418f759b3]
+
+	* PyQt5_builder/__init__.py, PyQt5_builder/buildable.py,
+	PyQt5_builder/builder.py:
+	Buildable-related changes. QmakeBuildable is no longer needed.
+	[5f7817a71e4a]
+
+2019-08-22  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt5_builder/builder.py:
+	Use Project.read_command_pipe().
+	[af2ce19ad4bb]
+
+	* PyQt5_builder/builder.py:
+	Moved open_command_pipe() and close_command_pipe() to sip.
+	[9a4c513a23b1]
+
+	* PyQt5_builder/builder.py:
+	Fixed the handling of the .exp export file.
+	[2d0d3b2a2c7e]
+
+	* PyQt5_builder/bundle/__init__.py, PyQt5_builder/bundle/bundle.py,
+	PyQt5_builder/bundle/main.py, setup.py:
+	Added the stub of pyqt5-bundle.
+	[099dd953c67b]
+
+	* PyQt5_builder/builder.py:
+	Fixed the handling of QmakeTargetInstall when part of a
+	QmakeBuildable.
+	[d4715c456c60]
+
+	* PyQt5_builder/__init__.py, PyQt5_builder/builder.py,
+	PyQt5_builder/installable.py:
+	Added QmakeTargetInstallable.
+	[a1decc04b6e4]
+
+2019-08-21  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt5_builder/bindings.py:
+	Provided a default implementation of get_test_sources().
+	[ff18fc26b7c8]
+
+	* PyQt5_builder/bindings.py:
+	Provided a default implementation of handle_test_output().
+	[37bb08ae1987]
+
+	* PyQt5_builder/bindings.py:
+	Improved progress messages.
+	[77158c5b4deb]
+
+	* PyQt5_builder/project.py:
+	Fixed the module containing QmakeBuilder.
+	[14ca9b7902b3]
+
+	* PyQt5_builder/builder.py:
+	The Qt configuration dict is now public.
+	[ef6618b4a4c0]
+
+	* PyQt5_builder/__init__.py, PyQt5_builder/buildable.py,
+	PyQt5_builder/builder.py, PyQt5_builder/qmake_builder.py:
+	Added QmakeBuildable and support for it in QmakeBuilder.
+	[e7b5f5c6b905]
+
+2019-08-20  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt5_builder/qmake_builder.py:
+	Updated for the changed install_project() signature.
+	[7384842b345e]
+
+	* PyQt5_builder/bindings.py:
+	The bindings name is now taken from the meta-data.
+	[06475623ee5f]
+
+	* PyQt5_builder/bindings.py:
+	Configure internal modules from the metadata.
+	[bfc861ea81b9]
+
+	* PyQt5_builder/project.py:
+	Added support for __init__.py.
+	[323ba3d91e07]
+
+2019-08-19  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt5_builder/qmake_builder.py:
+	Bug fixes.
+	[ae7fdc601725]
+
+2019-08-18  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt5_builder/qmake_builder.py:
+	Refactoring so the builder doesn't need to know the details of
+	installables.
+	[67d17b4d50eb]
+
+2019-08-17  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt5_builder/qmake_builder.py:
+	Pass the project root directory to sip5-distinfo.
+	[60f2d40b72eb]
+
+	* PyQt5_builder/qmake_builder.py:
+	Set the generator for the .dist-info directory.
+	[83fd84dc63d9]
+
+	* PyQt5_builder/qmake_builder.py:
+	Added support for the .dist-info directory.
+	[ebb270a72655]
+
+	* PyQt5_builder/qmake_builder.py:
+	.pyi files are now installed.
+	[38ee77a3c2f4]
+
+	* PyQt5_builder/qmake_builder.py:
+	Extension modules now use architecture-specific extensions.
+	[a179e3daab1b]
+
+	* PyQt5_builder/qmake_builder.py:
+	The configuration file of the bindings is now written.
+	[439df5c44482]
+
+2019-08-16  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt5_builder/qmake_builder.py:
+	The .sip files for bindings are now installed.
+	[f42842e3c16e]
+
+	* PyQt5_builder/bindings.py, PyQt5_builder/project.py:
+	Set sip_files_dir properly.
+	[a8c1b466d9ad]
+
+	* PyQt5_builder/qmake_builder.py:
+	Implemented install_into().
+	[b80b3978a091]
+
+2019-08-15  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt5_builder/qmake_builder.py:
+	Improved the error handling when compiling the project.
+	[39df17a76cf5]
+
+	* PyQt5_builder/bindings.py, PyQt5_builder/qmake_builder.py:
+	The qmake builder now runs qmake and make to build the project.
+	[27efeed64fe0]
+
+	* PyQt5_builder/bindings.py, PyQt5_builder/qmake_builder.py:
+	Re-factored so that a project is a list of buildables.
+	[fe9495ebcf1f]
+
+	* PyQt5_builder/bindings.py, PyQt5_builder/qmake_builder.py:
+	Remove the handling that seems to be specific to the dbus module.
+	[f9dac12dd85f]
+
+	* PyQt5_builder/bindings.py, PyQt5_builder/qmake_builder.py:
+	Replaced qmake_variables with the qmake_settings command line
+	option.
+	[8a201aa357ea]
+
+2019-08-14  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt5_builder/bindings.py, PyQt5_builder/project.py,
+	PyQt5_builder/qmake_builder.py:
+	Implemented the HEADERS and SOURCES values.
+	[d360ff49452b]
+
+2019-07-28  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt5_builder/bindings.py, PyQt5_builder/qmake_builder.py:
+	Implemented the running of bindings test code. Implemented the
+	creating of .pro file stubs.
+	[567cc77ba35c]
+
+2019-07-24  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt5_builder/__init__.py, PyQt5_builder/bindings.py,
+	PyQt5_builder/qmake_builder.py:
+	Added the support for running bindings-specific test programs.
+	[400a795eb595]
+
+2019-07-22  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt5_builder/qmake_builder.py:
+	Added the qmake_variables and spec options to the qmake builder.
+	[aa4646081e30]
+
+2019-07-19  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt5_builder/__init__.py, PyQt5_builder/bindings.py,
+	PyQt5_builder/project.py:
+	Added the PyQt5Bindings class.
+	[8783db6230a9]
+
+2019-07-18  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt5_builder/qmake_builder.py:
+	Get the Qt configuration.
+	[83a3a9c4b111]
+
+2019-07-12  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt5_builder/project.py, PyQt5_builder/qmake_builder.py:
+	Refactored in response to the sip5 builder refactoring.
+	[14a5f4f9b186]
+
+2019-07-06  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt5_builder/__init__.py, PyQt5_builder/project.py,
+	PyQt5_builder/qmake_builder.py, setup.py:
+	Added more stubs.
+	[c405c6aa6a31]
+
+	* .hgignore, PyQt5/builder/__init__.py, PyQt5_builder/__init__.py,
+	setup.py:
+	The package needs to be at the top level rather than in PyQt5 (fro
+	development purposes).
+	[0242cb6859d0]
+
+	* .hgignore, rb-product, setup.py:
+	Various fixes for the initial stubs.
+	[215540a40c21]
+
+	* .hgignore, PyQt5/builder/__init__.py, README, pyproject.toml, rb-
+	product, setup.cfg, setup.py:
+	Initial commit of stubs.
+	[6f3f6713118c]

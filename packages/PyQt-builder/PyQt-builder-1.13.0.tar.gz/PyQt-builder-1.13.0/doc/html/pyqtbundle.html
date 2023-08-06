@@ -1,0 +1,245 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bundling Qt Using pyqt-bundle &#8212; PyQt-builder v1.13.0 Documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/riverbank.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="An Example" href="example.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="example.html" title="An Example"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PyQt-builder v1.13.0 Documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Bundling Qt Using <strong class="program">pyqt-bundle</strong></a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="bundling-qt-using-pyqt-bundle">
+<span id="ref-pyqt-bundle"></span><h1>Bundling Qt Using <strong class="program">pyqt-bundle</strong><a class="headerlink" href="#bundling-qt-using-pyqt-bundle" title="Permalink to this headline">¶</a></h1>
+<p>PyQt wheels can contain a bundled copy of the relevent parts of Qt.  The main
+reason for doing this is so that users can install a complete PyQt environment
+with a single <strong class="program">pip</strong> install.</p>
+<p>A bundled copy may also be replaced by a newer release of Qt.  Given the ABI
+guarantees made by Qt (i.e. that a later version of Qt should be able to
+replace an earlier version without having to re-compile an application) then it
+should be perfectly possible to bundle a later version of Qt that has a later
+minor version number with a version of PyQt that has an earlier minor version
+number.  For example it should be possible to bundle Qt v5.15.2 with PyQt
+v5.12.0.</p>
+<p>The other use case is when you want to bundle a development version of Qt with
+a version of PyQt so that the development version can be tested in a Python
+environment.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The ABI guarantees made by Qt do not apply to the
+<code class="xref py py-mod docutils literal notranslate"><span class="pre">QAxContainer</span></code> module.  This is only guaranteed to work if
+the version of Qt being bundled is exactly the same as the version of Qt
+that PyQt was built against.</p>
+</div>
+<p>The <strong class="program">pyqt-bundle</strong> program is provided as a means of bundling the
+relevant parts of a local Qt installation with a wheel, replacing any existing
+copy.  You can also use it to produce a stripped down version of PyQt that
+contains only those modules you actually want to use.</p>
+<p><strong class="program">pyqt-bundle</strong> assumes that the Qt installation has been created from
+one of the LGPL or commercial binary installers provided by The Qt Company.  It
+may also work with a Qt installation built from source but this is unsupported.</p>
+<p>On Windows the binary installer for the latest supported version of MSVC must
+be used.  Also on Windows <strong class="program">pyqt-bundle</strong> also handles the MSVC runtime
+DLLs and the OpenSSL DLLs.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong class="program">pyqt-bundle</strong> will not update the platform tag of a wheel.  Some
+platform tags can embed additional requirements (e.g. the minimum required
+version of macOS is embedded in the platform tag of a macOS wheel).  If you
+bundle a later version of Qt with a more restrictive requirement then you
+should rename the wheel to reflect this.</p>
+</div>
+<p>The syntax of the <strong class="program">pyqt-bundle</strong> command line is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pyqt</span><span class="o">-</span><span class="n">bundle</span> <span class="p">[</span><span class="n">options</span><span class="p">]</span> <span class="n">wheel</span>
+</pre></div>
+</div>
+<p>The full set of command line options is:</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyqt-bundle-h">
+<span id="cmdoption-pyqt-bundle-help"></span><span class="sig-name descname"><span class="pre">-h</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--help</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyqt-bundle-h" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display a help message and exit.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyqt-bundle-V">
+<span id="cmdoption-pyqt-bundle-v"></span><span id="cmdoption-pyqt-bundle-version"></span><span class="sig-name descname"><span class="pre">-V</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--version</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyqt-bundle-V" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display the version number and exit.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyqt-bundle-build-tag-suffix">
+<span class="sig-name descname"><span class="pre">--build-tag-suffix</span></span><span class="sig-prename descclassname"> <span class="pre">SUFFIX</span></span><a class="headerlink" href="#cmdoption-pyqt-bundle-build-tag-suffix" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">SUFFIX</span></code> is appended to the build tag in the name of the updated wheel.
+The build tag is the version number of the copy of Qt being bundled.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyqt-bundle-arch">
+<span class="sig-name descname"><span class="pre">--arch</span></span><span class="sig-prename descclassname"> <span class="pre">ARCH</span></span><a class="headerlink" href="#cmdoption-pyqt-bundle-arch" title="Permalink to this definition">¶</a></dt>
+<dd><p>On macOS, when bundling Qt v6.2 or later, support for the <code class="docutils literal notranslate"><span class="pre">ARCH</span></code>
+architecture (either <code class="docutils literal notranslate"><span class="pre">x86_64</span></code> or <code class="docutils literal notranslate"><span class="pre">arm64</span></code>) only is included.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyqt-bundle-exclude">
+<span class="sig-name descname"><span class="pre">--exclude</span></span><span class="sig-prename descclassname"> <span class="pre">NAME</span></span><a class="headerlink" href="#cmdoption-pyqt-bundle-exclude" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <code class="docutils literal notranslate"><span class="pre">NAME</span></code> bindings are excluded from the wheel.  This option may be
+specified multiple times.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyqt-bundle-ignore-missing">
+<span class="sig-name descname"><span class="pre">--ignore-missing</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyqt-bundle-ignore-missing" title="Permalink to this definition">¶</a></dt>
+<dd><p>If a file cannot be found in the Qt installation being bundled then it is
+ignored instead of being teated as an error.  This allows unsupported or
+non-standard Qt installation to be bundled but may result in a wheel that
+does not work.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyqt-bundle-no-msvc-runtime">
+<span class="sig-name descname"><span class="pre">--no-msvc-runtime</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyqt-bundle-no-msvc-runtime" title="Permalink to this definition">¶</a></dt>
+<dd><p>On Windows the <code class="file docutils literal notranslate"><span class="pre">msvcp140.dll</span></code>, <code class="file docutils literal notranslate"><span class="pre">concrt140.dll</span></code> and
+<code class="file docutils literal notranslate"><span class="pre">vcruntime140.dll</span></code> MSVC runtime DLLs will not be included in the
+wheel.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyqt-bundle-no-openssl">
+<span class="sig-name descname"><span class="pre">--no-openssl</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-pyqt-bundle-no-openssl" title="Permalink to this definition">¶</a></dt>
+<dd><p>On Windows the OpenSSL DLLs (included with <strong class="program">pyqt-bundle</strong>) will not
+be included in the wheel.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyqt-bundle-openssl-dir">
+<span class="sig-name descname"><span class="pre">--openssl-dir</span></span><span class="sig-prename descclassname"> <span class="pre">DIR</span></span><a class="headerlink" href="#cmdoption-pyqt-bundle-openssl-dir" title="Permalink to this definition">¶</a></dt>
+<dd><p>On Windows the OpenSSL DLLs included in the wheels are taken from <code class="docutils literal notranslate"><span class="pre">DIR</span></code>
+instead of the DLLs included with <strong class="program">pyqt-bundle</strong>.  (Qt v5.12.4 and
+later are configured for OpenSSL v1.1.1.  Earlier versions of Qt are
+configured for OpenSSL v1.0.2.)</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-pyqt-bundle-qt-dir">
+<span class="sig-name descname"><span class="pre">--qt-dir</span></span><span class="sig-prename descclassname"> <span class="pre">DIR</span></span><a class="headerlink" href="#cmdoption-pyqt-bundle-qt-dir" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">DIR</span></code> contains the LGPL or commercial Qt installation to be bundled.  The
+directory is what Qt refers to as the <em>prefix</em> directory, i.e. the
+architecture specific directory containing the <code class="docutils literal notranslate"><span class="pre">bin</span></code>, <code class="docutils literal notranslate"><span class="pre">lib</span></code> etc.
+directories.  This option must be specified.</p>
+</dd></dl>
+
+<p>By convention a wheel without a copy of Qt bundled does not have a build tag.
+A wheel with a copy of Qt bundled has a build tag corresponding to the version
+of Qt.</p>
+<div class="section" id="bundling-qt6-additional-libraries">
+<h2>Bundling Qt6 Additional Libraries<a class="headerlink" href="#bundling-qt6-additional-libraries" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Starting with Qt v6.1.0 the online installer now includes binaries for the
+additional libraries, therefore the steps described below are no longer
+necessary.</p>
+</div>
+<p>Unlike Qt5, the Qt6 online installer only provides binaries for the core Qt
+libraries.  It provides the sources for the additional libraries (e.g. Qt 3D)
+and these must be built and installed before they can be bundled.  While the Qt
+documentation talks about using the <strong class="program">conan</strong> package manager to do
+this it isn’t actually necessary.</p>
+<p>To build and additional library make sure you have <strong class="program">CMake</strong> and
+<strong class="program">ninja</strong> installed and on <span class="target" id="index-0"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PATH</span></code>.  Change to the library’s
+<code class="file docutils literal notranslate"><span class="pre">Src</span></code> subdirectory and run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cmake</span> <span class="o">-</span><span class="n">G</span> <span class="n">Ninja</span> <span class="o">-</span><span class="n">DCMAKE_INSTALL_PREFIX</span><span class="o">=/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">qt</span><span class="o">-</span><span class="n">prefix</span><span class="o">-</span><span class="n">directory</span>
+<span class="n">ninja</span> <span class="n">install</span>
+</pre></div>
+</div>
+<p>The Qt prefix directory is the name of the architecture-specific directory of a
+Qt installation.  It is <code class="file docutils literal notranslate"><span class="pre">gcc_64</span></code> on Linux, <code class="file docutils literal notranslate"><span class="pre">clang_64</span></code> on macos and
+<code class="file docutils literal notranslate"><span class="pre">msvc2019_64</span></code> on Windows.</p>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Bundling Qt Using <strong class="program">pyqt-bundle</strong></a><ul>
+<li><a class="reference internal" href="#bundling-qt6-additional-libraries">Bundling Qt6 Additional Libraries</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="example.html"
+                        title="previous chapter">An Example</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="example.html" title="An Example"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PyQt-builder v1.13.0 Documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Bundling Qt Using <strong class="program">pyqt-bundle</strong></a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022 Riverbank Computing Limited.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.2.0.
+    </div>
+  </body>
+</html>
