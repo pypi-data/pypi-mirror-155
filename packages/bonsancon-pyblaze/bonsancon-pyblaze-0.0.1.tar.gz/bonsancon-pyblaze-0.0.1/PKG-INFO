@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: bonsancon-pyblaze
+Version: 0.0.1
+Summary: Blaze API
+Home-page: https://github.com/bonsancon/pyblaze
+Author: Álvaro Ferreira Pires de Paiva
+Author-email: alvarofepipa@gmail.com
+License: UNKNOWN
+Description: # Boilerplate for Python projects
+        
+        In this boilerplate you have:
+        
+        - Python 3.10-slim;
+        - Docker and Docker Compose;
+        - Linter workflow.
+        
+        **TO DO**:
+        
+        - Tests and coverage (example, command and CI).
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
