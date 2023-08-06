@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: python-ftx
+Version: 0.1.1
+Summary: FTX python API SDK
+Home-page: https://github.com/wanth1997/python-ftx
+Author: doublewan
+Author-email: wanth1997@gmail.com
+License: MIT
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Dist: aiohttp
+Requires-Dist: loguru
+Requires-Dist: requests
+Requires-Dist: websockets
+
+UNKNOWN
+
+
