@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "boxjelly"
+version = "0.2.1"
+description = "BoxJelly is a tool for viewing and editing object tracks in video."
+authors = ["Kevin Barnard <kbarnard@mbari.org>"]
+readme = "README.md"
+license = "MIT"
+
+[tool.poetry.scripts]
+boxjelly = "boxjelly.scripts.run:main"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pyqt5 = "^5.15"
+intervaltree = "^3.1.0"
+sharktopoda-client = "^0.1.4"
+dataclasses-json = "^0.5.7"
+
+[tool.poetry.dev-dependencies]
+pyqt5-stubs = "^5.15"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
