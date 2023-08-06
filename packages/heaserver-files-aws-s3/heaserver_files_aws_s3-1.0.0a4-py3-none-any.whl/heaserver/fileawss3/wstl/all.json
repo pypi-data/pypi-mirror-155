@@ -1,0 +1,170 @@
+{
+    "wstl": {
+        "title": "AWS S3 Bucket Files",
+        "actions": [
+            {
+                "name": "heaserver-awss3files-file-get-open-choices",
+                "description": "Open this file",
+                "type": "safe",
+                "action": "read",
+                "target": "item read cj",
+                "prompt": "Open"
+            },
+            {
+                "name": "heaserver-awss3files-file-open-default",
+                "description": "Open this file",
+                "type": "safe",
+                "action": "read",
+                "target": "item read cj",
+                "prompt": "Open"
+            },
+            {
+                "name": "heaserver-awss3files-file-get-properties",
+                "description": "View and edit this file's properties",
+                "type": "unsafe",
+                "target": "item cj-template",
+                "action": "update",
+                "prompt": "Properties",
+                "inputs": [
+                    {
+                        "name": "id",
+                        "prompt": "Id",
+                        "required": true,
+                        "readOnly": true
+                    },
+                    {
+                        "name": "source",
+                        "prompt": "Source"
+                    },
+                    {
+                        "name": "version",
+                        "prompt": "Version"
+                    },
+                    {
+                        "name": "display_name",
+                        "prompt": "Name",
+                        "required": true
+                    },
+                    {
+                        "name": "description",
+                        "prompt": "Description",
+                        "type": "textarea"
+                    },
+                    {
+                        "name": "owner",
+                        "prompt": "Owner"
+                    },
+                    {
+                        "name": "created",
+                        "prompt": "Created",
+                        "readOnly": true
+                    },
+                    {
+                        "name": "modified",
+                        "prompt": "Modified",
+                        "readOnly": true
+                    },
+                    {
+                        "name": "invites",
+                        "prompt": "Share invites",
+                        "readOnly": true
+                    },
+                    {
+                        "name": "shares",
+                        "prompt": "Shared with"
+                    },
+                    {
+                        "name": "size",
+                        "prompt": "Size",
+                        "readOnly": true
+                    },
+                    {
+                        "name": "storage_class",
+                        "prompt": "Storage class",
+                        "readOnly": true
+                    }
+                ]
+            },
+            {
+                "name": "heaserver-awss3files-file-duplicate",
+                "description": "Duplicate this file",
+                "type": "unsafe",
+                "action": "append",
+                "target": "item read cj",
+                "prompt": "Duplicate"
+            },
+            {
+                "name": "heaserver-awss3files-file-duplicate-form",
+                "description": "Duplicate this file",
+                "type": "unsafe",
+                "action": "update",
+                "target": "item cj-template",
+                "prompt": "Duplicate",
+                "inputs": [
+                    {
+                        "name": "id",
+                        "prompt": "Id",
+                        "required": true,
+                        "readOnly": true
+                    },
+                    {
+                        "name": "source",
+                        "prompt": "Source",
+                        "readOnly": true
+                    },
+                    {
+                        "name": "version",
+                        "prompt": "Version",
+                        "readOnly": true
+                    },
+                    {
+                        "name": "display_name",
+                        "prompt": "Name",
+                        "required": true
+                    },
+                    {
+                        "name": "description",
+                        "prompt": "Description",
+                        "type": "textarea",
+                        "readOnly": true
+                    },
+                    {
+                        "name": "owner",
+                        "prompt": "Owner",
+                        "readOnly": true
+                    },
+                    {
+                        "name": "created",
+                        "prompt": "Created",
+                        "readOnly": true
+                    },
+                    {
+                        "name": "modified",
+                        "prompt": "Modified",
+                        "readOnly": true
+                    },
+                    {
+                        "name": "invites",
+                        "prompt": "Share invites",
+                        "readOnly": true
+                    },
+                    {
+                        "name": "shares",
+                        "prompt": "Shared with",
+                        "readOnly": true
+                    },
+                    {
+                        "name": "size",
+                        "prompt": "Size",
+                        "readOnly": true
+                    },
+                    {
+                        "name": "storage_class",
+                        "prompt": "Storage class",
+                        "readOnly": true
+                    }
+                ]
+            }
+        ]
+    }
+}
