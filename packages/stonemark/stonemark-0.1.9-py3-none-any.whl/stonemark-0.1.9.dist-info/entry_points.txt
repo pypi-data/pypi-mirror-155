@@ -1,0 +1,3 @@
+[console_scripts]
+stonemark = stonemark.__main__:Main
+
