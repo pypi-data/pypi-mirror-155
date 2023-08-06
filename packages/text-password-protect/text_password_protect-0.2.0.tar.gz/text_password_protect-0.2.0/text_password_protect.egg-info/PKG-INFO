@@ -1,0 +1,100 @@
+Metadata-Version: 1.2
+Name: text-password-protect
+Version: 0.2.0
+Summary: Protect any text with your own password
+Home-page: UNKNOWN
+Author: Mason Egger
+Author-email: mason@masonegger.com
+License: MIT license
+Project-URL: Documentation, https://text-password-protect.readthedocs.io/en/latest/
+Project-URL: Source, https://github.com/masonegger/text-password-protect
+Description: Text Password Protect
+        =====================
+        
+        *Protect any text with your own password.*
+        
+        Ever want a simple library to encrypt some text with a password? Well
+        here it is. This is a great library for building quick One Time Secret
+        apps in Python
+        
+        .. warning::
+           Use this package at your own discretion. There is no guarantee about the strength
+           of the encryption.
+           
+        Usage
+        -----
+        
+        To install run
+        
+        .. code:: bash
+        
+           pip install text-password-protect
+        
+        In code:
+        
+        .. code:: python
+        
+               from text_password_protect import TextPasswordProtect
+               
+               test_text = "Hello There"
+               test_password = "General Kenobi"
+        
+               # Create an instance of the class.
+               # You can set a salt an initialization time, change the salt with the
+               # set_salt method, or set TPPSALT as an environment variable, which will
+               # be read at initialization time.
+               tpp = TextPasswordProtect(salt="BAD_SALT_DO_NOT_USE!")
+        
+               # Encrypt your message
+               ciphertext = tpp.encrypt(test_text, test_password)
+        
+               # Ciphertext is of type bytes
+               print(ciphertext)
+        
+               # Decrypt ciphertext
+               plaintext = tpp.decrypt(ciphertext, test_password)
+        
+               print(plaintext)
+               # Want the sha256 hex digest of some text?
+               sha256 = tpp.sha256hex(test_password)
+        
+            print(sha256)
+        
+        License
+        -------
+        
+        -  Free software: MIT license
+        -  Documentation: https://text-password-protect.readthedocs.io.
+        
+        
+        =======
+        History
+        =======
+        
+        0.2.0 (2022-06-16)
+        ------------------
+        
+        * Adding sha256 capabilities
+        
+        0.1.1 (2022-06-16)
+        ------------------
+        
+        * Few minor tweaks to docs, READMEs. Code didn't change
+        
+        0.1.0 (2022-06-15)
+        ------------------
+        
+        * First release on PyPI.
+        
+Keywords: text_password_protect
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.7
