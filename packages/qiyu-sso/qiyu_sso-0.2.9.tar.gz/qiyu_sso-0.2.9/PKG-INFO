@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: qiyu-sso
+Version: 0.2.9
+Summary: SSO client from QiYuTech
+Author: dev
+Author-email: dev@qiyutech.tech
+Requires-Python: >=3.9,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: aiohttp (>=3,<4)
+Requires-Dist: pydantic (>=1.7,<2)
+Requires-Dist: requests (>=2,<3)
+Description-Content-Type: text/markdown
+
+# QiYu SSO Client
+
+![Upload Python Package To Pypi](https://github.com/QiYuTechDev/qiyu-sso/workflows/Upload%20Python%20Package%20To%20Pypi/badge.svg)
+![Code Format Check](https://github.com/QiYuTechDev/qiyu-sso/workflows/Code%20Format%20Check/badge.svg)
+
+# 提示
+
+    当前仅仅是内部使用
+
+官网: https://user.qiyutech.tech/
+
+
