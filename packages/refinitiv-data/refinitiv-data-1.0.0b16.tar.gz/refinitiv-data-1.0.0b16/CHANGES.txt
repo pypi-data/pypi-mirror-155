@@ -1,0 +1,154 @@
+-------------------------------------------------------------------------------------
+Refinitiv Data Package Changes Log
+-------------------------------------------------------------------------------------
+
+Release Summary:
+
+1.0.0b3, 22 October, 2021
+    - limit httpx version to <0.20.0 to avoid "TypeError("send() got an unexpected keyword argument 'timeout'")"
+    - added ohlc attribute to rd.get_history result
+    - raise an reception on error for all rd.content requests (before, it returned None on error)
+    - updated rd.content.pricing.chain.Definition
+    - replace Chain.get_constituents() function with Chain.constituents attribute
+    - replace Session.get_open_state() function with Session.open_state attribute
+    - removed StreamingChain from public api. From now, expose rd.pricing.chain.Stream
+    - added open_state attribute to all streams
+    - added service parameter to rd.content.pricing.Definition
+    - improved partial data handling in rd.get_data and rd.get_history
+    - added detail on error "StreamingChain :: Stopped to process chain record because it found an invalid chain record XXX"
+    - fixed bug "StreamingPrices on_complete callback raised exception: AttributeError("'NoneType' object has no attribute 'get'")"
+    - fixed bug in historical pricing with not permissioned rics
+    - fixed bug : remove duplicated rows in rd.get_history result
+    - fixed warning "FutureWarning: Using .astype to convert from timezone-aware dtype to timezone-naive dtype is deprecated and will raise in a future version" in rd.content.news
+    - fixed bug "ValueError: Session name: my_session is invalid or session_name object is empty" with desktop session
+    - fixed bug "ValueError: Can't get config by name: my_session. Please check config name" with desktop session
+
+1.0.0b2, 1st October, 2021
+    - added get_history to Access Layer
+    - added extended parameters to financial contracts
+    - added content ownership api
+    - enhance historical_pricing from single ric to a list of rics
+    - close all streams when session is closed
+    - allow connection to a deployed server without RDP authentication
+    - update rd.open_session(app_key, session_name, ...) to rd.open_session(session_name, app_key, ...)
+    - rename parameter field_name to use_field_names_in_headers in rd.content.fundamental_and_reference.Definition().get_data
+    - fixed warning "PerformanceWarning: DataFrame is highly fragmented" with content pricing stream
+    - fixed bug "Error on checking proxy url ..." with desktop session
+    - fixed bug invalid session name in logs
+
+
+1.0.0b1, 23 September, 2021
+    1.0.0b1dev0 + 1.0.0b1dev1
+
+1.0.0b1.dev1, 23 September, 2021
+    - refactored session (containing own config snapshot).
+    - fixed bug "Error merging when call pricing data with parameters end fields".
+    - fixed bug "Bulk - change error message when the package is not found in the config".
+    - fixed bug "PerformanceWarning: DataFrame is highly fragmented".
+    - fixed bug "CFS downloader throws OSError if filename contains forbidden symbols".
+    - fixed bug "Incorrect work extended parameters in financial contracts when creating a QPS stream".
+    - fixed bug "IPA streaming - Opened/Closed states mismatch with on_response and on_state callbacks".
+    - fixed bug "Session closing is ignored when creating CapFloor stream".
+    - fixed bug "platform session should connect to local streaming platform by deployed parameters".
+    - fixed bug "No Subscribe request for TDS reconnect".
+    - removed functional layer from code.
+    - refactored historical_pricing definition universe(handling a list of RICs).
+    - refactored get_data() for Fincoder Layer.
+    - refactored "reload" mechanism for "configure" module.
+
+
+1.0.0b1.dev0, 10 September, 2021
+    - added IPA ZC curve docstring, type annotation and __repr__ function.
+    - added IPA forward curve docstring, type annotation and __repr__ function.
+    - fixed bug Fatal Python error: _Py_CheckRecursiveCall: Cannot recover from stack overflow.
+    - fixed bug rd.session.Definition() does not provide hint for method get_session().
+    - fixed bug Pricing streams should call on_complete only once.
+    - fixed bug QPSValuation error when create fx_cross stream.
+    - fixed bug CFS buckets return an empty response.
+    - refactored CFS, using a content provider instead of endpoint.
+    - reviewed all libraries that we use directly in our code to update dependencies in setup file.
+    - removed deployed session params from desktop session.
+
+
+1.0.0a1.dev9, 27 August, 2021
+    - improvements to the README file for release in PyPI.
+    - changed the logic of the ESG Bulk method cleanup_files() (remove only the downloaded, extracted files and the log file).
+    - fixed bug DeprecationWarning: elementwise comparison failed.
+    - refactored StreamingPrices and StreamingPrice into Pricing Stream
+    - added to ESG bulk update_db() method error message when no init file was downloaded.
+    - moved ESG bulk to Delivery layer - step 1.
+    - moved ESG bulk and PackageManager to Delivery layer - step 2.
+    - fixed bug Historical Pricing request validation error.
+    - fixed bug NameError when calling get_stream() method in Bond with fields.
+    - fixed bug Stream is frozen when creating TDS object without any parameters in platform session.
+    - fixed bug when the session was interrupted during the TDS process, don't get any errors.
+    - rephrased log info when creating table in DB in ESG Bulk feature.
+
+
+1.0.0a1.dev8, 13 August, 2021
+    - implemented ESG bulk get_db_data() and cleanup_db() methods.
+    - implemented http request auto retry when rejected because of (IPA) throttling.
+    - replaced camelcase to snake case in all CFS objects properties.
+    - removed get_axis() method from curves interpolation.
+    - fixed bug CFS file downloader object broken extract() method.
+    - fixed bug ESG bulk update_db() method should not close in-memory DB.
+    - fixed bug named session does not override "base-url" from config-file default value.
+    - fixed error in creating a pricing.Definition() when specifying an empty list in the universe.
+    - refactored session name logging, removed the "session_name" property and corrected the logic of the "name" property.
+    - improved row consistency of historical data returned by FundamentalAndReference content objects (RDP/DataGrid/ADC).
+
+
+1.0.0a1.dev7, 04 August, 2021
+    - implemented ESG bulk step#3 data retrieval.
+    - fixed bug no data.curve in IPA ZC Curve response.
+    - fixed bug incorrect working of the parse_axis() method in the surfaces_data_provider
+
+
+1.0.0a1.dev6, 23 July, 2021
+    - implement fincoder layer rd.open_session, rd.close_session, and rd.get_data functions.
+    - implement ESG bulk in content layer.
+    - automatic detect type in symbology conversion.
+    - add data.news in response for News.
+    - expose rd.session.state and rd.stream.state
+    - improve type annotation, docstring and reference guide.
+    - improve log for http requests.
+    - fixed bug missing parameters in EndpointRequest.
+    - fixed bug missing MarketSession in historical pricing.
+    - fixed bug IPA swap close function.
+    - fixed bug when close session, it have to wait and close all streams.
+    - support ESG with multiple universe.
+    - support set location and file name for log file.
+    - rename OMM/RDPItemStreamCallback to OMM/RDPStreamCallback
+    - add 'api' as an argument for RDPStream definition.
+    
+
+1.0.0a1.dev5, 22 June, 2021
+    - support open session from defined session in config file.
+    - renamed the default config file to be "refinitiv-data.config.json".
+    - renamed OMMItemStream to OMMStream and RDPItemStream to RDPStream.
+    - set default http request/response timeout to be 20 secs.
+    - improve the config file loading and overriding mechanism. 
+    - improve CFS when iterate over file_set and file.
+    - improve docstring, type annotation and __repr__ for chain, chain stream, pricing, pricing stream, and historical pricing
+    - add enum for symbol conversion.
+    - fixed bug missing start_date argument in LegDefinition.
+    - fixed bug desktop session with multiple streaming.
+
+    
+1.0.0a1, 18 May, 2021
+    - support websocket-client library version 0.58.0
+    - restricted websocket-client library version form 0.54.0 to 0.59.0
+    - restricted python-configuration library version not to be 0.8.0
+    - support extended parameters in OMMItemStream and RDPItemStream.
+    - fixed bug authentication token handler thread failed to request a new token. (specific to multi-threading)
+    - remove extra parameters in functions
+    - rename enum value for symbol types to be more align.
+    - improve error trace back when streaming raise an exception.
+    - cleanup params in functions.
+    - fixed bug cannot install refinitiv-dataplatform along with refinitiv-data
+    - fixed SymbolType enum to be a camel case.
+    - cleanup expose public and private apis.
+
+1.0.0a0, 26 March, 2021
+    - initial release of the Refinitiv Data package (including the definition concept.)
+    
