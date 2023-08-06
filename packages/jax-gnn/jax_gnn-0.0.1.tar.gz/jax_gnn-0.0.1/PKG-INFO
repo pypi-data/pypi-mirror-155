@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: jax_gnn
+Version: 0.0.1
+Summary: Efficient and Friendly Graph Neural Network Library for JAX
+Home-page: https://github.com/CrawlScript/jax-gnn
+Author: Jun Hu
+Author-email: hujunxianligong@gmail.com
+License: GNU General Public License v3.0 (See LICENSE)
+Platform: UNKNOWN
+Requires-Python: >3.5.0
+License-File: LICENSE
+
+Efficient and Friendly Graph Neural Network Library for JAX
+
