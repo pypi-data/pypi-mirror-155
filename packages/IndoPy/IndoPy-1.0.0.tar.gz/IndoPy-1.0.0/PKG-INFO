@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: IndoPy
+Version: 1.0.0
+Summary: IndoPy adalah Packages Module Python berbahasa Indonesia yang akan membantu mempermudah proses pembelajaran.
+Home-page: https://github.com/codexderes/indopy
+Author: Codex Deres
+Author-email: codexderes@gmail.com
+License: UNKNOWN
+Description: 
+        # INDOPY ~ CodeXDeres
+        IndoPy adalah Packages Module Python berbahasa Indonesia yang saat ini baru berencana untuk merancang module pembelajaran Indonesia semakin meningkat.
+        
+        Didalam Package Module ini terdapat berbagai macam Class & Fungsi berbahasa indonesia yang mudah dimengerti serta dipahami oleh pemula sekalipun.
+        
+        Class & Fungsi IndoPy yang tersedia saat ini:
+        1. Kalkulator Sederhana
+        2. Perhitungan Bangun Datar
+        
+        
+Keywords: python indonesia,indopy,python berbahasa indonesia
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+Classifier: Operating System :: Microsoft :: Windows
+Description-Content-Type: text/markdown
