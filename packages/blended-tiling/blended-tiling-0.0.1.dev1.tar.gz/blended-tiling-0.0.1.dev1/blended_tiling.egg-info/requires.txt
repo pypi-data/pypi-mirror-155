@@ -1,0 +1,10 @@
+torch>=1.6
+
+[dev]
+black==22.3.0
+flake8
+mypy>=0.760
+pytest
+pytest-cov
+usort==1.0.2
+ufmt
