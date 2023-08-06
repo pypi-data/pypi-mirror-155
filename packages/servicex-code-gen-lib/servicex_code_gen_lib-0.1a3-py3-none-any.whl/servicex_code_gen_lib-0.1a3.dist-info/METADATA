@@ -1,0 +1,46 @@
+Metadata-Version: 2.1
+Name: servicex-code-gen-lib
+Version: 0.1a3
+Summary: Library for creating ServiceX Code Generators
+Home-page: https://github.com/ssl-hep/ServiceX_Code_Generator_lib
+Author: Ben Galewsky (IRIS-HEP/NCSA/University of Illinois)
+Author-email: bengal1@illinois.edu
+Maintainer: Ben Galewsky (IRIS-HEP/NCSA/University of Illinois)
+Maintainer-email: bengal1@illinois.edu
+License: BSD
+Platform: Any
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development
+Classifier: Topic :: Utilities
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.7, <3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: Flask (==1.1.2)
+Requires-Dist: Flask-RESTful (==0.3.8)
+Requires-Dist: Flask-WTF (==0.14.3)
+Requires-Dist: itsdangerous (==2.0.1)
+Requires-Dist: werkzeug (==2.0.3)
+Requires-Dist: jinja2 (==3.0.3)
+Provides-Extra: test
+Requires-Dist: pytest (>=3.9) ; extra == 'test'
+Requires-Dist: pytest-mock ; extra == 'test'
+Requires-Dist: pytest-cov ; extra == 'test'
+Requires-Dist: coverage ; extra == 'test'
+Requires-Dist: flake8 ; extra == 'test'
+Requires-Dist: codecov ; extra == 'test'
+Requires-Dist: autopep8 ; extra == 'test'
+Requires-Dist: twine ; extra == 'test'
+Requires-Dist: black ; extra == 'test'
+
+# ServiceX Code Generator Library
+This library provides common code for creating Code Generator services for 
+ServiceX.
+
