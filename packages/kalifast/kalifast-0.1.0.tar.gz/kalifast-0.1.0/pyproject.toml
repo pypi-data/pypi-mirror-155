@@ -1,0 +1,30 @@
+[project]
+name = "kalifast"
+description = "Python package for kalifast record npp plugin"
+version = "0.1.0"
+authors = [
+    { name = "EISGE", email = "e@eisge.com" }
+]
+dependencies = [
+        "mpi4py>=2.0",
+        "numpy",     
+        "wheel",   
+        "shutil",
+        "pynput",         
+        "tkinter",
+        "turtle",
+        "urllib",
+        "pyautogui",
+        "numpy",
+        "cv2",
+        "os",
+        "PIL",
+        "threading",
+        "time"
+]
+
+
+
+[build-system]
+build-backend = "flit_core.buildapi"
+requires = ["flit_core >=3.2,<4"]
