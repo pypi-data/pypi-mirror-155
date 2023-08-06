@@ -1,0 +1,17 @@
+README.md
+setup.cfg
+setup.py
+ftx/__init__.py
+ftx/authentication.py
+ftx/client.py
+ftx/enums.py
+ftx/exceptions.py
+ftx/streams.py
+ftx/threaded_stream.py
+ftx/timer.py
+python_ftx.egg-info/PKG-INFO
+python_ftx.egg-info/SOURCES.txt
+python_ftx.egg-info/dependency_links.txt
+python_ftx.egg-info/requires.txt
+python_ftx.egg-info/top_level.txt
+python_ftx.egg-info/zip-safe
