@@ -1,0 +1,38 @@
+Metadata-Version: 2.1
+Name: git-ripper
+Version: 0.1.1
+Summary: Downloads git repo(s) from the web
+Home-page: https://github.com/tz4678/git-ripper
+License: MIT
+Author: tz4678
+Author-email: tz4678@gmail.com
+Requires-Python: >=3.10,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Requires-Dist: colorama (>=0.4.5,<0.5.0)
+Requires-Dist: httpx (>=0.23.0,<0.24.0)
+Project-URL: Repository, https://github.com/tz4678/git-ripper
+Description-Content-Type: text/markdown
+
+# Git Ripper ⚰️
+
+Downloads git repo(s) from the web
+
+Features:
+
+- Asynchronous and fast.
+- Mass git downloading.
+- Unix-friendly for geeks.
+- Colored output for gay people and transformers.
+- Powered by Putin's 🇷🇺 dark energy.
+
+From Russia with hate, szuki! Developed by secret KGB konstruktor buyro by red soviet communits hackers. Enjoy before you die in nuclear war...
+
+```bash
+$ pipx install git-ripper
+$ git-ripper -i urls.txt
+```
+
+![](./bandera-pidor.gif)
+
