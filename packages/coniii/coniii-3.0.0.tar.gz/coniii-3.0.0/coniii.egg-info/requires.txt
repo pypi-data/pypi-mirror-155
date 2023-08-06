@@ -1,0 +1,7 @@
+multiprocess<1,>=0.70.7
+scipy
+matplotlib
+numpy<2,>=1.16.2
+numba<1,>=0.45.1
+mpmath>=1.1.0
+dill
