@@ -1,0 +1,195 @@
+{
+    "1253385": {
+        "type": "GTK3/4 Themes",
+        "project_id": "1253385",
+        "author": "eliverlara",
+        "description": "Colorful Gtk3.20+ themes<br><br><h2><b><span style=\"color: #FF0000\">&iexcl;IMPORTANT!</span></b></h2><br><br><b>  If you can't see the files to download, you can download them from here <span> <a href=\"https://www.gnome-look.org/p/1745117\"> https://www.gnome-look.org/p/1745117  </a> </span>  </b><br><br><b>Installation:</b><br><br>1.- Extract the zip file to the themes directory i.e.   ~/.themes/  or  /usr/share/themes/ (create it  if necessary).<br><br>2.- To set the theme in Gnome, run the following commands in Terminal.<br><br><pre class=\"decoda-code\"><code>gsettings set org.gnome.desktop.interface gtk-theme Sweet</code></pre><br><pre class=\"decoda-code\"><code>gsettings set org.gnome.desktop.wm.preferences theme Sweet</code></pre><br><br>or Change via distribution specific tweaktool.<br>------------------<br><br><b>Donations</b><br>The Sweet theme is available for free. if you're enjoying the Sweet theme, feel free to buy me a cofee <img class=\"decoda-emoticon\" src=\"/emoticons/happy.png\" alt=\"\"> <a href=\"https://www.paypal.me/EliverLara/\">https://www.paypal.me/EliverLara/</a><br><br>------------------<br><b>Bugs and Issues </b>:<br><br>If you find a bug, please report it to the github issue tracker:<br><br><a href=\"https://github.com/EliverLara/Sweet/issues\">Sweet</a><br><br>------------------<br><b>IMPORTANT </b>:<br><br><b><span style=\"color: #F7797D\">Icons are now available!</span> - <a href=\"https://www.opendesktop.org/p/1284047/\">Sweet icons</a></b><br><br><b><span style=\"color: #8A2387\">F</span><span style=\"color: #A92E5A\">i</span><span style=\"color: #C93A2D\">r</span><span style=\"color: #E84600\">e</span><span style=\"color: #EB540B\">f</span><span style=\"color: #EE6216\">o</span><span style=\"color: #F17021\">x</span></b>: if you are a firefox user, you can give a chance to the <a href=\"https://addons.mozilla.org/es/firefox/addon/sweet-dark/\">sweet-dark</a> extension for a better looking or try my complete <a href=\"https://github.com/EliverLara/firefox-sweet-theme\"><b><span style=\"color: #7F00FF\">F</span><span style=\"color: #8400FF\">i</span><span style=\"color: #8900FF\">r</span><span style=\"color: #8E00FF\">e</span><span style=\"color: #9300FF\">f</span><span style=\"color: #9800FF\">o</span><span style=\"color: #9D00FF\">x</span><span style=\"color: #A300FF\">-</span><span style=\"color: #A800FF\">S</span><span style=\"color: #AD00FF\">w</span><span style=\"color: #B200FF\">e</span><span style=\"color: #B700FF\">e</span><span style=\"color: #BC00FF\">t</span><span style=\"color: #C200FF\">-</span><span style=\"color: #C700FF\">T</span><span style=\"color: #CC00FF\">h</span><span style=\"color: #D100FF\">e</span><span style=\"color: #D600FF\">m</span><span style=\"color: #DB00FF\">e</span></b> </a>.",
+        "title": "Sweet",
+        "likes": 303,
+        "changed_at": "2022-06-14 21:15:57",
+        "system_tags": [
+            "gnome",
+            "linux",
+            "theme",
+            "unix",
+            "gplv3"
+        ],
+        "files": [
+            {
+                "id": "0",
+                "name": "sweet-ambar-blue.tar.xz",
+                "type": "application/x-xz",
+                "is_active": true,
+                "url": "https://dl2.pling.com/api/files/download/j/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjE2NTMyNTY5NjAiLCJ1IjpudWxsLCJsdCI6ImZpbGVwcmV2aWV3IiwicyI6IjIzYzdhMDU0MGYzMmYxNGM0OTA2MGM3MTNiMmQ2OTgwY2FlMzllOWJmZTlkNTA3NGQzOTJhYTUxMGFiNTNmYjIxNTlhNzY0ZWFmYjc3MTYzNjkxMDJjZGUzZTdlYzYzYjdmZTU3NGJlZjk1MmYxOTk1ZTBmZmFhYTEzMTg4N2FlIiwidCI6MTY1NTY1MzQ1NSwic3RmcCI6bnVsbCwic3RpcCI6bnVsbH0.NDOBbwcxSFvbY0SRhOHM2XMATMSSCH1s_m06voRE4c8/sweet-ambar-blue.tar.xz",
+                "size": "0.78 Mb",
+                "downloads": 698,
+                "changed_at": "2022-05-22 21:54:59",
+                "extracted_files": [
+                    "Sweet-Ambar-Blue"
+                ]
+            },
+            {
+                "id": "0",
+                "name": "Sweet.tar.xz",
+                "type": "application/x-xz",
+                "is_active": true,
+                "url": "https://dl3.pling.com/api/files/download/j/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjE2NTAwNjE1MzMiLCJ1IjpudWxsLCJsdCI6ImZpbGVwcmV2aWV3IiwicyI6ImMyYmQzMTZkOWI4ZTU2Yzk5MDE5YTc4MWFjZGY1NjE3ZmFiNzBjNzg2YmRiZGJkNmI0OTRjOWU5N2IyYjJhYmZlMGRiODU5N2YwOGI1YzQ5MGE0ZmMwN2U0ZTIyNTRlMzAyM2VjOTg5MzljZmU0YmFlZjIwYzZhYTFlNDM3YzRlIiwidCI6MTY1MzA2OTYxNSwic3RmcCI6bnVsbCwic3RpcCI6bnVsbH0.kTaKQdDZ7dOuW2ZOAVYa9FEd6rHH427KXLYikx2Yhfc/Sweet.tar.xz",
+                "size": "0.43 Mb",
+                "downloads": 1821,
+                "changed_at": "2022-04-15 22:23:43",
+                "extracted_files": [
+                    "Sweet"
+                ]
+            },
+            {
+                "id": "2",
+                "name": "Sweet-Dark.tar.xz",
+                "type": "application/x-xz",
+                "is_active": true,
+                "url": "https://dl3.pling.com/api/files/download/j/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjE2NTAwNjE5NDQiLCJ1IjpudWxsLCJsdCI6ImZpbGVwcmV2aWV3IiwicyI6ImMyYmQzMTZkOWI4ZTU2Yzk5MDE5YTc4MWFjZGY1NjE3ZmFiNzBjNzg2YmRiZGJkNmI0OTRjOWU5N2IyYjJhYmZlMGRiODU5N2YwOGI1YzQ5MGE0ZmMwN2U0ZTIyNTRlMzAyM2VjOTg5MzljZmU0YmFlZjIwYzZhYTFlNDM3YzRlIiwidCI6MTY1MzA2OTYxNSwic3RmcCI6bnVsbCwic3RpcCI6bnVsbH0.6_L93ci9baQoXDoqvOeYdal8C6RSCOfLiT9VATn3lWo/Sweet-Dark.tar.xz",
+                "size": "0.50 Mb",
+                "downloads": 3268,
+                "changed_at": "2022-04-15 22:31:31",
+                "extracted_files": [
+                    "Sweet-Dark"
+                ]
+            },
+            {
+                "id": "4",
+                "name": "Sweet-mars.tar.xz",
+                "type": "application/x-xz",
+                "is_active": true,
+                "url": "https://dl3.pling.com/api/files/download/j/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjE2NTAwNjIwMDciLCJ1IjpudWxsLCJsdCI6ImZpbGVwcmV2aWV3IiwicyI6ImMyYmQzMTZkOWI4ZTU2Yzk5MDE5YTc4MWFjZGY1NjE3ZmFiNzBjNzg2YmRiZGJkNmI0OTRjOWU5N2IyYjJhYmZlMGRiODU5N2YwOGI1YzQ5MGE0ZmMwN2U0ZTIyNTRlMzAyM2VjOTg5MzljZmU0YmFlZjIwYzZhYTFlNDM3YzRlIiwidCI6MTY1MzA2OTYxNSwic3RmcCI6bnVsbCwic3RpcCI6bnVsbH0.C1frotz9e7fWOqT4hxZuM-K46PZ0A2D9q3ULS7BcVaQ/Sweet-mars.tar.xz",
+                "size": "1.49 Mb",
+                "downloads": 1052,
+                "changed_at": "2022-04-15 22:23:50",
+                "extracted_files": [
+                    "Sweet-mars"
+                ]
+            },
+            {
+                "id": "1",
+                "name": "Sweet-Ambar-Blue.tar.xz",
+                "type": "application/x-xz",
+                "is_active": true,
+                "url": "https://dl3.pling.com/api/files/download/j/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjE2NTAwNjE1ODIiLCJ1IjpudWxsLCJsdCI6ImZpbGVwcmV2aWV3IiwicyI6IjIwZDNiYzgzZDc4YzlhZmM3ZWE4ZTE2OWJjNzU4YWJlNzRmMzU4YWE4N2ZkMjYwNGU1ZjEyZjI5M2JlMjE0MGFiNmE2Y2NhNzIyYWM5ODkzZjRjNzdkYTY2OGRlZTExNGNmNGM2M2YzNDBmNDdlODVjYTZmYTQxZGFjNjU2ZTQ1IiwidCI6MTY1MjY4MzYzNSwic3RmcCI6bnVsbCwic3RpcCI6bnVsbH0.MZz0nF4PZ-OQqojABo3_t_UgtN1TRC--V1JDmUotwcw/Sweet-Ambar-Blue.tar.xz",
+                "size": "0.78 Mb",
+                "downloads": 676,
+                "changed_at": "2022-04-15 22:23:23",
+                "extracted_files": [
+                    "Sweet-Ambar-Blue"
+                ]
+            },
+            {
+                "id": "3",
+                "name": "Sweet-Ambar.tar.xz",
+                "type": "application/x-xz",
+                "is_active": true,
+                "url": "https://dl3.pling.com/api/files/download/j/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjE2NTAwNjE5NTkiLCJ1IjpudWxsLCJsdCI6ImZpbGVwcmV2aWV3IiwicyI6IjA2ZGUxNjA0MzliMzExYjQ2Njk3ZDZiM2VkMGIxM2ViYTRhMmVlMzVkNjg1ZDk5NDk2OWVmOTFiNTYzMzE5ZDUyY2U5OTFjNWYxZjIyZjFjNTc0ZDQ4NzRhYTljNjBiMWQ1MmM0ZjMxOTI0YzBiNjY1ZTM5MTEzZTIzZGQzN2RmIiwidCI6MTY1MjIwMzY5MCwic3RmcCI6bnVsbCwic3RpcCI6bnVsbH0.bb6kBKTHN3CO_gHfH2D_cm9f3Qd5H-NEr5GcLrr_Ock/Sweet-Ambar.tar.xz",
+                "size": "0.78 Mb",
+                "downloads": 310,
+                "changed_at": "2022-04-15 22:23:18",
+                "extracted_files": [
+                    "Sweet-Ambar"
+                ]
+            }
+        ],
+        "version": "1.10.5",
+        "url": "https://www.gnome-look.org/s/Gnome/p/1253385/",
+        "install_path": "./themes/GTK3/4 Themes"
+    },
+    "1403328": {
+        "type": "GTK3/4 Themes",
+        "project_id": "1403328",
+        "author": "vinceliuice",
+        "description": "MacOS Big Sur like theme for Gnome desktops<br>-----------------------<br><b>TIPS:</b><br>Nvidia users are recommended to use the solid version<br>-----------------------<br><b>Kde theme:</b> <a href=\"https://www.pling.com/p/1398840/\">https://www.pling.com/p/1398840/</a><br>-----------------------<br><b>Icon theme:</b> <a href=\"https://www.pling.com/p/1405756/\">https://www.pling.com/p/1405756/</a><br>-----------------------<br><b>Cursors theme:</b> <a href=\"https://www.pling.com/p/1355701/\">https://www.pling.com/p/1355701/</a><br>-----------------------<br><b>Wallpaper:</b> <a href=\"https://www.pling.com/p/1398833/\">https://www.pling.com/p/1398833/</a><br>-----------------------<br><b>Firefox theme:</b> <a href=\"https://github.com/vinceliuice/WhiteSur-gtk-theme/tree/master/src/other/firefox\">https://github.com/vinceliuice/WhiteSur-gtk-theme/tree/master/src/other/firefox</a><br>-----------------------<br><b>Dash-to-Dock theme:</b> <a href=\"https://github.com/vinceliuice/WhiteSur-gtk-theme/tree/master/src/other/dash-to-dock\">https://github.com/vinceliuice/WhiteSur-gtk-theme/tree/master/src/other/dash-to-dock</a><br>-----------------------<br><b>GitHub version:</b><br>-----------------------<br>If you want change the sidebar size of nautilus you need install this theme from <br>github: <a href=\"https://github.com/vinceliuice/WhiteSur-gtk-theme\">https://github.com/vinceliuice/WhiteSur-gtk-theme</a><br>then run: <b>./install.sh -s</b><br>-----------------------<br>If you want to change the panel (gnome-shell) transparency, then you can run: <b>./install.sh -t</b>",
+        "title": "WhiteSur Gtk Theme",
+        "likes": 195,
+        "changed_at": "2022-05-08 03:46:22",
+        "system_tags": [
+            "gnome",
+            "linux",
+            "theme",
+            "unix",
+            "gplv3"
+        ],
+        "files": [
+            {
+                "id": "3",
+                "name": "WhiteSur-Light-solid.tar.xz",
+                "type": "application/x-xz",
+                "is_active": true,
+                "url": "https://dl3.pling.com/api/files/download/j/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjE2NTE5ODIxNjciLCJ1IjpudWxsLCJsdCI6ImZpbGVwcmV2aWV3IiwicyI6IjBmMzZjMDdmODUzNjk4MGE4MDAyMmEyNDlkMzI0ZWU4ODIzZjhkNGI1NjU2OTgyMDQzM2NmMjg4MThiMTNmYzk4NzVhNDQ2ZjgzNzMwYTIwZTM2YzY2NDc5NTZkYTc0NDNiZmJmMzFhYjdkYjdmZTFkNmFhOTE4MDIxYzgzMzRkIiwidCI6MTY1MjIwMzcxMiwic3RmcCI6bnVsbCwic3RpcCI6bnVsbH0.cfqTdN67C7ej1te7x8zEz_F9h_w4yyQvuw1HMftnLLg/WhiteSur-Light-solid.tar.xz",
+                "size": "0.17 Mb",
+                "downloads": 313,
+                "changed_at": "2022-05-08 03:45:31",
+                "extracted_files": [
+                    "WhiteSur-Light-solid"
+                ]
+            },
+            {
+                "id": "1",
+                "name": "WhiteSur-Dark-solid.tar.xz",
+                "type": "application/x-xz",
+                "is_active": true,
+                "url": "https://dl3.pling.com/api/files/download/j/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjE2NTE5ODE4MTEiLCJ1IjpudWxsLCJsdCI6ImZpbGVwcmV2aWV3IiwicyI6IjBmMzZjMDdmODUzNjk4MGE4MDAyMmEyNDlkMzI0ZWU4ODIzZjhkNGI1NjU2OTgyMDQzM2NmMjg4MThiMTNmYzk4NzVhNDQ2ZjgzNzMwYTIwZTM2YzY2NDc5NTZkYTc0NDNiZmJmMzFhYjdkYjdmZTFkNmFhOTE4MDIxYzgzMzRkIiwidCI6MTY1MjIwMzcxMiwic3RmcCI6bnVsbCwic3RpcCI6bnVsbH0.HgsSYZWf_fGeUQ33oHgvTlLUpRMmxjajZe-TL0WZDPI/WhiteSur-Dark-solid.tar.xz",
+                "size": "0.16 Mb",
+                "downloads": 786,
+                "changed_at": "2022-05-08 03:45:37",
+                "extracted_files": [
+                    "WhiteSur-Dark-solid"
+                ]
+            },
+            {
+                "id": "2",
+                "name": "WhiteSur-Light.tar.xz",
+                "type": "application/x-xz",
+                "is_active": true,
+                "url": "https://dl3.pling.com/api/files/download/j/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjE2NTE5ODIwNjQiLCJ1IjpudWxsLCJsdCI6ImZpbGVwcmV2aWV3IiwicyI6IjBmMzZjMDdmODUzNjk4MGE4MDAyMmEyNDlkMzI0ZWU4ODIzZjhkNGI1NjU2OTgyMDQzM2NmMjg4MThiMTNmYzk4NzVhNDQ2ZjgzNzMwYTIwZTM2YzY2NDc5NTZkYTc0NDNiZmJmMzFhYjdkYjdmZTFkNmFhOTE4MDIxYzgzMzRkIiwidCI6MTY1MjIwMzcxMiwic3RmcCI6bnVsbCwic3RpcCI6bnVsbH0.LoGNuvjPiBmXc4MVsmyDX9szgXNGSJrn9-cV_0njvNs/WhiteSur-Light.tar.xz",
+                "size": "0.17 Mb",
+                "downloads": 587,
+                "changed_at": "2022-05-08 03:45:34",
+                "extracted_files": [
+                    "WhiteSur-Light"
+                ]
+            }
+        ],
+        "version": "",
+        "url": "https://www.gnome-look.org/p/1403328",
+        "install_path": "./themes/GTK3/4 Themes"
+    },
+    "1345605": {
+        "type": "GTK3/4 Themes",
+        "project_id": "1345605",
+        "author": "rtl88",
+        "description": "Great news: ChromeOs-Dark is finally releasing ''Stable' versions; and, likewise, is now available for download on GTK-Linux. Four fabulous Material Design flavors have been going through extensive testing, the past couple of months; and, at last, we can all start enjoying them. A half dozen more flavors are still in testing; hence, soon, there will be even more to choose from. ChromeOs-Dark is the new, highly anticipated - GTK, xfwm4, GNOME-Shell, and Cinnamon- Dark Mode Theme grounded on Material Design standards; and aims to bring a warm, colorful, and elegant experience to your desktop.<br><br>The new rankings are still coming in for 2020, and ChromeOs-Dark now enjoys the #3 spot in the GTK Linux world - according to top Linux/GTK site: ubuntupit. In their words: \"It has already gained popularity and become one of the most used mate OS themes... It has gone through extreme testing to ensure a vibrant, colorful, and elegant experience... the theme is decorated with grid-based layouts, responsive animations, transitions, depth effects, lighting, and shadow.... just like other Google Apps like Docs, drive, sheets, this theme is also inspired by Google&rsquo;s Material design.\" Thanks again faithful users! https://www.ubuntupit.com/best-mate-themes-for-linux/<br><br>Choose from the four official-based hues of: ChromeOS-Marsala, ChromeOS-Oceanic, ChromeOS-Slate, and ChromeOS-UltraViolet. All four flavors are available in both 'Dark' and 'Darker' modes.<br><br>***The 'Darker' Flavors also have an additional full-theme-version with extra dark menus, notification-banners, and dialogs.***<br><br>Over the last couple of years, Google has been moving towards a unified user experience with its Material Design interface. It started with Android, and we&rsquo;ve seen many Google Apps&mdash;like Drive, Docs, and Sheets&mdash;get this clean, modern makeover. Chrome (and, by extension, Chrome OS) has seen touches of Material Design here and there, but many of these design remakes have still been in testing.<br><br>Notably, Google&rsquo;s developers have recently been working diligently on creating &ldquo;Dark Mode&rdquo; Chrome for Desktop.  They have been implementing bits and pieces for dark themes, for some time; but these latest updates are good indicators that Chrome and Chrome OS will soon be very adept at handling dark mode across the board. There&rsquo;s still some fine tuning to be done, but overall, it looks great; and lots of users are really excited to see it starting to land in 'Stable' so they can go fully lights out on their Chromebooks. These first four releases, for GTK-Linux, are all tuned up and ready to go.<br><br>Material Design makes better use of grid-based layouts, responsive animations and transitions, padding and depth effects, such as, lighting and shadows. In desktop Chrome, Material Design is limited to a more rounded appearance, which currently excludes rounder tabs that first appeared in developer builds of the browser in April 2018. Most importantly, we can start enjoying ChromeOs dark mode, on GTK-Linux. Special thanks to the The Chrome team for their inspiration, expertise and contributions.<br><br><br>Manual Installation Is Easy:<br><br>For themes: 1) Extract the \"tar.xz\" file into your \"~/.themes/\" folder - to install for current user only - or into the \"/usr/share/themes/\" folder - for the theme to be applied globally. 2) Use the GNOME Tweak Tool or an equivalent app to enable it for your desktop.",
+        "title": "ChromeOs-Dark [introducing Rounded variant]",
+        "likes": 25,
+        "changed_at": "2020-11-19 22:58:57",
+        "system_tags": [
+            "gnome",
+            "linux",
+            "theme",
+            "unix",
+            "cc-by-sa"
+        ],
+        "files": [
+            {
+                "id": "0",
+                "name": "ChromeOS-UltraViolet-Rounded_1.7.zip",
+                "type": "application/zip",
+                "is_active": true,
+                "url": "https://dl3.pling.com/api/files/download/j/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjE2MDU4NDI5NDUiLCJ1IjpudWxsLCJsdCI6ImZpbGVwcmV2aWV3IiwicyI6IjhhZTE5MWQ5M2Q2OWI2ZTUyMWU0NTUwYmZmYTI0NDlhMWYwYWZmODMyMjA5ZTE3NDJjN2NkMGNhM2JjN2VlZGU5ODViYzBlNTQ0NmZjM2I5ZWI3MDA4MmJkOGM5YzIwMzFlZjgwZmNiM2I4ZDU0ZmM2Mzg0YTdiOTMwYzUwZDAyIiwidCI6MTY1MjE5OTE0Miwic3RmcCI6bnVsbCwic3RpcCI6bnVsbH0.1FfPRJau_R7361DWUDDpvbQJudEZauPYSz6infLNmjs/ChromeOS-UltraViolet-Rounded_1.7.zip",
+                "size": "0.32 Mb",
+                "downloads": 367,
+                "changed_at": "2020-11-20 03:26:58",
+                "extracted_files": [
+                    "ChromeOS-UltraViolet-Rounded"
+                ]
+            }
+        ],
+        "version": "1.7",
+        "url": "https://www.gnome-look.org/p/1345605",
+        "install_path": "./themes/GTK3/4 Themes"
+    }
+}
