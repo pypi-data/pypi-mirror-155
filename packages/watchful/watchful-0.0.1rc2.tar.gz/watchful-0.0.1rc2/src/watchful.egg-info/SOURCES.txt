@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.md
+README_PYPI.md
+pylama.ini
+pyproject.toml
+setup.cfg
+src/watchful/VERSION
+src/watchful/__init__.py
+src/watchful/api.py
+src/watchful/attributes.py
+src/watchful/enrich.py
+src/watchful.egg-info/PKG-INFO
+src/watchful.egg-info/SOURCES.txt
+src/watchful.egg-info/dependency_links.txt
+src/watchful.egg-info/requires.txt
+src/watchful.egg-info/top_level.txt
