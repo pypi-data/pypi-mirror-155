@@ -1,0 +1,42 @@
+Metadata-Version: 2.1
+Name: tkmedia
+Version: 0.1.2
+Summary: Tkinter Media Support.
+Home-page: https://github.com/Marusoftware/tkmedia3
+Author: Marusoftware
+Author-email: marusoftware@outlook.jp
+License: MIT
+Project-URL: Bug Tracker, https://github.com/Marusoftware/tkmedia3/issues
+Project-URL: Documents, https://marusoftware.github.io/tkmedia3/
+Keywords: tkmedia
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: av
+Requires-Dist: numpy
+Requires-Dist: Pillow
+Requires-Dist: sounddevice
+
+[![PyPI version](https://badge.fury.io/py/tkmedia.svg)](https://badge.fury.io/py/tkmedia)
+
+# tkmedia3
+Tkinter/Python3 media support.
+
+You can play video and audio on tkinter Frame/Canvas.
+
+## Usage
+see [docs](https://marusoftware.github.io/tkmedia3/master/index.html)(in progress) or test.py(mostly example)
+
+(Hmm...? "No one decent material"..? Yeah...I see... It's sorry, I'll do it...)
+
+## Install
+Stable release:   
+`pip install tkmedia`   
+Dev:   
+`pip install git+https://github.com/Marusoftware/tkmedia3.git`(not tested)   
+
+
