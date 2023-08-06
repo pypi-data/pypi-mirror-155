@@ -1,0 +1,15 @@
+task_flows/__init__.py,sha256=zIycLbvMzObuxRmIcE5CSUz2DkxEor3ZOMPvEUdvA64,33
+task_flows/admin.py,sha256=riKbgDiZMQVHUgajIDIWD9-T7eej64znhQllAp7UDE4,3229
+task_flows/containers.py,sha256=abH7vYrYF0pu_h5Hpn6KddEwpTK8MMsRaMlgYSQpTT4,2549
+task_flows/systemd.py,sha256=7CACFR_Sdra3Wm6DJgqPPGTrZ4FEzrF-HoqNnUmFudI,2648
+task_flows/tables.py,sha256=hcReRxsxFHZFHl2AwXS2ykwHXN011DlV0Q9jrqbbiAk,2518
+task_flows/task.py,sha256=Ltj3JFic8JTZwOula0Arwn9SdyRSPol02fK68tAXBOs,8840
+task_flows/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+task_flows/tests/conftest.py,sha256=kSDvU15c-d6XCvrrmxHkm6UoOTPgHOEejkckAlZUjBA,148
+task_flows/tests/main.py,sha256=V55WgNt-jttxXbbdWqxOm9DsXeLG4THvVQHeCXlST6s,268
+task_flows/tests/test_task.py,sha256=SYfNTDQ_Izx2muOO6fMcSukEa4Huq1xrxBAVokqN4Jo,1860
+task_flows/utils.py,sha256=MRpP2Eg_Kgc_RxMNRstOJnzuPXzVoBLpMvRzS-a1pQU,595
+task_flows-0.2.0.dist-info/entry_points.txt,sha256=aR6FY36AIPMnefYLB0kdmA_6xHb_R4ZCo9cZ3gdP-_Q,46
+task_flows-0.2.0.dist-info/WHEEL,sha256=y3eDiaFVSNTPbgzfNn0nYn5tEn1cX6WrdetDlQM4xWw,83
+task_flows-0.2.0.dist-info/METADATA,sha256=eX580HV-u7HtE-kzIxN0vHLnjIEsFVYXqkpW-AQX6rw,578
+task_flows-0.2.0.dist-info/RECORD,,
