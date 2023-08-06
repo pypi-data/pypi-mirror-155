@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: antpycv
+Version: 1.0.1
+Summary: Arduino Helper Library
+Home-page: https://github.com/samkakada
+Author: Kakada Sam
+Author-email: sam.kakada@gmail.com
+License: MIT
+Keywords: cv,computer vision,arduino
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.7
+Requires-Dist: opencv-python (==4.6.0.66)
+Requires-Dist: numpy (==1.21.6)
+Requires-Dist: pyserial (==3.5)
+Requires-Dist: mediapipe (==0.8.10)
+Requires-Dist: msvc-runtime (==14.29.30133)
+Requires-Dist: protobuf (==3.19.0)
+
+# antpycv គឺជា Computer Vision package ដែលងាយស្រួលសរសេរកូដ python ភ្ជាប់ទៅកាន់ Arduino ដើម្បីធ្វើការបង្ហាញរូបភាពនិងកិច្ចការងារពាក់ព័ន្ធនឹងមុខងារ AI (Artificial Intelligence)។ antpycv ត្រូវបានបង្កើតឡើងដោយប្រើប្រាស់ OpenCV និង Mediapipe libraries។
+## អ្នកអាចធ្វើការតំឡើង antpycv package ទៅកាន់ virtual environment (venv) project របស់អ្នកតាមរយៈ command ខាងក្រោម៖
+### pip install antpycv ###
+
+## ជាការសំនូមពរអ្នកគួរតែធ្វើការ upgrade តាម command ខាងក្រោម៖
+### pip install --upgrade pip setuptools wheel ###
