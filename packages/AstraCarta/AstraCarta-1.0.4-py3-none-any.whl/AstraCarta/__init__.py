@@ -1,0 +1,1 @@
+from astracarta.astracarta import main
