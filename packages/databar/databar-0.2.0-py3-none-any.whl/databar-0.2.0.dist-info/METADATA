@@ -1,0 +1,46 @@
+Metadata-Version: 2.1
+Name: databar
+Version: 0.2.0
+Summary: Official Databar.ai python package
+Home-page: https://github.com/databar-ai/databar-python
+Author: Databar.ai Team
+Author-email: founders@databar.ai
+License: MIT
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pandas (==1.4.2)
+Requires-Dist: requests (==2.27.1)
+Requires-Dist: aiohttp (==3.8.1)
+Provides-Extra: develop
+Requires-Dist: black ; extra == 'develop'
+Requires-Dist: coverage ; extra == 'develop'
+Requires-Dist: flake8 ; extra == 'develop'
+Requires-Dist: isort ; extra == 'develop'
+Requires-Dist: mypy ; extra == 'develop'
+Requires-Dist: pytest ; extra == 'develop'
+Requires-Dist: pylint ; extra == 'develop'
+Requires-Dist: sphinx ; extra == 'develop'
+Requires-Dist: sphinx-rtd-theme ; extra == 'develop'
+
+# databar_python
+
+[![docs at readthedocs][docs-badge]][docs-link]
+[![databar on pypi][pypi-badge]][pypi-link]
+[![Licensed under MIT][license-badge]][license-link]
+[![Code style: black][black-badge]][black-link]
+
+[docs-badge]: https://readthedocs.org/projects/databar-python/badge/?version=latest
+[docs-link]: https://databar-python.readthedocs.io/
+[pypi-badge]: https://img.shields.io/pypi/v/databar.svg
+[pypi-link]: https://pypi.org/project/databar/
+[license-badge]: https://databar-python.readthedocs.io/en/latest/_static/license.svg
+[license-link]: https://github.com/databar-ai/databar-python/blob/master/LICENSE
+[black-badge]: https://img.shields.io/badge/code%20style-black-000000.svg
+[black-link]: https://github.com/psf/black
+
+This is official [databar.ai][databar.ai] python library. Using this package you can access databar.ai functionality from python.
+
+[databar.ai]: https://databar.ai
+
+Docs: https://databar-python.readthedocs.io/
