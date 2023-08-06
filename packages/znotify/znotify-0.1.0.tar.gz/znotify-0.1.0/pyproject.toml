@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "znotify"
+version = "0.1.0"
+description = "sdk for notify"
+authors = ["Zxilly <zhouxinyu1001@gmail.com>"]
+license = "GPL-3.0"
+readme = "README.md"
+repository = "https://github.com/ZNotify/py-sdk"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Development Status :: 4 - Beta",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Operating System :: OS Independent",
+    "Natural Language :: Chinese (Simplified)"
+]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+requests = "^2.27.1"
+
+[tool.poetry.dev-dependencies]
+
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/ZNotify/py-sdk/issues"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
