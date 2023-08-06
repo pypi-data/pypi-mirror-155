@@ -1,0 +1,17 @@
+markdown
+pandas>=1.2.3
+openpyxl>=2.6.0
+pyproj>=3.0.1
+richdem
+rasterio
+numpy
+seaborn
+matplotlib
+statsmodels
+scipy
+pyproj
+datetime
+scikit-learn>=0.24.1
+supersmoother
+ipyleaflet>=0.13.0
+ipywidgets>=7.5.0

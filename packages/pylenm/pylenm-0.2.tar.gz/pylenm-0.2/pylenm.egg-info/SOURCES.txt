@@ -1,0 +1,43 @@
+.gitattributes
+.gitignore
+DESCRIPTION.md
+LICENSE
+README.md
+pyproject.toml
+setup.py
+docs/.readthedocs.yaml
+docs/Makefile
+docs/make.bat
+docs/requirements.txt
+docs/source/TOC.png
+docs/source/conf.py
+docs/source/index.rst
+docs/source/introduction.rst
+docs/source/notebooks.rst
+docs/source/pylenm.rst
+docs/source/usage.rst
+docs/source/notebook_thumbnails/tester.png
+docs/source/notebooks/1) pyLEnM - Basics.ipynb
+docs/source/notebooks/2) pyLEnM - Unsupervised Learning.ipynb
+docs/source/notebooks/3) pyLEnM - Water Table Spatial Estimation & Well Optimization.ipynb
+docs/source/notebooks/4) pyLEnM - Tritium Spatial Estimation.ipynb
+docs/source/notebooks/5) pyLEnM - Proxy Estimation (SC~Tritium).ipynb
+notebooks/1) pyLEnM - Basics.ipynb
+notebooks/2) pyLEnM - Unsupervised Learning.ipynb
+notebooks/3) pyLEnM - Water Table Spatial Estimation & Well Optimization.ipynb
+notebooks/4) pyLEnM - Tritium Spatial Estimation.ipynb
+notebooks/5) pyLEnM - Proxy Estimation (SC~Tritium).ipynb
+notebooks/data/.gitattributes
+notebooks/data/FASB Well Construction Info.xlsx
+notebooks/data/FASB_Data_thru_3Q2015_Reduced_Demo.csv
+notebooks/data/FArea-30m-DEM_cropped.tif
+pylenm/__init__.py
+pylenm/_imports.py
+pylenm/pylenm.py
+pylenm/version.py
+pylenm.egg-info/PKG-INFO
+pylenm.egg-info/SOURCES.txt
+pylenm.egg-info/dependency_links.txt
+pylenm.egg-info/not-zip-safe
+pylenm.egg-info/requires.txt
+pylenm.egg-info/top_level.txt
