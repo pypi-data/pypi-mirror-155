@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: helixtrajectory
+Version: 0.1.0
+Summary: Triple Helix Trajectory Generation Utility
+Author: Joshua Nichols
+License: MIT
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+License-File: LICENSE
+Requires-Dist: casadi (>=3.5.5)
+Requires-Dist: numpy (>=1.19.3)
+Requires-Dist: click (>=8.1.3)
+
+# Use this command to make the pex:
+python3.8 -m pex . -v -e helixtrajectory.cli:main -o env.pex --disable-cache
+
