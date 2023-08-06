@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: fast-rtsp
+Version: 0.0.2
+Summary: Fast rtsp capture package
+Home-page: https://github.com/maxwolf8852/fast_rtsp.git
+Author: Maxim Volkovskiy
+Author-email: maxwolf8852@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.9
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: av (>=9.2.0)
+
+# fast_rtsp
+Python extension for fast opencv RTSP stream capture.
+
+
