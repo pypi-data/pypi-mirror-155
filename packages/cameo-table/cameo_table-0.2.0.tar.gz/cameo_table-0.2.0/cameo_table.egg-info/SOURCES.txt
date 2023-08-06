@@ -1,0 +1,16 @@
+LICENSE
+README.md
+setup.py
+cameo_table/__init__.py
+cameo_table/__main__.py
+cameo_table/arg_parser.py
+cameo_table/cameo_table.py
+cameo_table/df_handler.py
+cameo_table/file_handler.py
+cameo_table/path_handler.py
+cameo_table/reuse.py
+cameo_table.egg-info/PKG-INFO
+cameo_table.egg-info/SOURCES.txt
+cameo_table.egg-info/dependency_links.txt
+cameo_table.egg-info/requires.txt
+cameo_table.egg-info/top_level.txt
