@@ -1,0 +1,14 @@
+[console_scripts]
+jjtable2ttl=jjowl:main_table2ttl
+jjtax2ttl=jjowl:main_tax2ttl
+jjtmd2ttl=jjowl:main_tmd2ttl
+jjyaml2ttl=jjowl:main_yaml2ttl
+owlcat=jjowl:mcat
+owlclass=jjowl:mclass
+owlexpandpp=jjowl:mexpandpp
+owlgrep=jjowl:mgrep
+owlhtml=jjowl:mhtml
+owllabel2term=jjowl:mlabel2term
+owlprops=jjowl:mprops
+owlxdxf=jjowl:mxdxf
+
