@@ -1,0 +1,52 @@
+Metadata-Version: 2.1
+Name: music-debugger
+Version: 0.0.1
+Summary: Music debugger
+Author: sldless
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: beautifulsoup4
+Requires-Dist: requests
+
+# Music debugger
+##### Makes debuging (2 music sites) much easier
+___
+
+###  SoundCloud ("Example")
+```py
+from music_debugger import SoundCloud as Sound
+
+Info = Sound(url="https://soundcloud.com/jonbellion/all-time-low-new-mix")
+
+print(f'Title: {Info.title}')
+print(f'Image url: {Info.image}')
+print(f'description: {Info.description}')
+print(f'Like count: {Info.like_count}')
+print(f'play count: {Info.play_count}')
+print(f'download count: {Info.download_count}')
+print(f'Comments count: {Info.comments_count}')
+print(f'Type: {Info.type}')
+print(f'Comments count: {Info.comments_count}')
+print(f'Artist: {Info.artist}')
+
+```
+
+###  Deezer ("Example")
+```py
+from music_debugger import Deezer 
+
+Info = Deezer(url="https://www.deezer.com/us/track/1761469787")
+
+print(f'Title: {Info.title}')
+print(f'Image url: {Info.image}')
+print(f'description: {Info.description}')
+print(f'Short Audio: {Info.audio}')
+print(f'Type: {Info.type}')
+print(f'Author: {Info.author}')
+print(f'Artist: {Info.artist}')
+
+```
