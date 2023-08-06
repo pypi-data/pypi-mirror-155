@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: ampel-argo
+Version: 0.1.0a6
+Summary: 
+Author: Jakob van Santen
+Author-email: jvansanten@gmail.com
+Requires-Python: >=3.9,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: PyJWT (>=2.3.0,<3.0.0)
+Requires-Dist: ampel-core (>=0.8.2-alpha.13,<0.8.3)
+Requires-Dist: fastapi (>=0.75.0,<0.76.0)
+Requires-Dist: httpx (>=0.22.0,<0.23.0)
+Requires-Dist: uvicorn (>=0.17.6,<0.18.0)
