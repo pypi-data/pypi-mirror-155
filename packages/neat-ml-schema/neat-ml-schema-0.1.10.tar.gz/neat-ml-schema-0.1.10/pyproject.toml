@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "neat-ml-schema"
+version = "v0.1.10"
+description = "A linkml based schema for the neat-ml project."
+readme = "README.md"
+authors = ["Harshad Hegde <hhegde@lbl.gov>"]
+license = "MIT"
+homepage = "https://knowledge-graph-hub.github.io/neat_ml_schema/"
+repository = "https://github.com/Knowledge-Graph-Hub/neat_ml_schema"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+linkml-runtime = "^1.1.24"
+tox = "^3.25.0"
+pytest = "^7.1.2"
+linkml = "^1.2.11"
+
+[tool.poetry.dev-dependencies]
+linkml = "^1.2.6"
+mkdocs-material = "^8.2.8"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 79
+
+[tool.poetry.extras]
+docs = ["linkml", "mkdocs-material"]
