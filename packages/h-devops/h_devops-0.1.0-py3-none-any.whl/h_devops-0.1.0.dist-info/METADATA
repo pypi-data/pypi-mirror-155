@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: h-devops
+Version: 0.1.0
+Summary: 
+Author: Vo Viet Hoang
+Author-email: levuthanhtung11@gmail.com
+Requires-Python: >=3.9,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: psutil (>=5.9.1,<6.0.0)
+Requires-Dist: typer[all] (>=0.4.1,<0.5.0)
+Description-Content-Type: text/markdown
+
+# h_devops v1.0.0
+
+# How to install
+Please run this command on your terminal window
+```shell
+$ pip install h_devops
+```
