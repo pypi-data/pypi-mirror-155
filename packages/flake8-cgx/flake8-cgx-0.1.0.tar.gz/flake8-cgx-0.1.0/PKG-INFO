@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: flake8-cgx
+Version: 0.1.0
+Summary: Flake8 plugin for cgx (Collagraph single file component) files
+License: MIT
+Author: Berend Klein Haneveld
+Author-email: berendkleinhaneveld@gmail.com
+Requires-Python: >=3.9
+Classifier: Environment :: Console
+Classifier: Framework :: Flake8
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Software Development
+Requires-Dist: collagraph (>=0.4.1)
+Requires-Dist: flake8 (>=4.0.0)
+Description-Content-Type: text/markdown
+
+# flake8-cgx
+
+Flake8 plugin for linting of cgx files (Single File Components for [Collagraph](https://github.com/fork-tongue/collagraph)).
+
