@@ -1,0 +1,12 @@
+[console_scripts]
+vbmc = virtualbmc.cmd.vbmc:main
+vbmcd = virtualbmc.cmd.vbmcd:main
+
+[virtualbmc]
+add = virtualbmc.cmd.vbmc:AddCommand
+delete = virtualbmc.cmd.vbmc:DeleteCommand
+list = virtualbmc.cmd.vbmc:ListCommand
+show = virtualbmc.cmd.vbmc:ShowCommand
+start = virtualbmc.cmd.vbmc:StartCommand
+stop = virtualbmc.cmd.vbmc:StopCommand
+
