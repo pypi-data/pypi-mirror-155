@@ -1,0 +1,67 @@
+name: build
+on:
+  workflow_call:
+
+jobs:
+  # Build python wheels
+  build_matrix:
+    name: Prepare job matrix for build job
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v1
+      - id: set-matrix
+        # match github.ref to the on_ref_regex field in the json
+        # to skip running linux/aarch64 builds on PRs
+        run: |
+          matrix=$(jq --arg ref "${{ github.ref }}" \
+            'map(select(.on_ref_regex as $pat | $pat == null or ($ref | test($pat))) | del(.on_ref_regex))' \
+            .github/build-matrix.json)
+          echo ::set-output name=matrix::{\"include\":$(echo $matrix)}\"
+
+  build:
+    name: Build wheels on ${{ join(matrix.os, '/') }}/${{ matrix.vers }}
+    needs: build_matrix
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix: ${{fromJson(needs.build_matrix.outputs.matrix)}}
+    env:
+      SCCACHE_VERSION: 0.2.13
+      CIBW_BEFORE_ALL_LINUX: "curl https://sh.rustup.rs -sSf | env -u CARGO_HOME sh -s -- --default-toolchain stable --profile minimal -y"
+      CIBW_BEFORE_BUILD_LINUX: "rm -rf native/target; ln -s /host/${{github.workspace}}/native/target native/target; [ -d /host/${{github.workspace}}/native/target ] ||  mkdir /host/${{github.workspace}}/native/target"
+      CIBW_ENVIRONMENT_LINUX: 'PATH="$PATH:$HOME/.cargo/bin" LIBCST_NO_LOCAL_SCHEME=$LIBCST_NO_LOCAL_SCHEME CARGO_HOME=/host/home/runner/.cargo'
+      CIBW_BEFORE_ALL_MACOS: "rustup target add aarch64-apple-darwin x86_64-apple-darwin"
+      CIBW_BEFORE_ALL_WINDOWS: "rustup target add x86_64-pc-windows-msvc i686-pc-windows-msvc"
+      CIBW_ENVIRONMENT: 'PATH="$PATH:$HOME/.cargo/bin" LIBCST_NO_LOCAL_SCHEME=$LIBCST_NO_LOCAL_SCHEME'
+      CIBW_SKIP: "cp27-* cp34-* cp35-* pp* *-win32 *-win_arm64 *-musllinux_*"
+      CIBW_ARCHS: ${{ matrix.vers }}
+      CIBW_BUILD_VERBOSITY: 1
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-python@v2
+        if: ${{ !contains(matrix.os, 'self-hosted') }}
+        with:
+          python-version: "3.10"
+      - uses: actions/cache@v2
+        id: cache
+        if: ${{ !contains(matrix.os, 'self-hosted') }}
+        with:
+          path: ${{ env.pythonLocation }}
+          key: ${{ env.pythonLocation }}-${{ hashFiles('requirements.txt', 'requirements-dev.txt', 'setup.py') }}
+      - name: Rust Cache
+        if: ${{ !contains(matrix.os, 'self-hosted') }}
+        uses: Swatinem/rust-cache@v1.3.0
+        with:
+          working-directory: native
+      - name: Disable scmtools local scheme
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+        run: >-
+          echo LIBCST_NO_LOCAL_SCHEME=1 >> $GITHUB_ENV
+      - name: Build wheels
+        uses: pypa/cibuildwheel@v2.3.1
+      - uses: actions/upload-artifact@v2
+        with:
+          path: wheelhouse/*.whl
+          name: wheels
