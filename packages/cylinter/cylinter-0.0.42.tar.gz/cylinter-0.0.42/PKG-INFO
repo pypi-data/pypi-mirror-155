@@ -1,0 +1,40 @@
+Metadata-Version: 2.1
+Name: cylinter
+Version: 0.0.42
+Summary: CyLinter
+Home-page: https://github.com/labsyspharm/cylinter
+Author: Gregory J. Baker
+Author-email: gregory_baker2@hms.harvard.edu
+License: MIT License
+Download-URL: https://github.com/labsyspharm/cylinter/archive/v0.0.42.tar.gz
+Keywords: scripts single cell data science
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Scientific/Engineering :: Visualization
+Requires-Python: >=3.6.0
+License-File: LICENSE
+
+
+![](docs/assets/images/cylinter-logo.svg)
+
+## An Interactive Image Segmentation Filter for Multiplex Microscopy.
+
+CyLinter is quality control software for identifying and removing cell segmentation instances corrupted by optical and/or image-processing artifacts in multiplex microscopy images. The tool is user-guided and comprises a set of modular and extensible QC modules instantiated in a configurable [Python](https://www.python.org) Class object. Module results are cached to allow for dynamic restarts.
+
+CyLinter development is led by [Greg Baker](https://github.com/gjbaker) at the [Laboratory of Systems Pharmacology](https://hits.harvard.edu/the-program/laboratory-of-systems-pharmacology/about/), Harvard Medical School.
+
+**Funding:** This work is supported by the following:
+
+* *NCI grant U2C-CA233262: Pre-cancer Atlases of Cutaneous and Hematologic Origin*
+* *NIH grant U54CA225088: Systems Pharmacology of Therapeutic and Adverse Responses to Immune Checkpoint and Small Molecule Drugs*
+* *Ludwig Center at Harvard Medical School and the Ludwig Cancer Research Foundation*
+
+**Instructions:** https://labsyspharm.github.io/cylinter/
+
+
