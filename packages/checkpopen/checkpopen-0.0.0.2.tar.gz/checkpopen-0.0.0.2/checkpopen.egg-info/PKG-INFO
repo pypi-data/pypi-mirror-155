@@ -1,0 +1,36 @@
+Metadata-Version: 2.1
+Name: checkpopen
+Version: 0.0.0.2
+Summary: Popen context manager variant that raises CalledProcessError like check_call
+Home-page: https://github.com/cielavenir/checkpopen
+Author: cielavenir
+Author-email: cielartisan@gmail.com
+License: MIT
+Description: [![PyPI](https://img.shields.io/pypi/v/checkpopen)](https://pypi.org/project/checkpopen/)
+        
+        ## CheckPopen
+        
+        Popen context manager variant that raises CalledProcessError like check\_call.
+        
+        1. Context manager is not available in Python2.
+        2. When exceptions happened in Python3 original context, the process might get stuck especially when the process is daemon.
+           We try to kill the process implicitly when exception happens.
+        3. Not closing stdin/stdout implicitly to make sure we communicate with the pipe correctly.
+        
+Platform: any
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Python Software Foundation License
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Utilities
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Description-Content-Type: text/markdown

@@ -1,0 +1,12 @@
+CHANGELOG.md
+LICENSE
+README.md
+checkpopen.py
+setup.py
+.github/workflows/ci.yaml
+checkpopen.egg-info/PKG-INFO
+checkpopen.egg-info/SOURCES.txt
+checkpopen.egg-info/dependency_links.txt
+checkpopen.egg-info/not-zip-safe
+checkpopen.egg-info/top_level.txt
+test/test_checkpopen.py
