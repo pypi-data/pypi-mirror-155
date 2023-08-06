@@ -1,0 +1,10 @@
+
+[dev]
+aiomysql
+black
+coverage
+pylint
+pytest
+sphinx
+twine
+wheel
