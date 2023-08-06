@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: iolite
+Version: 22.1.0
+Summary: todo
+Home-page: https://github.com/huntzhan/iolite
+Author: Hunt Zhan
+Author-email: huntzhan@vkit-x.com
+License: Apache-2.0
+Requires-Python: >=3.8.0
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: tqdm
+Requires-Dist: toml
+Requires-Dist: joblib
+Provides-Extra: dev
+Requires-Dist: build (>=0.2.1) ; extra == 'dev'
+Requires-Dist: pytest (>=6.1.2) ; extra == 'dev'
+Requires-Dist: pytest-parallel (>=0.1.1) ; extra == 'dev'
+Requires-Dist: yapf (>=0.30.0) ; extra == 'dev'
+Requires-Dist: flake8 (>=3.8.4) ; extra == 'dev'
+Requires-Dist: pdoc3 (>=0.9.2) ; extra == 'dev'
+Requires-Dist: twine (>=3.2.0) ; extra == 'dev'
+Requires-Dist: ipython (>=7.20.0) ; extra == 'dev'
+Requires-Dist: pdbpp (>=0.10.2) ; extra == 'dev'
+Requires-Dist: rope (>=0.18.0) ; extra == 'dev'
+Requires-Dist: fireball (>=0.5.0) ; extra == 'dev'
+Requires-Dist: iolite (>=0.3.0) ; extra == 'dev'
+
+# iolite
+
+TODO
