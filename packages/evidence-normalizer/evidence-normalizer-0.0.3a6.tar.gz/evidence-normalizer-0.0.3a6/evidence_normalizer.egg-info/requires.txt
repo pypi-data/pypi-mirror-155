@@ -1,0 +1,11 @@
+pydantic
+requests
+fastapi
+boto3
+
+[dev]
+variation-normalizer>=0.4.0a7
+asyncclick
+openpyxl
+pandas
+xlrd
