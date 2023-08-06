@@ -1,0 +1,29 @@
+bertdotconfig==3.0.1
+bertdotsshutil
+bertdotwebadapter
+coloredlogs==15.0.1
+flask==2.1.2
+jinja2
+keyring
+markdown
+setuptools
+ws4py==0.5.1
+
+[:sys_platform != "darwin"]
+pyinstaller==4.4
+
+[:sys_platform != "win32"]
+pexpect
+
+[:sys_platform == "darwin"]
+py2app
+
+[:sys_platform == "win32"]
+pywinpty==1.1.3
+
+[tests]
+pytest
+pytest-cov
+coveralls
+flake8
+mypy
