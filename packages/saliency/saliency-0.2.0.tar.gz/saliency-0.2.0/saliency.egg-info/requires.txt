@@ -1,0 +1,8 @@
+numpy
+scikit-image
+
+[full]
+tensorflow>=1.15
+
+[tf1]
+tensorflow>=1.15
