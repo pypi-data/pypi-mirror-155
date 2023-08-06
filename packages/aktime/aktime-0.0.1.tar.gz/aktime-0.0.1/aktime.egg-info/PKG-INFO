@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: aktime
+Version: 0.0.1
+Summary: Project Code Statistic
+Home-page: https://gitee.com/aktools/akstatistic
+Author: Kuture
+Author-email: kuture@163.com
+License: MIT Licence
+Keywords: pip,akstatistic,aktools,kuture,statistic
+Platform: any
+
+用于统计项目中的代码行数，一共2个参数，filter_list：文件类型，默认为.py，
+source_dir_path:要进行代码行数统计的项目，默认为当前运行路径
+。
+
