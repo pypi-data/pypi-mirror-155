@@ -1,0 +1,11 @@
+setup.py
+wordjc/__init__.py
+wordjc/add.py
+wordjc/subtract.py
+wordjc.egg-info/PKG-INFO
+wordjc.egg-info/SOURCES.txt
+wordjc.egg-info/dependency_links.txt
+wordjc.egg-info/top_level.txt
+wordjc/extra/__init__.py
+wordjc/extra/divide.py
+wordjc/extra/multiply.py
