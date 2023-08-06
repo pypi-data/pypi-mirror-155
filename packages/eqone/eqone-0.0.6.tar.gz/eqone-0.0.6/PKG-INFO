@@ -1,0 +1,51 @@
+Metadata-Version: 2.1
+Name: eqone
+Version: 0.0.6
+Summary: A package for visualizing worlf earthquske for one month
+Home-page: https://github.com/Junya-Toyokura/world-earthquake-one-month
+Author: junya toyokura
+Author-email: j.toyokura@agreement.jp
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/Junya-Toyokura/world-earthquake-one-month
+Description: # world-earthquake-one-month
+        
+        This program shows the number of earthquakes occurred around the world during a one-month period on a map.
+        
+        Using a USGS dataset, 'eqone' can visualize where earthquakes occurs.
+        
+        The USGS dataset is downloadable from:
+        
+        https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.csv
+        
+        This is sample of earthquakes around Japan.
+        
+        <img src='https://github.com/Junya-Toyokura/world-earthquake-one-month/blob/main/sample.png' width=640 height=480>
+        
+        # How to install eqone on Linux, MacOS, or WSL on Windows
+        
+        You may need folium library.
+        
+        $pip install folium
+        
+        $pip install eqone
+        
+        # How to run eqone
+         
+        Eqone program allows user to specify up to arthquake scale(1~) to plot on world map.
+        
+        $eqone 4
+        
+        <img src='https://github.com/Junya-Toyokura/world-earthquake-one-month/blob/main/sample2.png' width=640 height=480>
+        
+        If you don't specify a number, program shows where earthquakes with intensity 5 upper are around the world.
+        
+        $eqone
+        
+        <img src='https://github.com/Junya-Toyokura/world-earthquake-one-month/blob/main/sample3.png' width=640 height=480>
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
