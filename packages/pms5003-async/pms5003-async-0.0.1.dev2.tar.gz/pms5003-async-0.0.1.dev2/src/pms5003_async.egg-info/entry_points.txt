@@ -1,0 +1,3 @@
+[console_scripts]
+pms5003-write-csv = pms5003_async:write_csv_main
+pms5003-write-json = pms5003_async:write_json_main
