@@ -1,0 +1,46 @@
+Metadata-Version: 2.1
+Name: vk-url-scraper
+Version: 0.1.2
+Summary: UNKNOWN
+Home-page: https://github.com/bellingcat/vk-url-scraper
+Author: Bellingcat
+Author-email: tech@bellingcat.com
+License: Apache
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: certifi (==2022.6.15)
+Requires-Dist: charset-normalizer (==2.0.12)
+Requires-Dist: idna (==3.3)
+Requires-Dist: requests (==2.28.0)
+Requires-Dist: urllib3 (==1.26.9)
+Requires-Dist: vk-api (==11.9.8)
+Requires-Dist: python-dotenv (==0.20.0)
+Provides-Extra: dev
+Requires-Dist: flake8 ; extra == 'dev'
+Requires-Dist: mypy (==0.961) ; extra == 'dev'
+Requires-Dist: black (==22.3.0) ; extra == 'dev'
+Requires-Dist: isort (==5.10.1) ; extra == 'dev'
+Requires-Dist: pytest ; extra == 'dev'
+Requires-Dist: pytest-sphinx ; extra == 'dev'
+Requires-Dist: pytest-cov ; extra == 'dev'
+Requires-Dist: twine (>=1.11.0) ; extra == 'dev'
+Requires-Dist: setuptools ; extra == 'dev'
+Requires-Dist: wheel ; extra == 'dev'
+Requires-Dist: Sphinx (<5.1.0,>=4.3.0) ; extra == 'dev'
+Requires-Dist: furo (==2022.6.4.1) ; extra == 'dev'
+Requires-Dist: myst-parser (<0.19.0,>=0.15.2) ; extra == 'dev'
+Requires-Dist: sphinx-copybutton (==0.5.0) ; extra == 'dev'
+Requires-Dist: sphinx-autobuild (==2021.3.14) ; extra == 'dev'
+Requires-Dist: sphinx-autodoc-typehints ; extra == 'dev'
+Requires-Dist: packaging ; extra == 'dev'
+
+# vk-url-scraper
+
+
