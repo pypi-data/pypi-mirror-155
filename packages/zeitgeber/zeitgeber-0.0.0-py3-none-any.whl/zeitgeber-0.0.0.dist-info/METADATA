@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: zeitgeber
+Version: 0.0.0
+Summary: A multi-animal tracking algorithm based on convolutional neural networks
+License: GPLv3+
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+
+A package to abstract the functionality to deal with circadian time, offsets, etc
