@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "lite-term-system-stats"
+version = "0.2.0"
+description = ""
+authors = []
+
+[tool.poetry.dependencies]
+python = "^3.7"
+psutil = "^5.9.1"
+colorama = "^0.4.5"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["setuptools>=61.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project.scripts]
+stats = "lite_term_system_stats.__main__"
+
