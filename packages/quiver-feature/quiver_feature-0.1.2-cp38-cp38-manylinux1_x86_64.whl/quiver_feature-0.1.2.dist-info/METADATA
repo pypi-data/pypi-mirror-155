@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: quiver-feature
+Version: 0.1.2
+Summary: PyTorch Library for graph learning sampling
+Home-page: https://github.com/quiver-team/quiver_feature
+Author: quiver-team
+Author-email: 
+License: Apache
+Keywords: pytorch,sparse,graph
+Platform: UNKNOWN
+Requires-Python: >=3.6
+License-File: LICENSE
+Provides-Extra: test
+Requires-Dist: pytest ; extra == 'test'
+Requires-Dist: pytest-runner ; extra == 'test'
+Requires-Dist: pytest-cov ; extra == 'test'
+
+UNKNOWN
+
