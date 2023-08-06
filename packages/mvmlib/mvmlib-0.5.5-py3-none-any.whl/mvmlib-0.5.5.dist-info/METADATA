@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: mvmlib
+Version: 0.5.5
+Summary: Margin Value Method Library
+Author-email: Khalil Al Handawi <khalil.alhandawi@mail.mcgill.ca>
+Requires-Python: >=3.7
+Requires-Dist: matplotlib==3.4.3
+Requires-Dist: pyDOE==0.3.8
+Requires-Dist: scikit-fuzzy==0.4.2
+Requires-Dist: smt==1.1.0
+Requires-Dist: multiprocess==0.70.12.2
+Requires-Dist: sphinx ; extra == "doc"
+Requires-Dist: sphinx-autobuild ; extra == "doc"
+Requires-Dist: nbsphinx ; extra == "doc"
+Requires-Dist: pytest>=6.2.5 ; extra == "test"
+Requires-Dist: pytest-cov==3.0.0 ; extra == "test"
+Requires-Dist: pytest-dependency==0.5.1 ; extra == "test"
+Requires-Dist: pandoc ; extra == "test"
+Project-URL: Source, https://github.com/sed-group/mvmlib
+Provides-Extra: doc
+Provides-Extra: test
