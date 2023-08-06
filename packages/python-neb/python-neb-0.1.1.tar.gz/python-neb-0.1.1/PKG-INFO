@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: python-neb
+Version: 0.1.1
+Summary: The Python Nudged Elastic Band Package
+Home-page: https://github.com/pyneb/pyneb
+Author: Kyle Godbey
+Author-email: kyle@pyneb.dev
+Project-URL: Bug Tracker, https://github.com/pyneb/pyneb
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+![pyneb logo](https://pyneb.dev/assets/img/pyneb.png)
+
+# The Python Nudged Elastic Band Package 
+
+PyNEB provides a highly extensible and general purpose action minimization package for generic potential energy surfaces.
