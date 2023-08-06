@@ -1,0 +1,72 @@
+[tool.poetry]
+name = "poetry-deps-scanner"
+version = "1.1.0"
+description = "Analyse poetry dependencies and comment on gitlab"
+readme = "README.md"
+license = "MIT"
+authors = ["Gabriel Augendre <gabriel.augendre@itsfactory.fr>"]
+maintainers = [
+    "Gabriel Augendre <gabriel.augendre@itsfactory.fr>",
+    "Romain Da Costa Vieira <romain.da-costa-vieira@itsfactory.fr>",
+    "Jason Gallet <jason.gallet@itsfactory.fr>",
+    "Jean-Sébastien Heitz-Schaaf <jean-sebastien.heitz-schaaf@itsfactory.fr>",
+    "Emilio Staropoli <emilio.staropoli@itsfactory.fr>",
+]
+homepage = "https://github.com/itsolutionsfactory/poetry-deps-scanner/"
+repository = "https://github.com/itsolutionsfactory/pid-file-checker"
+keywords = [
+    "pyhon-poetry",
+    "poetry",
+    "gitlab",
+    "dependencies",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Utilities",
+]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<4"
+toml = ">=0.10.2"
+requests = ">=2.25.1"
+python-gitlab = ">=2.6.0"
+packaging = "^21.3"
+
+[tool.poetry.dev-dependencies]
+pytest = ">=6.2.2"
+pre-commit = ">=2.11.1"
+pdbpp = ">=0.10.2"
+
+[tool.poetry.scripts]
+comment-gitlab = "poetry_deps_scanner.comment_gitlab:main"
+scan-deps = "poetry_deps_scanner.scan_deps:main"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+###############################################################################
+# flake8 / flakeheaven
+###############################################################################
+[tool.flakeheaven]
+max_complexity = 10
+format = "grouped"
+
+# Base rules
+#############################
+[tool.flakeheaven.plugins]
+"*" = [
+    "+*",
+    "-E501", # long lines
+    "-E203", # conflict with black on PEP8 interpretation
+    "-W503",  # deprecated rule: https://www.flake8rules.com/rules/W503.html
+]
+flake8-docstrings = [
+    "+*",
+    "-D1??", # missing docstring
+]
