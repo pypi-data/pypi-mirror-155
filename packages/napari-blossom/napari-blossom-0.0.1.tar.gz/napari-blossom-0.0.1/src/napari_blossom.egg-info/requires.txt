@@ -1,0 +1,15 @@
+numpy
+magicgui
+qtpy
+opencv-python
+tensorflow
+scikit-image
+napari
+
+[testing]
+tox
+pytest
+pytest-cov
+pytest-qt
+napari
+pyqt5
