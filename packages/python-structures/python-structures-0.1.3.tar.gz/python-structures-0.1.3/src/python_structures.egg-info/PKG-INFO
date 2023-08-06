@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: python-structures
+Version: 0.1.3
+Summary: A small package for creating and manipulating structs similar to those in C/C++
+Home-page: https://github.com/tpxHorus/python-structures
+Author: Piotr Żarczyński
+Project-URL: Bug Tracker, https://github.com/tpxHorus/python-structures/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
