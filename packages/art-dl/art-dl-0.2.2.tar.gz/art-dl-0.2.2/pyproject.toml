@@ -1,0 +1,60 @@
+[tool.poetry]
+name = "art-dl"
+version = "0.2.2"
+description = "Artworks downloader"
+authors = ["Ilia <istudyatuni@gmail.com>"]
+readme = "README.md"
+repository = "https://github.com/istudyatuni/artworks-downloader"
+classifiers = [
+	"Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Environment :: Console",
+]
+
+[tool.poetry.urls]
+"Tracker" = "https://github.com/istudyatuni/artworks-downloader/issues"
+
+[tool.poetry.scripts]
+art-dl = "art_dl:main"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+aiofiles = "^0.8.0"
+aiohttp = "^3.8.1"
+aiohttp-socks = {extras = ["asyncio"], version = "^0.7.1"}
+lxml = "^4.8.0"
+
+[tool.poetry.dev-dependencies]
+isort = "^5.10.1"
+mypy = "^0.950"
+Nuitka = "^0.8.2"
+types-aiofiles = "^0.8.8"
+types-lxml = "^2022.4.10"
+yapf = {git = "https://github.com/google/yapf.git", branch = "main", extras = ["pyproject"]}
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.yapf]
+allow_split_before_dict_value = false
+coalesce_brackets = true
+column_limit = 100
+continuation_align_style = 'valign-right'
+dedent_closing_brackets = true
+force_multiline_dict = true
+spaces_around_dict_delimiters = true
+spaces_before_comment = 2
+use_tabs = true
+
+[tool.mypy]
+mypy_path = "$MYPY_CONFIG_FILE_DIR"
+namespace_packages = true
+explicit_package_bases = true
+
+[tool.isort]
+include_trailing_comma = true
+indent = "\t"
+line_length = 100
+multi_line_output = 3
+src_paths = ["art_dl"]
