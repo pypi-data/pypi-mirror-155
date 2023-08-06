@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: pyp333
+Version: 0.0.2
+Summary: A package for pratice
+Home-page: https://github.com/abcde117/233.git
+Author: abcd1234
+Author-email: s2122083@stu.muashino-u.ac.jp
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/abcde117/233.git
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+
+# pyp333
+a test for pypi package
+being inspired by https://github.com/ytakefuji/defense
+The goal of this is  compareing the diferense of Military spending　and gdp of us,uk,russia,ukraine on graph.
+ using SIPRI dataset https://sipri.org/sites/default/files/SIPRI-Milex-data-1949-2020_0.xlsx  
+ i 　visualize the data of total cost,per cost and gdp
+ 
+how to install :
+pip install pyp333
+
+
