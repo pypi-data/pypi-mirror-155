@@ -1,0 +1,34 @@
+Metadata-Version: 2.1
+Name: immunogen
+Version: 0.1.0
+Summary: ImmunoGen is the package for HLA and Immunogenicity computing with Python.
+Home-page: https://gitlab.com/immunogen/immunogen
+Author: Robert C. Green II
+Author-email: greenr@bgsu.edu
+Maintainer: Michael Terry
+Maintainer-email: mterry@bgsu.edu
+Requires-Python: >3.9
+Classifier: Development Status :: 3 - Alpha
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Requires-Dist: numpy (>=1.22.4,<2.0.0)
+Requires-Dist: pandas (>=1.4.0,<2.0.0)
+Requires-Dist: parameterized (>=0.8.1,<0.9.0)
+Project-URL: Documentation, https://immunogendoc.readthedocs.io/en/latest/
+Project-URL: Repository, https://gitlab.com/immunogen/immunogen
+Description-Content-Type: text/x-rst
+
+Immunogenicity Utilities is the package for HLA and Immunogenicity computing with Python.
+
+It provides:
+
+- low-to-high conversion
+
+- calculation of Type 1 and Type II AMS, EMS, and HMS
+
+    - both with DQ and without
+    - both with ABO consideration and without
+- useful eplet functions
+- and much more
+
