@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: conmo
+Version: 1.0.0
+Summary: Conmo is a framework developed in Python whose main objective             is to facilitate the execution and comparison of different anomaly detection and  experiments.
+Home-page: https://github.com/MyM-Uniovi/conmo
+Author: GrupoMyM
+Author-email: mym.inv.uniovi@gmail.com
+Maintainer: GrupoMyM
+Keywords: conmo,machine learning,time series,anomaly detection,outlier detection,condition monitoring
+Classifier: Environment :: Console
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.7
+Requires-Python: >=3.7,<3.10
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: tensorflow
+Requires-Dist: requests
+Requires-Dist: scipy
+Requires-Dist: scikit-learn
+Requires-Dist: pyarrow
+
