@@ -1,0 +1,50 @@
+protocol = "adafruit-stepper-motor-hat"
+doc = ""
+traits = ["uses-i2c", "uses-serial", "has-limits", "has-position", "is-homeable", "is-daemon"]
+hardware = ["adafruit:2348", "raspberry-pi:4b"]
+
+[links]
+source = "https://github.com/yaq-project/yaqd-adafruit"
+bugtracker = "https://github.com/yaq-project/yaqd-adafruit/-/issues"
+
+[installation]
+PyPI = "https://pypi.org/project/yaqd-adafruit/"
+
+[[types]]
+name = "limit_switch"
+type = "record"
+fields = [{"name"="pin", "type"="int", "doc"="GPIO Pin"},
+	  {"name"="invert", "type"="boolean", "default"=false}]
+
+[config]
+
+[config.i2c_addr]
+default = 0x60
+
+[config.steps_per_unit]
+type = "double"
+default = 0.5555555555556
+
+[config.units]
+type = "string"
+default = "deg"
+
+[config.lower_limit_switch]
+type = "limit_switch"
+
+[config.microsteps]
+type = "int"
+default = 16
+
+[config.stepper_index]
+type = "int"
+
+[config.upper_limit_port]
+type = ["null", "limit_switch"]
+default = "__null__"
+
+[state]
+[state.position]
+default = 0
+[state.destination]
+default=0
