@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: pycsbinarywriter
+Version: 0.0.2
+Summary: Helpers for parsing binary data created by dotnet BinaryWriters.
+License: MIT
+Author: Rob Nelson
+Author-email: nexisentertainment@gmail.com
+Requires-Python: >=3.8,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: pytz (>=2022.1,<2023.0)

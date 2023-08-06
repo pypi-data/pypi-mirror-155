@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "pycsbinarywriter"
+version = "0.0.2"
+description = "Helpers for parsing binary data created by dotnet BinaryWriters."
+authors = ["Rob Nelson <nexisentertainment@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = ">=3.8,<4.0"
+pytz = "^2022.1"
+
+[tool.poetry.dev-dependencies]
+isort = "^5.10.1"
+mypy = "^0.961"
+autopep8 = "^1.6.0"
+pybuildtools = "^0.4.14"
+"ruamel.yaml" = "^0.17.21"
+poetryup = "^0.8.0"
+twine = "^4.0.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
