@@ -1,0 +1,240 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html)[^1].
+
+<!---
+Types of changes
+
+- Added for new features.
+- Changed for changes in existing functionality.
+- Deprecated for soon-to-be removed features.
+- Removed for now removed features.
+- Fixed for any bug fixes.
+- Security in case of vulnerabilities.
+
+-->
+
+## [Unreleased]
+
+## [2.2.3] - 2022-06-16
+
+### Changed
+
+* Packaging: `CreateLayoutPackagesAction` is no longer based on `clean` task to create packages.
+* Define an action for each file of a shot to open, available in a submenu right-clicking on the shot in the map.
+
+### Added
+
+* Unpacking: The number of shots is now shown in the interface.
+
+### Fixed
+
+* Unpacking: Replace a deprecated Qt function that was causing the action not to work.
+* `OpenLastFilesAction`: Redefine the right attribute to check if the `sources` folder exists and display the warning message if it doesn't.
+
+## [2.2.2] - 2022-06-09
+
+### Added
+
+* ShotGrid API wrapper: Define a method to create and upload a version in a shot
+
+* An action in the films to upload compositing playblasts to ShotGrid:
+  - It lists all shots with status `WFA` on Kitsu
+  - When a shot is uploaded, its status on Kitsu is changed to `WFA_SG`
+  - Every shot upload is reported in a log file located in `PRODUCTION\delivery` folder.
+
+## [2.2.1] - 2022-06-08
+
+### Added
+
+* A file in `.mp4` or `.mov` now has options to:
+  - Compare revisions in RV with column layout. Revisions of shot animatic (`misc/animatic.mp4` by default) can be chosen and added.
+  - Compare with shot animatic (`misc/animatic.mp4` by default) in RV.
+* `layers` folders in `clean` tasks have an option to open the animation layers they contain in RV.
+* A shot now has options to:
+  - Open the last background file in Photoshop
+  - Open the last compositing file in After Effects
+  - Open the sources folder
+  - Compare revisions of compositing preview (`compositing/compositing_movie.mov` by default) in RV. Revisions of animatic (`misc/animatic.mp4` by default) can be chosen and added.
+  - Open last files revisions:
+    - Background file in Photoshop
+    - Compositing file in After Effects
+    - Sources folder
+
+### Changed
+
+* `OpenAnimationLayers` in a shot is now merged in `OpenLastFiles`.
+
+### Fixed
+
+* `CompareWithAnimaticAction` in a shot now get the last revision file only if its available on current site.
+
+## [2.2.0] - 2022-06-08
+
+### Added
+
+* Redefine the types of tracked files and folders in the project, inheriting from the types available in libreflow.
+
+## [2.1.1] - 2022-05-18
+
+### Added
+
+* Add default shotgrid login group to project settings.
+* Every working site can now have a custom shotgrid login.
+* A file map has now an action to compare two revisions from a `.mp4` or `.mov` file in Shotgun RV with column layout.
+
+## [2.1.0] - 2022-05-18
+
+### Added
+
+* The ShotGridEntity class which defines an entity on ShotGrid, whose id is stored in the `shotgrid_id` parameter.
+* Whenever a shot is created, its tasks are created according to the default tasks defined in the project's task manager.
+
+### Changed
+
+* The option to create a film's sequences based on ShotGrid data has been made available on the film. Similarly, the option to create a sequence's shots based on ShotGrid data has been moved into the sequence.
+* Types related to films, sequences and shots now inherit from that defined in Libreflow. These entities are stored in the global collections hold by the entity manager.
+* For semantic purposes, shot departments have been redefined as **tasks**. Plus, tasks are defined in a map to allow more flexibility when dealing with particular cases in the production of shots.
+
+## [2.0.12] - 2022-05-13
+
+### Added
+
+* Unpacking:
+  - Revisions are automatically uploaded to the exchange server.
+  - The shot list is refreshed after the unpacking has finished.
+  - Layout: The ShotGrid compositing briefing of a shot is added as a comment to its Kitsu *Compositing* task, if the status of the latter is *TODO*. The comment defaults to `No comment` if the briefing is undefined.
+* A shot's compositing briefing can be retrieved with the Shotgun wrapper's `get_shot_comp_briefing()` method.
+* A shot now has options to:
+  - compare its compositing preview (`compositing/compositing_movie.mov` by default) with its animatic (`misc/animatic.mp4` by default) in RV.
+  - open its animation layers in RV
+* Use Sentry to monitor events of the GUI session. The Sentry SDK is initialised before starting the session, assuming the project Data Source Name (DSN) is provided in the `SENTRY_DSN` environment variable.
+
+### Fixed
+
+* Unpacking: the package list is not updated anymore whenever the dialog shows up (only the first time, or when the list is explicitly refreshed).
+* Expand synchronisation field in the project's root by default.
+
+## [2.0.11] - 2022-04-26
+
+### Added
+
+* An action to export files of shots filtered by their Kitsu statutes.
+
+## [2.0.10] - 2022-04-25
+
+### Added
+
+* Unpacking: add an option to automatically delete packages on the current site if they were uploaded.
+
+### Fixed
+
+* Unpacking action display when files are ignored.
+* Ensure Kitsu host is defined when the project is entered through the home page `sequences` button.
+
+## [2.0.9] - 2022-04-21
+
+### Added
+
+* An action in the films allowing to unpack the content of packages into specific files and folders. The content may be single files or file sequences, and currently follow these rules:
+  - a single file is unpacked as a new revision of a tracked file
+  - a single file/file sequence is unpacked into a new revision of a tracked folder, with its subdirectories in the source package
+  - multiple elements assigned to a same target folder will be unpacked into the same revision
+* An AfterEffects scene template
+* A JSX script defining a set of functions to import elements for initialising a compositing scene
+* A method to the Shotgun API wrapper to get a shot's duration.
+* An action to initialise a compositing scene with the following elements (latest revision in each case), if they do exist:
+  - background: `misc/background.mp4`
+  - animatic: `misc/animatic.mp4`
+  - video reference: `misc/video_ref.mp4`
+  - audio tracks: all WAV files found in the folder `misc/audio`
+  - clean-up layers: all PNG sequences found in the folder `clean/layers`
+
+## [2.0.8] - 2022-04-04
+
+### Added
+
+* Packaging:
+  - `CreateCleanPackagesAction` holds a list of presets of the source files that have to be packed.
+  - An action to select the type of packages (clean or layout) to create, which prompts the dialog of the appropriate action.
+
+### Changed
+
+* Packaging: `CreateCleanPackagesAction` creates a single type of package.
+
+### Fixed
+
+* Layout package creation when multiple sources are packed
+
+## [2.0.7] - 2022-04-01
+
+### Added
+
+* An action to create clean-up packages
+
+### Changed
+
+* Allow to pack multiple source folders into a single package
+
+## [2.0.6] - 2022-04-01
+
+### Changed
+
+* Create packages:
+  - allow packages of a shot to be created in case the color is available on SG but source files don't exist on disk. In that case, color files are considered as to be sent from another site.
+  - create color package only if it's available on SG
+
+### Fixed
+
+* When a package is created, the name of its latest revision is updated in the file list.
+
+## [2.0.5] - 2022-03-30
+
+### Added
+
+* Add action value store
+
+## [2.0.4] - 2022-03-21
+
+### Changed
+
+* Packages: Create a new target folder whenever the creation of packages is launched.
+
+## [2.0.3] - 2022-03-21
+
+### Added
+
+* A ShotGrid API wrapper providing operators to get and update shot tasks.
+
+### Changed
+
+* The `CreateShotPackages` action lists all shots with a specific task on ShotGrid server having a specific status.
+
+## [2.0.2] - 2022-03-13
+
+### Added
+
+* Prettier labels for sequences, shots and departments
+* Search flow views, which allow to browse project indexed entries. This feature relies on the search module included in Libreflow, which makes use of a MongoDB for entry indexation. Thus, the feature can be enabled giving the session the URI configuration string of this database. If not provided, flow views revert to their default behaviour.
+
+## [2.0.1] - 2022-03-13
+
+### Added
+
+* An option to pack directories into existing shots.
+* An option to create packages, based on predefined templates.
+* Register runners required to:
+  - edit AfterEffects scenes (`AfterEffects`)
+  - render image sequences (`AfterEffectsRender`)
+  - mark rendered images (`MarkSequenceRunner`)
+
+### Fixed
+
+* Error raising when the home page *Sequences* button was clicked
+
+## [2.0.0] - 2022-02-08
+
+Define a flow up and ready to use.
