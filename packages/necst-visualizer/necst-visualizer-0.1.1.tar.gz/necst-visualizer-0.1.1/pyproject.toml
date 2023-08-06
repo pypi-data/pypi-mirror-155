@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "necst-visualizer"
+version = "0.1.1"
+description = ""
+license = "MIT"
+readme = "README.md"
+authors = ["FumikaDemachi <f.demachi@a.phys.nagoya-u.ac.jp>"]
+repository = "https://github.com/nanten2/necst-visualizer"
+
+[tool.poetry.dependencies]
+python = ">=3.7,<3.10"
+matplotlib = "^3.4.3"
+astropy = [
+    { version = "^3.0", python = "<3.8" },
+    { version = "^5.0.4", python = ">=3.8" }
+]  # must be identical to n-const's constraints
+xarray = "^0.20.0"
+necstdb = "^0.2.5"
+n-const = "^1.0.4"
+neclib = "^0.7.0"
+
+[tool.poetry.dev-dependencies]
+black = "^22.1"
+flake8 = "^3.8"
+ipykernel = "^5.3"
+jupyter = "^1.0"
+m2r2 = "^0.3"
+notebook = "^6.4"
+pydata-sphinx-theme = "^0.7.2"
+pytest = "^6.1"
+sphinx = "^4.4"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

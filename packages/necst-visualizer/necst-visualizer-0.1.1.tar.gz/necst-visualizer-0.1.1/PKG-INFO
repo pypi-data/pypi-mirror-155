@@ -1,0 +1,45 @@
+Metadata-Version: 2.1
+Name: necst-visualizer
+Version: 0.1.1
+Summary: 
+Home-page: https://github.com/nanten2/necst-visualizer
+License: MIT
+Author: FumikaDemachi
+Author-email: f.demachi@a.phys.nagoya-u.ac.jp
+Requires-Python: >=3.7,<3.10
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: astropy (>=3.0,<4.0); python_version < "3.8"
+Requires-Dist: astropy (>=5.0.4,<6.0.0); python_version >= "3.8"
+Requires-Dist: matplotlib (>=3.4.3,<4.0.0)
+Requires-Dist: n-const (>=1.0.4,<2.0.0)
+Requires-Dist: neclib (>=0.7.0,<0.8.0)
+Requires-Dist: necstdb (>=0.2.5,<0.3.0)
+Requires-Dist: xarray (>=0.20.0,<0.21.0)
+Project-URL: Repository, https://github.com/nanten2/necst-visualizer
+Description-Content-Type: text/markdown
+
+# necst-visualizer
+
+[![PyPI](https://img.shields.io/pypi/v/necst-visualizer.svg?label=PyPI&style=flat-square)](https://pypi.org/pypi/necst-visualizer/)
+[![Python](https://img.shields.io/pypi/pyversions/necst-visualizer.svg?label=Python&color=yellow&style=flat-square)](https://pypi.org/pypi/necst-visualizer/)
+[![Test](https://img.shields.io/github/workflow/status/nanten2/necst-visualizer/Test?logo=github&label=Test&style=flat-square)](https://github.com/nanten2/necst-visualizer/actions)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg?label=License&style=flat-square)](LICENSE)
+
+Simulate necst system
+
+## Features
+This package provides:
+- Check scanning path
+
+## Installation
+```
+pip install necst-visualizer
+```
+
+## Usage
+
+See the [API reference](https://nanten2.github.io/necst-visualizer/_source/necst_visualizer.html).
