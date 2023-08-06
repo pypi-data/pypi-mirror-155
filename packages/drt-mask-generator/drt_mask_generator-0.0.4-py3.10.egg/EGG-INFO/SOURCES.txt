@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+drt_mask_generator.egg-info/PKG-INFO
+drt_mask_generator.egg-info/SOURCES.txt
+drt_mask_generator.egg-info/dependency_links.txt
+drt_mask_generator.egg-info/requires.txt
+drt_mask_generator.egg-info/top_level.txt
+maskGenerator/__init__.py
+maskGenerator/app.py
