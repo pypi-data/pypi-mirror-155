@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: meower
+Version: 0.0.1
+Summary: Python library for interacting with the Meower API
+Home-page: https://github.com/Mwalters75/meower.py
+Author: M.D. Walters
+Author-email: pancake@mdwalters.ml
+Project-URL: Bug Tracker, https://github.com/Mwalters75/meower.py/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# meower.py
+Python library for interacting with the Meower API
+## Commands
+- `meower.repair()` - Checks if the server is in repair mode
+- `meower.post_id(num)` - A very misleading name. Downloads home, then finds the post number
+- `meower.home()` - Downloads home
+- `meower.home_len()` - Shows the number of posts on home
+- `meower.get_post(str)` - Gets the specified post, and shows in `username: post` format
+- `meower.page_len()` - Shows the number of home pages
+- `meower.current_page()` - Returns the current page number
+- `meower.change_page(num)` - Changes the page
+- `meower.ping()` - "Pings" the Meower API, by fetching
