@@ -1,0 +1,17 @@
+README.md
+setup.py
+geninstaller/__init__.py
+geninstaller/cmd.py
+geninstaller/core.py
+geninstaller/helpers.py
+geninstaller/ploppers.py
+geninstaller.egg-info/PKG-INFO
+geninstaller.egg-info/SOURCES.txt
+geninstaller.egg-info/dependency_links.txt
+geninstaller.egg-info/entry_points.txt
+geninstaller.egg-info/requires.txt
+geninstaller.egg-info/top_level.txt
+geninstaller/plop/__init__.py
+geninstaller/plop/database/gi_db.sqlite3
+geninstaller/plop/installer/__init__.py
+geninstaller/plop/installer/installer
