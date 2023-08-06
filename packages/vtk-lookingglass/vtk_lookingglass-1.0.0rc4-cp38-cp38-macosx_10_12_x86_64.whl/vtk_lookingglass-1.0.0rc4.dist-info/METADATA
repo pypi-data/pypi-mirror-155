@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: vtk-lookingglass
+Version: 1.0.0rc4
+Summary: Looking Glass support for VTK Python.
+Home-page: 
+Author: VTK developers
+License: MIT
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+License-File: LICENSE
+Requires-Dist: vtk (==9.2.0rc1)
+
+Looking Glass support for VTK Python.
