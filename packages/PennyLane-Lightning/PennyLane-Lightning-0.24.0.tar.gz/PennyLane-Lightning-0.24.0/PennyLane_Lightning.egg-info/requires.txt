@@ -1,0 +1,6 @@
+ninja
+numpy
+pennylane>=0.19
+
+[gpu]
+pennylane-lightning-gpu
