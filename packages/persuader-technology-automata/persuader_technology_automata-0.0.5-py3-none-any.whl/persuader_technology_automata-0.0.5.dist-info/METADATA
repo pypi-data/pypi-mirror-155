@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: persuader-technology-automata
+Version: 0.0.5
+Summary: Automata
+Author: Persuader Technology
+Author-email: software@persuader.technology
+License: UNLICENSE
+Classifier: Programming Language :: Python :: 3
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: persuader-technology-automata-core (>=0.5.1)
+Requires-Dist: persuader-technology-automata-utilities (>=0.1.1)
+Requires-Dist: persuader-technology-automata-redis (>=0.2.0)
+Requires-Dist: persuader-technology-automata-logger (>=0.0.4)
+Requires-Dist: persuader-technology-automata-process-manager (>=0.1.5)
+Requires-Dist: persuader-technology-automata-position-repository (>=0.1.1)
+Requires-Dist: persuader-technology-automata-trade-repository (>=0.1.2)
+Requires-Dist: persuader-technology-automata-exchange-repository (>=0.2.1)
+Requires-Dist: persuader-technology-automata-oracles (>=0.2.1)
+Requires-Dist: persuader-technology-automata-trade-strategy (>=0.0.8)
+
+# Automata
+
+## Packaging
+`python3 -m build`
