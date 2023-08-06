@@ -1,0 +1,31 @@
+---
+$schema: https://json-schema.org/draft/2020-12/schema
+id: laboro.module.specification.argument.schema
+title: Laboro argument specification schema
+description: Laboro argument specification schema
+type: object
+properties:
+  name:
+    type: string
+  required:
+    type: string
+  excluded:
+    type: array
+    uniqueItems: True
+    items:
+      type: string
+  implied:
+    type: array
+    uniqueItems: True
+    items:
+      type: string
+  secret:
+    type: boolean
+required:
+  - name
+  - required
+  - type
+  - excluded
+  - implied
+  - secret
+additionalProperties: False
