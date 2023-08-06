@@ -1,0 +1,4 @@
+[cobald.config.yaml_constructors]
+CobaldHepProjectExample=cobald_hep_plugins.example:DemandScale
+Stopper=cobald_hep_plugins.stopper:Stopper
+
