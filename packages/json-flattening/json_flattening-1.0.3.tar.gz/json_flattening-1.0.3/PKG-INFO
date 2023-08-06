@@ -1,0 +1,109 @@
+Metadata-Version: 2.1
+Name: json_flattening
+Version: 1.0.3
+Summary: Package to Flatten JSON data to relational Dataframe
+Home-page: https://github.com/rahulgoel11/json_flattening
+Author: Rahul Goel
+License: MIT
+Description: ## Json-flattening
+        
+        Flatten Json to Relational Dataframe
+        
+        ### Instructions
+        
+        1. **Install**
+        
+        ```
+        pip install json-flattening
+        ```
+        
+        2. **Parameters**
+        ```
+        json_data: Input data to be flattend, should be dict or list of dict
+        list_split_to_many: If the final node list data should be splitted to one to many relation(i.e to multiple rows)
+        ignore_parent_key: Parent Keys to be ignored should be string or list
+        ```
+        
+        
+        3. **Flatten json**
+        
+        ``` Python
+        from json_flattening import json_flatten
+        
+        data = [{
+            "firstName": "Rack",
+            "lastName": "Jackon",
+            "gender": "man",
+            "age": 24,
+            "address": {
+                "streetAddress": "126",
+                "city": "San Jone",
+                "state": "CA",
+                "postalCode": "394221"
+            },
+            "phoneNumbers": [
+                { "type": "home", "number": "7383627627" }
+            ]
+        },
+        {
+            "firstName": "rock",
+            "lastName": "Jackon",
+            "gender": "man",
+            "age": 24,
+            "address": {
+                "streetAddress": "126",
+                "city": "San Jone",
+                "postalCode": "394221"
+            },
+            "phoneNumbers": [
+                { "type": "home", "number": "7383627627" }
+            ]
+        }]
+        
+        flatten_data = json_flatten(data)
+        
+        ```
+        
+        | firstName | lastName | gender | age | address_state | address_streetAddress | address_postalCode | address_city | phoneNumbers_type | phoneNumbers_number |
+        | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |  
+        |Rack|Jackon|man|24|CA|126|394221|San Jone|home|7383627627|
+        |rock|Jackon|man|24|NaN|126|394221|San Jone|home|7383627627|
+        
+        
+        4. **With ignore parent Key**
+        ```
+        flatten_data = json_flatten(data,ignore_parent_key=['phoneNumbers','age'])
+        ```
+        | firstName | lastName | gender | address_state | address_streetAddress | address_postalCode | address_city |
+        | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+        |Rack|Jackon|man|CA|126|394221|San Jone|
+        |rock|Jackon|man|NaN|126|394221|San Jone|
+        
+        
+        
+        Change Log
+        ==============
+        
+        
+        1.0.0 (12/4/2022)
+        ------------------
+        - First Release
+        
+        1.0.1 (12/4/2022)
+        ------------------
+        - Bug fix for complex nested json
+        - Bug fix if key have a null value
+        
+        1.0.2 (12/4/2022)
+        ------------------
+        - Updated doc string details
+        
+        1.0.3 (20/6/2022)
+        ------------------
+        - Bug fix if the parent and child node have same key name
+Keywords: json flatten
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
