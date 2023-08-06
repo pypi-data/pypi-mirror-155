@@ -1,0 +1,1 @@
+This provide boiler plate code for connectors and its crud operations

@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: easyConnectors
+Version: 0.0.1
+Summary: This provide boiler plate code for connectors and its crud operations
+Home-page: UNKNOWN
+Author: Lalitya Sawant
+Author-email: sawant.lalitya@gmail.com
+License: MIT
+Keywords: connectors,postgress,crud,select,get,data
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Education
+Classifier: Operating System :: Microsoft :: Windows :: Windows 10
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+License-File: LICENCE.txt
+
+This provide boiler plate code for connectors and its crud operations
+
+CHANGE LOG
+======================================
+
+0.0.1 (June 16th 2022)
+--------------------------------------
+- First Release
+
