@@ -1,0 +1,3 @@
+[poetry.application.plugin]
+stickywheel=poetry_stickywheel_plugin:StickyWheelsPlugin
+
