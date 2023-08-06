@@ -1,0 +1,3 @@
+[console_scripts]
+pymich = pymich.pymich:cli.entry_point
+

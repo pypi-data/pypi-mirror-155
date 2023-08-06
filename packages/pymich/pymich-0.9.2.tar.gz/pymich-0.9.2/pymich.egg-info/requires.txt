@@ -1,0 +1,8 @@
+pytezos>=3.5.1
+cli2
+pygments
+
+[test]
+freezegun
+pytest
+pytest-cov
