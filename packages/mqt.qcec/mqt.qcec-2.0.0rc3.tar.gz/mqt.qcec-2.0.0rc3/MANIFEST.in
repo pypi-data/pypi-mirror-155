@@ -1,0 +1,15 @@
+prune docs
+prune test
+
+graft extern/qfr
+prune **/test
+prune **/tests
+prune **/doc
+prune **/docs
+prune **/apps
+prune **/.github
+
+prune extern/qfr/extern/json/benchmarks
+prune extern/qfr/extern/json/include
+prune extern/qfr/extern/json/third_party
+prune extern/qfr/extern/dd_package/extern

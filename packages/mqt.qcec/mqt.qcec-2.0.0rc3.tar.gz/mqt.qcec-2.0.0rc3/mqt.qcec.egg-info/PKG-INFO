@@ -1,0 +1,94 @@
+Metadata-Version: 2.1
+Name: mqt.qcec
+Version: 2.0.0rc3
+Summary: A tool for Quantum Circuit Equivalence Checking
+Home-page: https://www.cda.cit.tum.de/research/quantum_verification/
+Author: Lukas Burgholzer
+Author-email: lukas.burgholzer@jku.at
+License: MIT
+Project-URL: Source, https://github.com/cda-tum/qcec/
+Project-URL: Tracker, https://github.com/cda-tum/qcec/issues
+Project-URL: Research, https://www.cda.cit.tum.de/research/quantum_verification/
+Project-URL: Documentation, https://qcec.readthedocs.io
+Keywords: MQT quantum verification
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: C++
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Intended Audience :: Science/Research
+Classifier: Natural Language :: English
+Classifier: Topic :: Scientific/Engineering :: Electronic Design Automation (EDA)
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Provides-Extra: tests
+Provides-Extra: docs
+License-File: LICENSE.md
+
+[![PyPI](https://img.shields.io/pypi/v/mqt.qcec?logo=pypi&style=flat-square)](https://pypi.org/project/mqt.qcec/)
+![OS](https://img.shields.io/badge/os-linux%20%7C%20macos%20%7C%20windows-blue?style=flat-square)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+[![CI](https://img.shields.io/github/workflow/status/cda-tum/qcec/CI?style=flat-square&logo=github&label=c%2B%2B)](https://github.com/cda-tum/qcec/actions/workflows/ci.yml)
+[![Bindings](https://img.shields.io/github/workflow/status/cda-tum/qcec/Deploy%20to%20PyPI?style=flat-square&logo=github&label=python)](https://github.com/cda-tum/qcec/actions/workflows/deploy.yml)
+[![Documentation](https://img.shields.io/readthedocs/qcec?logo=readthedocs&style=flat-square)](https://qcec.readthedocs.io/en/latest/)
+[![codecov](https://img.shields.io/codecov/c/github/cda-tum/qcec?style=flat-square&logo=codecov)](https://codecov.io/gh/cda-tum/qcec)
+
+# MQT QCEC - A tool for Quantum Circuit Equivalence Checking
+
+A tool for quantum circuit equivalence checking developed by the [Chair for Design Automation](https://www.cda.cit.tum.de/) at the [Technical University of Munich](https://www.tum.de/). 
+QCEC is part of the Munich Quantum Toolkit (MQT; formerly known as JKQ and developed by the [Institute for Integrated Circuits](https://iic.jku.at/eda/) at the [Johannes Kepler University Linz](https://jku.at)). 
+It builds upon [our quantum functionality representation (QFR)](https://github.com/cda-tum/qfr)
+and [our decision diagram (DD) package](https://github.com/cda-tum/dd_package.git).
+
+**Detailed documentation on all available methods, options, and input formats is available at [ReadTheDocs](https://qcec.readthedocs.io/en/latest/).**
+
+If you have any questions, feel free to contact us via [quantum.cda@xcit.tum.de](mailto:quantum.cda@xcit.tum.de) or by creating an issue on [GitHub](https://github.com/cda-tum/qcec/issues).
+
+## Getting Started
+
+QCEC is available via [PyPI](https://pypi.org/project/mqt.qcec/) for Linux, macOS, and Windows.
+
+```console
+(venv) $ pip install mqt.qcec
+```
+
+The following code gives an example on the usage:
+
+```python3
+from mqt import qcec
+
+# verify the equivalence of two circuits provided as qasm files
+result = qcec.verify("circ1.qasm", "circ2.qasm")
+
+# print the result
+print(result.equivalence)
+```
+
+## System Requirements and Building
+
+The implementation is compatible with any C++17 compiler and a minimum CMake version of 3.14.
+Please refer to the [documentation](https://qcec.readthedocs.io/en/latest/) on how to build the project.
+
+Building (and running) is continuously tested under Linux, macOS, and Windows using the [latest available system versions for GitHub Actions](https://github.com/actions/virtual-environments).
+
+## References
+
+QCEC has been developed based on methods proposed in the following papers:
+
+[![a](https://img.shields.io/static/v1?label=arXiv&message=2004.08420&color=inactive&style=flat-square)](https://arxiv.org/abs/2004.08420)  
+L. Burgholzer and R. Wille, "[Advanced Equivalence Checking for Quantum Circuits](https://arxiv.org/abs/2004.08420)," Transactions on CAD of Integrated Circuits and Systems (TCAD), 2021
+
+[![a](https://img.shields.io/static/v1?label=arXiv&message=2009.02376&color=inactive&style=flat-square)](https://arxiv.org/abs/2009.02376)  
+L. Burgholzer, R. Raymond, and R. Wille, "[Verifying Results of the IBM Qiskit Quantum Circuit Compilation Flow](https://arxiv.org/abs/2009.02376)," in IEEE International Conference on Quantum Computing (QCE), 2020
+
+[![a](https://img.shields.io/static/v1?label=arXiv&message=2011.07288&color=inactive&style=flat-square)](https://arxiv.org/abs/2011.07288)  
+L. Burgholzer, R. Kueng, and R. Wille, "[Random Stimuli Generation for the Verification of Quantum Circuits](https://arxiv.org/abs/2011.07288)," in Asia and South Pacific Design Automation Conference (ASP-DAC), 2021
+
+[![a](https://img.shields.io/static/v1?label=arXiv&message=2106.01099&color=inactive&style=flat-square)](https://arxiv.org/abs/2106.01099)  
+L. Burgholzer and R. Wille, "[Handling Non-Unitaries in Quantum Circuit Equivalence Checking](https://arxiv.org/abs/2106.01099)," in Design Automation Conference (DAC), 2022
