@@ -1,0 +1,12 @@
+README.md
+setup.py
+test/test_zq_logger.py
+test/test_zq_tracing.py
+zq_tools/__init__.py
+zq_tools/zq_logger.py
+zq_tools/zq_tracing.py
+zq_tools.egg-info/PKG-INFO
+zq_tools.egg-info/SOURCES.txt
+zq_tools.egg-info/dependency_links.txt
+zq_tools.egg-info/requires.txt
+zq_tools.egg-info/top_level.txt
