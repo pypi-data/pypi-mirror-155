@@ -1,0 +1,21 @@
+{%- macro url(destination) -%}
+{%- if destination|lower|truncate(4, True, '') == 'http' or not destination -%}
+{{ destination }}
+{%- elif destination|first == '/' -%}
+{{ SITEURL + destination }}
+{%- else -%}
+{{ SITEURL + '/' + destination }}
+{%- endif -%}
+{%- endmacro -%}
+
+
+{%- macro cachekey(destination) -%}
+{%- if (SMALLWEB_HASHES|d({}))[destination] -%}
+?cache={{ SMALLWEB_HASHES[destination] }}
+{%- endif -%}
+{%- endmacro -%}
+
+
+{%- macro css(name) -%}
+{{ url(THEME_STATIC_DIR + name) }}{{ cachekey(name) }}
+{%- endmacro -%}
