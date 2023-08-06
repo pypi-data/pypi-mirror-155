@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: backports.shutil_chown
+Version: 0.0.0.5
+Summary: backports shutil chown (mainly for Python2)
+Home-page: https://github.com/cielavenir/backports.shutil_chown
+Author: cielavenir
+Author-email: cielartisan@gmail.com
+License: PSF
+Description: ```py
+        try:
+            from shutil import chown
+        except ImportError:
+            from backports.shutil_chown import chown
+        ```
+        
+Platform: any
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Python Software Foundation License
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Utilities
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Description-Content-Type: text/markdown

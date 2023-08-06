@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+backports/__init__.py
+backports/shutil_chown.py
+backports.shutil_chown.egg-info/PKG-INFO
+backports.shutil_chown.egg-info/SOURCES.txt
+backports.shutil_chown.egg-info/dependency_links.txt
+backports.shutil_chown.egg-info/not-zip-safe
+backports.shutil_chown.egg-info/top_level.txt
