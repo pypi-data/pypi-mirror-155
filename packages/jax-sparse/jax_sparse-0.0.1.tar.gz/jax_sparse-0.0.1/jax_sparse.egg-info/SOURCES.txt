@@ -1,0 +1,10 @@
+README.md
+setup.py
+jax_sparse/__init__.py
+jax_sparse/sparse_matrix.py
+jax_sparse.egg-info/PKG-INFO
+jax_sparse.egg-info/SOURCES.txt
+jax_sparse.egg-info/dependency_links.txt
+jax_sparse.egg-info/requires.txt
+jax_sparse.egg-info/top_level.txt
+test/test.py

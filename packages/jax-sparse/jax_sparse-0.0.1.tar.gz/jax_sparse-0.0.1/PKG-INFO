@@ -1,0 +1,11 @@
+Metadata-Version: 1.2
+Name: jax_sparse
+Version: 0.0.1
+Summary: Efficient and Friendly Sparse Matrix Library for JAX.
+Home-page: https://github.com/CrawlScript/jax-sparse
+Author: Jun Hu
+Author-email: hujunxianligong@gmail.com
+License: GNU General Public License v3.0 (See LICENSE)
+Description: Efficient and Friendly Sparse Matrix Library for JAX.
+Platform: UNKNOWN
+Requires-Python: >3.5.0
