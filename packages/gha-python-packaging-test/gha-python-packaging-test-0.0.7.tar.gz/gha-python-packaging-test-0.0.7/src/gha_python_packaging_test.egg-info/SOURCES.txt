@@ -1,0 +1,11 @@
+LICENSE
+pyproject.toml
+setup.cfg
+.github/workflows/pypi.yml
+src/gha_python_packaging_test/__init__.py
+src/gha_python_packaging_test/app.py
+src/gha_python_packaging_test.egg-info/PKG-INFO
+src/gha_python_packaging_test.egg-info/SOURCES.txt
+src/gha_python_packaging_test.egg-info/dependency_links.txt
+src/gha_python_packaging_test.egg-info/entry_points.txt
+src/gha_python_packaging_test.egg-info/top_level.txt
