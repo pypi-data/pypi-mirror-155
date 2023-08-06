@@ -1,0 +1,16 @@
+LICENSE
+README.md
+setup.py
+signaturizer/__init__.py
+signaturizer/exporter.py
+signaturizer/signaturizer.py
+signaturizer.egg-info/PKG-INFO
+signaturizer.egg-info/SOURCES.txt
+signaturizer.egg-info/dependency_links.txt
+signaturizer.egg-info/not-zip-safe
+signaturizer.egg-info/requires.txt
+signaturizer.egg-info/top_level.txt
+tests/__init__.py
+tests/helper.py
+tests/test_exporter.py
+tests/test_signaturizer.py
