@@ -1,0 +1,122 @@
+{% extends 'layout/base.html' %}
+{% comment %}
+    <!--
+    *********************************************************************************
+    *                                                                               *
+    * job.html -- HTML file.                                                        *
+    *                                                                               *
+    ************ IMPORTANT MATERIAL DASHBOARD DARK EDITION LICENSE TERMS ************
+    *                                                                               *
+    * =========================================================                     *
+    * Material Dashboard Dark Edition - v2.1.0                                      *
+    * =========================================================                     *
+    *                                                                               *
+    * Product Page: https://www.creative-tim.com/product/material-dashboard-dark    *
+    * Copyright 2019 Creative Tim (http://www.creative-tim.com)                     *
+    *                                                                               *
+    * Coded by www.creative-tim.com                                                 *
+    *                                                                               *
+    * =========================================================                     *
+    *                                                                               *
+    * The above copyright notice and this permission notice shall be included in    *
+    * all copies or substantial portions of the Software.                           *
+    *                                                                               *
+    ********************** IMPORTANT BLACK-WIDOW LICENSE TERMS **********************
+    *                                                                               *
+    * This file is part of black-widow.                                             *
+    *                                                                               *
+    * black-widow is free software: you can redistribute it and/or modify           *
+    * it under the terms of the GNU General Public License as published by          *
+    * the Free Software Foundation, either version 3 of the License, or             *
+    * (at your option) any later version.                                           *
+    *                                                                               *
+    * black-widow is distributed in the hope that it will be useful,                *
+    * but WITHOUT ANY WARRANTY; without even the implied warranty of                *
+    * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the                 *
+    * GNU General Public License for more details.                                  *
+    *                                                                               *
+    * You should have received a copy of the GNU General Public License             *
+    * along with black-widow.  If not, see <http://www.gnu.org/licenses/>.          *
+    *                                                                               *
+    *********************************************************************************
+    -->
+{% endcomment %}
+{% load static %}
+
+{% block style %}
+    {{ block.super }}
+    <link href="{% static 'css/plugins/simplePagination.css' %}" rel="stylesheet" />
+{% endblock %}
+
+{% block content %}
+    <!-- Job Modal -->
+    <div id="job-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    {% block modal-body %}
+                    {% endblock %}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Job Management -->
+    <input type="hidden" id="job_id" value="{{ job.id }}">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card card-job">
+                <div class="card-header card-header-danger">
+
+                    {% block card_header %}
+                    {% endblock %}
+
+                    <button id="play-btn" type="button" class="btn btn-success btn-action disabled" title="Start job"
+                            style="display: none;">
+                        <i class="material-icons" style="padding: 0;">play_arrow</i>
+                    </button>
+
+                    <button id="pause-btn" type="button" class="btn btn-warning btn-action" title="Pause job">
+                        <i class="material-icons" style="padding: 0;">pause</i>
+                    </button>
+
+                    <button id="stop-btn" type="button" class="btn btn-danger btn-action" title="Stop job">
+                        <i class="material-icons" style="padding: 0;">stop</i>
+                    </button>
+
+                    <button id="delete-btn" type="button" class="btn btn-abort btn-action" title="Delete current job">
+                        <i class="material-icons" style="padding: 0;">delete_forever</i>
+                    </button>
+
+                    <button id="restart-btn" type="button" class="btn btn-abort btn-action" title="Restart current job">
+                        <i class="material-icons" style="padding: 0;">rotate_right</i>
+                    </button>
+
+                </div>
+                <div class="card-body" id="main-body">
+                    <div class="table-responsive" id="data-table">
+                        {% block table %}
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+
+            <nav class="pagination justify-content-center" id="pagination">
+            </nav>
+        </div>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script type="application/javascript" src="{% static 'js/plugins/simplePagination.js' %}"></script>
+    <script type="application/javascript" src="{% static 'js/black-widow/job.js' %}"></script>
+{% endblock %}

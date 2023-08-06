@@ -1,0 +1,482 @@
+{% extends 'layout/job.html' %}
+{% comment %}
+    <!--
+    *********************************************************************************
+    *                                                                               *
+    * parse.html -- HTML file.                                                      *
+    *                                                                               *
+    ************ IMPORTANT MATERIAL DASHBOARD DARK EDITION LICENSE TERMS ************
+    *                                                                               *
+    * =========================================================                     *
+    * Material Dashboard Dark Edition - v2.1.0                                      *
+    * =========================================================                     *
+    *                                                                               *
+    * Product Page: https://www.creative-tim.com/product/material-dashboard-dark    *
+    * Copyright 2019 Creative Tim (http://www.creative-tim.com)                     *
+    *                                                                               *
+    * Coded by www.creative-tim.com                                                 *
+    *                                                                               *
+    * =========================================================                     *
+    *                                                                               *
+    * The above copyright notice and this permission notice shall be included in    *
+    * all copies or substantial portions of the Software.                           *
+    *                                                                               *
+    ********************** IMPORTANT BLACK-WIDOW LICENSE TERMS **********************
+    *                                                                               *
+    * This file is part of black-widow.                                             *
+    *                                                                               *
+    * black-widow is free software: you can redistribute it and/or modify           *
+    * it under the terms of the GNU General Public License as published by          *
+    * the Free Software Foundation, either version 3 of the License, or             *
+    * (at your option) any later version.                                           *
+    *                                                                               *
+    * black-widow is distributed in the hope that it will be useful,                *
+    * but WITHOUT ANY WARRANTY; without even the implied warranty of                *
+    * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the                 *
+    * GNU General Public License for more details.                                  *
+    *                                                                               *
+    * You should have received a copy of the GNU General Public License             *
+    * along with black-widow.  If not, see <http://www.gnu.org/licenses/>.          *
+    *                                                                               *
+    *********************************************************************************
+    -->
+{% endcomment %}
+{% load static %}
+
+{% block style %}
+    <link href="{% static 'css/plugins/simplePagination.css' %}" rel="stylesheet" />
+{% endblock %}
+
+{% block breadcrumb %}
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a class="parent" href="/web/parsing">Web Parsing</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Parse</li>
+    </ol>
+{% endblock %}
+
+{% block modal-body %}
+    <!-- Tag Tree -->
+    <div class="section tree">
+        <h2>Tags</h2>
+        <div class="tree-container">
+            <ul class="first-ul" id="tag-tree" depth="{{ job.depth }}">
+            </ul>
+        </div>
+    </div>
+
+    <!-- Separator -->
+    <div class="separator row">
+        <h2>Forms</h2>
+        <ul id="tags-container" class="accordion tags">
+        </ul>
+    </div>
+
+    <!-- Section -->
+    <div class="section tag-count">
+        <h2>Tag Count</h2>
+        <div id="tag-count" class="row">
+        <button type="button" class="btn btn-danger">
+            form <span class="badge badge-light">4</span>
+        </button>
+        </div>
+    </div>
+{% endblock %}
+
+{% block card_header %}
+    <h4 class="card-title mt-0">Web Parsing</h4>
+    <div class="job-header">
+        <div class="job-info-container col-sm-12 col-md-8 col-lg-10">
+            <div class="card-category card-info">
+                <div class="card-category-label">URL:</div>
+                <span class="card-category-content"><a href="{{ job.url }}" target="_blank">{{ job.url }}</a></span>
+            </div>
+            <div class="card-category card-info">
+                <div class="card-category-label">Tags:</div>
+                <span class="card-category-content">{{ job.parsing_tags }}</span>
+            </div>
+        </div>
+        <div class="download-btn-container col-sm-12 col-md-4 col-lg-2">
+            <a id="download-btn" type="button" class="btn btn-info disabled"
+                    title="Download Results" href="/web/parsing/download?id={{ job.id }}"
+                    base_href="/web/parsing/download">
+                <i class="material-icons" style="padding: 0;">save</i>
+            </a>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block table %}
+    <table class="table table-hover table-select">
+        <thead>
+        <tr>
+            <th>URL</th>
+            <th>Results</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+{% endblock %}
+
+{% block script %}
+    {{ block.super }}
+    <!--suppress JSUnfilteredForInLoop -->
+    <script type="application/javascript">
+        const $jobModal = $('#job-modal');
+        const $dataTable = $('#data-table').find('table').first();
+        const $tagTree = $('#tag-tree');
+        const $tagCount = $('#tag-count');
+        const $tagsContainer = $('#tags-container');
+        const depth = parseInt($tagTree.attr('depth'));
+        let tagDict = {};
+
+        const showJobData = function(result) {
+            for (let key in result) {
+                // noinspection JSUnfilteredForInLoop
+                let page = result[key];
+                let count = Object.entries(page).length - 1;
+                $dataTable.insertTableRow([
+                    {name: page.url},                     // URL
+                    {name: count},                        // Results
+                ], function() {
+                    showPage(page);
+                });
+                /*
+                if (depth === 0) {
+                    showPage(page);
+                }
+                 */
+            }
+        };
+
+        /**
+         * Show the parsed page in a modal
+         * @param page The page Object
+         */
+        const showPage = function(page) {
+            const anchor = '<a target="_black" href="' + page.url+'">' + page.url + '</a>';
+            $jobModal.find('.modal-title').html(anchor);
+            $tagTree.html('');
+            $tagsContainer.html('');
+            tagDict = {};
+            for (let key in page) {
+                if (key === 'url') {
+                    continue;
+                }
+                nestTag($tagTree, page[key]);
+            }
+            tagCountBadge();
+            initTree();
+            initAccordions();
+            $jobModal.modal();
+        };
+
+        /**
+         * Creates a badge button foreach tag in tagDict
+         */
+        const tagCountBadge = function() {
+            const htmlBadgeStart='<button type="button" class="btn btn-danger">';
+            const htmlBadgeEnd='</button>';
+            $tagCount.html('');
+            for (let tagName in tagDict) {
+                let htmlBadge = htmlBadgeStart;
+                htmlBadge += tagName;
+                htmlBadge += '<span class="badge badge-light">';
+                htmlBadge += tagDict[tagName];
+                htmlBadge += '</span>';
+                htmlBadge += htmlBadgeEnd;
+                $tagCount.append(htmlBadge);
+            }
+        };
+
+        /**
+         * Append a tag on $parent element and fill tagDict
+         * @param $parent The parent HTML jQuery object
+         * @param tag The parsed tag
+         */
+        const nestTag = function ($parent, tag) {
+            if (Array.isArray(tag)) {
+                for (let key in tag) {
+                    nestTag($parent, tag[key]);
+                }
+                return;
+            }
+            if (tag.tag.toLowerCase() === 'form') {
+                makeFormAccordion(tag);
+            }
+            if (tagDict[tag.tag] !== undefined) {
+                tagDict[tag.tag]++;
+            } else {
+                tagDict[tag.tag] = 1;
+            }
+            let attrsLength;
+            if (tag.attrs) {
+                attrsLength = Object.entries(tag.attrs).length;
+            } else {
+                attrsLength = 0;
+            }
+            let html = '<li>';
+            if (tag.children || attrsLength > 0 || tag.data) {
+                html += '<span class="toggler">';
+                html += '<span class="caret"></span>';
+            }
+            const tagName = tag.name && tag.name !== tag.tag ? ('&nbsp; <code>#' + tag.name + '</code>') : '';
+            html += '&lt;'+tag.tag+tagName;
+            if (attrsLength === 0) {
+                html += '&gt;'
+            }
+            if (tag.children || attrsLength > 0 || tag.data) {
+                html += '</span>';
+            }
+            html += '</li>';
+            const $me = $(html).appendTo($parent);
+            let childParentHtml = '<ul class="nested"></ul>';
+            const $childParent = $(childParentHtml).appendTo($me);
+            if (attrsLength > 0) {
+                for (let key in tag.attrs) {
+                    let value = tag.attrs[key];
+                    if (!value) {
+                        continue;
+                    }
+                    let attrHtml = '<li><span class="tag-key">'+key+'</span>=';
+                    attrHtml += '<span class="tag-value">"'+value+'"</span></li>';
+                    $childParent.append(attrHtml);
+                }
+                $childParent.append('<span class="close-tag">&gt;</span>');
+            }
+
+            if (tag.data) {
+                const $attrHtml = $('<li><code></code></li>').appendTo($childParent);
+                $attrHtml.find('code').text(tag.data);
+            }
+            if (tag.children) {
+                for (let key in tag.children) {
+                    nestTag($childParent, tag.children[key]);
+                }
+            }
+            let ltHtml = '<span class="nested nested-tag toggle">';
+            ltHtml += '&lt;/'+ tag.tag +'&gt;';
+            ltHtml += '</span>';
+            $me.append(ltHtml);
+        };
+
+        /**
+         *
+         * @param formTag A form tag Object
+         */
+        const makeFormAccordion = function (formTag) {
+            if (!formTag.attrs.method) {
+                return;
+            }
+            const htmlTagAccordion =
+                '<li class="layer">' +
+                '<a class="toggle" href="javascript:void(0);">[' +
+                formTag.attrs.method.toUpperCase() + '] ' + formTag.attrs.action +
+                '<i class="material-icons arrow">keyboard_arrow_right</i>' +
+                '</a>' +
+                '<ul class="inner"><li><form target="_blank" class="row"></form></li></ul>' +
+                '</li>';
+            const $formHtml = $(htmlTagAccordion).appendTo($tagsContainer);
+            const $form = $formHtml.find('form');
+
+            for (let key in formTag.attrs) {
+                const keyLower = key.toLowerCase();
+                if (keyLower === 'id' || keyLower === 'onsubmit') {
+                    continue;
+                }
+                const value = formTag.attrs[key];
+                $form.attr(key, value);
+            }
+
+            $formHtml.appendTo($tagsContainer);
+            makeFormInput(formTag, $form);
+        };
+
+        const makeFormInput = function (formInputTag, $parent) {
+            let html = null;
+            switch (formInputTag.tag.toLowerCase()) {
+                case 'textarea':
+                    html = makeTextarea(formInputTag);
+                    break;
+                case 'select':
+                    html = makeSelect(formInputTag);
+                    break;
+                case 'button':
+                    html = makeButton(formInputTag);
+                    break;
+                case 'input':
+                    switch (formInputTag.attrs.type.toLowerCase()) {
+                        case 'text':
+                        case 'password':
+                        case 'email':
+                        case 'hidden':
+                            html = makeInputText(formInputTag);
+                            break;
+                        case 'button':
+                        case 'submit':
+                            html = makeInputButton(formInputTag);
+                            break;
+                        case 'checkbox':
+                            html = makeInputCheckbox(formInputTag);
+                            break;
+                        default:
+                            formInputTag.attrs.type = 'text';
+                            html = makeInputText(formInputTag);
+                            break;
+                    }
+                    break;
+                default:
+                    break;
+            }
+            const tagName = formInputTag.attrs.name;
+            const tagType = formInputTag.attrs.type;
+            if (html !== null && (tagName || tagType === 'submit')) {
+                $parent.append(html);
+            }
+            if (formInputTag.children) {
+                for (let key in formInputTag.children) {
+                    makeFormInput(formInputTag.children[key], $parent);
+                }
+            }
+        };
+
+        const attrsToHtml = function (attrs) {
+            const badAttrs = [
+                'id', 'onchange', 'onkeypress', 'onblur', 'style', 'disabled'
+            ];
+            let html = '';
+            for (let key in attrs) {
+                const keyLower = key.toLowerCase();
+                if (badAttrs.includes(keyLower)) {
+                    continue;
+                }
+                let value = attrs[key];
+                if (keyLower === 'type' && value === 'hidden') {
+                    value = 'text';
+                }
+                html += ' ' + key + '="' + value + '"';
+            }
+            return html;
+        };
+
+        const getTagName = function (tag) {
+            let name;
+            if (tag.attrs.name) {
+                name = tag.attrs.name;
+            } else if (tag.attrs.id) {
+                name = tag.attrs.id;
+            } else if (tag.data) {
+                name = tag.data;
+            } else if (tag.attrs.type) {
+                name = tag.attrs.type;
+            } else {
+                name = tag.tag;
+            }
+            if (tag.attrs.required) {
+                name += '*';
+            }
+            return name;
+        };
+
+        /**
+         * Make an HTML Input Text
+         * @param textTag Object
+         * @returns {string}
+         */
+        const makeInputText = function (textTag) {
+            let html = '<div class="form-group col-12 col-lg-6">';
+            html += '<label>' + getTagName(textTag) + '</label>';
+            html += '<input class="form-control"';
+            html += attrsToHtml(textTag.attrs);
+            html += '>';
+            html += '</div>';
+            return html;
+        };
+
+        /**
+         * Make an HTML Input Checkbox
+         * @param checkboxTag Object
+         * @returns {string}
+         */
+        const makeInputCheckbox = function (checkboxTag) {
+            let html = '<div class="form-check form-group col-12 col-lg-6">';
+            html += '<label class="form-check-label">';
+            html += '<input class="form-check-input" type="checkbox"';
+            html +=  ' value="' + checkboxTag.attrs.name + '">';
+            html += getTagName(checkboxTag);
+            html += '<span class="form-check-sign"><span class="check"></span></span>';
+            html += '</label>';
+            html += '</div>';
+            return html;
+        };
+
+        /**
+         * Make an HTML Input Button
+         * @param buttonTag Object
+         * @returns {string}
+         */
+        const makeInputButton = function (buttonTag) {
+            let html = '<input class="btn btn-danger"';
+            html += attrsToHtml(buttonTag.attrs);
+            html += '>';
+            return html;
+        };
+
+        /**
+         * Make an HTML Select
+         * @param selectTag Object
+         * @returns {string}
+         */
+        const makeSelect = function (selectTag) {
+            let html = '<div class="form-group col-12 col-lg-6">';
+            html += '<label>' + getTagName(selectTag) + '</label>';
+            html += '<select size class="form-control"';
+            html += attrsToHtml(selectTag.attrs);
+            html += '>';
+            if (selectTag.children) {
+                for (let key in selectTag.children) {
+                    const optionTag = selectTag.children[key];
+                    html += '<option value="'+optionTag.attrs.value+'">';
+                    html += optionTag.attrs.value;
+                    html += '</option>';
+                }
+            } else {
+                html += '<option value="1">EMPTY</option>'
+            }
+            html += '</select>';
+            html += '</div>';
+            return html;
+        };
+
+        /**
+         * Make an HTML Textarea
+         * @param textareaTag Object
+         * @returns {string}
+         */
+        const makeTextarea = function (textareaTag) {
+            let html = '<div class="form-group col-12 col-lg-6">';
+            const data = textareaTag.attrs.data ? textareaTag.attrs.data : '';
+            html += '<label>' + getTagName(textareaTag) + '</label>';
+            html += '<textarea class="form-control" rows="2">'+data+'</textarea>';
+            html += '</div>';
+            return html;
+        };
+
+        /**
+         * Make an HTML Button
+         * @param buttonTag Object
+         * @returns {string}
+         */
+        const makeButton = function (buttonTag) {
+            let html = '<div class="form-group col-12">';
+            html += '<button class="btn btn-danger"';
+            html += attrsToHtml(buttonTag.attrs);
+            html += '>';
+            html += getTagName(buttonTag);
+            html += '</button>';
+            html += '</div>';
+            return html;
+        };
+    </script>
+{% endblock %}

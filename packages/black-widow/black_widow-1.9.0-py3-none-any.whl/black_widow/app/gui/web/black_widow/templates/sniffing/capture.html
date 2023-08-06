@@ -1,0 +1,432 @@
+{% extends 'layout/job.html' %}
+{% comment %}
+    <!--
+    *********************************************************************************
+    *                                                                               *
+    * capture.html -- HTML file.                                                    *
+    *                                                                               *
+    ************ IMPORTANT MATERIAL DASHBOARD DARK EDITION LICENSE TERMS ************
+    *                                                                               *
+    * =========================================================                     *
+    * Material Dashboard Dark Edition - v2.1.0                                      *
+    * =========================================================                     *
+    *                                                                               *
+    * Product Page: https://www.creative-tim.com/product/material-dashboard-dark    *
+    * Copyright 2019 Creative Tim (http://www.creative-tim.com)                     *
+    *                                                                               *
+    * Coded by www.creative-tim.com                                                 *
+    *                                                                               *
+    * =========================================================                     *
+    *                                                                               *
+    * The above copyright notice and this permission notice shall be included in    *
+    * all copies or substantial portions of the Software.                           *
+    *                                                                               *
+    ********************** IMPORTANT BLACK-WIDOW LICENSE TERMS **********************
+    *                                                                               *
+    * This file is part of black-widow.                                             *
+    *                                                                               *
+    * black-widow is free software: you can redistribute it and/or modify           *
+    * it under the terms of the GNU General Public License as published by          *
+    * the Free Software Foundation, either version 3 of the License, or             *
+    * (at your option) any later version.                                           *
+    *                                                                               *
+    * black-widow is distributed in the hope that it will be useful,                *
+    * but WITHOUT ANY WARRANTY; without even the implied warranty of                *
+    * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the                 *
+    * GNU General Public License for more details.                                  *
+    *                                                                               *
+    * You should have received a copy of the GNU General Public License             *
+    * along with black-widow.  If not, see <http://www.gnu.org/licenses/>.          *
+    *                                                                               *
+    *********************************************************************************
+    -->
+{% endcomment %}
+
+{% block breadcrumb %}
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a class="parent" href="/sniffing">Sniffing</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Capture</li>
+    </ol>
+{% endblock %}
+
+{% block modal-body %}
+    <!-- Hosts -->
+    <div class="section row hosts" id="pkt-modal-hosts" >
+
+        <!-- Source Host -->
+        <div class="col-12 col-md-6 src host">
+            <div class="card">
+                <div class="card-header card-header-danger">
+                    <div class="row">
+                        <h3 class="material-icons col-3">laptop_mac</h3>
+                        <h3 class="header-title col-9">Source</h3>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Source</h4>
+                    <div class="row addresses">
+                        <div class="col-sm-12 col-lg-6">
+                            <div class="card addr card-light">
+                                <div class="label">
+                                    <i class="material-icons">developer_board</i>
+                                    <span>MAC</span>
+                                </div>
+                                <div class="params">
+                                    <div>
+                                        <span>Address:</span>
+                                        <span class="param mac-address"></span>
+                                    </div>
+                                    <div>
+                                        <span>Vendor:</span>
+                                        <span class="param mac-vendor"></span>
+                                    </div>
+                                    <div>
+                                        <span>Company:</span>
+                                        <span class="param mac-company"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-6">
+                            <div class="card addr card-light">
+                                <div class="label">
+                                    <i class="material-icons">router</i>
+                                    <span>IP</span>
+                                </div>
+                                <div class="params">
+                                    <div>
+                                        <span>Address:</span>
+                                        <a target="_blank" class="param ip-address"></a>
+                                    </div>
+                                    <div>
+                                        <span>Port:</span>
+                                        <span class="param ip-port"></span>
+                                    </div>
+                                    <div>
+                                        <span>Host:</span>
+                                        <a target="_blank" class="param ip-host"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="stats">
+                        <i class="material-icons">desktop_mac</i>
+                        <span>transmitter host</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Destination Host -->
+        <div class="col-12 col-md-6 dst host">
+            <div class="card">
+                <div class="card-header card-header-danger">
+                    <div class="row">
+                        <h3 class="material-icons col-3">laptop_chromebook</h3>
+                        <h3 class="header-title col-9">Destination</h3>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Destination</h4>
+                    <div class="row addresses">
+                        <div class="col-sm-12 col-lg-6">
+                            <div class="card addr card-light">
+                                <div class="label">
+                                    <i class="material-icons">developer_board</i>
+                                    <span>MAC</span>
+                                </div>
+                                <div class="params">
+                                    <div>
+                                        <span>Address:</span>
+                                        <span class="param mac-address"></span>
+                                    </div>
+                                    <div>
+                                        <span>Vendor:</span>
+                                        <span class="param mac-vendor"></span>
+                                    </div>
+                                    <div>
+                                        <span>Company:</span>
+                                        <span class="param mac-company"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-6">
+                            <div class="card addr card-light">
+                                <div class="label">
+                                    <i class="material-icons">router</i>
+                                    <span>IP</span>
+                                </div>
+                                <div class="params">
+                                    <div>
+                                        <span>Address:</span>
+                                        <a target="_blank" class="param ip-address"></a>
+                                    </div>
+                                    <div>
+                                        <span>Port:</span>
+                                        <span class="param ip-port"></span>
+                                    </div>
+                                    <div>
+                                        <span>Host:</span>
+                                        <a target="_blank" class="param ip-host"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="stats">
+                        <i class="material-icons">desktop_windows</i>
+                        <span>receiver host</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Packet Info -->
+    <div class="section">
+        <h2>Packet</h2>
+        <div class="row info" id="pkt-modal-info">
+            <div class="col-12 col-md-6 col-lg-4">
+                <ul>
+                    <li>Number: <span id="number"></span></li>
+                    <li>Protocol: <span id="protocol"></span></li>
+                    <li>Highest Layer: <span id="highest_layer"></span></li>
+                    <li>Captured Length: <span id="captured_length"></span> bytes</li>
+                    <li>Length: <span id="length"></span> bytes</li>
+                </ul>
+            </div>
+            <div class="col-12 col-md-7 col-lg-8">
+                <ul>
+                    <li>Transport Layer: <span id="transport_layer"></span></li>
+                    <li>Sniff Time: <span id="sniff_time"></span></li>
+                    <li>Sniff Timestamp: <span id="sniff_timestamp"></span></li>
+                    <li>Time: <span id="time"></span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Frame Info -->
+    <div class="separator row">
+        <h2>Frame Info</h2>
+        <ul id="pkt-modal-frame" class="accordion frame">
+        </ul>
+    </div>
+
+    <!-- Layers -->
+    <div class="section">
+        <h2>Layers</h2>
+        <ul id="pkt-modal-layers" class="accordion layers">
+        </ul>
+    </div>
+{% endblock %}
+
+{% block card_header %}
+    <!-- TODO features:
+            - Sorting/Search filters
+            - Download ".pcap" file
+            - Keys to decrypt traffic
+    -->
+    <h4 class="card-title mt-0">Network Traffic</h4>
+    <div class="card-category card-info">
+        <div class="card-category-label">Interfaces:</div>
+        <span class="card-category-content">{{ job.interfaces }}</span>
+    </div>
+    <div class="card-category card-info">
+        <div class="card-category-label">Filters:</div>
+        <span class="card-category-content">{{ job.filters }}</span>
+    </div>
+{% endblock %}
+
+{% block table %}
+    <table class="table table-hover table-select">
+        <thead>
+        <tr>
+            <th>No.</th>
+            <th>Time</th>
+            <th>Source</th>
+            <th>Destination</th>
+            <th>Protocol</th>
+            <th>Length (bytes)</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+{% endblock %}
+
+{% block script %}
+    {{ block.super }}
+    <!--suppress JSUnfilteredForInLoop -->
+    <script type="application/javascript">
+        const $jobModal = $('#job-modal');
+        const $dataTable = $('#data-table').find('table').first();
+
+        const showJobData = function(result) {
+            for (let key in result) {
+                // noinspection JSUnfilteredForInLoop
+                let pkt = result[key];
+                const source_name = pkt.source ? pkt.source.label : undefined;
+                const source_title = pkt.source ? pkt.source.title : undefined;
+                const destination_name = pkt.destination ? pkt.destination.label : undefined;
+                const destination_title = pkt.destination ? pkt.destination.title : undefined;
+                $dataTable.insertTableRow([
+                    {name: pkt.number},                   // No.
+                    {name: pkt.time},                     // Time
+                    {
+                        name: source_name,                // Source
+                        title: source_title
+                    },
+                    {
+                        name: destination_name,           // Destination
+                        title: destination_title
+                    },
+                    {name: pkt.protocol},                 // Protocol
+                    {name: pkt.length},                   // Length (bytes)
+                ], function() {
+                    showPkt(pkt);
+                });
+            }
+        };
+
+        /**
+         * Show the packet in a modal
+         * @param pkt The packet Object
+         */
+        const showPkt = function(pkt) {
+            $jobModal.find('.modal-title').html('Packet #' + pkt.number);
+
+            const $jobModalSrcHost = $jobModal.find('.host.src');
+            const $jobModalDstHost = $jobModal.find('.host.dst');
+
+            const $srcTitle = $jobModalSrcHost.find('.header-title');
+            const $dstTitle = $jobModalDstHost.find('.header-title');
+
+            $srcTitle.html('SOURCE [ ' + pkt.source.label + ' ]');
+            $srcTitle.attr('title', pkt.source.title);
+            $dstTitle.html('DESTINATION [ ' + pkt.destination.label + ' ]');
+            $dstTitle.attr('title', pkt.destination.title);
+
+            // Source MAC
+            $jobModalSrcHost.find('.mac-address').html(pkt.source.mac);
+            $jobModalSrcHost.find('.mac-vendor').html(pkt.source.mac_lookup ? pkt.source.mac_lookup.vendor : '');
+            $jobModalSrcHost.find('.mac-company').html(pkt.source.mac_lookup ? pkt.source.mac_lookup.company : '');
+
+            // Destination MAC
+            $jobModalDstHost.find('.mac-address').html(pkt.destination.mac);
+            $jobModalDstHost.find('.mac-vendor').html(pkt.destination.mac_lookup.vendor);
+            $jobModalDstHost.find('.mac-company').html(pkt.destination.mac_lookup.company);
+
+            // Source IP
+            const $srcIpAddress = $jobModalSrcHost.find('.ip-address');
+            const $srcIpHost = $jobModalSrcHost.find('.ip-host');
+            const src_proto = 'http' + (parseInt(pkt.source.port) === 443 ? 's' : '');
+            const src_port = pkt.source.port ? (':' + pkt.source.port) : '';
+            $jobModalSrcHost.find('.ip-port').html(pkt.source.port);
+            $srcIpAddress.html(pkt.source.ip);
+            $srcIpAddress.attr('href', src_proto + '://' + pkt.source.ip + src_port);
+            $srcIpHost.html(pkt.source.ip_host);
+            $srcIpHost.attr('href', src_proto + '://' + pkt.source.ip_host + src_port);
+
+            // Destination IP
+            const $dstIpAddress = $jobModalDstHost.find('.ip-address');
+            const $dstIpHost = $jobModalDstHost.find('.ip-host');
+            const dst_proto = 'http' + (parseInt(pkt.destination.port) === 443 ? 's' : '');
+            const dst_port = pkt.destination.port ? (':' + pkt.destination.port) : '';
+            $jobModalDstHost.find('.ip-port').html(pkt.destination.port);
+            $dstIpAddress.html(pkt.destination.ip);
+            $dstIpAddress.attr('href', dst_proto + '://' + pkt.destination.ip + dst_port);
+            $dstIpHost.html(pkt.destination.ip_host);
+            $dstIpHost.attr('href', dst_proto + '://' + pkt.destination.ip_host + dst_port);
+
+            // Packet Info
+            const $info = $jobModal.find('#pkt-modal-info');
+            for (const key in pkt) {
+                const $key = $info.find('#' + key);
+                if ($key.length === 0) {
+                    continue;
+                }
+                $key.html(pkt[key]);
+            }
+
+            // Frame Info
+            const $frame = $jobModal.find('#pkt-modal-frame');
+            $frame.html('');
+            appendLayer($frame, pkt.frame_info);
+
+            // Layers
+            const $layers = $jobModal.find('#pkt-modal-layers');
+            $layers.html('');
+            for (let i in pkt.layers) {
+                const layer = pkt.layers[i];
+                appendLayer($layers, layer);
+            }
+
+            initAccordions();
+
+            $jobModal.modal();
+        };
+
+        const appendLayer = function ($parent, layer) {
+            const html_layer =
+                '<li class="layer">' +
+                '<a class="toggle" href="javascript:void(0);">' + layer.name +
+                '<i class="material-icons arrow">keyboard_arrow_right</i>' +
+                '</a>' +
+                '<ul class="inner"></ul>' +
+                '</li>';
+            const $layer = $(html_layer).appendTo($parent);
+            const $children = $layer.find('ul.inner');
+            for (let i in layer.fields) {
+                const field = layer.fields[i];
+                appendFieldRecursively($children, field);
+            }
+        };
+
+        const appendFieldRecursively = function ($parent, field) {
+            field.value = field.value.trim();
+            field.key = field.key.trim();
+            field.name = field.name.trim();
+
+            let htmlField = '<li';
+            if (field.children.length > 0) {
+                htmlField +=
+                    ' class="children">' +
+                    '<a class="toggle value" href="javascript:void(0);">' +
+                    '<i class="material-icons arrow">keyboard_arrow_right</i>' +
+                    '</a>' +
+                    '<ul class="inner"></ul>';
+            } else {
+                htmlField += ' class="value">';
+            }
+            htmlField += '</li>';
+
+            const $field = $(htmlField).appendTo($parent);
+
+            if (!field.key && !field.name) {
+                $field.addClass('alone');
+                $field.text(field.value);   // Prevents style and script execution
+            } else {
+                const htmlFieldStr = field.label + ': <div class="val-in">' + field.value + '</div>';
+                if ($field.hasClass('value')) {
+                    $field.html(htmlFieldStr);
+                } else {
+                    $field.find('.value').append(htmlFieldStr);
+                }
+            }
+
+            const $children = $field.find('ul.inner');
+            for (let i in field.children) {
+                const child_field = field.children[i];
+                appendFieldRecursively($children, child_field);
+            }
+        };
+    </script>
+{% endblock %}
