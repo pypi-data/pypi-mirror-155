@@ -1,0 +1,14 @@
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+gandalf_cmt.egg-info/PKG-INFO
+gandalf_cmt.egg-info/SOURCES.txt
+gandalf_cmt.egg-info/dependency_links.txt
+gandalf_cmt.egg-info/requires.txt
+gandalf_cmt.egg-info/top_level.txt
+src/gandalf
+src/modules/bedcCUModule.py
+src/modules/bedcMGMTModule.py
+src/modules/cmsDBBackup.py
+src/modules/pipelineIncrement.py
