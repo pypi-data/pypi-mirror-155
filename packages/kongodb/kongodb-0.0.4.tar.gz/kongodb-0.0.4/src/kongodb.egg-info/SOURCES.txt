@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+src/kongodb/__init__.py
+src/kongodb/adapters.py
+src/kongodb/cursor.py
+src/kongodb/database.py
+src/kongodb/exceptions.py
+src/kongodb/jsonquery.py
+src/kongodb/lib.py
+src/kongodb.egg-info/PKG-INFO
+src/kongodb.egg-info/SOURCES.txt
+src/kongodb.egg-info/dependency_links.txt
+src/kongodb.egg-info/requires.txt
+src/kongodb.egg-info/top_level.txt
