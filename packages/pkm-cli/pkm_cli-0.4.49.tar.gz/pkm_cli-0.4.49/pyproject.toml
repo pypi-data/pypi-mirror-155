@@ -1,0 +1,16 @@
+[project]
+name = "pkm-cli"
+version = "0.4.49"
+description = "Command line interface for PKM"
+requires-python = ">=3.8, <4.0"
+dependencies = ["questionary", "pkm", "jinja2", "pygments", "prompt-toolkit", "rich >=11.1.0, <12", "cryptography >=37.0.2, <38"]
+readme = "README.md"
+license = {text = "MIT License"}
+scripts = {pkm = "pkm_cli.main:main"}
+
+[[project.authors]]
+name = "bennyl"
+
+[build-system]
+requires = ["pkm >=0.4.23"]
+build-backend = "pkm.api.buildsys"

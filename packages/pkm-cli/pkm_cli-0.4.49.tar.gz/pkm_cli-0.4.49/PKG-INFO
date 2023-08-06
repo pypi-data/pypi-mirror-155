@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: pkm-cli
+Version: 0.4.49
+Summary: Command line interface for PKM
+Requires-Dist: questionary
+Requires-Dist: pkm
+Requires-Dist: jinja2
+Requires-Dist: pygments
+Requires-Dist: prompt-toolkit
+Requires-Dist: rich >=11.1.0, <12
+Requires-Dist: cryptography >=37.0.2, <38
+Requires-Python: >=3.8, <4.0
+Description-Content-Type: text/plain
+Author: bennyl
+Author-email:
+Maintainer: bennyl
+Maintainer-email:
+License: MIT License
+
+README.md
