@@ -1,0 +1,13 @@
+MANIFEST.in
+README.md
+license.txt
+setup.py
+nhapp.egg-info/PKG-INFO
+nhapp.egg-info/SOURCES.txt
+nhapp.egg-info/dependency_links.txt
+nhapp.egg-info/top_level.txt
+nmdi/ReadMinio.py
+nmdi/__init__.py
+nmdi/mysql-connector-java-8.0.29.jar
+nmdi/nmd.jar
+nmdi/postgresql-42.4.0.jar
