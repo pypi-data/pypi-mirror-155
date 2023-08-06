@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "pyaes256_encrypter"
+version = "1.0.5"
+readme = "README.md"
+license = "MIT"
+description = "A package to simplify the use of AES-256 encryption with random initialization vector."
+authors = ["Maicon Renildo <maicon.renildo1@gmail.com>"]
+keywords = [
+    "cryptography",
+    "AES"
+]
+
+[tool.poetry.dependencies]
+python = ">=3.6.2,<4.0"
+cryptography = ">=37.0.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.3"]
+build-backend = "poetry.core.masonry.api"
