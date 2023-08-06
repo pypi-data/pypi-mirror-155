@@ -1,0 +1,8 @@
+
+import json
+
+class PostalData:
+    def data(self):
+            return json.loads(d)
+
+d=r'[{"postal_code": "9170", "country_code": "SJ", "admin_code1": "21", "admin_name1": "Svalbard", "admin_name2": "Svalbard", "admin_name3": null, "place_name": "Longyearbyen"}, {"postal_code": "9171", "country_code": "SJ", "admin_code1": "21", "admin_name1": "Svalbard", "admin_name2": "Svalbard", "admin_name3": null, "place_name": "Longyearbyen"}, {"postal_code": "9173", "country_code": "SJ", "admin_code1": "21", "admin_name1": "Svalbard", "admin_name2": "Svalbard", "admin_name3": null, "place_name": "Ny-\u00c5lesund"}, {"postal_code": "9175", "country_code": "SJ", "admin_code1": "21", "admin_name1": "Svalbard", "admin_name2": "Svalbard", "admin_name3": null, "place_name": "Sveagruva"}, {"postal_code": "9178", "country_code": "SJ", "admin_code1": "21", "admin_name1": "Svalbard", "admin_name2": "Svalbard", "admin_name3": null, "place_name": "Barentsburg"}, {"postal_code": "9176", "country_code": "SJ", "admin_code1": "21", "admin_name1": "Svalbard", "admin_name2": "Svalbard", "admin_name3": null, "place_name": "Bj\u00f8rn\u00f8ya"}, {"postal_code": "9174", "country_code": "SJ", "admin_code1": "21", "admin_name1": "Svalbard", "admin_name2": "Svalbard", "admin_name3": null, "place_name": "Hopen"}, {"postal_code": "8099", "country_code": "SJ", "admin_code1": "22", "admin_name1": "Jan Mayen", "admin_name2": "Jan Mayen", "admin_name3": null, "place_name": "Jan Mayen"}]'
