@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Introduction &#8212; Bonsu - The Interactive Phase Retrieval Suite 3.4.5 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <link rel="shortcut icon" href="_static/bonsu.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="General Usage" href="usage.html" />
+    <link rel="prev" title="Installation" href="setup.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="usage.html" title="General Usage"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="setup.html" title="Installation"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="bonsu.html">Bonsu - The Interactive Phase Retrieval Suite 3.4.5 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Introduction</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="introduction">
+<span id="intro"></span><h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>Bonsu, the interactive phase retrieval suite, is the first phase retrieval software package for phase retrieval with real-time visualisation in both two and three dimensions. It is complete with an inventory of algorithms and routines for data manipulation and reconstruction.</p>
+<p>Bonsu is open-source, is designed around the <a class="reference external" href="http://python.org">python</a> language (with c bindings) and is largely platform independent. It is also able to handle data in formats such as:</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="http://www.princetoninstruments.com">SPE</a></p></li>
+<li><p><a class="reference external" href="http://www.hdfgroup.org">HDF5</a></p></li>
+<li><p><a class="reference external" href="http://www.vtk.org">VTK</a></p></li>
+<li><p><a class="reference external" href="http://www.numpy.org">Numpy</a></p></li>
+<li><p>Image formats including PNG, JPG, TIFF, PPM</p></li>
+</ol>
+</section>
+<section id="arrays">
+<h2>Arrays<a class="headerlink" href="#arrays" title="Permalink to this headline">¶</a></h2>
+<p>Bonsu uses NumPy array format (<a class="reference external" href="http://numpy.org">http://numpy.org</a>) internally for manipulating and outputting raw data.  Double-precision complex NumPy arrays are used for phase retrieval. NumPy is part of the ‘Scientific Computing Tools For Python’ or SciPy package (<a class="reference external" href="http://scipy.org">http://scipy.org</a>) available in Python. There are a number of standard tools made available for array conversion, manipulation and viewing. Tools for cropping, padding, binning, support array creation and mask array creation are provided. Arrays can be exported in both NumPy array and VTK format.</p>
+<p>For further details see <a class="reference internal" href="usage.html#usage-arrays"><span class="std std-ref">Array Creation and Storage</span></a>.</p>
+</section>
+<section id="algorithms">
+<h2>Algorithms<a class="headerlink" href="#algorithms" title="Permalink to this headline">¶</a></h2>
+<p>Bonsu comes complete with a number of <a class="reference internal" href="libref-algorithms.html#libref-algorithms"><span class="std std-ref">algorithms</span></a> for phase retrieval. They include Fienup’s hybrid input-output (HIO) (<a class="reference external" href="http://dx.doi.org/10.1364/AO.21.002758">Fienup, 1982</a>), HIO with positivity constraint, phase-constrained HIO (<a class="reference external" href="http://dx.doi.org/10.1088/1367-2630/12/3/035019">Harder et al., 2010</a>), hybrid projection reflection (<a class="reference external" href="http://dx.doi.org/10.1364/JOSAA.20.001025">Bauschke et al., 2003</a>), relaxed average alternating reflection (<a class="reference external" href="http://dx.doi.org/10.1088/0266-5611/21/1/004">Luke, 2005</a>) and the error reduction algorithm (Gerchberg &amp; Saxton, 1972). In addition, a shrink-wrap algorithm that is able to make use of either of the above algorithms is also provided (<a class="reference external" href="http://dx.doi.org/10.1103/PhysRevB.68.140101">Marchesini et al., 2003</a>; <a class="reference external" href="http://dx.doi.org/10.1038/nmat2702">Newton et al., 2010</a>).  Phase retrieval algorithms are implemented in the c language for fast execution and seamlessly integrated into the application.</p>
+<p>For a complete list see <a class="reference internal" href="libref-algorithms.html#libref-algorithms"><span class="std std-ref">Library Reference – Phasing Algorithms</span></a>.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="bonsu.html">
+              <img class="logo" src="_static/bonsu.png" alt="Logo"/>
+            </a></p>
+  <div>
+    <h3><a href="bonsu.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Introduction</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#arrays">Arrays</a></li>
+<li><a class="reference internal" href="#algorithms">Algorithms</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="setup.html"
+                          title="previous chapter">Installation</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="usage.html"
+                          title="next chapter">General Usage</a></p>
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="usage.html" title="General Usage"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="setup.html" title="Installation"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="bonsu.html">Bonsu - The Interactive Phase Retrieval Suite 3.4.5 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Introduction</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2011 - 2022, Marcus C. Newton.
+    </div>
+  </body>
+</html>
