@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: nbviewer-gui
+Version: 1.0.1
+Summary: A Utility for previewing *.ipynb files in linux machines
+Home-page: https://github.com/jithu7432/nb-viewer
+Author: Jithin Johnson
+License: MIT
+Project-URL: Bug Tracker, https://github.com/jithu7432/nb-viewer/issues
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+## Jupyter Notebook Viewer
+* This is a utility which lets you preview Jupyter notebooks faster on your Linux machine, with a double click.
+* Requires no internet and is faster.
+
+## Installation
+* Use `pip install .` to install the package, and you can call the command line utility from the terminal by
+
+```fish
+nbviewer-gui notebook.ipynb
+```
+
