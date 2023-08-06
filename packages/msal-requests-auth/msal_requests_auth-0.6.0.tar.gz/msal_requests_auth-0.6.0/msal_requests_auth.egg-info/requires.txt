@@ -1,0 +1,16 @@
+appdirs
+msal
+pyperclip
+requests
+
+[all]
+pytest
+pytest-cov
+pre-commit
+pylint
+
+[dev]
+pytest
+pytest-cov
+pre-commit
+pylint
