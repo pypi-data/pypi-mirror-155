@@ -1,0 +1,14 @@
+.git_archival.txt
+.gitattributes
+.gitignore
+LICENSE
+README.rst
+setup.cfg
+setup.py
+tests.py
+setuptools_scm_git_archive/__init__.py
+setuptools_scm_git_archive.egg-info/PKG-INFO
+setuptools_scm_git_archive.egg-info/SOURCES.txt
+setuptools_scm_git_archive.egg-info/dependency_links.txt
+setuptools_scm_git_archive.egg-info/entry_points.txt
+setuptools_scm_git_archive.egg-info/top_level.txt
