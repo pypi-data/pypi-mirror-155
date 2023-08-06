@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+versioneer.py
+bodo-platform-utils/__init__.py
+bodo-platform-utils/_version.py
+bodo-platform-utils/secrets.py
+bodo_platform_utils.egg-info/PKG-INFO
+bodo_platform_utils.egg-info/SOURCES.txt
+bodo_platform_utils.egg-info/dependency_links.txt
+bodo_platform_utils.egg-info/requires.txt
+bodo_platform_utils.egg-info/top_level.txt
