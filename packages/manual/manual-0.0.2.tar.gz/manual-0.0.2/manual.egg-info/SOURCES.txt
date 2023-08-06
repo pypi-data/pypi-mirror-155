@@ -1,0 +1,13 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+manual/__init__.py
+manual/base.py
+manual/util.py
+manual.egg-info/PKG-INFO
+manual.egg-info/SOURCES.txt
+manual.egg-info/dependency_links.txt
+manual.egg-info/not-zip-safe
+manual.egg-info/requires.txt
+manual.egg-info/top_level.txt
