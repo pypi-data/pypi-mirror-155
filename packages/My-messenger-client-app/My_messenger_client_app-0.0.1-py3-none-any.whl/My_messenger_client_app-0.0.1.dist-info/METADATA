@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: My-messenger-client-app
+Version: 0.0.1
+Summary: Клиентская часть приложения 'My messanger' для обмена сообщениями. Практика учебной части
+Home-page: UNKNOWN
+Author: Roman Melnikov
+Author-email: tupozarabotok@gmail.ru
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: PyQt5
+Requires-Dist: sqlalchemy
+Requires-Dist: pycryptodome
+Requires-Dist: pycryptodomex
+
+UNKNOWN
+
