@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: shortauthstrings
+Version: 0.1.0
+Summary: A simple implementation of short authentication strings
+Home-page: https://github.com/Rudd-O/shortauthstrings
+Author: Manuel Amador (Rudd-O)
+Author-email: rudd-o@rudd-o.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v2 (LGPLv2)
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+attr: shortauthstrings.__doc__
