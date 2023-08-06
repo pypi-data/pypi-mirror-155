@@ -1,0 +1,13 @@
+README.md
+setup.py
+mlcube_kubeflow/__init__.py
+mlcube_kubeflow/kubeflow_run.py
+mlcube_kubeflow/main.py
+mlcube_kubeflow.egg-info/PKG-INFO
+mlcube_kubeflow.egg-info/SOURCES.txt
+mlcube_kubeflow.egg-info/dependency_links.txt
+mlcube_kubeflow.egg-info/entry_points.txt
+mlcube_kubeflow.egg-info/requires.txt
+mlcube_kubeflow.egg-info/top_level.txt
+mlcube_kubeflow/tests/__init__.py
+mlcube_kubeflow/tests/test_mlcube_kubeflow_cli.py
