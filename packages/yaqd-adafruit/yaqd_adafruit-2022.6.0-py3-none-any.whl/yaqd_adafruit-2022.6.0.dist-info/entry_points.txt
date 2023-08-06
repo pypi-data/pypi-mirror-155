@@ -1,0 +1,3 @@
+[console_scripts]
+yaqd-adafruit-stepper-motor-hat=yaqd_adafruit._adafruit_stepper_motor_hat:AdafruitStepperMotorHat.main
+
