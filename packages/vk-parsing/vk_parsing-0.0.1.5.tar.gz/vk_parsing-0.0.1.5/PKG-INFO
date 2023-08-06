@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: vk_parsing
+Version: 0.0.1.5
+Summary: Flexible python package for parsing VKontakte.
+Home-page: https://github.com/Nikita2305/vk_parsing
+Author: Nikitin N
+Author-email: nikitanikitin2305@gmail.com
+Project-URL: Bug Tracker, https://github.com/Nikita2305/vk_parsing/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# vk_parsing
+VK parsing module for humans.
+
+## Pip
+Check out [pypi page](https://pypi.org/project/vk-parsing/) for details
+
+## Docs
+*To be implemented...*

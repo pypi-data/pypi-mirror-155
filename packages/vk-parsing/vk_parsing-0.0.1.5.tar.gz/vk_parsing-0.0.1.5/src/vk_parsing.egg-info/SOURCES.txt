@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/vk_parsing/__init__.py
+src/vk_parsing/api.py
+src/vk_parsing/exceptions.py
+src/vk_parsing/lconfig.py
+src/vk_parsing/parser.py
+src/vk_parsing/task.py
+src/vk_parsing.egg-info/PKG-INFO
+src/vk_parsing.egg-info/SOURCES.txt
+src/vk_parsing.egg-info/dependency_links.txt
+src/vk_parsing.egg-info/top_level.txt
+src/vk_parsing/accounts/account.py
+src/vk_parsing/accounts/sync_account.py
