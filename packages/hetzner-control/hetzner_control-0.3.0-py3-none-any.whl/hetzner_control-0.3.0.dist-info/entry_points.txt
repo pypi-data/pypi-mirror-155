@@ -1,0 +1,3 @@
+[console_scripts]
+htz=hetzner_control.cli:main
+
