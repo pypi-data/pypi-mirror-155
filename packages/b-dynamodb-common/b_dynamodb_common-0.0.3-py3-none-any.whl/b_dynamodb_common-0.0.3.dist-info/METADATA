@@ -1,0 +1,47 @@
+Metadata-Version: 2.1
+Name: b-dynamodb-common
+Version: 0.0.3
+Summary: Common functionality for interacting with dynamodb easier. Most of the functionality is based on PynamoDB ORM library.
+Home-page: https://github.com/biomapas/B.DynamoDbCommon.git
+License: Apache License 2.0
+Keywords: AWS DynamoDB PynamoDB Database ORM Python
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: pynamodb (<6.0.0,>=5.0.3)
+Requires-Dist: cryptography (<38.0.0,>=35.0.0)
+
+# B.DynamoDbCommon
+
+### Description
+
+### Remarks
+
+### Related technology
+
+### Assumptions
+
+### Useful sources
+
+### Install
+
+### Usage & Examples
+
+### Testing
+
+### Contribution
+
+
+# Release history
+
+### 0.0.3
+* Add tests to test PermissionModel base class.
+
+### 0.0.2
+* Improve `pynamodb_list_result` class.
+
+### 0.0.1
+* Initial build.
+
+
