@@ -1,0 +1,20 @@
+Metadata-Version: 1.1
+Name: clipcrop
+Version: 0.4
+Summary: Extract sections from your image by using OpenAI CLIP and Facebooks Detr implemented on HuggingFace Transformers
+Home-page: https://github.com/Vishnunkumar/clipcrop/
+Author: Vishnu N
+Author-email: vishnunkumar25@gmail.com
+License: MIT
+Download-URL: https://github.com/Vishnunkumar/clipcrop/archive/refs/tags/v-0.4.tar.gz
+Description: UNKNOWN
+Keywords: Documents,Machine learning,NLP,Deep learning,Computer Vision
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
