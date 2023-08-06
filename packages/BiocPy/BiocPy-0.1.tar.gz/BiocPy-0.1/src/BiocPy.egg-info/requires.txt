@@ -1,0 +1,12 @@
+genomicranges==0.1.1
+summarizedexperiment==0.1.3
+singlecellexperiment==0.1
+multiassayexperiment==0.1
+
+[:python_version < "3.8"]
+importlib-metadata
+
+[testing]
+setuptools
+pytest
+pytest-cov
