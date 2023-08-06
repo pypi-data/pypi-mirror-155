@@ -1,0 +1,10 @@
+*.egg-info
+.vscode
+__pycache__
+site
+dist
+test-reports/
+.tox/
+.mypy_cache/
+.eggs/
+docs/build
