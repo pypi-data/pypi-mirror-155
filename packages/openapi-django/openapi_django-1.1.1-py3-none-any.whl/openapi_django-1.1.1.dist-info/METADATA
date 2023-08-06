@@ -1,0 +1,177 @@
+Metadata-Version: 2.1
+Name: openapi-django
+Version: 1.1.1
+Summary: OpenApi for django
+Home-page: https://gitlab.com/kappasama.ks/openapi_django
+Author: Y. Chudakov
+Author-email: kappasama.ks@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
+Requires-Dist: Django (>=3.2.6)
+Requires-Dist: djantic (==0.7.0)
+Requires-Dist: pydantic (==1.9.1)
+
+# OpenAPI Django
+
+Библиотека для автоматической генерации OpenAPI файла для Django проектов.
+
+
+## Использование
+
+### Устанавливаем библиотеку
+```shell
+pip install openapi-django
+```
+
+### Добавляем в проект
+
+В файле ```{ProjectPath}/{DjangoFolder}/settings.py``` находим секцию ```INSTALLED_APPS``` и добавляем имя библиотеки.
+
+```python
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'openapi_django'
+]
+```
+
+### Настройка
+
+Настройка производится добавлением словаря ```OPENAPI_DJANGO``` в файл ```{ProjectPath}/{DjangoFolder}/settings.py```
+
+Используемые ключи:
+
+* ```servers``` - Список серверов, которые нужно добавить на страницу OpenAPI 
+(Учитывайте что если в ```settings.py``` указано ```DEBUG = True``` то на страницу автоматически будет добавлен сервер 
+из ```request.META["HTTP_HOST"]``` запроса)
+* ```version``` - Версия вашего приложения
+* ```title``` - Имя приложения
+
+Пример:
+
+```python
+OPENAPI_DJANGO = {
+    "servers": ["https://test.test"],
+    "version": "0.0.1",
+    "title": "Test project"
+}
+```
+
+## Добавление url для отображения страницы OpenAPI
+ 
+В файле ```{ProjectPath}/{DjangoFolder}/urls.py``` добавить:
+
+```python
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('openapi/', include('openapi_django.urls')),
+]
+```
+
+Библиотека добавляет 2 урла:
+
+1. "/" - отображает страницу OpenAPI
+2. "/file" - json файл данных OpenAPI
+
+## Использование
+
+### Простое добавление информации о запросе без указание возвращаемых и используемых данных
+
+```python
+from django.views import View
+from django.http import HttpResponse
+
+from openapi_django.openapi_utils.decorators import openapi
+
+class MyView(View):
+    @openapi()
+    def get(self, request):
+        html = "<html>Hello world</html>"
+        return HttpResponse(html)
+```
+
+### С указанием используемых данных 
+
+Поддерживаются переменные классов "pydantic" и "djantic")
+
+```python
+import json
+from typing import Optional, List
+from django.views import View
+from django.http import JsonResponse
+from djantic import ModelSchema
+from pydantic.main import BaseModel
+from pydantic.fields import Field
+
+from openapi_django.openapi_utils.decorators import openapi
+
+from test_app.models import MyModel
+
+
+class MyModelSchema(ModelSchema):
+    class Config:
+        model = MyModel
+
+
+class GetReturnClassSchema(BaseModel):
+    data: List[MyModelSchema] = Field(description="Список объектов")
+
+
+class ObjectReturnClassSchema(BaseModel):
+    data: MyModelSchema = Field(description="Данные нового объекта")
+
+
+class ParametersSchema(BaseModel):
+    name: Optional[str] = Field(description="Имя")
+    color: Optional[str] = Field(description="Любимый цвет")
+
+
+class PostBodySchema(BaseModel):
+    name: str = Field(description="Имя")
+    color: Optional[str] = Field(description="Любимый цвет")
+
+
+class PathParameterSchema(BaseModel):
+    param_path_id: int = Field(description="ID объекта")
+
+
+class MyModelsView(View):
+    @openapi(
+        description="Получение всех обьектов",
+        return_class=GetReturnClassSchema,
+        parameters=ParametersSchema)
+    def get(self, request):
+        items = MyModel.objects.filter(**request.GET.dict())
+        return JsonResponse(data={"data": [MyModelSchema.from_orm(item).dict() for item in items]})
+
+    @openapi(
+        description="Добавление обьекта",
+        return_class=ObjectReturnClassSchema,
+        body=PostBodySchema
+    )
+    def post(self, request):
+        item = MyModel(**json.loads(request.body))
+        item.save()
+        return JsonResponse(data={"data": MyModelSchema.from_orm(item).dict()})
+
+
+class MyModelView(View):
+    @openapi(
+        description="Получение данных объекта",
+        return_class=ObjectReturnClassSchema,
+        path_parameters=PathParameterSchema
+    )
+    def get(self, request, param_path_id):
+        item = MyModel.objects.get(pk=param_path_id)
+        return JsonResponse(data={"data": MyModelSchema.from_orm(item).dict()})
+```
+
+
