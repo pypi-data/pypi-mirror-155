@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/cw_torch/__init__.py
+src/cw_torch/metric.py
+src/cw_torch.egg-info/PKG-INFO
+src/cw_torch.egg-info/SOURCES.txt
+src/cw_torch.egg-info/dependency_links.txt
+src/cw_torch.egg-info/requires.txt
+src/cw_torch.egg-info/top_level.txt
