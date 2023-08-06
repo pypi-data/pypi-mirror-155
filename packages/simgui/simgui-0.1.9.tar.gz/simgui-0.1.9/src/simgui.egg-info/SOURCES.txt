@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/simgui/__init__.py
+src/simgui/mockaudio.py
+src/simgui.egg-info/PKG-INFO
+src/simgui.egg-info/SOURCES.txt
+src/simgui.egg-info/dependency_links.txt
+src/simgui.egg-info/requires.txt
+src/simgui.egg-info/top_level.txt
