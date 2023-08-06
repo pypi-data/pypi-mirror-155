@@ -1,0 +1,15 @@
+LICENSE.txt
+README.md
+setup.cfg
+setup.py
+ghcr_badge/__init__.py
+ghcr_badge/dicts.py
+ghcr_badge/generate.py
+ghcr_badge/main.py
+ghcr_badge/server.py
+ghcr_badge.egg-info/PKG-INFO
+ghcr_badge.egg-info/SOURCES.txt
+ghcr_badge.egg-info/dependency_links.txt
+ghcr_badge.egg-info/entry_points.txt
+ghcr_badge.egg-info/requires.txt
+ghcr_badge.egg-info/top_level.txt
