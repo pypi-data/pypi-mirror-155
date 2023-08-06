@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: Fliicoin
+Version: 0.1.5
+Summary: Useful API commands to interact with the fliicoin network.
+Home-page: https://github.com/Fliicoin/Fliicoin-API
+Download-URL: https://pypi.org/project/Fliicoin-API/
+Author: Fliicoin
+Author-email: admin@fliicoin.com
+License: MIT
+Keywords: Fliicoin,Flii,Fliic,Fliicoin.com,Fliicoin api,Flii api
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+
+Welcome to the Fliicoin API!
+
+0.1.4: Added mining to the api
+0.1.1: Fix my broken code
+0.1.0: Initial commit.
