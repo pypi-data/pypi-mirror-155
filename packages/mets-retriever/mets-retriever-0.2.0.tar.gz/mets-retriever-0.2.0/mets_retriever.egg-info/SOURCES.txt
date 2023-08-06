@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+mets_retriever/__init__.py
+mets_retriever/cli.py
+mets_retriever/mets_retriever.py
+mets_retriever.egg-info/PKG-INFO
+mets_retriever.egg-info/SOURCES.txt
+mets_retriever.egg-info/dependency_links.txt
+mets_retriever.egg-info/entry_points.txt
+mets_retriever.egg-info/requires.txt
+mets_retriever.egg-info/top_level.txt
