@@ -1,0 +1,38 @@
+Metadata-Version: 2.1
+Name: tabcmd
+Version: 2.0.5
+Summary: A command line client for working with Tableau Server.
+Home-page: https://github.com/tableau/tabcmd
+Author: Tableau
+Author-email: github@tableau.com
+License: MIT
+Requires-Python: >=3.7
+License-File: LICENSE
+Requires-Dist: polling2
+Requires-Dist: requests (<3.0,>=2.11)
+Requires-Dist: tableauserverclient (>=0.19)
+Requires-Dist: urllib3 (<2.0,>=1.24.3)
+Provides-Extra: build
+Requires-Dist: appdirs ; extra == 'build'
+Requires-Dist: black ; extra == 'build'
+Requires-Dist: mypy ; extra == 'build'
+Requires-Dist: pyinstaller-versionfile ; extra == 'build'
+Requires-Dist: types-appdirs ; extra == 'build'
+Requires-Dist: types-mock ; extra == 'build'
+Requires-Dist: types-requests ; extra == 'build'
+Provides-Extra: localize
+Requires-Dist: doit ; extra == 'localize'
+Requires-Dist: ftfy ; extra == 'localize'
+Provides-Extra: package
+Requires-Dist: doit ; extra == 'package'
+Requires-Dist: pyinstaller (>=5.1) ; extra == 'package'
+Requires-Dist: pyinstaller-versionfile ; extra == 'package'
+Provides-Extra: test
+Requires-Dist: mock ; extra == 'test'
+Requires-Dist: pytest ; extra == 'test'
+Requires-Dist: pytest-cov ; extra == 'test'
+Requires-Dist: pytest-order ; extra == 'test'
+Requires-Dist: pytest-runner ; extra == 'test'
+Requires-Dist: requests-mock (<2.0,>=1.0) ; extra == 'test'
+
+A command line client for working with Tableau Server.
