@@ -1,0 +1,8 @@
+[console_scripts]
+exec_nb = execnb.shell:exec_nb
+
+[mkdocs.plugins]
+rm_num_prefix = nbprocess.mkdocs:RmNumPrefix
+
+[nbprocess]
+execnb = execnb._modidx:d
