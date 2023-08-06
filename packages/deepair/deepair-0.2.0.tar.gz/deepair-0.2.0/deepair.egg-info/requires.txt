@@ -1,0 +1,15 @@
+gym
+numpy
+torch>=1.11
+cloudpickle
+pandas
+tqdm
+ipython
+pylint
+sphinx-material
+numpydoc
+nbsphinx
+recommonmark
+sphinx-markdown-tables
+sphinx_copybutton
+readthedocs-sphinx-search
