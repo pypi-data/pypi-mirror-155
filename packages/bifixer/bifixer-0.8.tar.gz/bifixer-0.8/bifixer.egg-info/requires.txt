@@ -1,0 +1,9 @@
+Unidecode
+ftfy>=6
+nltk>=3.5
+pytest
+regex
+xxhash>=2.0.0
+
+[loomchild]
+loomchild-segment==2.0.2
