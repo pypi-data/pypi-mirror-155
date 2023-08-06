@@ -1,0 +1,39 @@
+[tool.poetry]
+name = "rapptz-asqlite"
+version = "1.0.1"
+description = "A simple async wrapper for sqlite3"
+readme = "README.md"
+authors = ["Rapptz"]
+maintainers=["Seon82"]
+homepage="https://github.com/Rapptz/asqlite"
+repository="https://github.com/Rapptz/asqlite"
+license = "MIT"
+classifiers=[
+    'License :: OSI Approved :: MIT License',
+    'Intended Audience :: Developers',
+    'Natural Language :: English',
+    'Operating System :: OS Independent',
+    'Programming Language :: Python :: 3.5',
+    'Programming Language :: Python :: 3.6',
+    'Programming Language :: Python :: 3.7',
+    'Programming Language :: Python :: 3.8',
+    'Programming Language :: Python :: 3.9',
+]
+include = [
+    "LICENSE",
+]
+packages = [
+    { include = "asqlite" },
+]
+
+[tool.poetry.dependencies]
+python = ">=3.5"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.urls]
+"Issue Tracker"= "https://github.com/Rapptz/asqlite/issues/"
