@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: datecomputer
+Version: 2.0
+Summary: 时间计算器
+Home-page: UNKNOWN
+Author: Cooper
+Author-email: 734327367@qq.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: python-dateutil (>=2.8.2)
+
+UNKNOWN
+
