@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/easy_mvp/__init__.py
+src/easy_mvp/abstract_presenter.py
+src/easy_mvp/application_manager.py
+src/easy_mvp/exception.py
+src/easy_mvp/intent.py
+src/easy_mvp/window.py
+src/easy_mvp.egg-info/PKG-INFO
+src/easy_mvp.egg-info/SOURCES.txt
+src/easy_mvp.egg-info/dependency_links.txt
+src/easy_mvp.egg-info/requires.txt
+src/easy_mvp.egg-info/top_level.txt
