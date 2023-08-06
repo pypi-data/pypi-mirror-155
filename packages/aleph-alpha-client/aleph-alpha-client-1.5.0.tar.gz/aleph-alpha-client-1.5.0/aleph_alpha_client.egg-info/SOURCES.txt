@@ -1,0 +1,17 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+aleph_alpha_client/__init__.py
+aleph_alpha_client/aleph_alpha_client.py
+aleph_alpha_client/document.py
+aleph_alpha_client/explanation.py
+aleph_alpha_client/image.py
+aleph_alpha_client/prompt.py
+aleph_alpha_client/utils.py
+aleph_alpha_client/version.py
+aleph_alpha_client.egg-info/PKG-INFO
+aleph_alpha_client.egg-info/SOURCES.txt
+aleph_alpha_client.egg-info/dependency_links.txt
+aleph_alpha_client.egg-info/requires.txt
+aleph_alpha_client.egg-info/top_level.txt
