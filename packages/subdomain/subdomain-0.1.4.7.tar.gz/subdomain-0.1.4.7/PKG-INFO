@@ -1,0 +1,68 @@
+Metadata-Version: 2.1
+Name: subdomain
+Version: 0.1.4.7
+Summary: 这是一个使用异步协程的子域名爆破工具。
+Home-page: https://github.com/HotSec/subdomain
+Author: zmf96
+Author-email: zmf96@qq.com
+Requires-Python: >=3.8,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: IPy (>=1.01,<2.0)
+Requires-Dist: aiodns (>=3.0.0,<4.0.0)
+Requires-Dist: autopep8 (>=1.6.0,<2.0.0)
+Requires-Dist: cp-common (>=0.1.2,<0.2.0)
+Requires-Dist: loguru (>=0.6.0,<0.7.0)
+Requires-Dist: pytest (>=5.2,<6.0)
+Project-URL: Repository, https://github.com/HotSec/subdomain
+Description-Content-Type: text/markdown
+
+<!--
+ * @Version: 0.1
+ * @Autor: zmf96
+ * @Email: zmf96@qq.com
+ * @Date: 2022-02-21 08:41:27
+ * @LastEditors: zmf96
+ * @LastEditTime: 2022-02-22 03:49:57
+ * @FilePath: /README.md
+ * @Description: 
+-->
+# subdomain
+使用异步协程的子域名爆破工具
+
+采用cname与黑名单ip的方式来处理泛解析.
+
+## 安装
+
+python3.8.10 
+
+```bash
+git clone https://github.com/HotSec/subdomain
+cd subdomain
+pip3 install poetry
+poetry install
+poetry shell
+
+python subdomain/subdomain.py -h
+```
+## usage
+
+```bash
+usage: subdomain.py [-h] [-v] [-f FILE] -d DOMAIN [-s DEEP]
+
+使用aiodns爆破子域名
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -v, --version         show program's version number and exit
+  -f FILE, --file FILE  指定字典文件
+  -d DOMAIN, --domain DOMAIN
+                        目标域名
+  -s DEEP, --deep DEEP  域名深度,默认 1
+```
+
+## Thanks
+
+subdomain在[subdns](https://github.com/ldbfpiaoran/subdns.git)的基础上进行开发的.
