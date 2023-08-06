@@ -1,0 +1,109 @@
+Metadata-Version: 2.1
+Name: streamlit-gosling
+Version: 0.1.0
+Summary: Gosling custom component for Streamlit
+Home-page: https://github.com/gosling-lang/streamlit-gosling
+Author: Qianwen Wang
+Author-email: qianwen.april.wang@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: streamlit (>=0.63)
+Requires-Dist: gosling (>=0.0.8)
+
+# Streamlit - Gosling
+
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)]()
+
+A Streamlit component to display [Genomic Visualization using Gosling](http://gosling-lang.org).
+
+
+## Install
+
+```shell script
+pip install streamlit-gosling
+```
+
+## Usage
+
+
+
+```python
+import streamlit as st
+import gosling as gos
+from streamlit_gosling import streamlit_gosling as st_gos
+
+size = 500
+data = gos.matrix("https://server.gosling-lang.org/api/v1/tileset_info/?d=leung2015-hg38")
+# data = gos.matrix('/path/to/dataset.cool') # local dataset
+
+@st.cache
+def chart():
+    return gos.Track(data).mark_bar().encode(
+    x=gos.X("xs:G", axis="bottom"),
+    xe="xe:G",
+    y=gos.Y("ys:G", axis="left"),
+    ye="ye:G",
+    color=gos.Color("value:Q", range="hot", legend=True),
+    ).properties(width=size, height=size).view()
+
+st_gos(spec=chart(), id='id', height=size+ 100)
+
+```
+
+## API
+
+### st_echarts API
+
+```
+st_gos(
+    id: string,
+    spec: a gosling visualization object
+    height: number
+)
+```
+
+
+## Development
+
+### Install
+
+- JS side
+
+```shell script
+cd frontend
+npm install
+```
+
+- Python side
+
+```shell script
+conda create -n streamlit-gosling python=3.7
+conda activate streamlit-gosling
+pip install -e .
+```
+
+### Run
+
+You need to run both the JS side and the Python side for development mode.
+
+- JS side
+
+```shell script
+cd frontend
+npm run start
+```
+
+- Python side
+
+Demo example is on https://github.com/andfanilo/streamlit-echarts-demo.
+
+```shell script
+git clone https://github.com/andfanilo/streamlit-echarts-demo
+cd streamlit-echarts-demo/
+streamlit run app.py
+```
+
+
