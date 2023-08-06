@@ -1,0 +1,6 @@
+feedparser==6.0.8
+praw==6.4.0
+colorama==0.4.4
+pytest
+pytest-mock==3.7.0
+requests
