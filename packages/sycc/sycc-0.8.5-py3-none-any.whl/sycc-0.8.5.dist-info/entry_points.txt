@@ -1,0 +1,4 @@
+[console_scripts]
+get-pip = pip_check.get_pip:main
+sycc = sycc_.sycc:main
+
