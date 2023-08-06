@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: auth-lib-services
+Version: 0.0.4
+Summary: Library for token verification
+Home-page: UNKNOWN
+Author: Sachikia
+Author-email: UNKNOWN
+License: MIT
+Platform: UNKNOWN
+Requires-Dist: requests
+Requires-Dist: djangorestframework
+Requires-Dist: djangorestframework-simplejwt
+
+UNKNOWN
+
+
