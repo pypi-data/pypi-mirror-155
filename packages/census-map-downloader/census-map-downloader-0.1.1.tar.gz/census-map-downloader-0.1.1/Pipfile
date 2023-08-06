@@ -1,0 +1,23 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+twine = "*"
+flake8 = "*"
+setuptools-scm = "*"
+pre-commit = "*"
+sphinx = "*"
+myst-parser = "*"
+jupyterlab = "*"
+descartes = "*"
+matplotlib = "*"
+
+[packages]
+geopandas = "*"
+us = "*"
+click = "*"
+
+[requires]
+python_version = "3.9"
