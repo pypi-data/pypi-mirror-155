@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: sane-python
+Version: 0.1.0
+Summary: Simple encoding of numeric arrays
+License: BSD3
+Author: Viktor Kronvall
+Author-email: viktor.kronvall@gmail.com
+Requires-Python: >=3.9,<4.0
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: numpy (>=1.22.3,<2.0.0)
