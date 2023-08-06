@@ -1,0 +1,3 @@
+[mkdocs.plugins]
+mkdocs-add-teaser = mkdocs_add_teaser_plugin.plugin:AddTeaserPlugin
+
