@@ -1,0 +1,3 @@
+RATES_CLASS = "NEMO_billing.rates.rates_class.DatabaseRates"
+DEFAULT_MISSED_RESERVATION_FLAT = True
+DEFAULT_TOOL_CONTROL_COLLAPSED_RATE = True
