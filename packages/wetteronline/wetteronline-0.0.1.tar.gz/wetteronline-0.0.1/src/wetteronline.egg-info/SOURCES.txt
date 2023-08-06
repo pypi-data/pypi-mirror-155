@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/wetteronline/__init__.py
+src/wetteronline/api.py
+src/wetteronline.egg-info/PKG-INFO
+src/wetteronline.egg-info/SOURCES.txt
+src/wetteronline.egg-info/dependency_links.txt
+src/wetteronline.egg-info/top_level.txt
