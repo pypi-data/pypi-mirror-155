@@ -1,0 +1,40 @@
+[
+  {
+    "name": "Waveform_1550_100",
+    "data": {
+      "center_wavelength": 1.55,
+      "wavelength_span": 0.1
+    },
+    "public": false,
+    "id": 1
+  }, 
+  
+  {
+    "name": "Waveform_1310_60",
+    "data": {
+      "bandwidth": 57.242321592234134,
+      "center_frequency": 228.96928636893654,
+      "center_wavelength": 1.31,
+      "frequency_span": 10.487142887126879,
+      "frequency_start": 223.7257149253731,
+      "frequency_stop": 234.21285781249998,
+      "offset": 21.9203431148254,
+      "pulselength": 23.169746895415955,
+      "wavelength_span": 0.06,
+      "wavelength_start": 1.28,
+      "wavelength_stop": 1.34
+    },
+    "public": false,
+    "id": 2
+  },
+
+  {
+    "name": "Waveform_1310_100",
+    "data": {
+      "center_wavelength": 1.31,
+      "wavelength_span": 0.1
+    },
+    "public": false,
+    "id": 3
+  } 
+]

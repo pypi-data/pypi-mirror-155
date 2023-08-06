@@ -1,0 +1,248 @@
+[
+    {
+        "mesh_order": "2", 
+        "name": "Air", 
+        "table_data": {
+            "Lossless Material_indexes": {
+                "anisotropy": 0, 
+                "1.55e-06": [
+                    1.0, 
+                    0.0, 
+                    0.0
+                ], 
+                "table_head": [
+                    {
+                        "type": "wavelength_frequency", 
+                        "name": "Wavelength (\\u03bcm)"
+                    }, 
+                    {
+                        "type": "re", 
+                        "name": "Re (index)"
+                    }, 
+                    {
+                        "type": "im", 
+                        "name": "Im (index)"
+                    }, 
+                    {
+                        "type": "conductivity", 
+                        "name": "Conductivity"
+                    }
+                ]
+            }
+        }, 
+        "color": "abced8", 
+        "data": {
+            "conductivity": 0
+        }, 
+        "id": 0, 
+        "type": "Lossless Material", 
+        "public": false, 
+        "dispersionflag": 1, 
+        "temperature": 300.0
+    }, 
+    {
+        "name": "SiO2", 
+        "color": "a0d8ef",
+        "type": "List data", 
+        "public": "False", 
+        "table_data": {
+            "List data_indexes": {
+                "anisotropy": 0, 
+                "1.55e-06": [
+                    1.444, 
+                    0, 
+                    0
+                ], 
+                "table_head": [
+                    {
+                        "type": "wavelength_frequency", 
+                        "name": "Wavelength (\\u03bcm)"
+                    }, 
+                    {
+                        "type": "re", 
+                        "name": "Re (index)"
+                    }, 
+                    {
+                        "type": "im", 
+                        "name": "Im (index)"
+                    }, 
+                    {
+                        "type": "conductivity", 
+                        "name": "Conductivity"
+                    }
+                ]
+            }
+        }, 
+        "mesh_order": "2", 
+        "data": {
+            "conductivity": 0
+        }, 
+        "id": 0, 
+        "dispersionflag": 1, 
+        "temperature": 300.0
+    }, 
+    {
+        "name": "SiO2_SSC", 
+        "color": "a0d8ef",
+        "type": "List data", 
+        "public": "False", 
+        "table_data": {
+            "List data_indexes": {
+                "anisotropy": 0, 
+                "1.55e-06": [
+                    1.465, 
+                    0, 
+                    0
+                ], 
+                "table_head": [
+                    {
+                        "type": "wavelength_frequency", 
+                        "name": "Wavelength (\\u03bcm)"
+                    }, 
+                    {
+                        "type": "re", 
+                        "name": "Re (index)"
+                    }, 
+                    {
+                        "type": "im", 
+                        "name": "Im (index)"
+                    }, 
+                    {
+                        "type": "conductivity", 
+                        "name": "Conductivity"
+                    }
+                ]
+            }
+        }, 
+        "mesh_order": "2", 
+        "data": {
+            "conductivity": 0
+        }, 
+        "id": 0, 
+        "dispersionflag": 1, 
+        "temperature": 300.0
+    },
+    {
+        "name": "SiON", 
+        "color": "abced8", 
+        "type": "List data", 
+        "public": "False", 
+        "table_data": {
+            "List data_indexes": {
+                "anisotropy": 0, 
+                "1.55e-06": [
+                    1.50, 
+                    0, 
+                    0
+                ], 
+                "table_head": [
+                    {
+                        "type": "wavelength_frequency", 
+                        "name": "Wavelength (\\u03bcm)"
+                    }, 
+                    {
+                        "type": "re", 
+                        "name": "Re (index)"
+                    }, 
+                    {
+                        "type": "im", 
+                        "name": "Im (index)"
+                    }, 
+                    {
+                        "type": "conductivity", 
+                        "name": "Conductivity"
+                    }
+                ]
+            }
+        }, 
+        "mesh_order": "2", 
+        "data": {
+            "conductivity": 0
+        }, 
+        "id": 0, 
+        "dispersionflag": 1, 
+        "temperature": 300.0
+    },
+    {
+        "name": "Si", 
+        "color": "999999", 
+        "type": "List data", 
+        "public": "False", 
+        "table_data": {
+            "List data_indexes": {
+                "anisotropy": 0, 
+                "1.55e-06": [
+                    3.472, 
+                    0, 
+                    0
+                ], 
+                "table_head": [
+                    {
+                        "type": "wavelength_frequency", 
+                        "name": "Wavelength (\\u03bcm)"
+                    }, 
+                    {
+                        "type": "re", 
+                        "name": "Re (index)"
+                    }, 
+                    {
+                        "type": "im", 
+                        "name": "Im (index)"
+                    }, 
+                    {
+                        "type": "conductivity", 
+                        "name": "Conductivity"
+                    }
+                ]
+            }
+        }, 
+        "mesh_order": "2", 
+        "data": {
+            "conductivity": 0
+        }, 
+        "id": 0, 
+        "dispersionflag": 1, 
+        "temperature": 300.0
+    },
+    {
+        "name": "Si_SSC", 
+        "color": "999999", 
+        "type": "List data", 
+        "public": "False", 
+        "table_data": {
+            "List data_indexes": {
+                "anisotropy": 0, 
+                "1.55e-06": [
+                    3.476, 
+                    0, 
+                    0
+                ], 
+                "table_head": [
+                    {
+                        "type": "wavelength_frequency", 
+                        "name": "Wavelength (\\u03bcm)"
+                    }, 
+                    {
+                        "type": "re", 
+                        "name": "Re (index)"
+                    }, 
+                    {
+                        "type": "im", 
+                        "name": "Im (index)"
+                    }, 
+                    {
+                        "type": "conductivity", 
+                        "name": "Conductivity"
+                    }
+                ]
+            }
+        }, 
+        "mesh_order": "2", 
+        "data": {
+            "conductivity": 0
+        }, 
+        "id": 0, 
+        "dispersionflag": 1, 
+        "temperature": 300.0
+    }
+]

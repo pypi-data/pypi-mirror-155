@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: maxoptics-cloud-sdk
+Version: 0.9.2.620.1332
+Author: MaxOptics
+Author-email: raojin@max-optics.com
+Platform: any
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: requests
+Requires-Dist: matplotlib
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: pyyaml
+Requires-Dist: gdspy
+Requires-Dist: python-socketio
+Requires-Dist: aiohttp (==3.8.1)
+Requires-Dist: toml
+
