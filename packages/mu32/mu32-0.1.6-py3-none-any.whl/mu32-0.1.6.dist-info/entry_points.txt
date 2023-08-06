@@ -1,0 +1,8 @@
+[console_scripts]
+mu32-autotest = mu32.examples.mu32autotest:main
+mu32-doa = mu32.examples.mu32doa:main
+mu32-play = mu32.examples.mu32play:main
+mu32-run = mu32.examples.mu32run:main
+mu32-server = mu32.apps.mu32server:async_main
+mu32-usbcheck = mu32.apps.mu32usbcheck:main
+muH5-check = mu32.apps.muH5check:main
