@@ -1,0 +1,17 @@
+LICENSE.txt
+MANIFEST.in
+README.md
+setup.py
+TxtStyle.egg-info/PKG-INFO
+TxtStyle.egg-info/SOURCES.txt
+TxtStyle.egg-info/dependency_links.txt
+TxtStyle.egg-info/entry_points.txt
+TxtStyle.egg-info/top_level.txt
+txtstyle/__init__.py
+txtstyle/confparser.py
+txtstyle/linestyleprocessor.py
+txtstyle/palette.py
+txtstyle/transformer.py
+txtstyle/txts.py
+txtstyle/txtsconf.py
+txtstyle/version.py
