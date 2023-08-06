@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: rr-psychology
+Version: 2.1
+Summary: rr-psychology
+Home-page: https://upload.pypi.org/legacy/
+Author: YA
+Author-email: ya@gmail.com
+License: MIT
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: rr-base (==2.6)
+
+# rr-psychology
+
