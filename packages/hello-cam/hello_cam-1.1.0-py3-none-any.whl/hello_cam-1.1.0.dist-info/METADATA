@@ -1,0 +1,40 @@
+Metadata-Version: 2.1
+Name: hello-cam
+Version: 1.1.0
+Summary: simple example of packaging code
+Home-page: https://github.com/nguyentientungduong
+Author: Duong
+Author-email: nguyentientungduong@gmail.com
+License: MIT
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: click
+Requires-Dist: requests
+Requires-Dist: PyGithub (==1.53.0)
+
+
+# Cam
+> Example of using [dev containers](https://code.visualstudio.com/docs/remote/containers) in VS code editor
+
+## Set up
+1. Install Docker
+2. Install VS code
+3. Insatll VS [extensions](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)
+4. Create configuration file .devcontainer/devcontainer.json
+
+## Usage
+
+SomeThink
+
+---
+## Useful extensions:
+* njpwerner.autodocstring - VSCode Python Docstring Generator
+* ms-python.python - Python extension for Visual Studio Code
+* redhat.vscode-yaml - YAML Language Support by Red Hat
+* mohsen1.prettify-json - Prettify ugly JSON inside VSCode
+* ms-azuretools.vscode-docker - The Docker extension
+* CoenraadS.bracket-pair-colorizer - Bracket Pair Colorizer
+* mutantdino.resourcemonitor - Resource Monitor
