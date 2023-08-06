@@ -1,0 +1,2 @@
+[console_scripts]
+localise_assets = migration.migrater:main
