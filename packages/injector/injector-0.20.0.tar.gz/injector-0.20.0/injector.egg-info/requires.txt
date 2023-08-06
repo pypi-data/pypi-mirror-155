@@ -1,0 +1,15 @@
+
+[:python_version < "3.9"]
+typing_extensions>=3.7.4
+
+[dev]
+pytest
+pytest-cov>=2.5.1
+check-manifest
+
+[dev:implementation_name == "cpython"]
+mypy
+black
+
+[dev:python_version < "3.7"]
+dataclasses
