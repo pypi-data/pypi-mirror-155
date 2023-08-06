@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>OpenedProjectFrame</class>
+ <widget class="QFrame" name="OpenedProjectFrame">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>986</width>
+    <height>740</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string notr="true">Project Open</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <layout class="QVBoxLayout" name="mainLayout">
+     <item>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="2">
+        <widget class="QLabel" name="genderLabel">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Gender</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="3">
+        <widget class="QLineEdit" name="accentEdit">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="clientIdEdit"/>
+       </item>
+       <item row="0" column="3">
+        <widget class="QComboBox" name="genderInput">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <item>
+          <property name="text">
+           <string notr="true"/>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Male</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Female</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Other</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>[Multiple]</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QLabel" name="accentLabel">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Accent</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="ageLabel">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Age</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QComboBox" name="ageInput">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="clientIdLabel">
+         <property name="text">
+          <string>Client ID</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="4">
+        <widget class="QPushButton" name="importButton">
+         <property name="toolTip">
+          <string>Import a text file exported from the CommonVoice website</string>
+         </property>
+         <property name="text">
+          <string>Import Profile</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="4">
+        <widget class="QPushButton" name="markUnchangedButton">
+         <property name="toolTip">
+          <string>Marks the selected annotations as not modified, removing the green higlight.</string>
+         </property>
+         <property name="text">
+          <string>Mark Unchanged</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QTextEdit" name="annotationEdit"/>
+     </item>
+     <item>
+      <widget class="AudioPlaybackWidget" name="audioPlaybackWidget"/>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="sampleArea">
+     <item>
+      <widget class="QLabel" name="sampleTitle">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>Samples</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QListView" name="annotationList">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>160</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="selectionMode">
+        <enum>QAbstractItemView::ExtendedSelection</enum>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>AudioPlaybackWidget</class>
+   <extends>QFrame</extends>
+   <header>.audio_playback_widget</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>ageInput</tabstop>
+  <tabstop>genderInput</tabstop>
+  <tabstop>importButton</tabstop>
+  <tabstop>clientIdEdit</tabstop>
+  <tabstop>accentEdit</tabstop>
+  <tabstop>markUnchangedButton</tabstop>
+  <tabstop>annotationEdit</tabstop>
+  <tabstop>annotationList</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../resources.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>annotationEdit</sender>
+   <signal>textChanged()</signal>
+   <receiver>OpenedProjectFrame</receiver>
+   <slot>text_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>255</x>
+     <y>169</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>0</x>
+     <y>163</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>importButton</sender>
+   <signal>clicked()</signal>
+   <receiver>OpenedProjectFrame</receiver>
+   <slot>import_profile_pressed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>692</x>
+     <y>43</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1126</x>
+     <y>138</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ageInput</sender>
+   <signal>activated(int)</signal>
+   <receiver>OpenedProjectFrame</receiver>
+   <slot>age_selected(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>181</x>
+     <y>45</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>0</x>
+     <y>108</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>genderInput</sender>
+   <signal>activated(int)</signal>
+   <receiver>OpenedProjectFrame</receiver>
+   <slot>gender_selected(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>542</x>
+     <y>34</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1062</x>
+     <y>279</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>accentEdit</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>OpenedProjectFrame</receiver>
+   <slot>accent_changed(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>542</x>
+     <y>86</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1047</x>
+     <y>193</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>clientIdEdit</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>OpenedProjectFrame</receiver>
+   <slot>client_id_changed(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>211</x>
+     <y>69</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>280</x>
+     <y>0</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>markUnchangedButton</sender>
+   <signal>clicked()</signal>
+   <receiver>OpenedProjectFrame</receiver>
+   <slot>mark_unchanged_pressed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>614</x>
+     <y>75</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>556</x>
+     <y>830</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>previous_pressed()</slot>
+  <slot>next_pressed()</slot>
+  <slot>sound_selected(int)</slot>
+  <slot>text_changed()</slot>
+  <slot>import_profile_pressed()</slot>
+  <slot>age_selected(int)</slot>
+  <slot>gender_selected(int)</slot>
+  <slot>accent_changed(QString)</slot>
+  <slot>annotation_selected(QModelIndex)</slot>
+  <slot>client_id_changed(QString)</slot>
+  <slot>play_pause_pressed()</slot>
+  <slot>mark_unchanged_pressed()</slot>
+  <slot>metadata_changed(QString)</slot>
+ </slots>
+</ui>
