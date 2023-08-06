@@ -1,0 +1,40 @@
+Metadata-Version: 2.1
+Name: buildbot-fossil
+Version: 1.1
+Summary: Fossil version control plugin for Buildbot
+Home-page: https://github.com/stoklund/buildbot-fossil
+License: GPL-2.0-only
+Keywords: Buildbot,Fossil SCM
+Author: Jakob Stoklund Olesen
+Author-email: stoklund@2pi.dk
+Requires-Python: >=3.6,<4.0
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU General Public License v2 (GPLv2)
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: Topic :: Software Development :: Testing
+Requires-Dist: buildbot (>=3,<4)
+Requires-Dist: treq (>=20)
+Project-URL: Documentation, https://buildbot-fossil.readthedocs.io/
+Project-URL: Repository, https://github.com/stoklund/buildbot-fossil
+Description-Content-Type: text/markdown
+
+# Fossil plugin for Buildbot
+
+[![Documentation Status](https://readthedocs.org/projects/buildbot-fossil/badge/?version=latest)](https://buildbot-fossil.readthedocs.io/en/latest/?badge=latest)
+
+[Fossil](https://fossil-scm.org/) is a software configuration management system.
+This [Buildbot](https://buildbot.net) plugin provides two classes to use in
+`master.cfg`:
+
+1. `changes.FossilPoller` polls a Fossil HTTP server for new checkins.
+
+2. `steps.Fossil` checks out a source revision from a Fossil repo before a build.
+
+

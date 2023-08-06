@@ -1,0 +1,6 @@
+[buildbot.changes]
+FossilPoller=buildbot_fossil.changes:FossilPoller
+
+[buildbot.steps]
+Fossil=buildbot_fossil.steps:Fossil
+
