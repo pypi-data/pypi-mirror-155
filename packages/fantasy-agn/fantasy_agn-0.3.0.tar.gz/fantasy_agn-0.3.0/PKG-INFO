@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: fantasy-agn
+Version: 0.3.0
+Summary: 
+Author: Nemanja
+Author-email: rakinemanja@gmail.com
+Requires-Python: >=3.7,<3.11
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: PyAstronomy (==0.17.1)
+Requires-Dist: RegscorePy (==1.1)
+Requires-Dist: astropy (>4.3.1)
+Requires-Dist: matplotlib (==3.4.3)
+Requires-Dist: natsort (==8.1.0)
+Requires-Dist: numpy (>1.20.3)
+Requires-Dist: pandas (==1.3.4)
+Requires-Dist: scikit-learn (==1.0.2)
+Requires-Dist: scipy (>=1.8.0,<2.0.0)
+Requires-Dist: sfdmap (==0.1.1)
+Requires-Dist: sherpa (==4.14.0)
+Requires-Dist: spectres (==2.1.1)
