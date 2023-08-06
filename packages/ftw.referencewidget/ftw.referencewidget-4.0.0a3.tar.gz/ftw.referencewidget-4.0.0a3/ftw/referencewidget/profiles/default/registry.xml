@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<registry>
+    <records interface="ftw.referencewidget.interfaces.IReferenceSettings" />
+
+    <records prefix="plone.bundles/referencewidget" interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+        <value key="enabled">True</value>
+        <value key="expression">python: member is not None</value>
+        <value key="jscompilation">++resource++ftw.referencewidget/dist/referencewidget-remote.min.js</value>
+        <value key="csscompilation"></value>
+        <value key="load_async">False</value>
+        <value key="load_defer">False</value>
+    </records>
+</registry>
