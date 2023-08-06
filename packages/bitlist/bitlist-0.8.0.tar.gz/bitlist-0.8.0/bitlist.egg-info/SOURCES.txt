@@ -1,0 +1,12 @@
+LICENSE
+README.rst
+setup.cfg
+setup.py
+bitlist/__init__.py
+bitlist/bitlist.py
+bitlist.egg-info/PKG-INFO
+bitlist.egg-info/SOURCES.txt
+bitlist.egg-info/dependency_links.txt
+bitlist.egg-info/requires.txt
+bitlist.egg-info/top_level.txt
+test/test_bitlist.py
