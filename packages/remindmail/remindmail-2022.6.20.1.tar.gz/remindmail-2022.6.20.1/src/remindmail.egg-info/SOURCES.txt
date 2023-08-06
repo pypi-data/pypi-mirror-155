@@ -1,0 +1,15 @@
+LICENSE.md
+README.md
+pyproject.toml
+setup.cfg
+src/remind/__init__.py
+src/remind/__main__.py
+src/remind/client.py
+src/remind/client_utils.py
+src/remind/remind.py
+src/remind/reminder_struc.py
+src/remindmail.egg-info/PKG-INFO
+src/remindmail.egg-info/SOURCES.txt
+src/remindmail.egg-info/dependency_links.txt
+src/remindmail.egg-info/entry_points.txt
+src/remindmail.egg-info/top_level.txt
