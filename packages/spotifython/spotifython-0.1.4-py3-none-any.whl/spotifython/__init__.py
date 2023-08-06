@@ -1,0 +1,44 @@
+# -*- coding: utf-8 -*-
+
+"""
+Spotify API Wrapper
+~~~~~~~~~~~~~~~~~~~
+
+A basic wrapper for the Spotify API.
+
+:copyright: (c) 2022-present VAWVAW
+:license: MIT, see LICENSE for more details.
+
+"""
+
+__title__ = 'spotifython'
+__author__ = 'VAWVAW'
+__license__ = 'MIT'
+__copyright__ = 'Copyright 2022-present VAWVAW'
+__version__ = '0.1.4'
+
+# noinspection PyUnboundLocalVariable
+__path__ = __import__('pkgutil').extend_path(__path__, __name__)
+
+from collections import namedtuple
+import logging
+
+from .client import Client
+from .authentication import Authentication
+from .user import User
+from .errors import SpotifyException, BadRequestException, InvalidTokenException, ForbiddenException, NotFoundException, NotModified, InternalServerError, InvalidTokenData
+from .scope import Scope
+from .playlist import Playlist
+from .track import Track
+from .uri import URI
+from .album import Album
+from .artist import Artist
+from .episode import Episode
+from .show import Show
+from .abc import Playable, PlayContext, Cacheable
+
+VersionInfo = namedtuple('VersionInfo', 'major minor micro releaselevel serial')
+
+version_info = VersionInfo(major=0, minor=1, micro=3, releaselevel='development', serial=0)
+
+logging.getLogger(__name__).addHandler(logging.NullHandler())
