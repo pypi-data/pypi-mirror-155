@@ -1,0 +1,1 @@
+vbspython is a simple package that makes you interact with visual basic script in python.
