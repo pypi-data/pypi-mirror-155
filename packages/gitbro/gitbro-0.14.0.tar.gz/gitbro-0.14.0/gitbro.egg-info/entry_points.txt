@@ -1,0 +1,11 @@
+[console_scripts]
+giad = gitbro.giad.main:run
+gibk = gitbro.gibk.main:run
+gibr = gitbro.gibr.main:run
+gicm = gitbro.gicm.main:run
+gidf = gitbro.gidf.main:run
+gilg = gitbro.gilg.main:run
+gime = gitbro.gime.main:run
+gipx = gitbro.gipx.main:run
+gist = gitbro.gist.main:run
+gitbro = gitbro.mock.main:run
