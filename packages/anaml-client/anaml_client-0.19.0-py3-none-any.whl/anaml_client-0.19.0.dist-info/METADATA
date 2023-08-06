@@ -1,0 +1,50 @@
+Metadata-Version: 2.1
+Name: anaml-client
+Version: 0.19.0
+Summary: Python SDK for Anaml
+Home-page: https://anaml.com
+Author: Simple Machines
+Author-email: hello@simplemachines.com.au
+License: Copyright 2020 Simple Machines Pty Ltd. All Rights Reserved
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: License :: Other/Proprietary License
+Requires-Python: >=3.7.10
+Description-Content-Type: text/markdown
+Requires-Dist: isodate
+Requires-Dist: jsonschema
+Requires-Dist: requests
+Provides-Extra: aws
+Requires-Dist: s3fs ; extra == 'aws'
+Provides-Extra: google
+Requires-Dist: gcsfs ; extra == 'google'
+Requires-Dist: google-cloud-bigquery[bqstorage,pandas] ; extra == 'google'
+Provides-Extra: pandas
+Requires-Dist: numpy ; extra == 'pandas'
+Requires-Dist: pandas (>=0.24scipy) ; extra == 'pandas'
+Provides-Extra: plotting
+Requires-Dist: matplotlib ; extra == 'plotting'
+Requires-Dist: pandas (>=0.24seaborn) ; extra == 'plotting'
+Provides-Extra: spark
+Requires-Dist: pyspark ; extra == 'spark'
+Provides-Extra: testing
+Requires-Dist: flake8 ; extra == 'testing'
+Requires-Dist: flake8-copyright ; extra == 'testing'
+Requires-Dist: flake8-docstrings ; extra == 'testing'
+Requires-Dist: hypothesis[zoneinfo] ; extra == 'testing'
+Requires-Dist: parameterized ; extra == 'testing'
+Requires-Dist: pyarrow ; extra == 'testing'
+Requires-Dist: pytest ; extra == 'testing'
+Requires-Dist: pyspark ; extra == 'testing'
+Requires-Dist: pandas (>=0.24) ; extra == 'testing'
+
+
+The Anaml Python SDK makes it easy to interact with the [Anaml][1] feature
+engineering platform from Python. The SDK provides datatypes and methods to
+interact with the Anaml REST API and to load Anaml feature data into Pandas
+and/or Spark data frames.
+
+[1]: https://www.anaml.com/
+
+
