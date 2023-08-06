@@ -1,0 +1,5 @@
+[console_scripts]
+lodquery = lodstorage.querymain:main
+sparqlquery = lodstorage.querymain:mainSPARQL
+sqlquery = lodstorage.querymain:mainSQL
+
