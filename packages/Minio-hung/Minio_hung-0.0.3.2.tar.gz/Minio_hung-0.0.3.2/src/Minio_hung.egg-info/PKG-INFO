@@ -1,0 +1,112 @@
+Metadata-Version: 2.1
+Name: Minio-hung
+Version: 0.0.3.2
+Summary: Makes you use Minio easier.
+Home-page: https://github.com/lyduchung2001/Minio
+Author: Ly Duc Hung
+Author-email: lyduchung2001@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+
+# Minio-hung: Print your buckets and .csv files from Minio
+## Powered by Ly Duc Hung (FPT Infomation System)
+
+### Bản update nho nhỏ bớt cục súc hơn & bớt mất dạy hơn (Còn nếu bạn chưa biết thì oke bỏ qua đi đừng quan tâm làm gì).
+
+# How to install?
+```
+pip install Minio-hung
+```
+## or
+
+Windows
+```
+py -m pip install Minio-hung
+```
+Linux/Mac OS
+```
+python3 -m pip install Minio-hung
+```
+
+# What's in package?
+```
+minio_hung
+```
+
+# How to use Minio-hung?
+
+## You can use to one of codes below here:
+
+ACCESS_KEY: Access key in your Services Account.
+
+SECRET_KEY: Secret key in your Services Account.
+
+BUCKET_NAME: Your Bucket name.
+
+OBJECT_NAME: The Object name in your Bucket.
+
+## Print list buckets in Minio
+```
+#1
+import minio_hung
+
+minio_hung.read_list(ACCESS_KEY, PRIVATE_KEY)
+
+
+
+#2
+from minio_hung import read_list
+
+read_list(ACCESS_KEY, PRIVATE_KEY)
+
+```
+
+## Print .csv file from Minio
+```
+#1
+import minio_hung
+
+minio_hung.readcsv(ACCESS_KEY, SECRET_KEY, BUCKET_NAME, OBJECT_NAME)
+
+
+
+#2
+from minio_hung import readcsv
+
+readcsv(ACCESS_KEY, SECRET_KEY, BUCKET_NAME, OBJECT_NAME)
+
+```
+
+## Write file from Minio
+
+ACCESS_KEY: Access key in your Services Account.
+
+SECRET_KEY: Secret key in your Services Account.
+
+BUCKET_NAME_IN: Your Bucket name (INPUT).
+
+OBJECT_NAME_IN: The Object name in your Bucket (INPUT).
+
+BUCKET_NAME_OUT: Your Bucket name (OUTPUT).
+
+OBJECT_NAME_OUT: The Object name in your Bucket (OUTPUT).
+
+```
+#1
+import minio_hung
+
+minio_hung.writecsv(ACCESS_KEY,PRIVATE_KEY,BUCKET_NAME_IN,OBJECT_NAME_IN,BUCKET_NAME_OUT,OBJECT_NAME_OUT)
+
+
+
+#2
+from minio_hung import writecsv
+
+writecsv(ACCESS_KEY,PRIVATE_KEY,BUCKET_NAME_IN,OBJECT_NAME_IN,BUCKET_NAME_OUT,OBJECT_NAME_OUT)
+
+```
