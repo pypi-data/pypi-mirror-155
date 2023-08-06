@@ -1,0 +1,37 @@
+[bob.bio.annotator]
+energy-2gauss = bob.bio.spear.config.annotator.energy_2gauss:annotator
+energy-thr = bob.bio.spear.config.annotator.energy_thr:annotator
+external = bob.bio.spear.config.annotator.external:annotator
+mod-4hz = bob.bio.spear.config.annotator.mod_4hz:annotator
+
+[bob.bio.config]
+gmm-mobio = bob.bio.spear.config.pipeline.mfcc60_gmm_mobio
+gmm-voxforge = bob.bio.spear.config.pipeline.mfcc60_gmm_voxforge
+isv-voxforge = bob.bio.spear.config.pipeline.mfcc60_isv_voxforge
+mini-voxforge = bob.bio.spear.config.database.mini_voxforge
+voxforge = bob.bio.spear.config.database.voxforge
+
+[bob.bio.database]
+asvspoof-licit = bob.bio.spear.config.database.asvspoof:database_licit
+asvspoof-spoof = bob.bio.spear.config.database.asvspoof:database_spoof
+asvspoof2017-licit = bob.bio.spear.config.database.asvspoof2017:database_licit
+asvspoof2017-spoof = bob.bio.spear.config.database.asvspoof2017:database_spoof
+avspoof-licit = bob.bio.spear.config.database.avspoof:database_licit
+avspoof-spoof = bob.bio.spear.config.database.avspoof:database_spoof
+mini-voxforge = bob.bio.spear.config.database.mini_voxforge:database
+mobio-audio-female = bob.bio.spear.config.database.mobio_audio_female:database
+mobio-audio-male = bob.bio.spear.config.database.mobio_audio_male:database
+nist-sre04to16 = bob.bio.spear.config.database.nist_sre04to16:database
+timit = bob.bio.spear.config.database.timit:database
+voicepa-licit = bob.bio.spear.config.database.voicepa:database_licit
+voicepa-spoof = bob.bio.spear.config.database.voicepa:database_spoof
+voxforge = bob.bio.spear.config.database.voxforge:database
+
+[bob.bio.pipeline]
+gmm-voxforge = bob.bio.spear.config.pipeline.mfcc60_gmm_voxforge:pipeline
+isv-voxforge = bob.bio.spear.config.pipeline.mfcc60_isv_voxforge:pipeline
+speechbrain-ecapa-voxceleb = bob.bio.spear.config.pipeline.speechbrain_ecapa_voxceleb:pipeline
+
+[bob.db.cli]
+download-voxforge = bob.bio.spear.database.voxforge:download_voxforge
+
