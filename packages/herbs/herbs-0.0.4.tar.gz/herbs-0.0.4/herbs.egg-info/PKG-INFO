@@ -1,0 +1,60 @@
+Metadata-Version: 2.1
+Name: herbs
+Version: 0.0.4
+Summary: A Python-based GUI for Histological E-data Registration in Brain Space
+Home-page: https://github.com/JingyiGF/HERBS
+Author: Jingyi GF
+Author-email: jingyi.g.fuglstad@gmail.com
+Project-URL: Bug Tracker, https://github.com/JingyiGF/HERBS/issues
+Keywords: brain atlas,histological image registration,probe coordinates
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Topic :: Software Development
+Classifier: Topic :: Scientific/Engineering
+Classifier: Typing :: Typed
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+
+# HERBS
+A Python-based GUI for Histological E-data Registration in Brain Space
+
+
+## Install
+
+```python
+$ pip install herbs
+```
+
+## Usage
+
+```python
+import herbs
+run_herbs()
+```
+
+<img src="https://github.com/JingyiGF/HERBS/blob/main/image/herbs.jpg" width="800px"></img>
+
+### 
+Please report your issues: https://github.com/JingyiGF/HERBS/issues. Please have a good description (maybe a screenshot or an error message). Any feedback welcome!
+
+Please feel free to start any discussion: https://github.com/JingyiGF/HERBS/discussions.
+
+## Finally
+HERBS is 'always' in development, please check updates every time before you use it.
+
+
+Hope this tool makes your amazing research life more tasty,
+Mvh, Jingyi GF
