@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "cdk-static-site"
+version = "0.1.1"
+description = ""
+authors = ["David Steiner <david_j_steiner@yahoo.co.nz>"]
+packages = [{ include = "static_site" }]
+readme = "README.md"
+homepage = "https://github.com/davidsteiner/cdk-static-site"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+aws-cdk-lib = "^2.28"
+
+[tool.poetry.dev-dependencies]
+black = "^22.3.0"
+pre-commit = "^2.19.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
