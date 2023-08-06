@@ -1,0 +1,58 @@
+[tool.poetry]
+name = "pytest-embrace"
+version = "0.0.2-beta.6"
+description = "Use modern Python type hints to design expressive tests. Reject boilerplate. Embrace complexity."
+authors = ["Ainsley McGrath <mcgrath.ainsley@gmail.com>"]
+classifiers = [
+    "Framework :: Pytest",
+    "Topic :: Software Development :: Testing",
+    "Topic :: Software Development :: Testing :: Unit"
+]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+pytest = "^7.0"
+
+[tool.poetry.dev-dependencies]
+mypy = "^0.961"
+flake8 = "^4.0.1"
+black = "^22.3.0"
+isort = "^5.10.1"
+tox = "^3.25.0"
+
+[tool.poetry.plugins.pytest11]
+pytest_embrace = "pytest_embrace.plugin"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.mypy]
+disallow_untyped_defs = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+no_implicit_reexport = true
+
+[[tool.mypy.overrides]]
+module = "pytest"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "_pytest.fixtures"
+ignore_missing_imports = true
+
+[tool.isort]
+profile = "black"
+
+[tool.semantic_release]
+version_variable = [
+    "pytest_embrace/__init__.py:__version__",
+    "pyproject.toml:version"
+]
+build_command = "python -m pip install poetry && poetry build"
+branch = "master"
+upload_to_repository = true
+upload_to_release = false
+
+[tool.commitizen]
+tag_format = "$major.$minor.$patch-$prerelease"
