@@ -1,0 +1,4 @@
+include *spec
+include tox.ini
+graft tests
+global-exclude *.py[cod]
