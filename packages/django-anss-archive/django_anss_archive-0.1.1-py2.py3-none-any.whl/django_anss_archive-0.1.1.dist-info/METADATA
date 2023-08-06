@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: django-anss-archive
+Version: 0.1.1
+Summary: A Django application to archive real-time earthquake notifications from the USGS's Advanced National Seismic System
+Home-page: https://palewi.re/docs/django-anss-archive/
+Author: Ben Welsh
+Author-email: b@palewi.re
+License: MIT
+Project-URL: Maintainer, https://github.com/palewire
+Project-URL: Source, https://github.com/palewire/django-anss-archive
+Project-URL: Tracker, https://github.com/palewire/django-anss-archive/issues
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: License :: OSI Approved :: MIT License
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests
+
+### Links
+
+* Docs: [palewi.re/docs/django-anss-archive/](https://palewi.re/docs/django-anss-archive/)
+* Code: [github.com/datadesk/django-anss-archive](https://github.com/datadesk/django-anss-archive/)
+* Issues: [github.com/datadesk/django-anss-archive/issues](https://github.com/datadesk/django-anss-archive/issues)
+* Packaging: [pypi.python.org/pypi/django-anss-archive](https://pypi.python.org/pypi/django-anss-archive)
+* Testing: [github.com/datadesk/django-anss-archive/actions](https://github.com/datadesk/django-anss-archive/actions)
