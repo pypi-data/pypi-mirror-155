@@ -1,0 +1,16 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+dmg_reads/__init__.py
+dmg_reads/__main__.py
+dmg_reads/_version.py
+dmg_reads/defaults.py
+dmg_reads/lib.py
+dmg_reads/utils.py
+dmg_reads.egg-info/PKG-INFO
+dmg_reads.egg-info/SOURCES.txt
+dmg_reads.egg-info/dependency_links.txt
+dmg_reads.egg-info/entry_points.txt
+dmg_reads.egg-info/requires.txt
+dmg_reads.egg-info/top_level.txt
