@@ -1,0 +1,2 @@
+[console_scripts]
+pybind11_weaver = pybind11_weaver.main:main

@@ -1,0 +1,16 @@
+.gitignore
+LICENSE
+MANIFEST.in
+README.md
+build.sh
+pyproject.toml
+pybind11_weaver/__init__.py
+pybind11_weaver/main.py
+pybind11_weaver.egg-info/PKG-INFO
+pybind11_weaver.egg-info/SOURCES.txt
+pybind11_weaver.egg-info/dependency_links.txt
+pybind11_weaver.egg-info/entry_points.txt
+pybind11_weaver.egg-info/not-zip-safe
+pybind11_weaver.egg-info/requires.txt
+pybind11_weaver.egg-info/top_level.txt
+pybind11_weaver/include/pybind11_weaver/pybind11_weaver.h
