@@ -1,0 +1,15 @@
+LICENSE.txt
+README.md
+setup.py
+./sa_decor/__init__.py
+./sa_decor/engine.py
+./sa_decor/globals.py
+./sa_decor/session.py
+./sa_decor.egg-info/PKG-INFO
+./sa_decor.egg-info/SOURCES.txt
+./sa_decor.egg-info/dependency_links.txt
+./sa_decor.egg-info/top_level.txt
+test/test_with_async_connection.py
+test/test_with_async_session.py
+test/test_with_connection.py
+test/test_with_session.py
