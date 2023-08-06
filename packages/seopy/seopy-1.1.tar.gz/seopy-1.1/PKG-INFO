@@ -1,0 +1,46 @@
+Metadata-Version: 2.1
+Name: seopy
+Version: 1.1
+Summary: Instantly analyze your SEO issues
+Home-page: https://github.com/dhirajberi/seopy
+Author: Dhiraj Beri
+Author-email: dhirajberi.official@gmail.com
+License: MIT
+Download-URL: https://github.com/dhirajberi/seopy/archive/refs/tags/1.1.tar.gz
+Description: # SeoPy
+        
+        SeoPy - Instantly analyze your SEO issues.
+        
+        ## Installation
+        
+        ```bash
+        pip install seopy
+        ```
+        
+        ## Usage
+        
+        ```python
+        import seopy
+        seopy.checkup("yourwebsitename.com") 
+        
+        ```
+        Enter your website name between double quotes and you're ready to go!
+        
+        ## Contributing
+        Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+        
+        ## License
+        [MIT](https://choosealicense.com/licenses/mit/)
+Keywords: seo,seopy
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Description-Content-Type: text/markdown
