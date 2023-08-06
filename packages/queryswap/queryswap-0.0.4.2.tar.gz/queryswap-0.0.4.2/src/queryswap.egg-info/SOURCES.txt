@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/qs/__init__.py
+src/qs/__main__.py
+src/qs/qs.py
+src/queryswap.egg-info/PKG-INFO
+src/queryswap.egg-info/SOURCES.txt
+src/queryswap.egg-info/dependency_links.txt
+src/queryswap.egg-info/top_level.txt

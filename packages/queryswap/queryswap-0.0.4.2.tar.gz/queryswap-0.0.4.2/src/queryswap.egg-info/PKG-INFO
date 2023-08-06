@@ -1,0 +1,41 @@
+Metadata-Version: 2.1
+Name: queryswap
+Version: 0.0.4.2
+Summary: A url query string swapper
+Home-page: https://github.com/mikedesu/qs
+Author: darkmage
+Author-email: darkmagex6+github@bugcrowdninja.com
+Project-URL: Bug Tracker, https://github.com/mikedesu/qs/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# qs
+
+Accepts urls from a filename and, for each query parameter, replace the value
+with a specified value.
+
+## Usage
+
+Example input file:
+
+```
+~ % cat urls.txt
+https://www.evildojo.com/index.php?q=search&name=darkmage
+https://www.evildojo.com/index.php?q=search
+https://www.evildojo.com/index.php
+https://www.evildojo.com
+```
+
+Example usage:
+
+```
+python3 -m qs urls.txt d3v
+https://www.evildojo.com/index.php?q=d3v
+https://www.evildojo.com/index.php?q=d3v&name=darkmage
+https://www.evildojo.com/index.php?q=search&name=d3v
+```
+
