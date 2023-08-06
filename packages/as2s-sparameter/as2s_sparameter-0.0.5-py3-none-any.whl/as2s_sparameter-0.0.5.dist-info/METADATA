@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: as2s-sparameter
+Version: 0.0.5
+Summary: Assorted tools of S parameter.
+Home-page: https://github.com/luckgakidz/as2s_sparameter
+Author: luckgakidz
+Author-email: luckgakidz@luckgakidz.com
+Maintainer: luckgakidz
+Maintainer-email: luckgakidz@luckgakidz.com
+License: MIT
+Download-URL: https://github.com/luckgakidz/as2s_sparameter
+Keywords: sparameter touchstone
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: scikit-rf (>=0.22.1)
+
+# as2s-sparameter
+Assorted tools of S parameter
+
+
