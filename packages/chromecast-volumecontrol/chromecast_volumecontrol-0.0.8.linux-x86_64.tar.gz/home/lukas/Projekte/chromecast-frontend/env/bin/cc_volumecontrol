@@ -1,0 +1,6 @@
+#!/home/lukas/Projekte/chromecast-frontend/env/bin/python
+
+
+
+import chromecast_volumecontrol
+chromecast_volumecontrol.gui.start_guiapp()
