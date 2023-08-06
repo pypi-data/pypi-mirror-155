@@ -1,0 +1,3 @@
+[console_scripts]
+travel = travel.__main__:main
+
