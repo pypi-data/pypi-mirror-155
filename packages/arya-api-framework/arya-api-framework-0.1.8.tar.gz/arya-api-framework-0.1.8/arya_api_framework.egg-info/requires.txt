@@ -1,0 +1,10 @@
+pydantic>=1.9.1
+yarl>=1.7.2
+
+[async]
+aiohttp>=3.8.1
+aiolimiter>=1.0.0
+
+[sync]
+requests>=2.27.1
+ratelimit>=2.2.1
