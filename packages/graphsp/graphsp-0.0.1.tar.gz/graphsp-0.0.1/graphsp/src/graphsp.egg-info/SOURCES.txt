@@ -1,0 +1,13 @@
+MANIFEST.in
+README.md
+setup.py
+graphsp/src/graphsp.egg-info/PKG-INFO
+graphsp/src/graphsp.egg-info/SOURCES.txt
+graphsp/src/graphsp.egg-info/dependency_links.txt
+graphsp/src/graphsp.egg-info/top_level.txt
+graphsp/src/graphsp.py
+graphsp/src/graphsp.egg-info/PKG-INFO
+graphsp/src/graphsp.egg-info/SOURCES.txt
+graphsp/src/graphsp.egg-info/dependency_links.txt
+graphsp/src/graphsp.egg-info/top_level.txt
+test/test.py
