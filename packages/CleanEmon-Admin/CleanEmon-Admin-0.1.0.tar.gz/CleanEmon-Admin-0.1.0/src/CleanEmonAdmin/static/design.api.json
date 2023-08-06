@@ -1,0 +1,38 @@
+{
+  "_id": "_design/api",
+  "views": {
+    "get_dates": {
+      "map": "function (doc) {\n  if (doc.date) {\n    emit(doc.date, doc._id);\n  }\n}  "
+    },
+    "get_daily_kwh": {
+      "map": "function (doc) {\n  if (doc.date){\n    const key = doc.date;\n    \n    if (doc.energy_data && Array.isArray(doc.energy_data)){\n      var records = doc.energy_data;\n      var first_record = records[0];\n      var last_record = records[records.length - 1];\n      const value = last_record.kwh - first_record.kwh;\n      emit(key, value);\n    }\n  }\n}"
+    },
+    "get_daily_record_count": {
+      "map": "function (doc) {\n  if (doc.date){\n    const key = doc.date;\n    \n    if (doc.energy_data && Array.isArray(doc.energy_data)){\n      const value = doc.energy_data.length;\n      emit(key, value);\n    }\n  }\n}"
+    },
+    "get_monthly_kwh": {
+      "map": "function (doc) {\n  function remove_day(date){\n    var date_parts = date.split(\"-\");\n    return date_parts[0] + \"-\" + date_parts[1];\n  }\n  if (doc.date){\n    const key = remove_day(doc.date);\n    \n    if (doc.energy_data && Array.isArray(doc.energy_data)){\n      var records = doc.energy_data;\n      var first_record = records[0];\n      var last_record = records[records.length - 1];\n      const value = last_record.kwh - first_record.kwh;\n      emit(key, value);\n    }\n  }\n}",
+      "reduce": "_sum"
+    },
+    "get_yearly_kwh": {
+      "map": "function (doc) {\n  function extract_year(date){\n    var date_parts = date.split(\"-\");\n    return date_parts[0];\n  }\n  if (doc.date){\n    const key = extract_year(doc.date);\n    \n    if (doc.energy_data && Array.isArray(doc.energy_data)){\n      var records = doc.energy_data;\n      var first_record = records[0];\n      var last_record = records[records.length - 1];\n      const value = last_record.kwh - first_record.kwh;\n      emit(key, value);\n    }\n  }\n}",
+      "reduce": "_sum"
+    },
+    "get_last_day_kwh": {
+      "map": "function (doc) {\n  function get_previous_date(){\n    const today = new Date();\n    const yesterday = new Date(today);\n    yesterday.setDate(yesterday.getDate() - 1);\n    var [date, time] = yesterday.toISOString().split(\"T\");\n    return date;\n  }\n  if (doc.date){\n    if (doc.date == get_previous_date()) {\n      const key = doc.date;\n      if (doc.energy_data && Array.isArray(doc.energy_data)){\n        var records = doc.energy_data;\n        var first_record = records[0];\n        var last_record = records[records.length - 1];\n        const value = last_record.kwh - first_record.kwh;\n        emit(key, value);\n      }\n    }\n  }\n}"
+    },
+    "get_last_month_kwh": {
+      "map": "function (doc) {\n  function remove_day(date){\n    var date_parts = date.split(\"-\");\n    return date_parts[0] + \"-\" + date_parts[1];\n  }\n  function get_previous_month(){\n      var today = new Date();\n      today.setDate(0);\n      var [date, time] = today.toISOString().split(\"T\");\n      var [yyyy, mm, dd] = date.split(\"-\");\n      return yyyy + \"-\" + mm;\n  }\n  if (doc.date){\n    const key = remove_day(doc.date);\n    if (key == get_previous_month()) {\n      if (doc.energy_data && Array.isArray(doc.energy_data)){\n        var records = doc.energy_data;\n        var first_record = records[0];\n        var last_record = records[records.length - 1];\n        const value = last_record.kwh - first_record.kwh;\n        emit(key, value);\n      }\n    }\n  }\n}",
+      "reduce": "_sum"
+    },
+    "get_last_year_kwh": {
+      "map": "function (doc) {\n  function extract_year(date){\n    var date_parts = date.split(\"-\");\n    return date_parts[0];\n  }\n  function get_previous_year(){\n    var today = new Date();\n    today.setMonth(-1);\n    var [date, time] = today.toISOString().split(\"T\");\n    var [yyyy, mm, dd] = date.split(\"-\");\n    return yyyy;\n  }\n  if (doc.date){\n    const key = extract_year(doc.date);\n    if (key == get_previous_year()) {\n      if (doc.energy_data && Array.isArray(doc.energy_data)){\n        var records = doc.energy_data;\n        var first_record = records[0];\n        var last_record = records[records.length - 1];\n        const value = last_record.kwh - first_record.kwh;\n        emit(key, value);\n      }\n    }\n  }\n}",
+      "reduce": "_sum"
+    },
+    "get_last_vrms": {
+      "map": "function (doc) {\n  if (doc.date){\n    const key = null;\n    \n    if (doc.energy_data && Array.isArray(doc.energy_data)){\n      var records = doc.energy_data;\n      var last_record = records[records.length - 1];\n      const value = {\n        \"date\": doc.date,\n        \"vrms\": last_record.vrms\n      };\n      emit(key, value);\n    }\n  }\n}",
+      "reduce": "function (keys, values, rereduce) {\n  function get_last_by_date(items){\n    items.sort(function(a,b){return a.date < b.date ? 1 : -1;})\n    return items[0];\n  }\n  if(rereduce){\n    return get_last_by_date(values).vrms;\n  } else {\n    return get_last_by_date(values);\n  }\n}"
+    }
+  },
+  "language": "javascript"
+}

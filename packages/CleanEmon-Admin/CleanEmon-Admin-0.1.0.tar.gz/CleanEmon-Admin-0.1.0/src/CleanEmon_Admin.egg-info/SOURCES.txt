@@ -1,0 +1,12 @@
+MANIFEST.in
+pyproject.toml
+setup.cfg
+src/CleanEmonAdmin/__init__.py
+src/CleanEmonAdmin/__main__.py
+src/CleanEmonAdmin/scripts.py
+src/CleanEmonAdmin/static/design.api.json
+src/CleanEmon_Admin.egg-info/PKG-INFO
+src/CleanEmon_Admin.egg-info/SOURCES.txt
+src/CleanEmon_Admin.egg-info/dependency_links.txt
+src/CleanEmon_Admin.egg-info/requires.txt
+src/CleanEmon_Admin.egg-info/top_level.txt

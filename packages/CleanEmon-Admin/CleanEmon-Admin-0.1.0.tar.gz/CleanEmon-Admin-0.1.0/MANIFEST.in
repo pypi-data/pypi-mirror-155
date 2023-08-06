@@ -1,0 +1,2 @@
+graft src/CleanEmonAdmin/static
+global-exclude *.py[cod]
