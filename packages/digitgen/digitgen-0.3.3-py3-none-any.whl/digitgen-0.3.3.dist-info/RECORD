@@ -1,0 +1,16 @@
+digitgen/__init__.py,sha256=ljuYV-2MC244LCe35Hj9ym9FNYPoB9QR7qyhTsiqVso,344
+digitgen/digit_generator.py,sha256=7g1J74eq5aNqsKEhJ5XcH1hDwnkjtb0M6OKZ-nSFhB0,4132
+digitgen/augmentation/__init__.py,sha256=QzYwK25Ey38LNusumSzHBLRu8X3BRhr--NO5OMMdkzc,535
+digitgen/augmentation/augmentation.py,sha256=eKQmszKPRwkO_FBzcxSzlFbzolp1ADzPVfvTgjda9B4,895
+digitgen/augmentation/noise.py,sha256=HedJU67wOwX2WYw4CU8EMEls6z49VFZx4q8V1fdD5FM,4610
+digitgen/augmentation/shearing.py,sha256=CWNSrJlqp2rZTqKrFYkgkrNW16cqqClFnw05rx51lrw,1529
+digitgen/digit/__init__.py,sha256=LXbCLPEd-vfBAxDOWMLa-Q2FAopGZKLvnYOZetKlPr8,300
+digitgen/digit/digits.py,sha256=PzajhaZNZpRsZwomcpbyN1spm199XAI5_DtiZNT8Nec,9933
+digitgen/utils/__init__.py,sha256=J36ig4IxW0_uyJ-9EmAGQm5g8iyJDDZqQ2OnyX95BGY,694
+digitgen/utils/config.py,sha256=D65eMv0YlvbuEpqK6Cq3gLuuXFBZSfxkV_zC8heJP9M,4280
+digitgen/utils/helper.py,sha256=7_L5kotum-vxKR1ICMT1tLe8mQurlNQDyAsMSq9m0hs,2972
+digitgen-0.3.3.dist-info/LICENCE,sha256=yP1BJtxainlnXBYMCnWyWgxHzaottOeinN3ppLJdnT0,1060
+digitgen-0.3.3.dist-info/METADATA,sha256=dv4FI7u8kIfkUyRiGPpxXTjcIZTsoF6BRWcAVRuFgI0,1003
+digitgen-0.3.3.dist-info/WHEEL,sha256=G16H4A3IeoQmnOrYV4ueZGKSjhipXx8zc8nu9FGlvMA,92
+digitgen-0.3.3.dist-info/top_level.txt,sha256=meANTOdlJYTD-kUGSSE49eBIuLit8y1gVoJk8fqwE1c,61
+digitgen-0.3.3.dist-info/RECORD,,
