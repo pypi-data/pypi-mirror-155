@@ -1,0 +1,2 @@
+[console_scripts]
+pylone = pylone.__main__:main
