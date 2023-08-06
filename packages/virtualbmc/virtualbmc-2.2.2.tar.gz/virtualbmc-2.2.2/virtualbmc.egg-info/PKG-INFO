@@ -1,0 +1,79 @@
+Metadata-Version: 1.2
+Name: virtualbmc
+Version: 2.2.2
+Summary: Create virtual BMCs for controlling virtual instances via IPMI
+Home-page: https://docs.openstack.org/virtualbmc/latest/
+Author: OpenStack
+Author-email: openstack-discuss@lists.openstack.org
+License: UNKNOWN
+Description: ==========
+        VirtualBMC
+        ==========
+        
+        Team and repository tags
+        ------------------------
+        
+        .. image:: https://governance.openstack.org/tc/badges/virtualbmc.svg
+            :target: https://governance.openstack.org/tc/reference/tags/index.html
+        
+        Overview
+        --------
+        
+        A virtual BMC for controlling virtual machines using IPMI commands.
+        
+        Installation
+        ~~~~~~~~~~~~
+        
+        .. code-block:: bash
+        
+          pip install virtualbmc
+        
+        
+        Supported IPMI commands
+        ~~~~~~~~~~~~~~~~~~~~~~~
+        
+        .. code-block:: bash
+        
+          # Power the virtual machine on, off, graceful off, NMI and reset
+          ipmitool -I lanplus -U admin -P password -H 127.0.0.1 power on|off|soft|diag|reset
+        
+          # Check the power status
+          ipmitool -I lanplus -U admin -P password -H 127.0.0.1 power status
+        
+          # Set the boot device to network, hd or cdrom
+          ipmitool -I lanplus -U admin -P password -H 127.0.0.1 chassis bootdev pxe|disk|cdrom
+        
+          # Get the current boot device
+          ipmitool -I lanplus -U admin -P password -H 127.0.0.1 chassis bootparam get 5
+        
+        Project resources
+        ~~~~~~~~~~~~~~~~~
+        
+        * Documentation: https://docs.openstack.org/virtualbmc/latest
+        * Source: https://opendev.org/openstack/virtualbmc
+        * Bugs: https://storyboard.openstack.org/#!/project/openstack/virtualbmc
+        * Release Notes: https://docs.openstack.org/releasenotes/virtualbmc/
+        
+        Project status, bugs, and requests for feature enhancements (RFEs) are tracked
+        in StoryBoard:
+        https://storyboard.openstack.org/#!/project/openstack/virtualbmc
+        
+        For information on how to contribute to VirtualBMC, see
+        https://docs.openstack.org/virtualbmc/latest/contributor
+        
+        
+Platform: UNKNOWN
+Classifier: Environment :: OpenStack
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Python: >=3.6
