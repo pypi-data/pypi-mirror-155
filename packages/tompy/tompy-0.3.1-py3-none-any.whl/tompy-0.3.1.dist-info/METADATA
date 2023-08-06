@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: tompy
+Version: 0.3.1
+Summary: Tompy is the powerful package for portfolio.
+Author-email: Thomas Jeong <nanticj@users.noreply.github.com>
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Classifier: License :: OSI Approved :: MIT License
+Requires-Dist: Bottleneck
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: pytz
+Requires-Dist: scipy
+Requires-Dist: black ; extra == "develop"
+Requires-Dist: flit ; extra == "develop"
+Requires-Dist: isort ; extra == "develop"
+Requires-Dist: mypy ; extra == "develop"
+Requires-Dist: pylint ; extra == "develop"
+Requires-Dist: pytest ; extra == "develop"
+Project-URL: Home, https://github.com/nanticj/tompy
+Provides-Extra: develop
+
+# tompy
+Tompy is the powerful package for portfolio.
+
