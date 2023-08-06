@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: django-rtk-green
+Version: 0.2.0
+Summary: Extension of django-rtk that requires a password in the activation step
+Home-page: https://github.com/mnieber/django-rtk-home/blob/main/django-rtk-green/README.md
+Author: Maarten Nieber
+Author-email: hallomaarten@yahoo.com
+License: MIT
+Platform: UNKNOWN
+Requires-Python: >=3.6
+Description-Content-Type: text/x-rst
+License-File: LICENSE.txt
+
+Extension of django-rtk that requires a password in the activation step
+
