@@ -1,0 +1,3 @@
+[console_scripts]
+heaserver-data-adapters = heaserver.dataadapter.service:main
+
