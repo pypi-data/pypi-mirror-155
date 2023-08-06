@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: costeopy-package
+Version: 0.0.6
+Summary: Costeo de cas
+Home-page: https://github.com/francomrf/Costeo_Python.git
+Author: Franco F
+Author-email: francomrf@gmail.com
+Project-URL: Bug Tracker, https://github.com/francomrf/Costeo_Python.git
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+Este es un paquete de costeo para CAS en antualización
