@@ -1,0 +1,49 @@
+Metadata-Version: 2.1
+Name: pyshield
+Version: 0.0.7
+Summary: Hard Obfuscate Tool For Python
+Home-page: https://github.com/0xe2d0/pyshield
+Author: 0xe2d0
+License: MIT
+Download-URL: https://github.com/0xe2d0/pyshield/tarball/master
+Keywords: obfuscator,python-obfuscate,pyshield,python code obfuscate
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# PyShield - A Python Obfuscate Tool
+
+**Hard Obfuscate Tool For Python**
+
+# Installation
+<pre><code>pip install pyshield</code></pre>
+And thats it. So east.
+
+#  Quick Start
+Printing The Obfuscate Code :
+<pre><code>pyshield -f &lt;file_to_obfuscate&gt; -l &lt;level_of_obfuscate&gt; </code></pre>
+Save A File :
+<pre><code>pyshield -f &lt;file_to_obfuscate&gt; -l &lt;level_of_obfuscate&gt; -o &lt;output_file&gt;</code></pre>
+# As A Module
+Printing The Obfuscated Code : 
+<pre><code>from pyshield import PyShield
+result = PyShield.obfuscate(file_path,level)
+print(result)
+
+</code></pre>
+
+# FOR WINDOWS
+<pre><code>from pyshield import PyShield
+result = PyShield.obfuscate("example.py",3)
+open("obfuscated.py","w",encoding="utf8").write(result)
+</code></pre>
+
+
