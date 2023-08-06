@@ -1,0 +1,67 @@
+[build-system]
+requires = [
+  "setuptools >= 40.9.0",
+  "wheel",
+]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest]
+testpaths = "tests"
+
+[tool.mypy]
+files = "pydocstringformatter,tests"
+exclude = "tests/data.*"
+strict = true
+show_error_codes = true
+enable_error_code = "ignore-without-code"
+
+[[tool.mypy.overrides]]
+module = ["git.*"]
+ignore_missing_imports = true
+
+[tool.pylint.MASTER]
+load-plugins=[
+    "pylint.extensions.check_elif",
+    "pylint.extensions.code_style",
+    "pylint.extensions.comparetozero",
+    "pylint.extensions.confusing_elif",
+    "pylint.extensions.docparams",
+    "pylint.extensions.docstyle",
+    "pylint.extensions.empty_comment",
+    "pylint.extensions.for_any_all",
+    "pylint.extensions.set_membership",
+    "pylint.extensions.typing"
+]
+py-version="3.8"
+
+[tool.pylint.'MESSAGES CONTROL']
+disable = [
+    "missing-module-docstring",
+    "too-few-public-methods",
+    "duplicate-code"
+]
+enable = [
+    "c-extension-no-member",
+]
+
+[tool.pylint.BASIC]
+no-docstring-rgx = "__.*__"
+good-names = "f"
+
+[tool.pylint.TYPECHECK]
+generated-members = "argparse.Namespace"
+
+[tool.pylint.MISCELLANEOUS]
+notes=["XXX","FIXME"]
+notes-rgx = 'TODO(?!\(#\d+\))'
+
+[tool.isort]
+profile = "black"
+known_third_party = ["pytest"]
+skip_glob = "tests/data/**"
+
+[tool.coverage.paths]
+source = ["pydocstringformatter"]
+
+[tool.coverage.report]
+include = ["pydocstringformatter/*"]
