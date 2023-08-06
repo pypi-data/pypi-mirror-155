@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block content %}
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Task</th>
+            <th scope="col">Queue</th>
+            <th scope="col">LastTime</th>
+            <th scope="col">Status</th>
+            <th scope="col">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for task in tasks %}
+            <tr>
+                <td>{{ task.name }}</td>
+                <td>{{ task.queue }}</td>
+                <td class="time-format">{% if task.last_time %}
+                    {{ task.last_time }}
+                {% else %}
+                    Never Run
+                {% endif %} </td>
+                <td><span class="badge {% if task.status == 'enabled' %}bg-success{% else %}bg-warning{% endif %}">{{ task.status }}</span></td>
+                <td>{% include "widgets/task_actions.html" %}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">CronTasks</h1>
+    </div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Task</th>
+            <th scope="col">Queue</th>
+            <th scope="col">Crontab</th>
+            <th scope="col">LastTime</th>
+            <th scope="col">NextTime</th>
+            <th scope="col">Status</th>
+            <th scope="col">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for task in cron_tasks %}
+            <tr>
+                <td>{{ task.name }}</td>
+                <td>{{ task.queue }}</td>
+                <td><span class="badge bg-info">{{ task.cron }}</span></td>
+                <td class="time-format">{% if task.last_time %}
+                    {{ task.last_time }}
+                {% else %}
+                    Never Run
+                {% endif %} </td>
+                <td class="time-format">{{ task.next_time }}</td>
+                <td><span class="badge {% if task.status == 'enabled' %}bg-success{% else %}bg-warning{% endif %}">{{ task.status }}</span></td>
+                <td>{% include "widgets/task_actions.html" %}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

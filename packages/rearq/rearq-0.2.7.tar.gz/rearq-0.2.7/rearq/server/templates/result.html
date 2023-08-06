@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+{% block content %}
+    <form class="mb-3" id="toolbar">
+        <div class="row" role="form">
+            <div class="col">
+                <select id="task" name="task" class="form-select form-select-sm" aria-label="Task select">
+                    <option selected value="">Select Task</option>
+                    {% for task in tasks %}
+                        <option value="{{ task }}">{{ task }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col">
+                <select id="worker" name="worker" class="form-select form-select-sm" aria-label="Worker select">
+                    <option selected value="">Select Worker</option>
+                    {% for worker in workers %}
+                        <option value="{{ worker }}">{{ worker }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col">
+                <input type="text" id="job_id" name="job_id" class="form-control form-control-sm"
+                       placeholder="JobID">
+            </div>
+            <div class="col">
+                <select id="success" name="success" class="form-select form-select-sm" aria-label="Result success">
+                    <option selected value="">Select success</option>
+                    <option value="1">success</option>
+                    <option value="0">fail</option>
+                </select>
+            </div>
+            <div class="col">
+                <input type="datetime-local" name="start_time" id="start_time"
+                       class="form-control form-control-sm"
+                       placeholder="Task start time">
+            </div>
+            <div class="col">
+                <input type="datetime-local" name="finish_time" id="finish_time"
+                       class="form-control form-control-sm"
+                       placeholder="Task finish time">
+            </div>
+            <div class="col">
+                <button class="btn btn-primary btn-sm" type="button" id="search-btn">Search</button>
+                <button class="btn btn-danger btn-sm" type="button" id="remove-btn">Remove</button>
+            </div>
+        </div>
+    </form>
+    <table id="table" class="table" data-classes="" data-toggle="table" data-click-to-select="true"
+           data-pagination="true"
+           data-side-pagination="server"
+           data-pagination-loop="false"
+           data-url="/result/data" data-query-params="queryParams">
+        <thead>
+        <tr>
+            <th data-field="state" data-checkbox="true"></th>
+            <th data-field="id">ID</th>
+            <th data-field="worker">Worker</th>
+            <th data-field="job.task">Task</th>
+            <th data-field="job.args">Args</th>
+            <th data-field="job.kwargs">Kwargs</th>
+            <th data-field="job.job_retry">Retry</th>
+            <th data-field="job.job_retry_after">RetryAfter</th>
+            <th data-field="job.enqueue_time" data-formatter="timeFormatter">EnqueueTime</th>
+            <th data-field="job.job_id" data-formatter="jobIdFormatter">JobID</th>
+            <th data-field="success" data-formatter="booleanFormatter">Success</th>
+            <th data-field="result">Result</th>
+            <th data-field="start_time" data-formatter="timeFormatter">StartTime</th>
+            <th data-field="finish_time" data-formatter="timeFormatter">FinishTime</th>
+        </tr>
+        </thead>
+    </table>
+{% endblock %}
+{% block body_end %}
+    <script>
+        let table = $('#table')
+        let urlParams = new URLSearchParams(window.location.search);
+        let task = urlParams.get('task');
+        let worker = urlParams.get('worker');
+        let job_id = urlParams.get('job_id');
+        if (task) {
+            $('#task').val(task);
+        }
+        if (worker) {
+            $('#worker').val(worker);
+        }
+        if (job_id) {
+            $('#job_id').val(job_id);
+        }
+
+        function jobIdFormatter(value, row) {
+            return `<a class="text-decoration-none" href="/job?job_id=${value}">${value}</a>`;
+        }
+
+        function booleanFormatter(value, row) {
+            if (value) {
+                return `<span class="badge bg-success">${value}</span>`;
+            } else {
+                return `<span class="badge bg-danger">${value}</span>`;
+            }
+        }
+
+        $(function () {
+            $('#search-btn').click(function () {
+                table.bootstrapTable('refresh')
+            });
+
+            $('#remove-btn').click(function () {
+                let ids = $.map(table.bootstrapTable('getSelections'), function (row) {
+                    return row.id
+                });
+                $.ajax({
+                    url: "/result?ids=" + ids,
+                    method: 'DELETE',
+                    success: res => {
+                        table.bootstrapTable('remove', {field: 'id', values: ids});
+                        table.bootstrapTable('refresh');
+                    },
+                    error: res => {
+                        swal({
+                            icon: "error",
+                            title: "Delete failed",
+                        });
+                    }
+                })
+            })
+        })
+
+        function queryParams(params) {
+            params.task = task;
+            params.worker = worker;
+            params.job_id = job_id;
+            $('#toolbar').find('input[name],select[name]').each(function () {
+                params[$(this).attr('name')] = $(this).val()
+            })
+            return params
+        }
+
+    </script>
+{% endblock %}
