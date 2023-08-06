@@ -1,0 +1,17 @@
+LICENSE.txt
+README.md
+pyproject.toml
+setup.cfg
+src/py4pa/__init__.py
+src/py4pa/arm.py
+src/py4pa/email.py
+src/py4pa/misc.py
+src/py4pa/nlp.py
+src/py4pa/ona.py
+src/py4pa/vis.py
+src/py4pa/web_scraping.py
+src/py4pa.egg-info/PKG-INFO
+src/py4pa.egg-info/SOURCES.txt
+src/py4pa.egg-info/dependency_links.txt
+src/py4pa.egg-info/requires.txt
+src/py4pa.egg-info/top_level.txt
