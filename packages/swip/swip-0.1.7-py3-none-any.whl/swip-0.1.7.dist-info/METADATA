@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: swip
+Version: 0.1.7
+Summary: swip is a basic version control system, based on Git.
+Home-page: https://github.com/ShayNoa/swip.git
+Author: Noa Shay
+Author-email: noa.shay22@gmail.com
+License: MIT
+Keywords: version control,git
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.9
+License-File: LICENSE
+Requires-Dist: loguru
+Requires-Dist: colorama
+Requires-Dist: termcolor
+Requires-Dist: wheel
+Requires-Dist: networkx
+Requires-Dist: matplotlib
+
