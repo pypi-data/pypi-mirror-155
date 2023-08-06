@@ -1,0 +1,104 @@
+Metadata-Version: 2.1
+Name: SpaceTimePandas
+Version: 0.3.3
+Summary: Location date features as dataframe
+Home-page: https://github.com/tianle91/SpaceTimePandas
+Author: Tianle Chen
+Author-email: tianlechen@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: geopy (>=2.1.0)
+Requires-Dist: holidays (>=0.14.2)
+Requires-Dist: openrouteservice (>=2.3.3)
+Requires-Dist: OSMPythonTools (>=0.3.5)
+Requires-Dist: pynytimes (>=0.7.0)
+
+# SpaceTimePandas
+Location and date features from a bunch of api sources to Pandas.
+Repository hosted on [GitHub](https://github.com/tianle91/SpaceTimePandas).
+
+![icon](SpaceTimePandas.png)
+```
+pip install SpaceTimePandas
+```
+
+
+# Temporal features
+
+```python
+>>> import datetime
+>>> from stpd.event import Holiday
+>>> us_holidays = Holiday(years=[2021, 2022, 2023], country='US')
+>>> us_holidays(datetime.date(2022, 1, 17))
+{
+    'us_holiday_days_since_last': 0,
+    'us_holiday_days_to_next': 35
+}
+```
+
+```python
+>>> from datetime import datetime
+>>> from stpd.fourier import Fourier
+>>> Fourier()(datetime(2020, 1, 1))
+{
+    'week_of_year_sine_phase_0': 0.1198805403706726,
+    ...
+    'week_of_year_sine_phase_52': 0.08569582503232778,
+    'week_of_year_cos_phase_0': 0.9927883238840168,
+    ...
+    'minute_of_hour_cos_phase_59': 0.9945218953682733
+}
+```
+
+```python
+>>> from stpd.nytsentiment import NYTimesSentiment
+>>> from datetime import date
+>>> nytsentiment = NYTimesSentiment(api_key='<GET-ONE-FROM-NYT-DEVELOPERS-API>')
+>>> nytsentiment(date(2022, 6, 1))
+{'negative': 0.04179099574685097, 'positive': 0.9582089781761169}
+```
+
+
+# Location features
+```python
+>>> from stpd.openstreetmap import OpenStreetMap
+>>> osm=OpenStreetMap()('Toronto Ontario')
+[nominatim] downloading data: search
+{
+    'count_natural=tree': 719, 
+    'count_natural=water': 15, 
+    'count_building=yes': 1151, 
+    'count_building=house': 39, 
+    'count_amenity=parking': 148, 
+    'count_amenity=restaurant': 327, 
+    'count_service=driveway': 77
+}
+```
+
+```python
+>>> from stpd.openrouteservice import OpenRouteServicePathFeatures
+>>> ors = OpenRouteServicePathFeatures(api_key='<GET-ONE-FROM-OPENROUTESERVICE>')
+>>> ors(location_strs=['toronto ontario', 'hamilton ontario'])
+{
+    'distance': 67828.8,
+    'duration': 3125.3
+}
+```
+
+```python
+>>> from stpd.openrouteservice import OpenRouteServiceLocationFeatures
+>>> ors = OpenRouteServiceLocationFeatures(api_key='<GET-ONE-FROM-OPENROUTESERVICE>')
+>>> ors(location_str='toronto ontario')
+{
+    'range_seconds_100.0_area': 553988.44, 
+    'range_seconds_100.0_reachfactor': 0.0229, 
+    'range_seconds_100.0_total_pop': 1953.0, 
+    'range_seconds_200.0_area': 3674992.8, 
+    ...
+    'range_seconds_1000.0_total_pop': 942521.0
+}
+```
