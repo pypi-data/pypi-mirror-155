@@ -1,0 +1,3 @@
+[console_scripts]
+poolgrpcclient_cli=poolgrpc.client:cli
+
