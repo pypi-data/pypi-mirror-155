@@ -1,0 +1,71 @@
+Metadata-Version: 2.1
+Name: trclip
+Version: 0.1.19
+Summary: A Turkish CLIP
+Home-page: https://github.com/yusufani/trclip
+Author: Yusuf ANI
+Author-email: yusufani8@gmail.com
+License: MIT license
+Keywords: trclip
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Requires-Python: >=3.6
+License-File: LICENSE
+Requires-Dist: Click (>=7.0)
+
+======
+trclip
+======
+
+
+.. image:: https://img.shields.io/pypi/v/trclip.svg
+        :target: https://pypi.python.org/pypi/trclip
+
+.. image:: https://img.shields.io/travis/yusufani/trclip.svg
+        :target: https://travis-ci.com/yusufani/trclip
+
+.. image:: https://readthedocs.org/projects/trclip/badge/?version=latest
+        :target: https://trclip.readthedocs.io/en/latest/?version=latest
+        :alt: Documentation Status
+
+
+
+
+A Turkish CLIP
+
+
+* Free software: MIT license
+* Documentation: https://trclip.readthedocs.io.
+
+
+Features
+--------
+
+* TODO
+
+Credits
+-------
+
+This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+
+.. _Cookiecutter: https://github.com/audreyr/cookiecutter
+.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+
+
+=======
+History
+=======
+
+0.1.0 (2022-04-02)
+------------------
+
+* First release on PyPI.
+
+
