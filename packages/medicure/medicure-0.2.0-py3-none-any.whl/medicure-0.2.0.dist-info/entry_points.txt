@@ -1,0 +1,3 @@
+[console_scripts]
+medicure = medicure.cli:app
+
