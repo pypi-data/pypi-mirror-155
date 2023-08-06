@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: killtimer
+Version: 0.1.4
+Summary: Closes application after specified work interval
+Home-page: https://github.com/idle-code/killtimer
+License: GPL-3.0-or-later
+Author: Paweł Żukowski
+Author-email: p.z.idlecode@gmail.com
+Requires-Python: >=3.8,<4.0
+Classifier: Environment :: Console
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Natural Language :: English
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: Unix
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Utilities
+Requires-Dist: desktop-notifier (>=3.4.0,<4.0.0)
+Requires-Dist: humanfriendly (>=10.0,<11.0)
+Requires-Dist: playsound (>=1.3.0,<2.0.0)
+Requires-Dist: pytimeparse (>=1.1.8,<2.0.0)
+Requires-Dist: rich (>=12.4.3,<13.0.0)
