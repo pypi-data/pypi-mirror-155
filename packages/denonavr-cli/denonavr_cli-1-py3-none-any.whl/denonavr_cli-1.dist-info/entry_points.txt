@@ -1,0 +1,3 @@
+[console_scripts]
+denonavr-cli=denonavr_cli.__main__:entry_point
+
