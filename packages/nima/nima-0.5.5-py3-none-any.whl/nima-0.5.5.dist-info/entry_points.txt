@@ -1,0 +1,4 @@
+[console_scripts]
+bias=nima.__main__:bias
+nima=nima.__main__:main
+
