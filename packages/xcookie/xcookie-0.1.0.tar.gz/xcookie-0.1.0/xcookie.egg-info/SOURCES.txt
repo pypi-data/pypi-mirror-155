@@ -1,0 +1,15 @@
+README.rst
+pyproject.toml
+setup.py
+xcookie/__init__.py
+xcookie/__main__.py
+xcookie/__main__.pyi
+xcookie/main.py
+xcookie/main.pyi
+xcookie/py.typed
+xcookie.egg-info/PKG-INFO
+xcookie.egg-info/SOURCES.txt
+xcookie.egg-info/dependency_links.txt
+xcookie.egg-info/entry_points.txt
+xcookie.egg-info/requires.txt
+xcookie.egg-info/top_level.txt
