@@ -1,0 +1,26 @@
+asteval
+colorama
+cryptography==36.0.2
+gitdb
+gitpython
+importlib_metadata
+matplotlib
+natsort
+numpy
+pandas
+paramiko
+pyasn1
+pydotplus
+pygtrie
+regex
+require-python-3
+scipy
+sklearn
+typing
+webcolors
+
+[:python_version < "3.7.0"]
+orderedset
+
+[:python_version >= "3.7.0"]
+ordered_set
