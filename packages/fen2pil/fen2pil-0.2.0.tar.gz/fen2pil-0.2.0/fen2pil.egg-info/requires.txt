@@ -1,0 +1,8 @@
+numpy>=1
+chess>=1
+opencv-python>=4
+Pillow>=8
+
+[tests]
+pytest
+tox
