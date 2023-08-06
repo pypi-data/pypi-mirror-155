@@ -1,0 +1,10 @@
+name=OpenVPN
+method=get
+url=https://swupdate.openvpn.org/community/releases/openvpn-$version.tar.gz
+version=2.5.6
+tags=openvpn
+bin_folder=openvpn-$version/src/openvpn
+bin_name=openvpn
+configure=cd openvpn-$version && ./configure
+make=cd openvpn-$version && make
+clean= cd openvpn-$version && make clean
