@@ -1,0 +1,7 @@
+{
+    "from-type": "UDPListener",
+    "type": "UDPListenerDefault",
+    "out-ports": [
+        "value"
+    ]
+}

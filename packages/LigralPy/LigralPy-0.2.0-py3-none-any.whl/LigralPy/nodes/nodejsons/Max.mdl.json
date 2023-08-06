@@ -1,0 +1,14 @@
+{
+  "type": "Max",
+  "document": "This model returns maximal value among inputs",
+  "parameters": [],
+  "in-ports": [
+    "first",
+    "second"
+  ],
+  "out-ports": [
+    "max"
+  ],
+  "in-port-variable": false,
+  "out-port-variable": false
+}

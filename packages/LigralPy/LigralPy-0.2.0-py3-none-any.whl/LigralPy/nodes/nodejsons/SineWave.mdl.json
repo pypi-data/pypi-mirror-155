@@ -1,0 +1,27 @@
+{
+  "type": "SineWave",
+  "document": "This model outputs ampl*sin(omega*time\u002Bphi).",
+  "parameters": [
+    {
+      "name": "ampl",
+      "required": false,
+      "type": "signal"
+    },
+    {
+      "name": "omega",
+      "required": false,
+      "type": "signal"
+    },
+    {
+      "name": "phi",
+      "required": false,
+      "type": "signal"
+    }
+  ],
+  "in-ports": [],
+  "out-ports": [
+    "source"
+  ],
+  "in-port-variable": false,
+  "out-port-variable": false
+}

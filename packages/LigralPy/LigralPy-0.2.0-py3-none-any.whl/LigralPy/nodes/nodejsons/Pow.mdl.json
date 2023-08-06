@@ -1,0 +1,19 @@
+{
+  "type": "Pow",
+  "document": "This model calculates y=x^power.",
+  "parameters": [
+    {
+      "name": "power",
+      "required": true,
+      "type": "signal"
+    }
+  ],
+  "in-ports": [
+    "x"
+  ],
+  "out-ports": [
+    "y"
+  ],
+  "in-port-variable": false,
+  "out-port-variable": false
+}

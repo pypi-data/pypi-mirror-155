@@ -1,0 +1,29 @@
+{
+  "type": "Memory",
+  "document": "This model outputs the value from the previous input.",
+  "parameters": [
+    {
+      "name": "initial",
+      "required": false,
+      "type": "signal"
+    },
+    {
+      "name": "col",
+      "required": false,
+      "type": "signal"
+    },
+    {
+      "name": "row",
+      "required": false,
+      "type": "signal"
+    }
+  ],
+  "in-ports": [
+    "input"
+  ],
+  "out-ports": [
+    "output"
+  ],
+  "in-port-variable": false,
+  "out-port-variable": false
+}

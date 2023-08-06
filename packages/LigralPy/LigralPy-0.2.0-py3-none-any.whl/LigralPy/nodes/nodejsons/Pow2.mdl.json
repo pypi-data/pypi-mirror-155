@@ -1,0 +1,14 @@
+{
+  "type": "Pow2",
+  "document": "This model calculates y=base^index.",
+  "parameters": [],
+  "in-ports": [
+    "base",
+    "index"
+  ],
+  "out-ports": [
+    "y"
+  ],
+  "in-port-variable": false,
+  "out-port-variable": false
+}

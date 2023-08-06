@@ -1,0 +1,101 @@
+{
+    "models": [
+        {
+            "id": "3774",
+            "type": "Constant",
+            "parameters": [
+                {
+                    "name": "value",
+                    "value": 1
+                }
+            ],
+            "out-ports": [
+                {
+                    "name": "value",
+                    "destination": [
+                        {
+                            "id": "7047",
+                            "in-port": "x"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "1339",
+            "type": "Sub",
+            "parameters": [],
+            "out-ports": [
+                {
+                    "name": "result",
+                    "destination": [
+                        {
+                            "id": "2610",
+                            "in-port": "input"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "2610",
+            "type": "Integrator",
+            "parameters": [],
+            "out-ports": [
+                {
+                    "name": "output",
+                    "destination": [
+                        {
+                            "id": "1339",
+                            "in-port": "right"
+                        },
+                        {
+                            "id": "3053",
+                            "in-port": "input"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "3053",
+            "type": "Scope",
+            "parameters": [
+                {
+                    "name": "name",
+                    "value": "One Ordered System"
+                }
+            ],
+            "out-ports": []
+        },
+        {
+            "id": "7047",
+            "type": "Sin",
+            "parameters": [],
+            "out-ports": [
+                {
+                    "name": "y",
+                    "destination": [
+                        {
+                            "id": "1339",
+                            "in-port": "left"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "settings": [
+        {
+            "item": "inner_plotter",
+            "value": {
+                "enable": true,
+                "output_script": true
+            }
+        },
+        {
+            "item": "python",
+            "value": "/Users/hzy/.conda/envs/melodie/bin/python3.8"
+        }
+    ]
+}

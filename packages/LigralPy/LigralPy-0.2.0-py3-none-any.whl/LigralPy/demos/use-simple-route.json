@@ -1,0 +1,76 @@
+{
+    "nodes": [
+        {
+            "id": "3022",
+            "elID": "3022",
+            "left": 374,
+            "top": 126,
+            "type": "aaaaaaaaaaaa",
+            "params": [],
+            "flip": false
+        },
+        {
+            "id": "315",
+            "elID": "315",
+            "left": 100,
+            "top": 100,
+            "type": "Constant",
+            "params": [
+                {
+                    "name": "value",
+                    "value": 1
+                }
+            ],
+            "flip": false
+        },
+        {
+            "id": "8178",
+            "elID": "8178",
+            "left": 591,
+            "top": 104,
+            "type": "Print",
+            "params": [],
+            "flip": false
+        }
+    ],
+    "edges": [
+        {
+            "id": "8608",
+            "srcEndpointID": "value",
+            "srcNode": "315",
+            "destEndpointID": "in",
+            "destNode": "3022",
+            "midpoints": []
+        },
+        {
+            "id": "1470",
+            "srcEndpointID": "out",
+            "srcNode": "3022",
+            "destEndpointID": "input",
+            "destNode": "8178",
+            "midpoints": []
+        }
+    ],
+    "info": {
+        "name": "use-simple-route",
+        "type": "main",
+        "settings": {
+            "inPorts": [
+                {
+                    "name": "in",
+                    "type": "input",
+                    "connectedPort": "left",
+                    "connectedNode": "1339"
+                }
+            ],
+            "outPorts": [
+                {
+                    "name": "out",
+                    "type": "output",
+                    "connectedPort": "output",
+                    "connectedNode": "2610"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,59 @@
+{
+    "nodes": [
+        {
+            "id": "1407",
+            "elID": "1407",
+            "left": 244,
+            "top": 191,
+            "type": "Sub",
+            "params": [],
+            "flip": false
+        },
+        {
+            "id": "6670",
+            "elID": "6670",
+            "left": 78,
+            "top": 246,
+            "type": "Constant",
+            "params": [
+                {
+                    "name": "value",
+                    "value": 123
+                }
+            ],
+            "flip": false
+        }
+    ],
+    "edges": [
+        {
+            "id": "6060",
+            "srcEndpointID": "value",
+            "srcNode": "6670",
+            "destEndpointID": "right",
+            "destNode": "1407",
+            "midpoints": []
+        }
+    ],
+    "info": {
+        "name": "aaaaaaaaaaaa",
+        "type": "route",
+        "settings": {
+            "inPorts": [
+                {
+                    "name": "in",
+                    "type": "input",
+                    "connectedPort": "left",
+                    "connectedNode": "1407"
+                }
+            ],
+            "outPorts": [
+                {
+                    "name": "out",
+                    "type": "output",
+                    "connectedPort": "result",
+                    "connectedNode": "1407"
+                }
+            ]
+        }
+    }
+}

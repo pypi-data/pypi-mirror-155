@@ -1,0 +1,24 @@
+{
+  "type": "Saturation",
+  "document": "This model produces an output signal that is the value of the input signal bounded to the upper and lower.",
+  "parameters": [
+    {
+      "name": "upper",
+      "required": true,
+      "type": "signal"
+    },
+    {
+      "name": "lower",
+      "required": true,
+      "type": "signal"
+    }
+  ],
+  "in-ports": [
+    "input"
+  ],
+  "out-ports": [
+    "output"
+  ],
+  "in-port-variable": false,
+  "out-port-variable": false
+}

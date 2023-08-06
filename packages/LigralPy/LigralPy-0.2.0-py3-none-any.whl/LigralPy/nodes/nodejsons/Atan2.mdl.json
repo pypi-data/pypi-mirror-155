@@ -1,0 +1,14 @@
+{
+  "type": "Atan2",
+  "document": "This model calculates y=atan(sin/cos).",
+  "parameters": [],
+  "in-ports": [
+    "sin",
+    "cos"
+  ],
+  "out-ports": [
+    "y"
+  ],
+  "in-port-variable": false,
+  "out-port-variable": false
+}

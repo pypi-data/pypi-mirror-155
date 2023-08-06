@@ -1,0 +1,37 @@
+{
+  "type": "Rand",
+  "document": "This model generates random value in given range.",
+  "parameters": [
+    {
+      "name": "seed",
+      "required": false,
+      "type": "signal"
+    },
+    {
+      "name": "upper",
+      "required": false,
+      "type": "signal"
+    },
+    {
+      "name": "lower",
+      "required": false,
+      "type": "signal"
+    },
+    {
+      "name": "col",
+      "required": false,
+      "type": "signal"
+    },
+    {
+      "name": "row",
+      "required": false,
+      "type": "signal"
+    }
+  ],
+  "in-ports": [],
+  "out-ports": [
+    "output"
+  ],
+  "in-port-variable": false,
+  "out-port-variable": false
+}

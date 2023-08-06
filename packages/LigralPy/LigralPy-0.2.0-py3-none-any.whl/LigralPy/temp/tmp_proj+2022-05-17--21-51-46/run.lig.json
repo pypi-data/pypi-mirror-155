@@ -1,0 +1,131 @@
+{
+    "models": [
+        {
+            "id": "3774",
+            "type": "Constant",
+            "parameters": [
+                {
+                    "name": "value",
+                    "value": 1
+                }
+            ],
+            "out-ports": [
+                {
+                    "name": "value",
+                    "destination": [
+                        {
+                            "id": "1339",
+                            "in-port": "left"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "1339",
+            "type": "Sub",
+            "parameters": [],
+            "out-ports": [
+                {
+                    "name": "result",
+                    "destination": [
+                        {
+                            "id": "4899",
+                            "in-port": "left"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "2610",
+            "type": "Integrator",
+            "parameters": [
+                {
+                    "name": "name",
+                    "value": ""
+                }
+            ],
+            "out-ports": [
+                {
+                    "name": "output",
+                    "destination": [
+                        {
+                            "id": "4899",
+                            "in-port": "right"
+                        },
+                        {
+                            "id": "4364",
+                            "in-port": "input"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "3053",
+            "type": "Scope",
+            "parameters": [
+                {
+                    "name": "name",
+                    "value": "One Ordered System"
+                }
+            ],
+            "out-ports": []
+        },
+        {
+            "id": "4364",
+            "type": "Integrator",
+            "parameters": [
+                {
+                    "name": "name",
+                    "value": ""
+                }
+            ],
+            "out-ports": [
+                {
+                    "name": "output",
+                    "destination": [
+                        {
+                            "id": "3053",
+                            "in-port": "input"
+                        },
+                        {
+                            "id": "1339",
+                            "in-port": "right"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "4899",
+            "type": "Sub",
+            "parameters": [],
+            "out-ports": [
+                {
+                    "name": "result",
+                    "destination": [
+                        {
+                            "id": "2610",
+                            "in-port": "input"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "settings": [
+        {
+            "item": "inner_plotter",
+            "value": {
+                "enable": true,
+                "output_script": true
+            }
+        },
+        {
+            "item": "python",
+            "value": "/Users/hzy/.conda/envs/melodie/bin/python3.8"
+        }
+    ]
+}

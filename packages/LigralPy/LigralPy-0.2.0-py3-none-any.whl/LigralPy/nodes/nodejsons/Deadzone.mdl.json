@@ -1,0 +1,24 @@
+{
+  "type": "Deadzone",
+  "document": "This model generates zero output within a specified region [left, right].",
+  "parameters": [
+    {
+      "name": "left",
+      "required": true,
+      "type": "signal"
+    },
+    {
+      "name": "right",
+      "required": true,
+      "type": "signal"
+    }
+  ],
+  "in-ports": [
+    "input"
+  ],
+  "out-ports": [
+    "output"
+  ],
+  "in-port-variable": false,
+  "out-port-variable": false
+}

@@ -1,0 +1,17 @@
+{
+  "type": "Scope",
+  "document": "This model displays time domain signals and stores data to the output folder.",
+  "parameters": [
+    {
+      "name": "name",
+      "required": false,
+      "type": "string"
+    }
+  ],
+  "in-ports": [
+    "input"
+  ],
+  "out-ports": [],
+  "in-port-variable": false,
+  "out-port-variable": false
+}

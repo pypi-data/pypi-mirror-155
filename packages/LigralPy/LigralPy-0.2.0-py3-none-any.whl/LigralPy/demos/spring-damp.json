@@ -1,0 +1,187 @@
+{
+    "edges": [
+        {
+            "id": "4709",
+            "srcEndpointID": "source",
+            "srcNode": "3397",
+            "destEndpointID": "left",
+            "destNode": "6299",
+            "midpoints": []
+        },
+        {
+            "id": "4194",
+            "srcEndpointID": "result",
+            "srcNode": "6299",
+            "destEndpointID": "input",
+            "destNode": "6750",
+            "midpoints": []
+        },
+        {
+            "id": "6505",
+            "srcEndpointID": "output",
+            "srcNode": "6750",
+            "destEndpointID": "input",
+            "destNode": "9700",
+            "midpoints": []
+        },
+        {
+            "id": "4826",
+            "srcEndpointID": "output",
+            "srcNode": "9700",
+            "destEndpointID": "input",
+            "destNode": "3847",
+            "midpoints": []
+        },
+        {
+            "id": "8352",
+            "srcEndpointID": "output",
+            "srcNode": "3646",
+            "destEndpointID": "left",
+            "destNode": "182",
+            "midpoints": []
+        },
+        {
+            "id": "8289",
+            "srcEndpointID": "output",
+            "srcNode": "9173",
+            "destEndpointID": "right",
+            "destNode": "182",
+            "midpoints": []
+        },
+        {
+            "id": "9634",
+            "srcEndpointID": "output",
+            "srcNode": "9700",
+            "destEndpointID": "input",
+            "destNode": "3646",
+            "midpoints": []
+        },
+        {
+            "id": "9496",
+            "srcEndpointID": "output",
+            "srcNode": "3847",
+            "destEndpointID": "input",
+            "destNode": "9173",
+            "midpoints": []
+        },
+        {
+            "id": "8873",
+            "srcEndpointID": "output",
+            "srcNode": "3847",
+            "destEndpointID": "input",
+            "destNode": "558",
+            "midpoints": []
+        },
+        {
+            "id": "5317",
+            "srcEndpointID": "result",
+            "srcNode": "182",
+            "destEndpointID": "right",
+            "destNode": "6299",
+            "midpoints": []
+        }
+    ],
+    "nodes": [
+        {
+            "id": "3397",
+            "elID": "3397",
+            "left": 12,
+            "top": 144,
+            "type": "Step",
+            "params": [],
+            "flip": false
+        },
+        {
+            "id": "6299",
+            "elID": "6299",
+            "left": 169,
+            "top": 149,
+            "type": "Sub",
+            "params": [],
+            "flip": false
+        },
+        {
+            "id": "6750",
+            "elID": "6750",
+            "left": 327,
+            "top": 158,
+            "type": "Gain",
+            "params": [
+                {
+                    "name": "value",
+                    "value": 10
+                }
+            ],
+            "flip": false
+        },
+        {
+            "id": "9700",
+            "elID": "9700",
+            "left": 474,
+            "top": 159,
+            "type": "Integrator",
+            "params": [],
+            "flip": false
+        },
+        {
+            "id": "3847",
+            "elID": "3847",
+            "left": 618,
+            "top": 159,
+            "type": "Integrator",
+            "params": [
+                {
+                    "name": "initial",
+                    "value": 1
+                }
+            ],
+            "flip": false
+        },
+        {
+            "id": "182",
+            "elID": "182",
+            "left": 175,
+            "top": 297,
+            "type": "Add",
+            "params": [],
+            "flip": true
+        },
+        {
+            "id": "3646",
+            "elID": "3646",
+            "left": 357,
+            "top": 271,
+            "type": "Gain",
+            "params": [
+                {
+                    "name": "value",
+                    "value": 0.3
+                }
+            ],
+            "flip": true
+        },
+        {
+            "id": "9173",
+            "elID": "9173",
+            "left": 370,
+            "top": 362,
+            "type": "Gain",
+            "params": [
+                {
+                    "name": "value",
+                    "value": 10
+                }
+            ],
+            "flip": true
+        },
+        {
+            "id": "558",
+            "elID": "558",
+            "left": 766,
+            "top": 161,
+            "type": "Scope",
+            "params": [],
+            "flip": false
+        }
+    ]
+}

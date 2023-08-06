@@ -1,0 +1,7 @@
+{
+    "from-type": "UDPSender",
+    "type": "UDPSenderDefault",
+    "in-ports": [
+        "value"
+    ]
+}

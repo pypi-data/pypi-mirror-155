@@ -1,0 +1,33 @@
+{
+    "Add": {
+        "type": "rect",
+        "figure_mode": "latex",
+        "source": "+"
+    },
+    "Sub": {
+        "type": "rect",
+        "figure_mode": "latex",
+        "source": "-"
+    },
+    "Integrator": {
+        "type": "rect",
+        "figure_mode": "latex",
+        "source": "\\frac{1}{s}"
+    },
+    "Gain": {
+        "type": "triangle",
+        "figure_mode": "latex",
+        "source": "${value}"
+    },
+    "SineWave": {
+        "type": "rect",
+        "figure_mode": "icon",
+        "source": "sine-wave"
+    },
+    "TransferFunction": {
+        "type": "rect",
+        "figure_mode": "latex",
+        "source": "SpecialFormat:TransferFunction",
+        "x_scale": 2.0
+    }
+}
