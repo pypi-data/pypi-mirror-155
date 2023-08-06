@@ -1,0 +1,14 @@
+stages:     
+    - test
+    - deploy
+
+deploy:
+    image: python:latest
+    stage: deploy
+    script:
+        - printenv
+        - pip install twine
+        - python setup.py sdist bdist_wheel
+        - twine upload -u $TWINE_USER -p $TWINE_PASSWORD dist/* --verbose
+    only:
+        - tags
