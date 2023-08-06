@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: pytest-embrace
+Version: 0.0.2b6
+Summary: Use modern Python type hints to design expressive tests. Reject boilerplate. Embrace complexity.
+Author: Ainsley McGrath
+Author-email: mcgrath.ainsley@gmail.com
+Requires-Python: >=3.7,<4.0
+Classifier: Framework :: Pytest
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Software Development :: Testing
+Classifier: Topic :: Software Development :: Testing :: Unit
+Requires-Dist: pytest (>=7.0,<8.0)
