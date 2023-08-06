@@ -1,0 +1,26 @@
+name: segregation
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - deprecation
+  - geopandas>=0.9
+  - joblib
+  - libpysal
+  - mapclassify
+  - matplotlib
+  - numpy
+  - pandana
+  - pandas
+  - pip
+  - pygeos
+  - quilt3
+  - scikit-learn
+  - scipy
+  - seaborn
+  - tqdm
+  - urbanaccess
+  - rvlib
+  - numba
+  - pyproj >=3
