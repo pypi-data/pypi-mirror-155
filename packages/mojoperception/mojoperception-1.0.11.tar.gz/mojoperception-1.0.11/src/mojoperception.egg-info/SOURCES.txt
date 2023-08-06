@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+src/mojoperception/__init__.py
+src/mojoperception/mojo_perception_api.py
+src/mojoperception.egg-info/PKG-INFO
+src/mojoperception.egg-info/SOURCES.txt
+src/mojoperception.egg-info/dependency_links.txt
+src/mojoperception.egg-info/requires.txt
+src/mojoperception.egg-info/top_level.txt
