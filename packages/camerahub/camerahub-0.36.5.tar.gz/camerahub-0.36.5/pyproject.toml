@@ -1,0 +1,82 @@
+[tool.poetry]
+name = "camerahub"
+version = "0.36.5"
+description = "App for cataloguing vintage cameras, lenses, films, negatives & prints"
+authors = ["Jonathan Gazeley <camerahub@jonathangazeley.com>"]
+license = "Apache-2.0"
+readme = "README.md"
+homepage = "https://camerahub.info/"
+repository = "https://github.com/camerahub/camerahub"
+packages = [
+    { include = "camerahub" },
+    { include = "schema" },
+]
+include = [
+    "static",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Web Environment",
+    "Framework :: Django",
+    "Framework :: Django :: 2.2",
+    "Intended Audience :: End Users/Desktop",
+    "Natural Language :: English",
+    "Operating System :: POSIX :: Linux",
+    "Topic :: Database",
+    "Topic :: Internet :: WWW/HTTP :: WSGI :: Application",
+]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+Django = "^3"
+pytz = "*"
+django-money = "^1.2"
+django-choices = "^1.7.0"
+psycopg2-binary = { version = "^2.8", optional = true }
+django-currentuser = "^0.5"
+uWSGI = "^2.0.0"
+django-tables2 = "^2.1.1"
+django-crispy-forms = "^1.9.0"
+django-autosequence = "^0"
+django-sendgrid-v5 = "*"
+django-registration = "^3.0"
+django-fullurl = "^1"
+django-filter = "*"
+awesome-slugify = "^1.6.5"
+django-watson = "^1.5.5"
+django-taggit = "^2"
+poetry-version = "^0.2.0"
+django-simple-history = "^3"
+django-versatileimagefield = "^2.0"
+numpy = "^1.19.1"
+django-social-share = "^2.0.0"
+django-countries = "^7"
+django3-collectionfield = "^1"
+django-autocomplete-light = "^3.8.1"
+django-bootstrap-datepicker-plus = "^4"
+django-geoposition-2 = "^0.3.11"
+django-leaflet = "^0.27.1"
+djangorestframework = "^3.12.1"
+django-dbbackup = "^3.3.0"
+django-star-ratings = "0.9.0"
+drf-generators = "^0.5.0"
+pyyaml = "^6"
+uritemplate = "^4"
+drf-multiple-serializer = "^0.2.3"
+django-health-check = "^3.16.3"
+django-settings-export = "^1.2.1"
+platformdirs = "^2.5.1"
+django-colorfield = "^0.6.3"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+pylint-django = "^2.5.3"
+autopep8 = "^1.5.4"
+pylint = "^2"
+
+[tool.poetry.extras]
+pgsql = ["psycopg2-binary"]
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
