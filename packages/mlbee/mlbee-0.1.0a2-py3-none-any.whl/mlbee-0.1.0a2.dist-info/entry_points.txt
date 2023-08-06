@@ -1,0 +1,3 @@
+[console_scripts]
+mlbee=mlbee.__main__:app
+
