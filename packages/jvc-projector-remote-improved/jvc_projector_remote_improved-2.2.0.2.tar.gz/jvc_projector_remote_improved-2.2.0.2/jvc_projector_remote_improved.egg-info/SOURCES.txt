@@ -1,0 +1,15 @@
+LICENSE
+README.md
+setup.py
+jvc_projector/__init__.py
+jvc_projector/commands.py
+jvc_projector/jvc_projector.py
+jvc_projector/optimal_settings.py
+jvc_projector_remote_improved.egg-info/PKG-INFO
+jvc_projector_remote_improved.egg-info/SOURCES.txt
+jvc_projector_remote_improved.egg-info/dependency_links.txt
+jvc_projector_remote_improved.egg-info/top_level.txt
+mock/__init__.py
+mock/mochrie.py
+tests/__init__.py
+tests/testSuite.py
