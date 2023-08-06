@@ -1,0 +1,2 @@
+[console_scripts]
+flask-createproject = createproject.main:run
