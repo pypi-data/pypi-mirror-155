@@ -1,0 +1,15 @@
+MANIFEST.in
+README.md
+pyproject.toml
+requirements.txt
+setup.py
+TwitterHandler/VERSION
+TwitterHandler/__init__.py
+TwitterHandler.egg-info/PKG-INFO
+TwitterHandler.egg-info/SOURCES.txt
+TwitterHandler.egg-info/dependency_links.txt
+TwitterHandler.egg-info/not-zip-safe
+TwitterHandler.egg-info/requires.txt
+TwitterHandler.egg-info/top_level.txt
+TwitterHandler/Kafka/__init__.py
+TwitterHandler/Kafka/stream.py
