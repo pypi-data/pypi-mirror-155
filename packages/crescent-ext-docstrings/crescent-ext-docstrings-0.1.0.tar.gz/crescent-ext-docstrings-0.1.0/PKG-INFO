@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: crescent-ext-docstrings
+Version: 0.1.0
+Summary: A docstring parser for hikari-crescent.
+License: MPL-2.0
+Author: Lunarmagpie
+Author-email: Bambolambo0@gmail.com
+Requires-Python: >=3.8,<3.11
+Classifier: License :: OSI Approved
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: docstring-parser (>=0.14.1,<0.15.0)
+Requires-Dist: hikari-crescent (>=0.2.0,<0.3.0)
