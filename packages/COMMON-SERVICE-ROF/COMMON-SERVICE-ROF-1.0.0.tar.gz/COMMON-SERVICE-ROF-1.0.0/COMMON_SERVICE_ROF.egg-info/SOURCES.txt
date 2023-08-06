@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+COMMON_SERVICE_ROF.egg-info/PKG-INFO
+COMMON_SERVICE_ROF.egg-info/SOURCES.txt
+COMMON_SERVICE_ROF.egg-info/dependency_links.txt
+COMMON_SERVICE_ROF.egg-info/entry_points.txt
+COMMON_SERVICE_ROF.egg-info/top_level.txt
+rof/__init__.py
+rof/__main__.py
+rof/names.py
