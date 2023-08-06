@@ -1,0 +1,5 @@
+include LICENSE
+include README.rst
+
+graft src/matcouply
+global-exclude *.pyc
