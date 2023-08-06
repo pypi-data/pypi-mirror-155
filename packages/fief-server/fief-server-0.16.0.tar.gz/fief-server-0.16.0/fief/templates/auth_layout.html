@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block main %}
+  <main class="bg-white">
+    <div class="relative flex">
+      <div class="w-full">
+        <div class="min-h-screen h-full flex flex flex-col after:flex-1">
+          <div class="flex-1">
+            <div class="flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8">
+              <span class="text-3xl text-gray-800 font-bold">{{ tenant.name }}</span>
+            </div>
+          </div>
+
+          <div class="w-full max-w-sm mx-auto px-4 py-8">
+            <h1 class="text-3xl text-gray-800 font-bold mb-6">{% block title %}{% endblock %}</h1>
+            {% if error is defined %}
+              <div class="my-4 px-4 py-2 rounded-sm text-sm bg-red-100 border border-red-200 text-red-600">
+                <div class="flex w-full justify-between items-start">
+                  <div class="flex">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 shrink-0 fill-current opacity-80 mt-[3px] mr-3" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                    </svg>
+                    <div>{{error}}</div>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+            {% if success is defined %}
+              <div class="my-4 px-4 py-2 rounded-sm text-sm bg-emerald-100 border border-emerald-200 text-emerald-600">
+                <div class="flex w-full justify-between items-start">
+                  <div class="flex">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 shrink-0 fill-current opacity-80 mt-[3px] mr-3" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                    </svg>
+                    <div>{{success}}</div>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+            {% if not fatal_error %}
+              {% block auth_form %}
+                {% block csrf %}
+                  <input type="hidden" name="csrftoken" value="{{ request.scope.csrftoken }}" />
+                {% endblock %}
+              {% endblock %}
+            {% endif %}
+            <div class="pt-5 mt-6 border-t border-gray-200">
+              <div class="text-xs flex justify-center items-center">
+                <span class="mr-1 mt-1">{% trans %}Powered and secured by{% endtrans %}</span>
+                <a href="https://www.fief.dev" rel="noreferrer noopener" target="_blank">
+                  <img src="{{ url_for('auth:static', path='fief-logo.svg') }}" alt="Fief" layout="fixed" height="20" width="30" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock %}
