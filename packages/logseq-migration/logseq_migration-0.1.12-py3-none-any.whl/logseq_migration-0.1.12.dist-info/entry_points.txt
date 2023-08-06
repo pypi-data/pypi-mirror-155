@@ -1,0 +1,2 @@
+[console_scripts]
+localise_assets = logseq.migration.migrater:main
