@@ -1,0 +1,12 @@
+services:
+- url: ""
+  method: "POST"
+  cases:
+    - {}
+    - {"a": 1}
+
+- url: ""
+  method: "POST"
+  cases:
+    - {}
+    - {"a": 1}
