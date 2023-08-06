@@ -1,0 +1,17 @@
+CHANGELOG.md
+MANIFEST.in
+setup.py
+pynput-stubs/METADATA.toml
+pynput-stubs/__init__.pyi
+pynput-stubs/_info.pyi
+pynput-stubs/_util.pyi
+pynput-stubs/keyboard/__init__.pyi
+pynput-stubs/keyboard/_base.pyi
+pynput-stubs/keyboard/_dummy.pyi
+pynput-stubs/mouse/__init__.pyi
+pynput-stubs/mouse/_base.pyi
+pynput-stubs/mouse/_dummy.pyi
+types_pynput.egg-info/PKG-INFO
+types_pynput.egg-info/SOURCES.txt
+types_pynput.egg-info/dependency_links.txt
+types_pynput.egg-info/top_level.txt
