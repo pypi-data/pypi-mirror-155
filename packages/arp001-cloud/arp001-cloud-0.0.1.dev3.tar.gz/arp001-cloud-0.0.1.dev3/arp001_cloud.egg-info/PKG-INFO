@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: arp001-cloud
+Version: 0.0.1.dev3
+Summary: services from arp001-client
+Home-page: https://github.com/arp001-client/arp001-cloud
+Author: arp001dev
+Author-email: arp001dev@outlook.com
+Project-URL: Bug Reports, https://github.com/arp001-client/arp001-cloud/issues
+Project-URL: Source, https://github.com/arp001-client/arp001-cloud/
+Keywords: development
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3 :: Only
+Requires-Python: >=3.0, <4
+Description-Content-Type: text/plain
+License-File: LICENSE.txt
+
+run base.help() for help to how to use(this is not avavilable in the current version and will be coming soon)
