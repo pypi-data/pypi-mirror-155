@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.rst
+pyproject.toml
+setup.cfg
+setup.py
+mixedvines/__init__.py
+mixedvines/copula.py
+mixedvines/marginal.py
+mixedvines/mixedvine.py
+mixedvines.egg-info/PKG-INFO
+mixedvines.egg-info/SOURCES.txt
+mixedvines.egg-info/dependency_links.txt
+mixedvines.egg-info/requires.txt
+mixedvines.egg-info/top_level.txt
