@@ -1,0 +1,160 @@
+[tool.black]
+include = '\.pyi?$'
+line-length = 90
+
+[tool.isort]
+ensure_newline_before_comments = true
+include_trailing_comma = true
+line_length = 90
+multi_line_output = 3
+use_parentheses = true
+
+[tool.pylint]
+max-line-length = 90
+
+[tool.pyright]
+enableTypeIgnoreComments = true
+reportMissingTypeStubs = false
+typeCheckingMode = "basic"
+
+[tool.pylic]
+ignore_packages = [
+  # only install these as part of dev tools to avoid GPL usage in main application
+  "astroid",
+  "pylint",
+]
+safe_licenses = [
+  "3-Clause BSD License",
+  "Apache License 2.0",
+  "Apache Software License",
+  "Artistic License",
+  "BSD License",
+  "BSD-derived (http://www.repoze.org/LICENSE.txt)",
+  "BSD",
+  "GNU Library or Lesser General Public License (LGPL)",
+  "MIT License",
+  "MIT",
+  "Mozilla Public License 2.0 (MPL 2.0)",
+  "Public Domain",
+  "Python Software Foundation License",
+]
+
+[tool.pytest.ini_options]
+addopts = """
+    -W ignore::DeprecationWarning
+"""
+
+[tool.tox]
+legacy_tox_ini = """
+[tox]
+isolated_build = true
+envlist = py{39}
+
+[gh-actions]
+python =
+    3.9: py39
+
+[testenv]
+whitelist_externals = poetry
+skip_install = true
+passenv = *
+setenv =
+  DD_TRACE_ENABLED=0
+commands =
+    poetry install
+    poetry run coverage erase
+    poetry run coverage run -m pytest {posargs}
+    poetry run coverage report -m
+    poetry run coverage html -d coverage/{envname}
+    poetry run coverage xml
+"""
+
+[tool.poetry]
+authors = [
+  'Amy Troschinetz <spellbot@lexicalunit.com>',
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: End Users/Desktop",
+  "Topic :: Communications :: Chat",
+  "Topic :: Games/Entertainment :: Board Games",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3.9",
+]
+description = 'The Discord bot for SpellTable'
+homepage = 'http://spellbot.io/'
+keywords = ['discord', 'magic', 'bot', 'mtg', 'SpellTable']
+license = 'MIT'
+name = 'spellbot'
+packages = [
+  {include = "spellbot", from = "src"},
+]
+readme = 'README.md'
+repository = 'https://github.com/lexicalunit/spellbot'
+version = "7.12.5"
+
+[tool.poetry.dependencies]
+Babel = "^2.9.1"
+PyYAML = "^6.0"
+SQLAlchemy = "^1.4.36"
+SQLAlchemy-Utils = "^0.38.2"
+aiohttp = "<3.8.0"
+aiohttp-jinja2 = "^1.5"
+aiohttp-retry = "^2.4.6"
+alembic = "^1.7.6"
+asgiref = "^3.5.0"
+click = "^8.0.4"
+coloredlogs = "^15.0.1"
+datadog = "^0.44.0"
+ddtrace = ">=0.59,<1.1"
+discord-py-interactions = "^3.0.2"
+"discord.py" = "1.7.3"
+dunamai = "^1.11.1"
+expiringdict = "^1.2.1"
+gunicorn = "^20.1.0"
+humanize = "^4.0.0"
+hupper = "^1.10.3"
+importlib-resources = "^5.4.0"
+psycopg2-binary = "^2.9.3"
+pygicord = "^1.0.1"
+python = '>=3.9,<4'
+python-dateutil = "^2.8.2"
+python-dotenv = "^0.20.0"
+pytz = "^2022.1"
+supervisor = "^4.2.4"
+types-PyYAML = "^6.0.4"
+types-python-dateutil = "^2.8.9"
+types-pytz = "^2021.3.5"
+types-toml = "^0.10.4"
+uvloop = "^0.16.0"
+wrapt = "^1.13.3"
+
+[tool.poetry.dev-dependencies]
+Faker = "^13.6.0"
+GitPython = "^3.1.27"
+black = "^22.1.0"
+callee = "^0.3.1"
+coverage = "^6.3.2"
+factory-boy = "^3.2.1"
+flake8 = "^4.0.1"
+flake8-commas = "^2.1.0"
+flake8-print = "^5.0.0"
+isort = "^5.10.1"
+pylic = "^3.0.2"
+pylint = "==2.14.0"
+pyright = "^1.1.241"
+pytest = "^7.0.1"
+pytest-aiohttp = "<1.0.4"
+pytest-asyncio = "^0.18.2"
+pytest-freezegun = "^0.4.2"
+pytest-mock = "^3.7.0"
+sqlalchemy-stubs = "^0.4"
+syrupy = "^2.0.0"
+tox = "^3.24.5"
+
+[tool.poetry.scripts]
+spellbot = 'spellbot:main'
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core>=1.0.4"]
