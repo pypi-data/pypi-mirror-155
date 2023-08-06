@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: vsutil
+Version: 0.7.0
+Summary: A collection of general-purpose Vapoursynth functions to be reused in modules and scripts.
+Home-page: https://encode.moe/vsutil
+Author: kageru
+Author-email: wizards@encode.moe
+License: MIT
+Project-URL: Documentation, http://vsutil.encode.moe/en/latest/
+Project-URL: Source, https://github.com/Irrational-Encoding-Wizardry/vsutil
+Project-URL: Tracker, https://github.com/Irrational-Encoding-Wizardry/vsutil/issues
+Keywords: encoding vapoursynth video
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Topic :: Multimedia :: Video
+Classifier: Typing :: Typed
+Requires-Python: >=3.8
+License-File: LICENSE
+Requires-Dist: vapoursynth
+
+UNKNOWN
+
