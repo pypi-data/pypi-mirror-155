@@ -1,0 +1,64 @@
+rainiee_data
+===============
+* rainiee_data provides users with basic financial data. Users can obtain the full range of quantitative financial data provided by rainiee_data in their own locally built environment.
+* easy to use as most of the data returned are json.
+
+Installation
+--------------
+
+    pip install rainiee_data==3.0.1
+
+Upgrade
+---------------
+
+    pip install -U rainiee_data
+
+Login
+--------------
+
+    from rainiee_data.data_pro import *
+    auth('ID','Password')
+
+Quick Start
+--------------
+
+Supported API
+
+        from rainiee_data.data_pro import *
+        auth('ID','Password')
+
+        1: cn_index_eod(index_code, start_index, end_index)
+            e.g. cn_index_eod('399300.SZ', 7660, 7665)
+
+        2: cn_index_composition(index_code)
+            e.g. cn_index_composition(index_code='399300.SZ')
+
+        3: cn_index_composition_weight(index_code)
+            e.g. cn_index_composition_weight(index_code='000001.SH')
+
+        4: cn_index_basic(market)
+            e.g. cn_index_basic(market='SZSE')
+
+        5: cn_symbol_list(category)
+            e.g. cn_symbol_list(category='shzhuban')
+
+        6: cn_stock_eod(symbol, start_index, end_index, adj='qfq', frequency='D')
+            e.g. cn_stock_eod(symbol ='002679.sz',start_index=7686,end_index=7689,adj='qfq',frequency='D')
+
+        7: cn_stock_realtime(symbol)
+            e.g. cn_stock_realtime(symbol='300647.sz')
+
+        8: get_trade_index(date)
+            e.g. get_trade_index(date='20220601')
+
+        9: get_trade_date(index)
+            e.g. get_trade_date(7662)
+        
+        10: cn_features_eod(symbol, start_index, end_index)
+            e.g. cn_features_eod(symbol='600602.ss', start_index=7600, end_index=7603)
+
+        11: cn_targets_eod(symbol, start_index, end_index)
+            e.g. cn_targets_eod(symbol='000001.sz', start_index=7600, end_index=7603)
+
+        12: get_top_returns(index_code,index,top=10)
+            e.g. get_top_returns(index_code ='399300.SZ',index=7665)
