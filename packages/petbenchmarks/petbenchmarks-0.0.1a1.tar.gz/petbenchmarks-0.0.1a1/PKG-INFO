@@ -1,0 +1,68 @@
+Metadata-Version: 2.1
+Name: petbenchmarks
+Version: 0.0.1a1
+Summary: Convenient interface that provides structured representations of the PET dataset hosted on Huggingface and benchmarks to test approaches on
+Home-page: https://pdi.fbk.eu/pet-dataset
+Author: Patrizio Bellan
+Author-email: patrizio.bellan@gmail.com
+Maintainer: Patrizio Bellan
+Maintainer-email: patrizio.bellan@gmail.com
+License: MIT
+Keywords: huggingface,PET,dataset,benchmark,process extraction from text,natural language processing,nlp,business process management,bpm
+Platform: Any
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Intended Audience :: Information Technology
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Utilities
+Requires-Python: !=2.7, >=3.5.*
+Description-Content-Type: text/x-rst
+License-File: LICENSE.txt
+
+PET dataset reader
+##################
+
+Benchmarking procedure to test approaches on the `PET-dataset`_ (hosted on huggingface_).
+
+.. _PET-dataset: https://pdi.fbk.eu/pet-dataset/
+.. _huggingface: https://huggingface.co/datasets/patriziobellan/PET
+
+This is an alpha version. Do not use it in production since names and functions may change.
+
+Documentation will come soon.
+
+Example of ''how to benchmark an approach''
+*******************************************
+
+
+.. code-block:: python
+
+    from petbenchmarks.benchmarks import BenchmarkApproach
+
+    BenchmarkApproach(tested_approach_name='Approach-name',
+                      predictions_file_or_folder='path-to-prediction-file.json')
+
+
+The ``BenchmarkApproach`` object does all the job.
+It reads the file, computes score and generates a reports in the same
+directory of the ``path-to-prediction-file.json``.
+
+
+Created by `Patrizio Bellan`_.
+
+.. _Patrizio Bellan: https://pdi.fbk.eu/bellan/
+
