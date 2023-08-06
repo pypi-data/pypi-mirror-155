@@ -1,0 +1,46 @@
+Metadata-Version: 2.1
+Name: pymlib
+Version: 1.0.2
+Summary: A small common libraries
+Home-page: https://github.com/vdreamwin/mlib
+Author: vdreamwin
+Author-email: billikeu@gmail.com
+License: UNKNOWN
+Keywords: ssh linux
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: PyYaml (>=5.3.1)
+Requires-Dist: pymongo (>=3.11.0)
+Requires-Dist: sqlalchemy (>=1.3.20)
+Requires-Dist: pymysql
+Requires-Dist: requests
+
+# mlib
+ A small common libraries
+
+## 构建
+
+```
+python .\setup.py sdist bdist_wheel
+```
+
+## 推送
+
+ ```
+twine upload dist/*
+ ```
+
