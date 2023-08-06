@@ -1,0 +1,14 @@
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+pip_pin/__init__.py
+pip_pin/commands.py
+pip_pin/egg_info.py
+pip_pin.egg-info/PKG-INFO
+pip_pin.egg-info/SOURCES.txt
+pip_pin.egg-info/dependency_links.txt
+pip_pin.egg-info/develop_requires.txt
+pip_pin.egg-info/entry_points.txt
+pip_pin.egg-info/tests_require.txt
+pip_pin.egg-info/top_level.txt
