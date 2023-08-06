@@ -1,0 +1,804 @@
+import cv2
+
+import numpy as np
+
+from PyQt5.QtCore import Qt, pyqtSignal, QPointF, QRect, QRectF, QSizeF
+from PyQt5.QtGui import QColor, QFont, QIntValidator, QPainter, QPolygon, QPolygonF, QTransform
+from PyQt5.QtWidgets import QApplication, QLabel, QLineEdit, QCheckBox, QPushButton, QHBoxLayout, QSpinBox, QVBoxLayout, QWidget
+
+import zebrazoom.videoFormatConversion.zzVideoReading as zzVideoReading
+import zebrazoom.code.util as util
+from zebrazoom.code.getHyperparameters import getHyperparametersSimple
+from zebrazoom.code.getImage.headEmbededFrame import headEmbededFrame
+from zebrazoom.code.getImage.headEmbededFrameBackExtract import headEmbededFrameBackExtract
+
+
+class _WellSelectionLabel(QLabel):
+  def __init__(self, width, height):
+    super().__init__()
+    self._width = width
+    self._height = height
+    self._well = 0
+    self._hoveredWell = None
+    if QApplication.instance().wellPositions:
+      self.setMouseTracking(True)
+
+  def mouseMoveEvent(self, evt):
+    app = QApplication.instance()
+    if not app.wellPositions:
+      return
+    oldHovered = self._hoveredWell
+    if app.wellShape == 'rectangle':
+      def test_func(point, x, y, width, height):
+        return QRect(x, y, width, height).contains(point)
+    else:
+      assert app.wellShape == 'circle'
+      def test_func(point, x, y, width, height):
+        radius = width / 2;
+        centerX = x + radius;
+        centerY = y + radius;
+        dx = abs(point.x() - centerX)
+        if dx > radius:
+          return False
+        dy = abs(point.y() - centerY)
+        if dy > radius:
+          return False
+        if dx + dy <= radius:
+          return True
+        return dx * dx + dy * dy <= radius * radius
+    for idx, positions in enumerate(app.wellPositions):
+      if test_func(self._transformToOriginal.map(evt.pos()), *positions):
+        self._hoveredWell = idx
+        break
+    else:
+      self._hoveredWell = None
+    if self._hoveredWell != oldHovered:
+      self.update()
+
+  def mousePressEvent(self, evt):
+    if not QApplication.instance().wellPositions:
+      return
+    if self._hoveredWell is not None:
+      self._well = self._hoveredWell
+      self.update()
+
+  def enterEvent(self, evt):
+    QApplication.setOverrideCursor(Qt.CursorShape.CrossCursor)
+
+  def leaveEvent(self, evt):
+    QApplication.restoreOverrideCursor()
+    self._hoveredWell = None
+    self.update()
+
+  def paintEvent(self, evt):
+    super().paintEvent(evt)
+    app = QApplication.instance()
+    if not app.wellPositions:
+      return
+    qp = QPainter()
+    qp.begin(self)
+    factory = qp.drawRect if app.wellShape == 'rectangle' else qp.drawEllipse
+    font = QFont()
+    font.setPointSize(16)
+    font.setWeight(QFont.Weight.Bold)
+    qp.setFont(font)
+    for idx, positions in enumerate(app.wellPositions):
+      if idx == self._well:
+        qp.setPen(QColor(255, 0, 0))
+      elif idx == self._hoveredWell:
+        qp.setPen(QColor(0, 255, 0))
+      else:
+        qp.setPen(QColor(0, 0, 255))
+      rect = self._transformFromOriginal.map(QPolygon(QRect(*positions))).boundingRect()
+      qp.drawText(rect, Qt.AlignmentFlag.AlignCenter, str(idx))
+      factory(rect)
+    qp.end()
+
+  def resizeEvent(self, evt):
+    super().resizeEvent(evt)
+    self._size = self.size()
+    originalRect = QRectF(QPointF(0, 0), QSizeF(self._width, self._height))
+    currentRect = QRectF(QPointF(0, 0), QSizeF(self._size))
+    self._transformToOriginal = QTransform()
+    QTransform.quadToQuad(QPolygonF((currentRect.topLeft(), currentRect.topRight(), currentRect.bottomLeft(), currentRect.bottomRight())),
+                          QPolygonF((originalRect.topLeft(), originalRect.topRight(), originalRect.bottomLeft(), originalRect.bottomRight())),
+                          self._transformToOriginal)
+    self._transformFromOriginal = QTransform()
+    QTransform.quadToQuad(QPolygonF((originalRect.topLeft(), originalRect.topRight(), originalRect.bottomLeft(), originalRect.bottomRight())),
+                          QPolygonF((currentRect.topLeft(), currentRect.topRight(), currentRect.bottomLeft(), currentRect.bottomRight())),
+                          self._transformFromOriginal)
+
+  def getWell(self):
+    return self._well
+
+
+def _cleanup(app, page):
+  app.window.centralWidget().layout().removeWidget(page)
+  if hasattr(app, "wellPositions"):
+    del app.wellPositions
+  if hasattr(app, "wellShape"):
+    del app.wellShape
+  if hasattr(app, "background"):
+    del app.background
+
+
+def _showPage(layout, labelInfo):
+  app = QApplication.instance()
+  page = QWidget()
+  page.setLayout(layout)
+  stackedLayout = app.window.centralWidget().layout()
+  stackedLayout.addWidget(page)
+  oldWidget = stackedLayout.currentWidget()
+  with app.suppressBusyCursor():
+    stackedLayout.setCurrentWidget(page)
+    if labelInfo is not None:
+      img, label = labelInfo
+      label.setMinimumSize(1, 1)
+      label.show()
+      util.setPixmapFromCv(img, label)
+  return page
+
+
+class _InteractiveCVLabelLine(QLabel):
+  lineSelected = pyqtSignal(bool)
+  proceed = pyqtSignal()
+
+  def __init__(self, width, height, frame, thickness):
+    super().__init__()
+    self._width = width
+    self._height = height
+    self._startPoint = None
+    self._endPoint = None
+    self.setFocusPolicy(Qt.FocusPolicy.StrongFocus)
+    self.setMouseTracking(True)
+    self._thickness = thickness
+    self._frame = frame
+
+  def keyPressEvent(self, evt):
+    if self._endPoint is not None and (evt.key() == Qt.Key.Key_Enter or evt.key() == Qt.Key.Key_Return):
+      self.proceed.emit()
+      return
+    super().keyPressEvent(evt)
+
+  def updateFrame(self, frame=None):
+    if frame is not None:
+      self._frame = frame
+    else:
+      (startPointX, startPointY), (endPointX, endPointY) = self.getPoints()
+      cv2.line(self._frame, (startPointX, startPointY), (endPointX, endPointY), (255, 255, 255), self._thickness)
+    util.setPixmapFromCv(self._frame, self)
+    self._startPoint = None
+    self._endPoint = None
+    self.lineSelected.emit(False)
+
+  def setThickness(self, thickness):
+    self._thickness = thickness
+    if self._endPoint is None:
+      return
+    startPoint = self._startPoint
+    endPoint = self._endPoint
+    if self._size.height() != self._height or self._size.width() != self._width:
+      startPoint = util.transformCoordinates(QRectF(QPointF(0, 0), QSizeF(self._size)), QRectF(QPointF(0, 0), QSizeF(self._width, self._height)), startPoint)
+      endPoint = util.transformCoordinates(QRectF(QPointF(0, 0), QSizeF(self._size)), QRectF(QPointF(0, 0), QSizeF(self._width, self._height)), endPoint)
+    util.setPixmapFromCv(cv2.line(self._frame.copy(), (startPoint.x(), startPoint.y()), (endPoint.x(), endPoint.y()), (255, 255, 255), self._thickness), self)
+
+  def mouseMoveEvent(self, evt):
+    if self._endPoint is not None or self._startPoint is None:
+      return
+    startPoint = self._startPoint
+    endPoint = evt.pos()
+    if self._size.height() != self._height or self._size.width() != self._width:
+      startPoint = util.transformCoordinates(QRectF(QPointF(0, 0), QSizeF(self._size)), QRectF(QPointF(0, 0), QSizeF(self._width, self._height)), startPoint)
+      endPoint = util.transformCoordinates(QRectF(QPointF(0, 0), QSizeF(self._size)), QRectF(QPointF(0, 0), QSizeF(self._width, self._height)), endPoint)
+    util.setPixmapFromCv(cv2.line(self._frame.copy(), (startPoint.x(), startPoint.y()), (endPoint.x(), endPoint.y()), (255, 255, 255), self._thickness), self)
+
+  def mousePressEvent(self, evt):
+    if self._endPoint is None and self._startPoint is not None:
+      self._endPoint = evt.pos()
+      self.lineSelected.emit(True)
+    else:
+      self._startPoint = evt.pos()
+      self._endPoint = None
+      self.lineSelected.emit(False)
+      util.setPixmapFromCv(self._frame, self)
+
+  def enterEvent(self, evt):
+    QApplication.setOverrideCursor(Qt.CursorShape.CrossCursor)
+
+  def leaveEvent(self, evt):
+    QApplication.restoreOverrideCursor()
+    if self._endPoint is None:
+      util.setPixmapFromCv(self._frame, self)
+
+  def resizeEvent(self, evt):
+    super().resizeEvent(evt)
+    self._size = self.size()
+
+  def getPoints(self):
+    if self._endPoint is None:
+      return None
+    startPoint = self._startPoint
+    endPoint = self._endPoint
+    if self._size.height() != self._height or self._size.width() != self._width:
+      startPoint = util.transformCoordinates(QRectF(QPointF(0, 0), QSizeF(self._size)), QRectF(QPointF(0, 0), QSizeF(self._width, self._height)), self._startPoint)
+      endPoint = util.transformCoordinates(QRectF(QPointF(0, 0), QSizeF(self._size)), QRectF(QPointF(0, 0), QSizeF(self._width, self._height)), self._endPoint)
+    return (startPoint.x(), startPoint.y()), (endPoint.x(), endPoint.y())
+
+
+def addBlackSegments(config, videoPath, frameNumber):
+  tmpConfig = config.copy()
+
+  def getFrame():
+    hyperparameters = getHyperparametersSimple(tmpConfig)
+    if hyperparameters["headEmbededRemoveBack"] == 0 and hyperparameters["headEmbededAutoSet_BackgroundExtractionOption"] == 0:
+      frame, thresh1 = headEmbededFrame(videoPath, frameNumber, hyperparameters)
+    else:
+      hyperparameters["headEmbededRemoveBack"] = 1
+      hyperparameters["minPixelDiffForBackExtract"] = hyperparameters["headEmbededAutoSet_BackgroundExtractionOption"]
+      frame, thresh1 = headEmbededFrameBackExtract(videoPath, QApplication.instance().background, hyperparameters, frameNumber)
+
+    quartileChose = hyperparameters["outputValidationVideoContrastImprovementQuartile"]
+    lowVal  = int(np.quantile(frame, quartileChose))
+    highVal = int(np.quantile(frame, 1 - quartileChose))
+    frame[frame < lowVal]  = lowVal
+    frame[frame > highVal] = highVal
+    frame -= lowVal
+    return (frame * (255 / np.max(frame))).astype('uint8')
+
+  frame = getFrame()
+
+  imagePreProcessMethod = config.get("imagePreProcessMethod", None)
+  imagePreProcessParameters = config.get("imagePreProcessParameters", None)
+  if isinstance(imagePreProcessMethod, list) and isinstance(imagePreProcessParameters, list) and \
+      len(imagePreProcessMethod) == len(imagePreProcessParameters):
+    imagePreProcessMethod = imagePreProcessMethod[:]
+    imagePreProcessParameters = imagePreProcessParameters[:]
+  else:
+    imagePreProcessMethod = []
+    imagePreProcessParameters = []
+  tmpConfig["imagePreProcessMethod"] = imagePreProcessMethod
+  tmpConfig["imagePreProcessParameters"] = imagePreProcessParameters
+
+  layout = QVBoxLayout()
+  layout.addWidget(QLabel("Enter/Return keys can be used instead of clicking Add another segment."), alignment=Qt.AlignmentFlag.AlignCenter)
+  height, width = frame.shape[:2]
+  blackSegmentsLineWidth = QSpinBox()
+  blackSegmentsLineWidth.setMinimum(1)
+  blackSegmentsLineWidth.valueChanged.connect(lambda value: label.setThickness(value))
+  blackSegmentsLineWidth.setValue(config.get("addBlackLineToImg_Width", 1))
+  label = _InteractiveCVLabelLine(width, height, frame, blackSegmentsLineWidth.value())
+  layout.addWidget(label, alignment=Qt.AlignmentFlag.AlignCenter, stretch=1)
+  blackSegmentWidthLayout = QHBoxLayout()
+  blackSegmentWidthLayout.addStretch(1)
+  blackSegmentWidthLayout.addWidget(QLabel("Black segment line width:"))
+  blackSegmentWidthLayout.addWidget(blackSegmentsLineWidth)
+  blackSegmentWidthLayout.addStretch(1)
+  layout.addLayout(blackSegmentWidthLayout)
+
+  buttonsLayout = QHBoxLayout()
+  buttonsLayout.addStretch(1)
+  addSegmentBtn = QPushButton("Add another segment")
+  addSegmentBtn.setEnabled(False)
+
+  def storeSegment():
+    (startPointX, startPointY), (endPointX, endPointY) = label.getPoints()
+    imagePreProcessMethod.append("setImageLineToBlack")
+    imagePreProcessParameters.append([startPointX, startPointY, endPointX, endPointY, blackSegmentsLineWidth.value()])
+    label.updateFrame()
+  addSegmentBtn.clicked.connect(storeSegment)
+  label.proceed.connect(storeSegment)
+  label.lineSelected.connect(lambda selected: addSegmentBtn.setEnabled(selected))
+  buttonsLayout.addWidget(addSegmentBtn)
+  removeAllSegmentsBtn = QPushButton("Remove all segments")
+
+  def removeSegments():
+    for idx in reversed(range(len(imagePreProcessMethod))):
+      if imagePreProcessMethod[idx] != "setImageLineToBlack":
+        continue
+      del imagePreProcessMethod[idx]
+      del imagePreProcessParameters[idx]
+    label.updateFrame(getFrame())
+  removeAllSegmentsBtn.clicked.connect(removeSegments)
+  buttonsLayout.addWidget(removeAllSegmentsBtn)
+  buttonsLayout.addStretch(1)
+  layout.addLayout(buttonsLayout)
+
+  def saveClicked():
+    if label.getPoints() is not None:
+      storeSegment()
+    if not imagePreProcessMethod:
+      if "imagePreProcessMethod" in config:
+        del config["imagePreProcessMethod"]
+    else:
+      config["imagePreProcessMethod"] = imagePreProcessMethod
+    if not imagePreProcessParameters:
+      if "imagePreProcessParameters" in config:
+        del config["imagePreProcessMethod"]
+    else:
+      config["imagePreProcessParameters"] = imagePreProcessParameters
+  buttons = (("Done! Save changes!", saveClicked), ("Discard changes.", None))
+  util.showBlockingPage(layout, labelInfo=(frame, label), title="Click in the beginning and end of segment to set to black pixels", buttons=buttons)
+
+
+def adjustParamInsideAlgoPage(useNext=True):
+  app = QApplication.instance()
+
+  layout = QVBoxLayout()
+  title = "Select %sfirst frame for advanced parameter adjustment" % ("well and " if app.wellPositions else "")
+  layout.addWidget(util.apply_style(QLabel(title), font=util.TITLE_FONT), alignment=Qt.AlignmentFlag.AlignCenter)
+
+  cap = zzVideoReading.VideoCapture(app.videoToCreateConfigFileFor)
+
+  firstFrame = app.configFile.get("firstFrame", 1)
+  maxFrame = cap.get(7) - 1
+  frameSlider = util.SliderWithSpinbox(firstFrame, 0, maxFrame, name="First frame")
+
+  def getFrame():
+    cap.set(1, frameSlider.value())
+    ret, img = cap.read()
+    return img
+  frameSlider.valueChanged.connect(lambda: util.setPixmapFromCv(getFrame(), video))
+
+  img = getFrame()
+  height, width = img.shape[:2]
+  video = _WellSelectionLabel(width, height)
+  layout.addWidget(video, alignment=Qt.AlignmentFlag.AlignCenter, stretch=1)
+
+  sublayout = QHBoxLayout()
+  sublayout.addStretch(1)
+  sublayout.addWidget(frameSlider, alignment=Qt.AlignmentFlag.AlignCenter)
+  if maxFrame > 1000:
+    adjustLayout = QVBoxLayout()
+    adjustLayout.setSpacing(0)
+    adjustLayout.addStretch()
+    zoomInSliderBtn = QPushButton("Zoom in slider")
+
+    def updatePreciseFrameSlider(value):
+      if frameSlider.minimum() == value and frameSlider.minimum():
+        frameSlider.setMinimum(frameSlider.minimum() - 1)
+        frameSlider.setMaximum(frameSlider.maximum() - 1)
+      elif value == frameSlider.maximum() and frameSlider.maximum() != maxFrame:
+        frameSlider.setMinimum(frameSlider.minimum() + 1)
+        frameSlider.setMaximum(frameSlider.maximum() + 1)
+
+    def zoomInButtonClicked():
+      if "in" in zoomInSliderBtn.text():
+        zoomInSliderBtn.setText("Zoom out slider")
+        value = frameSlider.value()
+        minimum = value - 250
+        maximum = value + 250
+        if minimum < 0:
+          maximum = 500
+          minimum = 0
+        if maximum > frameSlider.maximum():
+          maximum = frameSlider.maximum()
+          minimum = maximum - 500
+        frameSlider.setMinimum(max(0, minimum))
+        frameSlider.setMaximum(min(frameSlider.maximum(), maximum))
+        frameSlider.setValue(value)
+        frameSlider.valueChanged.connect(updatePreciseFrameSlider)
+      else:
+        zoomInSliderBtn.setText("Zoom in slider")
+        frameSlider.setMinimum(0)
+        frameSlider.setMaximum(maxFrame)
+        frameSlider.valueChanged.disconnect(updatePreciseFrameSlider)
+    zoomInSliderBtn.clicked.connect(zoomInButtonClicked)
+    adjustLayout.addWidget(QLabel())
+    adjustLayout.addWidget(zoomInSliderBtn, alignment=Qt.AlignmentFlag.AlignLeft, stretch=1)
+    adjustLayout.addStretch()
+    sublayout.addLayout(adjustLayout, stretch=1)
+  else:
+    sublayout.addStretch(1)
+  layout.addLayout(sublayout)
+
+  recalculateLayout = QHBoxLayout()
+  recalculateLayout.addStretch()
+  recalculateLayout.addWidget(util.apply_style(QLabel("Recalculate background using this number of images:"), font=QFont("Helvetica", 10)), alignment=Qt.AlignmentFlag.AlignCenter)
+  nbImagesForBackgroundCalculation = QLineEdit()
+  nbImagesForBackgroundCalculation.setValidator(QIntValidator(nbImagesForBackgroundCalculation))
+  nbImagesForBackgroundCalculation.validator().setBottom(0)
+  nbImagesForBackgroundCalculation.setText("60")
+  nbImagesForBackgroundCalculation.setFixedWidth(50)
+  recalculateLayout.addWidget(nbImagesForBackgroundCalculation, alignment=Qt.AlignmentFlag.AlignCenter)
+  recalculateBtn = QPushButton("Recalculate")
+  recalculateBtn.clicked.connect(lambda: app.calculateBackgroundFreelySwim(app, nbImagesForBackgroundCalculation.text()))
+  recalculateLayout.addWidget(recalculateBtn, alignment=Qt.AlignmentFlag.AlignCenter)
+  recalculateLayout.addStretch()
+  layout.addLayout(recalculateLayout)
+
+  adjustButtonsLayout = QHBoxLayout()
+  adjustButtonsLayout.addStretch()
+  adjustBoutsBtn = QPushButton("Adjust Bouts Detection")
+  adjustBoutsBtn.clicked.connect(lambda: app.detectBouts(app, video.getWell(), frameSlider.value(), False))
+  adjustBoutsBtn.setToolTip("The aim here is to adjust parameters in order for the red dot on the top left of the image to appear when and only when movement is occurring.\n"
+                            "WARNING: if you don't want ZebraZoom to detect bouts, don't click on this button.")
+  adjustButtonsLayout.addWidget(adjustBoutsBtn, alignment=Qt.AlignmentFlag.AlignCenter)
+  adjustTrackingBtn = QPushButton("Adjust Tracking")
+  adjustTrackingBtn.clicked.connect(lambda: app.adjustHeadEmbededTracking(app, video.getWell(), frameSlider.value(), False))
+  adjustTrackingBtn.setToolTip('WARNING: only click this button if you\'ve tried to track without adjusting these parameters first. Trying to adjust these could make the tracking worse.\n'
+                               'Warning: for some of the "overwrite" parameters, you will need to change the initial value for the "overwrite" to take effect.')
+  adjustButtonsLayout.addWidget(adjustTrackingBtn, alignment=Qt.AlignmentFlag.AlignCenter)
+  addBlackSegmentsBtn = QPushButton("Add Black Segments on Artefacts")
+  addBlackSegmentsBtn.clicked.connect(lambda: addBlackSegments(app.configFile, app.videoToCreateConfigFileFor, frameSlider.value()))
+  adjustButtonsLayout.addWidget(addBlackSegmentsBtn, alignment=Qt.AlignmentFlag.AlignCenter)
+  adjustButtonsLayout.addStretch()
+  layout.addLayout(adjustButtonsLayout)
+
+  buttonsLayout = QHBoxLayout()
+  buttonsLayout.addStretch()
+  backBtn = QPushButton("Back")
+  backBtn.clicked.connect(lambda: app.configFileHistory[-2](restoreConfig=useNext))
+  backBtn.clicked.connect(lambda: _cleanup(app, page))
+  buttonsLayout.addWidget(backBtn, alignment=Qt.AlignmentFlag.AlignCenter)
+  startPageBtn = util.apply_style(QPushButton("Go to the start page"), background_color=util.LIGHT_CYAN)
+  startPageBtn.clicked.connect(lambda: app.show_frame("StartPage") or _cleanup(app, page))
+  buttonsLayout.addWidget(startPageBtn, alignment=Qt.AlignmentFlag.AlignCenter)
+  if useNext:
+    nextBtn = QPushButton("Next")
+    nextBtn.clicked.connect(lambda: util.addToHistory(app.show_frame)("FinishConfig") or _cleanup(app, page))
+    buttonsLayout.addWidget(nextBtn, alignment=Qt.AlignmentFlag.AlignCenter)
+  buttonsLayout.addStretch()
+  layout.addLayout(buttonsLayout)
+
+  page = _showPage(layout, (img, video))
+
+
+def adjustParamInsideAlgoFreelySwimPage(useNext=True):
+  app = QApplication.instance()
+
+  layout = QVBoxLayout()
+  title = "Select %sfirst frame for advanced parameter adjustment" % ("well and " if app.wellPositions else "")
+  layout.addWidget(util.apply_style(QLabel(title), font=util.TITLE_FONT), alignment=Qt.AlignmentFlag.AlignCenter)
+
+  cap = zzVideoReading.VideoCapture(app.videoToCreateConfigFileFor)
+
+  firstFrame = app.configFile.get("firstFrame", 1)
+  maxFrame = cap.get(7) - 1
+  frameSlider = util.SliderWithSpinbox(firstFrame, 0, maxFrame, name="First frame")
+
+  def getFrame():
+    cap.set(1, frameSlider.value())
+    ret, img = cap.read()
+    return img
+  frameSlider.valueChanged.connect(lambda: util.setPixmapFromCv(getFrame(), video))
+
+  img = getFrame()
+  height, width = img.shape[:2]
+  video = _WellSelectionLabel(width, height)
+  layout.addWidget(video, alignment=Qt.AlignmentFlag.AlignCenter, stretch=1)
+
+  sublayout = QHBoxLayout()
+  sublayout.addStretch(1)
+  sublayout.addWidget(frameSlider, alignment=Qt.AlignmentFlag.AlignCenter)
+  if maxFrame > 1000:
+    adjustLayout = QVBoxLayout()
+    adjustLayout.setSpacing(0)
+    adjustLayout.addStretch()
+    zoomInSliderBtn = QPushButton("Zoom in slider")
+
+    def updatePreciseFrameSlider(value):
+      if frameSlider.minimum() == value and frameSlider.minimum():
+        frameSlider.setMinimum(frameSlider.minimum() - 1)
+        frameSlider.setMaximum(frameSlider.maximum() - 1)
+      elif value == frameSlider.maximum() and frameSlider.maximum() != maxFrame:
+        frameSlider.setMinimum(frameSlider.minimum() + 1)
+        frameSlider.setMaximum(frameSlider.maximum() + 1)
+
+    def zoomInButtonClicked():
+      if "in" in zoomInSliderBtn.text():
+        zoomInSliderBtn.setText("Zoom out slider")
+        value = frameSlider.value()
+        minimum = value - 250
+        maximum = value + 250
+        if minimum < 0:
+          maximum = 500
+          minimum = 0
+        if maximum > frameSlider.maximum():
+          maximum = frameSlider.maximum()
+          minimum = maximum - 500
+        frameSlider.setMinimum(max(0, minimum))
+        frameSlider.setMaximum(min(frameSlider.maximum(), maximum))
+        frameSlider.setValue(value)
+        frameSlider.valueChanged.connect(updatePreciseFrameSlider)
+      else:
+        zoomInSliderBtn.setText("Zoom in slider")
+        frameSlider.setMinimum(0)
+        frameSlider.setMaximum(maxFrame)
+        frameSlider.valueChanged.disconnect(updatePreciseFrameSlider)
+    zoomInSliderBtn.clicked.connect(zoomInButtonClicked)
+    adjustLayout.addWidget(QLabel())
+    adjustLayout.addWidget(zoomInSliderBtn, alignment=Qt.AlignmentFlag.AlignLeft, stretch=1)
+    adjustLayout.addStretch()
+    sublayout.addLayout(adjustLayout, stretch=1)
+  else:
+    sublayout.addStretch(1)
+  layout.addLayout(sublayout)
+
+  recalculateLayout = QHBoxLayout()
+  recalculateLayout.addStretch()
+  recalculateLayout.addWidget(util.apply_style(QLabel("Recalculate background using this number of images:"), font=QFont("Helvetica", 10)), alignment=Qt.AlignmentFlag.AlignCenter)
+  nbImagesForBackgroundCalculation = QLineEdit()
+  nbImagesForBackgroundCalculation.setValidator(QIntValidator(nbImagesForBackgroundCalculation))
+  nbImagesForBackgroundCalculation.validator().setBottom(0)
+  nbImagesForBackgroundCalculation.setText("60")
+  nbImagesForBackgroundCalculation.setFixedWidth(50)
+  recalculateLayout.addWidget(nbImagesForBackgroundCalculation, alignment=Qt.AlignmentFlag.AlignCenter)
+  recalculateBtn = QPushButton("Recalculate")
+  recalculateBtn.clicked.connect(lambda: app.calculateBackgroundFreelySwim(app, nbImagesForBackgroundCalculation.text()))
+  recalculateLayout.addWidget(recalculateBtn, alignment=Qt.AlignmentFlag.AlignCenter)
+  recalculateLayout.addStretch()
+  layout.addLayout(recalculateLayout)
+
+  adjustButtonsLayout = QHBoxLayout()
+  adjustButtonsLayout.addStretch()
+  adjustBoutsBtn = QPushButton("Adjust Bouts Detection")
+  adjustBoutsBtn.clicked.connect(lambda: app.detectBouts(app, video.getWell(), frameSlider.value(), False))
+  adjustBoutsBtn.setToolTip("The aim here is to adjust parameters in order for the red dot on the top left of the image to appear when and only when movement is occurring.\n"
+                            "WARNING: if you don't want ZebraZoom to detect bouts, don't click on this button.")
+  adjustButtonsLayout.addWidget(adjustBoutsBtn, alignment=Qt.AlignmentFlag.AlignCenter)
+  adjustTrackingBtn = QPushButton("Adjust Tracking")
+  adjustTrackingBtn.clicked.connect(lambda: app.adjustFreelySwimTracking(app, video.getWell(), frameSlider.value(), False))
+  adjustTrackingBtn.setToolTip("WARNING: only click this button if you've tried to track without adjusting these parameters first. Trying to adjust these could make the tracking worse.")
+  adjustButtonsLayout.addWidget(adjustTrackingBtn, alignment=Qt.AlignmentFlag.AlignCenter)
+  adjustButtonsLayout.addStretch()
+  layout.addLayout(adjustButtonsLayout)
+
+  buttonsLayout = QHBoxLayout()
+  buttonsLayout.addStretch()
+  backBtn = QPushButton("Back")
+  backBtn.clicked.connect(lambda: app.configFileHistory[-2](restoreConfig=useNext))
+  backBtn.clicked.connect(lambda: _cleanup(app, page))
+  buttonsLayout.addWidget(backBtn, alignment=Qt.AlignmentFlag.AlignCenter)
+  startPageBtn = util.apply_style(QPushButton("Go to the start page"), background_color=util.LIGHT_CYAN)
+  startPageBtn.clicked.connect(lambda: app.show_frame("StartPage") or _cleanup(app, page))
+  buttonsLayout.addWidget(startPageBtn, alignment=Qt.AlignmentFlag.AlignCenter)
+  if useNext:
+    nextBtn = QPushButton("Next")
+    nextBtn.clicked.connect(lambda: util.addToHistory(app.show_frame)("FinishConfig") or _cleanup(app, page))
+    buttonsLayout.addWidget(nextBtn, alignment=Qt.AlignmentFlag.AlignCenter)
+  buttonsLayout.addStretch()
+  layout.addLayout(buttonsLayout)
+
+  page = _showPage(layout, (img, video))
+
+
+def adjustParamInsideAlgoFreelySwimAutomaticParametersPage(useNext=True):
+  app = QApplication.instance()
+
+  layout = QVBoxLayout()
+  title = "Select %sfirst frame for fish tail tracking parameters adjustment" % ("well and " if app.wellPositions else "")
+  layout.addWidget(util.apply_style(QLabel(title), font=util.TITLE_FONT), alignment=Qt.AlignmentFlag.AlignCenter)
+
+  cap = zzVideoReading.VideoCapture(app.videoToCreateConfigFileFor)
+
+  firstFrame = app.configFile.get("firstFrame", 1)
+  maxFrame = cap.get(7) - 1
+  frameSlider = util.SliderWithSpinbox(firstFrame, 0, maxFrame, name="First frame")
+
+  def getFrame():
+    cap.set(1, frameSlider.value())
+    ret, img = cap.read()
+    return img
+  frameSlider.valueChanged.connect(lambda: util.setPixmapFromCv(getFrame(), video))
+
+  img = getFrame()
+  height, width = img.shape[:2]
+  video = _WellSelectionLabel(width, height)
+  layout.addWidget(video, alignment=Qt.AlignmentFlag.AlignCenter, stretch=1)
+
+  sublayout = QHBoxLayout()
+  sublayout.addStretch(1)
+  sublayout.addWidget(frameSlider, alignment=Qt.AlignmentFlag.AlignCenter)
+  if maxFrame > 1000:
+    adjustLayout = QVBoxLayout()
+    adjustLayout.setSpacing(0)
+    adjustLayout.addStretch()
+    zoomInSliderBtn = QPushButton("Zoom in slider")
+
+    def updatePreciseFrameSlider(value):
+      if frameSlider.minimum() == value and frameSlider.minimum():
+        frameSlider.setMinimum(frameSlider.minimum() - 1)
+        frameSlider.setMaximum(frameSlider.maximum() - 1)
+      elif value == frameSlider.maximum() and frameSlider.maximum() != maxFrame:
+        frameSlider.setMinimum(frameSlider.minimum() + 1)
+        frameSlider.setMaximum(frameSlider.maximum() + 1)
+
+    def zoomInButtonClicked():
+      if "in" in zoomInSliderBtn.text():
+        zoomInSliderBtn.setText("Zoom out slider")
+        value = frameSlider.value()
+        minimum = value - 250
+        maximum = value + 250
+        if minimum < 0:
+          maximum = 500
+          minimum = 0
+        if maximum > frameSlider.maximum():
+          maximum = frameSlider.maximum()
+          minimum = maximum - 500
+        frameSlider.setMinimum(max(0, minimum))
+        frameSlider.setMaximum(min(frameSlider.maximum(), maximum))
+        frameSlider.setValue(value)
+        frameSlider.valueChanged.connect(updatePreciseFrameSlider)
+      else:
+        zoomInSliderBtn.setText("Zoom in slider")
+        frameSlider.setMinimum(0)
+        frameSlider.setMaximum(maxFrame)
+        frameSlider.valueChanged.disconnect(updatePreciseFrameSlider)
+    zoomInSliderBtn.clicked.connect(zoomInButtonClicked)
+    adjustLayout.addWidget(QLabel())
+    adjustLayout.addWidget(zoomInSliderBtn, alignment=Qt.AlignmentFlag.AlignLeft, stretch=1)
+    adjustLayout.addStretch()
+    sublayout.addLayout(adjustLayout, stretch=1)
+  else:
+    sublayout.addStretch(1)
+  layout.addLayout(sublayout)
+
+  recalculateLayout = QHBoxLayout()
+  recalculateLayout.addStretch()
+  recalculateLayout.addWidget(util.apply_style(QLabel("Recalculate background using this number of images:"), font=QFont("Helvetica", 10)), alignment=Qt.AlignmentFlag.AlignCenter)
+  nbImagesForBackgroundCalculation = QLineEdit()
+  nbImagesForBackgroundCalculation.setValidator(QIntValidator(nbImagesForBackgroundCalculation))
+  nbImagesForBackgroundCalculation.validator().setBottom(0)
+  nbImagesForBackgroundCalculation.setText("60")
+  nbImagesForBackgroundCalculation.setFixedWidth(50)
+  recalculateLayout.addWidget(nbImagesForBackgroundCalculation, alignment=Qt.AlignmentFlag.AlignCenter)
+  recalculateBtn = QPushButton("Recalculate")
+  recalculateBtn.clicked.connect(lambda: app.calculateBackgroundFreelySwim(app, nbImagesForBackgroundCalculation.text(), False, True))
+  recalculateLayout.addWidget(recalculateBtn, alignment=Qt.AlignmentFlag.AlignCenter)
+  recalculateLayout.addStretch()
+  layout.addLayout(recalculateLayout)
+
+  adjustTrackingBtn = QPushButton("Adjust Tracking")
+  adjustTrackingBtn.clicked.connect(lambda: app.adjustFreelySwimTrackingAutomaticParameters(app, video.getWell(), frameSlider.value(), False))
+  layout.addWidget(adjustTrackingBtn, alignment=Qt.AlignmentFlag.AlignCenter)
+
+  buttonsLayout = QHBoxLayout()
+  buttonsLayout.addStretch()
+  backBtn = QPushButton("Back")
+  backBtn.clicked.connect(lambda: app.configFileHistory[-2](restoreConfig=useNext))
+  backBtn.clicked.connect(lambda: _cleanup(app, page))
+  buttonsLayout.addWidget(backBtn, alignment=Qt.AlignmentFlag.AlignCenter)
+  startPageBtn = util.apply_style(QPushButton("Go to the start page"), background_color=util.LIGHT_CYAN)
+  startPageBtn.clicked.connect(lambda: app.show_frame("StartPage") or _cleanup(app, page))
+  buttonsLayout.addWidget(startPageBtn, alignment=Qt.AlignmentFlag.AlignCenter)
+  if useNext:
+    nextBtn = QPushButton("Next")
+    nextBtn.clicked.connect(lambda: util.addToHistory(app.show_frame)("FinishConfig") or _cleanup(app, page))
+    buttonsLayout.addWidget(nextBtn, alignment=Qt.AlignmentFlag.AlignCenter)
+  buttonsLayout.addStretch()
+  layout.addLayout(buttonsLayout)
+
+  page = _showPage(layout, (img, video))
+
+
+def adjustBoutDetectionOnlyPage(useNext=True):
+  app = QApplication.instance()
+
+  layout = QVBoxLayout()
+  title = "Select %sfirst frame for bout detection parameters adjustments" % ("well and " if app.wellPositions else "")
+  layout.addWidget(util.apply_style(QLabel(title), font=util.TITLE_FONT), alignment=Qt.AlignmentFlag.AlignCenter)
+
+  cap = zzVideoReading.VideoCapture(app.videoToCreateConfigFileFor)
+
+  firstFrame = app.configFile.get("firstFrame", 1)
+  maxFrame = cap.get(7) - 1
+  frameSlider = util.SliderWithSpinbox(firstFrame, 0, maxFrame, name="First frame")
+
+  def getFrame():
+    cap.set(1, frameSlider.value())
+    ret, img = cap.read()
+    return img
+  frameSlider.valueChanged.connect(lambda: util.setPixmapFromCv(getFrame(), video))
+
+  img = getFrame()
+  height, width = img.shape[:2]
+  video = _WellSelectionLabel(width, height)
+  layout.addWidget(video, alignment=Qt.AlignmentFlag.AlignCenter, stretch=1)
+
+  sublayout = QHBoxLayout()
+  sublayout.addStretch(1)
+  sublayout.addWidget(frameSlider, alignment=Qt.AlignmentFlag.AlignCenter)
+  if maxFrame > 1000:
+    adjustLayout = QVBoxLayout()
+    adjustLayout.setSpacing(0)
+    adjustLayout.addStretch()
+    zoomInSliderBtn = QPushButton("Zoom in slider")
+
+    def updatePreciseFrameSlider(value):
+      if frameSlider.minimum() == value and frameSlider.minimum():
+        frameSlider.setMinimum(frameSlider.minimum() - 1)
+        frameSlider.setMaximum(frameSlider.maximum() - 1)
+      elif value == frameSlider.maximum() and frameSlider.maximum() != maxFrame:
+        frameSlider.setMinimum(frameSlider.minimum() + 1)
+        frameSlider.setMaximum(frameSlider.maximum() + 1)
+
+    def zoomInButtonClicked():
+      if "in" in zoomInSliderBtn.text():
+        zoomInSliderBtn.setText("Zoom out slider")
+        value = frameSlider.value()
+        minimum = value - 250
+        maximum = value + 250
+        if minimum < 0:
+          maximum = 500
+          minimum = 0
+        if maximum > frameSlider.maximum():
+          maximum = frameSlider.maximum()
+          minimum = maximum - 500
+        frameSlider.setMinimum(max(0, minimum))
+        frameSlider.setMaximum(min(frameSlider.maximum(), maximum))
+        frameSlider.setValue(value)
+        frameSlider.valueChanged.connect(updatePreciseFrameSlider)
+      else:
+        zoomInSliderBtn.setText("Zoom in slider")
+        frameSlider.setMinimum(0)
+        frameSlider.setMaximum(maxFrame)
+        frameSlider.valueChanged.disconnect(updatePreciseFrameSlider)
+    zoomInSliderBtn.clicked.connect(zoomInButtonClicked)
+    adjustLayout.addWidget(QLabel())
+    adjustLayout.addWidget(zoomInSliderBtn, alignment=Qt.AlignmentFlag.AlignLeft, stretch=1)
+    adjustLayout.addStretch()
+    sublayout.addLayout(adjustLayout, stretch=1)
+  else:
+    sublayout.addStretch(1)
+  layout.addLayout(sublayout)
+
+  recalculateLayout = QHBoxLayout()
+  recalculateLayout.addStretch()
+  recalculateLayout.addWidget(util.apply_style(QLabel("Recalculate background using this number of images:"), font=QFont("Helvetica", 10)), alignment=Qt.AlignmentFlag.AlignCenter)
+  nbImagesForBackgroundCalculation = QLineEdit()
+  nbImagesForBackgroundCalculation.setValidator(QIntValidator(nbImagesForBackgroundCalculation))
+  nbImagesForBackgroundCalculation.validator().setBottom(0)
+  nbImagesForBackgroundCalculation.setText("60")
+  nbImagesForBackgroundCalculation.setFixedWidth(50)
+  recalculateLayout.addWidget(nbImagesForBackgroundCalculation, alignment=Qt.AlignmentFlag.AlignCenter)
+  recalculateBtn = QPushButton("Recalculate")
+  recalculateBtn.clicked.connect(lambda: app.calculateBackgroundFreelySwim(app, nbImagesForBackgroundCalculation.text(), False, True))
+  recalculateLayout.addWidget(recalculateBtn, alignment=Qt.AlignmentFlag.AlignCenter)
+  recalculateLayout.addStretch()
+  layout.addLayout(recalculateLayout)
+
+  adjustBoutsBtn = QPushButton("Adjust Bouts Detection")
+  adjustBoutsBtn.setToolTip("The aim here is to adjust parameters in order for the red dot on the top left of the image to appear when and only when movement is occurring.")
+  adjustBoutsBtn.clicked.connect(lambda: app.detectBouts(app, video.getWell(), frameSlider.value(), False))
+  layout.addWidget(adjustBoutsBtn, alignment=Qt.AlignmentFlag.AlignCenter)
+
+  fillGapLayout = QHBoxLayout()
+  fillGapLayout.addStretch()
+  fillGapLabel = util.apply_style(QLabel("Important: Bouts Merging: fillGapFrameNb:"), font=QFont("Helvetica", 0))
+  fillGapLabel.setToolTip("'fillGapFrameNb' parameter controls the distance (in number frames) under which two subsequent bouts are merged into one.")
+  fillGapLayout.addWidget(fillGapLabel, alignment=Qt.AlignmentFlag.AlignCenter)
+  fillGapFrameNb = QLineEdit()
+  fillGapFrameNb.setValidator(QIntValidator(nbImagesForBackgroundCalculation))
+  fillGapFrameNb.validator().setBottom(0)
+  if "fillGapFrameNb" in app.configFile:
+    fillGapFrameNb.setText(str(app.configFile["fillGapFrameNb"]))
+  fillGapFrameNb.setFixedWidth(50)
+
+  def updateFillGapFrameNb(text):
+    if not text:
+      del app.configFile["fillGapFrameNb"]
+    else:
+      app.configFile["fillGapFrameNb"] = int(text)
+  fillGapFrameNb.textChanged.connect(updateFillGapFrameNb)
+  fillGapFrameNb.setToolTip("'fillGapFrameNb' parameter controls the distance (in number frames) under which two subsequent bouts are merged into one.")
+  fillGapLayout.addWidget(fillGapFrameNb, alignment=Qt.AlignmentFlag.AlignCenter)
+  fillGapLayout.addStretch()
+  layout.addLayout(fillGapLayout)
+
+  buttonsLayout = QHBoxLayout()
+  buttonsLayout.addStretch()
+  backBtn = QPushButton("Back")
+  backBtn.clicked.connect(lambda: app.configFileHistory[-2](restoreConfig=useNext))
+  backBtn.clicked.connect(lambda: _cleanup(app, page))
+  buttonsLayout.addWidget(backBtn, alignment=Qt.AlignmentFlag.AlignCenter)
+  startPageBtn = util.apply_style(QPushButton("Go to the start page"), background_color=util.LIGHT_CYAN)
+  startPageBtn.clicked.connect(lambda: app.show_frame("StartPage") or _cleanup(app, page))
+  buttonsLayout.addWidget(startPageBtn, alignment=Qt.AlignmentFlag.AlignCenter)
+  if useNext:
+    nextBtn = QPushButton("Next")
+    nextBtn.clicked.connect(lambda: util.addToHistory(app.show_frame)("FinishConfig") or _cleanup(app, page))
+    buttonsLayout.addWidget(nextBtn, alignment=Qt.AlignmentFlag.AlignCenter)
+  buttonsLayout.addStretch()
+  layout.addLayout(buttonsLayout)
+
+  page = _showPage(layout, (img, video))
