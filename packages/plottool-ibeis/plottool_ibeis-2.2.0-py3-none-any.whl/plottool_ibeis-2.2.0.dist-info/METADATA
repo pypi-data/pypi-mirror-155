@@ -1,0 +1,164 @@
+Metadata-Version: 2.1
+Name: plottool-ibeis
+Version: 2.2.0
+Summary: Plottool - tools matplotlib computer vision plots
+Home-page: https://github.com/Erotemic/plottool_ibeis
+Author: Jon Crall
+Author-email: erotemic@gmail.com
+License: Apache 2
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Utilities
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.7
+Description-Content-Type: text/x-rst
+Requires-Dist: cachetools
+Requires-Dist: guitool-ibeis
+Requires-Dist: matplotlib
+Requires-Dist: six
+Requires-Dist: ubelt
+Requires-Dist: utool
+Requires-Dist: vtool-ibeis
+Provides-Extra: all
+Requires-Dist: cachetools ; extra == 'all'
+Requires-Dist: codecov ; extra == 'all'
+Requires-Dist: coverage ; extra == 'all'
+Requires-Dist: guitool-ibeis ; extra == 'all'
+Requires-Dist: matplotlib ; extra == 'all'
+Requires-Dist: pyqt5 ; extra == 'all'
+Requires-Dist: pytest ; extra == 'all'
+Requires-Dist: pytest-cov ; extra == 'all'
+Requires-Dist: six ; extra == 'all'
+Requires-Dist: ubelt ; extra == 'all'
+Requires-Dist: utool ; extra == 'all'
+Requires-Dist: vtool-ibeis ; extra == 'all'
+Requires-Dist: xdoctest ; extra == 'all'
+Provides-Extra: all-strict
+Requires-Dist: cachetools (==2.0.1) ; extra == 'all-strict'
+Requires-Dist: codecov (==2.0.15) ; extra == 'all-strict'
+Requires-Dist: coverage (==4.3.4) ; extra == 'all-strict'
+Requires-Dist: guitool-ibeis (==2.1.0) ; extra == 'all-strict'
+Requires-Dist: matplotlib ; extra == 'all-strict'
+Requires-Dist: pyqt5 (==5.11.2) ; extra == 'all-strict'
+Requires-Dist: pytest-cov ; extra == 'all-strict'
+Requires-Dist: pytest (==3.3.1) ; extra == 'all-strict'
+Requires-Dist: six (==1.10.0) ; extra == 'all-strict'
+Requires-Dist: ubelt (==0.9.0) ; extra == 'all-strict'
+Requires-Dist: utool (==2.1.5) ; extra == 'all-strict'
+Requires-Dist: vtool-ibeis (==2.2.0) ; extra == 'all-strict'
+Requires-Dist: xdoctest (==0.3.0) ; extra == 'all-strict'
+Provides-Extra: graphics
+Provides-Extra: graphics-strict
+Requires-Dist: opencv-python (==3.4.15.55) ; (python_version < "3.10" and python_version >= "3.9") and extra == 'graphics-strict'
+Requires-Dist: opencv-python (==3.1.0.0) ; (python_version < "3.4" and python_version >= "2.7") and extra == 'graphics-strict'
+Requires-Dist: opencv-python (==3.1.0.5) ; (python_version < "3.5" and python_version >= "3.4") and extra == 'graphics-strict'
+Requires-Dist: opencv-python (==3.1.0.2) ; (python_version < "3.6" and python_version >= "3.5") and extra == 'graphics-strict'
+Requires-Dist: opencv-python (==3.4.13.47) ; (python_version < "3.7" and python_version >= "3.6") and extra == 'graphics-strict'
+Requires-Dist: opencv-python (==3.4.15.55) ; (python_version < "3.8" and python_version >= "3.7") and extra == 'graphics-strict'
+Requires-Dist: opencv-python (==3.4.15.55) ; (python_version < "3.9" and python_version >= "3.8") and extra == 'graphics-strict'
+Requires-Dist: opencv-python (==4.5.4.58) ; (python_version >= "3.10") and extra == 'graphics-strict'
+Requires-Dist: opencv-python ; (python_version < "3.10" and python_version >= "3.9") and extra == 'graphics'
+Requires-Dist: opencv-python ; (python_version < "3.4" and python_version >= "2.7") and extra == 'graphics'
+Requires-Dist: opencv-python ; (python_version < "3.5" and python_version >= "3.4") and extra == 'graphics'
+Requires-Dist: opencv-python ; (python_version < "3.6" and python_version >= "3.5") and extra == 'graphics'
+Requires-Dist: opencv-python ; (python_version < "3.7" and python_version >= "3.6") and extra == 'graphics'
+Requires-Dist: opencv-python ; (python_version < "3.8" and python_version >= "3.7") and extra == 'graphics'
+Requires-Dist: opencv-python ; (python_version < "3.9" and python_version >= "3.8") and extra == 'graphics'
+Requires-Dist: opencv-python ; (python_version >= "3.10") and extra == 'graphics'
+Provides-Extra: headless
+Provides-Extra: headless-strict
+Requires-Dist: opencv-python-headless (==3.4.13.47) ; (python_version < "3.10" and python_version >= "3.9") and extra == 'headless-strict'
+Requires-Dist: opencv-python-headless (==3.4.2.16) ; (python_version < "3.4" and python_version >= "2.7") and extra == 'headless-strict'
+Requires-Dist: opencv-python-headless (==3.4.2.16) ; (python_version < "3.5" and python_version >= "3.4") and extra == 'headless-strict'
+Requires-Dist: opencv-python-headless (==3.4.11.39) ; (python_version < "3.6" and python_version >= "3.5") and extra == 'headless-strict'
+Requires-Dist: opencv-python-headless (==3.4.13.47) ; (python_version < "3.7" and python_version >= "3.6") and extra == 'headless-strict'
+Requires-Dist: opencv-python-headless (==3.4.13.47) ; (python_version < "3.8" and python_version >= "3.7") and extra == 'headless-strict'
+Requires-Dist: opencv-python-headless (==3.4.13.47) ; (python_version < "3.9" and python_version >= "3.8") and extra == 'headless-strict'
+Requires-Dist: opencv-python-headless (==4.5.4.58) ; (python_version >= "3.10") and extra == 'headless-strict'
+Requires-Dist: opencv-python-headless ; (python_version < "3.10" and python_version >= "3.9") and extra == 'headless'
+Requires-Dist: opencv-python-headless ; (python_version < "3.4" and python_version >= "2.7") and extra == 'headless'
+Requires-Dist: opencv-python-headless ; (python_version < "3.5" and python_version >= "3.4") and extra == 'headless'
+Requires-Dist: opencv-python-headless ; (python_version < "3.6" and python_version >= "3.5") and extra == 'headless'
+Requires-Dist: opencv-python-headless ; (python_version < "3.7" and python_version >= "3.6") and extra == 'headless'
+Requires-Dist: opencv-python-headless ; (python_version < "3.8" and python_version >= "3.7") and extra == 'headless'
+Requires-Dist: opencv-python-headless ; (python_version < "3.9" and python_version >= "3.8") and extra == 'headless'
+Requires-Dist: opencv-python-headless ; (python_version >= "3.10") and extra == 'headless'
+Provides-Extra: optional
+Requires-Dist: pyqt5 ; extra == 'optional'
+Provides-Extra: optional-strict
+Requires-Dist: pyqt5 (==5.11.2) ; extra == 'optional-strict'
+Provides-Extra: runtime-strict
+Requires-Dist: cachetools (==2.0.1) ; extra == 'runtime-strict'
+Requires-Dist: guitool-ibeis (==2.1.0) ; extra == 'runtime-strict'
+Requires-Dist: matplotlib ; extra == 'runtime-strict'
+Requires-Dist: six (==1.10.0) ; extra == 'runtime-strict'
+Requires-Dist: ubelt (==0.9.0) ; extra == 'runtime-strict'
+Requires-Dist: utool (==2.1.5) ; extra == 'runtime-strict'
+Requires-Dist: vtool-ibeis (==2.2.0) ; extra == 'runtime-strict'
+Provides-Extra: tests
+Requires-Dist: codecov ; extra == 'tests'
+Requires-Dist: coverage ; extra == 'tests'
+Requires-Dist: pyqt5 ; extra == 'tests'
+Requires-Dist: pytest ; extra == 'tests'
+Requires-Dist: pytest-cov ; extra == 'tests'
+Requires-Dist: xdoctest ; extra == 'tests'
+Provides-Extra: tests-strict
+Requires-Dist: codecov (==2.0.15) ; extra == 'tests-strict'
+Requires-Dist: coverage (==4.3.4) ; extra == 'tests-strict'
+Requires-Dist: pyqt5 (==5.11.2) ; extra == 'tests-strict'
+Requires-Dist: pytest-cov ; extra == 'tests-strict'
+Requires-Dist: pytest (==3.3.1) ; extra == 'tests-strict'
+Requires-Dist: xdoctest (==0.3.0) ; extra == 'tests-strict'
+
+plottool_ibeis
+==============
+
+|Pypi| |Downloads| |Codecov| |GithubActions| 
+
+Helpers for matplotlib computer vision plots for the IBEIS / WildMe project
+
+
+Repos relevant to the ibeis project:
+
+* https://github.com/Erotemic/plottool_ibeis
+
+* https://github.com/Erotemic/guitool_ibeis
+
+* https://github.com/Erotemic/dtool_ibeis
+
+* https://github.com/Erotemic/vtool_ibeis
+
+* https://github.com/Erotemic/pyflann_ibeis
+
+* https://github.com/Erotemic/pyhesaff
+
+* https://github.com/Erotemic/utool
+
+* https://github.com/Erotemic/ibeis
+
+
+.. |CircleCI| image:: https://circleci.com/gh/Erotemic/plottool_ibeis.svg?style=svg
+    :target: https://circleci.com/gh/Erotemic/plottool_ibeis
+.. |Travis| image:: https://img.shields.io/travis/Erotemic/plottool_ibeis/master.svg?label=Travis%20CI
+   :target: https://travis-ci.org/Erotemic/plottool_ibeis?branch=master
+.. |Appveyor| image:: https://ci.appveyor.com/api/projects/status/github/Erotemic/plottool_ibeis?branch=master&svg=True
+   :target: https://ci.appveyor.com/project/Erotemic/plottool_ibeis/branch/master
+.. |Codecov| image:: https://codecov.io/github/Erotemic/plottool_ibeis/badge.svg?branch=master&service=github
+   :target: https://codecov.io/github/Erotemic/plottool_ibeis?branch=master
+.. |Pypi| image:: https://img.shields.io/pypi/v/plottool_ibeis.svg
+   :target: https://pypi.python.org/pypi/plottool_ibeis
+.. |Downloads| image:: https://img.shields.io/pypi/dm/plottool_ibeis.svg
+   :target: https://pypistats.org/packages/plottool_ibeis
+.. |ReadTheDocs| image:: https://readthedocs.org/projects/plottool_ibeis/badge/?version=latest
+    :target: http://plottool_ibeis.readthedocs.io/en/latest/
+.. |GithubActions| image:: https://github.com/Erotemic/plottool_ibeis/actions/workflows/tests.yml/badge.svg?branch=main
+    :target: https://github.com/Erotemic/plottool_ibeis/actions?query=branch%3Amain
+
+
+
