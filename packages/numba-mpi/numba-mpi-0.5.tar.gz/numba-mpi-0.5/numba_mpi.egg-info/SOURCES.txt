@@ -1,0 +1,16 @@
+.gitignore
+LICENSE
+README.md
+setup.py
+.github/workflows/pdoc.yml
+.github/workflows/pylint.yml
+.github/workflows/stale.yml
+.github/workflows/tests+artifacts+pypi.yml
+numba_mpi/__init__.py
+numba_mpi/mpi.py
+numba_mpi.egg-info/PKG-INFO
+numba_mpi.egg-info/SOURCES.txt
+numba_mpi.egg-info/dependency_links.txt
+numba_mpi.egg-info/requires.txt
+numba_mpi.egg-info/top_level.txt
+tests/test_mpi.py
