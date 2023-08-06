@@ -1,0 +1,2 @@
+[console_scripts]
+configure_accelerate = fastai.distributed:configure_accelerate
