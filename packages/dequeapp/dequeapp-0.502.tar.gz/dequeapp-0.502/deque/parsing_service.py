@@ -1,0 +1,76 @@
+import time
+
+from deque.deque_environment import AGENT_API_SERVICE_URL
+from deque.redis_services import RedisServices
+import pickle
+from deque.rest_connect import RestConnect
+class ParsingService:
+    def __init__(self):
+        self._redis = RedisServices.get_redis_connection()
+        self._rest = RestConnect()
+        self.tracking_endpoint = AGENT_API_SERVICE_URL+"/fex/python/track/"
+
+    def receive(self):
+        while True:
+            run_ids = self._redis.smembers("run_ids:")
+
+
+            for s in run_ids:
+                s = str(s.decode("utf-8"))
+                steps = self._redis.smembers("run_id:steps:"+s)
+                #print(steps)
+
+                for step in steps:
+                    step = str(step.decode("utf-8"))
+                    #print("Step")
+                    #print(step)
+                    key = "run_id:step:data:"+s+step
+                    pickled_data = self._redis.get(key)
+                    #print("pickled data")
+                    #print(pickle.loads(pickled_data))
+
+
+
+                    if pickled_data is None:
+                        continue
+
+                    self._rest.post_binary(url=self.tracking_endpoint,data=pickled_data)
+                    self._redis.delete(key)
+                    self._redis.srem("run_id:steps:"+s,step)
+
+                    #self._get_all_values(data)
+            time.sleep(1)
+
+
+
+
+
+
+
+    def _get_all_values(self, nested_dictionary):
+        for key, value in nested_dictionary.items():
+            if type(value) is dict:
+                self._get_all_values(value)
+            else:
+                print(key, ":", value)
+
+    def test(self):
+        ex = {"k":"v"}
+        pickled_object = pickle.dumps(ex)
+        self._redis.set("test_key",pickled_object)
+        data_p = self._redis.get("test_key")
+
+        print(pickle.loads(data_p))
+
+if __name__ =="__main__":
+    deque = ParsingService()
+    #deque.receive()
+
+
+
+
+
+
+
+
+
