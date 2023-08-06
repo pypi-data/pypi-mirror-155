@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+big_fiubrother_core_application/__init__.py
+big_fiubrother_core_application/application.py
+big_fiubrother_core_application/application_arguments.py
+big_fiubrother_core_application/configuration.py
+big_fiubrother_core_application/environment.py
+big_fiubrother_core_application/logging_service.py
+big_fiubrother_core_application/runtime_context.py
+big_fiubrother_core_application/signal_handler.py
+big_fiubrother_core_application.egg-info/PKG-INFO
+big_fiubrother_core_application.egg-info/SOURCES.txt
+big_fiubrother_core_application.egg-info/dependency_links.txt
+big_fiubrother_core_application.egg-info/top_level.txt
