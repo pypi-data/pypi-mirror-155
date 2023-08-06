@@ -1,0 +1,3 @@
+[console_scripts]
+morphology_workflows = morphology_workflows.tasks.cli:main
+
