@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: electrostaticvacuum
+Version: 1.1
+Summary: Help calculate the electric intensity and potential in vacuum.
+Home-page: https://gitee.com/yueyinqiu5990/electrostaticvacuum.git
+License: MIT
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+
+# electrostaticvacuum
+
+`pip install electrostaticvacuum`
+
+This package can help you to calculate the electric intensity and potential in vacuum.
+
+
+
