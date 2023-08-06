@@ -1,0 +1,44 @@
+[build-system]
+requires = ["flit_core >=3.4"]
+build-backend = "flit_core.buildapi"
+
+
+[project.urls]
+source = "https://github.com/pacesm/pxlore"
+
+[project]
+name = "pxplore"
+authors = [
+    { name = "Martin Paces", email = "martin.paces@eox.at" },
+]
+maintainers = [
+    { name = "Martin Paces", email = "martin.paces@eox.at" },
+]
+license = { file = "LICENSE" }
+description = "Various tools to explore hidden details of the Python code."
+readme = "README.rst"
+requires-python = ">=3.6"
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Intended Audience :: Education",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Development Status :: 3 - Alpha",
+]
+dynamic = ["version"]
+dependencies = []
+
+[project.optional-dependencies]
+test = [
+    "pytest >=6",
+]
+dev = [
+    "pytest >=6",
+]
+docs = []
