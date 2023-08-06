@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: vtspy
+Version: 0.1.1
+Summary: VERITAS analysis tool
+Home-page: https://vtspy.readthedocs.io/en/latest/
+Author: Donggeun Tak
+Author-email: donggeun.tak@gmail.com
+License-File: LICENSE.txt
+Requires-Dist: astropy
+Requires-Dist: numpy
+Requires-Dist: matplotlib
+Requires-Dist: fermipy
+Requires-Dist: gammapy
+Provides-Extra: examples
+Requires-Dist: ipywidgets ; extra == 'examples'
+Requires-Dist: ipympl ; extra == 'examples'
+Requires-Dist: nodejs ; extra == 'examples'
+Provides-Extra: tests
+Requires-Dist: pytest ; extra == 'tests'
+Requires-Dist: pytest-ordering ; extra == 'tests'
+
