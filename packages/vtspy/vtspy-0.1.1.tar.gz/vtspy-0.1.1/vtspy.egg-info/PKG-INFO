@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: vtspy
+Version: 0.1.1
+Summary: VERITAS analysis tool
+Home-page: https://vtspy.readthedocs.io/en/latest/
+Author: Donggeun Tak
+Author-email: donggeun.tak@gmail.com
+Provides-Extra: tests
+Provides-Extra: examples
+License-File: LICENSE.txt

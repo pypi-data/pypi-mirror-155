@@ -1,0 +1,14 @@
+astropy
+numpy
+matplotlib
+fermipy
+gammapy
+
+[examples]
+ipywidgets
+ipympl
+nodejs
+
+[tests]
+pytest
+pytest-ordering
