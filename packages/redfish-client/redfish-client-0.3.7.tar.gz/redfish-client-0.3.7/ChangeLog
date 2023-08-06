@@ -1,0 +1,82 @@
+CHANGES
+=======
+
+0.3.7
+-----
+
+* Add custom \_\_dir\_\_ to Resource
+
+0.3.6
+-----
+
+* Add base\_url to logging
+* Update copyright year
+
+0.3.5
+-----
+
+* Enable logging of the requests and responses
+
+0.3.4
+-----
+
+* Fix uncaught exception
+
+0.3.3
+-----
+
+* Add support for put requests
+* Fix unit test to disambigute methods
+
+0.3.2
+-----
+
+* Make attribute access lazy
+
+0.3.1
+-----
+
+* Allow empty body for POST requests
+
+0.3.0
+-----
+
+* Update metadata
+* Officially drop support for Python < 3.6
+* Update CI/CD pipeline
+* Add a default timeout to the redfish requests
+
+0.2.2
+-----
+
+* Lazy-load resources
+
+0.2.1
+-----
+
+* Remove x-auth-token header before re-login
+* Raise handled exceptions
+* Expose session authentication data
+* Fix a bug with shared headers
+* Add pylint configuration
+* Add post, patch and delete methods to resource
+* Add a docstring to resource.execute\_action
+* Move cache into dedicated connector class
+* Move authentication mechanism into the connector
+* Abstract away connector response
+* Hook up test suite to the CircleCI
+* Add Makefile with essential commands
+* Add pipenv configuration file
+* Introduce CircleCI integration
+* Add tests for execute\_action and wait\_for methods
+* Add method that allows us to poll server for some key
+* Allow user to execute actions
+* Fix typo inside dig method
+* Add support for handling URL fragments
+* Update metadata after repo rename
+
+0.1.0
+-----
+
+* Add initial client implementation
+* Initial commit

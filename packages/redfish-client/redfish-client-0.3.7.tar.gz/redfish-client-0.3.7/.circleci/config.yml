@@ -1,0 +1,24 @@
+version: "2.1"
+
+workflows:
+  version: 2
+  main_workflow:
+    jobs:
+      - unit_test:
+          matrix:
+            parameters:
+              python: [ "3.6", "3.7", "3.8", "3.9" ]
+
+jobs:
+  unit_test:
+    parameters:
+      python:
+        description: cimg/python image tag
+        type: string
+    docker:
+      - image: cimg/python:<< parameters.python >>
+    steps:
+      - checkout
+      - run: pip install pytest requests-mock pytest-mock
+      - run: pip install .
+      - run: pytest tests
