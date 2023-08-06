@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: psquared-runner
+Version: 2.4.0
+Summary: Manage the connection and communications to a PSquared server.
+Home-page: http://nest.lbl.gov/projects/psquared
+Author: Simon Patton
+Author-email: sjpatton@lbl.gov
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Scientific/Engineering
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Python: >=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, <4
+Description-Content-Type: text/markdown
+Requires-Dist: requests
+
+# `runner_client` project #
+
+The `psquared_runner` project contains the `psquared_runner` package that provides a python code to run the `psquared` "command" in background outside the server.
+
+
+
