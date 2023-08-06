@@ -1,0 +1,10 @@
+pwned_passwords.db*
+insert_data
+rewrite
+*.o
+*.obj
+*.exe
+__pycache__/
+build/
+dist/
+*.egg-info/
