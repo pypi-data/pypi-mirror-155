@@ -1,0 +1,69 @@
+{
+    "workspace": {
+        "blocks": {
+            "blocks": [
+                {
+                    "id": "#Qm6~xqmz02sa:6r4s|A",
+                    "inputs": {
+                        "IF0": {
+                            "block": {
+                                "fields": {
+                                    "VAR": {
+                                        "id": "2NAN_Vaq_fS0ENC!HVyD"
+                                    }
+                                },
+                                "id": "EHY`g|Mr0Z.Y,3tsX+WD",
+                                "type": "variables_get"
+                            }
+                        }
+                    },
+                    "type": "controls_if",
+                    "x": 190,
+                    "y": 176
+                },
+                {
+                    "fields": {
+                        "VAR": {
+                            "id": "2NAN_Vaq_fS0ENC!HVyD"
+                        }
+                    },
+                    "id": "b3XIuP^I=wUmLm[4]?SY",
+                    "type": "variables_set",
+                    "x": 198,
+                    "y": 299
+                },
+                {
+                    "fields": {
+                        "OP": "AND"
+                    },
+                    "id": "8*;;Zex_$U+eE]C(xe^Y",
+                    "type": "logic_operation",
+                    "x": 309,
+                    "y": 121
+                },
+                {
+                    "fields": {
+                        "OP": "ADD"
+                    },
+                    "id": "RP@AF67?$l|e_IMFa8nI",
+                    "type": "math_arithmetic",
+                    "x": 366,
+                    "y": 172
+                }
+            ],
+            "languageVersion": 0
+        },
+        "variables": [
+            {
+                "id": "2NAN_Vaq_fS0ENC!HVyD",
+                "name": "my_var"
+            }
+        ]
+    },
+    "envs": [
+        {"my_var": true}
+    ],
+    "expected_results": [
+        {}
+    ]
+}

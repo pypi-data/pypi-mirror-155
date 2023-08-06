@@ -1,0 +1,43 @@
+{
+    "workspace": {
+        "blocks": {
+            "blocks": [
+                {
+                    "fields": {
+                        "VAR": {
+                            "id": "2NAN_Vaq_fS0ENC!HVyD"
+                        }
+                    },
+                    "id": "vS%avj(dz)[r6i(2~33w",
+                    "inputs": {
+                        "DELTA": {
+                            "shadow": {
+                                "fields": {
+                                    "NUM": 10
+                                },
+                                "id": "N!YM[Hl8}6KmMIo;{#wd",
+                                "type": "math_number"
+                            }
+                        }
+                    },
+                    "type": "math_change",
+                    "x": 144,
+                    "y": 92
+                }
+            ],
+            "languageVersion": 0
+        },
+        "variables": [
+            {
+                "id": "2NAN_Vaq_fS0ENC!HVyD",
+                "name": "toto"
+            }
+        ]
+    },
+    "envs": [
+        {}
+    ],
+    "expected_results": [
+        {}
+    ]
+}

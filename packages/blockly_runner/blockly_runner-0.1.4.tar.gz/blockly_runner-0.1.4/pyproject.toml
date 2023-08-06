@@ -1,0 +1,124 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "blockly_runner"
+authors = [
+    {name = "Bankstore", email = "tech@bankstore.fr"},
+]
+readme = "README.rst"
+classifiers = [
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Unix",
+    "Operating System :: POSIX",
+    "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+]
+description = "Run blockly workspaces directly, without the need to convert it to Python code."
+license = {file = "LICENSE"}
+requires-python = ">=3.8"
+dynamic = ["version"]
+keywords = ["Blockly", "Google Blockly", "Interpertor"]
+
+[project.urls]
+Home = "https://github.com/bankstore-fr/python-blockly-runner/"
+
+[tool.black]
+line-length = 100
+target-version = ['py310']
+
+[tool.isort]
+include_trailing_comma = true
+line_length = 100
+multi_line_output = 3
+known_first_party = "blockly_runner"
+default_section = "THIRDPARTY"
+skip = ".tox,.eggs,ci/templates,build,dist"
+
+[tool.mypy]
+python_version = "3.8"
+check_untyped_defs = true
+ignore_errors = false
+ignore_missing_imports = true
+strict_optional = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+warn_unused_configs = true
+warn_no_return = false
+plugins = []
+exclude = [ "tests" ]
+
+[tool.tox]
+legacy_tox_ini = """
+[tox]
+envlist =
+    clean,
+    check,
+    py38,
+    py39,
+    py310,
+    report
+isolated_build = True
+
+[testenv]
+basepython =
+    {clean,check,report}: {env:TOXPYTHON:python3}
+    py38: python3.8
+    py39: python3.9
+    py310: python3.10
+    .package: python3
+setenv =
+    PYTHONPATH={toxinidir}/tests
+    PYTHONUNBUFFERED=yes
+passenv =
+    *
+deps =
+    pytest
+    pytest-cov
+commands =
+    {posargs:pytest --cov --cov-report=term-missing -vv --ignore=src}
+
+[testenv:check]
+deps =
+    docutils
+    check-manifest
+    flake8
+    readme-renderer
+    pygments
+    isort
+    mypy
+skip_install = true
+commands =
+    python -m readme_renderer {toxinidir}/README.rst -o /dev/null
+    flake8
+    isort --verbose --check-only --diff --filter-files .
+    mypy src/
+
+[testenv:report]
+deps = coverage
+skip_install = true
+commands =
+    coverage report
+    coverage html
+
+[testenv:clean]
+commands = coverage erase
+skip_install = true
+deps = coverage
+
+[testenv:py38]
+basepython = {env:TOXPYTHON:python3.8}
+
+[testenv:py39]
+basepython = {env:TOXPYTHON:python3.9}
+
+[testenv:py310]
+basepython = {env:TOXPYTHON:python3.10}
+"""

@@ -1,0 +1,100 @@
+{
+    "workspace": {
+        "blocks": {
+            "blocks": [
+                {
+                    "fields": {
+                        "VAR": {
+                            "id": "uGu(QOCkNj?)6o)A?P6b"
+                        }
+                    },
+                    "id": "K~a4}T:~*H+,-d@LAgT=",
+                    "inputs": {
+                        "VALUE": {
+                            "block": {
+                                "id": "cZ4pR!=d#RbfwCszq3(B",
+                                "type": "logic_null"
+                            }
+                        }
+                    },
+                    "next": {
+                        "block": {
+                            "id": "4GMfrEZ7P1#YhR=VC(cd",
+                            "inputs": {
+                                "DO0": {
+                                    "block": {
+                                        "fields": {
+                                            "VAR": {
+                                                "id": "uGu(QOCkNj?)6o)A?P6b"
+                                            }
+                                        },
+                                        "id": "{lYEbPK%oD`.;w0=8/[7",
+                                        "inputs": {
+                                            "VALUE": {
+                                                "block": {
+                                                    "fields": {
+                                                        "NUM": 0
+                                                    },
+                                                    "id": "xP|{[`3B4oLtqLMZHpX#",
+                                                    "type": "math_number"
+                                                }
+                                            }
+                                        },
+                                        "type": "variables_set"
+                                    }
+                                },
+                                "IF0": {
+                                    "block": {
+                                        "fields": {
+                                            "OP": "EQ"
+                                        },
+                                        "id": "/s_-F0Mq~sxT7;*LNKZ#",
+                                        "inputs": {
+                                            "A": {
+                                                "block": {
+                                                    "id": "*O~v4nLVDC@r%@@I@E84",
+                                                    "type": "logic_null"
+                                                }
+                                            },
+                                            "B": {
+                                                "block": {
+                                                    "fields": {
+                                                        "VAR": {
+                                                            "id": "uGu(QOCkNj?)6o)A?P6b"
+                                                        }
+                                                    },
+                                                    "id": "G3s,7=de{YJRSq!Am+*L",
+                                                    "type": "variables_get"
+                                                }
+                                            }
+                                        },
+                                        "type": "logic_compare"
+                                    }
+                                }
+                            },
+                            "type": "controls_if"
+                        }
+                    },
+                    "type": "variables_set",
+                    "x": 181,
+                    "y": 39
+                }
+            ],
+            "languageVersion": 0
+        },
+        "variables": [
+            {
+                "id": "uGu(QOCkNj?)6o)A?P6b",
+                "name": "my_var"
+            }
+        ]
+    },
+    "envs": [
+        {}
+    ],
+    "expected_results": [
+        {
+            "my_var": 0
+        }
+    ]
+}

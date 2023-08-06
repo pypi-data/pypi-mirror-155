@@ -1,0 +1,98 @@
+{
+    "workspace": {
+        "blocks": {
+            "blocks": [
+                {
+                    "fields": {
+                        "VAR": {
+                            "id": "uGu(QOCkNj?)6o)A?P6b"
+                        }
+                    },
+                    "id": "K~a4}T:~*H+,-d@LAgT=",
+                    "inputs": {
+                        "VALUE": {
+                            "block": {
+                                "fields": {
+                                    "TEXT": "Hello!"
+                                },
+                                "id": "1gLkZdTyt^6;Uz}bj9!t",
+                                "type": "text"
+                            }
+                        }
+                    },
+                    "next": {
+                        "block": {
+                            "id": "Jw{Kh6%o;;MEUmBcx_,(",
+                            "inputs": {
+                                "TEXT": {
+                                    "block": {
+                                        "fields": {
+                                            "VAR": {
+                                                "id": "uGu(QOCkNj?)6o)A?P6b"
+                                            }
+                                        },
+                                        "id": "[ItoGd]/=3uLfDmg%2(2",
+                                        "type": "variables_get"
+                                    }
+                                }
+                            },
+                            "next": {
+                                "block": {
+                                    "id": "w^J[5B1F:,gZB2#W4-@,",
+                                    "inputs": {
+                                        "TEXT": {
+                                            "block": {
+                                                "fields": {
+                                                    "NUM": 12
+                                                },
+                                                "id": "=`Z4{L0yUBF~!:gkOL:o",
+                                                "type": "math_number"
+                                            }
+                                        }
+                                    },
+                                    "next": {
+                                        "block": {
+                                            "id": "jt9^IgmsXmI?t}LCZ/Fi",
+                                            "inputs": {
+                                                "TEXT": {
+                                                    "block": {
+                                                        "fields": {
+                                                            "TEXT": "World!"
+                                                        },
+                                                        "id": "*CU;Th4mZ+x~b4#1q2O!",
+                                                        "type": "text"
+                                                    }
+                                                }
+                                            },
+                                            "type": "text_print"
+                                        }
+                                    },
+                                    "type": "text_print"
+                                }
+                            },
+                            "type": "text_print"
+                        }
+                    },
+                    "type": "variables_set",
+                    "x": 181,
+                    "y": 39
+                }
+            ],
+            "languageVersion": 0
+        },
+        "variables": [
+            {
+                "id": "uGu(QOCkNj?)6o)A?P6b",
+                "name": "my_var"
+            }
+        ]
+    },
+    "envs": [
+        {}
+    ],
+    "expected_results": [
+        {
+            "my_var": "Hello!"
+        }
+    ]
+}

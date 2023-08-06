@@ -1,0 +1,232 @@
+{
+    "workspace": {
+        "blocks": {
+            "blocks": [
+                {
+                    "extraState": {
+                        "elseIfCount": 1,
+                        "hasElse": true
+                    },
+                    "id": "6^Vbk;+[4dGdZ=DZI@C3",
+                    "inputs": {
+                        "DO0": {
+                            "block": {
+                                "fields": {
+                                    "VAR": {
+                                        "id": "%/r]FKl#|yOZfc,/eH;5"
+                                    }
+                                },
+                                "id": "/8q5fD;L0iP5-qc0*2`J",
+                                "inputs": {
+                                    "VALUE": {
+                                        "block": {
+                                            "fields": {
+                                                "TEXT": "Branch 1"
+                                            },
+                                            "id": "fOH%cBrB|ByPwZjd9f;=",
+                                            "type": "text"
+                                        }
+                                    }
+                                },
+                                "type": "variables_set"
+                            }
+                        },
+                        "DO1": {
+                            "block": {
+                                "fields": {
+                                    "VAR": {
+                                        "id": "%/r]FKl#|yOZfc,/eH;5"
+                                    }
+                                },
+                                "id": "?U-1UJJVo2Ko/B7_G(%H",
+                                "inputs": {
+                                    "VALUE": {
+                                        "block": {
+                                            "fields": {
+                                                "TEXT": "Branch 2"
+                                            },
+                                            "id": ")4aFgM:Q;)xRgS1+!e$U",
+                                            "type": "text"
+                                        }
+                                    }
+                                },
+                                "type": "variables_set"
+                            }
+                        },
+                        "ELSE": {
+                            "block": {
+                                "fields": {
+                                    "VAR": {
+                                        "id": "%/r]FKl#|yOZfc,/eH;5"
+                                    }
+                                },
+                                "id": "|SZx9Y!=/;[=!zC5tcye",
+                                "inputs": {
+                                    "VALUE": {
+                                        "block": {
+                                            "fields": {
+                                                "TEXT": "Else"
+                                            },
+                                            "id": "6eO3#pf1ViBhkfGLFOM6",
+                                            "type": "text"
+                                        }
+                                    }
+                                },
+                                "type": "variables_set"
+                            }
+                        },
+                        "IF0": {
+                            "block": {
+                                "fields": {
+                                    "OP": "AND"
+                                },
+                                "id": "[m%*f2@lC42+BFaF6Y.$",
+                                "inputs": {
+                                    "A": {
+                                        "block": {
+                                            "fields": {
+                                                "OP": "EQ"
+                                            },
+                                            "id": "}0^ul:JGU?*sZ=xQr_!U",
+                                            "inputs": {
+                                                "A": {
+                                                    "block": {
+                                                        "fields": {
+                                                            "NUM": 0
+                                                        },
+                                                        "id": ".%lFVtmeY/`(fie5o$7A",
+                                                        "type": "math_number"
+                                                    }
+                                                },
+                                                "B": {
+                                                    "block": {
+                                                        "fields": {
+                                                            "NUM": 0
+                                                        },
+                                                        "id": "@U*B`~:Wn#Q%yY(6tt,i",
+                                                        "type": "math_number"
+                                                    }
+                                                }
+                                            },
+                                            "type": "logic_compare"
+                                        }
+                                    },
+                                    "B": {
+                                        "block": {
+                                            "fields": {
+                                                "OP": "EQ"
+                                            },
+                                            "id": ":E1[6rA%+Apy`_TeKn[x",
+                                            "inputs": {
+                                                "A": {
+                                                    "block": {
+                                                        "fields": {
+                                                            "NUM": 0
+                                                        },
+                                                        "id": ":*I-Xm,|d+^7`x?ACl!1",
+                                                        "type": "math_number"
+                                                    }
+                                                },
+                                                "B": {
+                                                    "block": {
+                                                        "fields": {
+                                                            "VAR": {
+                                                                "id": "a)B%~C/=|}|hxi:V56@`"
+                                                            }
+                                                        },
+                                                        "id": "3of4ZxoPvQF^%!!m[v/3",
+                                                        "type": "variables_get"
+                                                    }
+                                                }
+                                            },
+                                            "type": "logic_compare"
+                                        }
+                                    }
+                                },
+                                "type": "logic_operation"
+                            }
+                        },
+                        "IF1": {
+                            "block": {
+                                "id": "zz5AIAnH*SLM%TK{[wIs",
+                                "inputs": {
+                                    "BOOL": {
+                                        "block": {
+                                            "fields": {
+                                                "OP": "LT"
+                                            },
+                                            "id": "SK`pRc$a%`y@LMdwHsf~",
+                                            "inputs": {
+                                                "A": {
+                                                    "block": {
+                                                        "fields": {
+                                                            "NUM": 0
+                                                        },
+                                                        "id": "FfDFDQA`X2kg$m_l4!-N",
+                                                        "type": "math_number"
+                                                    }
+                                                },
+                                                "B": {
+                                                    "block": {
+                                                        "fields": {
+                                                            "VAR": {
+                                                                "id": "a)B%~C/=|}|hxi:V56@`"
+                                                            }
+                                                        },
+                                                        "id": "qt;A:E.}TPFQ1i0G6`]o",
+                                                        "type": "variables_get"
+                                                    }
+                                                }
+                                            },
+                                            "type": "logic_compare"
+                                        }
+                                    }
+                                },
+                                "type": "logic_negate"
+                            }
+                        }
+                    },
+                    "type": "controls_if",
+                    "x": 283,
+                    "y": 88
+                }
+            ],
+            "languageVersion": 0
+        },
+        "variables": [
+            {
+                "id": "a)B%~C/=|}|hxi:V56@`",
+                "name": "my_var"
+            },
+            {
+                "id": "%/r]FKl#|yOZfc,/eH;5",
+                "name": "result"
+            }
+        ]
+    },
+    "envs": [
+        {
+            "my_var": 0
+        },
+        {
+            "my_var": -20
+        },
+        {
+            "my_var": 10
+        }
+    ],
+    "expected_results": [
+        {
+            "my_var": 0,
+            "result": "Branch 1"
+        },
+        {
+            "my_var": -20,
+            "result": "Branch 2"
+        },
+        {
+            "my_var": 10,
+            "result": "Else"
+        }
+    ]
+}

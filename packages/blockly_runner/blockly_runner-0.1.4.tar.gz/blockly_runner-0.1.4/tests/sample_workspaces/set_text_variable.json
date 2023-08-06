@@ -1,0 +1,45 @@
+{
+    "workspace": {
+        "blocks": {
+            "blocks": [
+                {
+                    "fields": {
+                        "VAR": {
+                            "id": "a)B%~C/=|}|hxi:V56@`"
+                        }
+                    },
+                    "id": "3;!|DbkuD3KtLiU6Bm8Z",
+                    "inputs": {
+                        "VALUE": {
+                            "block": {
+                                "fields": {
+                                    "TEXT": "Hello world"
+                                },
+                                "id": "-v33n*X^*oFHX%c;Ix^J",
+                                "type": "text"
+                            }
+                        }
+                    },
+                    "type": "variables_set",
+                    "x": 91,
+                    "y": 35
+                }
+            ],
+            "languageVersion": 0
+        },
+        "variables": [
+            {
+                "id": "a)B%~C/=|}|hxi:V56@`",
+                "name": "my_var"
+            }
+        ]
+    },
+    "envs": [
+        {}
+    ],
+    "expected_results": [
+        {
+            "my_var": "Hello world"
+        }
+    ]
+}
