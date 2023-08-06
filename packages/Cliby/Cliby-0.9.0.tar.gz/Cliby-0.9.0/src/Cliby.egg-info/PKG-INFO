@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: Cliby
+Version: 0.9.0
+Summary: Simplify C libaries in python
+Author-email: Jun Ru Chen <junru.chen.2007@gmail.com>
+Keywords: C
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+
+# ****Cliby****
+### C libaries in python simplified
+### Compile your C files to be accessible with one command
+## Just run ```makelib``` in cmd to compile your files, and define input and output
+```
+makelib <C source file> <Your desired output directory>
+```
+### Then, just import the generated library with python's built-in in ctypes
+```
+```

@@ -1,0 +1,14 @@
+LICENSE.txt
+README.md
+pyproject.toml
+setup.py
+src/Cliby.py
+src/Cliby.egg-info/PKG-INFO
+src/Cliby.egg-info/SOURCES.txt
+src/Cliby.egg-info/dependency_links.txt
+src/Cliby.egg-info/entry_points.txt
+src/Cliby.egg-info/top_level.txt
+src/linux/build.py
+src/windows/builder.py
+src/windows/preprocessing.py
+src/windows/resources/locator.py
