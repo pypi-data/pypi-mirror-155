@@ -1,0 +1,47 @@
+#!python
+import os
+import sys
+
+import click
+
+import cli_changelog_md
+from core_changelog_md.common.exceptions import ChangeLogException
+from core_changelog_md.objects.changelog import Changelog
+
+
+@click.group()
+@click.version_option(version=cli_changelog_md.__version__)
+def cli() -> None:
+    pass
+
+
+@cli.command()
+@click.option(
+    '--file', '-f', default='CHANGELOG.md', show_default=True, help='Changelog file path', type=click.Path(exists=True))
+def current(file):
+    """
+    Echo current version
+    """
+    try:
+        click.echo(Changelog.from_file(os.path.realpath(file)).current_version.version.public)
+    except ChangeLogException as e:
+        click.echo(str(e))
+        sys.exit(os.EX_SOFTWARE)
+
+
+@cli.command(name='next')
+@click.option(
+    '--file', '-f', default='CHANGELOG.md', show_default=True, help='Changelog file path', type=click.Path(exists=True))
+def _next(file):
+    """
+    Echo next version
+    """
+    try:
+        click.echo(Changelog.from_file(os.path.realpath(file)).next_version)
+    except ChangeLogException as e:
+        click.echo(str(e))
+        sys.exit(os.EX_SOFTWARE)
+
+
+if __name__ == '__main__':
+    cli()
