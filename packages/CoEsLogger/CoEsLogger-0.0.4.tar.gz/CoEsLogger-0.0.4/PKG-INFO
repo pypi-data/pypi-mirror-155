@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: CoEsLogger
+Version: 0.0.4
+Summary: Logger
+Home-page: https://www.cityocean.com
+Author: CityOcean
+Author-email: it@cityocean.com
+License: GPL
+Keywords: logger,es
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.6
+License-File: LICENSE.txt
