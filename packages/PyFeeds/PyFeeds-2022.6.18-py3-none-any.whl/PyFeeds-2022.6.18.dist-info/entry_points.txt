@@ -1,0 +1,3 @@
+[console_scripts]
+feeds = feeds.cli:main
+
