@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: dj-easy-pdf
+Version: 0.2.1
+Summary: Django PDF views, the easy way
+Home-page: https://github.com/WilliamOtieno/django-easy-pdf
+Author: William Otieno
+Author-email: jimmywilliamotieno@gmail.com
+License: MIT
+Keywords: dj-easy-pdf
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+License-File: LICENSE
+Requires-Dist: django (>=3.2)
+Requires-Dist: xhtml2pdf (>=0.2)
+Requires-Dist: reportlab (>=3)
+
+- Give me time to refine this. I forked this from somewhere else and modified it because it didn't support my version of django. (Django 4.0)
+- Refer to the docs in https://django-easy-pdf.readthedocs.io/en/v0.2.0-dev1/
+- If you're on django3.2 or django 4 then you have nothing to worry about
+
+
