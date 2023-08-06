@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "carnival"
+version = "4.0.1"
+description = "Software provisioning tool"
+authors = ["Dmirty Simonov <demalf@gmail.com>"]
+license = "MIT"
+include = ["carnival/py.typed"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+Jinja2 = "3.0.3"
+Click = "8.0.3"
+python-dotenv = "0.19.2"
+colorama = "^0.4.4"
+tqdm = "^4.62.3"
+paramiko = "^2.8.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.5"
+pytest-cov = "^3.0.0"
+pytest-mock = "^3.6.1"
+flake8 = "^4.0.1"
+mypy = "^0.910"
+Sphinx = "^4.3.0"
+types-paramiko = "^2.8.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+carnival = "carnival.cli:main"
