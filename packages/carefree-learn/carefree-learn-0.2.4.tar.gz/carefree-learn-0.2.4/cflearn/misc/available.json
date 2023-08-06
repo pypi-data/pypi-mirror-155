@@ -1,0 +1,35 @@
+{
+  "data_info": [],
+  "tokenizers": [
+    "clip",
+    "clip_3.8",
+    "clip_3.9"
+  ],
+  "checkpoints": [
+    "vgg_style",
+    "adain",
+    "clip",
+    "vqgan_generator",
+    "style_gan2_generator.afhqcat",
+    "style_gan2_generator.afhqdog",
+    "style_gan2_generator.afhqwild",
+    "style_gan2_generator.brecahad",
+    "style_gan2_generator.ffhq",
+    "style_gan2_generator.metfaces",
+    "cycle_gan2_generator.pixel_art",
+    "cct_large_224",
+    "cct_large_384",
+    "u2net",
+    "u2net.lite"
+  ],
+  "reference": [
+    "u2net",
+    "u2netp",
+    "afhqcat",
+    "afhqdog",
+    "afhqwild",
+    "brecahad",
+    "ffhq",
+    "metfaces"
+  ]
+}
