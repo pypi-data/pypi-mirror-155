@@ -1,0 +1,13 @@
+LICENSE
+README.md
+setup.py
+pz7z8.egg-info/PKG-INFO
+pz7z8.egg-info/SOURCES.txt
+pz7z8.egg-info/dependency_links.txt
+pz7z8.egg-info/entry_points.txt
+pz7z8.egg-info/not-zip-safe
+pz7z8.egg-info/top_level.txt
+z7z8/__init__.py
+z7z8/dfslow.py
+z7z8/dsync.py
+z7z8/smod.py

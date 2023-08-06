@@ -1,0 +1,5 @@
+[console_scripts]
+dfslow = z7z8.dfslow:dfslow
+dsync = z7z8.dsync:dsync
+smod = z7z8.smod:main
+
