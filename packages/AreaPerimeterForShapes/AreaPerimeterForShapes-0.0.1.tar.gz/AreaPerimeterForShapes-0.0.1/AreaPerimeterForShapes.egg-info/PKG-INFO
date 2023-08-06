@@ -1,0 +1,37 @@
+Metadata-Version: 2.1
+Name: AreaPerimeterForShapes
+Version: 0.0.1
+Summary: Perimeter and area calculation for triangle, rectangle and circle.
+Home-page: UNKNOWN
+Author: Harsh Agarwal
+Author-email: harshagarwal9835@gmail.com
+License: MIT
+Description: This python module contains basic arithmetic functions for shapes like -
+        - Rectangle
+        - Circle
+        - Triangle
+        
+        and arithmetic functions includes:
+        - perimeter
+        - area
+        
+        * For rectangle, use function parameters as length and breadth
+        * For circle, use function parameters as radius
+        * For triangle, calculating function is of type **kwargs so,
+            include parameters as either side as (side=x)
+            or include parameters as base and height as (base=x, height=y)
+        
+        Change Log
+        ==============
+        
+        V 0.0.1 Dated: 18-06-2022
+        ==============
+        First Release
+Keywords: calculator
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Education
+Classifier: Operating System :: Microsoft :: Windows :: Windows 10
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Description-Content-Type: text/markdown
