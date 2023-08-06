@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: master-password-django
+Version: 1.0
+Summary: this package is based on a simple idea, if you are a login as a site admin, Enter any password for each user, you can log in as that user .
+Home-page: https://github.com/mojtabaakbari221b/django_master_password
+Author: Mojtaba Akbari
+Author-email: mojtaba.akbari.221B@gmail.com
+License: BSD-3-Clause
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 3.2
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Requires-Python: >=3.7
+License-File: LICENCE
+Requires-Dist: Django (>=3.2)
+
+check https://github.com/mojtabaakbari221b/django_master_password
