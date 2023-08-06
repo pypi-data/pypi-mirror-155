@@ -1,0 +1,36 @@
+Metadata-Version: 2.1
+Name: carefree-cython
+Version: 0.1.0
+Summary: Some commonly used cython functions
+Home-page: https://github.com/carefree0910/carefree-cython
+Author: carefree0910
+Author-email: syameimaru.saki@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/carefree0910/carefree-cython/archive/v0.1.0.tar.gz
+Keywords: python numpy data-science
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# carefree-cython
+
+`carefree-cython` implements some commonly used cython functions.
+
+
+## Installation
+
+`carefree-cython` requires Python 3.8 or higher.
+
+```bash
+pip install carefree-cython
+```
+
+or
+
+```bash
+git clone https://github.com/carefree0910/carefree-cython.git
+cd carefree-cython
+pip install -e .
+```
+
+
