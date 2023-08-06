@@ -1,0 +1,11 @@
+[tool.isort]
+# https://pycqa.github.io/isort/docs/configuration
+# Is the same as 99 in flake8:
+profile = "black"
+line_length = 99
+
+
+[tool.black]
+# https://black.readthedocs.io/
+# Is the same as 99 in flake8
+line-length = 99

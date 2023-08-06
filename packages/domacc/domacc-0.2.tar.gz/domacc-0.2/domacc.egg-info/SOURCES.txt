@@ -1,0 +1,17 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+bin/domacc
+domacc/__init__.py
+domacc/accountingData.py
+domacc/accountingManager.py
+domacc/budget.py
+domacc/fileReader.py
+domacc.egg-info/PKG-INFO
+domacc.egg-info/SOURCES.txt
+domacc.egg-info/dependency_links.txt
+domacc.egg-info/not-zip-safe
+domacc.egg-info/requires.txt
+domacc.egg-info/top_level.txt
