@@ -1,0 +1,217 @@
+find array target * {
+    <-types.String;
+    index: \;
+    ? array?! :: String {
+        .. index + target$ <: array$ {
+            ? array<<index..index+target$>> :: target {
+                * index;
+            }
+            index+: /;
+        }
+    } ,, {
+        ... e ->? array {
+            ? e :: target {
+                * index;
+            }
+            index+: /;
+        }
+    }
+    * -/;
+}
+
+count array target * {
+    <-math.sum;
+    ? target ~~ ->? array { * \; }
+    * sum([/ ... e ->? array ? e :: target]);
+}
+
+filter array function * {
+    * [e ... e ->? array ? function(e)];
+}
+
+filterFalse array function * {
+    flip arg * {
+        * ~~ function(arg);
+    }
+    * filter(array, flip);
+}
+
+map array function * {
+    * [function(e) ... e ->? array];
+}
+
+reverse array * {
+    o: [];
+    i: array$ - /;
+    .. i >: \ {
+        o+: [array<<i>>];
+        i-: /;
+    }
+    * o;
+}
+
+takeWhile array function * {
+    o: [];
+    ... e ->? array {
+        ? function(e) {
+            o+: [e];
+            ->
+        }
+        <-
+    }
+    * o;
+}
+
+dropWhile array function * {
+    o: [];
+    i: \;
+    ... e ->? array {
+        i+: /;
+        ? ~~ function(e) {
+            o+: [e];
+            <-
+        }
+    }
+    ... e ->? array<<i..array$>> {
+        o+: [e];
+    }
+    * o;
+}
+
+accumulate array function * {
+    prev: array<<\>>;
+    o: [array<<\>>];
+    ... e ->? array<</..>> {
+        prev: function(prev, e);
+        o+: [prev];
+    }
+    * o;
+}
+
+reduce array function * {
+    * accumulate(array, function)<<-/>>;
+}
+
+enumerate array * {
+    o: [];
+    i: \;
+    ... e ->? array {
+        o+: [[i, e]];
+        i+: /;
+    }
+    * o;
+}
+
+range start stop? step? * {
+    stop <> _;
+    step <> /;
+    ? step :: \ {
+        "step cannot be zero"!!!;
+    }
+    ? _ :: stop {
+        stop: start;
+        start: \;
+    }
+    o: [];
+    .. (step < \) ^ (start < stop) {
+        o+: [start];
+        start+: step;
+    }
+    ? step < \ && o {
+        o-: -/;
+    }
+    * o;
+}
+
+sort arr * {
+    ? arr$ <: / { * arr; }
+    <-collections.Stack;
+    l: \;
+    h: arr$ - /;
+    stack: Stack(h + /);
+    stack.push(l);
+    stack.push(h);
+    .. stack {
+        h: stack.pop();
+        l: stack.pop();
+        x: arr<<h>>;
+        i: l - /;
+        j: l;
+        .. j < h {
+            ? arr<<j>> <: x {
+                i+: /;
+                t: arr<<j>>;
+                arr<<j>>: arr<<i>>;
+                arr<<i>>: t;
+            }
+            j+: /;
+        }
+        t: arr<<h>>;
+        arr<<h>>: arr<<i+/>>;
+        arr<<i+/>>: t;
+        p: i + /;
+        ? p - / > l {
+            stack.push(l);
+            stack.push(p - /);
+        }
+        ? p + / < h {
+            stack.push(p + /);
+            stack.push(h);
+        }
+    }
+    * arr;
+}
+
+pairwise array * {
+    * [array<<i..i+/\>> ... i ->? range(array$ - /)];
+}
+
+zip arrays... * {
+    <-math.min;
+    out: [];
+    shortest: min([i$ ... i ->? arrays]);
+    ... i ->? range(shortest) {
+        out+: [[it<<i>> ... it ->? arrays]];
+    }
+    * out;
+}
+
+zipLongest fill arrays... * {
+    <-math.max;
+    out: [];
+    longest: max([i$ ... i ->? arrays]);
+    ... i ->? range(longest) {
+        zip: [];
+        ... it ->? arrays {
+            ?? {
+                zip+: [it<<i>>];
+            } !! {
+                zip+: [fill];
+            }
+        }
+        out+: [zip];
+    }
+    * out;
+}
+
+findAll array target * {
+    * [i ... i, v ->? enumerate(array) ? v :: target];
+}
+
+all array * {
+    ... i ->? array {
+        ? ~~ i {
+            * \;
+        }
+    }
+    * /;
+}
+
+any array * {
+    ... i ->? array {
+        ? i {
+            * /;
+        }
+    }
+    * \;
+}
