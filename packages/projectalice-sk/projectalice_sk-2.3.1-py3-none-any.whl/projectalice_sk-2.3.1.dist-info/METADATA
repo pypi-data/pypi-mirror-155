@@ -1,0 +1,76 @@
+Metadata-Version: 2.1
+Name: projectalice-sk
+Version: 2.3.1
+Summary: Project Alice skill kit
+Home-page: https://github.com/project-alice-assistant/ProjectAliceSkillKit
+Author: ProjectAlice
+Maintainer: Psychokiller1888
+Maintainer-email: laurentchervet@bluewin.ch
+License: GPL-3.0
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Software Development :: Code Generators
+Classifier: Topic :: Software Development :: Testing
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: AliceGit
+Requires-Dist: jsonschema (>=3.0.0)
+Requires-Dist: click
+Requires-Dist: unidecode
+Requires-Dist: requests
+Requires-Dist: InquirerPy (~=0.3.1)
+Requires-Dist: jinja2
+Requires-Dist: pytest (~=6.2.5)
+Requires-Dist: coverage (~=6.2)
+Requires-Dist: pytest-cov (~=3.0.0)
+Requires-Dist: coveralls (~=3.3.1)
+Requires-Dist: types-requests
+
+# Project Alice skill kit
+
+The Project Alice skill kit is a tool that helps create skills for Alice.
+
+## Features
+- Create new skills
+- Validate the format of all json files
+
+## Install
+```bash
+pip3 install projectalice-sk
+```
+The skill kit supports tab completion for `bash` and `zsh` it can be activated by adding this in your .bashrc:
+```bash
+eval "$(_ALICE_SK_COMPLETE=source projectalice-sk)"
+```
+For zsh users add this to your .zshrc:
+```bash
+eval "$(_ALICE_SK_COMPLETE=source_zsh projectalice-sk)"
+```
+
+## Testing
+It is possible to run all validation tests we currently run against a skill when someone submits a PR locally using:
+```bash
+projectalice-sk validate --paths <pathnames>
+```
+Further information on the validation tests can be found [here](https://github.com/project-alice-powered-by-snips/ProjectAliceSkillKit/blob/master/Validation.md)
+
+
+## Auto skills creation
+To create the basic files needed for a skill to work, run:
+
+```bash
+projectalice-sk create
+```
+This saves you the hassle of creating the directory tree, the required files and so on. It also follows the strict conventions we made for skills and will avoid you trouble when submitting your skill for review.
+
+
+## Contributors:
+- [maxbachmann](https://github.com/maxbachmann)
+- lazza
+
+
