@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: summon-tasks
+Version: 0.2.0
+Summary: 
+License: MIT
+Author: Tarcísio Eduardo Moreira Crocomo
+Author-email: tarcisioe@pm.me
+Requires-Python: >=3.7,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: pluggy (>=1.0.0,<2.0.0)
+Requires-Dist: typer (>=0.4.1,<0.5.0)
+Requires-Dist: typing-extensions (>=4.2.0,<5.0.0)
+Description-Content-Type: text/markdown
+
+Summon
+======
+
+Summon is a task runner, inspired by [Invoke](https://www.pyinvoke.org/), but
+entirely type-hint compatible.
+
+Summon is built upon [Typer](https://github.com/tiangolo/typer). Summon's tasks are
+Typer [commands](https://typer.tiangolo.com/tutorial/commands/))!
+
+Summon will run tasks from a `tasks.py` file, but also accepts plugins, powered
+by [pluggy](https://pluggy.readthedocs.io/en/stable/), meaning that shared
+tasks can be separated on a plugin package.
+
