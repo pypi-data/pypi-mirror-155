@@ -1,0 +1,10 @@
+boto3
+tqdm
+appdirs
+flask
+pyyaml
+werkzeug==2.0.3
+pyside6
+pillow
+botocore
+packaging
