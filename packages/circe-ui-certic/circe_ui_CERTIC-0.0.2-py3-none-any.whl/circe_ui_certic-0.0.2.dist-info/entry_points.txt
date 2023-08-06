@@ -1,0 +1,3 @@
+[console_scripts]
+circeui=circe_ui.__main__:run_cli
+

@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: circe-ui-certic
+Version: 0.0.2
+Summary: Circe Web UI
+License: MIT
+Author: Mickaël Desfrênes
+Author-email: mickael.desfrenes@unicaen.fr
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: aiofiles (>=0.8.0)
+Requires-Dist: argh (>=0.26.2)
+Requires-Dist: circe-client-CERTIC (>=0.0.7)
+Requires-Dist: itsdangerous (>=2.1.2)
+Requires-Dist: python-dotenv (>=0.20.0)
+Requires-Dist: sanic (>=22.3.2)
