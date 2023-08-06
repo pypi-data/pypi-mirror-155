@@ -1,0 +1,11 @@
+feast[redis]==0.19.4
+azure-storage-blob>=0.37.0
+azure-identity>=1.6.1
+
+[dev]
+pytest
+mypy
+assertpy
+
+[snowflake]
+snowflake-connector-python[pandas]>=2.7.3
