@@ -1,0 +1,11 @@
+click
+numpy
+sklearn
+tqdm
+torch
+torchvision
+tensorboard
+pyyaml
+
+[dev]
+pytest>=3.7
