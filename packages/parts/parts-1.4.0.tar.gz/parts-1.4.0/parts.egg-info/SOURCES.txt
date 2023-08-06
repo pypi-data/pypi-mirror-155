@@ -1,0 +1,11 @@
+LICENSE
+README.rst
+setup.cfg
+setup.py
+parts/__init__.py
+parts/parts.py
+parts.egg-info/PKG-INFO
+parts.egg-info/SOURCES.txt
+parts.egg-info/dependency_links.txt
+parts.egg-info/requires.txt
+parts.egg-info/top_level.txt
