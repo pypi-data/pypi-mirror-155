@@ -1,0 +1,9 @@
+geopandas
+lxml
+pathlib
+typing
+hdsr-pygithub
+
+[test]
+pytest
+pytest-cov
