@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: aiokeycloak
+Version: 0.0.2
+Summary: 
+Author: GLEF1X
+Author-email: glebgar567@gmail.com
+Requires-Python: >=3.7,<3.11
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Dist: aiohttp (>=3.8.1,<4.0.0)
+Requires-Dist: python-jose (>=3.3.0,<4.0.0)
