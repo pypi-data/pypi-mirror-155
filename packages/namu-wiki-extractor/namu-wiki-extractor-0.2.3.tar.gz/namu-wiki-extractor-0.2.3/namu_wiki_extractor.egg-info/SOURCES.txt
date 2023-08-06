@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+namu_wiki_extractor.egg-info/PKG-INFO
+namu_wiki_extractor.egg-info/SOURCES.txt
+namu_wiki_extractor.egg-info/dependency_links.txt
+namu_wiki_extractor.egg-info/top_level.txt
+namuwiki/__init__.py
+namuwiki/_syntax.py
+namuwiki/extractor.py
