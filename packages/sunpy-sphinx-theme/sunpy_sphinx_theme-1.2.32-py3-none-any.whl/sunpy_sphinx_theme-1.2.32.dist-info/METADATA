@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: sunpy-sphinx-theme
+Version: 1.2.32
+Summary: The sphinx theme for the SunPy website and documentation.
+Author: The SunPy Developers
+License: 2-clause BSD
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: BSD License
+License-File: LICENSE.md
+Requires-Dist: sphinx-bootstrap-theme
+
+The sphinx theme for the SunPy website and documentation.
