@@ -1,0 +1,68 @@
+Metadata-Version: 2.1
+Name: CodraFT
+Version: 2.0.2
+Summary: Signal and image processing software
+Home-page: https://codra-ingenierie-informatique.github.io/CodraFT/
+Author: Pierre Raybaut
+Author-email: p.raybaut@codra.fr
+License: BSD
+Platform: UNKNOWN
+Classifier: Topic :: Scientific/Engineering
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: OS Independent
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: Unix
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Development Status :: 5 - Production/Stable
+Requires-Python: <4,>=3.7
+License-File: Licence_CeCILL-B_V1-en.txt
+License-File: LICENSE
+Requires-Dist: h5py (>=3.0)
+Requires-Dist: NumPy (>=1.21)
+Requires-Dist: SciPy (>=1.7)
+Requires-Dist: scikit-image (>=0.18)
+Requires-Dist: psutil (>=5.5)
+Requires-Dist: guidata (>=2.3)
+Requires-Dist: guiqwt (>=4.3)
+Requires-Dist: QtPy (>=1.9)
+
+CodraFT: Signal and Image Processing Software
+=============================================
+
+CodraFT is a **generic signal and image processing software**.
+It is based on Python scientific libraries (such as NumPy,
+SciPy or OpenCV) and Qt graphical user interfaces (thanks to
+`guidata`_ and `guiqwt`_ libraries).
+
+.. image:: https://raw.githubusercontent.com/CODRA-Ingenierie-Informatique/CodraFT/master/doc/images/dark_light_modes.png
+
+CodraFT stands for "CODRA Filtering Tool".
+
+CodraFT features are available not only using the **stand-alone application**
+(easily installed thanks to the Windows installer or the Python package)
+but also by **embedding it into your own application**
+(see the "embedded tests" for detailed examples of how to do so).
+
+See `homepage`_ or `documentation`_ for more details on the library
+and `changelog`_ for recent history of changes.
+
+Copyrights and licensing
+------------------------
+
+- Copyright © 2022 `CEA`_ - `CODRA`_, Pierre Raybaut
+- Licensed under the terms of the `BSD / CeCILL-B License`_
+
+.. _guidata: https://pypi.python.org/pypi/guidata
+.. _guiqwt: https://pypi.python.org/pypi/guiqwt
+.. _homepage: https://codra-ingenierie-informatique.github.io/CodraFT/
+.. _documentation: https://codraft.readthedocs.io/en/latest/
+.. _changelog: https://github.com/CODRA-Ingenierie-Informatique/CodraFT/blob/master/CHANGELOG.md
+.. _CEA: http://www.cea.fr
+.. _CODRA: https://codra.net/
+.. _BSD / CeCILL-B License: https://github.com/CODRA-Ingenierie-Informatique/CodraFT/blob/master/LICENSE
+
+
