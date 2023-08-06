@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: djangorestframework-versioning
+Version: 0.0.6
+Summary: Versioning tools for use with Django Rest Framework
+Home-page: https://github.com/binnev/djangorestframework_versioning
+Author: Robin Neville
+Author-email: robin.m.neville@gmail.com
+Project-URL: Bug Tracker, https://github.com/binnev/djangorestframework_versioning/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: django (>=3.2)
+Requires-Dist: djangorestframework (>=3.13.1)
+Requires-Dist: typing (>=3.7.4.3)
+Requires-Dist: packaging (>=3.0.9)
+
+# Django Rest Framework Versioning
+WIP
