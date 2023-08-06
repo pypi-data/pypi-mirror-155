@@ -1,0 +1,56 @@
+[tool.poetry]
+name = "py-buzz"
+version = "3.2.0"
+description = "\"That's not flying, it's falling with style\": Exceptions with extras"
+authors = ["Tucker Beck <tucker.beck@gmail.com>"]
+license = "MIT"
+readme = "README.rst"
+packages = [
+    { include = 'buzz' }
+]
+
+[tool.poetry.dependencies]
+python = "^3.6.2"
+dataclasses = { version = "^0.8", python = "~3.6" }
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2"
+sphinx = "^2.0"
+black = "^22.1"
+isort = "^5.10.1"
+pytest-cov = "^3.0.0"
+pyproject-flake8 = "^0.0.1-alpha.2"
+pytest-random-order = "^1.0.4"
+mypy = "^0.961"
+
+[tool.black]
+line-length = 120
+
+[tool.isort]
+line_length = 120
+lines_after_imports = "2"
+profile = "black"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = [
+    "--random-order",
+    "--cov=buzz",
+    "--cov-report=term-missing",
+    "--cov-fail-under=90",
+]
+testpaths = "tests"
+
+[tool.flake8]
+max-line-length = 120
+max-complexity = 40
+
+[[tool.mypy.overrides]]
+module = [
+    "dataclasses",
+]
+ignore_missing_imports = true
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
