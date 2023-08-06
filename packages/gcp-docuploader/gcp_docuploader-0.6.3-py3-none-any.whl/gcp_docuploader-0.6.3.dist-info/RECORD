@@ -1,0 +1,15 @@
+docuploader/__init__.py,sha256=rdttj_i0e4IpRZYX9oZSTs5AnjAW4Zl__BoNHfUUHpU,575
+docuploader/__main__.py,sha256=nBw_kXkWKOp3thphz36uFF2E0pSHs5LZJ6iylS7OeCo,6653
+docuploader/credentials.py,sha256=k-OApGnbiALevdt3NYoTjbMm8hFiPVwKhI2KfdAX6ck,1865
+docuploader/log.py,sha256=gEo_PhDpMXmT6OSYXANIHhWVfxuMS2j5BDmNcq862Ws,2664
+docuploader/shell.py,sha256=L90xA6NKxWHHJBdiRJgveIyCuolRQhKq3pJndc2mtyE,1348
+docuploader/tar.py,sha256=kxP9OSEjDKkVl4QvbWedaol1LJC96_qKXIv6S6r-oWs,2102
+docuploader/upload.py,sha256=fWfe0Wygd1TqgRRUIeE7Uw0f8okS_LFGUxs1Wun885U,1072
+docuploader/protos/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+docuploader/protos/metadata_pb2.py,sha256=1EK3gD3BRxHia6wS7sezVeecaDWFjBZj8ZwXxd3_Q7M,1783
+gcp_docuploader-0.6.3.dist-info/LICENSE,sha256=z8d0m5b2O9McPEK1xHG_dWgUBT6EfBDz6wA0F7xSPTA,11358
+gcp_docuploader-0.6.3.dist-info/METADATA,sha256=KisxYxL9nNu6oLAAZONSjqQRzplvlg6NKWVUeKxZ_E8,672
+gcp_docuploader-0.6.3.dist-info/WHEEL,sha256=G16H4A3IeoQmnOrYV4ueZGKSjhipXx8zc8nu9FGlvMA,92
+gcp_docuploader-0.6.3.dist-info/entry_points.txt,sha256=z-p59ai1n93Y77p26O42iCm9ZNXhKx4zI00fqcKn-rg,58
+gcp_docuploader-0.6.3.dist-info/top_level.txt,sha256=m1gRmSGELIT7PHtqoVlxrKa58ZjrqKuLnbpmf6zFE9E,12
+gcp_docuploader-0.6.3.dist-info/RECORD,,
