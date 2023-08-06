@@ -1,0 +1,8 @@
+PyYAML>=5.0
+chevron>=0.14.0
+
+[dev]
+pytest
+bump2version
+wheel>=0.29.0
+twine
