@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: pytest-trace
+Version: 0.1.0
+Summary: Save OpenTelemetry traces generated during testing
+Author-email: Scott Nelson <scott@scottnelson.co>
+Project-URL: Homepage, https://github.com/scttnlsn/pytest-trace
+Keywords: pytest,py.test
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Framework :: Pytest
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+
+# pytest-trace
+
+Save OpenTelemetry spans generated during testing
+
+## Install
+
+```
+pip install pytest-trace
+```
+
+## Usage
+
+```
+pytest --save-spans=spans.json
+```

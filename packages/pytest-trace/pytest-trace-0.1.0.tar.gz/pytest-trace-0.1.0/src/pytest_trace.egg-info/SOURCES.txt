@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+setup.py
+src/pytest_trace/__init__.py
+src/pytest_trace/plugin.py
+src/pytest_trace.egg-info/PKG-INFO
+src/pytest_trace.egg-info/SOURCES.txt
+src/pytest_trace.egg-info/dependency_links.txt
+src/pytest_trace.egg-info/entry_points.txt
+src/pytest_trace.egg-info/requires.txt
+src/pytest_trace.egg-info/top_level.txt
