@@ -1,0 +1,48 @@
+Metadata-Version: 2.1
+Name: OpenFisca-France-Fiscalite-Miniere
+Version: 3.0.1
+Summary: French mining tax system for OpenFisca
+Home-page: https://github.com/openfisca/openfisca-france-fiscalite-miniere
+Author: OpenFisca Team
+Author-email: contact@openfisca.fr
+License: http://www.fsf.org/licensing/licenses/agpl-3.0.html
+Keywords: benefit microsimulation social tax
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3
+Classifier: Operating System :: POSIX
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Requires-Dist: OpenFisca-Core[web-api] (<36.0.0,>=35.0.0)
+Provides-Extra: dev
+Requires-Dist: autopep8 (<1.6.0,>=1.5.0) ; extra == 'dev'
+Requires-Dist: flake8 (<3.8.0,>=3.7.0) ; extra == 'dev'
+Requires-Dist: flake8-print ; extra == 'dev'
+Requires-Dist: flake8-2020 ; extra == 'dev'
+Requires-Dist: flake8-aaa ; extra == 'dev'
+Requires-Dist: flake8-annotations-complexity ; extra == 'dev'
+Requires-Dist: flake8-broken-line ; extra == 'dev'
+Requires-Dist: flake8-bugbear ; extra == 'dev'
+Requires-Dist: flake8-builtins ; extra == 'dev'
+Requires-Dist: flake8-comprehensions ; extra == 'dev'
+Requires-Dist: flake8-debugger ; extra == 'dev'
+Requires-Dist: flake8-eradicate ; extra == 'dev'
+Requires-Dist: flake8-executable ; extra == 'dev'
+Requires-Dist: flake8-import-order ; extra == 'dev'
+Requires-Dist: flake8-logging-format ; extra == 'dev'
+Requires-Dist: flake8-mutable ; extra == 'dev'
+Requires-Dist: flake8-pep3101 ; extra == 'dev'
+Requires-Dist: flake8-polyfill ; extra == 'dev'
+Requires-Dist: flake8-pyi ; extra == 'dev'
+Requires-Dist: flake8-rst-docstrings ; extra == 'dev'
+Requires-Dist: flake8-string-format ; extra == 'dev'
+Requires-Dist: flake8-tidy-imports ; extra == 'dev'
+Requires-Dist: mypy (<0.800,>=0.700) ; extra == 'dev'
+Requires-Dist: pytest (<6.0.0,>=5.0.0) ; extra == 'dev'
+Provides-Extra: simu
+Requires-Dist: pandas (<2.0.0,>=1.1.4) ; extra == 'simu'
+
+UNKNOWN
+
+

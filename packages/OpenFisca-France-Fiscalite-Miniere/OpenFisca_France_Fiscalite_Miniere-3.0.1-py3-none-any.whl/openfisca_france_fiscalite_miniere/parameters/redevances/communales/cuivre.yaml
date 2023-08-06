@@ -1,0 +1,25 @@
+description: Minerais de cuivre (par tonne de cuivre contenu)
+metadata:
+  unit: currency-EUR
+
+values:
+  2017-01-01:
+    value: 18.10
+    metadata:
+      reference: https://beta.legifrance.gouv.fr/codes/id/LEGISCTA000006191913/2018-01-01
+  2018-01-01:
+    value: 18.60
+    metadata:
+      reference: https://beta.legifrance.gouv.fr/codes/id/LEGISCTA000006191913/2019-01-01
+  2019-01-01:
+    value: 19.20
+    metadata:
+      reference: https://www.legifrance.gouv.fr/codes/id/LEGISCTA000006191913/2020-01-01
+  2020-01-01:
+    value: 19.70
+    metadata:
+      reference: https://www.legifrance.gouv.fr/codes/id/LEGISCTA000006191913/2020-07-25
+  2021-01-01:
+    value: 21.30
+    metadata:
+      reference: https://www.legifrance.gouv.fr/codes/id/LEGIARTI000043663105/2021-06-12/
