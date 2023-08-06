@@ -1,0 +1,6 @@
+recursive-include src *.cpp
+recursive-include include *.h
+recursive-include cmake_aux *
+recursive-include configs *
+include CMakeLists.txt
+prune extern/*
