@@ -1,0 +1,6 @@
+
+[:platform_system != "Windows"]
+xcffib
+
+[:platform_system == "Windows"]
+pywin32
