@@ -1,0 +1,12 @@
+requests
+importlib-metadata
+boto3==1.22.9
+dtw==1.4.0
+labelme==5.0.1
+matplotlib==3.2.2
+moviepy==1.0.3
+numpy==1.19.5
+opencv-contrib-python==4.6.0.66
+PyYAML==5.4.1
+sklearn
+tensorflow==2.6.0
