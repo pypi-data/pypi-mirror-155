@@ -1,0 +1,7 @@
+---Models in module 'l10n_se'---
+---Fields in module 'l10n_se'---
+---XML records in module 'l10n_se'---
+NEW ir.ui.view: l10n_se.res_partner_ocr_form
+NEW ir.ui.view: l10n_se.view_account_journal_se_ocr_form
+DEL ir.ui.view: l10n_se_ocr.res_partner_ocr_form
+DEL ir.ui.view: l10n_se_ocr.view_account_journal_se_ocr_form
