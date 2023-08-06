@@ -1,0 +1,129 @@
+Metadata-Version: 2.1
+Name: ai-core-sdk
+Version: 1.13.3
+Summary: SAP AI Core SDK
+Home-page: https://www.sap.com/
+Author: SAP SE
+License: SAP DEVELOPER LICENSE AGREEMENT
+Download-URL: https://pypi.python.org/pypi/ai-core-sdk
+Keywords: SAP AI Core SDK,SAP AI Core API,SAP AI Core
+Platform: Windows
+Platform: Linux
+Platform: Mac OS-X
+Platform: Unix
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Intended Audience :: Financial and Insurance Industry
+Classifier: Intended Audience :: Healthcare Industry
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: Legal Industry
+Classifier: Intended Audience :: Manufacturing
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: Other/Proprietary License
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows :: Windows 10
+Classifier: Operating System :: Microsoft :: Windows :: Windows 7
+Classifier: Operating System :: Microsoft :: Windows :: Windows 8
+Classifier: Operating System :: Microsoft :: Windows :: Windows 8.1
+Classifier: Operating System :: Microsoft :: Windows :: Windows Server 2008
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Topic :: Database
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: 
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: ai-api-client-sdk (==1.17.5)
+Requires-Dist: pyhumps (~=1.6.1)
+Requires-Dist: requests (~=2.25.1)
+Provides-Extra: aicore-content
+Requires-Dist: sap-ai-core-metaflow[kubernetes] (~=1.1.1) ; extra == 'aicore-content'
+Requires-Dist: click (~=8.0.4) ; extra == 'aicore-content'
+Requires-Dist: awscli (~=1.22.94) ; extra == 'aicore-content'
+Requires-Dist: python-dotenv (~=0.19.2) ; extra == 'aicore-content'
+Provides-Extra: all
+Requires-Dist: sap-ai-core-metaflow[kubernetes] (~=1.1.1) ; extra == 'all'
+Requires-Dist: click (~=8.0.4) ; extra == 'all'
+Requires-Dist: awscli (~=1.22.94) ; extra == 'all'
+Requires-Dist: python-dotenv (~=0.19.2) ; extra == 'all'
+
+# SAP AI Core SDK
+
+The SAP AI Core SDK is a Python-based SDK that lets you access SAP AI Core using Python methods and data structures. It provides tools that help you to manage your scenarios and workflows in SAP AI Core.
+
+The SAP AI Core SDK can be used to interact with SAP AI Core. It provides access to all public lifecycle and administration APIs.
+
+For example:
+
+* You can execute pipelines as a batch job to preprocess or train your models, or perform batch inference.
+
+* You can deploy а trained machine learning model as a web service to serve inference requests with high performance.
+
+* You can register your own Docker registry, synchronize your AI content from your own git repository, and register your own object store for training data and trained models.
+
+> **Note**
+>
+> Note that executing online inference is not part of SAP AI Core SDK.
+
+## Example Usage
+
+The SDK can, for instance, be used in a Jupyter notebook for convenient interaction with SAP AI Core in a test or development context.
+
+Here are a few examples how to use the SDK. For details on the methods, please refer to the html documentation provided in the `/docs` folder of the wheel file.
+
+### Import Definitions
+
+```python
+from ai_core_sdk.ai_core_v2_client import AICoreV2Client
+```
+
+## Create Client
+
+```python
+client = AICoreV2Client(base_url=AI_API_BASE,
+                        auth_url=AUTH_URL,
+                        client_id=CLIENT_ID,
+                        client_secret=CLIENT_SECRET,
+                        resource_group=resource_group_id)
+```
+
+### Create New Resource Group
+
+```python
+resource_group_create = client.resource_groups.create(resource_group_id=resource_group_id)
+print(resource_group_create.resource_group_id)
+resource_group_details = client.resource_groups.get(resource_group_id=resource_group_id)
+print(f"{resource_group_details.status_message} \n{resource_group_details.resource_group_id}")
+```
+
+### Create Object Store Secret
+
+```python
+# access key and secret are assumed to reside in environment variables OSS_KEY and OSS_SECRET
+object_store_secret_create = client.object_store_secrets.create(
+            name="default",
+            type="S3",
+            bucket="<your S3 bucket>",
+            endpoint="<your S3 host>",
+            path_prefix="<your path prefix in S3>", region="<your S3 region>",
+            data={"AWS_ACCESS_KEY_ID": os.environ.get("OSS_KEY"),
+            "AWS_SECRET_ACCESS_KEY": os.environ.get("OSS_SECRET")})
+
+secret_get = client.object_store_secrets.get(name="default")
+print(f"{secret_get.metadata}")
+```
+
+### List Scenarios
+
+```python
+scenarios = client.scenario.query()
+for scenario in scenarios.resources:
+    print(f"{scenario.name} {scenario.id}")
+```
+
