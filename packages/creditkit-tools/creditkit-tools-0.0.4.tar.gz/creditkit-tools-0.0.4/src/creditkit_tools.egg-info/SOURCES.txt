@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/creditkit_tools/__init__.py
+src/creditkit_tools/auxiliar_message.py
+src/creditkit_tools/format_text.py
+src/creditkit_tools/measure_time.py
+src/creditkit_tools.egg-info/PKG-INFO
+src/creditkit_tools.egg-info/SOURCES.txt
+src/creditkit_tools.egg-info/dependency_links.txt
+src/creditkit_tools.egg-info/top_level.txt
