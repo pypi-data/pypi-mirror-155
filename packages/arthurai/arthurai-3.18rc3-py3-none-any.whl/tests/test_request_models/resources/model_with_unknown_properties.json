@@ -1,0 +1,56 @@
+{
+  "partner_model_id": "3456",
+  "input_type": "TABULAR",
+  "output_type": "REGRESSION",
+  "explainability": {
+    "enabled": true,
+    "explanation_algo": "lime",
+    "foo": {
+      "bar": "baz"
+    }
+  },
+  "id": "ac55c7b4-2db7-4902-8cc3-969ed67a20c8",
+  "is_batch": false,
+  "archived": false,
+  "created_at": "2020-05-15T15:55:17.631797",
+  "updated_at": "2020-05-15T16:01:07.961584",
+  "attributes": [
+    {
+      "name": "attr_3",
+      "value_type": "INTEGER",
+      "stage": "PIPELINE_INPUT",
+      "id": "04418f36-529b-451e-8524-c57d09d9b02f",
+      "categorical": false,
+      "min_range": 0,
+      "max_range": 100,
+      "monitor_for_bias": false,
+      "bins": [
+        {
+          "continuous_start": 0,
+          "continuous_end": 5
+        },
+        {
+          "continuous_start": 5,
+          "continuous_end": 18
+        },
+        {
+          "continuous_start": 18,
+          "continuous_end": 30
+        },
+        {
+          "continuous_start": 30,
+          "continuous_end": 65
+        },
+        {
+          "continuous_start": 65,
+          "continuous_end": 100
+        }
+      ],
+      "is_unique": false,
+      "is_positive_predicted_attribute": false,
+      "foo": "bar"
+    }
+  ],
+  "classifier_threshold": 0.5,
+  "foo": "bar"
+}

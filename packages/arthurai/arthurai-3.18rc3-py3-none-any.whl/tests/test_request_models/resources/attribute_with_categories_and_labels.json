@@ -1,0 +1,21 @@
+{
+  "name": "attr_2",
+  "value_type": "BOOLEAN",
+  "stage": "PIPELINE_INPUT",
+  "id": "8514e278-24d1-4e20-b209-3c77eb2b247f",
+  "position": 1,
+  "categorical": true,
+  "monitor_for_bias": true,
+  "categories": [
+    {
+      "value": "1",
+      "label": "positive_label"
+    },
+    {
+      "value": "0",
+      "label": "negative_label"
+    }
+  ],
+  "is_unique": false,
+  "is_positive_predicted_attribute": true
+}

@@ -1,0 +1,94 @@
+{
+  "id": "123456789",
+  "external_id": "test_model",
+  "input_type": "TABULAR",
+  "output_type": "REGRESSION",
+  "explainability": {
+    "enabled": false
+  },
+  "display_name": "harrison_v3_test_3",
+  "description": "This is a test model",
+  "is_batch": false,
+  "accuracy_enabled": false,
+  "archived": false,
+  "created_at": "2020-06-30T18:13:24.213334Z",
+  "updated_at": "2020-06-30T18:13:24.213613Z",
+  "attributes": [
+    {
+      "id": "123456789",
+      "name": "pred_value",
+      "value_type": "INTEGER",
+      "stage": "PREDICTED_VALUE",
+      "position": 0,
+      "categorical": false,
+      "min_range": 8,
+      "max_range": 98,
+      "monitor_for_bias": false,
+      "is_unique": false,
+      "is_positive_predicted_attribute": false
+    },
+    {
+      "id": "123456789",
+      "name": "feature_b",
+      "value_type": "STRING",
+      "stage": "PIPELINE_INPUT",
+      "position": 1,
+      "categorical": true,
+      "monitor_for_bias": false,
+      "categories": [
+        {
+          "value": "G"
+        },
+        {
+          "value": "R"
+        },
+        {
+          "value": "O"
+        },
+        {
+          "value": "B"
+        },
+        {
+          "value": "P"
+        }
+      ],
+      "is_unique": false,
+      "is_positive_predicted_attribute": false
+    },
+    {
+      "id": "123456789",
+      "name": "gender",
+      "value_type": "STRING",
+      "stage": "NON_INPUT_DATA",
+      "position": 0,
+      "categorical": true,
+      "monitor_for_bias": true,
+      "categories": [
+        {
+          "value": "Female"
+        },
+        {
+          "value": "Male"
+        },
+        {
+          "value": "Non-binary"
+        }
+      ],
+      "is_unique": false,
+      "is_positive_predicted_attribute": false
+    },
+    {
+      "id": "123456789",
+      "name": "feature_a",
+      "value_type": "INTEGER",
+      "stage": "PIPELINE_INPUT",
+      "position": 0,
+      "categorical": false,
+      "min_range": 0,
+      "max_range": 25,
+      "monitor_for_bias": false,
+      "is_unique": true,
+      "is_positive_predicted_attribute": false
+    }
+  ]
+}
