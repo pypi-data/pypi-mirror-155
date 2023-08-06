@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: binit
+Version: 0.0.2
+Summary: Timestamp binning package
+Home-page: https://github.com/Ruairi-osul/binit
+Author: Ruairi O'Sullivan
+Author-email: ruairi.osullivan.work@gmail.com
+License: GNU GPLv3
+Project-URL: Source, https://github.com/Ruairi-osul/binit
+Keywords: data-analysis data-science array timestamps alignment
+Platform: UNKNOWN
+Requires-Python: >=3.6
+License-File: licence.txt
+Requires-Dist: numpy
+
+UNKNOWN
+
