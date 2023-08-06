@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: nws-aurora
+Version: 0.0.2
+Summary: Download forecast data for Aurora Borealis and Aurora Australis from the National Weather Service
+Home-page: https://palewi.re/docs/nws-aurora/
+Author: Ben Welsh
+Author-email: b@palewi.re
+License: MIT
+Project-URL: Maintainer, https://github.com/palewire
+Project-URL: Source, https://github.com/palewire/nws-aurora
+Project-URL: Tracker, https://github.com/palewire/nws-aurora/issues
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: License :: OSI Approved :: MIT License
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+### Links
+
+* Source: [www.swpc.noaa.gov](https://www.swpc.noaa.gov/products/aurora-30-minute-forecast)
+* Docs: [palewi.re/docs/nws-aurora/](https://palewi.re/docs/nws-aurora/)
+* Issues: [github.com/datadesk/nws-aurora/issues](https://github.com/datadesk/nws-aurora/issues)
+* Packaging: [pypi.python.org/pypi/nws-aurora](https://pypi.python.org/pypi/nws-aurora)
+* Testing: [github.com/datadesk/nws-aurora/actions](https://github.com/datadesk/nws-aurora/actions)
