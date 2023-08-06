@@ -1,0 +1,54 @@
+Metadata-Version: 2.1
+Name: fdsnnetextender
+Version: 3.2.0
+Summary: Compute extended network names from the fdsn network codes and a year using fdsn network webserice
+Home-page: https://gricad-gitlab.univ-grenoble-alpes.fr/OSUG/RESIF/fdsnnetextender
+Author: Jonathan Schaeffer, RESIF
+Author-email: jonathan.schaeffer@univ-grenoble-alpes.fr
+Maintainer: Jonathan Schaeffer, RESIF
+Maintainer-email: jonathan.schaeffer@univ-grenoble-alpes.fr
+License: GPL-3.0
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+[![pipeline status](https://gricad-gitlab.univ-grenoble-alpes.fr/OSUG/RESIF/fdsnextender/badges/master/pipeline.svg)](https://gricad-gitlab.univ-grenoble-alpes.fr/OSUG/RESIF/fdsnextender/commits/master)
+
+[![coverage report](https://gricad-gitlab.univ-grenoble-alpes.fr/OSUG/RESIF/fdsnextender/badges/master/coverage.svg)](https://gricad-gitlab.univ-grenoble-alpes.fr/OSUG/RESIF/fdsnextender/commits/master)
+
+# Generic tool to extend fdsn network code
+
+FDSN (https://fdsn.org) creates seismic network codes.
+
+Those can be in 2 forms : short or extended.
+
+This module uses FDSN network API (http://www.fdsn.org/ws/networks/) to find the extended network code, given a short form and a date.
+
+## Installation
+
+``` shell
+pip install fdsnnetextender
+```
+
+## Usage
+
+``` python
+
+from fdsnextender import FdsnNetExtender
+
+extender = FdsnNetExtender()
+ext_code = extender.extend('ZO', '2013-01-01')
+```
+Returns a string `ZO2008` for instance.
+
+
+
