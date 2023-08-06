@@ -1,0 +1,15 @@
+codecov>=2.0.15
+flake8>= 3.7.7
+GitPython>=2.1.11
+keystoneauth1>=3.18.0
+mock>=2.0.0
+osc-lib>=2.0.0
+oslo.serialization>=3.1.0
+pycodestyle>=2.5.0
+pytest>= 4.6.3
+pytest-cov>=2.7.1
+requests-mock>=1.2.0
+tempest>=17.1.0
+testtools>=2.2.0
+tox>= 3.12.1
+WebTest>=2.0.33

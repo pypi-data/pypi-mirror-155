@@ -1,0 +1,47 @@
+CHANGES
+=======
+
+0.1.0
+-----
+
+* Update author info
+* Changing setup.py to fix the issue related to rendering of README.md on PyPI
+* Adding Apache License in order to package for PyPI
+* Update CI to use GitHub actions
+* Add multi-data center commands
+* Update error message lessee creates illegal sublease/suboffer
+* Added subleasing tests
+* Completed implementation of all currently planned test cases, added documentation for running functional tests
+* Add future offers and future leases to the node list display
+* Added functional test framework
+* Implemented functional policy tests
+* Added functional test framework
+* Include owner, offer, and lease information in node list
+* Set tests to run py3 instead of py37
+* Removed owner change commands
+* Add resource list functionality
+* Restructure CLI to show names by default
+* Display parent\_lease\_uuid for offers and leases
+* Allow name of resource or project to be used in place of UUID
+* Added resource\_type and resource\_uuid filters for lease lists
+* Add owner change CLI
+* Add lessee id to offers
+* Fix 'lease list' owner filter
+* Updated args for create commands
+* Adds offer claim and updates lease create for direct creation
+* Add owner field to lease
+* Renamed lease offers and lease contracts to offers and leases
+* Bugfix on installing package
+* Fulfill and Expire Time
+* Allow contracts to be created using offer name
+* Added name support
+* --offer-uuid bugfix
+* run tests in travis-ci
+* Fix pylint error
+* Ignore unused import check in setup.py
+* Enable travis CI
+* Updated commands to reflect esi-leap changes
+* Set version with flag or env
+* Contract Support
+* Boilerplate and offer commands
+* first commit
