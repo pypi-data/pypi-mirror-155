@@ -1,0 +1,6 @@
+# Packages used in cli.py
+rich>=12.2.0
+typer>=0.4.1
+
+# To parse the version
+semantic-version>=2.10.0
