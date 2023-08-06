@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+djangorestframework_versioning.egg-info/PKG-INFO
+djangorestframework_versioning.egg-info/SOURCES.txt
+djangorestframework_versioning.egg-info/dependency_links.txt
+djangorestframework_versioning.egg-info/top_level.txt
+rest_framework_versioning/__init__.py
+rest_framework_versioning/admin.py
+rest_framework_versioning/apps.py
+rest_framework_versioning/exceptions.py
+rest_framework_versioning/middleware.py
+rest_framework_versioning/urls.py
+rest_framework_versioning/views.py
