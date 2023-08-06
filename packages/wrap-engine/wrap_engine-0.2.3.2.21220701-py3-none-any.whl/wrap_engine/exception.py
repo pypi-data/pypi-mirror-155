@@ -1,0 +1,3 @@
+
+class WrapEngineExceprion(Exception):
+    pass
