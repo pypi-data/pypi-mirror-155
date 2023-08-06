@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: core-changelog-md
+Version: 0.0.1
+Summary: core-changelog-md for cli-changelog-md
+Home-page: https://gitlab.com/kappasama.ks/openapi_django
+Author: Y. Chudakov
+Author-email: kappasama.ks@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
+Requires-Dist: Django (>=3.2.6)
+Requires-Dist: djantic (==0.7.0)
+Requires-Dist: pydantic (==1.9.1)
+
+# core-changelog-md
+
+Содержит объекты и общую логику работы с CHANGELOG
+
