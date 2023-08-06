@@ -1,0 +1,16 @@
+twisted>=17.9
+scrapy-team
+setuptools
+six
+w3lib
+zope.interface
+
+[docs]
+furo
+sphinx
+sphinx-autobuild
+
+[test]
+pytest
+pytest-cov
+requests
