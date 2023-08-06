@@ -1,0 +1,16 @@
+LICENSE
+README.md
+setup.py
+examples/__init__.py
+examples/fcm_2d.py
+fuzzycmeans/__init__.py
+fuzzycmeans/fuzzy_clustering.py
+fuzzycmeans/visualization.py
+fuzzycmeans.egg-info/PKG-INFO
+fuzzycmeans.egg-info/SOURCES.txt
+fuzzycmeans.egg-info/dependency_links.txt
+fuzzycmeans.egg-info/requires.txt
+fuzzycmeans.egg-info/top_level.txt
+tests/__init__.py
+tests/test_notypical.py
+tests/test_typical.py
