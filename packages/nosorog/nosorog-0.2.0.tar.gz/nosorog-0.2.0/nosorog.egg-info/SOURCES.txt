@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+nosorog/__init__.py
+nosorog/__version__.py
+nosorog.egg-info/PKG-INFO
+nosorog.egg-info/SOURCES.txt
+nosorog.egg-info/dependency_links.txt
+nosorog.egg-info/not-zip-safe
+nosorog.egg-info/top_level.txt
