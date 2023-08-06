@@ -1,0 +1,161 @@
+======
+reiter
+======
+
+Wrapper for Python iterators and iterables that implements a list-like random-access interface by caching retrieved items for later reuse.
+
+|pypi| |readthedocs| |actions| |coveralls|
+
+.. |pypi| image:: https://badge.fury.io/py/reiter.svg
+   :target: https://badge.fury.io/py/reiter
+   :alt: PyPI version and link.
+
+.. |readthedocs| image:: https://readthedocs.org/projects/reiter/badge/?version=latest
+   :target: https://reiter.readthedocs.io/en/latest/?badge=latest
+   :alt: Read the Docs documentation status.
+
+.. |actions| image:: https://github.com/lapets/reiter/workflows/lint-test-cover-docs/badge.svg
+   :target: https://github.com/lapets/reiter/actions/workflows/lint-test-cover-docs.yml
+   :alt: GitHub Actions status.
+
+.. |coveralls| image:: https://coveralls.io/repos/github/lapets/reiter/badge.svg?branch=main
+   :target: https://coveralls.io/github/lapets/reiter?branch=main
+   :alt: Coveralls test coverage summary.
+
+Package Installation and Usage
+------------------------------
+This library is available as a `package on PyPI <https://pypi.org/project/reiter>`__::
+
+    python -m pip install reiter
+
+The library can be imported in the usual way::
+
+    import reiter
+    from reiter import reiter
+
+Examples
+^^^^^^^^
+
+.. |reiter| replace:: ``reiter``
+.. _reiter: https://reiter.readthedocs.io/en/latest/_source/reiter.html#reiter.reiter.reiter
+
+This library makes it possible to wrap `iterators <https://docs.python.org/3/glossary.html#term-iterator>`__ and `iterables <https://docs.python.org/3/glossary.html#term-iterable>`__ within an interface that enables repeated iteration over -- and random access by index of -- the items contained within. A |reiter|_ instance yields the same sequence of items as the wrapped iterator or iterable::
+
+    >>> from reiter import reiter
+    >>> xs = iter([1, 2, 3])
+    >>> ys = reiter(xs)
+    >>> list(ys)
+    [1, 2, 3]
+
+Unlike iterators and some iterable objects (including those that are built-in and those that are user-defined), an instance of the |reiter|_ class *always* allows iteration over its items any number of times::
+
+    >>> list(ys), list(ys)
+    ([1, 2, 3], [1, 2, 3])
+
+Furthermore, it is also possible to access elements by their index::
+
+    >>> xs = iter([1, 2, 3])
+    >>> ys = reiter(xs)
+    >>> ys[0], ys[1], ys[2]
+    (1, 2, 3)
+
+.. |next| replace:: ``next``
+.. _next: https://docs.python.org/3/library/functions.html#next
+
+.. |StopIteration| replace:: ``StopIteration``
+.. _StopIteration: https://docs.python.org/3/library/exceptions.html#StopIteration
+
+The built-in Python |next|_ function is also supported, and any attempt to retrieve an item once the sequence of items is exhausted raises the |StopIteration|_ exception in the usual manner::
+
+    >>> xs = reiter(iter([1, 2, 3]))
+    >>> next(xs), next(xs), next(xs)
+    (1, 2, 3)
+    >>> next(xs)
+    Traceback (most recent call last):
+      ...
+    StopIteration
+
+However, all items yielded during iteration can be accessed by their index, and it is also possible to iterate over those items again::
+
+    >>> xs[0], xs[1], xs[2]
+    (1, 2, 3)
+    >>> [x for x in xs]
+    [1, 2, 3]
+
+.. |reiter___getitem__| replace:: ``__getitem__``
+.. _reiter___getitem__: https://reiter.readthedocs.io/en/latest/_source/reiter.html#reiter.reiter.reiter.__getitem__
+
+Retrieval of yielded items using slice notation is also supported via the |reiter___getitem__|_ method::
+
+	>>> xs = reiter(iter([1, 2, 3]))
+	>>> xs[0:2]
+	[1, 2]
+
+.. |reiter_has| replace:: ``has``
+.. _reiter_has: https://reiter.readthedocs.io/en/latest/_source/reiter.html#reiter.reiter.reiter.has
+
+.. |reiter_length| replace:: ``length``
+.. _reiter_length: https://reiter.readthedocs.io/en/latest/_source/reiter.html#reiter.reiter.reiter.length
+
+Instances of |reiter|_ support additional inspection methods, as well. For example, the |reiter_has|_ method returns a boolean value indicating whether a next item is available and the |reiter_length|_ method returns the length of the sequence of items emitted by the instance (once no more items can be emitted)::
+
+    >>> xs = reiter(iter([1, 2, 3]))
+    >>> xs.has(), xs.has(), xs.has(), xs.has()
+    (True, True, True, False)
+    >>> xs.length()
+    3
+
+Development
+-----------
+All installation and development dependencies are managed using `setuptools <https://pypi.org/project/setuptools>`__ and are fully specified in ``setup.py``. The ``extras_require`` parameter is used to `specify optional requirements <https://setuptools.pypa.io/en/latest/userguide/dependency_management.html#optional-dependencies>`__ for various development tasks. This makes it possible to specify additional options (such as ``docs``, ``lint``, and so on) when performing installation using `pip <https://pypi.org/project/pip>`__::
+
+    python -m pip install .[docs,lint]
+
+Documentation
+^^^^^^^^^^^^^
+.. include:: toc.rst
+
+The documentation can be generated automatically from the source files using `Sphinx <https://www.sphinx-doc.org>`__::
+
+    python -m pip install .[docs]
+    cd docs
+    sphinx-apidoc -f -E --templatedir=_templates -o _source .. ../setup.py && make html
+
+Testing and Conventions
+^^^^^^^^^^^^^^^^^^^^^^^
+All unit tests are executed and their coverage is measured when using `pytest <https://docs.pytest.org>`__ (see ``setup.cfg`` for configuration details)::
+
+    python -m pip install .[test]
+    python -m pytest
+
+All unit tests are included in the module itself and can be executed using `doctest <https://docs.python.org/3/library/doctest.html>`__::
+
+    python reiter/reiter.py -v
+
+Style conventions are enforced using `Pylint <https://www.pylint.org>`__::
+
+    python -m pip install .[lint]
+    python -m pylint reiter
+
+Contributions
+^^^^^^^^^^^^^
+In order to contribute to the source code, open an issue or submit a pull request on the `GitHub page <https://github.com/lapets/reiter>`__ for this library.
+
+Versioning
+^^^^^^^^^^
+The version number format for this library and the changes to the library associated with version number increments conform with `Semantic Versioning 2.0.0 <https://semver.org/#semantic-versioning-200>`__.
+
+Publishing
+^^^^^^^^^^
+This library can be published as a `package on PyPI <https://pypi.org/project/reiter>`__ by a package maintainer. First, install the dependencies required for packaging and publishing::
+
+    python -m pip install .[publish]
+
+Remove any old build/distribution files. Then, package the source into a distribution archive using the `wheel <https://pypi.org/project/wheel>`__ package::
+
+    rm -rf dist *.egg-info
+    python setup.py sdist bdist_wheel
+
+Finally, upload the package distribution archive to `PyPI <https://pypi.org>`__ using the `twine <https://pypi.org/project/twine>`__ package::
+
+    python -m twine upload dist/*
