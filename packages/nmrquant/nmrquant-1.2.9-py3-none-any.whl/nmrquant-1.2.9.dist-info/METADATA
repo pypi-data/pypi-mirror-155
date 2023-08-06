@@ -1,0 +1,48 @@
+Metadata-Version: 2.1
+Name: nmrquant
+Version: 1.2.9
+Summary: Quantify metabolites from 1D Proton NMR experiments
+Home-page: https://github.com/llegregam/NmrQuant
+Author: Loïc Le Grégam
+Author-email: legregam@insa-toulouse.fr
+Project-URL: Bug Tracker, https://github.com/llegregam/NmrQuant/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License (GPL)
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/x-rst
+License-File: LICENSE.txt
+Requires-Dist: pandas (>=1.3.5)
+Requires-Dist: numpy (>=1.21.6)
+Requires-Dist: matplotlib (>=3.5.2)
+Requires-Dist: colorcet (>=2.0.6)
+Requires-Dist: ipyfilechooser (>=0.4.4)
+Requires-Dist: ipywidgets (>=7.6.3)
+Requires-Dist: openpyxl (>=3.0.7)
+Requires-Dist: natsort (>=7.1.1)
+Requires-Dist: xlrd (>=2.0.1)
+Requires-Dist: openpyxl (>=3.0.9)
+Requires-Dist: ordered-set (>=4.0.2)
+
+NMRQuant
+========
+
+**NMRQuant is a software for the quantification of metabolites from 1D Proton NMR experiments**.
+It takes as input integrated areas from spectra and proton counts from a database from excel and
+csv files. It can be used with either internal or external calibration, using a standard. It outputs
+an excel file containing the calculated concentrations, and svg files containing plots that help
+with the visualisation and interpretation of the data.
+
+It is one of the routine tools used on the `MetaToul platform <https://www6.toulouse.inrae.fr/metatoul>`_.
+
+The code is open-source, and available on Github under a GPLv3 license.
+
+The documentation relative to NMRQuant's usage can be found on `ReadTheDocs <https://nmrquant.readthedocs.io/>`_.
+
+It can be used from a command line interface or through an interactive jupyter notebook GUI. The notebook can be
+downloaded from the `GitHub page <https://github.com/llegregam/NmrQuant>`_.
+
+.. rubric:: Key Features
+
+* **Calculation of metabolite concentrations from 1D H+ NMR integrated data**
+* **Creation of figures (lineplots and barplots) that help with interpretation**
