@@ -1,0 +1,41 @@
+Metadata-Version: 2.1
+Name: DeepSurrogatepin
+Version: 0.11
+Summary: Deep surrogate model for the probability of informed trading model
+Home-page: https://github.com/GuillaumePv/pin_surrogate_model
+Author: Guillaume Pavé
+Author-email: guillaumepave@gmail.com
+License: MIT
+Keywords: Machine learning, market microstructure
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: tensorflow
+Requires-Dist: tqdm
+Requires-Dist: tensorflow-probability
+
+# Master thesis: Deep Structural estimation: with an application to market microstructure modelling
+
+This package proposes an easy application of the master thesis: "Deep Structural estimation: with an application to market microstructure modelling"
+
+![alt text](https://github.com/GuillaumePv/pin_surrogate_model/blob/main/results/graphs/3d_comparison_model_surrogate.png)
+The figure above shows the log-likelihood value of the PIN model (left) and the Deep-Surrogate (right)
+
+## Authors
+
+- Guillaume Pavé (guillaumepave@gmail.com)
+
+## Supervisors
+
+- Simon Scheidegger (Department of Economics, HEC Lausanne, simon.scheidegger@unil.ch)
+- Antoine Didisheim (Swiss Finance Institute, antoine.didisheim@unil.ch)
