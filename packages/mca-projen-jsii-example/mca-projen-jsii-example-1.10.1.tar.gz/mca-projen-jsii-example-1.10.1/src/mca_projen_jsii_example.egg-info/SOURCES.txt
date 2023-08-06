@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+src/mca_projen_jsii_example/__init__.py
+src/mca_projen_jsii_example/py.typed
+src/mca_projen_jsii_example.egg-info/PKG-INFO
+src/mca_projen_jsii_example.egg-info/SOURCES.txt
+src/mca_projen_jsii_example.egg-info/dependency_links.txt
+src/mca_projen_jsii_example.egg-info/requires.txt
+src/mca_projen_jsii_example.egg-info/top_level.txt
+src/mca_projen_jsii_example/_jsii/__init__.py
+src/mca_projen_jsii_example/_jsii/mca-projen-jsii-example@1.10.1.jsii.tgz
