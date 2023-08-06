@@ -1,0 +1,13 @@
+lxml==4.*
+requests==2.*
+watchdog==2.*
+GitPython==3.*
+click==8.*
+pdfCropMargins<2,>=1.0.6
+click-logging==1.*
+
+[dev]
+setuptools
+wheel
+twine
+secretstorage
