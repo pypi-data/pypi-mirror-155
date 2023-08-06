@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}Félicitations{% endblock %}
+
+{% block content %}
+    <script type="text/javascript">
+        setTimeout(function() {
+        var redirectURL = "{{settings.MAINSITE}}";
+        window.location.replace(redirectURL);
+        }, 3000);
+    </script>
+
+    <section id="registration_complete">
+        {% url 'login' as auth_login_url %}
+        <h1 class="text-center">Merci, votre inscription est terminée ! </h1>
+        <div class="text-center helptext">
+            Vous pouvez maintenant vous <a href='{{ auth_login_url }}'>connecter</a> <br/> 
+            en utilisant le nom d'utilisateur et le mot de passe que vous avez définis.
+        </div>
+        <div class="text-center flex">
+            Sinon, vous allez être redirigé sur l'accueil de notre site dans 3 secondes.
+        </div>
+    </section>
+{% endblock %}
