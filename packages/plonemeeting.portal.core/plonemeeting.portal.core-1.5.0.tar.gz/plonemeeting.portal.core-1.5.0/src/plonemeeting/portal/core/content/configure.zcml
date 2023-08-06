@@ -1,0 +1,49 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser">
+
+    <!-- Indexers -->
+
+    <adapter name="pretty_representatives" factory=".item.get_pretty_representatives" />
+    <adapter name="pretty_category" factory=".item.get_pretty_category" />
+    <adapter name="linkedMeetingTitle" factory=".item.get_title_from_meeting" />
+    <adapter name="linkedMeetingUID" factory=".item.get_UID_from_meeting" />
+    <adapter name="linkedMeetingDate" factory=".item.get_datetime_from_meeting" />
+    <adapter name="linkedMeetingReviewState" factory=".item.get_review_state_from_meeting" />
+    <adapter name="year" factory=".item.get_year_from_meeting" />
+    <adapter name="annexes_infos" factory=".item.get_annexes_infos" />
+    <adapter name="formatted_title" factory=".item.get_formatted_title_output" />
+    <adapter name="icon" factory=".file.get_icon" />
+
+    <!-- Subscribers -->
+
+    <subscriber
+        for="plonemeeting.portal.core.content.institution.IInstitution
+             zope.lifecycleevent.interfaces.IObjectAddedEvent"
+        handler=".subscriber.handle_institution_creation"
+        />
+    <subscriber
+        for="plonemeeting.portal.core.content.institution.IInstitution
+             zope.lifecycleevent.interfaces.IObjectModifiedEvent"
+        handler=".subscriber.handle_institution_modified"
+        />
+    <subscriber
+        for="plonemeeting.portal.core.content.institution.IInstitution
+             Products.DCWorkflow.interfaces.IAfterTransitionEvent"
+          handler=".subscriber.institution_state_changed"
+        />
+
+    <subscriber
+        for="plonemeeting.portal.core.content.institution.IInstitution
+             zope.lifecycleevent.interfaces.IObjectRemovedEvent"
+        handler=".subscriber.handle_institution_deletion"
+        />
+
+    <subscriber
+        for="plonemeeting.portal.core.content.meeting.IMeeting
+             Products.DCWorkflow.interfaces.IAfterTransitionEvent"
+          handler=".subscriber.meeting_state_changed"
+        />
+
+
+</configure>
