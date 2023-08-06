@@ -1,0 +1,65 @@
+Metadata-Version: 2.1
+Name: ness-search
+Version: 0.0.1
+Summary: NESS: Vector-based Alignment-free Sequence Search
+Home-page: UNKNOWN
+Author: Frederico Schmitt Kremer
+Author-email: fred.s.kremer@gmail.com
+License: UNKNOWN
+Project-URL: Source Code, https://github.com/omixlab/ness
+Keywords: bioinformatics machine-learning data science
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: scikit-learn
+Requires-Dist: biopython
+Requires-Dist: gensim (>4.0.0)
+Requires-Dist: jsonlines
+Requires-Dist: scann (==1.2.6)
+Requires-Dist: h5py
+Requires-Dist: pysam
+Requires-Dist: twine
+
+# NESS
+
+NESS is an alignment-free tool for sequence search based on word embedding. The tool is still under development and the code present in this repository is a proof of concept distributed under the GPL v3 license. 
+
+## Usage
+
+Currently the NESS CLI interface provides the following commands:
+
+### `ness build_model`
+
+Creates a Word2Vec model from a multi FASTA file. For DNA sequences, use `--both-strands`.
+
+```
+$ ness build_model \
+    --input swissprot.fasta \
+    --output swissprot.model
+```
+
+### `ness build_database`
+
+Similarly to `makeblastdb`, formats a sequence database with vectors computed using a
+model previously built. For DNA sequences, use `--both-strands`.
+
+```
+$ ness build_database \
+    --input swissprot.fasta \
+    --model swissprot.model \
+    --output swissprot
+```
+
+### `ness search`
+
+Similarly to the `blast*` programs, compares a multi  FASTA file with the previously formated database.
+```
+$ ness search --input sequences.fasta --database swissprot --output hits.csv
+```
+# Cite
+Kremer, FS *et al* (2021). *NESS: an word embedding-based tool for alignment-free sequence search*. Available at: https://github.com/omixlab/ness. 
+
+
