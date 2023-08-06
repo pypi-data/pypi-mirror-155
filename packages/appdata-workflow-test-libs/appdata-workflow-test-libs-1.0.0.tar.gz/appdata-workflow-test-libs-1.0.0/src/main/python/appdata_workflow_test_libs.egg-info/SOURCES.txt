@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+src/main/python/appdata_workflow_test_libs.egg-info/PKG-INFO
+src/main/python/appdata_workflow_test_libs.egg-info/SOURCES.txt
+src/main/python/appdata_workflow_test_libs.egg-info/dependency_links.txt
+src/main/python/appdata_workflow_test_libs.egg-info/top_level.txt
+src/main/python/dlpx/__init__.py
+src/main/python/dlpx/virtualization/__init__.py
+src/main/python/dlpx/virtualization/common/VERSION
+src/main/python/dlpx/virtualization/common/__init__.py
+src/main/python/dlpx/virtualization/common/_common_classes.py
+src/main/python/dlpx/virtualization/common/exceptions.py
