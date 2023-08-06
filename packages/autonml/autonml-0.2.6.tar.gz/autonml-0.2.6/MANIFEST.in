@@ -1,0 +1,9 @@
+include docs/*
+inlcude /docs/img/*
+inlcude /docs/pipeline_examples/*
+include requirements.txt
+include basic-requirements.txt
+include build-requirements.txt
+include LICENSE
+include README.md
+exclude autonml/test_nb.ipynb
