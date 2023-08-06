@@ -1,0 +1,83 @@
+Metadata-Version: 2.1
+Name: eeg-positions
+Version: 2.1.0
+Summary: Compute and plot standard EEG electrode positions.
+Home-page: https://github.com/sappelhoff/eeg_positions
+Author: Stefan Appelhoff
+Maintainer: Stefan Appelhoff
+Maintainer-email: stefan.appelhoff@mailbox.org
+License: BSD-3-Clause
+Project-URL: Bug Reports, https://github.com/sappelhoff/eeg_positions/issues
+Project-URL: Source, https://github.com/sappelhoff/eeg_positions
+Keywords: EEG electrodes coordinates positions neuroscience
+Platform: any
+Classifier: Topic :: Scientific/Engineering
+Classifier: Intended Audience :: Science/Research
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy (>=1.15.4)
+Requires-Dist: matplotlib (>=0.8.0)
+Requires-Dist: pandas (>=1.0.0)
+Provides-Extra: dev
+Requires-Dist: mne (>=0.22.0) ; extra == 'dev'
+Requires-Dist: pytest ; extra == 'dev'
+Requires-Dist: pytest-sugar ; extra == 'dev'
+Requires-Dist: pytest-cov ; extra == 'dev'
+Requires-Dist: flake8 (>=3.9.2) ; extra == 'dev'
+Requires-Dist: flake8-docstrings ; extra == 'dev'
+Requires-Dist: flake8-isort (>=4.0.0) ; extra == 'dev'
+Requires-Dist: flake8-black ; extra == 'dev'
+Requires-Dist: check-manifest ; extra == 'dev'
+Requires-Dist: black ; extra == 'dev'
+Requires-Dist: isort ; extra == 'dev'
+Requires-Dist: ipython ; extra == 'dev'
+Requires-Dist: sphinx ; extra == 'dev'
+Requires-Dist: numpydoc ; extra == 'dev'
+Requires-Dist: sphinx-copybutton ; extra == 'dev'
+Requires-Dist: sphinx-gallery ; extra == 'dev'
+Requires-Dist: sphinxcontrib-bibtex ; extra == 'dev'
+Requires-Dist: sphinx-github-role ; extra == 'dev'
+
+[![DOI](https://zenodo.org/badge/136149692.svg)](https://zenodo.org/badge/latestdoi/136149692)
+[![CircleCI docs](https://circleci.com/gh/sappelhoff/eeg_positions/tree/main.svg?style=shield)](https://circleci.com/gh/sappelhoff/eeg_positions/tree/main)
+[![Python build and test and deploy](https://github.com/sappelhoff/eeg_positions/workflows/Python%20build%20and%20test%20and%20deploy/badge.svg)](https://github.com/sappelhoff/eeg_positions/actions?query=workflow%3A%22Python+build+and+test+and+deploy%22)
+[![Coverage](https://codecov.io/gh/sappelhoff/eeg_positions/branch/main/graph/badge.svg)](https://codecov.io/gh/sappelhoff/eeg_positions)
+[![Latest PyPI release](https://img.shields.io/pypi/v/eeg_positions.svg)](https://pypi.org/project/eeg_positions/)
+
+
+# eeg_positions
+
+Compute and plot standard EEG electrode positions.
+
+Please see the [**Documentation**](https://stefanappelhoff.com/eeg_positions/).
+
+# Quickstart
+
+There are two common ways to make use of this repository:
+
+1. Go to the `data/` directory and download the EEG electrode position files you need
+   (see the [README](https://github.com/sappelhoff/eeg_positions/tree/main/data) there).
+
+1. Use `eeg_positions` as a Python package (install through `pip install eeg_positions`),
+   and then obtain the EEG electrode positions through the `get_elec_coords` function.
+   See the [Examples](https://stefanappelhoff.com/eeg_positions/auto_examples/index.html)
+   and [API documentation](https://stefanappelhoff.com/eeg_positions/api.html).
+
+# Cite
+
+If you find this repository useful and want to cite it in your work, please go
+to the [Zenodo record](https://doi.org/10.5281/zenodo.3718568) and obtain the
+appropriate citation from the *"Cite as"* section there.
+
