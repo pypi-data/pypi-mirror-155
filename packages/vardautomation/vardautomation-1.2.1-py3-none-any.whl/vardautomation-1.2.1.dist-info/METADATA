@@ -1,0 +1,50 @@
+Metadata-Version: 2.1
+Name: vardautomation
+Version: 1.2.1
+Summary: Encoding automation tools via Vapoursynth
+Home-page: https://github.com/Ichunjo/vardautomation
+Author: Ichunjo
+Author-email: ichunjo.le.terrible@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: langcodes (~=3.3.0)
+Requires-Dist: language-data (~=1.1)
+Requires-Dist: loguru (~=0.6.0)
+Requires-Dist: lvsfunc (~=0.4.2)
+Requires-Dist: lxml (~=4.9.0)
+Requires-Dist: numpy (~=1.22.4)
+Requires-Dist: psutil (~=5.9.1)
+Requires-Dist: pymediainfo (~=5.1.0)
+Requires-Dist: pyparsebluray (~=0.1.3)
+Requires-Dist: pyparsedvd (~=0.0.3)
+Requires-Dist: pytimeconv (~=0.0.2)
+Requires-Dist: requests (~=2.28.0)
+Requires-Dist: requests-toolbelt (~=0.9.1)
+Requires-Dist: rich (~=12.4.4)
+Requires-Dist: typing-extensions (~=4.2.0)
+Requires-Dist: vardefunc (~=0.7.0)
+Requires-Dist: VapourSynth (==59)
+
+# Vardautomation
+Package I'm using for my encoding stuff
+
+# How to install vardautomation
+This command will install vardautomation and the python dependencies
+
+```
+pip install vardautomation -U
+```
+
+Or from source
+```
+python -m pip install git+https://github.com/Ichunjo/vardautomation.git -U
+```
+
+# Requirements
+* Python 3.10 or newer
+* VapourSynth r59 & the following plugins `bas`, `ffms2`, `imwri`, `lsmas`, `scxvid`, `wwxd`
+* Other modules in `requirements.txt`
