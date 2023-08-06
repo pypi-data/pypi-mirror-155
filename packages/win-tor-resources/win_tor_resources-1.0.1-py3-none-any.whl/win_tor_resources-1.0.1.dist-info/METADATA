@@ -1,0 +1,44 @@
+Metadata-Version: 2.1
+Name: win-tor-resources
+Version: 1.0.1
+Summary: Tor resources(binary) for python in windows
+Home-page: https://github.com/jakbin
+Author: Jak Bin
+License: MIT License
+Keywords: tor,windows,python,tor-binary
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: Microsoft :: Windows
+Requires-Python: >=3
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# win-tor-resources
+
+This package provide all important tor binary for windows. like:- tor.exe , geoip, geoip6 etc.
+
+ [![PyPI version](https://badge.fury.io/py/win-tor-resources.svg)](https://badge.fury.io/py/win-tor-resources)
+ [![Downloads](https://pepy.tech/badge/win-tor-resources/month)](https://pepy.tech/project/win-tor-resources)
+ [![Downloads](https://static.pepy.tech/personalized-badge/win-tor-resources?period=total&units=international_system&left_color=green&right_color=blue&left_text=Total%20Downloads)](https://pepy.tech/project/win-tor-resources)
+ ![Python 3](https://img.shields.io/badge/python-3-yellow.svg)
+
+
+### Disclaimer:-
+Use it only for educational purpose.
+
+## Installation
+
+```bash
+pip install win-tor-resources
+```
+
+## Quickstart
+1. Import with ```from win_tor_resources import *``` or 
+
+```py
+from win_tor_resources import tor_path, tor_geo_ip_file_path, tor_geo_ipv6_file_path
+```
+2. Pass this paths in your tor(stem) projects.
+
+
