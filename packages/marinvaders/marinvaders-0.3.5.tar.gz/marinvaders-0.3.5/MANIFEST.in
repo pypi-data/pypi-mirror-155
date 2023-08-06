@@ -1,0 +1,5 @@
+include marinvaders/data/*
+include marinvaders/data/*/*
+include MANIFEST.in
+include LICENSE
+

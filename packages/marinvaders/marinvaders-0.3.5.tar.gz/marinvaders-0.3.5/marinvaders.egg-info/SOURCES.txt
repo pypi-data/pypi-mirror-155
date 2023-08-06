@@ -1,0 +1,55 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+marinvaders/__init__.py
+marinvaders/alien_observation.py
+marinvaders/api_calls.py
+marinvaders/main.py
+marinvaders/readers.py
+marinvaders.egg-info/PKG-INFO
+marinvaders.egg-info/SOURCES.txt
+marinvaders.egg-info/dependency_links.txt
+marinvaders.egg-info/requires.txt
+marinvaders.egg-info/top_level.txt
+marinvaders/data/GISD_and_WoRMS_qualitative_distributions_linked_to_MEOWs.xlsx
+marinvaders/data/NatConAddAphiaID_FV.csv
+marinvaders/data/eco_mrgid.csv
+marinvaders/data/eco_mrgid.h5
+marinvaders/data/eco_mrgid_without_Sov1.csv
+marinvaders/data/natcon.xlsx
+marinvaders/data/EEZ_IHO_union_v2/EEZ_IHO_union_v2.dbf
+marinvaders/data/EEZ_IHO_union_v2/EEZ_IHO_union_v2.prj
+marinvaders/data/EEZ_IHO_union_v2/EEZ_IHO_union_v2.sbn
+marinvaders/data/EEZ_IHO_union_v2/EEZ_IHO_union_v2.sbx
+marinvaders/data/EEZ_IHO_union_v2/EEZ_IHO_union_v2.shp
+marinvaders/data/EEZ_IHO_union_v2/EEZ_IHO_union_v2.shp.xml
+marinvaders/data/EEZ_IHO_union_v2/EEZ_IHO_union_v2.shx
+marinvaders/data/IHO Sea Areas/LICENSE_IHO_v3.txt
+marinvaders/data/IHO Sea Areas/World_Seas_IHO_v3.cpg
+marinvaders/data/IHO Sea Areas/World_Seas_IHO_v3.dbf
+marinvaders/data/IHO Sea Areas/World_Seas_IHO_v3.prj
+marinvaders/data/IHO Sea Areas/World_Seas_IHO_v3.qpj
+marinvaders/data/IHO Sea Areas/World_Seas_IHO_v3.shp
+marinvaders/data/IHO Sea Areas/World_Seas_IHO_v3.shx
+marinvaders/data/eez_low_res/eez_lr.CPG
+marinvaders/data/eez_low_res/eez_lr.dbf
+marinvaders/data/eez_low_res/eez_lr.prj
+marinvaders/data/eez_low_res/eez_lr.sbn
+marinvaders/data/eez_low_res/eez_lr.sbx
+marinvaders/data/eez_low_res/eez_lr.shp
+marinvaders/data/eez_low_res/eez_lr.shp.xml
+marinvaders/data/eez_low_res/eez_lr.shx
+marinvaders/data/meow_ecos/meow_ecos.dbf
+marinvaders/data/meow_ecos/meow_ecos.prj
+marinvaders/data/meow_ecos/meow_ecos.sbn
+marinvaders/data/meow_ecos/meow_ecos.sbx
+marinvaders/data/meow_ecos/meow_ecos.shp
+marinvaders/data/meow_ecos/meow_ecos.shp.xml
+marinvaders/data/meow_ecos/meow_ecos.shx
+marinvaders/util/__init__.py
+marinvaders/util/gisd_scraper.py
+tests/__init__.py
+tests/integration_evaluation.py
+tests/test_all.py
+tests/test_api.py
