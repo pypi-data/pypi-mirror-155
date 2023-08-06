@@ -1,0 +1,15 @@
+LICENSE
+README.md
+__init__.py
+pyproject.toml
+setup.py
+ultraimport.c
+ultraimport.py
+./__init__.py
+./setup.py
+./ultraimport.py
+ultraimport.egg-info/PKG-INFO
+ultraimport.egg-info/SOURCES.txt
+ultraimport.egg-info/dependency_links.txt
+ultraimport.egg-info/not-zip-safe
+ultraimport.egg-info/top_level.txt
