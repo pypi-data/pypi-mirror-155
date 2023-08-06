@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README.rst
+requirements.txt
+setup.py
+ATM1b_QFIT/__init__.py
+ATM1b_QFIT/count_leap_seconds.py
+ATM1b_QFIT/read_ATM1b_QFIT_binary.py
+ATM1b_QFIT/time.py
+ATM1b_QFIT/utilities.py
+ATM1b_QFIT.egg-info/PKG-INFO
+ATM1b_QFIT.egg-info/SOURCES.txt
+ATM1b_QFIT.egg-info/dependency_links.txt
+ATM1b_QFIT.egg-info/requires.txt
+ATM1b_QFIT.egg-info/top_level.txt
+scripts/nsidc_convert_ILATM1b.py
