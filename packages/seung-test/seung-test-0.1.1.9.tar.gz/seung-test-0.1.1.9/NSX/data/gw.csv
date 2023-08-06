@@ -1,0 +1,22 @@
+NSX Manager General information,,,,,,,,,,
+,URL or IP,10.50.118.21,,,,,,,,
+,Username,admin,,,,,,,,
+,Password,VMware1!VMware1!,,,,,,,,
+,,,,,,,,,,
+Policy Name,Policy Category,Rule Name,Source,Destination,Services,Context Profiles,Applied To,Action,Direction,Logging
+gp_test1,EMERGENCY,,,,,,,,,
+,,gr_test1,g_test1,g_test2,HTTP,,"T0-router-01,T1-Router-01",allow,in_out,
+,,gr_test2,g_test1,g_test2,s1,,T0-router-01,allow,in_out,
+gp_test2,pre rules,,,,,,,,,
+,,gr_test5,g_test1,g_test2,s1,,"T0-router-01,T1-Router-01",allow,in_out,
+,,gr_test6,g_test1,g_test2,s2,,T0-router-01,allow,in_out,
+gp_test3,local gateway,,,,,,,,,
+,,gr_test3,"g_test1, 10.10.10.10,20.20.20.0/24, 30.30.30.1- 30.30.30.30",g_test2,s2,,T0-router-01,allow,out,enable
+,,gr_test4,g_test1,g_test2,s3,,T0-router-01,drop,in,
+gp_test4,local gateway,,,,,,,,,
+,,gr_test7,"g_test1, 10.10.10.10,20.20.20.0/24, 30.30.30.1- 30.30.30.30",g_test2,s2,,T1-Router-01,allow,out,enable
+,,gr_test8,g_test1,g_test2,s3,,T1-Router-01,drop,in,
+Policy_Default_Infra-tier0-T0-router-01,default,,,,,,,,,
+,,default_rule,Any,Any,Any,,T0-router-01,allow,in_out,
+Policy_Default_Infra-tier1-T1-Router-01,default,,,,,,,,,
+,,default_rule,Any,Any,Any,,T1-Router-01,allow,in_out,

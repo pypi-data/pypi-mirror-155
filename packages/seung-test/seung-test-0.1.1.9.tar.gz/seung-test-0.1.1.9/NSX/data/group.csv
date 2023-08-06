@@ -1,0 +1,21 @@
+NSX Manager General information,,,,
+,URL or IP,10.50.118.21,,
+,Username,admin,,
+,Password,VMware1!VMware1!,,
+,,,,
+Group Name,Expression Type,Expression Key,Expression operator,Group Member
+test1,ipaddress,,,"192.168.169.101,192.168.169.102,10.10.10.0/24,20.20.20.20 -20.20.20.200"
+test2,member vm,,,"vm1, vm2,vm3"
+test3,member group,,,t1
+,member segment,,,seg_overlay_net_02
+test4,Membership Criteria,vm name,startswith,vm
+,member vm,,,"vm1, vm2,vm3"
+test5,Membership Criteria,vm tag,equals,test
+,ipaddress,,,"192.168.169.101,192.168.169.102,10.10.10.0/24,20.20.20.20 -20.20.20.200"
+,member segment,,,seg_overlay_net_02
+test6,Membership Criteria,vm os,endswith,windows
+test7,Membership Criteria,vm name,startswith,vm
+,Membership Criteria and,vm name,equals,vm2
+,Membership Criteria,segment tag,equals,tag1
+,Membership Criteria and,segment tag,equals,tag2
+,member group,,,t1

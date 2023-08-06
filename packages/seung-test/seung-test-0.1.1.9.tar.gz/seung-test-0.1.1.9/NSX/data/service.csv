@@ -1,0 +1,17 @@
+NSX Manager General information,,,,,,
+,URL or IP,10.50.118.21,,,,
+,Username,admin,,,,
+,Password,VMware1!VMware1!,,,,
+,,,,,,
+Service Name,Service Entry Name,Protocol,Source Port,Destination Port,ICMP TYPE,Entry Service
+s1,icmp-1,icmpv4,,,request,
+,icmp-2,icmpv4,,,reply,
+s2,tcp-1,tcp,,80,,
+s3,tcp-1,tcp,"80,443
+2000- 3000",,,
+,tcp-2,tcp,,443,,
+,tcp-3,tcp,80,80,,
+,udp-1,udp,,50000,,
+s4,udp-1,udp,,40000,,
+s5,icmp-1,icmpv4,,,request,
+,,,,,,ICMPv4-ALL

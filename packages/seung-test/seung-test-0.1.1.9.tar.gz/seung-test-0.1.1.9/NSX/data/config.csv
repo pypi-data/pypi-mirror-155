@@ -1,0 +1,313 @@
+License,,,
+,License 01,3122H-4NK10-W8VD0-0A8A2-95MJ4,
+,,,
+Deployment tool information,,,
+,ovftool path,C:\Program Files\VMware\VMware OVF Tool\ovftool,
+,ovf file path,C:,
+,,,
+DNS Servers,,,
+,Primary Server,10.50.253.249,
+,,,
+NTP Servers,,,
+,Primary Server,10.50.253.249,
+,,,
+vCenter information 01,,,
+,Name,vcenter,
+,ip or FQDN,ksw-vcsa.nsx.local,
+,Username,administrator@vsphere.local,
+,Password,VMware1!,
+,deployment host,10.50.118.11,
+,,,
+NSX Manager General information,,,
+,NSX Version and Build,nsx-unified-appliance-3.2.0.1.0.19232400.ova,
+,Size,medium,
+,Password,VMware1!VMware1!,
+,,,
+NSX Manager 01 information,,,
+,Deploy Type,Manual,
+,Host Name,nsx-manager-01,
+,Domain Name,nsx.local,
+,vcenter name,vcenter,
+,Datacenter or Folder,Datacenter,
+,Portgroup,nsx-mgmt,
+,Address,10.50.118.21,
+,Netmask,255.255.255.0,
+,Default Gateway,10.50.118.1,
+,manager datastore,vsanDatastore,
+,manager disk mode,thin,
+,deployed cluster,Cluster,
+,deployed host,ksw-esxi01.nsx.local,
+,,,
+NSX Manager 02 information,,,
+,Deploy Type,Skip,
+,Host Name,nsx-manager-02,
+,Domain Name,nsx.local,
+,vcenter name,vcenter,
+,Datacenter or Folder,Datacenter,
+,Portgroup,nsx-mgmt,
+,Address,10.50.118.22,
+,Netmask,255.255.255.0,
+,Default Gateway,10.50.118.1,
+,manager datastore,vsanDatastore,
+,manager disk mode,thin,
+,deployed cluster,Cluster,
+,deployed host,ksw-esxi02.nsx.local,
+,,,
+NSX Manager 03 information,,,
+,Deploy Type,Skip,
+,Host Name,nsx-manager-03,
+,Domain Name,nsx.local,
+,vcenter name,vcenter,
+,Datacenter or Folder,Datacenter,
+,Portgroup,nsx-mgmt,
+,Address,10.50.118.23,
+,Netmask,255.255.255.0,
+,Default Gateway,10.50.118.1,
+,manager datastore,vsanDatastore,
+,manager disk mode,thin,
+,deployed cluster,Cluster,
+,deployed host,ksw-esxi03.nsx.local,
+,,,
+Manager Cluster IP,,,
+,Cluster IP,10.50.118.20,
+,,,
+Global Config,,,
+,MTU,1600,
+,,,
+Transport Zone Profile 01,,,
+,Name,NSX-OVERLAY-TZ,
+,Traffic Type,Overlay,
+,,,
+Transport Zone Profile 02,,,
+,Name,NSX-VLAN-TZ,
+,Traffic Type,vlan,
+,,,
+IP Pool 01,,,
+,Name,IPPOOL,
+,pool 01,,
+,,IP Ranges,10.50.115.201-10.50.115.210
+,,Gateway,10.50.115.1
+,,CIDR,10.50.115.0/24
+,,,
+IP Pool 02,,,
+,Name,IPPOOL2,
+,pool 01,,
+,,IP Ranges,10.50.114.201-10.50.114.210
+,,Gateway,10.50.114.1
+,,CIDR,10.50.114.0/24
+,,,
+Uplink Profile 01,,,
+,Name,host-uplink_profile,
+,Default Teaming,,
+,,Active Uplinks,"uplink01, uplink02"
+,,Standby Uplinks,n/a
+,,Teaming Policy,Load Balance Source
+,Transport VLAN,115,
+,MTU,1600,
+,,,
+Uplink Profile 02,,,
+,Name,host2-uplink_profile,
+,Default Teaming,,
+,,Active Uplinks,"uplink01, uplink02"
+,,Standby Uplinks,n/a
+,,Teaming Policy,Load Balance Source
+,Named Teaming 01,,
+,,Name,uplink01
+,,Active Uplinks,uplink01
+,,Standby Uplinks,n/a
+,,Teaming Policy,Failover Order
+,Named Teaming 02,,
+,,Name,uplink02
+,,Active Uplinks,uplink02
+,,Standby Uplinks,n/a
+,,Teaming Policy,Failover Order
+,Transport VLAN,114,
+,MTU,1600,
+,,,
+Transport Node Profile 01,,,
+,Name,TN_profile,
+,VDS Name,nsx,
+,TEP Pool,IPPOOL,
+,Transport Zone,NSX-OVERLAY-TZ,
+,Uplink Profile,host-uplink_profile,
+,Uplinks,,
+,,uplink01,Uplink 1
+,,uplink02,Uplink 2
+,,,
+Host Transport Node 01,,,
+,Name,Cluster,
+,Transport Node Profile,TN_profile,
+,,,
+Edge Node 01,,,
+,Name,edge-01,
+,Domain Name,nsx.local,
+,Password,VMware1!VMware1!,
+,Size,small,
+,Compute Manager,vcenter,
+,Cluster Name,Cluster,
+,Deployed Host Name,ksw-esxi02.nsx.local,
+,Data Store,vsanDatastore,
+,Management ip,10.50.118.24,
+,Netmask,255.255.255.0,
+,Gateway,10.50.118.1,
+,Management Portgroup,nsx-mgmt,
+,Transport Zone,"NSX-OVERLAY-TZ
+NSX-VLAN-TZ",
+,TEP Pool,IPPOOL2,
+,Uplink Profile,host2-uplink_profile,
+,Uplinks,,
+,,Uplink01 Portgroup,nsx_uplink1
+,,Uplink02 Portgroup,nsx_uplink2
+,,,
+Edge Node 02,,,
+,Name,edge-02,
+,Domain Name,nsx.local,
+,Password,VMware1!VMware1!,
+,Size,small,
+,Compute Manager,vcenter,
+,Cluster Name,Cluster,
+,Deployed Host Name,ksw-esxi03.nsx.local,
+,Data Store,vsanDatastore,
+,Management ip,10.50.118.25,
+,Netmask,255.255.255.0,
+,Gateway,10.50.118.1,
+,Management Portgroup,nsx-mgmt,
+,Transport Zone,"NSX-OVERLAY-TZ
+NSX-VLAN-TZ",
+,TEP Pool,IPPOOL2,
+,Uplink Profile,host2-uplink_profile,
+,Uplinks,,
+,,Uplink01 Portgroup,nsx_uplink1
+,,Uplink02 Portgroup,nsx_uplink2
+,,,
+Edge Cluster 01,,,
+,Name,edge_cluster_01,
+,Edge Clusetr Profile,nsx-default-edge-high-availability-profile,
+,Members,"edge-01, edge-02",
+,,,
+Segment 01,,,
+,Name,seg_vlan_112,
+,Transport Zone,NSX-VLAN-TZ,
+,Uplink Teaming Policy,uplink01,
+,Vlan,112,
+,,,
+Segment 02,,,
+,Name,seg_vlan_113,
+,Transport Zone,NSX-VLAN-TZ,
+,Uplink Teaming Policy,uplink02,
+,Vlan,113,
+,,,
+Segment 03,,,
+,Name,seg_overlay_net_01,
+,Transport Zone,NSX-OVERLAY-TZ,
+,Connected Virtual Router,T1-Router-01,
+,Subnet Gateway,192.168.168.1/24,
+,,,
+Segment 04,,,
+,Name,avi_mgmt,
+,Transport Zone,NSX-OVERLAY-TZ,
+,Connected Virtual Router,T1-Router-01,
+,Subnet Gateway,192.168.169.1/24,
+,,,
+Segment 05,,,
+,Name,avi_vip,
+,Transport Zone,NSX-OVERLAY-TZ,
+,Connected Virtual Router,T1-Router-01,
+,Subnet Gateway,192.168.170.1/24,
+,,,
+T0 Router 01,,,
+,Name,T0-router-01,
+,HA Mode,active-active,
+,Edge Cluster,edge_cluster_01,
+,Interface 01,,
+,,Name,edge01-uplink01
+,,Edge,edge-01
+,,Address,10.50.112.241
+,,Netmask,255.255.255.0
+,,Segment,seg_vlan_112
+,,URPF,NONE
+,Interface 02,,
+,,Name,edge01-uplink02
+,,Edge,edge-01
+,,Address,10.50.113.241
+,,Netmask,255.255.255.0
+,,Segment,seg_vlan_113
+,,URPF,NONE
+,Interface 03,,
+,,Name,edge02-uplink01
+,,Edge,edge-02
+,,Address,10.50.112.242
+,,Netmask,255.255.255.0
+,,Segment,seg_vlan_112
+,,URPF,NONE
+,Interface 04,,
+,,Name,edge02-uplink02
+,,Edge,edge-02
+,,Address,10.50.113.242
+,,Netmask,255.255.255.0
+,,Segment,seg_vlan_113
+,,URPF,NONE
+,BGP,,
+,,Local AS Number,65444
+,BGP Neighbor 01,,
+,,Remote AS Number,65000
+,,Remote Address,10.50.112.2
+,,Hold Down Time,3
+,,Keep Alive Time,1
+,BGP Neighbor 02,,
+,,Remote AS Number,65000
+,,Remote Address,10.50.113.3
+,,Hold Down Time,3
+,,Keep Alive Time,1
+,Route Redistribution,,
+,,Name,re-dist
+,,T0 - Static Routes,YES
+,,T0 - NAT IP,NO
+,,T0 - Connected Interfaces & Segments,YES
+,,T0 - IPSec Local IP,NO
+,,T0 - DNS Forwarder IP,NO
+,,T0 - EVPN TEP IP,NO
+,,T1 - Static Routes,YES
+,,T1 - NAT IP,NO
+,,T1 - Connected Interfaces & Segments,YES
+,,T1 - LB SNAT IP,YES
+,,T1 - LB VIP,YES
+,,T1 - DNS Forwarder IP,NO
+,,T1 - IPSec Local Endpoint,NO
+,,,
+T1 Router 01,,,
+,Name,T1-Router-01,
+,Connected T0 Router,T0-router-01,
+,Route Redistribution,,
+,,T1 - Static Routes,YES
+,,T1 - NAT IP,NO
+,,T1 - Connected Interfaces & Segments,YES
+,,T1 - LB SNAT IP,YES
+,,T1 - LB VIP,YES
+,,T1 - DNS Forwarder IP,NO
+,,T1 - IPSec Local Endpoint,NO
+,,,
+T1 Router 02,,,
+,Name,T1-Router-02,
+,Connected T0 Router,T0-router-01,
+,Edge Cluster,edge_cluster_01,
+,Fail Over,Non Preemptive,
+,Route Redistribution,,
+,,T1 - Static Routes,YES
+,,T1 - NAT IP,NO
+,,T1 - Connected Interfaces & Segments,YES
+,,T1 - LB SNAT IP,YES
+,,T1 - LB VIP,YES
+,,T1 - DNS Forwarder IP,NO
+,,T1 - IPSec Local Endpoint,NO
+,,,
+T1 Router 03,,,
+,Name,T1-Router-03,
+,Edge Cluster,edge_cluster_01,
+,Fail Over,NON Preemptive,
+,Service Interface,,
+,,Name,T1_Router_SVC_INT
+,,Address,192.168.168.10
+,,Netmask,255.255.255.0
+,,Gateway,192.168.168.1
+,,Segment,seg_overlay_net_01

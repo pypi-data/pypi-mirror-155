@@ -1,0 +1,17 @@
+NSX_API,,
+,Load_Balancer,policy/api/v1/infra/lb-services
+,Application_profile,policy/api/v1/infra/lb-app-profiles
+,Persistence_profile,policy/api/v1/infra/lb-persistence-profiles
+,Active_Health_monitor,policy/api/v1/infra/lb-monitor-profiles
+,Server_pool,policy/api/v1/infra/lb-pools
+,Virtual_service,policy/api/v1/infra/lb-virtual-servers
+,Certificate,policy/api/v1/infra/certificates
+,Inventory_Groups,policy/api/v1/infra/domains/default/groups
+,Inventory_Vms,api/v1/fabric/virtual-machines
+,Segments,policy/api/v1/infra/segments
+,Inventory_Services,policy/api/v1/infra/services
+,T0-router,policy/api/v1/infra/tier-0s
+,T1-router,policy/api/v1/infra/tier-1s
+,Distribute_Firewall,policy/api/v1/infra/domains/default/security-policies
+,Context_Profiles,policy/api/v1/infra/context-profiles
+,Gateway_Firewall,policy/api/v1/infra/domains/default/gateway-policies
