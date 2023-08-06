@@ -1,0 +1,9 @@
+include MANIFEST.in
+include LICENSE
+include README.md
+include requirements.txt
+graft django_middleware_global_request
+exlucde django_middleware_global_request_demo
+exclude django_middleware_global_request_example
+global-exclude __pycache__
+global-exclude *.py[co]
