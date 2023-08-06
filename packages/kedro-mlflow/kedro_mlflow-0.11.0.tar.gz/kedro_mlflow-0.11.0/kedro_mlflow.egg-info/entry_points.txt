@@ -1,0 +1,9 @@
+[kedro.hooks]
+mlflow_hook = kedro_mlflow.framework.hooks.mlflow_hook:mlflow_hook
+
+[kedro.line_magic]
+line_magic = kedro_mlflow.extras.extensions.ipython:reload_kedro_mlflow
+
+[kedro.project_commands]
+kedro_mlflow = kedro_mlflow.framework.cli.cli:commands
+
