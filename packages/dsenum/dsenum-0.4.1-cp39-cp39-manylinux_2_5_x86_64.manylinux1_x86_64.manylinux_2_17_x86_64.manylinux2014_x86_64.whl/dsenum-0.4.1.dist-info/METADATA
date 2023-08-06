@@ -1,0 +1,142 @@
+Metadata-Version: 2.1
+Name: dsenum
+Version: 0.4.1
+Summary: Derivative structure enumerator for multilattice
+Author: Kohei Shinohara
+Author-email: kohei19950508@gmail.com
+License: MIT
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Topic :: Scientific/Engineering :: Chemistry
+Classifier: Topic :: Scientific/Engineering :: Physics
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: setuptools
+Requires-Dist: setuptools-scm
+Requires-Dist: wheel
+Requires-Dist: pymatgen (>=2021.3.9)
+Requires-Dist: numpy
+Requires-Dist: sympy
+Requires-Dist: scipy
+Requires-Dist: tqdm
+Requires-Dist: hsnf (==0.3.13)
+Requires-Dist: pyzdd (==0.2.4)
+Provides-Extra: dev
+Requires-Dist: ipython ; extra == 'dev'
+Requires-Dist: notebook ; extra == 'dev'
+Requires-Dist: jupyter-contrib-nbextensions ; extra == 'dev'
+Requires-Dist: matplotlib ; extra == 'dev'
+Requires-Dist: seaborn ; extra == 'dev'
+Requires-Dist: pandas ; extra == 'dev'
+Requires-Dist: pytest (>=6.0.0) ; extra == 'dev'
+Requires-Dist: pytest-cov ; extra == 'dev'
+Requires-Dist: pytest-benchmark ; extra == 'dev'
+Requires-Dist: pre-commit ; extra == 'dev'
+Requires-Dist: black ; extra == 'dev'
+Requires-Dist: flake8 ; extra == 'dev'
+Requires-Dist: mypy ; extra == 'dev'
+Requires-Dist: isort ; extra == 'dev'
+Requires-Dist: pyupgrade ; extra == 'dev'
+Provides-Extra: docs
+Requires-Dist: sphinx ; extra == 'docs'
+Requires-Dist: sphinx-autobuild ; extra == 'docs'
+Requires-Dist: nbsphinx (==0.8.9) ; extra == 'docs'
+Requires-Dist: furo ; extra == 'docs'
+Requires-Dist: m2r2 ; extra == 'docs'
+Requires-Dist: ipykernel ; extra == 'docs'
+
+
+# dsenum
+
+[![testing](https://github.com/lan496/dsenum/actions/workflows/testing.yml/badge.svg?branch=master)](https://github.com/lan496/dsenum/actions/workflows/testing.yml)
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/lan496/dsenum/master.svg)](https://results.pre-commit.ci/latest/github/lan496/dsenum/master)
+[![codecov](https://codecov.io/gh/lan496/dsenum/branch/master/graph/badge.svg)](https://codecov.io/gh/lan496/dsenum)
+[![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/dsenum)
+[![PyPI version](https://badge.fury.io/py/dsenum.svg)](https://badge.fury.io/py/dsenum)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/dsenum)
+
+Derivative structure enumerator for multilattice
+
+- Github: https://github.com/lan496/dsenum
+- PyPI: https://pypi.org/project/dsenum/
+
+## Installation
+
+dsenum works with Python3.8+ and can be installed via PyPI:
+
+```shell
+pip install dsenum
+```
+
+Or in local:
+```shell
+git clone git@github.com:lan496/dsenum.git
+cd dsenum
+pip install -e .
+```
+
+## Usage
+
+```python
+import numpy as np
+from pymatgen.core import Lattice, Structure
+from pymatgen.core.periodic_table import DummySpecie
+
+from dsenum import StructureEnumerator
+
+latt = Lattice(np.array([[0, 1, 1], [1, 0, 1], [1, 1, 0]]))
+coords = [[0, 0, 0]]
+structure = Structure(latt, [DummySpecie('X')] * len(coords), coords)
+
+num_type = 2
+index = 4
+
+dstructs = StructureEnumerator(structure, index, num_type).generate()
+print(len(dstructs))  # -> 12
+```
+
+See [docs/examples/constraints.ipynb](docs/examples/constraints.ipynb) for more complicated use cases.
+
+## How to cite dsenum
+
+If you use `dsenum.ZddStructureEnumerator` in your research, please cite the following articles.
+
+```
+@article{doi:10.1063/5.0021663,
+    author = {Shinohara,Kohei  and Seko,Atsuto  and Horiyama,Takashi  and Ishihata,Masakazu  and Honda,Junya  and Tanaka,Isao },
+    title = {Enumeration of nonequivalent substitutional structures using advanced data structure of binary decision diagram},
+    journal = {J. Chem. Phys.},
+    volume = {153},
+    number = {10},
+    pages = {104109},
+    year = {2020},
+    doi = {10.1063/5.0021663},
+    URL = {https://doi.org/10.1063/5.0021663},
+}
+```
+
+```
+@inproceedings{Horiyama2018,
+  memo ={Isomorphism Elimination by Zero-Suppressed Binary Decision Diagrams},
+  author={Takashi Horiyama and Masahiro Miyasaka and Riku Sasaki},
+  booktitle={the Canadian Conference on Computational Geometry},
+  pages={360--366},
+  address={Winnipeg, Manitoba, Canada}
+  year={2018},
+  url={http://www.cs.umanitoba.ca/~cccg2018/papers/session7B-p2.pdf}
+}
+```
+
+## Acknowledgments
+
+I acknowledge Dr. Takashi Horiyama for sharing his implementation of the frontier method for isomorphism-elimination decision diagram.
+I also appreciate his kindness to allow publishing the code.
