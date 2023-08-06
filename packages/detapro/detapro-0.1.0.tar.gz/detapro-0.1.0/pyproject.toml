@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "detapro"
+version = "0.1.0"
+description = "A python package that further empowers the orginal Detabase "
+authors = ["TheReaper62"]
+license = "GPL3"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+deta = "^1.1.0"
+
+[tool.poetry.dev-dependencies]
+myst-nb = {version = "^0.16.0", python = "^3.9"}
+sphinx-autoapi = "^1.8.4"
+sphinx-rtd-theme = "^1.0.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

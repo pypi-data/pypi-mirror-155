@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: detapro
+Version: 0.1.0
+Summary: A python package that further empowers the orginal Detabase 
+License: GPL3
+Author: TheReaper62
+Requires-Python: >=3.7,<4.0
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: deta (>=1.1.0,<2.0.0)
