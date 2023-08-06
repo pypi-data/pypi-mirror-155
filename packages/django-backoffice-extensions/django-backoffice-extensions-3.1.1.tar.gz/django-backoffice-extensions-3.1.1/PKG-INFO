@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: django-backoffice-extensions
+Version: 3.1.1
+Summary: A set of views, tools and helpers to create a backoffice using Django.
+Home-page: https://github.com/Dekalabs/django-backoffice-extensions
+License: MIT
+Author: Marcos Gabarda
+Author-email: marcos@dekalabs.com
+Requires-Python: >=3.8,<4.0
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: django (>=4.0.0,<5.0.0)
+Requires-Dist: django-model-utils (>=4.0.0,<5.0.0)
+Requires-Dist: pytest-cov (>=2.10.0,<3.0.0)
+Description-Content-Type: text/x-rst
+
+Django Backoffice Extensions
+============================
+
+A set of views, tools and helpers to create a backoffice using Django.
