@@ -1,0 +1,36 @@
+Metadata-Version: 2.1
+Name: s3tests-pytest
+Version: 1.0.0
+Summary: Unofficial Amazon AWS S3 compatibility tests
+Home-page: https://github.com/kisscelia/s3tests-pytest
+Author: sine
+Author-email: sinecelia.wang@gmail.com
+Maintainer: sine.wang
+Maintainer-email: sinecelia.wang@gmail.com
+License: MIT
+Keywords: s3 pytest testing
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Framework :: Pytest
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Testing
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.6
+License-File: LICENSE
+Requires-Dist: boto3 (>=1.0.0)
+Requires-Dist: munch (>=2.0.0)
+Requires-Dist: isodate (>=0.4.4)
+Requires-Dist: pytest (>=7.1.1)
+Requires-Dist: requests (>=2.22.0)
+
+UNKNOWN
+
