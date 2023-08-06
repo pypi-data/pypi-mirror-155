@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: Galfgets
+Version: 0.2.4
+Summary: Package with several util functions to evade the wasting of time
+Home-page: https://github.com/AlfonsoBarragan/Galfgets/tree/main/python/Galfgets
+Download-URL: https://github.com/AlfonsoBarragan/Galfgets/releases/download/0.1.4/Galfgets-0.1.4.tar.gz
+Author: Alfonso Barragan Carmona
+Author-email: alfonso.barragan@uclm.es
+License: GNU General Public License v3 (GPLv3)
+Keywords: UTILS,LAMBDAS,REGULAR EXPRESIONS,FUNCTIONS
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: joblib
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: seaborn
+Requires-Dist: matplotlib
+Requires-Dist: sklearn
+Requires-Dist: ijson
+
