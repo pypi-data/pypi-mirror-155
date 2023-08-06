@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: devcloudcli
+Version: 1.2.28
+Summary: AN Interactive CLI for Intel DevCloud Bench
+Home-page: UNKNOWN
+Author: karthik kumaar
+Author-email: karthikx.kumaar@intel.com
+License: Proprietary - Intel
+Keywords: dc project
+Platform: UNKNOWN
+Requires-Python: >=3.6
+License-File: LICENSE.txt
+Requires-Dist: cmd2
+Requires-Dist: pexpect
+
+UNKNOWN
+
