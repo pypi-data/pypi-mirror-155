@@ -1,0 +1,16 @@
+LICENSE
+README.rst
+pyproject.toml
+setup.cfg
+setup.py
+SHRY.egg-info/PKG-INFO
+SHRY.egg-info/SOURCES.txt
+SHRY.egg-info/dependency_links.txt
+SHRY.egg-info/entry_points.txt
+SHRY.egg-info/requires.txt
+SHRY.egg-info/top_level.txt
+shry/__init__.py
+shry/const.py
+shry/core.py
+shry/main.py
+shry/script.py
