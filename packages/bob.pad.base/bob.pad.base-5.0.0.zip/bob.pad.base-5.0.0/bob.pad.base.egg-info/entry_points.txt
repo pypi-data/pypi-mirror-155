@@ -1,0 +1,16 @@
+[bob.cli]
+pad = bob.pad.base.script.pad:pad
+
+[bob.pad.cli]
+cross = bob.pad.base.script.cross:cross
+det = bob.pad.base.script.pad_commands:det
+epc = bob.pad.base.script.pad_commands:epc
+evaluate = bob.pad.base.script.pad_commands:evaluate
+finalize-scores = bob.pad.base.script.finalize_scores:finalize_scores
+gen = bob.pad.base.script.pad_commands:gen
+hist = bob.pad.base.script.pad_commands:hist
+metrics = bob.pad.base.script.pad_commands:metrics
+multi-metrics = bob.pad.base.script.pad_commands:multi_metrics
+roc = bob.pad.base.script.pad_commands:roc
+run-pipeline = bob.pad.base.script.run_pipeline:run_pipeline
+
