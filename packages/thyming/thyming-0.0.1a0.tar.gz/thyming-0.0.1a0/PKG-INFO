@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: thyming
+Version: 0.0.1a0
+Summary: Timing utilities.
+Home-page: 
+Author: MatthewBaggins
+Author-email: bagginsmatthew@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
+# `thyming`
+
+Timer and other timing utilities.
+
+Nothing I found was optimal for me so I created my own.
