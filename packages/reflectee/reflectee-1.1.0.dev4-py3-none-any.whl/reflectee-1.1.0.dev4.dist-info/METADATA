@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: reflectee
+Version: 1.1.0.dev4
+Summary: Reflectee server and connectors
+Author: Surviving Data
+Author-email: damien.autrusseau@surviving-data.fr
+License: BSD-3-Clause
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 4.0
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: asgiref (<4.0,>=3.5.2)
+Requires-Dist: django (<5.0,>=4.0.0)
+Requires-Dist: python-socketio (<6.0,>=5.5.1)
+Requires-Dist: python-engineio (<5.0,>=4.3.1)
+Requires-Dist: pydantic (<2.0,>=1.9.0)
+
