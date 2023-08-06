@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: airflow-provider-clickhouse
+Version: 1.0.1
+Summary: Apache Airflow providers for Yandex Clickhouse Database
+Home-page: UNKNOWN
+Author: Kwanheum Cho
+Author-email: kheum.cho@samsung.com
+License: Apache License 2.0
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: Framework :: Apache Airflow
+Classifier: Framework :: Apache Airflow :: Provider
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: apache-airflow (>=2.0)
+Requires-Dist: clickhouse-driver (>=0.2.1)
+
+# airflow-providers-clickhouse
+Provider allow connect Apache Airflow to Yandex Clickhouse Database and perform query using ClickhouseOperator
+
+
