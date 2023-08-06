@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/gitreg/__init__.py
+src/gitreg/main.py
+src/gitreg.egg-info/PKG-INFO
+src/gitreg.egg-info/SOURCES.txt
+src/gitreg.egg-info/dependency_links.txt
+src/gitreg.egg-info/top_level.txt
