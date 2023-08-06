@@ -1,0 +1,39 @@
+Metadata-Version: 2.1
+Name: beakerx
+Version: 2.3.13
+Summary: BeakerX: Beaker EasyForms, Magics, Plots and Spark Extension for Jupyter Lab 2.x
+Home-page: http://beakerx.com/
+Author: Two Sigma Open Source, LLC
+Author-email: beakerx-feedback@twosigma.com
+License: Apache-2.0
+Keywords: ipython,jupyter,widgets
+Platform: Linux
+Platform: Mac OS X
+Platform: Windows
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Framework :: IPython
+Classifier: Framework :: Jupyter
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Multimedia :: Graphics
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3
+License-File: LICENSE
+Requires-Dist: beakerx-base (>=2.0.1)
+Requires-Dist: requests
+Requires-Dist: pandas
+Requires-Dist: bottle
+Requires-Dist: pyspark
+Requires-Dist: jupyter-server
+
+BeakerX: Beaker EasyForms, Magics, Plots and Spark Extension for Jupyter Lab 2.x
+
