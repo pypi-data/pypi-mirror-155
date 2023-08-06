@@ -1,0 +1,3 @@
+[console_scripts]
+greet = package_test.info:greet
+kavian_info = package_test.info:kavian_info
