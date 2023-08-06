@@ -1,0 +1,11 @@
+README.md
+setup.py
+bin/quickcss
+quickcss/__init__.py
+quickcss/_version.py
+quickcss.egg-info/PKG-INFO
+quickcss.egg-info/SOURCES.txt
+quickcss.egg-info/dependency_links.txt
+quickcss.egg-info/requires.txt
+quickcss.egg-info/top_level.txt
+quickcss/clis/__init__.py
