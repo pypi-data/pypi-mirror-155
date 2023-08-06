@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: pySummarizedExperiment
+Version: 0.2.0
+Summary: A Python port of R's SummarizedExperiment package
+Home-page: https://github.com/Pascallio/pySummarizedExperiment
+Author: Pascal Maas
+Author-email: p.maas92@gmail.com
+License: Apache-2.0
+Description: # pySummarizedExperiment
+        Python port of R's SummarizedExperiment container ([link](https://bioconductor.org/packages/release/bioc/vignettes/SummarizedExperiment/inst/doc/SummarizedExperiment.html)). This library aims to preserve as much as functionality as the original SummarizedExperiment, while using familar syntax from Pandas. Take a look at examples [here](https://github.com/Pascallio/pySummarizedExperiment/blob/main/example.ipynb)
+        
+        Install pySummarizedExperiment using pip:
+        
+        `pip install pySummarizedExperiment`
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3.9
+Description-Content-Type: text/markdown
