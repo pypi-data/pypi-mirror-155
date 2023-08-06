@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+hotmailbox/__init__.py
+hotmailbox/email.py
+hotmailbox/errors.py
+hotmailbox/stock.py
+hotmailbox/translate.py
+hotmailbox/user.py
+hotmailbox.py.egg-info/PKG-INFO
+hotmailbox.py.egg-info/SOURCES.txt
+hotmailbox.py.egg-info/dependency_links.txt
+hotmailbox.py.egg-info/requires.txt
+hotmailbox.py.egg-info/top_level.txt
