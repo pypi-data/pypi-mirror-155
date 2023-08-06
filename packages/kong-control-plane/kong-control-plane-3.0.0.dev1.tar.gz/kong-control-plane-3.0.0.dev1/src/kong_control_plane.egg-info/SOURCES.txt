@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+src/kong_control_plane/__init__.py
+src/kong_control_plane/py.typed
+src/kong_control_plane.egg-info/PKG-INFO
+src/kong_control_plane.egg-info/SOURCES.txt
+src/kong_control_plane.egg-info/dependency_links.txt
+src/kong_control_plane.egg-info/requires.txt
+src/kong_control_plane.egg-info/top_level.txt
+src/kong_control_plane/_jsii/__init__.py
+src/kong_control_plane/_jsii/kong-control-plane@3.0.0-dev.1.jsii.tgz
