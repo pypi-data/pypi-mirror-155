@@ -1,0 +1,3 @@
+[console_scripts]
+pystripe = pystripe.core:main
+
