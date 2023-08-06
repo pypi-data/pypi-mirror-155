@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: torch-hep
+Version: 0.0.3
+Summary: Pytorch for high energy physics
+Home-page: https://github.com/tzuhanchang/pytorch_hep
+Download-URL: https://github.com/tzuhanchang/pytorch_hep/archive/0.0.3.tar.gz
+Author: Zihan Zhang
+Author-email: zihan.zhang@cern.ch
+Keywords: pytorch
+Requires-Python: >=3.7
+License-File: LICENSE
+Requires-Dist: torch
+Requires-Dist: torch-geometric
+
