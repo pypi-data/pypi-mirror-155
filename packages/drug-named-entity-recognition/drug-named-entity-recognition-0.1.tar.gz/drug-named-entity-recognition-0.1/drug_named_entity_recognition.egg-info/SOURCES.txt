@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.rst
+setup.cfg
+setup.py
+drug_named_entity_recognition/__init__.py
+drug_named_entity_recognition/drugbank vocabulary.csv
+drug_named_entity_recognition/drugs_dictionary_medlineplus.csv
+drug_named_entity_recognition/drugs_dictionary_mesh.csv
+drug_named_entity_recognition/drugs_dictionary_nhs.csv
+drug_named_entity_recognition/drugs_dictionary_wikipedia.csv
+drug_named_entity_recognition/drugs_finder.py
+drug_named_entity_recognition/test_drugs_finder.py
+drug_named_entity_recognition.egg-info/PKG-INFO
+drug_named_entity_recognition.egg-info/SOURCES.txt
+drug_named_entity_recognition.egg-info/dependency_links.txt
+drug_named_entity_recognition.egg-info/top_level.txt
