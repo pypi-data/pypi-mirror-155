@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: AthenaTwitchBot
+Version: 0.2.0
+Summary: A Twitch bot Connector
+Home-page: https://github.com/DirectiveAthena/AthenaTwitchBot
+Author: Andreas Sas
+Author-email: 
+License: GPLv3
+Project-URL: Bug Tracker, https://github.com/DirectiveAthena/AthenaTwitchBot/issues
+Requires-Python: >=3.10
+License-File: LICENSE
+Requires-Dist: AthenaLib (>=1.1.0)
+Requires-Dist: AthenaColor (>=6.0.1)
+
