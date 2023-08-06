@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: strangeworks
+Version: 0.2.16
+Summary: Strangeworks Python SDK
+License: Apache-2.0
+Author: Strange Devs
+Author-email: hello@strangeworks.com
+Requires-Python: >=3.8,<4.0
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: dwave-embedding-utilities (>=0.3.0,<0.4.0)
+Requires-Dist: pyyaml (>=5.4.1,<6.0.0)
+Requires-Dist: requests (==2.26.0)
+Description-Content-Type: text/markdown
+
+| ⚠️    | This SDK is currently in pre-release alpha state and subject to change. To get more info or access to test features check out the [Strangeworks Backstage Pass Program](https://strangeworks.com/backstage). |
+|---------------|:------------------------|
+
+# Strangeworks SDK
+
+The Strangeworks Python SDK grants easy access to the Strangeworks API. For more information on using the SDK check out the [Strangeworks docs](https://docs.strangeworks.com/).

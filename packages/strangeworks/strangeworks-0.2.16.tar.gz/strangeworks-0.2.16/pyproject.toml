@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "strangeworks"
+version = "0.2.16"
+description = "Strangeworks Python SDK"
+readme = "DESCRIPTION.md"
+authors = ["Strange Devs <hello@strangeworks.com>"]
+license = "Apache-2.0"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+requests = "2.26.0"
+pyyaml = "^5.4.1"
+dwave-embedding-utilities = "^0.3.0"
+
+[tool.poetry.dev-dependencies]
+Flask = "^2.0.2"
+pytest = "^7.0.1"
+black = "^22.1.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0", "setuptools", "wheel"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "--disable-warnings"
+testpaths = [
+    "tests",
+]
