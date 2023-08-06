@@ -1,0 +1,3 @@
+[console_scripts]
+jellyfin-mpv-shim = jellyfin_mpv_shim.mpv_shim:main
+
