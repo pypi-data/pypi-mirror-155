@@ -1,0 +1,4 @@
+[console_scripts]
+anvil_curl = anvil.clients.fhir_curl:cli
+anvil_etl = anvil.etl.anvil_etl:cli
+
