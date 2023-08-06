@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: dibs-lib
+Version: 1.0.2
+Summary: DiBS: Differentiable Bayesian Structure Learning
+Home-page: https://github.com/larslorch/dibs
+Author: Lars Lorch
+Author-email: lars.lorch@inf.ethz.ch
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+License-File: LICENCE
+Requires-Dist: jax (>=0.2.8)
+Requires-Dist: jaxlib (>=0.1.59)
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: python-igraph
+Requires-Dist: imageio
+Requires-Dist: jupyter
+Requires-Dist: tqdm
+Requires-Dist: matplotlib
+
