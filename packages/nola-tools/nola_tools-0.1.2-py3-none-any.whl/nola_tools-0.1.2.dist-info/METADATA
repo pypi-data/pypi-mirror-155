@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: nola-tools
+Version: 0.1.2
+Summary: Nol.A SDK Command Line Interface for IoT Device Firmware Development
+Home-page: https://github.com/CoXlabInc/Nol.A-Tools
+Author: CoXlab Inc.
+Author-email: support@coxlab.kr
+Maintainer: Jongsoo Jeong
+Maintainer-email: jsjeong@coxlab.kr
+License: MIT
+Project-URL: Bug Tracker, https://github.com/CoXlabInc/Nol.A-Tools/issues
+Keywords: nola,iotown,iot,firmware
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Dist: pbr
+Requires-Dist: pyserial
+Requires-Dist: setuptools
+
+# Nol.A-Tools
+
+The Nol.A-Tools is a command line interface for Nol.A-SDK.
+The Nol.A-SDK is a software development kit for IoT device firmware development.
+
+
+
