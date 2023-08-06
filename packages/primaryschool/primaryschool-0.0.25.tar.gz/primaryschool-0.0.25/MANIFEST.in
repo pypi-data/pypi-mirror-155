@@ -1,0 +1,20 @@
+
+global-include * *.mo
+
+recursive-include docs *
+
+exclude primaryschool.py
+exclude primaryschool.sh
+
+prune venv/
+prune tests/
+prune .git/
+prune primaryschool.build/
+prune .cp/
+prune .ipynb_checkpoints/
+
+global-exclude *.po
+global-exclude *.pot
+global-exclude *.pyc
+global-exclude *~
+
