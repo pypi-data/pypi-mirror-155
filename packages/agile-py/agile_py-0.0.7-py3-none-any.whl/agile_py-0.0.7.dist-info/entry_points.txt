@@ -1,0 +1,2 @@
+[console_scripts]
+agpy = agile_py.cli.cli:cli
