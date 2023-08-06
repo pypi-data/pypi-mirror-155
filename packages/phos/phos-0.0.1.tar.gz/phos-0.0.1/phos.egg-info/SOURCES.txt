@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+phos/__init__.py
+phos/datatypes.py
+phos/mapper.py
+phos/parser.py
+phos/utils.py
+phos.egg-info/PKG-INFO
+phos.egg-info/SOURCES.txt
+phos.egg-info/dependency_links.txt
+phos.egg-info/requires.txt
+phos.egg-info/top_level.txt
