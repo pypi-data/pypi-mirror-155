@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: quetzal
+Version: 0.2.1.1
+Summary: a json dmbs
+Home-page: https://github.com/lizardwine/quetzal
+Author: lizardwine
+Author-email: lizardwine@hotmail.com
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/lizardwine/quetzal/issues
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# quetzal v0.2.0.0
+### DBMS that plans to implement a functionality to accept any python data type, one to remotely connect to the database, an API for other languages, and a long etc.
+
+#### My Discord: savra#4491
+
