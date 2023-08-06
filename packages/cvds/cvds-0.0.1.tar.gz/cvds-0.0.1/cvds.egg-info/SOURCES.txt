@@ -1,0 +1,12 @@
+README.md
+setup.py
+cvds/__init__.py
+cvds.egg-info/PKG-INFO
+cvds.egg-info/SOURCES.txt
+cvds.egg-info/dependency_links.txt
+cvds.egg-info/requires.txt
+cvds.egg-info/top_level.txt
+cvds/image/__init__.py
+cvds/image/meanstd.py
+cvds/label/__init__.py
+cvds/label/seg.py
