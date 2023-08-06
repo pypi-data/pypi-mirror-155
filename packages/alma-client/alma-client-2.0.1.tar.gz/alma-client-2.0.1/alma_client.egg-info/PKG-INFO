@@ -1,0 +1,152 @@
+Metadata-Version: 2.1
+Name: alma-client
+Version: 2.0.1
+Summary: Python API client for the Alma Installments API
+Home-page: https://github.com/alma/alma-python-client
+Author: Alma
+Author-email: contact@getalma.eu
+License: MIT
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# alma-python-client
+
+[![Travis Build Status](https://travis-ci.org/alma/alma-python-client.svg?branch=main)](https://travis-ci.org/alma/alma-python-client) [![PyPI](https://img.shields.io/pypi/v/alma-client.svg)](https://pypi.python.org/pypi/alma-client)
+
+Python API Client for the Alma API
+
+## Install
+
+```bash
+pip install alma-client
+```
+
+## Demo
+
+We support both a sync and async client.
+
+### Synchronous client
+
+
+```python
+from alma import Client
+
+alma_client = Client.with_api_key("sk_test..")
+payments = alma_client.payments.fetch_all()
+
+for p in payments:
+    print(f"{p.id}: Paiement en {len(p.payment_plan)} fois")
+
+
+payment_data = {
+    "payment": {
+        "purchase_amount": 10000,
+        "return_url": "http://merchant.com/payment-success",
+        "shipping_address": {
+            "first_name": "Martin",
+            "last_name": "Dupond",
+            "line1": "1 rue de Rivoli",
+            "postal_code": "75004",
+            "city": "Paris"
+        }
+    }
+}
+
+eligibility = alma_client.payments.eligibility(payment_data)
+if eligibility.eligible:
+    payment = alma_client.payments.create(payment_data)
+
+print(payment.raw_data)
+```
+
+
+### Asynchronous client
+
+
+```python
+from alma import AsyncClient
+
+alma_client = AsyncClient.with_api_key("sk_test..")
+payments = await alma_client.payments.fetch_all()
+
+for p in payments:
+    print(f"{p.id}: Paiement en {len(p.payment_plan)} fois")
+
+
+payment_data = {
+    "payment": {
+        "purchase_amount": 10000,
+        "return_url": "http://merchant.com/payment-success",
+        "shipping_address": {
+            "first_name": "Martin",
+            "last_name": "Dupond",
+            "line1": "1 rue de Rivoli",
+            "postal_code": "75004",
+            "city": "Paris"
+        }
+    }
+}
+
+eligibility = await alma_client.payments.eligibility(payment_data)
+if eligibility.eligible:
+    payment = await alma_client.payments.create(payment_data)
+
+print(payment.raw_data)
+```
+
+
+# Changelog
+
+2.0.1 (2022-06-17)
+------------------
+
+- Adds `include_child_accounts` and `custom_fields` params to the DataExport creation endpoint
+
+
+2.0.0 (2021-08-12)
+------------------
+
+**Breaking changes**
+
+- Move from requests to HTTPX
+- Handle both sync and async python clients
+- Remove support for Python 3.5
+- Add support for Python 3.9
+
+
+1.2.0 (2020-09-01)
+------------------
+
+- Add support for different authentication methods
+- Add Black & isort checks on pull requests
+
+
+1.1.0 (2020-03-25)
+------------------
+
+- Add support for Python 3.5+
+
+
+1.0.1 (2020-03-24)
+------------------
+
+- Automatically detects the API mode from the api_key.
+
+
+1.0.0 (2020-03-24)
+------------------
+
+- Create a Python client for Alma
+- Handle Order entity for Payment
+- Handle the refund endpoint
+- Handle pagination for orders
+- Handle the send-sms API for payments.
+
+
