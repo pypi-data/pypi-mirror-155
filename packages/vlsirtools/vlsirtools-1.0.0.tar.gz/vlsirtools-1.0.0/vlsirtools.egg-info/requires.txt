@@ -1,0 +1,9 @@
+vlsir==1.0.0
+numpy==1.21.5
+
+[dev]
+pytest==5.2
+coverage
+pytest-cov
+black==19.10b0
+twine

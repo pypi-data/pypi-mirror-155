@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: vlsirtools
+Version: 1.0.0
+Summary: Tools for the Vlsir IC Design Schema
+Home-page: https://github.com/Vlsir/Vlsir
+Author: Dan Fritchman
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >=3.7, <4
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+License-File: LICENSE
+
+
+# Vlsir Tools 
+
+Collected Python-based tools and utilites for working with the Vlsir IC design schema. 
+
+
+
+
