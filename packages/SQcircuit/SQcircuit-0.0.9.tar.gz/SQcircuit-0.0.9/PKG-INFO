@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: SQcircuit
+Version: 0.0.9
+Summary: superconducting quantum circuit analyzer
+Home-page: https://github.com/stanfordLINQS/SQcircuit
+Author: Taha Rajabzadeh, Amir Safavi-Naeini
+Author-email: tahar@stanford.edu, safavi@stanford.edu
+License: BSD
+Keywords: superconducting circuits
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Scientific/Engineering
+Classifier: Intended Audience :: Science/Research
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+License-File: LICENSE
+
+UNKNOWN
+
