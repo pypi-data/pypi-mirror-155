@@ -1,0 +1,8 @@
+*~
+*.pyc
+*.vscode
+*.egg
+/build/*
+/.vscode/*
+/.pytest_cache/*
+/.idea/*
