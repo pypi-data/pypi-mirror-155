@@ -1,0 +1,35 @@
+Metadata-Version: 2.1
+Name: nomadenv
+Version: 0.1.5
+Summary: Build Movable Python Environments
+License: MIT
+Keywords: environment
+Author: Michael Delaporte
+Author-email: michael@pixelscoder.com
+Requires-Python: >=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: patchelf (>=0.14.5,<0.15.0)
+Description-Content-Type: text/markdown
+
+# Nomadenv
+
+
+## Introduction
+
+Nomadenv is a tool which help to build a python environnement which is easily delocalisable.

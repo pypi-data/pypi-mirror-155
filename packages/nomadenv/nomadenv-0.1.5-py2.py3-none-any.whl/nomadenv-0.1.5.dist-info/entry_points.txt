@@ -1,0 +1,3 @@
+[console_scripts]
+nomadenv=nomadenv.__main__:main
+
