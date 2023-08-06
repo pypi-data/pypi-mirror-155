@@ -1,0 +1,17 @@
+MANIFEST.in
+README.md
+requirements.txt
+setup.cfg
+setup.py
+versioneer.py
+drb_impl_xml/__init__.py
+drb_impl_xml/_version.py
+drb_impl_xml/cortex.yml
+drb_impl_xml/xml_node.py
+drb_impl_xml/xml_node_factory.py
+drb_impl_xml.egg-info/PKG-INFO
+drb_impl_xml.egg-info/SOURCES.txt
+drb_impl_xml.egg-info/dependency_links.txt
+drb_impl_xml.egg-info/entry_points.txt
+drb_impl_xml.egg-info/requires.txt
+drb_impl_xml.egg-info/top_level.txt
