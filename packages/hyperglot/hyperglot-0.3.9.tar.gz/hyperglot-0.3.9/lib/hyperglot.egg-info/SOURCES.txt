@@ -1,0 +1,16 @@
+LICENSE.txt
+README.md
+setup.py
+lib/hyperglot/__init__.py
+lib/hyperglot/hyperglot.yaml
+lib/hyperglot/language.py
+lib/hyperglot/languages.py
+lib/hyperglot/main.py
+lib/hyperglot/parse.py
+lib/hyperglot/validate.py
+lib/hyperglot.egg-info/PKG-INFO
+lib/hyperglot.egg-info/SOURCES.txt
+lib/hyperglot.egg-info/dependency_links.txt
+lib/hyperglot.egg-info/entry_points.txt
+lib/hyperglot.egg-info/requires.txt
+lib/hyperglot.egg-info/top_level.txt
