@@ -1,0 +1,72 @@
+Metadata-Version: 2.1
+Name: quanestimation
+Version: 0.1.4
+Summary: A package for quantum estimation.
+Home-page: https://github.com/QuanEstimation/QuanEstimation
+Author: Huaiming Yu
+Author-email: huaimingyuuu@gmail.com
+License: MIT license
+Keywords: quanestimation
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+License-File: AUTHORS.rst
+Requires-Dist: pip (>=19.2.3)
+Requires-Dist: bump2version (>=0.5.11)
+Requires-Dist: wheel (>=0.33.6)
+Requires-Dist: coverage (>=4.5.4)
+Requires-Dist: numpy
+Requires-Dist: sympy
+Requires-Dist: scipy
+Requires-Dist: cvxpy
+Requires-Dist: julia
+Requires-Dist: more-itertools
+Requires-Dist: julia-project
+
+# QuanEstimation
+
+| **Documentation**         |
+|:------------------------- |
+| [![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://quanestimation.github.io/QuanEstimation/) | 
+
+QuanEstimation is a Python-Julia based open-source toolkit for quantum parameter estimation, which consist in the calculation of the quantum metrological tools and quantum resources, and the optimizations with respect to the probe states, the controls or the measurements, as well as comprehensive optimizations in quantum metrology. Futhermore, QuanEstimation can generate not only optimal quantum parameter estimation schemes, but also adaptive measurement schemes.
+
+## Documentation
+The documentation of QuanEstimation can be found [here](https://quanestimation.github.io/QuanEstimation/).
+
+## Installation
+Run the command in the terminal to install QuanEstimation:  
+
+~~~
+pip install quanestimation
+~~~
+
+## Citation
+If you use QuanEstimation in your research, please cite the following paper:
+
+[1] M. Zhang, H.-M. Yu, H. Yuan, X. Wang, R. Demkowicz-Dobrzański, and J. Liu, 
+QuanEstimation: An open-source toolkit for quantum parameter estimation, 
+[arXiv:2205.15588](https://doi.org/10.48550/arXiv.2205.15588).
+
+
+=======
+History
+=======
+
+0.1.0 (2022-06-04)
+0.1.3 (2022-06-08)
+0.1.4 (2022-06-19)
+------------------
+
+* First release on PyPI.
+
+
