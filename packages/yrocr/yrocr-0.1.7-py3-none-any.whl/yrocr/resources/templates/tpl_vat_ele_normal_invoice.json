@@ -1,0 +1,197 @@
+{
+  "name": "增值税电子普通发票",
+  "imageHeight": 1051,
+  "imageWidth": 1625,
+  "anchors": [
+    {
+      "text": "货物或应税劳务服务名称",
+      "left": 119,
+      "top": 392,
+      "width": 285,
+      "height": 27
+    },
+    {
+      "text": "价税合计大写",
+      "left": 160,
+      "top": 734,
+      "width": 167,
+      "height": 31
+    }
+  ],
+  "recognition_areas": [
+    {
+      "field_name": "发票代码",
+      "show_name": "vat_invoice_code",
+      "left": 1140,
+      "top": 22,
+      "width": 402,
+      "height": 43
+    },
+    {
+      "field_name": "发票号码",
+      "show_name": "vat_invoice_number",
+      "left": 1142,
+      "top": 69,
+      "width": 405,
+      "height": 45
+    },
+    {
+      "field_name": "开票日期",
+      "show_name": "issue_date",
+      "left": 1140,
+      "top": 119,
+      "width": 414,
+      "height": 43
+    },
+    {
+      "field_name": "校验码",
+      "show_name": "check_code",
+      "left": 1140,
+      "top": 162,
+      "width": 420,
+      "height": 47
+    },
+    {
+      "field_name": "收款人",
+      "show_name": "payee",
+      "left": 72,
+      "top": 937,
+      "width": 278,
+      "height": 45
+    },
+    {
+      "field_name": "复核",
+      "show_name": "review",
+      "left": 469,
+      "top": 939,
+      "width": 270,
+      "height": 48
+    },
+    {
+      "field_name": "开票人",
+      "show_name": "drawer",
+      "left": 825,
+      "top": 942,
+      "width": 265,
+      "height": 50
+    },
+    {
+      "field_name": "密码",
+      "show_name": "cipher",
+      "left": 982,
+      "top": 229,
+      "width": 573,
+      "height": 150
+    },
+    {
+      "field_name": "购买方_多行",
+      "left": 132,
+      "top": 230,
+      "width": 663,
+      "height": 149
+    },
+    {
+      "field_name": "销售方_多行",
+      "left": 140,
+      "top": 782,
+      "width": 734,
+      "height": 140
+    },
+    {
+      "field_name": "规格型号_多行",
+      "show_name": "plate_specific",
+      "left": 470,
+      "top": 422,
+      "width": 117,
+      "height": 230
+    },
+    {
+      "field_name": "单位_多行",
+      "show_name": "unit",
+      "left": 582,
+      "top": 420,
+      "width": 97,
+      "height": 230
+    },
+    {
+      "field_name": "数量_多行",
+      "show_name": "quantity",
+      "left": 680,
+      "top": 420,
+      "width": 174,
+      "height": 230
+    },
+    {
+      "field_name": "单价_多行",
+      "show_name": "unit_price",
+      "left": 855,
+      "top": 422,
+      "width": 187,
+      "height": 228
+    },
+    {
+      "field_name": "金额_多行",
+      "show_name": "money",
+      "left": 1044,
+      "top": 422,
+      "width": 236,
+      "height": 227
+    },
+    {
+      "field_name": "税率_多行",
+      "show_name": "tax_rate",
+      "left": 1280,
+      "top": 429,
+      "width": 67,
+      "height": 220
+    },
+    {
+      "field_name": "税额_多行",
+      "show_name": "tax",
+      "left": 1347,
+      "top": 427,
+      "width": 235,
+      "height": 223
+    },
+    {
+      "field_name": "价税合计大写",
+      "show_name": "total_cover_tax_upper",
+      "left": 474,
+      "top": 724,
+      "width": 563,
+      "height": 48
+    },
+    {
+      "field_name": "价税合计小写",
+      "show_name": "total_cover_tax_lower",
+      "left": 1125,
+      "top": 734,
+      "width": 370,
+      "height": 41
+    },
+    {
+      "field_name": "货物名称_多行",
+      "show_name": "goods",
+      "left": 62,
+      "top": 424,
+      "width": 403,
+      "height": 230
+    },
+    {
+      "field_name": "总金额",
+      "show_name": "total_money",
+      "left": 1074,
+      "top": 678,
+      "width": 206,
+      "height": 39
+    },
+    {
+      "field_name": "总税额",
+      "show_name": "total_tax",
+      "left": 1402,
+      "top": 679,
+      "width": 175,
+      "height": 40
+    }
+  ]
+}
