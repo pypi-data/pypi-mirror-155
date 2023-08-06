@@ -1,0 +1,4 @@
+[console_scripts]
+onemodel-cli=onemodel.cli.cli:main
+onemodel-gui=onemodel.gui.app:main
+
