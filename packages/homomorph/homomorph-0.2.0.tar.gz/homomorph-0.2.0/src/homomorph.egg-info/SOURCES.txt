@@ -1,0 +1,11 @@
+LICENSE.txt
+README.md
+pyproject.toml
+setup.cfg
+src/homomorph/__init__.py
+src/homomorph/hmm.py
+src/homomorph.egg-info/PKG-INFO
+src/homomorph.egg-info/SOURCES.txt
+src/homomorph.egg-info/dependency_links.txt
+src/homomorph.egg-info/requires.txt
+src/homomorph.egg-info/top_level.txt
