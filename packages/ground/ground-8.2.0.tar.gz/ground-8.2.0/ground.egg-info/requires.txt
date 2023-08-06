@@ -1,0 +1,10 @@
+cfractions<3.0,>=2.1.0
+reprit<1.0,>=0.8.0
+shewchuk<7.0,>=6.3.0
+symba<2.0,>=1.1.0
+
+[:python_version < "3.7"]
+contextvars<3.0,>=2.4
+
+[:python_version < "3.8"]
+typing-extensions<5.0,>=4.1.1
