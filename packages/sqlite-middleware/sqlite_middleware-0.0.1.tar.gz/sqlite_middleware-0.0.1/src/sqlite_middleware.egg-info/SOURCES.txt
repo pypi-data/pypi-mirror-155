@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/sqlite_middleware/__init__.py
+src/sqlite_middleware/database.py
+src/sqlite_middleware.egg-info/PKG-INFO
+src/sqlite_middleware.egg-info/SOURCES.txt
+src/sqlite_middleware.egg-info/dependency_links.txt
+src/sqlite_middleware.egg-info/top_level.txt
