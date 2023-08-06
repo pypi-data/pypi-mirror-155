@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: census-map-consolidator
+Version: 0.0.5
+Summary: Combine Census maps into new shapes
+Home-page: https://palewi.re/docs/census-map-consolidator
+Author: Ben Welsh
+Author-email: b@palewi.re
+License: MIT
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: License :: OSI Approved :: MIT License
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+### Links
+
+* Docs: [palewi.re/docs/census-map-consolidator/](https://palewi.re/docs/census-map-consolidator/)
+* Issues: [github.com/datadesk/census-map-consolidator/issues](https://github.com/datadesk/census-map-consolidator/issues)
+* Packaging: [pypi.python.org/pypi/census-map-consolidator](https://pypi.python.org/pypi/census-map-consolidator)
+* Testing: [github.com/datadesk/census-map-consolidator/actions](https://github.com/datadesk/census-map-consolidator/actions)
