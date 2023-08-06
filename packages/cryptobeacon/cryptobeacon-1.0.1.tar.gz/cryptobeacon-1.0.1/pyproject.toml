@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "cryptobeacon"
+version = "1.0.1"
+description = "CryptoBeacon is a simple command-line interface tool for cryptocurrency alerts directly into your desktop."
+authors = ["Eduardo V. e Sousa <eduardoatrcomp@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+typer = {extras = ["all"], version = "^0.4.1"}
+rich = "^12.4.4"
+requests = "^2.28.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+black = {version = "^22.3.0", allow-prereleases = true}
+flake8 = "^4.0.1"
+pylama = "^8.3.8"
+
+[tool.poetry.scripts]
+cryptobeacon = "cryptobeacon.main:app"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
