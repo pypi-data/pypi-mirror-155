@@ -1,0 +1,4 @@
+[console_scripts]
+scd = scd_type2.__main__:main
+scd_type2 = scd_type2.__main__:main
+
