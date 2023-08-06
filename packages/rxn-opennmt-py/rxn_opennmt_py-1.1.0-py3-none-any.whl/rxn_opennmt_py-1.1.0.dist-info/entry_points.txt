@@ -1,0 +1,6 @@
+[console_scripts]
+onmt_preprocess = onmt.bin.preprocess:main
+onmt_server = onmt.bin.server:main
+onmt_train = onmt.bin.train:main
+onmt_translate = onmt.bin.translate:main
+
