@@ -1,0 +1,3 @@
+[console_scripts]
+warc-extractor=warc_extractor.warc_extractor:main
+
