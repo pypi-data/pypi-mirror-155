@@ -1,0 +1,8 @@
+from npstructures.bitarray import BitArray
+
+import hypothesis.strategies as st
+from hypothesis import given, example
+@given(st.arrays())
+def test_pack_unpack(array):
+    bitarray = 
+    

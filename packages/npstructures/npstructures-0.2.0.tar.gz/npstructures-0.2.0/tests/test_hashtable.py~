@@ -1,0 +1,10 @@
+import pytest
+import numpy as np
+from npstructures import RaggedArray, IRaggedArray, IRaggedArrayWithReverse
+
+@pytest.fixture
+def array_list():
+    return [[0, 1, 2],
+            [2, 1],
+            [1, 2, 3, 4],
+            [3]]

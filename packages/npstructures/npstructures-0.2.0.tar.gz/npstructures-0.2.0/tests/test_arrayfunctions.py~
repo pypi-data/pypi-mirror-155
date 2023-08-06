@@ -1,0 +1,12 @@
+from npstructures.arrayfunctions import diff
+import pytest
+import numpy as np
+
+
+@pytest.fixture
+def array_list():
+    return [[0, 1, 2],
+            [2, 1],
+            [1, 2, 3, 4],
+            [3]]
+
