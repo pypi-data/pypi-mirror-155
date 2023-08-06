@@ -1,0 +1,14 @@
+LICENCE
+README.md
+setup.cfg
+setup.py
+nc2gj/__init__.py
+nc2gj/cmems_datasets.py
+nc2gj/nc2geojson.py
+nc2gj/version.py
+nc2gj.egg-info/PKG-INFO
+nc2gj.egg-info/SOURCES.txt
+nc2gj.egg-info/dependency_links.txt
+nc2gj.egg-info/entry_points.txt
+nc2gj.egg-info/requires.txt
+nc2gj.egg-info/top_level.txt
