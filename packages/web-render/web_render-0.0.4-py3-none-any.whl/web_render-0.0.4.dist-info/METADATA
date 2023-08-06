@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: web-render
+Version: 0.0.4
+Summary: Web sites render.
+Home-page: 
+Author: Andrey Plugin
+Author-email: 9keepa@gmail.com
+License: Apache 2.0
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: Flask
+Requires-Dist: selenium
+Requires-Dist: selenium-stealth
+Requires-Dist: webdriver-manager
+Requires-Dist: waitress
+
+### Description
+
+Module "pyrender" for render dynamic web sites. 
+The module use selenium for render page and flask server for communication.
+
+Functionality:
+- render by url
+- execute javascript code
+- render with live mode
