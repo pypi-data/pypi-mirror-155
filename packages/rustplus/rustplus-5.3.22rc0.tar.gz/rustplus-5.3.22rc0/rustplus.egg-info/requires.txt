@@ -1,0 +1,7 @@
+websocket_client
+Pillow
+protobuf==4.21.1
+asyncio
+rustPlusPushReceiver==0.4.0
+http-ece
+requests
