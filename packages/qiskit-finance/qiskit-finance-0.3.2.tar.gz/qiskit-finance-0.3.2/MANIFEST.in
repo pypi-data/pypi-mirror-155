@@ -1,0 +1,8 @@
+include LICENSE.txt
+include requirements.txt
+recursive-include qiskit_finance *.txt
+graft test
+prune docs
+prune tools
+prune tutorials
+global-exclude *.py[co] .DS_Store
