@@ -1,0 +1,3 @@
+[console_scripts]
+xcookie = xcookie.__main__:main
+
