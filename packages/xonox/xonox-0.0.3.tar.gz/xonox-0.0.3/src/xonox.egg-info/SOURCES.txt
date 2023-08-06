@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/xonox/__init__.py
+src/xonox/__main__.py
+src/xonox/server.py
+src/xonox/station.py
+src/xonox/station_repository.py
+src/xonox.egg-info/PKG-INFO
+src/xonox.egg-info/SOURCES.txt
+src/xonox.egg-info/dependency_links.txt
+src/xonox.egg-info/requires.txt
+src/xonox.egg-info/top_level.txt
