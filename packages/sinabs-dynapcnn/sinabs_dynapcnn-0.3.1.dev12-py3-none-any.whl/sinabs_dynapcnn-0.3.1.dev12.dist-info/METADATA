@@ -1,0 +1,41 @@
+Metadata-Version: 2.1
+Name: sinabs-dynapcnn
+Version: 0.3.1.dev12
+Summary: sinabs plugin for porting models to chips with DYNAP-CNN technology
+Home-page: UNKNOWN
+Author: SynSense
+Author-email: sinabs@synsense.ai
+License: GNU AGPLv3
+Project-URL: Source Code, https://gitlab.com/synsense/sinabs-dynapcnn
+Project-URL: Documentation, https://synsense.gitlab.io/sinabs-dynapcnn
+Keywords: spiking,SNN,DYNAPCNN,Speck
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)
+Classifier: Programming Language :: Python :: 3
+Description-Content-Type: text/markdown
+Requires-Dist: pbr
+Requires-Dist: sinabs (>=0.3)
+Requires-Dist: samna (>=0.14.19)
+
+sinabs-dynapcnn
+===============
+
+This `sinabs` plugin enables porting sinabs models to chips and dev-kits with DYNAP-CNN technology.
+
+Documentation
+-------------
+
+You can find the latest documentation at [https://synsense.gitlab.io/sinabs-dynapcnn/](https://synsense.gitlab.io/sinabs-dynapcnn/)
+
+Contact us
+----------
+
+- If you would like to report bugs or push any changes, you can do this on out [gitlab repository](https://gitlab.com/synsense/sinabs-dynapcnn).
+- We encourage you to join our [SynSense Discord community](https://discordapp.com/channels/852094154188259338/852094154188259342/852113196201934859) to get in touch with the maintainers and other users.
+
+
+
