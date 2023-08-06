@@ -1,0 +1,46 @@
+[tool.poetry]
+name = "torchdyn"
+version = "1.0.2"
+license = "Apache License, Version 2.0"
+description = "A PyTorch library entirely dedicated to neural differential equations, implicit models and related numerical methods."
+authors = ["Michael Poli", "Stefano Massaroli", "DiffEqML"]
+packages = [
+    {include = "torchdyn"}
+]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+torch = "^1.8.1"
+torchsde="*"
+torchcde="^0.2.3"
+sklearn = "*"
+pytorch-lightning = "*"
+torchvision = "*"
+scipy = "*"
+matplotlib = "*"
+ipykernel = "*"
+ipywidgets = "*"
+poethepoet = "^0.10.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "*"
+pytest-cov = "*"
+papermill = "*"
+poethepoet = "^0.10.0"
+
+[tool.poe.tasks]
+force-cuda11 = "python -m pip install torch==1.10.0+cu111 torchvision torchaudio -f https://download.pytorch.org/whl/torch_stable.html"
+
+[build-system]
+build-backend = "poetry.masonry.api"
+requires = ["poetry", "wheel", "setuptools-cpp"]
+
+[tool.pytest.ini_options]
+filterwarnings = [
+        "ignore:Call to deprecated create function FieldDescriptor",  # pytorch lightning needs tensorboard which has a conflict with python 3.9
+        "ignore:Call to deprecated create function Descriptor", # pytorch lightning needs tensorboard which has a conflict with python 3.9
+        "ignore:Call to deprecated create function EnumDescriptor", # pytorch lightning needs tensorboard which has a conflict with python 3.9
+        "ignore:Call to deprecated create function EnumValueDescriptor", # pytorch lightning needs tensorboard which has a conflict with python 3.9
+        "ignore:Call to deprecated create function FileDescriptor", # pytorch lightning needs tensorboard which has a conflict with python 3.9
+        "ignore:Call to deprecated create function OneofDescriptor", # pytorch lightning needs tensorboard which has a conflict with python 3.9
+    ]
