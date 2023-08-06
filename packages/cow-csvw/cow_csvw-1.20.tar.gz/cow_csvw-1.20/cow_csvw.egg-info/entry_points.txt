@@ -1,0 +1,3 @@
+[console_scripts]
+cow_tool = cow_csvw.csvw_tool:main
+
