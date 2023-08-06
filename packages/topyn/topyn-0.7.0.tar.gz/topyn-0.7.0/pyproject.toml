@@ -1,0 +1,42 @@
+[tool.poetry]
+name = "topyn"
+version = "0.7.0"
+description = "TOPyN: Typed Opinionated PYthon Normalizer"
+authors = ["Leandro Leites Barrios <laloleites@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/lleites/topyn"
+repository = "https://github.com/lleites/topyn"
+keywords = [
+"formatter",
+"linter",
+"style-guide",
+"typing",
+"opinionated"
+]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+flake8 = "4.*"
+flake8-bugbear = "*"
+flake8-print = "*"
+flake8-comprehensions = "*"
+black = "22.*"
+mypy = "*"
+click = "8.*"
+pep8-naming = "*"
+autoflake = "1.4.*"
+toml ="*"
+
+[tool.poetry.dev-dependencies]
+pytest = "*"
+pytest-cov = "*"
+types-toml = "*"
+
+[tool.poetry.scripts]
+topyn = 'topyn:console.run'
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
+
