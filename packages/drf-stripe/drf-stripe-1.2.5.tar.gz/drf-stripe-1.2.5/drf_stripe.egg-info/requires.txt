@@ -1,0 +1,6 @@
+stripe>=1.7.9
+django>=1.6
+pytz
+six
+djangorestframework>=3.1.1
+jsonfield>=1.0.3
