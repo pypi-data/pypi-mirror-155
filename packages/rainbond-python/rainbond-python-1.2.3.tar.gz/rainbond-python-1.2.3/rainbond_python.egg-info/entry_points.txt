@@ -1,0 +1,2 @@
+[console_scripts]
+rainbond-python = rainbond_python.cli:main

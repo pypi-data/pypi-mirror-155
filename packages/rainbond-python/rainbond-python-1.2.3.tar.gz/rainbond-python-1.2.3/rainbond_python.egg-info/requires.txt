@@ -1,0 +1,6 @@
+pymongo==3.12.2
+Flask
+pytest
+flask_cors
+redis
+itsdangerous==2.0.1
