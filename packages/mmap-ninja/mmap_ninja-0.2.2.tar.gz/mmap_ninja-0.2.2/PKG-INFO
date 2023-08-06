@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: mmap_ninja
+Version: 0.2.2
+Summary: mmap.ninja: Memory mapped data structures
+Home-page: https://github.com/hristo-vrigazov/mmap.ninja
+Author: Hristo Vrigazov
+Author-email: hvrigazov@gmail.com
+License: MIT
+Description: ## mmap.ninja Python API
+        
+        
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
