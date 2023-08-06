@@ -1,0 +1,57 @@
+Metadata-Version: 2.1
+Name: freenit
+Version: 0.2.25
+Summary: REST API framework based on FastAPI
+Home-page: https://github.com/freenit-framework/backend
+Author: Goran Mekić
+Author-email: meka@tilda.center
+License: BSD
+Keywords: REST,openapi,swagger,fastapi
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Environment :: Web Environment
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: fastapi
+Requires-Dist: passlib
+Requires-Dist: pydantic[email]
+Requires-Dist: pyjwt
+Provides-Extra: beanie
+Requires-Dist: beanie ; extra == 'beanie'
+Provides-Extra: build
+Requires-Dist: twine ; extra == 'build'
+Provides-Extra: dev
+Requires-Dist: aiosqlite ; extra == 'dev'
+Requires-Dist: black ; extra == 'dev'
+Requires-Dist: isort ; extra == 'dev'
+Requires-Dist: uvicorn ; extra == 'dev'
+Provides-Extra: ormar
+Requires-Dist: alembic ; extra == 'ormar'
+Requires-Dist: ormar ; extra == 'ormar'
+Provides-Extra: test
+Requires-Dist: aiosqlite ; extra == 'test'
+Requires-Dist: black ; extra == 'test'
+Requires-Dist: isort ; extra == 'test'
+Requires-Dist: pytest-asyncio ; extra == 'test'
+Requires-Dist: pytest-factoryboy ; extra == 'test'
+Requires-Dist: requests ; extra == 'test'
+
+# Freenit Backend
+![freenit badge](https://github.com/freenit-framework/backend/actions/workflows/pythonapp.yml/badge.svg)
+
+[Documentation](https://freenit.org/backend/)
+
+[Source](https://github.com/freenit-framework/backend)
+
+Freenit is based on
+
+* [FastAPI](https://fastapi.tiangolo.com/)
+* [Ormar](https://github.com/collerek/ormar)
+
+
