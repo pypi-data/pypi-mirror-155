@@ -1,0 +1,12 @@
+README.rst
+pyproject.toml
+setup.cfg
+setup.py
+minty_infra_storage/__init__.py
+minty_infra_storage/s3.py
+minty_infra_storage.egg-info/PKG-INFO
+minty_infra_storage.egg-info/SOURCES.txt
+minty_infra_storage.egg-info/dependency_links.txt
+minty_infra_storage.egg-info/not-zip-safe
+minty_infra_storage.egg-info/requires.txt
+minty_infra_storage.egg-info/top_level.txt
