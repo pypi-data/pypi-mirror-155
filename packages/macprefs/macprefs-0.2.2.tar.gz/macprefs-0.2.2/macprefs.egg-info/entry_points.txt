@@ -1,0 +1,3 @@
+[console_scripts]
+macprefs-install-job = macprefs.command:install_job
+prefs-export = macprefs.command:main
