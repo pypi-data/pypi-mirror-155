@@ -1,0 +1,13 @@
+LICENSE.md
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+src/writema/__init__.py
+src/writema/writema.py
+src/writema.egg-info/PKG-INFO
+src/writema.egg-info/SOURCES.txt
+src/writema.egg-info/dependency_links.txt
+src/writema.egg-info/not-zip-safe
+src/writema.egg-info/requires.txt
+src/writema.egg-info/top_level.txt
