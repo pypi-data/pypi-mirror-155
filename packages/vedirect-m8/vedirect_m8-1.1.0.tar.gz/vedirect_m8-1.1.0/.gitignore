@@ -1,0 +1,10 @@
+*~
+*.pyc
+/build/*
+/.vscode/*
+/.pytest_cache/*
+/.idea/*
+/.trunk/*
+.flake8
+.isort.cfg
+.markdownlint.yaml
