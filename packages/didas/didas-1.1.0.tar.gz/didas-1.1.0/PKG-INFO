@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: didas
+Version: 1.1.0
+Summary: Python Commons for Didas
+Home-page: https://github.com/freenet-group/didas/
+Author: DiDas
+Author-email: georgfriedrich.wendorf@md.de
+Project-URL: Bug Tracker, https://github.com/freenet-group/didas/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+
+# didas
+
+[PyPi Projekt](https://pypi.org/project/didas/)
+
+## Installation
+
+### PyPi
+
+`pip install didas`
+
+### GitHub
+
+`pip install git+https://github.com/freenet-group/didas@main`
+

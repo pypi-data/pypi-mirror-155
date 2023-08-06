@@ -1,0 +1,17 @@
+.gitignore
+README.md
+pyproject.toml
+renovate.json
+setup.cfg
+.github/linters/.flake8
+.github/linters/.python-black
+.github/workflows/pypi.yml
+didas/__init__.py
+didas/_version.py
+didas/mlflow.py
+didas/oracle.py
+didas.egg-info/PKG-INFO
+didas.egg-info/SOURCES.txt
+didas.egg-info/dependency_links.txt
+didas.egg-info/requires.txt
+didas.egg-info/top_level.txt
