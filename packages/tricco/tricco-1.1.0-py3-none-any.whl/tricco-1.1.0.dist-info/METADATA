@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: tricco
+Version: 1.1.0
+Summary: TriCCo
+Home-page: https://gitlab.phaidra.org/climate/tricco
+Author: Aiko Voigt
+Author-email: <aiko.voigt@univie.ac.at>
+Keywords: python,connected components,triangular grids
+Classifier: Intended Audience :: Science/Research
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: xarray
+Requires-Dist: connected-components-3d
+Requires-Dist: networkx
+
+TriCCo: a python package for connected component labeling on triangular grids
