@@ -1,0 +1,17 @@
+.gitignore
+LICENSE
+README.md
+requirements.txt
+setup.cfg
+setup.py
+trueway_geocoding_rapidapi/__init__.py
+trueway_geocoding_rapidapi/api.py
+trueway_geocoding_rapidapi.egg-info/PKG-INFO
+trueway_geocoding_rapidapi.egg-info/SOURCES.txt
+trueway_geocoding_rapidapi.egg-info/dependency_links.txt
+trueway_geocoding_rapidapi.egg-info/not-zip-safe
+trueway_geocoding_rapidapi.egg-info/top_level.txt
+trueway_geocoding_rapidapi/schemas/__init__.py
+trueway_geocoding_rapidapi/schemas/base.py
+trueway_geocoding_rapidapi/schemas/enums.py
+trueway_geocoding_rapidapi/schemas/schema.py
