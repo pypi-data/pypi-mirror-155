@@ -1,0 +1,89 @@
+.coveragerc
+.gitignore
+.readthedocs.yml
+AUTHORS.rst
+CHANGELOG.rst
+CONTRIBUTING.rst
+LICENSE.txt
+README.rst
+pyproject.toml
+setup.cfg
+setup.py
+tox.ini
+akula/__init__.py
+akula/background.py
+akula/combustion.py
+akula/markets.py
+akula/parameterized_exchanges.py
+akula/swiss_consumption_uncertainty.py
+akula/utils.py
+akula/version.py
+akula/akula.egg-info/PKG-INFO
+akula/akula.egg-info/SOURCES.txt
+akula/akula.egg-info/dependency_links.txt
+akula/akula.egg-info/not-zip-safe
+akula/akula.egg-info/requires.txt
+akula/akula.egg-info/top_level.txt
+akula/electricity/__init__.py
+akula/electricity/add_residual_mix.py
+akula/electricity/config.py
+akula/electricity/create_datapackages.py
+akula/electricity/entso_data_converter.py
+akula/electricity/modify_electricity_markets.py
+akula/sensitivity_analysis/__init__.py
+akula/sensitivity_analysis/local_sensitivity_analysis.py
+akula/sensitivity_analysis/remove_non_influential.py
+akula/sensitivity_analysis/validation.py
+dev/Add Swiss residual mix activity.ipynb
+dev/Check ENTSO electricity results.ipynb
+dev/ENTSO-E electricity data.ipynb
+dev/GSA project import updated.ipynb
+dev/GSA project master definition.ipynb
+dev/Getting uncertainty arrays for a matrix.ipynb
+dev/Linking combustion emissions.ipynb
+dev/Local SA for GSA protocol.ipynb
+dev/Local sensitivity analysis.ipynb
+dev/Mapping electricity generators.ipynb
+dev/Parameterized exchanges Sasha.ipynb
+dev/Parameterized exchanges.ipynb
+dev/Swiss electricity residual mix.ipynb
+dev/add_foreground_uncertainty.py
+dev/draft.py
+dev/esd_video.py
+dev/gradient_boosting.py
+dev/monte_carlo_simulations.py
+dev/paper3_plot_electricity.py
+dev/paper3_plot_electricity_dirichlet.py
+dev/run_local_sa.py
+dev/setac32_plot_combustion.py
+dev/setac32_plot_dirichlet_electricity.py
+dev/setac32_plot_electricity.py
+dev/setac32_plot_markets.py
+dev/setac32_plot_monte_carlo.py
+dev/setac32_plot_parameterization.py
+dev/setac_32.py
+dev/validation_electricity.py
+dev/archived/Add agribalyse.ipynb
+dev/archived/Add uncertainty to foreground.ipynb
+dev/archived/Finding implicit markets Sasha.ipynb
+dev/archived/Finding implicit markets.ipynb
+dev/archived/Land balancing.ipynb
+dev/archived/gsa_project_master_definition.py
+dev/archived/paper2_foreground_uncertainty.ipynb
+dev/archived/paper3_market_plots.ipynb
+dev/figures/gsa_for_archetypes/sector_scores.pdf
+dev/figures/gsa_for_archetypes/yearly_scores.pdf
+dev/figures/gsa_for_archetypes_with_exiobase/sector_scores.pdf
+dev/figures/gsa_for_archetypes_with_exiobase/yearly_scores.pdf
+docs/Makefile
+docs/authors.rst
+docs/changelog.rst
+docs/conf.py
+docs/contributing.rst
+docs/index.rst
+docs/license.rst
+docs/readme.rst
+docs/requirements.txt
+docs/_static/.gitignore
+tests/conftest.py
+tests/test_skeleton.py

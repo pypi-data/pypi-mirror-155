@@ -1,0 +1,11 @@
+brightway25>=1.0.6
+tqdm
+thefuzz
+
+[:python_version < "3.8"]
+importlib-metadata
+
+[testing]
+setuptools
+pytest
+pytest-cov
