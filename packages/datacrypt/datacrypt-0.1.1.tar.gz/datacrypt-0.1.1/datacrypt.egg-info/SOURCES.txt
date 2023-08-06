@@ -1,0 +1,11 @@
+setup.cfg
+setup.py
+datacrypt/__init__.py
+datacrypt/array.py
+datacrypt/number.py
+datacrypt.egg-info/PKG-INFO
+datacrypt.egg-info/SOURCES.txt
+datacrypt.egg-info/dependency_links.txt
+datacrypt.egg-info/not-zip-safe
+datacrypt.egg-info/requires.txt
+datacrypt.egg-info/top_level.txt
