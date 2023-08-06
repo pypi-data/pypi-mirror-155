@@ -1,0 +1,46 @@
+Metadata-Version: 2.1
+Name: MicroStark
+Version: 0.0.0.0.1b5
+Summary: Personal add-on extension to Pyrogram
+Home-page: https://github.com/StarkBotsIndustries
+Author: StarkProgrammer
+Author-email: starkbotsindustries@gmail.com
+License: GPLv3+
+Project-URL: Support, https://t.me/StarkBotsChat
+Project-URL: Community, https://t.me/StarkBots
+Keywords: telegram,bot,pyrogram,python,telegram-bot
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Information Technology
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Natural Language :: English
+Classifier: Topic :: Communications :: Chat
+Classifier: Topic :: Education :: Testing
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+License-File: NOTICE
+
+# MicroStark
+
+Personal add-on extension to Pyrogram
+
+## Community
+
+Telegram Channel - **[StarkBots](https://t.me/StarkBots)**
+
+Telegram Chat - **[StarkBotsChat](https://t.me/StarkBotsChat)**
+
+## Copyright and License
+
+- Copyright (C) 2022 **Stark Bots** <<https://github.com/StarkBotsIndustries>>
+
+- Licensed under the terms of GNU General Public License v3 or later (GPLv3+)
