@@ -1,0 +1,15 @@
+zeep>=3.3.1
+pycountry~=22.3
+
+[quality]
+doc8
+flake8
+isort
+mypy
+pydocstyle
+
+[test]
+responses
+
+[types]
+types-requests

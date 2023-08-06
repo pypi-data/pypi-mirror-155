@@ -1,0 +1,311 @@
+# Verify VAT registration number
+
+The module for verification *VAT registration number* in EU and *VAT identification number* in Czechia. This module is used in the [Django Verify VAT registration number](https://gitlab.nic.cz/django-apps/django-verify-vat-number) module and then in the [DjangoCMS Verify VAT registration number](https://gitlab.nic.cz/djangocms-apps/djangocms-verify-vat-number) module.
+
+
+## VIES
+
+[VIES VAT number validation for European union](https://ec.europa.eu/taxation_customs/vies). It is an electronic mean of validating VAT-identification numbers of economic operators registered in the European Union for cross border transactions on goods or services.
+
+Supported countries:
+
+    BE - Belgium
+    BG - Bulgaria
+    CY - Cyprus
+    CZ - Czechia
+    DE - Germany
+    DK - Denmark
+    EE - Estonia
+    EL - Greece
+    ES - Spain
+    FI - Finland
+    FR - France
+    HR - Croatia
+    HU - Hungary
+    IE - Ireland
+    IT - Italy
+    LT - Lithuania
+    LU - Luxembourg
+    LV - Latvia
+    MT - Malta
+    NL - The Netherlands
+    PL - Poland
+    PT - Portugal
+    RO - Romania
+    SE - Sweden
+    SI - Slovenia
+    SK - Slovakia
+    XI - Northern Ireland
+
+## ARES
+
+[ARES](https://wwwinfo.mfcr.cz) - Access to Registers of Economic Subjects / Entities is an information system allowing a retrieval of information on economic entities registered in the Czech Republic. This system intermediates a display of data from particular registers of the state administration (called source registers) in which the data concerned is kept.
+
+
+## Installation
+
+This library is available on PyPI, it's recommended to install it using `pip`:
+
+```shell
+pip install verify-vat-number
+```
+
+## Usage
+
+```python
+from verify_vat_number.ares import get_from_cz_ares
+from verify_vat_number.vies import get_from_eu_vies
+from verify_vat_number.exceptions import VatNotFound, VerifyVatException, UnsupportedCountryCode
+
+def dump_reg(vat):
+    print('\nVAT-REG-NUM:', vat)
+    try:
+        data = get_from_eu_vies(vat)
+    except VatNotFound:
+        print("VAT not found for", vat)
+    except UnsupportedCountryCode as err:
+        print("Unsupported country code:", err)
+    except VerifyVatException as err:
+        print(err)
+        print(err.source)
+    else:
+        print(data)
+
+def dump_vid(ic):
+    print('\nVAT-ID-NUM:', ic)
+    try:
+        data = get_from_cz_ares(ic)
+    except VatNotFound:
+        print("IC not found for", ic)
+    except VerifyVatException as err:
+        print(err)
+        print(err.source)
+    else:
+        print(data)
+
+
+for vat in ("CZ67985726", "DE306401413", "SK2020317068", "CZ67985728", "BE0404616494", "BE0400853488", "BG127015636", "XX67985726"):
+    dump_reg(vat)
+
+for ic in ("67985726", "67985728", "456456456"):
+    dump_vid(ic)
+```
+
+```shell
+VAT-REG-NUM: CZ67985726
+VerifiedCompany(
+    company_name='CZ.NIC, z.s.p.o.',
+    address='Milešovská 1136/5\nPRAHA 3 - VINOHRADY\n130 00  PRAHA 3',
+    street_and_num='Milešovská 1136/5',
+    city='PRAHA 3',
+    postal_code='130 00',
+    district='PRAHA 3 - VINOHRADY',
+    country_code='CZ'
+)
+
+VAT-REG-NUM: DE306401413
+VerifiedCompany(
+    company_name='---',
+    address='---',
+    street_and_num=None,
+    city=None,
+    postal_code=None,
+    district=None,
+    country=None
+)
+
+VAT-REG-NUM: SK2020317068
+VerifiedCompany(
+    company_name='ESET, spol. s r.o.',
+    address='Einsteinova 24\n85101 Bratislava - mestská časť Petržalka\nSlovensko',
+    street_and_num='Einsteinova 24',
+    city='Bratislava - mestská časť Petržalka',
+    postal_code='85101',
+    district=None,
+    country_code='SK'
+)
+
+VAT-REG-NUM: CZ67985728
+VAT not found for CZ67985728
+
+VAT-REG-NUM: BE0404616494
+VerifiedCompany(
+    company_name='NV ACKERMANS & VAN HAAREN',
+    address='Begijnenvest 113\n2000 Antwerpen',
+    street_and_num='Begijnenvest 113',
+    city='Antwerpen',
+    postal_code='2000',
+    district=None,
+    country_code='BE'
+)
+
+VAT-REG-NUM: BE0400853488
+VerifiedCompany(
+    company_name='NV BRUSSELS AIRLINES',
+    address='Ringbaan 26\n1831 Machelen (Brab.)',
+    street_and_num='Ringbaan 26',
+    city='Machelen (Brab.)',
+    postal_code='1831',
+    district=None,
+    country_code='BE'
+)
+
+VAT-REG-NUM: BG127015636
+VerifiedCompany(
+    company_name='КАРЛСБЕРГ БЪЛГАРИЯ - АД',
+    address='жк МЛАДОСТ 4БИЗНЕС ПАРК СОФИЯ  №1 бл.сграда 10 ет.4 обл.СОФИЯ, гр.СОФИЯ 1715',
+    street_and_num='жк МЛАДОСТ 4БИЗНЕС ПАРК СОФИЯ  №1 бл.сграда 10 ет.4 обл.СОФИЯ',
+    city='гр.СОФИЯ',
+    postal_code='1715',
+    district=None,
+    country_code='BG'
+)
+
+VAT-REG-NUM: XX67985726
+Unsupported country code: XX
+
+VAT-ID-NUM: 67985726
+VerifiedCompany(
+    company_name='CZ.NIC, z.s.p.o.',
+    address='Milešovská 1136/5\n13000 Praha 3',
+    street_and_num='Milešovská 1136/5',
+    city='Praha 3',
+    postal_code='13000',
+    district='Praha 3 - Vinohrady',
+    country_code='CZ'
+)
+
+VAT-ID-NUM: 67985728
+IC not found for 67985728
+
+VAT-ID-NUM: 456456456
+Error code: 7; chyba logických vazeb vstupních dat v dotazu - POZOR! Hrozí zablokování Vaší IP adresy!
+Prosím čtěte http://wwwinfo.mfcr.cz/ares/ares_xml_standard.html.cz#max
+
+<?xml version="1.0" encoding="UTF-8"?>
+<are:Ares_odpovedi
+    xmlns:are="http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_answer/v_1.0.1"
+    xmlns:dtt="http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_datatypes/v_1.0.4"
+    xmlns:udt="http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/uvis_datatypes/v_1.0.1"
+    odpoved_datum_cas="2022-05-20T15:21:41"
+    odpoved_pocet="1"
+    odpoved_typ="Standard"
+    vystup_format="XML"
+    xslt="klient"
+    validation_XSLT="/ares/xml_doc/schemas/ares/ares_answer/v_1.0.0/ares_answer.xsl"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_answer/v_1.0.1
+        http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_answer/v_1.0.1/ares_answer_v_1.0.1.xsd"
+    Id="ares">
+    <are:Odpoved>
+        <are:Error>
+            <dtt:Error_kod>7</dtt:Error_kod>
+            <dtt:Error_text>
+                chyba logických vazeb vstupních dat v dotazu - POZOR!
+                Hrozí zablokování Vaší IP adresy!
+                Prosím čtěte http://wwwinfo.mfcr.cz/ares/ares_xml_standard.html.cz#max
+            </dtt:Error_text>
+        </are:Error>
+    </are:Odpoved>
+</are:Ares_odpovedi>
+```
+
+Work with logging:
+
+```python
+import sys
+import logging
+from verify_vat_number.ares import get_from_cz_ares
+from verify_vat_number.vies import get_from_eu_vies
+from verify_vat_number.exceptions import VatNotFound
+
+logger = logging.getLogger('verify_vat_number.vies')
+logger.addHandler(logging.StreamHandler(sys.stdout))
+logger.setLevel(logging.DEBUG)
+
+get_from_eu_vies("CZ67985726")
+```
+
+```shell
+https://ec.europa.eu/taxation_customs/vies/checkVatService.wsdl Country code: CZ VAT: 67985726
+
+<ns0:Envelope
+    xmlns:ns0="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:ns1="urn:ec.europa.eu:taxud:vies:services:checkVat:types">
+    <ns0:Body>
+        <ns1:checkVat>
+            <ns1:countryCode>CZ</ns1:countryCode>
+            <ns1:vatNumber>67985726</ns1:vatNumber>
+        </ns1:checkVat>
+    </ns0:Body>
+</ns0:Envelope>
+
+<ns0:Envelope
+    xmlns:ns0="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:ns1="urn:ec.europa.eu:taxud:vies:services:checkVat:types">
+    <ns0:Body>
+        <ns1:checkVatResponse>
+            <ns1:countryCode>CZ</ns1:countryCode>
+            <ns1:vatNumber>67985726</ns1:vatNumber>
+            <ns1:requestDate>2022-05-20+02:00</ns1:requestDate>
+            <ns1:valid>true</ns1:valid>
+            <ns1:name>CZ.NIC, z.s.p.o.</ns1:name>
+            <ns1:address>Milešovská 1136/5
+PRAHA 3 - VINOHRADY
+130 00  PRAHA 3</ns1:address>
+        </ns1:checkVatResponse>
+    </ns0:Body>
+</ns0:Envelope>
+
+VerifiedCompany(
+    company_name='CZ.NIC, z.s.p.o.',
+    address='Milešovská 1136/5\n13000 Praha 3',
+    street_and_num='Milešovská 1136/5',
+    city='Praha 3',
+    postal_code='13000',
+    district='Praha 3 - Vinohrady',
+    country_code='CZ'
+)
+```
+
+```python
+logger = logging.getLogger('verify_vat_number.ares')
+logger.addHandler(logging.StreamHandler(sys.stdout))
+logger.setLevel(logging.DEBUG)
+
+try:
+    get_from_cz_ares("67985728")
+except VatNotFound:
+    print('VAT not found.')
+```
+
+```shell
+https://wwwinfo.mfcr.cz/cgi-bin/ares/darv_std.cgi?ico=67985728
+<?xml version="1.0" encoding="UTF-8"?>
+<are:Ares_odpovedi
+    xmlns:are="http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_answer/v_1.0.1"
+    xmlns:dtt="http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_datatypes/v_1.0.4"
+    xmlns:udt="http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/uvis_datatypes/v_1.0.1"
+    odpoved_datum_cas="2022-05-20T15:12:15"
+    odpoved_pocet="1"
+    odpoved_typ="Standard"
+    vystup_format="XML"
+    xslt="klient"
+    validation_XSLT="/ares/xml_doc/schemas/ares/ares_answer/v_1.0.0/ares_answer.xsl"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_answer/v_1.0.1
+        http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_answer/v_1.0.1/ares_answer_v_1.0.1.xsd"
+    Id="ares">
+<are:Odpoved>
+    <are:Pocet_zaznamu>0</are:Pocet_zaznamu>
+    <are:Typ_vyhledani>FREE</are:Typ_vyhledani>
+</are:Odpoved>
+</are:Ares_odpovedi>
+
+VAT not found.
+```
+
+## License
+
+[GPLv3+](https://www.gnu.org/licenses/gpl-3.0.html)
+

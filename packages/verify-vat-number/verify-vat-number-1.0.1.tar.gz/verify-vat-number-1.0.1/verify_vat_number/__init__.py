@@ -1,0 +1,1 @@
+"""Verify VAT number module."""
