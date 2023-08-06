@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: planekit
+Version: 0.0.206
+Summary: ASD
+Home-page: https://github.com/msasen/planekit
+Author: Musa Şen
+Author-email: m42@gmail.com
+License: MIT
+Download-URL: https://github.com/msasen/planekit0.0.206.tar.gz
+Keywords: Alakalı,kelimeler
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Description-Content-Type: text/markdown
+Requires-Dist: pymavlink (==2.4.29)
+Requires-Dist: pyserial (==3.5)
+
+## Hi world
+
+demo
+
