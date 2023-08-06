@@ -1,0 +1,89 @@
+Metadata-Version: 2.1
+Name: aiommost
+Version: 0.2.1
+Summary: Asyncronous mattermost client.
+Author-email: Vladimir Puzakov <vppuzakov@rambler.ru>
+Requires-Python: >=3.10.0
+Description-Content-Type: text/markdown
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Internet
+Classifier: Topic :: Internet :: WWW/HTTP :: HTTP Servers
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Software Development :: Libraries :: Application Frameworks
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development
+Classifier: Typing :: Typed
+Requires-Dist: orjson
+Requires-Dist: httpx
+Requires-Dist: pydantic
+Requires-Dist: mypy>=0.910,<1 ; extra == "dev"
+Requires-Dist: wemake_python_styleguide>=0.15.3,<1 ; extra == "dev"
+Requires-Dist: faker>=9.8,<10.0 ; extra == "test"
+Requires-Dist: pytest>=6.2,<7.0 ; extra == "test"
+Requires-Dist: pytest-asyncio>=0.18.3,<1 ; extra == "test"
+Requires-Dist: pytest-clarity>=1.0,<2 ; extra == "test"
+Requires-Dist: pytest-cov>=3.0,<4 ; extra == "test"
+Requires-Dist: pytest-dotenv>=0.5.2,<1 ; extra == "test"
+Requires-Dist: pytest-mock>=3.6,<4 ; extra == "test"
+Requires-Dist: pytest-testdox>=2,<3 ; extra == "test"
+Project-URL: Issues, https://github.com/vppuzakov/aiommost/issues
+Project-URL: Source, https://github.com/vppuzakov/aiommost
+Provides-Extra: dev
+Provides-Extra: test
+
+# aiommost
+
+Asyncio Mattermost client. Useful to write bots.
+
+## Usage
+
+```python
+from aiommost import MattermostClient
+
+client = MattermostClient(host, token)
+
+# create direct channel
+user = await client.users.get_by_username('someuser')
+channel = await client.channels.direct(user.uid, user.uid)
+```
+
+## Contributing Guide
+
+Main dependencies:
+
+- `httpx`
+- `pydantic`
+
+Developer dependencies:
+
+- `mypy`
+- `wemake-python-styleguide`
+- `pytest`
+
+Install dependencies:
+
+```bash
+make dev.install
+```
+
+Before push:
+
+```bash
+$ make lint && make test
+...
+```
+
