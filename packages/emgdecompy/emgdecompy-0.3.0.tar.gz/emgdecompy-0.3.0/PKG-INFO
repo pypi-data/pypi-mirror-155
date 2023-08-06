@@ -1,0 +1,58 @@
+Metadata-Version: 2.1
+Name: emgdecompy
+Version: 0.3.0
+Summary: A package for decomposing raw EMG signals into individual motor unit activity.
+License: MIT
+Author: Daniel King
+Requires-Python: >=3.9,<3.11
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: altair (>=4.2.0,<5.0.0)
+Requires-Dist: altair-data-server (>=0.4.1,<0.5.0)
+Requires-Dist: numpy (>=1.22.3,<2.0.0)
+Requires-Dist: pandas (>=1.4.2,<2.0.0)
+Requires-Dist: scipy (>=1.8.0,<2.0.0)
+Requires-Dist: sklearn (>=0.0,<0.1)
+Description-Content-Type: text/markdown
+
+# EMGdecomPy
+
+[![ci-cd](https://github.com/UBC-SPL-MDS/emg-decomPy/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/UBC-SPL-MDS/emg-decomPy/actions/workflows/ci-cd.yml)
+[![codecov](https://codecov.io/gh/UBC-SPL-MDS/EMGdecomPy/branch/main/graph/badge.svg?token=78ZU40UEOE)](https://codecov.io/gh/UBC-SPL-MDS/EMGdecomPy)
+
+A package for decomposing raw EMG signals into individual motor unit activity.
+
+## Proposal
+
+Our project proposal can be found [here](https://github.com/UBC-SPL-MDS/emg-decomPy/blob/main/docs/proposal/proposal.pdf).
+
+To generate the proposal locally, run the following command from the root directory:
+
+```Rscript -e "rmarkdown::render('docs/proposal/proposal.Rmd')"```
+
+## Installation
+
+```bash
+pip install emgdecompy
+```
+
+## Usage
+
+- TODO
+
+## Contributing
+
+Interested in contributing? Check out the contributing guidelines. Please note that this project is released with a Code of Conduct. By contributing to this project, you agree to abide by its terms.
+
+## License
+
+`emgdecompy` was created by Daniel King, Jasmine Ortega, Rada Rudyak, and Rowan Sivanandam. It is licensed under the terms of the MIT license.
+
+## Credits
+
+`emgdecompy` was created with [`cookiecutter`](https://cookiecutter.readthedocs.io/en/latest/) and the `py-pkgs-cookiecutter` [template](https://github.com/py-pkgs/py-pkgs-cookiecutter).
+
+The data used for validation was obtained from [`Hug et al. (2021)`](https://figshare.com/articles/dataset/Analysis_of_motor_unit_spike_trains_estimated_from_high-density_surface_electromyography_is_highly_reliable_across_operators/13695937).
+
