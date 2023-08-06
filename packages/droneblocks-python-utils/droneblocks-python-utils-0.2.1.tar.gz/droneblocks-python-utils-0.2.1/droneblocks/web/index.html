@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>DroneBlocks Tello Web</title>
+
+    <link href="/static/css/neumorphism.css" rel="stylesheet"/>
+
+    <!--    <meta http-equiv="refresh" content="15;url=http://localhost:8080/"/>-->
+</head>
+<body>
+<div class="content" id="tello-svc">
+
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="/static/images/droneblocks_logo.png" alt=""
+                     class="d-inline-block align-text-top">
+                DroneBlocks Tello Control Web Application
+            </a>
+
+            <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" id="customSwitch2" v-model="use_tello_talent"
+                       v-on:click="toggle_tello_model()">
+                <label class="custom-control-label" for="customSwitch2">[[tello_model_label]]</label>
+            </div>
+
+            <div class="w-25">
+                <p v-if="command_success" class="text-success mb-0">
+                    [[command_status_message]]</p>
+                <p v-else class="text-danger mb-0">
+                    [[command_status_message]]</p>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <div class="container z-2">
+        <div class="row my-5 justify-content-center text-center">
+            <div class="col-lg-8">
+                <img v-if="use_tello_talent" src="/static/images/rm_tt_transparent.png"
+                     class="rounded-circle img-thumbnail image-lg border-light shadow-inset p-3" alt="rmtt">
+                <img v-else src="/static/images/tello_drone_image2.png"
+                     class="rounded-circle img-thumbnail image-lg border-light shadow-inset p-3" alt="tello">
+            </div>
+        </div>
+    </div>
+
+    <!--   JoyStick Controller -->
+    <div class="container z-2">
+        <div class="row my-5 justify-content-center text-center">
+            <div class="col-lg-8">
+                <img src="/static/images/tello-controller.png" usemap="#tellojoystickmap">
+                <map name="tellojoystickmap">
+                    <area shape="rect" coords="345,42,394,83" v-on:mouseover="execute_rc_command('move-forward')"
+                          v-on:mouseout="stop_flying()"/>
+                    <area shape="rect" coords="419,111,461,151" v-on:mouseover="execute_rc_command('move-right')"
+                          v-on:mouseout="stop_flying()"/>
+                    <area shape="rect" coords="350,181,392,221" v-on:mouseover="execute_rc_command('move-back')"
+                          v-on:mouseout="stop_flying()"/>
+                    <area shape="rect" coords="275,112,315,154" v-on:mouseover="execute_rc_command('move-left')"
+                          v-on:mouseout="stop_flying()"/>
+                    <area shape="rect" coords="344,116,398,159" v-on:mouseover="execute_rc_command('dummy')"
+                          v-on:mouseout="stop_flying()"/>
+                    <area shape="rect" coords="97,44,136,78" v-on:mouseover="execute_rc_command('move-up')"
+                          v-on:mouseout="stop_flying()"/>
+                    <area shape="rect" coords="159,118,202,147" v-on:mouseover="execute_rc_command('cw')"
+                          v-on:mouseout="stop_flying()"/>
+                    <area shape="rect" coords="93,184,136,219" v-on:mouseover="execute_rc_command('move-down')"
+                          v-on:mouseout="stop_flying()"/>
+                    <area shape="rect" coords="20,111,67,147" v-on:mouseover="execute_rc_command('ccw')"
+                          v-on:mouseout="stop_flying()"/>
+                    <area shape="rect" coords="84,102,143,155" v-on:mouseover="execute_rc_command('dummy')"
+                          v-on:mouseout="stop_flying()"/>
+                </map>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row mt-5 ml-4 mr-4 justify-content-around">
+        <div class="col-lg-3 col-md-3 mb-5 mb-lg-0">
+            <h2 class="h5 mb-4">Status</h2>
+            <ul class="list-group list-group-flush bg-primary shadow-soft rounded border border-light">
+                <li class="list-group-item d-flex justify-content-between align-items-center border-0">
+                    <h6>Battery:</h6> [[battery_level]]
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center border-0">
+                    <h6>Height:</h6>[[height]]
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <h6>Temperature(C):</h6>[[temp]]
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <h6>Flight Time:</h6>[[flight_time]]
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <h6>Flying Speed</h6>
+                    <input type="number" min="0" max="100" v-model="flying_speed"/>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <h6>Fly Distance:</h6>
+                    <input type="number" min="0" max="100" v-model="fly_distance"/>
+                </li>
+
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <button class="btn btn-sm btn-primary" type="button" v-on:click="update_flying_values">Update
+                    </button>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-lg-9 col-md-9 mb-5 mb-lg-0"><!--   BUTTON Controls -->
+            <div class="container mb-3">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <div class="mb-3">
+                            <h2 class="h5">TakeOff and Land</h2>
+                        </div>
+
+                        <!--Buttons-->
+                        <button class="btn btn-primary mr-3 btn-sm" type="button" v-on:click="stop_flying()">Stop &
+                            Hover
+                        </button>
+                        <button class="btn btn-primary mr-3 btn-sm" type="button" v-on:click="execute_land()">Land
+                        </button>
+                        <button class="btn btn-primary mr-3 btn-sm" type="button"
+                                v-on:click="execute_command('takeoff')">
+                            Take
+                            Off
+                        </button>
+                        <button class="btn btn-primary mr-3 btn-sm" type="button"
+                                v-on:click="execute_command('motor-on')">
+                            Motor
+                            On
+                        </button>
+                        <button class="btn btn-primary mr-3 btn-sm" type="button"
+                                v-on:click="execute_command('motor-off')">
+                            Motor Off
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mb-3">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <div class="mb-3">
+                            <h2 class="h5">Fixed Distance Operations</h2>
+                        </div>
+
+                        <!--Buttons-->
+                        <button class="btn btn-primary mr-3 btn-sm" type="button"
+                                v-on:click="execute_command('move-up')">
+                            Fly
+                            Up
+                        </button>
+                        <button class="btn btn-primary mr-3 btn-sm" type="button"
+                                v-on:click="execute_command('move-down')">
+                            Fly
+                            Down
+                        </button>
+                        <button class="btn btn-primary mr-3 btn-sm" type="button"
+                                v-on:click="execute_command('move-forward')">
+                            Fly Forward
+                        </button>
+                        <button class="btn btn-primary mr-3 btn-sm" type="button"
+                                v-on:click="execute_command('move-back')">
+                            Fly
+                            Backward
+                        </button>
+                        <button class="btn btn-primary mr-3 btn-sm" type="button"
+                                v-on:click="execute_command('move-left')">
+                            Fly
+                            Left
+                        </button>
+                        <button class="btn btn-primary mr-3 btn-sm" type="button"
+                                v-on:click="execute_command('move-right')">Fly
+                            Right
+                        </button>
+                        <button class="btn btn-primary mr-3 btn-sm" type="button" v-on:click="execute_command('cw')">
+                            Rotate
+                            CW
+                        </button>
+                        <button class="btn btn-primary mr-3 btn-sm" type="button" v-on:click="execute_command('ccw')">
+                            Rotate
+                            CCW
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mb-3">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <div class="mb-3">
+                            <h2 class="h5">Flip Operations</h2>
+                        </div>
+
+                        <!--Buttons-->
+                        <button class="btn btn-primary mr-3 btn-sm" type="button"
+                                v-on:click="execute_command('flip-left')">
+                            Flip Left
+                        </button>
+                        <button class="btn btn-primary mr-3 btn-sm" type="button"
+                                v-on:click="execute_command('flip-right')">
+                            Flip Right
+                        </button>
+                        <button class="btn btn-primary mr-3 btn-sm" type="button"
+                                v-on:click="execute_command('flip-forward')">
+                            Flip Forward
+                        </button>
+                        <button class="btn btn-primary mr-3 btn-sm" type="button"
+                                v-on:click="execute_command('flip-back')">
+                            Flip Backward
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--  *********************** -->
+    <!--  TELLO TALENT OPERATIONS -->
+    <!--  *********************** -->
+    <div v-if="use_tello_talent" class="pb-6 bg-primary overflow-hidden text-center border-bottom border-light">
+        <div class="container z-2">
+            <div class="row mb-4 justify-content-center">
+                <div class="col-12 col-md-8">
+                    <h1 class="display-3 mb-4">Tello Talent</h1>
+                    <p class="lead">Operations specific to the Tello Talent</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5 ml-4 mr-4 justify-content-around">
+            <div class="col-lg-3 col-md-4 mb-5 mb-lg-0">
+                <h2 class="h5 mb-4">Top LED</h2>
+                <ul class="list-group list-group-flush bg-primary shadow-soft rounded border border-light">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <h6>Red:</h6>
+                        <input type="number" min="0" max="255" name="tt-top-led-red" v-model="top_led_red"/>
+
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <h6>Green:</h6>
+                        <input type="number" min="0" max="255" name="tt-top-led-green" v-model="top_led_green"/>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <h6>Blue:</h6>
+                        <input type="number" min="0" max="255" name="tt-top-led-blue" v-model="top_led_blue"/>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <h6>Red 2:</h6>
+                        <input type="number" min="0" max="255" name="tt-top-led-red" v-model="top_led_red2"/>
+
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <h6>Green 2:</h6>
+                        <input type="number" min="0" max="255" name="tt-top-led-green" v-model="top_led_green2"/>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <h6>Blue 2:</h6>
+                        <input type="number" min="0" max="255" name="tt-top-led-blue" v-model="top_led_blue2"/>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <h6>Mode</h6>
+                        <fieldset>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="topLedMode"
+                                       id="topLedMode1" value="color" v-model="top_led_mode" checked>
+                                <label class="form-check-label" for="topLedMode1">
+                                    Color
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="topLedMode"
+                                       id="topLedMode2" value="pulse" v-model="top_led_mode">
+                                <label class="form-check-label" for="topLedMode2">
+                                    Pulse
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="topLedMode"
+                                       id="topLedMode3" value="flash" v-model="top_led_mode">
+                                <label class="form-check-label" for="topLedMode3">
+                                    Flash
+                                </label>
+                            </div>
+                            <!-- End of Radio -->
+                        </fieldset>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <h6>Flash/Pulse Freq</h6>
+                        <input type="number" min="1" max="100" name="tt-top-led-freq" value="10" v-model="top_led_freq"/>
+
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <button class="btn btn-sm btn-primary" type="button" v-on:click="set_top_led">Update</button>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <button class="btn btn-sm btn-primary" type="button" v-on:click="clear_top_led">Clear</button>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-4 mb-5 mb-lg-0">
+                <h2 class="h5 mb-4">Display Image</h2>
+                <ul class="list-group list-group-flush bg-primary shadow-soft rounded border border-light">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <h6>Brightness</h6>
+                        <input type="number" min="0" max="255" v-model="display_brightness"/>
+                        <button class="btn btn-sm btn-primary" type="button" v-on:click="update_brightness">Update
+                        </button>
+
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <h6>Display Color</h6>
+
+                        <fieldset>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="displayColorRadios"
+                                       id="displayColorRadios1" value="p" v-model="display_color" checked>
+                                <label class="form-check-label" for="displayColorRadios1">
+                                    Purple
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="displayColorRadios"
+                                       id="displayColorRadios2" value="r" v-model="display_color">
+                                <label class="form-check-label" for="displayColorRadios2">
+                                    Red
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="displayColorRadios"
+                                       id="displayColorRadios3" value="b" v-model="display_color">
+                                <label class="form-check-label" for="displayColorRadios3">
+                                    Blue
+                                </label>
+                            </div>
+                            <!-- End of Radio -->
+                        </fieldset>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0">
+                        <h6>Heart</h6>
+                        <button class="btn btn-sm btn-primary" type="button"
+                                v-on:click="display_image(2)">Go
+                        </button>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0">
+                        <h6>Happy Face</h6>
+                        <button class="btn btn-sm btn-primary" type="button"
+                                v-on:click="display_image(3)">Go
+                        </button>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0">
+                        <h6>Sad Face</h6>
+                        <button class="btn btn-sm btn-primary" type="button"
+                                v-on:click="display_image(4)">Go
+                        </button>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0">
+                        <h6>Clear Display</h6>
+                        <button class="btn btn-sm btn-primary" type="button"
+                                v-on:click="display_image(5)">Go
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-4 mb-5 mb-lg-0">
+                <h2 class="h5 mb-4">Scroll Text</h2>
+                <ul class="list-group list-group-flush bg-primary shadow-soft rounded border border-light">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <h6>Text:</h6>
+                        <input type="text" max="70" v-model="scroll_string"/>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <button class="btn btn-sm btn-primary" type="button"
+                                v-on:click="scroll_text(1)">Scroll Left
+                        </button>
+                        <button class="btn btn-sm btn-primary" type="button"
+                                v-on:click="scroll_text(2)">Scroll Up
+                        </button>
+
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <h6>Image String:</h6>
+                        <input type="text" max="64" v-model="image_string"/>
+
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0">
+                        <h6>Image String</h6>
+                        <button class="btn btn-sm btn-primary" type="button"
+                                v-on:click="display_image(1)">Update Image
+                        </button>
+                    </li>
+
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0">
+                        <h6>Clear Display</h6>
+                        <button class="btn btn-sm btn-primary" type="button"
+                                v-on:click="display_image(5)">Go
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row mt-5 ml-4 mr-4 justify-content-around">
+            <div class="col-lg-3 col-md-4 mb-5 mb-lg-0">
+                <h2 class="h5 mb-4">Mission Pads</h2>
+                <ul class="list-group list-group-flush bg-primary shadow-soft rounded border border-light">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" id="customSwitch3"
+                                   v-model="mission_pad_enabled"
+                                   v-on:click="toggle_mission_pad()">
+                            <label class="custom-control-label" for="customSwitch3">[[mission_pad_label]]</label>
+                        </div>
+
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0">
+                        <h6>Detected Mission Pad:</h6> [[detected_mission_pad]]
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0">
+                        <h6>X:</h6> [[current_x]]
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0">
+                        <h6>Y:</h6>[[current_y]]
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center border-0">
+                        <h6>Z:</h6>[[current_z]]
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<footer class="d-flex pb-5 pt-6 pt-md-7 border-top border-light bg-primary">
+    <div class="container">
+        <hr class="my-5">
+        <div class="row">
+            <div class="col">
+                <a href="https://droneblocks.io" target="_blank" class="d-flex justify-content-center">
+                    <img src="/static/images/droneblocks_logo.png" height="25" class="mb-3" alt="DroneBlocks">
+                </a>
+                <div class="d-flex text-center justify-content-center align-items-center" role="contentinfo">
+                    <p class="font-weight-normal font-small mb-0">Copyright © DroneBlocks
+                        <span class="current-year">2022</span>. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<script type='text/javascript' src='/static/js/axios.min.js'></script>
+<script type='text/javascript' src='/static/js/vue.min.js'></script>
+<script type='text/javascript' src='/static/js/neumorphism.js'></script>
+
+<script>
+    // Vue.config.devtools = true;
+    var tello_svc = new Vue({
+            el: "#tello-svc",
+            delimiters: ["[[", "]]"],
+            data: {
+                top_led_freq: 10, // freq is scaled by 10. actual range: 0.1-2.5, displayed range 1-25
+                top_led_mode: 'color',
+                display_color: 'p',
+                display_brightness: 32,
+                mission_pad_enabled: false,
+                detected_mission_pad: -2,
+                scroll_string: '',
+                top_led_red: 64,
+                top_led_green: 64,
+                top_led_blue: 64,
+                top_led_red2: 64,
+                top_led_green2: 64,
+                top_led_blue2: 64,
+                battery_level: -666,
+                height: 0,
+                temp: 0,
+                flight_time: 0,
+                fly_distance: null,
+                flying_speed: null,
+                command_success: false,
+                command_status_message: '',
+                use_tello_talent: false, // false=Tello true=Tello Talent
+                tello_model_label: 'Tello',
+                image_string: '',
+                mission_pad_label: 'Disabled',
+                current_x: -1,
+                current_y: -1,
+                current_z: -1
+            },
+            created() {
+                this.refresh_tello_status();
+                console.log("Created Vue Component")
+                this.timer = setInterval(this.refresh_tello_status, 1000);
+            },
+            methods: {
+                toggle_mission_pad: function () {
+                    let url = '';
+                    if (this.mission_pad_label == 'Disabled') {
+                        this.mission_pad_label = 'Enabled';
+                        url = '/enable-mission-pads';
+                    } else {
+                        this.mission_pad_label = 'Disabled';
+                        url = '/disable-mission-pads';
+                    }
+
+                    console.log('url: ' + url);
+                    axios.get(url)
+                        .then(response => {
+                            console.log(response.data);
+                            this.command_success = response.data['command_success'];
+                            this.command_status_message = response.data['command_status_message'];
+                        })
+                        .catch(error => {
+                            console.log(error);
+                        });
+                },
+                stop_flying: function () {
+                    console.log("STOP FLYING");
+                    const url = '/stop-flying';
+                    console.log('url: ' + url);
+                    axios.get(url)
+                        .then(response => {
+                            console.log(response.data);
+                            this.command_success = response.data['command_success'];
+                            this.command_status_message = response.data['command_status_message'];
+                        })
+                        .catch(error => {
+                            console.log(error);
+                        });
+                },
+
+                scroll_text: function (param) {
+                    console.log("scroll: " + this.scroll_string);
+                    axios.post('/scroll-text', {
+                        scroll_text: this.scroll_string,
+                        scroll_dir: param,  //1-left, 2-up
+                        display_color: this.display_color
+
+                    })
+                        .then(response => {
+                            console.log(response.data);
+                        })
+                        .catch(error => {
+                            console.log(error);
+                        });
+
+                },
+                display_image: function (param) {
+                    console.log("display image: " + param);
+                    axios.post('/display-image', {
+                        image_string: this.image_string,
+                        image_index: param,
+                        display_color: this.display_color
+                    })
+                        .then(response => {
+                            console.log(response.data);
+                        })
+                        .catch(error => {
+                            console.log(error);
+                        });
+                },
+                update_brightness: function () {
+                    console.log("update brigtness: " + this.display_brightness);
+
+                    axios.post('/update-brightness', {
+                        brightnessvalue: this.display_brightness
+                    })
+                        .then(response => {
+                            console.log(response.data);
+                            this.refresh_tello_status()
+                        })
+                        .catch(error => {
+                            console.log(error);
+                        });
+
+                },
+                update_flying_values: function () {
+                    console.log("update flying speed: " + this.flying_speed);
+
+                    axios.post('/update-flying-values', {
+                        speedvalue: this.flying_speed,
+                        distancevalue: this.fly_distance
+                    })
+                        .then(response => {
+                            console.log(response.data);
+                            this.refresh_tello_status()
+                        })
+                        .catch(error => {
+                            console.log(error);
+                        });
+
+                },
+                clear_top_led: function () {
+                    console.log("clear top led");
+                    axios.post('/set-top-led', {
+                        red: 0,
+                        green: 0,
+                        blue: 0,
+                        red2: 0,
+                        green2: 0,
+                        blue2: 0,
+                        mode: 'color',
+                        freq: 1
+                    })
+                        .then(response => {
+                            console.log(response.data);
+                        })
+                        .catch(error => {
+                            console.log(error);
+                        });
+
+                },
+                set_top_led: function () {
+                    console.log("set top led");
+                    console.log(this.top_led_red, this.top_led_green, this.top_led_blue);
+                    axios.post('/set-top-led', {
+                        red: this.top_led_red,
+                        green: this.top_led_green,
+                        blue: this.top_led_blue,
+                        red2: this.top_led_red2,
+                        green2: this.top_led_green2,
+                        blue2: this.top_led_blue2,
+                        mode: this.top_led_mode,
+                        freq: this.top_led_freq
+                    })
+                        .then(response => {
+                            console.log(response.data);
+                        })
+                        .catch(error => {
+                            console.log(error);
+                        });
+
+                },
+                toggle_tello_model: function () {
+                    if (this.use_tello_talent == false) {
+                        this.use_tello_talent = true;
+                        this.tello_model_label = 'Tello Talent';
+                    } else {
+                        this.use_tello_talent = false;
+                        this.tello_model_label = 'Tello';
+                        this.mission_pad_label = 'Disabled';
+                    }
+                },
+                refresh_tello_status: function () {
+                    console.log("Refresh Tello Status");
+                    console.log(this.display_color);
+                    axios.get('/status-update')
+                        .then(response => {
+                            console.log(response.data);
+                            console.log(response.data['tello_state']);
+                            const tello_state = response.data['tello_state'];
+                            this.battery_level = tello_state['battery_level'];
+                            this.height = tello_state['height'];
+                            this.temp = tello_state['temp'];
+                            this.flight_time = tello_state['flight_time'];
+                            this.command_status_message = '';
+                            if (this.fly_distance == null) {
+                                this.fly_distance = tello_state['fly_distance'];
+                            }
+                            if (this.flying_speed == null) {
+                                this.flying_speed = tello_state['flying_speed'];
+                            }
+                            this.current_x = tello_state['current_x'];
+                            this.current_y = tello_state['current_y'];
+                            this.current_z = tello_state['current_z'];
+                            this.detected_mission_pad = tello_state['detected_mission_pad'];
+                            this.mission_pad_enabled = tello_state['mission_pad_enabled']
+                            if (this.mission_pad_enabled) {
+                                this.mission_pad_label = "Enabled";
+                            } else {
+                                this.mission_pad_label = "Disabled";
+                            }
+
+                            if (tello_state['is_rmtt_drone'] === true) {
+                                this.use_tello_talent = true;
+                                this.tello_model_label = 'Tello Talent';
+                            }
+
+                        })
+                        .catch(error => {
+                            console.log(error);
+                        });
+                },
+                execute_rc_command: function (cmd) {
+                    console.log('execute_rc: ' + cmd);
+                    if (cmd == 'dummy') {
+                        return;
+                    }
+                    const url = '/execute-rc?command=' + cmd;
+                    console.log('url: ' + url);
+                    axios.get(url)
+                        .then(response => {
+                            console.log(response.data);
+                            this.command_success = response.data['command_success'];
+                            this.command_status_message = response.data['command_status_message'];
+                        })
+                        .catch(error => {
+                            console.log(error);
+                        });
+                },
+                execute_command: function (cmd) {
+                    console.log('execute: ' + cmd);
+                    if (cmd == 'dummy') {
+                        return;
+                    }
+                    const url = '/execute?command=' + cmd;
+                    console.log('url: ' + url);
+                    axios.get(url)
+                        .then(response => {
+                            console.log(response.data);
+                            this.command_success = response.data['command_success'];
+                            this.command_status_message = response.data['command_status_message'];
+                        })
+                        .catch(error => {
+                            console.log(error);
+                        });
+                },
+                execute_land: function () {
+                    const url = '/land';
+                    console.log('url: ' + url);
+                    axios.get(url)
+                        .then(response => {
+                            console.log(response.data);
+                            this.command_success = response.data['command_success'];
+                            this.command_status_message = response.data['command_status_message'];
+                        })
+                        .catch(error => {
+                            console.log(error);
+                        });
+                },
+                refresh_data: function (param1) {
+                    console.log('refresh data function called: ' + param1)
+                    axios.get(param1)
+                        .then(response => {
+                            console.log(response.data);
+                            this.rows = response.data.rows;
+                            this.columns = response.data.columns;
+
+                        })
+                        .catch(error => {
+                            console.log(error);
+                        });
+                }
+            }
+        });
+
+</script>
+
+</body>
+
+</html>

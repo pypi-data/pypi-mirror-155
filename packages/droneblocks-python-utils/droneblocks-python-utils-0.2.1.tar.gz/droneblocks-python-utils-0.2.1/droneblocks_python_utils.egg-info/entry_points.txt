@@ -1,0 +1,3 @@
+[console_scripts]
+telloscriptrunner = droneblocks.tello_script_runner:main
+tt-matrix-generator = droneblocks.tt_matrix_generator:main
