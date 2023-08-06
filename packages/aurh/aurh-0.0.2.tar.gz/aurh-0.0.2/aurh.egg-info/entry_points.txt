@@ -1,0 +1,3 @@
+[console_scripts]
+aurh = aurh.__main__:main
+
