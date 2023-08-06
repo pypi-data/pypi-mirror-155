@@ -1,0 +1,15 @@
+README.md
+setup.cfg
+setup.py
+../LICENSE.txt
+django_stubs_ext/__init__.py
+django_stubs_ext/aliases.py
+django_stubs_ext/annotations.py
+django_stubs_ext/patch.py
+django_stubs_ext/py.typed
+django_stubs_ext/types.py
+django_stubs_ext.egg-info/PKG-INFO
+django_stubs_ext.egg-info/SOURCES.txt
+django_stubs_ext.egg-info/dependency_links.txt
+django_stubs_ext.egg-info/requires.txt
+django_stubs_ext.egg-info/top_level.txt
