@@ -1,0 +1,6 @@
+django-cors-headers
+django-hashid-field
+django>=2.2
+djangorestframework
+djangorestframework-simplejwt
+rest-api-payload
