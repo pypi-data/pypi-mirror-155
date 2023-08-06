@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "poetry-demo-thomas-cleary"
+version = "0.4.2"
+description = "Example of setting up a python package project with poetry"
+license = "MIT"
+authors = ["Thomas Cleary <thomasclearydev@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.scripts]
+poetry-demo-thomas-cleary = "poetry_demo_thomas_cleary.cli:run"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+requests = "^2.28.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.1.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
