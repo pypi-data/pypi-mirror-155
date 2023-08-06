@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: dj-ratelimit
+Version: 0.1.0
+Summary: UNKNOWN
+Home-page: https://github.com/conorbergman/py-ratelimit
+Author: Conor Bergman
+Author-email: conorbergman@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+License-File: LICENSE
+Requires-Dist: Django (>=4.0.5)
+Requires-Dist: djangorestframework (>=3.12.4)
+Requires-Dist: redis (>=4.3.1)
+Requires-Dist: fakeredis
+Requires-Dist: freezegun (>=1.2.1)
+Requires-Dist: pytest (>=6.2.5)
+Requires-Dist: requests-mock (>=1.8.0)
+
+UNKNOWN
+
