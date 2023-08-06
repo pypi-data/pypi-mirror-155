@@ -1,0 +1,22 @@
+CHANGES
+=======
+
+* Update packages
+* Add six
+
+1.0.2
+-----
+
+* Fix references to power in documentation
+
+0.1.0
+-----
+
+* Change project name
+* Test functions and aggregates
+* Split functions module
+* Add docs directory and initial documentation
+* Add LICENSE, README, and setup.py
+* Added todo list
+* Added postgres\_power app from Django project
+* Initial commit
