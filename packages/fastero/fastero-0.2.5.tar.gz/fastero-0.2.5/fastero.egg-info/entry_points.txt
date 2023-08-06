@@ -1,0 +1,3 @@
+[console_scripts]
+fastero = fastero.__main__:app
+

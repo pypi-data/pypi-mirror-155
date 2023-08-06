@@ -1,0 +1,15 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+fastero/__init__.py
+fastero/__main__.py
+fastero/core.py
+fastero/exporter.py
+fastero/utils.py
+fastero.egg-info/PKG-INFO
+fastero.egg-info/SOURCES.txt
+fastero.egg-info/dependency_links.txt
+fastero.egg-info/entry_points.txt
+fastero.egg-info/requires.txt
+fastero.egg-info/top_level.txt
