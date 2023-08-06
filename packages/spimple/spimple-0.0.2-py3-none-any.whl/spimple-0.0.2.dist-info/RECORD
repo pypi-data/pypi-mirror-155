@@ -1,0 +1,14 @@
+spimple/__init__.py,sha256=9DHQBSwFRoV37Lo_gbmd5GMVzB3vOCLUhZAF2ghGToc,148
+spimple/utils.py,sha256=kcROg_G-tfF0M5ZKR2rwju4wU7jkk-oY7K6YrHPTd54,14956
+spimple/apps/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+spimple/apps/image_convolver.py,sha256=ddNFIunJei5DOvUUjawMqEXmP9IMD-u0tXV_bAzz7N8,7516
+spimple/apps/power_beam_maker.py,sha256=PYCFsNCEumkuajdLIw4OaJRVJS1kAmQdUQrBx5teLUU,3391
+spimple/apps/spi_fitter.py,sha256=q1cMdkWQFBaJ2ONFwTJ9wGActuuozY_8e46nTIb30FM,18149
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_convolve2gaussres.py,sha256=UvY6jcOzsNvDnoG_UKNIoHDwme1VH6c4rkQjvV1AVIs,1453
+spimple-0.0.2.dist-info/LICENSE,sha256=tOOdeiwyfELg9v5AOGs9Lv2-HyHrB1MDzsEBzfAGRjU,1071
+spimple-0.0.2.dist-info/METADATA,sha256=a1SYaDtEJwi80dbasfj_IrG409oH6mdD57gcp84TPNE,8840
+spimple-0.0.2.dist-info/WHEEL,sha256=G16H4A3IeoQmnOrYV4ueZGKSjhipXx8zc8nu9FGlvMA,92
+spimple-0.0.2.dist-info/entry_points.txt,sha256=FP8hogiVV0YNCjT94B2Dw8TcOZZ0cygPDT3NWuOaqKI,197
+spimple-0.0.2.dist-info/top_level.txt,sha256=XySErDoHmYlXoS4UtINBUDhFPaRdcdA09YRaGAFPYpw,14
+spimple-0.0.2.dist-info/RECORD,,
