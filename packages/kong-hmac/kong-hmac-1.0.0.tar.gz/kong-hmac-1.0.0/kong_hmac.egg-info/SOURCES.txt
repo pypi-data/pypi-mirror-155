@@ -1,0 +1,13 @@
+MANIFEST.in
+README.md
+README.rst
+requirements.txt
+setup.py
+kong_hmac/__init__.py
+kong_hmac/__version__.py
+kong_hmac/hmac_auth.py
+kong_hmac.egg-info/PKG-INFO
+kong_hmac.egg-info/SOURCES.txt
+kong_hmac.egg-info/dependency_links.txt
+kong_hmac.egg-info/not-zip-safe
+kong_hmac.egg-info/top_level.txt
