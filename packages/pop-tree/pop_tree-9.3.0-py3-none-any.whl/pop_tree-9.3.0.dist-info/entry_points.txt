@@ -1,0 +1,4 @@
+[console_scripts]
+pop-doc = pop_doc.scripts:start
+pop-tree = pop_tree.scripts:start
+
