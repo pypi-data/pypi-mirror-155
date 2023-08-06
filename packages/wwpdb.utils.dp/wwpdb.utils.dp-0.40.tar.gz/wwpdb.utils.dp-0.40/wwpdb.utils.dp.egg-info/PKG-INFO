@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: wwpdb.utils.dp
+Version: 0.40
+Summary: API for Common Data Processing Operations
+Home-page: https://github.com/wwpdb/py-wwpdb_utils_dp
+Author: John Westbrook
+Author-email: john.westbrook@rcsb.org
+License: Apache 2.0
+Description: See:  README.md
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Provides-Extra: test
+Provides-Extra: dev

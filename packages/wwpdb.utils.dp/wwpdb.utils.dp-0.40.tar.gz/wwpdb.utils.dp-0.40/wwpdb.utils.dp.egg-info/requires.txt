@@ -1,0 +1,11 @@
+future
+mmcif~=0.18
+wwpdb.utils.config~=0.24
+wwpdb.io
+gemmi>=0.4
+
+[dev]
+check-manifest
+
+[test]
+coverage
