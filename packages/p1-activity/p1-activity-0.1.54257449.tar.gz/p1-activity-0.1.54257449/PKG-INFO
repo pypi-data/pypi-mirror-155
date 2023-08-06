@@ -1,0 +1,45 @@
+Metadata-Version: 1.1
+Name: p1-activity
+Version: 0.1.54257449
+Summary: A simple consumer Django app for Activity Service.
+Home-page: UNKNOWN
+Author: Yonas & Wisnu
+Author-email: yonazadielwiguna@gmail.com
+License: MIT
+Description: ================
+        Activity
+        ================
+        
+        A simple consumer Django app for Activity Service.
+        
+        .. contents::
+            :local:
+            :backlinks: none
+        
+        
+        Installation
+        ============
+        
+        1. Run ``pip install p1-activity``
+        2. Add ``'activity'`` to ``INSTALLED_APPS`` in settings.py
+        3. Run `python manage.py migrate` to create activity models
+        
+        
+        
+        Webhook
+        ===========
+        
+        
+        API Client
+        ===========
+        
+Platform: UNKNOWN
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 1.11
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
