@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: tcrf
+Version: 0.0.1
+Summary: A deep learning based sequence tagging library with CRF layer on the top of transformer models.
+Home-page: https://github.com/ad6398/t-crf
+Download-URL: https://github.com/ad6398/t-crf
+Author: Amardeep Kumar
+Author-email: kumaramardipsingh@gmail.com
+License: MIT License
+Project-URL: Bug Tracker, https://github.com/ad6398/t-crf/issues
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: transformers (>=4.6.0)
+Requires-Dist: datasets
+Requires-Dist: scikit-learn
+Requires-Dist: seqeval
+
+# t-crf
+a crf head on the top of transformers sequence tagger models. 
