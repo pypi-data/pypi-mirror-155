@@ -1,0 +1,16 @@
+Click~=8.0.1
+bottle
+docker
+flake8~=3.9.2
+gitpython
+joblib
+jsonpickle
+numpy
+pandas
+pycodestyle~=2.7.0
+pydot
+pyinstaller
+pyyaml
+requests
+tqdm
+urllib3~=1.26.6

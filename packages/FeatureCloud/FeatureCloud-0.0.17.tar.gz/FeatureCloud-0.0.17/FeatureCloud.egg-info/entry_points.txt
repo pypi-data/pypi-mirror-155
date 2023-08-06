@@ -1,0 +1,4 @@
+[console_scripts]
+FeatureCloud = FeatureCloud.api.cli.__main__:fc_cli
+featurecloud = FeatureCloud.api.cli.__main__:fc_cli
+
