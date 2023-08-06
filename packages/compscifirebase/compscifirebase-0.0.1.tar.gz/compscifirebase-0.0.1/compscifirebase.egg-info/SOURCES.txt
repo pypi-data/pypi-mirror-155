@@ -1,0 +1,16 @@
+setup.cfg
+setup.py
+compscifirebase/__init__.py
+compscifirebase/asyncn.py
+compscifirebase/decorators.py
+compscifirebase/firebase.py
+compscifirebase/firebase_token_generator.py
+compscifirebase/jsonutil.py
+compscifirebase/lazy.py
+compscifirebase/pyre_sseclient.py
+compscifirebase/pyrebase.py
+compscifirebase.egg-info/PKG-INFO
+compscifirebase.egg-info/SOURCES.txt
+compscifirebase.egg-info/dependency_links.txt
+compscifirebase.egg-info/requires.txt
+compscifirebase.egg-info/top_level.txt
