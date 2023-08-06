@@ -1,0 +1,34 @@
+Metadata-Version: 2.1
+Name: mlops-build
+Version: 0.1.0
+Summary: MLops course
+Home-page: https://github.com/gracikk-ds/ml-ops
+License: none
+Keywords: flake8,markdown,lint
+Author: gordeev.al
+Author-email: aleksandr_gordeev2@epam.com
+Requires-Python: >=3.8,<3.11
+Classifier: Environment :: Console
+Classifier: License :: Other/Proprietary License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Software Development :: Documentation
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: click (>=8.1.2,<9.0.0)
+Requires-Dist: fastapi (>=0.78.0,<0.79.0)
+Requires-Dist: mlflow (>=1.26.1,<2.0.0)
+Requires-Dist: optuna (>=2.10.0,<3.0.0)
+Requires-Dist: python-dotenv (>=0.20.0,<0.21.0)
+Requires-Dist: python-multipart (>=0.0.5,<0.0.6)
+Requires-Dist: scikit-learn (==1.1.1)
+Requires-Dist: seaborn (==0.11.2)
+Requires-Dist: shap (>=0.40.0,<0.41.0)
+Requires-Dist: tqdm (>=4.64.0,<5.0.0)
+Requires-Dist: uvicorn (>=0.17.6,<0.18.0)
+Project-URL: Repository, https://github.com/gracikk-ds/ml-ops
+Description-Content-Type: text/markdown
+
+# ML-OPS
