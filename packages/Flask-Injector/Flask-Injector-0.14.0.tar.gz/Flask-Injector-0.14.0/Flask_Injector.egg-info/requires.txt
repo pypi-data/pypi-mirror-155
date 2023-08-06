@@ -1,0 +1,5 @@
+Flask>=2.1.2
+injector>=0.20.0
+
+[:python_version < "3.5"]
+typing

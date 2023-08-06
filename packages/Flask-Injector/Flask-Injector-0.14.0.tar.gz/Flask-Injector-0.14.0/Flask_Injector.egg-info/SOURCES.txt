@@ -1,0 +1,15 @@
+COPYING
+MANIFEST.in
+README.rst
+pyproject.toml
+setup.cfg
+setup.py
+Flask_Injector.egg-info/PKG-INFO
+Flask_Injector.egg-info/SOURCES.txt
+Flask_Injector.egg-info/dependency_links.txt
+Flask_Injector.egg-info/requires.txt
+Flask_Injector.egg-info/top_level.txt
+Flask_Injector.egg-info/zip-safe
+flask_injector/__init__.py
+flask_injector/py.typed
+flask_injector/tests.py
