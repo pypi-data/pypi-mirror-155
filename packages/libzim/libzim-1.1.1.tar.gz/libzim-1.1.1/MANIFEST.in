@@ -1,0 +1,16 @@
+include LICENSE
+include README.md
+include tests/*.py
+include pyproject.toml
+include setup.cfg
+include requirements-dev.txt
+include tasks.py
+include lib/libzim.7.dylib
+include lib/libzim.so.7
+include libzim/*.cxx
+include libzim/*.h
+include libzim/*.py
+include libzim/*.pxd
+include libzim/*.pyx
+global-exclude __pycache__/*
+exclude *.egg-info/*
