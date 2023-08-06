@@ -1,0 +1,24 @@
+prune build
+graft cmake
+graft docs
+prune docs/_build
+prune scratchpad
+graft src
+graft tests
+prune tmp
+prune src/sokoenginepy.egg-info
+
+include .bumpversion.cfg .gitignore .readthedocs.yml .travis.yaml .clang-format
+include CMakeLists.txt CMakePresets.json
+include CHANGELOG.md INSTALL.md LICENSE MANIFEST.in README.md setup.cfg setup.py
+include bin/encode_SOK_format_specification.py bin/mover_profiling.py
+
+prune .vscode
+prune .benchmarks
+prune .venv
+
+global-exclude *.py[cod] __pycache__ *.so *.dylib *.kdev4 .directory
+global-exclude .ipynb_checkpoints/*
+global-exclude .pytest_cache .pytest_cache/*
+exclude .coverage*
+exclude *.code-workspace

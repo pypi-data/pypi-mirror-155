@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=42", "wheel", "pybind11>=2.9.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.isort]
+profile = "black"
+skip_gitignore = true
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+norecursedirs = [".git", "tmp*", ".hg", ".venv", ".tox", ".eggs"]
+addopts = [
+	"-rxEfsw",
+	"--strict-markers",
+	"--tb=short",
+	# Enabling --doctest-modules on src/ runs into problems when there is native
+	# extension built. In that case, pytest will still try to import .py files (ie.
+	# hexoban_board.py) to collect tests from them. But, this will fail to import
+	# because that file works only in environments where native extension is NOT
+	# built. We can't use --doctest-modules.
+	# "--doctest-modules",
+	"--doctest-glob=*.rst",
+	"--doctest-glob=tutorial_.md",
+	"--ignore=bin",
+	"--ignore=build",
+	"--ignore=cmake",
+	"--ignore=docs/conf.py",
+	"--ignore=scratchpad",
+	"--ignore=src/libsokoengine",
+	"--ignore=src/sokoenginepyext",
+	"--ignore=tests/fixtures/test_cases",
+	"--ignore=tmp",
+]
+python_classes = ["Describe*", "When_*", "describe_*"]
+python_functions = ["it_*", "test_*", "then_*", "when_*"]
+python_files = ["test_*", "*_spec.py", "*_test.py"]
+spec_header_format = "{test_case}"
+
+[tool.coverage.paths]
+source = ["src"]
+
+[tool.coverage.run]
+branch = true
+source = ["src", "tests"]
+
+[tool.coverage.report]
+show_missing = true
+precision = 2

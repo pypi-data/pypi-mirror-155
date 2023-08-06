@@ -1,0 +1,55 @@
+# Python
+*.py[cod]
+__pycache__
+.ipynb_checkpoints/
+*.ipynb
+
+# C extensions
+*.so
+
+# Packages
+*.egg
+*.egg-info
+dist
+build
+eggs
+.eggs
+parts
+sdist
+
+# virtual environments
+.venv/
+.venv34/
+.venv33/
+.venvgt/
+.venvpypy/
+
+# Unit test / coverage reports
+.coverage
+.tox
+.coverage.*
+nosetests.xml
+coverage.xml
+htmlcov
+.pytest_cache/
+.mypy_cache
+
+# Sphinx
+docs/_build
+docs/_doxygen
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Benchmarks and profiling
+*.prof
+.benchmarks
+
+# KDE
+.directory
+.kdev4/
+*.kdev4
+
+/scratchpad
+/tmp
