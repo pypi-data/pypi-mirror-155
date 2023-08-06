@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: pynik
+Version: 0.1.2
+Summary: 
+Author: Nik Sheridan
+Author-email: nik.sheridan@gmail.com
+Requires-Python: >=3.10,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Requires-Dist: loguru (>=0.6.0,<0.7.0)
+Description-Content-Type: text/x-rst
+
+=====
+pynik
+=====
+
+This is purely a project trying out packaging of python
+code to Pypi.
+
+Trying out Styling guide
+------------------------
+
+This also outlines some of the ways of formatting text
+with rst, which is unfamiliar.
+
