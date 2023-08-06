@@ -1,0 +1,4 @@
+include pytest.ini
+graft src/CleanEmonBackend/tests
+
+global-exclude *.py[cod]
