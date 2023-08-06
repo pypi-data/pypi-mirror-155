@@ -1,0 +1,61 @@
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.nitpick]
+style = [
+  "https://raw.githubusercontent.com/wemake-services/wemake-python-styleguide/master/styles/nitpick-style-wemake.toml",
+  # TODO: Move this file to this repo once https://github.com/andreoliwa/nitpick/issues/418 gets fixed
+  "https://raw.githubusercontent.com/moowiz/workaround-nitpick-issue-418/main/black-flake8-compat-style.toml",
+]
+
+
+[tool.poetry]
+name = "poe-client"
+description = "Async PoE API client with rate limit support (upcoming)"
+version = "0.5.1"
+license = "MIT"
+
+authors = ["bittermandel"]
+
+readme = "README.md"
+
+repository = "https://github.com/BPL-Development-Team/poe-client"
+
+keywords = ["poe", "pathofexile", "aiohttp", "async", "pydantic", "mypy"]
+
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Operating System :: OS Independent",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[tool.poetry.dependencies]
+python = "^3.6.2"
+aiohttp = "^3.7.4"
+pytest-asyncio = "^0.15.1"
+pydantic = "^1.8.2"
+pyhumps = "^3.0.2"
+black = "^21.12b0"
+
+[tool.poetry.dev-dependencies]
+mypy = "^0.910"
+
+wemake-python-styleguide = "^0.16"
+flake8 = "^4.0.1"
+flake8-pytest-style = "^1.5"
+nitpick = "^0.29"
+
+safety = "^1.10"
+
+pytest = "^6.2"
+pytest-cov = "^2.12"
+pytest-randomly = "^3.8"
+
+sphinx = "^4.1"
+sphinx-autodoc-typehints = "^1.12"
+doc8 = "^0.8"
+m2r2 = "^0.3"
+tomlkit = "^0.7"
