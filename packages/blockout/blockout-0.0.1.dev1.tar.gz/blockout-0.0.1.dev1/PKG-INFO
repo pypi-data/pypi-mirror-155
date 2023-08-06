@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: blockout
+Version: 0.0.1.dev1
+Summary: Automate block management on Twitter
+Home-page: https://github.com/datashaman/blockout
+Author: Marlin Forbes
+Author-email: marlinf@datashaman.com
+License: MIT
+Keywords: block,spam,twitter
+Classifier: Development Status :: 1 - Planning
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Topic :: Internet
+Classifier: Topic :: Utilities
+Description-Content-Type: text/markdown
+License-File: LICENSE
+License-File: AUTHORS
+
+# blockout
+
+Tool for automating Twitter block lists. WIP.
