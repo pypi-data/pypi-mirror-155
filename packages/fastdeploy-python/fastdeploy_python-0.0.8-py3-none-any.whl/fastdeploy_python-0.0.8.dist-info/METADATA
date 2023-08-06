@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: fastdeploy-python
+Version: 0.0.8
+Summary: FastDeploy is a toolkit to deploy deeplearning models.
+Home-page: https://github.com/PaddlePaddle/FastDeploy
+Author: paddle-infer
+Author-email: paddle-infer@baidu.com
+License: Apache 2.0
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/plain
+License-File: LICENSE
+Requires-Dist: tqdm
+Requires-Dist: six
+
+FastDeploy is a toolkit to deploy deeplearning models.
+
+GitHub: https://github.com/PaddlePaddle/FastDeploy
+Email: paddle-infer@baidu.com
+

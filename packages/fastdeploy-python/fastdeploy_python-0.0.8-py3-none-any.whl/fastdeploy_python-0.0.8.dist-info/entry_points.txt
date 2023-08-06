@@ -1,0 +1,3 @@
+[console_scripts]
+fastdeploy = fastdeploy.__init__:main
+
