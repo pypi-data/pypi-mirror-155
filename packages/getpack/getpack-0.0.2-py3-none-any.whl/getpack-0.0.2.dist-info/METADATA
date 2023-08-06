@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: getpack
+Version: 0.0.2
+Summary: Setup external resources any deploy them on the fly
+Home-page: https://github.com/kalemas/getpack
+Author: Konstantin Maslyuk
+Author-email: Kostya.Maslyuk@gmail.com
+Project-URL: Bug Tracker, https://github.com/kalemas/getpack/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: Microsoft :: Windows :: Windows 10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Provides-Extra: dev
+Requires-Dist: flake8 ; extra == 'dev'
+Requires-Dist: flake8-import-order ; extra == 'dev'
+Requires-Dist: mypy ; extra == 'dev'
+Requires-Dist: pytest ; extra == 'dev'
+Requires-Dist: yapf ; extra == 'dev'
+
+### Setup external resources any deploy them on the fly.
+
+This package provide classes that allow to setup external resources (utilities,
+python packages etc.) that will be deployed whenever they are used. Most of
+cases data should be on the web and it will be deployed and cached locally on
+only first usage.
