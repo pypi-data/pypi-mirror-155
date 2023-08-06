@@ -1,0 +1,45 @@
+"""Rename audio files from metadata tags."""
+
+import sys
+
+from .args import parse_args, fields  # noqa: F401
+from .batch import Batch
+from .job import Job
+from .message import stats, job_info
+
+from ._version import get_versions
+
+
+__version__ = get_versions()['version']
+del get_versions
+
+
+def execute(*argv: str):
+    """Main function
+
+    :param list argv: The command line arguments specified as a list: e. g
+        :code:`['--dry-run', '.']`
+    """
+
+    job = None
+
+    try:
+        args = parse_args(argv)
+        job = Job(args)
+        job.stats.counter.reset()
+        job.stats.timer.start()
+        if job.cli_output.job_info:
+            job_info(job)
+        if job.rename.dry_run:
+            job.msg.output('Dry run')
+        batch = Batch(job)
+        batch.execute()
+        job.stats.timer.stop()
+        if job.cli_output.stats:
+            stats(job)
+    except KeyboardInterrupt:
+        if job:
+            job.stats.timer.stop()
+            if job.cli_output.stats:
+                stats(job)
+        sys.exit(0)
