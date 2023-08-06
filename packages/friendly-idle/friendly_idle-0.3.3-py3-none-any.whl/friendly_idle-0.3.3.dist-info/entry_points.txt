@@ -1,0 +1,3 @@
+[console_scripts]
+friendly_idle = friendly_idle.__main__:main
+
