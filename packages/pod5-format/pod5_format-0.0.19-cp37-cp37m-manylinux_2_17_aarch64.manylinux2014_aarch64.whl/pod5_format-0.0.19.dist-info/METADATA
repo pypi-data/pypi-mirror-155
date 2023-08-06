@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: pod5-format
+Version: 0.0.19
+Summary: Python bindings for the POD5 file format
+Home-page: http://www.nanoporetech.com
+Author: Oxford Nanopore Technologies plc
+Author-email: support@nanoporetech.com
+Keywords: nanopore
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Scientific/Engineering :: Bio-Informatics
+Requires-Python: ~=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: iso8601
+Requires-Dist: more-itertools
+Requires-Dist: numpy
+Requires-Dist: pyarrow (~=7.0.0)
+Requires-Dist: pytz
+Provides-Extra: test
+Requires-Dist: pytest (~=6.2) ; extra == 'test'
+Requires-Dist: pytest-cov (~=3.0) ; extra == 'test'
+
