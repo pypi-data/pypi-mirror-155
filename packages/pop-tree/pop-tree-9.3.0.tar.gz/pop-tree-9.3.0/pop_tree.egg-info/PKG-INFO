@@ -1,0 +1,209 @@
+Metadata-Version: 2.1
+Name: pop-tree
+Version: 9.3.0
+Summary: Visualize POP hub/sub structures
+Home-page: UNKNOWN
+Author: Tyler Johnson
+Author-email: tjohnson@saltstack.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Development Status :: 5 - Production/Stable
+Requires-Python: >=3.6
+Description-Content-Type: text/x-rst
+Provides-Extra: full
+Provides-Extra: networkx
+License-File: LICENSE
+
+========
+pop-tree
+========
+
+.. image:: https://img.shields.io/badge/made%20with-pop-teal
+   :alt: Made with pop, a Python implementation of Plugin Oriented Programming
+   :target: https://pop.readthedocs.io/
+
+.. image:: https://img.shields.io/badge/made%20with-python-yellow
+   :alt: Made with Python
+   :target: https://www.python.org/
+
+**POP structure visualization tool**
+
+About
+=====
+
+asdf
+
+What is POP?
+------------
+
+This project is built with `pop <https://pop.readthedocs.io/>`__, a Python-based
+implementation of *Plugin Oriented Programming (POP)*. POP seeks to bring
+together concepts and wisdom from the history of computing in new ways to solve
+modern computing problems.
+
+For more information:
+
+* `Intro to Plugin Oriented Programming (POP) <https://pop-book.readthedocs.io/en/latest/>`__
+* `pop-awesome <https://gitlab.com/saltstack/pop/pop-awesome>`__
+* `pop-create <https://gitlab.com/saltstack/pop/pop-create/>`__
+
+Getting Started
+===============
+
+Prerequisites
+-------------
+
+* Python 3.6+
+* git *(if installing from source, or contributing to the project)*
+
+Installation
+------------
+
+.. note::
+
+   If wanting to contribute to the project, and setup your local development
+   environment, see the ``CONTRIBUTING.rst`` document in the source repository
+   for this project.
+
+If wanting to use ``pop-tree``, you can do so by either
+installing from PyPI or from source.
+
+Install from PyPI
++++++++++++++++++
+
+Bare installation with no dependencies
+
+.. code-block:: bash
+
+    pip install pop-tree
+
+Installation for pretty yaml output
+
+.. code-block:: bash
+
+    pip install pop-tree\[rend\]
+
+Installation for incredible graphs
+
+.. code-block:: bash
+
+    pip install pop-tree\[networkx\]
+
+Install everything
+
+.. code-block:: bash
+
+    pip install pop-tree\[full\]
+
+Install from source
++++++++++++++++++++
+
+.. code-block:: bash
+
+   # clone repo
+   git clone git@<your-project-path>/pop-tree.git
+   cd pop-tree
+
+   # Setup venv
+   python3 -m venv .venv
+   source .venv/bin/activate
+   pip install -e .\[full\]
+
+Pop-doc
+=======
+
+Another cli tool that comes with pop-tree is pop-doc.
+You can use this to grab the documentation for specific references on the hub.
+
+.. code-block:: bash
+
+    pop-doc tree.init.refs
+
+output:
+
+.. code-block:: yaml
+
+    ref:
+        tree.init.refs
+    doc:
+        Return all the references available on the hub by reference first
+    contracts:
+        pre:
+        call:
+        post:
+    parameters:
+        hub:
+        tree:
+
+            annotation:
+                typing.Dict[str, typing.Any]
+
+    return_annotation:
+
+
+EXECUTION
+=========
+
+After installation the `pop-tree` command should also be available.
+Pop tree will add all dynamic namespaces in your current python environment to the hub.
+
+
+.. code-block:: bash
+
+    pop-tree exec
+
+
+OUTPUT
+------
+
+If you installed pop-tree with the [rend] extras, then `--output` can be used to specify an outputter from the `rend` project
+To see which outputters are available, just run
+
+.. code-block:: bash
+
+    pop-tree output
+
+Which will dynamically load the `output` dynamic namespace from the `rend` project and print the subs loaded immediately beneath it.
+
+.. code-block:: bash
+
+    pop-tree --output nested
+
+GRAPH
+-----
+
+There are many different graphing plugins, some print to the terminal, and some open a shiny graph in a new window.
+To list the available graphing plugins, run
+
+.. code-block:: bash
+
+    pop-tree graph
+
+A graph plugin can be specified with the `--graph` option.
+
+.. code-block:: bash
+
+    pop-tree --graph networkx
+
+Which should print off a beautiful matplotlib plot to visualize your pop ecosystem.
+Use these arguments together to create impressive visuals for your project.
+
+.. image:: hub.png
+
+Roadmap
+=======
+
+Reference the `open issues <https://gitlab.com/saltstack/pop/pop-tree/issues>`__ for a list of
+proposed features (and known issues).
+
+Acknowledgements
+================
+
+* `Img Shields <https://shields.io>`__ for making repository badges easy.
+
+
