@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: djk-bootstrap5
+Version: 2.1.0
+Summary: Bootstrap 5 UI for django-jinja-knockout.
+Home-page: https://github.com/Dmitri-Sintsov/djk-bootstrap5
+Author: Dmitriy Sintsov
+Author-email: questpc256@gmail.com
+License: LGPL-3.0
+Keywords: django,jinja,knockout.js,ajax,forms,grid,datagrid,datatables
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+
+.. _Bootstrap 5: https://getbootstrap.com/docs/5.2/
+
+
+==============
+djk-bootstrap4
+==============
+
+.. _django-jinja-knockout: https://github.com/Dmitri-Sintsov/django-jinja-knockout
+
+`Bootstrap 5`_ UI for `django-jinja-knockout`_.
+
+https://github.com/GedMarc/bootstrap4-dialog
