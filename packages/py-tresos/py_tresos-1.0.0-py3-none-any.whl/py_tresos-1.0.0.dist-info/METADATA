@@ -1,0 +1,72 @@
+Metadata-Version: 2.1
+Name: py-tresos
+Version: 1.0.0
+Summary: A python tool for EB Tresos Studio
+Home-page: UNKNOWN
+Author: Melodypapa
+Author-email: melodypapa@outlook.com
+License: MIT
+Keywords: EB Tresos Plugin
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Environment :: Console
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.5
+Description-Content-Type: text/markdown
+Provides-Extra: pytest
+License-File: LICENSE
+Requires-Dist: toml
+Provides-Extra: pytest
+Requires-Dist: pytest-cov; extra == 'pytest'
+
+# 1. py-tresos
+
+## 1.1. Introduce
+
+The utility is the python script supporting tool for EB Tresos Studio
+
+### 1.1.1. How to create the distribution and upload to pypi
+1. Run `python setup.py bdist_wheel` to generate distribution
+2. Run `twine check dist/*` to check the validation of distribution
+3. Run `twine upload dist/*` to upload to pypi repository
+4. Check the website https://pypi.org/project/armodel/ to find out it works or not
+
+And more details can be found at https://packaging.python.org/  
+
+### 1.1.2. Unit test
+
+Run `pip install pytest pytest-cov` to install pytest.
+
+Run `pytest --cov=py_tresos --cov-report term-missing` to verify all the functionality.
+
+### 1.1.3. How to create the document
+
+1. Run `pip install sphinx` to install the necessary document
+
+## 1.2. eb-plugin
+
+To Create the java project for the EB Tresos Studio Plugin.
+
+### TOML configuration
+
+[Vender Id](https://www.autosar.org/about/vendorid/)
+
+### 1.2.1. CLI
+
+`eb-plugin [-c|--cfg name][-h|-help]`
+
+```
+-c|--cfg name : The TOML configure file name
+-h            : Show the help information.
+```
+
+### 1.2.2. Example
+
+**Generate the default folder for EcuInfo**
+
+```
+eb-plugin -c toml/plugin_demo.toml
+```
+
