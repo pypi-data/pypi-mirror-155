@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "strangeworks-annealing"
+version = "0.1.4"
+description = "Strangeworks Annealing SDK extension"
+readme = "DESCRIPTION.md"
+authors = ["Strange Devs <hello@strangeworks.com>"]
+license = "Apache-2.0"
+packages = [
+    {include = "strangeworks"},
+]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+strangeworks = "^0.2.6"
+networkx = "^2.6.3"
+minorminer = "^0.2.7"
+dwave-embedding-utilities = "^0.3.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+black = "^22.1.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0", "setuptools", "wheel"]
+build-backend = "poetry.core.masonry.api"
