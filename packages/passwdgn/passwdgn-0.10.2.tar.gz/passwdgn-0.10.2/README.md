@@ -1,0 +1,1 @@
+This is an open-source python package for generating a password for registering on a website.
