@@ -1,0 +1,1 @@
+from crio_vault.vault import vault
