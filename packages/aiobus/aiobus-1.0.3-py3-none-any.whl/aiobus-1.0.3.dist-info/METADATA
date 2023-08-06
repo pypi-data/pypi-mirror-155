@@ -1,0 +1,71 @@
+Metadata-Version: 2.1
+Name: aiobus
+Version: 1.0.3
+Summary: An event-bus application layer, supports redis
+Home-page: https://github.com/Sirius-social/aiobus
+Author: Networks Synergy
+Author-email: support@socialsirius.com
+Maintainer: Pavel Minenkov <minikspb@gmail.com>
+License: Apache License
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Requires-Python: >=3.5
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: aioredis (>=1.3.1)
+
+# An event-bus application layer, support redis
+
+Simply **ASYNC** framework to integrate **DISTRIBUTED** message bus to your application:
+ - utilize redis pub/sub features in backend
+ - fast to start and simply configure
+ - thread-safe and python async-friendly thanks to coroutines contexts
+ - fault tolerance if some redis instances down for a little time
+ - scalable thanks to consistent hashing for mapping `topic` to `instance` without cluster setup
+
+## Install
+```pip install aiobus```
+
+## Usage
+
+```python
+    import json
+    import asyncio
+    import datetime
+    from aiobus.redis import RedisBus
+    ...
+    bus = RedisBus(
+        servers=['192.168.100.1', '192.168.100.2:6380'],
+        max_pool_size=1000
+    )
+    ...
+    # Publisher Coroutine
+    async def publisher():
+        while True:
+            await bus.publish('my-topic', {'stamp': str(datetime.datetime.now())})
+            await asyncio.sleep(0.1)
+    ...
+    # Subscriber Coroutine
+    async def subscriber():
+        await bus.subscribe('my-topic')
+        async for msg in await bus.listen():
+            print(json.dumps(msg, indent=2, sort_keys=True))
+    ...
+```
+
+## Demo
+1. Setup redis instances on localhost ```docker-compose up -d``` for demo purposes
+2. Run/Debug [Demo script](https://github.com/Sirius-social/aiobus/blob/main/demo.py) 
+
+## Running tests
+Before to run tests you should 
+ - install dependencies: ```pip install -r requirements.txt```
+ - start the dependent services with command: ```docker-compose up -d```
+
