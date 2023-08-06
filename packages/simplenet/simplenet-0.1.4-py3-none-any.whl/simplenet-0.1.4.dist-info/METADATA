@@ -1,0 +1,116 @@
+Metadata-Version: 2.1
+Name: simplenet
+Version: 0.1.4
+Summary: A simple neural network in Python
+Home-page: https://github.com/n8henrie/simplenet
+Author: Nathan Henrie
+Author-email: nate@n8henrie.com
+License: MIT
+Keywords: simplenet
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy (==1.22.4)
+Provides-Extra: dev
+Requires-Dist: build (==0.8.0) ; extra == 'dev'
+Requires-Dist: docutils (==0.14) ; extra == 'dev'
+Requires-Dist: pypandoc (==1.8.1) ; extra == 'dev'
+Requires-Dist: recommonmark (==0.7.1) ; extra == 'dev'
+Requires-Dist: sphinx-rtd-theme (==1.0.0) ; extra == 'dev'
+Requires-Dist: Sphinx (==5.0.2) ; extra == 'dev'
+Requires-Dist: twine (==4.0.1) ; extra == 'dev'
+Provides-Extra: test
+Requires-Dist: black (==22.3.0) ; extra == 'test'
+Requires-Dist: flake8-docstrings (==1.6.0) ; extra == 'test'
+Requires-Dist: flake8-import-order (==0.18.1) ; extra == 'test'
+Requires-Dist: mypy (==0.961) ; extra == 'test'
+Requires-Dist: pep8-naming (==0.13.0) ; extra == 'test'
+Requires-Dist: pylint (==2.14.3) ; extra == 'test'
+Requires-Dist: pytest (==7.1.2) ; extra == 'test'
+Requires-Dist: tox (==3.25.0) ; extra == 'test'
+Requires-Dist: tensorflow-macos (==2.9.1) ; (platform_system == "Darwin") and extra == 'test'
+Requires-Dist: tensorflow-cpu (==2.9.1) ; (platform_system == "Linux") and extra == 'test'
+
+# SimpleNet
+
+master: [![master branch build status](https://github.com/n8henrie/simplenet/actions/workflows/python-package.yml/badge.svg?branch=master)](https://github.com/n8henrie/simplenet/actions/workflows/python-package.yml)
+<!-- dev: [![dev branch build status](https://github.com/n8henrie/simplenet/actions/workflows/python-package.yml/badge.svg?branch=dev)](https://github.com/n8henrie/simplenet/actions/workflows/python-package.yml) -->
+
+A simple neural network in Python
+
+- Free software: MIT
+- Documentation: https://simplenet-nn.readthedocs.io
+
+## Features
+
+- Simple interface
+- Minimal dependencies (numpy)
+- Runs on Pythonista on iOS
+- Attempts to verify accuracy by comparing results with popular frameworks
+  Keras and Tensorflow
+
+## Introduction
+
+This is a simple multilayer perceptron that I decided to build as I learned a
+little bit about machine learning and neural networks. It doesn't have many
+features.
+
+## Dependencies
+
+- Python >= 3.8
+- numpy
+
+## Quickstart
+
+1. `pip3 install simplenet`
+1. See `examples/`
+
+### Development Setup
+
+1. Clone the repo: `git clone https://github.com/n8henrie/simplenet && cd
+   simplenet`
+1. Make a virtualenv: `python3 -m venv venv`
+1. `source venv/bin/activate`
+1. `pip install -e .[dev]`
+
+## Acknowledgements
+
+- Andrew Ng's Coursera courses
+
+## TODO
+
+I don't really know any Latex, so if anybody wants to help me fill out some of
+the other docstrings with pretty equations, feel free. I'm also not a
+mathematician, so if anything doesn't seem quite right, feel free to speak up.
+
+## Troubleshooting / FAQ
+
+- How can I install an older / specific version of SimpleNet?
+    - Install from a tag:
+        - pip install git+git://github.com/n8henrie/simplenet.git@v0.1.0
+    - Install from a specific commit:
+        - pip install git+git://github.com/n8henrie/simplenet.git@aabc123def456ghi789
+
+# [Changelog](https://keepachangelog.com)
+
+## 0.1.4 :: 20220-06-19
+
+- Fix README error, version bump for pypi
+
+## 0.1.3 :: 20220-06-19
+
+- Update dependencies and tests to run on modern python and tensorflow
+- Deprecate python3.5-3.7 due to numpy dependency
+- Use GitHub Actions instead of Travis
+- Add an experimental Dockerfile for reproducibility with tests
+
+## 0.1.2 :: 2017-12-12
+
+- Update initialization (now uses something like Xavier)
+
+## 0.1.0 :: 2017-11-02
+
+- First release on PyPI / GitHub.
