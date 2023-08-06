@@ -1,0 +1,3 @@
+[console_scripts]
+dbt-sync-server=dbt_sync_server:cli
+
