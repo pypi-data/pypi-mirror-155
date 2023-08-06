@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: django-admin-model-reorder
+Version: 0.3.2
+Summary: Fork of django-admin-model-reorder (courtesy of Misbah Razzaque); intended to keep up with the updates of Django and python
+License: MIT
+Author: fsecada01
+Author-email: francis.secada@gmail.com
+Requires-Python: >=3.7,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: Django (>=3.2)
