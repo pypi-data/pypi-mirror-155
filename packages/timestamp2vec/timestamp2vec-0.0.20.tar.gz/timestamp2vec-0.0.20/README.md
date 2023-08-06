@@ -1,0 +1,4 @@
+# Timestamp2Vec
+
+# About
+The Timestamp2Vec model consists of 2 parts: a feature extractor and an encoder, which is originally part of a variational autoencoder (VAE). The input of Timestamp2Vec is a timestamp, or multiple timestamps, in the shape YYYY-MM-DD HH:MM:SS and is of type String. The String(s) should be placed inside a list. The output of the model is a numpy array of shape (1, 8). To make use of Timestamp2Vec, install the package first. Afterward, import the model using "from timestamp2vec.Timestamp2Vec import Timestamp2Vec". Next, instanciate an instance of the model, for example: "timestamp2vec = Timestamp2Vec()". Finally, feed the model a list of timestamp(s) to obtain the vector(s). Please see the GitHub page to see an example.
