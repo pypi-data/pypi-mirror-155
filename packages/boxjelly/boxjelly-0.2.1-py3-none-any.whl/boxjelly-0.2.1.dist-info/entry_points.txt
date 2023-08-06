@@ -1,0 +1,3 @@
+[console_scripts]
+boxjelly=boxjelly.scripts.run:main
+
