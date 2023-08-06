@@ -1,0 +1,49 @@
+[tool.poetry]
+name = "mlops-sdk"
+version = "2022.06.20"
+description = "mlops-sdk for data play"
+authors = ["AI Engineering Chapter 정유선 <jerryjung@emart.com>"]
+
+[tool.poetry.dependencies]
+python = ">=3.8.8,<=3.9.5"
+pyfiglet = "^0.8.post1"
+termcolor = "^1.1.0"
+black = "^21.9b0"
+flake8 = "^4.0.1"
+requests = "^2.26.0"
+tabulate = "^0.8.9"
+torch = {version = "^1.10.0", optional=true}
+torchdiffeq = {version = "^0.2.2", optional=true}
+tensorboard = {version = "^2.7.0", optional=true}
+slack-sdk = "^3.11.2"
+hvac = "^0.11.2"
+boto3 = "^1.24.12"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[tool.poetry.extras]
+models-torch = ["torch", "torchdiffeq", "tensorboard"]
+all = ["torch", "torchdiffeq", "tensorboard"]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 112
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+  | \*.ipynb
+)/
+'''

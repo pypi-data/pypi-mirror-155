@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: mlops-sdk
+Version: 2022.6.20
+Summary: mlops-sdk for data play
+Author: AI Engineering Chapter 정유선
+Author-email: jerryjung@emart.com
+Requires-Python: >=3.8.8,<=3.9.5
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Provides-Extra: all
+Provides-Extra: models-torch
+Requires-Dist: black (>=21.9b0,<22.0)
+Requires-Dist: boto3 (>=1.24.12,<2.0.0)
+Requires-Dist: flake8 (>=4.0.1,<5.0.0)
+Requires-Dist: hvac (>=0.11.2,<0.12.0)
+Requires-Dist: pyfiglet (>=0.8.post1,<0.9)
+Requires-Dist: requests (>=2.26.0,<3.0.0)
+Requires-Dist: slack-sdk (>=3.11.2,<4.0.0)
+Requires-Dist: tabulate (>=0.8.9,<0.9.0)
+Requires-Dist: tensorboard (>=2.7.0,<3.0.0); extra == "models-torch" or extra == "all"
+Requires-Dist: termcolor (>=1.1.0,<2.0.0)
+Requires-Dist: torch (>=1.10.0,<2.0.0); extra == "models-torch" or extra == "all"
+Requires-Dist: torchdiffeq (>=0.2.2,<0.3.0); extra == "models-torch" or extra == "all"
