@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: plot3d
+Version: 1.4.9
+Summary: Plot3D python utilities for reading and writing and also finding connectivity between blocks
+Author: Paht Juangphanich
+Author-email: paht.juangphanich@nasa.gov
+Requires-Python: >=3.7.1,<4.0.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: scipy
+Requires-Dist: tqdm
