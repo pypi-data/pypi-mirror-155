@@ -1,0 +1,3 @@
+[console_scripts]
+htruc = htruc.cli:cli
+
