@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<errors>
+	<error id='0x00' level='OK'>
+		<name>SYS_OK</name>
+		<descr>No error. The system is working fine</descr>
+		<descr lang="fr">Pas d'erreur. Le système fonctionne bien</descr>
+	</error>
+	<error id='0x01' level='INFO'>
+		<name>COM_WATCHDOG</name>
+		<descr>Communication watchdog is running</descr>
+	</error>
+	<error id='0x02' level='INFO'>
+		<name>COM_MESSAGE</name>
+		<descr>Message is being received</descr>
+	</error>
+	<error id='0x03' level='INFO'>
+		<name>MOTOR_OVERLOAD</name>
+		<descr>current peak has occurred</descr>
+	</error>
+	<error id='0x04' level='INFO'>
+		<name>MOTOR_VOLTAGE_OVERLOAD</name>
+		<descr>Motor PWM is at its peak</descr>
+	</error>
+	<error id='0x05' level='INFO'>
+		<name>LAMP_NOLOAD</name>
+		<descr>No load on the lamp - the light is not present</descr>
+	</error>
+	<error id='0x06' level='INFO'>
+		<name>MOTOR_EMF_OUTBOUND</name>
+		<descr>EMF is outside boundaries</descr>
+	</error>
+	<error id='0x07' level='INFO'>
+		<name>MOTOR_SPEED_LIMITED</name>
+		<descr>The motor speed is limited.</descr>
+		<descr lang="fr">La vitesse du moteur est limitée</descr>
+	</error>
+	<error id='0x07' level='INFO'>
+		<name>POS_SIG_SIN_SATURATED_UP</name>
+		<descr>The SIN position signal saturates on top</descr>
+	</error>
+	<error id='0x09' level='INFO'>
+		<name>POS_SIG_SIN_SATURATED_DOWN</name>
+		<descr>The SIN position signal saturates on bottom</descr>
+	</error>
+	<error id='0x0a' level='INFO'>
+		<name>POS_SIG_COS_SATURATED_UP</name>
+		<descr>The COS position signal saturates on top</descr>
+	</error>
+	<error id='0x0b' level='INFO'>
+		<name>POS_SIG_COS_SATURATED_DOWN</name>
+		<descr>The COS position signal saturates on bottom</descr>
+	</error>
+	<error id='0x0c' level='INFO'>
+		<name>PSU_VOLTAGE_LOW</name>
+		<descr>The input voltage is low</descr>
+		<descr lang="fr">La tension d'alimentation est basse</descr>
+	</error>
+	<error id='0x0d' level='INFO'>
+		<name>PSU_VOLTAGE_HI</name>
+		<descr>The input voltage is high</descr>
+	</error>
+	<error id='0x3e' level='INFO'>
+		<name>COM_TIMEOUT</name>
+		<descr>Communication has timed out</descr>
+	</error>
+	<error id='0x40' level='WARNING'>
+		<name>UNDEFINED</name>
+		<descr>Undefined warning</descr>
+	</error>
+	<error id='0x41' level='WARNING'>
+		<name>TEMPEATURE_TOO_HIGH</name>
+		<descr>The temperature is out of range</descr>
+	</error>
+	<error id='0x42' level='WARNING'>
+		<name>MOTOR_STOPPED_IN_LIMITATION</name>
+		<descr>The motor stopped in current limitation mode</descr>
+	</error>
+	<error id='0x43' level='WARNING'>
+		<name>SPEED_REF_NOT_ZERO</name>
+		<descr>The speed reference has to be reset to zero</descr>
+		<descr lang="fr">La référence vitesse soit être remise à zéro</descr>
+	</error>
+	<error id='0x44' level='WARNING'>
+		<name>MOTOR_STOPPED_WHEN_STALLED</name>
+		<descr>The motor stopped while the rotor was stalled</descr>
+	</error>
+	<error id='0x45' level='WARNING'>
+		<name>MOTOR_COIL_OPEN</name>
+		<descr>A motor coil is open</descr>
+	</error>
+	<error id='0x46' level='WARNING'>
+		<name>WRONG_MOTOR_TYPE</name>
+		<descr>The motor is not of the right type</descr>
+		<descr lang="fr">Le moteur n'est pas du bon type</descr>
+	</error>
+	<error id='0x47' level='WARNING'>
+		<name>BUS_ERROR</name>
+		<descr>An I2C bus error occurred</descr>
+	</error>
+	<error id='0x7c' level='WARNING'>
+		<name>CALIBRATION_DATA_MISSING</name>
+		<descr>Captors are not calibrated</descr>
+		<descr lang="fr">Des capteurs ne sont pas clibrés</descr>
+	</error>
+	<error id='0x7d' level='WARNING'>
+		<name>FACTORY_INFO_MISSING</name>
+		<descr>Factory information not set</descr>
+		<descr lang="fr">Le données de fabrication ne sont pas fixées</descr>
+	</error>
+	<error id='0x80' level='ERROR'>
+		<name>UNDEFINED</name>
+		<descr>Undefined error.</descr>
+	</error>
+	<error id='0x81' level='ERROR'>
+		<name>WORKSPACE_UNAVAILABLE</name>
+		<descr>The requested work space is not available</descr>
+	</error>
+	<error id='0x82' level='ERROR'>
+		<name>INCOHERENT_VALUES</name>
+		<descr>Some register values ​​are inconsistent</descr>
+	</error>
+	<error id='0x83' level='ERROR'>
+		<name>POS_SIGNAL_CORRUPTED</name>
+		<descr>The position signal is corrupted</descr>
+	</error>
+	<error id='0x84' level='ERROR'>
+		<name>MOTOR_VOLTAGE_OVERLOAD</name>
+		<descr>Motor voltage is outside boundary</descr>
+	</error>
+	<error id='0x85' level='ERROR'>
+		<name>LAMP_OVERLOAD</name>
+		<descr>The Lamp consumption is outside boundary</descr>
+	</error>
+	<error id='0x86' level='ERROR'>
+		<name>MOTOR_COIL_OPEN</name>
+		<descr>A motor's coil is open</descr>
+	</error>
+	<error id='0x87' level='ERROR'>
+		<name>MOTOR_OVERLOAD</name>
+		<descr>Motor consumption out of limits</descr>
+	</error>
+	<error id='0x88' level='ERROR'>
+		<name>MOTOR_NOT_DETECTED</name>
+		<descr>The motor is not detected</descr>
+		<descr lang="fr">Le moteur n'est pas détecté</descr>
+	</error>
+	<error id='0x89' level='ERROR'>
+		<name>MOTOR_EMF_OUTBOUND</name>
+		<descr>EMF is outside boundaries</descr>
+	</error>
+	<error id='0x8a' level='ERROR'>
+		<name>MOTOR_START_FAILED</name>
+		<descr>Motor didn't start upon request</descr>
+	</error>
+	<error id='0x8b' level='ERROR'>
+		<name>MOTOR_EE_OVER_CURRENT</name>
+		<descr>Embedded electronics consumption out of limits</descr>
+	</error>
+	<error id='0x8c' level='ERROR'>
+		<name>DRAG_ERROR_TOO_HIGH</name>
+		<descr>The drag error exceeds the boundaries</descr>
+	</error>
+	<error id='0x8d' level='ERROR'>
+		<name>WRONG_MOTOR_TYPE</name>
+		<descr>The motor is not of the right type</descr>
+	</error>
+	<error id='0x8e' level='ERROR'>
+		<name>MOTOR_OVERSPEED</name>
+		<descr>The motor is rotating to quickly</descr>
+	</error>
+	<error id='0x8f' level='ERROR'>
+		<name>MOTOR_OVERTEMPERATURE</name>
+		<descr>The motor temperature is too high</descr>
+	</error>
+	<error id='0xbe' level='ERROR'>
+		<name>COM_TIMEOUT</name>
+		<descr>Communication timeout</descr>
+	</error>
+	<error id='0xbf' level='ERROR'>
+		<name>COM_FAILURE</name>
+		<descr>Communication failure</descr>
+		<descr lang="fr">Échec de communication</descr>
+	</error>
+	<error id='0xc0' level='FATAL'>
+		<name>UNDEFINED</name>
+		<descr>Undefined fatal error</descr>
+	</error>
+	<error id='0xc1' level='FATAL'>
+		<name>PSU_VOLTAGE_TOO_LOW</name>
+		<descr>The input voltage is very too low</descr>
+		<descr lang="fr">La tension d'alimentaton est trop basse</descr>
+	</error>
+	<error id='0xc2' level='FATAL'>
+		<name>EEPROM_INIT_FAILURE</name>
+		<descr>EEPROM initialization failure</descr>
+	</error>
+	<error id='0xc3' level='FATAL'>
+		<name>EEPROM_FAILURE</name>
+		<descr>EEPROM failure</descr>
+	</error>
+	<error id='0xc4' level='FATAL'>
+		<name>DRIVER_DEFECT_LOWER_SIDE</name>
+		<descr>The driver is flawed from lower side</descr>
+	</error>
+	<error id='0xc5' level='FATAL'>
+		<name>DRIVER_DEFECT_HIGHER_SIDE</name>
+		<descr>The driver is flawed from higher side</descr>
+	</error>
+	<error id='0xc6' level='FATAL'>
+		<name>DRIVER_OVERLOAD</name>
+		<descr>Driver consumption out of limits</descr>
+	</error>
+	<error id='0xc7' level='FATAL'>
+		<name>BUS_INIT_FAILURE</name>
+		<descr>I2C bus initialization failure</descr>
+	</error>
+	<error id='0xc8' level='FATAL'>
+		<name>BUS_FAILURE</name>
+		<descr>I2C bus failure</descr>
+		<descr lang="fr">Échec du bus I2C</descr>
+	</error>
+	<error id='0xc9' level='FATAL'>
+		<name>FLASH_INIT_FAILURE</name>
+		<descr>Flash initialization failure</descr>
+		<descr lang="fr">Échec d'initialisation de la programmation</descr>
+	</error>
+	<error id='0xca' level='FATAL'>
+		<name>FLASH_FAILURE</name>
+		<descr>Flash failure</descr>
+		<descr lang="fr">Échec de programmation</descr>
+	</error>
+	<error id='0xcb' level='FATAL'>
+		<name>PSU_VOLTAGE_TOO_HIGH</name>
+		<descr>The input voltage is very too high</descr>
+	</error>
+	<error id='0xff' level='FATAL'>
+		<name>SYSTEM_FAILURE</name>
+		<descr>General system failure</descr>
+	</error>
+</errors>
+		
+		

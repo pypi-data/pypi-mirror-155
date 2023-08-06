@@ -1,0 +1,678 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<registers size="256">
+	<group name="header" address="0x00">
+		<descr>Header registers</descr>
+		<descr lang="fr">Registres d'entête</descr>
+		<reg name="par" access="RW">
+			<descr>Peripheral Activation Register</descr>
+		</reg>
+		<reg name="ctr">
+			<descr>Controller Type Register</descr>
+		</reg>
+	</group>
+	<group name="ppa" address="0x02" access="RW" size="20">
+		<descr>Peripheral parameters Array</descr>
+		<descr lang="fr">Tableau de registres du périphérique</descr>
+		<reg></reg>
+		<reg></reg>
+		<reg></reg>
+		<reg></reg>
+		<reg></reg>
+		<reg></reg>
+		<reg></reg>
+		<reg></reg>
+		<reg name="wcs0" address="0x0a" access="R">
+			<descr>Signal Potentiometer Cosine</descr>
+		</reg>
+		<reg name="wcs1" address="0x0b" access="R">
+			<descr>Signal Potentiometer Sine</descr>
+		</reg>
+		<reg></reg>
+		<reg></reg>
+		<reg name="wcs4" address="0x0e" access="R">
+			<descr>Signal Offset Cosine</descr>
+		</reg>
+		<reg name="wcs5" address="0x0f" access="R">
+			<descr>Signal Offset Sine</descr>
+		</reg>
+		<reg name="wcs6" address="0x10" access="R">
+			<descr>Signal Divider Cosine</descr>
+		</reg>
+		<reg name="wcs7" address="0x11" access="R">
+			<descr>Signal Divider Sine</descr>
+		</reg>
+		<reg></reg>
+		<reg></reg>
+		<reg></reg>
+		<reg></reg>
+		<reg></reg>
+		<reg></reg>
+		<reg></reg>
+		<reg></reg>
+		<reg></reg>
+		<reg></reg>
+		<reg></reg>
+	</group>
+	<group name="controller" address="0x22">
+		<descr>Controller type</descr>
+		<descr lang="fr">Type de contôlleur</descr>
+		<reg name="ptr">
+			<descr>Peripheral controller Type Register</descr>
+		</reg>
+		<reg name="pnr">
+			<descr>Peripheral controller Name Register</descr>
+		</reg>
+	</group>
+	<group name="state" address="0x24">
+		<descr>State registers</descr>
+		<descr lang="fr">Registres d'état</descr>
+		<reg name="ssr1">
+			<descr>System Status Register part 1</descr>
+			<bit name="driver" shortname="drv">
+				<descr>Driver activation</descr>
+				<choice value="0" name="idle">
+					<descr>Driver is idle</descr>
+				</choice>
+				<choice value="1" name="enabled">
+					<descr>Driver is enabled</descr>
+				</choice>
+			</bit>
+			<bit name="reverse" shortname="rev">
+				<descr>Direction of rotation</descr>
+				<choice value="0" name="cw">
+					<descr>Clockwise (CW)</descr>
+				</choice>
+				<choice value="1" name="ccw">
+					<descr>Counter clockwise (CCW)</descr>
+				</choice>
+			</bit>
+			<bit name="rotation" shortname="rot">
+				<descr>Working state</descr>
+				<choice value="0" name="stopped">
+					<descr>The peripheral is stopped</descr>
+				</choice>
+				<choice value="1" name="working">
+					<descr>The peripheral is working</descr>
+				</choice>	
+			</bit>
+			<bit name="startup" shortname="stu">
+				<descr>Motor startup mode</descr>
+				<choice value="0" name="normal">
+					<descr>Motor is in normal rotation mode</descr>
+				</choice>
+				<choice value="1" name="startup">
+					<descr>Motor is in start up mode</descr>
+				</choice>
+			</bit>
+			<bit name="accel" shortname="acc">
+				<descr>Motor acceleration (or deceleration) status</descr>
+				<choice value="0" name="normal">
+					<descr>motor speed is constant</descr>
+				</choice>
+				<choice value="1" name="accel">
+					<descr>motor speed is changing</descr>
+				</choice>
+			</bit>
+			<bit name="load" shortname="ld">
+				<descr>Motor load status</descr>
+				<choice value="0" name="noload">
+					<descr>Motor is not loaded</descr>
+				</choice>
+				<choice value="1" name="loaded">
+					<descr>Motor is load (torque is delivered)</descr>
+				</choice>
+			</bit>
+			<bit name="torque" shortname="trq">
+				<descr>Motor torque limitation status</descr>
+				<choice value="0" name="normal">
+					<descr>No torque limitation</descr>
+				</choice>
+				<choice value="1" name="limited">
+					<descr>Motor is in torque limitation mode</descr>
+				</choice>
+			</bit>
+			<bit name="drag" shortname="drg">
+				<descr>Motor drag limitation status</descr>
+				<choice value="0" name="normal">
+					<descr>No drag limitation</descr>
+				</choice>
+				<choice value="1" name="limited">
+					<descr>Motor is in drag limitation mode</descr>
+				</choice>
+			</bit>
+			<bit name="security" shortname="sec">
+				<descr>Motor security status</descr>
+				<choice value="0" name="normal">
+					<descr>Motor is running normally</descr>
+				</choice>
+				<choice value="1" name="security">
+					<descr>Motor is in security mode</descr>
+				</choice>
+			</bit>
+			<bit name="temp" shortname="tmp">
+				<descr>Motor temperature limitation status</descr>
+				<choice value="0" name="normal">
+					<descr>The temperature is below the limit</descr>
+				</choice>
+				<choice value="1" name="warm">
+					<descr>Motor has reached maximum temperature</descr>
+				</choice>
+			</bit>
+			<bit name="spinup" shortname="spu">
+				<descr>Motor spin up status</descr>
+				<choice value="0" name="normal">
+					<descr>Normal working</descr>
+				</choice>
+				<choice value="1" name="spinningup">
+					<descr>motor is spinning up</descr>
+				</choice>
+			</bit>
+			<bit name="fault" shortname="flt">
+				<descr>Motor degraded mode status</descr>
+				<choice value="0" name="normal">
+					<descr>Normal working</descr>
+				</choice>
+				<choice value="1" name="degraded">
+					<descr>Degraded working</descr>
+				</choice>
+			</bit>
+			<bit name="light" shortname="l">
+				<descr>Light status</descr>
+				<choice value="0" name="off">
+					<descr>Light is off</descr>
+				</choice>
+				<choice value="1" name="on">
+					<descr>Light is on</descr>
+				</choice>
+			</bit>
+			<bit name="ready" shortname="rdy">
+				<descr>Motor readiness</descr>
+				<choice value="0" name="notready">
+					<descr>Motor is not ready</descr>
+				</choice>
+				<choice value="1" name="ready">
+					<descr>Motor is ready</descr>
+				</choice>
+			</bit>
+			<bit name="forced" shortname="for">
+				<descr>Motor control mode</descr>
+				<choice value="0" name="normal">
+					<descr>motor is in normal rotation mode</descr>
+				</choice>
+				<choice value="1" name="forced">
+					<descr>motor is in forced rotation mode</descr>
+				</choice>
+			</bit>
+			<bit name="stall" shortname="stl">
+				<descr>Motor stall status</descr>
+				<choice value="0" name="normal">
+					<descr>Motor is rotating freely</descr>
+				</choice>
+				<choice value="1" name="stalled">
+					<descr>motor is stalled</descr>
+				</choice>
+			</bit>
+		</reg>
+		<reg name="ssr2">
+			<descr>System Status Register part 2</descr>
+			<bit name="dio_0" shortname="io0"/>
+			<bit name="dio_1" shortname="io1"/>
+			<bit name="dio_2" shortname="io2"/>
+			<bit name="dio_3" shortname="io3"/>
+			<bit name="warn_err" shortname="wer" size="2">
+				<descr>Warning, error status</descr>
+				<choice value="0" name="idle">
+					<descr>No warning</descr>
+				</choice>
+				<choice value="1" name="enabled">
+					<descr>WARNING, motor stopped, stop command requested</descr>
+				</choice>
+				<choice value="2" name="enabled">
+					<descr>ERROR, motor stopped, workspace reset requested</descr>
+				</choice>
+				<choice value="3" name="enabled">
+					<descr>FATAL, motor stopped, board reset requested</descr>
+				</choice>
+			</bit>
+			<bit/>
+			<bit name="alt_lmp" shortname="al">
+				<descr>Alternate light presence</descr>
+				<choice value="0" name="no">
+					<descr>Motor has only one LED</descr>
+				</choice>
+				<choice value="1" name="yes">
+					<descr>Motor has tow LED</descr>
+				</choice>
+			</bit>
+			<bit name="cmd_0" shortname="c0">
+				<descr>Command 0 pin state</descr>
+			</bit>
+			<bit name="cmd_1" shortname="c1">
+				<descr>Command 1 pin state</descr>
+			</bit>
+			<bit name="foot_sw" shortname="fsw">
+				<descr>Foot switch state</descr>
+			</bit>
+			<bit name="fs_stop" shortname="fss">
+				<descr>Stop requested by foot switch</descr>
+			</bit>
+			<bit name="cl_stop" shortname="cls">
+				<descr>Stop requested by current limitation</descr>
+			</bit>
+			<bit name="sp_stop" shortname="sps">
+				<descr>Stop requested by set points</descr>
+			</bit>
+			<bit name="fw_stop" shortname="fws">
+				<descr>Stop mode</descr>
+				<choice value="0" name="normal">
+					<descr>Controlled stop</descr>
+				</choice>
+				<choice value="1" name="freewheel">
+					<descr>Freewheel stop, uncontrolled</descr>
+				</choice>
+			</bit>
+			<bit name="spd_ref" shortname="spd">
+				<descr>Speed reference reset status</descr>
+				<choice value="0" name="no">
+					<descr>Speed reference has not been reset</descr>
+				</choice>
+				<choice value="1" name="yes">
+					<descr>Speed reference has been reset</descr>
+				</choice>
+			</bit>
+		</reg>
+		<reg name="msr">
+			<descr>Motor Speed Register</descr>
+		</reg>
+		<reg name="a256dcr">
+			<descr>Average 256ms Driver Current Register</descr>
+		</reg>
+		<reg name="a256dvr">
+			<descr>Average 256ms Driver Voltage Register</descr>
+		</reg>
+		<reg name="a64dcr">
+			<descr>Average 64 samples Driver Current Register</descr>
+		</reg>
+		<reg name="a64dvr">
+			<descr>Average 64 samples Driver Voltage Register</descr>
+		</reg>
+		<reg name="a1tdcr">
+			<descr>Average over 1 Turn Driver Current Register</descr>
+		</reg>
+		<reg name="a1tdvr">
+			<descr>Average over 1 Turn Driver Voltage Register</descr>
+		</reg>
+		<reg name="dcr">
+			<descr>Driver Current Register</descr>
+		</reg>
+		<reg name="dvr">
+			<descr>Driver Voltage Register</descr>
+		</reg>
+		<reg name="mtr">
+			<descr>Motor Temperature Register</descr>
+		</reg>
+		<reg name="lsr">
+			<descr>Motor Logical Speed</descr>
+		</reg>
+		<reg name="rsr">
+			<descr>Motor Requested Speed</descr>
+		</reg>
+		<reg name="req">
+			<descr>Motor Requested Speed</descr>
+		</reg>
+		<reg name="ref">
+			<descr>Captor</descr>
+		</reg>
+		<reg name="clr">
+			<descr>Current limitation</descr>
+		</reg>
+		<reg/>
+		<reg name="prcr">
+			<descr>Pressure speed Captor Register</descr>
+		</reg>
+		<reg name="elcr">
+			<descr>Analog speed Captor Register</descr>
+		</reg>
+		<reg name="an0r">
+			<descr>Analog #0 Register</descr>
+		</reg>
+		<reg name="an1r">
+			<descr>Analog #1 Register</descr>
+		</reg>
+		<reg name="cap">
+			<descr>Captor</descr>
+		</reg>
+		<reg name="off">
+			<descr>Offset of actual speed Captor</descr>
+		</reg>
+		<reg name="div">
+			<descr>Divider of actual speed Captor</descr>
+		</reg>
+		<reg name="sqr">
+			<descr>Burst remaining Delay</descr>
+		</reg>
+		<reg name="lcr">
+			<descr>Light Current Register</descr>
+		</reg>
+		<reg name="lci">
+			<descr>Light Instantaneous Current Register</descr>
+		</reg>
+		<reg name="lvr">
+			<descr>Light Voltage Register</descr>
+		</reg>
+		<reg name="lrdr">
+			<descr>Light Remaining Delay Register</descr>
+		</reg>
+		<reg name="psvr">
+			<descr>Power Supply Voltage Register</descr>
+			<min>0</min>
+		</reg>
+		<reg name="esvr">
+			<descr>Embedded Supply Voltage Register</descr>
+		</reg>
+		<reg name="wer">
+			<descr>Warning, Error</descr>
+		</reg>
+		<reg name="cmr">
+			<descr>Controller Mode Register</descr>
+		</reg>
+		<reg name="mrd">
+			<descr>Motor Remaining Delay Register</descr>
+		</reg>
+		<reg name="pwr">
+			<descr>Motor Power Register</descr>
+		</reg>
+	</group>
+	<group name="setpoints" address="0x48" access="RW">
+		<descr>Set points registers</descr>
+		<descr lang="fr">Regsitres de consignes</descr>
+		<reg name="smr" >
+			<descr>System Mode Register</descr>
+			<bit name="start">
+				<descr>Motor start/stop request</descr>
+				<choice value="0" name="start">
+					<descr>Motor stop requested</descr>
+				</choice>
+				<choice value="1" name="stop">
+					<descr>Motor start requested</descr>
+				</choice>
+			</bit>
+			<bit/>
+			<bit/>
+			<bit name="holding">
+				<descr>holding mode</descr>
+				<choice value="0" name="free">
+					<descr>the rotor goes free (driver is disabled) when reference speed is zero, even when the SMR.START bit is set</descr>
+				</choice>
+				<choice value="1" name="fixed">
+					<descr>the rotor is kept at a fixed position (driver is enabled) as long as the SMR.START bit is set, even when reference speed is zero</descr>
+				</choice>
+			</bit>
+			<bit name="rocking"/>
+			<bit name="autoboost"/>
+			<bit name="autostop"/>
+			<bit name="autoreverse"/>
+			<bit name="reverse"/>
+			<bit name="quadratic"/>
+			<bit name="light"/>
+			<bit name="freewheel"/>
+			<bit name="indirect"/>
+			<bit/>
+			<bit name="lightauto"/>
+			<bit/>
+		</reg>
+		<reg name="scr" >
+			<descr>Speed Control Register</descr>
+		</reg>
+		<reg name="ccr" >
+			<descr>Current Control Register</descr>
+		</reg>
+		<reg name="acr" >
+			<descr>Acceleration Register</descr>
+			<min>1</min>
+		</reg>
+		<reg name="lir" >
+			<descr>Light Intensity Register</descr>
+		</reg>
+		<reg name="ldr" >
+			<descr>Light Delay Register</descr>
+		</reg>
+		<reg name="grnr" >
+			<descr>Gear Ratio Numerator Register</descr>
+			<min>1</min>
+		</reg>
+		<reg name="grdr" >
+			<descr>Gear Ratio Denominator Register</descr>
+			<min>1</min>
+		</reg>
+		<reg name="fwpr" >
+			<descr>Forward Position Preset Register</descr>
+		</reg>
+		<reg name="bwpr" >
+			<descr>Backward Position Preset Register</descr>
+		</reg>
+		<reg name="mdr" >
+			<descr>Motor Delay Register</descr>
+		</reg>
+		<reg name="pdr" >
+			<descr>Program Delay Register</descr>
+		</reg>
+		<reg/>
+		<reg name="tmr" >
+			<descr>Temperature Maximum Register</descr>
+		</reg>
+		<reg name="alr" >
+			<descr>Alternate Light Intensity Register</descr>
+		</reg>
+		<reg name="fscr" >
+			<descr>Floor Speed Control Register</descr>
+		</reg>
+	</group>
+	<group name="debug" address="0x58">
+		<reg name="dmr" size="8">
+			<descr>Debug Memories Register</descr>
+		</reg>
+		<reg name="dacsr" size="2" access="RW">
+			<descr>DAC 0 &amp; 1 Setup Register</descr>
+		</reg>
+	</group>
+	<group name="system" address="0x68">
+		<reg name="sfr">
+			<descr>System Flags Register</descr>
+			<bit name="sys">
+				<descr>Status of the System Information Registers</descr>
+				<choice value="0" name="default">
+					<descr>SYS registers are the default ones</descr>
+				</choice>
+				<choice value="1" name="altered">
+					<descr>SYS registers have been altered</descr>
+				</choice>
+			</bit>
+			<bit name="cfg">
+				<descr>Status of the Configuration Registers</descr>
+				<choice value="0" name="default">
+					<descr>CFG registers are the default ones</descr>
+				</choice>
+				<choice value="1" name="altered">
+					<descr>CFG registers have been altered</descr>
+				</choice>
+			</bit>
+			<bit name="pcr">
+				<descr>Status of the Peripheral Configuration Registers</descr>
+				<choice value="0" name="default">
+					<descr>PCR registers are the default ones</descr>
+				</choice>
+				<choice value="1" name="altered">
+					<descr>PCR registers have been altered</descr>
+				</choice>
+			</bit>
+			<bit name="cal">
+				<descr>Status of the captor calibration</descr>
+				<choice value="0" name="default">
+					<descr>captors have not been calibrated</descr>
+				</choice>
+				<choice value="1" name="calibrated">
+					<descr>captors have been calibrated</descr>
+				</choice>
+			</bit>
+			<bit name="ref">
+				<descr>Status of the captor transfer curves</descr>
+				<choice value="0" name="default">
+					<descr>transfer curves are the default ones</descr>
+				</choice>
+				<choice value="1" name="altered">
+					<descr>transfer curves have been altered</descr>
+				</choice>
+			</bit>
+			<bit name="ppa">
+				<descr>Status of the Peripheral Parameters Array</descr>
+				<choice value="0" name="cleared">
+					<descr>PPA has not been initialized</descr>
+				</choice>
+				<choice value="1" name="initialized">
+					<descr>PPA has been initialized</descr>
+				</choice>
+			</bit>
+			<bit name="wca">
+				<descr>Status of the Working Configuration Array</descr>
+				<choice value="0" name="cleared">
+					<descr>WCA has not been initialized</descr>
+				</choice>
+				<choice value="1" name="altered">
+					<descr>WCA has been initialized</descr>
+				</choice>
+			</bit>
+		</reg>
+		<reg name="snr">
+			<descr>Serial Number Register</descr>
+		</reg>
+		<reg name="fdr">
+			<descr>Factory Date Register</descr>
+		</reg>
+		<reg name="hvr">
+			<descr>Hardware Version Register</descr>
+		</reg>
+		<reg name="svr">
+			<descr>Software Version Register</descr>
+		</reg>
+		<reg name="sctr">
+			<descr>System Configuration Tag Register</descr>
+		</reg>
+		<reg name="scsr">
+			<descr>System Configuration Status Register</descr>
+			<bit name="access" size="2">
+				<descr>Connection access level</descr>
+				<choice value="0" name="no">
+					<descr>system is not connected</descr>
+				</choice>
+				<choice value="1" name="user">
+					<descr>system is connected in user mode</descr>
+				</choice>
+				<choice value="2" name="service">
+					<descr>system is connected in servive mode</descr>
+				</choice>
+				<choice value="3" name="factory">
+					<descr>system is connected in factory mode</descr>
+				</choice>
+			</bit>
+			<bit name="watchdog">
+				<descr>Watchdog status</descr>
+				<choice value="0" name="disabled">
+					<descr>watchdog is disabled</descr>
+				</choice>
+				<choice value="1" name="enabled">
+					<descr>watchdog is enabled</descr>
+				</choice>
+			</bit>
+			<bit/>
+			<bit name="reset" size="3">
+				<descr>Last reset was triggered by</descr>
+				<choice value="0" name="soft-api">
+					<descr>Software through API</descr>
+				</choice>
+				<choice value="1" name="power">
+					<descr>Power up</descr>
+				</choice>
+				<choice value="2" name="soft">
+					<descr>Software</descr>
+				</choice>
+				<choice value="3" name="3"/>
+				<choice value="4" name="watchdog">
+					<descr>Watchdog</descr>
+				</choice>
+				<choice value="5" name="powerfault">
+					<descr>power disturbance</descr>
+				</choice>
+				<choice value="6" name="6"/>
+				<choice value="7" name="7"/>
+			</bit>
+			<bit/>
+			<bit/>
+			<bit/>
+			<bit/>
+			<bit name="ab" size="2">
+				<descr>Additional boards</descr>
+				<choice value="0" name="no">
+					<descr>No additional board is present</descr>
+				</choice>
+				<choice value="1" name="ab12">
+					<descr>Auxiliary inputs board (AB-12) is present</descr>
+				</choice>
+				<choice value="2" name="ab03">
+					<descr>Blue board (AB-03) is present</descr>
+				</choice>
+			</bit>
+			<bit name="cp">
+				<choice value="0" name="disabled">
+					<descr>No CTRL module avtive</descr>
+				</choice>
+				<choice value="1" name="enabled">
+					<descr>A CTRL module is active</descr>
+				</choice>
+			</bit>
+			<bit/>
+		</reg>
+		<reg name="bvr">
+			<descr>BIOS Version Register</descr>
+		</reg>
+		<reg name="bbdr">
+			<descr>BIOS Build Date Register</descr>
+		</reg>
+		<reg name="fbdr">
+			<descr>Firmware Build Date Register</descr>
+		</reg>
+		<reg name="btr">
+			<descr>Board Type Register</descr>
+		</reg>
+		<reg name="bnr">
+			<descr>Board Name Register</descr>
+		</reg>
+		<reg name="cfg0">
+			<descr>Configuration Registers #0</descr>
+			<bit name="spd_req" size="4"/>
+			<bit name="spd_lim" size="4"/>
+			<bit name="lmp_req" size="4"/>
+			<bit name="trq_lim" size="4"/>
+		</reg>
+		<reg name="cfg1">
+			<descr>Configuration Registers #1</descr>
+		</reg>
+		<reg name="cfg2">
+			<descr>Configuration Registers #2</descr>
+		</reg>
+		<reg name="cfg3">
+			<descr>Configuration Registers #3</descr>
+		</reg>
+		<reg name="pcr" size="8">
+			<descr>Peripheral Configuration Registers</descr>
+			<bit name="periph" size="4">
+				<descr>Peripheral Parameters Array Pointer</descr>
+			</bit>
+			<bit name="captor" size="2"/>
+			<bit name="reference" size="2"/>
+			<bit name="tmp_run" size="4"/>
+			<bit name="tmp_idle" size="4"/>
+		</reg>
+	</group>
+</registers>
