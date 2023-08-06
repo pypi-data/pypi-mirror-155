@@ -1,0 +1,13 @@
+pandas==1.3.5
+numpy==1.19.5
+nltk<3.6,>=3.4.5
+tqdm==4.62.2
+simplejson<3.17.3,>=3.17.0
+requests<2.25.1,>=2.23.0
+ftfy<6.0,>=5.8
+
+[lemmatizer]
+spacy==3.3.1
+markupsafe==2.0.1
+Cython==0.29.24
+fr-core-news-sm==3.3.0
