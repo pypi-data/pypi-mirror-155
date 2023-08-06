@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: qsimov-Mowstyl
+Version: 5.0.5
+Summary: QSimov Quantum computer simulator
+Home-page: https://github.com/Mowstyl/QSimov
+Author: Hernán Indíbil de la Cruz Calvo
+Author-email: HernanIndibil.LaCruz@alu.uclm.es
+License: MIT
+Keywords: quantum
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+License-File: LICENSE
+
+QSimov is a quantum computer simulator based on the circuit model.
