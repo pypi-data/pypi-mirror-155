@@ -1,0 +1,14 @@
+libcove>=0.24.0
+bleach
+django
+json-merge-patch
+jsonschema
+markdown-it-py
+requests
+click
+
+[test]
+coveralls
+pytest
+pytest-cov
+isort

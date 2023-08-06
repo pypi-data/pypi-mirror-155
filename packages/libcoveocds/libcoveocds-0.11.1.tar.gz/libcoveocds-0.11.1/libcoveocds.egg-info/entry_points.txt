@@ -1,0 +1,2 @@
+[console_scripts]
+libcoveocds = libcoveocds.cli.__main__:main
