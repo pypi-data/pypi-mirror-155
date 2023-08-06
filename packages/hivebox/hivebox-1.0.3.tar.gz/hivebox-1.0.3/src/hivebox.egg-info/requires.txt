@@ -1,0 +1,8 @@
+numpy>=1.21
+opencv-python>4
+opencv-contrib-python>4
+pytube>=11.0.1
+depthai>2
+requests>2.27
+PyYAML>=6
+boto3>1.22
