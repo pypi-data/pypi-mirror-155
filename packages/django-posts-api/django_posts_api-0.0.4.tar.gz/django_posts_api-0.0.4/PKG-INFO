@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: django_posts_api
+Version: 0.0.4
+Summary: A small example plugin package
+Home-page: https://github.com/fadighattas100/django_posts_api
+Download-URL: https://github.com/fadighattas100/django_posts_api/blob/master/dist/django_posts_api-0.0.4.tar.gz
+Author: Fadi Ghattas
+Author-email: fadighattas100@outlook.com
+Project-URL: Bug Tracker, https://github.com/fadighattas100/django_posts_api/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+License-File: LICENSE
+License-File: LICENSE.txt
+
+A small example plugin package
