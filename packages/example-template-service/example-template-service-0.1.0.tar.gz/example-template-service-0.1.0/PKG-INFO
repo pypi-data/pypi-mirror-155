@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: example-template-service
+Version: 0.1.0
+Summary: 
+License: MIT
+Author: Anustup Das
+Author-email: anustup@mediadistillery.com
+Requires-Python: >=3.8,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: example-template-core (==0.1.0)
+Requires-Dist: example-template-foundation (==1.0.0)
+Requires-Dist: fastapi (>=0.63.0,<0.64.0)
+Requires-Dist: prometheus-client (>=0.6.0)
+Requires-Dist: pydantic (>=1.7.3,<1.8.0)
+Requires-Dist: python-multipart (>=0.0.5,<0.0.6)
+Requires-Dist: uvicorn (>=0.13.3,<0.14.0)
