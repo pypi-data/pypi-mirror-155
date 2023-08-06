@@ -1,0 +1,3 @@
+[mkdocs.plugins]
+tooltipster-links = mkdocs_tooltipster_links_plugin.plugin:TooltipsterLinks
+
