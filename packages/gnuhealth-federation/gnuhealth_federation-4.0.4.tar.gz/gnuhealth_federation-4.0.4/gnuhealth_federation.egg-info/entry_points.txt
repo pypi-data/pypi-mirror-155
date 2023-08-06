@@ -1,0 +1,4 @@
+
+    [trytond.modules]
+    health_federation = trytond.modules.health_federation
+    
