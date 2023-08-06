@@ -1,0 +1,15 @@
+LICENSE
+LICENSE.md
+README.md
+pyproject.toml
+setup.cfg
+src/mygui/__init__.py
+src/mygui.egg-info/PKG-INFO
+src/mygui.egg-info/SOURCES.txt
+src/mygui.egg-info/dependency_links.txt
+src/mygui.egg-info/top_level.txt
+src/mygui/Examples/LgridExamples.py
+src/mygui/Examples/MYGUI-egrid.py
+src/mygui/Examples/MYGUI-lgrid.py
+src/mygui/Examples/testmygui.py
+src/mygui/test/lgridegridtest.py
