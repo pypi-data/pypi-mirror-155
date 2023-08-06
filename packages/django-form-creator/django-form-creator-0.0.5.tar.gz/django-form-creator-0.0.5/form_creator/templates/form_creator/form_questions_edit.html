@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block head %}
+<title>Edit Questions</title>
+{% endblock %}
+
+{% block content %}
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="{% url 'form_creator:form_list' %}">Forms</a>
+    </li>
+    <li class="breadcrumb-item">
+      <a href="{{ object.get_absolute_url }}">{{ object|truncatechars:20 }}</a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">Edit Questions</li>
+  </ol>
+</nav>
+
+<h1>{{ object }}</h1>
+<h2>Edit Questions</h2>
+
+<form method="POST">
+  <div class="forms">
+    <!-- <input type="hidden" data-form-id="{{ object.id }}" id="form-id"> -->
+    {{ formset.management_form }}
+    {% for form in formset %}
+    <div class="forms__form mb-5">
+      {{ form|crispy }}
+    </div>
+    {% endfor %}
+    {% csrf_token %}
+
+  </div>
+
+  <button class="btn btn-primary" id="add-another">Add another</button>
+
+  <div class="d-flex justify-content-center mb-4">
+    <input type="submit" class="btn btn-primary mr-1" value="Submit">
+    <a href="{{ object.get_absolute_url }}" class="btn btn-danger ml-1">Cancel</a>
+  </div>
+</form>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'form_creator/js/additional_questions.js' %}"></script>
+{% endblock %}
