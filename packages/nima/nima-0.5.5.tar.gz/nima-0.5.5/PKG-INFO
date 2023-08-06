@@ -1,0 +1,89 @@
+Metadata-Version: 2.1
+Name: nima
+Version: 0.5.5
+Summary: Numerical IMage Analyses.
+Home-page: https://github.com/darosio/nima/
+License: BSD-3-Clause
+Keywords: ClopHensor,ratio imaging,image analysis,chloride,pH
+Author: daniele arosio
+Author-email: daniele.arosio@cnr.it
+Requires-Python: >=3.8,<3.11
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Unix Shell
+Classifier: Topic :: Scientific/Engineering
+Requires-Dist: click (>=8.1.3)
+Requires-Dist: matplotlib (>=2.0.0)
+Requires-Dist: numpy (>=1.16)
+Requires-Dist: pandas (>=0.19)
+Requires-Dist: scikit-image (>=0.14)
+Requires-Dist: scipy (>=0.18.1)
+Requires-Dist: tifffile (>2019.7.2)
+Project-URL: Repository, https://github.com/darosio/nima/
+Description-Content-Type: text/markdown
+
+[![PyPI](https://img.shields.io/pypi/v/nima.svg)][pypi status]
+[![Python Version](https://img.shields.io/pypi/pyversions/nima)][pypi status]
+[![image](https://github.com/darosio/nima/actions/workflows/tests.yml/badge.svg)](https://github.com/darosio/nima/actions/workflows/tests.yml)
+[![image](https://codecov.io/gh/darosio/nima/branch/main/graph/badge.svg?token=OR0LUZUJUR)](https://codecov.io/gh/darosio/nima)
+
+[pypi status]: https://pypi.org/project/nima/
+
+A library and a cli to help image analyses based on scipy.ndimage and
+scikit-image.
+
+# Features
+
+-   easy dark and flat correction
+-   automatic cell segmentation
+-   easy ratio analyses
+
+# Installation
+
+:
+
+	pyenv virtualenv 3.10.4 nima-0.5.4
+	pyenv activate
+	poetry install
+	pip install .
+
+Optionally:
+
+	python -m ipykernel install --user --name="nima0.3.1"
+
+
+# Usage
+
+To use nima in a project:
+
+    from nima import nima
+
+See documentation for the `nima` command line.
+
+## Description
+
+A longer description of your project goes here\...
+
+## Note
+
+pyenv activate nima-...
+poetry install pre-commit
+install before next first commit: pre-commit run --all-files
+
+pyenv activate nima-0.2
+poetry install
+pip install .
+
+so it is not installed in development mode and this version will persist to updates.
+
+## todo
+
+- restore sane complexity value (< 21).
+
