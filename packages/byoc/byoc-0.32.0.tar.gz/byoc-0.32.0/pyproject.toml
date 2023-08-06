@@ -1,0 +1,66 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "byoc"
+authors = [
+  {name = "Kale Kundert", email = "kale@thekunderts.net"},
+]
+readme = "README.rst"
+dynamic = ["version", "description"]
+requires-python = "~=3.7"
+dependencies = [
+  'autoprop',
+  'appdirs',
+  'docopt~=0.6.2',
+  'funcy',
+  'mako',
+  'more_itertools',
+  'nestedtext',
+  'pyyaml',
+  'tidyexc',
+  'tomli',
+  'jmespath',
+]
+classifiers = [
+  'Programming Language :: Python :: 3.6',
+]
+
+[project.optional-dependencies]
+tests = [
+  'pytest',
+  'pytest-cov',
+  'pytest-unordered',
+  'coveralls',
+  'parametrize_from_file',
+  'voluptuous',
+  're-assert',
+  'dataclasses',
+]
+docs = [
+  'sphinx',
+  'sphinx_rtd_theme',
+  'sphinx-inline-tabs',
+  'sphinx-copybutton',
+  'autoclasstoc',
+]
+
+[project.urls]
+'Documentation' = 'https://byoc.readthedocs.io/en/latest/'
+'Version Control' = 'https://github.com/kalekundert/byoc'
+'Bug Tracker' = 'https://github.com/kalekundert/byoc/issues'
+'Continuous Integration' = 'https://github.com/kalekundert/byoc/actions'
+'Test Coverage' = 'https://coveralls.io/github/kalekundert/byoc'
+
+[tool.pccc]
+header_length = 72
+types = ["chore", "docs", "feat", "fix", "refactor", "style", "test", "wip"]
+ignore_generated_commits = true
+generated_commits = ['^Merge']
+
+[tool.semantic_release]
+branch = 'release'
+version_variable = 'byoc/__init__.py:__version__'
+build_command = 'python -m pip install flit && flit build'
+major_on_zero = false
