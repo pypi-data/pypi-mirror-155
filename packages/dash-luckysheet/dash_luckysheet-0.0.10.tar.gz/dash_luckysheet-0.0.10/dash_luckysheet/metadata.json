@@ -1,0 +1,143 @@
+{
+  "src/lib/components/Luckysheet.react.js": {
+    "description": "ExampleComponent is an example component.\nIt takes a property, `label`, and\ndisplays it.\nIt renders an input with the property `value`\nwhich is editable by the user.",
+    "displayName": "Luckysheet",
+    "methods": [
+      {
+        "name": "tableResize",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "w",
+            "type": null
+          },
+          {
+            "name": "h",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "load_remote_excel",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "url",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "destroy_luckysheet",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "create_luckysheet",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "data",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "update_luckysheet",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "data",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "update_luckysheet_excel",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "url",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "download_excel",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "setStyleAndValue",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "data",
+            "type": null
+          },
+          {
+            "name": "config",
+            "type": null
+          },
+          {
+            "name": "worksheet",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The ID used to identify this component in Dash callbacks."
+      },
+      "data": {
+        "type": {
+          "name": "any"
+        },
+        "required": false,
+        "description": "data shown by the component"
+      },
+      "xlsx": {
+        "type": {
+          "name": "any"
+        },
+        "required": false,
+        "description": "data of an xlsx file"
+      },
+      "style": {
+        "type": {
+          "name": "any"
+        },
+        "required": false,
+        "description": "additional style options"
+      },
+      "setProps": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Dash-assigned callback that should be called to report property changes\nto Dash, to make them available for callbacks."
+      }
+    }
+  }
+}

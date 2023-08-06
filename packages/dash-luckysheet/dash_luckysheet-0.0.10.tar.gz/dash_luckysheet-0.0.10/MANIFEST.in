@@ -1,0 +1,13 @@
+include dash_luckysheet/dash_luckysheet.min.js
+include dash_luckysheet/dash_luckysheet.min.js.map
+include dash_luckysheet/async-*.js
+include dash_luckysheet/async-*.js.map
+include dash_luckysheet/*-shared.js
+include dash_luckysheet/*-shared.js.map
+include dash_luckysheet/metadata.json
+include dash_luckysheet/package-info.json
+include dash_luckysheet/assets/*
+include dash_luckysheet/fonts/*
+include README.md
+include LICENSE
+include package.json
