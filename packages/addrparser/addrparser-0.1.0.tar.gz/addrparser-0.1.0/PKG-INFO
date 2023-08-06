@@ -1,0 +1,117 @@
+Metadata-Version: 2.1
+Name: addrparser
+Version: 0.1.0
+Summary: Address parser for Finnish addresses
+License: MIT
+Author: Lauri Kajan
+Author-email: lauri.kajan@gispo.fi
+Requires-Python: >=3.7,<4.0
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Provides-Extra: cli
+Provides-Extra: dev
+Provides-Extra: doc
+Provides-Extra: test
+Requires-Dist: black (>=22.3.0,<23.0.0); extra == "test"
+Requires-Dist: bump2version (>=1.0.1,<2.0.0); extra == "dev"
+Requires-Dist: click (>=8.1.3,<9.0.0); extra == "cli" or extra == "test"
+Requires-Dist: flake8 (<4.0.0); extra == "test"
+Requires-Dist: isort (>=5.10.1,<6.0.0); extra == "test"
+Requires-Dist: jinja2 (>=3.1.2,<4.0.0); extra == "dev"
+Requires-Dist: mkdocs (>=1.3.0,<2.0.0); extra == "doc"
+Requires-Dist: mkdocs-autorefs (>=0.4.1,<0.5.0); extra == "doc"
+Requires-Dist: mkdocs-include-markdown-plugin (>=3.5.2,<4.0.0); extra == "doc"
+Requires-Dist: mkdocs-material (>=8.3.4,<9.0.0); extra == "doc"
+Requires-Dist: mkdocstrings[python] (>=0.19.0,<0.20.0); extra == "doc"
+Requires-Dist: mypy (>=0.961,<0.962); extra == "test"
+Requires-Dist: pre-commit (>=2.19.0,<3.0.0); extra == "dev"
+Requires-Dist: pymdown-extensions (>=9.5,<10.0); extra == "doc"
+Requires-Dist: pyparsing (>=3.0.9,<4.0.0)
+Requires-Dist: pytest (>=7.1.2,<8.0.0); extra == "test"
+Requires-Dist: pytest-cov (>=3.0.0,<4.0.0); extra == "test"
+Requires-Dist: railroad-diagrams (>=1.1.1,<2.0.0); extra == "dev"
+Requires-Dist: tox (>=3.25.0,<4.0.0); extra == "dev"
+Description-Content-Type: text/markdown
+
+# Address parser
+
+[![pypi](https://img.shields.io/pypi/v/addrparser.svg)](https://pypi.org/project/addrparser/)
+[![python](https://img.shields.io/pypi/pyversions/addrparser.svg)](https://pypi.org/project/addrparser/)
+[![Build Status](https://github.com/gispocoding/addr-parser/actions/workflows/dev.yml/badge.svg)](https://github.com/gispocoding/addr-parser/actions/workflows/dev.yml)
+[![codecov](https://codecov.io/gh/gispocoding/addr-parser/branch/main/graphs/badge.svg)](https://codecov.io/github/gispocoding/addr-parser)
+
+Simple address parser with localization support.
+
+> **Note:**
+> This library is meant to be simple, light weight and easy to adapt. This is not the best and most optimized address parser out there.
+> For *state of the art* parser you should probably look at https://github.com/openvenues/pypostal
+
+* Documentation: <https://gispocoding.github.io/addr-parser>
+* GitHub: <https://github.com/gispocoding/addr-parser>
+* PyPI: <https://pypi.org/project/addrparser/>
+* Free software: MIT
+
+## Supported countries
+| Country         | Description                            | Documentation                                          |
+| --------------- | -------------------------------------- | ------------------------------------------------------ |
+| Suomi - Finland | Suomalaisten osoitteiden osoiteparseri | <https://gispocoding.github.io/addr-parser/locales/fi> |
+
+## Installation
+
+```
+pip install addrparser
+```
+
+### Setting up a development environment
+See instructions in [CONTRIBUTING.md](./CONTRIBUTING.md#get-started)
+
+## Usage
+
+### Command line tool
+```shell
+$ addr-parse --help
+Usage: addr-parse [OPTIONS] ADDRESS
+
+  Cli tool for parsing text addresses.
+
+  Args:     address (str): address text
+
+Options:
+  -l, --locale TEXT  Country code in two-letter ISO 3166
+  --help             Show this message and exit.
+```
+
+```shell
+$ addr-parser "Iso Maantie 12b B 7"
+{
+  "input": "Iso Maantie 12b B 7",
+  "result": {
+    "street_name": "Iso Maantie",
+    "house_number": "12b",
+    "entrance": "B",
+    "apartment": "7"
+  }
+}
+```
+### Library
+```python
+>>> from addrparser import AddressParser
+
+>>> parser = AddressParser('fi')
+>>> address = parser.parse('Iso Maantie 12b B 7')
+>>> address
+Address(street_name='Iso Maantie', house_number='12b', entrance='B', apartment='7', post_office_box=None, zip_number=None, zip_name=None)
+```
+
+## Credits
+
+This project was created with inspiration from [waynerv/cookiecutter-pypackage](https://github.com/waynerv/cookiecutter-pypackage) project template.
+
