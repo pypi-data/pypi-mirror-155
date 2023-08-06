@@ -1,0 +1,2 @@
+[console_scripts]
+pgn4people = pgn4people_poc.__main__:main
