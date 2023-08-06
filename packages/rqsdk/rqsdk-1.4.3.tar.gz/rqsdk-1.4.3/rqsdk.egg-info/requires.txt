@@ -1,0 +1,144 @@
+patsy>=0.5.1
+click>=7.0
+statsmodels>=0.12.1
+scipy<=1.7.3
+rqdatac==2.9.*,>=2.9.44
+requests
+rqdatac_fund==1.0.*,>=1.0.18
+wcwidth
+pandas>=0.24.2
+tabulate
+pyjwt==1.7.1
+
+[:python_version <= "3.6"]
+python-rapidjson<=1.5
+cryptography==2.9.2
+numpy>=1.19.5
+
+[:python_version > "3.7"]
+cryptography<=36.0.2,>=2.9.2
+
+[:python_version >= "3.7"]
+numpy>=1.20.0
+
+[rqalpha_plus]
+rqalpha-mod-rqfactor==1.0.10
+rqalpha==4.9.0
+ta-lib==0.4.20
+rqalpha-plus==4.1.26
+rqalpha-mod-spot==1.0.*,>=1.0.8
+statsmodels>=0.12.1
+scipy<=1.7.3
+rqdatac_fund==1.0.*,>=1.0.18
+h5py>=3.0.0
+hdf5plugin
+requests
+wcwidth
+pandas>=0.24.2
+pyjwt==1.7.1
+rqfactor==1.2.*,>=1.2.3
+rqalpha-mod-option==1.1.*,>=1.1.17
+rqalpha-mod-ricequant-data==2.3.*,>=2.3.6
+rqalpha-mod-convertible==1.2.*,>=1.2.13
+patsy>=0.5.1
+rqalpha-mod-fund==0.0.9
+rqalpha-mod-optimizer2==1.0.*,>=1.0.8
+click>=7.0
+rqalpha-mod-incremental==0.0.6
+rqdatac==2.9.*,>=2.9.44
+rqrisk==1.0.0
+tabulate
+
+[rqalpha_plus:python_version <= "3.6"]
+cryptography==2.9.2
+numpy>=1.19.5
+python-rapidjson<=1.5
+
+[rqalpha_plus:python_version > "3.7"]
+cryptography<=36.0.2,>=2.9.2
+
+[rqalpha_plus:python_version >= "3.7"]
+numpy>=1.20.0
+
+[rqdatac]
+patsy>=0.5.1
+click>=7.0
+statsmodels>=0.12.1
+scipy<=1.7.3
+rqdatac==2.9.*,>=2.9.44
+requests
+rqdatac_fund==1.0.*,>=1.0.18
+wcwidth
+pandas>=0.24.2
+tabulate
+pyjwt==1.7.1
+
+[rqdatac:python_version <= "3.6"]
+python-rapidjson<=1.5
+cryptography==2.9.2
+numpy>=1.19.5
+
+[rqdatac:python_version > "3.7"]
+cryptography<=36.0.2,>=2.9.2
+
+[rqdatac:python_version >= "3.7"]
+numpy>=1.20.0
+
+[rqfactor]
+ta-lib==0.4.20
+statsmodels>=0.12.1
+scipy<=1.7.3
+rqdatac_fund==1.0.*,>=1.0.18
+requests
+wcwidth
+pandas>=0.24.2
+pyjwt==1.7.1
+rqfactor==1.2.*,>=1.2.3
+patsy>=0.5.1
+click>=7.0
+rqdatac==2.9.*,>=2.9.44
+tabulate
+
+[rqfactor:python_version <= "3.6"]
+cryptography==2.9.2
+numpy>=1.19.5
+python-rapidjson<=1.5
+
+[rqfactor:python_version > "3.7"]
+cryptography<=36.0.2,>=2.9.2
+
+[rqfactor:python_version >= "3.7"]
+numpy>=1.20.0
+
+[rqoptimizer]
+osqp==0.6.2.post5
+statsmodels>=0.12.1
+scipy<=1.7.3
+rqdatac_fund==1.0.*,>=1.0.18
+rqoptimizer2==1.2.*,>=1.2.16
+requests
+wcwidth
+pandas>=0.24.2
+pyjwt==1.7.1
+rqoptimizer==1.2.*,>=1.2.16
+patsy>=0.5.1
+scs==2.1.4
+click>=7.0
+ecos==2.0.10
+rqdatac==2.9.*,>=2.9.44
+tabulate
+
+[rqoptimizer:python_version <= "3.6"]
+cryptography==2.9.2
+numpy>=1.19.5
+python-rapidjson<=1.5
+
+[rqoptimizer:python_version == "3.6"]
+cvxpy==1.1.18
+
+[rqoptimizer:python_version > "3.7"]
+cryptography<=36.0.2,>=2.9.2
+
+[rqoptimizer:python_version >= "3.7"]
+cvxpy==1.2.0
+numpy>=1.20.0
