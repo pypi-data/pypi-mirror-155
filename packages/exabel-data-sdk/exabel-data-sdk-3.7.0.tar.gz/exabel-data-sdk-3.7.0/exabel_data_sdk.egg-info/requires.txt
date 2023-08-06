@@ -1,0 +1,18 @@
+google-api-core==1.31.2
+googleapis-common-protos
+grpcio
+pandas
+protobuf
+requests
+
+[:python_version <= "3.6"]
+dataclasses==0.8
+
+[bigquery]
+google-cloud-bigquery
+sqlalchemy-bigquery
+
+[snowflake]
+sqlalchemy
+snowflake-connector-python
+snowflake-sqlalchemy
