@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+flatex/__init__.py
+flatex/__main__.py
+flatex/main.py
+flatex.egg-info/PKG-INFO
+flatex.egg-info/SOURCES.txt
+flatex.egg-info/dependency_links.txt
+flatex.egg-info/entry_points.txt
+flatex.egg-info/top_level.txt
+tests/__init__.py
+tests/test_flatex.py
