@@ -1,0 +1,13 @@
+icontract<3,>=2.5.1
+regex==2021.4.4
+abnf<2,>=1.1.1
+sortedcontainers<3,>=2
+
+[dev]
+black==22.3.0
+mypy==0.812
+pylint==2.3.1
+pydocstyle<3,>=2.1.1
+coverage<5,>=4.5.1
+docutils<1,>=0.14
+pygments<3,>=2
