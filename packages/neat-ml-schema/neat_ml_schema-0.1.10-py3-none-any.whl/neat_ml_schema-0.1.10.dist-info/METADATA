@@ -1,0 +1,28 @@
+Metadata-Version: 2.1
+Name: neat-ml-schema
+Version: 0.1.10
+Summary: A linkml based schema for the neat-ml project.
+Home-page: https://knowledge-graph-hub.github.io/neat_ml_schema/
+License: MIT
+Author: Harshad Hegde
+Author-email: hhegde@lbl.gov
+Requires-Python: >=3.8,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Provides-Extra: docs
+Requires-Dist: linkml (>=1.2.11,<2.0.0); extra == "docs"
+Requires-Dist: linkml-runtime (>=1.1.24,<2.0.0)
+Requires-Dist: pytest (>=7.1.2,<8.0.0)
+Requires-Dist: tox (>=3.25.0,<4.0.0)
+Project-URL: Repository, https://github.com/Knowledge-Graph-Hub/neat_ml_schema
+Description-Content-Type: text/markdown
+
+# Neat-ml schema
+
+Neat-ml schema defines the schema in the form of a [YAML file](https://github.com/Knowledge-Graph-Hub/neat-ml-schema/blob/main/neat_ml_schema/src/schema/neat_ml_schema.yaml) for data going into graph ML pipelines (specifically [NEAT](https://github.com/Knowledge-Graph-Hub/neat-ml)). This project itself is generated using the command `linkml-ws new` derived from the [linkML](https://github.com/linkml/linkml) project.
+
+[Documentation](https://knowledge-graph-hub.github.io/neat-ml-schema/)
+
