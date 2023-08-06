@@ -1,0 +1,82 @@
+Metadata-Version: 2.1
+Name: crystal-tree
+Version: 0.2
+Summary: From large, deep trees to short, clear explanations.
+Home-page: https://github.com/bramucas/crystal-tree
+Author: Brais Muñiz
+Author-email: mc.brais@gmail.com
+License: UNKNOWN
+Keywords: artificial intelligence,explainable artificial intelligencelogic programming,answer set programming
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6.0
+Description-Content-Type: text/markdown
+Requires-Dist: dafact
+Requires-Dist: importlib-resources
+Requires-Dist: numpy
+Requires-Dist: setuptools-git
+Requires-Dist: sklearn
+Requires-Dist: xclingo
+
+# crystal-tree
+
+The goal of crystal-tree package is to provide simple, crystal-clear, natural language explanations for the predictions from classification Decision Trees. 
+
+This simple python package provides an object for obtaining explanations from a (for now [scikit-learn](https://scikit-learn.org/stable/)'s) Decision Tree Classifier.
+
+The implementations consists in the translation of the Decision Tree into an explainable logic program for [xclingo](https://github.com/bramucas/xclingo).
+
+Given an input, the CrystalTree object will provide the prediction from the original tree, justified by a summarized version of the conditions checked by the tree to ultimately produce the prediction. The explanations are provided as python objects which can be easily represented as text. The text used for the explanations admit some personalization, which allows the user to adapt them particular contexts (different languages, different levels of expertise, etc.)
+
+
+## Installation
+
+```
+python -m pip install crystal-tree
+```
+
+## Usage
+
+The following program will train a Decision Tree into the task of predicting types of flowers (throught the well-known Iris dataset), and then it will some explanations as an example.
+The program requires the following modules to be installed:
+```
+python -m pip instll sklearn pandas
+```
+
+```python
+from sklearn.datasets import load_iris
+from sklearn.tree import DecisionTreeClassifier
+
+from crystal_tree import CrystalTree
+
+# Loads dataset
+X, y = load_iris(return_X_y=True, as_frame=True)
+
+# Trains decision tree
+clf = DecisionTreeClassifier()
+clf.fit(X,y)
+
+# Translates the classifier into an explainable logic program
+crys_tree = CrystalTree(clf)
+
+# Print explanations of input X (two arbitrary rows)
+for e in crys_tree.explain(X.iloc[[0, 54]]):
+    print(e.ascii_tree())
+```
+
+This will produce the following output.
+```
+  *
+  |__Predicted class 0 for instance 0
+  |  |__petal width (cm) <= 0.8
+
+  *
+  |__Predicted class 1 for instance 1
+  |  |__petal length (cm) <= 4.9
+  |  |__petal width (cm) in (0.8,1.6]
+```
+
+More examples concerning personalization of explanations can be found in the ```examples/``` directory in this repository. 
+
