@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: cfntagger
+Version: 0.9.6
+Summary: A Cloudformation tagging tool
+Home-page: https://github.com/kristofwillen/cfntagger
+Author: Kristof Willen
+Author-email: kristof.willen@gmail.com
+License: GPL
+Keywords: cloudformation tagging
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+License-File: LICENSE
+Requires-Dist: ruamel.yaml (==0.17.21)
+Requires-Dist: colorama (>=0.4.4)
+Requires-Dist: gitpython (>=3.1.27)
+
+UNKNOWN
+
