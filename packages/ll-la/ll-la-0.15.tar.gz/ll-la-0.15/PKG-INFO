@@ -1,0 +1,81 @@
+Metadata-Version: 2.1
+Name: ll-la
+Version: 0.15
+Summary: Python API for LivingApps
+Home-page: http://github.com/LivingLogic/LivingApps.Python.LivingAPI
+Author: Walter Doerwald
+Author-email: walter@livinglogic.de
+License: MIT
+Keywords: LivingApps
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.8
+License-File: LICENSE.txt
+
+``ll.la`` provides a Python API for the LivingApps system
+(see http://www.living-apps.de/ or http://www.living-apps.com/ for more info).
+
+``ll.la`` allows you to fetch the configured data sources from a template,
+create new records, and update and delete existing records all from your Python
+prompt (or script).
+
+For more info about LivingApps and this Python SDK, see
+https://my.living-apps.de/docs/PythonSDK.html (in german).
+
+
+0.15 (2022-06-15)
+-----------------
+
+* Add support for custom attributes (whose name starts with ``x_``).
+
+* Added ``File`` attributes: ``duration``, ``geo``, ``storagefilename``,
+  ``archive`` and ``archive_url``.
+
+* Added new values for ``Globals.mode``: ``form/new/input``, ``form/new/geo``,
+  ``form/edit/input`` and ``form/edit/geo``.
+
+* Added shortcut attributes to ``Globals``: ``p_*`` for app parameters,
+  ``pv_*`` for app parameter values.
+
+* Added shortcut attributes to ``App``: ``lc_*`` for layout controls,
+  and ``pv_*`` for app parameter values.
+
+* Added shortcut attributes to ``Veiw``: ``c_*`` for controls and ``lc_*``
+  for layout controls.
+
+* The following attributes are now fetched from the database incrementally,
+  if they haven't been part of the UL4ON dump: ``App.params``, ``App.views``
+  and ``Record.attachments``.
+
+* Added attributes to ``NumberControl``: ``precision``, ``minimum`` and
+  ``maximum``.
+
+* When setting values of date fields, now the language specific format
+  (from ``globals.lang``) will be considered.
+
+* Added new values to ``ViewTemplateConfig.Type``: ``LISTDATAMANAGEMENT`` and
+  ``DETAILDATAMANAGEMENT``.
+
+* Added ``ButtonLayoutControl``.
+
+* Added ``View`` attributes: ``login_required``, ``result_page`` and
+  ``use_geo``.
+
+* Make ``DBHandler`` usable as a context manager (leaving the context manager
+  commits or rolls back the connection and reset the UL4ON decoder).
+
+* Rename classes: ``ViewTemplate`` to ``ViewTemplateConfig``, ``DataSource``
+  to ``DataSourceConfig``, ``DataSourceData`` to ``DataSource``.
+
+
+
+
