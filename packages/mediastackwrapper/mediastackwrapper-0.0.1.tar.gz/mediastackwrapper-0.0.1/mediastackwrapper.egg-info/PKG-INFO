@@ -1,0 +1,35 @@
+Metadata-Version: 1.1
+Name: mediastackwrapper
+Version: 0.0.1
+Summary: paginate through mediastack API data
+Home-page: UNKNOWN
+Author: Christopher Collins
+Author-email: mr.collins.llb@gmail.com
+License: MIT
+Description: This python library helps you use your mediastack API key to access data on the media stack API. No need to figure out how to paginate through the results this code does it for you.
+        
+        
+        pip install mediastackwrapper
+        
+        import mediastackwrapper
+        
+        
+        To use this library import mediastackwrapper and call the function news_dataframe(), put your between dates, the keyword you are searching the news for, your mediastack API key.
+        
+        
+        news_dataframe('2022-1-1,2022-5-31','Keywor','your_api_key')
+        
+        
+        Change Log
+        ==========
+        
+        0.0.1 (19/06/2022)
+        -------------------
+        - First Release
+Keywords: calculator
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Education
+Classifier: Operating System :: Microsoft :: Windows :: Windows 10
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
