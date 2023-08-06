@@ -1,0 +1,11 @@
+[build-system]
+requires= ["setuptools",
+    "numpy",
+    "pandas",
+    "matplotlib",
+    "sklearn",
+    "scikit-learn",
+    "scipy",
+    "openpyxl"
+]
+build-backend = "setuptools.build_meta"
