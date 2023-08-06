@@ -1,0 +1,93 @@
+[build-system]
+requires = ["setuptools >= 40.6.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.black]
+target-version = ['py37', 'py38', 'py39']
+include = '\.pyi?$'
+exclude = '''
+(
+    \.eggs
+  | \.git
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | venv
+  | _build/
+  | build/
+  | dist
+)
+'''
+
+[tool.coverage.run]
+branch = true
+source = ["sett"]
+omit = [
+    "sett/gui/resources/*",
+    "sett/gui/__main__.py",
+    "sett/gui/main_window.py",
+    "sett/gui/keys_tab.py",
+    "sett/gui/decrypt_tab.py",
+    "sett/gui/encrypt_tab.py",
+    "sett/gui/transfer_tab.py",
+    "sett/gui/file_selection_widget.py",
+]
+
+[tool.tox]
+legacy_tox_ini = '''
+[tox]
+envlist = clean,py{37,38,39,310},report
+isolated_build = true
+
+[testenv]
+setenv =
+    SETT_LEGACY=true
+depends =
+    py{37,38,39,310}: clean
+    report: py{37,38,39,310}
+deps =
+    PySide2
+    coverage[toml]
+    pytest
+    pytest-cov
+    pytest-randomly
+commands =
+    pytest {posargs: --cov --cov-append --cov-report=}
+
+[testenv:report]
+skip_install = true
+commands =
+    coverage report
+
+[testenv:clean]
+skip_install = true
+commands = coverage erase
+'''
+
+[tool.mypy]
+strict = true
+
+[[tool.mypy.overrides]]
+module = [
+    "socks",
+    "sockshandler",
+    "PySide2",
+    "matplotlib",
+    "matplotlib.pyplot",
+    "seaborn",
+    "minio",
+    "minio.error",
+]
+ignore_missing_imports = true
+
+[tool.pylint.'MESSAGES CONTROL']
+load-plugins = "pylint.extensions.docparams"
+default-docstring-type = "sphinx"
+ignored-modules = "PySide2,PySide6"
+extension-pkg-allow-list = "PySide2,PySide6,sett_rs"
+min-similarity-lines = 6
+ignore-comments = "yes"
+ignore-docstrings = "yes"
+disable = "line-too-long,missing-docstring,invalid-name,too-many-instance-attributes,too-many-arguments,too-many-locals,too-few-public-methods,too-many-lines,fixme"
+output-format = "text"
+reports = "no"
