@@ -1,0 +1,3 @@
+[console_scripts]
+zorp-assets = zorp.assets:main
+zorp-convert = bin.zorp_convert:run_cli
