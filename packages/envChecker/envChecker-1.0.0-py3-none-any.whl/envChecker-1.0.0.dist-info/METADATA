@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: envChecker
+Version: 1.0.0
+Summary: Compares your .env to .env.example to find anything missing in .env
+Home-page: UNKNOWN
+Author: Owen Gaspard
+License: MIT
+Platform: UNKNOWN
+License-File: LICENSE
+Requires-Dist: python-dotenv
+
+UNKNOWN
+
