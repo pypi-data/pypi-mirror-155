@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: pyhectiqlab
+Version: 2.0.18
+Summary: Python client to use the Hectiq Lab
+Home-page: https://www.hectiq.ai
+Author: Edward Laurence
+Author-email: edwardl@hectiq.ai
+Keywords: pip requirements imports
+Classifier: Programming Language :: Python :: 3
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Scientific/Engineering
+Classifier: Intended Audience :: Science/Research
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+[Hectiq lab](https://lab.hectiq.ai) is a platform for tracking machine learning experiments. The `pyhectiqlab` is the python client to connect with the lab.
+
+## Links
+
+- [Official documentation](https://docs.hectiq.ai)
+- [Platform](https://lab.hectiq.ai)

@@ -1,0 +1,14 @@
+requests
+tqdm
+ipykernel
+traitlets
+jupyter_core
+importlib-metadata
+numpy
+packaging>=21.0
+click==8.0.4
+more_itertools
+google-resumable-media
+python-slugify
+toml
+GitPython
