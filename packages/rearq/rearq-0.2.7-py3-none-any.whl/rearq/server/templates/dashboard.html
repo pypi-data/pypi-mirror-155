@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block head %}
+    <style>
+        .card {
+            flex-basis: 0;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    <div class="d-flex justify-content-center">
+        <div class="flex-grow-1 card text-white bg-primary me-3">
+            <div class="card-header">Task Num</div>
+            <div class="card-body">
+                <h5 class="card-title">{{ task_num }}</h5>
+                <p class="card-text">All task num</p>
+                <a href="/task" class="stretched-link"></a>
+            </div>
+        </div>
+        <div class="flex-grow-1 card text-white bg-success me-3">
+            <div class="card-header">Run Times</div>
+            <div class="card-body">
+                <h5 class="card-title">{{ run_times }}</h5>
+                <p class="card-text">All task run times</p>
+                <a href="/result" class="stretched-link"></a>
+            </div>
+        </div>
+        <div class="flex-grow-1 card text-white bg-secondary">
+            <div class="card-header">Worker Num</div>
+            <div class="card-body">
+                <h5 class="card-title">{{ worker_num }}</h5>
+                <p class="card-text">All worker num, include timer worker</p>
+                <a href="/worker" class="stretched-link"></a>
+            </div>
+        </div>
+    </div>
+    <div class="mt-5">
+        <div id="chart" style="height:500px"></div>
+    </div>
+{% endblock %}
+{% block body_end %}
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.0.2/dist/echarts.min.js"></script>
+    <script>
+        let chart = echarts.init(document.getElementById('chart'));
+        let option = {
+            title: {
+                text: 'Task results chart',
+            },
+            tooltip: {},
+            legend: {
+                data: ['Deferred', 'Queued', "InProgress", "Success", "Failed", "Expired"],
+            },
+            xAxis: {
+                data: {{ x_axis|safe }},
+            },
+            yAxis: {},
+            series: {{ series|safe }}
+        };
+        chart.setOption(option);
+    </script>
+{% endblock %}

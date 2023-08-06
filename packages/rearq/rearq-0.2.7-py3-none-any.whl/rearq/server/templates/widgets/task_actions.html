@@ -1,0 +1,180 @@
+<button class="btn btn-primary btn-sm" {% if task.status == 'disabled' %}
+        disabled
+{% endif %}  data-bs-toggle="modal" data-bs-target="#run-{{ task.name }}">
+    Run
+</button>
+<a class="btn btn-secondary btn-sm" href="/result?task={{ task.name }}">Job</a>
+<a class="btn btn-dark btn-sm" href="/job?task={{ task.name }}">Result</a>
+<button onclick="set_task('{{ task.name }}','{{ task.status }}')"
+        class="btn btn-sm {% if task.status == "enabled" %}btn-warning{% else %}btn-success{% endif %}">
+    {% if task.status == "enabled" %}
+        Disable{% else %}Enable{% endif %}</button>
+<div class="modal fade" id="run-{{ task.name }}" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Run task {{ task.name }}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="form-{{ task.name }}">
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="args-{{ task.name }}"
+                                       class="col-form-label">Args:</label>
+                                <input type="text" class="form-control" id="args-{{ task.name }}">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="kwargs-{{ task.name }}"
+                                       class="col-form-label">Kwargs:</label>
+                                <input type="text" class="form-control" id="kwargs-{{ task.name }}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="job-id-{{ task.name }}"
+                                       class="col-form-label">JobID:</label>
+                                <input type="text" class="form-control" id="job-id-{{ task.name }}">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="countdown-{{ task.name }}"
+                                       class="col-form-label">Countdown:</label>
+                                <input type="text" class="form-control"
+                                       id="countdown-{{ task.name }}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="eta-{{ task.name }}" class="col-form-label">Eta:</label>
+                                <input type="text" class="form-control" id="eta-{{ task.name }}">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="expires-{{ task.name }}"
+                                       class="col-form-label">Expires:</label>
+                                <input type="text" class="form-control"
+                                       id="expires-{{ task.name }}">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="job-retry-{{ task.name }}"
+                                       class="col-form-label">JobRetry:</label>
+                                <input type="number" class="form-control"
+                                       id="job-retry-{{ task.name }}">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close
+                </button>
+                <button type="button" class="btn btn-primary" onclick="run_task('{{ task.name }}')">
+                    Run
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+{% block body_end %}
+    <script>
+        function run_task(task_name) {
+            let data = {
+                task: task_name,
+            }
+            let args = $('#args-' + task_name).val()
+            if (args !== "") {
+                args = JSON.parse(args)
+                data.args = args;
+            }
+            let kwargs = $('#kwargs-' + task_name).val()
+            if (kwargs !== "") {
+                kwargs = JSON.parse(kwargs);
+                data.kwargs = kwargs;
+            }
+            let job_id = $('#job-id-' + task_name).val()
+            if (job_id !== "") {
+                data.job_id = job_id;
+            }
+            let countdown = $('#countdown-' + task_name).val()
+            if (countdown !== "") {
+                data.countdown = countdown;
+            }
+            let eta = $('#eta-' + task_name).val()
+            if (eta !== "") {
+                data.eta = eta;
+            }
+            let expires = $('#expires-' + task_name).val()
+            if (expires !== "") {
+                data.expires = expires;
+            }
+            let job_retry = $('#job-retry-' + task_name).val()
+            if (job_retry !== "") {
+                data.job_retry = job_retry;
+            }
+            $.ajax({
+                url: '/job',
+                method: 'POST',
+                data: JSON.stringify(data),
+                contentType: 'application/json',
+                dataType: 'json',
+                success: res => {
+                    swal({
+                        title: 'Run task success',
+                        icon: "success",
+                        content: {
+                            element: "a",
+                            attributes: {
+                                href: "/job?job_id=" + res.job_id,
+                                text: "JobID: " + res.job_id,
+                            },
+                        }
+                    });
+                },
+                error: res => {
+                    swal({
+                        title: res.responseJSON.msg,
+                        icon: "error",
+                    });
+                },
+                complete: () => {
+                    $('#run-' + task_name).modal('toggle');
+                }
+            })
+        }
+
+        function set_task(task_name, status) {
+            let set_status = status === 'disabled' ? 'enabled' : 'disabled';
+            $.ajax({
+                url: '/task/' + task_name,
+                method: 'PUT',
+                data: JSON.stringify({
+                    status: set_status,
+                }),
+                contentType: 'application/json',
+                dataType: 'json',
+                success: res => {
+                    location.reload();
+                },
+                error: res => {
+                    swal({
+                        title: res.responseJSON.msg,
+                        icon: "error",
+                    });
+                }
+            })
+        }
+    </script>
+{% endblock %}
