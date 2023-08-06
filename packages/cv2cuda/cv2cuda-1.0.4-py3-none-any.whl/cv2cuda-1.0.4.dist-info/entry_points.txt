@@ -1,0 +1,3 @@
+[console_scripts]
+cv2cuda = cv2cuda.bin.main:main
+cv2cuda-test = cv2cuda.tests.test:main
