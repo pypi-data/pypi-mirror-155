@@ -1,0 +1,1 @@
+from docTagger.docTagger import detect_class
