@@ -1,0 +1,2 @@
+"use strict";(globalThis.webpackChunk=globalThis.webpackChunk||[]).push([["app_views_settings_projectSourceMaps_index_tsx"],{"./app/views/settings/projectSourceMaps/index.tsx":(e,t,n)=>{n.r(t),n.d(t,{default:()=>s});var i=n("../node_modules/react/index.js");const s=(0,n("./app/utils/withOrganization.tsx").Z)((function(e){const{children:t,organization:n,project:s}=e;return(0,i.isValidElement)(t)?(0,i.cloneElement)(t,{organization:n,project:s}):null}))}}]);
+//# sourceMappingURL=../sourcemaps/app_views_settings_projectSourceMaps_index_tsx.6944fa3278a7b4d675ff459d5058c9c4.js.map
