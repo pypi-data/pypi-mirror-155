@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkjupyter_dsvisualizer=self.webpackChunkjupyter_dsvisualizer||[]).push([[480],{480:(e,t,i)=>{i.r(t),i.d(t,{default:()=>a});var r=i(565),s=i(44),u=i(657);const a={id:"dsvisualizer:plugin",requires:[r.IJupyterWidgetRegistry],activate:function(e,t){t.registerWidget({name:u.o,version:u.Y,exports:s})},autoStart:!0}}}]);
