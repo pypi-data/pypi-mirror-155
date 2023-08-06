@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: more-cli
+Version: 0.2.0
+Summary: 
+Author: chrbrauer
+Author-email: christoph@5xbrauer.de
+Requires-Python: >=3.8,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: inquirer
+Requires-Dist: pick
+Requires-Dist: pyfiglet
+Requires-Dist: requests
