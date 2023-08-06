@@ -1,0 +1,13 @@
+numpy
+scikit-learn
+
+[docs]
+sphinx
+sphinx-gallery
+sphinx_rtd_theme
+numpydoc
+matplotlib
+
+[tests]
+pytest
+pytest-cov
