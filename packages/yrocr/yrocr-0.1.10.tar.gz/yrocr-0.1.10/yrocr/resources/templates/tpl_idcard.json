@@ -1,0 +1,128 @@
+{
+  "name": "身份证",
+  "imageHeight": 3509,
+  "imageWidth": 2480,
+  "anchors": [
+    {
+      "text": "姓名",
+      "left": 434,
+      "top": 2334,
+      "width": 100,
+      "height": 45,
+      "prefix_match": "no"
+    },
+    {
+      "text": "性别",
+      "left": 437,
+      "top": 2418,
+      "width": 100,
+      "height": 51,
+      "prefix_match": "no"
+    },
+    {
+      "text": "公民身份号码",
+      "left": 429,
+      "top": 2818,
+      "width": 273,
+      "height": 61,
+      "prefix_match": "no"
+    },
+    {
+      "text": "中华人民共和国",
+      "left": 743,
+      "top": 1179,
+      "width": 625,
+      "height": 86,
+      "prefix_match": "no"
+    },
+    {
+      "text": "居民身份证",
+      "left": 693,
+      "top": 1309,
+      "width": 729,
+      "height": 116,
+      "prefix_match": "no"
+    },
+    {
+      "text": "出生",
+      "left": 437,
+      "top": 2513,
+      "width": 95,
+      "height": 35,
+      "prefix_match": "no"
+    },
+    {
+      "text": "地址",
+      "left": 437,
+      "top": 2604,
+      "width": 95,
+      "height": 37,
+      "prefix_match": "no"
+    },
+    {
+      "text": "民族",
+      "left": 695,
+      "top": 2425,
+      "width": 93,
+      "height": 37,
+      "prefix_match": "no"
+    }
+  ],
+  "recognition_areas": [
+    {
+      "field_name": "出生",
+      "show_name": "birth",
+      "left": 411,
+      "top": 2486,
+      "width": 642,
+      "height": 86
+    },
+    {
+      "field_name": "住址",
+      "show_name": "address",
+      "left": 411,
+      "top": 2588,
+      "width": 640,
+      "height": 195
+    },
+    {
+      "field_name": "签发机关",
+      "show_name": "issue_org",
+      "left": 604,
+      "top": 1618,
+      "width": 856,
+      "height": 82
+    },
+    {
+      "field_name": "有效期限",
+      "show_name": "validate_date",
+      "left": 604,
+      "top": 1739,
+      "width": 723,
+      "height": 102
+    },
+    {
+      "field_name": "sex_nation",
+      "left": 410,
+      "top": 2397,
+      "width": 555,
+      "height": 82
+    },
+    {
+      "field_name": "公民身份号码",
+      "show_name": "id_number",
+      "left": 388,
+      "top": 2802,
+      "width": 1089,
+      "height": 102
+    },
+    {
+      "field_name": "姓名",
+      "show_name": "name",
+      "left": 404,
+      "top": 2293,
+      "width": 565,
+      "height": 102
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+protobuf==3.20.1
+chardet==4.0.0
+pdf2image
+paddlex==1.3.7
+paddleocr==2.0.1
+opencv-python==4.2.0.32
+opencv-contrib-python-headless==4.2.0.32
+click>=7.1.1
