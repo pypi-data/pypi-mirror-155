@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.coverage.run]
+command_line = "-m pytest tests/"
+omit = [
+    "__init__.py",
+]
+
+[tool.coverage.report]
+skip_covered = true
+skip_empty = true
+show_missing = true
