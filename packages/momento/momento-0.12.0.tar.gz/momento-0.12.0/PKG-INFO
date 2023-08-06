@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: momento
+Version: 0.12.0
+Summary: SDK for Momento
+Home-page: UNKNOWN
+Author: Momento
+License: Apache License 2.0
+Project-URL: Source, https://github.com/momentohq/client-sdk-python
+Platform: UNKNOWN
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Provides-Extra: mypy
+Provides-Extra: black
+License-File: LICENSE
+
+# Momento SDK
+ Check out our SDK example [here](https://github.com/momentohq/client-sdk-examples/tree/main/python)!
+
