@@ -1,0 +1,2 @@
+[console_scripts]
+cv2cuda = cv2cuda.bin.main:main

@@ -1,0 +1,6 @@
+Metadata-Version: 2.1
+Name: cv2cuda
+Version: 1.0.2
+Requires-Python: >=3.8.12
+Provides-Extra: profile
+Provides-Extra: test
