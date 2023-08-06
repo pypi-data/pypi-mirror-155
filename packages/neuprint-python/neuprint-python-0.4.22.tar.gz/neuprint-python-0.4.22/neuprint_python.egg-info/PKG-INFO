@@ -1,0 +1,45 @@
+Metadata-Version: 2.1
+Name: neuprint-python
+Version: 0.4.22
+Summary: Python client utilties for interacting with the neuPrint connectome analysis service
+Home-page: https://github.com/connectome-neuprint/neuprint-python
+Author: Stuart Berg
+Author-email: bergs@hhmi.janelia.org
+License: UNKNOWN
+Description: [![docs-badge](docs/source/_static/docs-badge.svg)][docs]
+        
+        neuprint-python
+        ===============
+        
+        Python client utilties for interacting with the [neuPrint][neuprint] connectome analysis service.
+        
+        [neuprint]: https://neuprint.janelia.org
+        
+        ## Install
+        
+        If you're using conda, use this command:
+        
+        ```shell
+        conda install -c flyem-forge neuprint-python
+        ```
+        
+        Otherwise, use pip:
+        
+        ```shell
+        pip install neuprint-python
+        ```
+        
+        ## Getting started
+        
+        See the [Quickstart section][quickstart] in the [documentation][docs]
+        
+        [docs]: http://connectome-neuprint.github.io/neuprint-python/docs/
+        [quickstart]: http://connectome-neuprint.github.io/neuprint-python/docs/quickstart.html
+        
+        
+Keywords: neuprint-python
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Description-Content-Type: text/markdown
