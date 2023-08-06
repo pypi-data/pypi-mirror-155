@@ -1,0 +1,22 @@
+{
+    "HEADER_PROTOCOL": [
+        {
+            "H": ["header"]
+        },
+        {
+            "o": ["arg", "subtask_out"]
+        },
+        {
+            "e": ["arg", "subtask_err"]
+        }
+    ],
+    "MESSAGE_PROTOCOL": ["O", "E"],
+    "DETAILLIST_PROTOCOL": [
+        {
+            "I": ["key", "name"]
+        },
+        {
+            "U": ["key", "status", "endTime", "name", "arg"]
+        }
+    ]
+}
