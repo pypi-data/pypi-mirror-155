@@ -1,0 +1,4 @@
+[console_scripts]
+pyliverlesionseg_predict = pyliverlesionseg.predict_liver_lesion_seg:main
+pyliverlesionseg_train = pyliverlesionseg.train_liver_lesion_seg:main
+
