@@ -1,0 +1,35 @@
+Metadata-Version: 2.1
+Name: argsense
+Version: 0.1.2
+Summary: New command line interface based on Python Rich library.
+Home-page: https://github.com/likianta/argsense-cli
+License: MIT
+Author: Likianta
+Author-email: likianta@foxmail.com
+Requires-Python: >=3.8,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: rich
+Description-Content-Type: text/markdown
+
+# Argsense CLI
+
+**argsense** is a command line interface made with Python.
+
+![](.assets/eg01/20220615143658.jpg)
+
+![](.assets/eg01/20220615143730.jpg)
+
+![](.assets/eg01/20220615143751.jpg)
+
+![](.assets/eg01/20220615143817.jpg)
+
+## Usage
+
+> Currently this section is under construction.
+
+> Please check the folder ./examples for your reference.
+
