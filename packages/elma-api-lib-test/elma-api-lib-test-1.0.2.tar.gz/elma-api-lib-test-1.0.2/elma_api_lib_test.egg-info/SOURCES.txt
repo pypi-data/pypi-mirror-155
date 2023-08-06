@@ -1,0 +1,15 @@
+setup.py
+elma/__init__.py
+elma/elma_api_web_client.py
+elma/exceptions.py
+elma/models/__init__.py
+elma/models/auth_result.py
+elma/models/data/__init__.py
+elma/models/data/data.py
+elma/models/data/data_implementations.py
+elma/models/data/data_serializer.py
+elma/models/data/dataitem.py
+elma_api_lib_test.egg-info/PKG-INFO
+elma_api_lib_test.egg-info/SOURCES.txt
+elma_api_lib_test.egg-info/dependency_links.txt
+elma_api_lib_test.egg-info/top_level.txt
