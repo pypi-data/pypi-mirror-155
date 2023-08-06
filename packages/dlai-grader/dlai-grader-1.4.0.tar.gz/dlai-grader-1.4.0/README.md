@@ -1,0 +1,98 @@
+# grader
+Automatic grading for DLAI courses. Designed to be compatible with Coursera's grading requirements.
+
+# Installation
+
+You use pip to install it!
+```bash
+pip install dlai_grader
+```
+
+
+# How to use it
+
+## Initialize a grader
+
+To start building your grader `cd` into the directory where you will be working and use the following command:
+
+```bash
+dlai_grader --init
+```
+
+This will ask you for:
+- Name of the course (abbreviation is recommended)
+- Number of the course
+- Number of the week
+- Version of the grader (defaults to 1 but can be 2 or any other number)
+
+This will generate a file system tree like this:
+
+```
+.
+└── grader (directory you invoked the command from)
+    ├── data/               -> To store datasets (csv, TF Datasets, etc).
+    ├── learner/            -> The learner facing version will be generated here.
+    ├── solution/           -> Place solution.ipynb here
+    ├── submission/         -> Necessary only in debug mode (no need to place anything here).
+    ├── mount/              -> This mocks the bind mount that coursera will attach to the container. Should contain submission.ipynb or other file required for grading.
+    ├── .conf               -> Configuration variables.
+    ├── Dockerfile          -> Uses frolvlad/alpine-miniconda3:python3.7 as base image.
+    ├── Makefile            -> Useful commands.
+    ├── requirements.txt    -> Python dependencies.
+    ├── entry.py            -> Entrypoint of the grader.
+    └── grader.py           -> Grading logic.
+```
+
+## Placing the solution and submission
+
+Now that you have the layout of the grader you will need to place the solution of the assignment within the `solution/` directory. **This file must be named `solution.ipynb`**.
+
+A good starting point is to use the solution to create the first iteration of the grader. To do this place the solution within the `mount/` directory and **rename it to `submission.ipynb`**. You can use the `make submit-solution` command to do this.
+
+Your filesystem tree should look like this:
+
+```
+.
+└── grader
+    ├── ... 
+    ├── solution/
+    │    └── solution.ipynb
+    ├── mount/ 
+    │    └── submission.ipynb
+    └── ...
+```
+
+Note that the grader can be used to grade files other than Jupyter notebooks. If this is the case you can leave the `solution/` directory empty and place the file to grade within `mount/`. This file can be anything (`.h5, .tar.gz, .zip, etc`) the only requirement is that it should match the name of the file to submit in the coursera programming item.
+
+# Add versioning to the notebook
+
+## Why is this useful?
+
+We have seen many learners facing issues when submitting their assignments because coursera does not show them the latest version. To address this, a good alternative it to always check that the submission of the learner is up to date and if not, tell them how they can upgrade to the latest version.
+
+To ensure that a submission is compatible with a particular version of the grader the versioning feature has been created.
+
+Within the `.conf` file you will find the current version of the grader under the variable `GRADER_VERSION`.
+
+To compare against this version the submission notebook must include a variable called `grader_version` in its metadata. To add this variable to the `submission.ipynb` file you can use the `make versioning` command (this is just a wrapper of the `dlai_grader --versioning` command). This will add the variable matching the same version as the one found in the `.conf` file.
+
+
+## Upgrading the grader and notebook version
+
+After a refactor with breaking changes to the grader it is a good idea to upgrade the version to a newer one. You can do this be using the `make upgrade` command. This will add 1 to the current version in the `.conf` file and in the notebook.
+
+# Tagging graded cells
+
+You might decide to filter out cells created by learners (or other ones such as the ones that train models). If you take this approach you can add a tag to each cell's metadata and then filter out the ones that don't have this tag .
+
+If you wish to add the `graded` tag to each cell in the `submission.ipynb` notebook you can use the `make tag` command. 
+
+# Important note for make commands
+
+Note that the `make tag`, `make upgrade` and `make versioning` commands change only the `mount/submission.ipynb` file. 
+
+
+# Adding Python dependencies
+
+The next step is to include all the necessary Python dependencies. For this add them to the `requirements.txt` file. By default only `dlai_grader` is included.
+
