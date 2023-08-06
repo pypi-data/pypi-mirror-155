@@ -1,0 +1,14 @@
+pbr!=2.1.0,>=2.0.0
+Babel!=2.4.0,>=2.3.4
+pbr!=2.1.0,>=2.0.0
+passlib>=1.7.0
+psutil>=3.2.2
+python-ironicclient!=2.5.2,!=2.7.1,!=3.0.0,>=2.3.0
+python-novaclient==17.4.0
+python-openstackclient>=5.2.0
+simplejson>=3.5.1
+six>=1.10.0
+osc-lib>=1.8.0
+oslo.utils>=3.33.0
+websocket-client>=0.44.0
+ansible-runner>=1.4.4

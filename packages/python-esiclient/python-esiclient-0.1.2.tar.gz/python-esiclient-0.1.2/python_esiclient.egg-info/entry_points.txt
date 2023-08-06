@@ -1,0 +1,15 @@
+[openstack.cli.extension]
+esiclient = esiclient.plugin
+
+[openstack.esiclient.v1]
+esi_mdc_baremetal_node_list = esiclient.v1.mdc.mdc_node_baremetal:MDCBaremetalNodeList
+esi_node_network_attach = esiclient.v1.node_network:Attach
+esi_node_network_detach = esiclient.v1.node_network:Detach
+esi_node_network_list = esiclient.v1.node_network:List
+esi_node_volume_attach = esiclient.v1.node_volume:Attach
+esi_trunk_add_network = esiclient.v1.trunk:AddNetwork
+esi_trunk_create = esiclient.v1.trunk:Create
+esi_trunk_delete = esiclient.v1.trunk:Delete
+esi_trunk_list = esiclient.v1.trunk:List
+esi_trunk_remove_network = esiclient.v1.trunk:RemoveNetwork
+

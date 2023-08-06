@@ -1,0 +1,52 @@
+CHANGES
+=======
+
+0.1.2
+-----
+
+* Update author name
+
+0.1.1
+-----
+
+* Update email address
+
+0.1.0
+-----
+
+* Changing setup.py in order to fix rendering issue of README.md on PyPI
+* Make esi node network list more efficient
+* Adding Apache License and Manifest.in file
+* wait until target\_provision\_state is None
+* Add pull\_request to tests.yml
+* Corrected location of CI action
+* Update CI to use GitHub Actions
+* fix minor bugs in volume tests
+* bug fix functional tests
+* update node\_network tests
+* Minor mdc cleanup
+* Set auth\_required to False for mdc command
+* Adds Node List For Multisite
+* Modify port creation to check if available port can be used
+* Remove node-network-attach node state restriction
+* Console functional tests
+* Add positive provisioning tests
+* Add negative node provisioning tests - metalsmith node deploy test - esi node volume attach tests
+* Add additional functional tests
+* Functional Tests
+* Delete existing volume connectors to prevent a conflict
+* Set device\_owner to baremetal:none when creating a port
+* Add node-volume-attach command
+* Add CLI documentation
+* Bugfix on running client outside repo
+* Add trunk add/remove network commands
+* run tests in travis-ci
+* Get rid of unused variables
+* This patch enables travis ci and runs some code linting tools
+* Add CLI commands for managing trunk ports
+* Allow attaching network to specific mac address on node
+* initial doc
+* Add support for viewing trunk port information
+* Allow attaching/detaching node to specified port
+* Initial code commit
+* first commit
