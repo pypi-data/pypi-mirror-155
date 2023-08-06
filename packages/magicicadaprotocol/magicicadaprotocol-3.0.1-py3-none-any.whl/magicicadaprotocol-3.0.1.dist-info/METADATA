@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: magicicadaprotocol
+Version: 3.0.1
+Summary: The protocol implementation for the Magicicada filesync server (open source fork of the Ubuntu One filesync).
+License-File: LICENSE
+License-File: LICENSE.OpenSSL
+License-File: COPYING
+Requires-Dist: pyOpenSSL
+Requires-Dist: protobuf
+Requires-Dist: service-identity
+Requires-Dist: twisted
+Requires-Dist: zope.interface
+
