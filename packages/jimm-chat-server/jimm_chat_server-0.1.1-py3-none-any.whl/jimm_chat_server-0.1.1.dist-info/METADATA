@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: jimm-chat-server
+Version: 0.1.1
+Summary: Jimm Chat Server
+Author: Vyacheslav Fedorychev
+Author-email: nezl0i@mail.ru
+Requires-Dist: PyQt5
+Requires-Dist: sqlalchemy
+Requires-Dist: pycryptodome
+Requires-Dist: pycryptodomex
+
