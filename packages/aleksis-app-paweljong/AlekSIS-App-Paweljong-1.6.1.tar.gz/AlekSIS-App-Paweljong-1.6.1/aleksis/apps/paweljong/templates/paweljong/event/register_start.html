@@ -1,0 +1,123 @@
+{% extends "core/base.html" %}
+{% load i18n static %}
+
+{% block browser_title %}{% blocktrans %}Register for{% endblocktrans %} {{ event.display_name }}{% endblock %}
+
+{% block extra_head %}
+  <link rel="stylesheet" href="{% static 'css/paweljong.css' %}"/>
+{% endblock %}
+
+{% block content %}
+
+ <div class="card">
+   <div class="card-content">
+     <div class="row">
+       <div class="col s12">
+         <span class="card-title">
+          {{ event.display_name }}
+         </span>
+         <p>
+           {% blocktrans %}
+           Welcome to the registration for this event! Please make sure to fill in
+           the registration yourself, as the child who wants to participate.
+           You should fill in the registration together with a parent (or other legal
+           guardian).
+           {% endblocktrans %}
+         </p>
+         <p>
+           {% blocktrans %}
+           We ask parents to not fill in the registration on behalf of their child.
+           {% endblocktrans %}
+         </p>
+         <p>
+           {% blocktrans %}
+           Every participant needs a personal e-mail address. This address must be one
+           that you, the participating child, check and read yourself, not one owned by your
+           parents. Of course, we will always send important information to your parents as well.
+           {% endblocktrans %}
+         </p>
+         <p>
+           {% blocktrans %}
+           If you do not have a personal e-mail address yet, and do not want or cannot register
+           one with one of the "big" providers (keep in mind that Google, Outlook, etc. are
+           allowed from 16 years only, and often collect and analyse your private mail), you can
+           register an e-mail address with us.
+           {% endblocktrans %}
+         </p>
+         <p>
+           {% blocktrans %}
+           If you already have a user account with Teckids, do not register a new one. Login
+           with your existing username and password. If you have forgotten your password, please
+           send us an e-mail (pelase do this yourself, with the help of your parents, if needed).
+           {% endblocktrans %}
+         </p>
+       </div>
+     </div>
+   </div>
+   <div class="card-tabs">
+     <ul class="tabs tabs-fixed-width">
+       {% if can_register %}
+       <li class="tab">
+         <a href="#already_registered">
+           {% trans "I already have an account" %}
+         </a>
+       </li>
+       <li class="tab">
+         <a href="#without_email">
+           {% trans "I have a personal email address" %}
+         </a>
+       </li>
+       <li class="tab">
+         <a href="#with_email">
+            {% trans "I don't have a personal email address" %}
+         </a>
+       </li>
+       {% else %}
+       <li class="tab">
+         <a href="#not_possible">{% trans "Not available" %}</a>
+       </li>
+     {% endif %}
+   </div>
+   <div class="card-content grey lighten-4">
+     {% if can_register %}
+     <div id="already_registered">
+       <p>
+         {% blocktrans %}
+         If you already have a Teckids account, please login here. If you forgot your password,
+         or have problems logging in, please send us an e-mail.
+         {% endblocktrans %}
+       </p>
+       <a href="{% url "login" %}?next=/app/paweljong/event/{{ event.slug }}/register">{% trans "Login" %}</a>
+     </div>
+     <div id="with_email">
+       <p>
+         {% blocktrans %}
+         You can now choose a personal e-mail address hosted on our servers.
+         For information about receiving mails, see <a
+         href="https://leopard.institute/pages/services.html">
+         https://leopard.institute/pages/services.html</a>
+         {% endblocktrans %}
+       </p>
+       <a href="{% url "set_email_needed" event.slug %}">{% trans "Register now" %}</a>
+     </div>
+     <div id="without_email">
+       <p>
+         {% blocktrans %}
+         You will be asked for your existing, personal e-mail address. Please remember
+         that you should not use an address owned by your parents. If you do not have
+         a personal e-mail address, please choose the respective option instead!
+         {% endblocktrans %}
+       </p>
+       <a href="{% url "register_event_by_slug" event.slug %}">{% trans "Register now" %}</a>
+     </div>
+     {% else %}
+     <div id="not_possible">
+       <p>
+         {% blocktrans %}
+         Registration is no longer possible.
+         {% endblocktrans %}
+     </div>
+     {% endif %}
+   </div>
+ </div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "core/base.html" %}
+{% load i18n %}
+{% load render_table from django_tables2 %}
+
+{% block page_title %}{% blocktrans %}Events{% endblocktrans %}{% endblock %}
+{% block browser_title %}{% blocktrans %}Events{% endblocktrans %}{% endblock %}
+
+{% block content %}
+ <h5>
+  {% blocktrans %}Upcoming events{% endblocktrans %}
+ </h5>
+
+ {% render_table events_table %}
+
+ {% if participated_events_table %}
+   <h5>
+    {% blocktrans %}Events you've taken part{% endblocktrans %}
+   </h5>
+
+   {% render_table participated_events_table %}
+ {% endif %}
+
+{% endblock %}

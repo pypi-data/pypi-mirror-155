@@ -1,0 +1,71 @@
+{% extends "core/base.html" %}
+{% load i18n static %}
+
+{% block browser_title %}{% blocktrans %}Register{% endblocktrans %}{% endblock %}
+
+{% block content %}
+
+ <div class="card">
+   <div class="card-content">
+     <div class="row">
+       <div class="col s12">
+         <span class="card-title">
+          {% trans "Registration" %}
+         </span>
+         <p>
+           {% blocktrans %}
+           Every person needs a personal e-mail address. This address must be one
+           that you, the participating child, check and read yourself, not one owned by your
+           parents.
+           {% endblocktrans %}
+         </p>
+         <p>
+           {% blocktrans %}
+           If you do not have a personal e-mail address yet, and do not want or cannot register
+           one with one of the "big" providers (keep in mind that Google, Outlook, etc. are
+           allowed from 16 years only, and often collect and analyse your private mail), you can
+           register an e-mail address with us.
+           {% endblocktrans %}
+         </p>
+       </div>
+     </div>
+   </div>
+   <div class="card-tabs">
+     <ul class="tabs tabs-fixed-width">
+       <li class="tab">
+         <a href="#without_email">
+           {% trans "I have a personal email address" %}
+         </a>
+       </li>
+       <li class="tab">
+         <a href="#with_email">
+            {% trans "I don't have a personal email address" %}
+         </a>
+       </li>
+     </ul>
+   </div>
+   <div class="card-content">
+     <div id="with_email">
+       <p>
+         {% blocktrans %}
+         You can now choose a personal e-mail address hosted on our servers.
+         For information about receiving mails, see <a
+         href="https://leopard.institute/pages/services.html">
+         https://leopard.institute/pages/services.html</a>
+         {% endblocktrans %}
+       </p>
+       <a href="{% url "set_email_needed_no_slug" %}">{% trans "Register now" %}</a>
+     </div>
+     <div id="without_email">
+       <p>
+         {% blocktrans %}
+         You will be asked for your existing, personal e-mail address. Please remember
+         that you should not use an address owned by your parents. If you do not have
+         a personal e-mail address, please choose the respective option instead!
+         {% endblocktrans %}
+       </p>
+       <a href="{% url "register_account" %}">{% trans "Register now" %}</a>
+     </div>
+   </div>
+ </div>
+{% endblock %}

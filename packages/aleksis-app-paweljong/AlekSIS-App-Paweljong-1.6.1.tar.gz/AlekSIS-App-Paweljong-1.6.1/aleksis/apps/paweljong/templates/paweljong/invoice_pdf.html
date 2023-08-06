@@ -1,0 +1,257 @@
+{# -*- engine:django -*- #}
+
+{% load i18n static any_js sass_tags %}
+{% load render_table from django_tables2 %}
+
+{% get_current_language as LANGUAGE_CODE %}
+
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+  <base href="{{ BASE_URL }}" />
+
+  {% include "core/partials/meta.html" %}
+
+  <title>
+    {% blocktrans %}Invoice{% endblocktrans %} – {{ SITE_PREFERENCES.general__title }}
+  </title>
+
+  {% include_css "material-design-icons" %}
+  {% include_css "Roboto100" %}
+  {% include_css "Roboto300" %}
+  {% include_css "Roboto400" %}
+  {% include_css "Roboto500" %}
+  {% include_css "Roboto700" %}
+  {% include_css "Roboto900" %}
+  {% include_css "paper-css" %}
+  <link rel="stylesheet" href="{% sass_src 'public/style.scss' %}"/>
+  <link rel="stylesheet" href="{% static "print.css" %}"/>
+
+  <style>
+    #logo {
+        float: right;
+        height: calc(44.7mm/2);
+    }
+    #address-window {
+        width: 85mm;
+        height: 40mm;
+        /*outline: solid red;*/
+        position: absolute;
+        top: 44.7mm;
+    }
+    #sender {
+        font-size: 10pt;
+        height: 12pt;
+        text-decoration: underline black solid;
+        font-style: normal;
+    }
+    #recipient p {
+        line-height: 1.03;
+        margin: 0;
+        font-style: normal;
+        font-size: 11pt;
+    }
+    #side-information {
+        position: absolute;
+        top: 44.7mm;
+        left: 125mm;
+        width: 75mm;
+    }
+    dl {
+        display: grid;
+        grid-template-columns: repeat(2, min-content);
+        gap: 4px;
+        align-items: center;
+        margin: 0;
+    }
+    dl div {
+        /*margin: 0.4pt 0 0 0;*/
+    }
+    dt, dd {
+        margin: 0;
+        font-style: normal;
+        font-size: 11pt;
+        line-height: 1.03;
+    }
+    body.A4 .sheet {
+        position: relative;
+        font-size: 11pt;
+        padding: 1cm 2cm;
+        text-align: justify;
+    }
+    i.material-icons {
+        font-size: 11pt;
+        vertical-align: text-top;
+    }
+    article {
+        margin-top: calc(105mm - 1cm);
+    }
+    #date {
+        display: block;
+        text-align: right;
+    }
+    h1 {
+        font-size: 12pt;
+        margin: auto;
+        font-weight: 500;
+    }
+    .page-mark {
+        width: 2.5mm;
+        border-top: solid 1pt black;
+        position: absolute;
+        left: 2.5mm;
+    }
+    .page-mark-1 {
+        top: calc(105mm - .5pt);
+    }
+    .page-mark-2 {
+        top: calc(50% - .5pt);
+        width: 5mm;
+    }
+
+    .page-mark-3 {
+        top: calc(210mm - 1pt);
+    }
+    footer {
+        width: calc(100% - 4cm);
+        display: flex;
+        font-size: 9pt;
+        text-align: left;
+        position: absolute;
+        bottom: 1cm;
+    }
+    .text {
+        flex-grow: 999;
+    }
+    .text p {
+        margin: 0;
+    }
+    td:not(.hero-col), th {
+        white-space: nowrap;
+    }
+    td.hero-col {
+        width: 100%;
+    }
+    td, th {
+        padding: 0 .5cm;
+    }
+    table {
+        margin-top: 1cm;
+    }
+  </style>
+<head>
+
+<body class="A4 print-body">
+  <main class="sheet">
+    <div class="page-mark page-mark-1" aria-hidden="aria-hidden"></div>
+    <div class="page-mark page-mark-2" aria-hidden="aria-hidden"></div>
+    <div class="page-mark page-mark-3" aria-hidden="aria-hidden"></div>
+    <img src="https://teckids.org/images/logo.png" alt="Teckids Logo" id="logo"/>
+    <div id="address-window">
+        <address id="sender">Teckids e.V. · Kennedyallee 18 · 53175 Bonn</address>
+        <address id="recipient">
+            <p>&nbsp;</p>
+            <p>{{ invoice.billing_first_name }} {{ invoice.billing_last_name }}</p>
+            <p>{{ invoice.billing_address_1 }}</p>
+            <p>{{ invoice.billing_address_2 }}</p>
+            <p>{{ invoice.billing_postcode }} {{ invoice.billing_city }}</p>
+        </address>
+    </div>
+    <address id="side-information">
+        <dl>
+            <dt>
+                <i class="material-icons">mail</i><br/>
+                &nbsp;<br/>
+                &nbsp;
+            </dt>
+            <dd>
+                Teckids e.V.<br/>
+                Kennedyallee 18<br/>
+                53175 Bonn
+            </dd>
+            <dt>
+                <i class="material-icons small">phone</i>
+            </dt>
+            <dd>
+                <a href="tel:+4922892934160">+49 228 9293416–0</a>
+            </dd>
+            <dt>
+                <i class="material-icons">fax</i>
+            </dt>
+            <dd>
+                +49 228 9293416–9
+            </dd>
+            <dt>
+                <i class="material-icons">alternate_email</i>
+            </dt>
+            <dd>
+                <a href="mailto:verein@teckids.org">verein@teckids.org</a>
+            </dd>
+            <dt>
+                <i class="material-icons">info</i>
+            </dt>
+            <dd>
+                <a href="https://www.teckids.org/">https://www.teckids.org/</a>
+            </dd>
+        </dl>
+    </address>
+    <article>
+        <date id="date">{{ invoice.created.date }}</date>
+        <h1>{% trans "Invoice" %} {{ invoice.number }}</h1>
+
+        {% render_table invoice.purchased_items_table %}
+        {% render_table invoice.totals_table %}
+
+        {% if invoice.variant == "pledge" %}
+        <p>
+            {% blocktrans %}
+            Please make the payment with a member of the board or by bank transfer to the following
+            account:
+            {% endblocktrans %}
+        </p>
+        <table>
+            <tr>
+                <td>Bank:</td>
+                <td>Sparkasse KölnBonn</td>
+            </tr>
+            <tr>
+                <td>IBAN:</td>
+                <td>DE31 3705 0198 1933 0485 46</td>
+            </tr>
+            <tr>
+                <td>BIC:</td>
+                <td>COLSDE33XXX</td>
+            </tr>
+        </table>
+	{% else %}
+        <p>
+            {% blocktrans %}
+            The payment will be made via:
+            {% endblocktrans %}
+            {{ invoice.get_variant_name }}
+        </p>
+        {% endif %}
+	{% if invoice.due_date %}
+	<p>
+	    {% blocktrans %}
+	    The payment is due on
+	    {% endblocktrans %}
+	    {{ invoice.due_date }}
+	</p>
+	{% endif %}
+    </article>
+    <footer>
+        <div class="text"><p>Vereinsregister Amtsgericht Bonn · VR 9846</p>
+            <p>Vorstand: Dominik George, Tom Teichler, Benedict Suska</p>
+            <p>Stadtsparkasse KölnBonn · IBAN: DE31 3705 0198 1933 0485 46 · BIC: COLSDE33XXX</p>
+            <p>Anerkannt als gemeinnützig beim Finanzamt Bonn-Außenstadt</p>
+            <p>Steuernummer 206/5879/1026 · USt-ID: DE313359560</p>
+        </div>
+        <!--
+        <div class="supporters">
+            <div>Unterstützt durch:<img src=""/></div>
+        </div>
+        -->
+    </footer>
+  </main>
+</body>

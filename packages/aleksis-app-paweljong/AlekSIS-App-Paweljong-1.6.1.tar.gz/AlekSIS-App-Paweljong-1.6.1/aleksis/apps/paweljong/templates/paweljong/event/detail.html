@@ -1,0 +1,94 @@
+{# -*- engine:django -*- #}
+
+{% extends "core/base.html" %}
+
+{% load i18n static rules material_form coerce html_helpers %}
+{% load render_table from django_tables2 %}
+
+{% block browser_title %}{{ event }}{% endblock %}
+
+{% block extra_head %}
+  <link rel="stylesheet" href="{% static 'css/paweljong.css' %}"/>
+{% endblock %}
+
+{% block content %}
+  <h4>{{ event }}</h4>
+
+  {% has_perm 'paweljong.manage_event' user event as can_manage_event %}
+
+  {% if can_manage_event %}
+    <p>
+      {% if can_manage_event %}
+        <a href="{% url 'edit_event_by_slug' event.slug %}" class="btn waves-effect waves-light">
+          <i class="material-icons left iconify" data-icon="mdi:edit"></i>
+          {% trans "Edit" %}
+        </a>
+      {% endif %}
+
+    </p>
+  {% endif %}
+
+    <div class="card">
+      <div class="card-content">
+        <p>{{ event.description }}</p>
+        <table id="event-detail-table">
+          <tr>
+            <td><i class="material-icons small">event</i></td>
+            <td>{{ event.date_event }}</td>
+            <td><i class="material-icons small">location_on</i></td>
+            <td>{{ event.place }}</td>
+          </tr>
+          <tr>
+            <td><i class="material-icons small">edit_calendar</i></td>
+            <td colspan="2">{% trans "Registration open until" %}:</td>
+            <td>{{ event.date_registration }}</td>
+          </tr>
+          <tr>
+            <td><i class="material-icons small">money</i></td>
+            <td colspan="2">{% trans "Participation fee (all inclusive)" %}</td>
+            <td>{{ event.cost }}</td>
+          </tr>
+          <tr>
+            <td><i class="material-icons small">group</i></td>
+            <td colspan="2">{{ event.linked_group.members.count }}</td>
+            <td>{% trans "of" %} {{ event.max_participants }}</td>
+          </tr>
+          <tr>
+            <td><i class="material-icons iconify" data-icon="vscode-icons:file-type-light-codeowners"></i></td>
+            <td colspan="2">{% trans "Owners" %}</td>
+            <td>
+            {% for owner in event.owners_persons.all %}
+              <div class="chip">
+                <img src="{{ owner.avatar_url }}" alt="{{ owner }}" id="owners-chip">
+                <a href="{{ owner.get_absolute_url }}">{{ owner }}</a>
+              </div>
+            {% endfor %}
+            </td>
+          </tr>
+          <tr>
+            <td>{% trans "Description" %}</td>
+            <td colspan="3">
+              {{ event.information|add_class_to_el:"ul, browser-default"|safe }}
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+   </div>
+  </div>
+
+  <div class="row">
+    <div class="col s3">
+      <h5>{% blocktrans %}Additional fields{% endblocktrans %}</h5>
+      {% render_table additional_fields_table %}
+    </div>
+    <div class="col s9">
+      <h5>{% blocktrans %}Child groups{% endblocktrans%}</h5>
+      {% render_table child_groups_table %}
+    </div>
+  </div>
+
+  <h5>{% blocktrans %}Registrations{% endblocktrans %}</h5>
+  {% render_table registrations_table %}
+
+{% endblock %}

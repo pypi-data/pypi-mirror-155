@@ -1,0 +1,281 @@
+{# -*- engine:django -*- #}
+
+{% extends "core/base.html" %}
+
+{% load i18n static rules material_form %}
+{% load render_table from django_tables2 %}
+
+{% block browser_title %}Event registration {{ registration }}{% endblock %}
+
+{% block content %}
+  <h4>{{ registration }} </h4>
+
+  {% has_perm 'paweljong.manage_registration' user registration as can_manage_registration %}
+  {% has_perm 'paweljong.delete_registration' user registration as can_delete_registration %}
+  {% has_perm 'paweljong.send_notification_mail' user registration as can_send_notification %}
+  {% has_perm 'paweljong.can_retract_registration_rule' user registration as can_retract_registration %}
+  {% has_perm 'tezor.view_invoice_rule' user registration as can_view_invoice %}
+  {% has_perm 'core.edit_person_rule' user person as can_change_person %}
+
+  {% if can_manage_registration or can_manage_registration_preferences or can_delete_registration or can_send_notification or can_retract_registration %}
+    <p>
+      {% if can_manage_registration %}
+        <a href="{% url 'edit_registration_by_pk' registration.pk %}" class="btn waves-effect waves-light">
+          <i class="material-icons left iconify" data-icon="mdi:edit"></i>
+          {% trans "Edit" %}
+        </a>
+      {% endif %}
+      {% if can_retract_registration %}
+        <a href="{% url 'retract_registration_by_pk' registration.pk %}" class="btn waves-effect waves-light">
+          <i class="material-icons left iconify" data-icon="mdi:account-cancel"></i>
+          {% trans "Retract" %}
+        </a>
+      {% endif %}
+
+      {% if can_delete_registration %}
+        <a href="{% url 'delete_registration_by_pk' registration.pk %}" class="btn waves-effect waves-light red">
+          <i class="material-icons left iconify" data-icon="mdi:delete"></i>
+          {% trans "Delete" %}
+        </a>
+      {% endif %}
+
+      {% if can_send_notification %}
+        <a href="{% url 'registration_notification_by_pk' registration.pk %}" class="btn waves-effect waves-light">
+          <i class="material-icons left iconify" data-icon="mdi:email"></i>
+          {% trans "Notification" %}
+        </a>
+      {% endif %}
+
+      {% if can_view_invoice %}
+        <a href="{% url 'invoice_by_token' registration.get_invoice.token %}" class="btn waves-effect waves-light">
+          <i class="material-icons left iconify" data-icon="mdi:cash"></i>
+          {% trans "Invoice" %}
+        </a>
+      {% endif %}
+
+      {% if can_change_person %}
+        <a href="{% url 'edit_person_by_id' registration.person.id %}" class="btn waves-effect waves-light">
+          <i class="material-icons left iconify" data-icon="mdi:account-edit"></i>
+          {% trans "Edit person" %}
+        </a>
+      {% endif %}
+
+
+    </p>
+  {% endif %}
+
+  <h5>{% blocktrans %}Contact details{% endblocktrans %}</h5>
+  <div class="row">
+    <div class="col s12 m4">
+      {% if registration.person.photo %}
+        <img class="person-img" src="{{ registration.person.photo.url }}"
+             alt="{{ registration.person.first_name }} {{ registration.person.last_name }}"/>
+      {% else %}
+        <img class="person-img" src="{% static 'img/fallback.png' %}"
+             alt="{{ registration.person.first_name }} {{ registration.person.last_name }}"/>
+      {% endif %}
+    </div>
+    <div class="col s12 m8">
+      <table class="responsive-table highlight">
+        <tr>
+          <td rowspan="6">
+          </td>
+          <td>
+            <i class="material-icons small">person</i>
+          </td>
+          <td>{{ registration.person.first_name }}</td>
+          <td>{{ registration.person.additional_name }}</td>
+          <td>{{ registration.person.last_name }}</td>
+        </tr>
+        <tr>
+          <td>
+            <i class="material-icons small">face</i>
+          </td>
+          <td colspan="3">{{ registration.person.get_sex_display }}</td>
+        </tr>
+        {% has_perm 'core.view_address' user registration.person as can_view_address %}
+        {% if can_view_address %}
+          <tr>
+            <td>
+              <i class="material-icons small">home</i>
+            </td>
+            <td colspan="2">{{ registration.person.street }} {{ registration.person.housenumber }}</td>
+            <td colspan="2">{{ registration.person.postal_code }} {{ registration.person.place }}</td>
+          </tr>
+        {% endif %}
+        <tr>
+          <td>
+            <i class="material-icons small">phone</i>
+          </td>
+          <td>{{ registration.person.phone_number }}</td>
+          <td>{{ registration.person.mobile_number }}</td>
+        </tr>
+        <tr>
+          <td>
+            <i class="material-icons small">email</i>
+          </td>
+          <td colspan="3">{{ registration.person.email }}</td>
+        </tr>
+        <tr>
+          <td>
+            <i class="material-icons small">cake</i>
+          </td>
+          <td colspan="3">{{ registration.person.date_of_birth|date }}</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <i class="material-icons small">school</i>
+          </td>
+          <td>{{ registration.school_class }}</td>
+          <td>{{ registration.school }}</td>
+          <td>{{ registration.school_place }}</td>
+        </tr>
+      </table>
+    </div>
+    {% if registration.retracted %}
+      <div class="col s12 m12">
+        <h5>{% trans "Retraction information" %}</h5>
+        <table>
+          <tr>
+            <td>
+              <i class="material-icons iconify" data-icon="mdi:account-cancel"></i>
+            </td>
+            <td>
+              {% trans "True" %}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <i class="material-icons iconify" data-icon="fluent:calendar-cancel-24-filled"></i>
+            </td>
+            <td>
+              {{ registration.retracted_date }}
+            </td>
+          </tr>
+        </table>
+      </div>
+    {% endif %}
+    <div class="col s12 m12">
+      <h5>{% trans "Registration information" %}</h5>
+      <table>
+        <tr>
+          <td>
+            <i class="material-icons small">local_activity</a>
+          </td>
+          <td colspan="3"><a href="{% url 'edit_event_by_slug' registration.event.slug %}">{{ registration.event }}</a></td>
+        </tr>
+        <tr>
+          <td>
+            <i class="material-icons small">redeem</i>
+          </td>
+          <td colspan="3">{{ registration.donation }}€</td>
+        </tr>
+        {% if registration.extended_data %}
+          {% for field, value in registration.extended_data.items %}
+            <tr>
+              <td>
+                {{ field }}
+              </td>
+              <td>
+                {{ value }}
+              </td>
+            </tr>
+          {% endfor %}
+        {% endif %}
+        {% if registration.accepted_terms %}
+          {% for term in registration.accepted_terms.all %}
+            <tr>
+              <td>
+                {{ term }}
+              </td>
+              <td>
+                {% trans "Accepted" %}
+              </td>
+            </tr>
+          {% endfor %}
+        {% endif %}
+        <tr>
+          <tr>
+            <td>
+              <i class="material-icons small">medical_services</i>
+            </td>
+            <td>
+              {{ registration.medical_information }}
+            </td>
+          </tr>
+        </tr>
+        <tr>
+          <tr>
+            <td>
+              <i class="material-icons small">question_answer</i>
+            </td>
+            <td>
+              {{ registration.comment }}
+            </td>
+          </tr>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  {% if registration.person.guardians.all %}
+  <h5>{% trans "Guardians / Parents "%}</h5>
+  {% for person in registration.person.guardians.all %}
+    <div class="col s12 m8">
+      <table class="responsive-table highlight">
+        <tr>
+          <td rowspan="6">
+
+          </td>
+          <td>
+            <i class="material-icons small">person</i>
+          </td>
+          <td>{{ person.first_name }}</td>
+          <td>{{ person.additional_name }}</td>
+          <td>{{ person.last_name }}</td>
+        </tr>
+        <tr>
+          <td>
+            <i class="material-icons small">face</i>
+          </td>
+          <td colspan="3">{{ person.get_sex_display }}</td>
+        </tr>
+        {% has_perm 'core.view_address' user person as can_view_address %}
+        {% if can_view_address %}
+          <tr>
+            <td>
+              <i class="material-icons small">home</i>
+            </td>
+            <td colspan="2">{{ person.street }} {{ person.housenumber }}</td>
+            <td colspan="2">{{ person.postal_code }} {{ person.place }}</td>
+          </tr>
+        {% endif %}
+        <tr>
+          <td>
+            <i class="material-icons small">phone</i>
+          </td>
+          <td>{{ person.phone_number }}</td>
+          <td>{{ person.mobile_number }}</td>
+        </tr>
+        <tr>
+          <td>
+            <i class="material-icons small">email</i>
+          </td>
+          <td colspan="3">{{ person.email }}</td>
+        </tr>
+        {% has_perm 'core.view_personal_details' user person as can_view_personal_details %}
+        {% if can_view_personal_details %}
+          <tr>
+            <td>
+              <i class="material-icons small">cake</i>
+            </td>
+            <td colspan="3">{{ person.date_of_birth|date }}</td>
+          </tr>
+        {% endif %}
+      </table>
+    </div>
+  {% endfor %}
+  {% endif %}
+
+{% endblock %}
