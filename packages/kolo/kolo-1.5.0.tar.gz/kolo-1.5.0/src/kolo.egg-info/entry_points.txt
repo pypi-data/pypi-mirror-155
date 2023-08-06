@@ -1,0 +1,2 @@
+[console_scripts]
+kolo = kolo.__main__:cli
