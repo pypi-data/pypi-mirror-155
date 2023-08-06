@@ -1,0 +1,33 @@
+Metadata-Version: 2.1
+Name: nnabla-converter
+Version: 1.29.0
+Summary: NNabla File Format Converter
+Home-page: https://github.com/sony/nnabla
+Author: Takuya Narihira, Sony Corporation
+Author-email: nnabla@googlegroups.com
+License: Apache License 2.0
+Keywords: NNabla File Format Converter
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Requires-Python: >=3.6
+Requires-Dist: ply
+Requires-Dist: tensorflow (~=2.7.0)
+Requires-Dist: onnx-tf
+Requires-Dist: tf2onnx (==1.7.2)
+Requires-Dist: tensorflow-addons
+Requires-Dist: onnx (==1.9.0)
+Requires-Dist: tflite2onnx
+Requires-Dist: flatbuffers
+
+UNKNOWN
+
+
