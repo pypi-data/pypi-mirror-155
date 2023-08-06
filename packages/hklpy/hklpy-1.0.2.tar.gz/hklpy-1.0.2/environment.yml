@@ -1,0 +1,24 @@
+name: hklpy
+channels:
+  - nsls2forge
+  - conda-forge
+  - defaults
+  - aps-anl-tag
+dependencies:
+  - python >=3.7
+  - bluesky >=1.6.7
+  - gobject-introspection
+  - hkl
+  - ipython
+  - numpy
+  - ophyd
+  - packaging
+  - pint
+  - pip
+  - pyepics
+  - pyRestTable
+  - spec2nexus
+  - pip:
+    - coveralls
+    - pytest
+    - pytest-cov

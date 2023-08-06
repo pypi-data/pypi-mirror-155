@@ -1,0 +1,8 @@
+[run]
+source=hkl
+
+[report]
+omit=
+    # ignore _version.py and versioneer.py
+    .*version.*
+    *_version.py
