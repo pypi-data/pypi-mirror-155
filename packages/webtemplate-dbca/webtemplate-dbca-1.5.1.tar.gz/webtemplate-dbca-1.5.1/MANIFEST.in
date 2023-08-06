@@ -1,0 +1,4 @@
+include README.md
+include LICENSE
+recursive-include webtemplate_dbca/static *
+recursive-include webtemplate_dbca/templates *
