@@ -1,0 +1,2 @@
+[console_scripts]
+pytip = pytip.__main__:main
