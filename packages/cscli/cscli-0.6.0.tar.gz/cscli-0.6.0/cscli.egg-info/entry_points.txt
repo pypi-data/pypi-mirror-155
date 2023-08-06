@@ -1,0 +1,3 @@
+[console_scripts]
+cscli = cscli.cli:cli
+
