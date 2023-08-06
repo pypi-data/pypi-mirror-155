@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: nhm-spider
+Version: 1.4.2
+Summary: base on asyncio, spider module like scrapy.
+Home-page: https://github.com/noHairMan/nhm-spider
+Author: noHairMan
+Author-email: zongxuheng@163.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+
+### NHM-SPIDER
+> 使用asyncio异步方式实现的爬虫，写法与scrapy相同。
+
+
+##### 待完成
+
+##### 发布
+```bash
+python setup.py sdist bdist_wheel
+twine upload dist/*
+```
+
+- @auther: noHairMan
+- @time: 2021-03-18
+
