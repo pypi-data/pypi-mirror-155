@@ -1,0 +1,44 @@
+Metadata-Version: 2.1
+Name: fen2pil
+Version: 0.3.0
+Summary: Convert Forsyth–Edwards Notation (FEN) to a 2D chessboard PIL image
+Home-page: https://github.com/elbuco1/fen2pil
+Author: Laurent Boucaud
+Author-email: lrtboucaud@gmail.com
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3 :: Only
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Provides-Extra: tests
+License-File: LICENSE
+
+
+# fen2pil
+
+Convert Forsyth–Edwards Notation (FEN) to a 2D chessboard PIL image.
+
+```python
+from fen2pil import draw
+
+fen = "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQ1RK1 w Qkq - 0 1"
+
+pil_image = draw.transform_fen_pil(
+        fen=fen,
+        board_size=480,
+        light_color=(255, 253, 208),
+        dark_color=(76, 153, 0)
+    )
+
+pil_image.show()
+
+```
+
+![](images/board_example.png)
+
+
+
+
+
