@@ -1,0 +1,11 @@
+README.md
+setup.py
+HRR/__init__.py
+HRR/with_flax.py
+HRR/with_jax.py
+HRR/with_pytorch.py
+HRR/with_tensorflow.py
+hrr.egg-info/PKG-INFO
+hrr.egg-info/SOURCES.txt
+hrr.egg-info/dependency_links.txt
+hrr.egg-info/top_level.txt
