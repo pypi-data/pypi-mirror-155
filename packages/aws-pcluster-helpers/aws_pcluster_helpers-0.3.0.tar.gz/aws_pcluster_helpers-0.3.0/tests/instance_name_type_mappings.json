@@ -1,0 +1,25 @@
+{
+    "basic": {
+        "t32xlarge": "t3.2xlarge",
+        "t3alarge": "t3a.large",
+        "t3axlarge": "t3a.xlarge"
+    },
+    "mem": {
+        "m5a4xlarge": "m5a.4xlarge",
+        "r6i2xlarge": "r6i.2xlarge",
+        "c6a8xlarge": "c6a.8xlarge"
+    },
+    "big": {
+        "m5a8xlarge": "m5a.8xlarge",
+        "m5a16xlarge": "m5a.16xlarge",
+        "r6i4xlarge": "r6i.4xlarge",
+        "c6a16xlarge": "c6a.16xlarge"
+    },
+    "gpu": {
+        "p32xlarge": "p3.2xlarge",
+        "p38xlarge": "p3.8xlarge",
+        "p316xlarge": "p3.16xlarge",
+        "g4dn8xlarge": "g4dn.8xlarge",
+        "g4dn16xlarge": "g4dn.16xlarge"
+    }
+}

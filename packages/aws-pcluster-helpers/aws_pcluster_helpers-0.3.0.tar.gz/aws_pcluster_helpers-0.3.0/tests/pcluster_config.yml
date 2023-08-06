@@ -1,0 +1,234 @@
+Region: us-east-1
+Image:
+    Os: alinux2
+    CustomAmi: ami-cpuid
+Tags:
+    -   Key: Environment
+        Value: hpc
+    -   Key: Name
+        Value: test-hpc-dev-slurm
+    -   Key: Namespace
+        Value: test
+    -   Key: Stage
+        Value: dev
+
+
+HeadNode:
+    InstanceType: t3a.medium
+    Networking:
+        ElasticIp: true
+        SubnetId: subnet-456
+        AdditionalSecurityGroups:
+            - sg-123
+            - sg-456
+    Dcv:
+        Enabled: true
+        Port: 8443
+    Ssh:
+        KeyName: test-hpc-dev-slurm
+    LocalStorage:
+        RootVolume:
+            Size: 1000
+        EphemeralVolume:
+            MountDir: "/data"
+    Iam:
+        S3Access:
+            -   BucketName: "test-hpc-dev-slurm"
+                EnableWriteAccess: true
+    CustomActions:
+        OnNodeConfigured:
+            Script: "s3://test-hpc-dev-slurm/slurm-startup-scripts/install_all_the_things.sh"
+
+Monitoring:
+    Logs:
+        CloudWatch:
+            Enabled: true
+            RetentionInDays: 7
+    Dashboards:
+        CloudWatch:
+            Enabled: true
+
+SharedStorage:
+    -   MountDir: "/fastscratch"
+        Name: "lustre1"
+        StorageType: FsxLustre
+        FsxLustreSettings:
+            StorageCapacity: 1200
+            DeploymentType: "SCRATCH_2"
+            DataCompressionType: "LZ4"
+
+Scheduling:
+    Scheduler: slurm
+    SlurmQueues:
+        -   Name: "basic"
+            ComputeSettings:
+                LocalStorage:
+                    RootVolume:
+                        Size: 1000
+                    EphemeralVolume:
+                        MountDir: /data
+            ComputeResources:
+
+                -   Name: t32xlarge
+                    InstanceType: "t3.2xlarge"
+                    MinCount: 0
+                    MaxCount: 1000
+
+                -   Name: t3alarge
+                    InstanceType: "t3a.large"
+                    MinCount: 0
+                    MaxCount: 1000
+
+                -   Name: t3axlarge
+                    InstanceType: "t3a.xlarge"
+                    MinCount: 0
+                    MaxCount: 1000
+
+            CustomActions:
+                OnNodeConfigured:
+                    Script: "s3://test-hpc-dev-slurm/slurm-startup-scripts/install_all_the_things.sh"
+            Iam:
+                S3Access:
+                    -   BucketName: "test-hpc-dev-slurm"
+                        EnableWriteAccess: true
+            Image:
+                CustomAmi: ami-cpuid
+            Networking:
+                SubnetIds:
+                    - subnet-456
+                AdditionalSecurityGroups:
+                    - sg-123
+                    - sg-456
+        -   Name: "mem"
+            ComputeSettings:
+                LocalStorage:
+                    RootVolume:
+                        Size: 1000
+                    EphemeralVolume:
+                        MountDir: /data
+            ComputeResources:
+
+                -   Name: m5a4xlarge
+                    InstanceType: "m5a.4xlarge"
+                    MinCount: 0
+                    MaxCount: 1000
+
+                -   Name: r6i2xlarge
+                    InstanceType: "r6i.2xlarge"
+                    MinCount: 0
+                    MaxCount: 1000
+
+                -   Name: c6a8xlarge
+                    InstanceType: "c6a.8xlarge"
+                    MinCount: 0
+                    MaxCount: 1000
+
+            CustomActions:
+                OnNodeConfigured:
+                    Script: "s3://test-hpc-dev-slurm/slurm-startup-scripts/install_all_the_things.sh"
+            Iam:
+                S3Access:
+                    -   BucketName: "test-hpc-dev-slurm"
+                        EnableWriteAccess: true
+            Image:
+                CustomAmi: ami-cpuid
+            Networking:
+                SubnetIds:
+                    - subnet-456
+                AdditionalSecurityGroups:
+                    - sg-123
+                    - sg-456
+        -   Name: "big"
+            ComputeSettings:
+                LocalStorage:
+                    RootVolume:
+                        Size: 1000
+                    EphemeralVolume:
+                        MountDir: /data
+            ComputeResources:
+
+                -   Name: m5a8xlarge
+                    InstanceType: "m5a.8xlarge"
+                    MinCount: 0
+                    MaxCount: 1000
+
+                -   Name: m5a16xlarge
+                    InstanceType: "m5a.16xlarge"
+                    MinCount: 0
+                    MaxCount: 1000
+
+                -   Name: r6i4xlarge
+                    InstanceType: "r6i.4xlarge"
+                    MinCount: 0
+                    MaxCount: 1000
+
+                -   Name: c6a16xlarge
+                    InstanceType: "c6a.16xlarge"
+                    MinCount: 0
+                    MaxCount: 1000
+
+            CustomActions:
+                OnNodeConfigured:
+                    Script: "s3://test-hpc-dev-slurm/slurm-startup-scripts/install_all_the_things.sh"
+            Iam:
+                S3Access:
+                    -   BucketName: "test-hpc-dev-slurm"
+                        EnableWriteAccess: true
+            Image:
+                CustomAmi: ami-cpuid
+            Networking:
+                SubnetIds:
+                    - subnet-456
+                AdditionalSecurityGroups:
+                    - sg-123
+                    - sg-456
+        -   Name: "gpu"
+            ComputeSettings:
+                LocalStorage:
+                    RootVolume:
+                        Size: 1000
+                    EphemeralVolume:
+                        MountDir: /data
+            ComputeResources:
+
+                -   Name: p32xlarge
+                    InstanceType: "p3.2xlarge"
+                    MinCount: 0
+                    MaxCount: 1000
+
+                -   Name: p38xlarge
+                    InstanceType: "p3.8xlarge"
+                    MinCount: 0
+                    MaxCount: 1000
+
+                -   Name: p316xlarge
+                    InstanceType: "p3.16xlarge"
+                    MinCount: 0
+                    MaxCount: 1000
+
+                -   Name: g4dn8xlarge
+                    InstanceType: "g4dn.8xlarge"
+                    MinCount: 0
+                    MaxCount: 1000
+
+                -   Name: g4dn16xlarge
+                    InstanceType: "g4dn.16xlarge"
+                    MinCount: 0
+                    MaxCount: 1000
+
+            CustomActions:
+                OnNodeConfigured:
+                    Script: "s3://test-hpc-dev-slurm/slurm-startup-scripts/install_all_the_things.sh"
+            Iam:
+                S3Access:
+                    -   BucketName: "test-hpc-dev-slurm"
+                        EnableWriteAccess: true
+            Image:
+                CustomAmi: ami-gpuid
+            Networking:
+                SubnetIds:
+                    - subnet-123
+                AdditionalSecurityGroups:
+                    - sg-123
+                    - sg-456
+
