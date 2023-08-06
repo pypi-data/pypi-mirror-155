@@ -1,0 +1,43 @@
+[tool.poetry]
+name = "wagtail-oauth2"
+version = "1.0.0"
+description = "OAuth2.0 authentication fo wagtail"
+authors = ["Guillaume Gauvrit <guillaume@gandi.net>"]
+readme = "README.rst"
+license = "BSD-Derived"
+classifiers = [
+  "Intended Audience :: Developers",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Topic :: Internet :: WWW/HTTP",
+  "Framework :: Wagtail",
+  "Framework :: Wagtail :: 2",
+  "License :: OSI Approved :: BSD License"
+]
+homepage = "https://wagtail-oauth2.readthedocs.io/en/latest/"
+repository = "https://github.com/Gandi/wagtail-oauth2"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+Django = ">=3.2.0,<5"
+wagtail = ">=2.14,<4.0"
+requests = ">=2.26.0"
+
+[tool.poetry.dev-dependencies]
+black = "^21.11b1"
+isort = "^5.10.1"
+pytest-django = "^4.4.0"
+xmlrunner = "^1.7.7"
+pytest-cov = "^3.0.0"
+Faker = "^10.0.0"
+Sphinx = "^4.3.1"
+sphinx-rtd-theme = "^1.0.0"
+tomlkit = "^0.7.2"
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 88
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
