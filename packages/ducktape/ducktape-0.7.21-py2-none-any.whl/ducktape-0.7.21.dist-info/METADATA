@@ -1,0 +1,41 @@
+Metadata-Version: 2.1
+Name: ducktape
+Version: 0.7.21
+Summary: Distributed system test tools
+Home-page: http://github.com/confluentinc/ducktape
+Author: Confluent
+License: apache2.0
+Platform: any
+Requires-Dist: jinja2 (==2.10.1)
+Requires-Dist: boto3 (==1.9.217)
+Requires-Dist: MarkupSafe (<2.0.0)
+Requires-Dist: pyparsing (<3.0.0)
+Requires-Dist: zipp (<2.0.0)
+Requires-Dist: pywinrm (==0.2.2)
+Requires-Dist: requests (==2.22.0)
+Requires-Dist: bcrypt (==3.1.7)
+Requires-Dist: paramiko (~=2.3.2)
+Requires-Dist: pysistence (==0.4.1)
+Requires-Dist: pyzmq (==18.1.0)
+Requires-Dist: pycryptodome (==3.8.2)
+Requires-Dist: more-itertools (==5.0.0)
+Requires-Dist: six (==1.12.0)
+Requires-Dist: pynacl (==1.4.0)
+Requires-Dist: filelock (==3.2.1)
+Requires-Dist: cryptography (==3.3.2)
+Requires-Dist: certifi (==2020.04.05.1)
+Requires-Dist: xmltodict (==0.12.0)
+Provides-Extra: test
+Requires-Dist: pytest (==4.6.5) ; extra == 'test'
+Requires-Dist: mock (==3.0.5) ; extra == 'test'
+Requires-Dist: psutil (==5.6.3) ; extra == 'test'
+Requires-Dist: memory-profiler (==0.55) ; extra == 'test'
+Requires-Dist: statistics (==1.0.3.5) ; extra == 'test'
+Requires-Dist: requests-testadapter (==0.3.0) ; extra == 'test'
+Requires-Dist: flake8 (~=3.7.9) ; extra == 'test'
+Requires-Dist: pytest-cov (~=2.6.1) ; extra == 'test'
+Requires-Dist: pytest-xdist (~=1.34.0) ; extra == 'test'
+
+UNKNOWN
+
+
