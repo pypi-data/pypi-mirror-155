@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/python_docx_replace/__init__.py
+src/python_docx_replace/docx_replace.py
+src/python_docx_replace.egg-info/PKG-INFO
+src/python_docx_replace.egg-info/SOURCES.txt
+src/python_docx_replace.egg-info/dependency_links.txt
+src/python_docx_replace.egg-info/requires.txt
+src/python_docx_replace.egg-info/top_level.txt
