@@ -1,0 +1,121 @@
+{
+    "name": "营业执照(三证合一A版)",
+    "imageHeight": 3024,
+    "imageWidth": 4032,
+    "anchors": [
+        {
+            "text": "营业执照",
+            "left": 1527,
+            "top": 747,
+            "width": 1129,
+            "height": 229,
+            "prefix_match": "no"
+        },
+        {
+            "text": "登记机关",
+            "left": 2677,
+            "top": 2243,
+            "width": 433,
+            "height": 96,
+            "prefix_match": "no"
+        },
+        {
+            "text": "国家市场监督管理总局监制",
+            "left": 3412,
+            "top": 2776,
+            "width": 583,
+            "height": 84,
+            "prefix_match": "no"
+        },
+        {
+            "text": "统一社会信用代码",
+            "left": 449,
+            "top": 806,
+            "width": 504,
+            "height": 70,
+            "prefix_match": "no"
+        }
+    ],
+    "recognition_areas": [
+        {
+            "field_name": "名称",
+            "show_name": "company_name",
+            "left": 427,
+            "top": 1197,
+            "width": 1262,
+            "height": 146
+        },
+        {
+            "field_name": "类型",
+            "show_name": "company_type",
+            "left": 431,
+            "top": 1364,
+            "width": 1542,
+            "height": 154
+        },
+        {
+            "field_name": "注册资本",
+            "show_name": "register_money",
+            "left": 2123,
+            "top": 1143,
+            "width": 1158,
+            "height": 183
+        },
+        {
+            "field_name": "成立日期",
+            "show_name": "found_date",
+            "left": 2127,
+            "top": 1335,
+            "width": 1237,
+            "height": 158
+        },
+        {
+            "field_name": "营业期限",
+            "show_name": "operate_period",
+            "left": 2123,
+            "top": 1501,
+            "width": 1684,
+            "height": 175
+        },
+        {
+            "field_name": "法定代表人",
+            "show_name": "legal_person",
+            "left": 427,
+            "top": 1539,
+            "width": 900,
+            "height": 137
+        },
+        {
+            "field_name": "经营范围",
+            "show_name": "business_scope",
+            "left": 419,
+            "top": 1718,
+            "width": 1730,
+            "height": 883
+        },
+        {
+            "field_name": "住所",
+            "show_name": "address",
+            "left": 2177,
+            "top": 1681,
+            "width": 1629,
+            "height": 500
+        },
+        {
+            "field_name": "发证日期_LEFT_RIGHT",
+            "show_name": "issue_date",
+            "left": 3127,
+            "top": 2456,
+            "width": 708,
+            "height": 150
+        },
+        {
+            "field_name": "统一社会信用代码",
+            "show_name": "unified_social_credit_code",
+            "left": 385,
+            "top": 731,
+            "width": 738,
+            "height": 266
+        }
+    ]
+}
