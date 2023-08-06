@@ -1,0 +1,73 @@
+Metadata-Version: 2.1
+Name: processcube-sdk
+Version: 1.0.4a1
+Summary: Some tools and defaults to program for the ProcessCube.
+Home-page: https://github.com/atlas-engine-contrib/processcube_sdk.py
+Author: 5Minds IT-Solutions GmbH & Co. KG
+Author-email: processcube@5minds.de
+Keywords: sdk processcube bpmm external-tasks process-management etw
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: wheel (==0.37.1)
+Requires-Dist: typer (>=0.4.0)
+Requires-Dist: atlas-engine-client (==2.3.0)
+Requires-Dist: papermill (==2.3.3)
+Requires-Dist: scrapbook (==0.5.0)
+Requires-Dist: pandas (==1.4.1)
+Requires-Dist: numpy (==1.21.4)
+Requires-Dist: sqlalchemy (==1.4.31)
+Requires-Dist: stringcase (==1.2.0)
+Requires-Dist: fastapi (>=0.75.0)
+Requires-Dist: google-api-python-client (==2.42.0)
+Requires-Dist: google-auth-httplib2 (==0.1.0)
+Requires-Dist: google-auth-oauthlib (==0.5.1)
+
+# SDK für den ProcessCube
+
+Werkzeuge und Tools für die Entwicklung mit dem ProcessCube
+
+## Unterstützung
+
+Moduleliste:
+- processcube_sdk.configuration: Umgang mit Konfigurationsdateien
+- processcube_sdk.database: Datenbankzugriffe mit SQLAlchemy und Pandas handeln
+- processcube_sdk.external_tasks: External-Tasks-Basis-Klassen und generische Umsetzung (z.B. Prüfen von Instanzen eines Models)
+- processcube_sdk.fastapi: fastapi-Auth-Module für den Umgang mit Google-Authentifizierung
+- processcube_sdk.jupyter: Vereinfachung der automatischen Ausführung von Jupyter-Notebooks und Ergebnissen, die als Resultat ermittelt werden sollen
+
+
+## Verwendung
+### processcube_sdk.external_tasks
+
+Die External-Tasks haben für die direkte Verwendung eine Möglichekeit als Module direkt gestartet zu werden.
+
+Das Starten erfolgt wie nachfolgende beschrieben:
+
+```shell
+python -m pip install processcube_sdk
+
+
+CONFIG_FILE=`pwd`/config.dev.json PYTHONPATH=. python -m processcube_sdk.external_tasks
+```
+
+Die Konfigurationsdatei, sollte dabei folgende Elemente enthalten:
+```json
+{
+    "engine": 
+    {
+        "url": "http://192.168.178.125:56100"
+    },
+    "logging": 
+    {
+        "level": "info"
+    }
+}
+```
+#### Verwendung mit Docker
+
+Die Verwendung mit Docker ist unter docs/README.Dockerfile.md beschrieben.
+
+
