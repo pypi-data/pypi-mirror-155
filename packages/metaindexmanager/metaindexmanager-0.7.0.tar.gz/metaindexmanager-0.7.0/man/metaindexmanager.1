@@ -1,0 +1,952 @@
+.\" Man page generated from reStructuredText.
+.
+.
+.nr rst2man-indent-level 0
+.
+.de1 rstReportMargin
+\\$1 \\n[an-margin]
+level \\n[rst2man-indent-level]
+level margin: \\n[rst2man-indent\\n[rst2man-indent-level]]
+-
+\\n[rst2man-indent0]
+\\n[rst2man-indent1]
+\\n[rst2man-indent2]
+..
+.de1 INDENT
+.\" .rstReportMargin pre:
+. RS \\$1
+. nr rst2man-indent\\n[rst2man-indent-level] \\n[an-margin]
+. nr rst2man-indent-level +1
+.\" .rstReportMargin post:
+..
+.de UNINDENT
+. RE
+.\" indent \\n[an-margin]
+.\" old: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.nr rst2man-indent-level -1
+.\" new: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.in \\n[rst2man-indent\\n[rst2man-indent-level]]u
+..
+.TH "METAINDEXMANAGER"  "" "" ""
+.SH NAME
+metaindexmanager \- extendable metaindex file manager
+.SH SYNOPSIS
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+metaindexmanager [\-h] [\-v] [\-\-check\-for\-update] [\-m metaindex config file] [\-l loglevel] [\-\-log\-file logfile] [\-\-select\-file\-mode] [\-\-select\-file\-output file] [location ...]
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.SH DESCRIPTION
+.sp
+metaindexmanager is a text user interface (TUI) file manager that allows
+you to browse and manipulate your documents and files by their metadata
+tags.
+.sp
+You can also use metaindexmanager from other applications to select files.
+See below in \fI\%Select file mode\fP\&.
+.SH OPTIONS
+.sp
+The general parameters are:
+.INDENT 0.0
+.INDENT 3.5
+.INDENT 0.0
+.TP
+.B \fB\-h\fP
+Show the help and exit.
+.TP
+.B \fB\-v\fP
+Show the version and exit.
+.TP
+.B \fB\-\-check\-for\-update\fP
+Check online on vonshednob.cc whether your version of metaindexmaneger
+is up to date with the most recent published version.
+.TP
+.B \fB\-m metaindex config file\fP
+Location of your metaindex config file. If not specified, the default
+location is used. Usually that’s \fB~/.config/metaindex.conf\fP\&.
+.TP
+.B \fB\-l loglevel\fP
+The the level of details shown in the log file. Your options are
+\fBfatal\fP, \fBerror\fP, \fBwarning\fP, \fBinfo\fP, and \fBdebug\fP\&. Defaults to
+\fBwarning\fP\&.
+.TP
+.B \fB\-\-log\-file logfile\fP
+Where to write the log to. Defaults to \fB~/.local/share/metaindexmenager/ui.log\fP
+.sp
+Very useful if the application crashes or shows errors in the status
+line.
+.TP
+.B \fB\-\-select\-file\-mode\fP
+Run in select file mode. See below in \fI\%Select file mode\fP for details.
+.sp
+Not used by default.
+.TP
+.B \fB\-\-select\-file\-output file\fP
+What file to write the selected file(s) to. See \fI\%Select file mode\fP
+for details on how to use this.
+.sp
+Defaults to \fB\-\fP (standard output).
+.TP
+.B \fBlocation\fP
+Provide any locations or search queries to open on startup.
+.sp
+If the location you provide is a path to a folder, it will open a file
+panel. Otherwise the location is interpreted as a search query and a
+metadata panel is opened with that search query.
+.sp
+This, for example, will open two panels. One in your home folder and
+one showing all indexed files that are images:
+.INDENT 7.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+metaindexmanager ~ \(dqmimetype:image\(dq
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.SH SHORTCUTS
+.sp
+All shortcuts and their respective help are available by typing \fB?\fP,
+\fBF1\fP, or \fB:help\fP\&.
+.SS General
+.sp
+These shortcuts work in every panel:
+.INDENT 0.0
+.IP \(bu 2
+\fBq\fP, close the current panel
+.IP \(bu 2
+\fBX\fP, quit metaindexmanager
+.IP \(bu 2
+\fB?\fP, show the help,
+.IP \(bu 2
+\fBF1\fP, show the help,
+.IP \(bu 2
+\fB:\fP, enter a command
+.IP \(bu 2
+\fBTab\fP, next panel
+.IP \(bu 2
+\fBgt\fP, next panel
+.IP \(bu 2
+\fBgT\fP, previous panel
+.IP \(bu 2
+\fBgp\fP, go to panel by number
+.IP \(bu 2
+\fBgnf\fP, new file browser panel
+.IP \(bu 2
+\fBgnd\fP, new document browser panel
+.IP \(bu 2
+\fBy0\fP, clear clipboard
+.IP \(bu 2
+\fBzs\fP, use the horizontal split layout
+.IP \(bu 2
+\fBzt\fP, use the tabbed layout
+.IP \(bu 2
+\fB^L\fP, repaint
+.IP \(bu 2
+\fB\(aq\fP, jump to mark
+.IP \(bu 2
+\fBarrow down\fP, next item
+.IP \(bu 2
+\fBarrow up\fP, previous item
+.IP \(bu 2
+\fBpage down\fP, next page
+.IP \(bu 2
+\fBpage up\fP, previous page
+.IP \(bu 2
+\fBhome\fP, go to start
+.IP \(bu 2
+\fBend\fP, go to end
+.IP \(bu 2
+\fB/\fP, find item by text
+.IP \(bu 2
+\fBn\fP, find next item (uses text of \fB/\fP)
+.IP \(bu 2
+\fBN\fP, find previous item (uses text of \fB/\fP)
+.UNINDENT
+.sp
+These shortcuts only work in the file browser:
+.INDENT 0.0
+.IP \(bu 2
+\fBR\fP, refresh
+.IP \(bu 2
+\fBarrow right\fP, open the file in an external viewer or enter the folder
+.IP \(bu 2
+\fBarrow left\fP, go up in the folder hierarchy
+.IP \(bu 2
+\fBzh\fP, toggle display of hidden files
+.IP \(bu 2
+\fBgh\fP, go to your home folder
+.IP \(bu 2
+\fBgd\fP, show the metadata details for the selected item
+.IP \(bu 2
+\fBe\fP, edit metadata of the selected item
+.IP \(bu 2
+\fBE\fP, edit metadata with an external text editor
+.IP \(bu 2
+\fB!\fP, run a shell command or open a shell
+.IP \(bu 2
+\fBO\fP, open the selected file with another program of your choice
+.IP \(bu 2
+\fBcd\fP, change directory
+.IP \(bu 2
+\fBdD\fP, delete the selected item (experimental)
+.IP \(bu 2
+\fByy\fP, copy the selected path to clipboard
+.IP \(bu 2
+\fBya\fP, append the selected path to clipboard
+.IP \(bu 2
+\fBm\fP, mark the selected item for quick access
+.IP \(bu 2
+\fBspace\fP, select the item
+.IP \(bu 2
+\fBuv\fP, clear selection
+.IP \(bu 2
+\fBv\fP, invert selection
+.UNINDENT
+.sp
+These shortcuts only work in the document browser:
+.INDENT 0.0
+.IP \(bu 2
+\fBR\fP, refresh
+.IP \(bu 2
+\fBarrow right\fP, open the selected item in an external viewer
+.IP \(bu 2
+\fBF3\fP, enter a new search term
+.IP \(bu 2
+\fBgs\fP, enter a new search term
+.IP \(bu 2
+\fBgl\fP, open currently selected item in new file browser
+.IP \(bu 2
+\fBgd\fP, open the metadata viewer for the selected item
+.IP \(bu 2
+\fByy\fP, copy the path of the selected item to clipboard
+.IP \(bu 2
+\fBya\fP, append the path of the selected item to clipboard
+.IP \(bu 2
+\fBm\fP, mark the selected item for quick access
+.IP \(bu 2
+\fBe\fP, edit metadata of the selected item
+.IP \(bu 2
+\fBE\fP, edit metadata with an external text editor
+.IP \(bu 2
+\fBO\fP, open the selected file with another program of your choice
+.UNINDENT
+.sp
+These shortcuts only work in the metadata editor:
+.INDENT 0.0
+.IP \(bu 2
+\fBarrow right\fP, open the file in an external viewer
+.IP \(bu 2
+\fBgl\fP, open currently selected item in new file browser
+.IP \(bu 2
+\fBE\fP, edit metadata with an external text editor
+.IP \(bu 2
+\fBreturn\fP, edit the selected metadata tag
+.IP \(bu 2
+\fBi\fP, edit the selected metadata tag
+.IP \(bu 2
+\fBo\fP, add a new value with the same tag
+.IP \(bu 2
+\fBc\fP, clear the selected metadata tag value and start editing
+.IP \(bu 2
+\fBa\fP, add a new tag
+.IP \(bu 2
+\fBdd\fP, delete the selected tag
+.IP \(bu 2
+\fBu\fP, undo the most recent change
+.IP \(bu 2
+\fBU\fP, undo all changes
+.IP \(bu 2
+\fBr\fP, redo change
+.IP \(bu 2
+\fB^R\fP, redo change
+.IP \(bu 2
+\fByy\fP, copy tag to clipboard
+.IP \(bu 2
+\fBya\fP, append tag to clipboard
+.IP \(bu 2
+\fBpp\fP, paste tag from clipboard
+.IP \(bu 2
+\fBpP\fP, paste tag from clipboard
+.IP \(bu 2
+\fBO\fP, open the file with another program of your choice
+.UNINDENT
+.SH FILES
+.sp
+The configuration file of metaindexmanager is by default expected at
+\fB~/.config/metaindexmanager/config.rc\fP and consists of one command per
+line (usually \fBbind\fP and \fBset\fP commands, see \fI\%Commands\fP below).
+Empty or commented lines (starting with a \fB#\fP) are ignored.
+.sp
+Python files in \fB~/.local/share/metaindexmanager/addons/\fP are considered
+addons and will be loaded upon startup. See \fI\%Addons\fP below for details.
+.sp
+metaindexmanager will create a logfile to report unexpected or erroneous
+behaviour. The location of that logfile can be manually configured by
+providing the \fB\-\-log\-file\fP parameter upon startup. The default location
+is \fB~/.local/share/metaindexmanager/ui.log\fP\&.
+.SH SELECT FILE MODE
+.sp
+You can run metaindexmanager in \fB\-\-select\-file\-mode\fP to use it as an
+\(dqopen file dialog\(dq in various applications, like (neo)mutt.
+.sp
+When running in select file mode, the \fB<Return>\fP key will be used to
+select the current file, exit the program and write the full path to the
+selected file into \fB\-\-select\-file\-output\fP (by default the standard
+output).
+.sp
+To select any indexed text file or something from your home folder you
+could run this:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+metaindexmanager \-\-select\-file\-mode \(dqmimetype:plain/text\(dq \(dq~\(dq
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.sp
+In actual use cases, you will likely have to write the result to a file
+with the \fB\-\-select\-file\-output=file\fP parameter.
+.SS Example use case: (neo)mutt
+.sp
+If you wanted to use this in (neo)mutt to select email attachments, you
+could use the script file \fBmtattach.sh\fP (in \fBextras\fP) and set
+it up in mutt with this macro:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+# example (neo)mutt configuration to use \(aqa\(aq in the mail composition
+# screen to attach a file using metaindexmanager select file mode
+macro  compose  a  \(dq<shell\-escape>mtattach.sh<return><enter\-command>source /run/user/\(gaid \-u\(ga/mtattach.rc<return><shell\-escape>rm /run/user/\(gaid \-u\(ga/mtattach.rc<return>\(dq \(dqAttach file\(dq
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.sp
+The \fBmtattach.sh\fP script launches metaindexmanager with the
+\fB\-\-select\-file\-\-mode\fP and writes the selected file name into
+\fB/run/user/\(gaid \-u\(ga/mtattach.rc\fP\&. (neo)mutt will then read that file as a
+command to execute the attaching.
+.SH ADDONS
+.sp
+\fBBeware\fP that addons are just python files. They can in theory do
+anything on your computer with your permissions. If you install a malicious
+addon, it could upload all your files to the internet and/or encrypt all
+your files and ask you for ransom.
+.sp
+\fBNever install addons from untrusted sources!\fP
+.SS Installing
+.sp
+To install an addon, copy the corresponding \fB\&.py\fP file or the module
+folder (the one containing the \fB__init__.py\fP file) into your addons
+folder (usually at \fB~/.local/share/metaindexmanager/addons/\fP).
+.SS Writing your own
+.sp
+Currently there are three possible types of addons:
+.INDENT 0.0
+.INDENT 3.5
+.INDENT 0.0
+.IP \(bu 2
+panels, extending \fBmetaindexmanager.panel.ListPanel\fP or using the
+\fBmetaindexmanager.panel.register\fP decorator,
+.IP \(bu 2
+commands, extending \fBmetaindexmanager.command.Command\fP,
+.IP \(bu 2
+layouts, extending \fBmetaindexmanager.layouts.Layout\fP, and
+.IP \(bu 2
+humanizer, providing formatters for tags, see \fBmetaindexmanager.humanize\fP
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.sp
+Be sure to add the \fB@registered_command\fP, \fB@registered_layout\fP, or
+\fB@register_humanizer\fP decorators to your classes or functions.
+.sp
+Have a look at the layouts in \fBmetaindexmanager.layouts\fP and the commands
+in \fBmetaindexmanager.commands\fP to understand how commands work.
+\fBmetaindexmanager.docpanel\fP and \fBmetaindexmanager.filepanel\fP also have
+a bunch of commands defined that are restricted to these panels.
+.sp
+At the end of \fBmetaindexmanager.humanize\fP you can find a few examples of
+how to write tag value formatters.
+.sp
+The use of the \fBmetaindexmanager.panel.register\fP decorator allows you to
+create a new type of panel for use in bookmarks and as an option for
+\fBall.default\-panel\fP\&. The constructor of your panel type must accept these
+parameters in order: \fBapplication\fP and \fBlocation\fP\&. \fBapplication\fP is
+needed anyway for the underlying \fBcursedspace.Panel\fP\&. \fBlocation\fP might
+be \fBNone\fP or missing and you should be able to create the panel anyway.
+.sp
+If you add a new panel, make sure there is also a command to open that panel
+one way or the other.
+.SS Examples
+.sp
+Here is an example of a humanizer to transform the value for XMP\(aqs
+\fBorientation\fP tag into a human\-readable value:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+from metaindexmanager import humanize
+
+@humanize.register_humanizer(\(aqXmp.tiff.orientation\(aq)
+def format_tiff_orientation(value):
+    mapping = {
+        \(aq1\(aq: \(aqHorizontal\(aq,
+        \(aq2\(aq: \(aqMirrore horizontal\(aq,
+        \(aq3\(aq: \(aqRotate by 180°\(aq,
+        \(aq4\(aq: \(aqMirror vertical\(aq,
+        \(aq5\(aq: \(aqMirror horizontal and rotate 270° CW\(aq,
+        \(aq6\(aq: \(aqRotate 90° CW\(aq,
+        \(aq7\(aq: \(aqMirror horizontal and rotate 90° CW\(aq,
+        \(aq8\(aq: \(aqRotate 270° CW\(aq
+    }
+
+    return mapping.get(str(value))
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.SH CONFIGURATION OPTIONS
+.sp
+Configuration options can be set using the \fBset\fP command. Either during
+runtime from the command line or in the configuration file.
+.sp
+The following options exist:
+.INDENT 0.0
+.INDENT 3.5
+.INDENT 0.0
+.TP
+.B \fBall.editor\fP
+What text editor to use when a text editor should be launched from
+within metaindexmanager.
+.TP
+.B \fBall.opener\fP
+What program to use to open files for viewing in an external program.
+.sp
+A good program to use is \fBrifle\fP of the ranger file manager.
+.sp
+The default is \fBxdg\-open\fP\&.
+.TP
+.B \fBall.history\-size\fP
+How many entries should be remembered in the command history.
+.sp
+Defaults to \fB1000\fP\&.
+.TP
+.B \fBall.border\fP
+How much space should be wasted on drawing borders. Can be set to
+either \fBfull\fP or \fBminimal\fP\&.
+.sp
+Defaults to \fBfull\fP\&.
+.TP
+.B \fBall.info\-timeout\fP
+How long should errors or info messages be displayed at the bottom of
+the screen. A duration of 4 days, 3 hours, 2 minutes, and 1 second
+would be written like this: \fB4d3h2m1s\fP\&.
+.sp
+Defaults to \fB10s\fP\&.
+.TP
+.B \fBall.default\-panel\fP
+What panel type should be opened by default when starting
+\fImetaindexmanager\fP and no location has been specified?
+.sp
+Possible values are \fBfiles\fP, and \fBdocuments\fP\&.
+Addons might add to the list of possible values, please refer to the
+documentation of these addons.
+.sp
+Defaults to \fBdocuments\fP\&.
+.TP
+.B \fBall.find\-case\-sensitive\fP
+Whether or not the \fBfind\fP command should work case sensitive.
+.sp
+Defaults to \fBno\fP\&.
+.TP
+.B \fBfiles.use\-icons\fP
+Set this to \fByes\fP (or \fB1\fP, \fBy\fP, \fBon\fP) to use icons in the
+file and folder listing. That means that the shell variables
+\fBUSERDIR_ICONS\fP and \fBLS_ICONS\fP will be used to find out what icon
+to show per entry.
+.sp
+The format of \fBLS_ICONS\fP and \fBUSERDIR_ICONS\fP is based on
+\fBLS_COLORS\fP: a \fB:\fP separated list of filetype/folder names assigned
+to font awesome/nerdfont icons (the following examples will look broken
+if you don’t have font awesome or nerdfont installed).
+For example, if you want to use a special icon for your downloads and
+music folders, you could set your \fBUSERDIR_ICONS\fP variable to
+\fBdownloads=:music=\fP\&.
+Similarly, to show all normal files as \fBf\fP, folders as \fBF\fP and only
+JPEG files as \fB\fP, you could set your \fBLS_ICONS\fP variable to
+\fBfi=f:di=F:*.jpeg=:*.jpg=\fP\&.
+.sp
+metaindexmanager has some defaults built\-in.
+.TP
+.B \fBfiles.selection\-icon\fP
+What text symbol (or icon) to use to indicate selected files or
+folders. The default is a blank space, but you could also use a
+checkmark (\fB✔\fP).
+.TP
+.B \fBfiles.info\fP
+What extra information columns to show on the right side. Separate the
+options with a comma. Possible options are:
+.INDENT 7.0
+.IP \(bu 2
+\fBsize\fP, the human\-readable file size
+.IP \(bu 2
+\fBbytes\fP, the file size in bytes
+.IP \(bu 2
+\fBowner\fP, the owner\(aqs name or uid (only on *nix)
+.IP \(bu 2
+\fBgroup\fP, the group\(aqs name or gid (only on *nix)
+.IP \(bu 2
+\fBrights\fP or \fBmode\fP, the access rights in the form of \fB\-rw\-r\-\-r\-\-\fP (only on *nix)
+.IP \(bu 2
+\fBnum_rights\fP or \fBoctmode\fP, the access rights as octal number
+.IP \(bu 2
+\fBlm_abs\fP, absolute date and time when the file was last modified
+.IP \(bu 2
+\fBlm_duration\fP, how long ago this file was last modified
+.UNINDENT
+.TP
+.B \fBdocuments.columns\fP
+Defines the default columns for any new documents panel.
+.sp
+Columns are metadata tag names, like \fBextra.title\fP or \fBmimetype\fP\&.
+You may also use synonyms (\fBauthor\fP instead of only
+\fBextra.author\fP).
+To show more than just the first value (in case a document has multiple
+values for one metadata tag), you can add a \fB+\fP after the tag name.
+.sp
+The special column \fBicon\fP is not a metadata tag, but instead shows an
+icon (see \fBfiles.use\-icons\fP option above) based on the file type.
+.sp
+The default is \fBtitle filename tags+ mimetype\fP\&.
+.TP
+.B \fBeditor.multiline\-indicator\fP
+What single character to show when a metadata tag has line breaks.
+.sp
+Defaults to \fB…\fP\&.
+.TP
+.B \fBeditor.cutoff\-indicator\fP
+What single character to show when a metadata tag is longer than can be
+shown with the screen size.
+.sp
+Defaults to \fB→\fP\&.
+.TP
+.B \fBdictionary.<tag>\fP
+The \fBdictionary\fP namespace of configuration options can be used by
+you to define the allowed (or suggested) words for \fBextra.\fP metadata
+values.
+.sp
+For example, if you set the \fBdictionary.location\fP to the values
+\fBhome, work, cabin\fP you will see a completion suggesting these values
+when you add or edit a \fBlocation\fP tag using the editor panel.
+.sp
+If you want to allow all existing values of a given tag, and a few
+suggestions, you can add the special value \fB*\fP, like this:
+.INDENT 7.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+set dictionary.rating \(dqgood, bad, ugly, *\(dq
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.sp
+In this example if you had rated some file as \fBmeh\fP, this value would
+also show in the completion when you add or edit a \fBrating\fP tag using
+the editor panel.
+.sp
+If you don\(aqt define a dictionary for a tag, metaindexmanager will
+always show the existing values as suggestions.
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.SH COMMANDS
+.sp
+Commands can be bound to shortcuts or entered directly in the command line.
+The command to open the command line is called \fBenter\-command\fP and
+usually bound to \fB:\fP\&.
+.sp
+Based on what panel is currently in focus (file browser, document browser,
+editor, etc.) different commands may be available.
+The autocompletion in the command line should be aware of that and provide
+only valid suggestions.
+.sp
+Some commands accept or even require additional parameters that can be
+given on the commandline, but are a bit more tricky when bound to
+shortcuts. See details for that below in the \fBbind\fP command.
+.sp
+Here is a list of all commands:
+.INDENT 0.0
+.INDENT 3.5
+.INDENT 0.0
+.TP
+.B \fBclose\fP
+Closes the currently focused panel. Once the last panel is closed,
+metaindexmanager will end.
+.TP
+.B \fBquit\fP
+Quit metaindexmanager.
+.TP
+.B \fBnext\-panel\fP
+Focus the next panel.
+.TP
+.B \fBprevious\-panel\fP
+Focus the previous panel.
+.TP
+.B \fBfocus\fP
+Focus the given panel. If called with a parameter, e.g. \fBfocus 2\fP, it
+will focus panel with label \fB2\fP\&. If called without a parameter, it
+will ask the user for the panel to focus on.
+.TP
+.B \fBnew\-file\-panel\fP
+Open a new file browser panel.
+.TP
+.B \fBnew\-documents\-panel\fP
+Open a new document browser panel.
+.TP
+.B \fBenter\-command\fP
+Open the command line so the user can enter commands.
+.TP
+.B \fBcancel\-command\fP
+Close the command line and return focus to the previous panel.
+.TP
+.B \fBrepaint\fP
+Enforce a repaint of the screen.
+.TP
+.B \fBlayout\fP
+Change the layout of the panels. Provide the name of the layout you
+want to use as the first parameter. If you don\(aqt give a parameter, the
+available layouts will be listed for you.
+.TP
+.B \fBsource\fP
+Load the configuration file given in the first parameter to this
+command. Usually only used from your configuration file.
+.TP
+.B \fBbind\fP
+Bind a command to a shortcut. Expects three parameters: scope, key(s),
+and command.
+.sp
+The scope is either \fBany\fP (meaning any panel; file browser, document
+browser, metadata editor, etc.) or either of \fBdocuments\fP (a document
+browser panel), \fBfiles\fP (a file browser panel), \fBeditor\fP (a
+metadata editor panel).
+.sp
+Keys can be single keys, like \fBc\fP or \fBC\fP (to indicate the use of
+the shift key), \fB^H\fP (to indicate the use of a control key), or
+special key names like \fB<return>\fP or \fB<escape>\fP\&.
+Keys can also be sequences of keys, like \fBgTx<backspace>^Y\fP to
+indicate the the user must do this magic dance on the keyboard in
+sequence to call the bound command.
+.sp
+Commands can be given in three different ways. The basic case is to
+just give a command name, like \fBenter\-command\fP\&. This command does not
+expect any parameters, to nothing more is required.
+If a command expects parameters, you can provide them right in this
+parameter, but you must prefix the command with \fB::\fP, for example to
+bind a shortcut to switch to the tabbed layout, you could write \fBbind
+any LT \(dq::layout tabbed\(dq\fP\&.
+The third possibility is to only open the command line, type the first
+part of the command and let the user input the rest, like this: \fBbind
+any L? :layout\fP\&.
+.sp
+An optional last parameter may be used to give a command a nice help
+text.
+.TP
+.B \fBset\fP
+Set a configuration option. Expects two parameters: configuration
+option name and value. If only the configuration name is given, the
+current value is shown.
+The configuration option name is \fBscope.name\fP, with scope either
+being \fBall\fP (meaning, generic application level configuration) or
+either of the panel scopes (\fBdocuments\fP, \fBfiles\fP, \fBeditor\fP,
+etc.).
+.sp
+Example: \fBset all.opener xdg\-open\fP
+.sp
+For available configuration options, see above in \fI\%Configuration options\fP
+.TP
+.B \fBfind\fP
+Find the entry that matches what you are trying to find.
+.sp
+Example: if you are in the file panel and want to find the next text
+file in the listing, you could type \fB:find .txt\fP
+.TP
+.B \fBfind\-next\fP
+Find the next entry that matches the previous \fBfind\fP command.
+.sp
+Example: if you tried to \fB:find .txt\fP before and now execute
+\fBfind\-next\fP, it will repeat the \fBfind\fP command and find the next
+entry that matches \fB\&.txt\fP\&.
+.TP
+.B \fBfind\-prev\fP
+Much like \fBfind\-next\fP, but goes backwards rather than forwards.
+.TP
+.B \fBdetails\fP
+Open the metadata viewer to show all metadata for the currently
+selected file.
+.sp
+Only available in document browser and file browser.
+.TP
+.B \fBedit\-metadata\fP
+Edit the metadata of the currently selected file.
+.sp
+Only available in document browser, metadata viewer, and file browser.
+.TP
+.B \fBedit\-metadata\-external\fP
+Edit the metadata of the selected item in an external text editor. If
+you set the configuration option \fBall.editor\fP, this text editor will
+be used. Otherwise the environment variables \fBVISUAL\fP and \fBEDITOR\fP
+are checked in that order to find an existing program.
+.sp
+Only available in document browser, metadata editor, and file browser.
+.TP
+.B \fBopen\fP
+Open the selected item in the currently selected panel. This will
+usually open the file in an external program or, if a folder is
+selected, navigate to that folder.
+.sp
+Only available in document browser, metadata editor, and file browser.
+.TP
+.B \fBopen\-with\fP
+Open the selected item with another program.
+.sp
+Only available in document browser, metadata editor, and file browser.
+.TP
+.B \fBselect\-and\-exit\fP
+If started in \fB\-\-select\-file\-mode\fP this command can be called to quit
+metaindexmanager and have the currently selected item be the file to
+use (for whatever purpose you called metaindexmanager with that
+option).
+.sp
+Only available in document browser and file browser.
+.TP
+.B \fBcopy\fP
+Copy the currently selected item to the metaindexmanager
+internal clipboard.
+This command accepts a parameter to identify the clipboard that you
+want to copy the path into. If no parameter is provided, the default
+clipboard is used.
+.sp
+Only available in document browser and file browser.
+.TP
+.B \fBappend\fP
+Append the currently selected item to the metaindexmanager
+internal clipboard.
+This command accepts a parameter to identift the clipboard that you
+want to use. See \fBcopy\fP for more details on clipboard naming.
+.sp
+Only available in document browser and file browser.
+.TP
+.B \fBclear\-clipboard\fP
+Clear the named clipboard (identified by the first parameter), or clear
+the default clipboard. See \fBcopy\fP for more details on clipboards.
+.TP
+.B \fBpaste\fP
+Paste the content of the clipboard (identified by the first parameter)
+into the current panel, if the panel supports it.
+.TP
+.B \fBrefresh\fP
+Refresh the current panel. This means reloading the content, not just
+redrawing.
+.sp
+Only available in document browser and file browser.
+.TP
+.B \fBmark\fP
+Bookmark the currently selected item. If no parameter is given, the
+user will be asked to provide an identifier for that bookmark (single
+ASCII letters only). Otherwise the parameter will be used as the
+identifier.
+.sp
+Only available in document browser and file browser.
+.TP
+.B \fBocr\fP
+Run optical character recognition on the selected item. This requires
+that OCR is configured.
+.sp
+Only available in document browser, file browser, and metadata editor.
+.TP
+.B \fBindex\fP
+Run the indexer on the selected item. If a folder is selected, the
+indexer is run in recursive mode, indexing everything in the folder and
+the subfolders.
+.sp
+Only available in document browser, file browser, and metadata editor.
+.TP
+.B \fBjump\-to\-mark\fP
+Jump to the bookmark identified by the first parameter to this command.
+If no parameter is given, the user will be asked to select from the
+available bookmarks.
+If the current panel is suitable to display that bookmark, the bookmark
+will be opened in it. Otherwise a new panel will open.
+.sp
+Only available in document browser and file browser.
+.TP
+.B \fBselect\fP
+Toggle the selection of the current item.
+.sp
+Only available in document browser and file browser.
+.TP
+.B \fBclear\-selection\fP
+Unselect all selected items.
+.sp
+Only available in document browser and file browser.
+.TP
+.B \fBinvert\-selection\fP
+Invert the selection of the currently visible items.
+.sp
+Only available in document browser and file browser.
+.TP
+.B \fBgo\-to\-location\fP
+Open the path to the currently selected item in a new file browser
+panel.
+.sp
+Only available in document browser, metadata viewer, and metadata
+editor.
+.TP
+.B \fBrm\fP
+Delete the selected item.
+.sp
+Only available in the file browser.
+.TP
+.B \fBmkdir\fP
+Create a new folder here. The first parameter is the name of the
+folder.
+.sp
+Only available in the file browser.
+.TP
+.B \fBcd\fP
+Open the path given as the first parameter to this command.
+.sp
+Only available in the file browser.
+.TP
+.B \fBshell\fP
+Execute a command in the shell in this folder. Either the command is
+given as the parameter(s) to \fBshell\fP or a shell is simply being
+launched at this point, which you will have to exit to return to the
+metaindexmanager.
+.TP
+.B \fBtoggle\-hidden\fP
+Toggle whether or not hidden files should be shown.
+.sp
+Only available in the file browser.
+.TP
+.B \fBgo\-to\-parent\fP
+Go up in the file hierarchy.
+.sp
+Only available in the file browser.
+.TP
+.B \fBsearch\fP
+Search your documents using the search term given as the first
+parameter.
+.sp
+The search term is passed into metaindex. Please check the syntax of
+search queries there. You can also find the documentation here:
+\fI\%https://vonshednob.cc/metaindex/documentation.html#search\-query\-syntax\fP
+.sp
+Only available in the document browser.
+.TP
+.B \fBcolumns\fP
+Set the visible columns to the parameters. If no parameters are given,
+the current configuration is shown.
+.sp
+This commands overrides the default column configuration that is set
+through \fBset documents.columns\fP (see \fI\%Configuration options\fP above)
+for the current panel.
+.sp
+Only available in the document browser.
+.TP
+.B \fBedit\-mode\fP
+Edit the value of the selected metadata tag.
+.sp
+Only available in the metadata editor.
+.TP
+.B \fBedit\-multiline\fP
+Edit this metadata tag value in an external editor to allow editing
+values that have line breaks.
+See configuration option \fBall.editor\fP\&.
+.sp
+Only available in the metadata editor.
+.TP
+.B \fBadd\-tag\fP
+Add the first parameter as a metadata tag.
+.sp
+Only available in the metadata editor.
+.TP
+.B \fBadd\-value\fP
+Add a new value of the metadata tag that you have currently selected.
+.sp
+Only available in the metadata editor.
+.TP
+.B \fBreplace\-value\fP
+Clear the selected metadata value and start editing.
+.sp
+Only available in the metadata editor.
+.TP
+.B \fBdel\-tag\fP
+Delete the selected tag and value.
+.sp
+Only available in the metadata editor.
+.TP
+.B \fBwrite\fP
+Save all changes made in the metadata editor.
+.sp
+Only available in the metadata editor.
+.TP
+.B \fBrules\fP
+Run the rule\-based indexers on the current document.
+.sp
+Only available in the metadata editor.
+.TP
+.B \fBundo\-change\fP
+Undo the most recent change.
+.sp
+Only available in the metadata editor.
+.TP
+.B \fBredo\-change\fP
+Redo the most recently undone change.
+.sp
+Only available in the metadata editor.
+.TP
+.B \fBundo\-all\-changes\fP
+Discards all changes.
+.sp
+Only available in the metadata editor.
+.TP
+.B \fBreset\fP
+Discards all changes, but also deletes the edit history.
+\fBredo\-change\fP will not work after this.
+.sp
+Only available in the metadata editor.
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.SH USAGE EXAMPLES
+.SH BUGS
+.sp
+To be expected. Please report anything that you find at
+\fI\%https://github.com/vonshednob/metaindexmanager\fP or via email to the authors
+at \fI\%https://vonshednob.cc/metaindexmanager\fP .
+.sp
+Be sure to inspect your logfile for crash reports and add them to the bug
+report!
+.\" Generated by docutils manpage writer.
+.
