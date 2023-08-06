@@ -1,0 +1,4 @@
+[console_scripts]
+beacon-dump = dissect.cobaltstrike.beacon:main
+beacon-xordecode = dissect.cobaltstrike.xordecode:main
+c2profile-dump = dissect.cobaltstrike.c2profile:main

@@ -1,0 +1,14 @@
+dissect.cstruct>=2.0
+lark
+
+[docs]
+sphinx
+sphinx_rtd_theme
+sphinx-autoapi
+sphinx-copybutton
+sphinx-argparse-cli
+ipython
+
+[test]
+pytest
+pytest-cov
