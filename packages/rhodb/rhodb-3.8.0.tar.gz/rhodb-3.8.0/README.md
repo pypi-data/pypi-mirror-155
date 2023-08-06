@@ -1,0 +1,30 @@
+# RhoDB
+
+Core Database-related classes that typical Pit Rho
+Applications will need.  'Typical' meaning using flask,
+sqlalchemy/postgres, and redis.
+
+## Examples
+
+Example code include db initialization, helper functions,
+and base classes for models.
+
+## Testing
+
+To run the tests we need to install pyenv and tox.
+
+Follow the instructions for [pyenv](https://github.com/pyenv/pyenv#installation)
+and [pyenv-virtualenv](https://github.com/pyenv/pyenv-virtualenv#installation)
+to install pyenv.
+
+After pyenv is intalled, then install tox
+
+    $ pip install tox
+
+Then install the different python versions in pyenv
+
+    $ pyenv install 2.7.8 3.3.6 3.4.4 3.5.1
+
+Now, run the tests:
+
+    $ tox
