@@ -1,0 +1,15 @@
+setup.py
+graph_read_simulator/chip_seq.py
+graph_read_simulator/command_line_interface.py
+graph_read_simulator/diploid_reference_builder.py
+graph_read_simulator/id_assignment.py
+graph_read_simulator/simulation.py
+graph_read_simulator/util.py
+graph_read_simulator/vcf_simulation.py
+graph_read_simulator.egg-info/PKG-INFO
+graph_read_simulator.egg-info/SOURCES.txt
+graph_read_simulator.egg-info/dependency_links.txt
+graph_read_simulator.egg-info/entry_points.txt
+graph_read_simulator.egg-info/not-zip-safe
+graph_read_simulator.egg-info/requires.txt
+graph_read_simulator.egg-info/top_level.txt

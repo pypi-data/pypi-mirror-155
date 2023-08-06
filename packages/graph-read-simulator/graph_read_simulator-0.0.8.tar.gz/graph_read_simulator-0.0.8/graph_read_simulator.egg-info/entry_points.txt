@@ -1,0 +1,3 @@
+[console_scripts]
+graph_read_simulator = graph_read_simulator.command_line_interface:main
+
