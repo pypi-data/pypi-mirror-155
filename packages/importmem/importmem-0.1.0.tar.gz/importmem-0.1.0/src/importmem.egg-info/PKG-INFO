@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: importmem
+Version: 0.1.0
+Summary: Profile how much memory is used by package imports
+Home-page: https://github.com/dmage/importmem
+Author: Oleg Bulatov
+Author-email: oleg@bulatov.me
+Project-URL: Bug Tracker, https://github.com/dmage/importmem/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# importmem
+
+This is a simple script to analyze how much memory needed to import Python
+module dependencies.

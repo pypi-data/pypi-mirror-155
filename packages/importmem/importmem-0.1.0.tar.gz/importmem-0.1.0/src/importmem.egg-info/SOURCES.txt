@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/importmem/__init__.py
+src/importmem/cli.py
+src/importmem.egg-info/PKG-INFO
+src/importmem.egg-info/SOURCES.txt
+src/importmem.egg-info/dependency_links.txt
+src/importmem.egg-info/entry_points.txt
+src/importmem.egg-info/top_level.txt
