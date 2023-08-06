@@ -1,0 +1,122 @@
+# This YAML file contains descriptions for the CI of nightly builds of Bob and
+# BEAT.
+
+# Definition of global variables (all stages)
+variables:
+  PYTHONUNBUFFERED: "1"
+  CONDA_ROOT: "${CI_PROJECT_DIR}/miniconda"
+  BOOTSTRAP: "https://gitlab.idiap.ch/bob/bob.devtools/raw/master/bob/devtools/bootstrap.py"
+  TORCH_HOME: "${CI_PROJECT_DIR}/.cache/torch"
+  PRE_COMMIT_HOME: "${CI_PROJECT_DIR}/.cache/pre-commit"
+
+
+# Definition of our build pipeline order
+stages:
+  - build
+  - cleanup
+
+
+# All stages are prepared the same, with a base set of commands
+.bootstrap:
+  before_script:
+    - curl --silent "${BOOTSTRAP}" --output "bootstrap.py"
+    - python3 bootstrap.py -vv channel base
+    - source ${CONDA_ROOT}/etc/profile.d/conda.sh
+    - if [[ $CI_RUNNER_TAGS == *"docker,"* ]]; then git config --global --add safe.directory ${CI_PROJECT_DIR}; fi
+    - conda activate base
+    - conda clean --all
+  cache:
+    paths:
+      - miniconda.sh
+      - ${TORCH_HOME}
+      - ${PRE_COMMIT_HOME}
+
+
+# Build targets
+.build_template:
+  extends: .bootstrap
+  stage: build
+  script:
+    - bdt ci nightlies -vv order.txt
+    - bdt ci clean -vv
+
+.build_linux_template:
+  extends: .build_template
+  tags:
+    - bob
+    - docker
+  image: quay.io/condaforge/linux-anvil-cos7-x86_64
+  variables:
+    # The version of cuda at Idiap
+    CONDA_OVERRIDE_CUDA: "11.6"
+
+build_linux_38:
+  extends: .build_linux_template
+  variables:
+    PYTHON_VERSION: "3.8"
+  cache:
+    key: 'build-py38'
+
+build_linux_39:
+  extends: .build_linux_template
+  variables:
+    PYTHON_VERSION: "3.9"
+  cache:
+    key: 'build-py39'
+
+build_macos_intel_38:
+  extends: .build_template
+  variables:
+    PYTHON_VERSION: "3.8"
+  tags:
+    - bob
+    - macos
+    - intel
+  cache:
+    key: 'build-py38'
+
+build_macos_intel_39:
+  extends: .build_template
+  variables:
+    PYTHON_VERSION: "3.9"
+  tags:
+    - bob
+    - macos
+    - intel
+  cache:
+    key: 'build-py39'
+
+build_macos_arm_39:
+  extends: .build_template
+  variables:
+    PYTHON_VERSION: "3.9"
+  tags:
+    - bob
+    - macos
+    - arm
+  cache:
+    key: 'build-py39'
+
+
+# Periodic cleanup of beta packages
+.cleanup_template:
+  extends: .bootstrap
+  stage: cleanup
+  tags:
+    - bob
+    - docker
+  image: quay.io/condaforge/linux-anvil-cos7-x86_64
+  script:
+    - bdt ci clean-betas -vv
+  cache:
+    key: 'cleanup'
+
+
+# The automatic clean-up takes place when the nightly successfuly runs
+cleanup:
+  extends: .cleanup_template
+
+manual_cleanup:
+  extends: .cleanup_template
+  when: manual
+  allow_failure: true
