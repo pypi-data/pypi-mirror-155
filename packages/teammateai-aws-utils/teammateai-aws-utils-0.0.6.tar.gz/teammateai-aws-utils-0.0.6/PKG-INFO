@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: teammateai-aws-utils
+Version: 0.0.6
+Summary: AWS utils package
+Author: Jothi Panchatcharam
+Author-email: jothi@teammateai.com
+License: MIT
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3.6
+Requires-Python: >=3.6
+
+A package that makes it easy to interact with aws services across multipl products.
+
