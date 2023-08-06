@@ -1,0 +1,3 @@
+[console_scripts]
+funpinpin=funpinpin_cli.scripts.command:cli
+
