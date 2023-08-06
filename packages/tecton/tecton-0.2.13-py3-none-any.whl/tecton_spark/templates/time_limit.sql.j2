@@ -1,0 +1,4 @@
+SELECT * FROM (
+    {{ source }}
+)
+WHERE {{ timestamp_key }} >= TO_TIMESTAMP_NTZ('{{ start_time }}')
