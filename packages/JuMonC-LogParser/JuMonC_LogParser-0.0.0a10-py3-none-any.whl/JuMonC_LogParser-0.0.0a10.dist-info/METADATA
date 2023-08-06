@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: JuMonC-LogParser
+Version: 0.0.0a10
+Summary: LogParser plugin for JuMonC
+Home-page: https://gitlab.jsc.fz-juelich.de/coec/jumonc-logparser
+Author: Christian Witzler
+Author-email: c.witzler@fz-juelich.de
+License: BSD 3-Clause License
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Description-Content-Type: text/markdown
+Requires-Dist: JuMonC (>=0.8.0a0)
+Requires-Dist: ply
+
+# JuMonC-LogParser
+
+Plugin for JuMonC that allows to parse logs and pass information on to the REST-API of JuMonC from logfiles. By changing the logfile parsing information this plugin can parse different logfiles.
