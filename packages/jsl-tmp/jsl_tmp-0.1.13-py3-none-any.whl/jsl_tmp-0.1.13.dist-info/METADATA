@@ -1,0 +1,33 @@
+Metadata-Version: 2.1
+Name: jsl-tmp
+Version: 0.1.13
+Summary: JSL-LIB TODO placeholder
+Home-page: http://nlu.johnsnowlabs.com
+Author: John Snow Labs
+Author-email: christian@johnsnowlabs.com
+License: UNKNOWN
+Keywords: NLP spark development NLU
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Description-Content-Type: text/markdown
+Requires-Dist: nlu
+Requires-Dist: numpy
+Requires-Dist: pyarrow (>=0.16.0)
+Requires-Dist: pandas (>=1.3.5)
+Requires-Dist: dataclasses
+Provides-Extra: full
+Requires-Dist: plotly ; extra == 'full'
+Provides-Extra: lol
+Requires-Dist: plotly ; extra == 'lol'
+
+UNKNOWN
+
