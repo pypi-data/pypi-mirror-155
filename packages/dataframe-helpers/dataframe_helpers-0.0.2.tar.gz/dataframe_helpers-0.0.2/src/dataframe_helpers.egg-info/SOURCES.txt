@@ -1,0 +1,12 @@
+LICENCE
+README.md
+pyproject.toml
+setup.py
+src/dataframe_helpers/__init__.py
+src/dataframe_helpers/dataframe_helpers.py
+src/dataframe_helpers/group_apply.py
+src/dataframe_helpers.egg-info/PKG-INFO
+src/dataframe_helpers.egg-info/SOURCES.txt
+src/dataframe_helpers.egg-info/dependency_links.txt
+src/dataframe_helpers.egg-info/requires.txt
+src/dataframe_helpers.egg-info/top_level.txt
