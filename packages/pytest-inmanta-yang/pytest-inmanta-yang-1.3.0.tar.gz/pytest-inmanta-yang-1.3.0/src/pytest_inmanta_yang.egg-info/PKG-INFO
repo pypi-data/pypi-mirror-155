@@ -1,0 +1,53 @@
+Metadata-Version: 2.1
+Name: pytest-inmanta-yang
+Version: 1.3.0
+Summary: Common fixtures used in inmanta yang related modules
+Author: Inmanta NV
+Author-email: code@inmanta.com
+License: Apache License, Version 2.0
+Classifier: Development Status :: 4 - Beta
+Classifier: Framework :: Pytest
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Testing
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: Apache Software License
+Requires-Python: >=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# pytest-inmanta-yang
+
+Common fixtures used in inmanta yang related modules
+
+
+Installation
+------------
+
+    pip install pytest-inmanta-yang
+
+
+Usage
+-----
+
+
+1. You can specify workspace folder and device access parameters
+
+```bash
+export WORKSPACE=/tmp/workspace
+export YANG_DEVICE_HOST="sros-1.ci.ii.inmanta.com"
+export YANG_DEVICE_PORT="830"
+export YANG_DEVICE_USERNAME="admin"
+export YANG_DEVICE_PASSWORD="admin"
+```
+
+2. The override the base config (that will be deployed to the device before each test), override the fixture `netconf_device_initial_config_path_file` to return the path to the file containing the base config
