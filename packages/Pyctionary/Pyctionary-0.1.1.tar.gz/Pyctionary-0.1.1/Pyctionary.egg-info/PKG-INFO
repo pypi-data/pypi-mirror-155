@@ -1,0 +1,69 @@
+Metadata-Version: 2.1
+Name: Pyctionary
+Version: 0.1.1
+Summary: Dictionnary for python
+Home-page: https://pyctionnary.readthedocs.io/
+Author: M'GHARI Tariq
+Author-email: tariqmghari@gmail.com
+License: MIT
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+
+## Pyctionary!
+
+*   **Project description**
+
+`Pyctionary` is a dictionary that provides a free API to find word meanings, synonyms, and detect word language. (More is coming :) )
+
+_This Module uses BS4 and requests as dependencies_
+
+*   **Installation**
+
+```plaintext
+ pip install Pyctionary
+```
+
+*   **Usage**
+
+```plaintext
+ from pyctionary import Pictionary
+ Pyctio=Pictionary()
+```
+
+*   **Synonyms :**
+
+This method is used to get synonyms of a list of words and it returns a python dictionary of words and their synonyms.
+
+```plaintext
+Pyctio.synoyms(["help"],max_synonyms=5)
+```
+
+*   **Definition:**
+
+You can get the definition of English words with:
+
+```plaintext
+Pyctio.define("laughter")
+```
+
+*   **Language:**
+
+Return a python dictionary, country language and language code (eg. EN-GB)
+
+```plaintext
+Pyctio.language("Hola")
+```
+
+_About:_
+
+Made by M'GHARI Tariq 2022.
+
