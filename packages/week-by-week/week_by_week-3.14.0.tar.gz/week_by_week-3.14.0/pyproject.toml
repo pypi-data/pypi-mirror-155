@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "week_by_week"
+version = "3.14.0"
+description = "This Library accept pandas dataframe, date_column and optional end date If end date is not provide, current today will be use internally by the library"
+authors = ["Qamarudeen Muhammad <qamarudeen.m@gmail.com>"]
+# New attributes
+license = "MIT"
+readme = "Readme.md"
+homepage = "https://github.com/blueband/week_by_week"
+repository = "https://github.com/blueband/week_by_week"
+keywords = ["Pandas", "Week by Week", "Dataframe"]
+classifiers = [
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Documentation",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: Quality Assurance",
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pandas = "^1.4.2"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
