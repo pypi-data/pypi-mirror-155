@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: nerdler_tc
+Version: 1.0.1
+Summary: Clean text from special characters and blanks
+Home-page: https://www.nerdler.pt
+Author: nerdler_pt
+Author-email: no-reply@nerdler.pt
+License: MIT
+Platform: any
+License-File: LICENSE
+License-File: License.txt
+
+This module provides a simple class to remove special chars (ex. Ä -> A, ö -> o) from a string. It also removes blanks and tabs.
