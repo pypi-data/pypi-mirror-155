@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: planetaryconjunctions
+Version: 0.1.2
+Summary: find when visible planets are close to each other in the night sky
+Author-email: Tony Rice <rtphokie@gmail.com>
+Project-URL: Homepage, https://github.com/rtphokie/planetaryconjunctions
+Project-URL: Bug Tracker, https://github.com/rtphokie/planetaryconjunctions/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# planetaryconjunctions
+when visible planets (and the Moon) are appear close to each other in the night sky
+
+## installation
+
+> pip install planetaryconjunctions
+
