@@ -1,0 +1,49 @@
+Metadata-Version: 2.1
+Name: saturnscrape
+Version: 1.2.0
+Summary: Scrapes information from https://saturn.live, a collaborate school scheduling system.
+Home-page: https://github.com/regulad/saturnscrape
+License: GPLv3
+Author: Parker Wahle
+Author-email: parkeredwardwahle2017@gmail.com
+Requires-Python: >=3.10,<4.0
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Requires-Dist: PyJWT[crypto] (>=2.3.0,<3.0.0)
+Requires-Dist: aiofiles (>=0.8.0,<0.9.0)
+Requires-Dist: aiohttp (>=3.8.1,<4.0.0)
+Requires-Dist: arrow (>=0.11,<0.15)
+Requires-Dist: ics (>=0.7,<0.8)
+Requires-Dist: pytz (>=2022.1,<2023.0)
+Requires-Dist: tzlocal (>=4.2,<5.0)
+Requires-Dist: vobject (>=0.9.6,<0.10.0)
+Project-URL: Repository, https://github.com/regulad/saturnscrape
+Description-Content-Type: text/markdown
+
+# saturnscrape
+
+Scrapes information from https://saturn.live, a collaborate school scheduling system.
+
+Currently, this Python package only aims to support the scheduling and members of a school.
+
+## Example
+
+```python
+from asyncio import run
+from typing import cast
+
+from saturnscrape import *
+
+
+async def runner():
+    client = SaturnLiveClient("jwt", "refresh token")
+    print(cast(FullStudent, await client.get_student("me")).phone_number)
+    await client.close()
+    
+
+run(runner())
+```
+
+Also provides a simple command line tool for downloading the schedule and members of a school to vCard and vCalendar/iCalendar files.
+
