@@ -1,0 +1,64 @@
+Metadata-Version: 2.1
+Name: aleksis-app-paweljong
+Version: 1.6
+Summary: AlekSIS (School Information System) — App Paweljong (Camp/Event management)
+Home-page: https://hacknfun.camp
+License: EUPL-1.2-or-later
+Author: Tom Teichler
+Author-email: tom.teichler@teckids.org
+Requires-Python: >=3.9,<4.0
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Education
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Education
+Requires-Dist: aleksis-app-postbuero (==1.0+20220218233830.a212f707)
+Requires-Dist: aleksis-app-tezor (>=1.0,<2.0)
+Requires-Dist: aleksis-core (>=2.8.1,<3.0.0)
+Requires-Dist: django-formtools (>=2.3,<3.0)
+Requires-Dist: django-iban-field (>=0.8,<0.9)
+Requires-Dist: django-starfield (>=1.0,<2.0)
+Project-URL: Repository, https://edugit.org/Teckids/hacknfun/AlekSIS-App-Paweljong
+Description-Content-Type: text/x-rst
+
+AlekSIS (School Information System) — App Paweljong (Camp/Event management)
+==================================================================================================
+
+AlekSIS
+-------
+
+This is an application for use with the `AlekSIS®`_ platform.
+
+Features
+--------
+
+The author of this app did not describe it yet.
+
+Licence
+-------
+
+::
+
+  Copyright © 2018, 2021, 2022 Dominik George <dominik.george@teckids.org>
+  Copyright © 2019, 2022 Tom Teichler <tom.teichler@teckids.org>
+
+  Licenced under the EUPL, version 1.2 or later
+
+Please see the LICENCE.rst file accompanying this distribution for the
+full licence text or on the `European Union Public Licence`_ website
+https://joinup.ec.europa.eu/collection/eupl/guidelines-users-and-developers
+(including all other official language versions).
+
+Trademark
+---------
+
+AlekSIS® is a registered trademark of the AlekSIS open source project, represented
+by Teckids e.V. Please refer to the `trademark policy`_ for hints on using the trademark
+AlekSIS®.
+
+.. _AlekSIS®: https://edugit.org/AlekSIS/AlekSIS
+.. _European Union Public Licence: https://eupl.eu/
+.. _trademark policy: https://aleksis.org/pages/about
+

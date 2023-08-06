@@ -1,0 +1,1372 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-22 21:24+0000\n"
+"PO-Revision-Date: 2022-03-22 15:51+0000\n"
+"Last-Translator: Tom Teichler <tom.teichler@teckids.org>\n"
+"Language-Team: German <https://translate.edugit.org/projects/hacknfun/aleksis-app-paweljong/de/>\n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.8\n"
+
+#: aleksis/apps/paweljong/data_checks.py:7
+msgid "Sync members"
+msgstr ""
+
+#: aleksis/apps/paweljong/data_checks.py:18
+msgid "Ensure that all registered persons are member of the linked group"
+msgstr ""
+
+#: aleksis/apps/paweljong/data_checks.py:19
+msgid "Event members are out of sync with registrations!"
+msgstr ""
+
+#: aleksis/apps/paweljong/filters.py:30
+msgid "Search by event"
+msgstr "Suche Veranstaltung"
+
+#: aleksis/apps/paweljong/filters.py:38
+msgid "Search by name"
+msgstr "Suche Name"
+
+#: aleksis/apps/paweljong/forms.py:18
+msgid "Only first name"
+msgstr "Nur Vorname"
+
+#: aleksis/apps/paweljong/forms.py:19
+msgid "First name and age"
+msgstr "Vor- und Nachname"
+
+#: aleksis/apps/paweljong/forms.py:20
+msgid "First name, last name and age"
+msgstr "Vor-, Nachname und Alter"
+
+#: aleksis/apps/paweljong/forms.py:24
+msgid "Signature list"
+msgstr "Unterschriftenliste"
+
+#: aleksis/apps/paweljong/forms.py:25
+msgid "Participants list"
+msgstr "Anwesenheitsliste"
+
+#: aleksis/apps/paweljong/forms.py:26
+msgid "Corona attendance list"
+msgstr "Corona-Anwesenheitsliste"
+
+#: aleksis/apps/paweljong/forms.py:30
+msgid "Creative Commons with attribution, 4.0 or later"
+msgstr "Creative Commons mit Namensnennung 4.0 International (CC BY 4.0) oder neuer"
+
+#: aleksis/apps/paweljong/forms.py:34
+msgid "Creative Commons with attribution and distribution only under the same conditions, 4.0 or later"
+msgstr "Creative Commons mit  Namensnennung und Weitergabe unter gleichen Bedingungen, 4.0 oder später"
+
+#: aleksis/apps/paweljong/forms.py:46 aleksis/apps/paweljong/forms.py:436
+msgid "Base data"
+msgstr "Basisdaten"
+
+#: aleksis/apps/paweljong/forms.py:50
+msgid "Date data"
+msgstr "Kalenderdaten"
+
+#: aleksis/apps/paweljong/forms.py:51
+msgid "Event details"
+msgstr "Veranstaltungsdetails"
+
+#: aleksis/apps/paweljong/forms.py:52 aleksis/apps/paweljong/menus.py:37
+#: aleksis/apps/paweljong/models.py:129
+#: aleksis/apps/paweljong/templates/paweljong/term/list.html:6
+#: aleksis/apps/paweljong/templates/paweljong/term/list.html:7
+msgid "Terms"
+msgstr "Bedingungen"
+
+#: aleksis/apps/paweljong/forms.py:53 aleksis/apps/paweljong/menus.py:59
+#: aleksis/apps/paweljong/models.py:132
+#: aleksis/apps/paweljong/templates/paweljong/info_mailing/list.html:6
+#: aleksis/apps/paweljong/templates/paweljong/info_mailing/list.html:7
+msgid "Info mailings"
+msgstr "Info-Mailings"
+
+#: aleksis/apps/paweljong/forms.py:108
+msgid "Event the voucher is valid for"
+msgstr "Veranstaltungsgutschein ist gültig für"
+
+#: aleksis/apps/paweljong/forms.py:109
+msgid "Person the voucher is valid for"
+msgstr "Person, für die der Gutschein gültig ist"
+
+#: aleksis/apps/paweljong/forms.py:110
+msgid "Voucher discount"
+msgstr "Rabatt"
+
+#: aleksis/apps/paweljong/forms.py:118 aleksis/apps/paweljong/models.py:113
+#: aleksis/apps/paweljong/templates/templated_email/event_created.email:8
+#: aleksis/apps/paweljong/templates/templated_email/event_created.email:36
+msgid "Group"
+msgstr "Gruppe"
+
+#: aleksis/apps/paweljong/forms.py:120
+msgid "Select group to generate list"
+msgstr "Gruppe auswählen, für die die Liste generiert werden soll"
+
+#: aleksis/apps/paweljong/forms.py:124
+msgid "Template"
+msgstr "Vorlage"
+
+#: aleksis/apps/paweljong/forms.py:126
+msgid "Select template to generate list"
+msgstr "Vorlage auswählen, um Liste zu generieren"
+
+#: aleksis/apps/paweljong/forms.py:130
+msgid "Landscape"
+msgstr "Querformat"
+
+#: aleksis/apps/paweljong/forms.py:131
+msgid "Select if output should be in landscape"
+msgstr "Wähle, ob die Ausgabe im Querformat sein soll"
+
+#: aleksis/apps/paweljong/forms.py:143
+msgid "Guardians personal data"
+msgstr "Persönliche Daten der Erziehungsberechtigten"
+
+#: aleksis/apps/paweljong/forms.py:147
+msgid "Guardians contact details"
+msgstr "Kontaktdaten der Erziehungsberechtigten"
+
+#: aleksis/apps/paweljong/forms.py:153
+msgid "Guardian's first name"
+msgstr "Vorname des Erziehungsberechtigten"
+
+#: aleksis/apps/paweljong/forms.py:155
+msgid "Please enter the first name of the legal guardian who will fill in the registration with you and who can be reached during the event in an emergency."
+msgstr "Bitte gib den Vornamen des Erziehungsberechtigten ein, der die Anmeldung mit dir ausfüllt und in Notfällen während der Veranstaltung erreichbar ist."
+
+#: aleksis/apps/paweljong/forms.py:161
+msgid "Guardian's last name"
+msgstr "Nachname des Erziehungsberechtigten"
+
+#: aleksis/apps/paweljong/forms.py:163
+msgid "Please enter the last name of the legal guardian who will fill in the registration with you and who can be reached during the event in an emergency."
+msgstr "Bitte gib den Nachnamen des Erziehungsberechtigten ein, der die Anmeldung mit dir ausfüllt und in Notfällen während der Veranstaltung erreichbar ist."
+
+#: aleksis/apps/paweljong/forms.py:169
+msgid "Guardian's mobile number"
+msgstr "Handynummer des Erziehungsberechtigten"
+
+#: aleksis/apps/paweljong/forms.py:171
+msgid "We need the mobile phone number for emergencies if we urgently need to reach your parents during the event."
+msgstr "Wir benötigen die Handynummer für Notfälle, wenn wir deine Eltern während der Veranstaltung dringend erreichen müssen."
+
+#: aleksis/apps/paweljong/forms.py:177
+msgid "Guardian's email address"
+msgstr "E-Mail-Adresse des Erziehungsberechtigten"
+
+#: aleksis/apps/paweljong/forms.py:188
+msgid "Personal data"
+msgstr "Persönliche Daten"
+
+#: aleksis/apps/paweljong/forms.py:193
+msgid "Address data"
+msgstr "Addressdaten"
+
+#: aleksis/apps/paweljong/forms.py:198
+#: aleksis/apps/paweljong/templates/paweljong/event_registration/full.html:60
+msgid "Contact details"
+msgstr "Kontaktdaten"
+
+#: aleksis/apps/paweljong/forms.py:202
+msgid "School details"
+msgstr "Angaben zur Schule"
+
+#: aleksis/apps/paweljong/forms.py:208 aleksis/apps/paweljong/forms.py:447
+#: aleksis/apps/paweljong/templates/paweljong/print/corona.html:20
+#: aleksis/apps/paweljong/templates/paweljong/print/list_attendance.html:20
+#: aleksis/apps/paweljong/templates/paweljong/print/list_participants.html:21
+#: aleksis/apps/paweljong/templates/paweljong/print/list_sign.html:21
+msgid "First name"
+msgstr "Vorname"
+
+#: aleksis/apps/paweljong/forms.py:213 aleksis/apps/paweljong/forms.py:448
+#: aleksis/apps/paweljong/templates/paweljong/print/corona.html:19
+#: aleksis/apps/paweljong/templates/paweljong/print/list_attendance.html:19
+#: aleksis/apps/paweljong/templates/paweljong/print/list_participants.html:20
+#: aleksis/apps/paweljong/templates/paweljong/print/list_sign.html:20
+msgid "Last name"
+msgstr "Nachname"
+
+#: aleksis/apps/paweljong/forms.py:218
+#: aleksis/apps/paweljong/templates/templated_email/event_registered.email:18
+#: aleksis/apps/paweljong/templates/templated_email/event_registered.email:67
+msgid "Street"
+msgstr "Straße"
+
+#: aleksis/apps/paweljong/forms.py:222
+#: aleksis/apps/paweljong/templates/templated_email/event_registered.email:19
+#: aleksis/apps/paweljong/templates/templated_email/event_registered.email:68
+msgid "Housenumber"
+msgstr "Hausnummer"
+
+#: aleksis/apps/paweljong/forms.py:226
+#: aleksis/apps/paweljong/templates/templated_email/event_registered.email:20
+#: aleksis/apps/paweljong/templates/templated_email/event_registered.email:69
+msgid "Postal code"
+msgstr "Postleitzahl"
+
+#: aleksis/apps/paweljong/forms.py:230
+#: aleksis/apps/paweljong/templates/templated_email/event_created.email:11
+#: aleksis/apps/paweljong/templates/templated_email/event_created.email:39
+#: aleksis/apps/paweljong/templates/templated_email/event_registered.email:21
+#: aleksis/apps/paweljong/templates/templated_email/event_registered.email:70
+msgid "Place"
+msgstr "Stadt"
+
+#: aleksis/apps/paweljong/forms.py:234
+#: aleksis/apps/paweljong/templates/paweljong/print/corona.html:22
+#: aleksis/apps/paweljong/templates/paweljong/print/list_participants.html:23
+#: aleksis/apps/paweljong/templates/templated_email/event_registered.email:17
+#: aleksis/apps/paweljong/templates/templated_email/event_registered.email:27
+#: aleksis/apps/paweljong/templates/templated_email/event_registered.email:66
+#: aleksis/apps/paweljong/templates/templated_email/event_registered.email:76
+msgid "Mobile number"
+msgstr "Handynummer"
+
+#: aleksis/apps/paweljong/forms.py:237
+msgid "Your mobile number helps us to reach you in an emergency during the event, e.g. if you are alone with your group at a conference or similar. If you don't have a cell phone, you can leave the field blank."
+msgstr "deine Handynummer hilft uns, dich bei Notfällen während der Veranstaltung zu erreichen, z.B. wenn du alleine mit deiner Gruppe auf einer Konferenz unterwegs bist. Wenn du kein Handy hast, kannst du dieses Feld ignorieren."
+
+#: aleksis/apps/paweljong/forms.py:244 aleksis/apps/paweljong/forms.py:449
+#: aleksis/apps/paweljong/templates/paweljong/print/list_participants.html:22
+#: aleksis/apps/paweljong/templates/templated_email/event_registered.email:15
+#: aleksis/apps/paweljong/templates/templated_email/event_registered.email:64
+msgid "Date of birth"
+msgstr "Geburtsdatum"
+
+#: aleksis/apps/paweljong/forms.py:248
+msgid "Sex"
+msgstr "Geschlecht"
+
+#: aleksis/apps/paweljong/forms.py:250
+msgid "For various reasons, e.g. because we have to keep gender segregation during the night for legal reasons, we need to know if you are a boy or a girl."
+msgstr "Aus verschiedenen Gründen, z.B da wir aus rechtlichen Gründen die Geschlechtertrennung während der Nacht aufrechterhalten müssen, müssen wir wissen, ob du ein Junge oder ein Mädchen bist."
+
+#: aleksis/apps/paweljong/forms.py:258
+#: aleksis/apps/paweljong/templates/templated_email/event_registered.email:16
+#: aleksis/apps/paweljong/templates/templated_email/event_registered.email:26
+#: aleksis/apps/paweljong/templates/templated_email/event_registered.email:65
+#: aleksis/apps/paweljong/templates/templated_email/event_registered.email:75
+msgid "Email address"
+msgstr "E-Mail-Adresse"
+
+#: aleksis/apps/paweljong/forms.py:260
+msgid "Please use your personal e-mail address here, which you will check personally. Important information will always be sent to your parents as well. Do not use an e-mail address owned by your parents here."
+msgstr "Bitte nutze hier deine persönliche E-Mail-Adresse, welche du persönlich abrufst. Wichtige Informationen senden wir immer zusätzlich an deine Eltern. Bitte nutze hier nicht die E-Mail-Adresse deiner Eltern."
+
+#: aleksis/apps/paweljong/forms.py:267
+msgid "School"
+msgstr "Schule"
+
+#: aleksis/apps/paweljong/forms.py:268
+msgid "Please enter the name of your school."
+msgstr "Bitte trage den Namen deiner Schule ein."
+
+#: aleksis/apps/paweljong/forms.py:272
+msgid "School place"
+msgstr "Ort der Schule"
+
+#: aleksis/apps/paweljong/forms.py:273
+msgid "Enter the place (city) where your school is located."
+msgstr "Bitte trage die Stadt ein, wo sich deine Schule befindet."
+
+#: aleksis/apps/paweljong/forms.py:277 aleksis/apps/paweljong/models.py:261
+msgid "School class"
+msgstr "Schulklasse"
+
+#: aleksis/apps/paweljong/forms.py:278
+msgid "Please enter the class you are in (e.g. 8a)."
+msgstr "Bitte trage die Klasse ein, in die du gehst (z.B. 8a)."
+
+#: aleksis/apps/paweljong/forms.py:286 aleksis/apps/paweljong/models.py:266
+msgid "Medical information / intolerances"
+msgstr "Medizinische Informationen / Intoleranzen"
+
+#: aleksis/apps/paweljong/forms.py:290
+msgid "Other remarks"
+msgstr "Sonstige Anmerkungen"
+
+#: aleksis/apps/paweljong/forms.py:300
+msgid "If there are any medically important things we need to consider, e.g. when making food or to make sure you take prescribed medication, please enter it here."
+msgstr "Wenn es medizinisch wichtige Dinge gibt, die wir berücksichtigen müssen, z.B bei der Zubereitung von Speisen oder zur Sicherstellung der Einnahme verordneter Medikamente, trage diese bitte hier ein."
+
+#: aleksis/apps/paweljong/forms.py:304
+msgid "You can write down any remarks you want to tell us here."
+msgstr "Du kannst hier alles rein schreiben, was du uns mitteilen möchtest."
+
+#: aleksis/apps/paweljong/forms.py:329
+msgid "Financial data"
+msgstr "Angaben zur Bezahlung"
+
+#: aleksis/apps/paweljong/forms.py:336
+msgid "Voucher code"
+msgstr "Gutscheincode"
+
+#: aleksis/apps/paweljong/forms.py:337
+msgid "If you have a voucher code, type it in here."
+msgstr "Wenn du einen Gutscheincode hast, gib diesen hier ein."
+
+#: aleksis/apps/paweljong/forms.py:342
+msgid "Payment method"
+msgstr "Zahlungsmethode"
+
+#: aleksis/apps/paweljong/forms.py:344
+msgid "Please choose a payment method. The actual payment will be made after the registration."
+msgstr "Bitte wähle eine Zahlungsmethode. Die tatsächliche Zahlung wird nach der Anmeldung gemacht."
+
+#: aleksis/apps/paweljong/forms.py:361
+msgid "Our association would like to offer all children and young people the opportunity to participate in our events. Sometimes, however, families cannot afford the full fee. We therefore have a budget from which we can promote participation after we have carefully examined the necessity and eligibility. We rely on donations for this budget. If you would like to donate a voluntary additional amount for this budget, please indicate this here."
+msgstr "Unser Verein möchte allen Kindern und Jugendlichen die Möglichkeit bieten, an unseren Veranstaltungen teilzunehmen. Manchmal können sich Familien jedoch nicht die volle Gebühr leisten. Wir haben also ein Budget, aus dem wir die Teilnahme fördern können, nachdem wir die Notwendigkeit und Förderfähigkeit sorgfältig geprüft haben. Für dieses Budget sind wir auf Spenden angewiesen. Wenn Sie für dieses Budget einen freiwilligen Zusatzbetrag spenden möchten, geben Sie dies bitte hier an."
+
+#: aleksis/apps/paweljong/forms.py:393
+msgid "I confirm that the retraction of the registration is not possible anymore after {}"
+msgstr "Ich bestätigte, dass eine Stornierung nach dem {} nicht mehr möglich ist"
+
+#: aleksis/apps/paweljong/forms.py:440
+msgid "Account data"
+msgstr "Kontodaten"
+
+#: aleksis/apps/paweljong/forms.py:455
+msgid "The username must only contain lower case letters and numbers, and must begin with a letter."
+msgstr "Der Benutzername darf nur Kleinbuchstaben und Zahlen beinhalten, und muss mit einem Buchstaben beginnen."
+
+#: aleksis/apps/paweljong/menus.py:6
+#: aleksis/apps/paweljong/templates/paweljong/register_start.html:4
+msgid "Register"
+msgstr "Registrieren"
+
+#: aleksis/apps/paweljong/menus.py:14
+#: aleksis/apps/paweljong/templates/paweljong/event/list.html:5
+#: aleksis/apps/paweljong/templates/paweljong/event/list.html:6
+msgid "Events"
+msgstr "Veranstaltungen"
+
+#: aleksis/apps/paweljong/menus.py:26 aleksis/apps/paweljong/models.py:214
+#: aleksis/apps/paweljong/models.py:215
+#: aleksis/apps/paweljong/templates/paweljong/voucher/list.html:6
+#: aleksis/apps/paweljong/templates/paweljong/voucher/list.html:7
+msgid "Vouchers"
+msgstr "Gutscheine"
+
+#: aleksis/apps/paweljong/menus.py:48
+#: aleksis/apps/paweljong/templates/paweljong/registration_state/list.html:6
+#: aleksis/apps/paweljong/templates/paweljong/registration_state/list.html:7
+msgid "Registration states"
+msgstr "Registrierungsstatus"
+
+#: aleksis/apps/paweljong/menus.py:70
+msgid "Generate participant list"
+msgstr "Teilnehmerlisten generieren"
+
+#: aleksis/apps/paweljong/menus.py:81
+#: aleksis/apps/paweljong/templates/paweljong/event/list.html:10
+#: aleksis/apps/paweljong/views.py:757
+msgid "Upcoming events"
+msgstr "Anstehende Veranstaltungen"
+
+#: aleksis/apps/paweljong/menus.py:92
+#: aleksis/apps/paweljong/templates/paweljong/event_registration/list.html:6
+#: aleksis/apps/paweljong/templates/paweljong/event_registration/list.html:7
+msgid "Registrations"
+msgstr "Anmeldungen"
+
+#: aleksis/apps/paweljong/models.py:28
+#: aleksis/apps/paweljong/templates/templated_email/event_registered.email:14
+#: aleksis/apps/paweljong/templates/templated_email/event_registered.email:25
+#: aleksis/apps/paweljong/templates/templated_email/event_registered.email:63
+#: aleksis/apps/paweljong/templates/templated_email/event_registered.email:74
+msgid "Name"
+msgstr "Name"
+
+#: aleksis/apps/paweljong/models.py:29
+msgid "Colour"
+msgstr "Farbe"
+
+#: aleksis/apps/paweljong/models.py:36
+msgid "Title"
+msgstr "Titel"
+
+#: aleksis/apps/paweljong/models.py:37
+msgid "Term"
+msgstr "Bedingung"
+
+#: aleksis/apps/paweljong/models.py:38
+msgid "Confirmation text"
+msgstr "Bestätigungstext"
+
+#: aleksis/apps/paweljong/models.py:45
+msgid "subject"
+msgstr "Betreff"
+
+#: aleksis/apps/paweljong/models.py:46
+msgid "Text"
+msgstr "Text"
+
+#: aleksis/apps/paweljong/models.py:47
+msgid "Request replies to"
+msgstr "Antworten an"
+
+#: aleksis/apps/paweljong/models.py:49
+msgid "Mailing is active"
+msgstr "Mailing ist aktiv"
+
+#: aleksis/apps/paweljong/models.py:51
+msgid "Sender"
+msgstr "Absender"
+
+#: aleksis/apps/paweljong/models.py:52
+msgid "Send to registered person"
+msgstr "An angemeldete Personen senden"
+
+#: aleksis/apps/paweljong/models.py:53
+msgid "Send to guardians"
+msgstr "An Erziehungsberechtigte senden"
+
+#: aleksis/apps/paweljong/models.py:111
+msgid "Display name"
+msgstr "Anzeigename"
+
+#: aleksis/apps/paweljong/models.py:115
+#: aleksis/apps/paweljong/templates/templated_email/event_created.email:9
+#: aleksis/apps/paweljong/templates/templated_email/event_created.email:37
+msgid "Description"
+msgstr "Beschreibung"
+
+#: aleksis/apps/paweljong/models.py:116
+msgid "Publish"
+msgstr "Veröffentlichen"
+
+#: aleksis/apps/paweljong/models.py:118
+msgid "Slug"
+msgstr "Slug"
+
+#: aleksis/apps/paweljong/models.py:121
+#: aleksis/apps/paweljong/templates/templated_email/event_created.email:12
+#: aleksis/apps/paweljong/templates/templated_email/event_created.email:40
+msgid "Date of event"
+msgstr "Datum der Veranstaltung"
+
+#: aleksis/apps/paweljong/models.py:122
+#: aleksis/apps/paweljong/templates/templated_email/event_created.email:13
+#: aleksis/apps/paweljong/templates/templated_email/event_created.email:41
+msgid "Registration deadline"
+msgstr "Anmeldungsschluss"
+
+#: aleksis/apps/paweljong/models.py:123
+#: aleksis/apps/paweljong/templates/templated_email/event_created.email:14
+#: aleksis/apps/paweljong/templates/templated_email/event_created.email:42
+msgid "Retraction deadline"
+msgstr "Kündigungsfrist"
+
+#: aleksis/apps/paweljong/models.py:126
+msgid "Cost in €"
+msgstr "Kosten in €"
+
+#: aleksis/apps/paweljong/models.py:127
+msgid "Maximum participants"
+msgstr "Maximale Teilnehmerzahl"
+
+#: aleksis/apps/paweljong/models.py:128
+msgid "Information about the event"
+msgstr "Informationen über die Veranstaltung"
+
+#: aleksis/apps/paweljong/models.py:205
+msgid "Sent to persons"
+msgstr "An Personen gesendet"
+
+#: aleksis/apps/paweljong/models.py:221 aleksis/apps/paweljong/models.py:255
+#: aleksis/apps/paweljong/tables.py:12 aleksis/apps/paweljong/tables.py:35
+#: aleksis/apps/paweljong/templates/paweljong/event/full.html:4
+#: aleksis/apps/paweljong/templates/templated_email/event_registered.email:8
+#: aleksis/apps/paweljong/templates/templated_email/event_registered.email:10
+#: aleksis/apps/paweljong/templates/templated_email/event_registered.email:57
+#: aleksis/apps/paweljong/templates/templated_email/event_registered.email:59
+msgid "Event"
+msgstr "Veranstaltung"
+
+#: aleksis/apps/paweljong/models.py:228 aleksis/apps/paweljong/models.py:257
+#: aleksis/apps/paweljong/tables.py:38
+#: aleksis/apps/paweljong/templates/templated_email/event_registered.email:12
+#: aleksis/apps/paweljong/templates/templated_email/event_registered.email:61
+msgid "Person"
+msgstr "Person"
+
+#: aleksis/apps/paweljong/models.py:237
+msgid "Used by"
+msgstr "Benutzt von"
+
+#: aleksis/apps/paweljong/models.py:258
+msgid "Registration date"
+msgstr "Anmeldedatum"
+
+#: aleksis/apps/paweljong/models.py:260
+msgid "Name of school"
+msgstr "Name der Schule"
+
+#: aleksis/apps/paweljong/models.py:262
+msgid "Place of the school"
+msgstr "Ort der Schule"
+
+#: aleksis/apps/paweljong/models.py:264
+msgid "Comment / remarks"
+msgstr "Kommentar / Anmerkungen"
+
+#: aleksis/apps/paweljong/models.py:271
+msgid "Voucher"
+msgstr "Gutschein"
+
+#: aleksis/apps/paweljong/models.py:275
+#: aleksis/apps/paweljong/templates/templated_email/event_registered.email:31
+#: aleksis/apps/paweljong/templates/templated_email/event_registered.email:80
+msgid "Donation"
+msgstr "Spende"
+
+#: aleksis/apps/paweljong/models.py:278
+msgid "Accepted terms"
+msgstr "Akzeptierte Bedingungen"
+
+#: aleksis/apps/paweljong/models.py:283
+msgid "States"
+msgstr "Status"
+
+#: aleksis/apps/paweljong/models.py:312
+msgid "Participation of {} in event {}"
+msgstr "Teilnahme von {} bei Veranstaltung {}"
+
+#: aleksis/apps/paweljong/models.py:341
+msgid "Social Sponsoring / Extra Donation"
+msgstr "Social-Sponsoring / Spende"
+
+#: aleksis/apps/paweljong/models.py:352
+msgid "Voucher / Granted discount"
+msgstr "Rabatt"
+
+#: aleksis/apps/paweljong/models.py:379 aleksis/apps/paweljong/views.py:401
+msgid "Event registration"
+msgstr "Veranstaltungsanmeldung"
+
+#: aleksis/apps/paweljong/models.py:380
+msgid "Event registrations"
+msgstr "Veranstaltungsanmeldungen"
+
+#: aleksis/apps/paweljong/preferences.py:10
+msgid "Paweljong"
+msgstr "Paweljong"
+
+#: aleksis/apps/paweljong/preferences.py:20
+msgid "Mail recipient for event notifications"
+msgstr "Mail-Empfänger für Veranstaltungsbenachrichtigungen"
+
+#: aleksis/apps/paweljong/tables.py:13
+msgid "Date"
+msgstr "Datum"
+
+#: aleksis/apps/paweljong/tables.py:14
+#: aleksis/apps/paweljong/templates/templated_email/event_created.email:16
+#: aleksis/apps/paweljong/templates/templated_email/event_created.email:44
+msgid "Max. participants"
+msgstr "Maximale Teilnehmerzahl"
+
+#: aleksis/apps/paweljong/tables.py:15
+msgid "Registration until"
+msgstr "Anmeldung möglich bis"
+
+#: aleksis/apps/paweljong/tables.py:20 aleksis/apps/paweljong/tables.py:21
+#: aleksis/apps/paweljong/tables.py:46 aleksis/apps/paweljong/tables.py:70
+#: aleksis/apps/paweljong/tables.py:71 aleksis/apps/paweljong/tables.py:88
+#: aleksis/apps/paweljong/tables.py:89 aleksis/apps/paweljong/tables.py:102
+#: aleksis/apps/paweljong/tables.py:103 aleksis/apps/paweljong/tables.py:122
+#: aleksis/apps/paweljong/tables.py:123
+#: aleksis/apps/paweljong/templates/paweljong/event_registration/full.html:24
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: aleksis/apps/paweljong/tables.py:26 aleksis/apps/paweljong/tables.py:27
+#: aleksis/apps/paweljong/tables.py:65
+msgid "View"
+msgstr "Ansehen"
+
+#: aleksis/apps/paweljong/tables.py:36
+msgid "Amount"
+msgstr "Betrag"
+
+#: aleksis/apps/paweljong/tables.py:37
+msgid "Code"
+msgstr "Code"
+
+#: aleksis/apps/paweljong/tables.py:42 aleksis/apps/paweljong/tables.py:43
+#: aleksis/apps/paweljong/tables.py:108 aleksis/apps/paweljong/tables.py:109
+#: aleksis/apps/paweljong/templates/paweljong/event_registration/full.html:31
+msgid "Delete"
+msgstr "Löschen"
+
+#: aleksis/apps/paweljong/tables.py:49
+#: aleksis/apps/paweljong/templates/paweljong/print/manage.html:11
+msgid "Print"
+msgstr "Drucken"
+
+#: aleksis/apps/paweljong/tables.py:64
+msgid "View registration"
+msgstr "Anmeldung ansehen"
+
+#: aleksis/apps/paweljong/templates/paweljong/account_wizard.html:4
+#: aleksis/apps/paweljong/templates/paweljong/account_wizard.html:5
+#: aleksis/apps/paweljong/templates/paweljong/event/register_wizard.html:4
+#: aleksis/apps/paweljong/templates/paweljong/event/register_wizard.html:5
+#: aleksis/apps/paweljong/templates/paweljong/register.html:4
+#: aleksis/apps/paweljong/templates/paweljong/register.html:5
+#: aleksis/apps/paweljong/templates/paweljong/register.html:9
+#: aleksis/apps/paweljong/templates/paweljong/register_start.html:13
+msgid "Registration"
+msgstr "Anmeldung"
+
+#: aleksis/apps/paweljong/templates/paweljong/account_wizard.html:25
+#: aleksis/apps/paweljong/templates/paweljong/event/register_wizard.html:37
+#: aleksis/apps/paweljong/templates/paweljong/event/register_wizard_consent.html:51
+msgid "first step"
+msgstr "Erster Schritt"
+
+#: aleksis/apps/paweljong/templates/paweljong/account_wizard.html:29
+#: aleksis/apps/paweljong/templates/paweljong/event/register_wizard.html:41
+#: aleksis/apps/paweljong/templates/paweljong/event/register_wizard_consent.html:55
+msgid "previous step"
+msgstr "Vorheriger Schritt"
+
+#: aleksis/apps/paweljong/templates/paweljong/account_wizard.html:32
+#: aleksis/apps/paweljong/templates/paweljong/event/register_wizard.html:44
+#: aleksis/apps/paweljong/templates/paweljong/event/register_wizard_consent.html:58
+msgid "Next"
+msgstr "Weiter"
+
+#: aleksis/apps/paweljong/templates/paweljong/event/create.html:4
+#: aleksis/apps/paweljong/templates/paweljong/event/create.html:5
+#: aleksis/apps/paweljong/templates/paweljong/event/manage.html:20
+msgid "Create event"
+msgstr "Veranstaltung erstellen"
+
+#: aleksis/apps/paweljong/templates/paweljong/event/edit.html:4
+#: aleksis/apps/paweljong/templates/paweljong/event/edit.html:5
+msgid "Edit event"
+msgstr "Veranstaltung bearbeiten"
+
+#: aleksis/apps/paweljong/templates/paweljong/event/full.html:31
+msgid "Registration open until"
+msgstr "Anmeldung möglich bis"
+
+#: aleksis/apps/paweljong/templates/paweljong/event/full.html:36
+msgid "Participation fee (all inclusive)"
+msgstr "Teilnahmegebühr (alles inklusive)"
+
+#: aleksis/apps/paweljong/templates/paweljong/event/full.html:42
+msgid "of"
+msgstr "von"
+
+#: aleksis/apps/paweljong/templates/paweljong/event/full.html:58
+#: aleksis/apps/paweljong/templates/paweljong/event/full.html:60
+#: aleksis/apps/paweljong/templates/paweljong/event/register_start.html:101
+#: aleksis/apps/paweljong/templates/paweljong/event/register_start.html:111
+#: aleksis/apps/paweljong/templates/paweljong/register_start.html:57
+#: aleksis/apps/paweljong/templates/paweljong/register_start.html:67
+msgid "Register now"
+msgstr "Jetzt anmelden"
+
+#: aleksis/apps/paweljong/templates/paweljong/event/full.html:62
+#: aleksis/apps/paweljong/templates/paweljong/event/register_start.html:77
+msgid "Not available"
+msgstr "Nicht verfügbar"
+
+#: aleksis/apps/paweljong/templates/paweljong/event/list.html:17
+msgid "Events you've taken part"
+msgstr "Veranstaltungen an denen du teilgenommen hast"
+
+#: aleksis/apps/paweljong/templates/paweljong/event/manage.html:6
+#: aleksis/apps/paweljong/templates/paweljong/event/manage.html:7
+msgid "Manage events"
+msgstr "Veranstaltungen verwalten"
+
+#: aleksis/apps/paweljong/templates/paweljong/event/manage.html:11
+msgid "Filter events"
+msgstr "Veranstaltungen filtern"
+
+#: aleksis/apps/paweljong/templates/paweljong/event/manage.html:14
+#: aleksis/apps/paweljong/templates/paweljong/event_registration/list.html:14
+#: aleksis/apps/paweljong/templates/paweljong/voucher/list.html:14
+msgid "Search"
+msgstr "Suche"
+
+#: aleksis/apps/paweljong/templates/paweljong/event/manage.html:18
+#: aleksis/apps/paweljong/templates/paweljong/event_registration/list.html:18
+#: aleksis/apps/paweljong/templates/paweljong/voucher/list.html:18
+msgid "Clear"
+msgstr "Leeren"
+
+#: aleksis/apps/paweljong/templates/paweljong/event/manage.html:23
+msgid "Selected events"
+msgstr "Ausgewähle Veranstaltungen"
+
+#: aleksis/apps/paweljong/templates/paweljong/event/register_start.html:4
+msgid "Register for"
+msgstr "Anmelden für"
+
+#: aleksis/apps/paweljong/templates/paweljong/event/register_start.html:20
+msgid ""
+"\n"
+"           Welcome to the registration for this event! Please make sure to fill in\n"
+"           the registration yourself, as the child who wants to participate.\n"
+"           You should fill in the registration together with a parent (or other legal\n"
+"           guardian).\n"
+"           "
+msgstr ""
+"\n"
+"           Willkommen bei der Anmeldung für diese Veranstaltung! Bitte achte darauf,\n"
+"           die Anmeldung selbst auszufüllen. Du solltest diese Anmeldung zusammen mit\n"
+"           deinen Eltern oder Erziehungsberechtigten ausfüllen.\n"
+"           "
+
+#: aleksis/apps/paweljong/templates/paweljong/event/register_start.html:28
+msgid ""
+"\n"
+"           We ask parents to not fill in the registration on behalf of their child.\n"
+"           "
+msgstr ""
+"\n"
+"           Wir bitten die Eltern darum, diese Anmeldung nicht stellvertretend für ihr Kind auszufüllen.\n"
+"           "
+
+#: aleksis/apps/paweljong/templates/paweljong/event/register_start.html:33
+msgid ""
+"\n"
+"           Every participant needs a personal e-mail address. This address must be one\n"
+"           that you, the participating child, check and read yourself, not one owned by your\n"
+"           parents. Of course, we will always send important information to your parents as well.\n"
+"           "
+msgstr ""
+"\n"
+"           Jeder Teilnehmende benötigt seine eigene E-Mail-Adresse. Diese Adresse muss eine Adresse sein,\n"
+"           die du selbst abrufst und liest, und die nicht deinen Eltern gehört.\n"
+"           Wichtige Informationen senden wir natürlich immer zusätzlich an deine Eltern.\n"
+"           "
+
+#: aleksis/apps/paweljong/templates/paweljong/event/register_start.html:40
+#: aleksis/apps/paweljong/templates/paweljong/register_start.html:23
+msgid ""
+"\n"
+"           If you do not have a personal e-mail address yet, and do not want or cannot register\n"
+"           one with one of the \"big\" providers (keep in mind that Google, Outlook, etc. are\n"
+"           allowed from 16 years only, and often collect and analyse your private mail), you can\n"
+"           register an e-mail address with us.\n"
+"           "
+msgstr ""
+"\n"
+"           Wenn du bisher keine eigene E-Mail-Adresse hast, und keine bei den \"großen\"\n"
+"           Anbietern anlegen kannst oder möchtest (denke daran, dass Google, Outlook etc.\n"
+"           Accounts erst ab 16 erlauben, und oft deine Daten sammeln und analysieren), kannst du\n"
+"           Dir bei uns eine E-Mail-Adresse registrieren.\n"
+"           "
+
+#: aleksis/apps/paweljong/templates/paweljong/event/register_start.html:48
+msgid ""
+"\n"
+"           If you already have a user account with Teckids, do not register a new one. Login\n"
+"           with your existing username and password. If you have forgotten your password, please\n"
+"           send us an e-mail (pelase do this yourself, with the help of your parents, if needed).\n"
+"           "
+msgstr ""
+"\n"
+"           Wenn du bereits einen Teckids-Account hast, lege Dir bitte keinen neuen an. Melde\n"
+"           dich mit deinem vorhandenen Benutzernamen und Passwort an. Wenn du dein\n"
+"           Passwort vergessen hast, schreibe uns bitte eine E-Mail (bitte mache das selbst mit der Hilfe\n"
+"           deiner Eltern, falls nötig).\n"
+"           "
+
+#: aleksis/apps/paweljong/templates/paweljong/event/register_start.html:62
+msgid "I already have an account"
+msgstr "Ich habe bereits ein Konto"
+
+#: aleksis/apps/paweljong/templates/paweljong/event/register_start.html:67
+#: aleksis/apps/paweljong/templates/paweljong/register_start.html:37
+msgid "I have a personal email address"
+msgstr "Ich habe eine persönliche E-Mail-Adresse"
+
+#: aleksis/apps/paweljong/templates/paweljong/event/register_start.html:72
+#: aleksis/apps/paweljong/templates/paweljong/register_start.html:42
+msgid "I don't have a personal email address"
+msgstr "Ich habe keine persönliche E-Mail-Adresse"
+
+#: aleksis/apps/paweljong/templates/paweljong/event/register_start.html:85
+msgid ""
+"\n"
+"         If you already have a Teckids account, please login here. If you forgot your password,\n"
+"         or have problems logging in, please send us an e-mail.\n"
+"         "
+msgstr ""
+"\n"
+"         Wenn du bereits einen Teckids-Account hast, melde dich bitte hier an. Wenn du dein Passwort\n"
+"         vergessen hast, oder Probleme bei der Anmeldung hast, sende uns bitte eine E-Mail.\n"
+"         "
+
+#: aleksis/apps/paweljong/templates/paweljong/event/register_start.html:90
+msgid "Login"
+msgstr "Anmelden"
+
+#: aleksis/apps/paweljong/templates/paweljong/event/register_start.html:94
+#: aleksis/apps/paweljong/templates/paweljong/register_start.html:50
+msgid ""
+"\n"
+"         You can now choose a personal e-mail address hosted on our servers.\n"
+"         For information about receiving mails, see <a\n"
+"         href=\"https://leopard.institute/pages/services.html\">\n"
+"         https://leopard.institute/pages/services.html</a>\n"
+"         "
+msgstr ""
+"\n"
+"         Du kannst Dir jetzt eine bei uns gehostete E-Mail-Adresse aussuchen.\n"
+"         Informationen, wie Du deine Mails abrufen kannst, findest Du unter <a\n"
+"         href=\"https://leopard.institute/pages/services.html\">\n"
+"         https://leopard.institute/pages/services.html</a>\n"
+"         "
+
+#: aleksis/apps/paweljong/templates/paweljong/event/register_start.html:105
+#: aleksis/apps/paweljong/templates/paweljong/register_start.html:61
+msgid ""
+"\n"
+"         You will be asked for your existing, personal e-mail address. Please remember\n"
+"         that you should not use an address owned by your parents. If you do not have\n"
+"         a personal e-mail address, please choose the respective option instead!\n"
+"         "
+msgstr ""
+"\n"
+"         Du wirst nach deiner persönlichen E-Mail-Adresse gefragt werden. Bitte denke daran,\n"
+"         dass du keine Adresse nutzen solltest, die deinen Eltern gehört. Wenn du keine persönliche\n"
+"         E-Mail-Adresse hast, nutze die dafür vorgesehene Option!\n"
+"         "
+
+#: aleksis/apps/paweljong/templates/paweljong/event/register_start.html:116
+msgid ""
+"\n"
+"         Registration is no longer possible.\n"
+"         "
+msgstr ""
+"\n"
+"         Die Anmeldung ist nicht mehr möglich.\n"
+"         "
+
+#: aleksis/apps/paweljong/templates/paweljong/event/register_wizard_consent.html:34
+#: aleksis/apps/paweljong/templates/templated_email/event_registered.email:41
+#: aleksis/apps/paweljong/templates/templated_email/event_registered.email:92
+msgid "Consents"
+msgstr "Einverständnisse"
+
+#: aleksis/apps/paweljong/templates/paweljong/event/registered.html:4
+#: aleksis/apps/paweljong/templates/paweljong/event/registered.html:5
+msgid "Registered successfully"
+msgstr "Erfolgreich angemeldet"
+
+#: aleksis/apps/paweljong/templates/paweljong/event_registration/edit.html:4
+#: aleksis/apps/paweljong/templates/paweljong/event_registration/edit.html:5
+msgid "Edit registration"
+msgstr "Anmeldung bearbeiten"
+
+#: aleksis/apps/paweljong/templates/paweljong/event_registration/full.html:38
+msgid "Notification"
+msgstr "Benachrichtigung"
+
+#: aleksis/apps/paweljong/templates/paweljong/event_registration/full.html:45
+#: aleksis/apps/paweljong/templates/paweljong/invoice_pdf.html:16
+#: aleksis/apps/paweljong/templates/paweljong/invoice_pdf.html:200
+msgid "Invoice"
+msgstr "Rechnung"
+
+#: aleksis/apps/paweljong/templates/paweljong/event_registration/full.html:52
+#, fuzzy
+#| msgid "Edit term"
+msgid "Edit person"
+msgstr "Bedingung bearbeiten"
+
+#: aleksis/apps/paweljong/templates/paweljong/event_registration/full.html:130
+msgid "Registration information"
+msgstr "Anmeldungsinformationen"
+
+#: aleksis/apps/paweljong/templates/paweljong/event_registration/full.html:163
+#: aleksis/apps/paweljong/templates/templated_email/event_registered.email:45
+#: aleksis/apps/paweljong/templates/templated_email/event_registered.email:96
+msgid "Accepted"
+msgstr "Akzeptiert"
+
+#: aleksis/apps/paweljong/templates/paweljong/event_registration/full.html:193
+msgid "Guardians / Parents "
+msgstr "Erziehungsberechtigte / Eltern "
+
+#: aleksis/apps/paweljong/templates/paweljong/event_registration/list.html:11
+msgid "Filter registrations"
+msgstr "Anmeldungen filtern"
+
+#: aleksis/apps/paweljong/templates/paweljong/event_registration/list.html:22
+msgid "Selected registrations"
+msgstr "Ausgewählte Anmeldungen"
+
+#: aleksis/apps/paweljong/templates/paweljong/event_registration/notification.html:4
+#: aleksis/apps/paweljong/templates/paweljong/event_registration/notification.html:5
+msgid "Send notification"
+msgstr "Benachrichtigung senden"
+
+#: aleksis/apps/paweljong/templates/paweljong/info_mailing/create.html:4
+#: aleksis/apps/paweljong/templates/paweljong/info_mailing/create.html:5
+#: aleksis/apps/paweljong/templates/paweljong/info_mailing/list.html:11
+msgid "Create info mailing"
+msgstr "Info-Mailing erstellen"
+
+#: aleksis/apps/paweljong/templates/paweljong/info_mailing/edit.html:4
+#: aleksis/apps/paweljong/templates/paweljong/info_mailing/edit.html:5
+msgid "Edit info mailing"
+msgstr "Info-Mailing bearbeiten"
+
+#: aleksis/apps/paweljong/templates/paweljong/invoice_pdf.html:207
+msgid ""
+"\n"
+"            Please make the payment with a member of the board or by bank transfer to the following\n"
+"            account:\n"
+"            "
+msgstr ""
+"\n"
+"            Bitte senden Sie die Zahlung an ein Mitglied des Vorstands oder an die folgende\n"
+"            Adresse:\n"
+"            "
+
+#: aleksis/apps/paweljong/templates/paweljong/invoice_pdf.html:228
+msgid ""
+"\n"
+"            The payment will be made via:\n"
+"            "
+msgstr ""
+"\n"
+"            Die Zahlung wird durchgeführt via:\n"
+"            "
+
+#: aleksis/apps/paweljong/templates/paweljong/invoice_pdf.html:236
+msgid ""
+"\n"
+"\t    The payment is due on\n"
+"\t    "
+msgstr ""
+"\n"
+"\t    Das Fälligkeitsdatum ist am\n"
+"\t    "
+
+#: aleksis/apps/paweljong/templates/paweljong/print/corona.html:5
+#: aleksis/apps/paweljong/templates/paweljong/print/corona.html:12
+msgid "Corona"
+msgstr "Corona"
+
+#: aleksis/apps/paweljong/templates/paweljong/print/corona.html:21
+msgid "Address"
+msgstr "Adresse"
+
+#: aleksis/apps/paweljong/templates/paweljong/print/corona.html:23
+msgid "Arrival"
+msgstr "Ankunft"
+
+#: aleksis/apps/paweljong/templates/paweljong/print/corona.html:24
+msgid "Departure"
+msgstr "Abreise"
+
+#: aleksis/apps/paweljong/templates/paweljong/print/list_attendance.html:5
+#: aleksis/apps/paweljong/templates/paweljong/print/list_attendance.html:12
+msgid "attendance list"
+msgstr "Anwesenheitsliste"
+
+#: aleksis/apps/paweljong/templates/paweljong/print/list_participants.html:5
+#: aleksis/apps/paweljong/templates/paweljong/print/list_participants.html:12
+msgid "participant list"
+msgstr "Teilnehmerliste"
+
+#: aleksis/apps/paweljong/templates/paweljong/print/list_participants.html:19
+msgid "Photo"
+msgstr "Foto"
+
+#: aleksis/apps/paweljong/templates/paweljong/print/list_sign.html:5
+#: aleksis/apps/paweljong/templates/paweljong/print/list_sign.html:12
+msgid "signature list"
+msgstr "Unterschriftenliste"
+
+#: aleksis/apps/paweljong/templates/paweljong/print/list_sign.html:16
+msgid "Meeting"
+msgstr "Treffen"
+
+#: aleksis/apps/paweljong/templates/paweljong/print/list_sign.html:22
+msgid "Signature"
+msgstr "Unterschrift"
+
+#: aleksis/apps/paweljong/templates/paweljong/print/manage.html:4
+#: aleksis/apps/paweljong/templates/paweljong/print/manage.html:5
+msgid "Generate list"
+msgstr "Liste generieren"
+
+#: aleksis/apps/paweljong/templates/paweljong/print/voucher.html:5
+#: aleksis/apps/paweljong/templates/paweljong/print/voucher.html:12
+msgid "Voucher for "
+msgstr "Gutschein für "
+
+#: aleksis/apps/paweljong/templates/paweljong/print/voucher.html:20
+msgid "Voucher for"
+msgstr "Gutschein für"
+
+#: aleksis/apps/paweljong/templates/paweljong/print/voucher.html:20
+msgid "to visit event"
+msgstr "für die Veranstaltung"
+
+#: aleksis/apps/paweljong/templates/paweljong/print/voucher.html:20
+msgid "on"
+msgstr "am"
+
+#: aleksis/apps/paweljong/templates/paweljong/print/voucher.html:20
+msgid "at"
+msgstr "in"
+
+#: aleksis/apps/paweljong/templates/paweljong/print/voucher.html:21
+msgid "To use the voucher, register for the event "
+msgstr "Um den Gutschein zu nutzen, registriere dich für die Veranstaltung "
+
+#: aleksis/apps/paweljong/templates/paweljong/print/voucher.html:21
+msgid "here"
+msgstr "hier"
+
+#: aleksis/apps/paweljong/templates/paweljong/register_start.html:16
+msgid ""
+"\n"
+"           Every person needs a personal e-mail address. This address must be one\n"
+"           that you, the participating child, check and read yourself, not one owned by your\n"
+"           parents.\n"
+"           "
+msgstr ""
+"\n"
+"           Jeder Benutzende benötigt seine eigene E-Mail-Adresse. Diese Adresse muss eine Adresse sein,\n"
+"           die du selbst abrufst und liest, und die nicht deinen Eltern gehört.\n"
+"           Wichtige Informationen senden wir natürlich immer zusätzlich an deine Eltern.\n"
+"           "
+
+#: aleksis/apps/paweljong/templates/paweljong/registration_state/create.html:4
+#: aleksis/apps/paweljong/templates/paweljong/registration_state/create.html:5
+#: aleksis/apps/paweljong/templates/paweljong/registration_state/list.html:11
+msgid "Create registration state"
+msgstr "Registrierungsstatus erstellen"
+
+#: aleksis/apps/paweljong/templates/paweljong/registration_state/edit.html:4
+#: aleksis/apps/paweljong/templates/paweljong/registration_state/edit.html:5
+msgid "Edit registration state"
+msgstr "Registrierungsstatus bearbeiten"
+
+#: aleksis/apps/paweljong/templates/paweljong/term/create.html:4
+#: aleksis/apps/paweljong/templates/paweljong/term/create.html:5
+#: aleksis/apps/paweljong/templates/paweljong/term/list.html:11
+msgid "Create term"
+msgstr "Bedingung erstellen"
+
+#: aleksis/apps/paweljong/templates/paweljong/term/edit.html:4
+#: aleksis/apps/paweljong/templates/paweljong/term/edit.html:5
+msgid "Edit term"
+msgstr "Bedingung bearbeiten"
+
+#: aleksis/apps/paweljong/templates/paweljong/voucher/create.html:4
+#: aleksis/apps/paweljong/templates/paweljong/voucher/create.html:5
+msgid "Create voucher"
+msgstr "Gutschein erstellen"
+
+#: aleksis/apps/paweljong/templates/paweljong/voucher/edit.html:4
+#: aleksis/apps/paweljong/templates/paweljong/voucher/edit.html:5
+msgid "Edit voucher"
+msgstr "Gutschein bearbeiten"
+
+#: aleksis/apps/paweljong/templates/paweljong/voucher/list.html:11
+msgid "Filter vouchers"
+msgstr "Gutscheine filtern"
+
+#: aleksis/apps/paweljong/templates/paweljong/voucher/list.html:22
+msgid "Selected vouchers"
+msgstr "Ausgewählte Gutscheine"
+
+#: aleksis/apps/paweljong/templates/templated_email/event_created.email:3
+msgid "New event"
+msgstr "Neue Veranstaltung"
+
+#: aleksis/apps/paweljong/templates/templated_email/event_created.email:6
+#: aleksis/apps/paweljong/templates/templated_email/event_created.email:31
+#, python-format
+msgid " An event was created: %(new_event)s"
+msgstr " Eine Veranstaltung wurde erstellt: %(new_event)s"
+
+#: aleksis/apps/paweljong/templates/templated_email/event_created.email:10
+#: aleksis/apps/paweljong/templates/templated_email/event_created.email:38
+msgid "Published"
+msgstr "Veröffentlicht"
+
+#: aleksis/apps/paweljong/templates/templated_email/event_created.email:15
+#: aleksis/apps/paweljong/templates/templated_email/event_created.email:43
+msgid "Cost"
+msgstr "Kosten"
+
+#: aleksis/apps/paweljong/templates/templated_email/event_created.email:17
+#: aleksis/apps/paweljong/templates/templated_email/event_created.email:45
+msgid "Owners"
+msgstr "Besitzer"
+
+#: aleksis/apps/paweljong/templates/templated_email/event_created.email:22
+#: aleksis/apps/paweljong/templates/templated_email/event_created.email:55
+#, python-format
+msgid ""
+"\n"
+"        The event was created by %(sender)s\n"
+"    "
+msgstr ""
+"\n"
+"        Die Veranstaltung wurde von %(sender)s erstellt\n"
+"    "
+
+#: aleksis/apps/paweljong/templates/templated_email/event_created.email:26
+#: aleksis/apps/paweljong/templates/templated_email/event_created.email:61
+#: aleksis/apps/paweljong/templates/templated_email/event_registered.email:49
+#: aleksis/apps/paweljong/templates/templated_email/event_registered.email:103
+msgid "Your AlekSIS team"
+msgstr "Dein AlekSIS-Team"
+
+#: aleksis/apps/paweljong/templates/templated_email/event_registered.email:3
+msgid "New registration"
+msgstr "Neue Anmeldung"
+
+#: aleksis/apps/paweljong/templates/templated_email/event_registered.email:6
+#, python-format
+msgid "New registration: %(event)s"
+msgstr "Neue Anmeldung: %(event)s"
+
+#: aleksis/apps/paweljong/templates/templated_email/event_registered.email:23
+#: aleksis/apps/paweljong/templates/templated_email/event_registered.email:72
+msgid "Guardian"
+msgstr "Erziehungsberechtigter"
+
+#: aleksis/apps/paweljong/templates/templated_email/event_registered.email:29
+#: aleksis/apps/paweljong/templates/templated_email/event_registered.email:78
+msgid "Financial details"
+msgstr "Angaben zur Bezahlung"
+
+#: aleksis/apps/paweljong/templates/templated_email/event_registered.email:33
+#: aleksis/apps/paweljong/templates/templated_email/event_registered.email:82
+msgid "Additional"
+msgstr "Zusätzliches"
+
+#: aleksis/apps/paweljong/templates/templated_email/event_registered.email:54
+#, python-format
+msgid "New registration: %(registration)s"
+msgstr "Neue Anmeldung: %(registration)s"
+
+#: aleksis/apps/paweljong/views.py:63 aleksis/apps/paweljong/views.py:75
+msgid "The event has been saved."
+msgstr "Die Veranstaltung wurde gespeichert."
+
+#: aleksis/apps/paweljong/views.py:169
+msgid "The event registration has been created."
+msgstr "Die Veranstaltungsanmeldung wurde erstellt."
+
+#: aleksis/apps/paweljong/views.py:181
+msgid "The event registration has been saved."
+msgstr "Die Veranstaltungsanmeldung wurde gespeichert."
+
+#: aleksis/apps/paweljong/views.py:202
+msgid "The registration has been saved."
+msgstr "Die Anmeldung wurde gespeichert."
+
+#: aleksis/apps/paweljong/views.py:239
+msgid "The registration has been deleted."
+msgstr "Die Veranstaltung wurde gelöscht."
+
+#: aleksis/apps/paweljong/views.py:251
+msgid "The voucher has been created."
+msgstr "Der Gutschein wurde erstellt."
+
+#: aleksis/apps/paweljong/views.py:263
+msgid "The voucher has been saved."
+msgstr "Der Gutschein wurde gespeichert."
+
+#: aleksis/apps/paweljong/views.py:273
+msgid "The voucher has been deleted."
+msgstr "Der Gutschein wurde gelöscht."
+
+#: aleksis/apps/paweljong/views.py:392
+msgid "Create e-mail address"
+msgstr "E-Mail-Adresse erstellen"
+
+#: aleksis/apps/paweljong/views.py:394
+msgid "All participants need a personal e-mail address, which they check and read temselves. We offer the possibility to register an e-mail address on our secure servers, made for young users. For information about receiving mails, see: <a href='https://leopard.institute/pages/services.html'>https://leopard.institute/pages/services.html</a>."
+msgstr "Alle Teilnehmenden brauchen eine persönliche Adresse, die sie selbst abrufen und lesen. Wir bieten die Möglichkeit an, E-Mail-Adressen auf unseren sicheren Servern zu registrieren. Informationen, wie Du deine Mails abrufen kannst, findest Du unter <a href='https://leopard.institute/pages/services.html'>https://leopard.institute/pages/services.html</a>."
+
+#: aleksis/apps/paweljong/views.py:403
+msgid "First, please enter some basic information about yourself, and check whether all information is correct."
+msgstr "Zuerst, gib bitte einige Informationen über dich an und prüfe, dass alle Informationen korrekt sind."
+
+#: aleksis/apps/paweljong/views.py:407
+msgid "Contact information"
+msgstr "Kontaktinformationen"
+
+#: aleksis/apps/paweljong/views.py:409
+msgid "Tell us how we can contact you. You will receive information about the event by e-mail. Please use your personal e-mail address where you will read mails yourself, not an address of your parents. We will always send all important information to your parents as well, and you will enter their e-mail address on the next page."
+msgstr "Teile uns mit, wie wir dich erreichen können. Du wirst Informationen zu der Veranstaltung per E-Mail erhalten. Bitte nutze deine persönliche E-Mail-Adresse, die selbst liest, nicht die E-Mail-Adresse deiner Eltern. Wir senden wichtige Informationen immer zusätzlich an deine Eltern. Ihre E-Mail-Adresse wirst du im nächsten Schritt eingeben."
+
+#: aleksis/apps/paweljong/views.py:416
+msgid "Legal guardians / parents"
+msgstr "Erziehungsberechtigte / Eltern"
+
+#: aleksis/apps/paweljong/views.py:418
+msgid "Tell us how we can reach your parents or other legal guardians. This should be the person who was present when you registered for the event (which is now). If you want to add another parent, please tell us later as a comment."
+msgstr "Teile uns mit, wie wir deine Eltern oder Erziehungsberechtigten während der Veranstaltung erreichen können. Das sollte eine Person sein, die während der Anmeldung (also jetzt gerade), bei Dir ist. Wenn du einen weiteren Erziehungsberechtigten angeben möchtest, kannst du uns das später als Kommentar mitteilen."
+
+#: aleksis/apps/paweljong/views.py:424
+msgid "Additional registration information"
+msgstr "Zusätzliche Anmeldungsinformationen"
+
+#: aleksis/apps/paweljong/views.py:426
+msgid "Please answer the following questions as precisely as you can, so we can make sure your event attendance will be organised as wel las possible."
+msgstr "Bitte beantworte die folgenden Fragen so genau wie möglich, sodass wir sicher gehen können, dass deine Teilnahme bei der Veranstaltung so gut wie möglich organisiert ist."
+
+#: aleksis/apps/paweljong/views.py:430
+msgid "Payment"
+msgstr "Bezahlung"
+
+#: aleksis/apps/paweljong/views.py:432
+msgid "Please decide with your parents how you want to pay. In this step, you only select a payment method. The real payment will be done in a separate step, after the registration is complete."
+msgstr "Bitte wählen mit Deinen Eltern, wie Du bezahlen möchtest. In diesem Schritt wird nur die Zahlungsmethode ausgewählt. Die eigentliche Zahlung wird in einem separaten Schritt nach der Anmeldung durchgeführt."
+
+#: aleksis/apps/paweljong/views.py:437
+msgid "Consent"
+msgstr "Einverständnis"
+
+#: aleksis/apps/paweljong/views.py:439
+msgid "Lastly, please read the terms and conditions carefully, together with your parents. After that, you will need to confirm that you agree with everything yourself, and that your parents also agree."
+msgstr "Zuletzt lies bitte alle Bedingungen sorgfältig zusammen mit deinen Eltern durch. Danach musst du bestätigen, dass du und deine Eltern alles gelesen habt und akzeptiert."
+
+#: aleksis/apps/paweljong/views.py:537 aleksis/apps/paweljong/views.py:647
+msgid "You entered an invalid voucher code!"
+msgstr "Du hast einen ungütigen Gutscheincode eingegeben!"
+
+#: aleksis/apps/paweljong/views.py:673
+msgid "You have successfully registered for the event. Please give us up to two days to process your registration. You will then receive an email from us."
+msgstr "Du hast dich erfolgreich zu der Veranstaltung angemeldet. Bitte gib uns ein paar Tage, um deine Anmeldung zu bearbeiten. Du wirst dann eine E-Mail von uns bekommen."
+
+#: aleksis/apps/paweljong/views.py:680
+msgid "You registered for an event"
+msgstr "Du hast dich zu einer Veranstaltung angemeldet"
+
+#: aleksis/apps/paweljong/views.py:681
+#, python-format
+msgid "You registered for the event %s"
+msgstr "Du hast dich zur Veranstaltung %s angemeldet"
+
+#: aleksis/apps/paweljong/views.py:738 aleksis/apps/paweljong/views.py:889
+msgid "The term has been created."
+msgstr "Die Bedingung wurde erfolgreich erstellt."
+
+#: aleksis/apps/paweljong/views.py:750 aleksis/apps/paweljong/views.py:901
+msgid "The term has been saved."
+msgstr "Die Bedingung wurde gespeichert."
+
+#: aleksis/apps/paweljong/views.py:766
+msgid "Announcement feed of all upcoming events"
+msgstr "Ankündigungs-Feed aller bevorstehenden Veranstaltungen"
+
+#: aleksis/apps/paweljong/views.py:807
+msgid "The info mailing has been created."
+msgstr "Das Info-Mailing wurde erstellt."
+
+#: aleksis/apps/paweljong/views.py:819
+msgid "The info mailing has been saved."
+msgstr "Das Info-Mailing wurde gespeichert."
+
+#: aleksis/apps/paweljong/views.py:829
+msgid "The info mailing has been deleted."
+msgstr "Das Info-Mailing wurde gelöscht."
+
+#~ msgid "Please enter your IBAN"
+#~ msgstr "Bitte trage eine IBAN ein"
+
+#~ msgid "Parents: I authorize the creditor Teckids e.V., Kennedyallee 18, 53175 Bonn with creditor ID DE70ZZZ00001497650, to collect the participant fee from my account once using the SEPA core direct debit. At the same time, I instruct my bank to redeem the SEPA core direct debit withdrawn from my account by Teckids e.V."
+#~ msgstr "Eltern: Ich ermächtige den Gläubiger Teckids e.V., Kennedyallee 18, 53175 Bonn mit der Gläubiger-ID DE70ZZZ00001497650, den Teilnehmerbeitrag einmalig per SEPA-Basislastschrift von meinem Konto einzuziehen. Zugleich weise ich mein Kreditinstitut an, die von Teckids e.V. von meinem Konto eingezogene SEPA-Basislastschrift einzulösen."
+
+#~ msgid "If your parents want to pay by SEPA direct debit, please let them fill out this field."
+#~ msgstr "Wenn deine Eltern per SEPA-Lastschrift bezahlen möchten, lasse sie dieses Feld ausfüllen."
+
+#~ msgid "General event information"
+#~ msgstr "Generelle Veranstaltungsinformationen"
+
+#~ msgid "Declaration of consent"
+#~ msgstr "Einverständniserklärung"
+
+#~ msgid "SEPA direct debit"
+#~ msgstr "SEPA-Lastschriftmandat"
+
+#~ msgid "IBAN (for SEPA direct debit)"
+#~ msgstr "IBAN (für SEPA-Lastschriftmandat)"
+
+#~ msgid "IBAN"
+#~ msgstr "IBAN"
+
+#~ msgid "Accept SEPA"
+#~ msgstr "SEPA-Lastschriftmandat"
+
+#~ msgid "By default, we will send you an invoice, which you or your parents can pay by bank transfer. You can also choose to pay by direct debit – please make sure to enter exactly what your parents tell you."
+#~ msgstr "Standardmäßig senden wir eine Rechnung, welche du oder deine Eltern per Banküberweisung bezahlen könnt. Du kannst auch per Lastschrift bezahlen ­– bitte trage hier genau das ein, was deine Eltern dir sagen."
+
+#~ msgid "If you have a voucher for the event, enter the code here.It will be charged automatically."
+#~ msgstr "Wenn du einen Gutschein für diese Veranstaltung hast, gib den Code hier ein. Er wird automatisch verrechnet."
+
+#~ msgid "Parents: I authorize the creditor  e.V., Rochusstr. 2-4, 53123 Bonn with creditor ID DE70FZT00001497650, to collect the participant fee from my account once using the SEPA core direct debit. At the same time, I instruct my bank to redeem the SEPA core direct debit withdrawn from my account by  e.V."
+#~ msgstr "Eltern: Ich ermächtige den Gläubiger Teckids e.V., Kennedyallee 18, 53175 Bonn mit der Gläubiger-ID DE70ZZZ00001497650, den Teilnehmerbeitrag einmalig per SEPA-Basislastschrift von meinem Konto einzuziehen. Zugleich weise ich mein Kreditinstitut an, die von Teckids e.V. von meinem Konto eingezogene SEPA-Basislastschrift einzulösen."
+
+#, python-format
+#~ msgid ""
+#~ "\n"
+#~ "               The event takes place in <strong>%(event.place)s</strong>\n"
+#~ "               (Information on overnight stays and shared trips see description)\n"
+#~ "             "
+#~ msgstr ""
+#~ "\n"
+#~ "               Die Veranstaltung findet in<strong>%(event.place)s</strong> statt\n"
+#~ "               (Informationen über Übernachtungen und Ausflüge findest du in der Beschreibung)\n"
+#~ "             "
+
+#~ msgid "Registration possible until"
+#~ msgstr "Anmeldung möglich bis"
+
+#~ msgid "incl. program, overnight stays, trips and meals"
+#~ msgstr "inkl. Programm, Übernachtungen Fahrten und Mahlzeiten"
+
+#~ msgid "(if part of the event)"
+#~ msgstr "(falls Teil der Veranstaltung)"
+
+#~ msgid "Booked participants slots"
+#~ msgstr "Gebuchte Teilnehmerplätze"
+
+#~ msgid ""
+#~ "\n"
+#~ "         You can now choose a personal e-mail address hosted on our servers.\n"
+#~ "         "
+#~ msgstr ""
+#~ "\n"
+#~ "         du kannst eine persönliche E-Mail-Adresse wählen, die auf unseren Servern gehostet wird.\n"
+#~ "         "
+
+#~ msgid "Declarations"
+#~ msgstr "Erklärungen"

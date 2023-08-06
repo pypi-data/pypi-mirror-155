@@ -1,0 +1,35 @@
+{% extends "core/base_print.html" %}
+{% load i18n static %}
+
+{% block page_title %}
+    {{ group }} — {% trans "signature list" %}
+{% endblock %}
+
+{% block extra_head %}
+     <link rel="stylesheet" href="{% static 'css/paweljong.css' %}"/>
+{% endblock %}
+
+{% block browser_title %}{{ group }} — {% trans "signature list" %}{% endblock %}
+
+{% block content %}
+
+    <p>{% trans "Meeting"%}: ________________________________________ </p>
+    <table>
+        <thead>
+            <tr>
+                <th class="table-print">{% trans "Last name" %}</th>
+                <th class="table-print">{% trans "First name" %}</th>
+                <th class="table-print">{% trans "Signature" %}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for person in group.members.all %}
+                    <td class="table-print">{{ person.last_name }}</td>
+                    <td class="table-print">{{ person.first_name }}</td>
+                    <td class="table-print"></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

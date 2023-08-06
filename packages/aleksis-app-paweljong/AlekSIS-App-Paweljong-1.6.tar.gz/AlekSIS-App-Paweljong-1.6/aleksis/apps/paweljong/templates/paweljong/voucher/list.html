@@ -1,0 +1,25 @@
+{% extends "core/base.html" %}
+{% load material_form i18n %}
+
+{% load render_table from django_tables2 %}
+
+{% block page_title %}{% blocktrans %}Vouchers{% endblocktrans %}{% endblock %}
+{% block browser_title %}{% blocktrans %}Vouchers{% endblocktrans %}{% endblock %}
+
+{% block content %}
+
+  <h5>{% trans "Filter vouchers" %}</h5>
+  <form method="get">
+    {% form form=vouchers_filter.form %}{% endform %}
+    {% trans "Search" as caption %}
+    {% include "core/partials/save_button.html" with caption=caption icon="search" %}
+    <button type="reset" class="btn red waves-effect waves-light">
+      <i class="material-icons left">clear</i>
+      {% trans "Clear" %}
+    </button>
+  </form>
+
+  <h5>{% blocktrans %}Selected vouchers{% endblocktrans %}</h5>
+    {% render_table vouchers_table %}
+
+{% endblock %}

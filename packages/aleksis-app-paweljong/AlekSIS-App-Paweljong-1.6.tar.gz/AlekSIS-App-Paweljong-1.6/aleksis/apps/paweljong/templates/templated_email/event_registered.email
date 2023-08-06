@@ -1,0 +1,106 @@
+{% load i18n %}
+
+{% block subject %} {% trans "New registration" %} {{ registration }} {% endblock %}
+
+{% block plain %}
+    {% blocktrans with new_event=new_event %}New registration: {{ event }}{% endblocktrans %}
+
+    *** {% trans "Event" %} *****
+
+    * {% trans "Event" %}: {{ registration.event }}
+
+    **** {% trans "Person" %} ****
+
+    * {% trans "Name" %}: {{ registration.person }}
+    * {% trans "Date of birth" %}: {{ registration.person.date_of_birth }}
+    * {% trans "Email address" %}: {{ registration.person.email }}
+    * {% trans "Mobile number" %}: {{ registration.person.mobile_number }}
+    * {% trans "Street" %}: {{ registration.person.street }}
+    * {% trans "Housenumber" %}: {{ registration.person.housenumber }}
+    * {% trans "Postal code" %}: {{ registration.person.postal_code }}
+    * {% trans "Place" %}: {{ registration.person.place }}
+
+    **** {% trans "Guardian" %} ****
+
+    * {% trans "Name" %}: {{ registration.person.guardians.first }}
+    * {% trans "Email address" %}: {{ registration.person.guardians.first.email }}
+    * {% trans "Mobile number" %}: {{ registration.person.guardians.first.mobile_number }}
+
+    **** {% trans "Financial details" %}
+
+    * {% trans "Donation" %}: {{ registration.donation }}
+
+    **** {% trans "Additional" %} ****
+
+    {% if registration.extended_data %}
+      {% for field, value in registration.extended_data.items %}
+          * {{ field }}: {{ value }}
+      {% endfor %}
+    {% endif %}
+
+    **** {% trans "Consents" %} ****
+
+    {% if registration.accepted_terms %}
+      {% for term in registration.accepted_terms.all %}
+          * {{ term.title }}: {% trans "Accepted" %}
+      {% endfor %}
+    {% endif %}
+
+    {% trans "Your AlekSIS team" %}
+{% endblock %}
+
+{% block html %}
+<main>
+    <p>{% blocktrans with new_event=new_event %}New registration: {{ registration}}{% endblocktrans %}</p>
+
+    <blockquote>
+        <h5>{% trans "Event" %}</h5>
+            <ul>
+                <li>{% trans "Event" %}: {{ registration.event }}</li>
+            </ul>
+        <h5>{% trans "Person" %}</h5>
+        <ul>
+            <li>{% trans "Name" %}: {{ registration.person }}</li>
+            <li>{% trans "Date of birth" %}: {{ registration.person.date_of_birth }}</li>
+            <li>{% trans "Email address" %}: {{ registration.person.email }}</li>
+            <li>{% trans "Mobile number" %}: {{ registration.person.mobile_number }}</li>
+            <li>{% trans "Street" %}: {{ registration.person.street }}</li>
+            <li>{% trans "Housenumber" %}: {{ registration.person.housenumber }}</li>
+            <li>{% trans "Postal code" %}: {{ registration.person.postal_code }}</li>
+            <li>{% trans "Place" %}: {{ registration.person.place }}</li>
+        </ul>
+        <h5>{% trans "Guardian" %}</h5>
+        <ul>
+	    <li>{% trans "Name" %}: {{ registration.person.guardians.first }}</li>
+	    <li>{% trans "Email address" %}: {{ registration.person.guardians.first.email }}</li>
+	    <li>{% trans "Mobile number" %}: {{ registration.person.guardians.first.mobile_number }}</li>
+	</ul>
+	<h5>{% trans "Financial details" %}</h5>
+	<ul>
+	    <li>{% trans "Donation" %}: {{ registration.donation }}</li>
+	</ul>
+	<h5>{% trans "Additional" %}</h5>
+        {% if registration.extended_data %}
+          <ul>
+          {% for field, value in registration.extended_data.items %}
+            <li>
+              {{ field }}: {{ value }}
+            </li>
+          {% endfor %}
+          </ul>
+        {% endif %}
+        <h5>{% trans "Consents" %}</h5>
+	{% if registration.accepted_terms %}
+          <ul>
+          {% for term in registration.accepted_terms.all %}
+            <li>{{ term.title }}: {% trans "Accepted" %}</li>
+          {% endfor %}
+          </ul>
+        {% endif %}
+    </blockquote>
+
+    <p>
+        <i>{% trans "Your AlekSIS team" %}</i>
+    </p>
+</main>
+{% endblock %}
