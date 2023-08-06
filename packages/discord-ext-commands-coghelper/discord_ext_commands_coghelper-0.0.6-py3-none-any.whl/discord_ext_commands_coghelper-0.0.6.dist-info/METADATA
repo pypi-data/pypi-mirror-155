@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: discord-ext-commands-coghelper
+Version: 0.0.6
+Summary: utilities for easy use of Cog in discord.py
+Home-page: https://github.com/jukey17/discord-ext-commands-coghelper
+Author: jukey17
+License: MIT
+Keywords: discord,discord.py
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Description-Content-Type: text/markdown
+Requires-Dist: discord (~=1.7.3)
+
+# discord-ext-commands-coghelper
+Helps the features of discord.ext.commands.Cog in discord.py
