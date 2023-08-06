@@ -1,0 +1,44 @@
+Metadata-Version: 2.1
+Name: estimagic
+Version: 0.3.2
+Summary: Tools for the estimation of (structural) econometric models.
+Home-page: https://github.com/OpenSourceEconomics/estimagic
+Author: Janos Gabler
+Author-email: janos.gabler@gmail.com
+License: MIT
+Keywords: econometrics,statistics,estimation,extremum estimation,optimization,inference,numerical differentiation,finite differences,richardson extrapolation,derivative free optimization,method of simulated moments,maximum likelihood
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX
+Classifier: Topic :: Scientific/Engineering
+Classifier: Intended Audience :: Science/Research
+Requires-Python: >=3.8
+License-File: LICENSE
+Requires-Dist: click
+Requires-Dist: cloudpickle
+Requires-Dist: joblib
+Requires-Dist: numpy (>=1.16)
+Requires-Dist: pandas (>=1.0)
+Requires-Dist: bokeh (>=1.3)
+Requires-Dist: scipy
+Requires-Dist: fuzzywuzzy
+Requires-Dist: sqlalchemy (>=1.3)
+Requires-Dist: plotly
+Requires-Dist: dill
+Requires-Dist: pybaum
+
+
+Estimagic is a Python package that helps to build high-quality and user
+friendly implementations of (structural) econometric models.
+
+It is designed with large structural models in mind. However, it is also
+useful for any other estimator that numerically minimizes or maximizes a
+criterion function (Extremum Estimator). Examples are maximum likelihood
+estimation, generalized method of moments, method of simulated moments and
+indirect inference.
