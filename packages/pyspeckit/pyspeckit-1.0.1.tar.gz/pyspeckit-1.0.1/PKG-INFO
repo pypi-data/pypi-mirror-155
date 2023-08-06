@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: pyspeckit
+Version: 1.0.1
+Summary: Toolkit for fitting and manipulating spectroscopic data in python
+Home-page: http://pyspeckit.readthedocs.org
+Author: Adam Ginsburg
+Author-email: pyspeckit@gmail.com
+License: BSD
+Requires: astropy
+Requires: matplotlib
+Requires: numpy
+Provides: pyspeckit
+License-File: LICENSE
+
+
+pyspeckit is a package for spectrum plotting, fitting, and analysis
+
+For details, see https://pyspeckit.readthedocs.io/
