@@ -1,0 +1,71 @@
+[tool.poetry]
+authors = ["Yvan Nollet <yvan.nollet@rayference.eu>"]
+classifiers = [
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+]
+description = "Ussa1976"
+documentation = "https://ussa1976.readthedocs.io"
+homepage = "https://github.com/nollety/ussa1976"
+license = "MIT"
+name = "ussa1976"
+readme = "README.rst"
+repository = "https://github.com/nollety/ussa1976"
+version = "0.3.1"
+
+[tool.poetry.urls]
+Changelog = "https://github.com/nollety/ussa1976/releases"
+
+[tool.poetry.dependencies]
+click = ">=7.0"
+netCDF4 = ">=1.5.7"
+numpy = ">=1.22"
+python = ">=3.8,<3.10"
+scipy = ">=1.6.3"
+xarray = ">=0.18.2,<2022.4.0"
+
+[tool.poetry.dev-dependencies]
+Pygments = ">=2.8.1"
+bandit = "==1.7.2"
+black = ">=21.12b0"
+coverage = {extras = ["toml"], version = ">=5.4"}
+darglint = ">=1.7.0"
+flake8 = ">=3.8.4"
+flake8-bandit = ">=2.1.2"
+flake8-bugbear = ">=21.3.2"
+flake8-docstrings = ">=1.5.0"
+flake8-rst-docstrings = ">=0.0.14"
+furo = ">=2021.4.11-beta.34"
+jupyterlab = ">=3.0.16"
+matplotlib = ">=3.4.2"
+mypy = ">=0.812"
+pep8-naming = ">=0.11.1"
+pre-commit = ">=2.11.1"
+pre-commit-hooks = ">=3.4.0"
+pytest = ">=6.2.2"
+reorder-python-imports = ">=2.4.0"
+safety = ">=1.10.3"
+sphinx = ">=3.5.2"
+sphinx-autobuild = ">=2020.9.1"
+sphinx-click = ">=2.6.0"
+sphinxcontrib-bibtex = ">=2.3.0"
+typeguard = ">=2.11.1"
+xdoctest = {extras = ["colors"], version = ">=0.15.4"}
+
+[tool.poetry.scripts]
+ussa1976 = "ussa1976.__main__:main"
+
+[tool.coverage.paths]
+source = ["src", "*/site-packages"]
+
+[tool.coverage.run]
+branch = true
+source = ["ussa1976"]
+
+[tool.coverage.report]
+fail_under = 100
+show_missing = true
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core>=1.0.0"]
