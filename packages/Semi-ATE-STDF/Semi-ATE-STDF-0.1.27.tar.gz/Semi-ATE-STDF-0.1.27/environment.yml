@@ -1,0 +1,19 @@
+name: test
+channels:
+  - conda-forge
+  - semi-ate
+dependencies:
+  - python=3.8
+  - anaconda-client
+  - conda-build
+  - mamba
+#Issue 44 Disable temporary usage of pyqt to check if conda-forge feedstock will pass 
+#  - pyqt=5.12.3
+  - xlsxwriter
+  - pytest
+  - pytest-cov
+  - check-manifest
+  - pip 
+  - setuptools 
+  - twine
+  - tree
