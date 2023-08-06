@@ -1,0 +1,34 @@
+Metadata-Version: 2.1
+Name: aurh
+Version: 0.0.2
+Summary: An AUR helper in Python.
+Home-page: https://github.com/ajthr/aurh.git
+Author: Ajith
+Author-email: ajithar204@gmail.com
+License: MIT
+Keywords: arch aurh
+Platform: Arch Linux
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Topic :: System
+Classifier: Topic :: System :: Archiving :: Packaging
+Classifier: Topic :: Utilities
+License-File: LICENSE
+Requires-Dist: click
+Requires-Dist: pyalpm
+Requires-Dist: requests
+Requires-Dist: srcinfo
+
+# Aurh
+
+An AUR Helper Written in Python
+
+
