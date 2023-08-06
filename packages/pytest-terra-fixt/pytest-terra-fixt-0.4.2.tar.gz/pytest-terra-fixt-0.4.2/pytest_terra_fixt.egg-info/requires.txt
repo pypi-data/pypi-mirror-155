@@ -1,0 +1,9 @@
+pytest==6.2.5
+tftest==1.6.2
+requests==2.27.1
+
+[testing]
+pytest==6.2.5
+tftest==1.6.2
+mock==4.0.3
+pytest-mock==3.6.1
