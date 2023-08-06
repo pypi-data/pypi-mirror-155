@@ -1,0 +1,16 @@
+Click
+
+[develop]
+pytest
+bump2version
+
+[export]
+numpy
+pandas
+mapbox-earcut
+
+[reproject]
+pyproj
+
+[validate]
+cjvalpy
