@@ -1,0 +1,15 @@
+CHANGES
+=======
+
+0.8.2
+-----
+
+* change all PlistSocket to PlistSocketProxy to make socket release automatically
+* fix crashreport stat error
+* show serial for list
+* add serial to cmd\_info
+* fix pull file with LinkTarget
+* fix #61
+* little fix
+* support not ordered dtx message fragment, fix #213
+* fix for iOS 12
