@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: django-sql-queries
+Version: 1.0.0
+Summary: Middleware to print out all SQL queries done, their count and execution time for each view that is processed for a request
+Home-page: https://github.com/techieaman94/django-db-queries
+Author: Aman Prajapati
+Author-email: techieaman94@gmail.com
+License: MIT
+Keywords: database queries,sql queries,django request
+Platform: any
+Classifier: Programming Language :: Python :: 3.7
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+
