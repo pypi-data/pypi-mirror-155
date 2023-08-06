@@ -1,0 +1,2 @@
+[console_scripts]
+download_pyalink_dep_jars = pyalink.alink.download_pyalink_dep_jars:main
