@@ -1,0 +1,3 @@
+[console_scripts]
+ignis-deploy = ignis.deploy.deploy:main
+
