@@ -1,0 +1,70 @@
+Metadata-Version: 2.1
+Name: sabana
+Version: 0.1.4
+Summary: Classes to interact with Sabana. Meet us at https://sabana.io
+Home-page: https://sabana.io/
+License: Apache-2.0
+Author: Sabana Technologies, Inc
+Requires-Python: >=3.8,<4.0
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: jwt (>=1.3.1,<2.0.0)
+Requires-Dist: numpy (>=1.22.4,<2.0.0)
+Requires-Dist: pathlib (>=1.0.1,<2.0.0)
+Requires-Dist: protobuf (>=4.21.1,<5.0.0)
+Requires-Dist: requests (>=2.28.0,<3.0.0)
+Description-Content-Type: text/markdown
+
+ <!--
+   Copyright 2022 Sabana Technologies, Inc
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+ -->
+
+# Sabana python package
+
+This package has the following helper classes to allow programmatic interaction with the Sabana platform from python:
+
+- Program: constructs the series of steps to be executed in an instance deployed in the platform.
+- Instance: is a handler to a instance deployed in the platform.
+
+# Deploying an instance
+
+Instances in Sabana are identified by a triple of user, instance, and tag.
+
+After logging in, an instance can be deployed like this:
+
+```python
+from sabana import Instance
+
+inst = Instance(user="pedro", instance="rtl_mmio", tag="0")
+inst.up()
+# Don't forget to stop the instance if you don't use it
+inst.down()
+```
+
+# Support
+
+For support get in touch with us via our [Discord](https://discord.gg/2tNRW2yfzT) server, or alternatively via [Sabana.io](https://sabana.io).
+
+## Limited Availability - Join our wait list!
+
+Get in touch in order to get access to the Sabana platform. With your email address you will be able to setup your Sabana credentials.
+
+# Licensing
+
+The Sabana package is distributed under the terms of the [Apache 2.0 license](https://www.apache.org/licenses/LICENSE-2.0.txt).
+
