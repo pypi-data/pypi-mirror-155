@@ -1,0 +1,69 @@
+Metadata-Version: 2.1
+Name: openpack-torch
+Version: 0.2.0
+Summary: PyTorch extention to work around with OpenPack dataset
+Home-page: https://open-pack.github.io/home
+License: MIT
+Author: Yoshimura Naoya
+Author-email: yoshimura.naoya@ist.osaka-u.ac.jp
+Requires-Python: >=3.7.11,<3.10
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: hydra-core (>=1.2.0,<2.0.0)
+Requires-Dist: numpy (<1.22.0)
+Requires-Dist: omegaconf (>=2.2.1,<3.0.0)
+Requires-Dist: openpack-toolkit (>=0.3.0,<0.4.0)
+Requires-Dist: pandas (>=1.2.4,<2.0.0)
+Requires-Dist: pytorch-lightning (>=1.6.3,<2.0.0)
+Requires-Dist: sklearn (>=0.0)
+Requires-Dist: torch (>=1.9.0,<2.0.0)
+Requires-Dist: tqdm (>=4.64.0,<5.0.0)
+Project-URL: Repository, https://github.com/open-pack/openpack-torch
+Description-Content-Type: text/markdown
+
+# openpack-torch
+
+[![Test](https://github.com/open-pack/openpack-torch/actions/workflows/test.yaml/badge.svg)](https://github.com/open-pack/openpack-torch/actions/workflows/test.yaml)
+[![GitHub Pages](https://github.com/open-pack/openpack-torch/actions/workflows/deploy-docs.yaml/badge.svg)](https://github.com/open-pack/openpack-torch/actions/workflows/deploy-docs.yaml)
+
+PyTorch utilities to work around with [OpenPack Dataset](https://open-pack.github.io/).
+
+## Setup
+
+You can install via pip with the following command.
+
+```bash
+# Pip
+pip install openpack-torch
+
+# Poetry
+poetry add  openpack-torch
+```
+
+## Docs
+
+- [Dataset Page](https://open-pack.github.io/)
+- [API Docs](https://open-pack.github.io/openpack-torch/openpack_torch)
+
+## Examples
+
+### Operation Recognition (Semantic Segmentation)
+
+#### IMU
+
+- Acceleration
+  - [U-Net](./examples/unet/)
+  - [DeepConvLSTM](./examples/deep-conv-lstm/)
+
+#### Vision
+
+- Keypoints
+  - [ST-GCN](./examples/st-gcn)
+
+## LICENCE
+
+This software (openpack-torch) is distributed under [MIT Licence](./LICENSE).
+For the license of "OpenPack Dataset", please check [this site (https://open-pack.github.io/)](https://open-pack.github.io/).
+
