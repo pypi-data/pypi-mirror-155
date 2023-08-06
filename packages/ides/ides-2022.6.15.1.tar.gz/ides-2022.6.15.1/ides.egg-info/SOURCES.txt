@@ -1,0 +1,10 @@
+README.rst
+pyproject.toml
+setup.cfg
+ides/__init__.py
+ides/__main__.py
+ides/api.py
+ides.egg-info/PKG-INFO
+ides.egg-info/SOURCES.txt
+ides.egg-info/dependency_links.txt
+ides.egg-info/top_level.txt
