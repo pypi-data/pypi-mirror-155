@@ -1,0 +1,3 @@
+[console_scripts]
+k3sconfig=k3sconfig.app:cli
+
