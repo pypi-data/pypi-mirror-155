@@ -1,0 +1,22 @@
+boto3
+furl
+hsfs[python]~=3.0.0rc
+hsml~=3.0.0rc
+mock
+pyhumps==1.6.1
+pyjks
+requests
+tqdm
+
+[dev]
+black
+flake8
+pytest
+
+[docs]
+keras_autodoc@ git+https://git@github.com/moritzmeister/keras-autodoc@split-tags-properties
+markdown-include
+mike==1.1.2
+mkdocs-material==8.2.8
+mkdocs==1.3.0
+sphinx==3.5.4
