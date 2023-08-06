@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: XoogMongoFunctions
+Version: 0.0.1
+Summary: convert a Pandas DataFrame into a MongoDB document
+Home-page: UNKNOWN
+Author: Paweł Lachowski
+Author-email: <pawel.lachowski@xoog.pl>
+License: UNKNOWN
+Keywords: python
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Requires-Dist: pandas
+
+UNKNOWN
+
+
