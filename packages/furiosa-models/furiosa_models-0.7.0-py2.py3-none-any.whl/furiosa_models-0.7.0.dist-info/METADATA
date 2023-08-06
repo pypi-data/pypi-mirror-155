@@ -1,0 +1,63 @@
+Metadata-Version: 2.1
+Name: furiosa-models
+Version: 0.7.0
+Summary: FuriosaAI modles
+Author-email: "FurioaAI, Inc." <pkg@furiosa.ai>
+Requires-Python: ~=3.7
+Description-Content-Type: text/markdown
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Dist: furiosa-common == 0.7.*
+Requires-Dist: furiosa-registry == 0.7.*
+Requires-Dist: pytest ; extra == "test"
+Requires-Dist: pytest-asyncio ~= 0.17.2 ; extra == "test"
+Requires-Dist: furiosa-registry ; extra == "test"
+Requires-Dist: onnx ; extra == "test"
+Requires-Dist: onnxruntime ; extra == "test"
+Requires-Dist: opencv-python ; extra == "test"
+Requires-Dist: pycocotools ; extra == "test"
+Requires-Dist: timm ; extra == "test"
+Requires-Dist: torch ; extra == "test"
+Requires-Dist: torchvision ; extra == "test"
+Requires-Dist: protobuf < 4.0dev ; extra == "test"
+Requires-Dist: segmentation_models_pytorch ; extra == "test"
+Requires-Dist: pretrainedmodels ; extra == "test"
+Requires-Dist: effdet ; extra == "test"
+Project-URL: Bug Tracker, https://github.com/furiosa-ai/furiosa-sdk/issues
+Project-URL: Documentation, https://furiosa-ai.github.io/docs
+Project-URL: Home, https://furiosa.ai
+Project-URL: Source Code, https://github.com/furiosa-ai/furiosa-sdk
+Provides-Extra: test
+
+Furiosa Models
+==============
+
+Furiosa models provides ready to use deeplearning models provided by FuriosaAI.
+
+## Available models
+
+- MLCommonsResNet50
+- MLCommonsMobileNet
+- MLCommonsSSDResNet34
+
+## Usage
+
+```python
+import asyncio
+
+from furiosa.registry import Model
+from furiosa.models.vision import MLCommonsResNet50
+
+
+model: Model = asyncio.run(MLCommonsResNet50())
+```
+
