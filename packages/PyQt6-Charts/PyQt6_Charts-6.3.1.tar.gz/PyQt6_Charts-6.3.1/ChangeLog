@@ -1,0 +1,141 @@
+2022-04-26  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6-Charts.msp:
+	Make sure all the Qt major.minor versions are defined in the
+	project.
+	[b91c5cea2970] [6.3.1] <6.3-maint>
+
+2022-04-19  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6-Charts.msp:
+	Added the missing QXYSeries.points().
+	[a8a06a43a1cd] <6.3-maint>
+
+2022-04-12  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgtags:
+	Added tag 6.3.0 for changeset c5206d8b3d6c
+	[7cedb07aff8e]
+
+2022-03-31  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6-Charts.msp:
+	Updated for Qt v6.3.0rc.
+	[c5206d8b3d6c] [6.3.0]
+
+2021-09-30  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgtags:
+	Added tag 6.2.0 for changeset 121d91686411
+	[e66d9aed385d]
+
+	* NEWS:
+	Updated for Qt v6.2.0.
+	[121d91686411] [6.2.0]
+
+2021-07-13  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* rb-product.toml:
+	Update the minimum PyQt version.
+	[8c242496b33d]
+
+	* PyQt6-Charts.msp, sip/qhash.sip:
+	Completed the support for Qt v6.2.0beta1.
+	[48f42df9a0c7]
+
+2021-07-12  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6-Charts.msp, mksccode/QtCharts.versions:
+	First pass at updating for Qt v6.2.0beta1.
+	[f96bb99955da]
+
+	* Merged the 6.1-maint branch.
+	[85668d23635b]
+
+2021-06-08  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgtags:
+	Added tag 6.1.1 for changeset e54bff705222
+	[83e5ec425119] <6.1-maint>
+
+	* NEWS:
+	Updated the NEWS file.
+	[e54bff705222] [6.1.1] <6.1-maint>
+
+2021-05-07  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* .hgtags:
+	Added tag 6.1.0 for changeset 7b48a8f22d6c
+	[40934e43d2f7]
+
+2021-04-24  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS:
+	Updated for Qt v6.1.0rc.
+	[7b48a8f22d6c] [6.1.0]
+
+2021-04-10  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* NEWS, PyQt6-Charts.msp, pyproject.toml:
+	Added a base version.
+	[0961c33651eb]
+
+	* rb-product.toml:
+	Fixed the version number of the next release.
+	[5c9ca668accd]
+
+	* DevelopersNotes.txt:
+	The developer notes are no longer required.
+	[d92ec0d69e71]
+
+2021-03-31  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* examples/areachart.py, examples/barchart.py,
+	examples/barmodelmapper.py, examples/boxplotchart/acme_data.txt,
+	examples/boxplotchart/boxplotchart.py,
+	examples/boxplotchart/boxwhisk_data.txt, examples/chartthemes.py,
+	examples/donutbreakdown.py, examples/horizontalbarchart.py,
+	examples/horizontalpercentbarchart.py,
+	examples/horizontalstackedbarchart.py, examples/modeldata.py,
+	examples/percentbarchart.py, examples/polarchart.py:
+	Added the examples.
+	[a2f9564e7f0a]
+
+2021-03-30  Phil Thompson  <phil@riverbankcomputing.com>
+
+	* PyQt6-Charts.msp:
+	Fixed QBoxPlotSeries.append().
+	[ebb882dedce8]
+
+	* PyQt6-Charts.msp:
+	Fixed the base type of QBoxSet.ValuePositions.
+	[495d8eb970cb]
+
+	* .hgignore:
+	Added .hgignore.
+	[bf7f1c6eef3c]
+
+	* PyQt6-Charts.msp, pyproject.toml:
+	Completed the support for Qt v6.1.0.
+	[b15e5257ae2b]
+
+	* PyQt6-Charts.msp:
+	Updated for Qt v6.1.0.
+	[d4bef52888d9]
+
+	* PyQt6-Charts.msp:
+	More namespace removals.
+	[eb03180936db]
+
+	* mksccode/QtCharts.versions:
+	Removed the sub-code version file.
+	[5c63ffeba332]
+
+	* PyQt6-Charts.msp:
+	Stripped out the Qt5 namespace.
+	[0f33438a05a9]
+
+	* DevelopersNotes.txt, NEWS, PyQt6-Charts.msp, README,
+	mksccode/QtCharts.versions, pyproject.toml, rb-product.toml:
+	Initial commit.
+	[25cf867bc81f]
