@@ -1,0 +1,4 @@
+from rest_framework import serializers
+
+class {{camel_case_app_name}}Transformer(serializers.Serializer):
+    pass
