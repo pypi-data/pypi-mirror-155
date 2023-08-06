@@ -1,0 +1,17 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+HAT_phasing.egg-info/PKG-INFO
+HAT_phasing.egg-info/SOURCES.txt
+HAT_phasing.egg-info/dependency_links.txt
+HAT_phasing.egg-info/entry_points.txt
+HAT_phasing.egg-info/requires.txt
+HAT_phasing.egg-info/top_level.txt
+hat/HAT_main.py
+hat/Phasing.py
+hat/PloidyBlocks.py
+hat/ReadInput.py
+hat/Seeds.py
+hat/Visualization.py
+hat/__init__.py
