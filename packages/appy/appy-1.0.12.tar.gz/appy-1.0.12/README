@@ -1,0 +1,14 @@
+
+Appy is a web framework written in Python 3 to build webapps.
+
+The part of the framework named "appy.pod" works with Python 2 as well.
+
+Appy requires :
+- Python 3.6 or higher;
+- the Zope Object DataBase (ZODB)
+
+To install pip (Debian/Ubuntu):
+sudo apt install python3-pip
+
+To install Python dependencies:
+pip3 install zodb DateTime python-ldap
