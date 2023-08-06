@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}-{{ template "mysql-cluster.name" . }}-service
+spec:
+  type: NodePort
+  selector:
+    mysql.presslabs.org/cluster: {{ .Release.Name }}-{{ template "mysql-cluster.name" . }}-db
+    role: master
+  ports:
+  - nodePort: {{ .Values.mysqlnodeport }}
+    port: 3306
+    targetPort: 3306

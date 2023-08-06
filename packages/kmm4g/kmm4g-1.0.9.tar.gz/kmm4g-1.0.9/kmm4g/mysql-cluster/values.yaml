@@ -1,0 +1,73 @@
+# Default values for mysql-cluster.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+## The cluster number of nodes
+replicas: 2
+
+## For setting custom docker image or specifying mysql version
+## the image field has priority over mysqlVersion.
+# image: percona:5.7
+# mysqlVersion: "5.7"
+
+## MySQL connect credentials, those credentials will be provisioned in the cluster
+rootPassword:
+#appUser: "myuser"
+#appPassword: "mypass"
+#appDatabase: "mydb"
+# appSecretLabels: {}
+# appSecretAnnotations: {}
+
+## MySQL expose port using node port
+mysqlnodeport:
+#podSpec:
+#mysqlConf:
+volumeSpec:
+  persistentVolumeClaim:
+    accessModes: ["ReadWriteOnce"]
+    resources:
+      requests:
+        storage: 4Gi
+
+serverIDOffset:
+
+#initBucketURL: s3://my_bucket_name/mysql-cluster-db-auto-2022-02-22t12-29-00.xbackup.gz
+initBucketURL:
+initBucketSecretName:
+
+# Represents the time and frequency of making cluster backups, 
+# in a cron format with seconds 
+#backupSchedule: "0 0 0 * * *" */10 * * * *
+backupSchedule:
+
+#The number of many backups to keep .. Ex: 10
+#backupScheduleJobsHistoryLimit: 10
+backupScheduleJobsHistoryLimit:
+
+# Your bucket name .. Ex: my_bucket_name
+##backupURL: s3://my_bucket_name/
+backupURL:
+
+# The name of the secret that contains credentials for connecting to Object storage
+# Or keep it epmty and it will create secret for you
+#backupSecretName: os-backup-secret
+backupSecretName:
+
+# specify the remote deletion policy. It can be on of ["retain", "delete"]
+backupRemoteDeletePolicy:
+
+# backupSecretLabels: {}
+# backupSecretAnnotations: {}
+
+backupCredentials:
+
+  # Your Object storage Access key
+#  AWS_ACCESS_KEY_ID:
+
+  # Your Object storage Secret key
+#  AWS_SECRET_ACCESS_KEY:
+#  S3_PROVIDER: Minio  
+#  S3_PROVIDER:
+
+  # Your Object storage URL after publish using receive proxy 
+#  S3_ENDPOINT:
