@@ -1,0 +1,36 @@
+Metadata-Version: 2.1
+Name: carefree-cv
+Version: 0.1.0
+Summary: Some commonly used computer vision functions and modules
+Home-page: https://github.com/carefree0910/carefree-cv
+Author: carefree0910
+Author-email: syameimaru.saki@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/carefree0910/carefree-cv/archive/v0.1.0.tar.gz
+Keywords: python computer-vision
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# carefree-cv
+
+`carefree-cv` implemented some commonly used computer vision functions and modules
+
+
+## Installation
+
+`carefree-cv` requires Python 3.8 or higher.
+
+```bash
+pip install carefree-cv
+```
+
+or
+
+```bash
+git clone https://github.com/carefree0910/carefree-cv.git
+cd carefree-cv
+pip install -e .
+```
+
+
