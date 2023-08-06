@@ -1,0 +1,28 @@
+Metadata-Version: 2.1
+Name: redfish-client
+Version: 0.3.7
+Summary: Redfish API client for Python
+Home-page: https://github.com/xlab-steampunk/redfish-client-python
+Author: XLAB d.o.o.
+Author-email: pypi@xlab.si
+License: UNKNOWN
+Project-URL: Source Code, https://github.com/xlab-steampunk/redfish-client-python
+Project-URL: Bug Tracker, https://github.com/xlab-steampunk/redfish-client-python/issues
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: requests (>=2.16)
+
+Redfish API client for Python
+
+
