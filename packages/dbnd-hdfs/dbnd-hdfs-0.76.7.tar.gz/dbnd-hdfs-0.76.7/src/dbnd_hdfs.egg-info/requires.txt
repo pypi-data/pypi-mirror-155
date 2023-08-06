@@ -1,0 +1,10 @@
+dbnd==0.76.7
+pyox
+hdfs
+
+[kerberos]
+requests_kerberos
+hdfs
+
+[tests]
+dbnd_test_scenarios==0.76.7
