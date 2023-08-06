@@ -1,0 +1,12 @@
+60-ypmeteo.rules
+LICENSE
+MANIFEST.in
+README.md
+example.py
+pyproject.toml
+src/ypmeteo/__init__.py
+src/ypmeteo.egg-info/PKG-INFO
+src/ypmeteo.egg-info/SOURCES.txt
+src/ypmeteo.egg-info/dependency_links.txt
+src/ypmeteo.egg-info/requires.txt
+src/ypmeteo.egg-info/top_level.txt
