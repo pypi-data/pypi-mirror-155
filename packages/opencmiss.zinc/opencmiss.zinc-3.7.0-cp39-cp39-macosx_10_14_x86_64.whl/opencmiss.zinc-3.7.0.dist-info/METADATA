@@ -1,0 +1,52 @@
+Metadata-Version: 2.1
+Name: opencmiss.zinc
+Version: 3.7.0
+Summary: Zinc Library: An advanced visualisation library for FE models
+Home-page: http://opencmiss.org
+Author: H. Sorby
+Author-email: h.sorby@auckland.ac.nz
+License: Mozilla Public License 2.0 (MPL 2.0)
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)
+Classifier: Programming Language :: Python
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Topic :: Scientific/Engineering :: Medical Science Apps.
+Classifier: Topic :: Scientific/Engineering :: Visualization
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: 
+Description-Content-Type: text/x-rst
+License-File: LICENSE.txt
+
+====================
+Zinc Python bindings
+====================
+
+Zinc provides Python bindings to the visualisation library.
+There are some examples available at http://opencmiss.org/documentation/tutorials/index.html.
+A typical usage often starts with creating a Context like this::
+
+ from opencmiss.zinc import context
+ c = context.Context.create("my-context")
+
+There are some very cool things you can visualize with this library, like DICOM images, Hermite meshes and so on.
+
+First Steps
+===========
+
+The examples are the best place for getting started with Zinc Python bindings.
+
+Contributors
+============
+
+Alan Wu
+Hugh Sorby
+Richard Christie
+
+
+
