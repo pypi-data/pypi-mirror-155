@@ -1,0 +1,11 @@
+warcio>=1.7.4,<1.8
+requests>=2.25.1,<3.0
+beautifulsoup4>=4.9.3,<4.10
+zimscraperlib>=1.6.0,<1.7
+Babel>=2.9,<3.0
+jinja2>=2.11,<3.0
+# to support possible brotli content in warcs
+brotlipy==0.7.0
+cdxj_indexer>=1.4.3
+# jinja2 dependency (https://github.com/pallets/markupsafe/issues/284)
+MarkupSafe==2.0.1

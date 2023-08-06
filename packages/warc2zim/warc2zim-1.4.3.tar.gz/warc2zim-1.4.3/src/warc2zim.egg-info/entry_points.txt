@@ -1,0 +1,4 @@
+
+        [console_scripts]
+        warc2zim = warc2zim.main:warc2zim
+    
