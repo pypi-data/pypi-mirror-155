@@ -1,0 +1,10 @@
+MANIFEST.in
+README.md
+setup.py
+digibyte_scrypt/scrypt.c
+digibyte_scrypt/scrypt.h
+digibyte_scrypt/scryptmodule.c
+digibyte_scrypt.egg-info/PKG-INFO
+digibyte_scrypt.egg-info/SOURCES.txt
+digibyte_scrypt.egg-info/dependency_links.txt
+digibyte_scrypt.egg-info/top_level.txt
