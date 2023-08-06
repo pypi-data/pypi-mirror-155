@@ -1,0 +1,4 @@
+[console_scripts]
+ncs-pycli = ncs_pycli.ncs_pycli:run
+ncs_pycli = ncs_pycli.ncs_pycli:run
+
