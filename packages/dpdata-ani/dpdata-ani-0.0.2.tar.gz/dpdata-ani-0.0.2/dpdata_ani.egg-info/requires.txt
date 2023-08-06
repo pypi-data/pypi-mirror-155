@@ -1,0 +1,9 @@
+dpdata>=0.2.7
+torchani
+torch
+numpy
+h5py
+
+[test]
+pytest
+pytest-cov
