@@ -1,0 +1,17 @@
+LICENSE
+README.rst
+requirements.txt
+setup.py
+aas_core3.0rc02_testgen.egg-info/PKG-INFO
+aas_core3.0rc02_testgen.egg-info/SOURCES.txt
+aas_core3.0rc02_testgen.egg-info/dependency_links.txt
+aas_core3.0rc02_testgen.egg-info/requires.txt
+aas_core3.0rc02_testgen.egg-info/top_level.txt
+aas_core3_0_rc02_testgen/__init__.py
+aas_core3_0_rc02_testgen/common.py
+aas_core3_0_rc02_testgen/generate_json.py
+aas_core3_0_rc02_testgen/py.typed
+aas_core3_0_rc02_testgen/frozen_examples/__init__.py
+aas_core3_0_rc02_testgen/frozen_examples/_types.py
+aas_core3_0_rc02_testgen/frozen_examples/pattern.py
+aas_core3_0_rc02_testgen/frozen_examples/xs_value.py
