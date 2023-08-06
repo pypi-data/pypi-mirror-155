@@ -1,0 +1,3 @@
+[console_scripts]
+metashovel = metashovel.cli:cli
+
