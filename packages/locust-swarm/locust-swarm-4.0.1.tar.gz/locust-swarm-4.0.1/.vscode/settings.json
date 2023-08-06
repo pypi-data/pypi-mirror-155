@@ -1,0 +1,25 @@
+{
+    "python.formatting.provider": "black",
+    "files.exclude": {
+        "**/env": true,
+        "**/__pycache__": true,
+        "**/pip-wheel-metadata": true,
+        "**/locust_swarm.egg-info": true,
+        "**/build": true,
+        "**/dist": true,
+        "**/.mypy_cache": true,
+        "**/.tox": true
+    },
+    "python.linting.pylintEnabled": true,
+    "files.watcherExclude": {
+        "**/target": true
+    },
+    "editor.formatOnSave": true,
+    "python.languageServer": "Pylance",
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportOptionalSubscript": "none",
+        "reportOptionalMemberAccess": "none",
+        "reportPrivateImportUsage": "none"
+    },
+}
