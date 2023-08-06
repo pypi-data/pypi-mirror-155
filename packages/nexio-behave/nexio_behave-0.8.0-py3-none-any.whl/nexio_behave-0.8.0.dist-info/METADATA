@@ -1,0 +1,68 @@
+Metadata-Version: 2.1
+Name: nexio-behave
+Version: 0.8.0
+Summary: The Nexio Behave
+Home-page: https://github.com/NarrativeScience/nexio-behave
+License: Proprietary
+Author: Hongli Zhang
+Author-email: hzhang@narrativescience.com
+Requires-Python: >=3.7.0,<4.0.0
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: ansicolor (>=0.3.2,<0.4.0)
+Requires-Dist: behave (>=1.2.6,<2.0.0)
+Requires-Dist: jsonpath (>=0.82,<0.83)
+Requires-Dist: loguru (>=0.6.0,<0.7.0)
+Requires-Dist: pydantic (>=1.9.0,<2.0.0)
+Requires-Dist: requests (>=2.27.1,<3.0.0)
+Project-URL: Repository, https://github.com/NarrativeScience/nexio-behave
+Description-Content-Type: text/markdown
+
+# nexio-behave
+
+The Nexio Behave
+
+Features:
+
+- <!-- list of features -->
+
+Table of Contents:
+
+- [Installation](#installation)
+- [Guide](#guide)
+- [Development](#development)
+
+## Installation
+
+nexio-behave requires Python 3.9 or above.
+
+```bash
+pip install nexio-behave
+# or
+poetry add nexio-behave
+```
+
+## Guide
+
+<!-- Subsections explaining how to use the package -->
+
+## Development
+
+To develop nexio-behave, install dependencies and enable the pre-commit hook:
+
+```bash
+pip install pre-commit poetry
+poetry install
+pre-commit install -t pre-commit -t pre-push
+```
+
+To run tests:
+
+```bash
+poetry run pytest
+```
+
