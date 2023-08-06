@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: cloudfn-aws
+Version: 0.2.6
+Summary: cloudfn-aws
+Home-page: https://github.com/akrymskiy/cloudfn
+Author: Aleksandr Krymskiy
+Author-email: alex@krymskiy.net
+License: MIT
+Requires-Python: >=3.9
+Requires-Dist: cloudfn-core (==0.2.6)
+Requires-Dist: boto3
+
