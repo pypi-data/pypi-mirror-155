@@ -1,0 +1,8 @@
+click>=8.0.0
+distro
+flake8
+linux-utils
+oslo.concurrency
+psutil>5.9.0
+testtools
+tox
