@@ -1,0 +1,58 @@
+Metadata-Version: 2.1
+Name: dash-charlotte
+Version: 0.3.0
+Summary: A package of themes, tools and components for Plotly-Dash web dashboards.
+Home-page: https://github.com/GusFurtado/dash-charlotte
+Author: Gustavo Furtado
+Author-email: gustavofurtado2@gmail.com
+License: MIT
+Download-URL: https://github.com/GusFurtado/dash-charlotte/archive/0.3.0.tar.gz
+Keywords: dashboard,plotly
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Software Development :: User Interfaces
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: dash
+Requires-Dist: dash-bootstrap-components
+
+# Dash Charlotte
+
+A package of themes, tools and components that I use on my Plotly-Dash web dashboards.
+
+This is still a super early work in progress and probably not very interesting, so don't waste your time here.
+
+## Submodules
+
+- [**Components**](https://github.com/GusFurtado/dash-charlotte/tree/main/dash_charlotte/components)
+
+A set of standard Dash components for a fast and modular dashboard building.
+
+- [**Themes**](https://github.com/GusFurtado/dash-charlotte/tree/main/dash_charlotte/themes)
+
+Tools for easy and consistent styling. Colors, fonts, icon packages and CSS stuff.
+
+- [**Layouts**](https://github.com/GusFurtado/dash-charlotte/tree/main/dash_charlotte/layouts)
+
+Some pre-built page layouts.
+
+## Instatlation
+
+- `pip install dash-charlotte`
+
+## License
+
+- [**MIT**]([LICENSE])
+
+## Getting Started
+
+Check the [example app](https://github.com/GusFurtado/dash-charlotte-live-demo) or the [live demo](https://dash-charlotte.herokuapp.com/).
+
+
