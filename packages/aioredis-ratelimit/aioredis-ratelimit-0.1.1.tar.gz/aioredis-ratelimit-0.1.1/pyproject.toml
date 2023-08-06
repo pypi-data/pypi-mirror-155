@@ -1,0 +1,6 @@
+[build-system]
+requires = [
+    "setuptools",
+    "aioredis>=2,<3",
+]
+build-backend = "setuptools.build_meta"
