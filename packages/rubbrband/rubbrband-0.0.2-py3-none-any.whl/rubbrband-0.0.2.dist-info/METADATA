@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: rubbrband
+Version: 0.0.2
+Summary: A library to interact with the Rubbrband API.
+Home-page: https://github.com/rubbrband/rubbrband-python
+Author: Rubbrband Inc
+Author-email: contact@rubbrband.com
+License: BSD
+Keywords: rubbrband cache serverless
+Classifier: Development Status :: 3 - Alpha
+Classifier: Topic :: Utilities
+Classifier: License :: OSI Approved :: BSD License
+
+A library to interact with the Rubbrband API
