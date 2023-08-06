@@ -1,0 +1,3 @@
+[console_scripts]
+obgraph = obgraph.command_line_interface:main
+
