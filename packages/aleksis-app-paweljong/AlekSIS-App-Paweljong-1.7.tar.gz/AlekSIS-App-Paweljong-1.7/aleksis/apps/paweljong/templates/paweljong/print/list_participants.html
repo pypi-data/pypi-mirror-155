@@ -1,0 +1,49 @@
+{% extends "core/base_print.html" %}
+{% load i18n static %}
+
+{% block page_title %}
+    {{ group }} — {% trans "participant list" %}
+{% endblock %}
+
+{% block extra_head %}
+     <link rel="stylesheet" href="{% static 'css/paweljong.css' %}"/>
+{% endblock %}
+
+{% block browser_title %}{{ group }} — {% trans "participant list" %}{% endblock %}
+
+{% block content %}
+
+    <table>
+        <thead>
+            <tr>
+                <th class="table-print">{% trans "Photo" %}</th>
+                <th class="table-print">{% trans "Last name" %}</th>
+                <th class="table-print">{% trans "First name" %}</th>
+                <th class="table-print">{% trans "Date of birth" %}</th>
+                <th class="table-print">{% trans "Mobile number" %}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for person in group.members.all %}
+                <tr>
+                    {% if person.photo %}
+                        <td class="table-print">
+                            <img class="person-photo-print" src="{{ person.photo.url }}"
+                                alt="{{ registration.person.first_name }} {{ registration.person.last_name }}"/>
+                        </td>
+                    {% else %}
+                        <td class="table-print">
+                            <img class="person-photo-print" src="{% static 'img/fallback.png' %}"
+                            alt="{{ registration.person.first_name }} {{ registration.person.last_name }}"/>
+                        </td>
+                    {% endif %}
+                    <td class="table-print">{{ person.last_name }}</td>
+                    <td class="table-print">{{ person.first_name }}</td>
+                    <td class="table-print">{{ person.date_of_birth }}</td>
+                    <td class="table-print">{{ person.mobile_number }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

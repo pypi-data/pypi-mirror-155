@@ -1,0 +1,24 @@
+{% extends "core/base_print.html" %}
+{% load i18n static %}
+
+{% block page_title %}
+    {% trans "Voucher for "%} {{ voucher.event }}
+{% endblock %}
+
+{% block extra_head %}
+  <link rel="stylesheet" href="{% static 'css/paweljong.css' %}"/>
+{% endblock %}
+
+{% block browser_title %}{% trans "Voucher for "%} {{ voucher.event }}{% endblock %}
+
+{% block content %}
+
+    <div class="center-align">
+        <img src="{% firstof request.site.preferences.theme__logo.url aleksis_banner %}" alt="Logo" class="max-size-600 center">
+        <h3>{{ voucher.event }}<h3>
+        <h4>{{ voucher.code }}</h4>
+        <p>{% trans "Voucher for" %} {{ voucher.person.first_name }} {{ voucher.person.last_name }} {% trans "to visit event" %} {{ voucher.event }} {% trans "on" %} {{ voucher.event.date_event }} {% trans "at" %} {{ voucher.event.place }}!</p>
+        <p>{% trans "To use the voucher, register for the event " %} <a href="{% url 'register_event_by_pk' voucher.event.pk %}">{% trans "here" %}</a></p>
+    </div>
+
+{% endblock %}

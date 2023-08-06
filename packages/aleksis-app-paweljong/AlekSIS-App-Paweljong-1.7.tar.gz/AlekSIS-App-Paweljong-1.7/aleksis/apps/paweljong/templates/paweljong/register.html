@@ -1,0 +1,17 @@
+{% extends "core/base.html" %}
+{% load material_form i18n %}
+
+{% block page_title %}{% blocktrans %}Registration{% endblocktrans %}{% endblock %}
+{% block browser_title %}{% blocktrans %}Registration{% endblocktrans %}{% endblock %}
+
+{% block content %}
+ <h5>
+  {% blocktrans %}Registration{% endblocktrans %} {{ event.display_name }}
+ </h5>
+
+ <form method="post">
+   {% csrf_token %}
+   {% form form=register_form %}{% endform %}
+   {% include "core/partials/save_button.html" %}
+ </form>
+{% endblock %}

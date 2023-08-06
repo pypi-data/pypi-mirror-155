@@ -1,0 +1,22 @@
+{% extends "core/base.html" %}
+{% load material_form i18n any_js %}
+
+{% block page_title %}{% blocktrans %}Terms{% endblocktrans %}{% endblock %}
+{% block browser_title %}{% blocktrans %}Terms{% endblocktrans %}{% endblock %}
+
+{% block content %}
+
+ <div class="row">
+  {% for term in event.terms.all %}
+  <div class="col s12">
+   <div class="card">
+     <div class="card-content">
+      <span class="card-title">{{ term.title }}</span>
+      {{ term.term | safe}}
+     </div>
+    </div>
+  </div>
+  {% endfor %}
+ </div>
+
+{% endblock %}

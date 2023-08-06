@@ -1,0 +1,64 @@
+{% load i18n %}
+
+{% block subject %} {% trans "New event" %} {{ new_event }} {% endblock %}
+
+{% block plain %}
+    {% blocktrans with new_event=new_event %} An event was created: {{ new_event }}{% endblocktrans %}
+
+    * {% trans "Group" %}: {{ new_event.group }}
+    * {% trans "Description" %}: {{ new_event.description }}
+    * {% trans "Published" %}: {{ new_event.published }}
+    * {% trans "Place" %}: {{ new_event.place }}
+    * {% trans "Date of event" %}: {{ new_event.date_event }}
+    * {% trans "Registration deadline" %}: {{ new_event.date_registration }}
+    * {% trans "Retraction deadline" %}: {{ new_event.date_retraction }}
+    * {% trans "Cost" %}: {{ new_event.cost }}
+    * {% trans "Max. participants" %}: {{ new_event.max_participants }}
+    * {% trans "Owners" %}:
+    {% for owner in new_event.group.owners.all %}
+        * {{ owner }}
+    {% endfor %}
+
+    {% blocktrans with sender=person %}
+        The event was created by {{ sender }}
+    {% endblocktrans %}
+
+    {% trans "Your AlekSIS team" %}
+{% endblock %}
+
+{% block html %}
+<main>
+    <p>{% blocktrans with new_event=new_event %} An event was created: {{ new_event }}{% endblocktrans %}</p>
+
+    <blockquote>
+        <h5>{{ new_event }}</h5>
+        <ul>
+            <li> {% trans "Group" %}: {{ new_event.group }}</li>
+            <li> {% trans "Description" %}: {{ new_event.description }}</li>
+            <li> {% trans "Published" %}: {{ new_event.published }}</li>
+            <li> {% trans "Place" %}: {{ new_event.place }}</li>
+            <li> {% trans "Date of event" %}: {{ new_event.date_event }}</li>
+            <li> {% trans "Registration deadline" %}: {{ new_event.date_registration }}</li>
+            <li> {% trans "Retraction deadline" %}: {{ new_event.date_retraction }}</li>
+            <li> {% trans "Cost" %}: {{ new_event.cost }}</li>
+            <li> {% trans "Max. participants" %}: {{ new_event.max_participants }}</li>
+            <li> {% trans "Owners" %}</li>
+            <ul>
+            {% for owner in new_event.group.owners.all %}
+                <li> {{ owner }}</li>
+            {% endfor %}
+	    </ul>
+	</ul>
+    </blockquote>
+
+    <p>
+    {% blocktrans with sender=person %}
+        The event was created by {{ sender }}
+    {% endblocktrans %}
+    </p>
+
+    <p>
+        <i>{% trans "Your AlekSIS team" %}</i>
+    </p>
+</main>
+{% endblock %}
