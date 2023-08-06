@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: unscrambler
+Version: 0.3.2
+Summary: A utility for working with test papers in PDF form.
+Author-email: Peter Davison-Reiber <peter@davisonreiber.com>
+Project-URL: Homepage, https://github.com/pdavisonreiber/unscrambler
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: argparse
+Requires-Dist: PyPDF2 (>=2.2.0)
+
+Unscrambler is a utility for working with test papers in PDF form.
