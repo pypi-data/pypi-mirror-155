@@ -1,0 +1,11 @@
+aiohttp>=3.0
+aiotapioca-wrapper>=4.0.1
+orjson>=3.0.0
+
+[dev]
+pytest>=7.0
+pytest-asyncio>=0.18
+aioresponses>=0.7
+async-solipsism<1.0,>=0.5
+black>=22.0
+isort>=5.10.0
