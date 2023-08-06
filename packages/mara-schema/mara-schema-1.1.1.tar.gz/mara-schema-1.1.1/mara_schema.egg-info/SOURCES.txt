@@ -1,0 +1,17 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+mara_schema/__init__.py
+mara_schema/attribute.py
+mara_schema/config.py
+mara_schema/data_set.py
+mara_schema/entity.py
+mara_schema/metric.py
+mara_schema/sql_generation.py
+mara_schema.egg-info/PKG-INFO
+mara_schema.egg-info/SOURCES.txt
+mara_schema.egg-info/dependency_links.txt
+mara_schema.egg-info/requires.txt
+mara_schema.egg-info/top_level.txt
