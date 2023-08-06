@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+src/schadem_cdk_construct_sfn_textract_output_config_to_json/__init__.py
+src/schadem_cdk_construct_sfn_textract_output_config_to_json/py.typed
+src/schadem_cdk_construct_sfn_textract_output_config_to_json.egg-info/PKG-INFO
+src/schadem_cdk_construct_sfn_textract_output_config_to_json.egg-info/SOURCES.txt
+src/schadem_cdk_construct_sfn_textract_output_config_to_json.egg-info/dependency_links.txt
+src/schadem_cdk_construct_sfn_textract_output_config_to_json.egg-info/requires.txt
+src/schadem_cdk_construct_sfn_textract_output_config_to_json.egg-info/top_level.txt
+src/schadem_cdk_construct_sfn_textract_output_config_to_json/_jsii/__init__.py
+src/schadem_cdk_construct_sfn_textract_output_config_to_json/_jsii/schadem-cdk-construct-sfn-textract-output-config-to-json@0.0.0.jsii.tgz
