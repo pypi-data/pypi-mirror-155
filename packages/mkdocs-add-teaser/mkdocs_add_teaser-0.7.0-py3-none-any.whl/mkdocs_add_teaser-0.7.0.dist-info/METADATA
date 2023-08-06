@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: mkdocs-add-teaser
+Version: 0.7.0
+Summary: A MkDocs plugin to add a CSS class to the first paragraph after the first heading 1 in all pages of your project.
+Home-page: https://github.com/wilhelmer/mkdocs-add-teaser.git
+Author: Lars Wilhelmer
+Author-email: lars@wilhelmer.de
+License: MIT
+Keywords: mkdocs css
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Python: >=2.7
+License-File: LICENSE
+Requires-Dist: mkdocs (>=1.0.4)
+
+UNKNOWN
+
