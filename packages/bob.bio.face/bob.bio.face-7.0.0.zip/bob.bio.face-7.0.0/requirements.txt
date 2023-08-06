@@ -1,0 +1,14 @@
+setuptools
+bob.extension
+bob.io.base
+bob.measure
+bob.bio.base
+bob.pipelines
+matplotlib   # for plotting
+scikit-image
+scikit-learn # for pipelines Tranformers
+torch
+torchvision
+imageio-ffmpeg
+pytorch-lightning
+opencv-python

@@ -1,0 +1,182 @@
+[bob.bio.annotator]
+mtcnn = bob.bio.face.config.annotator.mtcnn:annotator
+tinyface = bob.bio.face.config.annotator.tinyface:annotator
+
+[bob.bio.cli]
+display-face-annotations = bob.bio.face.script.display_face_annotations:display_face_annotations
+face = bob.bio.face.script.face:face
+
+[bob.bio.config]
+afffe = bob.bio.face.config.baseline.afffe
+arcface-insightface = bob.bio.face.config.baseline.arcface_insightface
+arface-all = bob.bio.face.config.database.arface_all
+arface-expression = bob.bio.face.config.database.arface_expression
+arface-illumination = bob.bio.face.config.database.arface_illumination
+arface-occlusion = bob.bio.face.config.database.arface_occlusion
+arface-occlusion-and-illumination = bob.bio.face.config.database.arface_occlusion_and_illumination
+attentionnet = bob.bio.face.config.baseline.attention_net
+casia-africa = bob.bio.face.config.database.casia_africa
+caspeal-accessory = bob.bio.face.config.database.caspeal_accessory
+caspeal-aging = bob.bio.face.config.database.caspeal_aging
+caspeal-background = bob.bio.face.config.database.caspeal_background
+caspeal-distance = bob.bio.face.config.database.caspeal_distance
+caspeal-expression = bob.bio.face.config.database.caspeal_expression
+caspeal-lighting = bob.bio.face.config.database.caspeal_lighting
+efficientnet = bob.bio.face.config.baseline.efficient_net
+facenet-sanderberg = bob.bio.face.config.baseline.facenet_sanderberg
+frgc-exp1 = bob.bio.face.config.database.frgc_experiment1
+frgc-exp2 = bob.bio.face.config.database.frgc_experiment2
+frgc-exp4 = bob.bio.face.config.database.frgc_experiment4
+gbu-bad = bob.bio.face.config.database.gbu_bad
+gbu-good = bob.bio.face.config.database.gbu_good
+gbu-ugly = bob.bio.face.config.database.gbu_ugly
+ghostnet = bob.bio.face.config.baseline.ghost_net
+hrnet = bob.bio.face.config.baseline.hr_net
+ijbc-test1 = bob.bio.face.config.database.ijbc_test1
+ijbc-test2 = bob.bio.face.config.database.ijbc_test2
+ijbc-test4-g1 = bob.bio.face.config.database.ijbc_test4_g1
+ijbc-test4-g2 = bob.bio.face.config.database.ijbc_test4_g2
+inception-resnetv1-casiawebface = bob.bio.face.config.baseline.inception_resnetv1_casiawebface
+inception-resnetv1-msceleb = bob.bio.face.config.baseline.inception_resnetv1_msceleb
+inception-resnetv2-casiawebface = bob.bio.face.config.baseline.inception_resnetv2_casiawebface
+inception-resnetv2-msceleb = bob.bio.face.config.baseline.inception_resnetv2_msceleb
+iresnet100 = bob.bio.face.config.baseline.iresnet100
+iresnet100-elastic = bob.bio.face.config.baseline.iresnet100_elastic
+iresnet100-msceleb-idiap-20210623 = bob.bio.face.config.baseline.iresnet100_msceleb_arcface_20210623
+iresnet34 = bob.bio.face.config.baseline.iresnet34
+iresnet50 = bob.bio.face.config.baseline.iresnet50
+iresnet50-msceleb-idiap-20210623 = bob.bio.face.config.baseline.iresnet50_msceleb_arcface_20210623
+lfw-o1 = bob.bio.face.config.database.lfw_o1
+lfw-o2 = bob.bio.face.config.database.lfw_o2
+lfw-o3 = bob.bio.face.config.database.lfw_o3
+lfw-view2 = bob.bio.face.config.database.lfw_view2
+meds = bob.bio.face.config.database.meds
+mobilefacenet = bob.bio.face.config.baseline.mobile_facenet
+mobilenetv2-msceleb-arcface-2021 = bob.bio.face.config.baseline.mobilenetv2_msceleb_arcface_2021
+mobio-all = bob.bio.face.config.database.mobio_all
+mobio-male = bob.bio.face.config.database.mobio_male
+morph = bob.bio.face.config.database.morph
+multipie = bob.bio.face.config.database.multipie
+multipie-pose = bob.bio.face.config.database.multipie_pose
+oxford-resnet50-ft-dag-vgg2 = bob.bio.face.config.baseline.oxford_resnet50_ft_dag_vgg2
+oxford-resnet50-scratch-dag-vgg2 = bob.bio.face.config.baseline.oxford_resnet50_scratch_dag_vgg2
+oxford-senet50-ft-dag-vgg2 = bob.bio.face.config.baseline.oxford_senet50_ft_dag_vgg2
+oxford-senet50-scratch-dag-vgg2 = bob.bio.face.config.baseline.oxford_senet50_scratch_dag_vgg2
+pola-thermal = bob.bio.face.config.database.pola_thermal
+replaymobile-img = bob.bio.face.config.database.replaymobile
+resnest = bob.bio.face.config.baseline.resne_st
+resnet = bob.bio.face.config.baseline.resnet
+resnet101-msceleb-arcface-20210521 = bob.bio.face.config.baseline.resnet101_msceleb_arcface_20210521
+resnet50-msceleb-arcface-2021 = bob.bio.face.config.baseline.resnet50_msceleb_arcface_2021
+resnet50-msceleb-arcface-20210521 = bob.bio.face.config.baseline.resnet50_msceleb_arcface_20210521
+resnet50-vgg2-arcface-2021 = bob.bio.face.config.baseline.resnet50_vgg2_arcface_2021
+rexnet = bob.bio.face.config.baseline.rex_net
+rfw-idiap = bob.bio.face.config.database.rfw_idiap
+rfw-original = bob.bio.face.config.database.rfw_original
+scface = bob.bio.face.config.database.scface_combined
+scface-close = bob.bio.face.config.database.scface_close
+scface-far = bob.bio.face.config.database.scface_far
+scface-ir = bob.bio.face.config.database.scface_ir
+scface-medium = bob.bio.face.config.database.scface_medium
+tfnas = bob.bio.face.config.baseline.tf_nas
+vgg16-oxford = bob.bio.face.config.baseline.vgg16_oxford
+vgg2-full = bob.bio.face.config.database.vgg2_full
+vgg2-full-with-eval = bob.bio.face.config.database.vgg2_full_with_eval
+vgg2-short = bob.bio.face.config.database.vgg2_short
+vgg2-short-with-eval = bob.bio.face.config.database.vgg2_short_with_eval
+
+[bob.bio.database]
+arface-all = bob.bio.face.config.database.arface_all:database
+arface-expression = bob.bio.face.config.database.arface_expression:database
+arface-illumination = bob.bio.face.config.database.arface_illumination:database
+arface-occlusion = bob.bio.face.config.database.arface_occlusion:database
+arface-occlusion-and-illumination = bob.bio.face.config.database.arface_occlusion_and_illumination:database
+casia-africa = bob.bio.face.config.database.casia_africa:database
+caspeal-accessory = bob.bio.face.config.database.caspeal_accessory:database
+caspeal-aging = bob.bio.face.config.database.caspeal_aging:database
+caspeal-background = bob.bio.face.config.database.caspeal_background:database
+caspeal-distance = bob.bio.face.config.database.caspeal_distance:database
+caspeal-expression = bob.bio.face.config.database.caspeal_expression:database
+caspeal-lighting = bob.bio.face.config.database.caspeal_lighting:database
+frgc-exp1 = bob.bio.face.config.database.frgc_experiment1:database
+frgc-exp2 = bob.bio.face.config.database.frgc_experiment2:database
+frgc-exp4 = bob.bio.face.config.database.frgc_experiment4:database
+gbu-bad = bob.bio.face.config.database.gbu_bad:database
+gbu-good = bob.bio.face.config.database.gbu_good:database
+gbu-ugly = bob.bio.face.config.database.gbu_ugly:database
+ijbc-test1 = bob.bio.face.config.database.ijbc_test1:database
+ijbc-test2 = bob.bio.face.config.database.ijbc_test2:database
+ijbc-test4-g1 = bob.bio.face.config.database.ijbc_test4_g1:database
+ijbc-test4-g2 = bob.bio.face.config.database.ijbc_test4_g2:database
+lfw-o1 = bob.bio.face.config.database.lfw_o1:database
+lfw-o2 = bob.bio.face.config.database.lfw_o2:database
+lfw-o3 = bob.bio.face.config.database.lfw_o3:database
+lfw-view2 = bob.bio.face.config.database.lfw_view2:database
+meds = bob.bio.face.config.database.meds:database
+mobio-all = bob.bio.face.config.database.mobio_all:database
+mobio-male = bob.bio.face.config.database.mobio_male:database
+morph = bob.bio.face.config.database.morph:database
+multipie = bob.bio.face.config.database.multipie:database
+multipie-pose = bob.bio.face.config.database.multipie_pose:database
+pola-thermal = bob.bio.face.config.database.pola_thermal:database
+replaymobile-img = bob.bio.face.config.database.replaymobile:database
+rfw-idiap = bob.bio.face.config.database.rfw_idiap:database
+rfw-original = bob.bio.face.config.database.rfw_original:database
+scface = bob.bio.face.config.database.scface_combined:database
+scface-close = bob.bio.face.config.database.scface_close:database
+scface-far = bob.bio.face.config.database.scface_far:database
+scface-ir = bob.bio.face.config.database.scface_ir:database
+scface-medium = bob.bio.face.config.database.scface_medium:database
+vgg2-full = bob.bio.face.config.database.vgg2_full:database
+vgg2-short = bob.bio.face.config.database.vgg2_short:database
+
+[bob.bio.face.cli]
+plots = bob.bio.face.script.plots:plots
+
+[bob.bio.face.plots.cli]
+arface = bob.bio.face.script.face_plots_commands:arface
+gbu = bob.bio.face.script.face_plots_commands:gbu
+ijbc = bob.bio.face.script.face_plots_commands:ijbc
+mobio-gender = bob.bio.face.script.face_plots_commands:mobio_gender
+multipie-expression = bob.bio.face.script.face_plots_commands:multipie_expression
+multipie-pose = bob.bio.face.script.face_plots_commands:multipie_pose
+scface = bob.bio.face.script.face_plots_commands:scface_distance
+
+[bob.bio.pipeline]
+afffe = bob.bio.face.config.baseline.afffe:pipeline
+arcface-insightface = bob.bio.face.config.baseline.arcface_insightface:pipeline
+attentionnet = bob.bio.face.config.baseline.attention_net:pipeline
+dummy = bob.bio.face.config.baseline.dummy:pipeline
+efficientnet = bob.bio.face.config.baseline.efficient_net:pipeline
+facenet-sanderberg = bob.bio.face.config.baseline.facenet_sanderberg:pipeline
+ghostnet = bob.bio.face.config.baseline.ghost_net:pipeline
+hrnet = bob.bio.face.config.baseline.hr_net:pipeline
+inception-resnetv1-casiawebface = bob.bio.face.config.baseline.inception_resnetv1_casiawebface:pipeline
+inception-resnetv1-msceleb = bob.bio.face.config.baseline.inception_resnetv1_msceleb:pipeline
+inception-resnetv2-casiawebface = bob.bio.face.config.baseline.inception_resnetv2_casiawebface:pipeline
+inception-resnetv2-msceleb = bob.bio.face.config.baseline.inception_resnetv2_msceleb:pipeline
+iresnet100 = bob.bio.face.config.baseline.iresnet100:pipeline
+iresnet100-elastic = bob.bio.face.config.baseline.iresnet100_elastic:pipeline
+iresnet100-msceleb-idiap-20210623 = bob.bio.face.config.baseline.iresnet100_msceleb_arcface_20210623:pipeline
+iresnet34 = bob.bio.face.config.baseline.iresnet34:pipeline
+iresnet50 = bob.bio.face.config.baseline.iresnet50:pipeline
+iresnet50-msceleb-idiap-20210623 = bob.bio.face.config.baseline.iresnet50_msceleb_arcface_20210623:pipeline
+mobilefacenet = bob.bio.face.config.baseline.mobile_facenet:pipeline
+mobilenetv2-msceleb-arcface-2021 = bob.bio.face.config.baseline.mobilenetv2_msceleb_arcface_2021:pipeline
+oxford-resnet50-ft-dag-vgg2 = bob.bio.face.config.baseline.oxford_resnet50_ft_dag_vgg2:pipeline
+oxford-resnet50-scratch-dag-vgg2 = bob.bio.face.config.baseline.oxford_resnet50_scratch_dag_vgg2:pipeline
+oxford-senet50-ft-dag-vgg2 = bob.bio.face.config.baseline.oxford_senet50_ft_dag_vgg2:pipeline
+oxford-senet50-scratch-dag-vgg2 = bob.bio.face.config.baseline.oxford_senet50_scratch_dag_vgg2:pipeline
+resnest = bob.bio.face.config.baseline.resne_st:pipeline
+resnet = bob.bio.face.config.baseline.resnet:pipeline
+resnet101-msceleb-arcface-20210521 = bob.bio.face.config.baseline.resnet101_msceleb_arcface_20210521:pipeline
+resnet50-msceleb-arcface-2021 = bob.bio.face.config.baseline.resnet50_msceleb_arcface_2021:pipeline
+resnet50-msceleb-arcface-20210521 = bob.bio.face.config.baseline.resnet50_msceleb_arcface_20210521:pipeline
+resnet50-vgg2-arcface-2021 = bob.bio.face.config.baseline.resnet50_vgg2_arcface_2021:pipeline
+rexnet = bob.bio.face.config.baseline.rex_net:pipeline
+tfnas = bob.bio.face.config.baseline.tf_nas:pipeline
+vgg16-oxford = bob.bio.face.config.baseline.vgg16_oxford:pipeline
+
+[console_scripts]
+
+
