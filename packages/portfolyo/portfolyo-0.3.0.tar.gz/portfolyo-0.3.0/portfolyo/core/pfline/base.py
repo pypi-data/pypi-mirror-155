@@ -1,0 +1,335 @@
+"""
+Abstract Base Class for PfLine.
+"""
+
+from __future__ import annotations
+
+
+# from . import single, multi, interop  #<-- moved to end of file
+from ..ndframelike import NDFrameLike
+from ..mixins import PfLineText, PfLinePlot, OtherOutput
+from ...prices.utils import duration_bpo
+from ...prices import convert
+from ...tools.types import Quantity, Value
+
+from abc import abstractmethod
+from enum import Enum
+from typing import Dict, Iterable, Mapping, Union, TYPE_CHECKING
+import pandas as pd
+
+# Developer notes: we would like to be able to handle 2 cases with volume AND financial
+# information. We would like to...
+# ... handle the situation where, for some timestamp, the volume q == 0 but the revenue
+#   r != 0, because this occasionally arises for the sourced volume, e.g. after buying
+#   and selling the same volume at unequal price. So: we want to be able to store q and r.
+# ... keep price information even if the volume q == 0, because at a later time this price
+#   might still be needed, e.g. if a perfect hedge becomes unperfect. So: we want to be
+#   able to store q and p.
+# Both cases can be catered to. The first as a 'SinglePfLine', where the timeseries for
+# q and r are used in the instance creation. The price is not defined at the timestamp in
+# the example, but can be calculated for other timestamps, and downsampling is also still
+# possble.
+# The second is a bit more complex. It is possible as a 'MultiPfLine'. This has then 2
+# 'SinglePfLine' instances as its children: one made from each of the timeseries for q
+# and p.
+
+
+if TYPE_CHECKING:
+    from .single import SinglePfLine  # noqa
+    from .multi import MultiPfLine  # noqa
+
+
+class Kind(Enum):
+    """Enumerate what kind of information (which dimensions) is present in a PfLine."""
+
+    VOLUME_ONLY = "vol"
+    PRICE_ONLY = "pri"
+    ALL = "all"
+
+    def __repr__(self):
+        return f"<{self.value}>"
+
+    def __str__(self):
+        return self.value
+
+
+class PfLine(NDFrameLike, Mapping, PfLineText, PfLinePlot, OtherOutput):
+    """Class to hold a related energy timeseries. This can be volume timeseries with q
+    [MWh] and w [MW], a price timeseries with p [Eur/MWh] or both.
+    """
+
+    def __new__(cls, data):
+        # Catch case where user actually called PfLine().
+        if cls is PfLine:
+            subclasses = [single.SinglePfLine, multi.MultiPfLine]
+            # If data is instance of subclass: return copy of the object.
+            for subcls in subclasses:
+                if isinstance(data, subcls):
+                    return data  # TODO: make copy instead
+            # Try passing data to subclasses to see if they can handle it.
+            for subcls in subclasses:
+                try:
+                    return subcls(data)
+                except (ValueError, TypeError):
+                    pass
+            raise NotImplementedError(
+                f"None of the subclasses ({', '.join([subcls.__name__ for subcls in subclasses])}) knows how to handle this data."
+            )
+        # Otherwise, do normal thing.
+        return super().__new__(cls)
+
+    # Additional abstract methods to be implemented by descendents.
+
+    @property
+    @abstractmethod
+    def children(self) -> Dict[str, PfLine]:
+        """Children of this instance, if any."""
+        ...
+
+    @property
+    @abstractmethod
+    def w(self) -> pd.Series:
+        """(Flattened) power timeseries in [MW]."""
+        ...
+
+    @property
+    @abstractmethod
+    def q(self) -> pd.Series:
+        """(Flattened) energy timeseries in [MWh]."""
+        ...
+
+    @property
+    @abstractmethod
+    def p(self) -> pd.Series:
+        """(Flattened) price timeseries in [Eur/MWh]."""
+        ...
+
+    @property
+    @abstractmethod
+    def r(self) -> pd.Series:
+        """(Flattened) revenue timeseries in [Eur]."""
+        ...
+
+    @property
+    @abstractmethod
+    def kind(self) -> Kind:
+        """Kind of data that is stored in the instance."""
+        ...
+
+    @abstractmethod
+    def df(
+        self, cols: Iterable[str], flatten: bool = True, has_units: bool = False
+    ) -> pd.DataFrame:
+        """DataFrame for portfolio line in default units.
+
+        Parameters
+        ----------
+        cols : str, optional (default: all that are available)
+            The columns (w, q, p, r) to include in the dataframe.
+        flatten : bool, optional (default: True)
+            - If True, include only aggregated timeseries (4 or less; 1 per dimension).
+            - If False, include all children and their (intermediate and final)
+              aggregations.
+        has_units : bool, optional (default: True)
+            - If True, return dataframe with ``pint`` units. (The unit can be extracted
+              as a column level with ``.pint.dequantify()``).
+            - If False, return dataframe with float values.
+
+        Returns
+        -------
+        pd.DataFrame
+        """
+        ...
+
+    @abstractmethod
+    def __bool__(self) -> bool:
+        """Return True if object (i.e., its children) contains any non-zero data."""
+        ...
+
+    # Implemented directly here.
+
+    @property
+    def summable(self) -> str:
+        """Which attributes/colums of this PfLine can be added to those of other PfLines
+        to get consistent/correct new PfLine."""
+        return {Kind.PRICE_ONLY: "p", Kind.VOLUME_ONLY: "q", Kind.ALL: "qr"}[self.kind]
+
+    @property
+    def available(self) -> str:  # which time series have values
+        """Attributes/columns that are available. One of {'wq', 'p', 'wqpr'}."""
+        return {Kind.PRICE_ONLY: "p", Kind.VOLUME_ONLY: "wq", Kind.ALL: "wqpr"}[
+            self.kind
+        ]
+
+    def flatten(self) -> SinglePfLine:
+        """Return flat instance, i.e., without children."""
+        return single.SinglePfLine(self)
+
+    @property
+    def volume(self) -> SinglePfLine:
+        """Return (flattened) volume-only PfLine."""
+        # Design decision: could also be non-flattened.
+        # if isinstance(self, multi.MultiPfLine):
+        #     return multi.MultiPfLine({name: child.volume for name, child in self.items){}})
+        return single.SinglePfLine({"q": self.q})
+
+    @property
+    def price(self) -> SinglePfLine:
+        """Return (flattened) price-only PfLine."""
+        # Design decision: could also be non-flattened if self.kind is not ALL
+        return single.SinglePfLine({"p": self.p})
+
+    def _set_col_val(self, col: str, val: pd.Series | Value) -> SinglePfLine:
+        """Set or update a timeseries and return the modified instance."""
+
+        if col == "r" and self.kind is Kind.ALL:
+            raise NotImplementedError(
+                "Cannot set `r` on a price-and-volume portfolio line; first select `.volume` or `.price` before applying `.set_r()`."
+            )
+
+        inop = interop.InOp(**{col: val}).to_timeseries(self.index)
+
+        # Create input data for new (flat) instance.
+        data = {col: getattr(inop, col)}
+        if col in ["w", "q", "r"] and "p" in self.available:
+            data["p"] = self.p
+        elif col in ["p", "r"] and "q" in self.available:
+            data["q"] = self.q
+        return single.SinglePfLine(data)
+
+        # # val is now None, a PfLine, or dimless Series.
+
+        # # Get pd.Series of other, in correct unit.
+        # if isinstance(val, float) or isinstance(val, int):
+        #     val = pd.Series(val, self.index)
+        # elif isinstance(val, Quantity):
+        #     val = pd.Series(val.magnitude, self.index, dtype=nits.g(val.units))
+
+        # if self.kind is Kind.ALL and col == "r":
+        #     raise NotImplementedError(
+        #         "Cannot set `r`; first select `.volume` or `.price` before applying `.set_r()`."
+        #     )
+        # # Create pd.DataFrame.
+        # # TODO: Use InOp
+        # data = {col: val.astype(nits.pintunit(nits.name2unit(col)))}
+        # if col in ["w", "q", "r"] and self.kind in [Kind.PRICE_ONLY, Kind.ALL]:
+        #     data["p"] = self.p
+        # elif col in ["p", "r"] and self.kind in [Kind.VOLUME_ONLY, Kind.ALL]:
+        #     data["q"] = self.q
+        # df = pd.DataFrame(data)
+        # return single.SinglePfLine(df)
+
+    def set_w(self, w: Union[pd.Series, float, int, Quantity]) -> SinglePfLine:
+        """Set or update power timeseries [MW]; returns modified (and flattened) instance."""
+        return self._set_col_val("w", w)
+
+    def set_q(self, q: Union[pd.Series, float, int, Quantity]) -> SinglePfLine:
+        """Set or update energy timeseries [MWh]; returns modified (and flattened) instance."""
+        return self._set_col_val("q", q)
+
+    def set_p(self, p: Union[pd.Series, float, int, Quantity]) -> SinglePfLine:
+        """Set or update price timeseries [Eur/MWh]; returns modified (and flattened) instance."""
+        return self._set_col_val("p", p)
+
+    def set_r(self, r: Union[pd.Series, float, int, Quantity]) -> SinglePfLine:
+        """Set or update revenue timeseries [MW]; returns modified (and flattened) instance."""
+        return self._set_col_val("r", r)
+
+    def set_volume(self, other: PfLine) -> SinglePfLine:
+        """Set or update volume information; returns modified (and flattened) instance."""
+        if not isinstance(other, PfLine) or other.kind is not Kind.VOLUME_ONLY:
+            raise ValueError(
+                "Can only set volume equal to a volume-only PfLine. Use .volume to obtain such a PfLine."
+            )
+        return self.set_q(other.q)
+
+    def set_price(self, other: PfLine) -> SinglePfLine:
+        """Set or update price information; returns modified (and flattened) instance."""
+        if not isinstance(other, PfLine) or other.kind is not Kind.PRICE_ONLY:
+            raise ValueError(
+                "Can only set price equal to a price-only PfLine. Use .price to obtain such a PfLine."
+            )
+        return self.set_p(other.p)
+
+    def po(self: PfLine, freq: str = "MS") -> pd.DataFrame:
+        """Decompose the portfolio line into peak and offpeak values. Takes simple averages
+        of volume [MW] and price [Eur/MWh] - does not hedge!
+
+        Parameters
+        ----------
+        freq : {'MS' (months, default), 'QS' (quarters), 'AS' (years)}
+            Frequency of resulting dataframe.
+
+        Returns
+        -------
+        pd.DataFrame
+            The dataframe shows a composition into peak and offpeak values.
+        """
+        if self.index.freq not in ["15T", "H"]:
+            raise ValueError(
+                "Only PfLines with (quarter)hourly values can be turned into peak and offpeak values."
+            )
+        if freq not in ["MS", "QS", "AS"]:
+            raise ValueError(
+                f"Value of paramater ``freq`` must be one of {'MS', 'QS', 'AS'} (got: {freq})."
+            )
+
+        prods = ("peak", "offpeak")
+
+        # Get values.
+        dfs = []
+        if "w" in self.available:
+            vals = convert.tseries2bpoframe(self.w, freq)
+            vals.columns = pd.MultiIndex.from_product([vals.columns, ["w"]])
+            dfs.append(vals)
+        if "p" in self.available:
+            vals = convert.tseries2bpoframe(self.p, freq)
+            vals.columns = pd.MultiIndex.from_product([vals.columns, ["p"]])
+            dfs.append(vals)
+        df = pd.concat(dfs, axis=1)
+
+        # Add duration.
+        durs = duration_bpo(df.index)
+        durs.columns = pd.MultiIndex.from_product([durs.columns, ["duration"]])
+        df = pd.concat([df, durs], axis=1)
+
+        # Add additional values and sort.
+        if "q" in self.available:
+            for prod in prods:
+                df[(prod, "q")] = df[(prod, "w")] * df[(prod, "duration")]
+        if "r" in self.available:
+            for prod in prods:
+                df[(prod, "r")] = df[(prod, "q")] * df[(prod, "p")]
+        i = pd.MultiIndex.from_product([prods, ("duration", *self.available)])
+        return df[i]
+
+    # Working with children.
+
+    def items(self):
+        return self.children.items()
+
+    def __iter__(self):
+        return iter(self.children.keys())
+
+    def __len__(self):
+        return len(self.children)
+
+    def __getitem__(self, name: str):
+        if name in self.children:
+            return self.children[name]
+        raise KeyError(f"No child with this name '{name}' found.")
+
+    # Dunder methods.
+
+    def __getattr__(self, name):
+        try:
+            return self[name]
+        except KeyError as e:
+            raise AttributeError(f"No such attribute '{name}'.") from e
+
+
+# Must be at end, because they depend on PfLine existing.
+from . import single, multi, interop, enable_arithmatic, enable_hedging  # noqa
+
+enable_arithmatic.apply()
+enable_hedging.apply()
