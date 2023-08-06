@@ -1,0 +1,10 @@
+[distutils.commands]
+pin = pip_pin:Pin
+sync = pip_pin:Sync
+
+[distutils.setup_keywords]
+develop_requires = pip_pin:validate_develop_requires
+
+[egg_info.writers]
+develop_requires.txt = pip_pin:develop_requires
+tests_require.txt = pip_pin:tests_require
