@@ -1,0 +1,73 @@
+Metadata-Version: 2.1
+Name: solar-client
+Version: 3.0.0
+Summary: A simple Python API client for the Solar Blockchain.
+Home-page: https://github.com/solar-network/python-client
+Author: Solar Network
+Author-email: hello@solar.org
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests
+Requires-Dist: backoff
+Requires-Dist: flatten-dict
+Provides-Extra: dev
+Requires-Dist: requests ; extra == 'dev'
+Requires-Dist: backoff ; extra == 'dev'
+Requires-Dist: flatten-dict ; extra == 'dev'
+Requires-Dist: flake8 (==4.0.1) ; extra == 'dev'
+Requires-Dist: flake8-import-order (==0.18.1) ; extra == 'dev'
+Requires-Dist: flake8-print (==4.0.1) ; extra == 'dev'
+Requires-Dist: flake8-quotes (==3.3.1) ; extra == 'dev'
+Requires-Dist: isort (==5.10.1) ; extra == 'dev'
+Requires-Dist: pytest-cov (==2.5.1) ; extra == 'dev'
+Requires-Dist: pytest-responses (>=0.3.0) ; extra == 'dev'
+Requires-Dist: pytest-mock (>=1.10.0) ; extra == 'dev'
+Requires-Dist: black (==22.3.0) ; extra == 'dev'
+Requires-Dist: build (==0.8.0) ; extra == 'dev'
+Requires-Dist: twine (==3.8.0) ; extra == 'dev'
+Requires-Dist: pytest (==7.0.1) ; (python_version < "3.7") and extra == 'dev'
+Requires-Dist: pytest (==7.1.2) ; (python_version >= "3.7") and extra == 'dev'
+Provides-Extra: test
+Requires-Dist: flake8 (==4.0.1) ; extra == 'test'
+Requires-Dist: flake8-import-order (==0.18.1) ; extra == 'test'
+Requires-Dist: flake8-print (==4.0.1) ; extra == 'test'
+Requires-Dist: flake8-quotes (==3.3.1) ; extra == 'test'
+Requires-Dist: isort (==5.10.1) ; extra == 'test'
+Requires-Dist: pytest-cov (==2.5.1) ; extra == 'test'
+Requires-Dist: pytest-responses (>=0.3.0) ; extra == 'test'
+Requires-Dist: pytest-mock (>=1.10.0) ; extra == 'test'
+Requires-Dist: black (==22.3.0) ; extra == 'test'
+Requires-Dist: build (==0.8.0) ; extra == 'test'
+Requires-Dist: twine (==3.8.0) ; extra == 'test'
+Requires-Dist: pytest (==7.0.1) ; (python_version < "3.7") and extra == 'test'
+Requires-Dist: pytest (==7.1.2) ; (python_version >= "3.7") and extra == 'test'
+
+# Solar Python - Client
+
+> A simple Python API client for the Solar Blockchain.
+
+## Install
+
+`pip install solar-client`
+
+## Example usage
+
+```py
+from solar_client import SolarClient
+
+client = SolarClient("http://127.0.0.1:6003")
+data = client.node.status()
+```
+
+## Documentation
+
+You can find installation instructions and detailed instructions on how to use this package at the [dedicated documentation site](https://docs.solar.network/sdk/clients/usage.html).
+
+## Credits
+
+This project exists thanks to all the people who [contribute](../../contributors).
+
+## License
+
+Please read the separate [LICENSE](LICENSE) file for details.
