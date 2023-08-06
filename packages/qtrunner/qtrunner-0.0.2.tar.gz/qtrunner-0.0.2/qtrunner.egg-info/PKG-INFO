@@ -1,0 +1,80 @@
+Metadata-Version: 2.1
+Name: qtrunner
+Version: 0.0.2
+Summary: 快速命令启动器
+Home-page: https://github.com/notmmao/runner
+Author: hufeng.mao
+Author-email: hufeng.mao@carota.ai
+License: MIT
+Keywords: qt,launcher
+Platform: windows
+Requires-Python: >=3.6
+License-File: LICENSE
+
+runner
+======
+
+介绍
+----
+
+``runner``\ 是一个\ ``可配置的``\ 快速启动器,用于\ ``启动(运行)``\ 常用的\ ``命令(程序)``.
+它附带了\ ``log``\ 输出界面,方便用户\ ``查看(染色)``\ 和\ ``保存``\ log.并且特殊格式的log输出还能驱动程序绘制\ ``进度条``.
+
+.. figure:: https://i.ibb.co/CtZ55GP/main.png
+   :alt: 主界面
+
+   主界面
+
+安装
+----
+
+pip install -r requirements.txt
+
+目前只在\ ``windwos``\ 平台测试过, 推荐使用\ ``python 3.7``\ 版本.
+
+启动
+----
+
+-  python runner.py 从使用代码中启动
+-  runner 直接启动
+
+配置
+----
+
+主配置文件
+~~~~~~~~~~
+
+config.json
+
+.. code:: json
+
+   {
+       "maxLogLines": 1000,        // log 最大行数
+       "maxStdout": 40960,         // stdout 最大输出块
+       "defaultEncoding": "gbk",   // stdout 默认编码
+       "configs": [                // 子配置项
+           {
+               "file": "runner_common.json",   // 子配置文件
+               "title": "通用(测试)"            // 子配置ui显示的名字
+           }
+       ]
+   }
+
+子配置文件
+~~~~~~~~~~
+
+runner_xxxx.json
+
+.. code:: json
+
+   [
+       {
+           "title": "切换codepage到gbk(慎用)",  // ui上显示的名称
+           "cmd": "cmd /c  chcp 936",          // 命令行
+           "encoding": "gbk",                  // 对应的输出编码(可选)
+           "qss": "color: rgb(150, 0, 0);",    // ui上对应的样式(可选)
+           "cwd": ""                           // 命令启动的工作目录(可选,默认当前)
+       }
+   ]
+
+
