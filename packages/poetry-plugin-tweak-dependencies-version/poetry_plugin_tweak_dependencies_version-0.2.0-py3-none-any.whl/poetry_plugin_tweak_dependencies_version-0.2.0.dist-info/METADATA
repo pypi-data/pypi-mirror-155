@@ -1,0 +1,37 @@
+Metadata-Version: 2.1
+Name: poetry-plugin-tweak-dependencies-version
+Version: 0.2.0
+Summary: Poetry plugin used to tweak dependency versions
+Author: Stéphane Brunner
+Author-email: stephane.brunner@camptocamp.com
+Requires-Python: >=3.8,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: poetry (>=1.0.0,<2.0.0)
+Description-Content-Type: text/markdown
+
+# Poetry plugin tweak dependencies version
+
+Plugin use to tweak the dependencies of the project.
+
+Will be used when we have different constraints for the dependencies, like publish and dependency upgrader like Renovate.
+
+This plugin will let us tweak the dependencies of the published packages.
+
+Config:
+
+```toml
+[build-system]
+requires = ["poetry-core>=1.0.0", "poetry-plugin-tweak-dependencies-version"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry-plugin-tweak-dependencies-version]
+default = "(present|major|minor|patch|full)" # Default to `full`
+"<package>" = "(present|major|minor|patch|full|<alternate>)"
+```
+
+`present` => `*`, `major` => `x.*`, `minor` => `x.y.*`, `patch` => `x.y.z`, `full` => keep the original version.
+Or just specify an alternate version constraint.
+
