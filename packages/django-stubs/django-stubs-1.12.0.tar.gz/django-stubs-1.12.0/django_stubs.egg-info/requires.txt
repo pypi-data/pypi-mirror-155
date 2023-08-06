@@ -1,0 +1,10 @@
+mypy>=0.930
+django
+django-stubs-ext>=0.4.0
+tomli
+typing-extensions
+types-pytz
+types-PyYAML
+
+[compatible-mypy]
+mypy<0.970,>=0.930
