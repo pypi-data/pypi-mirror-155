@@ -1,0 +1,154 @@
+{
+    "dataset_name": "Twitter",
+    "dataset_location": "US",
+    "tables": [
+        {
+            "table_name": "tw_tweet",
+            "is_partitioned": true,
+            "field-partition":"day",
+            "columns": [
+                {
+                    "column-name": "user_name",
+                    "column-type": "STRING",
+                    "column-mode": "NULLABLE",
+                    "column-description": "Columns that stores the first name of the user"
+                },
+                {
+                    "column-name": "last_name",
+                    "column-type": "STRING",
+                    "column-mode": "NULLABLE",
+                    "column-description": "Columns that stores the last name of the user"
+                },
+                {
+                    "column-name": "ocupacion",
+                    "column-type": "STRING",
+                    "column-mode": "NULLABLE",
+                    "column-description": "Nueva columna para probar"
+                },
+                {
+                    "column-name": "ocupacion_v1",
+                    "column-type": "STRING",
+                    "column-mode": "NULLABLE",
+                    "column-description": "Nueva columna para probar"
+                },
+                {
+                    "column-name": "ocupacion_v2",
+                    "column-type": "STRING",
+                    "column-mode": "NULLABLE",
+                    "column-description": "Nueva columna para probar"
+                },
+                {
+                    "column-name": "ocupacion_v3",
+                    "column-type": "STRING",
+                    "column-mode": "NULLABLE",
+                    "column-description": "Nueva columna para probar"
+                },
+                {
+                    "column-name": "ocupacion_v4",
+                    "column-type": "STRING",
+                    "column-mode": "NULLABLE",
+                    "column-description": "Nueva columna para probar"
+                },
+                {
+                    "column-name": "ocupacion_v5",
+                    "column-type": "STRING",
+                    "column-mode": "NULLABLE",
+                    "column-description": "Nueva columna para probar"
+                },
+                {
+                    "column-name": "ocupacion_v6",
+                    "column-type": "STRING",
+                    "column-mode": "NULLABLE",
+                    "column-description": "Nueva columna para probar"
+                },
+                {
+                    "column-name": "ocupacion_v7",
+                    "column-type": "STRING",
+                    "column-mode": "NULLABLE",
+                    "column-description": "Nueva columna para probar"
+                },
+                {
+                    "column-name": "ocupacion_v8",
+                    "column-type": "STRING",
+                    "column-mode": "NULLABLE",
+                    "column-description": "Nueva columna para probar"
+                },
+                {
+                    "column-name": "ocupacion_v9",
+                    "column-type": "STRING",
+                    "column-mode": "NULLABLE",
+                    "column-description": "Nueva columna para probar"
+                },
+                {
+                    "column-name": "ocupacion_v10",
+                    "column-type": "STRING",
+                    "column-mode": "NULLABLE",
+                    "column-description": "Nueva columna para probar"
+                },
+                {
+                    "column-name": "ocupacion_v11",
+                    "column-type": "STRING",
+                    "column-mode": "NULLABLE",
+                    "column-description": "Nueva columna para probar"
+                },
+                {
+                    "column-name": "facturita",
+                    "column-type": "RECORD",
+                    "column-mode": "REPEATED",
+                    "column-description": "Nueva columna para probar",
+                    "fields-relationed": [
+                        {
+                            "field-name": "id_factura",
+                            "field-type": "INT64",
+                            "field-mode": "NULLABLE"
+                        }
+                    ]
+                },
+                {
+                    "column-name": "day",
+                    "column-type": "DATE",
+                    "column-mode": "REQUIRED",
+                    "column-description": "Day of user testing"
+                },
+                {
+                    "column-name": "addresses",
+                    "column-type": "RECORD",
+                    "column-mode": "REPEATED",
+                    "column-description": "Column that stores the multiple address for user",
+                    "fields-relationed": [
+                        {
+                            "field-name": "status",
+                            "field-type": "STRING",
+                            "field-mode": "NULLABLE"
+                        },
+                        {
+                            "field-name": "address",
+                            "field-type": "STRING",
+                            "field-mode": "NULLABLE"
+                        },
+                        {
+                            "field-name": "city",
+                            "field-type": "STRING",
+                            "field-mode": "NULLABLE"
+                        },
+                        {
+                            "field-name": "state",
+                            "field-type": "STRING",
+                            "field-mode": "NULLABLE"
+                        },
+                        {
+                            "field-name": "zip",
+                            "field-type": "STRING",
+                            "field-mode": "NULLABLE"
+                        },
+                        {
+                            "field-name": "numberOfYears",
+                            "field-type": "STRING",
+                            "field-mode": "NULLABLE"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
