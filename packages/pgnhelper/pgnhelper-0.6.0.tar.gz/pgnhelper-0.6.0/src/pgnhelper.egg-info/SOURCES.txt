@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+src/pgnhelper/__init__.py
+src/pgnhelper/__main__.py
+src/pgnhelper/pgnhelper.py
+src/pgnhelper/roundrobin.py
+src/pgnhelper/tiebreak.py
+src/pgnhelper/utility.py
+src/pgnhelper.egg-info/PKG-INFO
+src/pgnhelper.egg-info/SOURCES.txt
+src/pgnhelper.egg-info/dependency_links.txt
+src/pgnhelper.egg-info/entry_points.txt
+src/pgnhelper.egg-info/requires.txt
+src/pgnhelper.egg-info/top_level.txt
