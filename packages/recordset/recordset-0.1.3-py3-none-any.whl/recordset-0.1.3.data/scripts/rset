@@ -1,0 +1,72 @@
+#!python
+from __future__ import absolute_import
+
+import click
+import pkg_resources
+
+import utils.logger as logger
+from configuration.profile_config import add_profile, add_default_profile
+from dnspod.recordsetclient import RecordSetClient
+
+VERSION = pkg_resources.require("recordset")[0].version
+
+
+def debug_logging(verbose):
+    if verbose == 1:
+        click.echo(click.style("Debugging Level is set", fg='green'))
+        logger.enable_debug()
+
+
+@click.group()
+@click.version_option(version=VERSION, prog_name='recordset')
+def record_operator():
+    pass
+
+
+@click.command()
+@click.option('--profile', help='Enable profile name')
+@click.option('-d', count=True, help='Enable debugger logging')
+def configure(profile, d):
+    debug_logging(d)
+    if profile is not None:
+        add_profile(profile)
+    else:
+        add_default_profile()
+
+
+@click.command()
+@click.option('--profile', help=' profile name')
+@click.option('-d', count=True, help='Enable debugger logging')
+def rlist(profile, d):
+    debug_logging(d)
+    RecordSetClient(profile).run("list")
+
+
+@click.command()
+@click.option('--val', help=' record value')
+@click.option('--sd', help=' subdomain value')
+@click.option('--profile', help=' profile name')
+@click.option('-d', count=True, help='Enable debugger logging')
+def rdel(val, sd, profile, d):
+    debug_logging(d)
+    RecordSetClient(profile).run("del", val, sd)
+
+
+@click.command()
+@click.option('--val', help=' record value')
+@click.option('--sd', help=' subdomain value')
+@click.option('--rt', help=' record_type value')
+@click.option('--profile', help=' profile name')
+@click.option('-d', count=True, help='Enable debugger logging')
+def radd(val, sd, rt, profile, d):
+    debug_logging(d)
+    RecordSetClient(profile).run("add", val, sd, rt)
+
+
+record_operator.add_command(configure)
+record_operator.add_command(rdel)
+record_operator.add_command(rlist)
+record_operator.add_command(radd)
+
+if __name__ == '__main__':  # pragma: no cover
+    record_operator()

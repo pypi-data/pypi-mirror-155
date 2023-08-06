@@ -1,0 +1,60 @@
+Metadata-Version: 2.1
+Name: recordset
+Version: 0.1.3
+Summary: record operator in Dnspod
+Home-page: https://github.com/
+Author: xoto
+Author-email: xxx.tao.c@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# recordset
+
+## Features
+ - You can use `rset configure` set the profile information of Tencent cloud through a simple command
+ - You can use the `rset rlist` command to query all record records under DNSPod
+ - You can add a record using the `rset radd` command
+ - You can be deleted by `rset rdel` command
+
+## Requirements
+
+A terminal with Python and pi'p installed:
+
+- install py environment and python version >= 3.8
+- install tencentcloud-sdk-python package
+
+## Installation
+```bash
+~ → pip3 install recordset
+```
+### command help:
+
+```bash
+~ → rset --help
+Usage: rset [OPTIONS] COMMAND [ARGS]...
+
+Options:
+  --version  Show the version and exit.
+  --help     Show this message and exit.
+
+Commands:
+  configure
+  radd
+  rdel
+  rlist
+```
+
+## Uninstall the recordset
+
+```bash
+~ → pip3 uninstall recordset
+```
+
+## Feedback & Questions
+
+
+## License
+OSI Approved :: MIT License 
