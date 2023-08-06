@@ -1,0 +1,56 @@
+/*
+ * Copyright 2021-2021 Exactpro (Exactpro Systems Limited)
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+syntax = "proto3";
+
+package woodpecker;
+
+option java_multiple_files = true;
+option java_package = "com.exactpro.th2.woodpecker.grpc";
+
+service Woodpecker {
+  rpc start (StartRequest) returns (Response); // starts a load with a constant rate for indefinite amount of time
+  rpc schedule (ScheduleRequest) returns (Response); // starts a load with variable rate for a certain amount of time
+  rpc stop (StopRequest) returns (Response); // stops current load
+}
+
+message StartRequest {
+  uint32 rate = 1; // load rate in messages per second
+  string settings = 2; // load settings
+}
+
+message ScheduleRequest {
+  message Step {
+    uint32 duration = 1; // load duration in seconds
+    uint32 rate = 2; // load rate in messages per second
+    string settings = 3; // load settings
+  }
+
+  uint32 cycles = 1; // how many times to run steps sequence
+  repeated Step steps = 2; // load steps
+}
+
+message StopRequest {}
+
+message Response {
+  enum Status {
+    SUCCESS = 0;
+    FAILURE = 1;
+  }
+
+  Status status = 1;
+  string message = 2;
+}
