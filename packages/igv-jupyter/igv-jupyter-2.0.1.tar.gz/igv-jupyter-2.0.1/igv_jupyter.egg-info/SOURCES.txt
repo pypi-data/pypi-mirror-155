@@ -1,0 +1,16 @@
+LICENSE.md
+README.md
+setup.cfg
+setup.py
+igv/__init__.py
+igv/navbar.py
+igv/tool.py
+igv/static/menu.css
+igv/static/menu.js
+igv_jupyter.egg-info/PKG-INFO
+igv_jupyter.egg-info/SOURCES.txt
+igv_jupyter.egg-info/dependency_links.txt
+igv_jupyter.egg-info/not-zip-safe
+igv_jupyter.egg-info/requires.txt
+igv_jupyter.egg-info/top_level.txt
+nbtools/igv.json
