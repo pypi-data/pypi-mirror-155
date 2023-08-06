@@ -1,0 +1,35 @@
+Metadata-Version: 2.1
+Name: gw-lts
+Version: 0.1.0
+Summary: Gravitational Wave Low-Latency Test Suite
+Home-page: https://git.ligo.org/rebecca.ewing/gw-lts.git
+Author: Becca Ewing
+Author-email: rebecca.ewing@ligo.org
+License: MIT
+Classifier: Development Status :: 3 - Alpha
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Intended Audience :: Science/Research
+Classifier: Natural Language :: English
+Requires-Python: >=3.6.*
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# GW Low-latency Test Suite
+
+## Features
+
+The gw-lts software provides:
+
+* real-time end-to-end consistency checks of science outputs from gravitational wave searches
+* capability to simulate gravitational wave search outputs with a fake data set
+* ability to display results with an example Grafana dashboard template
+
+## Installation
+
+WRITEME
+
+## Usage
+
+WRITEME
+

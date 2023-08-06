@@ -1,0 +1,9 @@
+confluent-kafka>=1.7.0
+pyyaml
+python-ligo-lw==1.7.1
+lalsuite==6.82
+cronut>=0.1.0
+ligo-scald>=0.8.0
+ligo.skymap
+igwn-alert
+hop-client
