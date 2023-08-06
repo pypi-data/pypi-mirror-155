@@ -1,0 +1,15 @@
+include *.txt
+include *.yml
+include LICENSE
+recursive-include src *.cpp
+recursive-include src *.csv
+recursive-include src *.edgelist
+recursive-include src *.h
+recursive-include src *.md
+recursive-include src *.pkl
+recursive-include src *.png
+recursive-include src *.py
+recursive-include src *.txt
+recursive-include src *.yml
+recursive-include src makefile
+recursive-include src Makefile*
