@@ -1,0 +1,65 @@
+Metadata-Version: 2.1
+Name: aws-pcluster-slurm-spawner
+Version: 0.2.0
+Summary: Extend Jupyterhub's BatchSpawner to deal with AWS ParallelCluster's SLURM environment
+Home-page: https://github.com/dabble-of-devops-bioanalyze/aws_pcluster_slurm_spawner
+Author: Jillian Rowe
+Author-email: jillian@dabbleofdevops.com
+License: Apache Software License 2.0
+Keywords: aws_pcluster_slurm_spawner
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Requires-Python: >=3.6
+License-File: LICENSE
+Requires-Dist: batchspawner
+Requires-Dist: jupyter-rsession-proxy
+Requires-Dist: datasize
+Requires-Dist: humanize
+Requires-Dist: boto3
+Requires-Dist: aws-pcluster-helpers
+
+=======================
+AwsPClusterSlurmSpawner
+=======================
+
+
+.. image:: https://img.shields.io/pypi/v/aws_pcluster_slurm_spawner.svg
+        :target: https://pypi.python.org/pypi/aws_pcluster_slurm_spawner
+
+
+
+Extend Jupyterhub's BatchSpawner to deal with AWS ParallelCluster's SLURM environment
+
+
+* Free software: Apache Software License 2.0
+* Documentation: https://aws-pcluster-slurm-spawner.readthedocs.io.
+
+
+Features
+--------
+
+* TODO
+
+Credits
+-------
+
+This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+
+.. _Cookiecutter: https://github.com/audreyr/cookiecutter
+.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+
+
+=======
+History
+=======
+
+0.1.0 (2022-05-15)
+------------------
+
+* First release on PyPI.
