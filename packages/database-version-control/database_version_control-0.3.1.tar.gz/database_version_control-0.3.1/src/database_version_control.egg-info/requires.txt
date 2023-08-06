@@ -1,0 +1,13 @@
+psycopg2
+typer[all]
+pyyaml
+
+[dev]
+pytest
+pytest-cov
+pytest-docker
+pytest-html
+pytest-html
+sphinx
+pyinstaller
+flake8
