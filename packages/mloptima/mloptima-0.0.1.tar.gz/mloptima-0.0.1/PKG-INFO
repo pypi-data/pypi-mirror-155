@@ -1,0 +1,34 @@
+Metadata-Version: 2.1
+Name: mloptima
+Version: 0.0.1
+Summary: Optimization methods, machine learning tools and models with visualization
+Home-page: https://github.com/M1croZavr/ML_opt
+Author: Timofey Lashukov
+Author-email: tlashukov@gmail.com
+License: MIT
+Description: # ML_opt
+        ## Repository of optimization methods in machine learning.
+        ## Machine Learning models and valuable visualization.
+        1. Two-variable function extrema finding and visualization implementation. Use User interface notebook twovarextremas Jupyter Notebook with downloaded modules.
+        2. One dimensional optimization(minimization) methods implementation and visualization. Use User interface notebook onedimensionaloptimization Jupyter Notebook with downloaded modules.
+        3. Gradients optimization(minimization) methods and visualization implementation. Use User interface notebook gradients Jupyter Notebook with downloaded modules.
+        4. Regression(Linear, Polynomial, Exponential) models and visualization implementation with StochasticGradientDescent/NormalEquation solvers. Use User interface notebook regression colab Jupyter Notebook with downloaded modules.
+        5. Optimization with equality/inequality constraints. Interior point methods and visualization implementation. Use User interface notebook interiorpoint Jupyter Notebook with downloaded modules.
+        6. Classification. Implementation of LogisticRegression(Ridge, Lasso), LogisticRegression with RBF kernel function, SVMs classifiers. Use User Interface notebook classification notebook colab with downloaded modules.
+        8. Stochastic optimization. Implementation of Stochastic gradient descent, Support vector classifier on 2 classes optimized by SGD, simulated annealing algorithm for function minimization, genetic algorithm for function minimization. Built in visualization implemented.
+        
+        
+        Change log
+        ==========
+        
+        0.0.1 (19/06/2022)
+        ----------------
+        - First Library Release
+Keywords: ml visualization optimization
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Education
+Classifier: Operating System :: Microsoft :: Windows :: Windows 10
+Classifier: Programming Language :: Python :: 3.8
+Classifier: License :: OSI Approved :: MIT License
+Description-Content-Type: text/markdown
