@@ -1,0 +1,61 @@
+Metadata-Version: 2.1
+Name: invesyservertools
+Version: 0.0.3
+Summary: Tools for Python scripts or terminal
+Home-page: https://gitlab.com/Rastaf/invesyservertools
+Author: Georg Pfolz
+Author-email: georg.pfolz@invesy.at
+License: MIT License
+Project-URL: Bug Tracker, https://gitlab.com/Rastaf/invesyservertools/-/issues
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+
+# invesyservertools
+
+A small set of useful tools an a server, especially for terminal scripts.
+
+Why "invesy"? Invesy (from German **In**halts**ve**rwaltungs**sy**stem == content management system) is a closed source cms I created with Thomas Macher. It's only used in-house, that's why we didn't bother making it open source.
+
+
+# What's in the box?
+## interactive_tools
+- **wait\_for\_key**: Wait for a pressed key to continue.
+
+## print_tools
+- **and_list**: human-readable list like `a, 1, 2 and something`
+- **indent**: get an indentation string
+- **print_**: Enhanced print function, specially enhanced for printing in the terminal and into log files.
+- **format_filesize**: return a human-readable filesize, like `31.9 GiB`.
+
+## system_tools
+- **get_username**: get the username in the operating system
+- **get\_home\_dir**
+- **find\_file\_with\_path**: provide a filename and a start path to begin searching recursively, get the complete path including the filename
+# History
+## 0.0.3 (2022-06-16)
+Added support for line breaks in *print_*:
+
+- can be added as singletons or as part of strings
+- line break singletons are not counted in the color argument
+
+## 0.0.2 (2022-06-13)
+* splitted modules (now: *interactive_tools*, *print_tools*, *system_tools*)
+* added new functions:
+	* system_tools
+		* get_username
+		* get\_home\_dir
+		* find\_file\_path
+	* print_tools
+		* and_list
+		* format_filesize
+
+## 0.0.1 (2022-06-10)
+* first version
+
