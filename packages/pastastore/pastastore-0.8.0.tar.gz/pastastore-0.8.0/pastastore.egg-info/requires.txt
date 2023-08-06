@@ -1,0 +1,11 @@
+tqdm>=4.36
+pastas>=0.13
+pyyaml
+
+[adjusttext]
+adjustText
+
+[full]
+contextily
+pyproj
+adjustText
