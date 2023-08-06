@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: slai
+Version: 0.1.80
+Summary: 
+Author: slai
+Author-email: luke@slai.io
+Requires-Python: >=3.6.1,<4.0.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: PyYAML (>=6.0,<7.0)
+Requires-Dist: python-dotenv (>=0.15.0,<0.16.0)
+Requires-Dist: requests (>=2.26.0,<3.0.0)
+Requires-Dist: urllib3 (>=1.26.7,<2.0.0)
