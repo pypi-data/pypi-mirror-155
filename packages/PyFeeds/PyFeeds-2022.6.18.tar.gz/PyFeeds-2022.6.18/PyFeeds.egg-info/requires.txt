@@ -1,0 +1,17 @@
+Click>=6.6
+Scrapy>=2.2
+dateparser>=0.5.1
+feedparser
+lxml>=3.5.0
+python-dateutil>=2.7.3
+pyxdg>=0.26
+readability-lxml>=0.7
+scrapy-inline-requests
+itemloaders
+
+[docs]
+sphinx
+sphinx_rtd_theme
+
+[test]
+pytest
