@@ -1,0 +1,37 @@
+Metadata-Version: 2.1
+Name: elastixpy
+Version: 0.2.3
+Summary: Python wrapper for elastix
+Home-page: https://github.com/Svdvoort/elastixpy
+License: MIT
+Requires-Python: >=3.7.0,<3.11
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: spython (>=0.1.18,<0.3.0)
+Project-URL: Repository, https://github.com/Svdvoort/elastixpy
+Description-Content-Type: text/markdown
+
+# elastixpy
+
+Python wrapper for elastix
+
+
+
+## Installation
+
+```bash
+pip install elastixpy
+```
+
+## License
+
+[MIT](https://github.com/Svdvoort/elastixpy/blob/master/LICENSE)
+
