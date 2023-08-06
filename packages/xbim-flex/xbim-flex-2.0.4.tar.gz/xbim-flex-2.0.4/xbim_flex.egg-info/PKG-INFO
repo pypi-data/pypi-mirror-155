@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: xbim-flex
+Version: 2.0.4
+Summary: XBIM Flex API v2
+Home-page: https://github.com/juliopereirab/xbim-flex-python
+Author: XBIM Ltd
+Author-email: info@xbim.net
+License: UNKNOWN
+Download-URL: https://github.com/juliopereirab/xbim-flex-python/archive/refs/tags/1.0.1.zip
+Keywords: XBIM Flex API v2,Bim,XBim
+Platform: UNKNOWN
+Requires-Python: >=3.6
+
+    This is the XBIM Flex Swagger service where you can explore the REST API for the platform.  # noqa: E501
+    
+
