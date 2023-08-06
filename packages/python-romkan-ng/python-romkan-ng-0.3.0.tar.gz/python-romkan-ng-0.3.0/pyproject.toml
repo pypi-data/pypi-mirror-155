@@ -1,0 +1,36 @@
+[tool.poetry]
+name = "python-romkan-ng"
+version = "0.3.0"
+packages = [
+	{ include = "romkan" }
+]
+description = "A Romaji/Kana conversion library"
+authors = [
+    "Augustin Cisterne-Kaas <ajitekun@gmail.com>",
+    "Mort Yao <mort.yao@gmail.com>",
+    "Masato Hagiwara  <hagisan@gmail.com>",
+    "Satoru Takabayashi <satoru@namazu.org>"]
+license = "BSD"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.1.2"
+black = "^22.3.0"
+flake8 = "^4.0.1"
+coverage = "^6.4.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.semantic_release]
+version_variable = [
+    "romkan/__init__.py:__version__",
+    "pyproject.toml:version"
+]
+branch = "main"
+upload_to_pypi = true
+upload_to_release = true
+build_command = "pip install poetry && poetry build"
