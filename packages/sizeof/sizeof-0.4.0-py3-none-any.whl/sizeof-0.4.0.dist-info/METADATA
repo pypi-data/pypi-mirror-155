@@ -1,0 +1,145 @@
+Metadata-Version: 2.1
+Name: sizeof
+Version: 0.4.0
+Summary: Simple function for determining the memory usage of common Python values and objects.
+Home-page: https://github.com/lapets/sizeof
+Author: Andrei Lapets
+Author-email: a@lapets.io
+License: MIT
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+Provides-Extra: coveralls
+Requires-Dist: coveralls (~=3.3.1) ; extra == 'coveralls'
+Provides-Extra: docs
+Requires-Dist: sphinx (~=4.2.0) ; extra == 'docs'
+Requires-Dist: sphinx-rtd-theme (~=1.0.0) ; extra == 'docs'
+Provides-Extra: lint
+Requires-Dist: pylint (~=2.14.0) ; extra == 'lint'
+Provides-Extra: publish
+Requires-Dist: setuptools (~=62.0) ; extra == 'publish'
+Requires-Dist: wheel (~=0.37) ; extra == 'publish'
+Requires-Dist: twine (~=4.0) ; extra == 'publish'
+Provides-Extra: test
+Requires-Dist: pytest (~=7.0) ; extra == 'test'
+Requires-Dist: pytest-cov (~=3.0) ; extra == 'test'
+
+======
+sizeof
+======
+
+Simple function for determining the memory usage of common Python values and objects.
+
+|pypi| |readthedocs| |actions| |coveralls|
+
+.. |pypi| image:: https://badge.fury.io/py/sizeof.svg
+   :target: https://badge.fury.io/py/sizeof
+   :alt: PyPI version and link.
+
+.. |readthedocs| image:: https://readthedocs.org/projects/sizeof/badge/?version=latest
+   :target: https://sizeof.readthedocs.io/en/latest/?badge=latest
+   :alt: Read the Docs documentation status.
+
+.. |actions| image:: https://github.com/lapets/sizeof/workflows/lint-test-cover-docs/badge.svg
+   :target: https://github.com/lapets/sizeof/actions/workflows/lint-test-cover-docs.yml
+   :alt: GitHub Actions status.
+
+.. |coveralls| image:: https://coveralls.io/repos/github/lapets/sizeof/badge.svg?branch=main
+   :target: https://coveralls.io/github/lapets/sizeof?branch=main
+   :alt: Coveralls test coverage summary.
+
+Installation and Usage
+----------------------
+This library is available as a `package on PyPI <https://pypi.org/project/sizeof>`__::
+
+    python -m pip install sizeof
+
+The library can be imported in the usual ways::
+
+    import sizeof
+    from sizeof import sizeof
+
+.. |sizeof| replace:: ``sizeof``
+.. _sizeof: https://sizeof.readthedocs.io/en/latest/_source/sizeof.html#sizeof.sizeof.sizeof
+
+The |sizeof|_ function can be applied to any value or object. By default, the function returns the memory consumed by that value or object (and **not** by any of the objects to which it may contain references)::
+
+    >>> from sizeof import sizeof
+    >>> sizeof(123.0123)
+    16
+
+.. |arch| replace:: ``arch``
+.. _arch: https://sizeof.readthedocs.io/en/latest/_source/sizeof.html#sizeof.sizeof.arch
+
+The amount of memory consumed for any given value or object is in part determined by the host architecture and the version of Python being used. The |arch|_ function can be used to determine whether the architecture is 32-bit or 64-bit::
+
+    >>> from sizeof import arch
+    >>> arch()
+    32
+
+The optional ``deep`` argument of the |sizeof|_ function makes it possible to calculate the memory consumed by an object and all of it descendants by reference::
+
+    >>> sizeof([]) # Size of an empty list.
+    28
+    >>> sizeof([1]), sizeof([1, 2]) # Size of reference is 4.
+    (32, 36)
+    >>> sizeof(3) # Size of an integer.
+    14
+    >>> sizeof([1, 2, 3]) == 28 + (3 * 4)
+    True
+    >>> sizeof([1, 2, 3], deep=True) == 28 + (3 * (4 + 14))
+    True
+
+Note that all of the examples above may return different results on your system and in your environment.
+
+Development
+-----------
+All installation and development dependencies are managed using `setuptools <https://pypi.org/project/setuptools>`__ and are fully specified in ``setup.py``. The ``extras_require`` parameter is used to `specify optional requirements <https://setuptools.pypa.io/en/latest/userguide/dependency_management.html#optional-dependencies>`__ for various development tasks. This makes it possible to specify additional options (such as ``docs``, ``lint``, and so on) when performing installation using `pip <https://pypi.org/project/pip>`__::
+
+    python -m pip install .[docs,lint]
+
+Documentation
+^^^^^^^^^^^^^
+The documentation can be generated automatically from the source files using `Sphinx <https://www.sphinx-doc.org>`__::
+
+    python -m pip install .[docs]
+    cd docs
+    sphinx-apidoc -f -E --templatedir=_templates -o _source .. ../setup.py && make html
+
+Testing and Conventions
+^^^^^^^^^^^^^^^^^^^^^^^
+All unit tests are executed and their coverage is measured when using `pytest <https://docs.pytest.org>`__ (see ``setup.cfg`` for configuration details)::
+
+    python -m pip install .[test]
+    python -m pytest
+
+Alternatively, all unit tests are included in the module itself and can be executed using `doctest <https://docs.python.org/3/library/doctest.html>`__::
+
+    python sizeof/sizeof.py -v
+
+Style conventions are enforced using `Pylint <https://www.pylint.org>`__::
+
+    python -m pip install .[lint]
+    python -m pylint sizeof
+
+Contributions
+^^^^^^^^^^^^^
+In order to contribute to the source code, open an issue or submit a pull request on the `GitHub page <https://github.com/lapets/sizeof>`__ for this library.
+
+Versioning
+^^^^^^^^^^
+The version number format for this library and the changes to the library associated with version number increments conform with `Semantic Versioning 2.0.0 <https://semver.org/#semantic-versioning-200>`__.
+
+Publishing
+^^^^^^^^^^
+This library can be published as a `package on PyPI <https://pypi.org/project/sizeof>`__ by a package maintainer. First, install the dependencies required for packaging and publishing::
+
+    python -m pip install .[publish]
+
+Remove any old build/distribution files. Then, package the source into a distribution archive using the `wheel <https://pypi.org/project/wheel>`__ package::
+
+    rm -rf dist *.egg-info
+    python setup.py sdist bdist_wheel
+
+Finally, upload the package distribution archive to `PyPI <https://pypi.org>`__ using the `twine <https://pypi.org/project/twine>`__ package::
+
+    python -m twine upload dist/*
