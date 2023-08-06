@@ -1,0 +1,4 @@
+[console_scripts]
+samarium=samarium.__main__:main
+samarium-debug=samarium.__main__:main_debug
+
