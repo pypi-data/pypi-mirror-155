@@ -1,0 +1,17 @@
+relational_datasets/__init__.py,sha256=IeE73v_46Nm0d69RHQ-Ui62Bpcypo4Bqx9vSWRnFxX0,407
+relational_datasets/_base.py,sha256=NoiOj4nwoeby5MEFAha7YBnQ74ywEVOLoSi-3_FBna0,1430
+relational_datasets/_version.py,sha256=_FdTbhnVmY_9ZNp3jt5x1KlAmSTnihLXDXNNPajslJ4,84
+relational_datasets/request.py,sha256=hPvvUnwVG9wGJmrHDWKnIadVSGoGu_ovTg4FoygS13o,11015
+relational_datasets/types.py,sha256=gPOYVwcN90vJNfDzlPKZDzyxql1y4Pn27pjUdiQwHBY,1393
+relational_datasets/convert/__init__.py,sha256=8GgggabbGrDp216GZLHdEU3oC34iddleE6K8L12LiJY,174
+relational_datasets/convert/convert_numpy.py,sha256=Ft7UbQH2EBrC-6pYEllHPgM5eaEivpUon0Qt6P7YdjY,3093
+relational_datasets/convert/tests/__init__.py,sha256=-S-AAljjurPcU9mNw0dxt84Zn3eZ6k0BjofVaS6dHZw,60
+relational_datasets/convert/tests/test_convert_numpy.py,sha256=tE0OLIxw8gXd_MyUSO-7tDLkUOlajQmvhBA3HbEvX4s,2808
+relational_datasets/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+relational_datasets/tests/test_base.py,sha256=QDL3neTNwO1kiynXf_8YcIdpxQadehXE7H8z6a_-byo,284
+relational_datasets/tests/test_load.py,sha256=nEb6mpxTceMY7Q3BEnBBZ9PoRuiv905MWpFk2ws6iyw,495
+relational_datasets-0.3.0.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+relational_datasets-0.3.0.dist-info/METADATA,sha256=K6zaBGD3IbWJJ73n-i8zbY7sViiQiXTPBA23goENz7U,7583
+relational_datasets-0.3.0.dist-info/WHEEL,sha256=G16H4A3IeoQmnOrYV4ueZGKSjhipXx8zc8nu9FGlvMA,92
+relational_datasets-0.3.0.dist-info/top_level.txt,sha256=nP8Z4lDvpMwDr5KxA-7hGqRwzf30DMfuS-O6dyJw62M,20
+relational_datasets-0.3.0.dist-info/RECORD,,
