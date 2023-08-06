@@ -1,0 +1,53 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="senaite.abx">
+
+  <five:registerPackage package="." initialize=".initialize"/>
+
+  <!-- Register locales -->
+  <i18n:registerTranslations directory="locales"/>
+
+  <!-- Import senaite.core permissions -->
+  <include package="bika.lims" file="permissions.zcml" />
+
+  <!-- Package includes -->
+  <include package=".behaviors"/>
+  <include package=".browser"/>
+
+  <!-- Vocabularies -->
+  <utility
+      component="senaite.abx.vocabularies.AntibioticClassesVocabularyFactory"
+      name="senaite.abx.vocabularies.antibiotic_classes" />
+
+  <!-- Default profile -->
+  <genericsetup:registerProfile
+    name="default"
+    title="SENAITE ABX"
+    directory="profiles/default"
+    description="Antibiotics handling for SENAITE"
+    pre_handler=".setuphandlers.pre_install"
+    post_handler=".setuphandlers.post_install"
+    provides="Products.GenericSetup.interfaces.EXTENSION" />
+
+  <!-- Generic Setup Handler -->
+  <genericsetup:importStep
+    name="senaite.abx.setup_handler"
+    title="SENAITE ABX: Setup Handler"
+    description="Run various configuration actions"
+    handler=".setuphandlers.setup_handler">
+    <depends name="typeinfo"/>
+  </genericsetup:importStep>
+
+  <!-- Uninstall profile -->
+  <genericsetup:registerProfile
+    name="uninstall"
+    title="SENAITE ABX (uninstall)"
+    directory="profiles/uninstall"
+    description="Antibiotics handling for SENAITE"
+    post_handler=".setuphandlers.post_uninstall"
+    provides="Products.GenericSetup.interfaces.EXTENSION" />
+
+</configure>

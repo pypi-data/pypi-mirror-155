@@ -1,0 +1,52 @@
+Metadata-Version: 2.1
+Name: senaite.abx
+Version: 1.0.0
+Summary: Antibiotics handling for SENAITE
+Home-page: https://github.com/senaite/senaite.abx
+Author: RIDING BYTES & NARALABS
+Author-email: senaite@senaite.com
+License: GPLv2
+Description: Antibiotics for SENAITE
+        =======================
+        
+        About
+        -----
+        
+        SENAITE.ABX adds Antibiotics handling to `SENAITE LIMS`_.
+        
+        License
+        -------
+        
+        **SENAITE.ABX** Copyright (C) 2020-2022 RIDING BYTES & NARALABS
+        
+        This program is free software; you can redistribute it and/or modify it under
+        the terms of the `GNU General Public License version 2`_ as published
+        by the Free Software Foundation.
+        
+        This program is distributed in the hope that it will be useful,
+        but WITHOUT ANY WARRANTY; without even the implied warranty of
+        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+        GNU General Public License for more details.
+        
+        
+        .. Links
+        
+        .. _SENAITE LIMS: https://www.senaite.com
+        .. _GNU General Public License version 2: https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt
+        
+        
+        Changelog
+        =========
+        
+        1.0.0 (2022-06-17)
+        ------------------
+        
+        - Initial Release
+        
+Keywords: senaite,lims,opensource
+Platform: UNKNOWN
+Classifier: Framework :: Plone
+Classifier: Framework :: Zope2
+Classifier: Programming Language :: Python
+Classifier: License :: OSI Approved :: GNU General Public License v2 (GPLv2)
+Provides-Extra: test

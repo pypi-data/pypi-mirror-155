@@ -1,0 +1,22 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="senaite.abx">
+
+  <!-- Antibiotic classes folder view -->
+  <browser:page
+    for="senaite.abx.content.antibioticclassfolder.IAntibioticClassFolder"
+    name="view"
+    class=".antibioticclassfolder.AntibioticClassFolderView"
+    permission="senaite.core.permissions.ManageBika"
+    layer="senaite.abx.interfaces.ISenaiteABXLayer" />
+
+  <!-- Antibiotics folder view  -->
+  <browser:page
+    for="senaite.abx.content.antibioticfolder.IAntibioticFolder"
+    name="view"
+    class=".antibioticfolder.AntibioticFolderView"
+    permission="senaite.core.permissions.ManageBika"
+    layer="senaite.abx.interfaces.ISenaiteABXLayer" />
+
+</configure>

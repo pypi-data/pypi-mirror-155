@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object name="portal_types">
+  <object name="Antibiotic" meta_type="Dexterity FTI" />
+  <object name="AntibioticFolder" meta_type="Dexterity FTI" />
+  <object name="AntibioticClass" meta_type="Dexterity FTI" />
+  <object name="AntibioticClassFolder" meta_type="Dexterity FTI" />
+</object>

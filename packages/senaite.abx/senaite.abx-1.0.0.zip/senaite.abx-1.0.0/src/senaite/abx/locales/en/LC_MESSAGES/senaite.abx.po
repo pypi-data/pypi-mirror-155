@@ -1,0 +1,119 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2022-06-17 17:57+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+
+#: senaite/abx/behaviors/antibiotic.py:36
+#: senaite/abx/browser/content/antibioticfolder.py:65
+msgid "Abbreviation"
+msgstr ""
+
+#: senaite/abx/browser/content/antibioticclassfolder.py:66
+msgid "Active"
+msgstr ""
+
+#: senaite/abx/browser/content/antibioticclassfolder.py:45
+msgid "Add"
+msgstr ""
+
+#: senaite/abx/behaviors/configure.zcml:16
+msgid "Adds Antibiotic behavior"
+msgstr ""
+
+#: senaite/abx/browser/content/antibioticclassfolder.py:78
+msgid "All"
+msgstr ""
+
+#: senaite/abx/config.py:25
+msgid "Aminoglycosides"
+msgstr ""
+
+#: senaite/abx/behaviors/configure.zcml:16
+#: senaite/abx/profiles/default/types/Antibiotic.xml
+msgid "Antibiotic"
+msgstr ""
+
+#: senaite/abx/behaviors/antibiotic.py:41
+#: senaite/abx/profiles/default/types/AntibioticClass.xml
+msgid "Antibiotic class"
+msgstr ""
+
+#: senaite/abx/profiles/default/types/AntibioticClassFolder.xml
+msgid "Antibiotic classes"
+msgstr ""
+
+#: senaite/abx/profiles/default/types/AntibioticFolder.xml
+msgid "Antibiotics"
+msgstr ""
+
+#: senaite/abx/configure.zcml:33
+msgid "Antibiotics handling for SENAITE"
+msgstr ""
+
+#: senaite/abx/config.py:26
+msgid "Carbapenems"
+msgstr ""
+
+#: senaite/abx/config.py:27
+msgid "Cephalosporins"
+msgstr ""
+
+#: senaite/abx/browser/content/antibioticfolder.py:68
+msgid "Class"
+msgstr ""
+
+#: senaite/abx/browser/content/antibioticclassfolder.py:58
+msgid "Description"
+msgstr ""
+
+#: senaite/abx/config.py:28
+msgid "Fluoroquinolones"
+msgstr ""
+
+#: senaite/abx/browser/content/antibioticclassfolder.py:72
+msgid "Inactive"
+msgstr ""
+
+#: senaite/abx/config.py:29
+msgid "Macrolides"
+msgstr ""
+
+#: senaite/abx/config.py:30
+msgid "Monobactams"
+msgstr ""
+
+#: senaite/abx/browser/content/antibioticfolder.py:133
+#: senaite/abx/config.py:33
+msgid "Other"
+msgstr ""
+
+#: senaite/abx/config.py:31
+msgid "Penicillins"
+msgstr ""
+
+#: senaite/abx/configure.zcml:33
+msgid "SENAITE ABX"
+msgstr ""
+
+#: senaite/abx/configure.zcml:51
+msgid "SENAITE ABX (uninstall)"
+msgstr ""
+
+#: senaite/abx/config.py:32
+msgid "Tetracyclines"
+msgstr ""
+
+#: senaite/abx/browser/content/antibioticclassfolder.py:54
+msgid "Title"
+msgstr ""
