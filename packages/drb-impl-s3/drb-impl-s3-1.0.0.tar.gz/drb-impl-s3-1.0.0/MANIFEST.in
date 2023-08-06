@@ -1,0 +1,2 @@
+include versioneer.py
+include drb_impl_s3/_version.py
