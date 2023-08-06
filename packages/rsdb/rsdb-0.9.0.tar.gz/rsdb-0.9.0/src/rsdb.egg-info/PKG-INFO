@@ -1,0 +1,44 @@
+Metadata-Version: 2.1
+Name: rsdb
+Version: 0.9.0
+Summary: Object–relational mapping for RiskSpectrum PSA model database
+Home-page: https://github.com/HexQuant/rsdb
+Author: Kravchenko Vladimir S
+Author-email: kvover@gmail.com
+Project-URL: Bug Reports, https://github.com/HexQuant/rsdb/issues
+Project-URL: Source, https://github.com/HexQuant/rsdb
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v2 or later (LGPLv2+)
+Classifier: Natural Language :: English
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.8, <4
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# rsdb
+Object–relational mapping for [RiskSpectrum PSA](https://www.lr.org/en/riskspectrum/technical-information/psa/) model database.
+
+[![image](https://img.shields.io/pypi/v/rsdb.svg)](https://pypi.python.org/pypi/rsdb/)
+
+## Installation
+```sh
+# PyPI
+pip install rsdb
+```
+
+## Usage
+```python
+# 1
+```
