@@ -1,0 +1,35 @@
+Metadata-Version: 2.1
+Name: neon-tts-plugin-polly
+Version: 0.1.3a1
+Summary: A Polly TTS plugin for Neon
+Home-page: https://github.com/NeonGeckoCom/neon-tts-plugin-polly
+Author: Neongecko
+Author-email: developers@neon.ai
+License: NeonAI License v1.0
+Keywords: mycroft plugin tts
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Text Processing :: Linguistic
+Classifier: Programming Language :: Python :: 3.6
+Description-Content-Type: text/markdown
+Requires-Dist: boto3 (~=1.15)
+Requires-Dist: neon-utils (~=0.5)
+Requires-Dist: ovos-plugin-manager (~=0.0.2)
+
+# NeonAI Amazon Polly TTS Plugin
+[Mycroft](https://mycroft-ai.gitbook.io/docs/mycroft-technologies/mycroft-core/plugins) compatible
+TTS Plugin for Amazon Polly Text-to-Speech.
+
+# Configuration:
+A credential should be saved at: `~/.aws/credentials`.
+Credentials may alternatively be included in the tts configuration as shown below.
+
+```yaml
+tts:
+    module: amazon_polly
+    amazon_polly:
+      aws_access_key_id: ''
+      aws_secret_access_key: ''
+      region: us-west-2
+```
+
