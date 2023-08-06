@@ -1,0 +1,4 @@
+[console_scripts]
+xra31-analyse = excentis.xra31.cli.xra31_analyse:main
+xra31-capture = excentis.xra31.cli.xra31_capture:main
+xra31-configure = excentis.xra31.cli.xra31_configure:main

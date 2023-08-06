@@ -1,0 +1,57 @@
+Metadata-Version: 2.1
+Name: excentis-xra31
+Version: 5.3.0
+Summary: XRA-31 Python and Command-line Interface
+Home-page: https://www.xra31.com
+Author: Excentis XRA-31 Development Team
+Author-email: support.xra31@excentis.com
+License: BSD-3-Clause
+Project-URL: Documentation, https://python.xra31.com
+Keywords: excentis xra-31
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: BSD License
+Requires-Python: >=3.5,<4
+Description-Content-Type: text/x-rst
+License-File: LICENSE.txt
+Requires-Dist: requests (<3.0.0,>=2.24.0)
+Requires-Dist: importlib-metadata (>=1.7.0) ; python_version < "3.8"
+
+========================================
+XRA-31 Python and Command-line Interface
+========================================
+
+This package provides two ways to interact with the XRA-31:
+
+- an XRA-31 Command-line Interface, and
+- an XRA-31 Python Interface.
+
+The first allows you to configure the XRA-31 and capture packets with the use
+of JSON configuration files and command-line options.
+
+The XRA-31 Python Interface gives you the option to use the same JSON files, or
+interact with the XRA-31 through a fine-grained programming interface.
+
+Both are detailed in the documentation_, and can be used interchangeably
+alongside the web interface.
+
+
+Installation
+============
+
+**excentis-xra31** can be installed from PyPI using pip:
+
+.. code-block:: console
+
+    $ pip3 install excentis-xra31
+
+
+Support
+=======
+
+Questions, requests and feedback are welcome at the Excentis `support portal`_
+or via e-mail.
+
+
+.. _support portal: https://support.excentis.com
+.. _documentation: https://python.xra31.com
