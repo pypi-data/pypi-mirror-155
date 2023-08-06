@@ -1,0 +1,17 @@
+LICENSE
+README.md
+setup.py
+awesome_messages/__init__.py
+awesome_messages.egg-info/PKG-INFO
+awesome_messages.egg-info/SOURCES.txt
+awesome_messages.egg-info/dependency_links.txt
+awesome_messages.egg-info/requires.txt
+awesome_messages.egg-info/top_level.txt
+awesome_messages/domain/__init__.py
+awesome_messages/domain/handler.py
+awesome_messages/domain/listener.py
+awesome_messages/domain/publisher.py
+awesome_messages/infra/__init__.py
+awesome_messages/infra/rabbitmq/__init__.py
+awesome_messages/infra/rabbitmq/listener.py
+awesome_messages/infra/rabbitmq/publisher.py
