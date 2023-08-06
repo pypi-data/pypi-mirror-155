@@ -1,0 +1,132 @@
+#!python
+# Copyright 2019-2022 DADoES, Inc.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License in the root directory in the "LICENSE" file or at:
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+import argparse
+import sys
+import anatools
+from anatools.lib.channel import Channel, find_channelfile
+
+LATESTANAVERSION = 1
+
+parser = argparse.ArgumentParser()
+parser.add_argument('--channel', default=None)
+parser.add_argument('--channelId', default=None)
+parser.add_argument('--environment', default='prod')
+parser.add_argument('--email', default=None)
+parser.add_argument('--password', default=None)
+parser.add_argument('--local', type=bool, default=False)
+parser.add_argument('--verbose', type=bool, default=False)
+args = parser.parse_args()
+
+# find the channel file
+if args.channel is None: args.channel = find_channelfile()
+if args.channel is None: print('No channel file was specified or found.'); sys.exit(1)
+
+# determine channel volumes
+volumes = []
+channel = Channel(args.channel)
+for package in channel.packages.keys():
+    if 'volumes' in channel.packages[package]:
+        for volume in channel.packages[package]['volumes'].keys():
+            if channel.packages[package]['volumes'][volume] != 'local':
+                volumes.append(channel.packages[package]['volumes'][volume])
+
+# build and deploy the channel
+client = anatools.client(
+    environment=args.environment, 
+    email=args.email, 
+    password=args.password,
+    interactive=False,
+    local=args.local,
+    verbose=args.verbose)
+if client is None: sys.exit(1)
+channels = []
+organizations = client.get_organizations()
+organizations = [organization for organization in organizations if organization['role'] != 'guest']
+for organization in organizations:
+    managedChannels = client.get_managed_channels(organizationId=organization['organizationId'])
+    for channel in managedChannels:
+        channels.append({
+            'organizationId': organization['organizationId'],
+            'organizationName': organization['name'],
+            'channelId': channel['channelId'],
+            'channelName': channel['name'] })
+
+if args.channelId is None:
+    print("Please select one of the following options:")
+    print(f"\t{'[0]'.ljust(5)} Create a new managed channel.")
+    val = 1
+    for channel in channels:
+        print(f"\t{f'[{val}]'.ljust(5)} Deploy to {channel['channelName']} channel in the {channel['organizationName']} organization.")
+        val += 1
+    resp = input('Enter your choice: ')
+    try:
+        resp = int(resp)
+        if resp not in range(val): raise Exception()
+    except: print('Invalid choice, exiting...'); sys.exit(0)
+    if resp == 0:
+        print("Select an organization to create a new managed channel in:")
+        val = 0
+        for organization in organizations:
+            print(f"\t{f'[{val}]'.ljust(5)} {organization['name']}")
+            val += 1
+        resp = input('Enter your choice: ')
+        try:
+            resp = int(resp)
+            if resp not in range(val): raise Exception()
+        except: print('Invalid choice, exiting...'); sys.exit(0)
+        resp2 = input(f"Creating a new channel using the {args.channel} channel file in {organizations[resp]['name']} organization. Continue (y/n)? ")
+        if resp2.lower() == 'y':
+            channelname = args.channel.split('/')[-1].split('.')[0]
+            if channelname in [channel['channelName'] for channel in channels if channel['organizationId'] == organizations[resp]['organizationId']]:
+                resp3 = input(f"Please provide a name for the channel, '{channelname}' is taken: ")
+            else: resp3 = input(f"Please provide a name for the channel or leave blank for '{channelname}': ")
+            channelId = client.create_managed_channel(name=resp3, volumes=volumes, organizationId=organizations[resp]['organizationId'])
+            deploymentId = client.deploy_managed_channel(channelId=channelId, channelfile=args.channel)
+            client.get_deployment_status(deploymentId, stream=True)
+        else: print('Exiting...'); sys.exit(0)
+
+    else:
+        resp2 = input(f"Deploying {args.channel} channel to {channels[resp-1]['channelName']} channel in {channels[resp-1]['organizationName']} organization. Continue (y/n)? ")
+        if resp2.lower() == 'y':
+            managedChannel = client.get_managed_channels(channelId=channels[resp-1]['channelId'])
+            if managedChannel[0]['interfaceVersion'] != LATESTANAVERSION:
+                resp3 = input(f"The {channels[resp-1]['channelName']} channel in {channels[resp-1]['organizationName']} organization uses the Ana Interface version {managedChannel[0]['interfaceVersion']}. Do you wish to upgrade (y/n)? ")
+                if resp3.lower() == 'y':
+                    client.edit_managed_channel(channelId=channels[resp-1]['channelId'], interfaceVersion=LATESTANAVERSION)
+            if managedChannel[0]['volumes'] != volumes:
+                resp3 = input(f"The {channels[resp-1]['channelName']} channel in {channels[resp-1]['organizationName']} organization has different volumes than your local channel. Do you wish to update the volumes (y/n)? ")
+                if resp3.lower() == 'y':
+                    client.edit_managed_channel(channelId=channels[resp-1]['channelId'], volumes=volumes)
+            deploymentId = client.deploy_managed_channel(channelId=channels[resp-1]['channelId'], channelfile=args.channel)
+            client.get_deployment_status(deploymentId, stream=True) 
+        else: print('Exiting...'); sys.exit(0)
+        
+else:
+    selectedchannels = [channel for channel in channels if channel['channelId'] == args.channelId]
+    if len(selectedchannels):
+        resp2 = input(f"Deploying {args.channel} channel to {selectedchannels[0]['channelName']} channel in {selectedchannels[0]['organizationName']} organization. Continue (y/n)? ")
+        if resp2.lower() == 'y':
+            managedChannel = client.get_managed_channels(channelId=args.channelId)
+            if managedChannel[0]['interfaceVersion'] != LATESTANAVERSION:
+                resp3 = input(f"The {selectedchannels[0]['channelName']} channel in {selectedchannels[0]['organizationName']} organization uses the Ana Interface version {managedChannel[0]['interfaceVersion']}. Do you wish to upgrade (y/n)? ")
+                if resp3.lower() == 'y':
+                    client.edit_managed_channel(channelId=args.channelId, interfaceVersion=LATESTANAVERSION)
+            if managedChannel[0]['volumes'] != volumes:
+                resp3 = input(f"The {selectedchannels[0]['channelName']} channel in {selectedchannels[0]['organizationName']} organization has different volumes than your local channel. Do you wish to update the volumes (y/n)? ")
+                if resp3.lower() == 'y':
+                    client.edit_managed_channel(channelId=channels[resp-1]['channelId'], volumes=volumes)
+            deploymentId = client.deploy_managed_channel(channelId=args.channelId, channelfile=args.channel)
+            client.get_deployment_status(deploymentId, stream=True)
+    else: print(f'Could not find a channel with channelId {args.channelId} in your managed channels. Exiting..;')
