@@ -1,0 +1,53 @@
+Metadata-Version: 2.1
+Name: karrio.fedex
+Version: 2022.4.2
+Summary: Karrio - Fedex Shipping Extension
+Home-page: https://docs.karrio.io/guides/sdk
+License: Apache-2.0
+Author: Karrio
+Author-email: hello@karrio.io
+Requires-Python: >=3.7,<4.0
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: carrier.fedex
+Requires-Dist: karrio
+Project-URL: Repository, https://github.com/karrioapi/karrio
+Description-Content-Type: text/markdown
+
+# karrio.fedex
+
+This package is a FedEx extension of the [karrio](https://pypi.org/project/karrio) multi carrier shipping SDK.
+
+## Requirements
+
+`Python 3.7+`
+
+## Installation
+
+```bash
+pip install karrio.fedex
+```
+
+## Usage
+
+```python
+import karrio
+from karrio.mappers.fedex.settings import Settings
+
+
+# Initialize a carrier gateway
+fedex = karrio.gateway["fedex"].create(
+    Settings(
+        ...
+    )
+)
+```
+
+Check the [Karrio Mutli-carrier SDK docs](https://docs.karrio.io) for Shipping API requests
+
