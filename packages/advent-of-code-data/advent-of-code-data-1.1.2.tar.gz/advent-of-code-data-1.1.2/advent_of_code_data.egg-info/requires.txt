@@ -1,0 +1,9 @@
+python-dateutil
+requests
+termcolor
+beautifulsoup4
+pebble
+tzlocal
+
+[:platform_system == "Windows"]
+colorama
