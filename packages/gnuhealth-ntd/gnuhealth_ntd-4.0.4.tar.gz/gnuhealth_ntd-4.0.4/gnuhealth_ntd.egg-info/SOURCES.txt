@@ -1,0 +1,17 @@
+COPYING
+MANIFEST.in
+README
+setup.py
+./__init__.py
+./health_ntd.py
+./tryton.cfg
+./doc/index.rst
+./tests/__init__.py
+./tests/test_health_ntd.py
+gnuhealth_ntd.egg-info/PKG-INFO
+gnuhealth_ntd.egg-info/SOURCES.txt
+gnuhealth_ntd.egg-info/dependency_links.txt
+gnuhealth_ntd.egg-info/entry_points.txt
+gnuhealth_ntd.egg-info/not-zip-safe
+gnuhealth_ntd.egg-info/requires.txt
+gnuhealth_ntd.egg-info/top_level.txt
