@@ -1,0 +1,3 @@
+[console_scripts]
+summon=summon.__main__:main
+
