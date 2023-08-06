@@ -1,0 +1,74 @@
+# https://taskfile.dev/
+version: "3"
+
+vars:
+  PYTHON: python3
+  VENVS: .venvs
+  NPROC:
+    sh: nproc
+
+env:
+  FLIT_ROOT_INSTALL: "1"
+
+tasks:
+  install:base:
+    status:
+      - test -f {{.VENVS}}/base/bin/flitenv
+    cmds:
+      - "{{.PYTHON}} -m venv {{.VENVS}}/base"
+      - >
+        {{.VENVS}}/base/bin/python3 -m pip
+        install -U flitenv pip-tools
+  install:test:
+    sources:
+      - pyproject.toml
+      - requirements.txt
+    deps:
+      - install:base
+    cmds:
+      - >
+        {{.VENVS}}/base/bin/flitenv
+        --venvs={{.VENVS}}
+        test install
+  install:lint:
+    sources:
+      - pyproject.toml
+      - requirements.txt
+    deps:
+      - install:base
+    cmds:
+      - >
+        {{.VENVS}}/base/bin/flitenv
+        --venvs={{.VENVS}}
+        lint install
+
+  pytest:run:
+    desc: "run Python tests"
+    deps:
+      - install:test
+    cmds:
+      - >
+        {{.VENVS}}/base/bin/flitenv
+        --venvs={{.VENVS}}
+        test run
+        pytest -n {{.NPROC}} {{.CLI_ARGS}}
+  flake8:run:
+    desc: "lint Python code"
+    deps:
+      - install:lint
+    cmds:
+      - >
+        {{.VENVS}}/base/bin/flitenv
+        --venvs={{.VENVS}}
+        lint run
+        flake8 {{.CLI_ARGS}} .
+  mypy:run:
+    desc: "check type annotations"
+    deps:
+      - install:lint
+    cmds:
+      - >
+        {{.VENVS}}/base/bin/flitenv
+        --venvs={{.VENVS}}
+        lint run
+        mypy {{.CLI_ARGS}}

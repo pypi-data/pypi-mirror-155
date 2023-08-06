@@ -1,0 +1,54 @@
+Metadata-Version: 2.1
+Name: deal-solver
+Version: 0.1.1
+Summary: z3-powered solver (theorem prover) for deal.
+Home-page: https://github.com/life4/deal-solver
+License: MIT
+Keywords: deal,contracts,verification
+Author: Gram
+Author-email: gram@orsinium.dev
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Plugins
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Software Development :: Quality Assurance
+Requires-Dist: astroid
+Requires-Dist: z3-solver
+Requires-Dist: flake8 ; extra == "lint"
+Requires-Dist: flake8-bugbear ; extra == "lint"
+Requires-Dist: flake8-commas ; extra == "lint"
+Requires-Dist: flake8-quotes ; extra == "lint"
+Requires-Dist: isort ; extra == "lint"
+Requires-Dist: mypy>=0.910 ; extra == "lint"
+Requires-Dist: hypothesis ; extra == "test"
+Requires-Dist: pytest ; extra == "test"
+Requires-Dist: pytest-cov ; extra == "test"
+Requires-Dist: pytest-xdist ; extra == "test"
+Provides-Extra: lint
+Provides-Extra: test
+
+# deal-solver
+
+[z3](https://github.com/Z3Prover/z3)-powered solver (theorem prover) for [deal](https://github.com/life4/deal).
+
+```bash
+python3 -m pip install deal-solver
+```
+
+## CLI
+
+For CLI usage, see the [deal documentation](https://deal.readthedocs.io/). The solver doesn't provide a CLI on its own.
+
+## API
+
+Deal-solver is created specifically for deal. So, if you want to use it with another tool, you have to mimic deal. It's not hard, though. See `TestTheorem` implementation in [tests/helpers.py](./tests/helpers.py).
+
+## The project state
+
+This is an experimental project. it supports only limited subset of syntax an types. Still, it works for some simple cases. So, give it a try, it is free.
+
