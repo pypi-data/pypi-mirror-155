@@ -1,0 +1,24 @@
+CHANGES
+=======
+
+v0.3.0
+------
+
+* feat(options): add support for globally allowing direct imports
+* fix(options): allow allowed-direct-imports to be specified
+
+v0.2.0
+------
+
+* Make a python module rather than a script. (#5)
+* [Config] Make config shorter for several imports from the same module
+* Ensure exceptions are imported directly. (#3)
+
+v0.1.0
+------
+
+* v0.1.0
+* Prepare for a pip release. (#2)
+* Allow exceptions to the rule. (#1)
+* Get original version from gist
+* Initial commit

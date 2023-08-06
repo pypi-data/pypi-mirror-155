@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: pylint_import_modules
+Version: 0.3.0
+Summary: A Pylint plugin to ensure only modules are imported.
+Home-page: https://github.com/zozoens31/pylint_import_modules
+Author: Cyrille Corpet
+Author-email: cyrille@bayesimpact.org
+License: GPL-3.0
+Keywords: pylint,plugin,import,module
+Platform: UNKNOWN
+License-File: LICENSE
+License-File: AUTHORS
+
+# pylint_import_modules
+A Pylint plugin to ensure all imports are modules, and not Classes, functions or variables
+
+
+
