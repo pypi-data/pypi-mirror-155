@@ -1,0 +1,3 @@
+[console_scripts]
+yaqc-qtpy=yaqc_qtpy.__main__:main
+
