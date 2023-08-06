@@ -1,0 +1,102 @@
+Metadata-Version: 2.1
+Name: idom
+Version: 0.39.0
+Summary: It's React, but in Python
+Home-page: https://github.com/rmorshea/idom
+Author: Ryan Morshead
+Author-email: ryan.morshead@gmail.com
+License: MIT
+Keywords: interactive,widgets,DOM,React
+Platform: Linux
+Platform: Mac OS X
+Platform: Windows
+Classifier: Environment :: Web Environment
+Classifier: Framework :: AsyncIO
+Classifier: Framework :: Flask
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Software Development :: User Interfaces
+Classifier: Topic :: Software Development :: Widget Sets
+Classifier: Typing :: Typed
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: typing-extensions (>=3.10)
+Requires-Dist: mypy-extensions (>=0.4.3)
+Requires-Dist: anyio (>=3)
+Requires-Dist: jsonpatch (>=1.32)
+Requires-Dist: fastjsonschema (>=2.14.5)
+Requires-Dist: requests (>=2)
+Requires-Dist: colorlog (>=6)
+Provides-Extra: all
+Requires-Dist: starlette (>=0.13.6) ; extra == 'all'
+Requires-Dist: uvicorn[standard] (>=0.13.4) ; extra == 'all'
+Requires-Dist: sanic (>=21) ; extra == 'all'
+Requires-Dist: sanic-cors ; extra == 'all'
+Requires-Dist: fastapi (>=0.63.0) ; extra == 'all'
+Requires-Dist: flask ; extra == 'all'
+Requires-Dist: markupsafe (<2.1) ; extra == 'all'
+Requires-Dist: flask-cors ; extra == 'all'
+Requires-Dist: flask-sock ; extra == 'all'
+Requires-Dist: tornado ; extra == 'all'
+Requires-Dist: playwright ; extra == 'all'
+Provides-Extra: fastapi
+Requires-Dist: fastapi (>=0.63.0) ; extra == 'fastapi'
+Requires-Dist: uvicorn[standard] (>=0.13.4) ; extra == 'fastapi'
+Provides-Extra: flask
+Requires-Dist: flask ; extra == 'flask'
+Requires-Dist: markupsafe (<2.1) ; extra == 'flask'
+Requires-Dist: flask-cors ; extra == 'flask'
+Requires-Dist: flask-sock ; extra == 'flask'
+Provides-Extra: sanic
+Requires-Dist: sanic (>=21) ; extra == 'sanic'
+Requires-Dist: sanic-cors ; extra == 'sanic'
+Provides-Extra: starlette
+Requires-Dist: starlette (>=0.13.6) ; extra == 'starlette'
+Requires-Dist: uvicorn[standard] (>=0.13.4) ; extra == 'starlette'
+Provides-Extra: testing
+Requires-Dist: playwright ; extra == 'testing'
+Provides-Extra: tornado
+Requires-Dist: tornado ; extra == 'tornado'
+
+# IDOM &middot; [![Tests](https://github.com/idom-team/idom/workflows/Test/badge.svg?event=push)](https://github.com/idom-team/idom/actions?query=workflow%3ATest) [![PyPI Version](https://img.shields.io/pypi/v/idom.svg)](https://pypi.python.org/pypi/idom) [![License](https://img.shields.io/badge/License-MIT-purple.svg)](https://github.com/idom-team/idom/blob/main/LICENSE)
+
+IDOM connects your Python web framework of choice to a ReactJS frontend, allowing you to create **interactive websites without needing JavaScript!**
+
+Following ReactJS styling, web elements are combined into [reusable "components"](https://idom-docs.herokuapp.com/docs/guides/creating-interfaces/your-first-components/index.html#parametrizing-components). These components can utilize [hooks](https://idom-docs.herokuapp.com/docs/reference/hooks-api.html) and [events](https://idom-docs.herokuapp.com/docs/guides/adding-interactivity/responding-to-events/index.html#async-event-handlers) to create infinitely complex web pages.
+
+When needed, IDOM can [use components directly from NPM](https://idom-docs.herokuapp.com/docs/guides/escape-hatches/javascript-components.html#dynamically-loaded-components). For additional flexibility, components can also be [fully developed in JavaScript](https://idom-docs.herokuapp.com/docs/guides/escape-hatches/javascript-components.html#custom-javascript-components).
+
+Any Python web framework with Websockets can support IDOM. See below for what frameworks are supported out of the box.
+
+| Supported Frameworks | Supported Frameworks (External) |
+| --- | --- |
+|  [`Flask`, `FastAPI`, `Sanic`, `Tornado`](https://idom-docs.herokuapp.com/docs/guides/getting-started/installing-idom.html#officially-supported-servers) | [`Django`](https://github.com/idom-team/django-idom), [`Plotly-Dash`](https://github.com/idom-team/idom-dash), [`Jupyter`](https://github.com/idom-team/idom-jupyter) |
+
+
+# At a Glance
+
+To get a rough idea of how to write apps in IDOM, take a look at this tiny _Hello World_ application.
+
+```python
+from idom import component, html, run
+
+@component
+def HelloWorld():
+    return html.h1("Hello, World!")
+
+run(HelloWorld)
+```
+
+# Resources
+
+Follow the links below to find out more about this project.
+
+- [Try it Now](https://mybinder.org/v2/gh/idom-team/idom-jupyter/main?urlpath=lab/tree/notebooks/introduction.ipynb) - check out IDOM in a Jupyter Notebook.
+- [Documentation](https://idom-docs.herokuapp.com/) - learn how to install, run, and use IDOM.
+- [Community Forum](https://github.com/idom-team/idom/discussions) - ask questions, share ideas, and show off projects.
+- [Contributor Guide](https://idom-docs.herokuapp.com/docs/developing-idom/contributor-guide.html) - see how you can help develop this project.
+- [Code of Conduct](https://github.com/idom-team/idom/blob/main/CODE_OF_CONDUCT.md) - standards for interacting with this community.
