@@ -1,0 +1,3 @@
+[console_scripts]
+py-xlsx-textconv=py_xlsx_textconv.__main__:main
+
