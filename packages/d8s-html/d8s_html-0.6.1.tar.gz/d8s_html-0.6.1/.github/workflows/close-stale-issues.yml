@@ -1,0 +1,27 @@
+name: Mark stale issues
+
+on:
+  schedule:
+  - cron: "30 1 * * *"
+
+jobs:
+  stale:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Close stale issues
+      uses: actions/stale@v3.0.18
+      with:
+        repo-token: ${{ secrets.DEMOCRITUS_ISSUE_TO_BACKLOG_TOKEN }}
+        days-before-issue-stale: 90
+        days-before-issue-close: 7
+        # The message to post on the issue when tagging it. If none provided, will not mark issues stale.
+        stale-issue-message: "This issue has been around for a long time and will be closed in a week. If you want to keep this open, remove the 'stale' label or comment on this issue. cc: @fhightower"
+        # The message to post on the issue when closing it. If none provided, will not comment when closing an issue.
+        close-issue-message: "Closing issue as stale."
+        # The number of days old a pull request can be before marking it stale. Set to -1 to never mark pull requests as stale automatically. Override "days-before-stale" option regarding only the pull requests.
+        days-before-pr-stale: -1
+        # The label to apply when an issue is closed.
+        close-issue-label: "wontfix"
+        stale-issue-label: "stale"

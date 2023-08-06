@@ -1,0 +1,6 @@
+beautifulsoup4
+d8s-networking==0.*
+d8s-urls==0.*
+html-to-json
+html2text
+importlib-metadata; python_version < '3.8'
