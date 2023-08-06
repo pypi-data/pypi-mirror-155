@@ -1,0 +1,144 @@
+Metadata-Version: 2.1
+Name: morphology-workflows
+Version: 0.3.1
+Summary: Workflows used for morphology processing.
+Home-page: https://github.com/BlueBrain/morphology-workflows
+Author: Blue Brain Project, EPFL
+License: Apache-2.0
+Project-URL: Tracker, https://github.com/BlueBrain/morphology-workflows/issues
+Project-URL: Source, https://github.com/BlueBrain/morphology-workflows
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Scientific/Engineering :: Bio-Informatics
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: data-validation-framework (>=0.3.0)
+Requires-Dist: diameter-synthesis (>=0.2.5)
+Requires-Dist: luigi
+Requires-Dist: luigi-tools (>=0.0.7)
+Requires-Dist: markupsafe (<2.1)
+Requires-Dist: matplotlib
+Requires-Dist: morphapi
+Requires-Dist: morph-tool (<3.0,>=2.9.0)
+Requires-Dist: morphio (<4.0,>=3.1)
+Requires-Dist: neurom (<4.0,>=3.0)
+Requires-Dist: neuror (<2.0,>=1.5.0)
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: plotly-helper (<1.0,>=0.0.8)
+Requires-Dist: PyYAML
+Requires-Dist: rst2pdf
+Requires-Dist: sphinx (<4)
+Requires-Dist: tqdm
+Provides-Extra: allen_brain
+Requires-Dist: allensdk ; extra == 'allen_brain'
+Provides-Extra: docs
+Requires-Dist: graphviz ; extra == 'docs'
+Requires-Dist: m2r2 ; extra == 'docs'
+Requires-Dist: mistune (<2) ; extra == 'docs'
+Requires-Dist: sphinx-autoapi (<1.6) ; extra == 'docs'
+Requires-Dist: sphinx-bluebrain-theme ; extra == 'docs'
+Requires-Dist: sphinx-argparse ; extra == 'docs'
+Provides-Extra: mouselight
+Requires-Dist: bg-atlasapi ; extra == 'mouselight'
+Provides-Extra: test
+Requires-Dist: diff-pdf-visually (>=1.5.1) ; extra == 'test'
+Requires-Dist: dir-content-diff (>=0.2) ; extra == 'test'
+Requires-Dist: mock ; extra == 'test'
+Requires-Dist: pytest ; extra == 'test'
+Requires-Dist: pytest-cov ; extra == 'test'
+Requires-Dist: pytest-html ; extra == 'test'
+Requires-Dist: pytest-xdist ; extra == 'test'
+
+![workflow Logo](doc/source/logo/BBP-Morphology-Workflows.jpg)
+
+[![Version](https://img.shields.io/pypi/v/morphology-workflows)](https://github.com/BlueBrain/morphology-workflows/releases)
+[![Build status](https://github.com/BlueBrain/morphology-workflows/actions/workflows/run-tox.yml/badge.svg?branch=main)](https://github.com/BlueBrain/morphology-workflows/actions)
+[![Coverage](https://codecov.io/github/BlueBrain/morphology-workflows/coverage.svg?branch=main)](https://codecov.io/github/BlueBrain/morphology-workflows?branch=main)
+[![License](https://img.shields.io/badge/License-Apache%202-blue)](https://github.com/BlueBrain/morphology-workflows/blob/main/LICENSE.txt)
+[![Documentation status](https://readthedocs.org/projects/morphology-workflows/badge/?version=latest)](https://morphology-workflows.readthedocs.io/)
+
+
+# Morphology Workflows
+
+This project contains several workflows for processing morphologies:
+- **Fetch:** download morphologies from online database (like Allen, NeuroMorpho or MouseLight).
+- **Curate:** from raw morphologies, ensures that morphologies can be used with the rest of
+  BBP codes
+  [![](autoapi/tasks/workflows/Curate.png)](autoapi/tasks/workflows/index.html#tasks.workflows.Curate)
+- **Annotate:** create various annotations on morphologies needed by specific BBP codes
+  [![](autoapi/tasks/workflows/Annotate.png)](autoapi/tasks/workflows/index.html#tasks.workflows.Annotate)
+- **Repair:** process morphologies to correct for artifacts of in-vitro reconstruction
+  [![](autoapi/tasks/workflows/Repair.png)](autoapi/tasks/workflows/index.html#tasks.workflows.Repair)
+
+
+In a nutshell, the user provides a list of morphologies in a ``.csv`` file, with their names and
+paths and a ``luigi.cfg`` configuration file. Each workflow is run independently and creates an
+output folder, with one subfolder per task. In each, there will be a ``report.csv`` and a ``data``
+folder containing the output files of the task if any. In the ``report.csv`` file, columns contain
+paths to these files, additional information, error messages if the task failed on that
+morphologies, as well as a flag ``is_valid``, used in subsequent tasks to filter valid morphologies.
+At the end of each workflow, another ``report.csv`` file is created, with the main output columns of
+each tasks, and a ``report.pdf`` containing a human readable summary of the result of the workflow.
+
+The complete documentation can be found here:
+  * stable: https://morphology-workflows.readthedocs.io/en/stable/
+  * latest: https://morphology-workflows.readthedocs.io/en/latest/
+
+
+## Installation
+
+This should be installed using pip:
+
+```bash
+pip install morphology-workflows
+```
+
+
+## Usage
+
+This workflow is based on the ``luigi`` library but can be run via the command line interface:
+
+```bash
+morphology_workflows --local-scheduler Curate
+```
+
+> **NOTE** This command must be executed from a directory containing a ``luigi.cfg`` file.
+> An example of such file is given in the ``examples`` directory.
+
+More details can be found in the command line interface section of the documentation.
+
+
+## Examples
+
+The `examples` folder contains a simple example that will process a set of morphologies.
+A ``dataset.csv`` file is provided which is taken as input for the workflows. A ``luigi.cfg`` file
+is also provided to give a default configuration for the workflows.
+This example can simply be run using the following command:
+
+```bash
+./run_curation.sh
+```
+
+This script will create a new directory ``out_curated`` which will contain the report and all the
+results.
+
+
+## Funding & Acknowledgment
+
+The development of this software was supported by funding to the Blue Brain Project, a research
+center of the École polytechnique fédérale de Lausanne (EPFL), from the Swiss government’s ETH Board
+of the Swiss Federal Institutes of Technology.
+
+For license and authors, see `LICENSE.txt` and `AUTHORS.md` respectively.
+
+Copyright © 2021-2022 Blue Brain Project/EPFL
+
+
