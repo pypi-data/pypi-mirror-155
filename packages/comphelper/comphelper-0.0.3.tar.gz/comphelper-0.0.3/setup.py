@@ -1,0 +1,24 @@
+from setuptools import setup, find_packages
+
+classifiers = [
+    'Development Status :: 5 - Production/Stable',
+    'Intended Audience :: Education',
+    'Operating System :: Microsoft :: Windows :: Windows 10',
+    'License :: OSI Approved :: MIT License',
+    'Programming Language :: Python :: 3'
+]
+
+setup(
+    name='comphelper',
+    version='0.0.3',
+    description='Helps to view DataFrames',
+    long_description=open('README.txt').read() + '\n\n' + open('CHANGELOG.txt').read(),
+    url='',
+    author='Nicholas Carrier',
+    author_email='nicholas.carrier.wm@gmail.com',
+    license='MIT',
+    classifiers=classifiers,
+    keywords='compensation',
+    packages=find_packages(),
+    install_requires=['pandas', 'openpyxl', 'xlrd', 'seaborn', 'statsmodels']
+)

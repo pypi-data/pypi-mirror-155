@@ -1,0 +1,35 @@
+Metadata-Version: 2.1
+Name: comphelper
+Version: 0.0.3
+Summary: Helps to view DataFrames
+Home-page: UNKNOWN
+Author: Nicholas Carrier
+Author-email: nicholas.carrier.wm@gmail.com
+License: MIT
+Keywords: compensation
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Education
+Classifier: Operating System :: Microsoft :: Windows :: Windows 10
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+License-File: LICENCE.txt
+
+This helps you view an entire DataFrame in PyCharm. It also formats column headers to be easier to use.
+
+Change Log
+==========
+
+0.0.1 (11/24/2021)
+------------------
+- First Release
+
+0.0.2 (06/20/2022)
+------------------
+- Second Release
+
+0.0.3 (06/20/2022)
+------------------
+- Third Release
+
+
