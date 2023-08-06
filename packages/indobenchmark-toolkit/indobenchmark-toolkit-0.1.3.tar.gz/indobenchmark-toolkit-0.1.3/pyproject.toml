@@ -1,0 +1,10 @@
+[build-system]
+requires = [
+    "setuptools>=42",
+    "wheel",
+    "transformers>=4.3.2",
+    "sentencepiece>=0.1.95",
+    "datasets>=1.4.1",
+    "torch>=1.7.1"
+]
+build-backend = "setuptools.build_meta"
