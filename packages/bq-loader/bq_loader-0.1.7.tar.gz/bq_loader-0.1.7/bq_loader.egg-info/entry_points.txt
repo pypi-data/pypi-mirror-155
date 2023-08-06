@@ -1,0 +1,2 @@
+[console_scripts]
+bqloader = bq_loader.__main__:main

@@ -1,0 +1,11 @@
+google-cloud-bigquery
+google-cloud-storage
+google-api-core
+inquirer==2.8.0
+
+[dev]
+pytest
+coverage
+pytest-cov
+sphinx
+alabaster
