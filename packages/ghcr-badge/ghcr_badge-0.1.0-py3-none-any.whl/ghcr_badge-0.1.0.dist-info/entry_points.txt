@@ -1,0 +1,4 @@
+[console_scripts]
+ghcr-badge = ghcr_badge.main:main
+ghcr-badge-server = ghcr_badge.server:main
+
