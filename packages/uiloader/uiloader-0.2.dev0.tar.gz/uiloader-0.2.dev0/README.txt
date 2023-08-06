@@ -1,0 +1,1 @@
+This package is required by PIE (Python Interface Editor) developed by Kristóf Lajos.
