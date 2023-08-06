@@ -1,0 +1,28 @@
+Metadata-Version: 2.1
+Name: wmb
+Version: 0.0.8
+Summary: misc code for whole mouse brain analysis.
+Home-page: https://github.com/lhqing/whole_mouse_brain
+Author: Hanqing Liu
+Author-email: hanliu@salk.edu
+License: MIT
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# whole_mouse_brain
+misc code for whole mouse brain analysis
+
+- file paths on local and remote storage
+- key metadata files will be included in the package
+- key reference files
+- other helper function for working with metadata
+- Automated annotation framework
+- All final analysis results
+
+I will keep this as private repo until publish
+
+## Code organization
+![code_org.jpg](wmb.mindnode/QuickLook/Preview.jpg)
