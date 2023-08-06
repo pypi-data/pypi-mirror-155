@@ -1,0 +1,35 @@
+# Python releases manager - pyrman
+
+Python library that can be used to manage releases for packages that you owns on PyPI.
+
+## Features
+
+* list packages that you own
+* list releases for packages that you own
+* unpublish (remove) a specific release for one of your packages
+
+## Usage (CLI)
+
+* Unpublish a release
+
+```bash
+pyrman release rm <package> <version>
+```
+
+* You can find out more information on how to use CLI by using `--help` option
+
+```bash
+pyrman --help
+```
+
+## Usage (Python)
+
+```python
+from pyrman.client import ReleaseManagerClient
+
+pyrman = ReleaseManagerClient(url)
+pyrman.authenticate(username, password)
+releases = pyrman.list_releases("my-package")
+for release in releases:
+    pyrman.remove_release("my-package", release.version)
+```

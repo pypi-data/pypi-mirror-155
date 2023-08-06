@@ -1,0 +1,3 @@
+[console_scripts]
+pyrman = pyrman.__main__:cli
+
