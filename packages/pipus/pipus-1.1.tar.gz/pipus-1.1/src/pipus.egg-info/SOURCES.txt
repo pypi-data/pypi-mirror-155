@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/pipus/__init__.py
+src/pipus/__main__.py
+src/pipus/args.py
+src/pipus.egg-info/PKG-INFO
+src/pipus.egg-info/SOURCES.txt
+src/pipus.egg-info/dependency_links.txt
+src/pipus.egg-info/entry_points.txt
+src/pipus.egg-info/top_level.txt
