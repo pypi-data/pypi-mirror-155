@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: bola
+Version: 0.1.1
+Summary: Collection of sphere packing and meshing algorithms.
+Home-page: https://github.com/TTitscher/bola
+Author: Thomas Titscher
+Author-email: thomas.titscher@gmail.com
+License: UNKNOWN
+Description: <h1 align="center">
+        <img src="https://raw.githubusercontent.com/TTitscher/bola/main/logo/bola.svg" width="300">
+        </h1><br>
+        
+        Collection of sphere packing and meshing algorithms.
+        
+Keywords: molecular-dynamics packing-algorithm gmsh fba edmd
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+Provides-Extra: test

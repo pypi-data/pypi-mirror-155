@@ -1,0 +1,16 @@
+tabulate
+numpy
+loguru
+vtk
+tqdm
+gmsh
+
+[dev]
+black
+
+[test]
+pytest
+pytest-cov
+flake8
+h5py
+meshio
