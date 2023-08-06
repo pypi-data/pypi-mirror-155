@@ -1,0 +1,257 @@
+@@grammar::OneModel
+
+
+# TatSu by default defines newline as whitespace but onemodel syntax
+# uses newlines as separators. So we have removed the intro from the
+# whitespace characters in TatSu.
+@@whitespace::/[\t ]+/
+
+
+# This allows us to use comments like in python.
+@@eol_comments::/#.*?$/
+
+
+# Keywords reserved.
+@@keyword:: species parameter reaction end rule function input import has standalone if
+
+
+start
+  = 
+  {statements} $
+  ;
+
+
+statements
+  =
+  {newline} @:statement {{newline}+ @:statement} {newline}
+  ;
+
+
+statement
+  = 
+  | 'species'    newline {newline | @:species {',' | @:species} newline} 'end'
+  | 'parameter'  newline {newline | @:parameter {',' | @:parameter} newline} 'end'
+  | 'reaction'   newline {newline | @:reaction newline} 'end'
+  | 'rule'       newline {newline | @:rule newline} 'end'
+  | 'input'      newline {newline | @:input {',' | @:input} newline} 'end'
+  | import
+  | standalone
+  | expr
+  ;
+
+
+import::Import
+  =
+  'import' filepath:string
+  ;
+
+
+standalone::Standalone
+  =
+  'standalone' newline {newline | code:statement newline} 'end'
+  ;
+
+
+expr
+  =
+  | 'species'   @:species   {',' | @:species}
+  | 'parameter' @:parameter {',' | @:parameter}
+  | 'reaction'  @:reaction 
+  | 'rule'      @:rule 
+  | 'input'     @:input 
+  | assign_variable
+  | comp_expr
+  ;
+
+
+species::Species
+  = 
+  name:identifier  {'.' name:identifier} ['=' value:expr]
+  ;
+
+
+parameter::Parameter
+  = 
+  name:identifier {'.' name:identifier} ['=' value:expr]
+  ;
+
+
+reaction::Reaction
+  =
+  [ name:identifier ':']
+  ('0' | reactants:expr {'+' | reactants:expr})
+  '->' 
+  ('0' | products:expr {'+' | products:expr})
+  newline 
+  kinetic_law:formula
+  ;
+
+
+rule
+  =
+  | rule_rate
+  | rule_assignment
+  | rule_algebraic
+  ;
+
+
+rule_rate::RuleRate
+  =
+  | name:identifier {'.' name:identifier} ':' variable:expr "'" '=' math:formula
+  | variable:expr "'" '=' math:formula
+  ;
+
+rule_assignment::RuleAssignment
+  =
+  | name:identifier {'.' name:identifier} ':' variable:expr ':=' math:formula
+  | variable:expr ':=' math:formula
+  ;
+
+
+rule_algebraic::RuleAlgebraic
+  =
+  [name:identifier ':'] variable:identifier '==' math:formula
+  ;
+
+
+input::Input
+  = 
+  name:identifier
+  ;
+
+
+assign_variable::AssignVariable
+  =
+  name:identifier {'.' name:identifier} '=' value:expr
+  ;
+
+
+comp_expr
+  =
+  arith_expr
+  ;
+
+
+arith_expr
+  =
+  term
+  ;
+
+
+term
+  =
+  factor
+  ;
+
+
+factor
+  =
+  power
+  ;
+
+
+power
+  =
+  call
+  ;
+
+
+call::Call
+  =
+  | value:atom '(' [args:expr {',' args:expr}] ')'
+  | next:atom
+  ;
+
+
+atom
+  = 
+  | float
+  | integer
+  | string
+  | struct
+  | if
+  | function_definition
+  | model_definition
+  | access_identifier
+  ;
+
+
+# Definition of integers.
+integer::Integer
+  = 
+  value:/\d+/
+  ;
+
+
+# Definition of floats.
+float::Float
+  =
+  | value:/\d*(?:\.\d+)?(?:e(?:\+|\-)\d+)/  # Scientific notation.
+  | value:/\d*\.\d+/                        # Regular floats.
+  ;
+
+
+# Definition of strings.
+string::String
+  = 
+  "'" value:/[^\\\r\n\f']*/ "'"
+  ;
+
+
+struct::Struct
+  =
+  '{' '}'
+  ;
+
+
+if::If
+  =
+  'if' condition:expr newline
+  {newline | body:statement}
+  'end'
+  ;
+
+
+function_definition::FunctionDefinition
+  =
+  'function' name:identifier '(' [args:identifier {',' args:identifier}] ')' newline
+  {newline | body:statement}
+  'end'
+  ;
+
+
+model_definition::ModelDefinition
+  =
+  'model' name:identifier ['(' parent_model:identifier ')'] newline 
+  {newline | body:statement}
+  'end'
+  ;
+
+
+# Access the value of an identifier.
+access_identifier::AccessIdentifier
+  = 
+  name:identifier {'.' name:identifier}
+  ;
+
+
+# Definition of identifiers
+# Identifiers cannot have a keyword name.
+@name
+identifier::str
+  =
+  /(?!\d)\w+/ 
+  ;
+
+
+formula::str
+  =
+  /[^\\\r\n\f'\;#]*/
+  ;
+
+
+newline 
+  = 
+  | ';'
+  | /\n/
+  ;
