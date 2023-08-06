@@ -1,0 +1,190 @@
+Metadata-Version: 2.1
+Name: pdfreactor.plone
+Version: 1.0.0.dev1
+Summary: PDFreactor integration for Plone
+Home-page: UNKNOWN
+Author: Tobias Herp
+Author-email: tobias.herp@visaplan.com
+License: MIT License
+Project-URL: Source, https://github.com/visaplan/pdfreactor.plone
+Project-URL: Documentation, https://pypi.org/project/pdfreactor.plone
+Project-URL: Tracker, https://github.com/visaplan/pdfreactor.plone/issues
+Description: .. This README is meant for consumption by humans and pypi. Pypi can render rst files so please do not use Sphinx features.
+           If you want to learn more about writing documentation, please check out: http://docs.plone.org/about/documentation_styleguide.html
+           This text does not appear on pypi or github. It is a comment.
+        
+        ================
+        pdfreactor.plone
+        ================
+        
+        This Add-On package integrates the PDFreactor_ client API by RealObjects_,
+        as provided by the pdfreactor-api_ package, into Plone.
+        
+        To effectively make use of it, you'll need
+        
+        - a license key (from *RealObjects*; see https://www.pdfreactor.com/buy/)
+        - a running *PDFreactor* server
+        
+        
+        Features
+        ========
+        
+        - a simple ``@@as.pdf`` browser view for contentish objects
+          (providing a synchronous PDF export with standard options)
+        - storage of *connection* settings in the Plone registry
+        - a simple ``@@pdfreactor-config`` view to provide basic *conversion* settings.
+        
+          (For a package providing customizable conversion settings in the registry as
+          well, see below.)
+        
+        
+        Examples
+        --------
+        
+        Some generic sample scripts are contained in the ``docs/sample/`` directory:
+        
+        simple.py
+            A sample demonstrating the simple integration of PDFreactor into Python applications
+        async.py
+            A sample demonstrating an asynchronous integration which is recommended for medium to large documents
+        stream.py
+            A sample demonstrating how converted PDFs can be streamed, thus conserving memory
+        
+        
+        Installation
+        ============
+        
+        Plone environments are typically built using `zc.buildout`_;
+        so add to your ``buildout.cfg`` script::
+        
+            [buildout]
+            ...
+            eggs =
+                pdfreactor.plone
+        
+        and then run ``bin/buildout``.
+        
+        This will get you the pdfreactor-api_ package as well.
+        
+        After restarting your Zope instance, you'll find the package in
+        the Quick-Installer or
+        the Plone Add-Ons view.
+        
+        After installing (or *activating*) the package there, go to the Plone registry
+        to customize your PDFreactor connection settings (URL and API key);
+        look for the interface (or *prefix*) "IPdfReactorConnectionSettings".
+        
+        For installation instructions regarding the PDFreactor service itself, please
+        refer to `PDFreactor Support`_.
+        
+        
+        
+        Customization
+        =============
+        
+        Zope / Plone
+        ------------
+        
+        You have several options:
+        
+        - You may subclass our .base.Exporter BrowserView class
+          (which provides the ``@@as.pdf`` view)
+          and override some of it's methods,
+          e.g.
+        
+          - conversion_url
+          - conversionSettings
+        
+        - You may connect our BrowserView class or subclasses of it
+          to more specific interfaces than IContentish.
+          (You might need a layer interface to avoid configuration conflicts).
+        
+        - You may override the ``@@pdfreactor-config`` view to modify the conversion
+          options (generally, or by interface).
+        
+          One add-on package to get a global "TTW" customizable configuration is
+          pdfreactor.parsecfg_.
+        
+        Please refer to the Zope / Plone documentation for instructions how to do this.
+        
+        
+        PDFreactor
+        ----------
+        
+        For the details about the supported methods and configuration options of the
+        *PDFreactor* itself,
+        please refer to the documentation by *RealObjects GmbH*:
+        
+        - `PDFreactor Web service documentation`_
+        
+        
+        Support
+        =======
+        
+        If you are having issues *concerning this Plone integration*,
+        please let us know;
+        please use the `issue tracker`_ mentioned above.
+        
+        For issues regarding the *PDFreactor* itself, please refer to *RealObjects GmbH*:
+        
+        - `PDFreactor Support Center`_
+        
+        
+        Contribute
+        ==========
+        
+        (To this Plone integration package:)
+        
+        - Issue Tracker: https://github.com/visaplan/pdfreactor.plone/issues
+        - Source Code: https://github.com/visaplan/pdfreactor.plone
+        
+        
+        License
+        =======
+        
+        The project is licensed under the MIT License.
+        
+        .. _`issue tracker`: https://github.com/visaplan/pdfreactor.plone/issues
+        .. _pdfreactor-api: https://pypi.org/project/pdfreactor-api
+        .. _pdfreactor.parsecfg: https://pypi.org/project/pdfreactor.parsecfg
+        .. _PDFreactor: https://www.pdfreactor.com
+        .. _PDFreactor Support Center: https://www.pdfreactor.com/support/
+        .. _PDFreactor Support: https://www.pdfreactor.com/support/
+        .. _PDFreactor Web service documentation: https://www.pdfreactor.com/product/doc/webservice/
+        .. _RealObjects: https://www.realobjects.com/
+        .. _zc.buildout: https://pypi.org/project/zc.buildout
+        
+        .. vim: tw=79 cc=+1 sw=4 sts=4 si et
+        
+        
+        Author
+        ======
+        
+        - Tobias Herp, tobias.herp@visaplan.com
+        
+        
+        Changelog
+        =========
+        
+        
+        1.0.0 (unreleased)
+        ------------------
+        
+        - Initial release.
+          [tobiasherp]
+        
+Platform: UNKNOWN
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Plone
+Classifier: Framework :: Plone :: 4.3
+Classifier: Framework :: Zope2
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: MIT License
+Description-Content-Type: text/x-rst

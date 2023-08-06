@@ -1,0 +1,27 @@
+<configure
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns="http://namespaces.zope.org/zope">
+
+    <!-- The @@as.pdf view returns an on-the-fly created PDF document,
+         resembling the current context
+      -->
+    <browser:page
+        name="as.pdf"
+        for="Products.CMFCore.interfaces.IContentish"
+        class=".base.Exporter"
+        permission="zope2.View"
+        /><!-- gf: ./base.py
+            -->
+
+    <!-- Provide a very basic config object for the PDFreactor conversion
+      -->
+    <browser:page
+        name="pdfreactor-config"
+        for="*"
+        class=".config.DefaultSettingsView"
+        permission="zope2.View"
+        /><!-- gf: ./config.py
+            -->
+    <include file="profiles.zcml" />
+
+</configure>
