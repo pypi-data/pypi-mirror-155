@@ -1,0 +1,33 @@
+<tal:playerbuttonviewlet tal:condition="view/show">
+    <style type="text/css">
+        #playerbuttonviewlet {
+            font-size: 5rem;
+        }
+        a.playlist-button,
+        a:visited.playlist-button {
+            color: #000;
+            outline: 0;
+            margin: 0 1rem 0 4rem;
+        }
+
+        .contenttype-playlist::before    { content: '\e801'; }
+        .contenttype-track::before       { content: '\e811'; }
+
+    </style>
+
+    <div id="playerbuttonviewlet">
+        <a class="playlist-button"
+            href="./playlist-mocoloco"
+            target="_blank"
+            tal:attributes="href view/href|nothing">
+            <span class="glyphicon glyphicon-play-circle"></span>
+        </a>
+    </div>
+
+    <script type="text/javascript">
+        $("a.playlist-button").click(function() {
+            window.open(this.href, "_blank", "width=500,height=600");
+            return false;
+        });
+    </script>
+</tal:playerbuttonviewlet>

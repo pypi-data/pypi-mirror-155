@@ -1,0 +1,97 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2018-05-14 11:34+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: collective.playlist\n"
+
+#: ../content/track.py:14
+msgid "Audio"
+msgstr ""
+
+#: ../content/playlist.py:13
+msgid "Copyright"
+msgstr ""
+
+#: ../profiles/default/types/playlist.xml
+#: ../profiles/default/types/track.xml
+msgid "Edit"
+msgstr ""
+
+#: ../configure.zcml:30
+msgid "Installs the collective.playlist add-on."
+msgstr ""
+
+#: ../profiles/default/types/playlist.xml
+msgid "Playlist"
+msgstr ""
+
+#: ../profiles/default/controlpanel.xml
+msgid "Playlist Settings"
+msgstr ""
+
+#: ../browser/settings.py:16
+msgid "Some style to be applied to playlist. CSS"
+msgstr ""
+
+#: ../browser/settings.py:23
+msgid "Some stylesheets to be applied to playlist. e.g. https://fonts.googleapis.com/css?family=Ubuntu"
+msgstr ""
+
+#: ../browser/settings.py:15
+msgid "Style"
+msgstr ""
+
+#: ../browser/settings.py:22
+msgid "Stylesheets"
+msgstr ""
+
+#: ../profiles/default/types/track.xml
+msgid "Track"
+msgstr ""
+
+#: ../configure.zcml:39
+msgid "Uninstalls the collective.playlist add-on."
+msgstr ""
+
+#: ../profiles/default/types/playlist.xml
+#: ../profiles/default/types/track.xml
+msgid "View"
+msgstr ""
+
+#: ../browser/templates/playlistpopupview.pt:84
+msgid "add track"
+msgstr ""
+
+#: ../configure.zcml:30
+msgid "collective.playlist"
+msgstr ""
+
+#: ../configure.zcml:39
+msgid "collective.playlist (uninstall)"
+msgstr ""
+
+#: ../browser/templates/playlistpopupview.pt:81
+msgid "edit list of tracks"
+msgstr ""
+
+#: ../browser/templates/playlistpopupview.pt:78
+msgid "edit playlist"
+msgstr ""
+
+#: ../browser/templates/playlistpopupview.pt:75
+msgid "home"
+msgstr ""
+
+#: ../content/track.py:15
+msgid "mp3, oga, ogg, wav"
+msgstr ""

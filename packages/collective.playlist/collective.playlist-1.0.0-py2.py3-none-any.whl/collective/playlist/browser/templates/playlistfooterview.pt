@@ -1,0 +1,53 @@
+<div id="jquery_jplayer_playlist" class="jp-jplayer"
+            tal:attributes="data-tracks view/getJSONTracks"></div>
+
+<div id="jp_container_playlist" class="jp-audio" role="application" aria-label="media player">
+    <div class="jp-type-playlist">
+
+        <div class="jp-gui jp-interface">
+            <div class="jp-controls">
+                <a class="jp-previous"><i class="fa fa-backward"></i></a>
+                <a class="jp-play"><i class="fa fa-play"></i></a>
+                <a class="jp-pause"><i class="fa fa-pause"></i></a>
+                <a class="jp-stop"><i class="fa fa-stop"></i></a>
+                <a class="jp-next"><i class="fa fa-forward"></i></a>
+            </div>
+            <div class="jp-progress">
+                <div class="jp-seek-bar">
+                    <div class="jp-play-bar"></div>
+                </div>
+            </div>
+            <div class="jp-toggles">
+                <a class="jp-repeat"><i class="fa fa-redo"></i></a>
+                <a class="jp-shuffle"><i class="fa fa-random"></i></a>
+            </div>
+            <div class="jp-volume-controls">
+                <a class="jp-mute"><i class="fa fa-volume-off"></i></a>
+                <a class="jp-volume-max"><i class="fa fa-volume-up"></i></a>
+                <div class="jp-volume-bar">
+                    <div class="jp-volume-bar-value"></div>
+                </div>
+            </div>
+            <div class="jp-time-holder">
+                <div class="jp-current-time" role="timer" aria-label="time">&nbsp;</div>
+                <div class="jp-duration" role="timer" aria-label="duration">&nbsp;</div>
+            </div>
+        </div>
+
+
+        <div class="jp-playlist">
+            <ul>
+                <li>playlist here</li>
+            </ul>
+        </div>
+        <div class="jp-no-solution">
+            <h3>Update Required</h3>
+            To play the media you will need to update your browser to a recent version.
+        </div>
+    </div>
+</div>
+
+<div id="copyright" tal:content="structure view/copyright|nothing">copyright</div>
+
+<tal:stylesheets tal:replace="structure view/css_stylesheets_collectiveplaylist" />
+<style type="text/css" tal:content="structure view/css_collectiveplaylist"/>
