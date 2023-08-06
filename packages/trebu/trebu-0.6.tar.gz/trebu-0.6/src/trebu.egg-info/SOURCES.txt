@@ -1,0 +1,11 @@
+README.rst
+setup.cfg
+setup.py
+src/trebu/__init__.py
+src/trebu.egg-info/PKG-INFO
+src/trebu.egg-info/SOURCES.txt
+src/trebu.egg-info/dependency_links.txt
+src/trebu.egg-info/requires.txt
+src/trebu.egg-info/top_level.txt
+src/trebu/example/__init__.py
+src/trebu/example/custom_numpy.py
