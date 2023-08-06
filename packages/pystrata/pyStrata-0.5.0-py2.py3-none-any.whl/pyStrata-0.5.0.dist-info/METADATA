@@ -1,0 +1,178 @@
+Metadata-Version: 2.1
+Name: pyStrata
+Version: 0.5.0
+Summary: Site Response Analysis with Python
+Home-page: http://github.com/arkottke/pystrata
+Author: Albert Kottke
+Author-email: albert.kottke@gmail.com
+License: MIT
+Keywords: site response
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Scientific/Engineering
+Classifier: Intended Audience :: Science/Research
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+License-File: AUTHORS.rst
+Requires-Dist: matplotlib
+Requires-Dist: numpy
+Requires-Dist: pyrvt
+Requires-Dist: pykooh
+Requires-Dist: scipy
+Requires-Dist: setuptools
+Requires-Dist: typing
+Provides-Extra: dataframe
+Requires-Dist: pandas ; extra == 'dataframe'
+
+pyStrata
+========
+
+|PyPi Cheese Shop| |Build Status| |Documentation Status| |Code Quality| |Test Coverage|
+|License| |Zenodo| |MyBinder|
+
+Site response analyses implemented in Python. This Python packages aims
+to implement many of the features found in
+Strata_. These features include:
+
+- Input motion characterization:
+    - Time series
+    - Random vibration theory
+- Wave propagation or site amplification:
+    - linear
+    - equivalent-linear
+    - equivalent-linear with frequency dependent properties
+    - quarter wavelength
+- Nonlinear curve models:
+    - Darendeli (2001)
+    - Menq (2004)
+    - Kishida (2012)
+- Site and soil property uncertainty:
+    - Toro (1994) Vs correlation model
+    - G/Gmax and D uncertainty:
+        - Darendeli (2001)
+        - EPRI SPID (2013)
+
+Development of this software is on-going and any contributions are encouraged.
+Previously named ``pysra``, but renamed after some sage and persistent advice to be
+better associated with Strata_.
+
+Installation
+------------
+
+``pystrata`` is available via ``pip`` and can be installed with::
+
+   pip install pystrata
+
+If you are using ``conda`` and a create a ``pystrata`` specific environmental make sure you install ``ipykernels`` and ``nb_conda_kernels`` so that the environment is discoverable by ``Jupyter`` with::
+
+    conda install ipykernel nb_conda_kernels
+
+Citation
+--------
+
+Please cite this software using the following DOI_.
+
+Examples
+--------
+
+There are a variety of examples of using ``pystrata`` within the `examples
+directory`_. An interactive Jupyter interface of these examples is available on
+|MyBinder|.
+
+.. _Strata: https://github.com/arkottke/strata
+.. _DOI: https://zenodo.org/badge/latestdoi/8959678
+.. _`examples directory`: https://github.com/arkottke/pystrata/tree/master/examples
+
+.. |PyPi Cheese Shop| image:: https://img.shields.io/pypi/v/pystrata.svg
+   :target: https://pypi.python.org/pypi/pystrata
+.. |Build Status| image:: https://img.shields.io/travis/arkottke/pystrata.svg
+   :target: https://travis-ci.org/arkottke/pystrata
+.. |Documentation Status| image:: https://readthedocs.org/projects/pystrata/badge/?version=latest&style=flat
+   :target: https://pystrata.readthedocs.org
+.. |Code Quality| image:: https://api.codacy.com/project/badge/Grade/6dbbb3a4279744d697b9bfe08af19ded
+   :target: https://www.codacy.com/app/arkottke/pystrata
+.. |Test Coverage| image:: https://api.codacy.com/project/badge/Coverage/6dbbb3a4279744d697b9bfe08af19ded
+   :target: https://www.codacy.com/app/arkottke/pystrata
+.. |License| image:: https://img.shields.io/badge/license-MIT-blue.svg
+.. |Zenodo| image:: https://zenodo.org/badge/8959678.svg
+   :target: https://zenodo.org/badge/latestdoi/8959678
+.. |MyBinder| image:: https://mybinder.org/badge_logo.svg
+   :target: https://mybinder.org/v2/gh/arkottke/pystrata/master?filepath=examples
+
+
+History
+=======
+
+v0.5.0 (2022-06-14)
+-------------------
+- Renamed to `pyStrata`.
+
+v0.4.11 (2020-03-31)
+--------------------
+- Added: Depth dependent velocity variation model
+- Added: Output plotting functionality
+- Added: Ability to exclude soil type variation from bedrock
+
+v0.4.10 (2020-03-27)
+--------------------
+- Fixed: Error in SPID variation of G/Gmax
+- Added: Scaling during read of SMC and AT2 input motions
+
+v0.4.9 (2020-03-09)
+-------------------
+- Add InitialVelProfile and CompatVelProfile outputs
+
+v0.4.8 (2019-12-11)
+-------------------
+- Remove Cython and cyko as dependencies
+- Added a numba based Konno-Ohmachi smoothing
+
+v0.4.6 (2019-11-12)
+-------------------
+- FIXED #11: Dependencies missing on install.
+
+v0.4.5 (2019-10-24)
+-------------------
+- FIXED #9: Wrong stress for some Menq components.
+
+v0.4.4 (2019-05-22)
+-------------------
+-  Incremented version because of issue with automated builds.
+
+v0.4.3 (2019-05-22)
+-------------------
+-  FIXED: Bug in MANIFEST.in
+
+v0.4.2 (2019-05-22)
+-------------------
+-  Incremented version because of issue with automated builds.
+
+v0.4.1 (2019-05-22)
+-------------------
+-  Fixed strain profile to use ``max_strain``.
+-  Changed README and HISTORY to markdown.
+
+v0.4.0 (2019-03-11)
+-------------------
+-  Added smoothed FourierAmplitudeSpectrum output.
+
+v0.3.2 (2018-12-02)
+-------------------
+-  Fixed building of docs.
+-  Removed stickler.
+-  Version double increment due to pypi naming conflict.
+
+v0.3.0 (2018-11-30)
+-------------------
+-  Converted all damping to decimal.
+-  Added tests for KishidaSoilType.
+-  Added tests against Deepsoil.
+
+v0.0.1 (2016-04-30)
+-------------------
+-  First release on PyPI.
