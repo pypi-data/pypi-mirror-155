@@ -1,0 +1,5 @@
+jupyter_server<2,>=1.6
+h5grove==1.0.0
+
+[full]
+hdf5plugin
