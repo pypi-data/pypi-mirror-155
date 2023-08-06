@@ -1,0 +1,23 @@
+[project]
+name = "bio-network-ayelet-tohar"
+description = "create sub networks"
+version = "0.1.1"
+authors = [
+    { name = "ayelet gibly", email = "ayelet47654@gmail.com"},
+    { name = "tohar tsvitman", email = "toharbk@gmail.com"}
+]
+dependencies = [
+
+]
+
+[project.optional-dependencies]
+dev = [
+    "tox",
+    "pre-commit",
+    "bump2version"
+]
+
+
+[build-system]
+requires = ["setuptools>=42"]
+build-backend = "setuptools.build_meta"
