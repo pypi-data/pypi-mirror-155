@@ -1,0 +1,42 @@
+[tool.poetry]
+name = "path_version"
+version = "0.1.6"
+description = "Get the last changed has of a dir as a python function"
+readme = "README.md"
+authors = ["Oxford Ionics"]
+license = "Proprietary"
+
+[[tool.poetry.source]]
+name = "oxionics"
+url = "http://pypi.oxionics.com:3141/oiuser/oxionics/+simple/"
+default = true
+
+[tool.poetry.dependencies]
+# We are using a slightly old PyQt5 (specified by artiq) which limits what
+# Python versions have wheels available. If we upgrade the Qt version we can
+# probably relax this Python requirement.
+python = "~3.8"
+
+[tool.poetry.dev-dependencies]
+flake8 = "^4.0.1"
+pytest = "^6.2.5"
+black = "22.3.0"
+pre-commit = "^2.17.0"
+
+[tool.poetry-dynamic-versioning]
+enable = false
+vcs = "git"
+style = "pep440"
+format-jinja = "{{ base }}.{{ distance }}"
+pattern = "^(?P<base>\\d+(\\.\\d+)*)"
+
+[build-system]
+requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poe.tasks]
+pre-commit-install="pre-commit install"
+fmt = "black ."
+fmt-test = "black --check ."
+test = "pytest"
+flake = "flake8 ."
