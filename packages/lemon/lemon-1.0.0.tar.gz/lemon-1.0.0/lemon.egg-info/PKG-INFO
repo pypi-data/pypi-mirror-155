@@ -1,0 +1,33 @@
+Metadata-Version: 2.1
+Name: lemon
+Version: 1.0.0
+Summary: Official Python client for lemon.markets API
+Home-page: https://github.com/lemon-markets/sdk-python/
+Author: lemon.markets
+Author-email: support@lemon.markets
+License: MIT
+Download-URL: https://pypi.python.org/pypi/lemon/
+Project-URL: Source, https://github.com/lemon-markets/sdk-python/
+Project-URL: Changes, https://github.com/lemon-markets/sdk-python/blob/master/CHANGELOG.md
+Project-URL: Tracker, https://github.com/lemon-markets/sdk-python/issues/
+Project-URL: lemon.markets, https://www.lemon.markets/
+Project-URL: API Documentation, https://docs.lemon.markets/
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# sdk-python
+
