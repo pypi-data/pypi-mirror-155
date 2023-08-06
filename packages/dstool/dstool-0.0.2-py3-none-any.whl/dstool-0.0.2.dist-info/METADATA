@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: dstool
+Version: 0.0.2
+Summary: Toolkit for Data Scientists
+Home-page: https://dstool.yao.sh
+Author: Xiaozhe Yao
+Author-email: askxzyao@gmail.com
+License: MIT
+Project-URL: Bug Tracker, https://github.com/yao-sh/dstool/issues
+Project-URL: Documentation, https://dstool.yao.sh/
+Project-URL: Source Code, https://github.com/yao-sh/dstool
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Software Development
+Description-Content-Type: text/markdown
+Requires-Dist: requests
+Requires-Dist: loguru
+
