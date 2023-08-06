@@ -1,0 +1,2 @@
+[console_scripts]
+censusmapdownloader = census_map_downloader.cli:cmd
