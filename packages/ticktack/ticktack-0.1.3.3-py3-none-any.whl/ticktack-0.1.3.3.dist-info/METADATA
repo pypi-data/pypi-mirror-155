@@ -1,0 +1,37 @@
+Metadata-Version: 2.1
+Name: ticktack
+Version: 0.1.3.3
+Summary: Python package to build a carbon box model.
+Home-page: https://github.com/SharmaLlama/ticktack
+Author: Utkarsh Sharma
+Author-email: u.sharma@uqconnect.edu.au
+License: MIT
+Platform: UNKNOWN
+Classifier: Topic :: Scientific/Engineering
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Developers
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Requires-Dist: astropy
+Requires-Dist: celerite2
+Requires-Dist: chainconsumer
+Requires-Dist: emcee
+Requires-Dist: h5py (==3.3.0)
+Requires-Dist: hdfdict
+Requires-Dist: jax (>=0.3.13)
+Requires-Dist: jaxlib (>=0.3.7)
+Requires-Dist: matplotlib
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: scipy
+Requires-Dist: seaborn
+Requires-Dist: tqdm
+Requires-Dist: jaxns
+Requires-Dist: jax-cosmo
+Requires-Dist: tinygp
+
+A Python package implementing carbon box models for tree ring radiocarbon data analysis.
+
+
