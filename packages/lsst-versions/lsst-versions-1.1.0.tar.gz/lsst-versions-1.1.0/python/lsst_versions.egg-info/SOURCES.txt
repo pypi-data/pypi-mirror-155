@@ -1,0 +1,17 @@
+LICENSE
+README.rst
+pyproject.toml
+setup.cfg
+setup.py
+python/lsst_versions/__init__.py
+python/lsst_versions/__version__.py
+python/lsst_versions/_cmd.py
+python/lsst_versions/_versions.py
+python/lsst_versions/py.typed
+python/lsst_versions.egg-info/PKG-INFO
+python/lsst_versions.egg-info/SOURCES.txt
+python/lsst_versions.egg-info/dependency_links.txt
+python/lsst_versions.egg-info/entry_points.txt
+python/lsst_versions.egg-info/not-zip-safe
+python/lsst_versions.egg-info/requires.txt
+python/lsst_versions.egg-info/top_level.txt

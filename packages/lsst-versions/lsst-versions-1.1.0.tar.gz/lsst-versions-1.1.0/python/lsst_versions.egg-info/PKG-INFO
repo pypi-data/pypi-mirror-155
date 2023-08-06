@@ -1,0 +1,64 @@
+Metadata-Version: 2.1
+Name: lsst-versions
+Version: 1.1.0
+Summary: Calculate package versions following LSST code conventions.
+Home-page: https://github.com/lsst/lsst_versions
+Author: Rubin Observatory Data Management
+Author-email: dm-admin@lists.lsst.org
+Project-URL: Source code, https://github.com/lsst/lsst_versions
+Project-URL: Issue tracker, https://github.com/lsst/lsst_versions/issues
+Keywords: lsst
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Version Control
+Classifier: Topic :: System :: Software Distribution
+Requires-Python: >=3.8
+Description-Content-Type: text/x-rst
+Provides-Extra: dev
+License-File: LICENSE
+
+lsst_versions
+=============
+
+This package is used to calculate a version dynamically from a Git repository when it is being built by ``pip``.
+It is not needed for EUPS-only packages, and the calculated package version will be ``pip``-compatible and thus differ from that produced by EUPS's ``pkgautoversion``.
+It avoids the need to hard-code and continually update a version string.
+It assumes the use of LSST DM release and tagging practices.
+
+lsst-versions 1.1.0 2022-06-14
+==============================
+
+New Features
+------------
+
+- Added a new ``lsst-version`` command line that can be used to determine the version of a package.
+  This command can also be used to create a version file in the package using the configuration found in a ``pyproject.toml`` file. (`DM-35064 <https://jira.lsstcorp.org/browse/DM-35064>`_)
+
+
+API Changes
+-----------
+
+- Renamed the ``find_dev_lsst_version`` function to ``find_lsst_version`` to reflect the fact that it does more than finding developer versions. (`DM-35064 <https://jira.lsstcorp.org/browse/DM-35064>`_)
+
+
+Miscellaneous Changes of Minor Interest
+---------------------------------------
+
+- * Replaced some debug prints with logging.
+  * Significantly improved the test coverage. (`DM-35064 <https://jira.lsstcorp.org/browse/DM-35064>`_)
+
+
+lsst-versions 1.0.0 2022-04-18
+==============================
+
+New Features
+------------
+
+- Initial release of ``lsst-versions`` package.
+  This package can be used as a ``setuptools`` entry point to determine the version of a package from the Git repository. (`DM-32408 <https://jira.lsstcorp.org/browse/DM-32408>`_)
