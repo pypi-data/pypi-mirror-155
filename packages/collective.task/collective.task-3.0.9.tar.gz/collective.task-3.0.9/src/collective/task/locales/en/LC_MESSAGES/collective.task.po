@@ -1,0 +1,148 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2019-03-01 13:16+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+
+#: ../browser/templates/task_parent.pt:14
+msgid "Above tasks"
+msgstr ""
+
+#: ../behaviors.py:92
+#: ../browser/batchactions.py:48
+#: ../browser/table.py:114
+msgid "Assigned group"
+msgstr ""
+
+#: ../behaviors.py:108
+#: ../browser/batchactions.py:111
+#: ../browser/table.py:129
+msgid "Assigned user"
+msgstr ""
+
+#: ../interfaces.py:67
+msgid "Attribute prefix (without dot)"
+msgstr ""
+
+#: ../behaviors.zcml:19
+msgid "Content behaves like a task (fields are in a fieldset)."
+msgstr ""
+
+#: ../behaviors.zcml:13
+msgid "Content behaves like a task."
+msgstr ""
+
+#: ../behaviors.zcml:25
+msgid "Content that contains tasks."
+msgstr ""
+
+#: ../profiles/default/registry.xml
+msgid "Dates"
+msgstr ""
+
+#: ../behaviors.py:114
+#: ../browser/table.py:138
+#: ../profiles/default/registry.xml
+msgid "Due date"
+msgstr ""
+
+#: ../behaviors.py:119
+#: ../browser/table.py:105
+msgid "Enquirer"
+msgstr ""
+
+#: ../browser/templates/task_parent.pt:9
+msgid "Highest task"
+msgstr ""
+
+#: ../interfaces.py:66
+msgid "Parent attribute"
+msgstr ""
+
+#: ../interfaces.py:68
+msgid "Parent interface"
+msgstr ""
+
+#: ../interfaces.py:29
+msgid "Parents assigned groups"
+msgstr ""
+
+#: ../interfaces.py:38
+msgid "Parents enquirers"
+msgstr ""
+
+#: ../interfaces.py:75
+msgid "Parents field"
+msgstr ""
+
+#: ../interfaces.py:65
+msgid "Parents field name"
+msgstr ""
+
+#: ../interfaces.py:74
+msgid "Parents fields"
+msgstr ""
+
+#: ../profiles/default/types/task.xml
+msgid "Something to do by someone."
+msgstr ""
+
+#: ../testing.zcml:16
+msgid "Steps to ease tests of collective.task"
+msgstr ""
+
+#: ../behaviors.py:131
+#: ../behaviors.zcml:13
+#: ../profiles/default/types/task.xml
+msgid "Task"
+msgstr ""
+
+#: ../behaviors.zcml:25
+msgid "Task container"
+msgstr ""
+
+#: ../behaviors.py:86
+msgid "Task description"
+msgstr ""
+
+#: ../behaviors.zcml:19
+msgid "Task with fieldset"
+msgstr ""
+
+#: ../browser/viewlets.py:15
+msgid "Tasks list"
+msgstr ""
+
+#: ../behaviors.py:181
+msgid "The assigned user is not in the selected assigned group !"
+msgstr ""
+
+#: ../profiles/default/registry.xml
+msgid "The person to whom a task is assigned"
+msgstr ""
+
+#: ../browser/viewlets.py:16
+msgid "There is no task for this content."
+msgstr ""
+
+#: ../behaviors.py:88
+msgid "What is to do and/or what is done"
+msgstr ""
+
+#: ../browser/views.py:23
+msgid "You must select an assigned user before continuing !"
+msgstr ""
+
+#: ../testing.zcml:16
+msgid "collective.task tests"
+msgstr ""
