@@ -1,0 +1,1972 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <link rel="icon" href="./idom-logo-square-small.svg" type="image/svg+xml">
+    <title>IDOM</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module">var __defProp = Object.defineProperty;
+var __markAsModule = (target) => __defProp(target, "__esModule", {value: true});
+var __commonJS = (callback, module2) => () => {
+  if (!module2) {
+    module2 = {exports: {}};
+    callback(module2.exports, module2);
+  }
+  return module2.exports;
+};
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, {get: all[name], enumerable: true});
+};
+
+// ../idom/_client/_snowpack/pkg/idom-app-react.js
+var require_idom_app_react = __commonJS((exports) => {
+  __markAsModule(exports);
+  __export(exports, {
+    mount: () => mount
+  });
+  var n;
+  var l;
+  var u;
+  var t;
+  var o;
+  var r;
+  var f;
+  var e = {};
+  var c = [];
+  var s = /acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|itera/i;
+  function a(n2, l2) {
+    for (var u2 in l2)
+      n2[u2] = l2[u2];
+    return n2;
+  }
+  function h(n2) {
+    var l2 = n2.parentNode;
+    l2 && l2.removeChild(n2);
+  }
+  function v(l2, u2, i2) {
+    var t2, o2, r2, f2 = {};
+    for (r2 in u2)
+      r2 == "key" ? t2 = u2[r2] : r2 == "ref" ? o2 = u2[r2] : f2[r2] = u2[r2];
+    if (arguments.length > 2 && (f2.children = arguments.length > 3 ? n.call(arguments, 2) : i2), typeof l2 == "function" && l2.defaultProps != null)
+      for (r2 in l2.defaultProps)
+        f2[r2] === void 0 && (f2[r2] = l2.defaultProps[r2]);
+    return y(l2, f2, t2, o2, null);
+  }
+  function y(n2, i2, t2, o2, r2) {
+    var f2 = {type: n2, props: i2, key: t2, ref: o2, __k: null, __: null, __b: 0, __e: null, __d: void 0, __c: null, __h: null, constructor: void 0, __v: r2 == null ? ++u : r2};
+    return r2 == null && l.vnode != null && l.vnode(f2), f2;
+  }
+  function p() {
+    return {current: null};
+  }
+  function d(n2) {
+    return n2.children;
+  }
+  function _(n2, l2) {
+    this.props = n2, this.context = l2;
+  }
+  function k(n2, l2) {
+    if (l2 == null)
+      return n2.__ ? k(n2.__, n2.__.__k.indexOf(n2) + 1) : null;
+    for (var u2; l2 < n2.__k.length; l2++)
+      if ((u2 = n2.__k[l2]) != null && u2.__e != null)
+        return u2.__e;
+    return typeof n2.type == "function" ? k(n2) : null;
+  }
+  function b(n2) {
+    var l2, u2;
+    if ((n2 = n2.__) != null && n2.__c != null) {
+      for (n2.__e = n2.__c.base = null, l2 = 0; l2 < n2.__k.length; l2++)
+        if ((u2 = n2.__k[l2]) != null && u2.__e != null) {
+          n2.__e = n2.__c.base = u2.__e;
+          break;
+        }
+      return b(n2);
+    }
+  }
+  function m(n2) {
+    (!n2.__d && (n2.__d = true) && t.push(n2) && !g.__r++ || r !== l.debounceRendering) && ((r = l.debounceRendering) || o)(g);
+  }
+  function g() {
+    for (var n2; g.__r = t.length; )
+      n2 = t.sort(function(n3, l2) {
+        return n3.__v.__b - l2.__v.__b;
+      }), t = [], n2.some(function(n3) {
+        var l2, u2, i2, t2, o2, r2;
+        n3.__d && (o2 = (t2 = (l2 = n3).__v).__e, (r2 = l2.__P) && (u2 = [], (i2 = a({}, t2)).__v = t2.__v + 1, j(r2, t2, i2, l2.__n, r2.ownerSVGElement !== void 0, t2.__h != null ? [o2] : null, u2, o2 == null ? k(t2) : o2, t2.__h), z(u2, t2), t2.__e != o2 && b(t2)));
+      });
+  }
+  function w(n2, l2, u2, i2, t2, o2, r2, f2, s2, a2) {
+    var h2, v2, p2, _2, b2, m2, g2, w2 = i2 && i2.__k || c, A2 = w2.length;
+    for (u2.__k = [], h2 = 0; h2 < l2.length; h2++)
+      if ((_2 = u2.__k[h2] = (_2 = l2[h2]) == null || typeof _2 == "boolean" ? null : typeof _2 == "string" || typeof _2 == "number" || typeof _2 == "bigint" ? y(null, _2, null, null, _2) : Array.isArray(_2) ? y(d, {children: _2}, null, null, null) : _2.__b > 0 ? y(_2.type, _2.props, _2.key, null, _2.__v) : _2) != null) {
+        if (_2.__ = u2, _2.__b = u2.__b + 1, (p2 = w2[h2]) === null || p2 && _2.key == p2.key && _2.type === p2.type)
+          w2[h2] = void 0;
+        else
+          for (v2 = 0; v2 < A2; v2++) {
+            if ((p2 = w2[v2]) && _2.key == p2.key && _2.type === p2.type) {
+              w2[v2] = void 0;
+              break;
+            }
+            p2 = null;
+          }
+        j(n2, _2, p2 = p2 || e, t2, o2, r2, f2, s2, a2), b2 = _2.__e, (v2 = _2.ref) && p2.ref != v2 && (g2 || (g2 = []), p2.ref && g2.push(p2.ref, null, _2), g2.push(v2, _2.__c || b2, _2)), b2 != null ? (m2 == null && (m2 = b2), typeof _2.type == "function" && _2.__k === p2.__k ? _2.__d = s2 = x(_2, s2, n2) : s2 = P(n2, _2, p2, w2, b2, s2), typeof u2.type == "function" && (u2.__d = s2)) : s2 && p2.__e == s2 && s2.parentNode != n2 && (s2 = k(p2));
+      }
+    for (u2.__e = m2, h2 = A2; h2--; )
+      w2[h2] != null && (typeof u2.type == "function" && w2[h2].__e != null && w2[h2].__e == u2.__d && (u2.__d = k(i2, h2 + 1)), N(w2[h2], w2[h2]));
+    if (g2)
+      for (h2 = 0; h2 < g2.length; h2++)
+        M(g2[h2], g2[++h2], g2[++h2]);
+  }
+  function x(n2, l2, u2) {
+    for (var i2, t2 = n2.__k, o2 = 0; t2 && o2 < t2.length; o2++)
+      (i2 = t2[o2]) && (i2.__ = n2, l2 = typeof i2.type == "function" ? x(i2, l2, u2) : P(u2, i2, i2, t2, i2.__e, l2));
+    return l2;
+  }
+  function A(n2, l2) {
+    return l2 = l2 || [], n2 == null || typeof n2 == "boolean" || (Array.isArray(n2) ? n2.some(function(n3) {
+      A(n3, l2);
+    }) : l2.push(n2)), l2;
+  }
+  function P(n2, l2, u2, i2, t2, o2) {
+    var r2, f2, e2;
+    if (l2.__d !== void 0)
+      r2 = l2.__d, l2.__d = void 0;
+    else if (u2 == null || t2 != o2 || t2.parentNode == null)
+      n:
+        if (o2 == null || o2.parentNode !== n2)
+          n2.appendChild(t2), r2 = null;
+        else {
+          for (f2 = o2, e2 = 0; (f2 = f2.nextSibling) && e2 < i2.length; e2 += 2)
+            if (f2 == t2)
+              break n;
+          n2.insertBefore(t2, o2), r2 = o2;
+        }
+    return r2 !== void 0 ? r2 : t2.nextSibling;
+  }
+  function C(n2, l2, u2, i2, t2) {
+    var o2;
+    for (o2 in u2)
+      o2 === "children" || o2 === "key" || o2 in l2 || H(n2, o2, null, u2[o2], i2);
+    for (o2 in l2)
+      t2 && typeof l2[o2] != "function" || o2 === "children" || o2 === "key" || o2 === "value" || o2 === "checked" || u2[o2] === l2[o2] || H(n2, o2, l2[o2], u2[o2], i2);
+  }
+  function $(n2, l2, u2) {
+    l2[0] === "-" ? n2.setProperty(l2, u2) : n2[l2] = u2 == null ? "" : typeof u2 != "number" || s.test(l2) ? u2 : u2 + "px";
+  }
+  function H(n2, l2, u2, i2, t2) {
+    var o2;
+    n:
+      if (l2 === "style")
+        if (typeof u2 == "string")
+          n2.style.cssText = u2;
+        else {
+          if (typeof i2 == "string" && (n2.style.cssText = i2 = ""), i2)
+            for (l2 in i2)
+              u2 && l2 in u2 || $(n2.style, l2, "");
+          if (u2)
+            for (l2 in u2)
+              i2 && u2[l2] === i2[l2] || $(n2.style, l2, u2[l2]);
+        }
+      else if (l2[0] === "o" && l2[1] === "n")
+        o2 = l2 !== (l2 = l2.replace(/Capture$/, "")), l2 = l2.toLowerCase() in n2 ? l2.toLowerCase().slice(2) : l2.slice(2), n2.l || (n2.l = {}), n2.l[l2 + o2] = u2, u2 ? i2 || n2.addEventListener(l2, o2 ? T : I, o2) : n2.removeEventListener(l2, o2 ? T : I, o2);
+      else if (l2 !== "dangerouslySetInnerHTML") {
+        if (t2)
+          l2 = l2.replace(/xlink(H|:h)/, "h").replace(/sName$/, "s");
+        else if (l2 !== "href" && l2 !== "list" && l2 !== "form" && l2 !== "tabIndex" && l2 !== "download" && l2 in n2)
+          try {
+            n2[l2] = u2 == null ? "" : u2;
+            break n;
+          } catch (n3) {
+          }
+        typeof u2 == "function" || (u2 != null && (u2 !== false || l2[0] === "a" && l2[1] === "r") ? n2.setAttribute(l2, u2) : n2.removeAttribute(l2));
+      }
+  }
+  function I(n2) {
+    this.l[n2.type + false](l.event ? l.event(n2) : n2);
+  }
+  function T(n2) {
+    this.l[n2.type + true](l.event ? l.event(n2) : n2);
+  }
+  function j(n2, u2, i2, t2, o2, r2, f2, e2, c2) {
+    var s2, h2, v2, y2, p2, k2, b2, m2, g2, x2, A2, P2 = u2.type;
+    if (u2.constructor !== void 0)
+      return null;
+    i2.__h != null && (c2 = i2.__h, e2 = u2.__e = i2.__e, u2.__h = null, r2 = [e2]), (s2 = l.__b) && s2(u2);
+    try {
+      n:
+        if (typeof P2 == "function") {
+          if (m2 = u2.props, g2 = (s2 = P2.contextType) && t2[s2.__c], x2 = s2 ? g2 ? g2.props.value : s2.__ : t2, i2.__c ? b2 = (h2 = u2.__c = i2.__c).__ = h2.__E : ("prototype" in P2 && P2.prototype.render ? u2.__c = h2 = new P2(m2, x2) : (u2.__c = h2 = new _(m2, x2), h2.constructor = P2, h2.render = O), g2 && g2.sub(h2), h2.props = m2, h2.state || (h2.state = {}), h2.context = x2, h2.__n = t2, v2 = h2.__d = true, h2.__h = []), h2.__s == null && (h2.__s = h2.state), P2.getDerivedStateFromProps != null && (h2.__s == h2.state && (h2.__s = a({}, h2.__s)), a(h2.__s, P2.getDerivedStateFromProps(m2, h2.__s))), y2 = h2.props, p2 = h2.state, v2)
+            P2.getDerivedStateFromProps == null && h2.componentWillMount != null && h2.componentWillMount(), h2.componentDidMount != null && h2.__h.push(h2.componentDidMount);
+          else {
+            if (P2.getDerivedStateFromProps == null && m2 !== y2 && h2.componentWillReceiveProps != null && h2.componentWillReceiveProps(m2, x2), !h2.__e && h2.shouldComponentUpdate != null && h2.shouldComponentUpdate(m2, h2.__s, x2) === false || u2.__v === i2.__v) {
+              h2.props = m2, h2.state = h2.__s, u2.__v !== i2.__v && (h2.__d = false), h2.__v = u2, u2.__e = i2.__e, u2.__k = i2.__k, u2.__k.forEach(function(n3) {
+                n3 && (n3.__ = u2);
+              }), h2.__h.length && f2.push(h2);
+              break n;
+            }
+            h2.componentWillUpdate != null && h2.componentWillUpdate(m2, h2.__s, x2), h2.componentDidUpdate != null && h2.__h.push(function() {
+              h2.componentDidUpdate(y2, p2, k2);
+            });
+          }
+          h2.context = x2, h2.props = m2, h2.state = h2.__s, (s2 = l.__r) && s2(u2), h2.__d = false, h2.__v = u2, h2.__P = n2, s2 = h2.render(h2.props, h2.state, h2.context), h2.state = h2.__s, h2.getChildContext != null && (t2 = a(a({}, t2), h2.getChildContext())), v2 || h2.getSnapshotBeforeUpdate == null || (k2 = h2.getSnapshotBeforeUpdate(y2, p2)), A2 = s2 != null && s2.type === d && s2.key == null ? s2.props.children : s2, w(n2, Array.isArray(A2) ? A2 : [A2], u2, i2, t2, o2, r2, f2, e2, c2), h2.base = u2.__e, u2.__h = null, h2.__h.length && f2.push(h2), b2 && (h2.__E = h2.__ = null), h2.__e = false;
+        } else
+          r2 == null && u2.__v === i2.__v ? (u2.__k = i2.__k, u2.__e = i2.__e) : u2.__e = L(i2.__e, u2, i2, t2, o2, r2, f2, c2);
+      (s2 = l.diffed) && s2(u2);
+    } catch (n3) {
+      u2.__v = null, (c2 || r2 != null) && (u2.__e = e2, u2.__h = !!c2, r2[r2.indexOf(e2)] = null), l.__e(n3, u2, i2);
+    }
+  }
+  function z(n2, u2) {
+    l.__c && l.__c(u2, n2), n2.some(function(u3) {
+      try {
+        n2 = u3.__h, u3.__h = [], n2.some(function(n3) {
+          n3.call(u3);
+        });
+      } catch (n3) {
+        l.__e(n3, u3.__v);
+      }
+    });
+  }
+  function L(l2, u2, i2, t2, o2, r2, f2, c2) {
+    var s2, a2, v2, y2 = i2.props, p2 = u2.props, d2 = u2.type, _2 = 0;
+    if (d2 === "svg" && (o2 = true), r2 != null) {
+      for (; _2 < r2.length; _2++)
+        if ((s2 = r2[_2]) && "setAttribute" in s2 == !!d2 && (d2 ? s2.localName === d2 : s2.nodeType === 3)) {
+          l2 = s2, r2[_2] = null;
+          break;
+        }
+    }
+    if (l2 == null) {
+      if (d2 === null)
+        return document.createTextNode(p2);
+      l2 = o2 ? document.createElementNS("http://www.w3.org/2000/svg", d2) : document.createElement(d2, p2.is && p2), r2 = null, c2 = false;
+    }
+    if (d2 === null)
+      y2 === p2 || c2 && l2.data === p2 || (l2.data = p2);
+    else {
+      if (r2 = r2 && n.call(l2.childNodes), a2 = (y2 = i2.props || e).dangerouslySetInnerHTML, v2 = p2.dangerouslySetInnerHTML, !c2) {
+        if (r2 != null)
+          for (y2 = {}, _2 = 0; _2 < l2.attributes.length; _2++)
+            y2[l2.attributes[_2].name] = l2.attributes[_2].value;
+        (v2 || a2) && (v2 && (a2 && v2.__html == a2.__html || v2.__html === l2.innerHTML) || (l2.innerHTML = v2 && v2.__html || ""));
+      }
+      if (C(l2, p2, y2, o2, c2), v2)
+        u2.__k = [];
+      else if (_2 = u2.props.children, w(l2, Array.isArray(_2) ? _2 : [_2], u2, i2, t2, o2 && d2 !== "foreignObject", r2, f2, r2 ? r2[0] : i2.__k && k(i2, 0), c2), r2 != null)
+        for (_2 = r2.length; _2--; )
+          r2[_2] != null && h(r2[_2]);
+      c2 || ("value" in p2 && (_2 = p2.value) !== void 0 && (_2 !== l2.value || d2 === "progress" && !_2 || d2 === "option" && _2 !== y2.value) && H(l2, "value", _2, y2.value, false), "checked" in p2 && (_2 = p2.checked) !== void 0 && _2 !== l2.checked && H(l2, "checked", _2, y2.checked, false));
+    }
+    return l2;
+  }
+  function M(n2, u2, i2) {
+    try {
+      typeof n2 == "function" ? n2(u2) : n2.current = u2;
+    } catch (n3) {
+      l.__e(n3, i2);
+    }
+  }
+  function N(n2, u2, i2) {
+    var t2, o2;
+    if (l.unmount && l.unmount(n2), (t2 = n2.ref) && (t2.current && t2.current !== n2.__e || M(t2, null, u2)), (t2 = n2.__c) != null) {
+      if (t2.componentWillUnmount)
+        try {
+          t2.componentWillUnmount();
+        } catch (n3) {
+          l.__e(n3, u2);
+        }
+      t2.base = t2.__P = null;
+    }
+    if (t2 = n2.__k)
+      for (o2 = 0; o2 < t2.length; o2++)
+        t2[o2] && N(t2[o2], u2, typeof n2.type != "function");
+    i2 || n2.__e == null || h(n2.__e), n2.__e = n2.__d = void 0;
+  }
+  function O(n2, l2, u2) {
+    return this.constructor(n2, u2);
+  }
+  function S(u2, i2, t2) {
+    var o2, r2, f2;
+    l.__ && l.__(u2, i2), r2 = (o2 = typeof t2 == "function") ? null : t2 && t2.__k || i2.__k, f2 = [], j(i2, u2 = (!o2 && t2 || i2).__k = v(d, null, [u2]), r2 || e, e, i2.ownerSVGElement !== void 0, !o2 && t2 ? [t2] : r2 ? null : i2.firstChild ? n.call(i2.childNodes) : null, f2, !o2 && t2 ? t2 : r2 ? r2.__e : i2.firstChild, o2), z(f2, u2);
+  }
+  function q(n2, l2) {
+    S(n2, l2, q);
+  }
+  function B(l2, u2, i2) {
+    var t2, o2, r2, f2 = a({}, l2.props);
+    for (r2 in u2)
+      r2 == "key" ? t2 = u2[r2] : r2 == "ref" ? o2 = u2[r2] : f2[r2] = u2[r2];
+    return arguments.length > 2 && (f2.children = arguments.length > 3 ? n.call(arguments, 2) : i2), y(l2.type, f2, t2 || l2.key, o2 || l2.ref, null);
+  }
+  function D(n2, l2) {
+    var u2 = {__c: l2 = "__cC" + f++, __: n2, Consumer: function(n3, l3) {
+      return n3.children(l3);
+    }, Provider: function(n3) {
+      var u3, i2;
+      return this.getChildContext || (u3 = [], (i2 = {})[l2] = this, this.getChildContext = function() {
+        return i2;
+      }, this.shouldComponentUpdate = function(n4) {
+        this.props.value !== n4.value && u3.some(m);
+      }, this.sub = function(n4) {
+        u3.push(n4);
+        var l3 = n4.componentWillUnmount;
+        n4.componentWillUnmount = function() {
+          u3.splice(u3.indexOf(n4), 1), l3 && l3.call(n4);
+        };
+      }), n3.children;
+    }};
+    return u2.Provider.__ = u2.Consumer.contextType = u2;
+  }
+  n = c.slice, l = {__e: function(n2, l2, u2, i2) {
+    for (var t2, o2, r2; l2 = l2.__; )
+      if ((t2 = l2.__c) && !t2.__)
+        try {
+          if ((o2 = t2.constructor) && o2.getDerivedStateFromError != null && (t2.setState(o2.getDerivedStateFromError(n2)), r2 = t2.__d), t2.componentDidCatch != null && (t2.componentDidCatch(n2, i2 || {}), r2 = t2.__d), r2)
+            return t2.__E = t2;
+        } catch (l3) {
+          n2 = l3;
+        }
+    throw n2;
+  }}, u = 0, _.prototype.setState = function(n2, l2) {
+    var u2;
+    u2 = this.__s != null && this.__s !== this.state ? this.__s : this.__s = a({}, this.state), typeof n2 == "function" && (n2 = n2(a({}, u2), this.props)), n2 && a(u2, n2), n2 != null && this.__v && (l2 && this.__h.push(l2), m(this));
+  }, _.prototype.forceUpdate = function(n2) {
+    this.__v && (this.__e = true, n2 && this.__h.push(n2), m(this));
+  }, _.prototype.render = d, t = [], o = typeof Promise == "function" ? Promise.prototype.then.bind(Promise.resolve()) : setTimeout, g.__r = 0, f = 0;
+  var t$1;
+  var u$1;
+  var r$1;
+  var o$1 = 0;
+  var i = [];
+  var c$1 = l.__b;
+  var f$1 = l.__r;
+  var e$1 = l.diffed;
+  var a$1 = l.__c;
+  var v$1 = l.unmount;
+  function l$1(t2, r2) {
+    l.__h && l.__h(u$1, t2, o$1 || r2), o$1 = 0;
+    var i2 = u$1.__H || (u$1.__H = {__: [], __h: []});
+    return t2 >= i2.__.length && i2.__.push({}), i2.__[t2];
+  }
+  function m$1(n2) {
+    return o$1 = 1, p$1(w$1, n2);
+  }
+  function p$1(n2, r2, o2) {
+    var i2 = l$1(t$1++, 2);
+    return i2.t = n2, i2.__c || (i2.__ = [o2 ? o2(r2) : w$1(void 0, r2), function(n3) {
+      var t2 = i2.t(i2.__[0], n3);
+      i2.__[0] !== t2 && (i2.__ = [t2, i2.__[1]], i2.__c.setState({}));
+    }], i2.__c = u$1), i2.__;
+  }
+  function y$1(r2, o2) {
+    var i2 = l$1(t$1++, 3);
+    !l.__s && k$1(i2.__H, o2) && (i2.__ = r2, i2.__H = o2, u$1.__H.__h.push(i2));
+  }
+  function d$1(r2, o2) {
+    var i2 = l$1(t$1++, 4);
+    !l.__s && k$1(i2.__H, o2) && (i2.__ = r2, i2.__H = o2, u$1.__h.push(i2));
+  }
+  function h$1(n2) {
+    return o$1 = 5, _$1(function() {
+      return {current: n2};
+    }, []);
+  }
+  function s$1(n2, t2, u2) {
+    o$1 = 6, d$1(function() {
+      return typeof n2 == "function" ? (n2(t2()), function() {
+        return n2(null);
+      }) : n2 ? (n2.current = t2(), function() {
+        return n2.current = null;
+      }) : void 0;
+    }, u2 == null ? u2 : u2.concat(n2));
+  }
+  function _$1(n2, u2) {
+    var r2 = l$1(t$1++, 7);
+    return k$1(r2.__H, u2) && (r2.__ = n2(), r2.__H = u2, r2.__h = n2), r2.__;
+  }
+  function A$1(n2, t2) {
+    return o$1 = 8, _$1(function() {
+      return n2;
+    }, t2);
+  }
+  function F(n2) {
+    var r2 = u$1.context[n2.__c], o2 = l$1(t$1++, 9);
+    return o2.c = n2, r2 ? (o2.__ == null && (o2.__ = true, r2.sub(u$1)), r2.props.value) : n2.__;
+  }
+  function T$1(t2, u2) {
+    l.useDebugValue && l.useDebugValue(u2 ? u2(t2) : t2);
+  }
+  function x$1() {
+    for (var t2; t2 = i.shift(); )
+      if (t2.__P)
+        try {
+          t2.__H.__h.forEach(g$1), t2.__H.__h.forEach(j$1), t2.__H.__h = [];
+        } catch (u2) {
+          t2.__H.__h = [], l.__e(u2, t2.__v);
+        }
+  }
+  l.__b = function(n2) {
+    u$1 = null, c$1 && c$1(n2);
+  }, l.__r = function(n2) {
+    f$1 && f$1(n2), t$1 = 0;
+    var r2 = (u$1 = n2.__c).__H;
+    r2 && (r2.__h.forEach(g$1), r2.__h.forEach(j$1), r2.__h = []);
+  }, l.diffed = function(t2) {
+    e$1 && e$1(t2);
+    var o2 = t2.__c;
+    o2 && o2.__H && o2.__H.__h.length && (i.push(o2) !== 1 && r$1 === l.requestAnimationFrame || ((r$1 = l.requestAnimationFrame) || function(n2) {
+      var t3, u2 = function() {
+        clearTimeout(r2), b$1 && cancelAnimationFrame(t3), setTimeout(n2);
+      }, r2 = setTimeout(u2, 100);
+      b$1 && (t3 = requestAnimationFrame(u2));
+    })(x$1)), u$1 = null;
+  }, l.__c = function(t2, u2) {
+    u2.some(function(t3) {
+      try {
+        t3.__h.forEach(g$1), t3.__h = t3.__h.filter(function(n2) {
+          return !n2.__ || j$1(n2);
+        });
+      } catch (r2) {
+        u2.some(function(n2) {
+          n2.__h && (n2.__h = []);
+        }), u2 = [], l.__e(r2, t3.__v);
+      }
+    }), a$1 && a$1(t2, u2);
+  }, l.unmount = function(t2) {
+    v$1 && v$1(t2);
+    var u2, r2 = t2.__c;
+    r2 && r2.__H && (r2.__H.__.forEach(function(n2) {
+      try {
+        g$1(n2);
+      } catch (n3) {
+        u2 = n3;
+      }
+    }), u2 && l.__e(u2, r2.__v));
+  };
+  var b$1 = typeof requestAnimationFrame == "function";
+  function g$1(n2) {
+    var t2 = u$1, r2 = n2.__c;
+    typeof r2 == "function" && (n2.__c = void 0, r2()), u$1 = t2;
+  }
+  function j$1(n2) {
+    var t2 = u$1;
+    n2.__c = n2.__(), u$1 = t2;
+  }
+  function k$1(n2, t2) {
+    return !n2 || n2.length !== t2.length || t2.some(function(t3, u2) {
+      return t3 !== n2[u2];
+    });
+  }
+  function w$1(n2, t2) {
+    return typeof t2 == "function" ? t2(n2) : t2;
+  }
+  function C$1(n2, t2) {
+    for (var e2 in t2)
+      n2[e2] = t2[e2];
+    return n2;
+  }
+  function S$1(n2, t2) {
+    for (var e2 in n2)
+      if (e2 !== "__source" && !(e2 in t2))
+        return true;
+    for (var r2 in t2)
+      if (r2 !== "__source" && n2[r2] !== t2[r2])
+        return true;
+    return false;
+  }
+  function E(n2) {
+    this.props = n2;
+  }
+  function g$2(n2, t2) {
+    function e2(n3) {
+      var e3 = this.props.ref, r3 = e3 == n3.ref;
+      return !r3 && e3 && (e3.call ? e3(null) : e3.current = null), t2 ? !t2(this.props, n3) || !r3 : S$1(this.props, n3);
+    }
+    function r2(t3) {
+      return this.shouldComponentUpdate = e2, v(n2, t3);
+    }
+    return r2.displayName = "Memo(" + (n2.displayName || n2.name) + ")", r2.prototype.isReactComponent = true, r2.__f = true, r2;
+  }
+  (E.prototype = new _()).isPureReactComponent = true, E.prototype.shouldComponentUpdate = function(n2, t2) {
+    return S$1(this.props, n2) || S$1(this.state, t2);
+  };
+  var w$2 = l.__b;
+  l.__b = function(n2) {
+    n2.type && n2.type.__f && n2.ref && (n2.props.ref = n2.ref, n2.ref = null), w$2 && w$2(n2);
+  };
+  var R = typeof Symbol != "undefined" && Symbol.for && Symbol.for("react.forward_ref") || 3911;
+  function x$2(n2) {
+    function t2(t3, e2) {
+      var r2 = C$1({}, t3);
+      return delete r2.ref, n2(r2, !(e2 = t3.ref || e2) || typeof e2 == "object" && Object.keys(e2).length === 0 ? null : e2);
+    }
+    return t2.$$typeof = R, t2.render = t2, t2.prototype.isReactComponent = t2.__f = true, t2.displayName = "ForwardRef(" + (n2.displayName || n2.name) + ")", t2;
+  }
+  var N$1 = function(n2, t2) {
+    return n2 == null ? null : A(A(n2).map(t2));
+  };
+  var k$2 = {map: N$1, forEach: N$1, count: function(n2) {
+    return n2 ? A(n2).length : 0;
+  }, only: function(n2) {
+    var t2 = A(n2);
+    if (t2.length !== 1)
+      throw "Children.only";
+    return t2[0];
+  }, toArray: A};
+  var O$1 = l.__e;
+  l.__e = function(n2, t2, e2, r2) {
+    if (n2.then) {
+      for (var u2, o2 = t2; o2 = o2.__; )
+        if ((u2 = o2.__c) && u2.__c)
+          return t2.__e == null && (t2.__e = e2.__e, t2.__k = e2.__k), u2.__c(n2, t2);
+    }
+    O$1(n2, t2, e2, r2);
+  };
+  var A$2 = l.unmount;
+  function L$1() {
+    this.__u = 0, this.t = null, this.__b = null;
+  }
+  function U(n2) {
+    var t2 = n2.__.__c;
+    return t2 && t2.__e && t2.__e(n2);
+  }
+  function F$1(n2) {
+    var t2, e2, r2;
+    function u2(u3) {
+      if (t2 || (t2 = n2()).then(function(n3) {
+        e2 = n3.default || n3;
+      }, function(n3) {
+        r2 = n3;
+      }), r2)
+        throw r2;
+      if (!e2)
+        throw t2;
+      return v(e2, u3);
+    }
+    return u2.displayName = "Lazy", u2.__f = true, u2;
+  }
+  function M$1() {
+    this.u = null, this.o = null;
+  }
+  l.unmount = function(n2) {
+    var t2 = n2.__c;
+    t2 && t2.__R && t2.__R(), t2 && n2.__h === true && (n2.type = null), A$2 && A$2(n2);
+  }, (L$1.prototype = new _()).__c = function(n2, t2) {
+    var e2 = t2.__c, r2 = this;
+    r2.t == null && (r2.t = []), r2.t.push(e2);
+    var u2 = U(r2.__v), o2 = false, i2 = function() {
+      o2 || (o2 = true, e2.__R = null, u2 ? u2(l2) : l2());
+    };
+    e2.__R = i2;
+    var l2 = function() {
+      if (!--r2.__u) {
+        if (r2.state.__e) {
+          var n3 = r2.state.__e;
+          r2.__v.__k[0] = function n4(t4, e3, r3) {
+            return t4 && (t4.__v = null, t4.__k = t4.__k && t4.__k.map(function(t5) {
+              return n4(t5, e3, r3);
+            }), t4.__c && t4.__c.__P === e3 && (t4.__e && r3.insertBefore(t4.__e, t4.__d), t4.__c.__e = true, t4.__c.__P = r3)), t4;
+          }(n3, n3.__c.__P, n3.__c.__O);
+        }
+        var t3;
+        for (r2.setState({__e: r2.__b = null}); t3 = r2.t.pop(); )
+          t3.forceUpdate();
+      }
+    }, c2 = t2.__h === true;
+    r2.__u++ || c2 || r2.setState({__e: r2.__b = r2.__v.__k[0]}), n2.then(i2, i2);
+  }, L$1.prototype.componentWillUnmount = function() {
+    this.t = [];
+  }, L$1.prototype.render = function(n2, t2) {
+    if (this.__b) {
+      if (this.__v.__k) {
+        var e2 = document.createElement("div"), r2 = this.__v.__k[0].__c;
+        this.__v.__k[0] = function n3(t3, e3, r3) {
+          return t3 && (t3.__c && t3.__c.__H && (t3.__c.__H.__.forEach(function(n4) {
+            typeof n4.__c == "function" && n4.__c();
+          }), t3.__c.__H = null), (t3 = C$1({}, t3)).__c != null && (t3.__c.__P === r3 && (t3.__c.__P = e3), t3.__c = null), t3.__k = t3.__k && t3.__k.map(function(t4) {
+            return n3(t4, e3, r3);
+          })), t3;
+        }(this.__b, e2, r2.__O = r2.__P);
+      }
+      this.__b = null;
+    }
+    var u2 = t2.__e && v(d, null, n2.fallback);
+    return u2 && (u2.__h = null), [v(d, null, t2.__e ? null : n2.children), u2];
+  };
+  var T$2 = function(n2, t2, e2) {
+    if (++e2[1] === e2[0] && n2.o.delete(t2), n2.props.revealOrder && (n2.props.revealOrder[0] !== "t" || !n2.o.size))
+      for (e2 = n2.u; e2; ) {
+        for (; e2.length > 3; )
+          e2.pop()();
+        if (e2[1] < e2[0])
+          break;
+        n2.u = e2 = e2[2];
+      }
+  };
+  function j$2(n2) {
+    return this.getChildContext = function() {
+      return n2.context;
+    }, n2.children;
+  }
+  function D$1(n2) {
+    var t2 = this, e2 = n2.i;
+    t2.componentWillUnmount = function() {
+      S(null, t2.l), t2.l = null, t2.i = null;
+    }, t2.i && t2.i !== e2 && t2.componentWillUnmount(), n2.__v ? (t2.l || (t2.i = e2, t2.l = {nodeType: 1, parentNode: e2, childNodes: [], appendChild: function(n3) {
+      this.childNodes.push(n3), t2.i.appendChild(n3);
+    }, insertBefore: function(n3, e3) {
+      this.childNodes.push(n3), t2.i.appendChild(n3);
+    }, removeChild: function(n3) {
+      this.childNodes.splice(this.childNodes.indexOf(n3) >>> 1, 1), t2.i.removeChild(n3);
+    }}), S(v(j$2, {context: t2.context}, n2.__v), t2.l)) : t2.l && t2.componentWillUnmount();
+  }
+  function I$1(n2, t2) {
+    return v(D$1, {__v: n2, i: t2});
+  }
+  (M$1.prototype = new _()).__e = function(n2) {
+    var t2 = this, e2 = U(t2.__v), r2 = t2.o.get(n2);
+    return r2[0]++, function(u2) {
+      var o2 = function() {
+        t2.props.revealOrder ? (r2.push(u2), T$2(t2, n2, r2)) : u2();
+      };
+      e2 ? e2(o2) : o2();
+    };
+  }, M$1.prototype.render = function(n2) {
+    this.u = null, this.o = new Map();
+    var t2 = A(n2.children);
+    n2.revealOrder && n2.revealOrder[0] === "b" && t2.reverse();
+    for (var e2 = t2.length; e2--; )
+      this.o.set(t2[e2], this.u = [1, 0, this.u]);
+    return n2.children;
+  }, M$1.prototype.componentDidUpdate = M$1.prototype.componentDidMount = function() {
+    var n2 = this;
+    this.o.forEach(function(t2, e2) {
+      T$2(n2, e2, t2);
+    });
+  };
+  var W = typeof Symbol != "undefined" && Symbol.for && Symbol.for("react.element") || 60103;
+  var P$1 = /^(?:accent|alignment|arabic|baseline|cap|clip(?!PathU)|color|dominant|fill|flood|font|glyph(?!R)|horiz|marker(?!H|W|U)|overline|paint|stop|strikethrough|stroke|text(?!L)|underline|unicode|units|v|vector|vert|word|writing|x(?!C))[A-Z]/;
+  var V = typeof document != "undefined";
+  var z$1 = function(n2) {
+    return (typeof Symbol != "undefined" && typeof Symbol() == "symbol" ? /fil|che|rad/i : /fil|che|ra/i).test(n2);
+  };
+  function B$1(n2, t2, e2) {
+    return t2.__k == null && (t2.textContent = ""), S(n2, t2), typeof e2 == "function" && e2(), n2 ? n2.__c : null;
+  }
+  function $$1(n2, t2, e2) {
+    return q(n2, t2), typeof e2 == "function" && e2(), n2 ? n2.__c : null;
+  }
+  _.prototype.isReactComponent = {}, ["componentWillMount", "componentWillReceiveProps", "componentWillUpdate"].forEach(function(n2) {
+    Object.defineProperty(_.prototype, n2, {configurable: true, get: function() {
+      return this["UNSAFE_" + n2];
+    }, set: function(t2) {
+      Object.defineProperty(this, n2, {configurable: true, writable: true, value: t2});
+    }});
+  });
+  var H$1 = l.event;
+  function Z() {
+  }
+  function Y() {
+    return this.cancelBubble;
+  }
+  function q$1() {
+    return this.defaultPrevented;
+  }
+  l.event = function(n2) {
+    return H$1 && (n2 = H$1(n2)), n2.persist = Z, n2.isPropagationStopped = Y, n2.isDefaultPrevented = q$1, n2.nativeEvent = n2;
+  };
+  var G;
+  var J = {configurable: true, get: function() {
+    return this.class;
+  }};
+  var K = l.vnode;
+  l.vnode = function(n2) {
+    var t2 = n2.type, e2 = n2.props, r2 = e2;
+    if (typeof t2 == "string") {
+      var u2 = t2.indexOf("-") === -1;
+      for (var o2 in r2 = {}, e2) {
+        var i2 = e2[o2];
+        V && o2 === "children" && t2 === "noscript" || o2 === "value" && "defaultValue" in e2 && i2 == null || (o2 === "defaultValue" && "value" in e2 && e2.value == null ? o2 = "value" : o2 === "download" && i2 === true ? i2 = "" : /ondoubleclick/i.test(o2) ? o2 = "ondblclick" : /^onchange(textarea|input)/i.test(o2 + t2) && !z$1(e2.type) ? o2 = "oninput" : /^onfocus$/i.test(o2) ? o2 = "onfocusin" : /^onblur$/i.test(o2) ? o2 = "onfocusout" : /^on(Ani|Tra|Tou|BeforeInp|Compo)/.test(o2) ? o2 = o2.toLowerCase() : u2 && P$1.test(o2) ? o2 = o2.replace(/[A-Z0-9]/, "-$&").toLowerCase() : i2 === null && (i2 = void 0), r2[o2] = i2);
+      }
+      t2 == "select" && r2.multiple && Array.isArray(r2.value) && (r2.value = A(e2.children).forEach(function(n3) {
+        n3.props.selected = r2.value.indexOf(n3.props.value) != -1;
+      })), t2 == "select" && r2.defaultValue != null && (r2.value = A(e2.children).forEach(function(n3) {
+        n3.props.selected = r2.multiple ? r2.defaultValue.indexOf(n3.props.value) != -1 : r2.defaultValue == n3.props.value;
+      })), n2.props = r2, e2.class != e2.className && (J.enumerable = "className" in e2, e2.className != null && (r2.class = e2.className), Object.defineProperty(r2, "className", J));
+    }
+    n2.$$typeof = W, K && K(n2);
+  };
+  var Q = l.__r;
+  l.__r = function(n2) {
+    Q && Q(n2), G = n2.__c;
+  };
+  var X = {ReactCurrentDispatcher: {current: {readContext: function(n2) {
+    return G.__n[n2.__c].props.value;
+  }}}};
+  function tn(n2) {
+    return v.bind(null, n2);
+  }
+  function en(n2) {
+    return !!n2 && n2.$$typeof === W;
+  }
+  function rn(n2) {
+    return en(n2) ? B.apply(null, arguments) : n2;
+  }
+  function un(n2) {
+    return !!n2.__k && (S(null, n2), true);
+  }
+  function on(n2) {
+    return n2 && (n2.base || n2.nodeType === 1 && n2) || null;
+  }
+  var ln = function(n2, t2) {
+    return n2(t2);
+  };
+  var cn = function(n2, t2) {
+    return n2(t2);
+  };
+  var ReactDOM = {useState: m$1, useReducer: p$1, useEffect: y$1, useLayoutEffect: d$1, useRef: h$1, useImperativeHandle: s$1, useMemo: _$1, useCallback: A$1, useContext: F, useDebugValue: T$1, version: "17.0.2", Children: k$2, render: B$1, hydrate: $$1, unmountComponentAtNode: un, createPortal: I$1, createElement: v, createContext: D, createFactory: tn, cloneElement: rn, createRef: p, Fragment: d, isValidElement: en, findDOMNode: on, Component: _, PureComponent: E, memo: g$2, forwardRef: x$2, flushSync: cn, unstable_batchedUpdates: ln, StrictMode: d, Suspense: L$1, SuspenseList: M$1, lazy: F$1, __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED: X};
+  var n$1 = function(t2, s2, r2, e2) {
+    var u2;
+    s2[0] = 0;
+    for (var h2 = 1; h2 < s2.length; h2++) {
+      var p2 = s2[h2++], a2 = s2[h2] ? (s2[0] |= p2 ? 1 : 2, r2[s2[h2++]]) : s2[++h2];
+      p2 === 3 ? e2[0] = a2 : p2 === 4 ? e2[1] = Object.assign(e2[1] || {}, a2) : p2 === 5 ? (e2[1] = e2[1] || {})[s2[++h2]] = a2 : p2 === 6 ? e2[1][s2[++h2]] += a2 + "" : p2 ? (u2 = t2.apply(a2, n$1(t2, a2, r2, ["", null])), e2.push(u2), a2[0] ? s2[0] |= 2 : (s2[h2 - 2] = 0, s2[h2] = u2)) : e2.push(a2);
+    }
+    return e2;
+  };
+  var t$2 = new Map();
+  function htm(s2) {
+    var r2 = t$2.get(this);
+    return r2 || (r2 = new Map(), t$2.set(this, r2)), (r2 = n$1(this, r2.get(s2) || (r2.set(s2, r2 = function(n2) {
+      for (var t2, s3, r3 = 1, e2 = "", u2 = "", h2 = [0], p2 = function(n3) {
+        r3 === 1 && (n3 || (e2 = e2.replace(/^\s*\n\s*|\s*\n\s*$/g, ""))) ? h2.push(0, n3, e2) : r3 === 3 && (n3 || e2) ? (h2.push(3, n3, e2), r3 = 2) : r3 === 2 && e2 === "..." && n3 ? h2.push(4, n3, 0) : r3 === 2 && e2 && !n3 ? h2.push(5, 0, true, e2) : r3 >= 5 && ((e2 || !n3 && r3 === 5) && (h2.push(r3, 0, e2, s3), r3 = 6), n3 && (h2.push(r3, n3, 0, s3), r3 = 6)), e2 = "";
+      }, a2 = 0; a2 < n2.length; a2++) {
+        a2 && (r3 === 1 && p2(), p2(a2));
+        for (var l2 = 0; l2 < n2[a2].length; l2++)
+          t2 = n2[a2][l2], r3 === 1 ? t2 === "<" ? (p2(), h2 = [h2], r3 = 3) : e2 += t2 : r3 === 4 ? e2 === "--" && t2 === ">" ? (r3 = 1, e2 = "") : e2 = t2 + e2[0] : u2 ? t2 === u2 ? u2 = "" : e2 += t2 : t2 === '"' || t2 === "'" ? u2 = t2 : t2 === ">" ? (p2(), r3 = 1) : r3 && (t2 === "=" ? (r3 = 5, s3 = e2, e2 = "") : t2 === "/" && (r3 < 5 || n2[a2][l2 + 1] === ">") ? (p2(), r3 === 3 && (h2 = h2[0]), r3 = h2, (h2 = h2[0]).push(2, 0, r3), r3 = 0) : t2 === " " || t2 === "	" || t2 === "\n" || t2 === "\r" ? (p2(), r3 = 2) : e2 += t2), r3 === 3 && e2 === "!--" && (r3 = 4, h2 = h2[0]);
+      }
+      return p2(), h2;
+    }(s2)), r2), arguments, [])).length > 1 ? r2 : r2[0];
+  }
+  /*!
+   * https://github.com/Starcounter-Jack/JSON-Patch
+   * (c) 2017 Joachim Wester
+   * MIT license
+   */
+  var __extends = function() {
+    var extendStatics = function(d2, b2) {
+      extendStatics = Object.setPrototypeOf || {__proto__: []} instanceof Array && function(d22, b22) {
+        d22.__proto__ = b22;
+      } || function(d22, b22) {
+        for (var p2 in b22)
+          if (b22.hasOwnProperty(p2))
+            d22[p2] = b22[p2];
+      };
+      return extendStatics(d2, b2);
+    };
+    return function(d2, b2) {
+      extendStatics(d2, b2);
+      function __() {
+        this.constructor = d2;
+      }
+      d2.prototype = b2 === null ? Object.create(b2) : (__.prototype = b2.prototype, new __());
+    };
+  }();
+  var _hasOwnProperty = Object.prototype.hasOwnProperty;
+  function hasOwnProperty(obj, key) {
+    return _hasOwnProperty.call(obj, key);
+  }
+  function _objectKeys(obj) {
+    if (Array.isArray(obj)) {
+      var keys = new Array(obj.length);
+      for (var k2 = 0; k2 < keys.length; k2++) {
+        keys[k2] = "" + k2;
+      }
+      return keys;
+    }
+    if (Object.keys) {
+      return Object.keys(obj);
+    }
+    var keys = [];
+    for (var i2 in obj) {
+      if (hasOwnProperty(obj, i2)) {
+        keys.push(i2);
+      }
+    }
+    return keys;
+  }
+  function _deepClone(obj) {
+    switch (typeof obj) {
+      case "object":
+        return JSON.parse(JSON.stringify(obj));
+      case "undefined":
+        return null;
+      default:
+        return obj;
+    }
+  }
+  function isInteger(str) {
+    var i2 = 0;
+    var len = str.length;
+    var charCode;
+    while (i2 < len) {
+      charCode = str.charCodeAt(i2);
+      if (charCode >= 48 && charCode <= 57) {
+        i2++;
+        continue;
+      }
+      return false;
+    }
+    return true;
+  }
+  function escapePathComponent(path) {
+    if (path.indexOf("/") === -1 && path.indexOf("~") === -1)
+      return path;
+    return path.replace(/~/g, "~0").replace(/\//g, "~1");
+  }
+  function unescapePathComponent(path) {
+    return path.replace(/~1/g, "/").replace(/~0/g, "~");
+  }
+  function hasUndefined(obj) {
+    if (obj === void 0) {
+      return true;
+    }
+    if (obj) {
+      if (Array.isArray(obj)) {
+        for (var i2 = 0, len = obj.length; i2 < len; i2++) {
+          if (hasUndefined(obj[i2])) {
+            return true;
+          }
+        }
+      } else if (typeof obj === "object") {
+        var objKeys = _objectKeys(obj);
+        var objKeysLength = objKeys.length;
+        for (var i2 = 0; i2 < objKeysLength; i2++) {
+          if (hasUndefined(obj[objKeys[i2]])) {
+            return true;
+          }
+        }
+      }
+    }
+    return false;
+  }
+  function patchErrorMessageFormatter(message, args) {
+    var messageParts = [message];
+    for (var key in args) {
+      var value = typeof args[key] === "object" ? JSON.stringify(args[key], null, 2) : args[key];
+      if (typeof value !== "undefined") {
+        messageParts.push(key + ": " + value);
+      }
+    }
+    return messageParts.join("\n");
+  }
+  var PatchError = function(_super) {
+    __extends(PatchError2, _super);
+    function PatchError2(message, name, index, operation, tree) {
+      var _newTarget = this.constructor;
+      var _this = _super.call(this, patchErrorMessageFormatter(message, {name, index, operation, tree})) || this;
+      _this.name = name;
+      _this.index = index;
+      _this.operation = operation;
+      _this.tree = tree;
+      Object.setPrototypeOf(_this, _newTarget.prototype);
+      _this.message = patchErrorMessageFormatter(message, {name, index, operation, tree});
+      return _this;
+    }
+    return PatchError2;
+  }(Error);
+  var JsonPatchError = PatchError;
+  var deepClone = _deepClone;
+  var objOps = {
+    add: function(obj, key, document2) {
+      obj[key] = this.value;
+      return {newDocument: document2};
+    },
+    remove: function(obj, key, document2) {
+      var removed = obj[key];
+      delete obj[key];
+      return {newDocument: document2, removed};
+    },
+    replace: function(obj, key, document2) {
+      var removed = obj[key];
+      obj[key] = this.value;
+      return {newDocument: document2, removed};
+    },
+    move: function(obj, key, document2) {
+      var removed = getValueByPointer(document2, this.path);
+      if (removed) {
+        removed = _deepClone(removed);
+      }
+      var originalValue = applyOperation(document2, {op: "remove", path: this.from}).removed;
+      applyOperation(document2, {op: "add", path: this.path, value: originalValue});
+      return {newDocument: document2, removed};
+    },
+    copy: function(obj, key, document2) {
+      var valueToCopy = getValueByPointer(document2, this.from);
+      applyOperation(document2, {op: "add", path: this.path, value: _deepClone(valueToCopy)});
+      return {newDocument: document2};
+    },
+    test: function(obj, key, document2) {
+      return {newDocument: document2, test: _areEquals(obj[key], this.value)};
+    },
+    _get: function(obj, key, document2) {
+      this.value = obj[key];
+      return {newDocument: document2};
+    }
+  };
+  var arrOps = {
+    add: function(arr, i2, document2) {
+      if (isInteger(i2)) {
+        arr.splice(i2, 0, this.value);
+      } else {
+        arr[i2] = this.value;
+      }
+      return {newDocument: document2, index: i2};
+    },
+    remove: function(arr, i2, document2) {
+      var removedList = arr.splice(i2, 1);
+      return {newDocument: document2, removed: removedList[0]};
+    },
+    replace: function(arr, i2, document2) {
+      var removed = arr[i2];
+      arr[i2] = this.value;
+      return {newDocument: document2, removed};
+    },
+    move: objOps.move,
+    copy: objOps.copy,
+    test: objOps.test,
+    _get: objOps._get
+  };
+  function getValueByPointer(document2, pointer) {
+    if (pointer == "") {
+      return document2;
+    }
+    var getOriginalDestination = {op: "_get", path: pointer};
+    applyOperation(document2, getOriginalDestination);
+    return getOriginalDestination.value;
+  }
+  function applyOperation(document2, operation, validateOperation, mutateDocument, banPrototypeModifications, index) {
+    if (validateOperation === void 0) {
+      validateOperation = false;
+    }
+    if (mutateDocument === void 0) {
+      mutateDocument = true;
+    }
+    if (banPrototypeModifications === void 0) {
+      banPrototypeModifications = true;
+    }
+    if (index === void 0) {
+      index = 0;
+    }
+    if (validateOperation) {
+      if (typeof validateOperation == "function") {
+        validateOperation(operation, 0, document2, operation.path);
+      } else {
+        validator(operation, 0);
+      }
+    }
+    if (operation.path === "") {
+      var returnValue = {newDocument: document2};
+      if (operation.op === "add") {
+        returnValue.newDocument = operation.value;
+        return returnValue;
+      } else if (operation.op === "replace") {
+        returnValue.newDocument = operation.value;
+        returnValue.removed = document2;
+        return returnValue;
+      } else if (operation.op === "move" || operation.op === "copy") {
+        returnValue.newDocument = getValueByPointer(document2, operation.from);
+        if (operation.op === "move") {
+          returnValue.removed = document2;
+        }
+        return returnValue;
+      } else if (operation.op === "test") {
+        returnValue.test = _areEquals(document2, operation.value);
+        if (returnValue.test === false) {
+          throw new JsonPatchError("Test operation failed", "TEST_OPERATION_FAILED", index, operation, document2);
+        }
+        returnValue.newDocument = document2;
+        return returnValue;
+      } else if (operation.op === "remove") {
+        returnValue.removed = document2;
+        returnValue.newDocument = null;
+        return returnValue;
+      } else if (operation.op === "_get") {
+        operation.value = document2;
+        return returnValue;
+      } else {
+        if (validateOperation) {
+          throw new JsonPatchError("Operation `op` property is not one of operations defined in RFC-6902", "OPERATION_OP_INVALID", index, operation, document2);
+        } else {
+          return returnValue;
+        }
+      }
+    } else {
+      if (!mutateDocument) {
+        document2 = _deepClone(document2);
+      }
+      var path = operation.path || "";
+      var keys = path.split("/");
+      var obj = document2;
+      var t2 = 1;
+      var len = keys.length;
+      var existingPathFragment = void 0;
+      var key = void 0;
+      var validateFunction = void 0;
+      if (typeof validateOperation == "function") {
+        validateFunction = validateOperation;
+      } else {
+        validateFunction = validator;
+      }
+      while (true) {
+        key = keys[t2];
+        if (key && key.indexOf("~") != -1) {
+          key = unescapePathComponent(key);
+        }
+        if (banPrototypeModifications && key == "__proto__") {
+          throw new TypeError("JSON-Patch: modifying `__proto__` prop is banned for security reasons, if this was on purpose, please set `banPrototypeModifications` flag false and pass it to this function. More info in fast-json-patch README");
+        }
+        if (validateOperation) {
+          if (existingPathFragment === void 0) {
+            if (obj[key] === void 0) {
+              existingPathFragment = keys.slice(0, t2).join("/");
+            } else if (t2 == len - 1) {
+              existingPathFragment = operation.path;
+            }
+            if (existingPathFragment !== void 0) {
+              validateFunction(operation, 0, document2, existingPathFragment);
+            }
+          }
+        }
+        t2++;
+        if (Array.isArray(obj)) {
+          if (key === "-") {
+            key = obj.length;
+          } else {
+            if (validateOperation && !isInteger(key)) {
+              throw new JsonPatchError("Expected an unsigned base-10 integer value, making the new referenced value the array element with the zero-based index", "OPERATION_PATH_ILLEGAL_ARRAY_INDEX", index, operation, document2);
+            } else if (isInteger(key)) {
+              key = ~~key;
+            }
+          }
+          if (t2 >= len) {
+            if (validateOperation && operation.op === "add" && key > obj.length) {
+              throw new JsonPatchError("The specified index MUST NOT be greater than the number of elements in the array", "OPERATION_VALUE_OUT_OF_BOUNDS", index, operation, document2);
+            }
+            var returnValue = arrOps[operation.op].call(operation, obj, key, document2);
+            if (returnValue.test === false) {
+              throw new JsonPatchError("Test operation failed", "TEST_OPERATION_FAILED", index, operation, document2);
+            }
+            return returnValue;
+          }
+        } else {
+          if (t2 >= len) {
+            var returnValue = objOps[operation.op].call(operation, obj, key, document2);
+            if (returnValue.test === false) {
+              throw new JsonPatchError("Test operation failed", "TEST_OPERATION_FAILED", index, operation, document2);
+            }
+            return returnValue;
+          }
+        }
+        obj = obj[key];
+        if (validateOperation && t2 < len && (!obj || typeof obj !== "object")) {
+          throw new JsonPatchError("Cannot perform operation at the desired path", "OPERATION_PATH_UNRESOLVABLE", index, operation, document2);
+        }
+      }
+    }
+  }
+  function applyPatch(document2, patch, validateOperation, mutateDocument, banPrototypeModifications) {
+    if (mutateDocument === void 0) {
+      mutateDocument = true;
+    }
+    if (banPrototypeModifications === void 0) {
+      banPrototypeModifications = true;
+    }
+    if (validateOperation) {
+      if (!Array.isArray(patch)) {
+        throw new JsonPatchError("Patch sequence must be an array", "SEQUENCE_NOT_AN_ARRAY");
+      }
+    }
+    if (!mutateDocument) {
+      document2 = _deepClone(document2);
+    }
+    var results = new Array(patch.length);
+    for (var i2 = 0, length_1 = patch.length; i2 < length_1; i2++) {
+      results[i2] = applyOperation(document2, patch[i2], validateOperation, true, banPrototypeModifications, i2);
+      document2 = results[i2].newDocument;
+    }
+    results.newDocument = document2;
+    return results;
+  }
+  function applyReducer(document2, operation, index) {
+    var operationResult = applyOperation(document2, operation);
+    if (operationResult.test === false) {
+      throw new JsonPatchError("Test operation failed", "TEST_OPERATION_FAILED", index, operation, document2);
+    }
+    return operationResult.newDocument;
+  }
+  function validator(operation, index, document2, existingPathFragment) {
+    if (typeof operation !== "object" || operation === null || Array.isArray(operation)) {
+      throw new JsonPatchError("Operation is not an object", "OPERATION_NOT_AN_OBJECT", index, operation, document2);
+    } else if (!objOps[operation.op]) {
+      throw new JsonPatchError("Operation `op` property is not one of operations defined in RFC-6902", "OPERATION_OP_INVALID", index, operation, document2);
+    } else if (typeof operation.path !== "string") {
+      throw new JsonPatchError("Operation `path` property is not a string", "OPERATION_PATH_INVALID", index, operation, document2);
+    } else if (operation.path.indexOf("/") !== 0 && operation.path.length > 0) {
+      throw new JsonPatchError('Operation `path` property must start with "/"', "OPERATION_PATH_INVALID", index, operation, document2);
+    } else if ((operation.op === "move" || operation.op === "copy") && typeof operation.from !== "string") {
+      throw new JsonPatchError("Operation `from` property is not present (applicable in `move` and `copy` operations)", "OPERATION_FROM_REQUIRED", index, operation, document2);
+    } else if ((operation.op === "add" || operation.op === "replace" || operation.op === "test") && operation.value === void 0) {
+      throw new JsonPatchError("Operation `value` property is not present (applicable in `add`, `replace` and `test` operations)", "OPERATION_VALUE_REQUIRED", index, operation, document2);
+    } else if ((operation.op === "add" || operation.op === "replace" || operation.op === "test") && hasUndefined(operation.value)) {
+      throw new JsonPatchError("Operation `value` property is not present (applicable in `add`, `replace` and `test` operations)", "OPERATION_VALUE_CANNOT_CONTAIN_UNDEFINED", index, operation, document2);
+    } else if (document2) {
+      if (operation.op == "add") {
+        var pathLen = operation.path.split("/").length;
+        var existingPathLen = existingPathFragment.split("/").length;
+        if (pathLen !== existingPathLen + 1 && pathLen !== existingPathLen) {
+          throw new JsonPatchError("Cannot perform an `add` operation at the desired path", "OPERATION_PATH_CANNOT_ADD", index, operation, document2);
+        }
+      } else if (operation.op === "replace" || operation.op === "remove" || operation.op === "_get") {
+        if (operation.path !== existingPathFragment) {
+          throw new JsonPatchError("Cannot perform the operation at a path that does not exist", "OPERATION_PATH_UNRESOLVABLE", index, operation, document2);
+        }
+      } else if (operation.op === "move" || operation.op === "copy") {
+        var existingValue = {op: "_get", path: operation.from, value: void 0};
+        var error = validate([existingValue], document2);
+        if (error && error.name === "OPERATION_PATH_UNRESOLVABLE") {
+          throw new JsonPatchError("Cannot perform the operation from a path that does not exist", "OPERATION_FROM_UNRESOLVABLE", index, operation, document2);
+        }
+      }
+    }
+  }
+  function validate(sequence, document2, externalValidator) {
+    try {
+      if (!Array.isArray(sequence)) {
+        throw new JsonPatchError("Patch sequence must be an array", "SEQUENCE_NOT_AN_ARRAY");
+      }
+      if (document2) {
+        applyPatch(_deepClone(document2), _deepClone(sequence), externalValidator || true);
+      } else {
+        externalValidator = externalValidator || validator;
+        for (var i2 = 0; i2 < sequence.length; i2++) {
+          externalValidator(sequence[i2], i2, document2, void 0);
+        }
+      }
+    } catch (e2) {
+      if (e2 instanceof JsonPatchError) {
+        return e2;
+      } else {
+        throw e2;
+      }
+    }
+  }
+  function _areEquals(a2, b2) {
+    if (a2 === b2)
+      return true;
+    if (a2 && b2 && typeof a2 == "object" && typeof b2 == "object") {
+      var arrA = Array.isArray(a2), arrB = Array.isArray(b2), i2, length, key;
+      if (arrA && arrB) {
+        length = a2.length;
+        if (length != b2.length)
+          return false;
+        for (i2 = length; i2-- !== 0; )
+          if (!_areEquals(a2[i2], b2[i2]))
+            return false;
+        return true;
+      }
+      if (arrA != arrB)
+        return false;
+      var keys = Object.keys(a2);
+      length = keys.length;
+      if (length !== Object.keys(b2).length)
+        return false;
+      for (i2 = length; i2-- !== 0; )
+        if (!b2.hasOwnProperty(keys[i2]))
+          return false;
+      for (i2 = length; i2-- !== 0; ) {
+        key = keys[i2];
+        if (!_areEquals(a2[key], b2[key]))
+          return false;
+      }
+      return true;
+    }
+    return a2 !== a2 && b2 !== b2;
+  }
+  var core = /* @__PURE__ */ Object.freeze({
+    __proto__: null,
+    JsonPatchError,
+    deepClone,
+    getValueByPointer,
+    applyOperation,
+    applyPatch,
+    applyReducer,
+    validator,
+    validate,
+    _areEquals
+  });
+  /*!
+   * https://github.com/Starcounter-Jack/JSON-Patch
+   * (c) 2017 Joachim Wester
+   * MIT license
+   */
+  var beforeDict = new WeakMap();
+  var Mirror = function() {
+    function Mirror2(obj) {
+      this.observers = new Map();
+      this.obj = obj;
+    }
+    return Mirror2;
+  }();
+  var ObserverInfo = function() {
+    function ObserverInfo2(callback, observer) {
+      this.callback = callback;
+      this.observer = observer;
+    }
+    return ObserverInfo2;
+  }();
+  function getMirror(obj) {
+    return beforeDict.get(obj);
+  }
+  function getObserverFromMirror(mirror, callback) {
+    return mirror.observers.get(callback);
+  }
+  function removeObserverFromMirror(mirror, observer) {
+    mirror.observers.delete(observer.callback);
+  }
+  function unobserve(root, observer) {
+    observer.unobserve();
+  }
+  function observe(obj, callback) {
+    var patches = [];
+    var observer;
+    var mirror = getMirror(obj);
+    if (!mirror) {
+      mirror = new Mirror(obj);
+      beforeDict.set(obj, mirror);
+    } else {
+      var observerInfo = getObserverFromMirror(mirror, callback);
+      observer = observerInfo && observerInfo.observer;
+    }
+    if (observer) {
+      return observer;
+    }
+    observer = {};
+    mirror.value = _deepClone(obj);
+    if (callback) {
+      observer.callback = callback;
+      observer.next = null;
+      var dirtyCheck = function() {
+        generate(observer);
+      };
+      var fastCheck = function() {
+        clearTimeout(observer.next);
+        observer.next = setTimeout(dirtyCheck);
+      };
+      if (typeof window !== "undefined") {
+        window.addEventListener("mouseup", fastCheck);
+        window.addEventListener("keyup", fastCheck);
+        window.addEventListener("mousedown", fastCheck);
+        window.addEventListener("keydown", fastCheck);
+        window.addEventListener("change", fastCheck);
+      }
+    }
+    observer.patches = patches;
+    observer.object = obj;
+    observer.unobserve = function() {
+      generate(observer);
+      clearTimeout(observer.next);
+      removeObserverFromMirror(mirror, observer);
+      if (typeof window !== "undefined") {
+        window.removeEventListener("mouseup", fastCheck);
+        window.removeEventListener("keyup", fastCheck);
+        window.removeEventListener("mousedown", fastCheck);
+        window.removeEventListener("keydown", fastCheck);
+        window.removeEventListener("change", fastCheck);
+      }
+    };
+    mirror.observers.set(callback, new ObserverInfo(callback, observer));
+    return observer;
+  }
+  function generate(observer, invertible) {
+    if (invertible === void 0) {
+      invertible = false;
+    }
+    var mirror = beforeDict.get(observer.object);
+    _generate(mirror.value, observer.object, observer.patches, "", invertible);
+    if (observer.patches.length) {
+      applyPatch(mirror.value, observer.patches);
+    }
+    var temp = observer.patches;
+    if (temp.length > 0) {
+      observer.patches = [];
+      if (observer.callback) {
+        observer.callback(temp);
+      }
+    }
+    return temp;
+  }
+  function _generate(mirror, obj, patches, path, invertible) {
+    if (obj === mirror) {
+      return;
+    }
+    if (typeof obj.toJSON === "function") {
+      obj = obj.toJSON();
+    }
+    var newKeys = _objectKeys(obj);
+    var oldKeys = _objectKeys(mirror);
+    var deleted = false;
+    for (var t2 = oldKeys.length - 1; t2 >= 0; t2--) {
+      var key = oldKeys[t2];
+      var oldVal = mirror[key];
+      if (hasOwnProperty(obj, key) && !(obj[key] === void 0 && oldVal !== void 0 && Array.isArray(obj) === false)) {
+        var newVal = obj[key];
+        if (typeof oldVal == "object" && oldVal != null && typeof newVal == "object" && newVal != null && Array.isArray(oldVal) === Array.isArray(newVal)) {
+          _generate(oldVal, newVal, patches, path + "/" + escapePathComponent(key), invertible);
+        } else {
+          if (oldVal !== newVal) {
+            if (invertible) {
+              patches.push({op: "test", path: path + "/" + escapePathComponent(key), value: _deepClone(oldVal)});
+            }
+            patches.push({op: "replace", path: path + "/" + escapePathComponent(key), value: _deepClone(newVal)});
+          }
+        }
+      } else if (Array.isArray(mirror) === Array.isArray(obj)) {
+        if (invertible) {
+          patches.push({op: "test", path: path + "/" + escapePathComponent(key), value: _deepClone(oldVal)});
+        }
+        patches.push({op: "remove", path: path + "/" + escapePathComponent(key)});
+        deleted = true;
+      } else {
+        if (invertible) {
+          patches.push({op: "test", path, value: mirror});
+        }
+        patches.push({op: "replace", path, value: obj});
+      }
+    }
+    if (!deleted && newKeys.length == oldKeys.length) {
+      return;
+    }
+    for (var t2 = 0; t2 < newKeys.length; t2++) {
+      var key = newKeys[t2];
+      if (!hasOwnProperty(mirror, key) && obj[key] !== void 0) {
+        patches.push({op: "add", path: path + "/" + escapePathComponent(key), value: _deepClone(obj[key])});
+      }
+    }
+  }
+  function compare(tree1, tree2, invertible) {
+    if (invertible === void 0) {
+      invertible = false;
+    }
+    var patches = [];
+    _generate(tree1, tree2, patches, "", invertible);
+    return patches;
+  }
+  var duplex = /* @__PURE__ */ Object.freeze({
+    __proto__: null,
+    unobserve,
+    observe,
+    generate,
+    compare
+  });
+  var jsonpatch = Object.assign({}, core, duplex, {
+    JsonPatchError: PatchError,
+    deepClone: _deepClone,
+    escapePathComponent,
+    unescapePathComponent
+  });
+  function useJsonPatchCallback(initial) {
+    const doc = ReactDOM.useRef(initial);
+    const forceUpdate = useForceUpdate();
+    const applyPatch2 = ReactDOM.useCallback((path, patch) => {
+      if (!path) {
+        doc.current = applyNonMutativePatch(doc.current, patch);
+      } else {
+        applyMutativePatch(doc.current, [
+          {
+            op: "replace",
+            path,
+            value: applyNonMutativePatch(jsonpatch.getValueByPointer(doc.current, path), patch)
+          }
+        ]);
+      }
+      forceUpdate();
+    }, [doc]);
+    return [doc.current, applyPatch2];
+  }
+  function applyNonMutativePatch(doc, patch) {
+    return jsonpatch.applyPatch(doc, patch, false, false, true).newDocument;
+  }
+  function applyMutativePatch(doc, patch) {
+    jsonpatch.applyPatch(doc, patch, false, true, true).newDocument;
+  }
+  function useForceUpdate() {
+    const [, updateState] = ReactDOM.useState();
+    return ReactDOM.useCallback(() => updateState({}), []);
+  }
+  var LayoutContext = ReactDOM.createContext({
+    sendEvent: void 0,
+    loadImportSource: void 0
+  });
+  function serializeEvent(event) {
+    const data = {};
+    if (event.type in eventTransforms) {
+      Object.assign(data, eventTransforms[event.type](event));
+    }
+    data.target = serializeDomElement(event.target);
+    data.currentTarget = event.target === event.currentTarget ? data.target : serializeDomElement(event.currentTarget);
+    data.relatedTarget = serializeDomElement(event.relatedTarget);
+    return data;
+  }
+  function serializeDomElement(element) {
+    let elementData = null;
+    if (element) {
+      elementData = defaultElementTransform(element);
+      if (element.tagName in elementTransforms) {
+        elementTransforms[element.tagName].forEach((trans) => Object.assign(elementData, trans(element)));
+      }
+    }
+    return elementData;
+  }
+  var elementTransformCategories = {
+    hasValue: (element) => ({
+      value: element.value
+    }),
+    hasCurrentTime: (element) => ({
+      currentTime: element.currentTime
+    }),
+    hasFiles: (element) => {
+      if ((element == null ? void 0 : element.type) === "file") {
+        return {
+          files: Array.from(element.files).map((file) => ({
+            lastModified: file.lastModified,
+            name: file.name,
+            size: file.size,
+            type: file.type
+          }))
+        };
+      } else {
+        return {};
+      }
+    }
+  };
+  function defaultElementTransform(element) {
+    return {boundingClientRect: element.getBoundingClientRect()};
+  }
+  var elementTagCategories = {
+    hasValue: [
+      "BUTTON",
+      "INPUT",
+      "OPTION",
+      "LI",
+      "METER",
+      "PROGRESS",
+      "PARAM",
+      "SELECT",
+      "TEXTAREA"
+    ],
+    hasCurrentTime: ["AUDIO", "VIDEO"],
+    hasFiles: ["INPUT"]
+  };
+  var elementTransforms = {};
+  Object.keys(elementTagCategories).forEach((category) => {
+    elementTagCategories[category].forEach((type) => {
+      const transforms = elementTransforms[type] || (elementTransforms[type] = []);
+      transforms.push(elementTransformCategories[category]);
+    });
+  });
+  function EventTransformCategories() {
+    this.clipboard = (event) => ({
+      clipboardData: event.clipboardData
+    });
+    this.composition = (event) => ({
+      data: event.data
+    });
+    this.keyboard = (event) => ({
+      altKey: event.altKey,
+      charCode: event.charCode,
+      ctrlKey: event.ctrlKey,
+      key: event.key,
+      keyCode: event.keyCode,
+      locale: event.locale,
+      location: event.location,
+      metaKey: event.metaKey,
+      repeat: event.repeat,
+      shiftKey: event.shiftKey,
+      which: event.which
+    });
+    this.mouse = (event) => ({
+      altKey: event.altKey,
+      button: event.button,
+      buttons: event.buttons,
+      clientX: event.clientX,
+      clientY: event.clientY,
+      ctrlKey: event.ctrlKey,
+      metaKey: event.metaKey,
+      pageX: event.pageX,
+      pageY: event.pageY,
+      screenX: event.screenX,
+      screenY: event.screenY,
+      shiftKey: event.shiftKey
+    });
+    this.pointer = (event) => ({
+      ...this.mouse(event),
+      pointerId: event.pointerId,
+      width: event.width,
+      height: event.height,
+      pressure: event.pressure,
+      tiltX: event.tiltX,
+      tiltY: event.tiltY,
+      pointerType: event.pointerType,
+      isPrimary: event.isPrimary
+    });
+    this.selection = () => {
+      return {selectedText: window.getSelection().toString()};
+    };
+    this.touch = (event) => ({
+      altKey: event.altKey,
+      ctrlKey: event.ctrlKey,
+      metaKey: event.metaKey,
+      shiftKey: event.shiftKey
+    });
+    this.ui = (event) => ({
+      detail: event.detail
+    });
+    this.wheel = (event) => ({
+      deltaMode: event.deltaMode,
+      deltaX: event.deltaX,
+      deltaY: event.deltaY,
+      deltaZ: event.deltaZ
+    });
+    this.animation = (event) => ({
+      animationName: event.animationName,
+      pseudoElement: event.pseudoElement,
+      elapsedTime: event.elapsedTime
+    });
+    this.transition = (event) => ({
+      propertyName: event.propertyName,
+      pseudoElement: event.pseudoElement,
+      elapsedTime: event.elapsedTime
+    });
+  }
+  var eventTypeCategories = {
+    clipboard: ["copy", "cut", "paste"],
+    composition: ["compositionend", "compositionstart", "compositionupdate"],
+    keyboard: ["keydown", "keypress", "keyup"],
+    mouse: [
+      "click",
+      "contextmenu",
+      "doubleclick",
+      "drag",
+      "dragend",
+      "dragenter",
+      "dragexit",
+      "dragleave",
+      "dragover",
+      "dragstart",
+      "drop",
+      "mousedown",
+      "mouseenter",
+      "mouseleave",
+      "mousemove",
+      "mouseout",
+      "mouseover",
+      "mouseup"
+    ],
+    pointer: [
+      "pointerdown",
+      "pointermove",
+      "pointerup",
+      "pointercancel",
+      "gotpointercapture",
+      "lostpointercapture",
+      "pointerenter",
+      "pointerleave",
+      "pointerover",
+      "pointerout"
+    ],
+    selection: ["select"],
+    touch: ["touchcancel", "touchend", "touchmove", "touchstart"],
+    ui: ["scroll"],
+    wheel: ["wheel"],
+    animation: ["animationstart", "animationend", "animationiteration"],
+    transition: ["transitionend"]
+  };
+  var eventTransforms = {};
+  var eventTransformCategories = new EventTransformCategories();
+  Object.keys(eventTypeCategories).forEach((category) => {
+    eventTypeCategories[category].forEach((type) => {
+      eventTransforms[type] = eventTransformCategories[category];
+    });
+  });
+  function createElementChildren(model, createElement) {
+    if (!model.children) {
+      return [];
+    } else {
+      return model.children.filter((x2) => x2).map((child) => {
+        switch (typeof child) {
+          case "object":
+            return createElement(child);
+          case "string":
+            return child;
+        }
+      });
+    }
+  }
+  function createElementAttributes(model, sendEvent) {
+    const attributes = Object.assign({}, model.attributes);
+    if (model.eventHandlers) {
+      for (const [eventName, eventSpec] of Object.entries(model.eventHandlers)) {
+        attributes[eventName] = createEventHandler(eventName, sendEvent, eventSpec);
+      }
+    }
+    return attributes;
+  }
+  function createEventHandler(eventName, sendEvent, eventSpec) {
+    return function() {
+      const data = Array.from(arguments).map((value) => {
+        if (typeof value === "object" && value.nativeEvent) {
+          if (eventSpec["preventDefault"]) {
+            value.preventDefault();
+          }
+          if (eventSpec["stopPropagation"]) {
+            value.stopPropagation();
+          }
+          return serializeEvent(value);
+        } else {
+          return value;
+        }
+      });
+      sendEvent({
+        data,
+        target: eventSpec["target"]
+      });
+    };
+  }
+  function useImportSource(modelImportSource) {
+    const layoutContext = ReactDOM.useContext(LayoutContext);
+    const [importSource, setImportSource] = ReactDOM.useState(null);
+    ReactDOM.useEffect(() => {
+      let unmounted = false;
+      loadModelImportSource(layoutContext, modelImportSource).then((src) => {
+        if (!unmounted) {
+          setImportSource(src);
+        }
+      });
+      return () => {
+        unmounted = true;
+      };
+    }, [layoutContext, modelImportSource, setImportSource]);
+    return importSource;
+  }
+  function loadModelImportSource(layoutContext, importSource) {
+    return layoutContext.loadImportSource(importSource.source, importSource.sourceType).then((module2) => {
+      if (typeof module2.bind === "function") {
+        return {
+          data: importSource,
+          bind: (node) => {
+            const shortImportSource = {
+              source: importSource.source,
+              sourceType: importSource.sourceType
+            };
+            const binding = module2.bind(node, layoutContext);
+            if (typeof binding.create === "function" && typeof binding.render === "function" && typeof binding.unmount === "function") {
+              return {
+                render: (model) => binding.render(createElementFromModuleBinding(layoutContext, importSource, module2, binding, model)),
+                unmount: binding.unmount
+              };
+            } else {
+              console.error(`${importSource.source} returned an impropper binding`);
+            }
+          }
+        };
+      } else {
+        console.error(`${importSource.source} did not export a function 'bind'`);
+      }
+    });
+  }
+  function createElementFromModuleBinding(layoutContext, currentImportSource, module2, binding, model) {
+    let type;
+    if (model.importSource) {
+      if (!isImportSourceEqual(currentImportSource, model.importSource)) {
+        console.error("Parent element import source " + stringifyImportSource(currentImportSource) + " does not match child's import source " + stringifyImportSource(model.importSource));
+        return null;
+      } else if (!module2[model.tagName]) {
+        console.error("Module from source " + stringifyImportSource(currentImportSource) + ` does not export ${model.tagName}`);
+        return null;
+      } else {
+        type = module2[model.tagName];
+      }
+    } else {
+      type = model.tagName;
+    }
+    return binding.create(type, createElementAttributes(model, layoutContext.sendEvent), createElementChildren(model, (child) => createElementFromModuleBinding(layoutContext, currentImportSource, module2, binding, child)));
+  }
+  function isImportSourceEqual(source1, source2) {
+    return source1.source === source2.source && source1.sourceType === source2.sourceType;
+  }
+  function stringifyImportSource(importSource) {
+    return JSON.stringify({
+      source: importSource.source,
+      sourceType: importSource.sourceType
+    });
+  }
+  var html = htm.bind(ReactDOM.createElement);
+  function Layout({saveUpdateHook, sendEvent, loadImportSource}) {
+    const [model, patchModel] = useJsonPatchCallback({});
+    ReactDOM.useEffect(() => saveUpdateHook(patchModel), [patchModel]);
+    if (!Object.keys(model).length) {
+      return html`<${ReactDOM.Fragment} />`;
+    }
+    return html`
+    <${LayoutContext.Provider} value=${{sendEvent, loadImportSource}}>
+      <${Element} model=${model} />
+    <//>
+  `;
+  }
+  function Element({model}) {
+    if (model.error !== void 0) {
+      if (model.error) {
+        return html`<pre>${model.error}</pre>`;
+      } else {
+        return null;
+      }
+    } else if (model.tagName == "script") {
+      return html`<${ScriptElement} model=${model} />`;
+    } else if (["input", "select", "textarea"].includes(model.tagName)) {
+      return html`<${UserInputElement} model=${model} />`;
+    } else if (model.importSource) {
+      return html`<${ImportedElement} model=${model} />`;
+    } else {
+      return html`<${StandardElement} model=${model} />`;
+    }
+  }
+  function StandardElement({model}) {
+    const layoutContext = ReactDOM.useContext(LayoutContext);
+    let type;
+    if (model.tagName == "") {
+      type = ReactDOM.Fragment;
+    } else {
+      type = model.tagName;
+    }
+    return ReactDOM.createElement(type, createElementAttributes(model, layoutContext.sendEvent), ...createElementChildren(model, (model2) => html`<${Element} key=${model2.key} model=${model2} />`));
+  }
+  function UserInputElement({model}) {
+    const ref = ReactDOM.useRef();
+    const layoutContext = ReactDOM.useContext(LayoutContext);
+    const props = createElementAttributes(model, layoutContext.sendEvent);
+    let value = props.value;
+    delete props.value;
+    ReactDOM.useEffect(() => {
+      if (value !== void 0) {
+        ref.current.value = value;
+      }
+    }, [ref.current, value]);
+    const observedValues = ReactDOM.useState([])[0];
+    if (observedValues) {
+      if (value === observedValues[0]) {
+        observedValues.shift();
+        value = observedValues[observedValues.length - 1];
+      } else {
+        observedValues.length = 0;
+      }
+    }
+    const givenOnChange = props.onChange;
+    if (typeof givenOnChange === "function") {
+      props.onChange = (event) => {
+        observedValues.push(event.target.value);
+        givenOnChange(event);
+      };
+    }
+    return ReactDOM.createElement(model.tagName, {
+      ...props,
+      ref: (target) => {
+        ref.current = target;
+      }
+    }, ...createElementChildren(model, (model2) => html`<${Element} key=${model2.key} model=${model2} />`));
+  }
+  function ScriptElement({model}) {
+    const ref = ReactDOM.useRef();
+    ReactDOM.useEffect(() => {
+      var _a, _b;
+      if (((_a = model == null ? void 0 : model.children) == null ? void 0 : _a.length) > 1) {
+        console.error("Too many children for 'script' element.");
+      }
+      let scriptContent = (_b = model == null ? void 0 : model.children) == null ? void 0 : _b[0];
+      let scriptElement;
+      if (model.attributes) {
+        scriptElement = document.createElement("script");
+        for (const [k2, v2] of Object.entries(model.attributes)) {
+          scriptElement.setAttribute(k2, v2);
+        }
+        scriptElement.appendChild(document.createTextNode(scriptContent));
+        ref.current.appendChild(scriptElement);
+      } else {
+        let scriptResult = eval(scriptContent);
+        if (typeof scriptResult == "function") {
+          return scriptResult();
+        }
+      }
+    }, [model.key]);
+    return html`<div ref=${ref} />`;
+  }
+  function ImportedElement({model}) {
+    const layoutContext = ReactDOM.useContext(LayoutContext);
+    const importSourceFallback = model.importSource.fallback;
+    const importSource = useImportSource(model.importSource);
+    if (!importSource) {
+      if (!importSourceFallback) {
+        return html`<div />`;
+      } else if (typeof importSourceFallback === "string") {
+        return html`<div>${importSourceFallback}</div>`;
+      } else {
+        return html`<${StandardElement} model=${importSourceFallback} />`;
+      }
+    } else {
+      return html`<${_ImportedElement}
+      model=${model}
+      importSource=${importSource}
+    />`;
+    }
+  }
+  function _ImportedElement({model, importSource}) {
+    const layoutContext = ReactDOM.useContext(LayoutContext);
+    const mountPoint = ReactDOM.useRef(null);
+    const sourceBinding = ReactDOM.useRef(null);
+    ReactDOM.useEffect(() => {
+      sourceBinding.current = importSource.bind(mountPoint.current);
+      if (!importSource.data.unmountBeforeUpdate) {
+        return sourceBinding.current.unmount;
+      }
+    }, []);
+    ReactDOM.useEffect(() => {
+      sourceBinding.current.render(model);
+      if (importSource.data.unmountBeforeUpdate) {
+        return sourceBinding.current.unmount;
+      }
+    });
+    return html`<div ref=${mountPoint} />`;
+  }
+  function mountLayout(mountElement, layoutProps) {
+    ReactDOM.render(ReactDOM.createElement(Layout, layoutProps), mountElement);
+  }
+  function mountLayoutWithWebSocket(element, endpoint, loadImportSource, maxReconnectTimeout) {
+    mountLayoutWithReconnectingWebSocket(element, endpoint, loadImportSource, maxReconnectTimeout);
+  }
+  function mountLayoutWithReconnectingWebSocket(element, endpoint, loadImportSource, maxReconnectTimeout, mountState = {
+    everMounted: false,
+    reconnectAttempts: 0,
+    reconnectTimeoutRange: 0
+  }) {
+    const socket = new WebSocket(endpoint);
+    const updateHookPromise = new LazyPromise();
+    socket.onopen = (event) => {
+      console.info(`IDOM WebSocket connected.`);
+      if (mountState.everMounted) {
+        ReactDOM.unmountComponentAtNode(element);
+      }
+      _resetOpenMountState(mountState);
+      mountLayout(element, {
+        loadImportSource,
+        saveUpdateHook: updateHookPromise.resolve,
+        sendEvent: (event2) => socket.send(JSON.stringify(event2))
+      });
+    };
+    socket.onmessage = (event) => {
+      const [pathPrefix, patch] = JSON.parse(event.data);
+      updateHookPromise.promise.then((update) => update(pathPrefix, patch));
+    };
+    socket.onclose = (event) => {
+      if (!maxReconnectTimeout) {
+        console.info(`IDOM WebSocket connection lost.`);
+        return;
+      }
+      const reconnectTimeout = _nextReconnectTimeout(maxReconnectTimeout, mountState);
+      console.info(`IDOM WebSocket connection lost. Reconnecting in ${reconnectTimeout} seconds...`);
+      setTimeout(function() {
+        mountState.reconnectAttempts++;
+        mountLayoutWithReconnectingWebSocket(element, endpoint, loadImportSource, maxReconnectTimeout, mountState);
+      }, reconnectTimeout * 1e3);
+    };
+  }
+  function _resetOpenMountState(mountState) {
+    mountState.everMounted = true;
+    mountState.reconnectAttempts = 0;
+    mountState.reconnectTimeoutRange = 0;
+  }
+  function _nextReconnectTimeout(maxReconnectTimeout, mountState) {
+    const timeout = Math.floor(Math.random() * mountState.reconnectTimeoutRange) || 1;
+    mountState.reconnectTimeoutRange = (mountState.reconnectTimeoutRange + 5) % maxReconnectTimeout;
+    return timeout;
+  }
+  function LazyPromise() {
+    this.promise = new Promise((resolve, reject) => {
+      this.resolve = resolve;
+      this.reject = reject;
+    });
+  }
+  function mountWithLayoutServer(element, serverInfo, maxReconnectTimeout) {
+    const loadImportSource = (source, sourceType) => (sourceType == "NAME" ? import(serverInfo.path.module(source)) : import(source)).catch((error) => {
+      throw error;
+    });
+    mountLayoutWithWebSocket(element, serverInfo.path.stream, loadImportSource, maxReconnectTimeout);
+  }
+  function LayoutServerInfo({host, port, path, query, secure}) {
+    const wsProtocol = "ws" + (secure ? "s" : "");
+    const httpProtocol = "http" + (secure ? "s" : "");
+    let url = host + ":" + port + (path || new URL(document.baseURI).pathname);
+    if (url.endsWith("/")) {
+      url = url.slice(0, -1);
+    }
+    const wsBaseUrl = wsProtocol + "://" + url;
+    const httpBaseUrl = httpProtocol + "://" + url;
+    if (query) {
+      query = "?" + query;
+    } else {
+      query = "";
+    }
+    this.path = {
+      stream: wsBaseUrl + "/_api/stream" + query,
+      module: (source) => httpBaseUrl + `/_api/modules/${source}`
+    };
+  }
+  function mount(mountPoint) {
+    const serverInfo = new LayoutServerInfo({
+      host: document.location.hostname,
+      port: document.location.port,
+      query: queryParams.user.toString(),
+      secure: document.location.protocol == "https:"
+    });
+    mountWithLayoutServer(mountPoint, serverInfo, shouldReconnect() ? 45 : 0);
+  }
+  function shouldReconnect() {
+    return queryParams.reserved.get("noReconnect") === null;
+  }
+  var queryParams = (() => {
+    const reservedParams = new URLSearchParams();
+    const userParams = new URLSearchParams(window.location.search);
+    const reservedParamNames = ["noReconnect"];
+    reservedParamNames.forEach((name) => {
+      const value = userParams.get(name);
+      if (value !== null) {
+        reservedParams.append(name, userParams.get(name));
+        userParams.delete(name);
+      }
+    });
+    return {
+      reserved: reservedParams,
+      user: userParams
+    };
+  })();
+});
+
+// ../idom/_client/index.html.inline.0.js
+var import_idom_app_react = require_idom_app_react();
+(0, import_idom_app_react.mount)(document.getElementById("app"));
+//# sourceMappingURL=index.html.inline.0.js.map
+</script>
+  
+
+</body></html>
