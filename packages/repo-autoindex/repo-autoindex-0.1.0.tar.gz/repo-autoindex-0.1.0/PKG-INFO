@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: repo-autoindex
+Version: 0.1.0
+Summary: Generic static HTML indexes of various repository types
+License: GPLv3
+Author: Rohan McGovern
+Author-email: rmcgover@redhat.com
+Requires-Python: >=3.10,<4.0
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Requires-Dist: Jinja2 (>=3.1.2,<4.0.0)
+Requires-Dist: aiohttp (>=3.8.1,<4.0.0)
+Requires-Dist: defusedxml (>=0.7.1,<0.8.0)
