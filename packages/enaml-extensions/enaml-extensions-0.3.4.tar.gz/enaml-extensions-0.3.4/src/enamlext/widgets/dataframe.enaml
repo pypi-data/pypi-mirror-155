@@ -1,0 +1,25 @@
+from enaml.core.declarative import d_
+from enamlext.widgets import Table
+import pandas as pd
+from atom.api import Value
+
+from enamlext.qt.qt_dataframe import DataFrameProxy
+from enamlext.qt.table.column import generate_columns
+
+
+enamldef DataFrame(Table):
+    attr df = d_(Value(factory=pd.DataFrame))
+
+    initialized ::
+        if self.df is not None:
+            self._assign(self.df)
+
+    func _assign(df):
+        self.items = DataFrameProxy(df)
+        self.columns = generate_columns(self.items, hints=self.hints)
+
+    df ::
+        if df is not None:
+            self._assign(self.df)
+        else:
+            self._assign(pd.DataFrame())
