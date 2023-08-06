@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: mb_netmgmt
+Version: 0.0.23
+Summary: Network Management Protocols for Mountebank
+Requires-Dist: ncclient
+Requires-Dist: paramiko
+Requires-Dist: pyyaml
+Requires-Dist: requests
+Requires-Dist: scapy
