@@ -1,0 +1,11 @@
+nlu
+spark-nlp==3.4.1numpy
+pyarrow>=0.16.0
+pandas>=1.3.5
+dataclasses
+
+[full]
+plotly
+
+[lol]
+plotly
