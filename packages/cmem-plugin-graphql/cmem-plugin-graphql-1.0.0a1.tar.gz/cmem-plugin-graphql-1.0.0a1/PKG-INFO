@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: cmem-plugin-graphql
+Version: 1.0.0a1
+Summary: eccenca Corporate Memory workflow plugin that executes a custom GraphQL query to a GraphQL endpoint and saves the result to a JSON dataset.
+License: Apache-2.0
+Keywords: eccenca Corporate Memory,plugin
+Author: Sai Praneeth M
+Author-email: saipraneeth@aarth.io
+Requires-Python: >=3.9,<4.0
+Classifier: Environment :: Plugins
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: cmem-plugin-base (>=1.2.0)
+Requires-Dist: gql[all] (>=3.2.0,<4.0.0)
+Requires-Dist: validators (>=0.20.0,<0.21.0)
+Description-Content-Type: text/markdown
+
+# cmem-plugin-graphql
+
+a CMEM Plugin to query GraphQL APIs and write the response to dataset of type JSON.
+In the current release we are supporting only endpoints without authentication.
+
