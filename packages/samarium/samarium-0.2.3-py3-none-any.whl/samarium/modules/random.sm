@@ -1,0 +1,36 @@
+randint start end * {
+    * (end - start + /)?? + start;
+}
+
+shuffle array * {
+    shuffledArray: [];
+    oldArray: array<<>>;
+    .. oldArray$ > \ {
+        e: oldArray??;
+        shuffledArray+: [e];
+        oldArray-: [e];
+    }
+    * shuffledArray;
+}
+
+choices array k * {
+    o: [];
+    .. o$ < k {
+        o+: [array??];
+    }
+    * o;
+}
+
+sample array k * {
+    ? k > array$ {
+        "the sample cannot be bigger than the array"!!!;
+    }
+    o: [];
+    oldArray: array<<>>;
+    .. o$ < k {
+        e: oldArray??;
+        o+: [e];
+        oldArray-: [e];
+    }
+    * o;
+}
