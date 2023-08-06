@@ -1,0 +1,177 @@
+{
+    "wstl": {
+        "title": "HEA Server Organization",
+        "actions": [
+            {
+                "name": "heaserver-organizations-organization-duplicate",
+                "type": "safe",
+                "target": "item",
+                "prompt": "Duplicate"
+            },
+            {
+                "name": "heaserver-organizations-organization-get-open-choices",
+                "description": "Open this organization",
+                "type": "safe",
+                "action": "read",
+                "target": "item read cj",
+                "prompt": "Open"
+            },
+            {
+                "name": "heaserver-organizations-organization-get-properties",
+                "description": "View and edit this Organization's properties",
+                "type": "unsafe",
+                "target": "item cj-template",
+                "action": "update",
+                "prompt": "Properties",
+                "inputs": [
+                    {
+                        "name": "id",
+                        "prompt": "Id",
+                        "required": true,
+                        "readOnly": true
+                    },
+                    {
+                        "name": "source",
+                        "prompt": "Source"
+                    },
+                    {
+                        "name": "version",
+                        "prompt": "Version"
+                    },
+                    {
+                        "name": "display_name",
+                        "prompt": "Name",
+                        "required": true
+                    },
+                    {
+                        "name": "description",
+                        "prompt": "Description",
+                        "type": "textarea"
+                    },
+                    {
+                        "name": "owner",
+                        "prompt": "Owner"
+                    },
+                    {
+                        "name": "created",
+                        "prompt": "Created",
+                        "readOnly": true
+                    },
+                    {
+                        "name": "modified",
+                        "prompt": "Modified",
+                        "readOnly": true
+                    },
+                    {
+                        "name": "invited",
+                        "prompt": "Share invited",
+                        "readOnly": true
+                    },
+                    {
+                        "name": "shared_with",
+                        "prompt": "Shared with"
+                    },
+                    {
+                        "name": "derived_by",
+                        "prompt": "Derived by",
+                        "readOnly": true
+                    },
+                    {
+                        "name": "derived_from",
+                        "prompt": "Derived from",
+                        "readOnly": true
+                    }
+                ]
+            },
+            {
+                "name": "heaserver-organizations-organization-duplicate-form",
+                "description": "Duplicate this organization",
+                "type": "unsafe",
+                "target": "item cj-template",
+                "action": "update",
+                "prompt": "Duplicate",
+                "inputs": [
+                    {
+                        "name": "id",
+                        "prompt": "Id",
+                        "required": true,
+                        "readOnly": true
+                    },
+                    {
+                        "name": "source",
+                        "prompt": "Source",
+                        "readOnly": true
+                    },
+                    {
+                        "name": "version",
+                        "prompt": "Version",
+                        "readOnly": true
+                    },
+                    {
+                        "name": "display_name",
+                        "prompt": "Name",
+                        "required": true,
+                        "readOnly": true
+                    },
+                    {
+                        "name": "description",
+                        "prompt": "Description",
+                        "type": "textarea",
+                        "readOnly": true
+                    },
+                    {
+                        "name": "owner",
+                        "prompt": "Owner",
+                        "readOnly": true
+                    },
+                    {
+                        "name": "created",
+                        "prompt": "Created",
+                        "readOnly": true
+                    },
+                    {
+                        "name": "modified",
+                        "prompt": "Modified",
+                        "readOnly": true
+                    },
+                    {
+                        "name": "invited",
+                        "prompt": "Share invited",
+                        "readOnly": true
+                    },
+                    {
+                        "name": "shared_with",
+                        "prompt": "Shared with",
+                        "readOnly": true
+                    },
+                    {
+                        "name": "derived_by",
+                        "prompt": "Derived by",
+                        "readOnly": true
+                    },
+                    {
+                        "name": "derived_from",
+                        "prompt": "Derived from",
+                        "readOnly": true
+                    }
+                ]
+            },
+            {
+                "name": "heaserver-organizations-organization-open-aws-accounts",
+                "description": "Open AWS accounts",
+                "type": "safe",
+                "action": "read",
+                "target": "item read cj",
+                "prompt": "Open"
+            },
+            {
+                "name": "heaserver-organizations-aws-account-get-open-choices",
+                "description": "Open this AWS account",
+                "type": "safe",
+                "action": "read",
+                "target": "item read cj",
+                "prompt": "Open"
+            }
+        ]
+    }
+}

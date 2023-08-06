@@ -1,0 +1,9 @@
+-e . # useful for getting app to recognize the heaserver-organization module in all files in the project
+idna~=3.3
+pytest~=6.2.5
+twine~=3.7.1
+wheel~=0.37.1
+git+https://github.com/arpost/testcontainers-python@1106e3bd#testcontainers
+mypy==0.931
+pip-licenses~=3.5.3
+aiohttp-swagger3~=0.7.0
