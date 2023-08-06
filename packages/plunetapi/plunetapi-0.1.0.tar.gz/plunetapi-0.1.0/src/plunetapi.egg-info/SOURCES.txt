@@ -1,0 +1,13 @@
+LICENCE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+src/plunetapi/__init__.py
+src/plunetapi/server.py
+src/plunetapi/webservice.py
+src/plunetapi.egg-info/PKG-INFO
+src/plunetapi.egg-info/SOURCES.txt
+src/plunetapi.egg-info/dependency_links.txt
+src/plunetapi.egg-info/requires.txt
+src/plunetapi.egg-info/top_level.txt
