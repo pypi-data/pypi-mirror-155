@@ -1,0 +1,609 @@
+Metadata-Version: 2.1
+Name: babelnet
+Version: 1.0
+Summary: Python API for BabelNet
+Home-page: https://babelnet.org/
+Author: Babelscape
+Author-email: info@babelscape.com
+Project-URL: Documentation, https://babelnet.org/pydoc/1.0/
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Natural Language :: English
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Text Processing :: Linguistic
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: License :: Other/Proprietary License
+Classifier: Operating System :: OS Independent
+Requires-Python: ==3.8.*
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: cloudpickle
+Requires-Dist: zerorpc
+Requires-Dist: pyzmq (~=22.3)
+Requires-Dist: dataclasses
+Requires-Dist: text-unidecode (>=1.2)
+Requires-Dist: ordered-set (>=3.0.1)
+Requires-Dist: requests (>=2.19.1)
+Requires-Dist: pyyaml (>=4.2b4)
+Requires-Dist: aenum (>=2.1.2)
+Provides-Extra: rpc
+Requires-Dist: docker ; extra == 'rpc'
+
+<!--
+  Automatically generated file, do not edit directly
+  Source file: readme/pypi.template.md
+-->
+This package consists of a Python API to work with BabelNet, a very large multilingual semantic network. For more
+information, please refer to the documentation below on how to use the software, and our
+website (https://babelnet.org) for news, updates and papers.
+
+# Version compatibility
+
+BabelNet Python API can be used with BabeNet 4.0 and above. 
+
+# Configuration
+
+After the installation, the first step to take when you want to use BabelNet in another project (or in the REPL) is to
+create a file called `babelnet_conf.yml` in the current working directory. 
+Alternatively, the path of the configuration file can be specified using the `BABELNET_CONF` environment variable.
+
+The content of the `babelnet_conf.yml` should vary according to the usage mode of choice:
+
+**Online Mode**: uses the online REST service to retrieve the data. To use this mode you need an internet connection
+and a [valid API key](https://babelnet.org/guide#access). 
+
+**RPC Mode**: reads data directly from a local copy of the BabelNet indices, making it more suitable for heavy 
+workloads than the online mode since it is faster and doesn't have usage limits. To use this mode you need the 
+[BabelNet indices](https://babelnet.org/downloads) and [Docker installed in your system](https://www.docker.com/get-started/).
+The *RPC server controller* (see below) requires additional dependencies that can be installed with the following pip command:
+```bash
+pip install babelnet[rpc]
+```
+
+Further details on how to use these modes are provided in the following sections.
+
+## Online Mode
+
+This is the simplest version to use, since it requires only [a valid API key](https://babelnet.org/guide#access). Assuming you
+have received by e-mail the key `3x54mp13-8au0-o97q-9vzz-3vakcpec8w4p`, add the following line to `babelnet_conf.yml`:
+
+```yaml
+RESTFUL_KEY: '3x54mp13-8au0-o97q-9vzz-3vakcpec8w4p'
+```
+
+This will automatically be used to authenticate you on the official BabelNet REST service. 
+
+The supported REST endpoints are:
+
+- `https://babelnet.io/v6/service` for BabelNet 5.0 *(default)*
+- `https://babelnet.io/v5/service` for BabelNet 4.0
+
+If you want to use a different REST endpoint, add the following line to `babelnet_conf.yml`:
+
+```yaml
+# BabelNet 5.0 REST endpoint
+RESTFUL_URL: 'https://babelnet.io/v6/service'
+```
+
+
+## RPC Mode
+
+To use the RPC mode you need a **local copy of the BabelNet indices**. To download them, follow the procedure
+on the [official website](https://babelnet.org/downloads).
+This can be considered a _full_ mode, because it has no usage limit and faster responses.
+
+BabelNet Python API requires PyLucene, which has a dependency on Lucene itself. The installation process of Lucene can be tricky
+since it has many dependencies that need compiling. Because of this, we moved this PyLucene build and install process to
+a simple Docker image. In the RPC mode, the Remote Procedure Call paradigm is applied in calling this Docker container 
+as a remote service, effectively decoupling PyLucene and BabelNet.
+
+To configure the APIs in RPC mode, you just need to add one of these lines to your `babelnet_conf.yml`, depending on
+which protocol you want to use.
+
+The default protocol used by the RPC server is TCP. You can specify the URL where the server is listening with the
+following configuration line.
+```yaml
+# TCP URL example
+RPC_URL: "tcp://127.0.0.1:7790"
+```
+
+If the RPC server has the optional IPC protocol enabled, you can use it with the following configuration line. 
+```yaml
+# IPC URL example
+RPC_URL: "ipc:///home/user/your_ipc_dir/socket"
+```
+
+*__Important__:* to use lambdas in RPC mode, the client code must be run using the **same Python version** of the 
+server, i.e. Python 3.8, and the **same (or older) version of cloudpickle**, i.e. 2.1.0.
+
+To start the server, you can either use the *RPC server controller* or manually start the Docker.
+In any case you need [Docker to be installed in your system](https://www.docker.com/get-started/).
+The controller is described in the following section; for details on how to directly use the 
+Docker image, please follow the documentation on the [Docker Hub page](https://hub.docker.com/r/babelscape/babelnet-rpc). 
+
+***Note:*** when you update the API to a newer version, you need to either restart the server using the controller or 
+pull the new docker from the hub and start a new server with the updated image. 
+
+# RPC server controller
+
+To simplify the management of the RPC server, you can use the `babelnet-rpc` command.
+
+The additional dependencies required by the controller can be installed with the command:
+```bash
+pip install babelnet[rpc]
+```
+
+***For Windows users:*** if you are working in an Anaconda environment, you need to install `pywin32` using anaconda 
+with the following command: 
+```bash
+conda install pywin32=227
+```
+
+## Documentation
+Once the server is started, the documentation of the Python API will be available at 
+[http://localhost:7780](http://localhost:7780), 
+or alternatively to the port defined by the arguments of the `start` command.
+
+## Start the server
+
+To start the server, you can use the command `babelnet-rpc start`. 
+If no arguments are provided, it will start in interactive mode, in which you will be prompted to provide the required
+values.
+
+```console
+$ babelnet-rpc start
+
+BabelNet indices path: /home/user/BabelNet-5.0
+Port for documentation ([7780], -1 to ignore): 8080
+RPC mode ([tcp]/ipc/all): all
+Port for TCP mode ([7790]): 
+IPC directory: your_ipc_dir
+Starting server...
+Server started
+
+BabelNet Python API documentation is available at http://localhost:8080
+
+To use BabelNet in RPC mode, add one of these lines in your babelnet_conf.yml file
+RPC_URL: "tcp://127.0.0.1:7790"
+RPC_URL: "ipc:///home/user/your_ipc_dir/socket"
+```
+
+Alternatively, the values can be passed as arguments. The available arguments are:
+
+- `--bn <path>` required, the BabelNet indices path
+- `--doc <port>` port for the BabelNet API documentation (default `7780`)
+- `--no-doc` disable the documentation port
+- `-m`, `--mode` the RPC mode enabled on the server (`tcp`, `ipc` or `all`, default `tcp`). _On Windows the only 
+available mode is `tcp`_. 
+- `--tcp <port>` the port for TPC mode (default `7790`)
+- `--ipc <path>` the IPC directory (required with mode `ipc` or `all`)
+- `--print` print the command instead of executing it
+
+### Examples of usage
+
+#### Basic usage
+```console
+$ babelnet-rpc start --bn /home/user/BabelNet-5.0 
+
+Starting server...
+Server started
+
+BabelNet Python API documentation will be available at http://localhost:7790
+
+To use BabelNet in RPC mode, add this line in your babelnet_conf.yml file
+RPC_URL: "tcp://127.0.0.1:7790"
+```
+
+#### IPC mode without documentation
+```console
+$ babelnet-rpc start --bn /home/user/BabelNet-5.0 --no-doc -m ipc --ipc your_ipc_dir
+
+Starting server...
+Server started
+
+To use BabelNet in RPC mode, add this line in your babelnet_conf.yml file
+RPC_URL: "ipc:///home/user/your_ipc_dir/socket"
+```
+
+#### Custom TCP port, print docker command 
+```console
+$ babelnet-rpc start --bn /home/user/BabelNet-5.0 --print --tcp 1234
+
+To start the RPC server, run the following command:
+docker run -d --name babelnet-rpc -p 7780:8000 -p 1234:1234 -v "/home/user/BabelNet-5.0:/root/babelnet" babelscape/babelnet-rpc:latest
+
+BabelNet Python API documentation will be available at http://localhost:7780
+
+To use BabelNet in RPC mode, add this line in your babelnet_conf.yml file
+RPC_URL: "tcp://127.0.0.1:1234"
+```
+
+## Stop the server
+
+To stop a running RPC server, run the command:
+```bash
+babelnet-rpc stop
+```
+
+# Code
+
+Assuming the installation and configuration phases have been completed, you can start working with BabelNet.
+
+The entry point in the library is the `babelnet` package. It contains a set of functions that query the available
+content. You can import the package by calling:
+
+```python
+import babelnet as bn
+```
+
+The two main classes of BabelNet are:
+
+- `BabelSynset` (a concept or named entity identified by a set of multilingual lexicalizations, each being a
+  BabelSense)
+- `BabelSense` (a lexicalization of a given concept, i.e. a BabelSynset)
+
+For more details, see the API documentation at 
+[https://babelnet.org/pydoc/1.0/](https://babelnet.org/pydoc/1.0/).
+
+## BabelSynset
+
+A `BabelSynset` is a set of multilingual lexicalizations that are synonyms expressing a given concept or named entity.
+For instance, the synset for car in the motorcar sense
+looks [like this](https://babelnet.org/synset?word=bn:00007309n&details=1&orig=car&lang=EN). After importing `babelnet`
+as `bn` we can use its functions to retrieve one or many `BabelSynset` objects. For instance, to retrieve all the
+synsets containing `car` we can call `get_synsets`:
+
+```python
+from babelnet.language import Language
+
+# Given a word in a certain language,
+# returns the concepts (BabelSynsets) denoted by the word.
+byl = bn.get_synsets('car', from_langs=[Language.EN])
+```
+
+We can also specify which of the parts of speech we are interested in and obtain only synsets for the specified part of
+speech. In the following example, we retrieve all the verbal synsets containing the English lexicalization `run` :
+
+```python
+from babelnet.language import Language
+from babelnet.pos import POS
+
+# Given a word in a certain language and pos (part of speech),
+# returns the concepts denoted by the word.
+byl = bn.get_synsets('run', from_langs=[Language.EN], poses=[POS.VERB])
+```
+
+Due to the [nature of BabelNet](https://babelnet.org/about), a `BabelSynset` may contain lexicalizations from different
+sources. You can restrict your search only to your sources of interest. For instance:
+
+```python
+from babelnet.language import Language
+from babelnet.pos import POS
+from babelnet.data.source import BabelSenseSource
+
+# Given a word in a certain language, returns the concepts
+# for the word available in the given sense sources.
+byl = bn.get_synsets('run', from_langs=[Language.EN], poses=[POS.NOUN],
+                     sources=[BabelSenseSource.WIKI, BabelSenseSource.OMWIKI])
+```
+
+Each `BabelSynset` has an ID that univocally identifies the synset, and that can be obtained via the `id`
+attribute of BabelSynset instances. If we have an ID and want to retrieve the corresponding synset, we can
+use `get_synset`. For instance:
+
+```python
+from babelnet.resources import BabelSynsetID
+
+# Gets a BabelSynset from a concept identifier (Babel synset ID).
+by = bn.get_synset(BabelSynsetID('bn:03083790n'))
+```
+
+returns the BabelSynset corresponding to
+ID [bn:03083790n](https://babelnet.org/synset?id=bn%3A03083790n&orig=bn%3A03083790n&lang=EN), that is, the synset about BabelNet.
+
+If we want to retrieve the BabelSynset corresponding to a given WordNet 3.0 ID, we can do the following:
+
+```python
+from babelnet.resources import WordNetSynsetID
+
+# Gets the BabelSynsets corresponding to an input WordNet offset.
+by = bn.get_synset(WordNetSynsetID('wn:06879521n'))
+```
+
+If we want to retrieve the BabelSynset corresponding to a given Wikidata page ID, we can do the following:
+
+```python
+from babelnet.resources import WikidataID
+
+# Gets the BabelSynsets corresponding to an input Wikidata page ID.
+by = bn.get_synset(WikidataID('Q4837690'))
+```
+
+If we want to retrieve the BabelSynsets containing a given Wikipedia page title, we can use the function `get_synsets`:
+
+```python
+from babelnet.language import Language
+from babelnet.pos import POS
+from babelnet.resources import WikipediaID
+
+# Given a Wikipedia title, returns the BabelSynsets which contain it.
+byl = bn.get_synsets(WikipediaID('Men in Black (film 1997)', Language.IT, POS.NOUN))
+```
+
+## BabelSense
+
+A `BabelSense` is a term (either word or multi-word expression) in a given language occurring in a certain `BabelSynset`
+. Each occurrence of the same term (e.g., car) in different synsets is, therefore, a different `BabelSense` of that term.
+
+Now let's look at the functions to retrieve a `BabelSense` using the `bn` module we have imported earlier:
+
+```python
+from babelnet.language import Language
+from babelnet.pos import POS
+from babelnet.data.source import BabelSenseSource
+
+#  Returns the senses for the word in a certain language.
+senses1 = bn.get_senses('run', from_langs=[Language.EN])
+
+# Returns the senses for the word in a certain language and Part-Of-Speech.
+senses2 = bn.get_senses('run', from_langs=[Language.EN], poses=[POS.VERB])
+
+# Returns the senses for the word with the given constraints.
+senses3 = bn.get_senses('run', from_langs=[Language.EN], poses=[POS.VERB],
+                        sources=[BabelSenseSource.WIKI, BabelSenseSource.OMWIKI])
+```
+
+Once we have a `BabelSense`, we can go back to the synset it belongs with the `synset` property:
+
+```python
+by = sense.synset
+```
+
+We can view the `BabelSynset` as a container of `BabelSense` s, i.e., the lexicalizations in the various languages
+contained in the synset that express its concept or named entity.
+
+## Some attributes of BabelSynset and BabelSense
+
+We are now going into details about important attributes (methods, properties)
+of the `BabelSynset` and `BabelSense` classes.
+
+### BabelSynset
+
+`BabelSynset` is composed of various elements, which we describe below. Furthermore, a `BabelSynset` is connected to
+other `BabelSynset` objects. The main components of a `BabelSynset` are objects of the following types:
+
+1. `BabelSense` (a lexicalization of the concept, see above)
+2. `POS` (the synset's part of speech)
+3. `BabelGloss` (a definition of the concept in a given language)
+4. `BabelExample` (an example sentence of the meaning expressed by the synset)
+5. `BabelImage` (an image depicting the concept)
+6. `BabelSynsetRelation` (an edge semantically connecting the synset to another synset)
+
+Let's take a look at the main methods and properties of a `BabelSynset` object which we call `by`. *Note:* to
+obtain `BabelSynset` objects we can also use the above examples.
+
+```python
+# Get a BabelSynset from a concept identifier (Babel synset ID).
+by = bn.get_synset(BabelSynsetID('bn:03083790n'))
+
+# Most relevant BabelSense to this BabelSynset for a given language.
+bs = by.main_sense(Language.EN)
+
+# The part of speech of this BabelSynset.
+pos = by.pos
+
+# True if the BabelSynset is a key concept
+is_key_concept = by.is_key_concept
+
+# Gets the senses contained in this BabelSynset.
+senses = by.senses()
+
+# Collects all BabelGlosses in the given source for this BabelSynset.
+glosses = by.glosses()
+
+# Collects all BabelExamples for this BabelSynset.
+examples = by.examples()
+
+# The images (BabelImages) of this BabelSynset.
+images = by.images
+
+# Collects all the edges incident on this BabelSynset.
+edges = by.outgoing_edges()
+
+# Gets the BabelCategory objects of this BabelSynset.
+cats = by.categories()
+```
+
+### BabelSense
+
+We now have a look at the BabelSense attributes. The main components of a BabelSense are:
+
+1. `BabelSynset` (the synset the sense belongs to)
+2. `POS` (its part-of-speech tag)
+3. the lemma string (the lexicalization of the sense)
+4. `BabelSensePhonetics` (the written and audio pronunciations of this sense)
+5. `BabelSenseSource` (the source of the sense, e.g.: Wikipedia, WordNet, etc.)
+
+Some code retrieving the above information follows:
+
+```python
+bs = by.main_sense(Language.EN)
+
+# The language of this BabelSense
+lang = bs.language
+
+# The part-of-speech tag of this BabelSense
+pos = bs.pos
+
+# True if the BabelSense is a key concept
+is_key_concept = bs.is_key_sense
+
+# The lemma of this BabelSense
+lemma = bs.full_lemma
+
+# The normalized lemma of this sense (i.e., lowercase, without parentheses, etc.)
+normalized_lemma = bs.normalized_lemma
+
+# The pronunciations of this sense
+pronunciations = bs.pronunciations
+
+# The source of the sense; ex: Wikipedia, WordNet, etc.
+source = bs.source
+```
+
+# Usage examples
+
+Here we show full examples that show how you can use the BabelNet API to accomplish several tasks.
+
+## Retrieve all BabelSynset objects for a specific word
+
+```python
+import babelnet as bn
+from babelnet import Language
+
+for synset in bn.get_synsets('home', from_langs=[Language.EN]):
+    print('Synset ID:', synset.id)
+```
+
+## For a specific word retrieves all BabelSynset objects in English, Italian and French
+
+```python
+import babelnet as bn
+from babelnet import Language
+
+synsets = bn.get_synsets('home', from_langs=[Language.EN],
+                         to_langs=[Language.IT, Language.FR])
+for synset in synsets:
+    print('Synset ID:', synset.id)
+```
+
+## Retrieve all BabelSense objects for a specific BabelSynset object
+
+```python
+import babelnet as bn
+from babelnet import BabelSynsetID
+
+synset = bn.get_synset(BabelSynsetID('bn:00000356n'))
+# a synset is an iterator over its senses
+for sense in synset:
+    print('Sense: ' + sense.full_lemma,
+          'Language: ' + str(sense.language),
+          'Source: ' + str(sense.source), sep='\t')
+    phonetic = sense.pronunciations
+    for audio in phonetic.audios:
+        print('Audio URL', audio.validated_url)
+```
+
+## Retrieve all BabelSense objects for a specific Wikidata page id
+
+```python
+import babelnet as bn
+from babelnet.resources import WikidataID
+
+synset = bn.get_synset(WikidataID('Q4837690'))
+# a synset is an iterator over its senses
+for sense in synset:
+    print('Sense: ' + sense.full_lemma,
+          'Language: ' + str(sense.language),
+          'Source: ' + str(sense.source), sep='\t')
+    phonetic = sense.pronunciations
+    for audio in phonetic.audios:
+        print('Audio URL', audio.validated_url)
+```
+
+## Retrieve Wikidata id for each BabelSense in a BabelSynset
+
+```python
+import babelnet as bn
+from babelnet import BabelSynsetID, BabelSenseSource
+
+by = bn.get_synset(BabelSynsetID('bn:00000356n'))
+for sense in by.senses(source=BabelSenseSource.WIKIDATA):
+    sensekey = sense.sensekey
+    print(sense.full_lemma, sense.language, sensekey, sep='\t')
+```
+
+## Retrieve neighbors of a BabelSynset object
+
+```python
+import babelnet as bn
+from babelnet import BabelSynsetID, Language
+from babelnet.data.relation import BabelPointer
+
+by = bn.get_synset(BabelSynsetID('bn:00015556n'))
+for edge in by.outgoing_edges(BabelPointer.ANY_HYPERNYM):
+    print(str(by.id) + '\t' + by.main_sense(Language.EN).full_lemma,
+          edge.pointer, edge.id_target, sep=' - ')
+```
+
+## Retrieve the distribution of relationships (frequency of each BabelPointer type) for a specific word
+
+```python
+from itertools import groupby
+
+import babelnet as bn
+from babelnet import Language
+
+synsets = bn.get_synsets('car', from_langs=[Language.EN])
+li = [edge.pointer.symbol for synset in synsets for edge
+      in synset.outgoing_edges()]
+for p, l in groupby(sorted(li)):
+    print(p, len(list(l)), sep='\t')
+```
+
+# Multithreading
+
+In **online mode** requests can come from different threads or processes and are elaborated concurrently.
+
+In **RPC mode**, using the API simultaneously from multiple threads is discouraged due to Python's threading 
+management and the limitations of the RPC library. Since sending concurrent requests to the server can lead to long 
+response times, to avoid timeouts it is recommended to use a limited pool like in the following example.
+
+```python
+import concurrent.futures
+from datetime import datetime
+from sys import stdout
+
+import babelnet as bn
+from babelnet import Language
+
+
+# function called from the threads
+def func(name: str, word: str):
+    stdout.write(datetime.now().strftime("%H:%M:%S.%f") + " - Start - " + name + "\n")
+    synsets = bn.get_synsets(word, from_langs=[Language.EN])
+    glosses = []
+    for synset in synsets:
+        gloss = synset.main_gloss(Language.EN)
+        if gloss:
+            glosses.append(gloss.gloss)
+    stdout.write(datetime.now().strftime("%H:%M:%S.%f") + " - End   - " + name + "\n")
+    return {word: glosses}
+
+
+word_list = ["vocabulary", "article", "time", "bakery", "phoenix", "stunning", "judge", "clause", "anaconda",
+             "patience", "risk", "scribble", "writing", "zebra", "trade"]
+
+with concurrent.futures.ThreadPoolExecutor(max_workers=8) as executor:
+    future = []
+    for i, w in enumerate(word_list):
+        future.append(executor.submit(func, f'Thread {i} "{w}"', w))
+    results = {}
+    for f in future:
+        results.update(f.result())
+
+for w, gs in results.items():
+    for g in gs:
+        print(w, g, sep='\t')
+```
+
+# Authors
+
+Babelscape
+([info@babelscape.com](mailto:info@babelscape.com))
+
+
+# License
+
+**BabelNet** and its **API** are licensed under the [BabelNet Non-Commercial License](https://babelnet.org/license).

@@ -1,0 +1,10 @@
+MODE_TCP = 'tcp'
+MODE_IPC = 'ipc'
+MODE_ALL = 'all'
+
+DOCKER_NAME = "pybabelnet-rpc"
+DOCKER_VERSION = "latest"
+DOCKER_IMAGE = f"babelscape/{DOCKER_NAME}:{DOCKER_VERSION}"
+
+DEFAULT_DOC_PORT = 7780
+DEFAULT_TCP_PORT = 7790
