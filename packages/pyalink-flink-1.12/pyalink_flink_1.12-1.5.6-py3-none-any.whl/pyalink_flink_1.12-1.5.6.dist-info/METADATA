@@ -1,0 +1,34 @@
+Metadata-Version: 2.1
+Name: pyalink-flink-1.12
+Version: 1.5.6
+Summary: Alink Python API
+Home-page: https://github.com/alibaba/Alink
+Author: xuyang1706,chengscu,Fanoid,hapsunday,liulfy,lqb11,Xiafei Qiu,shaomengwang,cainingnk,weibo.zwb
+Author-email: xuyang1706@gmail.com,chengscu@qq.com,hongfanxo@gmail.com,hapsunday@gmail.com,2691140740@qq.com,liqianbing11@163.com,qiuxiafei@gmail.com,shaomeng.wang.w@gmail.com,cainingnk@gmail.com,weibo.zwb@alibaba-inc.com
+License: Apache License, Version 2.0
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: Apache Software License
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: apache-flink (<1.12.4,>=1.12.0)
+Requires-Dist: numpy (<1.20)
+Requires-Dist: jupyter
+Requires-Dist: py4j (==0.10.8.1)
+Requires-Dist: cloudpickle (==1.2.2)
+Requires-Dist: scipy
+Requires-Dist: Rx
+Requires-Dist: tqdm
+Requires-Dist: requests
+Requires-Dist: deprecation
+
+# Alink
+
+Alink is the Machine Learning algorithm platform based on Flink, developed by the PAI team of Alibaba computing platform.
+
+More information about Alink and PyAlink tutorials can be found at [https://github.com/alibaba/Alink](https://github.com/alibaba/Alink).
+
+This package maintains Alink Python API against Flink 1.12.
+To use PyAlink with latest Flink version, please check package **pyalink**.
