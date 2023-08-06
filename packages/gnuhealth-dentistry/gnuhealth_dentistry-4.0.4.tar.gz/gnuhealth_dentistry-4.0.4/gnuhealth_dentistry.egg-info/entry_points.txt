@@ -1,0 +1,4 @@
+
+    [trytond.modules]
+    health_dentistry = trytond.modules.health_dentistry
+    
