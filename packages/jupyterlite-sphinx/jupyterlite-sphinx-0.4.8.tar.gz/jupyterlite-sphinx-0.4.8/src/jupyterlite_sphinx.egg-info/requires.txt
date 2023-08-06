@@ -1,0 +1,5 @@
+docutils
+jupyterlite[piplite]
+sphinx<5,>=4
+jupyter_server
+jupyterlab_server
