@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "wkfs_wrapper"
+version = "0.3.3"
+description = "WKFS wrapper to generate documents from WKFS system"
+authors = ["Tejas Bhandari <tejas@thesummitgrp.com>"]
+include = ["validator/schema_validation.json"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pytest = "6.2.4"
+lxml = "^4.6.4"
+jsonschema = "4.4.0"
+
+[tool.poetry.dev-dependencies]
+requests = "^2.26.0"
+Jinja2 = "^3.0.2"
+black = "^21.11b1"
+isort = "^5.10.1"
+autoflake = "^1.4"
+pre-commit = "^2.15.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

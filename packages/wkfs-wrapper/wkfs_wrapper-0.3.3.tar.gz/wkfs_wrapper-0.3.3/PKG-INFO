@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: wkfs-wrapper
+Version: 0.3.3
+Summary: WKFS wrapper to generate documents from WKFS system
+Author: Tejas Bhandari
+Author-email: tejas@thesummitgrp.com
+Requires-Python: >=3.8,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: jsonschema (==4.4.0)
+Requires-Dist: lxml (>=4.6.4,<5.0.0)
+Requires-Dist: pytest (==6.2.4)
