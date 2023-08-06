@@ -1,0 +1,45 @@
+[tool.poetry]
+name = "skillsnetwork"
+version = "0.19.0.dev0" # Set by GitHub Action
+description = "Library for working with Skills Network"
+readme="README.md"
+authors = ["Bradley Steinfeld <bs@ibm.com>"]
+license = "MIT"
+
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.ibm.com/skills-network/labs/issues/new?assignees=&labels=bug%2C+labs&template=bug.md&title=Short+explanation+of+how+the+user+sees+the+bug+manifest"
+"Repository" = "https://github.com/ibm-skills-network/skillsnetwork-python-library"
+"Skills Network Labs" = "https://skills.network/lab-tools"
+
+
+[tool.poetry.dependencies]
+python = "^3.9"
+requests = "^2.28.0"
+tqdm = "^4.64.0"
+ipywidgets = "^7.7.0"
+ipython = "^8.4.0"
+ibm-cos-sdk = {version = "^2.11", optional = true}
+
+
+[tool.poetry.extras]
+regular = ["ibm-cos-sdk"]
+
+[tool.poetry.dev-dependencies]
+jupyterlab = "^3.4.3"
+jupyterlite = "^0.1.0-beta.8"
+build = "^0.8.0"
+pytest = "^7.1.2"
+pytest-asyncio = "^0.18.3"
+pytest-httpserver = "^1.0.4"
+js = "^1.0"
+black = {version = "^22.3.0", allow-prereleases = true}
+
+[tool.pytest.ini_options]
+testpaths = [
+  "tests",
+]
+asyncio_mode = "auto"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
