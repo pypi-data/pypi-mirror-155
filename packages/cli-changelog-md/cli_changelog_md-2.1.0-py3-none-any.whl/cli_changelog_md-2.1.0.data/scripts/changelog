@@ -1,0 +1,74 @@
+#!python
+import datetime
+import os
+import sys
+
+import click
+from core_changelog_md.objects.changes import ChangeCollection
+
+from core_changelog_md.objects.version import VersionBlock
+
+import cli_changelog_md
+from core_changelog_md.common.exceptions import ChangeLogException
+from core_changelog_md.objects.changelog import Changelog
+
+
+@click.group()
+@click.version_option(version=cli_changelog_md.__version__)
+def cli() -> None:
+    pass
+
+
+@cli.command()
+@click.option(
+    '--file', '-f', default='CHANGELOG.md', show_default=True, help='Changelog file path', type=click.Path(exists=True))
+def current(file):
+    """
+    Echo current version
+    """
+    try:
+        click.echo(Changelog.from_file(os.path.realpath(file)).current_version.version.public)
+    except ChangeLogException as e:
+        click.echo(str(e))
+        sys.exit(os.EX_SOFTWARE)
+
+
+@cli.command(name='next')
+@click.option(
+    '--file', '-f', default='CHANGELOG.md', show_default=True, help='Changelog file path', type=click.Path(exists=True))
+def _next(file):
+    """
+    Echo next version
+    """
+    try:
+        click.echo(Changelog.from_file(os.path.realpath(file)).next_version)
+    except ChangeLogException as e:
+        click.echo(str(e))
+        sys.exit(os.EX_SOFTWARE)
+
+@cli.command()
+@click.option('--bump-major', '-b', help='Up major version', is_flag=True)
+@click.option(
+    '--file', '-f', default='CHANGELOG.md', show_default=True, help='Changelog file path', type=click.Path(exists=True))
+def release(file, bump_major):
+    """
+    Make release changelog
+    """
+    try:
+        changelog = Changelog.from_file(os.path.realpath(file))
+    except ChangeLogException as e:
+        click.echo(str(e))
+        sys.exit(os.EX_SOFTWARE)
+    if changelog.has_unreleased_changes:
+        next_version = VersionBlock(version=changelog.next_version, date=datetime.datetime.now().date())
+        next_version.change_blocks = changelog.unreleased.change_blocks
+        changelog.unreleased.change_blocks = ChangeCollection()
+        changelog.add(next_version)
+        changelog.save(path=file)
+        click.echo(f'Released version {next_version.version.public} is added in {os.path.basename(file)}')
+    else:
+        click.echo("Unreleased Block is empty!")
+
+
+if __name__ == '__main__':
+    cli()
