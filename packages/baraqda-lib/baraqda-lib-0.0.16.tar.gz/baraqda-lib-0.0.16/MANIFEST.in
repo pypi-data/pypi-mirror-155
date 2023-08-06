@@ -1,0 +1,5 @@
+include baraqdalib/addressData/*.csv
+include baraqdalib/data/PL/*.csv
+include baraqdalib/data/PL/cars/*.csv
+include baraqdalib/data/PL/*.txt
+include baraqdalib/data/DE/*.csv
