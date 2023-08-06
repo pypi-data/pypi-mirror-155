@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: tables_io
+Version: 0.7.8
+Summary: Input/output and conversion functions for tabular data
+Home-page: https://github.com/LSSTDESC/tables_io
+Author: Eric Charles
+Author-email: charles@slac.stanford.edu
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+License-File: LICENSE
+
+# tables_io
+
+Input/output and conversion interfaces for tabular data formats.
+
+
+## People
+
+* [Eric Charles](https://github.com/LSSTDESC/qp/issues/new?body=@eacharles) (SLAC)
+
+
+## License, Contributing etc
+
+The code in this repo is available for re-use under the MIT license.
+
+
