@@ -1,0 +1,13 @@
+[bob.cli]
+measure = bob.measure.script.measure:measure
+
+[bob.measure.cli]
+det = bob.measure.script.commands:det
+epc = bob.measure.script.commands:epc
+evaluate = bob.measure.script.commands:evaluate
+gen = bob.measure.script.gen:gen
+hist = bob.measure.script.commands:hist
+metrics = bob.measure.script.commands:metrics
+multi-metrics = bob.measure.script.commands:multi_metrics
+roc = bob.measure.script.commands:roc
+
