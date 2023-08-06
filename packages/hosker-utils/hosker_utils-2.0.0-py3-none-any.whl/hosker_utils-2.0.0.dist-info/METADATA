@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: hosker-utils
+Version: 2.0.0
+Summary: General utility functions
+Home-page: https://github.com/tomhosker/hosker_utils
+Author: Tom Hosker
+Author-email: tomdothosker@gmail.com
+License: MIT
+License-File: LICENSE
+Requires-Dist: pylint (>=2.12.2)
+Requires-Dist: pytest (>=7.1.2)
+Requires-Dist: pytest-cov
+Requires-Dist: termcolor
+
