@@ -1,0 +1,67 @@
+Metadata-Version: 2.1
+Name: bTagScript
+Version: 2.6.3
+Summary: An easy drop in user-provided Templating system.
+Home-page: https://github.com/Leg3ndary/bTagScript
+Author: Leg3ndary
+Author-email: bleg3ndary@gmail.com
+License: Creative Commons Attribution 4.0 International License
+Keywords: tagscript
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: Freely Distributable
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.8
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown; charset=UTF-8; variant=GFM
+License-File: LICENSE
+
+## Information
+<a href='https://btagscript.readthedocs.io/en/latest/?badge=latest'>
+    <img src='https://readthedocs.org/projects/btagscript/badge/?version=latest' alt='Documentation Status' />
+</a>
+
+**This is my own implementation of TagScript. Will write documentation for how to use this later.**
+
+This repository is a fork of JonSnowbd's [TagScript](https://github.com/JonSnowbd/TagScript), a string templating language.
+
+This fork is also from phenom4n4n's forked version of the original TagScript package.
+
+Documentation on the bTagScript library can be [found here](https://btagscript.readthedocs.io/en/latest/).
+
+## Installation
+
+Download the latest version through github:
+
+```
+pip(3) install https://github.com/Leg3ndary/bTagScript
+```
+
+Download from a commit:
+
+```
+pip(3) install git+https://github.com/Leg3ndary/bTagScript.git@<COMMIT_HASH>
+```
+
+Install for editing/development:
+
+```
+git clone https://github.com/Leg3ndary/bTagScript.git
+pip(3) install -e ./bTagScript
+```
+
+## What?
+
+TagScript allows you to create low level code, quickly, and easily. This is meant to be used with discord.py 2.0 and is not compatible with other versions.
+
+## Dependencies
+
+`Python 3.8+`
+
+`discord.py`
+
+`pyparsing`
+
+
