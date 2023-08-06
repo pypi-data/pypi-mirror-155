@@ -1,0 +1,196 @@
+CHANGES
+=======
+
+0.1.0
+-----
+
+* Update author in setup.cfg
+* Changing setup.py to fix rendering issue of README.md on PyPI
+* Adding required files for packaging the repository. These files include Manifest.in, pyproject.toml and whl file
+* Update hacking to fix flake8
+* Update CI to use GitHub Actions
+* Added error status for offers and leases
+* Update exception message for subleases/suboffers
+* Add future offers and future leases to the node list display
+* Update the lease returned when claiming an offer to include names
+* Include owner, offer, and lease information in node list
+* Fix error when controller attempts to retrieve project name
+* Removed owner change code
+* Use is\_lease\_\* and is\_offer\_\* policy rules
+* Optimize name queries for list commands
+* Add resource list functionality
+* Add compilation rule for DateTime in MySQL to specify precision
+* Updated readme with database configuration instructions + section in example configuration for internal keystone authentication
+* Lease/offer API returns resource and project names
+* Catch PolicyNotAuthorized errors and replace with HTTPForbidden
+* Add logging for lease and offer operations
+* Allow lessees to create offers and leases
+* Change the 'cancelled' status to 'deleted' to match the CLI
+* Allow nodes and projects to be specified by name in the REST API
+* Added resource\_type and resource\_uuid filters for lease lists
+* Add owner change to leasing system
+* Add lessee\_id to offers
+* Update default lease get all to include owned leases
+* Add default resource type config
+* Allow owners to create a lease and lessees to claim an offer
+* Add owner field for leases
+* Rename contract with lease
+* Bugfix on Offer create
+* Use EngineFacade
+* add tests for resource objects
+* Reporting documentation
+* Bugfix on times for offer and contract creation
+* UUID warning in tests
+* Bug Fix on offer deletion and manager
+* Fulfill and Expire times for contracts
+* create a separate expire\_contract
+* Locks on objects
+* Updated documentation
+* Additional tests for Api.py(WIP)
+* Tests for api.py
+* Update to manager
+* Bugfix on contract POST
+* Contract creation by name
+* Conflict times for offer creation
+* Added names for api objects
+* Offer and contract api no longer can set project\_id
+* run tests in travis-ci
+* Ensure policy test has proper configuration
+* Rework destroy to cancel
+* Tests for offer\_get
+* Testing for Post
+* Fix issues pointed out by pylint and pycodestyle
+* Enable travis CI
+* Added availabilities to offers
+* Policy for remaining offer and contract api functions
+* Policy on contract get\_all
+* Fixes to tox.ini
+* Fixed start and end times
+* url variables and filtering
+* Intitial tests for contract
+* Initial tests for types.py
+* new functionalities in requirement doc
+* Add test\_types.py
+* Fixed posting readonly variables
+* Update ironic node resource object to work with node owners/lessees
+* requirements doc for ESI Leap
+* Removed flocx dependencies
+* Offers should use 'available' rather than 'open' status
+* provider retrieves contracts from marketplace and creates contracts
+* removed print statement
+* Implement get\_node\_config for ironic nodes
+* send dummy/test/ironic node data in offer
+* update README for connecting to flocx-market
+* create flocx-market client
+* provider send an offer to marketplace
+* ensure pep8 is only run against esi\_leap \*.py files
+* add oslo policy tests
+* Add base oslo policy code
+* add get\_one test
+* set project\_id
+* set request context when querying test api service
+* added test\_node resource type for testing
+* updated offer import
+* initial api tests
+* fixed db api facade code
+* allow API to use no authentication
+* removed unintentional text
+* filled out README
+* updated API to use offers/contracts
+* updated manager service to manage offer/contracts
+* updated tests to offer/contract model
+* updated resource objects to set contract and contract uuid
+* updated object classes to offer/contract model
+* updated common libs to offer/contract model
+* updated DB to offer/contract model
+* updated project description
+* removed policy
+* created LeasableResource tests
+* added LeaseRequest object tests
+* finished Policy object tests
+* pep8 fix
+* created initial Policy object tests
+* created base test classes
+* add missing functions needed for tests
+* renamed indices
+* add python-ironicclient requirement
+* add LeasableResource controller to API
+* implemented DummyNode
+* refactored ResourceObject into a factory class
+* pep8 fix
+* created ResourceObject, moved all ironic calls into it
+* renamed Policy Node to Leasable Resource
+* updated LeaseRequest node\_properties into resource\_properties
+* updated LeasableResource to use resource\_type/resource\_uuid
+* renamed PolicyNode to LeasableResource
+* pep8 updates
+* add lease request api controller
+* add jsontype
+* add test framework
+* Add install instructions to README
+* add token authentication to api
+* add post and delete operations
+* created
+* temporary hack to set project\_id
+* added get\_all
+* added to\_dict method
+* created
+* Initial API implementation framework
+* combined policy node periodic jobs
+* add periodic jobs to monitor lease requests and nodes
+* pep8
+* add check before removing project\_id from node
+* add get\_leased for policy nodes
+* updated expire to expire\_or\_cancel
+* added log info messages to expire method
+* pep8
+* set log level to info
+* fix setting of project\_id when fulfilling lease
+* make DateTimeField timezone unaware
+* scope db queries properly for admins
+* add lease\_request\_get\_all\_by\_status
+* add apache license
+* initial implementation of esi-leap-manager
+* add netconf opts
+* add to\_dict method to base model class
+* fix pep8 error
+* moved node un/assignment methods to policy\_node
+* added lease request expire method
+* added fulfillment check to see if node is already claimed
+* add method for lease request to check its status
+* separated lease request statuses into constants file
+* fix pep8 errors
+* added TODO to check ironic node properties when fulfilling lease request
+* simple lease request fullfillment method
+* corrected lease request node\_properties field
+* updated node owner property to look for ID
+* add project check against ironic with creating/updating/deleting an inventory node
+* created ironic client
+* minor cleanup
+* alphabetized exception list
+* limit policy and lease request db operations by project
+* created esi leap exception class
+* fix queries with relationship filter
+* add policy node available query
+* initial object layer implementation
+* fixed delete methods
+* updated lease request model to allow nullable fields
+* renamed lease\_request\_uuid field to request\_uuid
+* combined applied policies and lease nodes to policy nodes table
+* fixed delete methods
+* added missing save call in update methods
+* add missing return statement from create methods
+* add context variable to various db methods
+* initial database schema and migration code
+* add base db-manage entrypoint
+* add temp return statement
+* created
+* add i18n
+* created
+* add config code
+* removed test-requirement requirement for now
+* created
+* removed Flask requirement
+* created
+* created
+* created

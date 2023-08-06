@@ -1,0 +1,20 @@
+[console_scripts]
+esi-leap-api = esi_leap.cmd.api:main
+esi-leap-dbsync = esi_leap.cmd.dbsync:main
+esi-leap-manager = esi_leap.cmd.manager:main
+
+[esi_leap.database.migration_backend]
+sqlalchemy = esi_leap.db.sqlalchemy.migration
+
+[oslo.config.opts]
+esi-leap.conf = esi_leap.conf.opts:list_opts
+
+[oslo.policy.enforcer]
+esi-leap = esi_leap.common.policy:get_enforcer
+
+[oslo.policy.policies]
+esi-leap = esi_leap.common.policy:list_rules
+
+[wsgi_scripts]
+esi-leap-wsgi-api = esi_leap.api.wsgi:init
+
