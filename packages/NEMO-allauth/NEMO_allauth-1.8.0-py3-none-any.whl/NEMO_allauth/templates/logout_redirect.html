@@ -1,0 +1,18 @@
+{% load static %}
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>logout</title>
+
+		{# NEMO jQuery #}
+		<script type="text/javascript" src="{% static "jquery.js" %}"></script>
+	</head>
+	<body>
+		<script>
+			if (!$) { $ = django.jQuery; }
+			$.ajax({url: '{{ ajax_url }}', dataType: 'jsonp'});
+			window.setTimeout(function() { window.location.href = '{% url 'original_logout' %}';}, 10);
+		</script>
+	</body>
+</html>
