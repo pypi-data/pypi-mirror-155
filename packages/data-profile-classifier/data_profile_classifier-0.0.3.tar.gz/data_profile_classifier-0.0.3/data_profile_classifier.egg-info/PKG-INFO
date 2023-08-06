@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: data-profile-classifier
+Version: 0.0.3
+Summary: Data profile classifier
+Home-page: https://github.com/GuitooStephan/data-job-applicant-classifier
+Author: Stephane Tanoh
+Author-email: guystephane00@gmail.com
+Project-URL: Bug Tracker, https://github.com/GuitooStephan/data-job-applicant-classifier/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+
+# Data profile classifier
+
+This program helps to classify data profiles based on the skills

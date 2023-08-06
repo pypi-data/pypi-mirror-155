@@ -1,0 +1,14 @@
+LICENSE.txt
+README.txt
+pyproject.toml
+setup.cfg
+data_profile_classifier/__init__.py
+data_profile_classifier/inference.py
+data_profile_classifier/preprocess.py
+data_profile_classifier/train.py
+data_profile_classifier/transformers.py
+data_profile_classifier.egg-info/PKG-INFO
+data_profile_classifier.egg-info/SOURCES.txt
+data_profile_classifier.egg-info/dependency_links.txt
+data_profile_classifier.egg-info/requires.txt
+data_profile_classifier.egg-info/top_level.txt
