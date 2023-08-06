@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: twostates
+Version: 0.0.3
+Summary: Allows simulation of two level systems.
+Author: j2
+Keywords: quantum mechanics
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3
+Requires-Dist: mylog
+Requires-Dist: numpy (>=1.17.0)
+
