@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "mclogger"
+version = "1.0.9"
+description = "MCLogger that shows log records on screen in color and in a log file"
+authors = ["Pubs Abayasiri <pubudu.abayasiri@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/pubs12/mlogger"
+packages = [{include = "mclogger"}]
+
+
+[tool.poetry.dependencies]
+python = "^3"
+colorama= "^0.4.3"
+coloredlogs= "^15.0"
+tailer= "^0.4.1"
+
+[tool.poetry.scripts]
+mclogger = "mclogger.__main__:main"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
