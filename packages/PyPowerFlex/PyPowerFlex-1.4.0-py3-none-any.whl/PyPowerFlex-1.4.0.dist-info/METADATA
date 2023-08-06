@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: PyPowerFlex
+Version: 1.4.0
+Summary: Python library for Dell PowerFlex
+Home-page: UNKNOWN
+Author: Ansible Team at Dell
+Author-email: ansible.team@dell.com
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >=3.5
+Requires-Dist: packaging (==20.4)
+Requires-Dist: requests (>=2.23.0)
+
+UNKNOWN
+
+
