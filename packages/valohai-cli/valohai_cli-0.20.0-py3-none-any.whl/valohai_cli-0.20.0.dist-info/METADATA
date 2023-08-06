@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: valohai-cli
+Version: 0.20.0
+Author: Valohai
+Author-email: hait@valohai.com
+License: MIT
+Requires-Python: >=3.6
+License-File: LICENSE
+Requires-Dist: click (>=7.0)
+Requires-Dist: gitignorant (>=0.2.0)
+Requires-Dist: requests-toolbelt (>=0.7.1)
+Requires-Dist: requests (>=2.0.0)
+Requires-Dist: typing-extensions (>=3.7)
+Requires-Dist: valohai-utils (>=0.1.13)
+Requires-Dist: valohai-yaml (>=0.23.0)
+
