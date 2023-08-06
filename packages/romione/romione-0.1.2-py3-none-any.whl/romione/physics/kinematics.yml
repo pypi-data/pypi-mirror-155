@@ -1,0 +1,11 @@
+Symbols:
+  s: s
+  t: t
+  u: u
+  v: v
+  a: a
+
+Equations:
+  Eq1_motion: v = u + a*t
+  Eq2_motion: s = u*t + 1/2 * a * t**2
+  Eq3_motion: v**2 - u**2 = 2*a*s

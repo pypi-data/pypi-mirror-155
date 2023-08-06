@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: romione
+Version: 0.1.2
+Summary: Named after the duo companion of Harry Potter i.e. Ron and Hermione who were
+Home-page: https://github.com/pensieves/romione
+Download-URL: https://github.com/pensieves/romione/releases
+Author: Md Imbesat Hassan Rizvi
+Author-email: imbugene@gmail.com
+License: MIT
+Keywords: knowledge graph,computation engine
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Environment :: GPU :: NVIDIA CUDA :: 11.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pytest (~=7.1.2)
+Requires-Dist: sympy (~=1.10.1)
+Requires-Dist: scipy (~=1.8.0)
+Requires-Dist: pyyaml (~=6.0)
+Requires-Dist: networkx (~=2.8)
+
+# romione
+Computational Engine based on subject knowledge graph
+
+Named after the duo companion of Harry Potter i.e. Ron and Hermione who were the first source of information and help to Harry in the Hogwarts School of Witchcraft and Wizardry. The library is built to function as a knowledge graph and computation engine for you (Harry).
+
