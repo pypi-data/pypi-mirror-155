@@ -1,0 +1,7 @@
+include fastapi_img_det/core/*
+include fastapi_img_det/experiments/*
+include fastapi_img_det/mmdetection/*
+include fastapi_img_det/models/*
+include fastapi_img_det/Spicing/*
+include fastapi_img_det/prediction.py
+include fastapi_img_det/prediction_rid.py
