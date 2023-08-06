@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+src/raadpy/__init__.py
+src/raadpy/core.py
+src/raadpy/event.py
+src/raadpy/functionality.py
+src/raadpy/plotting.py
+src/raadpy/rparray.py
+src/raadpy.egg-info/PKG-INFO
+src/raadpy.egg-info/SOURCES.txt
+src/raadpy.egg-info/dependency_links.txt
+src/raadpy.egg-info/requires.txt
+src/raadpy.egg-info/top_level.txt
