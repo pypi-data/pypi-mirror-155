@@ -1,0 +1,3 @@
+[console_scripts]
+dReads = dmg_reads.__main__:main
+
