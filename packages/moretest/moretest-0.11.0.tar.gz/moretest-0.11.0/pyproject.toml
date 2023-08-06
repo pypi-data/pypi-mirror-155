@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "moretest"
+version = "0.11.0"
+description = ""
+authors = ["chrbrauer <christoph@5xbrauer.de>"]
+
+
+
+[tool.poetry.dependencies]
+python = "^3.8"
+inquirer = "*"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[tool.poetry.scripts]
+APPLICATION-NAME = 'moretest.entry:main'
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
