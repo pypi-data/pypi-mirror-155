@@ -1,0 +1,15 @@
+README.md
+setup.cfg
+setup.py
+TokenExchangeAuthenticator.egg-info/PKG-INFO
+TokenExchangeAuthenticator.egg-info/SOURCES.txt
+TokenExchangeAuthenticator.egg-info/dependency_links.txt
+TokenExchangeAuthenticator.egg-info/requires.txt
+TokenExchangeAuthenticator.egg-info/top_level.txt
+tokenexchangeauthenticator/__init__.py
+tokenexchangeauthenticator/_version.py
+tokenexchangeauthenticator/auth.py
+tokenexchangeauthenticator/tests/__init__.py
+tokenexchangeauthenticator/tests/conftest.py
+tokenexchangeauthenticator/tests/mocks.py
+tokenexchangeauthenticator/tests/test_auth.py
