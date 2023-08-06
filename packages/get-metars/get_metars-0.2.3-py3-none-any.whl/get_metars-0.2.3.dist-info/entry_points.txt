@@ -1,0 +1,3 @@
+[console_scripts]
+get-metars=get_metars.__main__:app
+
