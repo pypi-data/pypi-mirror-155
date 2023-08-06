@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+requirements.txt
+setup.cfg
+setup.py
+version.py
+docs/README.md
+src/ApplicationLibrary/DesktopLibrary.py
+src/ApplicationLibrary/MobileLibrary.py
+src/ApplicationLibrary/Helpers/AppiumCommon.py
+src/robotframework_applicationlibrary.egg-info/PKG-INFO
+src/robotframework_applicationlibrary.egg-info/SOURCES.txt
+src/robotframework_applicationlibrary.egg-info/dependency_links.txt
+src/robotframework_applicationlibrary.egg-info/requires.txt
+src/robotframework_applicationlibrary.egg-info/top_level.txt

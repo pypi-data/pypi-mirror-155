@@ -1,0 +1,8 @@
+robotframework==5.0.1
+selenium==3.141.0
+robotframework-appiumlibrary==1.6.3
+psutil==5.9.1
+
+[testing]
+Appium-Python-Client
+mock
