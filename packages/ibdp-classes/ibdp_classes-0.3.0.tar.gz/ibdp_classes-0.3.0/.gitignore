@@ -1,0 +1,6 @@
+.mypy_cache
+dist
+build
+ibdp_classes.egg-info
+__pycache__
+.vscode
