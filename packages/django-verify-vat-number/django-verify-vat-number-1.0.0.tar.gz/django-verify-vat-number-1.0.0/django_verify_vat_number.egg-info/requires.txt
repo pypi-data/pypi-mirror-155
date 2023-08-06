@@ -1,0 +1,17 @@
+verify-vat-number~=1.0
+django<5.0,>=3.1
+django-app-settings>=0.7.1
+pycountry~=22.3
+
+[quality]
+doc8
+flake8
+isort
+mypy
+pydocstyle
+
+[test]
+responses
+
+[types]
+types-requests
