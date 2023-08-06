@@ -1,0 +1,33 @@
+Metadata-Version: 2.1
+Name: nhanes-dl
+Version: 0.0.11
+Summary: A python library for downloading Continous NHANES data into panda dataframes
+License: MIT
+Project-URL: Bug Tracker, https://github.com/LeviButcher/nhanes-dl/issues
+Keywords: nhanes
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pandas (>="1.4.2")
+
+# nhanes-dl
+
+Python Library to download Continuous NHANES codebooks into ready to use panda dataframes for all years!
+
+Current Supported Features:
+
+- Downloading a specific Codebook
+- Combining Codebooks
+- Download the linked Mortality data
+- Combining Linked Mortality data with Codebooks
+
+Future Features:
+
+- Better Documentation for download functions
+- Download All codebooks for a year without specifying codebooks
+- Checking if codebooks entered to download are valid for that year
+- Better error messages if a download fails
+- Linking to other NHANES link datasets
