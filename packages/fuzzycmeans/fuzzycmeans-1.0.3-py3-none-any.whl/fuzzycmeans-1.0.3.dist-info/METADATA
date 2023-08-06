@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: fuzzycmeans
+Version: 1.0.3
+Summary: Fuzzy c-means according to the research paper by James C. Bezdek et. al
+Home-page: https://github.com/oeg-upm/fuzzy-c-means
+Author: Ahmad Alobaid
+Author-email: aalobaid@fi.upm.es
+Classifier: Programming Language :: Python :: 3.9
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Software Development :: Libraries
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: six
+Requires-Dist: bokeh
+
+
+# fuzzy-c-means
+Fuzzy c-means Clustering
+
+## Description
+This implementation is based on the paper
+**FCM: The fuzzy c-means clustering algorithm**  by: *James C.Bezdek, Robert Ehrlich, and  William Full*
+
+## To run the tests
+`sh tests/run_tests.sh`
+
+## Install via pip
+```pip install fuzzycmeans```
+
