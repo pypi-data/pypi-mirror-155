@@ -1,0 +1,13 @@
+alfred3>=2.0
+bleach>=3.2.1
+packaging
+
+[dev]
+pytest
+pre-commit
+black
+flake8
+python-dotenv
+mongomock
+bs4
+selenium
