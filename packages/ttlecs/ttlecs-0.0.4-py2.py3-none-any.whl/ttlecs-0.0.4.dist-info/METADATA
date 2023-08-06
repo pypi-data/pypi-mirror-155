@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: ttlecs
+Version: 0.0.4
+Summary: create ttl ecs on cloud
+Home-page: https://github.com/shenyubao/ttlecs
+Author: shenyubao
+Author-email: ssybb1988@gmail.com
+License: MIT
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3.5
+Requires-Dist: pyyaml (==6.0)
+Requires-Dist: aliyun-python-sdk-core (==2.13.36)
+Requires-Dist: aliyun-python-sdk-ecs (==4.24.19)
+
+# TTLECS
+
+create ttl(time to alive) ecs instance on cloud provider
+
+
