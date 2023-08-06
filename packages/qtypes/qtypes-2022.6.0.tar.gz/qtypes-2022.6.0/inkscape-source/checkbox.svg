@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="70.513039mm"
+   height="70.513039mm"
+   viewBox="0 0 70.513039 70.513039"
+   version="1.1"
+   id="svg5"
+   inkscape:export-filename="/home/kyle/src/yaq/qtypes/qtypes/styles/tomorrow-night/checkbox-disabled-checked.png"
+   inkscape:export-xdpi="8.8818321"
+   inkscape:export-ydpi="8.8818321"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="checkbox.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="2.2948373"
+     inkscape:cx="100.66073"
+     inkscape:cy="168.20365"
+     inkscape:window-width="1920"
+     inkscape:window-height="1051"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g1321" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-73.209419,-57.366482)">
+    <rect
+       style="fill:#1d1f21;fill-opacity:1;stroke-width:0.874001"
+       id="rect868"
+       width="70.488068"
+       height="70.620255"
+       x="73.23439"
+       y="57.259262" />
+  </g>
+  <g
+     inkscape:label="Active check"
+     inkscape:groupmode="layer"
+     id="g1317"
+     transform="translate(-73.209419,-57.366482)"
+     style="display:none">
+    <path
+       style="fill:none;stroke:#c5c8c6;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 9.5614576,35.944133 26.469139,50.787546 60.426216,11.973186"
+       id="path1636"
+       transform="translate(73.209419,57.366482)" />
+  </g>
+  <g
+     inkscape:label="DisabledCheck"
+     inkscape:groupmode="layer"
+     id="g1999"
+     transform="translate(-73.209419,-57.366482)"
+     style="display:inline">
+    <path
+       style="fill:none;stroke:#aaaaaa;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 9.5614576,35.944133 26.469139,50.787546 60.426216,11.973186"
+       id="path1997"
+       transform="translate(73.209419,57.366482)" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="ActiveBorder"
+     style="display:none">
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#c5c8c6;stroke-width:3;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1137"
+       width="70.488068"
+       height="70.620255"
+       x="0.024971258"
+       y="-0.10721991" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g1321"
+     inkscape:label="DisabledBorder"
+     style="display:inline">
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#333333;stroke-width:3;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect1319"
+       width="70.488068"
+       height="70.620255"
+       x="0.024971258"
+       y="-0.10721991" />
+  </g>
+</svg>
