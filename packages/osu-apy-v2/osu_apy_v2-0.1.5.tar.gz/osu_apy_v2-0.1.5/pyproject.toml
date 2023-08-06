@@ -1,0 +1,22 @@
+[tool.black]
+line-length = 120
+
+[tool.poetry]
+name = "osu_apy_v2"
+version = "0.1.5"
+description = "small osu api v2 helper"
+authors = ["Eulentier161 <eulentier161@gmail.com>"]
+readme = "README.md"
+repository = "https://gitlab.com/Eulentier161/osu_apy_v2"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+requests = "^2.28.0"
+pyaml = "^21.10.1"
+
+[tool.poetry.dev-dependencies]
+black = "^22.3.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
