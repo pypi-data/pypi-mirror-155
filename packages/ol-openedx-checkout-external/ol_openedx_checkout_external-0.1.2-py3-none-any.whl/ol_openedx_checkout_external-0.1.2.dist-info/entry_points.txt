@@ -1,0 +1,3 @@
+[lms.djangoapp]
+ol_openedx_checkout_external = ol_openedx_checkout_external.app:ExternalCheckoutConfig
+
