@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: yrocr
+Version: 0.1.4
+Summary: OCR
+Home-page: https://pypi.org/project/yrocr
+Author: ocr team
+Author-email: ocr@qq.com
+License: UNKNOWN
+Keywords: yrocr
+Platform: UNKNOWN
+Classifier: Topic :: Utilities
+Classifier: Topic :: Internet
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Description-Content-Type: text/markdown
+
+基于开源paddleOcr的OCR小工具
+
