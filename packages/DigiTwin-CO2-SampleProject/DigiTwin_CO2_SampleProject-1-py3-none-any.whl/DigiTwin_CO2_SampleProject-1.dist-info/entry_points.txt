@@ -1,0 +1,4 @@
+[console_scripts]
+run_co2_prediction = DigiTwin_CO2_SampleProject.main:run_predictions
+run_measurement_generator = DigiTwin_CO2_SampleProject.MonitoringFaker.fake_measurement_data:fake_measurement_data
+
