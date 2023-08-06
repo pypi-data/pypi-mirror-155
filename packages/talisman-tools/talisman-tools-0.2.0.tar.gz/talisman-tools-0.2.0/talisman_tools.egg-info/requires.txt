@@ -1,0 +1,10 @@
+talisman-dm>=0.4.5
+talisman-interfaces
+fastapi>=0.73.0
+python-multipart>=0.0.5
+requests>=2.22.0
+uvicorn>=0.13.3
+jsonformatter>=0.3.0
+
+[logstash]
+python3-logstash>=0.4.80
