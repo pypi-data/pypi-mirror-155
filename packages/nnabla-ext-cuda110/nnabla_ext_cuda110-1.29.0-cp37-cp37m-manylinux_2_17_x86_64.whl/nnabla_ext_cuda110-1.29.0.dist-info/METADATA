@@ -1,0 +1,34 @@
+Metadata-Version: 2.1
+Name: nnabla-ext-cuda110
+Version: 1.29.0
+Summary: A CUDA(11.0) and cuDNN(8.0.4) extension of NNabla
+Home-page: https://github.com/sony/nnabla-ext-cuda
+Author: Takuya Narihira, Sony Corporation
+Author-email: nnabla@googlegroups.com
+License: Apache License 2.0
+Keywords: deep learning artificial intelligence machine learning neural network cuda
+Platform: CUDA 11.0
+Platform: cuDNN 8.0.4
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: C++
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: MacOS :: MacOS X
+Requires-Python: >=3.5
+Requires-Dist: setuptools
+Requires-Dist: nnabla (==1.29.0)
+
+UNKNOWN
+
+
