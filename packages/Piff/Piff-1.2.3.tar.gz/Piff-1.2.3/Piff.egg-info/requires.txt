@@ -1,0 +1,9 @@
+galsim>=2.3
+numpy>=1.17
+scipy>=1.2
+pyyaml>=5.1
+treecorr>=4.2
+fitsio>=1.0
+matplotlib>=3.3
+LSSTDESC.Coord>=1.0
+treegp>=0.6
