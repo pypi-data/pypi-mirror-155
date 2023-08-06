@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load i18n static django_bootstrap5 %}
+
+
+{% block content_title %}<h2>{{ title }}</h2>{% endblock %}
+
+{% block content %}
+
+  {% include 'xform_howto.html' %}
+
+  <p>{% blocktrans %}If you have a correct xlsx (XForm) file you can now Upload it{% endblocktrans %}</p>
+
+  {% if uploaded_file_url %}
+      <br/>
+      <p>{% trans "Currently" %} <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
+  {% endif %}
+
+
+  <form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% bootstrap_form form layout='horizontal' %}
+    
+    <div class="mt-2">
+      {% if pk %}
+        <a class="btn btn-secondary" href="{% url 'odk:xform_detail' pk %}" role="button">{% trans "Back" %}</a>
+      {% else %}
+        <a class="btn btn-secondary" href="{% url 'odk:xform_list' %}" role="button">{% trans "Back" %}</a>
+      {% endif %}
+      <button type="submit" class="btn btn-primary"><i class="far fa-save me-2"></i>{% trans "Save" %}</button>
+    </div>
+    
+  </form>
+    
+
+{% endblock %}
+
+<!-- Load js -->
+{% block js %}
+    {{ block.super }}
+    <script src="{% static 'js/enableajaxindjango.js' %}"></script>
+    <script src="{% static 'js/required_fields.js' %}"></script>
+{% endblock js %}
