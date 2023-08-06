@@ -1,0 +1,54 @@
+---
+class: submodule.SubDemo
+methods:
+  - name: get_random_data
+    args: []
+args:
+  - name: is_demo
+    required: True
+    type: bool
+    implied: []
+    excluded: []
+    secret: False
+  - name: name
+    required: True
+    type: str
+    excluded: []
+    implied: []
+    secret: False
+  - name: password
+    required: True
+    type: str
+    excluded: []
+    implied: []
+    secret: True
+  - name: list_only
+    required: False
+    type: bool
+    excluded:
+      - dict_only
+      - demo_dict
+    implied:
+      - demo_list
+    secret: False
+  - name: demo_list
+    required: False
+    type: list
+    excluded: []
+    implied: []
+    secret: False
+  - name: dict_only
+    required: False
+    type: bool
+    excluded:
+      - list_only
+      - demo_list
+    implied:
+      - demo_dict
+    secret: False
+  - name: demo_dict
+    required: False
+    type: dict
+    excluded: []
+    implied: []
+    secret: False
