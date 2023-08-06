@@ -1,0 +1,16 @@
+README.md
+README.rst
+setup.cfg
+setup.py
+dephell_setuptools/distutils_cmd.py
+dephell_setuptools/_cmd.py
+dephell_setuptools/_cli.py
+dephell_setuptools/_pkginfo.py
+dephell_setuptools/_manager.py
+dephell_setuptools/_base.py
+dephell_setuptools/_cached_property.py
+dephell_setuptools/__main__.py
+dephell_setuptools/_cfg.py
+dephell_setuptools/_constants.py
+dephell_setuptools/_static.py
+dephell_setuptools/__init__.py
