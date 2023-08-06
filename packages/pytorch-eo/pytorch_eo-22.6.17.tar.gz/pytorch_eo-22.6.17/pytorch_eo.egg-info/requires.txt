@@ -1,0 +1,11 @@
+numpy
+torch>=1.4
+torchvision
+pytorch_lightning
+rasterio
+scikit-image
+scikit-learn
+albumentations
+einops
+pandas
+geopandas
