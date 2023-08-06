@@ -1,0 +1,2 @@
+[console_scripts]
+motext = motext.scripts.motext:cli
