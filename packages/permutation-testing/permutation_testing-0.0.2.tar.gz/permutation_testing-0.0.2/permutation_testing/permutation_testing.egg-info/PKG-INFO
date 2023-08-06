@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: permutation-testing
+Version: 0.0.2
+Summary: Package for quick implementation of non-parametric permutation testing
+Author-email: Duncan Tulimieri <tulimid@udel.edu>
+Project-URL: Homepage, https://tulimid1.github.io/permutation_testing/
+Project-URL: Bug Tracker, https://github.com/tulimid1/permutation_testing/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# permutation_test
+Permutation test for MATLAB and Python. 
