@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: mathematicslib
+Version: 0.0.1
+Summary: A module for math
+Home-page: UNKNOWN
+Author: Gustavo Kayser
+Author-email: sentick00@gmail.com
+License: MIT
+Keywords: math
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Education
+Classifier: Operating System :: Microsoft :: Windows :: Windows 10
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+License-File: LICENSES.txt
+
+-> README <-
+
+This is a math libary for python 3+ that export important modules for
+helping in mathematics.
+
+Change Log
+==========
+
+0.0.1 (19/06/2022)
+-------------------
+- First Release
+
