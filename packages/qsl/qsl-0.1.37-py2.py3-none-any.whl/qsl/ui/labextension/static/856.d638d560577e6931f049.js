@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkqslwidgets=self.webpackChunkqslwidgets||[]).push([[856],{73856:(e,a,d)=>{d.r(a),d.d(a,{CommonWidget:()=>i.f,MODULE_NAME:()=>s.o,MODULE_VERSION:()=>s.Y,MediaLabelerModel:()=>t.p,MediaLabelerView:()=>t.N,defaultWidgetState:()=>i.U});var s=d(31255),t=d(59087),i=d(81609)}}]);

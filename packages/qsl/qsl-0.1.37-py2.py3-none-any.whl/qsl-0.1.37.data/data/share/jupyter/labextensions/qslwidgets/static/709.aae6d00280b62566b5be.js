@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkqslwidgets=self.webpackChunkqslwidgets||[]).push([[709],{58709:(e,t,i)=>{i.r(t),i.d(t,{default:()=>d});var s=i(82565),r=i(31255),a=i(59087);const d={id:"qsl:plugin",requires:[s.IJupyterWidgetRegistry],activate:function(e,t){t.registerWidget({name:r.o,version:r.Y,exports:{MediaLabelerModel:a.p,MediaLabelerView:a.N}})},autoStart:!0}}}]);
