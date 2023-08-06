@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: solidlab-perftest-common
+Version: 1.0.0
+Summary: SolidLab PerfTest Common
+Home-page: https://gitlab.ilabt.imec.be/ilabt/solidlab-perftest-common
+Author: Wim Van de Meerssche
+Author-email: wim.vandemeerssche@imec.be
+License: EUPL-1.2
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: European Union Public Licence 1.2 (EUPL 1.2)
+Classifier: Programming Language :: Python :: 3 :: Only
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# SolidLab PerfTest Common
+
+Common tools and datastructures used by [solidlab-perftest-server](https://github.com/SolidLabResearch/solidlab-perftest-server) and related tools.
+
+
+
