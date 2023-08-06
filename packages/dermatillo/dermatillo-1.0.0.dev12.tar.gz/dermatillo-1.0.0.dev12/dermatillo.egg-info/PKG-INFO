@@ -1,0 +1,23 @@
+Metadata-Version: 1.2
+Name: dermatillo
+Version: 1.0.0.dev12
+Summary:  AI-driven alarm that can detect when the user is picking skin of own face (dermatillomania). Application's goal is to aid self-awareness of the user and consequently prevent destructive behavior from happening.  # TO-DO: instructions 
+Home-page: UNKNOWN
+Author: Jan Grzybek
+Author-email: lyre_embassy_0n@icloud.com
+License: MIT
+Project-URL: GitHub, https://github.com/jan-grzybek/dermatillo
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: Unix
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Scientific/Engineering :: Image Processing
+Classifier: Topic :: Scientific/Engineering :: Medical Science Apps.
+Requires-Python: >=3.9
