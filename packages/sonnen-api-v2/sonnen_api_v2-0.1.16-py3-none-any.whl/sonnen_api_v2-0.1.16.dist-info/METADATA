@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: sonnen-api-v2
+Version: 0.1.16
+Summary: # Sonnen API v2
+Home-page: https://github.com/Katamave/sonnen_api_v2.git
+Author: Vaclav Silhan
+Author-email: katamave@gmail.com
+License: MIT
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests (~=2.27.1)
+
+# Sonnen API v2
+Sonnenbatterie API v2 fetcher. In my case used for Home Assistant.
+
+
