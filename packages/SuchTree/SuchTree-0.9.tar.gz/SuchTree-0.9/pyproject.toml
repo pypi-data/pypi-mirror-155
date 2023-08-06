@@ -1,0 +1,12 @@
+[build-system]
+requires = [ "setuptools", "wheel", "Cython", "numpy", "scipy" ]
+build-backend = "setuptools.build_meta"
+
+[tool.cibuildwheel.linux]
+before-all = "yum -y install lapack-devel blas-devel openblas-devel atlas-devel"
+archs = "x86_64"
+skip = "*musllinux*"
+
+[tool.cibuildwheel.macos]
+archs = "arm64 x86_64"
+skip = "pp*"
