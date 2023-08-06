@@ -1,0 +1,6 @@
+[console_scripts]
+
+
+[databroker.handlers]
+AD_PILATUS_MX = nyxtools.handlers:PilatusHandlerMX
+
