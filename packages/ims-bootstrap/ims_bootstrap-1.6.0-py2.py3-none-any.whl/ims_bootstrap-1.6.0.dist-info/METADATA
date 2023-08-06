@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: ims-bootstrap
+Version: 1.6.0
+Summary: A collection of Django widgets and templatetags for Bootstrap integration.
+Home-page: https://github.com/imsweb/django-bootstrap
+Author: Dan Watson
+Author-email: watsond@imsweb.com
+License: BSD
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Utilities
+License-File: LICENSE
+
