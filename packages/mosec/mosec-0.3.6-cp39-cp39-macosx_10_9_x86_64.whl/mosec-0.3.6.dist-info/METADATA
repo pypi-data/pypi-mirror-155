@@ -1,0 +1,390 @@
+Metadata-Version: 2.1
+Name: mosec
+Version: 0.3.6
+Summary: Model Serving made Efficient in the Cloud
+Home-page: https://mosecorg.github.io/
+Author: Keming Yang
+Author-email: Keming <kemingy94@gmail.com>, Zichen <lkevinzc@gmail.com>
+License: Apache License
+                                   Version 2.0, January 2004
+                                http://www.apache.org/licenses/        
+           TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION        
+           1. Definitions.        
+              "License" shall mean the terms and conditions for use, reproduction,
+              and distribution as defined by Sections 1 through 9 of this document.        
+              "Licensor" shall mean the copyright owner or entity authorized by
+              the copyright owner that is granting the License.        
+              "Legal Entity" shall mean the union of the acting entity and all
+              other entities that control, are controlled by, or are under common
+              control with that entity. For the purposes of this definition,
+              "control" means (i) the power, direct or indirect, to cause the
+              direction or management of such entity, whether by contract or
+              otherwise, or (ii) ownership of fifty percent (50%) or more of the
+              outstanding shares, or (iii) beneficial ownership of such entity.        
+              "You" (or "Your") shall mean an individual or Legal Entity
+              exercising permissions granted by this License.        
+              "Source" form shall mean the preferred form for making modifications,
+              including but not limited to software source code, documentation
+              source, and configuration files.        
+              "Object" form shall mean any form resulting from mechanical
+              transformation or translation of a Source form, including but
+              not limited to compiled object code, generated documentation,
+              and conversions to other media types.        
+              "Work" shall mean the work of authorship, whether in Source or
+              Object form, made available under the License, as indicated by a
+              copyright notice that is included in or attached to the work
+              (an example is provided in the Appendix below).        
+              "Derivative Works" shall mean any work, whether in Source or Object
+              form, that is based on (or derived from) the Work and for which the
+              editorial revisions, annotations, elaborations, or other modifications
+              represent, as a whole, an original work of authorship. For the purposes
+              of this License, Derivative Works shall not include works that remain
+              separable from, or merely link (or bind by name) to the interfaces of,
+              the Work and Derivative Works thereof.        
+              "Contribution" shall mean any work of authorship, including
+              the original version of the Work and any modifications or additions
+              to that Work or Derivative Works thereof, that is intentionally
+              submitted to Licensor for inclusion in the Work by the copyright owner
+              or by an individual or Legal Entity authorized to submit on behalf of
+              the copyright owner. For the purposes of this definition, "submitted"
+              means any form of electronic, verbal, or written communication sent
+              to the Licensor or its representatives, including but not limited to
+              communication on electronic mailing lists, source code control systems,
+              and issue tracking systems that are managed by, or on behalf of, the
+              Licensor for the purpose of discussing and improving the Work, but
+              excluding communication that is conspicuously marked or otherwise
+              designated in writing by the copyright owner as "Not a Contribution."        
+              "Contributor" shall mean Licensor and any individual or Legal Entity
+              on behalf of whom a Contribution has been received by Licensor and
+              subsequently incorporated within the Work.        
+           2. Grant of Copyright License. Subject to the terms and conditions of
+              this License, each Contributor hereby grants to You a perpetual,
+              worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+              copyright license to reproduce, prepare Derivative Works of,
+              publicly display, publicly perform, sublicense, and distribute the
+              Work and such Derivative Works in Source or Object form.        
+           3. Grant of Patent License. Subject to the terms and conditions of
+              this License, each Contributor hereby grants to You a perpetual,
+              worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+              (except as stated in this section) patent license to make, have made,
+              use, offer to sell, sell, import, and otherwise transfer the Work,
+              where such license applies only to those patent claims licensable
+              by such Contributor that are necessarily infringed by their
+              Contribution(s) alone or by combination of their Contribution(s)
+              with the Work to which such Contribution(s) was submitted. If You
+              institute patent litigation against any entity (including a
+              cross-claim or counterclaim in a lawsuit) alleging that the Work
+              or a Contribution incorporated within the Work constitutes direct
+              or contributory patent infringement, then any patent licenses
+              granted to You under this License for that Work shall terminate
+              as of the date such litigation is filed.        
+           4. Redistribution. You may reproduce and distribute copies of the
+              Work or Derivative Works thereof in any medium, with or without
+              modifications, and in Source or Object form, provided that You
+              meet the following conditions:        
+              (a) You must give any other recipients of the Work or
+                  Derivative Works a copy of this License; and        
+              (b) You must cause any modified files to carry prominent notices
+                  stating that You changed the files; and        
+              (c) You must retain, in the Source form of any Derivative Works
+                  that You distribute, all copyright, patent, trademark, and
+                  attribution notices from the Source form of the Work,
+                  excluding those notices that do not pertain to any part of
+                  the Derivative Works; and        
+              (d) If the Work includes a "NOTICE" text file as part of its
+                  distribution, then any Derivative Works that You distribute must
+                  include a readable copy of the attribution notices contained
+                  within such NOTICE file, excluding those notices that do not
+                  pertain to any part of the Derivative Works, in at least one
+                  of the following places: within a NOTICE text file distributed
+                  as part of the Derivative Works; within the Source form or
+                  documentation, if provided along with the Derivative Works; or,
+                  within a display generated by the Derivative Works, if and
+                  wherever such third-party notices normally appear. The contents
+                  of the NOTICE file are for informational purposes only and
+                  do not modify the License. You may add Your own attribution
+                  notices within Derivative Works that You distribute, alongside
+                  or as an addendum to the NOTICE text from the Work, provided
+                  that such additional attribution notices cannot be construed
+                  as modifying the License.        
+              You may add Your own copyright statement to Your modifications and
+              may provide additional or different license terms and conditions
+              for use, reproduction, or distribution of Your modifications, or
+              for any such Derivative Works as a whole, provided Your use,
+              reproduction, and distribution of the Work otherwise complies with
+              the conditions stated in this License.        
+           5. Submission of Contributions. Unless You explicitly state otherwise,
+              any Contribution intentionally submitted for inclusion in the Work
+              by You to the Licensor shall be under the terms and conditions of
+              this License, without any additional terms or conditions.
+              Notwithstanding the above, nothing herein shall supersede or modify
+              the terms of any separate license agreement you may have executed
+              with Licensor regarding such Contributions.        
+           6. Trademarks. This License does not grant permission to use the trade
+              names, trademarks, service marks, or product names of the Licensor,
+              except as required for reasonable and customary use in describing the
+              origin of the Work and reproducing the content of the NOTICE file.        
+           7. Disclaimer of Warranty. Unless required by applicable law or
+              agreed to in writing, Licensor provides the Work (and each
+              Contributor provides its Contributions) on an "AS IS" BASIS,
+              WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+              implied, including, without limitation, any warranties or conditions
+              of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
+              PARTICULAR PURPOSE. You are solely responsible for determining the
+              appropriateness of using or redistributing the Work and assume any
+              risks associated with Your exercise of permissions under this License.        
+           8. Limitation of Liability. In no event and under no legal theory,
+              whether in tort (including negligence), contract, or otherwise,
+              unless required by applicable law (such as deliberate and grossly
+              negligent acts) or agreed to in writing, shall any Contributor be
+              liable to You for damages, including any direct, indirect, special,
+              incidental, or consequential damages of any character arising as a
+              result of this License or out of the use or inability to use the
+              Work (including but not limited to damages for loss of goodwill,
+              work stoppage, computer failure or malfunction, or any and all
+              other commercial damages or losses), even if such Contributor
+              has been advised of the possibility of such damages.        
+           9. Accepting Warranty or Additional Liability. While redistributing
+              the Work or Derivative Works thereof, You may choose to offer,
+              and charge a fee for, acceptance of support, warranty, indemnity,
+              or other liability obligations and/or rights consistent with this
+              License. However, in accepting such obligations, You may act only
+              on Your own behalf and on Your sole responsibility, not on behalf
+              of any other Contributor, and only if You agree to indemnify,
+              defend, and hold each Contributor harmless for any liability
+              incurred by, or claims asserted against, such Contributor by reason
+              of your accepting any such warranty or additional liability.        
+           END OF TERMS AND CONDITIONS        
+           APPENDIX: How to apply the Apache License to your work.        
+              To apply the Apache License to your work, attach the following
+              boilerplate notice, with the fields enclosed by brackets "[]"
+              replaced with your own identifying information. (Don't include
+              the brackets!)  The text should be enclosed in the appropriate
+              comment syntax for the file format. We also recommend that a
+              file or class name and description of purpose be included on the
+              same "printed page" as the copyright notice for easier
+              identification within third-party archives.        
+           Copyright [2021] [Yang Keming]        
+           Licensed under the Apache License, Version 2.0 (the "License");
+           you may not use this file except in compliance with the License.
+           You may obtain a copy of the License at        
+               http://www.apache.org/licenses/LICENSE-2.0        
+           Unless required by applicable law or agreed to in writing, software
+           distributed under the License is distributed on an "AS IS" BASIS,
+           WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+           See the License for the specific language governing permissions and
+           limitations under the License.        
+Project-URL: homepage, https://mosecorg.github.io/
+Project-URL: documentation, https://mosecorg.github.io/mosec/
+Project-URL: repository, https://github.com/mosecorg/mosec
+Project-URL: changelog, https://github.com/mosecorg/mosec/releases
+Keywords: machine learning,deep learning,model serving
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Provides-Extra: dev
+Requires-Dist: pytest (>=6) ; extra == 'dev'
+Requires-Dist: pytest-mock (>=3.5) ; extra == 'dev'
+Requires-Dist: mypy (>=0.910) ; extra == 'dev'
+Requires-Dist: pylint (>=2.13.8) ; extra == 'dev'
+Requires-Dist: pydocstyle (>=6.1.1) ; extra == 'dev'
+Requires-Dist: black (>=20.8b1) ; extra == 'dev'
+Requires-Dist: isort (>=5.6) ; extra == 'dev'
+Requires-Dist: autoflake (>=1.4) ; extra == 'dev'
+Requires-Dist: msgpack (>=1.0.2) ; extra == 'dev'
+Requires-Dist: pre-commit (>=2.15.0) ; extra == 'dev'
+Requires-Dist: requests (~=2.28) ; extra == 'dev'
+Requires-Dist: httpx (>=0.21.0) ; extra == 'dev'
+Provides-Extra: doc
+Requires-Dist: mkdocstrings (>=0.16.0) ; extra == 'doc'
+Requires-Dist: mkdocs-material (>=7.3.0) ; extra == 'doc'
+Requires-Dist: mkdocs-gen-files (>=0.3.3) ; extra == 'doc'
+Provides-Extra: plugin
+Requires-Dist: pyarrow (>=0.6.1) ; extra == 'plugin'
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/38581401/134487662-49733d45-2ba0-4c19-aa07-1f43fd35c453.png" height="230" alt="MOSEC" />
+</p>
+
+<p align="center">
+  <a href="https://discord.gg/JTWcRNGQyQ">
+    <img alt="discord invitation link" src="https://img.shields.io/discord/916177932236521533">
+  </a>
+  <a href="https://pypi.org/project/mosec/">
+      <img src="https://badge.fury.io/py/mosec.svg" alt="PyPI version" height="20">
+  </a>
+  <a href="https://pepy.tech/project/mosec">
+      <img src="https://pepy.tech/badge/mosec/month" alt="PyPi Downloads" height="20">
+  </a>
+  <a href="https://tldrlegal.com/license/apache-license-2.0-(apache-2.0)">
+      <img src="https://img.shields.io/github/license/mosecorg/mosec" alt="License" height="20">
+  </a>
+  <a href="https://github.com/mosecorg/mosec/actions/workflows/check.yml?query=workflow%3A%22lint+and+test%22+branch%3Amain">
+      <img src="https://github.com/mosecorg/mosec/actions/workflows/check.yml/badge.svg?branch=main" alt="Check status" height="20">
+  </a>
+</p>
+
+<p align="center">
+  <i>Model Serving made Efficient in the Cloud.</i>
+</p>
+
+## Introduction
+
+Mosec is a high-performance and flexible model serving framework for building ML model-enabled backend and microservices. It bridges the gap between any machine learning models you just trained and the efficient online service API.
+
+- **Highly performant**: web layer and task coordination built with Rust 🦀, which offers blazing speed in addition to efficient CPU utilization powered by async I/O
+- **Ease of use**: user interface purely in Python 🐍, by which users can serve their models in an ML framework-agnostic manner using the same code as they do for offline testing
+- **Dynamic batching**: aggregate requests from different users for batched inference and distribute results back
+- **Pipelined stages**: spawn multiple processes for pipelined stages to handle CPU/GPU/IO mixed workloads
+- **Cloud friendly**: designed to run in the cloud, with the model warmup, graceful shutdown, and Prometheus monitoring metrics, easily managed by Kubernetes or any container orchestration systems
+- **Do one thing well**: focus on the online serving part, users can pay attention to the model performance and business logic
+
+## Installation
+
+Mosec requires Python 3.7 or above. Install the latest [PyPI package](https://pypi.org/project/mosec/) with:
+
+```shell
+> pip install -U mosec
+```
+
+## Usage
+
+### Write the server
+
+Import the libraries and set up a basic logger to better observe what happens.
+
+```python
+import logging
+
+from mosec import Server, Worker
+from mosec.errors import ValidationError
+
+logger = logging.getLogger()
+logger.setLevel(logging.DEBUG)
+formatter = logging.Formatter(
+    "%(asctime)s - %(process)d - %(levelname)s - %(filename)s:%(lineno)s - %(message)s"
+)
+sh = logging.StreamHandler()
+sh.setFormatter(formatter)
+logger.addHandler(sh)
+```
+
+Then, we **build an API** to calculate the exponential with base **e** for a given number. To achieve that, we simply inherit the `Worker` class and override the `forward` method. Note that the input `req` is by default a JSON-decoded object, e.g., a dictionary here (wishfully it receives data like `{"x": 1}`). We also enclose the input parsing part with a `try...except...` block to reject invalid input (e.g., no key named `"x"` or field `"x"` cannot be converted to `float`).
+
+```python
+import math
+
+
+class CalculateExp(Worker):
+    def forward(self, req: dict) -> dict:
+        try:
+            x = float(req["x"])
+        except KeyError:
+            raise ValidationError("cannot find key 'x'")
+        except ValueError:
+            raise ValidationError("cannot convert 'x' value to float")
+        y = math.exp(x)  # f(x) = e ^ x
+        logger.debug(f"e ^ {x} = {y}")
+        return {"y": y}
+```
+
+Finally, we append the worker to the server to construct a `single-stage workflow`, and we specify the number of processes we want it to run in parallel. Then we run the server.
+
+```python
+if __name__ == "__main__":
+    server = Server()
+    server.append_worker(
+        CalculateExp, num=2
+    )  # we spawn two processes for parallel computing
+    server.run()
+
+```
+
+### Run the server
+
+After merging the snippets above into a file named `server.py`, we can first have a look at the command line arguments:
+
+```shell
+> python server.py --help
+```
+
+Then let's start the server...
+
+```shell
+> python server.py
+```
+
+and in another terminal, test it:
+
+```console
+> curl -X POST http://127.0.0.1:8000/inference -d '{"x": 2}'
+{
+  "y": 7.38905609893065
+}
+
+> curl -X POST http://127.0.0.1:8000/inference -d '{"input": 2}' # wrong schema
+validation error: cannot find key 'x'
+```
+
+or check the metrics:
+
+```shell
+> curl http://127.0.0.1:8000/metrics
+```
+
+For more debug logs, you can enable it by changing the Python & Rust log level:
+
+```python
+logger.setLevel(logging.DEBUG)
+```
+
+```shell
+> RUST_LOG=debug python server.py
+```
+
+That's it! You have just hosted your **_exponential-computing model_** as a server! 😉
+
+## Example
+
+More ready-to-use examples can be found in the [Example](https://mosecorg.github.io/mosec/example) section. It includes:
+
+- Multi-stage workflow
+- Batch processing worker
+- Shared memory IPC
+- Customized GPU allocation
+- PyTorch deep learning models:
+  - sentiment analysis
+  - image recognition
+
+## Qualitative Comparison<sup>\*</sup>
+
+|                                                             | Batcher | Pipeline | Parallel | I/O Format<sup>(1)</sup>                                                                                                                    | Framework<sup>(2)</sup> | Backend | Activity                                                                      |
+| ----------------------------------------------------------- | :-----: | :------: | :------: | ------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------- | ------- | ----------------------------------------------------------------------------- |
+| [TF Serving](https://github.com/tensorflow/serving)         |    ✅    |    ✅     |    ✅     | Limited<a href="https://github.com/tensorflow/serving/blob/master/tensorflow_serving/g3doc/api_rest.md#request-format-1"><sup>(a)</sup></a> | Heavily TF              | C++     | ![](https://img.shields.io/github/last-commit/tensorflow/serving)             |
+| [Triton](https://github.com/triton-inference-server/server) |    ✅    |    ✅     |    ✅     | Limited                                                                                                                                     | Multiple                | C++     | ![](https://img.shields.io/github/last-commit/triton-inference-server/server) |
+| [MMS](https://github.com/awslabs/multi-model-server)        |    ✅    |    ❌     |    ✅     | Limited                                                                                                                                     | Heavily MX              | Java    | ![](https://img.shields.io/github/last-commit/awslabs/multi-model-server)     |
+| [BentoML](https://github.com/bentoml/BentoML)               |    ✅    |    ❌     |    ❌     | Limited<a href="https://docs.bentoml.org/en/latest/concepts.html#api-function-return-value"><sup>(b)</sup></a>                              | Multiple                | Python  | ![](https://img.shields.io/github/last-commit/bentoml/BentoML)                |
+| [Streamer](https://github.com/ShannonAI/service-streamer)   |    ✅    |    ❌     |    ✅     | Customizable                                                                                                                                | Agnostic                | Python  | ![](https://img.shields.io/github/last-commit/ShannonAI/service-streamer)     |
+| [Flask](https://github.com/pallets/flask)<sup>(3)</sup>     |    ❌    |    ❌     |    ❌     | Customizable                                                                                                                                | Agnostic                | Python  | ![](https://img.shields.io/github/last-commit/pallets/flask)                  |
+| **[Mosec](https://github.com/mosecorg/mosec)**              |    ✅    |    ✅     |    ✅     | Customizable                                                                                                                                | Agnostic                | Rust    | ![](https://img.shields.io/github/last-commit/mosecorg/mosec)                 |
+
+
+<sup>\*As accessed on 08 Oct 2021. By no means is this comparison showing that other frameworks are inferior, but rather it is used to illustrate the trade-off. The information is not guaranteed to be absolutely accurate. Please let us know if you find anything that may be incorrect.</sup>
+
+<sup>**(1)**: Data format of the service's request and response. "Limited" in the sense that the framework has pre-defined requirements on the format.</sup>
+<sup>**(2)**: Supported machine learning frameworks. "Heavily" means the serving framework is designed towards a specific ML framework. Thus it is hard, if not impossible, to adapt to others. "Multiple" means the serving framework provides adaptation to several existing ML frameworks. "Agnostic" means the serving framework does not necessarily care about the ML framework. Hence it supports all ML frameworks (in Python).</sup>
+<sup>**(3)**: Flask is a representative of general purpose web frameworks to host ML models.</sup>
+
+## Contributing
+
+We welcome any kind of contribution. Please give us feedback by [raising issues](https://github.com/mosecorg/mosec/issues/new/choose) or discussing on [Discord](https://discord.gg/JTWcRNGQyQ). You could also directly [contribute](https://mosecorg.github.io/mosec/contributing) your code and pull request!
+
+
