@@ -1,0 +1,5 @@
+[console_scripts]
+imgstore-codecs = imgstore.apps:list_codecs
+imgstore-save = imgstore.apps:main_saver
+imgstore-test = imgstore.apps:main_test
+imgstore-view = imgstore.apps:main_viewer
