@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: telegram_types
+Version: 1.2
+Home-page: https://github.com/telectron
+Download-URL: https://github.com/telectron/telectron/releases/latest
+Author: Dan
+Author-email: dan@telectron.org
+License: LGPLv3+
+Keywords: telegram chat messenger mtproto api client library python
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: Implementation
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Topic :: Internet
+Classifier: Topic :: Communications
+Classifier: Topic :: Communications :: Chat
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Software Development :: Libraries :: Application Frameworks
+Requires-Python: ~=3.6
+Description-Content-Type: text/markdown
