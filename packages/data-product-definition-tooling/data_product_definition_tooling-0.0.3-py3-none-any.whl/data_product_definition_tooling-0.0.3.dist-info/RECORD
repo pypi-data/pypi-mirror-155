@@ -1,0 +1,12 @@
+converter/__init__.py,sha256=Dz2B6s50PaJqzBse1PxFEEPRTMesky4vgzNJjyzZ96E,145
+converter/cli.py,sha256=46XG4flK1TlZZJLzmfmH5gFgFkXKPdOwTwB6GqH-D18,620
+converter/converter.py,sha256=VwtpGug8LsztvkoywIVB1s-CqZOlEj8qPh5VU7ywXjM,5265
+converter/tests/__snapshots__/test_converter/test_air_quality.json,sha256=-UAKHLLb33Ja1kbm8N9JSIfL1VyWqiI7R2_fs8hSkSc,5344
+converter/tests/conftest.py,sha256=PNzLBl9JYcJNH5ItJ-QnnT-RMABQ-DA4cN6zWv_38wg,175
+converter/tests/data/AirQuality/Current.py,sha256=FOKQoTAve0fQfbSDU21cUyDiQ_SS0h0F8YjUi3qO6Ks,1642
+converter/tests/test_converter.py,sha256=vNVZc5569kFjuK6724eCWiiohZgmQ6wt07m6-XM2PVs,444
+data_product_definition_tooling-0.0.3.dist-info/entry_points.txt,sha256=z3r_sPrFlSVmoFCFuwNsRdkJJoDp1WJl4AArgwkEGXc,47
+data_product_definition_tooling-0.0.3.dist-info/LICENSE,sha256=s0IogvqnSrPiz3PgTCCnd0XKu5xp17NEzMcJtCyRU5U,1519
+data_product_definition_tooling-0.0.3.dist-info/WHEEL,sha256=DA86_h4QwwzGeRoz62o1svYt5kGEXpoUTuTtwzoTb30,83
+data_product_definition_tooling-0.0.3.dist-info/METADATA,sha256=bIzhqXgnuIj31FU8NERKg2WaP7xdGlwkR6vkhYgC6jM,1368
+data_product_definition_tooling-0.0.3.dist-info/RECORD,,
