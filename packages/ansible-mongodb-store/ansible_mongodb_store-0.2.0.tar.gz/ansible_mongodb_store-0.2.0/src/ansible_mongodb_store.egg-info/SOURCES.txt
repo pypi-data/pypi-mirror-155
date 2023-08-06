@@ -1,0 +1,12 @@
+LICENSE.txt
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+src/ansible_mongodb_store/__init__.py
+src/ansible_mongodb_store/mongodb_store.py
+src/ansible_mongodb_store.egg-info/PKG-INFO
+src/ansible_mongodb_store.egg-info/SOURCES.txt
+src/ansible_mongodb_store.egg-info/dependency_links.txt
+src/ansible_mongodb_store.egg-info/requires.txt
+src/ansible_mongodb_store.egg-info/top_level.txt
