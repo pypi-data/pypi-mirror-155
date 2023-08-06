@@ -1,0 +1,16 @@
+ENV:
+  envir_name:
+    uri: "http://host/api"
+    user: "the account for login"
+    password: "user login password"
+    public_key: "have default value"
+    company: "company_name or empty"
+    sponsor: "sponsor_name"
+    study: "study_name"
+    life_cycle: "dev"
+    db:
+      host: "db_host"
+      user: "db_user"
+      pwd: "db user password"
+      database: "schema"
+      port: 3306

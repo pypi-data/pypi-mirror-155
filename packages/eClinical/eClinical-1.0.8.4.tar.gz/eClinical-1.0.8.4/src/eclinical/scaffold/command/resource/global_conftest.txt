@@ -1,0 +1,23 @@
+import os.path
+
+import pytest
+import yaml
+
+
+def pytest_addoption(parser):
+    parser.addoption(
+        "--st", default="-1", help="选择在哪个study 或 sponsor 执行, 默认为environment.yaml中的第一个"
+    )
+
+
+@pytest.fixture(scope="module")
+def ef(): return os.path.join(os.path.dirname(__file__), "environment.yaml")
+
+
+@pytest.fixture(scope="module")
+def st(request, ef):
+    if request.config.getoption("--st") == "-1":
+        with open(ef, "r") as f:
+            return list(yaml.load(f.read(), Loader=yaml.FullLoader).get("ENV").keys())[0]
+    else:
+        return request.config.getoption("--st")

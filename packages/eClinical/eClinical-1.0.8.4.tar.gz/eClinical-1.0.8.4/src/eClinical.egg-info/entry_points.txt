@@ -1,0 +1,5 @@
+[console_scripts]
+edk = eclinical.scaffold.command.edk:edk_command
+edk-meta = eclinical.scaffold.command.mc:mc_command
+edk-module = eclinical.scaffold.command.ecl:ecl_command
+edk-service = eclinical.scaffold.command.sc:sc_command
