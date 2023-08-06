@@ -1,0 +1,51 @@
+Metadata-Version: 2.1
+Name: areixlib
+Version: 0.1.6
+Summary: Areix Utils Library
+Home-page: https://alphagen.areix-ai.com
+Author: Areix
+Author-email: hellohk@areix-ai.com
+License: UNKNOWN
+Project-URL: Documentation, https://alphagen.areix-ai.com/doc
+Keywords: areix,areixio,alpha_gen,alphagen,wealthx,algo,algorithmic,backtest,backtesting,bitcoin,crypto,bokeh,bonds,candle,candlestick,cboe,chart,cme,commodities,crash,currency,drawdown,equity,etf,ethereum,exchange,finance,financial,forecast,forex,fund,futures,fx,gold,historical,indicator,invest,investing,investment,macd,market,money,ohlc,ohlcv,order,price,profit,quant,quantitative,rsi,pnl,stocks,strategy,ticker,trader,trading,tradingview,usd,binance
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Financial and Insurance Industry
+Classifier: Intended Audience :: Information Technology
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: Topic :: Office/Business :: Financial :: Investment
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Operating System :: OS Independent
+Classifier: Environment :: Console
+Requires-Python: >=3.7.0
+Description-Content-Type: text/markdown
+
+# Areix Utils Library
+
+## Installation
+Create a virtual environment 
+```
+virtualenv venv --python=python3
+```
+Activate the virtual environment 
+```python
+# Macbook / Linus
+source venv/bin/activate 
+
+# Windows
+venv/Scripts/activate
+```
+Deactivate
+```
+deactivate
+```
+Install areixlib package
+```
+pip install areixlib
+```
+
+
