@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: SurikovDB
+Version: 1.0.0
+Summary: Simple relational database. Use JSONQL
+Home-page: https://github.com/IgorSurikov/SurikovDB
+Author: Igor Surikov
+Author-email: i.surikov@outlook.com
+Requires-Dist: jsonschema (>=4.4.0)
+Requires-Dist: aiohttp (>=3.8.1)
+Requires-Dist: platformdirs (>=2.5.1)
+
