@@ -1,0 +1,69 @@
+[tool]
+[tool.poetry]
+name = "xedocs"
+version = "0.1.4"
+homepage = "https://github.com/XENONnT/xedocs"
+description = "Top-level package for xedocs."
+authors = ["Yossi Mosbacher <joe.mosbacher@gmail.com>"]
+readme = "README.rst"
+classifiers=[
+    'Development Status :: 2 - Pre-Alpha',
+    'Intended Audience :: Developers',
+    'Natural Language :: English',
+    'Programming Language :: Python :: 3.8',
+]
+packages = [
+    { include = "xedocs" },
+    { include = "tests", format = "sdist" },
+]
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.11"
+click = "*"
+rframe = "^0.1.16"
+rich = "^12.0.1"
+pandas = "*"
+
+[tool.poetry.dev-dependencies]
+bumpversion = "*"
+coverage = "*"
+flake8 = "*"
+isort = "*"
+pylint = "*"
+pytest = "*"
+sphinx = "*"
+tox = "*"
+yapf = "*"
+sphinx-material = "*"
+nbsphinx = "*"
+invoke = "*"
+black = "^22.1.0"
+pytest-cov = "^3.0.0"
+hypothesis = "^6.39.4"
+autodoc-pydantic = "^1.6.1"
+jupyterlite-sphinx = "^0.4.6"
+sphinxext-rediraffe = "^0.2.7"
+
+[tool.poetry.scripts]
+xedocs = 'xedocs.cli:main'
+
+[build-system]
+requires = ["poetry-core>=1.0.8", "setuptools"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.dephell.main]
+versioning = "semver"
+from = {format = "poetry", path = "pyproject.toml"}
+to = {format = "setuppy", path = "setup.py"}
+
+[tool.poe.tasks]
+test   = "pytest --cov=xedocs"
+format = "black ."
+clean  = """
+    rm -rf .coverage
+        .mypy_cache
+        .pytest_cache
+        dist
+        ./**/__pycache__
+    """
+lint   = "pylint xedocs"
