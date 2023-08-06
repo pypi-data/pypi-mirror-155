@@ -1,0 +1,53 @@
+org_member/org_id:
+    - r:organization/org_id
+    - r:runtime_artifacts/org_id
+deployment_viewer/org_id,repository_id,branch:
+    - r:deployment/org_id,repository_id,branch
+    - r:deployment_artifacts/org_id,repository_id,branch
+    - r:endpoint/org_id,repository_id,branch,*
+deployment_admin/org_id,repository_id,branch:
+    - deployment_editor/org_id,repository_id,branch
+    - w+d:deployment/org_id,repository_id,branch
+deployment_editor/org_id,repository_id,branch:
+    - deployment_viewer/org_id,repository_id,branch
+    - w:endpoint/org_id,repository_id,branch,*
+org_admin/org_id:
+    - org_member/org_id
+    - w:organization/org_id
+    - deployment_admin/org_id,*
+taktile_fdmle/org_id:
+    - org_member/org_id
+    - deployment_editor/org_id,*
+taktile_admin:
+    - org_admin/*
+    - d_org_admin/*
+github:
+    - r+w+d:deployment/*,*,*
+    - d:runtime_artifacts/*
+profiler/org_id,repository_id,branch:
+    - w:deployment_artifacts/org_id,repository_id,branch
+d_org_admin/org_id:
+    - d_flow_admin/org_id,*,*
+d_org_editor/org_id:
+    - d_flow_editor/org_id,*,*
+d_org_viewer/org_id:
+    - d_flow_viewer/org_id,*,*
+d_flow_admin/org_id,flow_id,env:
+    - d_flow_editor/org_id,flow_id,env
+    - w+d:flow_exec/org_id,flow_id,env
+    - d:flow/org_id,flow_id,env
+    - w+d:api/org_id,flow_id,env
+    - w+d:service_account/org_id,flow_id,env
+d_flow_editor/org_id,flow_id,env:
+    - d_flow_viewer/org_id,flow_id,env
+    - w:flow/org_id,flow_id,env
+    - w+d:monitor/org_id,flow_id,env
+d_flow_viewer/org_id,flow_id,env:
+    - r:flow/org_id,flow_id,env
+    - r:flow_exec/org_id,flow_id,env
+    - r:api/org_id,flow_id,env
+    - r:monitor/org_id,flow_id,env
+    - r:service_account/org_id,flow_id,env
+d_api_key/org_id,flow_id,env:
+    - r+w:api/org_id,flow_id,env
+    - r:service_account/org_id,flow_id,env
