@@ -1,0 +1,17 @@
+sc_retail_client_analysis/__init__.py,sha256=Got_9Etc1-NJq_mbdmNcZNuLuleHYJXZ8pL4m_ItkM8,1181
+sc_retail_client_analysis/main.py,sha256=Wz0RyK5j09LKpk7yzVumMWlIOWye3NhbewiQZ0RdYME,2472
+sc_retail_client_analysis/analyzer/__init__.py,sha256=nnFlO-f_84tHmjU-u0XqC4miLnw4HuzAfEYX43HMBWI,1132
+sc_retail_client_analysis/analyzer/base/__init__.py,sha256=nnFlO-f_84tHmjU-u0XqC4miLnw4HuzAfEYX43HMBWI,1132
+sc_retail_client_analysis/analyzer/base/base_analyzer.py,sha256=HwTvC7MySWjPUCiJQhvqSXGuS_Q5PG4QqleXFWPoIwE,7455
+sc_retail_client_analysis/analyzer/client/__init__.py,sha256=nnFlO-f_84tHmjU-u0XqC4miLnw4HuzAfEYX43HMBWI,1132
+sc_retail_client_analysis/analyzer/client/client_info_analyzer.py,sha256=wlcfHDdo3_4ak1BGXAwXgWCJ64l9Y0bKp1K8FFOqL2A,55905
+sc_retail_client_analysis/tests/__init__.py,sha256=5QNcohCZooPxnY9TtRMJ3w2cHgggAPl99Jp9-GIFTe0,1114
+sc_retail_client_analysis/tests/sample_config/production.yml,sha256=wsQhMOu2Nz7AedL3Zvpg5jHZyKfqkiZ5lQSoaEQWZHk,4116
+test_data/__init__.py,sha256=nnFlO-f_84tHmjU-u0XqC4miLnw4HuzAfEYX43HMBWI,1132
+test_data/client_info_base_analyzer.py,sha256=Iz1teIZt9yeqgyn4Nk0rjiHQLY9SvYZsHmtA9k4qT7Q,7444
+sc_retail_client_analysis-0.0.4.dist-info/LICENSE,sha256=48l_zi7sXkPAoMS5fF_oFZuBFReKAuNfmzYynXjjaB4,1076
+sc_retail_client_analysis-0.0.4.dist-info/METADATA,sha256=fGKlC6CphEroYzkI-Ueq7u1waYaXkfeQLUG7pBawf-s,2118
+sc_retail_client_analysis-0.0.4.dist-info/WHEEL,sha256=OqRkF0eY5GHssMorFjlbTIq072vpHpF60fIQA6lS9xA,92
+sc_retail_client_analysis-0.0.4.dist-info/entry_points.txt,sha256=quIbdwP1t1pyOYqjS2xuRfU98lQGT9wT0TXgBhxJXWA,82
+sc_retail_client_analysis-0.0.4.dist-info/top_level.txt,sha256=7QkPKNYA6n0tGjOUgA1R0WGw6FwxXFc_5661AqfpZCw,36
+sc_retail_client_analysis-0.0.4.dist-info/RECORD,,

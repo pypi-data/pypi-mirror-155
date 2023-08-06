@@ -1,0 +1,114 @@
+# 说明：如下配置的索引均从0开始计数，第1列为0、第2列为1，依此类推
+
+# 零售
+retail:
+  # 生成的目标Excel文件存放路径
+  target_directory: ./
+  # 目标文件名称
+  target_filename: 广州分行零售客群分析.xlsx
+  # 生成的目标Excel文件存放路径
+  target_detail_filename: "零售客群-明细数据.xlsx"
+  # 零售客群类业务
+  client:
+    # 零售客群分析
+    client_info:
+      # 是否启用分析，True：分析，False：不分析
+      enabled: true
+      # 业务分类类型说明
+      business_type: 零售客群
+      # 融卡发卡及相关数据明细表文件路径
+#      source_file_path: 100.xlsx
+      source_file_path: 财富系统全量客户数据.xlsx
+      # 数据分析日期，格式yyyymmdd，例如：20220302
+      data_date: '20220615'
+      # 数据日期据年初月份数
+      data_total_month: 5
+      target_avg_asset_filename: "零售客群-AUM.xlsx"
+      target_contrib_filename: "零售客群-本年创利.xlsx"
+      target_contrib_per_acct_filename: "零售客群-本年户均创利.xlsx"
+      target_contrib_monthly_filename: "零售客群-月均创利.xlsx"
+      target_contrib_monthly_per_acct_filename: "零售客群-月均户均创利.xlsx"
+      target_cross_sales_filename: "零售客群-交叉营销.xlsx"
+      target_prod_sales_rate_filename: "零售客群-产品营销率.xlsx"
+      # Sheet名称
+      sheet_name: 全量
+      sheet_config:
+        # 表头行索引
+        header_row: 0
+        # 性别列索引
+        gender_column: 3
+        # 年龄列索引
+        age_column: 5
+        # 管护机构列索引
+        manage_branch_column: 7
+        # 联系地址列索引
+        address_column: 10
+        # 管理资产年日均列索引
+        average_asset_column: 30
+        # 管理资产余额
+        asset_balance_column: 28
+        # 信用卡客户
+        credit_column: 45
+        credit_sign_column_name: '信用卡签约'
+        # 快捷支付
+        fast_payment_column: 61
+        fast_payment_sign_column_name: "快捷支付签约"
+        # 呼啦商户
+        hula_column: 63
+        hula_sign_column_name: "呼啦签约"
+        payment_and_clear_sign_column_name: "支付结算签约"
+        # 净储蓄存款月日均
+        monthly_saving_avg_column: 19
+        # 定期存款余额
+        fixed_deposit_column: 40
+        # 结构性存款余额
+        structural_deposit_column: 33
+        # 大额存单余额
+        large_deposit_column: 34
+        deposit_sales_column_name: "储蓄营销"
+
+        # 零售贷款余额
+        retail_loan_column: 21
+        retail_loan_sales_column_name: "零贷营销"
+        # 理财产品余额
+        finance_prod_column: 26
+        finance_sales_column_name: "理财营销"
+        # 非货基金余额
+        fund_column: 41
+        fund_sales_column_name: "基金营销"
+        # 代销信托余额
+        trust_column: 42
+        trust_sales_column_name: "信托营销"
+        # 贵金属余额
+        precious_metal_column: 43
+        precious_metal_sales_column_name: "贵金属营销"
+        cross_sales_column_name: "交叉营销"
+
+        # 储蓄存款创利金额
+        saving_profit_column: 72
+        # 零售贷款创利金额
+        retail_loan_profit_column: 66
+        # 非息资产中收金额
+        non_interest_profit_column: 74
+        # 理财中收金额
+        finance_profit_column: 67
+        # 基金中收金额
+        fund_profit_column: 68
+        # 保险中收金额
+        insurance_profit_column: 69
+        # 信托中收金额
+        trust_profit_column: 70
+        # 贵金属中收金额
+        precious_metal_profit_column: 71
+
+        # 客户整体贡献度
+        whole_contrib_column: 75
+        gz_column: 79
+        # 管理资产年日均拆分区间
+        average_asset_splits: [ 0,1000,10000,50000,300000,500000,1000000 ]
+        # 年龄拆分区间
+        age_splits: [ 0,18,25,30,40,50,60,70,150 ]
+        whole_contrib_splits: [ 0,10,40,80,160,400,800 ]
+        cross_sales_splits: [ 0,1,2,3,4,5,6,7,8,9 ]
+
+environment: production
