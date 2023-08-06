@@ -1,0 +1,16 @@
+django>=3.0
+requests
+piffle
+attrdict
+jsonfield<3.0,>=2.1
+django-autocomplete-light>=3.5.1
+rdflib>6.0.1
+
+[docs]
+sphinx
+
+[test]
+pytest>=5.1
+pytest-django
+pytest-cov
+psycopg2-binary
