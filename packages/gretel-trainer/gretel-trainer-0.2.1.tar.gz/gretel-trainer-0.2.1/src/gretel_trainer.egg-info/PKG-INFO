@@ -1,0 +1,15 @@
+Metadata-Version: 1.2
+Name: gretel-trainer
+Version: 0.2.1
+Summary: Synthetic Data Generation with optional Differential Privacy
+Home-page: https://github.com/gretelai/gretel-trainer
+License: http://www.apache.org/licenses/LICENSE-2.0
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.7
