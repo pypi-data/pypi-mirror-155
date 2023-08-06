@@ -1,0 +1,49 @@
+Metadata-Version: 2.1
+Name: yamcs-client
+Version: 1.8.4
+Summary: Yamcs API client library
+Home-page: https://github.com/yamcs/python-yamcs-client
+Author: Space Applications Services
+Author-email: yamcs@spaceapplications.com
+License: LGPL
+Description: # Yamcs Client Library for Python
+        [![PyPI](https://img.shields.io/pypi/v/yamcs-client.svg)](https://pypi.python.org/pypi/yamcs-client)
+        [![PyPI pyversions](https://img.shields.io/pypi/pyversions/yamcs-client.svg)](https://pypi.python.org/pypi/yamcs-client/)
+        
+        
+        ## Features
+        
+        * MDB retrieval
+        * Telemetry updates
+        * Command History updates
+        * Alarm updates
+        * Event updates
+        * Archive retrieval
+        * Histogram retrieval
+        
+        
+        ## Installation
+        
+        Install with pip
+        
+            pip install yamcs-client
+        
+        
+        ## License
+        
+        LGPL-3.0. See [LICENSE](https://github.com/yamcs/python-yamcs-client/blob/master/LICENSE)
+        
+Platform: Posix; MacOS X; Windows
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
