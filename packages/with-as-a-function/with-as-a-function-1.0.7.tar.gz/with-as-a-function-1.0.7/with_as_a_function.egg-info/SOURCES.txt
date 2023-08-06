@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.rst
+from_future_import.py
+manual.py
+manual_no_traceback.py
+normal.py
+setup.py
+with_as_a_function.egg-info/PKG-INFO
+with_as_a_function.egg-info/SOURCES.txt
+with_as_a_function.egg-info/dependency_links.txt
+with_as_a_function.egg-info/top_level.txt
