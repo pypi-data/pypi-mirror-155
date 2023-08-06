@@ -1,0 +1,3 @@
+[console_scripts]
+mltk = mltk.cli.main:main
+
