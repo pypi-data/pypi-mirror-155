@@ -1,0 +1,46 @@
+Metadata-Version: 2.1
+Name: pxplore
+Version: 0.1.0
+Summary: Various tools to explore hidden details of the Python code.
+Author-email: Martin Paces <martin.paces@eox.at>
+Maintainer-email: Martin Paces <martin.paces@eox.at>
+Requires-Python: >=3.6
+Description-Content-Type: text/x-rst
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Intended Audience :: Education
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Development Status :: 3 - Alpha
+Requires-Dist: pytest >=6 ; extra == "dev"
+Requires-Dist: pytest >=6 ; extra == "test"
+Project-URL: source, https://github.com/pacesm/pxlore
+Provides-Extra: dev
+Provides-Extra: docs
+Provides-Extra: test
+
+
+::
+
+  pip install pxplore
+
+pxplore_ is a Python package providing a set of useful tools to explore
+hidden details of the Python code.
+
+.. _pxplore: https://github.com/pacesm/pxplore                                         
+
+.. code-block:: python
+
+ import pxplore
+
+ # print symbols in the current frame
+ pxplore.print_symbols()
+
+ # print symbols offered by a module
+ pxplore.print_module_symbols(pxplore)
+
