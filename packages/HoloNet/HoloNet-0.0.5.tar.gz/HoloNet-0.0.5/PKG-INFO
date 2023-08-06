@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: HoloNet
+Version: 0.0.5
+Summary: Decoding functional cell–cell communication events by multi-view graph learning on spatial transcriptomics
+Home-page: 
+Author: lihaochen
+Author-email: 1421127652@qq.com
+License: MIT License
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# HoloNet
+
+HoloNet is a powerful tool on spatial transcriptomic data to help understand the shaping of cellular phenotypes through cell–cell communications in a microenvironment. 
+
+Detailed documentations and tutorials are available from https://github.com/lhc17/HoloNet.
+
