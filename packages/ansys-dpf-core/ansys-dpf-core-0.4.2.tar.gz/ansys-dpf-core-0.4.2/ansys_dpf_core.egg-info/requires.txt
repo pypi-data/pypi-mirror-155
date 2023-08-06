@@ -1,0 +1,11 @@
+psutil
+progressbar2
+numpy
+ansys.grpc.dpf>=0.2.3
+
+[plotting]
+pyvista>=0.24.0
+matplotlib==3.2
+
+[reporting]
+scooby
