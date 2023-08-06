@@ -1,0 +1,60 @@
+name: Pulls
+
+on: pull_request
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['2.7', '3.4', '3.5', '3.6', '3.7', '3.8', '3.9']
+        include:
+          - tox_env: 'py27'
+            python-version: '2.7'
+          - tox_env: 'py34'
+            python-version: '3.4'
+          - tox_env: 'py35'
+            python-version: '3.5'
+          - tox_env: 'py36'
+            python-version: '3.6'
+          - tox_env: 'latest'
+            python-version: '3.7'
+          - tox_env: 'latest'
+            python-version: '3.8'
+          - tox_env: 'latest'
+            python-version: '3.9'
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v3
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install dependencies
+      run: |
+        pip install pbr
+        pip install tox
+        tox -e ${{ matrix.tox_env }} --notest
+    - name: Run
+      run: |
+        tox -e ${{ matrix.tox_env }} -- --nocapture
+  lint:
+    runs-on: ubuntu-18.04
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['2.7', '3.4', '3.5', '3.6', '3.7', '3.8', '3.9']
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v3
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: |
+          pip install pbr
+          pip install --upgrade pip
+          pip install tox
+          tox -r -e pep8 --notest
+      - name: lint
+        run: |
+          tox -e pep8
