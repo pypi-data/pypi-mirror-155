@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -o errexit
+set -o pipefail
+set -o nounset
+
+python manage.py collectstatic --noinput
+
+>&2 echo 'Running migrations'
+python manage.py showmigrations
+python manage.py migrate
+
+exec /usr/bin/supervisord

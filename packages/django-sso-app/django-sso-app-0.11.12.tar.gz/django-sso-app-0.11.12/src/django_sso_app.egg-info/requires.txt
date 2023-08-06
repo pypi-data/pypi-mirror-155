@@ -1,0 +1,13 @@
+django
+django-allauth
+djangorestframework
+django-filter
+pyjwt
+django-environ
+django-meta
+django-countries
+
+[testing]
+pytest
+pytest-cov
+responses

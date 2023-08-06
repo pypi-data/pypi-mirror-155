@@ -1,0 +1,30 @@
+django-filter==2.4.0
+
+django-celery-results==1.2.1
+
+# CORS
+# ------------------------------------------------------------------------------
+django-cors-headers==3.6.0
+
+ipython
+
+# OpenApi
+drf-spectacular==0.22.1
+
+pyjwt>1.7.1
+
+# server
+# ------------------------------------------------------------------------------
+cherrypy==18.2.0
+
+django-meta==1.7.0
+
+django-countries==7.0
+
+# django-project-backup
+
+django-project-backup==0.1.8
+cloudant==2.14.0
+
+# grouping
+django-treebeard==4.5.1
