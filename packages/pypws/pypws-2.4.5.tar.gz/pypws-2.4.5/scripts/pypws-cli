@@ -1,0 +1,5 @@
+#!/usr/bin/python
+
+from pypws import main
+
+main()

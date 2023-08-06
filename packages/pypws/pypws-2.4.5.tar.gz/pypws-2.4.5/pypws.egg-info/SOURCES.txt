@@ -1,0 +1,15 @@
+LICENSE
+README.md
+setup.py
+pypws/__init__.py
+pypws/calculations.py
+pypws/constants.py
+pypws/entities.py
+pypws/enums.py
+pypws/utilities.py
+pypws.egg-info/PKG-INFO
+pypws.egg-info/SOURCES.txt
+pypws.egg-info/dependency_links.txt
+pypws.egg-info/requires.txt
+pypws.egg-info/top_level.txt
+scripts/pypws-cli
