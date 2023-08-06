@@ -1,0 +1,39 @@
+[tool.poetry]
+name = "nexio-behave"
+version = "0.6.0"
+description = "The Nexio Behave"
+authors = ["Hongli Zhang <hzhang@narrativescience.com>"]
+license = "Proprietary"
+readme = "README.md"
+homepage = "https://github.com/NarrativeScience/nexio-behave"
+repository = "https://github.com/NarrativeScience/nexio-behave"
+
+[tool.poetry.dependencies]
+python = "^3.7.0"
+behave = "^1.2.6"
+jsonpath = "^0.82"
+loguru = "^0.6.0"
+pydantic = "^1.9.0"
+requests = "^2.27.1"
+ansicolor = "^0.3.2"
+
+[tool.poetry.dev-dependencies]
+black = {version = "^22.3.0", allow-prereleases = true}
+coverage = "^6.3.2"
+cruft = "^2.9.0"
+mock = "^4.0.3"
+mypy = ">=0.942,<1"
+pre-commit = "^2.10.1"
+pytest = "^6.2.2"
+types-requests = "^2.27.11"
+
+[[tool.poetry.source]]
+name = "codeartifact"
+url = "https://lexio-231405699240.d.codeartifact.us-east-1.amazonaws.com/pypi/lexio/simple/"
+
+[tool.cruft]
+skip = ["pyproject.toml", "nexio_behave", "tests", "README.md", ".circleci/config.yml"]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
