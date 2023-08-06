@@ -1,0 +1,2 @@
+[console_scripts]
+smgmt = secrets_mgmt_cli.cli:cli
