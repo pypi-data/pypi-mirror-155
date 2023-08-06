@@ -1,0 +1,51 @@
+[databroker.ingestors]
+application/x-edf = xicam.SAXS.ingestors.edf_ingestor:edf_ingestor
+
+[databroker.intents]
+SAXSImageIntent = xicam.SAXS.intents:SAXSImageIntent
+
+[xicam.plugins.Fittable1DModelPlugin]
+Gaussian1D = xicam.SAXS.models.gaussian1d:Gaussian1D
+
+[xicam.plugins.GUIPlugin]
+SAXS = xicam.SAXS.SAXSGUIPlugin:SAXSPlugin
+
+[xicam.plugins.IntentCanvasPlugin]
+saxs_image_intent_canvas = xicam.SAXS.canvases:SAXSImageIntentCanvas
+
+[xicam.plugins.OperationPlugin]
+array_rotate = xicam.SAXS.operations.arrayrotate:array_rotate
+array_transpose = xicam.SAXS.operations.arraytranspose:array_transpose
+astropyfit = xicam.SAXS.operations.astropyfit:AstropyQSpectraFit
+cake_integrate = xicam.SAXS.operations.cakeintegrate:cake_integration
+chi_integrate = xicam.SAXS.operations.chiintegrate:chi_integrate
+chi_squared = xicam.SAXS.operations.chisquared:chi_squared
+correct_fastccd_image = xicam.SAXS.operations.correction:correct_fastccd_image
+detector_mask = xicam.SAXS.masking.detector:detector_mask_plugin
+diffusion_coefficient = xicam.SAXS.operations.diffusion_coefficient:diffusion_coefficient
+fit_scattering_factor = xicam.SAXS.operations.fitting:fit_scattering_factor
+fourier_autocorrelation = xicam.SAXS.calibration.fourierautocorrelation:fourier_autocorrelation
+fourier_correlation = xicam.SAXS.operations.fourierautocorrelator:fourier_correlation
+guinier_plot = xicam.SAXS.operations.guinier_plot:guinier_plot
+inpaint = xicam.SAXS.operations.inpaint:inpaint
+naive_sdd = xicam.SAXS.calibration.naivesdd:naive_sdd
+one_time_correlation = xicam.SAXS.operations.onetime:one_time_correlation
+porod_plot = xicam.SAXS.operations.porod_plot:porod_plot
+q_conversion_gisaxs = xicam.SAXS.operations.qconversiongisaxs:q_conversion_gisaxs
+q_conversion_saxs = xicam.SAXS.operations.qconversionsaxs:q_conversion_saxs
+q_integrate = xicam.SAXS.operations.qintegrate:q_integrate
+ricker_wavelet = xicam.SAXS.calibration.cwt:ricker_wavelet
+roi_mask = xicam.SAXS.masking.roi:roi_mask_plugin
+set_detector = xicam.SAXS.operations.select_detector:set_detector
+set_geometry = xicam.SAXS.operations.select_detector:set_geometry
+simulate_calibrant = xicam.SAXS.calibration.simulatecalibrant:simulate_calibrant
+two_time_correlation = xicam.SAXS.operations.twotime:two_time_correlation
+x_integrate = xicam.SAXS.operations.xintegrate:x_integrate
+z_integrate = xicam.SAXS.operations.zintegrate:z_integrate
+
+[xicam.plugins.ProcessingPlugin]
+CorrectFastCCDImage = xicam.SAXS.operations.correction:correct_fastccd_image
+
+[xicam.plugins.SettingsPlugin]
+xicam.SAXS.calibration = xicam.SAXS.calibration:DeviceProfiles
+
