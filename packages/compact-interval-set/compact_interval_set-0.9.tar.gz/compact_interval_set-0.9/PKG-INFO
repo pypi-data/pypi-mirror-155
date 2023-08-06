@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: compact_interval_set
+Version: 0.9
+Summary: Package for dealing with interval operations
+Home-page: https://github.com/tgree/compact_interval_set
+Author: Terry Greeniaus
+Author-email: terrygreeniaus@gmail.com
+License: LGPLv2
+Keywords: interval range set overlap
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v2 (LGPLv2)
+Requires-Python: >=3.0
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+
+compact_interval_set
+====================
+Package for dealing with sets of range intervals, merging intervals within a set and allowing set union, intersection and difference operations.  Strives to be a compact and understandable bit of code.
