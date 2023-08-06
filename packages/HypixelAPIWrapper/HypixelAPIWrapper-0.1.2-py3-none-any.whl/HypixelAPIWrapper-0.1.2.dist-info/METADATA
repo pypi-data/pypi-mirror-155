@@ -1,0 +1,48 @@
+Metadata-Version: 2.1
+Name: HypixelAPIWrapper
+Version: 0.1.2
+Summary: Small library to work with Hypixel public API.
+Home-page: https://HypixelAPIWrapper.readthedocs.io/
+Author: Houwy
+Author-email: nazandre1233@gmail.com
+License: MIT
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: requests
+Requires-Dist: python-nbt
+
+# Hypixel API wrapper
+A small  library for using Hypixel API methods.
+
+### Installation
+```
+pip install HypixelAPIWrapper
+```
+
+### Get started
+How to get progile information with this lib:
+
+```Python
+from HypixelAPIWrapper import APIWrapper
+
+# Instantiate a wrapper object
+APIKey = 'xxxxxxxx-xxxx-xxxx-xxxxx-xxxxxxxxxxxx'
+wrapper = APIWrapper(APIkey)
+
+# Get owner uuid
+owner = wrapper.getOwner()
+
+# Get player data
+profile = wrapper.getPlayerData(owner)
+```
+
