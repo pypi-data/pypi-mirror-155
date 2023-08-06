@@ -1,0 +1,3 @@
+[console_scripts]
+freefft = freefft.__main__:main
+
