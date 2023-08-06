@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/mpong/__init__.py
+src/mpong/mpong.py
+src/mpong.egg-info/PKG-INFO
+src/mpong.egg-info/SOURCES.txt
+src/mpong.egg-info/dependency_links.txt
+src/mpong.egg-info/entry_points.txt
+src/mpong.egg-info/requires.txt
+src/mpong.egg-info/top_level.txt
