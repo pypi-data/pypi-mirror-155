@@ -1,0 +1,757 @@
+[![Build][build-image]]()
+[![Status][status-image]][pypi-project-url]
+[![Stable Version][stable-ver-image]][pypi-project-url]
+[![Coverage][coverage-image]]()
+[![Python][python-ver-image]][pypi-project-url]
+[![License][bsd3-image]][bsd3-url]
+
+
+# thcouch
+
+## Overview
+TangledHub library for couchdb with a focus on asynchronous functions
+
+## Licensing
+thcouch is licensed under the BSD license. Check the [LICENSE](https://opensource.org/licenses/BSD-3-Clause) for details
+
+## Installation
+```bash
+pip instal thcouch
+```
+
+---
+
+## Testing
+```bash
+docker-compose build thcouch-test ; docker-compose run --rm thcouch-test
+```
+
+## Building
+```bash
+docker-compose build thcouch-build ; docker-compose run --rm thcouch-build
+```
+
+## Publish
+```bash
+docker-compose build thcouch-publish ; docker-compose run --rm -e PYPI_USERNAME=__token__ -e PYPI_PASSWORD=__SECRET__ thcouch-publish
+```
+
+---
+
+## Usage
+
+## Database
+CouchDB provides a RESTful HTTP API for 
+reading and updating (add, edit, delete) database documents
+
+### create
+```python
+'''
+description:
+    creates the database 
+    by providing uri and database name
+
+parameters: 
+    uri: str
+    db: str
+
+returns:
+    PutDbOk
+'''
+
+# creates database by given uri and db(name)
+db: CouchDatabase = (await put_db(uri=COUCH_URI, db=DATABASE_NAME)).unwrap()
+```
+
+### Delete
+```python
+'''
+description:
+    deletes the database
+     by providing uri and database name
+
+parameters: 
+    uri: str
+    db: str
+
+returns:
+    DeleteDbOk
+'''
+
+# deletes database by given uri and db(name)
+(await delete_db(uri=COUCH_URI, db=DATABASE_NAME)).unwrap()
+```
+
+## Loader
+
+### setup
+loader reads file configurations
+suports toml, yaml, json and json5 files
+```python
+'''
+description:
+    create instance of CouchLoader
+    by providing CouchDatabase object and path to file
+
+parameters: 
+    db: CouchDatabase
+    path: str
+
+returns:
+    CouchLoader 
+'''
+
+# instantiate CouchLoader by given db and path
+loader: CouchLoader = CouchLoader(db=DB, path=PATH_TO_FILE)
+```
+
+### example of config files for loader:
+### toml file
+```
+[User]
+_type = "model"
+_id = "string, required=True, default=uuid4"
+_rev = "string, should_get=lambda value: False if value is None else True"
+email = "string, validator='email'"
+phone = "Field(string)"
+age = "int"
+```
+
+### yaml file
+```
+User:
+  _type: "model"
+  _id: "string, required=True, default=uuid4"
+  _rev: "string, should_get=lambda value: False if value is None else True"
+  usertype: "string, default='company', values=['company', 'individual']"
+  email: "string, validator='email'"
+  phone: "Field(string)"
+  age: "int"
+```
+
+### json file
+```
+{
+    "User": {
+        "_type": "model",
+        "_id": "string, required=True, default=uuid4",
+        "_rev": "string, should_get=lambda value: False if value is None else True",
+        "usertype": "string, default='company', values=['company', 'individual']",
+        "email": "string, validator='email'",
+        "phone": "Field(string)",
+        "age": "int"
+    }
+}
+```
+
+### json5 file
+```
+{
+    // user model
+    "User": {
+        "_type": "model",
+        "_id": "string, required=True, default=uuid4",
+        "_rev": "string, should_get=lambda value: False if value is None else True",
+        "usertype": "string, default='company', values=['company', 'individual']",
+        "email": "string, validator='email'",
+        "phone": "Field(string)",
+        "age": "int"
+    }
+}
+```
+
+
+## Model
+Documents(Model) are the primary unit of data 
+in CouchDB and consist of any number of fields and attachments
+
+Single document updates (add, edit, delete) are all or nothing,
+either succeeding entirely or failing completely.
+The database never contains partially saved or edited documents
+
+# TODO: explain model types
+### setup
+```python
+'''
+description:
+    load BaseModel type using CouchLoader
+    creates instance of BaseModel
+
+returns:
+    BaseModel
+'''
+
+# load Model type from file
+User: type = loader.User
+
+# create User/BaseModel object
+user0: User = User()
+```
+
+### create/add
+The Add method creates a new named document
+```python
+'''
+description:
+    add function created document into database
+    call on model or model instance
+    
+    if call on model:
+        parameters: 
+            self: BaseModel
+
+returns:
+    BaseModel
+'''
+
+# save model instance to database - call on model
+user1_0: User = (await User.add(user0)).unwrap()
+
+# save model instance to database - call on model instance
+user1_0: User = (await user0.add()).unwrap()
+```
+
+### get
+Returns document by the specified docid from the specified db.
+Unless you request a specific revision, the latest revision of the document will always be returned
+```python
+'''
+description:
+    get function gets existing documents
+    from database by providing document id and document rev 
+
+parameters: 
+    docid: str,
+    rev: None | str = None
+
+returns:
+    BaseModel
+'''
+
+# get model from database by given id and rev, if rev is not passed document will be latest
+user0_1: User = (await User.get(docid = user1_0._id, rev = user1_0._rev)).unwrap()
+```
+
+### all
+Executes the built-in _all_docs view,
+returning all of the documents in the database
+```python
+'''
+description:
+    all function gets list of existing documents 
+    from database 
+
+returns:
+    list[BaseModel]
+'''
+
+# gets list of all models from database
+users0: list[User] = (await User.all()).unwrap()
+```
+
+### find
+Find documents using a declarative JSON querying syntax. Queries can use the built-in _all_docs index or custom indexes, specified using the _index endpoint.
+```python
+'''
+description:
+    find function gets list of existing documents 
+    from database 
+    by providing selector/dict as query  
+
+parameters: 
+    selector: dict,
+    limit: None | int = None,
+    skip: None | int = None,
+    sort: None | list[dict | str] = None,
+    fields: None | list[str] = None,
+    use_index: None | (str | list[str]) = None,
+    r: None | int = None,
+    bookmark: None | str = None,
+    update: None | bool = None,
+    stable: None | bool = None
+
+returns:
+    tuple[list[BaseModel], bookmark: str, warning: str]
+'''
+
+selector = {
+            'usertype': 'company'
+        }
+
+# gets tuple of all models, bookmark, warning from database by given selector
+user0_1: tuple[list[User], str, str] = (await User.find(selector = selector)).unwrap()
+```
+
+### delete
+Marks the specified document as deleted by adding a field
+_deleted with the value true.
+Documents with this field will not be returned
+within requests anymore, but stay in the database.
+You must supply the current (latest) revision
+by using the rev parameter.
+```python
+'''
+description 
+    delete function deletes user from database
+    call on model or model instance
+    
+    if call on model:
+        parameters:
+            self: BaseModel
+            batch: None | str = None
+
+returns:
+    BaseModel
+'''
+
+# delete model instance from database - call on model
+user0_1: User = (await User.delete(user_0)).unwrap()
+
+# delete model instance from database - call on model instance
+user0_1: User = (await user_0.delete()).unwrap()
+```
+
+### update
+When updating an existing document, the current document revision
+must be included in the document (i.e. the request body),
+as the rev query parameter
+```python
+'''
+description:
+    update function updates existing document 
+    from database 
+    by providing fields to update
+
+parameters:
+    doc: dict, 
+    batch: None | str = None, 
+    new_edits: None | bool = None
+
+returns:
+    BaseModel
+'''
+
+doc_update: dict = {
+    'email': 'user@user.com'
+}
+
+# update model instance from database with given dict
+# with fields as keys
+user0_1: User = (await user_0.update(doc = doc_update)).unwrap()
+```
+
+### bulk get
+This method can be called to query several documents in bulk. It is well suited for fetching a specific revision of documents, as replicators do for example, or for getting revision history
+
+```python
+'''
+description:
+    bulk get function gets a list of documents 
+    from database by
+    providing the ids and revs of specific documents
+    
+parameters:
+    docs: list[dict],
+    revs: None | bool = None
+
+returns:
+    list[BaseModel]
+'''
+
+doc1: dict = {'id': user1._id, 'rev': user1.rev}
+
+# gets all models by given list of dicts
+user0_1: list[User] = (await User.bulk_get(list[doc1])).unwrap()
+```
+
+### bulk docs
+The bulk document API allows you to create and update multiple documents at the same time within a single request. The basic operation is similar to creating or updating a single document, except that you batch the document structure and information.
+When creating new documents the document ID (_id) is optional.
+
+For updating existing documents, you must provide the document ID, revision information (_rev), and new document values.
+In case of batch deleting documents all fields as document ID, revision information and deletion status (_deleted) are required.
+
+```python
+'''
+description:
+    bulk docs function creates a documents or 
+    updates existing documents by 
+    providing the ids and revs of specific documents
+
+parameters:
+    docs: list[Union[BaseModel, dict]],
+    new_edits: None | bool = None
+
+returns:
+    list[dict]
+'''
+
+doc1: dict = {'id': user1._id, 'rev': user1.rev}
+
+# updates/creates models by given list of dicts
+# with keys id and rev for specific document
+user0_1: list[dict] = (await User.bulk_docs(list[doc1])).unwrap()
+```
+
+## Attachment
+
+### create/add attachment
+Uploads the supplied content as an attachment to
+the specified document.
+If case when uploading an attachment using
+an existing attachment name,
+CouchDB will update the corresponding stored content of the database.
+Since you must supply the revision information to add an attachment to the document, this serves as validation to update the existing attachment.
+
+```python
+'''
+description:
+    add attachment function creates/adds attachment
+    to specific existing document in database
+    by providing attachment name (filename) and body as bytes
+
+parameters:
+    attachment_name: str,
+    body: bytes
+
+returns:
+    tuple[BaseModel, CouchAttachment]
+'''
+
+# adds/creates attachment to specific document into database by given attachment name and body
+data_tuple: tuple[BaseModel, CouchAttachment] = (
+            await user1.add_attachment(attachment_name = 'file_name', body = content)).unwrap()
+```
+
+### get attachment
+Returns the file attachment associated with the document.
+The raw data of the associated attachment is returned 
+(just as if you were accessing a static file.
+The returned Content-Type will be the same as the content
+type set when the document attachment was submitted 
+into the database.
+```python
+'''
+description:
+    get attachment function gets the attachment
+    for specific existing document from database
+    by providing attachment name and range
+
+parameters:
+    attachment_name: str,
+    range: str | None = None
+
+returns:
+    CouchAttachment
+'''
+
+# gets the attachment from database by name
+attachment: CouchAttachment = (
+            await user1.get_attachment(attachment_name = 'file_name')).unwrap()
+```
+
+### update attachment
+```python
+'''
+description:
+    update attachment function updates attachment
+    for specific existing document from database
+    by providing attachment name (filename) and body
+
+parameters:
+    attachment_name: str,
+    body: bytes
+
+returns:
+    tuple[BaseModel, CouchAttachment]
+'''
+
+# updates the attachment for specific document from database by attachment name and body
+data_tuple: tuple[BaseModel, CouchAttachment] = (
+            await user1.update_attachment(attachment_name = 'file_name', body = content)).unwrap()
+```
+
+### remove attachment
+Deletes the attachment with filename {attname} of the specified doc. You must supply the rev query parameter
+or If-Match with the current revision to
+delete the attachment.
+
+```python
+'''
+description:
+    remove attachment function removes/deletes attachment
+    for specific existing document from database
+    by providing attachment name and range
+
+parameters:
+    attachment_name: str,
+    batch: None | str = None
+
+returns:
+    BaseModel
+'''
+
+# removes/deletes the attachment for specific document from database by attachment name
+data_tuple: BaseModel= (
+            await user1.remove_attachment(attachment_name = 'file_name')).unwrap()
+```
+
+## Index
+### setup
+```python
+'''
+description:
+    load Index type from file using CouchLoader
+
+returns:
+    BaseIndex
+'''
+
+# load Index type from file using CouchLoader
+UserIndex: type = loader.UserIndex_email_usertype
+```
+
+### create/add index
+```python
+'''
+description:
+    create index function creates/adds index
+    with specific fields into database
+    by providing ddoc as id/name, partial_filter_selector and partitioned
+
+parameters:
+    ddoc: Optional[str] = None,
+    partial_filter_selector: Optional[dict] = None,
+    partitioned: Optional[bool] = None
+
+returns:
+    BaseIndex
+'''
+
+# creates/adds index with specific fields into database
+index_: UserIndex = (await UserIndex.create()).unwrap()
+```
+
+### get indexes
+When you make a GET request to /db/_index, you get a list of all indexes in the database. In addition to the information available through this API, indexes are also stored in design documents <index-functions>. Design documents are regular documents that have an ID starting with _design/. Design documents can be retrieved and modified in the same way as any other document
+```python
+'''
+description:
+    get index function gets list of indexes from database
+
+returns:
+    list[BaseIndex]
+'''
+ 
+# gets list of indexes from database
+index_list: list[UserIndex] = (await UserIndex.get()).unwrap()
+```
+
+### update index
+```python
+'''
+description:
+    update index function updates specific index from database
+    by providing ddoc as id/name
+
+parameters:
+    ddoc: Optional[str] = None,
+    partial_filter_selector: Optional[dict] = None,
+    partitioned: Optional[bool] = None
+
+returns:
+    BaseIndex
+'''
+
+# load Index type from file
+UserIndex: type = loader.UserIndex_email_usertype
+
+# update fields 
+UserIndex.fields = ['email']
+
+# update index by given ddoc/name/id
+updated_index = (await UserIndex.update(ddoc = 'ddoc')).unwrap()
+```
+
+### delete index
+```python
+'''
+description:
+    delete index function deletes specific index from database
+    by providing designdoc as name/id
+
+parameters:
+    designdoc: Optional[str] = None
+
+returns:
+    bool
+'''
+
+# delete index by given designdoc/name/id
+deleted_index: bool = (await UserIndex.delete(designdoc = 'ddoc')).unwrap()
+```
+
+## Object
+### setup
+```python
+'''
+description:
+    load Object type from file using CouchLoader
+    create instance of BaseObject
+
+returns:
+    BaseObject
+'''
+
+# load Object type from file
+AgentProfile: type = loader.AgentProfile
+
+# create instance of BaseObject
+agent_profile = AgentProfile(x = 1)
+```
+
+ ### create
+```python
+'''
+description:
+    creates instance of BaseModel, BaseObject
+    add function creates document into database
+    BaseModel type/document has BaseObject type attribute
+    call on model or model instance
+
+    if call on model:
+        parameters:
+            self: BaseModel
+
+returns:
+    BaseModel
+'''
+
+# load Object type from file
+AgentProfile: type = loader.AgentProfile
+
+# create instance of AgentProfile/BaseObject
+agent_profile1_0: AgentProfile = AgentProfile(x = 1)
+
+# load Model type from file
+Profile: type = loader.Profile
+
+# create Profile/BaseModel object
+# BaseModel type/document has BaseObject type attribute
+profile0: Profile = Profile(agent_profile = agent_profile1_0)
+
+# save model instance to database - call on model
+profile1_0: Profile = (await Profile.add(profile0)).unwrap()
+
+# save model instance to database - call on model instance
+profile1_0: Profile = (await profile0.add()).unwrap()
+```
+
+ ### get
+```python
+'''
+description:
+    get function gets document from database
+    BaseModel type/document has BaseObject type attribute
+    by given document id and document rev
+
+parameters:
+    docid: str,
+    rev: None | str = None
+
+returns:
+    BaseModel
+'''
+
+# get model from database by given id and rev, if rev is not passed document will be latest
+# BaseModel type/document has BaseObject type attribute
+profile1_0: Profile = (await Profile.get(docid = profile0._id, rev = profile0._rev)).unwrap()
+
+# geting BaseObject type from model
+agent_profile1_1: AgentProfile = profile1_0.agent_profile
+```
+
+ ### update
+```python
+'''
+description:
+    update function updates existing document 
+    from database 
+    BaseModel type/document has BaseObject type attribute
+    by providing fields to update
+
+parameters:
+    doc: dict, 
+    batch: None | str = None, 
+    new_edits: None | bool = None
+
+returns:
+    BaseModel
+'''
+
+# geting BaseObject type from model
+agent_profile0: AgentProfile = profile0.agent_profile
+
+# change object's attribute
+agent_profile0.x = 10
+
+doc_update: dict = {
+    'agent_profile': agent_profile0
+}
+
+# update model instance from database with given dict(keys as attributes)
+profile0_1: Profile = (await profile0.update(doc = doc_update)).unwrap()
+```
+
+### delete
+```python
+'''
+description:
+    delete BaseObject type can be done in two ways:
+    - if field is not required, could be set to None, 
+    and update BaseModel
+    - delete BaseModel type from database
+
+parameters:
+    if updating BaseModel:
+        doc: dict, 
+        batch: None | str = None, 
+        new_edits: None | bool = None
+    if deleting BaseModel:
+        batch: None | str = None
+
+returns:
+    BaseModel
+'''
+
+# delete BaseObject type can be done in two ways
+
+# 1st 
+# if agent_profile field is not required, could be set to None
+doc_update: dict = {
+    'agent_profile': None
+}
+
+# update model instance from database with given dict
+profile0_1: Profile = (await profile0.update(doc = doc_update)).unwrap()
+
+# 2nd
+# delete BaseModel type from database
+profile0_1: Profile = (await profile0.delete()).unwrap()
+```
+
+<!-- Links -->
+
+<!-- Badges -->
+[bsd3-image]: https://img.shields.io/badge/License-BSD_3--Clause-blue.svg
+[bsd3-url]: https://opensource.org/licenses/BSD-3-Clause
+[build-image]: https://img.shields.io/badge/build-success-brightgreen
+[coverage-image]: https://img.shields.io/badge/Coverage-100%25-green
+
+[pypi-project-url]: https://pypi.org/project/thcouch/
+[stable-ver-image]: https://img.shields.io/pypi/v/thcouch?label=stable
+[python-ver-image]: https://img.shields.io/pypi/pyversions/thcouch.svg?logo=python&logoColor=FBE072
+[status-image]: https://img.shields.io/pypi/status/thcouch.svg
+
+
+
