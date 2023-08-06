@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: termfactory
+Version: 0.3
+Summary: A python package for generating LaTeX and python code for evaluating residual terms
+Home-page: https://github.com/ngraymon/termfactory
+Author: Neil Raymond
+Author-email: neil.raymond@uwaterloo.ca
+License: MIT
+Keywords: coupled_cluster quantum_mechanics chemistry vibronic
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Chemistry
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.9
+Requires-Python: ~=3.5
+Provides-Extra: test
+
+Research Project
+
+![Master_workflow_coverage](https://github.com/ngraymon/residual_term_builder/actions/workflows/master_coverage.yml/badge.svg)
+![Testing_workflow_coverage](https://github.com/ngraymon/residual_term_builder/actions/workflows/testing_coverage.yml/badge.svg?testing_coverage=ci_testing) <!-- [![codecov](https://img.shields.io/codecov/c/github/ngraymon/residual_term_builder/master?label=master&token=BFcZ9ifNLT)](https://codecov.io/gh/ngraymon/residual_term_builder) -->
+[![codecov](https://img.shields.io/codecov/c/github/ngraymon/residual_term_builder/ci_testing?label=ci_testing&token=BFcZ9ifNLT)](https://codecov.io/gh/ngraymon/residual_term_builder)
