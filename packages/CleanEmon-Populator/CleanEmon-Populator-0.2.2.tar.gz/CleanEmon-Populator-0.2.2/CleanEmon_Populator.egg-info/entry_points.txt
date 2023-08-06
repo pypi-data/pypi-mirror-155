@@ -1,0 +1,2 @@
+[console_scripts]
+populator = CleanEmonPopulator.service:run
