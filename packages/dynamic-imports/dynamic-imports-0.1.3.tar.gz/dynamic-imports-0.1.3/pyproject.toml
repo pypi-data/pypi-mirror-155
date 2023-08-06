@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "dynamic-imports"
+version = "0.1.3"
+description = "Dynamic discovery and importing."
+authors = ["Dan Kelleher <dan@danklabs.org>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+ready-logger = "^0.1.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.5"
+black = "^21.12b0"
+jupyter = "^1.0.0"
+pylama = {extras = ["all"], version = "^8.3.6"}
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
