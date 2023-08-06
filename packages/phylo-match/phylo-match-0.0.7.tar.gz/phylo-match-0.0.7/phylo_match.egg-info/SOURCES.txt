@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+phylo_match.egg-info/PKG-INFO
+phylo_match.egg-info/SOURCES.txt
+phylo_match.egg-info/dependency_links.txt
+phylo_match.egg-info/entry_points.txt
+phylo_match.egg-info/requires.txt
+phylo_match.egg-info/top_level.txt
+src/__init__.py
+src/python/__init__.py
+src/python/definitions.py
+src/python/gui-windows.py
+src/python/gui.py
+src/python/match.py
