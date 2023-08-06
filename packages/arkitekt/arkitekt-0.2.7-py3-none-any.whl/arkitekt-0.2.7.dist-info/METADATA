@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: arkitekt
+Version: 0.2.7
+Summary: rpc and node backbone
+License: CC BY-NC 3.0
+Author: jhnnsrs
+Author-email: jhnnsrs@gmail.com
+Requires-Python: >=3.7,<4.0
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: docstring-parser (>=0.11)
+Requires-Dist: fakts (>=0.2.4,<0.3.0)
+Requires-Dist: herre (>=0.2.4,<0.3.0)
+Requires-Dist: inflection (>=0.5.1,<0.6.0)
+Requires-Dist: pydantic (==1.9.0)
+Requires-Dist: pytest-qt (>=4.0.2,<5.0.0)
+Requires-Dist: rath (>=0.2.4,<0.3.0)
+Requires-Dist: watchdog (>=2.1.6,<3.0.0)
+Requires-Dist: websockets (>=10.0,<11.0)
