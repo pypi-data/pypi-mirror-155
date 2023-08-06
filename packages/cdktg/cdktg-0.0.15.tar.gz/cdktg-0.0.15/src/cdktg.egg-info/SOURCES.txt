@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+src/cdktg/__init__.py
+src/cdktg/py.typed
+src/cdktg.egg-info/PKG-INFO
+src/cdktg.egg-info/SOURCES.txt
+src/cdktg.egg-info/dependency_links.txt
+src/cdktg.egg-info/requires.txt
+src/cdktg.egg-info/top_level.txt
+src/cdktg/_jsii/__init__.py
+src/cdktg/_jsii/cdktg@0.0.15.jsii.tgz
+src/cdktg/_jsii/bin/cdktg
