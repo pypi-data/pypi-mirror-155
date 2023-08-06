@@ -1,0 +1,3 @@
+[console_scripts]
+dermatillo = dermatillo.cli:entry
+
