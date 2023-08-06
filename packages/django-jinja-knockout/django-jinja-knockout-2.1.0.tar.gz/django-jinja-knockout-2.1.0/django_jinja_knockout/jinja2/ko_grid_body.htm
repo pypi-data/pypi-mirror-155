@@ -1,0 +1,398 @@
+{% macro ko_grid_body(include_ids=None, exclude_ids=None) -%}
+
+{% set _include_ids = set([
+    'ko_range_filter',
+    'ko_grid_row_click_menu',
+    'ko_action_form',
+    'ko_grid_filter_choices',
+    'ko_grid_filter_popup',
+    'ko_grid_search',
+    'ko_grid_nav',
+    'ko_grid_bottom_nav',
+    'ko_grid_no_results',
+    'ko_grid_table',
+    'ko_grid_body',
+    'ko_grid_pagination',
+    'ko_grid_rows_per_page_dialog',
+    'ko_fk_grid_widget',
+    'ko_fk_grid_widget_row',
+    'ko_fk_grid_widget_controls'
+]) -%}
+
+{% if include_ids is not none -%}
+    {% set _include_ids = _include_ids.union(include_ids) -%}
+{% endif -%}
+
+{% if exclude_ids is not none -%}
+    {% set _include_ids = _include_ids.difference(exclude_ids) -%}
+{% endif -%}
+
+{% if 'ko_range_filter' in _include_ids -%}
+<script type="text/template" id="ko_range_filter">
+    <card-default>
+        <card-body>
+            <div is="form-row">
+                <label is="form-label" data-bind="text: meta.from" class="col-md-3" for="id_range_from"></label>
+                <div class="field col-md-6">
+                    <input data-bind="textInput: from, attr: fieldAttrs" id="id_range_from" name="range_from">
+                </div>
+            </div>
+            <div is="form-row">
+                <label is="form-label" data-bind="text: meta.to" for="id_range_to" class="col-md-3"></label>
+                <div class="field col-md-6">
+                    <input data-bind="textInput: to, attr: fieldAttrs" id="id_range_to" name="range_to">
+                </div>
+            </div>
+        </card-body>
+    </card-default>
+</script>
+{% endif -%}
+
+{% if 'ko_grid_row_click_menu' in _include_ids -%}
+<script type="text/template" id="ko_grid_row_click_menu">
+    <div data-bind="foreach: {data: getEnabledActions(lastClickedKoRow, 'click', lastClickedCellNames), as: 'koAction'}">
+        <button class="btn btn-block" data-bind="css: actionCss(), click: function() { doLastClickedRowAction(); }, text: koAction.localName">
+        </button>
+    </div>
+</script>
+{% endif -%}
+
+{% if 'ko_action_form' in _include_ids -%}
+<!-- 'ko_action_form' template is not actual template but a skeleton of action template for ActionTemplateDialog class. -->
+<script type="text/template" id="ko_action_form">
+    <card-default>
+        <card-body>
+            <form class="ajax-form" enctype="multipart/form-data" method="post" role="form" data-bind="attr: {'data-url': actions.getLastActionUrl()}">
+                <input type="hidden" name="csrfmiddlewaretoken" data-bind="value: actions.getCsrfToken()">
+                <input type="hidden" name="pk_val" data-bind="value: getLastPkVal()">
+                <div class="jumbotron">
+                    <div class="default-padding">
+                        This is the sample template. Copy this template with another id then add your MVVM fields here.
+                    </div>
+                </div>
+            </form>
+        </card-body>
+    </card-default>
+</script>
+{% endif -%}
+
+{% if 'ko_grid_filter_choices' in _include_ids -%}
+<script type="text/template" id="ko_grid_filter_choices">
+    <li data-bind="grid_filter, click: onDropdownClick.bind(gridFilter), css: {'bg-info': hasActiveChoices()}" class="dropdown nav-item">
+        <a aria-expanded="false" class="dropdown-toggle nav-link" bs-data bs-toggle="dropdown" href="#">
+            <span data-bind="text: name"></span> <b class="caret"></b>
+        </a>
+        <ul data-bind="foreach: {data: choices, as: 'filterChoice'}" class="dropdown-menu">
+            <li data-bind="click: onLoadFilter.bind(filterChoice), css: {active: is_active(), 'dropdown-item': true}">
+                <a data-bind="text: name, grid_filter_choice" name="#"></a>
+            </li>
+        </ul>
+    </li>
+</script>
+{% endif -%}
+
+
+{% if 'ko_grid_breadcrumb_filter_choices' in _include_ids -%}
+<script type="text/template" id="ko_grid_breadcrumb_filter_choices">
+    <li data-bind="grid_filter">
+        <ol class="breadcrumb grid-breadcrumb">
+            <li class="bold pr-2 pe-2" data-bind="text: name"></li>
+            <!-- ko foreach: {data: choices, as: 'filterChoice'} -->
+            <li data-bind="css: {active: is_active(), 'breadcrumb-item': true}">
+                <a data-bind="css: {bold: is_active(), 'breadcrumb-item': true}, text: name, grid_filter_choice, click: onLoadFilter.bind(filterChoice)" name="#"></a>
+            </li>
+            <!-- /ko -->
+        </ol>
+    </li>
+</script>
+{% endif -%}
+
+{% if 'ko_grid_filter_popup' in _include_ids -%}
+<script type="text/template" id="ko_grid_filter_popup">
+    <li data-bind="grid_filter, css: {'bg-info': hasActiveChoices()}" class="dropdown nav-item">
+        <a data-bind="click: onDropdownClick.bind(gridFilter)" aria-expanded="false" class="dropdown-toggle nav-link" bs-data bs-toggle="dropdown" href="#">
+            <span data-bind="text: name"></span> <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu visually-hidden"></ul>
+    </li>
+</script>
+{% endif -%}
+
+{% if 'ko_grid_breadcrumb_filter_popup' in _include_ids -%}
+<script type="text/template" id="ko_grid_breadcrumb_filter_popup">
+    <li data-bind="grid_filter">
+        <ol class="breadcrumb grid-breadcrumb">
+            <li class="breadcrumb-item">
+                <a data-bind="click: onDropdownClick.bind(gridFilter), css: {'bold': hasActiveChoices()}" href="#">
+                    <span data-bind="text: name"></span> <b class="caret"></b>
+                </a>
+            </li>
+        </ol>
+    </li>
+</script>
+{% endif -%}
+
+{% if 'ko_grid_search' in _include_ids -%}
+<script type="text/template" id="ko_grid_search">
+    <li class="nav-item">
+        <form is="form-inline" data-bind="visible: meta.hasSearch() || actionTypes['button']().length > 0">
+            <div is="form-group" data-bind="if: meta.hasSearch()">
+                <input data-bind="textInput: gridSearchDisplayStr, attr: {placeholder: meta.searchPlaceholder}" class="form-control" type="search">
+                <button type="button" data-bind="click: onSearchReset" class="btn btn-default">{{ _('Clear') }}</button>
+            </div>
+            <!-- ko foreach: {data: actionTypes['button'], as: 'koAction'} -->
+                <button type="button" class="btn" data-bind="css: actionCss('button'), click: function(data, ev) { doAction({event: ev}); }">
+                    <span class="iconui" data-bind="css: actionCss('iconui')"></span>
+                    <span data-bind="text: koAction.localName"></span>
+                </button>
+            <!-- /ko -->
+        </form>
+    </li>
+</script>
+{% endif -%}
+
+{% if 'ko_grid_nav' in _include_ids -%}
+<script type="text/template" id="ko_grid_nav">
+    <navbar-default>
+        <div class="container-fluid">
+            <ul class="nav navbar-nav grid-controls">
+                <!-- ko template: {name: filterTemplateName, afterRender: expandFilterContents, foreach: gridFilters, as: 'gridFilter'} -->
+                <!-- /ko -->
+                <div data-template-id="ko_grid_search"></div>
+            </ul>
+        </div>
+    </navbar-default>
+</script>
+{% endif -%}
+
+{% if 'ko_grid_bottom_nav' in _include_ids -%}
+<script type="text/template" id="ko_grid_bottom_nav">
+    <div class="navbar navbar-left">
+        <!-- ko foreach: {data: actionTypes['button_footer'], as: 'koAction'} -->
+        <button class="btn" data-bind="css: actionCss('button'), click: function(data, ev) { doAction({event: ev}); }">
+            <span class="iconui" data-bind="css: actionCss('iconui')"></span>
+            <span data-bind="text: koAction.localName"></span>
+        </button>
+        <!-- /ko -->
+    </div>
+</script>
+{% endif -%}
+
+{% if 'ko_grid_no_results' in _include_ids -%}
+<script language="text/template" id="ko_grid_no_results">
+    <card-default>
+        <card-header>
+            <!-- ko ifnot: meta.firstLoad() -->
+                <!-- ko ifnot: hasActiveFilters() -->
+                {{ _(
+                    'No %(verbose_name)s found matching the query',
+                    verbose_name=mark_safe('<span data-bind="text: meta.verboseName"></span>')
+                ) }}
+                <!-- /ko -->
+                <!-- ko if: hasActiveFilters() -->
+                {{ _(
+                    'No %(verbose_name)s found matching the query for the selected filters',
+                    verbose_name=mark_safe('<span data-bind="text: meta.verboseName"></span>')
+                ) }}
+                <!-- /ko -->
+            <!-- /ko -->
+            <!-- ko if: meta.firstLoad() -->
+            {{ _('Please wait until the query is loading') }}
+            <!-- /ko -->
+        </card-header>
+    </card-default>
+</script>
+{% endif -%}
+
+{% if 'ko_grid_table' in _include_ids -%}
+<script type="text/template" id="ko_grid_table">
+    <div data-top="true">
+        <div class="table-responsive<%= self.padLeft('grid_wrapper_class') %>" <% if (self.get('vscroll')) { %> style="overflow-y: scroll;" <% } %> >
+            <table class="table table-bordered table-hover table-collapse<%= self.padLeft('grid_table_class') %>" <% if (self.get('vscroll')) { %> style="margin-bottom: 0;" <% } %>>
+                <thead>
+                    <tr data-bind="css: headerCss">
+                        <!-- ko if: options.showSelection -->
+                        <th data-bind="if: options.selectMultipleRows" class="grid-glyph-cell">
+                            <span data-bind="css: selectAllRowsCss, click: onSelectAllRows" class="iconui-ctrl iconui iconui-unchecked"></span>
+                        </th>
+                        <!-- /ko -->
+                        <!-- ko if: iconuiColumns() -->
+                        <th class="grid-glyph-cell"></th>
+                        <!-- /ko -->
+                        <!-- ko foreach: {data: gridColumns, as: 'gridColumn'} -->
+                        <th data-bind="foreach: columnOrders">
+                            <!-- ko if: isSortedColumn() -->
+                            <a data-bind="
+                                text: name,
+                                grid_order_by,
+                                click: onSwitchOrder,
+                                css: orderCss
+                            " class="iconui-ctrl-before" name="#"></a>
+                            <!-- /ko -->
+                            <!-- ko if: !isSortedColumn() -->
+                            <div data-bind="text: name"></div>
+                            <!-- /ko -->
+                        </th>
+                        <!-- /ko -->
+                    </tr>
+                </thead>
+                <% if (self.get('vscroll')) { %>
+            </table>
+        </div>
+        <div class="table-responsive vscroll" style="overflow-y: scroll;">
+            <table class="table table-bordered table-hover table-collapse">
+                <% } %>
+                <tbody data-bind="foreach: {data: gridRows, as: 'gridRow', afterRender: afterRowRender.bind(grid)}">
+                    <tr data-bind="grid_row, css: rowCss">
+                        <!-- ko if: grid.options.showSelection -->
+                        <td data-bind="click: onSelect" class="grid-glyph-cell">
+                            <span data-bind="css: selectionCss" class="iconui-ctrl iconui"></span>
+                        </td>
+                        <!-- /ko -->
+                        <!-- ko if: grid.iconuiColumns() -->
+                        <td class="grid-glyph-cell grid-glypicon-actions">
+                            <!-- ko foreach: {data: grid.actionTypes['iconui'], as: 'koAction'} -->
+                                <!-- ko if: gridRow.observeEnabledAction(koAction) -->
+                                <span data-bind="
+                                    css: actionCss(),
+                                    attr: {title: koAction.localName},
+                                    click: function() { koAction.doForRow(gridRow); }
+                                " class="iconui-ctrl iconui pointer"></span>
+                                <!-- /ko -->
+                            <!-- /ko -->
+                        </td>
+                        <!-- /ko -->
+                        <!-- ko foreach: {data: grid.gridColumns, as: 'gridColumn'} -->
+                        <td data-bind="
+                            click: gridRow.onRowClick.bind(gridRow),
+                            attr: {index: $index, 'data-caption': names},
+                            css: columnCss(),
+                            grid_compound_cell
+                        "></td>
+                        <!-- /ko -->
+                    </tr>
+                </tbody>
+                <tfoot class="jumbotron default-padding" data-bind="visible: gridRows().length === 0">
+                    <tr>
+                        <td data-bind="attr: {colspan: totalColumns()}">
+                            <div data-template-id="ko_grid_no_results"></div>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</script>
+{% endif -%}
+
+{% if 'ko_grid_body' in _include_ids -%}
+<script type="text/template" id="ko_grid_body">
+    <% if (!self.get('show_title')) { %>
+    <div data-bind="using: $root, as: 'grid'">
+    <% } else { %>
+    <card-<%= self.get('card_type') %> data-bind="using: $root, as: 'grid'">
+        <card-header data-bind="text: meta.verboseNamePlural"></card-header>
+        <card-body>
+    <% } %>
+            <!-- ko if: meta.hasSearch() || gridFilters().length > 0 || actionTypes['button']().length > 0 -->
+            <div data-template-id="ko_grid_nav"></div>
+            <!-- /ko -->
+            <div data-template-id="ko_grid_table"></div>
+        <% if (self.get('show_pagination')) { %>
+            <div data-template-id="ko_grid_pagination"></div>
+        <% } %>
+            <!-- ko if: actionTypes['button_footer']().length > 0 -->
+            <div data-template-id="ko_grid_bottom_nav"></div>
+            <!-- /ko -->
+    <% if (self.get('show_title')) { %>
+        </card-body>
+    </card-<%= self.get('card_type') %>>
+    <% } else { %>
+    </div>
+    <% } %>
+</script>
+{% endif -%}
+
+{% if 'ko_grid_pagination' in _include_ids -%}
+<script type="text/template" id="ko_grid_pagination">
+    <div data-bind="visible: options.alwaysShowPagination || gridTotalPages() > 1" class="pagination-wrapper">
+        <ul class="pagination flex-wrap default-margin">
+            <!-- ko foreach: {data: actionTypes['pagination'], as: 'koAction'} -->
+                <li data-bind="click: function(data, ev) { doAction({event: ev}); }" class="page-item">
+                    <span data-bind="css: actionCss('iconui'), attr: {title: koAction.localName}" class="page-link iconui-button iconui mr-2"></span>
+                </li>
+            <!-- /ko -->
+            <!-- ko foreach: {data: gridPages, as: 'gridPage'} -->
+            <li data-bind="css:{active: isActive}" class="page-item">
+                <a data-bind="text:title, click: onPagination" name="#" class="page-link" ></a>
+            </li>
+            <!-- /ko -->
+        </ul>
+    </div>
+</script>
+{% endif -%}
+
+{% if 'ko_grid_rows_per_page_dialog' in _include_ids -%}
+<script id="ko_grid_rows_per_page_dialog" language="text/html">
+    <card-default>
+        <card-header class="flex-space-between" data-bind="foreach: {data: meta.rowsPerPageValues, as: 'rangeValue'}">
+            <div data-bind="text: rangeValue"></div>
+        </card-header>
+        <card-body>
+            <input class="w-100" type="range" data-bind="attr: meta.rowsPerPageRange, value: meta.rowsPerPage, valueUpdate: 'input'" list="tickmarks">
+            <datalist id="tickmarks" data-bind="foreach: {data: meta.rowsPerPageValues, as: 'rangeValue'}">
+                <option data-bind="attr: {value: rangeValue}">
+            </datalist>
+        </card-body>
+    </card-default>
+</script>
+{% endif -%}
+
+{% if 'ko_fk_grid_widget' in _include_ids -%}
+<script id="ko_fk_grid_widget" language="text/html">
+    <div data-top="true" data-bind="using: $root, as: 'widget'">
+        <ul class="list-group vscroll" data-bind="if: inputRows().length > 0">
+            <li class="list-group-item"
+                data-bind="template: {name: widget.getTemplateName('ko_fk_grid_widget_row'), foreach: inputRows, as: 'inputRow', afterRender: widget.expandRowContents }">
+            </li>
+        </ul>
+        <!-- ko if: inputRows().length === 0 -->
+            <!-- ko if: isRequired -->
+            <input type="hidden" data-bind="attr: getEmptyAttrs()">
+            <!-- /ko -->
+            <!-- ko if: !isRequired -->
+            <p hidden data-bind="attr: getEmptyAttrs()"></p>
+            <!-- /ko -->
+        <!-- /ko -->
+        <!-- ko foreach: {data: inputRows, as: 'inputRow'} -->
+            <input type="hidden" data-bind="attr: widget.getInputAttrs(inputRow, $index())">
+        <!-- /ko -->
+        <div data-template-id="ko_fk_grid_widget_controls"></div>
+    </div>
+</script>
+{% endif -%}
+
+{% if 'ko_fk_grid_widget_row' in _include_ids -%}
+<script id="ko_fk_grid_widget_row" language="text/html">
+    <div data-bind="css: inputRow.css, click: inputRow.onClick, replaceInto: inputRow.display()">
+        <a class="close preserve-append" data-bind="visible: inputRow.canDelete, click: inputRow.remove"><button is="btn-dismiss"></button></a>
+    </div>
+</script>
+{% endif -%}
+
+{% if 'ko_fk_grid_widget_controls' in _include_ids -%}
+<script id="ko_fk_grid_widget_controls" language="text/html">
+    <button class="btn btn-info default-margin" data-bind="click: onFkButtonClick, clickBubble: false">{{ _('Change') }}</button>
+</script>
+{% endif -%}
+
+{% endmacro -%}
+{% if _render_ -%}
+    {% if not isinstance(_render_, dict) -%}
+        {% set _render_ = {
+            'include_ids': include_ids or None,
+            'exclude_ids': exclude_ids or None,
+        } -%}
+    {% endif -%}
+    {{ ko_grid_body(**_render_) }}
+{% endif -%}

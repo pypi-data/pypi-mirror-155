@@ -1,0 +1,40 @@
+    <script>
+    // https://github.com/systemjs/systemjs#ie11-support
+    if (typeof URLSearchParams === 'undefined') {
+        document.write('<script src="{{ static('djk/js/lib/url-search-params-polyfill.js') }}"><\/script>');
+    }
+    if (typeof CSS === 'undefined') {
+        document.write('<script src="{{ static('djk/js/lib/css.escape.js') }}"><\/script>');
+    }
+    if (typeof Promise === 'undefined') {
+        document.write('<script src="{{ static('djk/js/lib/bluebird.core.min.js') }}"><\/script>');
+    }
+    if (typeof fetch === 'undefined') {
+        document.write('<script src="{{ static('djk/js/lib/fetch.umd.js') }}"><\/script>');
+    }
+    // https://stackoverflow.com/questions/50295703/create-custom-elements-v1-in-es5-not-es6
+    if (typeof Reflect === 'undefined') {
+        document.write('<script src="{{ static('djk/js/lib/es6-shim.min.js') }}"><\/script>');
+    }
+    </script>
+    <script src="{{ static('djk/js/lib/ungap-custom-elements-min.js') }}"></script>
+    <script src="{{ static('djk/js/lib/jquery.min.js') }}"></script>
+    <script src="{{ tpl.url('javascript-catalog') }}"></script>
+    <script src="{{ static('djk/js/lib/knockout.js') }}"></script>
+    <!-- script src="{{ static('djk/js/lib/knockout-es5.min.js') }}"></script -->
+    <script src="{{ static('djk/js/lib/jquery.form.min.js') }}"></script>
+    <script src="{{ static('djk/js/lib/moment-with-locales.min.js') }}"></script>
+    <script src="{{ static('djk/js/lib/bootstrap.min.js') }}"></script>
+    <script src="{{ static('djk/js/lib/bootstrap-dialog.min.js') }}"></script>
+    <script src="{{ static('djk/js/lib/bootstrap-datetimepicker.min.js') }}"></script>
+    <script src="{{ static('djk/js/plugins.js') }}"></script>
+    <script type="application/json" class="app-conf">
+        {{ page_context.get_client_conf()|to_json(True) }}
+    </script>
+    <script type="application/json" class="app-client-data">
+        {{ page_context.get_client_data()|to_json(True) }}
+    </script>
+    <script src="{{ static('djk/js/lib/system.min.js') }}"></script>
+    {% for script, atts in page_context.get_custom_scripts() -%}
+    <script src="{{ static(script) }}"{{ tpl.flatatt(atts) }}></script>
+    {% endfor -%}

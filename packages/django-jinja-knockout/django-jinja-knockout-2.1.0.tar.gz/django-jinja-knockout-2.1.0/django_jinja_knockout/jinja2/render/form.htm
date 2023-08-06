@@ -1,0 +1,10 @@
+<card-default class="{{ opts.class }}">
+    {% if opts.title is defined -%}
+    <card-header>
+        <card-title>{{ opts.title }}</card-title>
+    </card-header>
+    {% endif -%}
+    <card-body>
+        {% include 'render/form_raw.htm' with context -%}
+    </card-body>
+</card-default>

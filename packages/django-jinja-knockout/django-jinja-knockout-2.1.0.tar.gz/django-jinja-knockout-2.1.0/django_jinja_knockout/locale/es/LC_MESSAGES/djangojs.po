@@ -1,0 +1,104 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: django-jinja-knockout javascript localization\n"
+"Language: es\n"
+
+#: 
+msgid "No"
+msgstr "No"
+
+#: 
+msgid "Yes"
+msgstr "Si"
+
+#: 
+msgid "From"
+msgstr "de donde"
+
+#: 
+msgid "To"
+msgstr "para"
+
+#: 
+msgid "AJAX request error"
+msgstr "Error de peticion AJAX"
+
+#, javascript-format
+msgid "Undefined response view %s"
+msgstr "respuesta indefinida a Vista %s"
+
+#: 
+msgid "Request error"
+msgstr "error de peticion"
+
+#: 
+msgid "Choose year / decade."
+msgstr "Elige año/decada"
+
+#, javascript-format
+msgid "Delete \"%s\""
+msgstr "Eliminar \"%s\""
+
+#, javascript-format
+msgid "Are you sure you want to delete \"%s\" ?"
+msgstr "Estas se guro que quieres eliminar  \"%s\" ?"
+
+#: 
+msgid "Required"
+msgstr "Requerido"
+
+#: 
+msgid "Delete when saved"
+msgstr "Eliminar al Guardar"
+
+#: 
+msgid "First page"
+msgstr "Primera pagina"
+
+#: 
+msgid "Last page"
+msgstr "Ultima pagina"
+
+#: 
+msgid "All"
+msgstr "Todo"
+
+#: 
+msgid "Search"
+msgstr "Busqueda"
+
+#: 
+msgid "Remove selection"
+msgstr "Eliminar seleccion"
+
+#: 
+msgid "Apply"
+msgstr "Aplicar"
+
+#: 
+msgid "N/A"
+msgstr "N/A"
+
+#: 
+msgid "Save"
+msgstr "Guardar"
+
+#: 
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: 
+msgid "Choose action"
+msgstr "elegir accion"
+
+#, javascript-format
+msgid "Too big file size=%s, max_size=%s"
+msgstr "Tamaño =%s de archivo demasiado grande,tamaño_maximo=%s"
+
+#: 
+msgid "Error"
+msgstr "Error"

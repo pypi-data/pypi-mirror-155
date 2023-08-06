@@ -1,0 +1,14 @@
+{# @note: Also called in forms.set_knockout_template #}
+{% if not opts.formset_form_class -%}
+    {% do opts.update({'formset_form_class': ''}) -%}
+{% endif -%}
+<div class="formset-form-wrap {{ opts.formset_form_class }}">
+    <card-default class="inline-formset-wrap">
+        <card-header>
+            <card-title>{{ opts.inline_title }}</card-title>
+        </card-header>
+        <card-body>
+            {{ form._renderer['body']() }}
+        </card-body>
+    </card-default>
+</div>

@@ -1,0 +1,7 @@
+django>=2.2.0
+Jinja2
+bleach
+lxml
+ensure
+sqlparse
+pytz

@@ -1,0 +1,48 @@
+{% macro bs_dropdown(title=None, navs=None, menu_attrs=None) -%}
+{% if navs is none -%}
+    {% set navs = {} -%}
+{% endif -%}
+{% if menu_attrs is none -%}
+    {% set menu_attrs = {'class': 'dropdown-menu dropdown-menu-right'} -%}
+{% endif -%}
+{% if title is not none -%}
+{% set dropdown_atts = {'class': 'dropdown dropdown-choice'} -%}
+{% for nav in navs if nav.is_active_reset -%}
+{% else -%}
+    {% do tpl.add_css_classes_to_dict(dropdown_atts, 'active') -%}
+{% endfor -%}
+<ul class="nav nav-pills">
+    <li{{ tpl.json_flatatt(dropdown_atts) }}>
+        <a class="dropdown-toggle" bs-data bs-toggle="dropdown" href="#" aria-expanded="false">
+        {{ title }} <span class="caret"></span>
+        </a>
+{% endif -%}
+        <ul{{ tpl.json_flatatt(menu_attrs) }}>
+            {% for nav in navs -%}
+            {% do tpl.add_css_classes_to_dict(nav.atts, 'nav-item') -%}
+            <li {{ tpl.json_flatatt(nav.atts) }}>
+                {% set a_atts = {'class': 'nav-link'} -%}
+                {% if nav.url is defined -%}
+                    {% do a_atts.update({'href': nav['url'] }) -%}
+                {% else -%}
+                    {% do a_atts.update({'name': '#'}) -%}
+                {% endif -%}
+                <a{{ tpl.json_flatatt(a_atts)}}>{{ nav.text }}</a>
+            </li>
+            {% endfor -%}
+        </ul>
+{% if title is not none -%}
+    </li>
+</ul>
+{% endif -%}
+{% endmacro -%}
+{% if _render_ -%}
+    {% if not isinstance(_render_, dict) -%}
+        {% set _render_ = {
+            'title': title or None,
+            'navs': navs or None,
+            'menu_attrs': menu_attrs or None,
+        } -%}
+    {% endif -%}
+    {{ bs_dropdown(**_render_) }}
+{% endif -%}

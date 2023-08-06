@@ -1,0 +1,62 @@
+            {% if caller -%}
+                {{ caller({'formset_begin': formset, 'opts': opts}) }}
+            {% endif -%}
+            <div class="formset default-padding">
+                <div class="management-form">
+                    {{ formset.management_form }}
+                </div>
+                {% if formset.total_error_count() -%}
+                    <div class="alert alert-warning">
+                    {% for error in formset.errors -%}
+                        <div>{{ error }}</div>
+                    {% endfor -%}
+                    </div>
+                {% endif -%}
+                {% if action == '' -%}
+                    <div class="table-responsive">
+                        <table class="{{ opts.table_classes }}">
+                            <colgroup>
+                                <col class="{{ opts.layout_classes.label }}">
+                                <col class="{{ opts.layout_classes.field }}">
+                            </colgroup>
+                {% endif -%}
+                {% for form in formset -%}
+                    {% if caller -%}
+                        {{ caller({'inline_form_begin': form, 'opts': opts}) }}
+                    {% endif -%}
+                    {% set formset_form_class = '' -%}
+                    {% if formset.can_delete -%}
+                        {% if loop.index0 < formset.min_num -%}
+                            {% set formset_form_class = 'form-required' -%}
+                        {% else -%}
+                            {% set formset_form_class = 'form-optional' -%}
+                        {% endif -%}
+                    {% endif -%}
+                    {% do form._renderer['inline'].update_context({
+                        'action': action,
+                        'formset_index': loop.index0,
+                        'opts': {
+                            'formset_form_class': formset_form_class,
+                        }
+                    }) -%}
+                    {{ form._renderer['inline']() }}
+                    {% if caller -%}
+                        {{ caller({'inline_form_end': form, 'opts': opts}) }}
+                    {% endif -%}
+                {% endfor -%}
+                {% if action == '' -%}
+                        </table>
+                    </div>
+                {% endif -%}
+                {% if formset.knockout_template -%}
+                <div data-bind="foreach: {data: forms, afterRender: afterFormRendered}">
+                    <div data-bind="anonymous_template: {'base-selector': '.formsets', 'template-index': {{ loop.index0 }}}"></div>
+                </div>
+                <button class="btn btn-info btn-sm" data-bind="click: addForm, visible: hasMoreForms">
+                    {{ _('Add "%(verbose_name)s"', verbose_name=opts.inline_title) }}
+                </button>
+                {% endif -%}
+            </div>
+            {% if caller -%}
+                {{ caller({'formset_end': formset, 'opts': opts}) }}
+            {% endif -%}
