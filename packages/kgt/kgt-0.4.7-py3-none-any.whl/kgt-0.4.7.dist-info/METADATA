@@ -1,0 +1,105 @@
+Metadata-Version: 2.1
+Name: kgt
+Version: 0.4.7
+Summary: Python tools for Keygen.sh licensing
+Author-email: Nico Schlömer <nico.schloemer@gmail.com>
+Project-URL: Homepage, https://github.com/nschloe/kgt
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: Other/Proprietary License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Topic :: Utilities
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: x21 (>=0.3.3,<0.4.0)
+Requires-Dist: appdirs
+Requires-Dist: cryptography
+Requires-Dist: PyNaCl
+Requires-Dist: requests
+Requires-Dist: rich
+Requires-Dist: tomli
+Requires-Dist: tomli-w
+
+# kgt
+
+[![PyPi Version](https://img.shields.io/pypi/v/kgt.svg?style=flat-square)](https://pypi.org/project/kgt/)
+[![PyPI pyversions](https://img.shields.io/pypi/pyversions/kgt.svg?style=flat-square)](https://pypi.org/project/kgt/)
+
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg?style=flat-square)](https://github.com/psf/black)
+
+Some handy tools for the [Keygen](https://keygen.sh/) licensing service. (This
+is a user contribution, not an official Keygen LLC product. For Keygen
+software, see [here](https://github.com/keygen-sh).)
+
+Install with
+
+```
+pip install kgt
+```
+
+and use as
+
+```python
+import sys
+from kgt import get_online_license_info, ValidationError
+
+info = get_online_license_info(
+    account_id="demo", key="DEMO-DAD877-FCBF82-B83D5A-03E644-V3"
+)
+```
+
+The `out` object contains useful information such as
+
+```
+out.code
+out.timestamp
+out.license_creation_time
+out.license_expiry_time
+```
+
+The validation result can also be safely cached with
+
+<!--pytest-codeblocks:skip-->
+
+```python
+import sys
+from datetime import datetime, timedelta
+from kgt import get_cached_license_info, ValidationError
+
+infi = get_cached_license_info(
+    account_id="your accound id",
+    key="the license key",
+    keygen_verify_key="your Ed25519 128-bit Verify Key",
+    cache_path="/tmp/license-cache.json",
+    refresh_cache_period=timedelta(days=3),
+)
+
+now = datetime.utcnow()
+cache_age = now - out.timestamp
+if cache_age > timedelta(days=3) and cache_age < timedelta(days=7):
+    print("Warning: Could not validate license. Make sure to get online soon.")
+elif cache_age > timedelta(days=7):
+    print("Error: Could not validate license. Internet connection needed. Exiting.")
+    sys.exit(1)
+```
+
+For _offline validation_, use
+
+<!--pytest-codeblocks:skip-->
+
+```python
+from kgt import get_offline_license_info
+
+# or "RSA_2048_PKCS1_SIGN_V2", "RSA_2048_PKCS1_PSS_SIGN_V2":
+license_scheme = "ED25519_SIGN"
+keygen_verify_key = "your public verify key"
+license_key = "your offline license key"
+
+info = get_offline_license_info(license_scheme, license_key, keygen_verify_key)
+print(info)
+```

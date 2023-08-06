@@ -1,0 +1,3 @@
+from ._helpers import safeget as safeget, to_datetime as to_datetime
+
+def get_online_license_info(account_id: str, key: str): ...

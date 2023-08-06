@@ -1,0 +1,3 @@
+from ._helpers import to_datetime as to_datetime
+
+def get_offline_license_info(license_scheme: str, license_key: str, keygen_verify_key: str) -> dict: ...
