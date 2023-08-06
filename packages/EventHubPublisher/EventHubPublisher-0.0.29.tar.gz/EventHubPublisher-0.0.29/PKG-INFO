@@ -1,0 +1,41 @@
+Metadata-Version: 2.1
+Name: EventHubPublisher
+Version: 0.0.29
+Summary: A small example package
+Home-page: https://storis.com
+Author: STORIS
+Author-email: author@example.com
+Project-URL: Bug Tracker, https://storis.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
+Build the project 
+	In the Visual Studio Search box type 'Terminal'.
+	Open the Terminal and navigate to the Project folder location 'cd project_path'
+	run 'py -3.9 -m build'
+	This will update/crate 'dist' folder into the project location
+
+Run send script
+	In the project location open power shell 
+	run 'python Publisher.py --type=OrderWrittenSale --env=Development --code=storis, --account=storisAccount, --events='[{\"name\":\"a\"}, {\"name\":\"aa\"}]''
+
+Upload library
+	In the project location open power shell 
+	run 'python -m twine upload dist/* --verbose'
+
+Install script
+	run 'py -m pip install --target=C:\storis\ud15\PYEVENTS EventHubPublisher'
+	Where --target=C:\PyScripts specifies the directory where the package will be installed  
+	Into the installation directory create settings.json file same as the file in Storis.EventHub.Publisher/settings.json and add settings for the corresponding environment  
+
+Run the script from package in U2
+	client_code must be always the first parameter 
+	'runpy EventPublisher Publisher.py --type=OrderWrittenSale --env=Development --code=storis, --account=storisAccount, --events=""[{\"name\":\"a\"}, {\"name\":\"aa\"}]""'
+
+Run from U2 
+	json = '{"environment":"Development", "eventType":"OrderWrittenSale", "clientCode":"fla-105-code", "accountName":"fla-105", "data":[{"entityId":"a"}]}'
+	PyCallFunction(Publisher, "run", json)
+	
