@@ -1,0 +1,2 @@
+[console_scripts]
+py-package-template = py_pkg.entry_points:main
