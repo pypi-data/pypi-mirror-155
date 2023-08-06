@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: dooit
+Version: 0.1.0
+Summary: A TUI todo manager
+License: MIT
+Author: kraanzu
+Author-email: kraanzu@gmail.com
+Requires-Python: >=3.10,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Requires-Dist: pyperclip (>=1.8.2,<2.0.0)
+Requires-Dist: textual (>=0.1.17,<0.2.0)
