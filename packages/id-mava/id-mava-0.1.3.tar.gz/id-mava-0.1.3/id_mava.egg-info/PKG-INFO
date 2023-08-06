@@ -1,0 +1,37 @@
+Metadata-Version: 2.1
+Name: id-mava
+Version: 0.1.3
+Summary: A Python library for Multi-Agent Reinforcement Learning.
+Author: InstaDeep Ltd
+License: Apache License, Version 2.0
+Keywords: multi-agent reinforcement-learning python machine learning
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Description-Content-Type: text/markdown
+Provides-Extra: tf
+Provides-Extra: pz
+Provides-Extra: flatland
+Provides-Extra: open_spiel
+Provides-Extra: reverb
+Provides-Extra: testing_formatting
+Provides-Extra: record_episode
+Provides-Extra: sc2
+Provides-Extra: envs
+Provides-Extra: jax
+License-File: LICENSE
+
+Mava is a library for building multi-agent reinforcement
+learning (MARL) systems. Mava builds off of Acme and in a similar way strives
+to expose simple, efficient, and readable components, as well as examples that
+serve both as reference implementations of popular algorithms and as strong
+baselines, while still providing enough flexibility to do novel research.
+For more information see
+[github repository](https://github.com/instadeepai/mava).
