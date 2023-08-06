@@ -1,0 +1,161 @@
+#!python
+""" ups-ls  -  Displays details about installed compatible UPSs
+
+    This utility displays most relevant parameters for installed and compatible
+    UPSs listed in the config.json file.  By default, all available parameters
+    are displayed. The *--input* and *--output* options can be used to get relevant
+    UPS input and output parameters.  With the *--list_commands* option, the
+    utility will list all available SNMP commands for the configured UPS.  With
+    the *--list_params* option, the daemon configuration parameters will be listed.
+    The *--list_decoders* option will display list of all MiB decoders available
+    for the UPS defined as daemon target. The *--verbose* will cause informational
+    messages to be displayed and *--no_markup* option will result in plain text
+    output instead of color coded text.  The logger is enabled with the *--debug*
+    option.
+
+    Copyright (C) 2019  RicksLab
+
+    This program is free software: you can redistribute it and/or modify it
+    under the terms of the GNU General Public License as published by the Free
+    Software Foundation, either version 3 of the License, or (at your option)
+    any later version.
+
+    This program is distributed in the hope that it will be useful, but WITHOUT
+    ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+    FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+    more details.
+
+    You should have received a copy of the GNU General Public License along with
+    this program.  If not, see <https://www.gnu.org/licenses/>.
+"""
+__author__ = 'RicksLab'
+__copyright__ = 'Copyright (C) 2019 RicksLab'
+__license__ = 'GNU General Public License'
+__program_name__ = 'ups-ls'
+__maintainer__ = 'RicksLab'
+__docformat__ = 'reStructuredText'
+# pylint: disable=multiple-statements
+# pylint: disable=line-too-long
+# pylint: disable=bad-continuation
+
+import argparse
+import sys
+import logging
+from UPSmodules import UPSmodule as UPS
+from UPSmodules import env
+from UPSmodules import __version__, __status__, __credits__
+
+LOGGER = logging.getLogger('ups-utils')
+
+
+def main() -> None:
+    """
+    Main function
+    """
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--about', help='README',
+                        action='store_true', default=False)
+
+    # Mutually exclusive group of main functions
+    detail_group = parser.add_mutually_exclusive_group(required=False)
+    detail_group.add_argument('--list_commands', help='List all available commands',
+                              action='store_true', default=False)
+    detail_group.add_argument('--list_params', help='List all configuration parameters',
+                              action='store_true', default=False)
+    detail_group.add_argument('--list_decoders', help='List all decoder parameters',
+                              action='store_true', default=False)
+    detail_group.add_argument('--input', help='Display UPS input parameters',
+                              action='store_true', default=False)
+    detail_group.add_argument('--output', help='Display UPS output parameters',
+                              action='store_true', default=False)
+
+    # Verbosity, and debug options
+    parser.add_argument('--no_markup', help='Output plane text',
+                        action='store_true', default=False)
+    parser.add_argument('--verbose', help='Output normal readings',
+                        action='store_true', default=False)
+    parser.add_argument('-d', '--debug', help='Debug output',
+                        action='store_true', default=False)
+    args = parser.parse_args()
+
+    # About me
+    if args.about:
+        print(__doc__)
+        print('Author: ', __author__)
+        print('Copyright: ', __copyright__)
+        print('Credits: ', *['\n      {}'.format(item) for item in __credits__])
+        print('License: ', __license__)
+        print('Version: ', __version__)
+        print('Install Type: ', env.UT_CONST.install_type)
+        print('Maintainer: ', __maintainer__)
+        print('Status: ', __status__)
+        sys.exit(0)
+
+    env.UT_CONST.set_env_args(args, __program_name__)
+    LOGGER.debug('########## %s %s', __program_name__, __version__)
+
+    if not env.UT_CONST.check_env():
+        env.UT_CONST.process_message('Error in environment. Exiting...', log_flag=True)
+        sys.exit(-1)
+
+    ups_list = UPS.UpsList(daemon=args.list_params)
+    num_ups = ups_list.num_upss()
+
+    if env.UT_CONST.fatal:
+        env.UT_CONST.process_message('Fatal Error. Exiting...', log_flag=True)
+        sys.exit(-1)
+
+    if not num_ups['total']:
+        env.UT_CONST.process_message('No UPSs specified in {}'.format(env.UT_CONST.ups_json_file), log_flag=True)
+        print('    For more information: `man {0}`, exiting...'.format(env.UT_CONST.ups_json_file))
+        sys.exit(-1)
+    print(ups_list)
+
+    LOGGER.debug('nmc types: %s', ups_list.get_ups_type_list())
+    if args.list_decoders:
+        UPS.UpsComm.print_decoders()
+        sys.exit(0)
+
+    if args.list_params:
+        ups_list.daemon.print_daemon_parameters()
+        sys.exit(0)
+
+    for ups in ups_list.upss():
+        if args.list_commands:
+            cmd_group = UPS.UpsComm.MIB_group.static
+            ups.read_ups_list_items(cmd_group, display=False)
+            ups.print_snmp_commands()
+            sys.exit(0)
+        if not ups.is_compatible():
+            print('ERROR: {} is not compatible type: {}'.format(ups.ups_name(), ups.ups_type()))
+            print('       Check the config file: [{}]\n'.format(env.UT_CONST.ups_json_file))
+            continue
+        if not ups.is_accessible():
+            print('ERROR: {} is not an accessible IP: {}'.format(ups.ups_name(), ups.ups_ip()))
+            print('       Check the config file: [{}]\n'.format(env.UT_CONST.ups_json_file))
+            continue
+        if not ups.is_responsive():
+            print('ERROR: {} is not responsive to snmp IP: {}'.format(ups.ups_name(), ups.ups_ip()))
+            print('       Check the config file: [{}]\n'.format(env.UT_CONST.ups_json_file))
+            continue
+        cmd_group = UPS.UpsComm.MIB_group.all
+        if args.input or args.output:
+            if args.input:
+                cmd_group = UPS.UpsComm.MIB_group.input
+            else:
+                cmd_group = UPS.UpsComm.MIB_group.output
+            if not ups.read_ups_list_items(cmd_group, display=False):
+                print('Giving up on {}'.format(ups.ups_name()))
+                break
+            ups.print(short=True, input_arg=args.input, output_arg=args.output)
+        else:
+            if not ups.read_ups_list_items(cmd_group, display=False):
+                print('Giving up on {}'.format(ups.ups_name()))
+                break
+            ups.print()
+
+    sys.exit(0)
+
+
+if __name__ == '__main__':
+    main()
