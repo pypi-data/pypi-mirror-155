@@ -1,0 +1,12 @@
+README.md
+setup.py
+singleton_type/__init__.py
+singleton_type/pkg_meta.py
+singleton_type/py.typed
+singleton_type.egg-info/PKG-INFO
+singleton_type.egg-info/SOURCES.txt
+singleton_type.egg-info/dependency_links.txt
+singleton_type.egg-info/entry_points.txt
+singleton_type.egg-info/requires.txt
+singleton_type.egg-info/top_level.txt
+test/test_singleton_type.py
