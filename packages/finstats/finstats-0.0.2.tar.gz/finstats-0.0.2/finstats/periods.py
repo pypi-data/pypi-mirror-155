@@ -1,0 +1,13 @@
+DAILY = 'd'
+WEEKLY = 'w'
+MONTHLY = 'm'
+QUARTERLY = 'q'
+YEARLY = 'y'
+
+ANNUALIZATION_FACTORS = {
+    DAILY: 252,
+    WEEKLY: 52,
+    MONTHLY: 12,
+    QUARTERLY: 4,
+    YEARLY: 1
+}
