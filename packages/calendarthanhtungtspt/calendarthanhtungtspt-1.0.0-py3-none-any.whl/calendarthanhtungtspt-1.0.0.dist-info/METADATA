@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: calendarthanhtungtspt
+Version: 1.0.0
+Summary: A library for calculate calendar
+Home-page: https://github.com/pypa/sampleproject
+Author: Thanh Tung
+Author-email: thanhtung247@gmail.com
+Project-URL: Bug Tracker, https://github.com/pypa/sampleproject/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+Thư viện tính toán âm dương lịch, Julius Day number cùng các công cụ tính toán lịch pháp khác sử dụng trong các thuật toán
