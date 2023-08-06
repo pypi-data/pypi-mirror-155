@@ -1,0 +1,2 @@
+[console_scripts]
+metatrim = metatrim.command_line:main
