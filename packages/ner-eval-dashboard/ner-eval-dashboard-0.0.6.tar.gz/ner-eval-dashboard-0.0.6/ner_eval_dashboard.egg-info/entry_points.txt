@@ -1,0 +1,2 @@
+[console_scripts]
+ner_eval_dashboard = ner_eval_dashboard.cli:main
