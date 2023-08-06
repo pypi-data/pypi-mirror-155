@@ -1,0 +1,28 @@
+Metadata-Version: 2.1
+Name: archive-hocr-tools
+Version: 1.1.21
+Summary: hOCR (streaming) parsers and writers
+Home-page: https://github.com/internetarchive/archive-hocr-tools
+Author: Merlijn Boris Wolf Wajer
+Author-email: merlijn@archive.org
+License: AGPL-3.0
+Download-URL: https://github.com/internetarchive/archive-hocr-tools/archive/1.1.21.tar.gz
+Keywords: hOCR,Internet Archive
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.6
+Requires-Dist: lxml (==4.6.5)
+Provides-Extra: epub
+Requires-Dist: ebooklib (==0.17.1) ; extra == 'epub'
+Requires-Dist: internetarchive-deriver-module (==1.0.1) ; extra == 'epub'
+Requires-Dist: iso639 (==0.1.4) ; extra == 'epub'
+Provides-Extra: pdf
+Requires-Dist: PyMuPDF (==1.19.2) ; extra == 'pdf'
+Requires-Dist: numpy (==1.21.3) ; extra == 'pdf'
+
+UNKNOWN
+
+
