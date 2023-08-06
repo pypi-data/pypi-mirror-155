@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+boonamber/__init__.py
+boonamber.egg-info/PKG-INFO
+boonamber.egg-info/SOURCES.txt
+boonamber.egg-info/dependency_links.txt
+boonamber.egg-info/requires.txt
+boonamber.egg-info/top_level.txt
+test/test_client.py
+test/test_streaming.py
