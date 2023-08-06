@@ -1,0 +1,53 @@
+Metadata-Version: 1.1
+Name: html2rml
+Version: 0.3.2
+Summary: Simple HTML to RML converter
+Home-page: https://github.com/misli/html2rml
+Author: Jakub Dorňák
+Author-email: jakub.dornak@misli.cz
+License: BSD
+Description: html2rml
+        ========
+        
+        Simple HTML to RML converter. It may be used to take output of TinyMCE
+        or any other WYSIWYG html editor and use it in your RML template.
+        
+        
+        Installation with pip
+        ---------------------
+        
+        .. code:: shell
+        
+            pip install html2rml
+        
+        
+        Usage
+        -----
+        
+        This HTML code ...
+        
+        .. code:: python
+        
+            from html2rml import html2rml
+        
+            html = """<p>This is text of simple paragraph.<br/> <b>This is bold.</b></p>"""
+            print(html2rml(html))
+        
+        ... will be converted to the following RML code.
+        
+        .. code:: shell
+        
+            <para style="p">This is text of simple paragraph.<br/> <b>This is bold.</b></para>
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 2.7
