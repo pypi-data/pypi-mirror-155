@@ -1,0 +1,14 @@
+logger/__init__.py,sha256=FOn_k7E-59Ix6MASRGduVmCa5cE1yrr8Dh8YUhRb7_s,40
+logger/es_logger.py,sha256=7x1oPo1BYPixSBwpFlVdJ7IlYd9toHFZMEyqsVk9JlY,1955
+logger/es_total_logger.py,sha256=VuJ4tTFoNojYvm9YfN6Y4r04vNtwiNjv0R7v9z8lD20,1049
+logger/logger.py,sha256=jK-Fl-aYzIDLLcc7IDhMjxhBK3P54sMJAhaoRVlQAFw,358
+logger/logger_factory.py,sha256=OKgqzaFlEgyE_0md-X0it8NxbzMULasK5bsSQoeWSn8,463
+logger/total_logger.py,sha256=UhtZZs2Wpo06YkLvT2Hee5z1FnYgCaKm2JVNSYiut2o,119
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/logger_test.py,sha256=R80URWEKOoO6mvLrYvCalQbQwzkiKRb53QUnUxT9uaE,1450
+tests/total_logger_test.py,sha256=4oesxaxhNNr8SyR-BtNlRCkpGgjhjx_wPsZNtrMDkdU,680
+CoEsLogger-0.0.4.dist-info/LICENSE.txt,sha256=jzBdW2CZCJK7uvAItLfd04GG5xg44JvdI1tIW5Emcd4,26930
+CoEsLogger-0.0.4.dist-info/METADATA,sha256=qxwBhXa-u8rPXCueeLI5Nt2k7Q4-V4aQX0WXYjZi-JU,626
+CoEsLogger-0.0.4.dist-info/WHEEL,sha256=G16H4A3IeoQmnOrYV4ueZGKSjhipXx8zc8nu9FGlvMA,92
+CoEsLogger-0.0.4.dist-info/top_level.txt,sha256=BJ3PKW1PPKxQ0GDRTuhjsjh92SFj617ajLJCwnxOpZI,13
+CoEsLogger-0.0.4.dist-info/RECORD,,
