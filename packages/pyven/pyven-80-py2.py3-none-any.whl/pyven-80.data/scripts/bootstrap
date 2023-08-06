@@ -1,0 +1,28 @@
+#!/bin/bash
+
+set -eux
+
+bootvenv=$(mktemp -d)
+
+trap 'rm -r $bootvenv' EXIT
+
+virtualenv $bootvenv
+
+$bootvenv/bin/pip install pyven
+
+(
+
+    cd "$(dirname "$0")"
+
+    # TODO: Inspect project.arid to get these names.
+    for p in ../aridity ../diapyr ../lagoon .; do
+
+        (cd $p; $bootvenv/bin/pipify)
+
+        $bootvenv/bin/pip install -e $p
+
+    done
+
+)
+
+$bootvenv/bin/initopt "$@" "$USER_OPT"
