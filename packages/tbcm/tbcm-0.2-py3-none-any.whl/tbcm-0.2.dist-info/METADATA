@@ -1,0 +1,37 @@
+Metadata-Version: 2.1
+Name: tbcm
+Version: 0.2
+Summary: Ten Bit Color Maps
+Home-page: https://github.com/artiedins/tbcm
+Author: Artie Dins
+License: MIT
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: matplotlib
+
+# Ten Bit Color Maps
+
+
+## Features
+
+- 1024 colors in each sequential colormap
+- Perceptually uniform - each color is same perceptual distance from the previous color (before rounding)
+- Raw color data rounded so they can be used in a byte tensor (see pytorch example below)
+- All maps start at black
+
+## Installation
+
+```bash
+pip install tbcm
+```
+
+## Usage
+
+### With matplotlib
+
+
+
+### With pytorch
+
+
+
