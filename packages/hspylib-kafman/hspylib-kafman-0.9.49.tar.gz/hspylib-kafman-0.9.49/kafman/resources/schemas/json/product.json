@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$id": "https://example.com/product.schema.json",
+  "title": "Product",
+  "type": "object",
+  "description": "A Confluent Kafka Product",
+  "properties": {
+    "brand": {
+      "type": "string"
+    },
+    "market": {
+      "type": "string"
+    },
+    "product": {
+      "type": "string"
+    },
+    "quantity": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 1000
+    }
+  },
+  "required": [
+    "brand",
+    "market",
+    "product",
+    "quantity"
+  ],
+  "additionalProperties": false
+}
