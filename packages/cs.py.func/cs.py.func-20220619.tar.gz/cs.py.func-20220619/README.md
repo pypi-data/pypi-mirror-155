@@ -1,0 +1,137 @@
+Convenience facilities related to Python functions.
+
+*Latest release 20220619*:
+@trace: rename some parameters, add with_caller.
+
+## Function `callif(doit, func, *a, **kw)`
+
+Call `func(*a,**kw)` if `doit` is true
+otherwise just print it out.
+
+The parameter `func` may be preceeded optionally by a `dict`
+containing modes. The current modes are:
+* `'print'`: the print function, default the builtin `print`
+
+## Function `callmethod_if(o, method, default=None, a=None, kw=None)`
+
+Call the named `method` on the object `o` if it exists.
+
+If it does not exist, return `default` (which defaults to None).
+Otherwise call getattr(o, method)(*a, **kw).
+`a` defaults to ().
+`kw` defaults to {}.
+
+## Function `derived_from(property_name)`
+
+A property which must be recomputed
+if the revision of another property exceeds the snapshot revision.
+
+## Function `derived_property(func, original_revision_name='_revision', lock_name='_lock', property_name=None, unset_object=None)`
+
+A property which must be recomputed
+if the reference revision (attached to self)
+exceeds the snapshot revision.
+
+## Function `func_a_kw_fmt(func, *a, **kw)`
+
+Prepare a percent-format string and associated argument list
+describing a call to `func(*a,**kw)`.
+Return `format,args`.
+
+The `func` argument can also be a string,
+presumably a prepared description of `func` such as `funccite(func)`.
+
+## Function `funccite(func)`
+
+Return a citation for a function (name and code location).
+
+## Function `funcname(func)`
+
+Return a name for the supplied function `func`.
+Several objects do not have a __name__ attribute, such as partials.
+
+## Function `prop(func)`
+
+A substitute for the builtin @property.
+
+The builtin @property decorator lets internal AttributeErrors escape.
+While that can support properties that appear to exist conditionally,
+in practice this is almost never what I want, and it masks deeper errors.
+Hence this wrapper for @property that transmutes internal AttributeErrors
+into RuntimeErrors.
+
+## Function `returns_bool(func)`
+
+Decorator for functions which should return Booleans.
+
+## Function `returns_str(func)`
+
+Decorator for functions which should return strings.
+
+## Function `returns_type(func, basetype)`
+
+Decrator which checks that a function returns values of type `basetype`.
+
+## Function `trace(*da, **dkw)`
+
+Decorator to report the call and return of a function.
+
+## Function `yields_str(func)`
+
+Decorator for generators which should yield strings.
+
+## Function `yields_type(func, basetype)`
+
+Decorator which checks that a generator yields values of type `basetype`.
+
+# Release Log
+
+
+
+*Release 20220619*:
+@trace: rename some parameters, add with_caller.
+
+*Release 20220311.1*:
+New callif(doit[,modes],func,*a,**kw) to call or print a function, used in -n/--dry-run stuff sometimes.
+
+*Release 20220311*:
+* @trace: new pprint=False option to use pprint.pformat instead of repr for the return value.
+* @trace: bugfix use of retval parameter.
+
+*Release 20210913*:
+New func_a_kw_fmt(func,*a,**kw) imported from cs.pfx, hooked it into @trace.
+
+*Release 20210906*:
+funcname: special case functools.partial, return concise name.
+
+*Release 20210717*:
+* Move @trace from debug to py.func, defer log call imports to avoid loops.
+* Drop cs.pfx requirement, import opportunisticly with fallback.
+
+*Release 20200518*:
+funcname: prefer `func.__qualname__` over `func.__name__`
+
+*Release 20190729*:
+funccite: handle callables with no __code__ attribute.
+
+*Release 20190108*:
+Break import loop. Use cs.py3.raise_from for portability.
+
+*Release 20181231*:
+* Some type specific convenience wrappers for yields_type and returns_type.
+* Bugfix for @prop.
+
+*Release 20170906.1*:
+Minor tweaks.
+
+*Release 20170906*:
+Bugfix for @prop.
+
+*Release 20170608*:
+New decorator @prop which works just like the builtin @property, but transmutes internal AttributeError into RuntimeError, unmasking many bugs.
+
+*Release 20160828*:
+Use "install_requires" instead of "requires" in DISTINFO.
+
+*Release 20150115*:
+First PyPI release.
