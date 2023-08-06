@@ -1,0 +1,100 @@
+{
+  "name": "承装电力设施许可证",
+  "imageHeight": 1516,
+  "imageWidth": 2123,
+  "anchors": [
+    {
+      "text": "承装(修、试)电力设施许可证",
+      "left": 412,
+      "top": 350,
+      "width": 1327,
+      "height": 112
+    },
+    {
+      "text": "国家能源局印制",
+      "left": 1585,
+      "top": 1440,
+      "width": 293,
+      "height": 44
+    },
+    {
+      "text": "许可机关",
+      "left": 1539,
+      "top": 1108,
+      "width": 212,
+      "height": 49
+    }
+  ],
+  "recognition_areas": [
+    {
+      "field_name": "单位名称",
+      "show_name": "no",
+      "left": 217,
+      "top": 669,
+      "width": 795,
+      "height": 144,
+      "replace_re": "[：]",
+      "replace_val": ""
+    },
+    {
+      "field_name": "法定代表人",
+      "show_name": "legal_person",
+      "left": 214,
+      "top": 823,
+      "width": 488,
+      "height": 132,
+      "replace_re": "[：]",
+      "replace_val": ""
+    },
+    {
+      "field_name": "住所",
+      "show_name": "address",
+      "left": 1058,
+      "top": 657,
+      "width": 881,
+      "height": 149,
+      "replace_re": "[：]",
+      "replace_val": ""
+    },
+    {
+      "field_name": "许可类别和等级",
+      "show_name": "license_category_and_level",
+      "left": 1061,
+      "top": 818,
+      "width": 639,
+      "height": 193,
+      "replace_re": "[：]",
+      "replace_val": ""
+    },
+    {
+      "field_name": "有效期限",
+      "show_name": "period",
+      "left": 209,
+      "top": 1089,
+      "width": 686,
+      "height": 187,
+      "replace_re": "[：]",
+      "replace_val": ""
+    },
+    {
+      "field_name": "许可证编号",
+      "show_name": "permit_no",
+      "left": 1385,
+      "top": 523,
+      "width": 554,
+      "height": 75,
+      "replace_re": "[：]",
+      "replace_val": ""
+    },
+    {
+      "field_name": "发证日期",
+      "show_name": "issue_date",
+      "left": 1424,
+      "top": 1186,
+      "width": 371,
+      "height": 69,
+      "replace_re": "[：]",
+      "replace_val": ""
+    }
+  ]
+}
