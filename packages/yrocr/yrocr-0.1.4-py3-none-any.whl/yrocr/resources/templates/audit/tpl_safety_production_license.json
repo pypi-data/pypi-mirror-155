@@ -1,0 +1,103 @@
+{
+  "name": "安全生产许可证",
+  "imageHeight": 513,
+  "imageWidth": 724,
+  "anchors": [
+    {
+      "text": "安全生产许可证",
+      "left": 64,
+      "top": 155,
+      "width": 238,
+      "height": 34
+    },
+    {
+      "text": "（副本）",
+      "left": 152,
+      "top": 198,
+      "width": 58,
+      "height": 19
+    }
+  ],
+  "recognition_areas": [
+    {
+      "field_name": "编号",
+      "show_name": "no",
+      "left": 87,
+      "top": 222,
+      "width": 214,
+      "height": 17,
+      "replace_re": "[：]",
+      "replace_val": ""
+    },
+    {
+      "field_name": "单位名称",
+      "show_name": "org_name",
+      "left": 41,
+      "top": 245,
+      "width": 250,
+      "height": 19,
+      "replace_re": "[：]",
+      "replace_val": ""
+    },
+    {
+      "field_name": "主要负责人",
+      "show_name": "charge_person",
+      "left": 41,
+      "top": 267,
+      "width": 155,
+      "height": 18,
+      "replace_re": "[：]",
+      "replace_val": ""
+    },
+    {
+      "field_name": "单位地址",
+      "show_name": "address",
+      "left": 42,
+      "top": 287,
+      "width": 328,
+      "height": 21,
+      "replace_re": "[：]",
+      "replace_val": ""
+    },
+    {
+      "field_name": "经济类型",
+      "show_name": "economic_type",
+      "left": 40,
+      "top": 308,
+      "width": 164,
+      "height": 19,
+      "replace_re": "[：]",
+      "replace_val": ""
+    },
+    {
+      "field_name": "许可范围",
+      "show_name": "license_scope",
+      "left": 40,
+      "top": 328,
+      "width": 163,
+      "height": 20,
+      "replace_re": "[：]",
+      "replace_val": ""
+    },
+    {
+      "field_name": "有效期",
+      "show_name": "valid_date_scope",
+      "left": 41,
+      "top": 349,
+      "width": 309,
+      "height": 25,
+      "replace_re": "[：]",
+      "replace_val": ""
+    },
+    {
+      "field_name": "发证日期",
+      "show_name": "issue_date",
+      "left": 201,
+      "top": 446,
+      "width": 138,
+      "height": 26,
+      "replace_re": "[：]",
+      "replace_val": ""
+    }
+  ]
+}

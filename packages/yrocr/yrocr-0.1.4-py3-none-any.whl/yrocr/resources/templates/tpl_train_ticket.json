@@ -1,0 +1,103 @@
+{
+  "name": "火车票",
+  "imageHeight": 335,
+  "imageWidth": 576,
+  "anchors": [
+    {
+      "text": "仅供报销使用",
+      "left": 69,
+      "top": 177,
+      "width": 122,
+      "height": 23
+    },
+    {
+      "text": "中国铁路祝您旅途愉快",
+      "left": 154,
+      "top": 257,
+      "width": 179,
+      "height": 21
+    }
+  ],
+  "recognition_areas": [
+    {
+      "field_name": "出发地",
+      "show_name": "departure_station",
+      "left": 81,
+      "top": 45,
+      "width": 136,
+      "height": 28
+    },
+    {
+      "field_name": "目的地",
+      "show_name": "arrival_station",
+      "left": 360,
+      "top": 40,
+      "width": 137,
+      "height": 31
+    },
+    {
+      "field_name": "车次号",
+      "show_name": "train_number",
+      "left": 238,
+      "top": 48,
+      "width": 98,
+      "height": 28
+    },
+    {
+      "field_name": "乘车时间",
+      "show_name": "departure_date",
+      "left": 63,
+      "top": 97,
+      "width": 250,
+      "height": 24
+    },
+    {
+      "field_name": "座位号",
+      "show_name": "seat_number",
+      "left": 354,
+      "top": 97,
+      "width": 107,
+      "height": 19
+    },
+    {
+      "field_name": "座位类别",
+      "show_name": "class",
+      "left": 390,
+      "top": 121,
+      "width": 67,
+      "height": 21
+    },
+    {
+      "field_name": "价格",
+      "show_name": "price",
+      "left": 67,
+      "top": 127,
+      "width": 99,
+      "height": 21
+    },
+    {
+      "field_name": "乘客身份证姓名",
+      "show_name": "passenger_name_and_id",
+      "left": 64,
+      "top": 204,
+      "width": 296,
+      "height": 23
+    },
+    {
+      "field_name": "检票口",
+      "show_name": "check",
+      "left": 419,
+      "top": 6,
+      "width": 117,
+      "height": 27
+    },
+    {
+      "field_name": "火车票ID",
+      "show_name": "ticket_id",
+      "left": 57,
+      "top": 286,
+      "width": 214,
+      "height": 27
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "name": "建筑工程施工许可证",
+  "imageHeight": 1013,
+  "imageWidth": 1434,
+  "anchors": [
+    {
+      "text": "中华人民共和国",
+      "left": 203,
+      "top": 142,
+      "width": 291,
+      "height": 42
+    },
+    {
+      "text": "建筑工程施工许可证",
+      "left": 102,
+      "top": 235,
+      "width": 506,
+      "height": 50
+    },
+    {
+      "text": "特发此证",
+      "left": 193,
+      "top": 547,
+      "width": 81,
+      "height": 26
+    }
+  ],
+  "recognition_areas": [
+    {
+      "field_name": "编号",
+      "show_name": "no",
+      "left": 394,
+      "top": 332,
+      "width": 306,
+      "height": 59
+    },
+    {
+      "field_name": "发证日期",
+      "show_name": "issue_date",
+      "left": 249,
+      "top": 841,
+      "width": 372,
+      "height": 63
+    },
+    {
+      "field_name": "发证机关",
+      "show_name": "issue_org",
+      "left": 241,
+      "top": 797,
+      "width": 374,
+      "height": 43
+    },
+    {
+      "field_name": "建设单位",
+      "show_name": "construction_unit",
+      "left": 794,
+      "top": 83,
+      "width": 558,
+      "height": 52
+    },
+    {
+      "field_name": "工程名称",
+      "show_name": "project_name",
+      "left": 790,
+      "top": 137,
+      "width": 576,
+      "height": 33
+    }
+  ]
+}
