@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: bergamot
+Version: 0.4.4
+Summary: Bergamot translator python binding.
+Home-page: https://github.com/browsermt/bergamot-translator/
+Author: Jerin Philip
+Author-email: jerinphilip@live.in
+Requires-Python: >=3.6
+License-File: LICENSE
+Requires-Dist: requests
+Requires-Dist: pyyaml
+Requires-Dist: appdirs
+Provides-Extra: test
+Requires-Dist: pytest (>=6.0) ; extra == 'test'
+
