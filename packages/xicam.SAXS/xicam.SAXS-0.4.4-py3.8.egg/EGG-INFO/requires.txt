@@ -1,0 +1,15 @@
+xicam
+numpy
+qtpy
+pyFAI<0.21
+scipy
+dill
+scikit-image
+databroker>=1.0.0b1
+scikit-beam
+camsaxs
+numba
+
+[tests]
+pytest
+coverage
