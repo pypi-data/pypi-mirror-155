@@ -1,0 +1,3 @@
+[console_scripts]
+ws_cleanup_tool = ws_cleanup_tool.cleanup_tool:main
+
