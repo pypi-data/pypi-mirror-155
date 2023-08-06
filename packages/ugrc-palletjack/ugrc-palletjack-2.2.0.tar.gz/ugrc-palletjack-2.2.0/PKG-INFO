@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: ugrc-palletjack
+Version: 2.2.0
+Summary: Updating AGOL feature services with data from SFTP shares.
+Home-page: https://github.com/agrc/palletjack
+Author: Jake Adams, UGRC
+Author-email: jdadams@utah.gov
+License: MIT
+Project-URL: Issue Tracker, https://github.com/agrc/palletjack/issues
+Keywords: gis
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Utilities
+Provides-Extra: tests
+License-File: LICENSE
+
+UNKNOWN
+
