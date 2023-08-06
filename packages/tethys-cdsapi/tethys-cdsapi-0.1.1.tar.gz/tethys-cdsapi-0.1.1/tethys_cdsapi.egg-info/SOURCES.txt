@@ -1,0 +1,14 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+tethys_cdsapi/__init__.py
+tethys_cdsapi/downloader.py
+tethys_cdsapi.egg-info/PKG-INFO
+tethys_cdsapi.egg-info/SOURCES.txt
+tethys_cdsapi.egg-info/dependency_links.txt
+tethys_cdsapi.egg-info/requires.txt
+tethys_cdsapi.egg-info/top_level.txt
+tethys_cdsapi/tests/__init__.py
+tethys_cdsapi/tests/testing.py
+tethys_cdsapi/tests/utest_downloader.py
