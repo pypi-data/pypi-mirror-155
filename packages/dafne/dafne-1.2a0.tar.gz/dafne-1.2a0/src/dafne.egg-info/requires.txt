@@ -1,0 +1,25 @@
+h5py
+numpy
+scipy
+matplotlib
+pyqt5
+nibabel
+pydicom
+dill
+progress
+tensorflow-gpu
+appdirs
+requests
+scikit-image
+SimpleITK-SimpleElastix
+pyradiomics
+muscle-bids
+
+[:python_version < "3.10"]
+importlib_resources
+
+[:sys_platform != "win32"]
+pypotrace
+
+[:sys_platform == "win32"]
+pypotrace-windows
