@@ -1,0 +1,17 @@
+LICENSE.txt
+MANIFEST.in
+README.md
+pyproject.toml
+requirements.txt
+setup.cfg
+setup.py
+pittgoogle/__init__.py
+pittgoogle/bigquery.py
+pittgoogle/figures.py
+pittgoogle/pubsub.py
+pittgoogle/utils.py
+pittgoogle_client.egg-info/PKG-INFO
+pittgoogle_client.egg-info/SOURCES.txt
+pittgoogle_client.egg-info/dependency_links.txt
+pittgoogle_client.egg-info/requires.txt
+pittgoogle_client.egg-info/top_level.txt

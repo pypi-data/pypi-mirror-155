@@ -1,0 +1,11 @@
+aplpy
+astropy==3.2.1
+fastavro
+google-cloud-bigquery
+google-cloud-pubsub>=2.0
+google-cloud-storage
+matplotlib
+numpy
+pandas
+tabulate
+typing
