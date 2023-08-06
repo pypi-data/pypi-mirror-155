@@ -1,0 +1,45 @@
+Metadata-Version: 2.1
+Name: portodjangostarter
+Version: 0.1.3
+Summary: With portodjangostarter we can start porto containers in django project
+Home-page: https://github.com/BakdauletBolat/portodjangostarter
+Author: BakdauletBolat
+Author-email: bakosh21345@gmail.com
+Requires-Python: >=3.8,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Project-URL: Repository, https://github.com/BakdauletBolat/portodjangostarter
+Description-Content-Type: text/markdown
+
+# Porto container starter
+
+This package uses to start a porto container
+
+You can install this package very simple
+
+## Installation
+
+
+```bash
+  pip install portodjangostarter
+```
+
+#### Add package to installed apps
+
+```python
+  INSTALLED_APPS = [
+    ...
+    'django.contrib.staticfiles',
+    'portodjangostarter',
+    ...
+]
+```
+
+### And use it for happy 🚀
+```python
+   python manage.py startcontainer {{app_name}}
+```
+
+
