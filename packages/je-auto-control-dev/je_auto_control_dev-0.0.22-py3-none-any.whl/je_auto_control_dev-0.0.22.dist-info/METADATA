@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: je-auto-control-dev
+Version: 0.0.22
+Summary: auto testing
+Home-page: https://github.com/JE-Chen/AutoControl
+Author: JE-Chen
+Author-email: zenmailman@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Environment :: Win32 (MS Windows)
+Classifier: Environment :: MacOS X
+Classifier: Environment :: X11 Applications
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: je-open-cv
+Requires-Dist: pillow
+Requires-Dist: numpy
+Requires-Dist: pyobjc-core ; platform_system == "Darwin"
+Requires-Dist: pyobjc ; platform_system == "Darwin"
+Requires-Dist: python3-Xlib ; platform_system == "Linux"
+
+# Integration-testing-environment
+
