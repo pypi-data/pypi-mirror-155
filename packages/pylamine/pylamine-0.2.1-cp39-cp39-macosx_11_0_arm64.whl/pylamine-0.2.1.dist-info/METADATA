@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: pylamine
+Version: 0.2.1
+Summary: Python bindings for Calamine.
+Home-Page: https://github.com/cnpryer/pylamine
+Author: Chris <cnpryer@gmail.com>
+Author-email: Chris <cnpryer@gmail.com>
+License: MIT
+Description-Content-Type: text/markdown; charset=UTF-8; variant=GFM
+Project-URL: Source Code, https://github.com/cnpryer/pylamine.git
+
+[![Python tests](https://github.com/cnpryer/pylamine/actions/workflows/python-tests.yaml/badge.svg)](https://github.com/cnpryer/pylamine/actions/workflows/python-tests.yaml)
+[![Rust tests](https://github.com/cnpryer/pylamine/actions/workflows/rust-tests.yaml/badge.svg)](https://github.com/cnpryer/pylamine/actions/workflows/rust-tests.yaml)
+[![latest release](https://img.shields.io/pypi/v/pylamine.svg)](https://pypi.org/project/pylamine/)
+
+# pylamine
+
+Python bindings for [`Calamine`](https://github.com/tafia/calamine).
+
+## Contributing
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md).
+
+## Credits
+
+Credits to [`python-calamine`](https://github.com/dimastbk/python-calamine) for getting this started with `get_sheet_data` and `get_sheet_names`! 👏
+
