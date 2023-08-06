@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: pyhelp
+Version: 0.4.0
+Summary: A Python library for the assessment of spatially distributed groundwater recharge and hydrological components with HELP.
+Home-page: https://github.com/cgq-qgc/pyhelp
+Author: PyHELP Project Contributors
+Author-email: jean-sebastien.gosselin@ete.inrs.ca
+License: MIT
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Education
+Classifier: Topic :: Scientific/Engineering
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+PyHELP is an object oriented Python library providing a set of tools to estimate spatially distributed groundwater recharge and other hydrological components (runoff and evapotranspiration) using the HELP ([Hydrologic Evaluation of Landfill Performance](https://www.epa.gov/land-research/hydrologic-evaluation-landfill-performance-help-model)) model.PyHELP integrates weather data (from grids or stations), land conditions defined by a series of GIS maps as well as soil and geological material properties into HELP input files. PyHELP also processes HELP simulation results and outputs them as maps and graphs, including comparisons of simulation results with stream hydrographs. PyHELP thus accompanies users through the entire workflow from input file assembly to model calibration and to the documentation of results. This workflow is based on the method originally developed by [Croteau et al. (2011)](https://www.tandfonline.com/doi/abs/10.4296/cwrj3504451) to assess spatially distributed groundwater recharge at the regional scale.
+
