@@ -1,0 +1,23 @@
+[bob.bio.config]
+1vsall = bob.bio.vein.config.database.utfvp_1vsall
+full = bob.bio.vein.config.database.utfvp_full
+mc = bob.bio.vein.config.maximum_curvature
+nom = bob.bio.vein.config.database.utfvp_nom
+rlt = bob.bio.vein.config.repeated_line_tracking
+vera_nom = bob.bio.vein.config.database.verafinger_contactless_nom
+wld = bob.bio.vein.config.wide_line_detector
+
+[bob.bio.database]
+utfvp = bob.bio.vein.config.database.utfvp_nom:database
+verafinger_contactless = bob.bio.vein.config.database.verafinger_contactless_nom:database
+
+[bob.bio.pipeline]
+mc = bob.bio.vein.config.maximum_curvature:pipeline
+rlt = bob.bio.vein.config.repeated_line_tracking:pipeline
+wld = bob.bio.vein.config.wide_line_detector:pipeline
+
+[console_scripts]
+bob_bio_vein_blame.py = bob.bio.vein.script.blame:main
+bob_bio_vein_compare_rois.py = bob.bio.vein.script.compare_rois:main
+bob_bio_vein_view_sample.py = bob.bio.vein.script.view_sample:main
+
