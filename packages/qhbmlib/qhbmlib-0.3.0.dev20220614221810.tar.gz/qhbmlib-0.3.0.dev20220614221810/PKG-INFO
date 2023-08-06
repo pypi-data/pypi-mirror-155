@@ -1,0 +1,46 @@
+Metadata-Version: 2.1
+Name: qhbmlib
+Version: 0.3.0.dev20220614221810
+Summary: Quantum Hamiltonian-Based Models built on TensorFlow Quantum
+Home-page: https://github.com/google/qhbm-library
+License: Apache-2.0
+Keywords: quantum-computing
+Author: The QHBM Library Authors
+Author-email: no-reply@google.com
+Requires-Python: >=3.7,<3.10
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Classifier: Topic :: Scientific/Engineering :: Physics
+Provides-Extra: doc
+Requires-Dist: Sphinx (>=4.5.0,<5.0.0); extra == "doc"
+Requires-Dist: myst-parser (>=0.17.2,<0.18.0); extra == "doc"
+Requires-Dist: sphinx-rtd-theme (>=1.0.0,<2.0.0); extra == "doc"
+Requires-Dist: tensorflow (==2.7.0)
+Requires-Dist: tensorflow-probability (==0.15.0)
+Requires-Dist: tensorflow-quantum (==0.6.1)
+Project-URL: Repository, https://github.com/google/qhbm-library
+Description-Content-Type: text/markdown
+
+# QHBM Library
+
+This repository is a collection of tools for building and training
+Quantum Hamiltonian-Based Models.  These tools depend on
+[TensorFlow Quantum](https://www.tensorflow.org/quantum),
+and are thus compatible with both real and simulated quantum computers.
+
+[Installation instructions](https://github.com/google/qhbm-library/blob/main/docs/INSTALL.md) and [contribution instructions](https://github.com/google/qhbm-library/blob/main/docs/contributing.md) can be found in the docs folder.
+
+This is not an officially supported Google product.
+

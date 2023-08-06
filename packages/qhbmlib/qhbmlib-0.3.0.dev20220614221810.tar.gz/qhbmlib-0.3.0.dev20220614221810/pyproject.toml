@@ -1,0 +1,67 @@
+[tool.poetry]
+name = "qhbmlib"
+version = "0.3.0.dev20220614221810"
+description = "Quantum Hamiltonian-Based Models built on TensorFlow Quantum"
+license = "Apache-2.0"
+readme = "README.md"
+homepage = "https://github.com/google/qhbm-library"
+repository = "https://github.com/google/qhbm-library"
+keywords = ["quantum-computing"]
+authors = ["The QHBM Library Authors <no-reply@google.com>"]
+classifiers = [
+        "Development Status :: 3 - Alpha",
+        "Intended Audience :: Science/Research",
+        "License :: OSI Approved :: Apache Software License",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
+        "Topic :: Scientific/Engineering",
+        "Topic :: Scientific/Engineering :: Artificial Intelligence",
+        "Topic :: Scientific/Engineering :: Mathematics",
+        "Topic :: Scientific/Engineering :: Physics",
+]
+packages = [
+    { include = "qhbmlib" },
+]
+
+[tool.poetry.dependencies]
+python = "~3.7 || ~3.8 || ~3.9"
+tensorflow = "2.7.0"
+tensorflow-probability = "0.15.0"
+tensorflow-quantum = "0.6.1"
+
+# Documentation tools are only installed on RTD if they are in this main group
+Sphinx = "^4.5.0"
+sphinx-rtd-theme = "^1.0.0"
+myst-parser = "^0.17.2"
+
+[tool.poetry.dev-dependencies]
+coverage = {extras = ["toml"], version = "5.5"}
+pylint = "2.13.3"
+pytest = "6.2.4"
+pytest-cov = "2.11.1"
+yapf = "0.31.0"
+
+[tool.coverage.paths]
+source = ["qhbmlib"]
+
+[tool.coverage.run]
+branch = true
+source = ["qhbmlib"]
+
+[tool.coverage.report]
+show_missing = true
+
+[tool.poetry.extras]
+# Everything needed for docs building goes here.
+# The 'doc' command under 'extra_requirements' in the RTD yaml uses this line.
+doc = ["myst-parser", "sphinx", "sphinx-rtd-theme"]
+
+[build-system]
+requires = ["poetry_core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.yapf]
+based_on_style = "yapf"
+indent_width = "2"
