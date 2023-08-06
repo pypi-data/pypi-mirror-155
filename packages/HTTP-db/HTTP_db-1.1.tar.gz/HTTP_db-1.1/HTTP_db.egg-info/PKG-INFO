@@ -1,0 +1,43 @@
+Metadata-Version: 2.1
+Name: HTTP-db
+Version: 1.1
+Summary: Simple and easy database system using HTTP
+Home-page: https://github.com/nattyan-tv/HTTP_db
+Author: nattyan-tv
+Author-email: nananatsu2020@outlook.com
+Maintainer: nattyan-tv
+Maintainer-email: nananatsu2020@outlook.com
+License: MIT License
+Download-URL: https://github.com/nattyan-tv/HTTP_db
+Keywords: HTTP,database,simple,easy,nirabot
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3 :: Only
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+
+# HTTP_db
+Simple and easy database manager using HTTP  
+[日本語版](https://github.com/nattyan-tv/HTTP_db/blob/master/README_ja.md)
+
+# Usage
+1. Install modules (`pip install -r requirements.txt`)
+2. Write `setting.json` file
+3. Execute `main.py`
+
+# API Reference
+[English version](https://nattyan-tv.github.io/HTTP_db/docs/en-us/index)  
+[Japanese version](https://nattyan-tv.github.io/HTTP_db/docs/ja-jp/index)  
+
+# Setting
+
+Name|Description|Type
+---|---|---
+address|HTTP Server address|str
+port|HTTP Server port|int
+debug|HTTP Server debug mode|bool
+remotesave|Remote save mode|bool
+location|If remotesave is true, database key, else, savedata location|str
+cell|If remotesave is true, database cell|str
+
+
