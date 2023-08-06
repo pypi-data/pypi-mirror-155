@@ -1,0 +1,17 @@
+LICENSE.TXT
+README.rst
+pyproject.toml
+setup.py
+matrix_registration_bot/__init__.py
+matrix_registration_bot/bot.py
+matrix_registration_bot/config.py
+matrix_registration_bot/registration_api.py
+matrix_registration_bot.egg-info/PKG-INFO
+matrix_registration_bot.egg-info/SOURCES.txt
+matrix_registration_bot.egg-info/dependency_links.txt
+matrix_registration_bot.egg-info/entry_points.txt
+matrix_registration_bot.egg-info/requires.txt
+matrix_registration_bot.egg-info/top_level.txt
+tests/__init__.py
+tests/test_registration_api.py
+venv/bin/activate_this.py
