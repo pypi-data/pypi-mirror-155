@@ -1,0 +1,17 @@
+README.md,sha256=PRsAIMss3xZh-_9Y6TVqt1MnuY5cJKQIkuNTz-XoR_0,2166
+scraping_subsystem/airflow_python_callables.py,sha256=oAdtHb3JnJtEvp9K9aP1GnGv6jVCYtUG4a810zOlDag,4049
+scraping_subsystem/kafka_handler/kafka_handler.py,sha256=Zaog59ZpysNGCT5Ikv9Um-y9JMv-tToTIL39sFoyKes,1783
+scraping_subsystem/scraper/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+scraping_subsystem/scraper/items.py,sha256=lshepPRL0Xf-16cEr1KyI1FQdkiKrJX1LlXBlfI4rfc,594
+scraping_subsystem/scraper/middlewares.py,sha256=xSFWq0snVMgjT9Dg7JFF1VmKyfOZJCp8iteQ80NbpTc,3654
+scraping_subsystem/scraper/pipelines.py,sha256=CFbkmeOYGwNVAIEZzvGwAr4-knvf8ss9f1cI9valoik,363
+scraping_subsystem/scraper/settings.py,sha256=UQ4rJhrqE9MnBvJR5YlHdtBrsIGxJDji8Re4CibnBs4,3106
+scraping_subsystem/scraper/spiders/__init__.py,sha256=ULwecZkx3_NTphkz7y_qiazBeUoHFnCCWnKSjoDCZj0,161
+scraping_subsystem/scraper/spiders/flamp_spider.py,sha256=EIrsMWr8403jRp0zFNY-z9DPYj_wYar_UAWCv_X1aDQ,3956
+scraping_subsystem/scraper/spiders/test_spider.py,sha256=ii7e1FgcLQL09hDf3cU4uL4DvPH5Tj38TpTHA5Q-RVo,660
+scraping_subsystem/scrapy.cfg,sha256=io9GKLyY-bGFtQXwyMtf4F2ddoO3QqjEFnP6YVgpb78,325
+scraping_subsystem/sentiment_analyzer/analyzer.py,sha256=XUFLKgcwQNYDHXfoukXWxt5Y65lrVmpX6Dc99liVF3E,3273
+scraping_subsystem/sentiment_analyzer/text_cleaner.py,sha256=6Bo0rzQtg1udtSvKb48mgz7pM9MWuuOvd8YgM3olaMk,2664
+scrapingsubsystem-0.1.5.dist-info/WHEEL,sha256=y3eDiaFVSNTPbgzfNn0nYn5tEn1cX6WrdetDlQM4xWw,83
+scrapingsubsystem-0.1.5.dist-info/METADATA,sha256=woM3l5JMpPeqr35M6HEX7IFSqEyQdROuzFXU-EOCL2w,518
+scrapingsubsystem-0.1.5.dist-info/RECORD,,
