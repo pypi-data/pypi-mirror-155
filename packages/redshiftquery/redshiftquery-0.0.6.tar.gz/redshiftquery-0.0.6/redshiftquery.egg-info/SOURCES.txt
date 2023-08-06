@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.cfg
+redshiftquery/GetOLsInTerm.sql
+redshiftquery/GetTermsNoWinter.sql
+redshiftquery/GetTermsWithWinter.sql
+redshiftquery/__init__.py
+redshiftquery/query.py
+redshiftquery/terms.py
+redshiftquery.egg-info/PKG-INFO
+redshiftquery.egg-info/SOURCES.txt
+redshiftquery.egg-info/dependency_links.txt
+redshiftquery.egg-info/top_level.txt
+tests/__init__.py
+tests/tests_myfunctions.py
