@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+src/schadem_cdk_construct_csv_to_aurora/__init__.py
+src/schadem_cdk_construct_csv_to_aurora/py.typed
+src/schadem_cdk_construct_csv_to_aurora.egg-info/PKG-INFO
+src/schadem_cdk_construct_csv_to_aurora.egg-info/SOURCES.txt
+src/schadem_cdk_construct_csv_to_aurora.egg-info/dependency_links.txt
+src/schadem_cdk_construct_csv_to_aurora.egg-info/requires.txt
+src/schadem_cdk_construct_csv_to_aurora.egg-info/top_level.txt
+src/schadem_cdk_construct_csv_to_aurora/_jsii/__init__.py
+src/schadem_cdk_construct_csv_to_aurora/_jsii/schadem-cdk-construct-csv-to-aurora@0.0.0.jsii.tgz
