@@ -1,0 +1,141 @@
+parameters:
+  p360_export:
+    config:
+      secret_getter: 'dbutils_secrets'
+      dbutils_secrets_scope:
+      azure_storage_config_base_path:
+      local_file_config_base_path:
+      config_getter: 'azure_storage'
+    facebook:
+      access_token_key:
+      ad_account_id:
+    azure_storage:
+      csv_exports_base_path:
+    google_ads:
+      developer_token_key:
+      refresh_token_key:
+      client_id_key:
+      client_secret_key:
+      customer_id:
+    sfmc:
+      client_secret_key:
+      ftp_password_key:
+      client_id:
+      ftp_username:
+      tenant_url:
+      account_id:
+      file_location:
+
+services:
+  p360_export.utils.EnvVariableSecretGetter:
+    tags:
+      - {name: 'secret_getter', alias: 'env_variable'}
+
+  p360_export.utils.DbutilsSecretsSecretGetter:
+    arguments:
+      scope: '%p360_export.config.dbutils_secrets_scope%'
+    tags:
+      - {name: 'secret_getter', alias: 'dbutils_secrets'}
+
+  p360_export.utils.SecretGetterFactory:
+    arguments:
+      - !tagged_aliased ['secret_getter', '%p360_export.config.secret_getter%']
+
+  p360_export.utils.secret_getter:
+    class: p360_export.utils.SecretGetterInterface.SecretGetterInterface
+    factory: ['@p360_export.utils.SecretGetterFactory', 'get']
+
+  p360_export.config.AzureStorageConfigGetter:
+    arguments:
+      base_path: '%p360_export.config.azure_storage_config_base_path%'
+    tags:
+      - {name: 'config_getter', alias: 'azure_storage'}
+
+  p360_export.config.LocalFileConfigGetter:
+    arguments:
+      base_path: '%p360_export.config.local_file_config_base_path%'
+    tags:
+      - {name: 'config_getter', alias: 'local_file'}
+
+  p360_export.config.ConfigGetterFactory:
+    arguments:
+      - !tagged_aliased ['config_getter', '%p360_export.config.config_getter%']
+
+  p360_export.config.config_getter:
+    class: p360_export.config.ConfigGetterInterface.ConfigGetterInterface
+    factory: ['@p360_export.config.ConfigGetterFactory', 'get']
+
+  p360_export.query.DataPlatformQueryBuilder:
+    tags:
+      - {name: 'query_builder', alias: 'data_platform'}
+
+  p360_export.query.FacebookQueryBuilder:
+    tags:
+      - {name: 'query_builder', alias: 'facebook'}
+
+  p360_export.query.GoogleAdsQueryBuilder:
+    tags:
+      - {name: 'query_builder', alias: 'google_ads'}
+
+  p360_export.query.SFMCPersonaQueryBuilder:
+    tags:
+      - {name: 'query_builder', alias: 'sfmc_persona'}
+
+  p360_export.data.DataPlatformDataFrameBuilder:
+    tags:
+      - {name: 'data_frame_builder', alias: 'data_platform'} 
+
+  p360_export.data.FacebookDataFrameBuilder:
+    tags:
+      - {name: 'data_frame_builder', alias: 'facebook'} 
+
+  p360_export.data.GoogleAdsDataFrameBuilder:
+    tags:
+      - {name: 'data_frame_builder', alias: 'google_ads'} 
+
+  p360_export.data.SFMCPersonaDataFrameBuilder:
+    tags:
+      - {name: 'data_frame_builder', alias: 'sfmc_persona'} 
+
+  p360_export.export.AzureStorageCsvExporter:
+    tags:
+      - {name: 'exporter', alias: 'data_platform'}
+    arguments:
+      exports_base_path: '%p360_export.azure_storage.csv_exports_base_path%'
+
+  p360_export.export.FacebookExporter:
+    tags:
+      - {name: 'exporter', alias: 'facebook'}
+    arguments:
+      access_token_key: '%p360_export.facebook.access_token_key%'
+      ad_account_id: '%p360_export.facebook.ad_account_id%'
+
+  p360_export.export.GoogleAdsExporter:
+    tags:
+      - {name: 'exporter', alias: 'google_ads'}
+    arguments:
+      developer_token_key: '%p360_export.google_ads.developer_token_key%'
+      refresh_token_key: '%p360_export.google_ads.refresh_token_key%'
+      client_id_key: '%p360_export.google_ads.client_id_key%'
+      client_secret_key: '%p360_export.google_ads.client_secret_key%'
+      customer_id: '%p360_export.google_ads.customer_id%'
+
+  p360_export.export.SFMCPersonaExporter:
+    tags:
+      - {name: 'exporter', alias: 'sfmc_persona'}
+    arguments:
+      client_secret_key: '%p360_export.sfmc.client_secret_key%'
+      ftp_password_key: '%p360_export.sfmc.ftp_password_key%'
+      client_id: '%p360_export.sfmc.client_id%'
+      ftp_username: '%p360_export.sfmc.ftp_username%'
+      tenant_url: '%p360_export.sfmc.tenant_url%'
+      account_id: '%p360_export.sfmc.account_id%'
+      file_location: '%p360_export.sfmc.file_location%'
+
+  p360_export.P360ExportRunner:
+
+  p360_export.P360ExportManager:
+    arguments:
+      query_builders: !tagged 'query_builder'
+      data_frame_builders: !tagged 'data_frame_builder'
+      exporters: !tagged 'exporter'
