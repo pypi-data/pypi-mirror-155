@@ -1,0 +1,81 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+lamb/__init__.py
+lamb/combinators.py
+lamb/display.py
+lamb/lang.py
+lamb/lnsetup.py
+lamb/magics.py
+lamb/meta.py
+lamb/parsing.py
+lamb/tree_mini.py
+lamb/treetransforms.py
+lamb/types.py
+lamb/utils.py
+lamb/notebooks/An introduction to compositionality via "two plus two is four".ipynb
+lamb/notebooks/Introduction to typed lambda calculus.ipynb
+lamb/notebooks/Lambda Notebook Demo (executed).ipynb
+lamb/notebooks/Lambda Notebook Demo.ipynb
+lamb/notebooks/Lambda Notebook Intro (start here).ipynb
+lamb/notebooks/documentation/Ad hoc polymorphism.ipynb
+lamb/notebooks/documentation/Intro to type variables.ipynb
+lamb/notebooks/documentation/Lexical ambiguity.ipynb
+lamb/notebooks/documentation/Metalanguage documentation.ipynb
+lamb/notebooks/documentation/Partiality documentation.ipynb
+lamb/notebooks/documentation/Quick reference.ipynb
+lamb/notebooks/fragments/Compositional DRT.ipynb
+lamb/notebooks/fragments/Continuations and quantifier scope.ipynb
+lamb/notebooks/fragments/Hamblin semantics.ipynb
+lamb/notebooks/fragments/Intensional scope.ipynb
+lamb/notebooks/fragments/Neo-davidsonian event semantics.ipynb
+lamb/notebooks/fragments/Relative clauses.ipynb
+lamb/notebooks/fragments/Variable free binding.ipynb
+lamb/notebooks/fragments/von Fintel and Heim beginning.ipynb
+lamb/notebooks/misc/00 Readme for upgrading from IPython 2.ipynb
+lamb/notebooks/misc/Diagnostics.ipynb
+lamb/notebooks/misc/LSA poster examples.ipynb
+lamb/notebooks/misc/Lambda calculus testing.ipynb
+lamb/notebooks/misc/Polymorphism examples.ipynb
+lamb/notebooks/tutorials/Composition operations.ipynb
+lamb/notebooks/tutorials/Intro to type variables.ipynb
+lamb/notebooks/tutorials/Quantification tutorial.ipynb
+lamb/notebooks/tutorials/Type shifting.ipynb
+lamb/notebooks/tutorials/definite article tutorial.ipynb
+lambda_notebook.egg-info/PKG-INFO
+lambda_notebook.egg-info/SOURCES.txt
+lambda_notebook.egg-info/dependency_links.txt
+lambda_notebook.egg-info/requires.txt
+lambda_notebook.egg-info/top_level.txt
+notebooks/An introduction to compositionality via "two plus two is four".ipynb
+notebooks/Introduction to typed lambda calculus.ipynb
+notebooks/Lambda Notebook Demo (executed).ipynb
+notebooks/Lambda Notebook Demo.ipynb
+notebooks/Lambda Notebook Intro (start here).ipynb
+notebooks/documentation/Ad hoc polymorphism.ipynb
+notebooks/documentation/Intro to type variables.ipynb
+notebooks/documentation/Lexical ambiguity.ipynb
+notebooks/documentation/Metalanguage documentation.ipynb
+notebooks/documentation/Partiality documentation.ipynb
+notebooks/documentation/Quick reference.ipynb
+notebooks/fragments/Compositional DRT.ipynb
+notebooks/fragments/Continuations and quantifier scope.ipynb
+notebooks/fragments/Hamblin semantics.ipynb
+notebooks/fragments/Intensional scope.ipynb
+notebooks/fragments/Neo-davidsonian event semantics.ipynb
+notebooks/fragments/Relative clauses.ipynb
+notebooks/fragments/Variable free binding.ipynb
+notebooks/fragments/von Fintel and Heim beginning.ipynb
+notebooks/misc/00 Readme for upgrading from IPython 2.ipynb
+notebooks/misc/Diagnostics.ipynb
+notebooks/misc/LSA poster examples.ipynb
+notebooks/misc/Lambda calculus testing.ipynb
+notebooks/misc/Polymorphism examples.ipynb
+notebooks/tutorials/Composition operations.ipynb
+notebooks/tutorials/Intro to type variables.ipynb
+notebooks/tutorials/Quantification tutorial.ipynb
+notebooks/tutorials/Type shifting.ipynb
+notebooks/tutorials/definite article tutorial.ipynb
