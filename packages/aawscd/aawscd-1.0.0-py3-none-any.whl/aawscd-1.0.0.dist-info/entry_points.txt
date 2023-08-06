@@ -1,0 +1,10 @@
+[console_scripts]
+aawscd_copycat=aawscd.aawscd_copycat:main
+aawscd_getconf=aawscd.aawscd_getconf:main
+aawscd_pdcap=aawscd.aawscd_pdcap:main
+aawscd_probmon=aawscd.aawscd_probmon:main
+aawscd_probwrite=aawscd.aawscd_probwrite:main
+aawscd_setdirection=aawscd.aawscd_setdirection:main
+aawscd_wwclient=aawscd.aawscd_wwclient:main
+aawscd_wwrecord=aawscd.aawscd_wwrecord:main
+
