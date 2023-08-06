@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+faker_geoscience/__init__.py
+faker_geoscience.egg-info/PKG-INFO
+faker_geoscience.egg-info/SOURCES.txt
+faker_geoscience.egg-info/dependency_links.txt
+faker_geoscience.egg-info/requires.txt
+faker_geoscience.egg-info/top_level.txt
+faker_geoscience/flora/__init__.py
+faker_geoscience/flora/el_GR/__init__.py
+faker_geoscience/geography/__init__.py
+faker_geoscience/geography/el_GR/__init__.py
+faker_geoscience/minerals/__init__.py
+faker_geoscience/minerals/el_GR/__init__.py
