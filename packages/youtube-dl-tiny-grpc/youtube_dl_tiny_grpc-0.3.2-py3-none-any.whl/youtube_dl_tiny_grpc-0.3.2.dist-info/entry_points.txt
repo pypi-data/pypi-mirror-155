@@ -1,0 +1,3 @@
+[console_scripts]
+youtube-dl-tiny-grpc = youtube_dl_tiny_grpc:main
+
