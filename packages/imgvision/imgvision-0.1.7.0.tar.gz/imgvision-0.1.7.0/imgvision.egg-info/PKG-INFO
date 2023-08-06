@@ -1,0 +1,11 @@
+Metadata-Version: 1.1
+Name: imgvision
+Version: 0.1.7.0
+Summary: A package for image vision
+Home-page: https://github.com/Caoxuheng/imgvision
+Author: Xuheng Cao
+Author-email: caoxuhengcn@gmail.com
+License: UNKNOWN
+Description: An image vision package. It helps you achieve spectral image visualization, convert the spectral image to different color spaces, such as sRGB, Adobe RGB, CIE XYZ, CIE Lab, and etc.Besides, it includes some image process operation, evaluation, downsample, cluster prediction, and image evaluation metrics 
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
