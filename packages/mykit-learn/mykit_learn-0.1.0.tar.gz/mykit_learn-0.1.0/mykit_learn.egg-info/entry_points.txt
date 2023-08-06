@@ -1,0 +1,2 @@
+[console_scripts]
+mykit_learn = mykit_learn.__main__:main
