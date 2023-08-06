@@ -1,0 +1,4 @@
+[console_scripts]
+generate-paintera-bash-completion = paintera:generate_paintera_bash_completion
+paintera = paintera:launch_paintera
+
