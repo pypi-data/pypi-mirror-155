@@ -1,0 +1,85 @@
+# Package Overview
+package_name: heartdisease_model
+
+pipeline_name: heartdisease_model
+pipeline_save_file: heartdisease_model_output_v
+
+# Data Files
+training_data_file: train.csv
+test_data_file: test.csv
+
+
+# Variables
+# The variable we are attempting to predict
+target: HeartDisease
+
+features:
+  - Smoking
+  - AlcoholDrinking
+  - Stroke
+  - DiffWalking
+  #- Sex
+  - AgeCategory
+  - Race
+  - Diabetic
+  - PhysicalActivity
+  - GenHealth
+  - Asthma
+  - KidneyDisease
+  - SkinCancer
+
+  
+
+variables_to_drop:
+  - BMI
+  - PhysicalHealth
+  - MentalHealth
+  - SleepTime
+  - Sex
+ # - AgeCategory
+  #- Race
+  #- GenHealth
+
+
+categorical_vars:
+  - HeartDisease
+  - Smoking
+  - AlcoholDrinking
+  - Stroke
+  - DiffWalking
+  - PhysicalActivity
+  - Asthma
+  - KidneyDisease
+  - SkinCancer
+  #- Sex
+  
+
+
+numerical_vars:
+  - AgeCategory
+  - Race
+  - GenHealth
+  - Diabetic
+
+
+variables_na:
+  - HeartDisease
+  - Smoking
+  - AlcoholDrinking
+  - Stroke
+  - DiffWalking
+  - Sex
+  - PhysicalActivity
+  - Asthma
+  - KidneyDisease
+  - SkinCancer
+
+
+# set train/test split
+test_size: 0.2
+
+# to set the random seed
+random_state: 0
+
+# Regularization parameter
+alpha: 0.001
