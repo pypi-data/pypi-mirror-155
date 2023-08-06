@@ -1,0 +1,38 @@
+Metadata-Version: 2.1
+Name: miniut
+Version: 0.1.0
+Summary: Paquete de utilidades
+Home-page: https://github.com/JuanS3/utilities
+Author: Juan Sebastián Martínez Serna
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/JuanS3/utilities/issues
+Project-URL: Wiki, https://github.com/JuanS3/utilities/wiki
+Description: <h3 align="center">Miniut - Mini-Utilities for Python</h3>
+        
+        <div align="center">
+        
+        [![Status](https://img.shields.io/badge/status-active-success.svg)]()
+        [![GitHub Issues](https://img.shields.io/github/issues/JuanS3/miniut.svg)](https://github.com/JuanS3/miniut/issues)
+        [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/JuanS3/miniut.svg)](https://github.com/JuanS3/miniut/pulls)
+        [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
+        
+        </div>
+        
+        ---
+        
+        ## 🧐 About <a name = "about"></a>
+        
+        In construction 🚧
+        
+        
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
