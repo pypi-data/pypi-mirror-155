@@ -1,0 +1,17 @@
+Flask==1.1.2
+Flask-RESTful==0.3.8
+Flask-WTF==0.14.3
+itsdangerous==2.0.1
+werkzeug==2.0.3
+jinja2==3.0.3
+
+[test]
+pytest>=3.9
+pytest-mock
+pytest-cov
+coverage
+flake8
+codecov
+autopep8
+twine
+black
