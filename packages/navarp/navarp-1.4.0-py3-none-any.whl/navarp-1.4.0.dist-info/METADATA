@@ -1,0 +1,42 @@
+Metadata-Version: 2.1
+Name: navarp
+Version: 1.4.0
+Summary: Navigation tool for ARPES data.
+Home-page: https://gitlab.com/fbisti/navarp
+Author: Federico Bisti
+Author-email: federico.bisti@univaq.it
+License: GPLv3+
+Keywords: navarp
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Natural Language :: English
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Topic :: Scientific/Engineering :: Physics
+Requires-Python: >=3.5.0
+License-File: LICENSE
+License-File: AUTHORS.rst
+Requires-Dist: numpy (>=1.16.0)
+Requires-Dist: scipy (>=1.3.0)
+Requires-Dist: matplotlib (>=3.1.0)
+Requires-Dist: h5py (>=2.9.0)
+Requires-Dist: pyyaml
+Requires-Dist: igor
+Requires-Dist: colorcet
+Requires-Dist: Click
+
+NavARP
+============
+
+**Nav**\ igation tools for **A**\ ngle **R**\ esolved **P**\ hotoemission spectroscopy data, *i.e.* a **companion app** during ARPES data acquitision (as in beamtime) and set of **dedicated libs** helping to get high quality figures for publication.
+**Documentation site**: `https://fbisti.gitlab.io/navarp <https://fbisti.gitlab.io/navarp>`_
+
