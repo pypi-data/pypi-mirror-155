@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: browserbook
+Version: 0.2.2
+Summary: A web browser backend. Gets all data needed from a url. Multiple sessions at once is possible
+Home-page: https://github.com/thatrandomperson5/BrowserBook
+License: MIT
+Keywords: WebBrowser,Backend
+Author: DragonHunter
+Requires-Python: >=3.8,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: beautifulsoup4 (>=4.11.1,<5.0.0)
+Requires-Dist: requests (>=2.28.0,<3.0.0)
+Description-Content-Type: text/markdown
+
+# Browser Book
+A web-browser backend for collecting resources.
