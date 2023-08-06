@@ -1,0 +1,39 @@
+organization:
+  org_id: wildcard
+deployment_artifacts:
+  org_id: wildcard
+  repository_id: wildcard
+  branch: partial_wildcard
+deployment:
+  org_id: wildcard
+  repository_id: wildcard
+  branch: partial_wildcard
+endpoint:
+  org_id: wildcard
+  repository_id: wildcard
+  branch: partial_wildcard
+  endpoint: partial_wildcard
+runtime_artifacts:
+  org_id: wildcard
+cluster:
+  org_id: wildcard
+flow:
+  org_id: wildcard
+  flow_id: wildcard
+  env: wildcard
+flow_exec:
+  org_id: wildcard
+  flow_id: wildcard
+  env: wildcard
+api:
+  org_id: wildcard
+  flow_id: wildcard
+  env: wildcard
+monitor:
+  org_id: wildcard
+  flow_id: wildcard
+  env: wildcard
+service_account:
+  org_id: wildcard
+  flow_id: wildcard
+  env: wildcard
