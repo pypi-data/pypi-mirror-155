@@ -1,0 +1,17 @@
+pyproject_installer/__init__.py,sha256=0tE8-rx4Mncs4p3YapR0aFgo0DzxjOPXkh7cdXZ5WLI,78
+pyproject_installer/__main__.py,sha256=q22s-wosd6nKm6GVxClybF25-HZefhXH3cqr2hmtM98,6222
+pyproject_installer/version.py,sha256=EqIccytbgmIh3EOfv7QIiksdjJSlB-o2LbyXxRtoMGs,18
+pyproject_installer/build_cmd/__init__.py,sha256=Vs9KF7sG6LIVQ_4EiQKpmK3BlAUv2klD5vX5CPhA6vI,134
+pyproject_installer/build_cmd/_build.py,sha256=2luVwMaAyLYKIqhqAwJXw2cQdM9dMwpiNTjT2XG6f1c,11104
+pyproject_installer/build_cmd/_vendor/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pyproject_installer/build_cmd/_vendor/tomli/__init__.py,sha256=JhUwV66DB1g4Hvt1UQCVMdfCu-IgAV8FXmvDU9onxd4,396
+pyproject_installer/build_cmd/_vendor/tomli/_parser.py,sha256=g9-ENaALS-B8dokYpCuzUFalWlog7T-SIYMjLZSWrtM,22633
+pyproject_installer/build_cmd/_vendor/tomli/_re.py,sha256=dbjg5ChZT23Ka9z9DHOXfdtSpPwUfdgMXnj8NOoly-w,2943
+pyproject_installer/build_cmd/_vendor/tomli/_types.py,sha256=-GTG2VUqkpxwMqzmVO4F7ybKddIbAnuAHXfmWQcTi3Q,254
+pyproject_installer/build_cmd/helper/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pyproject_installer/build_cmd/helper/backend_caller.py,sha256=gIAFf166OOzNZEJK65j2VVhQFaOAB_UIFo5-OyefAcE,5785
+pyproject_installer/install_cmd/__init__.py,sha256=lGgq6-zm5eQ4PorCST6Y6U7JIEfjw7b-0IywD8Xw34U,73
+pyproject_installer/install_cmd/_install.py,sha256=esiiefLOfkAaAC-wihG0B2oAgjaQ1kb61eRrutpyIi0,18928
+pyproject_installer-0.3.0.dist-info/WHEEL,sha256=YDIziy4uDGnKEgpdmzMwTZRRA9l1bC2KdI4Ntql-k7M,97
+pyproject_installer-0.3.0.dist-info/METADATA,sha256=OmZOIs5be0KazQCOCLuLzsXBG90yX2RYrvNxkGtG7Wk,9020
+pyproject_installer-0.3.0.dist-info/RECORD,,
