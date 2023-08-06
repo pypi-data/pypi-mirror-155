@@ -1,0 +1,3 @@
+[console_scripts]
+tafver=get_metars.__main__:get_metars
+
