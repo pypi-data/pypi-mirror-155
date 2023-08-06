@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "shodan-chrono"
+version = "0.1.0"
+description = "Create a progress bar that you can view on chrono.shodan.io"
+authors = ["John Matherly <jmath@shodan.io>"]
+readme = "README.md"
+homepage = "https://chrono.shodan.io"
+repository = "https://gitlab.com/shodan-public/chrono-clients"
+packages = [
+    { include = "chrono" },
+]
+
+[tool.poetry.dependencies]
+python = ">=3.6"
+shodan = "^1.27.0"
+construct = "^2.10.68"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
