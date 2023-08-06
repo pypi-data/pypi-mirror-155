@@ -1,0 +1,33 @@
+Metadata-Version: 2.1
+Name: ljtool
+Version: 0.0.1
+Summary: 工具库
+Home-page: https://github.com/Xlj997/xlinjietool
+Author: Linjie Xing
+Author-email: jin.951107@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+## xlinjietool
+- 打造集成工具库
+---
+### 总览
+- amazon(亚马逊解析)
+- db(数据库)
+- headers(header头解析)
+#### amazon(亚马逊解析)
+> 各个站点日期解析<br>
+> 站点链接组装<br>
+#### db(数据库)
+> es<br>
+> redis<br>
+> mysql<br>
+#### headers(header头解析)
+> 把web复制的headers解析成为json
+
+
