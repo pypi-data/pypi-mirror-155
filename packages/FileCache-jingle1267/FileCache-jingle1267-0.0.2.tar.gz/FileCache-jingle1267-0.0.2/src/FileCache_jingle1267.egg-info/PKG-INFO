@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: FileCache-jingle1267
+Version: 0.0.2
+Summary: Small high-performance file caching tool for python.
+Home-page: https://github.com/jingle1267/FileCache
+Author: jingle1267
+Author-email: jingle1267@163.com
+Project-URL: Bug Tracker, https://github.com/jingle1267/FileCache/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# FileCache
+Small high-performance file caching tool for python.
