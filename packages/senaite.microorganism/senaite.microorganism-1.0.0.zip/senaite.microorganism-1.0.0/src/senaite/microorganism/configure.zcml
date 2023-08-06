@@ -1,0 +1,56 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="senaite.microorganism">
+
+  <five:registerPackage package="." initialize=".initialize"/>
+
+  <!-- Register locales -->
+  <i18n:registerTranslations directory="locales"/>
+
+  <!-- Import senaite.core permissions -->
+  <include package="bika.lims" file="permissions.zcml" />
+
+  <!-- Package includes -->
+  <include package=".behaviors" />
+  <include package=".browser" />
+
+  <!-- Vocabularies -->
+  <utility
+      component="senaite.microorganism.vocabularies.GramStainsVocabularyFactory"
+      name="senaite.microorganism.vocabularies.gram_stains" />
+  <utility
+      component="senaite.microorganism.vocabularies.ShapesVocabularyFactory"
+      name="senaite.microorganism.vocabularies.shapes" />
+
+  <!-- Default profile -->
+  <genericsetup:registerProfile
+    name="default"
+    title="SENAITE MICROORGANISM"
+    directory="profiles/default"
+    description="Microorganisms handling for SENAITE"
+    pre_handler=".setuphandlers.pre_install"
+    post_handler=".setuphandlers.post_install"
+    provides="Products.GenericSetup.interfaces.EXTENSION" />
+
+  <!-- Generic Setup Handler -->
+  <genericsetup:importStep
+    name="senaite.microorganism.setup_handler"
+    title="SENAITE MICROORGANISM: Setup Handler"
+    description="Run various configuration actions"
+    handler=".setuphandlers.setup_handler">
+    <depends name="typeinfo"/>
+  </genericsetup:importStep>
+
+  <!-- Uninstall profile -->
+  <genericsetup:registerProfile
+    name="uninstall"
+    title="SENAITE MICROORGANISM (uninstall)"
+    directory="profiles/uninstall"
+    description="Microorganisms handling for SENAITE"
+    post_handler=".setuphandlers.post_uninstall"
+    provides="Products.GenericSetup.interfaces.EXTENSION" />
+
+</configure>

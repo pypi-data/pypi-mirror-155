@@ -1,0 +1,167 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2022-06-17 17:31+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+
+#: senaite/microorganism/behaviors/configure.zcml:15
+msgid "Adds Microorganism behavior"
+msgstr ""
+
+#: senaite/microorganism/config.py:48
+msgid "Bacillus"
+msgstr ""
+
+#: senaite/microorganism/behaviors/microorganism.py:75
+msgid "Category / Group"
+msgstr ""
+
+#: senaite/microorganism/config.py:50
+msgid "Coccobacilli"
+msgstr ""
+
+#: senaite/microorganism/config.py:35
+msgid "Coccus"
+msgstr ""
+
+#: senaite/microorganism/behaviors/microorganism.py:105
+msgid "Description"
+msgstr ""
+
+#: senaite/microorganism/config.py:38
+msgid "Diplococci"
+msgstr ""
+
+#: senaite/microorganism/browser/content/microorganismfolder.py:73
+msgid "GLASS"
+msgstr ""
+
+#: senaite/microorganism/behaviors/microorganism.py:51
+msgid "GLASS organism"
+msgstr ""
+
+#: senaite/microorganism/behaviors/microorganism.py:39
+#: senaite/microorganism/browser/content/microorganismfolder.py:67
+msgid "Gram stain"
+msgstr ""
+
+#: senaite/microorganism/config.py:27
+msgid "Gram-negative"
+msgstr ""
+
+#: senaite/microorganism/config.py:26
+msgid "Gram-positive"
+msgstr ""
+
+#: senaite/microorganism/browser/content/microorganismfolder.py:77
+msgid "MRO"
+msgstr ""
+
+#: senaite/microorganism/behaviors/microorganism.py:62
+msgid "MRO Organism"
+msgstr ""
+
+#: senaite/microorganism/behaviors/microorganism.py:70
+#: senaite/microorganism/browser/content/microorganismfolder.py:81
+msgid "MRO phenotype"
+msgstr ""
+
+#: senaite/microorganism/behaviors/configure.zcml:15
+#: senaite/microorganism/profiles/default/types/Microorganism.xml
+msgid "Microorganism"
+msgstr ""
+
+#: senaite/microorganism/profiles/default/types/MicroorganismCategories.xml
+msgid "Microorganism categories"
+msgstr ""
+
+#: senaite/microorganism/profiles/default/types/MicroorganismCategory.xml
+msgid "Microorganism category"
+msgstr ""
+
+#: senaite/microorganism/profiles/default/types/MicroorganismFolder.xml
+msgid "Microorganisms"
+msgstr ""
+
+#: senaite/microorganism/configure.zcml:36
+msgid "Microorganisms handling for SENAITE"
+msgstr ""
+
+#: senaite/microorganism/config.py:45
+msgid "Rod"
+msgstr ""
+
+#: senaite/microorganism/configure.zcml:36
+msgid "SENAITE MICROORGANISM"
+msgstr ""
+
+#: senaite/microorganism/configure.zcml:54
+msgid "SENAITE MICROORGANISM (uninstall)"
+msgstr ""
+
+#: senaite/microorganism/config.py:41
+msgid "Sarcina"
+msgstr ""
+
+#: senaite/microorganism/behaviors/microorganism.py:45
+#: senaite/microorganism/browser/content/microorganismfolder.py:70
+msgid "Shape"
+msgstr ""
+
+#: senaite/microorganism/config.py:53
+msgid "Spiral"
+msgstr ""
+
+#: senaite/microorganism/config.py:55
+msgid "Spirillum"
+msgstr ""
+
+#: senaite/microorganism/config.py:39
+msgid "Staphylococci"
+msgstr ""
+
+#: senaite/microorganism/config.py:49
+msgid "Streptobacilli"
+msgstr ""
+
+#: senaite/microorganism/config.py:40
+msgid "Streptococci"
+msgstr ""
+
+#: senaite/microorganism/config.py:42
+msgid "Tetrad"
+msgstr ""
+
+#: senaite/microorganism/behaviors/microorganism.py:76
+msgid "The category or group this microorganism belongs to"
+msgstr ""
+
+#: senaite/microorganism/behaviors/microorganism.py:100
+msgid "Title"
+msgstr ""
+
+#: senaite/microorganism/browser/content/microorganismfolder.py:139
+msgid "Uncategorized"
+msgstr ""
+
+#: senaite/microorganism/config.py:54
+msgid "Vibrio"
+msgstr ""
+
+#: senaite/microorganism/behaviors/microorganism.py:52
+msgid "Whether this is an infectious organism included in the Global Antimicrobial Resistance Surveillance System (GLASS) for the the collection, analysis and sharing of Antimicrobial Resistance (AMR) data at a global level"
+msgstr ""
+
+#: senaite/microorganism/behaviors/microorganism.py:63
+msgid "Whether this organism is considered multi resistant (MRO)"
+msgstr ""

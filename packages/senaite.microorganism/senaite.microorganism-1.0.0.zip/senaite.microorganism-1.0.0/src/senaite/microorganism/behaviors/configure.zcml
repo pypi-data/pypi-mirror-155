@@ -1,0 +1,17 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="senaite.microorganism">
+
+  <include package="plone.behavior" file="meta.zcml"/>
+
+  <plone:behavior
+      name="senaite.microorganism"
+      title="Microorganism"
+      description="Adds Microorganism behavior"
+      provides=".microorganism.IMicroorganismBehavior"
+      factory=".microorganism.Microorganism"
+      for="plone.dexterity.interfaces.IDexterityContent"
+      marker="senaite.microorganism.interfaces.IMicroorganism" />
+
+</configure>

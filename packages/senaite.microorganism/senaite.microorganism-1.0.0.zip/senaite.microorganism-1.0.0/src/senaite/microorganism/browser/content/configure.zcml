@@ -1,0 +1,22 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="senaite.microorganism">
+
+  <!-- Microorganisms folder view -->
+  <browser:page
+    for="senaite.microorganism.content.microorganismfolder.IMicroorganismFolder"
+    name="view"
+    class=".microorganismfolder.MicroorganismFolderView"
+    permission="senaite.core.permissions.ManageBika"
+    layer="senaite.microorganism.interfaces.ISenaiteMicroorganismLayer" />
+
+  <!-- Microorganism categories folder view -->
+  <browser:page
+      for="senaite.microorganism.content.microorganismcategories.IMicroorganismCategories"
+      name="view"
+      class=".microorganismcategories.MicroorganismCategoriesView"
+      permission="senaite.core.permissions.ManageBika"
+      layer="senaite.microorganism.interfaces.ISenaiteMicroorganismLayer" />
+
+</configure>

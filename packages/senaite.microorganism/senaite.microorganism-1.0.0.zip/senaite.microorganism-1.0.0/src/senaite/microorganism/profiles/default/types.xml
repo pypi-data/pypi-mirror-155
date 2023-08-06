@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object name="portal_types">
+  <object name="Microorganism" meta_type="Dexterity FTI" />
+  <object name="MicroorganismFolder" meta_type="Dexterity FTI" />
+  <object name="MicroorganismCategory" meta_type="Dexterity FTI" />
+  <object name="MicroorganismCategories" meta_type="Dexterity FTI" />
+</object>
