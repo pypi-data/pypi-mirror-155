@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: OctoPrint-Nanny
+Version: 0.11.2
+Summary: Get notified when defects are detected in your print.
+Home-page: https://github.com/bitsy-ai/octoprint-nanny-plugin
+Author: Leigh Johnson
+Author-email: leigh@bitsy.ai
+License: AGPL
+Platform: UNKNOWN
+Requires-Python: >=3,<4
+Provides-Extra: dev
+License-File: LICENSE
+
+UNKNOWN
+
