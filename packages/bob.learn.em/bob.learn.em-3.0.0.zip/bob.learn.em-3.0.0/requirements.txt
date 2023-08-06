@@ -1,0 +1,6 @@
+setuptools
+bob.extension
+dask
+dask-ml
+h5py >= 3
+scikit-learn
