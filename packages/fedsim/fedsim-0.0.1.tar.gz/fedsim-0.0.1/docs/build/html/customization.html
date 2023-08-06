@@ -1,0 +1,501 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Customization &#8212; fedsim 0.1 documentation</title>
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Reference" href="reference/index.html" />
+    <link rel="prev" title="fedsim.models package" href="fedsim.models.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="None">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
+
+    
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
+
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">fedsim 0.1 documentation</p>
+  
+</a>
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fas fa-bars"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="notebooks/tutorial.html">
+  Tutorial
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="modules.html">
+  fedsim
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="current reference internal nav-link" href="#">
+  Customization
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="reference/index.html">
+  Reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="contributing.html">
+  Contributing
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="authors.html">
+  Authors
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="changelog.html">
+  ChangeLog
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
+          
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+<h3><a href="index.html">Table of Contents</a></h3>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="notebooks/tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">fedsim</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Customization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#datamanager">DataManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#flalgorithm">FLAlgorithm</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reference/index.html">Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authors.html">Authors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">ChangeLog</a></li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/customization.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
+
+          
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#datamanager">
+   DataManager
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#integration-with-included-cli">
+     Integration with included cli
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#flalgorithm">
+   FLAlgorithm
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Integration with included cli
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+    </div>
+    
+    <div class="toc-item">
+      
+    </div>
+    
+  
+</div>
+
+
+          
+          
+          <div class="bd-content col-12 col-md-9 col-xl-7">
+              
+              <article class="bd-article" role="main">
+                
+  <section id="customization">
+<h1>Customization<a class="headerlink" href="#customization" title="Permalink to this headline">#</a></h1>
+<section id="datamanager">
+<h2>DataManager<a class="headerlink" href="#datamanager" title="Permalink to this headline">#</a></h2>
+<p>Any custome DataManager class should inherit from <code class="docutils literal notranslate"><span class="pre">fedsim.data_manager.data_manager.DataManager</span></code> (or its children) and implement its abstract methods. For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fedsim.data_manager.data_manager</span> <span class="kn">import</span> <span class="n">DataManager</span>
+
+<span class="k">class</span> <span class="nc">CustomDataManager</span><span class="p">(</span><span class="n">DataManager</span><span class="p">)</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">,</span> <span class="n">other_arg</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">other_arg</span> <span class="o">=</span> <span class="n">other_arg</span>
+        <span class="c1"># note that super should be called at the end of init \</span>
+        <span class="c1"># because the abstract classes are called in its __init__</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">BasicDataManager</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">seed</span><span class="p">,</span> <span class="n">save_path</span><span class="o">=</span><span class="n">save_path</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">make_datasets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">object</span><span class="p">]]:</span>
+        <span class="sd">&quot;&quot;&quot;Abstract method to be implemented by child class.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            dataset_name (str): name of the dataset.</span>
+<span class="sd">            root (str): directory to download and manipulate data.</span>
+<span class="sd">            save_path (str): directory to store the data after partitioning.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            NotImplementedError: if the dataset_name is not defined</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Iterable[Dict[str, object]]: dict of local datasets [split:dataset]</span>
+<span class="sd">                                         followed by global ones.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+
+    <span class="k">def</span> <span class="nf">partition_local_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">datasets</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">object</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Iterable</span><span class="p">[</span><span class="nb">int</span><span class="p">]]]:</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+
+    <span class="k">def</span> <span class="nf">get_identifiers</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot; Returns identifiers</span>
+<span class="sd">            to be used for saving the partition info.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            NotImplementedError: this abstract method should be</span>
+<span class="sd">                implemented by child classes</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Sequence[str]: a sequence of str identifing class instance</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+</pre></div>
+</div>
+<section id="integration-with-included-cli">
+<h3>Integration with included cli<a class="headerlink" href="#integration-with-included-cli" title="Permalink to this headline">#</a></h3>
+<p>To automatically include your custom data manager in the provided cli tool, you can place your class in a file under <code class="docutils literal notranslate"><span class="pre">fedsim/data_manager</span></code>. Then, call it using option <code class="docutils literal notranslate"><span class="pre">--data-manager</span></code>. To deliver arguments to the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method of your custom data manager, you can pass options in form of <code class="docutils literal notranslate"><span class="pre">--d-&lt;arg-name&gt;</span></code> where <code class="docutils literal notranslate"><span class="pre">&lt;arg-name&gt;</span></code> is the argument. Example</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>fedsim fed-learn --data-manager CustomDataManager --d-other_arg &lt;other_arg_value&gt; ...
+</pre></div>
+</div>
+</section>
+</section>
+<section id="flalgorithm">
+<h2>FLAlgorithm<a class="headerlink" href="#flalgorithm" title="Permalink to this headline">#</a></h2>
+<p>Any custome DataManager class should inherit from <code class="docutils literal notranslate"><span class="pre">fedsim.fl.fl_algorithm.FLAlgorithm</span></code> (or its children) and implement its abstract methods. For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Hashable</span><span class="p">,</span> <span class="n">Mapping</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Any</span>
+<span class="kn">from</span> <span class="nn">fedsim.fl.fl_algorithm</span> <span class="kn">import</span> <span class="n">FLAlgorithm</span>
+
+<span class="k">class</span> <span class="nc">CustomFLAlgorithm</span><span class="p">(</span><span class="n">FLAlgorithm</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">data_manager</span><span class="p">,</span> <span class="n">num_clients</span><span class="p">,</span> <span class="n">sample_scheme</span><span class="p">,</span> <span class="n">sample_rate</span><span class="p">,</span> <span class="n">model_class</span><span class="p">,</span> <span class="n">epochs</span><span class="p">,</span> <span class="n">loss_fn</span><span class="p">,</span>
+        <span class="n">batch_size</span><span class="p">,</span> <span class="n">test_batch_size</span><span class="p">,</span> <span class="n">local_weight_decay</span><span class="p">,</span> <span class="n">slr</span><span class="p">,</span> <span class="n">clr</span><span class="p">,</span> <span class="n">clr_decay</span><span class="p">,</span> <span class="n">clr_decay_type</span><span class="p">,</span>
+        <span class="n">min_clr</span><span class="p">,</span> <span class="n">clr_step_size</span><span class="p">,</span> <span class="n">metric_logger</span><span class="p">,</span> <span class="n">device</span><span class="p">,</span> <span class="n">log_freq</span><span class="p">,</span> <span class="n">other_arg</span><span class="p">,</span> <span class="o">...</span> <span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">other_arg</span> <span class="o">=</span> <span class="n">other_arg</span>
+
+        <span class="nb">super</span><span class="p">(</span><span class="n">FedAvg</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">data_manager</span><span class="p">,</span> <span class="n">num_clients</span><span class="p">,</span> <span class="n">sample_scheme</span><span class="p">,</span> <span class="n">sample_rate</span><span class="p">,</span> <span class="n">model_class</span><span class="p">,</span> <span class="n">epochs</span><span class="p">,</span> <span class="n">loss_fn</span><span class="p">,</span>
+            <span class="n">batch_size</span><span class="p">,</span> <span class="n">test_batch_size</span><span class="p">,</span> <span class="n">local_weight_decay</span><span class="p">,</span> <span class="n">slr</span><span class="p">,</span> <span class="n">clr</span><span class="p">,</span> <span class="n">clr_decay</span><span class="p">,</span> <span class="n">clr_decay_type</span><span class="p">,</span>
+            <span class="n">min_clr</span><span class="p">,</span> <span class="n">clr_step_size</span><span class="p">,</span> <span class="n">metric_logger</span><span class="p">,</span> <span class="n">device</span><span class="p">,</span> <span class="n">log_freq</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="c1"># make mode and optimizer</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_model_class</span><span class="p">()()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span>
+            <span class="n">parameters_to_vector</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">())</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span><span class="o">.</span><span class="n">detach</span><span class="p">())</span>
+        <span class="n">optimizer</span> <span class="o">=</span> <span class="n">SGD</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="p">[</span><span class="n">params</span><span class="p">],</span> <span class="n">lr</span><span class="o">=</span><span class="n">slr</span><span class="p">)</span>
+        <span class="c1"># write model and optimizer to server</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write_server</span><span class="p">(</span><span class="s1">&#39;model&#39;</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write_server</span><span class="p">(</span><span class="s1">&#39;cloud_params&#39;</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write_server</span><span class="p">(</span><span class="s1">&#39;optimizer&#39;</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">)</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span> <span class="nf">send_to_client</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Mapping</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot; returns context to send to the client corresponding to client_id.</span>
+<span class="sd">            Do not send shared objects like server model if you made any</span>
+<span class="sd">            before you deepcopy it.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            client_id (int): id of the receiving client</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            NotImplementedError: abstract class to be implemented by child</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Mapping[Hashable, Any]: the context to be sent in form of a Mapping</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+    <span class="k">def</span> <span class="nf">send_to_server</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">client_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">datasets</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">],</span> <span class="n">epochs</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">loss_fn</span><span class="p">:</span> <span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">,</span>
+        <span class="n">batch_size</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">lr</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">weight_decay</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">device</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;cuda&#39;</span><span class="p">,</span>
+        <span class="n">ctx</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot; client operation on the recieved information.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            client_id (int): id of the client</span>
+<span class="sd">            datasets (Dict[str, Iterable]): this comes from Data Manager</span>
+<span class="sd">            epochs (int): number of epochs to train</span>
+<span class="sd">            loss_fn (nn.Module): either &#39;ce&#39; (for cross-entropy) or &#39;mse&#39;</span>
+<span class="sd">            batch_size (int): training batch_size</span>
+<span class="sd">            lr (float): client learning rate</span>
+<span class="sd">            weight_decay (float, optional): weight decay for SGD. Defaults to 0.</span>
+<span class="sd">            device (Union[int, str], optional): Defaults to &#39;cuda&#39;.</span>
+<span class="sd">            ctx (Optional[Dict[Hashable, Any]], optional): context reveived from server. Defaults to None.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            NotImplementedError: abstract class to be implemented by child</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Mapping[str, Any]: client context to be sent to the server</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+    <span class="k">def</span> <span class="nf">receive_from_client</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">client_msg</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">aggregator</span><span class="p">:</span> <span class="n">Any</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; receive and aggregate info from selected clients</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            client_id (int): id of the sender (client)</span>
+<span class="sd">            client_msg (Mapping[Hashable, Any]): client context that is sent</span>
+<span class="sd">            aggregator (Any): aggregator instance to collect info</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            NotImplementedError: abstract class to be implemented by child</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+    <span class="k">def</span> <span class="nf">optimize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">aggregator</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Mapping</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot; optimize server mdoel(s) and return metrics to be reported</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            aggregator (Any): Aggregator instance</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            NotImplementedError: abstract class to be implemented by child</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Mapping[Hashable, Any]: context to be reported</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+    <span class="k">def</span> <span class="nf">deploy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Mapping</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
+        <span class="sd">&quot;&quot;&quot; return Mapping of name -&gt; parameters_set to test the model</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            NotImplementedError: abstract class to be implemented by child</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+    <span class="k">def</span> <span class="nf">report</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">dataloaders</span><span class="p">,</span> <span class="n">metric_logger</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">device</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">optimize_reports</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
+        <span class="n">deployment_points</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Mapping</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;test on global data and report info</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            dataloaders (Any): dict of data loaders to test the global model(s)</span>
+<span class="sd">            metric_logger (Any): the logging object (e.g., SummaryWriter)</span>
+<span class="sd">            device (str): &#39;cuda&#39;, &#39;cpu&#39; or gpu number</span>
+<span class="sd">            optimize_reports (Mapping[Hashable, Any]): dict returned by optimzier</span>
+<span class="sd">            deployment_points (Mapping[Hashable, torch.Tensor], optional): output of deploy method</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            NotImplementedError: abstract class to be implemented by child</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+</pre></div>
+</div>
+<section id="id1">
+<h3>Integration with included cli<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<p>To automatically include your custom algorithm by the provided cli tool, you can place your class in a file under fedsim/fl/algorithms. Then, call it using option –algorithm. To deliver arguments to the <strong>init</strong> method of your custom algorithm, you can pass options in form of <cite>–a-&lt;arg-name&gt;</cite> where <cite>&lt;arg-name&gt;</cite> is the argument. Example</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>fedsim fed-learn --algorithm CustomFLAlgorithm --a-other_arg &lt;other_arg_value&gt; ...
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+              </article>
+              
+
+              
+              <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="fedsim.models.html" title="previous page">
+      <i class="fas fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">fedsim.models package</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="reference/index.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">Reference</p>
+  </div>
+  <i class="fas fa-angle-right"></i>
+  </a>
+</div>
+              </footer>
+              
+          </div>
+          
+      </div>
+    </div>
+
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
+
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
+    &copy; Copyright 2022, Farshid Varno.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+</p>
+  </div>
+  
+</div>
+</footer>
+  </body>
+</html>

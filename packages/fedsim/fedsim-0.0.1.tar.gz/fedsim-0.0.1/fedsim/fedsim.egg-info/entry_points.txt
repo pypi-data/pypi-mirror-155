@@ -1,0 +1,3 @@
+[console_scripts]
+fedsim = fedsim.scripts.simulate:main
+

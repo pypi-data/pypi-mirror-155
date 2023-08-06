@@ -1,0 +1,9 @@
+fedsim
+======
+
+.. testsetup::
+
+    from fedsim import *
+
+.. automodule:: fedsim
+    :members:
