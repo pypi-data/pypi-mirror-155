@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: aerosol-functions
+Version: 0.0.1
+Summary: Functions to analyze atmospheric aerosol data
+Home-page: https://github.com/jlpl/aerosol-functions
+Author: Janne Lampilahti
+Author-email: janne.lampilahti@helsinki.fi
+License: UNKNOWN
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+
+# Aerosol Functions
+
+A collection of functions to analyze atmospheric aerosol data.
+
+Use [pip](https://pip.pypa.io/en/stable/) to install the package:
+```
+pip install aerosol-functions
+```
+Documentation can be found [here](https://jlpl.github.io/aerosol-functions/).
+
+
+
