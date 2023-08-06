@@ -1,0 +1,8 @@
+from django_reusable import views
+from django.conf.urls import url
+
+
+urlpatterns = [
+    url(r'^ajax-callback-handler/(?P<pk>\d+)/(?P<name>[\w-]+)/$',
+        views.ajax_callback_handler, name='ajax_callback_handler'),
+]
