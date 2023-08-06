@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/anaplanConnector/__init__.py
+src/anaplanConnector/auth.py
+src/anaplanConnector/connector.py
+src/anaplanConnector/createCerts.py
+src/anaplanConnector/endpoints.py
+src/anaplanConnector/file.py
+src/anaplanConnector.egg-info/PKG-INFO
+src/anaplanConnector.egg-info/SOURCES.txt
+src/anaplanConnector.egg-info/dependency_links.txt
+src/anaplanConnector.egg-info/requires.txt
+src/anaplanConnector.egg-info/top_level.txt
+test/test.py
