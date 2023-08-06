@@ -1,0 +1,17 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+genetist/__init__.py
+genetist/crossover.py
+genetist/datatype_inference.py
+genetist/environment.py
+genetist/individual.py
+genetist/mutation.py
+genetist/params.py
+genetist/results.py
+genetist.egg-info/PKG-INFO
+genetist.egg-info/SOURCES.txt
+genetist.egg-info/dependency_links.txt
+genetist.egg-info/requires.txt
+genetist.egg-info/top_level.txt
