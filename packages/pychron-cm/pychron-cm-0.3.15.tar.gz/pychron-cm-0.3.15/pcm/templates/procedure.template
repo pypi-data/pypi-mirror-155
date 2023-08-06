@@ -1,0 +1,13 @@
+def main():
+    # This is a procedure. Most extraction script functions are available.
+    # the main exception is that a procedure CANNOT be used to interact with an extraction device such as a laser
+
+    info('this is a test procedure')
+    info('cycle valve 5 times delay 3 seconds between open and close
+
+    for i in range(10):
+        sleep(3)
+        if i%2:
+            open('A')
+        else:
+            close('A')

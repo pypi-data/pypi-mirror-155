@@ -1,0 +1,6 @@
+[pychron.update]
+build_repo = {build_repo:}
+remote = {build_remote:}
+branch = {build_branch:}
+check_on_startup = False
+check_on_quit = False

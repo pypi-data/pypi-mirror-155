@@ -1,0 +1,16 @@
+def main():
+    info('this is a info messeage')
+
+    #this is a comment
+
+    # the following is used to open a valve
+    open('A')
+
+    # can also open by description
+    open(description='MS Inlet')
+
+    # delay n seconds
+    sleep(10)
+
+    # close the valve
+    close('A')

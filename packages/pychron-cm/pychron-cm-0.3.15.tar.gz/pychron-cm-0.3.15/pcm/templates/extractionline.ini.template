@@ -1,0 +1,6 @@
+[pychron.extraction_line]
+use_hardware_update = True
+hardware_update_period = 3.0
+canvas_path = {canvas_path:}
+canvas_config_path = {canvas_config_path:}
+valves_path = {valves_path:}
