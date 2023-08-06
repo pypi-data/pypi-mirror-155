@@ -1,0 +1,27 @@
+# Drakken release history
+
+## Unreleased
+- CHANGE: @login_required can raise LoginFail or redirect to login URL.
+- FIX: routing handles LoginFail.
+- FIX: remove circular import (initial load seems faster now).
+
+## 2.1 - 2022-02-10
+- ADD: can select unique user name or unique email.
+- ADD: user.active disables account if set to False.
+- CHANGE: create_user() returns User object.
+- CHANGE: rename hash() -> slow_hash().
+
+## 2.0 - 2021-11-10
+- CHANGE: Use JSON configuration file.
+
+## 1.2 - 2021-05-27
+- CHANGE: To close session when browser is closed, set SESSION_COOKIE_AGE = 0.
+- FIX: Handle URL UnicodeDecodeError.
+
+## 1.1 - 2021-03-29
+- ADD: SESSION_COOKIE_SECURE blocks session cookie over HTTP.
+- CHANGE: get_session() filters for session age.
+
+## 1.0 - 2021-03-03
+- Initial release.
+
