@@ -1,0 +1,121 @@
+Metadata-Version: 2.1
+Name: handyman
+Version: 0.2.0
+Summary: Skit utils package for ML Services
+Home-page: https://gitlab.com/vernacularai/tools/handyman
+Author: Skit.ai
+Author-email: deepankar@vernacular.ai
+License: Apache 2.0
+Description: # Handyman
+        
+        Common utility framework for ML Services
+        
+        ## Install
+        
+        1. To install the handyman library, please use the following command in case of [_pip_](https://pip.pypa.io/en/stable/):
+        
+        ```
+            pip install handyman
+        ```
+        
+        * Or add handyman as a poetry dependency.
+        
+        ```
+            handyman = 0.2.0
+        ```
+        
+        ## Usage
+        
+        The handyman library currently consists of the following packages:
+        
+        * `exceptions`
+        * `io`
+        * `json_utils`
+        * `log`
+        * `prometheus`
+        * `sentry`
+        * `crypto`
+        
+        #### Crypto
+        
+        Full example of new client onboarding to encryption/decryption to deletion of the client
+        
+        ##### Generate data key for client (onboarding)
+        ``` python
+            from handyman.crypto import generate_new_data_key
+        
+            # Random client uuid for example usage purpose
+            client_uuid = '6a624995-a0f4-43e1-b331-1716457962ce'
+        
+            # Generate data key for new client (while onboarding)
+            generate_new_data_key(client_uuid)
+            # Output - ('vault:v1:tXZ4nHIs3G8xhbLWMuMM8kzdLDgG7pr8B/uyNTz8svK2maNFZM8tkwU/ribGQQO6/5K7Pg2TeOSLia2b', None)
+        
+            # Store the variable for example usage purpose
+            encrypted_data_key = 'vault:v1:tXZ4nHIs3G8xhbLWMuMM8kzdLDgG7pr8B/uyNTz8svK2maNFZM8tkwU/ribGQQO6/5K7Pg2TeOSLia2b'
+        ```
+        
+        ##### Encrypt data with newly created client
+        ``` python
+            from handyman.crypto import encrypt_string
+        
+            # Encrypt plaintext
+            encrypt_string("hello world", client_uuid, encrypted_data_key)
+            # Output - ('GICD7oOmX0KbaBzeqzvOxtmK2ntjRH7kiFMmgKH8F6FYbvibASCM', None)
+        
+            # Store the variable for example usage purpose
+            encrypted_data = 'GICD7oOmX0KbaBzeqzvOxtmK2ntjRH7kiFMmgKH8F6FYbvibASCM'
+        ```
+        
+        ##### Decrypt data with the same client
+        ``` python
+            from handyman.crypto import decrypt_base64_string
+        
+            # Decrypt data (2nd return parameter is an exception if any)
+            decrypt_base64_string(encrypted_data, client_uuid, encrypted_data_key)
+            # Output - (b'hello world', None)
+            # Decrypt data to string (2nd return parameter is an exception if any)
+            decrypt_base64_string(encrypted_data, client_uuid, encrypted_data_key, decode_to_str=True)
+            # Output - ('hello world', None)
+        ```
+        
+        ##### Delete client (offboarding)
+        ``` python
+            from handyman.crypto import transit_delete_key
+        
+            # Delete client (offboarding)
+            transit_delete_key(client_uuid)
+        ```
+        
+        
+        To use any of the packages stated above, please use:
+        
+            from handyman import <package name>
+        
+        ## Publish
+        
+        Create a distribution package:
+        
+            python setup.py sdist
+        
+        Publish to PyPi:
+        
+        
+            pip install twine
+        
+            twine upload dist/*
+        
+        You will be prompted to enter username and password, if you don't have credentials contact `@devops`.
+Platform: Posix; MacOS X; Windows
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.5
+Description-Content-Type: text/markdown
