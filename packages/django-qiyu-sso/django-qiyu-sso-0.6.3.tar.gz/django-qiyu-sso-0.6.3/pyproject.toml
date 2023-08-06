@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "django-qiyu-sso"
+version = "0.6.3"
+description = "QiYu SSO intergation for Django"
+homepage = "https://www.qiyutech.tech/"
+authors = ["dev <dev@qiyutech.tech>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+django = ">=3.2,<4.1"
+
+###########################
+# 自己的第三方插件
+# QiYu SSO intergation
+qiyu-sso = ">=0.2.10,<0.3"
+# QiYu django utils
+django-qiyu-utils = ">=0.4,<0.5"
+
+[tool.poetry.dev-dependencies]
+black = "*"
+pylama = "*"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

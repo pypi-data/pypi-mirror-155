@@ -1,0 +1,37 @@
+Metadata-Version: 2.1
+Name: django-qiyu-sso
+Version: 0.6.3
+Summary: QiYu SSO intergation for Django
+Home-page: https://www.qiyutech.tech/
+Author: dev
+Author-email: dev@qiyutech.tech
+Requires-Python: >=3.9,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: django (>=3.2,<4.1)
+Requires-Dist: django-qiyu-utils (>=0.4,<0.5)
+Requires-Dist: qiyu-sso (>=0.2.10,<0.3)
+Description-Content-Type: text/markdown
+
+# Django QiYu SSO
+
+QiYu SSO django integration
+
+![PyPI - Version](https://img.shields.io/pypi/v/django-qiyu-sso)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/django-qiyu-sso)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/py_apple_signin)
+![PyPI - Wheel](https://img.shields.io/pypi/wheel/django-qiyu-sso)
+![GitHub repo size](https://img.shields.io/github/repo-size/qiyutechdev/py_apple_signin)
+![Lines of code](https://img.shields.io/tokei/lines/github/qiyutechdev/py_apple_signin)
+
+## WARNING
+
+    This is a WIP project, is not stablized!
+    USE AT YOUR OWN RISK!
+
+## 警告
+
+    当前并不稳定.
+    使用风险自负!
+
