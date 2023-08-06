@@ -1,0 +1,50 @@
+Metadata-Version: 2.1
+Name: dephell-setuptools
+Version: 0.2.5
+Summary: Read metainfo from setup.py
+Project-URL: Homepage, https://github.com/dephell/dephell_setuptools
+Author: Gram (@orsinium)
+Author-email: gram@orsinium.dev
+Requires-Python: >=3.5
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: mypy; extra == "dev"
+Requires-Dist: pkginfo; extra == "dev"
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: setuptools
+Provides-Extra: dev
+
+
+dephell_setuptools
+==================
+
+Extract meta information from ``setup.py``.
+
+Install:
+
+.. code-block::
+
+   python3 -m pip install --user dephell_setuptools
+
+CLI:
+
+.. code-block::
+
+   python3 -m dephell_setuptools ./setup.py
+
+Lib:
+
+.. code-block:: python
+
+   from pathlib import Path
+   from dephell_setuptools import read_setup
+
+   result = read_setup(path=Path('setup.py'))
