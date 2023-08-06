@@ -1,0 +1,3 @@
+[console_scripts]
+airflint=airflint.__main__:main
+
