@@ -1,0 +1,3 @@
+[console_scripts]
+SequenceExtractor = genemethods.SequenceExtractor.src.sequenceExtractor:main
+
