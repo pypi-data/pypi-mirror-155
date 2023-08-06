@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "samarium"
+version = "0.2.2"
+description = "The Samarium Programming Language"
+authors = ["trag1c <trag1cdev@yahoo.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.9"
+termcolor = "^1.1.0"
+
+[tool.poetry.dev-dependencies]
+flake8 = "^4.0.1"
+
+[tool.poetry.scripts]
+samarium = "samarium.__main__:main"
+samarium-debug = "samarium.__main__:main_debug"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
