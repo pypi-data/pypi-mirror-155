@@ -1,0 +1,2 @@
+[console_scripts]
+core-agent-manager = apm_client.core.cli.core_agent_manager:main
