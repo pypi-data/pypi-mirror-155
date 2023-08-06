@@ -1,0 +1,9 @@
+geopandas<=0.9.0
+fiona<=1.18.13lxml
+pathlib
+typing
+hdsr-pygithub
+
+[test]
+pytest
+pytest-cov
