@@ -1,0 +1,6 @@
+[console_scripts]
+case_file = case_utils.case_file:main
+case_sparql_construct = case_utils.case_sparql_construct:main
+case_sparql_select = case_utils.case_sparql_select:main
+case_validate = case_utils.case_validate:main
+
