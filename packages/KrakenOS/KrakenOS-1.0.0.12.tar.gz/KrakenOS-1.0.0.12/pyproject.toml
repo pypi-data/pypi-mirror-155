@@ -1,0 +1,30 @@
+# pyproject.toml
+
+[build-system]
+requires      = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name="KrakenOS"
+version="1.0.0.12"
+description="Optical Simulation and ray tracing"
+readme = "README.md"
+authors = [{ name = "joel Herrera et al.", email = "joel@astro.unam.mx" }]
+license = { file = "LICENSE" }
+classifiers = [
+    "License :: OSI Approved :: GNU General Public License v3.0",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+]
+keywords = ["optics", "ray", "simulator"]
+dependencies = ["pyvista","PyVTK","vtk","numpy","scipy","matplotlib", "csv342", "numba"]
+requires-python = ">=3.9"
+
+[project.optional-dependencies]
+dev = []
+
+[project.urls]
+Homepage = "https://github.com/Garchupiter/Kraken-Optical-Simulator"
+
+[project.scripts]
+realpython = "reader.__main__:main"
