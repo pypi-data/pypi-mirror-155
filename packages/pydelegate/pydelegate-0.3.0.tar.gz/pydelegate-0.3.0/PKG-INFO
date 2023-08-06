@@ -1,0 +1,51 @@
+Metadata-Version: 2.1
+Name: pydelegate
+Version: 0.3.0
+Summary: a python version delegate like C#
+Home-page: https://github.com/Cologler/pydelegate-python
+License: MIT
+Keywords: delegate
+Author: Cologler
+Author-email: skyoflw@gmail.com
+Requires-Python: >=3.8,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Description-Content-Type: text/markdown
+
+# pydelegate
+
+![GitHub](https://img.shields.io/github/license/Cologler/pydelegate-python.svg)
+[![Build Status](https://travis-ci.com/Cologler/pydelegate-python.svg?branch=master)](https://travis-ci.com/Cologler/pydelegate-python)
+[![PyPI](https://img.shields.io/pypi/v/pydelegate.svg)](https://pypi.org/project/pydelegate/)
+
+a python version delegate like C#.
+
+## Usage
+
+``` py
+from pydelegate import Delegate
+
+def func():
+    return 1
+
+d = Delegate()
+d += func
+assert d() == 1
+```
+
+or you can add `Delegate` to `None`:
+
+``` py
+from pydelegate import Delegate
+
+def func():
+    return 1
+
+d = None
+d += Delegate(func)
+assert d() == 1
+```
+
