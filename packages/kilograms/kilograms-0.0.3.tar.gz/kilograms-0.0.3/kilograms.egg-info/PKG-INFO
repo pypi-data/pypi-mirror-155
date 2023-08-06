@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: kilograms
+Version: 0.0.3
+Summary: Histograms for large data.
+Home-page: UNKNOWN
+Author: MatteoLacki
+Author-email: matteo.lacki@gmail.com
+License: UNKNOWN
+Keywords: Great module,Devel Inside
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Chemistry
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+License-File: LICENSE
+
+Numba based calculation of 1D and 2D histograms for large data..
+
