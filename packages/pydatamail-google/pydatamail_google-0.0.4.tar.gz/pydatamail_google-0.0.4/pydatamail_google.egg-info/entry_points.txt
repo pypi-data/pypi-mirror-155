@@ -1,0 +1,2 @@
+[console_scripts]
+pydatamail_google = pydatamail_google.__main__:command_line_parser
