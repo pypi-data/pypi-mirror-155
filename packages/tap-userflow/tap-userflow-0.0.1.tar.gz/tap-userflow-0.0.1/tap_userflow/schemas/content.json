@@ -1,0 +1,16 @@
+{
+    "properties": {
+        "id": {"type": "string"},
+        "created_at": {
+            "type": "string",
+            "format": "datetime"
+            },
+        "object": { "anyOf": [ {"type": "string"}, {"type": "null"} ] },
+        "draft_version_id": { "anyOf": [ {"type": "string"}, {"type": "null"} ] },
+        "draft_version": { "anyOf": [ {"type": "string"}, {"type": "null"} ] },
+        "name": { "anyOf": [ {"type": "string"}, {"type": "null"} ] },
+        "published_version_id": { "anyOf": [ {"type": "string"}, {"type": "null"} ] },
+        "published_version": { "anyOf": [ {"type": "string"}, {"type": "null"} ] },
+        "type": { "anyOf": [ {"type": "string"}, {"type": "null"} ] }
+    }
+}
