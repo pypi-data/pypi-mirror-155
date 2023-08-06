@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "jledru_maths"
+version = "0.1.1"
+description = "Testing package deployment"
+readme = "README.rst"
+repository = "https://github.com/jledru/jledru_maths/releases/tag/v0.1.1"
+authors = ["Julien Ledru <julien.ledru@hei.fr>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+black = "^22.3.0"
+flake8 = "^4.0.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
