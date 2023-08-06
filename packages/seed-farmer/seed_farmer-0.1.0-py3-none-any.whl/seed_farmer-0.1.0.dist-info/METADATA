@@ -1,0 +1,38 @@
+Metadata-Version: 2.1
+Name: seed-farmer
+Version: 0.1.0
+Summary: The AWS Professional CLI tool SeedFarmer for GitOps support with AWS_CodeSeeder
+Home-page: https://github.com/awslabs/seed-farmer
+Author: AWS Professional Services
+Author-email: aws-proserve-opensource@amazon.com
+License: Apache License 2.0
+Project-URL: Org Site, https://aws.amazon.com/professional-services/
+Keywords: aws,cdk
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Software Development :: Libraries :: Application Frameworks
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Typing :: Typed
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+License-File: NOTICE
+License-File: VERSION
+Requires-Dist: aws-codeseeder (~=0.3.0)
+Requires-Dist: cookiecutter (~=2.1.0)
+Requires-Dist: pyhumps (~=3.5.0)
+Requires-Dist: pydantic (~=1.9.0)
+Requires-Dist: executor (~=23.2)
+Requires-Dist: typing-extensions (~=4.0.0)
+Requires-Dist: checksumdir (~=1.2.0)
+Requires-Dist: rich (~=12.4.0)
+
+UNKNOWN
+
