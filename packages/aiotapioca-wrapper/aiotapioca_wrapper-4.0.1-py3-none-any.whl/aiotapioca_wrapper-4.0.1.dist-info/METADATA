@@ -1,0 +1,38 @@
+Metadata-Version: 2.1
+Name: aiotapioca-wrapper
+Version: 4.0.1
+Summary: Python API client generator
+Home-page: https://github.com/ilindrey/aiotapioca-wrapper
+Author: Filipe Ximenes, Andrey Ilin
+Author-email: andreyilin@fastmail.com
+License: MIT
+Keywords: async,tapioca,wrapper,api
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.7
+License-File: LICENSE
+Requires-Dist: aiohttp (>=3.0)
+Requires-Dist: orjson (>=3.0.0)
+Requires-Dist: pydantic (>=1.0.0)
+Requires-Dist: xmltodict (>=0.9.2)
+Requires-Dist: asyncio-atexit (<2.0,>=1.0)
+Provides-Extra: dev
+Requires-Dist: aioresponses (>=0.7) ; extra == 'dev'
+Requires-Dist: pytest (>=7.0) ; extra == 'dev'
+Requires-Dist: pytest-asyncio (>=0.18) ; extra == 'dev'
+Requires-Dist: yarl (<2.0,>=1.0) ; extra == 'dev'
+Requires-Dist: black (>=22.0) ; extra == 'dev'
+Requires-Dist: isort (>=5.10.0) ; extra == 'dev'
+
+
+It's an asynchronous fork of https://github.com/vintasoftware/tapioca-wrapper library.
+
+Tapioca provides an easy way to make explorable Python API wrappers.
+APIs wrapped by Tapioca follow a simple interaction pattern that works uniformly so developers don't need to learn how to use a new coding interface/style for each service API.
+
+Source code hosted on Github: https://github.com/ilindrey/aiotapioca-wrapper
+
+Documentation hosted by Readthedocs (original library, it's not asynchronous): http://tapioca-wrapper.readthedocs.io/en/stable/
