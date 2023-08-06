@@ -1,0 +1,2 @@
+from .ManipulationDetector import ManipulationDetector
+
