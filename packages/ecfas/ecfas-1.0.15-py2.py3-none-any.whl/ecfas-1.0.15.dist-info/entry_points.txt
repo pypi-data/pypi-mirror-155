@@ -1,0 +1,6 @@
+[console_scripts]
+check_trigger = ecfas.check_trigger:main
+op_trigger = ecfas.coast_water_level_trigger:main
+op_validate = ecfas.cmems_operational_validate:main
+op_workflow = ecfas.cmems_operational_fullworkflow:main
+qual_checks = ecfas.quality_checks:main
