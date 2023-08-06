@@ -1,0 +1,9 @@
+appPath: \python_venvs\packages\boakboak
+cmds:
+- python
+- -m
+- unittest
+defaultArgs: null
+executable: C:\python_venvs\packages\boakboak\.venv\Scripts\python.exe
+logDir: \python_venvs\packages\boakboak\boakboak\test\logs
+name: test_boakboak

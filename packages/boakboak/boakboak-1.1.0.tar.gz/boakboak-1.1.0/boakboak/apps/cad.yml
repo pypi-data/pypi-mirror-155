@@ -1,0 +1,10 @@
+appPath: /python_venvs/packages/cadwalk
+cmds:
+  - python
+  - -m
+  - cadwalk
+  - animate
+defaultArgs:
+- -g donut
+executable: C:\Users\Lars\.virtualenvs\setup_cadwalk-U11t1zKT\Scripts/python.exe
+name: cadwalk
