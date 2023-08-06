@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "airflint"
+version = "0.2.0-alpha"
+description = "Enforce Best Practices for all your Airflow DAGs. ⭐"
+authors = ["Felix Uellendall <feluelle@pm.me>"]
+license = "Apache-2.0"
+keywords = ["airflow", "best-practices", "dag"]
+readme = "README.md"
+
+[tool.poetry.scripts]
+airflint = "airflint.__main__:main"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+refactor = "^0.4.3"
+
+[tool.poetry.dev-dependencies]
+apache-airflow = "^2.2.5"
+pytest = "^7.1.1"
+pytest-cov = "^3.0.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
