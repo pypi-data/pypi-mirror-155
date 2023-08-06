@@ -1,0 +1,16 @@
+mlcube_gcp/__init__.py,sha256=ep7lHN-zQeOEnZ2JLOxks4S8e4p4Mg-36L_cjBCaE4s,86
+mlcube_gcp/__main__.py,sha256=GJVXaEpmCjgqj2d-9NDKngrd9n6ZtUfJrpfGYizT82E,71
+mlcube_gcp/gcp_run.py,sha256=EehvTG7JdmlvC6LE0CyJ0oNcCh8H4Tk6HR6n4pBwUpk,7586
+mlcube_gcp/gcp_client/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+mlcube_gcp/gcp_client/client.py,sha256=7y2YafEW_8BO_OkKJYOAaTrT_jvrnxjb2Ni19f6Otmk,3791
+mlcube_gcp/gcp_client/instance.py,sha256=5NoS7cVR8nAf0xqjlRlYzJ6-FhlkXDW2EiiYnJVOpz4,1166
+mlcube_gcp/gcp_client/operation.py,sha256=p-9Fxq4vc9izf2WinCyA_RUBBSf9ecpC5NH0oxtFPbU,572
+mlcube_gcp/gcp_client/service.py,sha256=6Xc1ZyCYOSCej_iyNYziDGSBryslHt3cpW8fxqsduPI,4833
+mlcube_gcp/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+mlcube_gcp/tests/test_mlcube_gcp_cli.py,sha256=hs1YDFxb3-67rEBt4dcXo2JgJvFT06TcOdVgU9m3Rb8,172
+mlcube_gcp/tests/test_data/platform_01.yaml,sha256=mroidl6IcCvSzbmznMp8Wiudn3hgAhZR6RbhIeeGMjw,976
+mlcube_gcp-0.0.6.dist-info/METADATA,sha256=mFXepxwahQXh45IBSNDg0h_t_6vyAzgpsAAu-V__ztU,347
+mlcube_gcp-0.0.6.dist-info/WHEEL,sha256=G16H4A3IeoQmnOrYV4ueZGKSjhipXx8zc8nu9FGlvMA,92
+mlcube_gcp-0.0.6.dist-info/entry_points.txt,sha256=Lqbe1oEquGk0J4M7lKNAklnmeI5zAt5CzkOyPF70gVc,74
+mlcube_gcp-0.0.6.dist-info/top_level.txt,sha256=y5s242vk5g-76q60n1NgwVO09O_W9frchU9P-SibyDc,11
+mlcube_gcp-0.0.6.dist-info/RECORD,,
