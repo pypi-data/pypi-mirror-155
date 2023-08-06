@@ -1,0 +1,23 @@
+---
+# nexus container
+- name: Add Data dir
+  file:
+    path: "{{ nexus_data_dir }}/nexus-data"
+    state: directory
+    mode: '200'
+
+- name: Start nexus
+  community.docker.docker_container:
+    name: nexus_by_bootstrap
+    image: "{{ nexus_image }}"
+    state: started
+    pull: true
+    restart_policy: always
+    ports:
+      - "{{ minio_server_port }}:8081"
+    env:
+      NEXUS_SECURITY_RANDOMPASSWORD: false
+      NEXUS_DEED: "{{ need_nexus }}"
+    volumes:
+      - "{{ minio_data_dir }}/nexus-data:/nexus-data"
+  when: NEXUS_DEED == true
