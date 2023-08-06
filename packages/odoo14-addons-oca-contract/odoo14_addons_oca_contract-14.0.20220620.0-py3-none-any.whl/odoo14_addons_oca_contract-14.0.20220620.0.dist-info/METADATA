@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: odoo14-addons-oca-contract
+Version: 14.0.20220620.0
+Summary: Meta package for oca-contract Odoo addons
+Home-page: UNKNOWN
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Framework :: Odoo
+Classifier: Framework :: Odoo :: 14.0
+Requires-Dist: odoo14-addon-agreement
+Requires-Dist: odoo14-addon-agreement-account
+Requires-Dist: odoo14-addon-agreement-legal
+Requires-Dist: odoo14-addon-agreement-legal-sale
+Requires-Dist: odoo14-addon-agreement-maintenance
+Requires-Dist: odoo14-addon-agreement-mrp
+Requires-Dist: odoo14-addon-agreement-project
+Requires-Dist: odoo14-addon-agreement-repair
+Requires-Dist: odoo14-addon-agreement-sale
+Requires-Dist: odoo14-addon-agreement-serviceprofile
+Requires-Dist: odoo14-addon-agreement-stock
+Requires-Dist: odoo14-addon-agreement-tier-validation
+Requires-Dist: odoo14-addon-contract
+Requires-Dist: odoo14-addon-contract-mandate
+Requires-Dist: odoo14-addon-contract-payment-mode
+Requires-Dist: odoo14-addon-contract-sale
+Requires-Dist: odoo14-addon-contract-sale-generation
+Requires-Dist: odoo14-addon-contract-sale-tag
+Requires-Dist: odoo14-addon-contract-variable-quantity
+
+UNKNOWN
+
