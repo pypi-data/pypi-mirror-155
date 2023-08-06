@@ -1,0 +1,6 @@
+[console_scripts]
+nbdoc_build = nbdoc.convert:nbdoc_build
+nbdoc_linkify = nbdoc.docindex:nbdoc_linkify
+nbdoc_test = nbdev.test:nbdev_test_nbs
+nbdoc_update = nbdoc.run:nbdoc_update
+
