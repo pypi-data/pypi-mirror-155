@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: launart
+Version: 0.5.0
+License: MIT
+Author-email: GreyElaina <GreyElaina@outlook.com>
+Requires-Python: >=3.8
+Requires-Dist: loguru>=0.6.0
+Requires-Dist: statv>=0.2.2
+Provides-Extra: saya
+Requires-Dist: graia-saya>=0.0.16; extra == "saya"
+Description-Content-Type: text/markdown
+
+# Launart - Launch for Graia Project
+
+`Launart` 是实际实现了 `Launch API`, 即统一的应用实例启动时部件管理; 本部件为 Graia Project 内部使用.
+
+在应用实例装载 `richuru` 后可获得更加缤纷多彩的控制台输出.
