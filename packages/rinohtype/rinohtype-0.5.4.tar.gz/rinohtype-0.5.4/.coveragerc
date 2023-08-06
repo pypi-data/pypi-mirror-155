@@ -1,0 +1,11 @@
+[run]
+branch = True
+source = rinoh
+omit = src/rinoh/backend/pdf/xobject/purepng.py
+parallel = true
+
+[paths]
+source =
+    src/rinoh
+    .tox/*/lib/python*/site-packages/rinoh
+    .tox/pypy*/site-packages/rinoh
