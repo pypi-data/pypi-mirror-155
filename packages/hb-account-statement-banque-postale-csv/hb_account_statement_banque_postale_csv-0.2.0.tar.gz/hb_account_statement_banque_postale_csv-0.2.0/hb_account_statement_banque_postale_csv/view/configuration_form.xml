@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<data>
+    <xpath expr="/form/separator[@id=&quot;party&quot;]" position="before">
+        <separator id="bp_csv" string="Banque postale (CSV)" colspan="4"/>
+        <label name="default_statement_journal_for_bp_csv"/>
+        <field name="default_statement_journal_for_bp_csv"/>
+    </xpath>
+</data>
