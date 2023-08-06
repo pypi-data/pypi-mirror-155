@@ -1,0 +1,282 @@
+Metadata-Version: 2.1
+Name: nntm
+Version: 1.6.1
+Summary: A set of modules for the Numerai tournament.
+Home-page: https://github.com/suud/nntm
+Author: Timo Sutterer
+Author-email: hi@timo-sutterer.de
+License: MIT
+Project-URL: Bug Tracker, https://github.com/suud/nntm/issues
+Keywords: numerai
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Office/Business :: Financial :: Investment
+Classifier: Topic :: Software Development
+Classifier: Topic :: Scientific/Engineering
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+[![PyPI version](https://img.shields.io/pypi/v/nntm.svg)](https://pypi.python.org/pypi/nntm/)
+[![PyPI status](https://img.shields.io/pypi/status/nntm.svg)](https://pypi.python.org/pypi/nntm/)
+[![PyPI pyversions](https://img.shields.io/pypi/pyversions/nntm.svg)](https://pypi.python.org/pypi/nntm/)
+[![PyPI license](https://img.shields.io/pypi/l/nntm.svg)](https://pypi.python.org/pypi/nntm/)
+[![Documentation Status](https://img.shields.io/readthedocs/nntm)](https://nntm.readthedocs.io/en/latest)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+
+# nntm
+A set of modules for the [Numerai tournament](https://numer.ai/tournament).
+
+## Installation
+```sh
+pip install nntm==1.6.1
+```
+
+## Usage
+```python
+from getpass import getpass
+from nntm.datasets import (
+    fetch_numerai_training,
+    fetch_numerai_tournament,
+    submit_numerai_tournament,
+    COLUMN_NAMES_SMALL,
+)
+from sklearn.linear_model import LinearRegression
+
+# Leave some columns out to save RAM
+columns = COLUMN_NAMES_SMALL
+
+# Fit
+X_train, y_train = fetch_numerai_training(return_X_y=True, columns=columns)
+model = LinearRegression()
+model.fit(X_train, y_train)
+
+# Predict
+X_tourn, _ = fetch_numerai_tournament(return_X_y=True, columns=columns)
+y_pred = model.predict(X_tourn)
+
+# Submit
+model_id = input("Model ID (numer.ai/models):")
+public_id = input("API Key Public ID (numer.ai/account):")
+secret_key = getpass("API Key Secret (numer.ai/account):")
+submit_numerai_tournament(
+    y_pred, model_id=model_id, public_id=public_id, secret_key=secret_key
+)
+```
+
+## Development
+### Run Tests
+```sh
+pytest
+```
+
+### Docs
+```sh
+apt-get install -y python3-sphinx
+pip install -r docs/requirements.txt
+pip install .
+cd docs
+```
+#### Generate api documentation from docstrings
+
+```sh
+sphinx-apidoc -f -o source/ ../src/nntm/
+```
+
+#### Build html documentation
+```sh
+make html
+```
+## 1.6.1 (2022-06-19)
+
+### Fix
+
+- remove submission version
+
+## 1.6.0 (2021-12-05)
+
+### Feat
+
+- add function to submit tournament prediction
+
+## 1.5.0 (2021-11-30)
+
+### Feat
+
+- add round_num attribute to datasets
+- add metrics to public api
+
+## 1.4.1 (2021-11-14)
+
+### Fix
+
+- set factory args
+- don't pass eras to predict method
+- pass eras to scorers on call
+- convert ndarray to series
+
+## 1.4.0 (2021-11-11)
+
+### Feat
+
+- add validation_curve
+- add numerai correlation score
+- add utility function to build cv
+
+### Refactor
+
+- simplify function
+
+## 1.3.0 (2021-11-04)
+
+### Feat
+
+- add argument to keep downloaded file
+
+## 1.2.2 (2021-11-04)
+
+### Fix
+
+- explicitly check if groups is None
+
+## 1.2.1 (2021-11-04)
+
+### Fix
+
+- explicitly check if groups is None
+
+## 1.2.0 (2021-10-30)
+
+### Feat
+
+- add constants for feature and target names
+
+## 1.1.1 (2021-10-30)
+
+### Fix
+
+- add suffix only to filepath
+
+## 1.1.0 (2021-10-30)
+
+### Feat
+
+- add fetcher for feature metadata
+- add argument to fetch custom round
+
+## 1.0.0 (2021-10-29)
+
+### Feat
+
+- add fetcher for validation predictions
+- add fetcher for example predictions
+- add fetcher for live data
+- add fetcher for test data
+- add fetcher for tournament data
+- add targets attribute
+- remove na_value argument
+- use original data types
+- return metadata as separate attributes
+
+### BREAKING CHANGE
+
+- remove support for NaN value replacement in fetchers.
+- don't convert `era`s to int.
+- replace the dataset's `info` attribute by `id`, `era`
+and `data_type` attributes.
+
+## 0.3.0 (2021-10-28)
+
+### Feat
+
+- add PurgedKFold cross-validator
+
+### Perf
+
+- fill NaNs only when necessary
+
+## 0.2.0 (2021-10-08)
+
+### Feat
+
+- add fetcher for validation data
+
+## 0.1.2 (2021-10-07)
+
+### Fix
+
+- support earlier python versions
+
+## 0.1.1 (2021-10-07)
+
+### Refactor
+
+- remove icons
+
+## 0.1.0 (2021-10-07)
+
+### Feat
+
+- add fetcher for training data
+
+MIT License
+
+Copyright (c) 2021 Timo Sutterer
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+
+
+BSD 3-Clause License
+
+Copyright (c) 2007-2021 The scikit-learn developers.
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+* Redistributions of source code must retain the above copyright notice, this
+  list of conditions and the following disclaimer.
+
+* Redistributions in binary form must reproduce the above copyright notice,
+  this list of conditions and the following disclaimer in the documentation
+  and/or other materials provided with the distribution.
+
+* Neither the name of the copyright holder nor the names of its
+  contributors may be used to endorse or promote products derived from
+  this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
