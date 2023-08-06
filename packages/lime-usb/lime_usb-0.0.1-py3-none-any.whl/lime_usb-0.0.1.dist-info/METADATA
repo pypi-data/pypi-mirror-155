@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: lime-usb
+Version: 0.0.1
+Summary: Dynamic IO mapping for the RP2040 written in Micro Python
+Home-page: https://github.com/xxninjabunnyxx/micromapper
+Author: xxninjabunnyxx
+Author-email: xxninjabunnyxx@gmail.com
+Project-URL: Bug Tracker, https://github.com/xxninjabunnyxx/micromapper/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
