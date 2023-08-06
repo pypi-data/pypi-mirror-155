@@ -1,0 +1,15 @@
+annotell-auth<3,>=2.0.1
+annotell-openlabel
+annotell-base-clients>=0.1.0
+annotell-openlabel
+click>=7.1.1
+Pillow>=7.0.0
+requests>=2.23.0
+tabulate>=0.8.7
+python-dateutil
+pydantic
+pyhumps
+Deprecated
+
+[:python_version < "3.7"]
+dataclasses
