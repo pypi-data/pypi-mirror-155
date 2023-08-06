@@ -1,0 +1,66 @@
+[databroker.ingestors]
+application/x-npy = xicam.core.formats.NPYPlugin:ingest_npy
+
+[databroker.intents]
+BarIntent = xicam.core.intents:BarIntent
+ErrorBarIntent = xicam.core.intents:ErrorBarIntent
+ImageIntent = xicam.core.intents:ImageIntent
+PairPlotIntent = xicam.core.intents:PairPlotIntent
+PlotIntent = xicam.core.intents:PlotIntent
+ScatterIntent = xicam.core.intents:ScatterIntent
+
+[gui_scripts]
+xicam = xicam.run_xicam:main
+
+[xicam.plugins.CatalogPlugin]
+databroker_catalog_plugin = xicam.gui.bluesky.databroker_catalog_plugin:DatabrokerCatalogPlugin
+
+[xicam.plugins.DataHandlerPlugin]
+npy = xicam.core.formats.NPYPlugin:NPYPlugin
+
+[xicam.plugins.ImageMixinPlugin]
+RowMajor = xicam.gui.widgets.imageviewmixins:RowMajor
+
+[xicam.plugins.IntentCanvasPlugin]
+image_canvas = xicam.gui.canvases:ImageIntentCanvas
+pairplot_canvas = xicam.gui.canvases:PairPlotIntentCanvas
+plot_canvas = xicam.gui.canvases:PlotIntentCanvas
+
+[xicam.plugins.OperationPlugin]
+absolute_square = xicam.core.operations:absolute_square
+fourier_transform = xicam.core.operations:fourier_transform
+inverse_fourier_transform = xicam.core.operations:inverse_fourier_transform
+low_band_pass = xicam.core.operations:low_band_pass
+raccoon_face = xicam.core.operations:raccoon_face
+random_array = xicam.core.operations:random_array
+tuple_test = xicam.core.operations:tuple_test
+
+[xicam.plugins.PlotMixinPlugin]
+ToggleSymbols = xicam.gui.widgets.plotwidgetmixins:ToggleSymbols
+
+[xicam.plugins.PluginType]
+CatalogPlugin = xicam.plugins.catalogplugin:CatalogPlugin
+ControllerPlugin = xicam.plugins.controllerplugin:ControllerPlugin
+DataHandlerPlugin = xicam.plugins.datahandlerplugin:DataHandlerPlugin
+DataResourcePlugin = xicam.plugins.dataresourceplugin:DataResourcePlugin
+EZPlugin = xicam.plugins.ezplugin:_EZPlugin
+Fittable1DModelPlugin = xicam.plugins.fittablemodelplugin:Fittable1DModelPlugin
+GUIPlugin = xicam.plugins.guiplugin:GUIPlugin
+ImageMixinPlugin = xicam.plugins.imagemixinplugin:ImageMixinPlugin
+IntentCanvasPlugin = xicam.plugins.intentcanvasplugin:IntentCanvasPlugin
+OperationPlugin = xicam.plugins.operationplugin:OperationPlugin
+PlotMixinPlugin = xicam.plugins.plotmixinplugin:PlotMixinPlugin
+QWidgetPlugin = xicam.plugins.widgetplugin:QWidgetPlugin
+SettingsPlugin = xicam.plugins.settingsplugin:SettingsPlugin
+ingestors = xicam.plugins.ingestorplugin:IngestorPlugin
+intents = xicam.plugins.intentplugin:IntentPlugin
+sniffers = xicam.plugins.snifferplugin:SnifferPlugin
+
+[xicam.plugins.SettingsPlugin]
+appearance = xicam.gui.settings.appearance:AppearanceSettingsPlugin
+cammart = xicam.gui.cammart:CamMartSettingsPlugin
+connections = xicam.gui.connections:ConnectionSettingsPlugin
+databroker = xicam.gui.settings.databroker:DatabrokerSettingsPlugin
+execution = xicam.gui.settings.execution:ExecutionSettingsPlugin
+logging = xicam.gui.settings.logging:LoggingSettingsPlugin
+venvs = xicam.gui.cammart.venvs:VenvsSettingsPlugin
