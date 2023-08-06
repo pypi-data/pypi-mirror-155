@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+colorido/__init__.py
+colorido/background.py
+colorido/color.py
+colorido/foreground.py
+colorido/style.py
+colorido.egg-info/PKG-INFO
+colorido.egg-info/SOURCES.txt
+colorido.egg-info/dependency_links.txt
+colorido.egg-info/requires.txt
+colorido.egg-info/top_level.txt
