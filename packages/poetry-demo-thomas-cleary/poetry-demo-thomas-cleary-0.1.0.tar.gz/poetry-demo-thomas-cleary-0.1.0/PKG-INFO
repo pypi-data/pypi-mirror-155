@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: poetry-demo-thomas-cleary
+Version: 0.1.0
+Summary: 
+Author: Thomas Cleary
+Author-email: thomasclearydev@gmail.com
+Requires-Python: >=3.10,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Requires-Dist: pendulum (>=2.1.2,<3.0.0)
