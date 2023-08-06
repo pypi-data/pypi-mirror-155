@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: kvv-WordCreator
+Version: 0.0.1
+Summary: WordCreator is a helper package to create Word spreadsheets out of Publications
+Home-page: https://github.com/VladKornilov/StoredObjects
+Author: Vladislav Kornilov
+Author-email: v.kornilovv@yandex.ru
+Project-URL: Bug Tracker, https://github.com/VladKornilov/StoredObjects/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# WordCreator
+
+WordCreator is a helper package to create Word spreadsheets out of Publications for
+ the **Publications Activity Module**.
+
