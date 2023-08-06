@@ -1,0 +1,17 @@
+LICENSE.md
+README.md
+pyproject.toml
+setup.cfg
+rfc_http_validate/__init__.py
+rfc_http_validate/markdown.py
+rfc_http_validate/methods.py
+rfc_http_validate/retrofit.py
+rfc_http_validate/ui.py
+rfc_http_validate/validate.py
+rfc_http_validate/xml.py
+rfc_http_validate.egg-info/PKG-INFO
+rfc_http_validate.egg-info/SOURCES.txt
+rfc_http_validate.egg-info/dependency_links.txt
+rfc_http_validate.egg-info/entry_points.txt
+rfc_http_validate.egg-info/requires.txt
+rfc_http_validate.egg-info/top_level.txt
