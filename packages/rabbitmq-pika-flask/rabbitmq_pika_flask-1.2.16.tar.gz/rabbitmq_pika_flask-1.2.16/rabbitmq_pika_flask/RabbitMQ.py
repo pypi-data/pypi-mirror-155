@@ -1,0 +1,387 @@
+import json
+import os
+from datetime import datetime
+from functools import wraps
+from hashlib import sha256
+from threading import Thread
+from typing import Callable
+from uuid import uuid4
+
+from flask.app import Flask
+from flask.config import Config
+from pika import BlockingConnection, URLParameters, spec
+from pika.adapters.blocking_connection import BlockingChannel
+from pika.exceptions import AMQPConnectionError
+from retry import retry
+from retry.api import retry_call
+
+from rabbitmq_pika_flask.ExchangeType import ExchangeType
+from rabbitmq_pika_flask.QueueParams import QueueParams
+
+
+class RabbitMQ():
+    """ Main class containing queue and message sending methods
+    """
+
+    app: Flask
+    config: Config
+
+    get_connection: Callable[[], BlockingConnection]
+    exchange_name: str
+    consumers: set
+
+    body_parser: Callable or None
+    msg_parser: Callable or None
+
+    queue_prefix: str
+    queue_params: QueueParams
+
+    def __init__(
+        self,
+        app: Flask = None,
+        queue_prefix: str = '',
+        body_parser: Callable = None,
+        msg_parser: Callable = None,
+        queue_params: QueueParams = QueueParams(),
+        development: bool = False
+    ) -> None:
+        self.app = None
+        self.consumers = set()
+        self.queue_params = queue_params
+
+        if app is not None:
+            self.init_app(
+                app,
+                queue_prefix,
+                body_parser,
+                msg_parser,
+                development
+            )
+
+    # Inits class from flask app
+    def init_app(
+        self,
+        app: Flask,
+        queue_prefix: str,
+        body_parser: Callable = lambda body: body,
+        msg_parser: Callable = lambda msg: msg,
+        development: bool = False
+    ):
+        """This callback can be used to initialize an application for the use with this RabbitMQ setup.
+
+        Args:
+            app (Flask): Flask app
+            queue_prefix (str): Prefix for queue names
+            body_parser (Callable, optional): A parser function to
+                parse received messages. Defaults to None.
+            msg_parser (Callable, optional): A parser function to
+                parse messages to be sent. Defaults to None.
+            development (bool, optional): If the app is in development mode. Defaults to False.
+        """
+
+        self.app = app
+        self.queue_prefix = queue_prefix
+        self.config = app.config
+
+        self._check_env()
+
+        self.body_parser = body_parser
+        self.msg_parser = msg_parser
+        self.development = development
+        self.exchange_name = self.config['MQ_EXCHANGE']
+        params = URLParameters(self.config['MQ_URL'])
+        self.get_connection = lambda: BlockingConnection(params)
+
+        # Avoiding running twice when flask in debug mode
+        if os.getenv('FLASK_ENV') == 'production' or os.getenv('WERKZEUG_RUN_MAIN') == 'true':
+            self._validate_connection()
+
+        if development:
+            self.queue_prefix = 'dev.' + str(uuid4()) + queue_prefix
+            self.queue_params = QueueParams(False, True, True)
+
+        # Run every consumer queue
+        for consumer in self.consumers:
+            consumer()
+
+    def _validate_connection(self):
+        try:
+            connection = self.get_connection()
+            if connection.is_open:
+                self.app.logger.info('Connected to RabbitMQ')
+                connection.close()
+        except Exception as error:  # pylint: disable=broad-except
+            self.app.logger.error('Invalid RabbitMQ connection')
+            self.app.logger.error(error.__class__.__name__)
+
+    def _check_env(self):
+        """assert env variables are set
+        """
+
+        assert any((os.getenv('FLASK_ENV'), self.config.get('FLASK_ENV'))), \
+            'No FLASK_ENV variable found. Add one such as "production" or "development"'
+
+        assert any((os.getenv('MQ_URL'), self.config.get('MQ_URL'))), \
+            'No MQ_URL variable found. Please add one following this' + \
+            ' format https://pika.readthedocs.io/en/stable/examples/using_urlparameters.html'
+
+        assert any((os.getenv('MQ_EXCHANGE'), self.config.get('MQ_EXCHANGE'))), \
+            'No MQ_EXCHANGE variable found. Please add a default exchange'
+
+    def _build_queue_name(self, func: Callable):
+        """Builds queue name from function name"""
+        spacer = self.config['MQ_DELIMITER'] if 'MQ_DELIMITER' in self.config else '.'
+        return self.queue_prefix + spacer + func.__name__.replace('_', spacer)
+
+    def queue(
+        self,
+        routing_key: str,
+        exchange_type: ExchangeType = ExchangeType.DEFAULT,
+        auto_ack: bool = False,
+        dead_letter_exchange: bool = False,
+        props_needed: list[str] = None
+    ):
+        """Creates new RabbitMQ queue
+
+        Args:
+            routing_key (str): The routing key for this queue
+            exchange_type (ExchangeType, optional): The exchange type to be used. Defaults to TOPIC.
+            auto_ack (bool, optional): If messages should be auto acknowledged. Defaults to False
+            dead_letter_exchange (bool): If a dead letter exchange should be created for this queue
+            props_needed (list[str], optional): List of properties to be passed along with body, such as `sent_at` or `message_id`. Defaults to None.
+        """
+
+        def decorator(f):
+            # ignore flask default reload when on debug mode
+            if os.getenv('FLASK_ENV') == 'production' or os.getenv('WERKZEUG_RUN_MAIN') == 'true':
+                @wraps(f)
+                def new_consumer():
+
+                    return self._setup_connection(f, routing_key, exchange_type, auto_ack, dead_letter_exchange, props_needed or [])
+
+                # adds consumer to consumers list if not initiated, or runs new consumer if already initiated
+                if self.app is not None:
+                    new_consumer()
+                else:
+                    self.consumers.add(new_consumer)
+            return f
+        return decorator
+
+    def _setup_connection(
+        self,
+        func: Callable,
+        routing_key: str,
+        exchange_type: ExchangeType,
+        auto_ack: bool,
+        dead_letter_exchange: bool,
+        props_needed: list[str]
+    ):
+        """Setup new queue connection in a new thread
+
+        Args:
+            func (Callable): function to run as callback for a new message
+            routing_key (str): routing key for the new queue bind
+            exchange_type (ExchangeType): Exchange type to be used with new queue
+            auto_ack (bool): If messages should be auto acknowledged.
+            dead_letter_exchange (bool): If a dead letter exchange should be created for this queue
+            props_needed (list[str]): List of properties to be passed along with body
+        """
+
+        def create_queue():
+            return self._add_exchange_queue(func, routing_key, exchange_type, auto_ack, dead_letter_exchange, props_needed)
+
+        thread = Thread(target=create_queue, name=self._build_queue_name(func))
+        thread.setDaemon(True)
+        thread.start()
+
+    @staticmethod
+    def __get_needed_props(props_needed: list[str], props: spec.BasicProperties):
+        """Sets needed properties for a message"""
+
+        payload = {}
+
+        if 'message_id' in props_needed:
+            payload['message_id'] = props.message_id
+
+        if 'sent_at' in props_needed:
+            payload['sent_at'] = datetime.fromtimestamp(props.timestamp)
+
+        return payload
+
+    @retry((AMQPConnectionError, AssertionError), delay=5, jitter=(5, 15))
+    def _add_exchange_queue(
+        self,
+        func: Callable,
+        routing_key: str,
+        exchange_type: ExchangeType,
+        auto_ack: bool,
+        dead_letter_exchange: bool,
+        props_needed: list[str]
+    ):
+        """ Creates or connects to new queue, retries connection on failure
+
+        Args:
+            func (Callable): function to run as callback for a new message
+            routing_key (str): routing key for the new queue bind
+            exchange_type (ExchangeType): Exchange type to be used with new queue
+            auto_ack (bool): If messages should be auto acknowledged.
+            dead_letter_exchange (bool): If a dead letter exchange should be created for this queue
+            props_needed (list[str]): List of properties to be passed along with body
+        """
+
+        # Create connection channel
+        connection = self.get_connection()
+        channel = connection.channel()
+
+        # declare dead letter exchange if needed
+        if dead_letter_exchange:
+            dead_letter_exchange_name = f"dead.letter.{self.exchange_name}"
+            channel.exchange_declare(
+                dead_letter_exchange_name, ExchangeType.DIRECT)
+
+        # Declare exchange
+        channel.exchange_declare(
+            exchange=self.exchange_name, exchange_type=exchange_type)
+
+        # Creates new queue or connects to existing one
+        queue_name = self._build_queue_name(func)
+        exchange_args = {}
+        if dead_letter_exchange and not self.development:
+            dead_letter_queue_name = f"dead.letter.{queue_name}"
+            channel.queue_declare(
+                dead_letter_queue_name,
+                durable=self.queue_params.durable,
+            )
+
+            # Bind queue to exchange
+            channel.queue_bind(
+                exchange=dead_letter_exchange_name, queue=dead_letter_queue_name, routing_key=routing_key)
+
+            exchange_args = {
+                'x-dead-letter-exchange': dead_letter_exchange_name,
+                'x-dead-letter-routing-key': routing_key
+
+            }
+
+        channel.queue_declare(
+            queue_name,
+            durable=self.queue_params.durable,
+            auto_delete=self.queue_params.auto_delete,
+            exclusive=self.queue_params.exclusive,
+            arguments=exchange_args
+        )
+        self.app.logger.info(f'Declaring Queue: {queue_name}')
+
+        # Bind queue to exchange
+        channel.queue_bind(exchange=self.exchange_name,
+                           queue=queue_name, routing_key=routing_key)
+
+        def callback(_: BlockingChannel, method: spec.Basic.Deliver, props: spec.BasicProperties, body: bytes):
+            with self.app.app_context():
+                decoded_body = body.decode()
+
+                try:
+                    # Fetches original message routing_key from headers if it has been dead-lettered
+                    routing_key = method.routing_key
+                    if getattr(props, 'headers', None) and props.headers.get('x-death'):
+                        x_death_props = props.headers.get('x-death')[0]
+                        routing_key = x_death_props.get('routing-keys')[0]
+
+                    func(
+                        routing_key=routing_key,
+                        body=self.body_parser(decoded_body),
+                        **RabbitMQ.__get_needed_props(props_needed, props)
+                    )
+
+                    if not auto_ack:
+                        # ack message after fn was ran
+                        channel.basic_ack(method.delivery_tag)
+                except Exception as err:  # pylint: disable=broad-except
+                    self.app.logger.error(f'ERROR IN {queue_name}: {err}')
+
+                    if not auto_ack:
+                        channel.basic_reject(
+                            method.delivery_tag, requeue=(not method.redelivered))
+
+        channel.basic_consume(
+            queue=queue_name, on_message_callback=callback, auto_ack=auto_ack)
+
+        try:
+            channel.start_consuming()
+        except Exception as err:
+            self.app.logger.error(err)
+            channel.stop_consuming()
+            connection.close()
+
+            raise AMQPConnectionError from err
+
+    def _send_msg(self, body, routing_key, exchange_type):
+        try:
+            channel = self.get_connection().channel()
+
+            channel.exchange_declare(
+                exchange=self.exchange_name, exchange_type=exchange_type)
+
+            if self.msg_parser:
+                body = self.msg_parser(body)
+
+            message_id = sha256(json.dumps(body).encode('utf-8')).hexdigest()
+            timestamp = int(datetime.now().timestamp())
+
+            channel.basic_publish(
+                exchange=self.exchange_name,
+                routing_key=routing_key,
+                body=body,
+                properties=spec.BasicProperties(
+                    message_id=message_id,
+                    timestamp=timestamp
+                )
+            )
+
+            channel.close()
+        except Exception as err:
+            self.app.logger.error('Error while sending message')
+            self.app.logger.error(err)
+
+            raise AMQPConnectionError from err
+
+    def send(self, body, routing_key: str, exchange_type: ExchangeType = ExchangeType.DEFAULT, retries: int = 5):
+        """Sends a message to a given routing key
+
+        Args:
+            body (str): The body to be sent
+            routing_key (str): The routing key for the message
+            exchange_type (ExchangeType, optional): The exchange type to be used. Defaults to ExchangeType.DEFAULT.
+        """
+
+        thread = Thread(target=lambda: retry_call(
+            self._send_msg,
+            (body, routing_key, exchange_type),
+            exceptions=(
+                AMQPConnectionError, AssertionError),
+            tries=retries,
+            delay=5,
+            jitter=(5, 15)
+        ))
+        thread.setDaemon(True)
+        thread.start()
+
+    def sync_send(self, body, routing_key: str, exchange_type: ExchangeType = ExchangeType.DEFAULT, retries: int = 5):
+        """Sends a message to a given routing key synchronously
+
+        Args:
+            body (str): The body to be sent
+            routing_key (str): The routing key for the message
+            exchange_type (ExchangeType, optional): The exchange type to be used. Defaults to ExchangeType.DEFAULT.
+            retries (int, optional): Number of retries to send the message. Defaults to 5.
+        """
+
+        retry_call(
+            self._send_msg,
+            (body, routing_key, exchange_type),
+            exceptions=(
+                AMQPConnectionError, AssertionError),
+            tries=retries,
+            delay=5,
+            jitter=(5, 15)
+        )
