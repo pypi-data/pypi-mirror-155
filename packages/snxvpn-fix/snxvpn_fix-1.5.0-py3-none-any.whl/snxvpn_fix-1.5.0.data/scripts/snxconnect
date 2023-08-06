@@ -1,0 +1,5 @@
+#!python
+
+from snxconnect import main
+
+main ()
