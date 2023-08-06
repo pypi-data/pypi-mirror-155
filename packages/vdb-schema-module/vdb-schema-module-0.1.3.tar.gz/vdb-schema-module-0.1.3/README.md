@@ -1,0 +1,1 @@
+# Vdb schema for producer and consumer
