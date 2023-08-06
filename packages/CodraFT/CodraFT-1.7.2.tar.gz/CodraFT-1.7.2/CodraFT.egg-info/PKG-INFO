@@ -1,0 +1,45 @@
+Metadata-Version: 2.1
+Name: CodraFT
+Version: 1.7.2
+Summary: Signal and image processing software
+Home-page: https://github.com/CODRA-Ingenierie-Informatique/CodraFT
+Author: Pierre Raybaut
+Author-email: p.raybaut@codra.fr
+License: CeCILL V2
+Platform: UNKNOWN
+Classifier: Topic :: Scientific/Engineering
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: OS Independent
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: Unix
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+License-File: Licence_CeCILL_V2.1-en.txt
+
+CodraFT: Signal and Image Processing Software
+=============================================
+
+.. image:: https://raw.githubusercontent.com/CODRA-Ingenierie-Informatique/CodraFT/master/doc/images/dark_light_modes.png
+
+CodraFT is a generic signal and image processing software based on Python scientific
+libraries (such as NumPy, SciPy or OpenCV) and Qt graphical user interfaces (thanks to
+guidata and guiqwt libraries).
+
+CodraFT stands for "CODRA Filtering Tool".
+
+See `documentation`_ for more details on the library and `changelog`_ for
+recent history of changes.
+
+Copyright © 2018-2022 CODRA, Pierre Raybaut
+Copyright © 2009-2015 CEA, Pierre Raybaut
+Licensed under the terms of the `CECILL License`_.
+
+.. _documentation: https://codraft.readthedocs.io/en/latest/
+.. _changelog: https://github.com/CODRA-Ingenierie-Informatique/CodraFT/blob/master/CHANGELOG.md
+.. _CECILL License: https://github.com/CODRA-Ingenierie-Informatique/CodraFT/blob/master/Licence_CeCILL_V2.1-en.txt
+
+

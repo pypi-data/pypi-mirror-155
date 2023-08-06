@@ -1,0 +1,851 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2022-03-10 21:44+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=cp1252\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+
+#: codraft\app.py:150
+msgid "Welcome to %s!"
+msgstr ""
+
+#: codraft\app.py:155
+msgid "Open HDF5 file..."
+msgstr ""
+
+#: codraft\app.py:157
+msgid "Open an HDF5 file"
+msgstr ""
+
+#: codraft\app.py:162
+msgid "Save to HDF5 file..."
+msgstr ""
+
+#: codraft\app.py:164
+msgid "Save to HDF5 file"
+msgstr ""
+
+#: codraft\app.py:167
+msgid "HDF5 I/O Toolbar"
+msgstr ""
+
+#: codraft\app.py:170
+msgid "Signal Processing Toolbar"
+msgstr ""
+
+#: codraft\app.py:171
+msgid "Image Processing Toolbar"
+msgstr ""
+
+#: codraft\app.py:174
+msgid "Curve Plotting Toolbar"
+msgstr ""
+
+#: codraft\app.py:182
+msgid "Image Visualization Toolbar"
+msgstr ""
+
+#: codraft\app.py:198
+msgid "Signals"
+msgstr ""
+
+#: codraft\app.py:199
+msgid "Images"
+msgstr ""
+
+#: codraft\app.py:200
+msgid "Main panel"
+msgstr ""
+
+#: codraft\app.py:203
+msgid "Curve plotting panel"
+msgstr ""
+
+#: codraft\app.py:206
+msgid "Image visualization panel"
+msgstr ""
+
+#: codraft\app.py:242
+msgid "Console"
+msgstr ""
+
+#: codraft\app.py:250
+msgid "Hide window"
+msgstr ""
+
+#: codraft\app.py:251
+msgid "Hide CodraFT window"
+msgstr ""
+
+#: codraft\app.py:253 codraft\app.py:605
+msgid "Quit"
+msgstr ""
+
+#: codraft\app.py:254
+msgid "Quit application"
+msgstr ""
+
+#: codraft\app.py:265
+msgid "File"
+msgstr ""
+
+#: codraft\app.py:267
+msgid "&Edit"
+msgstr ""
+
+#: codraft\app.py:268
+msgid "Operations"
+msgstr ""
+
+#: codraft\app.py:269
+msgid "Processing"
+msgstr ""
+
+#: codraft\app.py:270
+msgid "Computing"
+msgstr ""
+
+#: codraft\app.py:271
+msgid "&View"
+msgstr ""
+
+#: codraft\app.py:283
+msgid "About..."
+msgstr ""
+
+#: codraft\app.py:304
+msgid "Unable to open file"
+msgstr ""
+
+#: codraft\app.py:309
+msgid "Invalid dependency:"
+msgstr ""
+
+#: codraft\app.py:311
+msgid "Invalid dependencies:"
+msgstr ""
+
+#: codraft\app.py:317
+msgid "At least one dependency has been altered."
+msgstr ""
+
+#: codraft\app.py:318
+msgid "Application may not behave as expected."
+msgstr ""
+
+#: codraft\app.py:387
+msgid "Save"
+msgstr ""
+
+#: codraft\app.py:416 codraft\app.py:571
+msgid "Warning"
+msgstr ""
+
+#: codraft\app.py:417
+msgid "Do you want to remove all signals and images before importing data from an HDF5 file?"
+msgstr ""
+
+#: codraft\app.py:429 codraft\core\gui\signal.py:246
+msgid "Open"
+msgstr ""
+
+#: codraft\app.py:458
+msgid "Loading data from HDF5 file..."
+msgstr ""
+
+#: codraft\app.py:571
+msgid "Clipping uint32 data to int32."
+msgstr ""
+
+#: codraft\app.py:580
+msgid "About "
+msgstr ""
+
+#: codraft\app.py:606
+msgid "Do you want to save all signals and images to an HDF5 file before quitting CodraFT?"
+msgstr ""
+
+#: codraft\config.py:24
+msgid "CodraFT"
+msgstr ""
+
+#: codraft\config.py:25
+msgid ""
+"<b>Codra</b> <b>F</b>iltering <b>T</b>ool<br>\n"
+"Generic signal and image processing software based on Python and Qt"
+msgstr ""
+
+#: codraft\core\gui\base.py:58
+msgid "Cancel"
+msgstr ""
+
+#: codraft\core\gui\base.py:71
+msgid "Error:"
+msgstr ""
+
+#: codraft\core\gui\base.py:107
+msgid "%s could not be opened:"
+msgstr ""
+
+#: codraft\core\gui\base.py:170
+msgid "Properties"
+msgstr ""
+
+#: codraft\core\gui\base.py:192
+msgid "New %s..."
+msgstr ""
+
+#: codraft\core\gui\base.py:194
+msgid "Create new %s"
+msgstr ""
+
+#: codraft\core\gui\base.py:200
+msgid "Open %s..."
+msgstr ""
+
+#: codraft\core\gui\base.py:202
+msgid "Open %s"
+msgstr ""
+
+#: codraft\core\gui\base.py:208
+msgid "Save %s..."
+msgstr ""
+
+#: codraft\core\gui\base.py:210
+msgid "Save selected %s"
+msgstr ""
+
+#: codraft\core\gui\base.py:224
+msgid "Duplicate"
+msgstr ""
+
+#: codraft\core\gui\base.py:231
+msgid "View in a new window"
+msgstr ""
+
+#: codraft\core\gui\base.py:237
+msgid "Clean up data view"
+msgstr ""
+
+#: codraft\core\gui\base.py:239
+msgid "Clean up data view before updating plotting panels"
+msgstr ""
+
+#: codraft\core\gui\base.py:245
+msgid "Delete object metadata"
+msgstr ""
+
+#: codraft\core\gui\base.py:247
+msgid "Delete all that is contained in object metadata"
+msgstr ""
+
+#: codraft\core\gui\base.py:252 codraft\core\gui\base.py:666
+msgid "Delete all"
+msgstr ""
+
+#: codraft\core\gui\base.py:258
+msgid "Remove"
+msgstr ""
+
+#: codraft\core\gui\base.py:278
+msgid "Sum"
+msgstr ""
+
+#: codraft\core\gui\base.py:280
+msgid "Average"
+msgstr ""
+
+#: codraft\core\gui\base.py:283
+msgid "Difference"
+msgstr ""
+
+#: codraft\core\gui\base.py:285
+msgid "Product"
+msgstr ""
+
+#: codraft\core\gui\base.py:286
+msgid "Division"
+msgstr ""
+
+#: codraft\core\gui\base.py:289 codraft\core\param.py:152
+#: codraft\core\param.py:263
+msgid "ROI extraction"
+msgstr ""
+
+#: codraft\core\gui\base.py:294
+msgid "Swap X/Y axes"
+msgstr ""
+
+#: codraft\core\gui\base.py:297
+msgid "Absolute value"
+msgstr ""
+
+#: codraft\core\gui\base.py:327 codraft\core\gui\base.py:891
+msgid "Gaussian filter"
+msgstr ""
+
+#: codraft\core\gui\base.py:330 codraft\core\gui\base.py:911
+msgid "Moving average"
+msgstr ""
+
+#: codraft\core\gui\base.py:333 codraft\core\gui\base.py:931
+msgid "Moving median"
+msgstr ""
+
+#: codraft\core\gui\base.py:336
+msgid "Wiener filter"
+msgstr ""
+
+#: codraft\core\gui\base.py:340
+msgid "FFT"
+msgstr ""
+
+#: codraft\core\gui\base.py:341 codraft\core\gui\base.py:347
+msgid "Warning: only real part is plotted"
+msgstr ""
+
+#: codraft\core\gui\base.py:346
+msgid "Inverse FFT"
+msgstr ""
+
+#: codraft\core\gui\base.py:513 codraft\core\gui\base.py:524
+msgid "Annotation"
+msgstr ""
+
+#: codraft\core\gui\base.py:667
+msgid "Do you want to delete all %ss currently opened in CodraFT?"
+msgstr ""
+
+#: codraft\core\gui\base.py:808 codraft\core\gui\base.py:848
+msgid "Computing:"
+msgstr ""
+
+#: codraft\core\gui\base.py:909 codraft\core\gui\base.py:928
+msgid "Size of the moving window"
+msgstr ""
+
+#: codraft\core\gui\image.py:63
+msgid "image"
+msgstr ""
+
+#: codraft\core\gui\image.py:71 codraft\core\gui\image.py:362
+msgid "Rotation"
+msgstr ""
+
+#: codraft\core\gui\image.py:74
+msgid "Flip horizontally"
+msgstr ""
+
+#: codraft\core\gui\image.py:80
+msgid "Flip vertically"
+msgstr ""
+
+#: codraft\core\gui\image.py:86
+msgid "Rotate 90° right"
+msgstr ""
+
+#: codraft\core\gui\image.py:92
+msgid "Rotate 90° left"
+msgstr ""
+
+#: codraft\core\gui\image.py:97
+msgid "Rotate arbitrarily..."
+msgstr ""
+
+#: codraft\core\gui\image.py:99 codraft\core\gui\image.py:448
+msgid "Resize"
+msgstr ""
+
+#: codraft\core\gui\image.py:102
+msgid "Flat-field correction"
+msgstr ""
+
+#: codraft\core\gui\image.py:129 codraft\core\gui\image.py:526
+#: codraft\core\gui\signal.py:94 codraft\core\gui\signal.py:435
+msgid "Linear calibration"
+msgstr ""
+
+#: codraft\core\gui\image.py:132 codraft\core\gui\image.py:546
+msgid "Thresholding"
+msgstr ""
+
+#: codraft\core\gui\image.py:134 codraft\core\gui\image.py:562
+msgid "Clipping"
+msgstr ""
+
+#: codraft\core\gui\image.py:149 codraft\core\gui\signal.py:148
+msgid "Define ROI"
+msgstr ""
+
+#: codraft\core\gui\image.py:153 codraft\core\gui\image.py:620
+#: codraft\tests\enclosingcircle_test.py:28
+msgid "Centroid"
+msgstr ""
+
+#: codraft\core\gui\image.py:154
+msgid "Compute image centroid"
+msgstr ""
+
+#: codraft\core\gui\image.py:159
+msgid "Minimum enclosing circle center"
+msgstr ""
+
+#: codraft\core\gui\image.py:160
+msgid "Compute smallest enclosing circle center"
+msgstr ""
+
+#: codraft\core\gui\image.py:331 codraft\core\gui\image.py:426
+msgid "Mode"
+msgstr ""
+
+#: codraft\core\gui\image.py:334 codraft\core\gui\image.py:429
+msgid "cval"
+msgstr ""
+
+#: codraft\core\gui\image.py:336 codraft\core\gui\image.py:431
+msgid "Value used for points outside the boundaries of the input if mode is 'constant'"
+msgstr ""
+
+#: codraft\core\gui\image.py:343
+msgid "Reshape the output array"
+msgstr ""
+
+#: codraft\core\gui\image.py:345
+msgid "Reshape the output array so that the input array is contained completely in the output"
+msgstr ""
+
+#: codraft\core\gui\image.py:351 codraft\core\gui\image.py:437
+msgid "Prefilter the input image"
+msgstr ""
+
+#: codraft\core\gui\image.py:355 codraft\core\gui\image.py:441
+msgid "Order"
+msgstr ""
+
+#: codraft\core\gui\image.py:359 codraft\core\gui\image.py:445
+msgid "Spline interpolation order"
+msgstr ""
+
+#: codraft\core\gui\image.py:404 codraft\widgets\h5browser.py:682
+msgid "Warning:"
+msgstr ""
+
+#: codraft\core\gui\image.py:406
+msgid "Selected images do not have the same size"
+msgstr ""
+
+#: codraft\core\gui\image.py:414
+msgid "Destination size:"
+msgstr ""
+
+#: codraft\core\gui\image.py:424
+msgid "Zoom"
+msgstr ""
+
+#: codraft\core\gui\image.py:474 codraft\core\gui\image.py:644
+#: codraft\core\gui\signal.py:628
+msgid "Region of interest"
+msgstr ""
+
+#: codraft\core\gui\image.py:541 codraft\core\gui\signal.py:344
+msgid "Threshold"
+msgstr ""
+
+#: codraft\core\gui\image.py:557
+msgid "Clipping value"
+msgstr ""
+
+#: codraft\core\gui\image.py:639
+msgid "MinEnclosingCircle"
+msgstr ""
+
+#: codraft\core\gui\new.py:27 codraft\core\gui\new.py:102
+#: codraft\core\param.py:67 codraft\core\param.py:73 codraft\core\param.py:218
+msgid "Untitled"
+msgstr ""
+
+#: codraft\core\gui\new.py:27 codraft\core\gui\new.py:102
+#: codraft\core\param.py:76 codraft\core\param.py:80 codraft\core\param.py:221
+#: codraft\core\param.py:225 codraft\core\param.py:229
+msgid "Title"
+msgstr ""
+
+#: codraft\core\gui\new.py:31
+msgid "Signal size (total number of points)"
+msgstr ""
+
+#: codraft\core\gui\new.py:31 codraft\widgets\h5browser.py:309
+msgid "Size"
+msgstr ""
+
+#: codraft\core\gui\new.py:34 codraft\core\gui\new.py:119
+#: codraft\widgets\h5browser.py:309
+msgid "Type"
+msgstr ""
+
+#: codraft\core\gui\new.py:36 codraft\core\gui\new.py:121
+msgid "zeros"
+msgstr ""
+
+#: codraft\core\gui\new.py:37 codraft\core\gui\new.py:123
+msgid "gaussian"
+msgstr ""
+
+#: codraft\core\gui\new.py:38
+msgid "lorentzian"
+msgstr ""
+
+#: codraft\core\gui\new.py:40 codraft\core\gui\new.py:124
+msgid "random"
+msgstr ""
+
+#: codraft\core\gui\new.py:60 codraft\core\gui\new.py:191
+msgid "Create a new signal"
+msgstr ""
+
+#: codraft\core\gui\new.py:73
+msgid "New gaussian function"
+msgstr ""
+
+#: codraft\core\gui\new.py:81
+msgid "New lorentzian function"
+msgstr ""
+
+#: codraft\core\gui\new.py:89
+msgid "New Voigt function"
+msgstr ""
+
+#: codraft\core\gui\new.py:104
+msgid "Height"
+msgstr ""
+
+#: codraft\core\gui\new.py:104
+msgid "Image height (total number of rows)"
+msgstr ""
+
+#: codraft\core\gui\new.py:107
+msgid "Image width (total number of columns)"
+msgstr ""
+
+#: codraft\core\gui\new.py:107
+msgid "Width"
+msgstr ""
+
+#: codraft\core\gui\new.py:110
+msgid "Data type"
+msgstr ""
+
+#: codraft\core\gui\new.py:122
+msgid "empty"
+msgstr ""
+
+#: codraft\core\gui\new.py:135 codraft\core\gui\new.py:194
+msgid "Create a new image"
+msgstr ""
+
+#: codraft\core\gui\new.py:169
+msgid "New 2D-gaussian image"
+msgstr ""
+
+#: codraft\core\gui\signal.py:64
+msgid "signal"
+msgstr ""
+
+#: codraft\core\gui\signal.py:74 codraft\core\gui\signal.py:351
+#: codraft\widgets\peak_dialog.py:24
+msgid "Peak detection"
+msgstr ""
+
+#: codraft\core\gui\signal.py:86 codraft\core\gui\signal.py:406
+msgid "Normalize"
+msgstr ""
+
+#: codraft\core\gui\signal.py:88
+msgid "Derivative"
+msgstr ""
+
+#: codraft\core\gui\signal.py:91
+msgid "Integral"
+msgstr ""
+
+#: codraft\core\gui\signal.py:98 codraft\core\gui\signal.py:489
+msgid "Polynomial fit"
+msgstr ""
+
+#: codraft\core\gui\signal.py:101 codraft\core\gui\signal.py:539
+msgid "Multi-Gaussian fit"
+msgstr ""
+
+#: codraft\core\gui\signal.py:105 codraft\core\gui\signal.py:107
+msgid "Gaussian fit"
+msgstr ""
+
+#: codraft\core\gui\signal.py:112 codraft\core\gui\signal.py:114
+msgid "Lorentzian fit"
+msgstr ""
+
+#: codraft\core\gui\signal.py:119 codraft\core\gui\signal.py:120
+msgid "Voigt fit"
+msgstr ""
+
+#: codraft\core\gui\signal.py:152
+msgid "Full width at half-maximum"
+msgstr ""
+
+#: codraft\core\gui\signal.py:154
+msgid "Compute Full Width at Half-Maximum (FWHM)"
+msgstr ""
+
+#: codraft\core\gui\signal.py:158
+msgid "Full width at"
+msgstr ""
+
+#: codraft\core\gui\signal.py:160
+msgid "Compute Full Width at Maximum"
+msgstr ""
+
+#: codraft\core\gui\signal.py:288
+msgid "CSV files"
+msgstr ""
+
+#: codraft\core\gui\signal.py:288
+msgid "Save as"
+msgstr ""
+
+#: codraft\core\gui\signal.py:301
+msgid "%s could not be written:"
+msgstr ""
+
+#: codraft\core\gui\signal.py:395
+msgid "maximum"
+msgstr ""
+
+#: codraft\core\gui\signal.py:396
+msgid "amplitude"
+msgstr ""
+
+#: codraft\core\gui\signal.py:397
+msgid "sum"
+msgstr ""
+
+#: codraft\core\gui\signal.py:398
+msgid "energy"
+msgstr ""
+
+#: codraft\core\gui\signal.py:404
+msgid "Normalize with respect to"
+msgstr ""
+
+#: codraft\core\gui\signal.py:426 codraft\core\param.py:75
+#: codraft\core\param.py:78 codraft\core\param.py:220
+#: codraft\core\param.py:223
+msgid "X-axis"
+msgstr ""
+
+#: codraft\core\gui\signal.py:426 codraft\core\param.py:79
+#: codraft\core\param.py:82 codraft\core\param.py:224
+#: codraft\core\param.py:227
+msgid "Y-axis"
+msgstr ""
+
+#: codraft\core\gui\signal.py:431
+msgid "Calibrate"
+msgstr ""
+
+#: codraft\core\gui\signal.py:494
+msgid "Degree"
+msgstr ""
+
+#: codraft\core\gui\signal.py:563
+msgid "FWHM"
+msgstr ""
+
+#: codraft\core\gui\signal.py:565
+msgid "Gaussian"
+msgstr ""
+
+#: codraft\core\gui\signal.py:566
+msgid "Lorentzian"
+msgstr ""
+
+#: codraft\core\gui\signal.py:573
+msgid "Fit type"
+msgstr ""
+
+#: codraft\core\gui\signal.py:600
+msgid "FW"
+msgstr ""
+
+#: codraft\core\io.py:382
+msgid "Andor SIF files"
+msgstr ""
+
+#: codraft\core\io.py:383
+msgid "SPIRICON files"
+msgstr ""
+
+#: codraft\core\io.py:384
+msgid "FXD files"
+msgstr ""
+
+#: codraft\core\io.py:386
+msgid "Bitmap images"
+msgstr ""
+
+#: codraft\core\param.py:66 codraft\core\param.py:70 codraft\core\param.py:212
+#: codraft\core\param.py:215
+msgid "Data and metadata"
+msgstr ""
+
+#: codraft\core\param.py:67 codraft\core\param.py:73
+msgid "Signal title"
+msgstr ""
+
+#: codraft\core\param.py:68 codraft\core\param.py:213
+msgid "Data"
+msgstr ""
+
+#: codraft\core\param.py:69 codraft\core\param.py:214
+msgid "Metadata"
+msgstr ""
+
+#: codraft\core\param.py:72 codraft\core\param.py:84 codraft\core\param.py:217
+#: codraft\core\param.py:233
+msgid "Titles and units"
+msgstr ""
+
+#: codraft\core\param.py:77 codraft\core\param.py:81 codraft\core\param.py:222
+#: codraft\core\param.py:226 codraft\core\param.py:230
+msgid "Unit"
+msgstr ""
+
+#: codraft\core\param.py:149 codraft\core\param.py:258
+msgid "First row index"
+msgstr ""
+
+#: codraft\core\param.py:150 codraft\core\param.py:259
+msgid "Last row index"
+msgstr ""
+
+#: codraft\core\param.py:218
+msgid "Image title"
+msgstr ""
+
+#: codraft\core\param.py:228 codraft\core\param.py:231
+msgid "Z-axis"
+msgstr ""
+
+#: codraft\core\param.py:260
+msgid "First column index"
+msgstr ""
+
+#: codraft\core\param.py:261
+msgid "Last column index"
+msgstr ""
+
+#: codraft\patch.py:117
+msgid "Z-Axis logarithmic scale"
+msgstr ""
+
+#: codraft\patch.py:313 codraft\patch.py:331
+msgid "Cross section"
+msgstr ""
+
+#: codraft\patch.py:337
+msgid "Average cross section"
+msgstr ""
+
+#: codraft\patch.py:347
+msgid "Process signal"
+msgstr ""
+
+#: codraft\tests\embedded_test.py:26
+msgid "Host Qt main window"
+msgstr ""
+
+#: codraft\tests\embedded_test.py:28
+msgid "Open CodraFT"
+msgstr ""
+
+#: codraft\widgets\fit_dialog.py:91 codraft\widgets\fit_dialog.py:117
+#: codraft\widgets\fit_dialog.py:143
+msgid "Amplitude"
+msgstr ""
+
+#: codraft\widgets\fit_dialog.py:92 codraft\widgets\fit_dialog.py:118
+#: codraft\widgets\fit_dialog.py:144
+msgid "Base line"
+msgstr ""
+
+#: codraft\widgets\fit_dialog.py:93 codraft\widgets\fit_dialog.py:119
+#: codraft\widgets\fit_dialog.py:145
+msgid "Std-dev"
+msgstr ""
+
+#: codraft\widgets\fit_dialog.py:94 codraft\widgets\fit_dialog.py:120
+#: codraft\widgets\fit_dialog.py:146
+msgid "Mean"
+msgstr ""
+
+#: codraft\widgets\fit_dialog.py:194
+msgid "Y0"
+msgstr ""
+
+#: codraft\widgets\h5browser.py:93
+msgid "Collapse all"
+msgstr ""
+
+#: codraft\widgets\h5browser.py:98
+msgid "Expand all"
+msgstr ""
+
+#: codraft\widgets\h5browser.py:102
+msgid "Restore"
+msgstr ""
+
+#: codraft\widgets\h5browser.py:103
+msgid "Restore original tree layout"
+msgstr ""
+
+#: codraft\widgets\h5browser.py:109
+msgid "Collapse selection"
+msgstr ""
+
+#: codraft\widgets\h5browser.py:115
+msgid "Expand selection"
+msgstr ""
+
+#: codraft\widgets\h5browser.py:306 codraft\widgets\h5browser.py:643
+msgid "HDF5 Browser"
+msgstr ""
+
+#: codraft\widgets\h5browser.py:309
+msgid "Name"
+msgstr ""
+
+#: codraft\widgets\h5browser.py:309
+msgid "Textual preview"
+msgstr ""
+
+#: codraft\widgets\h5browser.py:682
+msgid "No supported data available in HDF5 file."
+msgstr ""
+
+#: codraft\widgets\h5browser.py:702
+msgid "Check all"
+msgstr ""
+
+#: codraft\widgets\h5browser.py:709
+msgid "Uncheck all"
+msgstr ""
+
