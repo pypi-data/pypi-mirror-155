@@ -1,0 +1,110 @@
+{
+  "name": "飞机行程单",
+  "imageHeight": 3000,
+  "imageWidth": 4000,
+  "anchors": [
+    {
+      "text": "航空运输电子客票行程单",
+      "left": 1640,
+      "top": 644,
+      "width": 817,
+      "height": 58,
+      "prefix_match": "no"
+    }
+  ],
+  "recognition_areas": [
+    {
+      "field_name": "旅客姓名",
+      "show_name": "passenger_name",
+      "left": 511,
+      "top": 827,
+      "width": 629,
+      "height": 146
+    },
+    {
+      "field_name": "有效身份证件号码",
+      "show_name": "id_number",
+      "left": 1257,
+      "top": 814,
+      "width": 829,
+      "height": 150
+    },
+    {
+      "field_name": "签注",
+      "show_name": "signed_remark",
+      "left": 2269,
+      "top": 810,
+      "width": 1209,
+      "height": 150
+    },
+    {
+      "field_name": "from",
+      "show_name": "from",
+      "left": 653,
+      "top": 1102,
+      "width": 379,
+      "height": 121
+    },
+    {
+      "field_name": "to",
+      "show_name": "to",
+      "left": 644,
+      "top": 1244,
+      "width": 388,
+      "height": 112
+    },
+    {
+      "field_name": "航班号_座位_日期",
+      "left": 1261,
+      "top": 1098,
+      "width": 1567,
+      "height": 150
+    },
+    {
+      "field_name": "有效截止日期_行李",
+      "left": 3178,
+      "top": 1085,
+      "width": 445,
+      "height": 179
+    },
+    {
+      "field_name": "价格信息",
+      "left": 1036,
+      "top": 1569,
+      "width": 2625,
+      "height": 183
+    },
+    {
+      "field_name": "电子客票号码",
+      "show_name": "ticket_no",
+      "left": 453,
+      "top": 1752,
+      "width": 775,
+      "height": 121
+    },
+    {
+      "field_name": "填开单位",
+      "show_name": "fill_org",
+      "left": 1323,
+      "top": 1894,
+      "width": 1321,
+      "height": 133
+    },
+    {
+      "field_name": "填开日期",
+      "show_name": "fill_date",
+      "left": 2932,
+      "top": 1902,
+      "width": 729,
+      "height": 121
+    },
+    {
+      "field_name": "印刷序号",
+      "show_name": "print_no",
+      "left": 2869,
+      "top": 710,
+      "width": 804,
+      "height": 100
+    }
+  ]
+}

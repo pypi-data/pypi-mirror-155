@@ -1,0 +1,105 @@
+{
+  "name": "营业执照(三证合一G版)",
+  "imageHeight": 2552,
+  "imageWidth": 3504,
+  "anchors": [
+    {
+      "text": "营业执照",
+      "left": 1298,
+      "top": 622,
+      "width": 940,
+      "height": 193,
+      "prefix_match": "no"
+    },
+    {
+      "text": "登记机关",
+      "left": 2206,
+      "top": 1872,
+      "width": 375,
+      "height": 79,
+      "prefix_match": "no"
+    },
+    {
+      "text": "国家市场监督管理总局监制",
+      "left": 2823,
+      "top": 2326,
+      "width": 511,
+      "height": 78,
+      "prefix_match": "no"
+    }
+  ],
+  "recognition_areas": [
+    {
+      "field_name": "统一社会信用代码",
+      "show_name": "unified_social_credit_code",
+      "left": 348,
+      "top": 611,
+      "width": 743,
+      "height": 229
+    },
+    {
+      "field_name": "名称",
+      "show_name": "company_name",
+      "left": 348,
+      "top": 1029,
+      "width": 1336,
+      "height": 122
+    },
+    {
+      "field_name": "成立日期",
+      "show_name": "found_date",
+      "left": 1938,
+      "top": 1036,
+      "width": 828,
+      "height": 122
+    },
+    {
+      "field_name": "营业期限",
+      "show_name": "operate_period",
+      "left": 1941,
+      "top": 1168,
+      "width": 1061,
+      "height": 133
+    },
+    {
+      "field_name": "营业场所",
+      "show_name": "address",
+      "left": 1934,
+      "top": 1308,
+      "width": 1200,
+      "height": 175
+    },
+    {
+      "field_name": "类型",
+      "show_name": "company_type",
+      "left": 338,
+      "top": 1169,
+      "width": 1443,
+      "height": 135
+    },
+    {
+      "field_name": "负责人",
+      "show_name": "legal_person",
+      "left": 338,
+      "top": 1308,
+      "width": 889,
+      "height": 128
+    },
+    {
+      "field_name": "经营范围",
+      "show_name": "business_scope",
+      "left": 341,
+      "top": 1447,
+      "width": 1554,
+      "height": 218
+    },
+    {
+      "field_name": "发证日期_LEFT_RIGHT",
+      "show_name": "issue_date",
+      "left": 2559,
+      "top": 2079,
+      "width": 611,
+      "height": 97
+    }
+  ]
+}

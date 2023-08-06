@@ -1,0 +1,196 @@
+{
+  "name": "增值税专用发票",
+  "imageHeight": 1117,
+  "imageWidth": 1587,
+  "anchors": [
+    {
+      "text": "价税合计大写",
+      "left": 124,
+      "top": 794,
+      "width": 226,
+      "height": 38
+    },
+    {
+      "text": "货物或应税劳务服务名称",
+      "left": 86,
+      "top": 453,
+      "width": 308,
+      "height": 35
+    },
+    {
+      "text": "规格型号",
+      "left": 473,
+      "top": 452,
+      "width": 123,
+      "height": 27
+    }
+  ],
+  "recognition_areas": [
+    {
+      "field_name": "购买方_多行",
+      "left": 314,
+      "top": 283,
+      "width": 587,
+      "height": 165
+    },
+    {
+      "field_name": "销售方_多行",
+      "left": 301,
+      "top": 852,
+      "width": 577,
+      "height": 149
+    },
+    {
+      "field_name": "密码",
+      "show_name": "cipher",
+      "left": 978,
+      "top": 293,
+      "width": 567,
+      "height": 147
+    },
+    {
+      "field_name": "收款人",
+      "show_name": "payee",
+      "left": 50,
+      "top": 1006,
+      "width": 242,
+      "height": 51
+    },
+    {
+      "field_name": "复核",
+      "show_name": "review",
+      "left": 479,
+      "top": 1002,
+      "width": 223,
+      "height": 51
+    },
+    {
+      "field_name": "开票人",
+      "show_name": "drawer",
+      "left": 804,
+      "top": 1006,
+      "width": 284,
+      "height": 46
+    },
+    {
+      "field_name": "价税合计大写",
+      "show_name": "total_cover_tax_upper",
+      "left": 445,
+      "top": 788,
+      "width": 492,
+      "height": 57
+    },
+    {
+      "field_name": "价税合计小写",
+      "show_name": "total_cover_tax_lower",
+      "left": 1069,
+      "top": 793,
+      "width": 484,
+      "height": 52
+    },
+    {
+      "field_name": "规格型号_多行",
+      "show_name": "plate_specific",
+      "left": 435,
+      "top": 484,
+      "width": 195,
+      "height": 228
+    },
+    {
+      "field_name": "单位_多行",
+      "show_name": "unit",
+      "left": 632,
+      "top": 483,
+      "width": 90,
+      "height": 228
+    },
+    {
+      "field_name": "数量_多行",
+      "show_name": "quantity",
+      "left": 724,
+      "top": 484,
+      "width": 155,
+      "height": 228
+    },
+    {
+      "field_name": "单价_多行",
+      "show_name": "unit_price",
+      "left": 881,
+      "top": 486,
+      "width": 146,
+      "height": 228
+    },
+    {
+      "field_name": "金额_多行",
+      "show_name": "money",
+      "left": 1033,
+      "top": 484,
+      "width": 222,
+      "height": 233
+    },
+    {
+      "field_name": "税率_多行",
+      "show_name": "tax_rate",
+      "left": 1260,
+      "top": 488,
+      "width": 77,
+      "height": 231
+    },
+    {
+      "field_name": "税额_多行",
+      "show_name": "tax",
+      "left": 1338,
+      "top": 484,
+      "width": 231,
+      "height": 238
+    },
+    {
+      "field_name": "货物名称_多行",
+      "show_name": "goods",
+      "left": 40,
+      "top": 488,
+      "width": 395,
+      "height": 224
+    },
+    {
+      "field_name": "开票日期",
+      "show_name": "issue_date",
+      "left": 1155,
+      "top": 225,
+      "width": 414,
+      "height": 58
+    },
+    {
+      "field_name": "发票代码",
+      "show_name": "vat_invoice_code",
+      "left": 204,
+      "top": 129,
+      "width": 302,
+      "height": 67
+    },
+    {
+      "field_name": "发票号码",
+      "show_name": "vat_invoice_number",
+      "left": 1376,
+      "top": 189,
+      "width": 211,
+      "height": 31
+    },
+    {
+      "field_name": "总金额",
+      "show_name": "total_money",
+      "left": 1035,
+      "top": 732,
+      "width": 225,
+      "height": 52
+    },
+    {
+      "field_name": "总税额",
+      "show_name": "total_tax",
+      "left": 1340,
+      "top": 732,
+      "width": 218,
+      "height": 52
+    }
+  ]
+}
