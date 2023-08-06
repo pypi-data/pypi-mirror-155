@@ -1,0 +1,45 @@
+[tool.poetry]
+name = "AIMol"
+version = "0.0.0.1"
+description = "AIMol"
+authors = ["Rahul Brahma <mrbrahma.rahul@gmail.com>"]
+license = "MIT"
+homepage = "https://github.com/takshan/posgen"
+repository = "https://github.com/takshan/posgen"
+documentation = "https://posgen.readthedocs.io"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+]
+
+[tool.poetry.dependencies]
+
+
+
+[tool.poetry.scripts]
+posgen = "aimol:main"
+
+[tool.coverage.paths]
+
+source = ["ainmol", "*/site-packages"]
+
+[tool.coverage.run]
+branch = true
+source = ["aimol"]
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 100
+
+[tool.mypy]
+strict = true
+pretty = true
+show_column_numbers = true
+show_error_codes = true
+show_error_context = true
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
