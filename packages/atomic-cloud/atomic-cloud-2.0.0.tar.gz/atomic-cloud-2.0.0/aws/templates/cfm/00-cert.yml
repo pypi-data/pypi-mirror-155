@@ -1,0 +1,26 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Certificate for the {{clusterName}} cluster
+Resources:
+  Certificate:
+    Type: AWS::CertificateManager::Certificate
+    Properties:
+      DomainName: '*.{{baseDomain}}'
+      ValidationMethod: EMAIL
+      DomainValidationOptions: # not sure if necessary
+        - DomainName: '*.{{baseDomain}}'
+          ValidationDomain: {{ValidationDomain}}
+      SubjectAlternativeNames:
+        - {{baseDomain}}
+      Tags:
+        - Key: Name
+          Value: {{baseDomain}}
+        - Key: CreatedBy
+          Value: !Ref AWS::AccountId
+        - Key: clusterName
+          Value: {{clusterName}}
+Outputs:
+  OutputCertificate:
+    Description: Certificate for the environment
+    Value: !Ref Certificate
+    Export:
+      Name: '{{clusterName}}-{{DomainSafe}}-certificate'

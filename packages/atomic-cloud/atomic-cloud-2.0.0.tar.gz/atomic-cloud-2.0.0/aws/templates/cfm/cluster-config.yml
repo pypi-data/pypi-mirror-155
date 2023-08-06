@@ -1,0 +1,21 @@
+clusterName: 'default-test'
+baseDomain: 'test.ac-unit-test.simoncomputing.com'
+validationDomain: 'simoncomputing.com'
+cidrPrefix: '10.10'
+isCicd: False
+
+workerGroups:
+  - workerGroupName: 'workerGroup1'
+    instanceType: 't3.medium'
+    amiType: 'AL2_x86_64'
+    desiredCount: 2
+    minCount: 1
+    maxCount: 4
+
+databases:
+  - dBClusterId: 'test-rds-db'
+    engineType: 'postgres'
+    engineVersion: '11.12'
+    template: 'dev-test'
+    isProduction: false
+

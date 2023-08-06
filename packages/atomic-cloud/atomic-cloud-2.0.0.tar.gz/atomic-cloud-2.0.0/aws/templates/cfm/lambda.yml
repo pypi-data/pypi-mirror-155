@@ -1,0 +1,72 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Temporary Lambda Function
+Resources: 
+  LambdaExecutionRole:
+    Type: 'AWS::IAM::Role'
+    Properties:
+      RoleName: rds-lambda-temporary-execution-role-{{databaseInfo.resourceName}}-{{attempt}}
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+        - Effect: Allow
+          Principal:
+            Service: lambda.amazonaws.com
+          Action: sts:AssumeRole
+      ManagedPolicyArns:
+      - arn:aws:iam::aws:policy/service-role/AWSLambdaVPCAccessExecutionRole
+      Policies:
+        - PolicyName: rds-lambda-temporary-execution-policy-{{databaseInfo.resourceName}}-{{attempt}}
+          PolicyDocument:
+            Version: 2012-10-17
+            Statement:
+              - Effect: Allow
+                Action:
+                  - "secretsmanager:GetResourcePolicy"
+                  - "secretsmanager:GetSecretValue"
+                  - "secretsmanager:DescribeSecret"
+                  - "secretsmanager:DeleteSecret"
+                Resource: '*'
+  LambdaSecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      GroupName: rds-temporary-lambda-sg-{{databaseInfo.resourceName}}-{{attempt}}
+      GroupDescription: Security group to allow communication with RDS instance from Lambda
+      VpcId: !ImportValue {{clusterName}}-vpc
+      Tags:
+      - Key: Name
+        Value: rds-temporary-lambda-sg-{{databaseInfo.resourceName}}-{{attempt}}
+      - Key: clusterName
+        Value: {{clusterName}}
+  Lambda{{databaseInfo.resourceName}}{{attempt}}:
+    Type: 'AWS::Lambda::Function'
+    Properties:
+      FunctionName: rds-temporary-lambda-{{databaseInfo.resourceName}}-{{attempt}}
+      Runtime: python3.8
+      Role: !GetAtt LambdaExecutionRole.Arn
+      Handler: index.handler
+      Timeout: 60
+      VpcConfig:
+        SecurityGroupIds:
+        - !Ref LambdaSecurityGroup
+        SubnetIds: !Split
+        - ','
+        - !Join [',', [!ImportValue '{{clusterName}}-private-subnets']]
+      Tags:
+        - Key: Name
+          Value: rds-temporary-lambda-{{databaseInfo.resourceName}}-{{attempt}}
+        - Key: clusterName
+          Value: {{clusterName}}
+        - Key: dbInstanceId
+          Value: {{databaseInfo.dbInstanceId}}
+        - Key: attempt
+          Value: {{attempt}}
+        - Key: stackName
+          Value: {{stackName}}
+      Code:
+        ZipFile: |
+          def handler(event, context):
+              return { 'message': 'This is a placeholder. Code package has not been uploaded' }
+
+Outputs:
+  TemporaryLambda{{databaseInfo.resourceName}}{{attempt}}:
+    Value: !Ref Lambda{{databaseInfo.resourceName}}{{attempt}}

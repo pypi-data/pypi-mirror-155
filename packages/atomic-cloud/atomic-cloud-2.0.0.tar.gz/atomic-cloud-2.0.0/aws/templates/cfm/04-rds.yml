@@ -1,0 +1,100 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: RDS (postgres) instance and SG
+Resources: 
+  DBSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupName: {{clusterName}}-postgres-rds-sg
+      GroupDescription: Allow internal traffic to postgres
+      VpcId: !ImportValue {{clusterName}}-vpc
+      SecurityGroupIngress:
+      - CidrIp: !ImportValue {{clusterName}}-cidr
+        IpProtocol: tcp
+        FromPort: 5432
+        ToPort: 5432
+      Tags:
+      - Key: Name
+        Value: '{{clusterName}}-rds-sg'
+      - Key: clusterName
+        Value: {{clusterName}}
+  DBSubnetGroup:
+    Type: AWS::RDS::DBSubnetGroup
+    Properties:
+      DBSubnetGroupDescription: Group for rds instances is {{clusterName}}
+      DBSubnetGroupName: {{clusterName}}-rds-subnet-grp
+      SubnetIds: !Split
+        - ','
+        - !Join [ ',', [ !ImportValue '{{clusterName}}-private-subnets' ] ]
+
+      Tags:
+      - Key: Name
+        Value: '{{clusterName}}-rds-subnet-grp'
+      - Key: clusterName
+        Value: {{clusterName}}
+  {% for database in databases %}
+  {{database.resourceName}}:
+    Type: 'AWS::RDS::DBInstance'
+    DeletionPolicy: {{database.deletePolicy}}
+    Properties:
+      DBInstanceIdentifier: {{database.dBClusterId}}
+      {% if database.isProduction %}
+      DBInstanceClass: db.m5.large
+      AllocatedStorage: 128
+      MultiAZ: true
+      {% else %}
+      DBInstanceClass: db.t3.micro
+      AllocatedStorage: 16
+      {% endif %}
+      Engine: {{database.engineType}}
+      Port: '5432'
+      EngineVersion: {{database.engineVersion}}
+      MasterUsername: postgres
+      MasterUserPassword: {{database.dbPassword}}
+      MonitoringInterval: 0 #s, if larger we need a role for enhanced monitoring
+      DBSubnetGroupName: !Ref DBSubnetGroup
+      VPCSecurityGroups:
+      - !Ref DBSecurityGroup
+      Tags:
+      - Key: clusterName
+        Value: {{clusterName}}
+      - Key: dbClusterId
+        Value: {{database.dBClusterId}}
+      - Key: default
+        Value: {{database.default}}
+  {% endfor %}
+
+  {% for db in databases %}
+  # secret to be used in rotation
+  Secret{{db.resourceName}}:
+    Type: AWS::SecretsManager::Secret
+    Properties: 
+      Description: Credentials for master user on {{db.resourceName}}
+      Name: {{db.resourceName}}-master-credentials
+      SecretString: !Sub
+        - "{\"username\": \"postgres\",\"password\": \"{{db.dbPassword}}\",\"engine\": \"postgres\",\"host\": \"${HostName}\",\"port\": 5432,\"dbInstanceIdentifier\": \"{{db.dBClusterId}}\"}"
+        - HostName: !GetAtt {{db.resourceName}}.Endpoint.Address
+      Tags: 
+      - Key: Name
+        Value: '{{clusterName}}-{{db.resourceName}}-rds-master-credentials'
+      - Key: clusterName
+        Value: {{clusterName}}
+      - Key: rdsInstance
+        Value: {{db.dBClusterId|lower}}
+      - Key: secretType
+        Value: 'RDS login credentials'
+  {% endfor %}
+  
+
+Outputs:
+  {% for db in databases %}
+  DBInstance{{db.resourceName}}:
+    Value: !Ref {{db.resourceName}}
+  DBHostName{{db.resourceName}}:
+    Export:
+      Name: '{{clusterName}}-{{db.resourceName}}-rds-host'
+    Value: !GetAtt {{db.resourceName}}.Endpoint.Address
+  DBSecurityGroup:
+    Export:
+      Name: '{{clusterName}}-rds-sg'
+    Value: !Ref DBSecurityGroup
+  {% endfor %}

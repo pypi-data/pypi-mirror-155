@@ -1,0 +1,3 @@
+include aws/templates/cfm/*
+include aws/templates/factsheet/*
+include aws/lambdas/rds/package.zip
