@@ -1,0 +1,180 @@
+versoin: 1.0
+containers:
+  registry: quay.io/devtest
+  images:
+    - name: seqc
+      version: 0.2.11
+      project_url: https://github.com/hisplan/seqc-docker
+      download_url: https://github.com/hisplan/seqc-docker/archive/refs/tags/v0.2.11.tar.gz
+    - name: seqc-basic-analysis
+      version: 0.0.11
+      project_url: https://github.com/hisplan/seqc-ada
+      download_url: https://github.com/hisplan/seqc-ada/archive/refs/tags/v0.0.4.tar.gz
+      directory: dockers/seqc-basic-analysis
+    - name: seqc-utils
+      version: 0.5.2
+      project_url: https://github.com/hisplan/seqc-utils
+      download_url: https://github.com/hisplan/seqc-utils/archive/refs/tags/v0.5.2.tar.gz
+    - name: samtools
+      version: 1.9
+      project_url: https://github.com/hisplan/docker-samtools
+      download_url: https://github.com/hisplan/docker-samtools/archive/refs/tags/v1.9.tar.gz
+    - name: velocyto
+      version: 0.17.17
+      project_url: https://github.com/hisplan/docker-velocyto
+      download_url: https://github.com/hisplan/docker-velocyto/archive/refs/tags/v0.17.17.tar.gz
+    - name: fastqc
+      version: 0.11.9
+      project_url: https://github.com/hisplan/docker-fastqc
+      download_url: https://github.com/hisplan/docker-fastqc/archive/refs/tags/v0.11.9.tar.gz
+    - name: asap2kite
+      version: 0.0.1
+      project_url: https://github.com/hisplan/docker-asap2kite
+      download_url: https://github.com/hisplan/docker-asap2kite/archive/refs/tags/v0.0.1.tar.gz
+    - name: star
+      version: 2.5.3a
+      project_url: https://github.com/hisplan/docker-star
+      download_url: https://github.com/hisplan/docker-star/archive/refs/tags/v2.5.3a.tar.gz
+    - name: star
+      version: 2.7.6a
+      project_url: https://github.com/hisplan/docker-star
+      download_url: https://github.com/hisplan/docker-star/archive/refs/tags/v2.7.6a.tar.gz
+    - name: cutadapt
+      version: 2.5
+      project_url: https://github.com/hisplan/docker-cutadapt
+      download_url: https://github.com/hisplan/docker-cutadapt/archive/refs/tags/v2.5.tar.gz
+    - name: seqkit
+      version: 0.16.1
+      project_url: https://github.com/hisplan/sharp/tree/master/dockers/seqkit
+      download_url: https://github.com/hisplan/sharp/archive/refs/tags/v0.1.1.tar.gz
+      directory: dockers/seqkit
+    - name: hto-demux-kmeans
+      version: 0.5.0
+      project_url: https://github.com/hisplan/sharp/tree/master/dockers/hto-demux-kmeans
+      download_url: https://github.com/hisplan/sharp/archive/refs/tags/v0.1.1.tar.gz
+      directory: dockers/hto-demux-kmeans
+    - name: hto-demux-seurat
+      version: 0.6.0
+      project_url: https://github.com/hisplan/sharp/tree/master/dockers/hto-demux-seurat
+      download_url: https://github.com/hisplan/sharp/archive/refs/tags/v0.1.1.tar.gz
+      directory: dockers/hto-demux-seurat
+    - name: hto-adt-postprocess
+      version: 0.3.4
+      project_url: https://github.com/hisplan/sharp/tree/master/dockers/hto-adt-postprocess
+      download_url: https://github.com/hisplan/sharp/archive/refs/tags/v0.1.1.tar.gz
+      directory: dockers/hto-adt-postprocess
+    - name: cut-indrop-spacer
+      version: 0.2.0
+      project_url: https://github.com/hisplan/sharp/tree/master/dockers/cut-indrop-spacer
+      download_url: https://github.com/hisplan/sharp/archive/refs/tags/v0.1.1.tar.gz
+      directory: dockers/cut-indrop-spacer
+    - name: basic-qc
+      version: 0.2.1
+      project_url: https://github.com/hisplan/sharp/tree/master/dockers/basic-qc
+      download_url: https://github.com/hisplan/sharp/archive/refs/tags/v0.1.1.tar.gz
+      directory: dockers/cut-indrop-spacer
+    - name: cite-seq-count
+      version: 1.4.2-develop
+      project_url: https://github.com/hisplan/sharp/tree/master/dockers/cite-seq-count
+      download_url: https://github.com/hisplan/sharp/archive/refs/tags/v0.1.1.tar.gz
+      directory: dockers/cite-seq-count
+    - name: pigz
+      version: 2.4
+      project_url: https://github.com/hisplan/docker-pigz
+      download_url: https://github.com/hisplan/docker-pigz/archive/refs/tags/v2.4.tar.gz
+    - name: htslib
+      version: 1.9
+      project_url: https://github.com/hisplan/docker-htslib
+      download_url: https://github.com/hisplan/docker-htslib/archive/refs/tags/v1.9.tar.gz
+    - name: fai2gtf
+      version: 0.2.0
+      project_url: https://github.com/hisplan/wdl-transgenes
+      download_url: https://github.com/hisplan/wdl-transgenes/archive/refs/tags/v0.0.8.tar.gz
+      directory: dockers/fai2gtf
+    - name: gtf-utils
+      version: 0.0.6
+      project_url: https://github.com/hisplan/gtf-utils
+      download_url: https://github.com/hisplan/gtf-utils/archive/refs/tags/v0.0.6.tar.gz
+    - name: cellranger
+      version: 6.1.2
+      project_url: https://github.com/hisplan/docker-cellranger
+      download_url: https://github.com/hisplan/docker-cellranger/archive/refs/tags/v6.1.2.tar.gz
+    - name: cellranger-arc
+      version: 2.0.0
+      project_url: https://github.com/hisplan/docker-cellranger-arc
+      download_url: https://github.com/hisplan/docker-cellranger-arc/archive/refs/tags/v2.0.0.tar.gz
+    - name: cellranger-atac
+      version: 2.1.0
+      project_url: https://github.com/hisplan/docker-cellranger-atac
+      download_url: https://github.com/hisplan/docker-cellranger-atac/archive/refs/tags/v2.1.0.tar.gz
+    - name: spaceranger
+      version: 1.3.1
+      project_url: https://github.com/hisplan/docker-spaceranger
+      download_url: https://github.com/hisplan/docker-spaceranger/archive/refs/tags/v1.3.1.tar.gz
+    - name: archr
+      version: 0.9.x-snapshot-20200922b
+      project_url: https://github.com/hisplan/docker-archr
+      download_url: https://github.com/hisplan/docker-archr/archive/refs/tags/v0.9.x-snapshot-20200922b.tar.gz
+    - name: archr2adata
+      version: 0.0.3
+      project_url: https://github.com/hisplan/archr2adata
+      download_url: https://github.com/hisplan/archr2adata/archive/refs/tags/v0.0.3.tar.gz
+
+pipelines:
+  packages:
+    - name: seqc
+      version: 0.2.11
+      project_url: https://github.com/hisplan/seqc-docker
+      download_url: https://github.com/hisplan/seqc-docker/archive/refs/tags/v0.2.11.tar.gz
+    - name: seqc-ada
+      version: 0.0.4
+      project_url: https://github.com/hisplan/seqc-ada
+      download_url: https://github.com/hisplan/seqc-ada/archive/refs/tags/v0.0.4.tar.gz
+    - name: sharp
+      version: 0.1.1
+      project_url: https://github.com/hisplan/sharp
+      download_url: https://github.com/hisplan/sharp/archive/refs/tags/v0.1.1.tar.gz
+    - name: velopipe
+      version: 0.0.9
+      project_url: https://github.com/hisplan/velopipe
+      download_url: https://github.com/hisplan/velopipe/archive/refs/tags/v0.0.9.tar.gz
+    - name: fastqc
+      version: 0.11.9
+      project_url: https://github.com/hisplan/wdl-fastqc
+      download_url: https://github.com/hisplan/wdl-fastqc/archive/refs/tags/v0.11.9.tar.gz
+    - name: transgenes
+      version: 0.0.8
+      project_url: https://github.com/hisplan/wdl-transgenes
+      download_url: https://github.com/hisplan/wdl-transgenes/archive/refs/tags/v0.0.8.tar.gz
+    - name: cellranger-gex
+      version: 6.1.2
+      project_url: https://github.com/hisplan/wdl-cellranger-gex
+      download_url: https://github.com/hisplan/wdl-cellranger-gex/archive/refs/tags/v6.1.2.tar.gz
+    - name: cellranger-vdj
+      version: 6.1.2
+      project_url: https://github.com/hisplan/wdl-cellranger-vdj
+      download_url: https://github.com/hisplan/wdl-cellranger-vdj/archive/refs/tags/v6.1.2.tar.gz
+    - name: cellranger-cellplex
+      version: 6.1.2
+      project_url: https://github.com/hisplan/wdl-cellranger-cellplex
+      download_url: https://github.com/hisplan/wdl-cellranger-cellplex/archive/refs/tags/v6.1.2.tar.gz
+    - name: cellranger-arc
+      version: 2.0.0
+      project_url: https://github.com/hisplan/wdl-cellranger-arc
+      download_url: https://github.com/hisplan/wdl-cellranger-arc/archive/refs/tags/v2.0.0.tar.gz
+    - name: cellranger-atac
+      version: 2.1.0
+      project_url: https://github.com/hisplan/wdl-cellranger-atac
+      download_url: https://github.com/hisplan/wdl-cellranger-atac/archive/refs/tags/v2.1.0.tar.gz
+    - name: spaceranger
+      version: 1.3.1
+      project_url: https://github.com/hisplan/wdl-spaceranger
+      download_url: https://github.com/hisplan/wdl-spaceranger/archive/refs/tags/v1.3.1.tar.gz
+    - name: mkref
+      version: 0.0.6
+      project_url: https://github.com/hisplan/wdl-mkref
+      download_url: https://github.com/hisplan/wdl-mkref/archive/refs/tags/v0.0.6.tar.gz
+    - name: archr
+      version: 0.1.0
+      project_url: https://github.com/hisplan/wdl-ArchR
+      download_url: https://github.com/hisplan/wdl-ArchR/archive/refs/tags/v0.1.0.tar.gz
