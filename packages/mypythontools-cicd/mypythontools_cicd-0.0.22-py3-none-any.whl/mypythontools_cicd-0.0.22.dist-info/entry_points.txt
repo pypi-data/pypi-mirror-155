@@ -1,0 +1,2 @@
+[console_scripts]
+mypythontools_cicd = mypythontools_cicd.project_utils:project_utils_pipeline
