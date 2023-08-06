@@ -1,0 +1,5 @@
+wagtail>=2.0
+
+[testing]
+coverage>=6.4.1
+tox-poetry>=0.4.1
