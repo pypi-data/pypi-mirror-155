@@ -1,0 +1,10 @@
+[pennylane.io]
+pyquil_program = pennylane_forest:load_program
+quil = pennylane_forest:load_quil
+quil_file = pennylane_forest:load_quil_from_file
+
+[pennylane.plugins]
+forest.numpy_wavefunction = pennylane_forest:NumpyWavefunctionDevice
+forest.qvm = pennylane_forest:QVMDevice
+forest.wavefunction = pennylane_forest:WavefunctionDevice
+
