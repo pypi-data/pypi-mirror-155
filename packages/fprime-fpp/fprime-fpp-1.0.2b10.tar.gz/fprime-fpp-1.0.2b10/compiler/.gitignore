@@ -1,0 +1,6 @@
+bin
+num_failed.txt
+target/
+test-output.txt
+*.o
+native-fpp-*
