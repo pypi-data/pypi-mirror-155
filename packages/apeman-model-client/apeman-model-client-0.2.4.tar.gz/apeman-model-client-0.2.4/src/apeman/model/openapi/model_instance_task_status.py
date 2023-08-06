@@ -1,0 +1,11 @@
+from enum import Enum
+
+
+class TaskStatus(Enum):
+    NONE = 'TASK_NONE'
+    PENDING = 'TASK_PENDING'
+    DEPLOYING = 'TASK_DEPLOYING'
+    RUNNING = 'TASK_RUNNING'
+    FAILED = 'TASK_FAILED'
+    SUCCEEDED = 'TASK_SUCCEEDED'
+    CANCELED = 'TASK_CANCELED'
