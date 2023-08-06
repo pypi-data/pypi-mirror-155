@@ -1,0 +1,10 @@
+Pillow>=4.0
+argue
+matplotlib>=2.0
+numpy>=1.16
+py-linq
+pydicom>=2.0
+reportlab>=3.3
+scikit-image<0.19,>=0.17
+scipy>=1.1
+tqdm>=3.8
