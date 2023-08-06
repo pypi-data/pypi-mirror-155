@@ -1,0 +1,2 @@
+[console_scripts]
+pgspot = pgspot.cli:run
