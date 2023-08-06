@@ -1,0 +1,618 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>fedsim.fl package &#8212; fedsim 0.1 documentation</title>
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="fedsim.fl.algorithms package" href="fedsim.fl.algorithms.html" />
+    <link rel="prev" title="fedsim.datasets package" href="fedsim.datasets.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="None">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
+
+    
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
+
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">fedsim 0.1 documentation</p>
+  
+</a>
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fas fa-bars"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="notebooks/tutorial.html">
+  Tutorial
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="modules.html">
+  fedsim
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="customization.html">
+  Customization
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="contributing.html">
+  Contributing
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="authors.html">
+  Authors
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="changelog.html">
+  ChangeLog
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
+          
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+<h3><a href="index.html">Table of Contents</a></h3>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="notebooks/tutorial.html">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">fedsim</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="fedsim.html">Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="customization.html">Customization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authors.html">Authors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">ChangeLog</a></li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/fedsim.fl.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
+
+          
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#subpackages">
+   Subpackages
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#submodules">
+   Submodules
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-fedsim.fl.aggregators">
+   fedsim.fl.aggregators module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-fedsim.fl.evaluation">
+   fedsim.fl.evaluation module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-fedsim.fl.fl_algorithm">
+   fedsim.fl.fl_algorithm module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-fedsim.fl.utils">
+   fedsim.fl.utils module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-fedsim.fl">
+   Module contents
+  </a>
+ </li>
+</ul>
+
+</nav>
+    </div>
+    
+    <div class="toc-item">
+      
+    </div>
+    
+  
+</div>
+
+
+          
+          
+          <div class="bd-content col-12 col-md-9 col-xl-7">
+              
+              <article class="bd-article" role="main">
+                
+  <section id="fedsim-fl-package">
+<h1>fedsim.fl package<a class="headerlink" href="#fedsim-fl-package" title="Permalink to this headline">#</a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">#</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="fedsim.fl.algorithms.html">fedsim.fl.algorithms package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fedsim.fl.algorithms.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fedsim.fl.algorithms.html#module-fedsim.fl.algorithms.adabest">fedsim.fl.algorithms.adabest module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fedsim.fl.algorithms.html#module-fedsim.fl.algorithms.fedavg">fedsim.fl.algorithms.fedavg module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fedsim.fl.algorithms.html#module-fedsim.fl.algorithms.fedavgm">fedsim.fl.algorithms.fedavgm module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fedsim.fl.algorithms.html#module-fedsim.fl.algorithms.feddyn">fedsim.fl.algorithms.feddyn module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fedsim.fl.algorithms.html#module-fedsim.fl.algorithms.fednova">fedsim.fl.algorithms.fednova module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fedsim.fl.algorithms.html#module-fedsim.fl.algorithms.fedprox">fedsim.fl.algorithms.fedprox module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fedsim.fl.algorithms.html#module-fedsim.fl.algorithms">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fedsim.fl.mtl_algorithms.html">fedsim.fl.mtl_algorithms package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fedsim.fl.mtl_algorithms.html#module-fedsim.fl.mtl_algorithms">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="module-fedsim.fl.aggregators">
+<span id="fedsim-fl-aggregators-module"></span><h2>fedsim.fl.aggregators module<a class="headerlink" href="#module-fedsim.fl.aggregators" title="Permalink to this headline">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="fedsim.fl.aggregators.SerialAggregator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">fedsim.fl.aggregators.</span></span><span class="sig-name descname"><span class="pre">SerialAggregator</span></span><a class="reference internal" href="_modules/fedsim/fl/aggregators.html#SerialAggregator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.aggregators.SerialAggregator" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="fedsim.fl.aggregators.SerialAggregator.add">
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fedsim/fl/aggregators.html#SerialAggregator.add"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.aggregators.SerialAggregator.add" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fedsim.fl.aggregators.SerialAggregator.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fedsim/fl/aggregators.html#SerialAggregator.get"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.aggregators.SerialAggregator.get" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fedsim.fl.aggregators.SerialAggregator.get_sum">
+<span class="sig-name descname"><span class="pre">get_sum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fedsim/fl/aggregators.html#SerialAggregator.get_sum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.aggregators.SerialAggregator.get_sum" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fedsim.fl.aggregators.SerialAggregator.get_weight">
+<span class="sig-name descname"><span class="pre">get_weight</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fedsim/fl/aggregators.html#SerialAggregator.get_weight"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.aggregators.SerialAggregator.get_weight" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fedsim.fl.aggregators.SerialAggregator.items">
+<span class="sig-name descname"><span class="pre">items</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fedsim/fl/aggregators.html#SerialAggregator.items"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.aggregators.SerialAggregator.items" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fedsim.fl.aggregators.SerialAggregator.pop">
+<span class="sig-name descname"><span class="pre">pop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fedsim/fl/aggregators.html#SerialAggregator.pop"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.aggregators.SerialAggregator.pop" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fedsim.fl.aggregators.SerialAggregator.pop_all">
+<span class="sig-name descname"><span class="pre">pop_all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fedsim/fl/aggregators.html#SerialAggregator.pop_all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.aggregators.SerialAggregator.pop_all" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-fedsim.fl.evaluation">
+<span id="fedsim-fl-evaluation-module"></span><h2>fedsim.fl.evaluation module<a class="headerlink" href="#module-fedsim.fl.evaluation" title="Permalink to this headline">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="fedsim.fl.evaluation.inference">
+<span class="sig-prename descclassname"><span class="pre">fedsim.fl.evaluation.</span></span><span class="sig-name descname"><span class="pre">inference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_loader</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metric_fn_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">link_fn=functools.partial(&lt;built-in</span> <span class="pre">method</span> <span class="pre">argmax</span> <span class="pre">of</span> <span class="pre">type</span> <span class="pre">object&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim=1)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device='cpu'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transform_y=None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fedsim/fl/evaluation.html#inference"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.evaluation.inference" title="Permalink to this definition">#</a></dt>
+<dd><p>to test the performance of a model on a test set.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> – model to get the predictions from</p></li>
+<li><p><strong>loader</strong> – data loader</p></li>
+<li><p><strong>metric_fn_dict</strong> – a dict of {name: fn}, fn gets (inputs, targets)</p></li>
+<li><p><strong>link_fn</strong> – to be applied on top of model output (e.g. softmax)</p></li>
+<li><p><strong>device</strong> – device (e.g., ‘cuda’, ‘&lt;gpu number&gt; or ‘cpu’)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fedsim.fl.evaluation.local_train_val">
+<span class="sig-prename descclassname"><span class="pre">fedsim.fl.evaluation.</span></span><span class="sig-name descname"><span class="pre">local_train_val</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_data_loader</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epochs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">steps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loss_fn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">optimizer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step_closure=&lt;function</span> <span class="pre">default_closure&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metric_fn_dict=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_grad_norm=1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">link_fn=functools.partial(&lt;built-in</span> <span class="pre">method</span> <span class="pre">argmax</span> <span class="pre">of</span> <span class="pre">type</span> <span class="pre">object&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim=1)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**step_ctx</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fedsim/fl/evaluation.html#local_train_val"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.evaluation.local_train_val" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-fedsim.fl.fl_algorithm">
+<span id="fedsim-fl-fl-algorithm-module"></span><h2>fedsim.fl.fl_algorithm module<a class="headerlink" href="#module-fedsim.fl.fl_algorithm" title="Permalink to this headline">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="fedsim.fl.fl_algorithm.FLAlgorithm">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">fedsim.fl.fl_algorithm.</span></span><span class="sig-name descname"><span class="pre">FLAlgorithm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_manager</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metric_logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_clients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_scheme</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_class</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epochs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loss_fn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_batch_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local_weight_decay</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clr_decay</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clr_decay_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_clr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clr_step_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_freq</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fedsim/fl/fl_algorithm.html#FLAlgorithm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.fl_algorithm.FLAlgorithm" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="fedsim.fl.fl_algorithm.FLAlgorithm.deploy">
+<span class="sig-name descname"><span class="pre">deploy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Mapping</span><span class="p"><span class="pre">[</span></span><span class="pre">Hashable</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/fedsim/fl/fl_algorithm.html#FLAlgorithm.deploy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.fl_algorithm.FLAlgorithm.deploy" title="Permalink to this definition">#</a></dt>
+<dd><p>return Mapping of name -&gt; parameters_set to test the model</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>NotImplementedError</strong> – abstract class to be implemented by child</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fedsim.fl.fl_algorithm.FLAlgorithm.get_model_class">
+<span class="sig-name descname"><span class="pre">get_model_class</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fedsim/fl/fl_algorithm.html#FLAlgorithm.get_model_class"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.fl_algorithm.FLAlgorithm.get_model_class" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fedsim.fl.fl_algorithm.FLAlgorithm.optimize">
+<span class="sig-name descname"><span class="pre">optimize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">aggregator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Mapping</span><span class="p"><span class="pre">[</span></span><span class="pre">Hashable</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/fedsim/fl/fl_algorithm.html#FLAlgorithm.optimize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.fl_algorithm.FLAlgorithm.optimize" title="Permalink to this definition">#</a></dt>
+<dd><p>optimize server mdoel(s) and return metrics to be reported</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>aggregator</strong> (<em>Any</em>) – Aggregator instance</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>NotImplementedError</strong> – abstract class to be implemented by child</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>Mapping[Hashable, Any]</em> – context to be reported</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fedsim.fl.fl_algorithm.FLAlgorithm.read_client">
+<span class="sig-name descname"><span class="pre">read_client</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fedsim/fl/fl_algorithm.html#FLAlgorithm.read_client"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.fl_algorithm.FLAlgorithm.read_client" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fedsim.fl.fl_algorithm.FLAlgorithm.read_server">
+<span class="sig-name descname"><span class="pre">read_server</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fedsim/fl/fl_algorithm.html#FLAlgorithm.read_server"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.fl_algorithm.FLAlgorithm.read_server" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fedsim.fl.fl_algorithm.FLAlgorithm.receive_from_client">
+<span class="sig-name descname"><span class="pre">receive_from_client</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client_msg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Mapping</span><span class="p"><span class="pre">[</span></span><span class="pre">Hashable</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aggregator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fedsim/fl/fl_algorithm.html#FLAlgorithm.receive_from_client"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.fl_algorithm.FLAlgorithm.receive_from_client" title="Permalink to this definition">#</a></dt>
+<dd><p>receive and aggregate info from selected clients</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>client_id</strong> (<em>int</em>) – id of the sender (client)</p></li>
+<li><p><strong>client_msg</strong> (<em>Mapping[Hashable, Any]</em>) – client context that is sent</p></li>
+<li><p><strong>aggregator</strong> (<em>Any</em>) – aggregator instance to collect info</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>NotImplementedError</strong> – abstract class to be implemented by child</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fedsim.fl.fl_algorithm.FLAlgorithm.report">
+<span class="sig-name descname"><span class="pre">report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataloaders</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metric_logger</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">optimize_reports</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Mapping</span><span class="p"><span class="pre">[</span></span><span class="pre">Hashable</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deployment_points</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Mapping</span><span class="p"><span class="pre">[</span></span><span class="pre">Hashable</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">torch.Tensor</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/fedsim/fl/fl_algorithm.html#FLAlgorithm.report"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.fl_algorithm.FLAlgorithm.report" title="Permalink to this definition">#</a></dt>
+<dd><p>test on global data and report info</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataloaders</strong> (<em>Any</em>) – dict of data loaders to test the global model(s)</p></li>
+<li><p><strong>metric_logger</strong> (<em>Any</em>) – the logging object (e.g., SummaryWriter)</p></li>
+<li><p><strong>device</strong> (<em>str</em>) – ‘cuda’, ‘cpu’ or gpu number</p></li>
+<li><p><strong>optimize_reports</strong> (<em>Mapping[Hashable, Any]</em>) – dict returned by optimzier</p></li>
+<li><p><strong>deployment_points</strong> (<em>Mapping[Hashable, torch.Tensor], optional</em>) – output of deploy method</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>NotImplementedError</strong> – abstract class to be implemented by child</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fedsim.fl.fl_algorithm.FLAlgorithm.send_to_client">
+<span class="sig-name descname"><span class="pre">send_to_client</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Mapping</span><span class="p"><span class="pre">[</span></span><span class="pre">Hashable</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/fedsim/fl/fl_algorithm.html#FLAlgorithm.send_to_client"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.fl_algorithm.FLAlgorithm.send_to_client" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>returns context to send to the client corresponding to client_id.</dt><dd><p>Do not send shared objects like server model if you made any
+before you deepcopy it.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>client_id</strong> (<em>int</em>) – id of the receiving client</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>NotImplementedError</strong> – abstract class to be implemented by child</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>Mapping[Hashable, Any]</em> – the context to be sent in form of a Mapping</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fedsim.fl.fl_algorithm.FLAlgorithm.send_to_server">
+<span class="sig-name descname"><span class="pre">send_to_server</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datasets</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Iterable</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epochs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loss_fn</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch.nn.modules.module.Module</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_decay</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'cuda'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Hashable</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Mapping</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/fedsim/fl/fl_algorithm.html#FLAlgorithm.send_to_server"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.fl_algorithm.FLAlgorithm.send_to_server" title="Permalink to this definition">#</a></dt>
+<dd><p>client operation on the recieved information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>client_id</strong> (<em>int</em>) – id of the client</p></li>
+<li><p><strong>datasets</strong> (<em>Dict[str, Iterable]</em>) – this comes from Data Manager</p></li>
+<li><p><strong>epochs</strong> (<em>int</em>) – number of epochs to train</p></li>
+<li><p><strong>loss_fn</strong> (<em>nn.Module</em>) – either ‘ce’ (for cross-entropy) or ‘mse’</p></li>
+<li><p><strong>batch_size</strong> (<em>int</em>) – training batch_size</p></li>
+<li><p><strong>lr</strong> (<em>float</em>) – client learning rate</p></li>
+<li><p><strong>weight_decay</strong> (<em>float, optional</em>) – weight decay for SGD. Defaults to 0.</p></li>
+<li><p><strong>device</strong> (<em>Union[int, str], optional</em>) – Defaults to ‘cuda’.</p></li>
+<li><p><strong>ctx</strong> (<em>Optional[Dict[Hashable, Any]], optional</em>) – context reveived from server. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>NotImplementedError</strong> – abstract class to be implemented by child</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>Mapping[str, Any]</em> – client context to be sent to the server</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fedsim.fl.fl_algorithm.FLAlgorithm.train">
+<span class="sig-name descname"><span class="pre">train</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rounds</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fedsim/fl/fl_algorithm.html#FLAlgorithm.train"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.fl_algorithm.FLAlgorithm.train" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fedsim.fl.fl_algorithm.FLAlgorithm.write_client">
+<span class="sig-name descname"><span class="pre">write_client</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fedsim/fl/fl_algorithm.html#FLAlgorithm.write_client"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.fl_algorithm.FLAlgorithm.write_client" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fedsim.fl.fl_algorithm.FLAlgorithm.write_server">
+<span class="sig-name descname"><span class="pre">write_server</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fedsim/fl/fl_algorithm.html#FLAlgorithm.write_server"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.fl_algorithm.FLAlgorithm.write_server" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-fedsim.fl.utils">
+<span id="fedsim-fl-utils-module"></span><h2>fedsim.fl.utils module<a class="headerlink" href="#module-fedsim.fl.utils" title="Permalink to this headline">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="fedsim.fl.utils.ModelReconstructor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">fedsim.fl.utils.</span></span><span class="sig-name descname"><span class="pre">ModelReconstructor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_extractor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">classifier</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connection_fn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fedsim/fl/utils.html#ModelReconstructor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.utils.ModelReconstructor" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.modules.module.Module</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="fedsim.fl.utils.ModelReconstructor.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fedsim/fl/utils.html#ModelReconstructor.forward"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.utils.ModelReconstructor.forward" title="Permalink to this definition">#</a></dt>
+<dd><p>Defines the computation performed at every call.</p>
+<p>Should be overridden by all subclasses.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Although the recipe for forward pass needs to be defined within
+this function, one should call the <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code> instance afterwards
+instead of this since the former takes care of running the
+registered hooks while the latter silently ignores them.</p>
+</div>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fedsim.fl.utils.ModelReconstructor.training">
+<span class="sig-name descname"><span class="pre">training</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#fedsim.fl.utils.ModelReconstructor.training" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fedsim.fl.utils.default_closure">
+<span class="sig-prename descclassname"><span class="pre">fedsim.fl.utils.</span></span><span class="sig-name descname"><span class="pre">default_closure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loss_fn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">optimizer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metric_fn_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_grad_norm=1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">link_fn=functools.partial(&lt;built-in</span> <span class="pre">method</span> <span class="pre">argmax</span> <span class="pre">of</span> <span class="pre">type</span> <span class="pre">object&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim=1)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device='cpu'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transform_grads=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transform_y=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fedsim/fl/utils.html#default_closure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.utils.default_closure" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fedsim.fl.utils.get_metric_scores">
+<span class="sig-prename descclassname"><span class="pre">fedsim.fl.utils.</span></span><span class="sig-name descname"><span class="pre">get_metric_scores</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metric_fn_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_true</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_pred</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fedsim/fl/utils.html#get_metric_scores"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.utils.get_metric_scores" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fedsim.fl.utils.vector_to_parameters_like">
+<span class="sig-prename descclassname"><span class="pre">fedsim.fl.utils.</span></span><span class="sig-name descname"><span class="pre">vector_to_parameters_like</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameters_like</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fedsim/fl/utils.html#vector_to_parameters_like"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.utils.vector_to_parameters_like" title="Permalink to this definition">#</a></dt>
+<dd><p>Convert one vector to new parameters like the ones provided</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>vec</strong> (<em>Tensor</em>) – a single vector represents the parameters of a model.</p></li>
+<li><p><strong>parameters</strong> (<em>Iterable[Tensor]</em>) – an iterator of Tensors that are the
+parameters of a model. This is only used to get the sizes. New
+parametere are defined.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-fedsim.fl">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-fedsim.fl" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+
+
+              </article>
+              
+
+              
+              <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="fedsim.datasets.html" title="previous page">
+      <i class="fas fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">fedsim.datasets package</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="fedsim.fl.algorithms.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">fedsim.fl.algorithms package</p>
+  </div>
+  <i class="fas fa-angle-right"></i>
+  </a>
+</div>
+              </footer>
+              
+          </div>
+          
+      </div>
+    </div>
+
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
+
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
+    &copy; Copyright 2022, Farshid Varno.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+</p>
+  </div>
+  
+</div>
+</footer>
+  </body>
+</html>

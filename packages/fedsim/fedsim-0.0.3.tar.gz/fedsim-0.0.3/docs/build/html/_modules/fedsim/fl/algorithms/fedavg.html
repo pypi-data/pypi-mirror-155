@@ -1,0 +1,466 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>fedsim.fl.algorithms.fedavg &#8212; fedsim 0.1 documentation</title>
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
+  <link rel="stylesheet"
+    href="../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="None">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
+
+    
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
+
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../../../../index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">fedsim 0.1 documentation</p>
+  
+</a>
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fas fa-bars"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../notebooks/tutorial.html">
+  Tutorial
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../modules.html">
+  fedsim
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../customization.html">
+  Customization
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../contributing.html">
+  Contributing
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../authors.html">
+  Authors
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../changelog.html">
+  ChangeLog
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
+          
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+<h3><a href="../../../../index.html">Table of Contents</a></h3>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../notebooks/tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../modules.html">fedsim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../customization.html">Customization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../authors.html">Authors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../changelog.html">ChangeLog</a></li>
+</ul>
+
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
+
+          
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+</div>
+
+
+          
+          
+          <div class="bd-content col-12 col-md-9 col-xl-7">
+              
+              <article class="bd-article" role="main">
+                
+  <h1>Source code for fedsim.fl.algorithms.fedavg</h1><div class="highlight"><pre>
+<span></span><span class="sa">r</span><span class="sd">&quot;&quot;&quot; This file contains an implementation of the following paper:</span>
+<span class="sd">    Title: &quot;Communication-Efficient Learning of Deep Networks from Decentralized Data&quot;</span>
+<span class="sd">    Authors: H. Brendan McMahan, Eider Moore, Daniel Ramage, Seth Hampson, Blaise Agüera y Arcas</span>
+<span class="sd">    Publication date: February 17th, 2016</span>
+<span class="sd">    Link: https://arxiv.org/abs/1602.05629</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
+<span class="kn">from</span> <span class="nn">torch.optim</span> <span class="kn">import</span> <span class="n">SGD</span>
+<span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">DataLoader</span><span class="p">,</span> <span class="n">RandomSampler</span>
+<span class="kn">from</span> <span class="nn">torch.nn.utils</span> <span class="kn">import</span> <span class="n">parameters_to_vector</span><span class="p">,</span> <span class="n">vector_to_parameters</span>
+
+<span class="kn">from</span> <span class="nn">fedsim.utils</span> <span class="kn">import</span> <span class="n">apply_on_dict</span>
+<span class="kn">from</span> <span class="nn">..fl_algorithm</span> <span class="kn">import</span> <span class="n">FLAlgorithm</span>
+<span class="kn">from</span> <span class="nn">..evaluation</span> <span class="kn">import</span> <span class="n">local_train_val</span><span class="p">,</span> <span class="n">inference</span><span class="p">,</span> <span class="n">default_closure</span>
+
+
+<div class="viewcode-block" id="FedAvg"><a class="viewcode-back" href="../../../../fedsim.fl.algorithms.html#fedsim.fl.algorithms.fedavg.FedAvg">[docs]</a><span class="k">class</span> <span class="nc">FedAvg</span><span class="p">(</span><span class="n">FLAlgorithm</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">data_manager</span><span class="p">,</span>
+        <span class="n">metric_logger</span><span class="p">,</span>
+        <span class="n">num_clients</span><span class="p">,</span>
+        <span class="n">sample_scheme</span><span class="p">,</span>
+        <span class="n">sample_rate</span><span class="p">,</span>
+        <span class="n">model_class</span><span class="p">,</span>
+        <span class="n">epochs</span><span class="p">,</span>
+        <span class="n">loss_fn</span><span class="p">,</span>
+        <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span>
+        <span class="n">test_batch_size</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span>
+        <span class="n">local_weight_decay</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span>
+        <span class="n">slr</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span>
+        <span class="n">clr</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+        <span class="n">clr_decay</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span>
+        <span class="n">clr_decay_type</span><span class="o">=</span><span class="s1">&#39;step&#39;</span><span class="p">,</span>
+        <span class="n">min_clr</span><span class="o">=</span><span class="mf">1e-12</span><span class="p">,</span>
+        <span class="n">clr_step_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+        <span class="n">device</span><span class="o">=</span><span class="s1">&#39;cuda&#39;</span><span class="p">,</span>
+        <span class="n">log_freq</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+        <span class="o">*</span><span class="n">args</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">FedAvg</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="n">data_manager</span><span class="p">,</span>
+            <span class="n">metric_logger</span><span class="p">,</span>
+            <span class="n">num_clients</span><span class="p">,</span>
+            <span class="n">sample_scheme</span><span class="p">,</span>
+            <span class="n">sample_rate</span><span class="p">,</span>
+            <span class="n">model_class</span><span class="p">,</span>
+            <span class="n">epochs</span><span class="p">,</span>
+            <span class="n">loss_fn</span><span class="p">,</span>
+            <span class="n">batch_size</span><span class="p">,</span>
+            <span class="n">test_batch_size</span><span class="p">,</span>
+            <span class="n">local_weight_decay</span><span class="p">,</span>
+            <span class="n">slr</span><span class="p">,</span>
+            <span class="n">clr</span><span class="p">,</span>
+            <span class="n">clr_decay</span><span class="p">,</span>
+            <span class="n">clr_decay_type</span><span class="p">,</span>
+            <span class="n">min_clr</span><span class="p">,</span>
+            <span class="n">clr_step_size</span><span class="p">,</span>
+            <span class="n">device</span><span class="p">,</span>
+            <span class="n">log_freq</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="c1"># make mode and optimizer</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_model_class</span><span class="p">()()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span>
+            <span class="n">parameters_to_vector</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">())</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span><span class="o">.</span><span class="n">detach</span><span class="p">())</span>
+        <span class="n">optimizer</span> <span class="o">=</span> <span class="n">SGD</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="p">[</span><span class="n">params</span><span class="p">],</span> <span class="n">lr</span><span class="o">=</span><span class="n">slr</span><span class="p">)</span>
+        <span class="c1"># write model and optimizer to server</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write_server</span><span class="p">(</span><span class="s1">&#39;model&#39;</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write_server</span><span class="p">(</span><span class="s1">&#39;cloud_params&#39;</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write_server</span><span class="p">(</span><span class="s1">&#39;optimizer&#39;</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">)</span>
+
+<div class="viewcode-block" id="FedAvg.send_to_client"><a class="viewcode-back" href="../../../../fedsim.fl.algorithms.html#fedsim.fl.algorithms.fedavg.FedAvg.send_to_client">[docs]</a>    <span class="k">def</span> <span class="nf">send_to_client</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client_id</span><span class="p">):</span>
+        <span class="c1"># since fedavg broadcast the same model to all selected clients,</span>
+        <span class="c1"># the argument client_id is not used</span>
+
+        <span class="c1"># load cloud stuff</span>
+        <span class="n">cloud_params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">read_server</span><span class="p">(</span><span class="s1">&#39;cloud_params&#39;</span><span class="p">)</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">read_server</span><span class="p">(</span><span class="s1">&#39;model&#39;</span><span class="p">)</span>
+
+        <span class="c1"># copy cloud params to cloud model to send to the client</span>
+        <span class="n">vector_to_parameters</span><span class="p">(</span><span class="n">cloud_params</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span><span class="o">.</span><span class="n">data</span><span class="p">,</span>
+                             <span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">())</span>
+        <span class="c1"># return a copy of the cloud model</span>
+        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="FedAvg.send_to_server"><a class="viewcode-back" href="../../../../fedsim.fl.algorithms.html#fedsim.fl.algorithms.fedavg.FedAvg.send_to_server">[docs]</a>    <span class="k">def</span> <span class="nf">send_to_server</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">client_id</span><span class="p">,</span>
+        <span class="n">datasets</span><span class="p">,</span>
+        <span class="n">epochs</span><span class="p">,</span>
+        <span class="n">loss_fn</span><span class="p">,</span>
+        <span class="n">batch_size</span><span class="p">,</span>
+        <span class="n">lr</span><span class="p">,</span>
+        <span class="n">weight_decay</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="n">device</span><span class="o">=</span><span class="s1">&#39;cuda&#39;</span><span class="p">,</span>
+        <span class="n">ctx</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">step_closure</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="o">*</span><span class="n">args</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="c1"># create a random sampler with replacement so that</span>
+        <span class="c1"># stochasticity is maximiazed and privacy is not compromized</span>
+        <span class="n">sampler</span> <span class="o">=</span> <span class="n">RandomSampler</span><span class="p">(</span>
+            <span class="n">datasets</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">],</span>
+            <span class="n">replacement</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">num_samples</span><span class="o">=</span><span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">datasets</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">])</span> <span class="o">/</span> <span class="n">batch_size</span><span class="p">)</span> <span class="o">*</span>
+            <span class="n">batch_size</span><span class="p">)</span>
+        <span class="c1"># # create train data loader</span>
+        <span class="n">train_loader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">datasets</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">],</span>
+                                  <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span>
+                                  <span class="n">sampler</span><span class="o">=</span><span class="n">sampler</span><span class="p">)</span>
+
+        <span class="n">model</span> <span class="o">=</span> <span class="n">ctx</span><span class="p">[</span><span class="s1">&#39;model&#39;</span><span class="p">]</span>
+        <span class="n">optimizer</span> <span class="o">=</span> <span class="n">SGD</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="n">lr</span><span class="p">,</span> <span class="n">weight_decay</span><span class="o">=</span><span class="n">weight_decay</span><span class="p">)</span>
+        <span class="c1"># optimize the model locally</span>
+        <span class="n">step_closure_</span> <span class="o">=</span> <span class="n">default_closure</span> <span class="k">if</span> <span class="n">step_closure</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">step_closure</span>
+        <span class="n">opt_result</span> <span class="o">=</span> <span class="n">local_train_val</span><span class="p">(</span><span class="n">model</span><span class="p">,</span>
+                                     <span class="n">train_loader</span><span class="p">,</span>
+                                     <span class="n">epochs</span><span class="p">,</span>
+                                     <span class="mi">0</span><span class="p">,</span>
+                                     <span class="n">loss_fn</span><span class="p">,</span>
+                                     <span class="n">optimizer</span><span class="p">,</span>
+                                     <span class="n">device</span><span class="p">,</span>
+                                     <span class="n">step_closure_</span><span class="p">,</span>
+                                     <span class="n">metric_fn_dict</span><span class="o">=</span><span class="p">{</span>
+                                         <span class="s1">&#39;train_accuracy&#39;</span><span class="p">:</span> <span class="n">accuracy_score</span><span class="p">,</span>
+                                     <span class="p">})</span>
+        <span class="n">num_train_samples</span><span class="p">,</span> <span class="n">num_steps</span><span class="p">,</span> <span class="n">diverged</span><span class="p">,</span> <span class="n">loss</span><span class="p">,</span> <span class="n">metrics</span> <span class="o">=</span> <span class="n">opt_result</span>
+        <span class="c1"># local test</span>
+        <span class="k">if</span> <span class="s1">&#39;test&#39;</span> <span class="ow">in</span> <span class="n">datasets</span><span class="p">:</span>
+            <span class="n">test_loader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span>
+                <span class="n">datasets</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">],</span>
+                <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span>
+                <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="n">test_metrics</span><span class="p">,</span> <span class="n">num_test_samples</span> <span class="o">=</span> <span class="n">inference</span><span class="p">(</span>
+                <span class="n">model</span><span class="p">,</span>
+                <span class="n">test_loader</span><span class="p">,</span>
+                <span class="p">{</span><span class="s1">&#39;test_accuracy&#39;</span><span class="p">:</span> <span class="n">accuracy_score</span><span class="p">},</span>
+                <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">test_metrics</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+            <span class="n">num_test_samples</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="c1"># return optimized model parameters and number of train samples</span>
+        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span>
+            <span class="n">local_params</span><span class="o">=</span><span class="n">parameters_to_vector</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">()),</span>
+            <span class="n">num_samples</span><span class="o">=</span><span class="n">num_train_samples</span><span class="p">,</span>
+            <span class="n">num_steps</span><span class="o">=</span><span class="n">num_steps</span><span class="p">,</span>
+            <span class="n">diverged</span><span class="o">=</span><span class="n">diverged</span><span class="p">,</span>
+            <span class="n">train_loss</span><span class="o">=</span><span class="n">loss</span><span class="p">,</span>
+            <span class="n">metrics</span><span class="o">=</span><span class="n">metrics</span><span class="p">,</span>
+            <span class="n">num_test_samples</span><span class="o">=</span><span class="n">num_test_samples</span><span class="p">,</span>
+            <span class="n">test_metrics</span><span class="o">=</span><span class="n">test_metrics</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="FedAvg.agg"><a class="viewcode-back" href="../../../../fedsim.fl.algorithms.html#fedsim.fl.algorithms.fedavg.FedAvg.agg">[docs]</a>    <span class="k">def</span> <span class="nf">agg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client_id</span><span class="p">,</span> <span class="n">client_msg</span><span class="p">,</span> <span class="n">aggregator</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="n">client_msg</span><span class="p">[</span><span class="s1">&#39;local_params&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">data</span>
+        <span class="n">diverged</span> <span class="o">=</span> <span class="n">client_msg</span><span class="p">[</span><span class="s1">&#39;diverged&#39;</span><span class="p">]</span>
+        <span class="n">loss</span> <span class="o">=</span> <span class="n">client_msg</span><span class="p">[</span><span class="s1">&#39;train_loss&#39;</span><span class="p">]</span>
+        <span class="n">metrics</span> <span class="o">=</span> <span class="n">client_msg</span><span class="p">[</span><span class="s1">&#39;metrics&#39;</span><span class="p">]</span>
+        <span class="n">test_metrics</span> <span class="o">=</span> <span class="n">client_msg</span><span class="p">[</span><span class="s1">&#39;test_metrics&#39;</span><span class="p">]</span>
+        <span class="n">n_ts_samples</span> <span class="o">=</span> <span class="n">client_msg</span><span class="p">[</span><span class="s1">&#39;num_test_samples&#39;</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="n">diverged</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;client </span><span class="si">{}</span><span class="s1"> diverged&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">client_id</span><span class="p">))</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;exiting ...&#39;</span><span class="p">)</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="n">aggregator</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s1">&#39;local_params&#39;</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">weight</span><span class="p">)</span>
+        <span class="n">aggregator</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s1">&#39;clients.train_loss&#39;</span><span class="p">,</span> <span class="n">loss</span><span class="p">,</span> <span class="n">weight</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">metric</span> <span class="ow">in</span> <span class="n">metrics</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">aggregator</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s1">&#39;clients.</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">),</span> <span class="n">metric</span><span class="p">,</span> <span class="n">weight</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">metric</span> <span class="ow">in</span> <span class="n">test_metrics</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">aggregator</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s1">&#39;clients.</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">),</span> <span class="n">metric</span><span class="p">,</span> <span class="n">n_ts_samples</span><span class="p">)</span>
+
+        <span class="c1"># purge client info</span>
+        <span class="k">del</span> <span class="n">client_msg</span></div>
+
+<div class="viewcode-block" id="FedAvg.receive_from_client"><a class="viewcode-back" href="../../../../fedsim.fl.algorithms.html#fedsim.fl.algorithms.fedavg.FedAvg.receive_from_client">[docs]</a>    <span class="k">def</span> <span class="nf">receive_from_client</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client_id</span><span class="p">,</span> <span class="n">client_msg</span><span class="p">,</span> <span class="n">aggregation_results</span><span class="p">):</span>
+        <span class="n">weight</span> <span class="o">=</span> <span class="n">client_msg</span><span class="p">[</span><span class="s1">&#39;num_samples&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">weight</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">client_id</span><span class="p">,</span> <span class="n">client_msg</span><span class="p">,</span> <span class="n">aggregation_results</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="n">weight</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="FedAvg.optimize"><a class="viewcode-back" href="../../../../fedsim.fl.algorithms.html#fedsim.fl.algorithms.fedavg.FedAvg.optimize">[docs]</a>    <span class="k">def</span> <span class="nf">optimize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">aggregator</span><span class="p">):</span>
+        <span class="k">if</span> <span class="s1">&#39;local_params&#39;</span> <span class="ow">in</span> <span class="n">aggregator</span><span class="p">:</span>
+            <span class="n">param_avg</span> <span class="o">=</span> <span class="n">aggregator</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;local_params&#39;</span><span class="p">)</span>
+            <span class="n">optimizer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">read_server</span><span class="p">(</span><span class="s1">&#39;optimizer&#39;</span><span class="p">)</span>
+            <span class="n">cloud_params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">read_server</span><span class="p">(</span><span class="s1">&#39;cloud_params&#39;</span><span class="p">)</span>
+            <span class="n">pseudo_grads</span> <span class="o">=</span> <span class="n">cloud_params</span><span class="o">.</span><span class="n">data</span> <span class="o">-</span> <span class="n">param_avg</span>
+            <span class="c1"># update cloud params</span>
+            <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+            <span class="n">cloud_params</span><span class="o">.</span><span class="n">grad</span> <span class="o">=</span> <span class="n">pseudo_grads</span>
+            <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+            <span class="c1"># purge aggregated results</span>
+            <span class="k">del</span> <span class="n">param_avg</span>
+        <span class="k">return</span> <span class="n">aggregator</span><span class="o">.</span><span class="n">pop_all</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="FedAvg.deploy"><a class="viewcode-back" href="../../../../fedsim.fl.algorithms.html#fedsim.fl.algorithms.fedavg.FedAvg.deploy">[docs]</a>    <span class="k">def</span> <span class="nf">deploy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="n">avg</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">read_server</span><span class="p">(</span><span class="s1">&#39;cloud_params&#39;</span><span class="p">),</span> <span class="p">)</span></div>
+
+<div class="viewcode-block" id="FedAvg.report"><a class="viewcode-back" href="../../../../fedsim.fl.algorithms.html#fedsim.fl.algorithms.fedavg.FedAvg.report">[docs]</a>    <span class="k">def</span> <span class="nf">report</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+               <span class="n">dataloaders</span><span class="p">,</span>
+               <span class="n">metric_logger</span><span class="p">,</span>
+               <span class="n">device</span><span class="p">,</span>
+               <span class="n">optimize_reports</span><span class="p">,</span>
+               <span class="n">deployment_points</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">read_server</span><span class="p">(</span><span class="s1">&#39;model&#39;</span><span class="p">)</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rounds</span>
+        <span class="n">log_fn</span> <span class="o">=</span> <span class="n">metric_logger</span><span class="o">.</span><span class="n">add_scalar</span>
+        <span class="k">if</span> <span class="n">deployment_points</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">point_name</span><span class="p">,</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">deployment_points</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="c1"># copy cloud params to cloud model to send to the client</span>
+                <span class="n">vector_to_parameters</span><span class="p">(</span><span class="n">point</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span><span class="o">.</span><span class="n">data</span><span class="p">,</span>
+                                     <span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">())</span>
+
+                <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">loader</span> <span class="ow">in</span> <span class="n">dataloaders</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                    <span class="n">metrics</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">inference</span><span class="p">(</span>
+                        <span class="n">model</span><span class="p">,</span>
+                        <span class="n">loader</span><span class="p">,</span>
+                        <span class="p">{</span>
+                            <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">.</span><span class="si">{}</span><span class="s1">_accuracy&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">point_name</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+                            <span class="n">accuracy_score</span>
+                        <span class="p">},</span>
+                        <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span>
+                    <span class="p">)</span>
+                    <span class="n">apply_on_dict</span><span class="p">(</span><span class="n">metrics</span><span class="p">,</span> <span class="n">log_fn</span><span class="p">,</span> <span class="n">global_step</span><span class="o">=</span><span class="n">t</span><span class="p">)</span>
+        <span class="n">apply_on_dict</span><span class="p">(</span><span class="n">optimize_reports</span><span class="p">,</span> <span class="n">log_fn</span><span class="p">,</span> <span class="n">global_step</span><span class="o">=</span><span class="n">t</span><span class="p">)</span></div></div>
+</pre></div>
+
+              </article>
+              
+
+              
+              <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+              </footer>
+              
+          </div>
+          
+      </div>
+    </div>
+
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
+
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
+    &copy; Copyright 2022, Farshid Varno.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+</p>
+  </div>
+  
+</div>
+</footer>
+  </body>
+</html>
