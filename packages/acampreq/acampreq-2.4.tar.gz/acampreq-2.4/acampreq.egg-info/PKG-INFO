@@ -1,0 +1,17 @@
+Metadata-Version: 1.1
+Name: acampreq
+Version: 2.4
+Summary: 给A营用户的爬虫项目
+Home-page: https://pypi.org
+Author: I_am_back
+Author-email: 2682786816@qq.com
+License: UNKNOWN
+Description: 这是提供给A营用户的post项目(可以post用户,工作室,任务,作品)。
+        
+        至少使用2.0版本！远古版本可能含有严重bug！
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.8
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Natural Language :: Chinese (Simplified)
+Classifier: Development Status :: 6 - Mature
