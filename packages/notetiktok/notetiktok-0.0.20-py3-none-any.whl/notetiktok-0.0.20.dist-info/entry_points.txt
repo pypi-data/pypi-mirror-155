@@ -1,0 +1,3 @@
+[console_scripts]
+notetiktok = notetiktok.server.cron.script:notetiktok
+
