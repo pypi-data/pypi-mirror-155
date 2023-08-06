@@ -1,0 +1,13 @@
+MANIFEST.in
+README.md
+setup.py
+sysperf/__init__.py
+sysperf/perf.py
+sysperf.egg-info/PKG-INFO
+sysperf.egg-info/SOURCES.txt
+sysperf.egg-info/dependency_links.txt
+sysperf.egg-info/entry_points.txt
+sysperf.egg-info/not-zip-safe
+sysperf.egg-info/requires.txt
+sysperf.egg-info/top_level.txt
+sysperf/templates/home.html
