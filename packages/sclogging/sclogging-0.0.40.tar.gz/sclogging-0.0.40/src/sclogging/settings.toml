@@ -1,0 +1,9 @@
+logging_path = 'C:\Logs'
+logging_level = 'WARNING'
+logging_file_level = 10
+logging_ext = 'log'
+logging_auto_create_dir = false
+logging_log_to_file = false
+color = true
+spacer = '='
+spacer_color = 'LIGHTBLACK_EX'

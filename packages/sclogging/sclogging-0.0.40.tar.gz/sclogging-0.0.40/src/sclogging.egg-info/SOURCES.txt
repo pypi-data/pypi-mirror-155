@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+src/sclogging/__init__.py
+src/sclogging/config.py
+src/sclogging/sclogging_main.py
+src/sclogging/settings.toml
+src/sclogging.egg-info/PKG-INFO
+src/sclogging.egg-info/SOURCES.txt
+src/sclogging.egg-info/dependency_links.txt
+src/sclogging.egg-info/top_level.txt
