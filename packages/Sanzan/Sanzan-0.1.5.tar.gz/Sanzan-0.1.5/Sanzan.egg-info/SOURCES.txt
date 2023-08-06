@@ -1,0 +1,13 @@
+README.md
+pyproject.toml
+setup.py
+Sanzan.egg-info/PKG-INFO
+Sanzan.egg-info/SOURCES.txt
+Sanzan.egg-info/dependency_links.txt
+Sanzan.egg-info/entry_points.txt
+Sanzan.egg-info/requires.txt
+Sanzan.egg-info/top_level.txt
+sanzan/__init__.py
+sanzan/etc.py
+sanzan/main.py
+sanzan/sz.py
