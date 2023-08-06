@@ -1,0 +1,5 @@
+[console_scripts]
+rotsim2d_calc = rotsim2d_apps.rotsim2d_calc:run
+rotsim2d_peak_picker = rotsim2d_apps.peak_picker:run
+rotsim2d_polarizations = rotsim2d_apps.polarizations:run
+rotsim2d_waiting_time = rotsim2d_apps.waiting_time:run
