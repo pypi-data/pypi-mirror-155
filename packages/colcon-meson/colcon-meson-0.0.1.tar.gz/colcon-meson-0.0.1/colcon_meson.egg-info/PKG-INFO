@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: colcon-meson
+Version: 0.0.1
+Summary: Extension for colcon to support Meson packages.
+Author: Christian Rauch
+Author-email: Rauch.Christian@gmx.de
+Maintainer: Christian Rauch
+Maintainer-email: Rauch.Christian@gmx.de
+License: Apache License, Version 2.0
+Project-URL: GitHub, https://github.com/colcon/colcon-meson
+Keywords: colcon
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# colcon-meson
+
+A colcon extension for building [Meson](https://mesonbuild.com) packages.
