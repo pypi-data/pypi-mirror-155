@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: openapi-django
+Version: 0.0.8
+Summary: OpenApi for django
+Home-page: https://gitlab.com/kappasama.ks/openapi_django
+Author: Y. Chudakov
+Author-email: kappasama.ks@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: Django (>=3.2.6)
+Requires-Dist: djantic (==0.7.0)
+
+# CHANGELOG
+## [Unreleased]
+
+---
+
+## [0.0.8] 2022-06-13
+### Featured
+- Base functional
+
+
