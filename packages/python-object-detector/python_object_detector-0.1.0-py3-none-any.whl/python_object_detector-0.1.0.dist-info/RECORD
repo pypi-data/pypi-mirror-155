@@ -1,0 +1,17 @@
+LICENSE,sha256=IqwDK6NAhk8fNhWlHiqlUdcDV_jJSR5NsBPzLD7xzt0,1069
+src/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+src/object_detector/__init__.py,sha256=Vez8_VDXjGw4iDq83sQVSyyzkyRAmWz6XxK4O6vaJQs,121
+src/object_detector/data/coco.names,sha256=M8d3YeEkzHSRE0aGXjvBIZuHwtt9DxBuM3a_XvN4WTM,624
+src/object_detector/data/yolo_colors.txt,sha256=XvaJ1vq3iTtlrD62qL0X18StMFf83ko1bCzeZVNj05g,852
+src/object_detector/data/yolov2-tiny.cfg,sha256=sZ9n-RXppBaTZ-sChhNvXbtUouvuxcYzOIWbk0VL7zU,1487
+src/object_detector/data/yolov2-tiny.weights,sha256=FvTocPGu2D8Aictpv9prU8t7KkoBchvlbq9ciZ36xF8,44948600
+src/object_detector/scan_buffer.py,sha256=etNgnBPSfxOIH1Wjha1ls4GIs7DBU3NcSkCwKrcTBhI,1057
+src/object_detector/scan_file.py,sha256=QKD_ucStdN-vHzBcY2gNfb-r0qHIRXf9Lj4UeseHsmQ,370
+src/object_detector/scan_filelist.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+src/object_detector/settings.py,sha256=Qof0CfDvhp4Cuyp8L-GpmYGdnGVz4FjKmA6zQu0PMgU,99
+src/object_detector/yolo/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+src/object_detector/yolo/yolo_detector.py,sha256=D9Z_KHS_r1U93hYTScZ43pPpcG2xj6cGIk829tCeHqU,4852
+python_object_detector-0.1.0.dist-info/LICENSE,sha256=IqwDK6NAhk8fNhWlHiqlUdcDV_jJSR5NsBPzLD7xzt0,1069
+python_object_detector-0.1.0.dist-info/WHEEL,sha256=DA86_h4QwwzGeRoz62o1svYt5kGEXpoUTuTtwzoTb30,83
+python_object_detector-0.1.0.dist-info/METADATA,sha256=Jmdcwv3N_h2HDHPzMAstMCzksMbdEsh8g2fBtTTDy58,1488
+python_object_detector-0.1.0.dist-info/RECORD,,
