@@ -1,0 +1,14 @@
+{% load gifs %}
+{% load i18n %}
+<div class="loading screen-only">
+  <div class="loading-inner">
+    <p>
+      {% loading_gif %}
+    </p>
+    <p class="lead">
+      <strong>
+        {% trans "Loading" %}
+      </strong>
+    </p>
+  </div>
+</div>
