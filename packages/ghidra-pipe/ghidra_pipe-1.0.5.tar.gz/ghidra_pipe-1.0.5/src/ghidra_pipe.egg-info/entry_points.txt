@@ -1,0 +1,2 @@
+[console_scripts]
+ghidra-pipe = scripts.ghidra_pipe:main
