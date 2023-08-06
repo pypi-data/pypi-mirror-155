@@ -1,0 +1,126 @@
+{
+    "type": "object",
+    "properties": {
+        "wkfs_id": {
+            "type": "string"
+        },
+        "account_id": {
+            "type": "string"
+        },
+        "grant_type": {
+            "type": "string"
+        },
+        "client_id": {
+            "type": "string"
+        },
+        "scope": {
+            "type": "string"
+        },
+        "wkfs_client_certificate": {
+            "type": "string"
+        },
+        "docviewer_options": {
+            "type": "object",
+            "properties": {
+                "isSummaryTrayVisibile": {
+                    "type": "boolean"
+                },
+                "isPackageMenuVisible": {
+                    "type": "boolean"
+                },
+                "isDocumentDrawerVisible": {
+                    "type": "boolean"
+                },
+                "isDocumentCompletionEnabled": {
+                    "type": "boolean"
+                },
+                "isCreateDocumentVisible": {
+                    "type": "boolean"
+                },
+                "isCreatePDFVisible": {
+                    "type": "boolean"
+                },
+                "isDocOptionsHeaderVisible": {
+                    "type": "boolean"
+                },
+                "isDocDisplayHeaderVisible": {
+                    "type": "boolean"
+                },
+                "isBackButtonDisabled": {
+                    "type": "boolean"
+                },
+                "isReadOnly": {
+                    "type": "boolean"
+                },
+                "hideSessionTimeoutErrors": {
+                    "type": "boolean"
+                },
+                "trackXPathChanges": {
+                    "type": "boolean"
+                },
+                "supportRequiredData": {
+                    "type": "boolean"
+                },
+                "mergeTransactionWithEmpty": {
+                    "type": "boolean"
+                },
+                "trackXPathChangesWithIndexAttribute": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "isSummaryTrayVisibile",
+                "isPackageMenuVisible",
+                "isDocumentDrawerVisible",
+                "isDocumentCompletionEnabled",
+                "isCreateDocumentVisible",
+                "isCreatePDFVisible",
+                "isDocOptionsHeaderVisible",
+                "isDocDisplayHeaderVisible",
+                "isBackButtonDisabled",
+                "isReadOnly",
+                "hideSessionTimeoutErrors",
+                "trackXPathChanges",
+                "supportRequiredData",
+                "mergeTransactionWithEmpty",
+                "trackXPathChangesWithIndexAttribute"
+            ]
+        },
+        "packages": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "package_or_packet": {
+                        "type": "string"
+                    },
+                    "template_xml": {
+                        "type": "string"
+                    },
+                    "wkfs_package_name": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "name",
+                "package_or_packet",
+                "template_xml",
+                "wkfs_package_name"
+            ]
+        }
+    },
+    "required": [
+        "wkfs_id",
+        "account_id",
+        "grant_type",
+        "client_id",
+        "scope",
+        "wkfs_client_certificate",
+        "docviewer_options",
+        "packages"
+    ]
+}
