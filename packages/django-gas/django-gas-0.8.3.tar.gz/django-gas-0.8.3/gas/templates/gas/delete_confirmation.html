@@ -1,0 +1,29 @@
+{% extends base_template %}
+
+{% load i18n %}
+{% load form_tags %}
+
+{% block ui_title %}{% trans "Delete confirmation" %}{% endblock %}
+
+{% block content %}
+    {% form_errors form %}
+    <p>{{ confirmation_text }}</p>
+
+    {% if show_deleted_objects %}
+        <h2>{% trans "Summary" %}</h2>
+        <ul>
+            {% for model_name, object_count in deleted_model_count.items %}
+            <li>{{ model_name|capfirst }}: {{ object_count }}</li>
+            {% endfor %}
+        </ul>
+        <h2>{% trans "Objects" %}</h2>
+        <ul>{{ deleted_objects|unordered_list }}</ul>
+    {% endif %}
+
+    <form method="post" action=".">{% csrf_token %}
+        {% block form_actions %}
+            <button  type="submit">{% trans 'Delete' %}</button>
+            <a href="{{ cancel_url }}">{% trans 'Cancel' %}</a>
+        {% endblock %}
+    </form>
+{% endblock %}

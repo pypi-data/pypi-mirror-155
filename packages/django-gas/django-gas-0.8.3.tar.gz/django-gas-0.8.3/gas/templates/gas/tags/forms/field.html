@@ -1,0 +1,16 @@
+{% load form_tags %}
+<div class="
+    form-group {{ container_class }}
+    {% if field.field.required %} required{% endif %}
+    {% if field.errors %} has-error{% endif %}
+    ">
+    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+    {{ field }}
+
+    {% if add_another_url %}
+    <a id="add_{{ field.id_for_label }}" class="add-another" onclick="return showAddAnotherPopup(this);" href="{{ add_another_url }}"><i class="fa fa-plus"></i></a>
+    {% endif %}
+
+    {% if field.help_text %}<div class="help-block">{{ field.help_text|safe }}</div>{% endif %}
+    {% if field.errors %}{{ field.errors }}{% endif %}
+</div>

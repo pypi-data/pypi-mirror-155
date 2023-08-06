@@ -1,0 +1,228 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-14 16:22+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: apps.py:8
+msgid "GAS"
+msgstr ""
+
+#: forms.py:25
+msgid "roles"
+msgstr "rolak"
+
+#: gas/config.py:6
+msgid "Users with access to gas control panel."
+msgstr "Kontrol panelera sartzeko baimena duten erabiltzaileak."
+
+#: gas/config.py:7
+msgid "Users with access to everithing inside control panel."
+msgstr "Kontrol panel guztian sartzeko baimena duten erabiltzaileak."
+
+#: gas/config.py:14 gas/users/views.py:31 gas/users/views.py:39
+#: gas/users/views.py:49 gas/users/views.py:60 gas/users/views.py:96
+#: gas/users/views.py:108
+msgid "Users"
+msgstr "Erabiltzaileak"
+
+#: gas/core/views.py:21
+msgid "Change your password"
+msgstr "Zure pasahitza aldatu"
+
+#: gas/core/views.py:22
+msgid "Password changed."
+msgstr "Pasahitza aldatuta."
+
+#: gas/users/forms.py:9 templates/gas/users/user_list.html:10
+msgid "Username"
+msgstr "Erabiltzailea"
+
+#: gas/users/forms.py:10 templates/gas/users/user_list.html:11
+msgid "Active"
+msgstr "Gaituta"
+
+#: gas/users/forms.py:12 templates/gas/users/user_list.html:12
+msgid "Roles"
+msgstr "Rolak"
+
+#: gas/users/views.py:32
+msgid "Manage users and set roles."
+msgstr "Erabiltzaileak kudeatu eta rolak ezarri."
+
+#: gas/users/views.py:34
+msgid "New user"
+msgstr "Erabiltzaile berria"
+
+#: gas/users/views.py:44
+msgid "Create user"
+msgstr "Erabiltzailea sortu"
+
+#: gas/users/views.py:45
+msgid "User created"
+msgstr "Erabiltzailea sortua"
+
+#: gas/users/views.py:50
+msgid "Create"
+msgstr "Sortu"
+
+#: gas/users/views.py:55
+msgid "Update user"
+msgstr "Erabiltzailea eguneratu"
+
+#: gas/users/views.py:56
+msgid "User updated"
+msgstr "Erabiltzailea eguneratuta"
+
+#: gas/users/views.py:62
+msgid "Update"
+msgstr "Eguneratu"
+
+#: gas/users/views.py:69
+msgid "User password updated"
+msgstr "Erabiltzailearen pasahitza eguneratuta"
+
+#: gas/users/views.py:76
+#, python-brace-format
+msgid "Change {username} user password"
+msgstr "Aldatu {username} erabiltzailearen pasahitza"
+
+#: gas/users/views.py:98 templates/gas/base.html:23
+#: templates/gas/users/user_list.html:29
+msgid "Change password"
+msgstr "Pasahitza aldatu"
+
+#: gas/users/views.py:103
+msgid "Delete user"
+msgstr "Erabiltzailea ezabatu"
+
+#: gas/users/views.py:104
+msgid "User deleted"
+msgstr "Erabiltzailea ezabatua"
+
+#: gas/users/views.py:110 templates/gas/delete_confirmation.html:20
+#: templates/gas/users/user_list.html:30
+msgid "Delete"
+msgstr "Ezabatu"
+
+#: models.py:8
+msgid "role"
+msgstr "rola"
+
+#: models.py:10
+msgid "user"
+msgstr "erabiltzailea"
+
+#: models.py:14
+msgid "user role"
+msgstr "erabiltzaile rola"
+
+#: models.py:15
+msgid "user roles"
+msgstr "erabiltzaile rolak"
+
+#: templates/gas/base.html:24
+msgid "Logout"
+msgstr "Irten"
+
+#: templates/gas/base.html:44
+msgid "Home"
+msgstr "Hasiera"
+
+#: templates/gas/base.html:66
+msgid "Close"
+msgstr "Itxi"
+
+#: templates/gas/base_form.html:23 templates/gas/delete_confirmation.html:21
+msgid "Cancel"
+msgstr "Ezeztatu"
+
+#: templates/gas/base_form.html:26
+msgid "Save"
+msgstr "Gorde"
+
+#: templates/gas/base_form.html:29
+msgid "Save and continue"
+msgstr "Gorde eta jarraitu"
+
+#: templates/gas/base_list.html:14
+msgid "Filter"
+msgstr "Iragazi"
+
+#: templates/gas/delete_confirmation.html:5
+msgid "Delete confirmation"
+msgstr "Ezabatzeko berrespena"
+
+#: templates/gas/delete_confirmation.html:10
+msgid "Summary"
+msgstr "Laburpena"
+
+#: templates/gas/delete_confirmation.html:16
+msgid "Objects"
+msgstr "Objetuak"
+
+#: templates/gas/login.html:6 templates/gas/login.html:15
+msgid "Login"
+msgstr "Sartu"
+
+#: templates/gas/tags/pagination.html:9
+msgid "Previous"
+msgstr "Aurrekoa"
+
+#: templates/gas/tags/pagination.html:13
+#, python-format
+msgid ""
+"\n"
+"            Page %(number)s of %(total)s\n"
+"            "
+msgstr ""
+"\n"
+"            %(number)s orria, %(total)s totalean\n"
+"            "
+
+#: templates/gas/tags/pagination.html:18
+msgid "Next"
+msgstr "Hurrengoa"
+
+#: templates/gas/tags/pagination.html:23
+#, python-format
+msgid ""
+"\n"
+"        From %(start)s to %(end)s of %(total_objects)s total items.\n"
+"        "
+msgstr ""
+"\n"
+"        %(total_objects)s elementuetatik %(start)s - %(end)s.\n"
+"        "
+
+#: templates/gas/users/user_list.html:28
+msgid "Edit"
+msgstr "Editatu"
+
+#: views.py:45
+msgid "Operation successful."
+msgstr "Eragiketa ongi burutu da."
+
+#: views.py:181
+#, python-brace-format
+msgid "Are you sure you want to delete {object}?"
+msgstr "Ziur zaude {object} ezabatu nahi duzula?"
+
+#: views.py:182
+#, python-brace-format
+msgid "{object} deleted."
+msgstr "{object} ezabatua."

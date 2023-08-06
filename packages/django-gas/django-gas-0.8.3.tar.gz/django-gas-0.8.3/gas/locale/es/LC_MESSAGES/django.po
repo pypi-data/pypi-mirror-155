@@ -1,0 +1,228 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-14 16:22+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: apps.py:8
+msgid "GAS"
+msgstr "GAS"
+
+#: forms.py:25
+msgid "roles"
+msgstr "roles"
+
+#: gas/config.py:6
+msgid "Users with access to gas control panel."
+msgstr "Usuarios con acceso al panel de control."
+
+#: gas/config.py:7
+msgid "Users with access to everithing inside control panel."
+msgstr "Usuarios con acceso a todo el panel de control."
+
+#: gas/config.py:14 gas/users/views.py:31 gas/users/views.py:39
+#: gas/users/views.py:49 gas/users/views.py:60 gas/users/views.py:96
+#: gas/users/views.py:108
+msgid "Users"
+msgstr "Usuarios"
+
+#: gas/core/views.py:21
+msgid "Change your password"
+msgstr "Cambiar tu contraseña"
+
+#: gas/core/views.py:22
+msgid "Password changed."
+msgstr "Contraseña cambiada."
+
+#: gas/users/forms.py:9 templates/gas/users/user_list.html:10
+msgid "Username"
+msgstr "Usuario"
+
+#: gas/users/forms.py:10 templates/gas/users/user_list.html:11
+msgid "Active"
+msgstr "Activo"
+
+#: gas/users/forms.py:12 templates/gas/users/user_list.html:12
+msgid "Roles"
+msgstr "Roles"
+
+#: gas/users/views.py:32
+msgid "Manage users and set roles."
+msgstr "Gestionar usuarios y asignar roles."
+
+#: gas/users/views.py:34
+msgid "New user"
+msgstr "Nuevo usuario"
+
+#: gas/users/views.py:44
+msgid "Create user"
+msgstr "Crear usuario"
+
+#: gas/users/views.py:45
+msgid "User created"
+msgstr "Usuario creado"
+
+#: gas/users/views.py:50
+msgid "Create"
+msgstr "Crear"
+
+#: gas/users/views.py:55
+msgid "Update user"
+msgstr "Actualizar usuario"
+
+#: gas/users/views.py:56
+msgid "User updated"
+msgstr "Usuario actualizado"
+
+#: gas/users/views.py:62
+msgid "Update"
+msgstr "Actualizar"
+
+#: gas/users/views.py:69
+msgid "User password updated"
+msgstr "Contraseña de usuario actualizada"
+
+#: gas/users/views.py:76
+#, python-brace-format
+msgid "Change {username} user password"
+msgstr "Cambiar la contraseña del usuario {username}"
+
+#: gas/users/views.py:98 templates/gas/base.html:23
+#: templates/gas/users/user_list.html:29
+msgid "Change password"
+msgstr "Cambiar contraseña"
+
+#: gas/users/views.py:103
+msgid "Delete user"
+msgstr "Borrar usuario"
+
+#: gas/users/views.py:104
+msgid "User deleted"
+msgstr "Usuario borrado"
+
+#: gas/users/views.py:110 templates/gas/delete_confirmation.html:20
+#: templates/gas/users/user_list.html:30
+msgid "Delete"
+msgstr "Borrar"
+
+#: models.py:8
+msgid "role"
+msgstr "rol"
+
+#: models.py:10
+msgid "user"
+msgstr "usuario"
+
+#: models.py:14
+msgid "user role"
+msgstr "rol de usuario"
+
+#: models.py:15
+msgid "user roles"
+msgstr "roles de usuario"
+
+#: templates/gas/base.html:24
+msgid "Logout"
+msgstr "Salir"
+
+#: templates/gas/base.html:44
+msgid "Home"
+msgstr "Inicio"
+
+#: templates/gas/base.html:66
+msgid "Close"
+msgstr "Cerrar"
+
+#: templates/gas/base_form.html:23 templates/gas/delete_confirmation.html:21
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: templates/gas/base_form.html:26
+msgid "Save"
+msgstr "Guardar"
+
+#: templates/gas/base_form.html:29
+msgid "Save and continue"
+msgstr "Guardar y continuar"
+
+#: templates/gas/base_list.html:14
+msgid "Filter"
+msgstr "Filtrar"
+
+#: templates/gas/delete_confirmation.html:5
+msgid "Delete confirmation"
+msgstr "Confirmación de borrado"
+
+#: templates/gas/delete_confirmation.html:10
+msgid "Summary"
+msgstr "Resumen"
+
+#: templates/gas/delete_confirmation.html:16
+msgid "Objects"
+msgstr "Objetos"
+
+#: templates/gas/login.html:6 templates/gas/login.html:15
+msgid "Login"
+msgstr "Login"
+
+#: templates/gas/tags/pagination.html:9
+msgid "Previous"
+msgstr "Anterior"
+
+#: templates/gas/tags/pagination.html:13
+#, python-format
+msgid ""
+"\n"
+"            Page %(number)s of %(total)s\n"
+"            "
+msgstr ""
+"\n"
+"            Página %(number)s de %(total)s\n"
+"            "
+
+#: templates/gas/tags/pagination.html:18
+msgid "Next"
+msgstr "Siguiente"
+
+#: templates/gas/tags/pagination.html:23
+#, python-format
+msgid ""
+"\n"
+"        From %(start)s to %(end)s of %(total_objects)s total items.\n"
+"        "
+msgstr ""
+"\n"
+"        De %(start)s a %(end)s de un total de %(total_objects)s items.\n"
+"        "
+
+#: templates/gas/users/user_list.html:28
+msgid "Edit"
+msgstr "Editar"
+
+#: views.py:45
+msgid "Operation successful."
+msgstr "Operación realizada."
+
+#: views.py:181
+#, python-brace-format
+msgid "Are you sure you want to delete {object}?"
+msgstr "¿Seguro que quieres borrar {object}?"
+
+#: views.py:182
+#, python-brace-format
+msgid "{object} deleted."
+msgstr "{object} borrado"

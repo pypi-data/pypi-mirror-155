@@ -1,0 +1,106 @@
+{% load i18n static gas_tags %}<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{ gas_title }} {% block header_title %}{{ header_title }}{% endblock %}</title>
+
+    {% for cssfile in css %}
+        <link href="{% static cssfile %}" rel="stylesheet" type="text/css" />
+    {% endfor %}
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    {% if not is_popup %}
+    <nav id="navbar-main" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="{% url "gas:index" %}"><img id="logo" src="{% static logo_static_url %}"></a>
+        </div>
+        <ul id="main-navigation">
+            <li>{{ user }}</li>
+            <li>
+                <a href="{% url 'gas:change_password' %}"> <i class="fas fa-key" title="{% trans "Change password" %}"></i></a>
+                <a href="{% url 'gas:logout' %}"> <i class="fas fa-times" title="{% trans "Logout" %}"></i></a>
+            </li>
+        </ul>
+    </nav>
+    {% endif %}
+
+    <div id="body">
+        {% if not is_popup %}
+        {% block sidebar %}
+            <nav id="sidebar" role="section-navigation">
+                <ul>
+                    {% show_navigation user %}
+                </ul>
+            </nav>
+        {% endblock %}
+        {% endif %}
+        <section id="content">
+            {% if not is_popup %}
+            <nav class="breadcrumb">
+                <ol>
+                    <li><a href="{% url "gas:index" %}" title="{% trans "Home" %}"><i class="fas fa-home fa-fw"></i></a></li>
+                    {% for bc_url, bc_label in breadcrumbs %}
+                        {% if bc_url %}
+                            <li><a href="{{ bc_url }}">{{ bc_label }}</a></li>
+                        {% else %}
+                            <li>{{ bc_label }}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ol>
+            </nav>
+            {% endif %}
+
+            <head>
+                <h2 class="header-title">{% block title %}{{ title }}{% endblock %}</h2>
+            </head>
+
+            <div class="main-content">
+                {% if messages %}
+                    <div id="messages">
+                        {% for message in messages %}
+                            <div class="message {% if message.tags %} {{ message.tags }}{% endif %}">
+                                {{ message|safe }}
+                                <button class="message-close" type="button"><i class="fas fa-times" title="{% trans "Close" %}"></i></button>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+                {% block help_text %}
+                    {% if help_text %}
+                        <p>{{ help_text }}</p>
+                    {% endif %}
+                {% endblock %}
+
+                {% block actions %}
+                    {% if actions %}
+                        <ul class="actions">
+                            {% for target_url, icon, label in actions %}
+                                {% if icon %}
+                                    {% if icon|slice:":2" == "fa" %}
+                                        <li><a href="{{ target_url }}"><i class="fas {{ icon }}" title="{{ label }}"></i></a></li>
+                                    {% else %}
+                                        <li><a href="{{ target_url }}" class="{{ icon }}">{{ label }}</a></li>
+                                    {% endif %}
+                                {% else %}
+                                    <li><a href="{{ target_url }}">{{ label }}</a></li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                {% endblock %}
+
+                {% block content %}
+                {% endblock %}
+            </div>
+        </section>
+    </div>
+    {% for jsfile in js %}
+        <script src="{% static jsfile %}"></script>
+    {% endfor %}
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

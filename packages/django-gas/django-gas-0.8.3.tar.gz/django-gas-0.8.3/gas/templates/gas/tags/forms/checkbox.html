@@ -1,0 +1,12 @@
+<div class="
+    form-group checkbox {{ container_class }}
+    {% if field.field.required %} required{% endif %}
+    {% if field.errors %} has-error{% endif %}
+    ">
+    <label>
+        {{ field }}
+        {{ field.label }}
+    </label>
+    {% if field.errors %}{{ field.errors }}{% endif %}
+    {% if field.help_text %}<p class="help-block">{{ field.help_text }}</p>{% endif %}
+</div>

@@ -1,0 +1,14 @@
+{% load i18n %}
+{% if form.errors %}
+    <dl class="alert alert-danger {{ container_class }}">
+        {% for error in form.non_field_errors %}
+            <dd>{{ error|striptags }}</dd>
+        {% endfor %}
+        {% for field in form %} 
+            {% if field.errors %}
+            <dt>{{ field.label }}</dt>
+            <dd>{{ field.errors|striptags }}</dd>
+            {% endif %}
+        {% endfor %}
+    </dl>
+{% endif %}

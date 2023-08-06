@@ -1,0 +1,23 @@
+{% load i18n %}
+{% load gas_tags %}
+{% if not is_submenu %}
+    <li class="nav-item">
+      <a class="nav-link" href="{% url "gas:index" %}">{% trans "Home" %}</a>
+    </li>
+{% endif %}
+{% for entry in menu %}
+{% with children=entry|get_children:user_roles %}
+    <li class="nav-item{% if children %} dropdown{% endif %}{% if entry.icon %} icon-{{ entry.icon }}{% endif %}">
+        {% if entry.url %}
+            <a href="{% url entry.url %}">{{ entry.label }}</a>
+        {% else %}
+            {{ entry.label }}
+        {% endif %}
+        {% if children %}
+            <ul>
+                {% include "gas/tags/navigation.html" with menu=children is_submenu=True %}
+            </ul>
+        {% endif %}
+    </li>
+{% endwith %}
+{% endfor %}

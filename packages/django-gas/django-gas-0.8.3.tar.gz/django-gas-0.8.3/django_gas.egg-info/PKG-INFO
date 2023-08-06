@@ -1,0 +1,204 @@
+Metadata-Version: 2.1
+Name: django-gas
+Version: 0.8.3
+Summary: An alternative to django admin
+Home-page: https://git.negromate.rocks/shagi/gas
+Author: Ales (Shagi) Zabala Alava
+Author-email: shagi@gisa-elkartea.org
+License: GPLv3
+Platform: UNKNOWN
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 3.1
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+
+GAS
+===
+
+Generic Administration Sistem, an alternative to django admin with a set
+of generic views.
+
+
+Instalation
+-----------
+
+1. Install `django-gas` package:
+
+    pip install django-gas
+
+2. Add `'gas'` to `INSTALLED_APPS`
+3. Add `gas` urls to project's `urls.py`:
+
+    import gas.sites
+
+    urlpatterns = [
+        path('control-panel/', include(gas.sites.site.urls)),
+    ]
+
+4. Run `python manage.py migrate`
+
+
+Configuration
+-------------
+
+Project settings can customize the `gas` control panel:
+
+* `GAS_TITLE`: Name of the control panel.
+* `GAS_LOGO`: Icon for the control panel.
+* `GAS_MEDIA`: A django form's Media like dict with css and js files.
+  Overrides default css and javascript.
+* `GAS_EXTRA_MEDIA`: A django form's Media like dict with css and js
+  files. Extends current css and javascript instead of overriding.
+
+The default values of those settings can be viewed in the
+`gas/gas_settings.py` file.
+
+
+Integration
+-----------
+
+Create a submodule `gas.config` in your django app. 
+
+        -\ yourapp
+            \gas
+                __init__.py
+                config.py
+            admin.py
+            models.py
+            ...
+
+Edit this `config.py` file to register your code into `gas`. For examples look
+at `gas.gas.config` and `gas.gas.users` modules.
+
+Gas comes with a basic user management. To enable this section, import
+`gas.gas.users_config` from any `gas.config` of your installed apps.
+
+To enable the urls but keep the section out of the menu, just add this to
+your `gas.config`:
+
+    site.register_urls('users', 'gas.gas.users.urls')
+
+
+Licenses
+--------
+
+The license of the code is GPLv3, but in the `gas/static/vendor` folder there
+is some external code with different licenses.
+
+Changelog
+=========
+
+0.8.3
+-----
+
+* Fix password change views
+* Show errors on delete view
+
+0.8.2
+-----
+
+* Add GASConfig.default_auto_field
+* Remove default_app_config
+* Add admin.py file
+
+0.8.1
+-----
+
+* Bugfix
+
+0.8
+---
+
+* form_actions block on delete confirmation template
+* Cancel url for GAS views
+
+0.7.3
+-----
+
+* 'show_deleted_objects' boolean attribute in GASDeleteView
+
+0.7.2
+-----
+
+* Add GET support to AjaxCommandMixin
+* Enhanced json encoder, available in AjaxCommandsMixin
+* Add Shakarina to collaborators, thanks!
+
+0.7.1
+-----
+
+* Fix login view
+* Fix initial roles in user form
+
+0.7
+---
+
+* Enhance sidebar menu
+* Use all css files on login template
+* Make user admin section optional
+* Show role description in user edit form
+
+0.6
+---
+
+* Close button for messages
+* Add locale files to package
+* Add basque translations
+
+0.5.1
+-----
+
+* Fix typo
+
+0.5
+---
+
+* Update spanish translations
+* multipart/form-data by default
+* New templatetag for pagination
+
+0.4
+---
+
+* Helper function to use SplitDateTimeField for datetimes
+* Update spanish translation
+
+0.3
+---
+
+* Allow extending GAS media files
+* Allow actions in every view
+* Enhance support for inline formsets
+* Add missing templates
+* Add help_text to gas views
+
+0.2
+---
+
+* Allow overriding base_form template controls
+* Style login
+* Fix migration
+* Add spanish translation
+* Add form.media to base_form.html
+* Fix license in setup.cfg
+
+0.1
+---
+
+Initial relase.
+
+Collaborators
+=============
+
+* Shakarina
+
+

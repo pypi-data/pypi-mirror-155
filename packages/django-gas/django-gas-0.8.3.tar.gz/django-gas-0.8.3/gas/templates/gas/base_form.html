@@ -1,0 +1,39 @@
+{% extends base_template %}
+
+{% load i18n %}
+{% load form_tags %}
+
+{% block content %}
+    <form action="." method="POST" enctype="multipart/form-data">{% csrf_token %}
+        {% if is_popup %}
+            <input type="hidden" name="_popup" value="1">
+        {% endif %}
+        {% block form_fields %}
+            {% form_errors form %}
+            {% for field in form %}
+                {% form_field field %}
+            {% endfor %}
+        {% endblock %}
+
+        {% block extra_form %}{% endblock %}
+
+        <ul class="actions">
+        {% block form_actions %}
+            {% if not is_popup %}
+                <li><a href="{{ view.get_cancel_url }}">{% trans "Cancel" %}</a></li>
+            {% endif %}
+
+            <li><button type="submit">{% trans "Save" %}</button></li>
+
+            {% if not is_popup %}
+                <li><button name="save_and_continue" type="submit">{% trans "Save and continue" %}</button></li>
+            {% endif %}
+            {% block extra_form_actions %}{% endblock %}
+        {% endblock form_actions %}
+        </ul>
+    </form>
+{% endblock %}
+
+{% block extra_js %}
+    {{ form.media }}
+{% endblock %}

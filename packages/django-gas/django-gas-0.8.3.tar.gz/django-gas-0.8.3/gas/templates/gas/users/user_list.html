@@ -1,0 +1,37 @@
+{% extends "gas/base_list.html" %}
+
+{% load i18n %}
+{% load gas_tags %}
+
+{% block listing %}
+    <table>
+        <thead>
+            <tr>
+                <th>{% trans "Username" %}</th>
+                <th>{% trans "Active" %}</th>
+                <th>{% trans "Roles" %}</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for usr in user_list %}
+                <tr>
+                    <td>{{ usr.username }}</td>
+                    <td>{{ usr.is_active|display_boolean }}</td>
+                    <td>
+                        {% for user_role in usr.user_roles.all %}
+                            <abbr title="{{ user_role.description }}">{{ user_role.role }}</abbr>{% if not forloop.last %},{% endif %}
+                        {% endfor %}
+                    </td>
+                    <td>
+                        <ul class="actions">
+                            <li><a href="{% url "gas:user_update" usr.pk %}"><i class="fas fa-edit" title="{% trans "Edit" %}"></i></a></li>
+                            <li><a href="{% url "gas:user_change_password" usr.pk %}"><i class="fas fa-key" title="{% trans "Change password" %}"></i></a></li>
+                            <li><a href="{% url "gas:user_delete" usr.pk %}"><i class="fas fa-times" title="{% trans "Delete" %}"></i></a></li>
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
