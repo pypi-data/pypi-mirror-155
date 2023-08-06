@@ -1,0 +1,16 @@
+LICENSE
+README.md
+setup.py
+pyvgmdb/__init__.py
+pyvgmdb/album.py
+pyvgmdb/artist.py
+pyvgmdb/automatic.py
+pyvgmdb/notes.py
+pyvgmdb/re_tools.py
+pyvgmdb/thread_tools.py
+pyvgmdb/utils.py
+pyvgmdb/xpaths.py
+pyvgmdb.egg-info/PKG-INFO
+pyvgmdb.egg-info/SOURCES.txt
+pyvgmdb.egg-info/dependency_links.txt
+pyvgmdb.egg-info/top_level.txt
