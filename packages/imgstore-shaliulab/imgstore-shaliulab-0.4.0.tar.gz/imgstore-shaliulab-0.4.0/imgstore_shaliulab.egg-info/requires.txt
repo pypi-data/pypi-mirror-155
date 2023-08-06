@@ -1,0 +1,10 @@
+numpy
+pandas
+pyyaml
+pytz
+tzlocal
+python-dateutil
+cv2cuda>=1.0.4
+
+[bloscpack]
+bloscpack
