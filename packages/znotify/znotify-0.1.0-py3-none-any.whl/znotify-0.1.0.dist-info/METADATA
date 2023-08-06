@@ -1,0 +1,49 @@
+Metadata-Version: 2.1
+Name: znotify
+Version: 0.1.0
+Summary: sdk for notify
+Home-page: https://github.com/ZNotify/py-sdk
+License: GPL-3.0
+Author: Zxilly
+Author-email: zhouxinyu1001@gmail.com
+Requires-Python: >=3.9,<4.0
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Natural Language :: Chinese (Simplified)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: requests (>=2.27.1,<3.0.0)
+Project-URL: Bug Tracker, https://github.com/ZNotify/py-sdk/issues
+Project-URL: Repository, https://github.com/ZNotify/py-sdk
+Description-Content-Type: text/markdown
+
+# notify-py-sdk
+
+Send notifications to [Notify](https://github.com/znotify/Notify)
+
+## Installation
+
+```bash
+pip install znotify
+```
+
+## Usage
+
+```python
+import znotify
+
+client = znotify.Client.create("user_id")
+client.send("Hello World")
+```
+
+## Development
+
+### Run tests
+
+```bash
+python -m unittest discover
+```
+
+
