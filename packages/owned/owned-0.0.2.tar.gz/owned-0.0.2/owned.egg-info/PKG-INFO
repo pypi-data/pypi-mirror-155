@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: owned
+Version: 0.0.2
+Summary: A little tool to manage secrets
+Home-page: https://github.com/thorwhalen/owned
+Author: Thor Whalen
+License: apache-2.0
+Platform: any
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+
+# owned
+A little tool to manage secrets
+
+
+To install:	```pip install owned```
+
+
