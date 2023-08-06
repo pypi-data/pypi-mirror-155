@@ -1,0 +1,41 @@
+Metadata-Version: 2.1
+Name: hbagecalculator
+Version: 8
+Summary: A VERY BASIC AGE CALCULATOR BY HB
+Home-page: https://github.com/hbbots/hb-agecalculator
+Author: HB
+Author-email: amalmohan902@gmail.com
+License: MIT
+Keywords: agecalculaor
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Education
+Classifier: Operating System :: Microsoft :: Windows :: Windows 10
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Description-Content-Type: text/markdown
+
+## HB AGE CALCULATOR 
+
+THIS IS A SIMPLE AGE CALCULTOR MODULE YOU CAN EASILY USE IT
+
+## Installation
+
+```
+pip install hbagecalculator
+```
+
+## Usage
+
+```py
+
+# INPUT METHOD (TO GET YEAR)
+import hbagecalculator
+import datetime
+Year = int(input("ENTER THE YEAR YOU WERE BORN : "))
+age= datetime.datetime.now().year-Year
+print("YOUR ARE ", age, "YEARS OLD")
+
+```
+
+
