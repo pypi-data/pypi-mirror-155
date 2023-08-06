@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+src/geojsonformer/__init__.py
+src/geojsonformer/geojsonformer.py
+src/geojsonformer.egg-info/PKG-INFO
+src/geojsonformer.egg-info/SOURCES.txt
+src/geojsonformer.egg-info/dependency_links.txt
+src/geojsonformer.egg-info/requires.txt
+src/geojsonformer.egg-info/top_level.txt
