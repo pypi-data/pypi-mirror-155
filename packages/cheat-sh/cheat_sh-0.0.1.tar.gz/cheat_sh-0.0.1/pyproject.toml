@@ -1,0 +1,22 @@
+[build-system]
+requires = [ "setuptools>=42", "wheel" ]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cheat_sh"
+version = "0.0.1"
+authors = [ {name = "Saverio", email = "personnex976@gmail.com"} ]
+readme = "README.md"
+description = "wrapper around http://cheat.sh"
+keywords = [ "cheatsh", "cheat.sh", "cht.sh" ]
+license = {text = "MIT"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [ "requests" ]
+
+[tool.setuptools.packages.find]
+where = [ "." ]
+include = [ "cheat_sh*" ]
