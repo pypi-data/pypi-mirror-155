@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/backtrader_plotly/__init__.py
+src/backtrader_plotly/plotter.py
+src/backtrader_plotly/scheme.py
+src/backtrader_plotly.egg-info/PKG-INFO
+src/backtrader_plotly.egg-info/SOURCES.txt
+src/backtrader_plotly.egg-info/dependency_links.txt
+src/backtrader_plotly.egg-info/top_level.txt
