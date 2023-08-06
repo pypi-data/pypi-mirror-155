@@ -1,0 +1,8 @@
+requests
+marshmallow
+
+[dev]
+pytest
+requests_mock
+coverage
+mypy
