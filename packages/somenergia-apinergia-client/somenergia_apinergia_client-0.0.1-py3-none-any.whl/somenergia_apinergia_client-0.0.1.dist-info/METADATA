@@ -1,0 +1,53 @@
+Metadata-Version: 2.1
+Name: somenergia-apinergia-client
+Version: 0.0.1
+Summary: SomEnergia Apinergia API Wrapper
+Home-page: https://github.com/Som-Energia/somenergia-apinergia-client
+Author: Pol Monsó Purtí
+Author-email: itcrowd@somenergia.coop
+Project-URL: Bug Tracker, https://github.com/Som-Energia/somenergia-apinergia-client/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pandas
+Requires-Dist: python-dotenv
+Provides-Extra: dev
+Requires-Dist: black ; extra == 'dev'
+Requires-Dist: pytest ; extra == 'dev'
+
+# somenergia-apinergia-client
+Package to read from SomEnergia Apinergia
+
+# Testing
+
+requires pytest>=7 given that we use pythonpath option in pyproject.toml
+
+```console
+$ pytest
+```
+
+# Packaging
+
+based on [PyPI doc](https://packaging.python.org/en/latest/tutorials/packaging-projects/) v:latest on Jun-2022
+
+```console
+$ pip install --upgrade build
+$ python3 -m build
+```
+
+It might require
+
+```console
+$ sudo apt install python3.8-venv
+```
+
+### Distribute to TestPyPi
+
+```console
+$ pip install --upgrade twine
+$ twine upload --repository testpypi dist/*
+```
+
