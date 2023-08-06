@@ -1,0 +1,27 @@
+$schema: http://json-schema.org/draft-07/schema#
+description: Localhost pool driver schema
+
+type: object
+
+properties:
+  patch-images:
+    type: array
+
+  post-install-script:
+    type: string
+
+  capabilities:
+    type: object
+
+  cost:
+    type: object
+
+  resources:
+    type: object
+
+  use-only-when-addressed:
+    type: boolean
+
+additionalProperties: false
+
+required: []

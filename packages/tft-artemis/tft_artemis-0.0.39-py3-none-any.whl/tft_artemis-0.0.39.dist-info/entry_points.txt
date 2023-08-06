@@ -1,0 +1,7 @@
+[console_scripts]
+artemis-api-server=tft.artemis.api:main
+artemis-db-init-content=tft.artemis.scripts.init_db_content:cmd_root
+artemis-dispatcher=tft.artemis.dispatcher:main
+artemis-scheduler=tft.artemis.scripts.scheduler:cmd_root
+artemis-worker=tft.artemis.scripts.worker:cmd_root
+
