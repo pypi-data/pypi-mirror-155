@@ -1,0 +1,16 @@
+LICENSE.txt
+README.md
+setup.py
+sockit/VERSION
+sockit/__init__.py
+sockit/__main__.py
+sockit/log.py
+sockit.egg-info/PKG-INFO
+sockit.egg-info/SOURCES.txt
+sockit.egg-info/dependency_links.txt
+sockit.egg-info/entry_points.txt
+sockit.egg-info/requires.txt
+sockit.egg-info/top_level.txt
+sockit/data/noun_list.txt
+sockit/data/soc_titles.json
+sockit/data/wordtrie.json

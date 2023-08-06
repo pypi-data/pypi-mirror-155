@@ -1,0 +1,2 @@
+[console_scripts]
+sockit = sockit.__main__:main
