@@ -1,0 +1,2 @@
+include requirements.txt
+recursive-include traveltask_google_artifact_registry/resources *
