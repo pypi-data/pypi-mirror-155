@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.rst
+pyproject.toml
+requirements.txt
+setup.cfg
+src/PlayerTracer.egg-info/PKG-INFO
+src/PlayerTracer.egg-info/SOURCES.txt
+src/PlayerTracer.egg-info/dependency_links.txt
+src/PlayerTracer.egg-info/requires.txt
+src/PlayerTracer.egg-info/top_level.txt
+src/playertracer/__init__.py
+src/playertracer/playertracer.py
