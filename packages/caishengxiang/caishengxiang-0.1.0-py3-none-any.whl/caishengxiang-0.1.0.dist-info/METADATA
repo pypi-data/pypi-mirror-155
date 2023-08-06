@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: caishengxiang
+Version: 0.1.0
+Summary: Python Boilerplate contains all the boilerplate you need to create a Python package.
+Home-page: https://github.com/caishengxiang
+Author: caishengxiang
+Author-email: wancheng3833@163.com
+License: UNKNOWN
+Keywords: caishengxiang
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Python: >=3.6
+Requires-Dist: requests
+
+UNKNOWN
+
