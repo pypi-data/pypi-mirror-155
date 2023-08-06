@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: jpassets
+Version: 0.0.3
+Summary: A package for adverse effects on death using VAERS
+Home-page: https://github.com/YasuharaKosuke/jpassets
+Author: KosukeYasuhara
+Author-email: s2022066@stu.musashino-u.ac.jp
+Project-URL: Bug Tracker, https://github.com/YasuharaKosuke/jpassets
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
+# jpassets
+The goal of this project is to visualize total net assets-structure of Investment trusts of countries.
+
+# How to install jpassets on Linux, MacOS, or WSL on Windows
+You may need matplotlib library.
+
+$ pip install matplotlib
+$ pip install pandas
+$ pip install jpassets.py
+
+
+# How to run 
+$ python jpassets.py
+<img src='https://github.com/YasuharaKosuke/jpassets/blob/main/Figure_1.png' height=480 width=640>
+$ python jpassets.py 2012
+<img src='https://github.com/YasuharaKosuke/jpassets/blob/main/Figure_2.png' height=480 width=640>
