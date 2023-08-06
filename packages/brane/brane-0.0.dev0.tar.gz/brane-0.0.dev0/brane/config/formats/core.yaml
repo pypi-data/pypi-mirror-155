@@ -1,0 +1,20 @@
+TXT:
+    default_extension: txt
+    module_name: TextIO
+
+CSV_builtin:
+    default_extension: csv
+    module_name: Csv
+    priority: 10
+
+JSON:
+    default_extension: json
+    module_name: Json
+
+PKL:
+    default_extension: pkl
+    module_name: Pickle
+
+WAV:
+    default_extension: wav
+    module_name: Wave

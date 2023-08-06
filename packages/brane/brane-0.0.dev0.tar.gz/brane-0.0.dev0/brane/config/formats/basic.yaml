@@ -1,0 +1,39 @@
+PNG:
+    default_extension: png
+    module_name: Pillow
+
+JPEG:
+    default_extension: jpeg
+    variation:
+        - jpg
+    module_name: Pillow
+
+CSV:
+    default_extension: csv
+    module_name: Pandas
+
+TSV:
+    default_extension: tsv
+    module_name: Pandas
+
+TOML:
+    default_extension: toml
+    module_name: Toml
+
+YAML:
+    default_extension: yaml
+    variation:
+        - yml
+    module_name: Pyyaml
+
+NPY:
+    default_extension: npy
+    module_name: Numpy
+
+NPZ:
+    default_extension: npz
+    module_name: Numpy
+
+XLSX:
+    default_extension: xlsx
+    module_name: OpenPyxl

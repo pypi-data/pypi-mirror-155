@@ -1,0 +1,15 @@
+version: dev.0
+
+targets:
+    pre_read:
+        - brane.libs.hooks.core:
+            - check_path_existence
+    post_read:
+    pre_write:
+        - brane.libs.hooks.core:
+            - create_parent_directory
+    post_write:
+    pre_readall:
+    post_readall:
+    pre_writeall:
+    post_writeall:

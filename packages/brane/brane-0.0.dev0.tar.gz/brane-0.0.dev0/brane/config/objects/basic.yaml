@@ -1,0 +1,39 @@
+PIL_Image:
+    format_name: JPEG
+    module_name: Pillow
+    object_type_info:
+        - PIL.Image
+        - Image
+    priority: 80
+
+PIL_JPEG:
+    format_name: JPEG
+    module_name: Pillow
+    object_type_info:
+        - PIL.JpegImagePlugin
+        - JpegImageFile
+    priority: 90
+
+PIL_PNG:
+    format_name: PNG
+    module_name: Pillow
+    object_type_info:
+        - PIL.PngImagePlugin
+        - PngImageFile
+    priority: 90
+
+Pandas_DataFrame:
+    format_name: CSV
+    module_name: Pandas
+    object_type_info:
+        - pandas
+        - DataFrame
+    priority: 90
+
+Pyyaml_Dict:
+    format_name: YAML
+    module_name: Pyyaml
+    object_type_info:
+        - builtins
+        - dict
+    priority: 20

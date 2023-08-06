@@ -1,0 +1,92 @@
+Pillow:
+    name: Pillow
+    module_name: PIL.Image
+
+    # [TODO]: will be repalced in the future
+    module_read_method_name: open
+
+    # [TODO]: will be repalced in the future
+    object_write_method_name: save
+
+CV2:
+    name: opencv-python
+    module_name: cv2
+
+    module_read_method_name: imread
+
+    module_write_method_name: imwrite
+    file_arg_first: true
+
+Pandas:
+    module_name: pandas
+
+    module_read_method_name: read_csv
+
+    object_write_method_name: to_csv
+    base_kwargs_write:
+        index: null
+
+Numpy:
+    # should we care about file close ?
+    module_name: numpy
+
+    module_read_method_name: load
+
+    module_write_method_name: save
+    file_arg_first: true
+
+Numpz1:
+    # should we care about file close ?
+    name: numpz1
+    module_name: numpy
+
+    module_read_method_name: load
+    transform_info:
+        - builtins
+        - dict
+
+    module_write_method_name: savez
+    file_arg_first: true
+    object_unpacking_type: mapping
+
+Numpz2:
+    # should we care about file close ?
+    name: numpz2
+    module_name: numpy
+
+    module_read_method_name: load
+    transform_info:
+        - builtins
+        - dict
+
+    module_write_method_name: savez
+    file_arg_first: true
+    object_unpacking_type: sequence
+
+Pyyaml:
+    name: PyYAML
+    module_name: yaml
+
+    file_open_for_read: true
+    module_read_method_name: safe_load
+
+    file_open_for_write: true
+    module_write_method_name: safe_dump
+    file_arg_first: false
+
+Toml:
+    module_name: toml
+
+    file_open_for_read: true
+    module_read_method_name: load
+
+    file_open_for_write: true
+    module_write_method_name: dump
+    file_arg_first: false
+
+OpenPyxl:
+    module_name: openpyxl
+
+    module_read_method_name: load_workbook
+
+    object_write_method_name: save

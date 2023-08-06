@@ -1,0 +1,11 @@
+PyYAML>=5.1
+fsspec>=2021.4.0
+
+[:python_version < "3.9"]
+typing-extensions
+
+[gcs]
+gcsfs
+
+[s3]
+s3fs
