@@ -1,0 +1,59 @@
+Metadata-Version: 2.1
+Name: nilearn-extra
+Version: 0.1.0
+Summary: Drop-in extra functionalities for nilearn (statistics for neuroimaging in Python)
+Home-page: https://github.com/morteza/nilearn-extra
+License: BSD 3-Clause
+Keywords: neuroimaging,nilearn,machine learning
+Author: Morteza Ansarinia
+Author-email: ansarinia@me.com
+Requires-Python: >=3.9,<3.11
+Classifier: License :: Other/Proprietary License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: nilearn (>=0.9.1,<0.10.0)
+Requires-Dist: scipy (>=1.8,<2.0)
+Project-URL: Repository, https://github.com/morteza/nilearn-extra
+Description-Content-Type: text/markdown
+
+# nilearn-extra
+
+**Nilearn Extra** is a small add-on for *[Nilearn](https://nilearn.github.io/) (Statistics for NeuroImaging in Python)*. It currently adds some functional connectivity measures to the mix.
+
+## Installation
+
+```bash
+pip install nilearn-extra
+```
+
+## Usage
+
+```diff
+- from nilearn.connectome import ConnectivityMeasure
++ from nilearn_extra.connectome import ConnectivityMeasure
+```
+
+## Extra Connectivity Matrices
+
+Nilearn Extra supports two additional connectivity matrices:
+- Chatterjee XiCorr (`kind="chatterjee"`) is a new correlation coefficient as described in [Chatterjee (2019)](https://arxiv.org/abs/1909.10140).
+- Transfer Entropy (`kind="transfer entropy"`) between regions X and Y is amount of uncertainty reduced in Y by knowing the past values of X. Note that transfer entropy is a asymmetric measure, so is the connectivity matrix.
+
+# Optional dependencies
+
+```bash
+# for transfer entropy connectivity
+pip install pyinform
+```
+
+## Contributing
+
+We use GitHub to fork and manage pull requests.
+
+## License
+
+BSD 3-Clause License. See the [LICENSE](LICENSE) file.
+
