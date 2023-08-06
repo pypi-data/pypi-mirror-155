@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: yangyuan-pkg-learn
+Version: 0.0.1
+Summary: The first example pkg build for learn
+Home-page: https://github.com/yangyuan0107/packaging_tutorial
+Author: Yuan Yang
+Author-email: messiyuan16@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent 
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# packaging_tutorial
+This is a simple example pkg for leaning to upload codes to PyPi
