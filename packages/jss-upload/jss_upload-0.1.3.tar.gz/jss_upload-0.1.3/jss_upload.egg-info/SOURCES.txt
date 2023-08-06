@@ -1,0 +1,14 @@
+LICENSE
+README.md
+setup.py
+jss_upload/__init__.py
+jss_upload/bucket.py
+jss_upload/client.py
+jss_upload/config.py
+jss_upload/jss.py
+jss_upload/object.py
+jss_upload/utils.py
+jss_upload.egg-info/PKG-INFO
+jss_upload.egg-info/SOURCES.txt
+jss_upload.egg-info/dependency_links.txt
+jss_upload.egg-info/top_level.txt
