@@ -1,0 +1,3 @@
+[flake8.extension]
+CGX=flake8_cgx:CGXTreeChecker
+
