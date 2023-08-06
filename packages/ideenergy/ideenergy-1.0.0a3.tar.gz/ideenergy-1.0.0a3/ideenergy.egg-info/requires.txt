@@ -1,0 +1,5 @@
+aiohttp
+attrs==21.2.0
+
+[mqtt]
+paho-mqtt>=1.6.1

@@ -1,0 +1,3 @@
+[console_scripts]
+ideenergy = ideenergy.cli:main
+ideenergy-mqtt = ideenergy.mqtt:main
