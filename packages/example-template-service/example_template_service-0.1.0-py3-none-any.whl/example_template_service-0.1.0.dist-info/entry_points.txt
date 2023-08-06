@@ -1,0 +1,4 @@
+[console_scripts]
+example_template_service_web_start=example_template_service.run:run_cli
+run-cli=example_template_service.run:run_cli
+
