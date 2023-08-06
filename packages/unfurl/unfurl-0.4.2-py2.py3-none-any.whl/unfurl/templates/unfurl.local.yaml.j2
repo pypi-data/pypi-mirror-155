@@ -1,0 +1,50 @@
+#jinja2: variable_start_string: '[%', variable_end_string: '%]'
+apiVersion: unfurl/v1alpha1
+kind: Project
+# this file is including into unfurl.yaml but is listed in .gitignore
+# so you can add configuration that you don't want committed to the repository,
+# such as secrets, local settings, and local ensembles.
+environments:
+ defaults:
+    # use "variables" to modify environment variables
+    # keys are processed in order and a leader "+" and "-"
+    # will copy or remove the variable from the environment
+    # e.g.:
+    # variables:
+    #   -*:       # will remove all environment variables
+    #   +HOME:    # will add HOME back
+    #   FOO: bar  # set FOO
+    variables: {}
+
+    {%- if vaultpass %}
+    # make sure you keep this password in a safe place as this file isn't committed to the repository.
+    secrets:
+      vault_secrets:
+        +%: merge # directive to merge this with other "vault_secrets" (by default secrets will be replaced)
+        [% vaultid | default("default") %]: "[% vaultpass %]"
+      # Note: The UNFURL_VAULT_[% vaultid | default("default") | upper %]_PASSWORD environment variable overrides this.
+    {% endif %}
+
+{% if default_context | default("") %}
+# This sets the default environment to use for new ensembles created in this project.
+default_environment: [%default_context%]
+{% endif %}
+
+{%if manifestPath %}
+# This lists ensembles managed by this project
+# (note that they can be located in a different project)
+# Ensembles contained in local repositories (without a remote git origin) appear here instead of the main file.
+ensembles:
+  - file: [%manifestPath%]
+    default: true
+    {%- if external | default("") %}
+    # the ensemble is located in a different project
+    project: [%external%]
+    {% endif -%}
+    {% if context | default("") %}
+    environment: [%context%]
+    {% else %}
+    # uncomment to associate this ensemble with an environment
+    # environment: your_environment
+    {% endif %}
+{% endif %}
