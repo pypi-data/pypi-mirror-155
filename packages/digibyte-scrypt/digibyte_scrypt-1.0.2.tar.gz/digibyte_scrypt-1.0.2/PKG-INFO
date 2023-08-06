@@ -1,0 +1,42 @@
+Metadata-Version: 2.1
+Name: digibyte_scrypt
+Version: 1.0.2
+Summary: Bindings for scrypt proof of work used by DigiByte
+Home-page: https://pypi.org/project/digibyte_scrypt
+Maintainer: YoshiJaeger
+Maintainer-email: pypi@jaeger.berlin
+License: GPLv3
+Description: # DigiByte Scrypt (Python Bindings)
+        
+        ## Install
+        
+        ```bash
+        pip3 install digibyte_scrypt
+        ```
+        
+        ## Usage
+        
+        ```python
+        import digibyte_scrypt
+        
+        digibyte_scrypt.calcPoW(...)
+        ```
+        
+        ## Changelog
+        `1.0.2`
+        - Version `1.0.2` does not rely on `pypandoc` anymore as the new `setuptools` can handle markdown just well
+        
+        `1.0.0` Initial Development
+        
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.10
+Description-Content-Type: text/markdown
