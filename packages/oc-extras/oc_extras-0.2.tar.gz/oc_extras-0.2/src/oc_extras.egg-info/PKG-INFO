@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: oc-extras
+Version: 0.2
+Summary: Common functions related to use of OmegaConf
+Home-page: https://github.com/shagunsodhani/oc_extras
+Author: Shagun Sodhani
+Author-email: sshagunsodhani@gmail.com
+Project-URL: Bug Tracker, https://github.com/pypa/shagunsodhani/oc_extras/issues
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# oc_extras
+Common functions related to use of OmegaConf
