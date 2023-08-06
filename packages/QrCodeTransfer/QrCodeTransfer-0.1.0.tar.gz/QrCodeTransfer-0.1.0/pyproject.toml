@@ -1,0 +1,18 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "QrCodeTransfer"
+authors = [{name = "cosmore", email = "icosmore@foxmail.com"}]
+license = {file = "LICENSE"}
+classifiers = ["License :: OSI Approved :: MIT License"]
+
+dynamic = ["version", "description"]
+
+dependencies = [
+    "pyzbar >= 0.1.9",
+    "PIL >= 8.1.0",
+    "pyqrcode",
+    "PyQt5"
+]

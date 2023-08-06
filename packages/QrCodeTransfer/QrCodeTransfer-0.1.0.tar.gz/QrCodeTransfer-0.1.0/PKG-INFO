@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: QrCodeTransfer
+Version: 0.1.0
+Summary: To send and receive data transmitted by QR code.
+Author-email: cosmore <icosmore@foxmail.com>
+Classifier: License :: OSI Approved :: MIT License
+Requires-Dist: pyzbar >= 0.1.9
+Requires-Dist: PIL >= 8.1.0
+Requires-Dist: pyqrcode
+Requires-Dist: PyQt5
