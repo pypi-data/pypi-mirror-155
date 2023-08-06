@@ -1,0 +1,17 @@
+LICENCE.md
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+m3u_serializer/__init__.py
+m3u_serializer/exceptions.py
+m3u_serializer/reader.py
+m3u_serializer/record.py
+m3u_serializer/util.py
+m3u_serializer/version.py
+m3u_serializer/writer.py
+m3u_serializer.egg-info/PKG-INFO
+m3u_serializer.egg-info/SOURCES.txt
+m3u_serializer.egg-info/dependency_links.txt
+m3u_serializer.egg-info/requires.txt
+m3u_serializer.egg-info/top_level.txt
