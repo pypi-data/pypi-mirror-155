@@ -1,0 +1,17 @@
+.bumpversion.cfg
+CHANGELOG.md
+LICENSE
+MANIFEST.in
+README.md
+RELEASING.md
+setup.py
+ipypandex/__init__.py
+ipypandex/_version.py
+ipypandex/uninstall.py
+ipypandex.egg-info/PKG-INFO
+ipypandex.egg-info/SOURCES.txt
+ipypandex.egg-info/dependency_links.txt
+ipypandex.egg-info/requires.txt
+ipypandex.egg-info/top_level.txt
+ipypandex/tests/echo_pandas.py
+ipypandex/tests/test_startup.py

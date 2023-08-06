@@ -1,0 +1,38 @@
+Metadata-Version: 2.1
+Name: ipypandex
+Version: 0.2.2
+Summary: A package for automatically turning on Data Explorer in Pandas for an IPython Jupyter kernel.
+Home-page: https://github.com/nteract/ipypandex
+Author: nteract contributors
+Author-email: nteract@googlegroups.com
+License: BSD
+Project-URL: Funding, https://nteract.io
+Project-URL: Source, https://github.com/nteract/ipypandex/
+Project-URL: Tracker, https://github.com/nteract/ipypandex/issues
+Keywords: jupyter nteract notebook dataframe d3
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Provides-Extra: test
+License-File: LICENSE
+
+# ipypandex
+A package for automatically turning on Data Explorer in Pandas for an IPython Jupyter kernel.
+
+## Installing
+
+To install `ipypandex` run: `python setup.py install`.
+
+## Uninstalling
+
+`ipypandex` installs a startup script for IPython that will not be uninstalled by `pip` or other package managers. To remove this run: `python ipypandex/uninstall.py`.
+
