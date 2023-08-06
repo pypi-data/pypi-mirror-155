@@ -1,0 +1,46 @@
+Metadata-Version: 2.1
+Name: basicpycalc
+Version: 1.1
+Summary: This is a clock extension which creates a basic clock using a few modules. If you have any questions, mail me at - ananyo.bhattacharya2010@gmail.com
+Home-page: UNKNOWN
+Author: Ananyo Bhattacharya
+Author-email: ananyo.bhattacharya2010@gmail.com
+License: MIT
+Keywords: calculator
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Education
+Classifier: Operating System :: Microsoft :: Windows :: Windows 10
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+License-File: LICENSE.txt
+Requires-Dist: tkinter
+Requires-Dist: tkinter.ttk
+Requires-Dist: time
+
+--- README ---
+
+This is a clock extension which creates a basic clock using a few modules. 
+If you have any questions, mail me at - 
+ananyo.bhattacharya2010@gmail.com
+
+Make sure to keep up with the changes!
+
+--- END OF README ---
+
+--- CHANGELOG ---
+
+==============================
+- Version 1.0 (21 June, 2022)
+==============================
+
+--- END OF CHANGELOG ---
+
+Copyright 2022 Ananyo Bhattacharya
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
