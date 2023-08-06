@@ -1,0 +1,14 @@
+MANIFEST.in
+README.md
+setup.py
+jeckin/__init__.py
+jeckin/injector.py
+jeckin/main.py
+jeckin/sshclient.py
+jeckin/template-config.ini
+jeckin/tunnel.py
+jeckin.egg-info/PKG-INFO
+jeckin.egg-info/SOURCES.txt
+jeckin.egg-info/dependency_links.txt
+jeckin.egg-info/entry_points.txt
+jeckin.egg-info/top_level.txt
