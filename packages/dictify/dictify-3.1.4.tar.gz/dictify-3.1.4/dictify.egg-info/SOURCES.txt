@@ -1,0 +1,9 @@
+LICENSE
+pyproject.toml
+setup.cfg
+./dictify/__init__.py
+./dictify/test.py
+dictify.egg-info/PKG-INFO
+dictify.egg-info/SOURCES.txt
+dictify.egg-info/dependency_links.txt
+dictify.egg-info/top_level.txt
