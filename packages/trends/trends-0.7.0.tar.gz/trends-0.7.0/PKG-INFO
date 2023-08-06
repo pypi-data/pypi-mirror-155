@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: trends
+Version: 0.7.0
+Summary: Generate and study quasi-monotonic sequences.
+License: MIT
+Author: Jeffrey S. Haemer
+Author-email: jeffrey.haemer@gmail.com
+Requires-Python: >=3.8,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: nbsphinx (>=0.8.8,<0.9.0)
+Requires-Dist: python-decouple (>=3.6,<4.0)
