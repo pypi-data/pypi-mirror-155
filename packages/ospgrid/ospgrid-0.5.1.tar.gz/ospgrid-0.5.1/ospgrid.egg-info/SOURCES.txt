@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+ospgrid/__init__.py
+ospgrid/grid.py
+ospgrid/post.py
+ospgrid/utils.py
+ospgrid.egg-info/PKG-INFO
+ospgrid.egg-info/SOURCES.txt
+ospgrid.egg-info/dependency_links.txt
+ospgrid.egg-info/requires.txt
+ospgrid.egg-info/top_level.txt
+tests/__init__.py
+tests/test_basic.py
