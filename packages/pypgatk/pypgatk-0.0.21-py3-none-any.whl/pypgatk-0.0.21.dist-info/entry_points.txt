@@ -1,0 +1,3 @@
+[console_scripts]
+pypgatk = pypgatk.pypgatk_cli:main
+
