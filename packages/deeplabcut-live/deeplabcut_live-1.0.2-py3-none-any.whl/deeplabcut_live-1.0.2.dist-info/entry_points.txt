@@ -1,0 +1,4 @@
+[console_scripts]
+dlc-live-benchmark=dlclive.benchmark:main
+dlc-live-test=dlclive.check_install.check_install:main
+
