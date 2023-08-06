@@ -1,0 +1,12 @@
+            <div class="messages">
+                {% for message in messages -%}
+                    {% set msg_class='alert alert-danger' -%}
+                    {% if message.tags -%}
+                        {% set msg_class = tpl.add_css_classes(msg_class, message.tags) -%}
+                    {% endif -%}
+                <div class="{{ msg_class}}">
+                    {{ message }}
+                    <a class="close"><button is="dismiss-alert"></button></a>
+                </div>
+                {% endfor -%}
+            </div>

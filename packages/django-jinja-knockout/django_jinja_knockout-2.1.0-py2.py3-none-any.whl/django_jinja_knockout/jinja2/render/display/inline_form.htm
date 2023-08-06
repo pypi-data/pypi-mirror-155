@@ -1,0 +1,12 @@
+{# @note: Also called in forms.set_knockout_template #}
+{# DisplayText fields may use tr/td when displaying as tables or div when embedded into "normal" forms. #}
+{% if formset_index == 0 -%}
+<tr>
+    <th colspan="2">{{ opts.inline_title }}</th>
+</tr>
+{% else -%}
+<tr>
+    <th colspan="2"></th>
+</tr>
+{% endif -%}
+{{ form._renderer['body']() }}

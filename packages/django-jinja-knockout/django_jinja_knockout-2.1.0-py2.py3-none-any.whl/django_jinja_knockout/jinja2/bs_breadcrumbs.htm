@@ -1,0 +1,33 @@
+{% macro bs_breadcrumbs(title=None, navs=None, menu_attrs=None) -%}
+{% if navs is none -%}
+    {% set navs = {} -%}
+{% endif -%}
+{% if menu_attrs is none -%}
+    {% set menu_attrs = {'class': 'breadcrumb'} -%}
+{% endif -%}
+<ol{{ tpl.json_flatatt(menu_attrs) }}>
+    {% if title is not none -%}
+    <li class="bold pr-2 pe-2">{{ title }}:</li>
+    {% endif -%}
+    {% for nav in navs -%}
+    {% do tpl.add_css_classes_to_dict(nav.atts, 'breadcrumb-item') -%}
+    <li {{ tpl.json_flatatt(nav.atts) }}>
+        {% if tpl.has_css_classes_in_dict(nav.atts, 'active') -%}
+        {{ nav.text }}
+        {% else -%}
+        <a href="{{ nav.url }}">{{ nav.text }}</a>
+        {% endif -%}
+    </li>
+    {% endfor -%}
+</ol>
+{% endmacro -%}
+{% if _render_ -%}
+    {% if not isinstance(_render_, dict) -%}
+        {% set _render_ = {
+            'title': title or None,
+            'navs': navs or None,
+            'menu_attrs': menu_attrs or None,
+        } -%}
+    {% endif -%}
+    {{ bs_breadcrumbs(**_render_) }}
+{% endif -%}

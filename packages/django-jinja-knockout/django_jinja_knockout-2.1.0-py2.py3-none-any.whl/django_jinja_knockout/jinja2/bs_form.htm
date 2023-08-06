@@ -1,0 +1,24 @@
+{% macro bs_form(form, action, opts, method='post') -%}
+{% if not opts -%}
+    {% set opts = {} -%}
+{% endif -%}
+{% if not opts.class -%}
+    {% do opts.update({'class': ''}) -%}
+{% endif -%}
+{{ render_form(request, 'standalone', form, {
+    'action': action,
+    'caller': caller,
+    'opts': opts,
+    'method': method,
+}) }}
+{% endmacro -%}
+{% if _render_ -%}
+    {% if not isinstance(_render_, dict) -%}
+        {% set _render_ = {
+            'form': form,
+            'action': action,
+            'opts': opts,
+        } -%}
+    {% endif -%}
+    {{ bs_form(**_render_) }}
+{% endif -%}

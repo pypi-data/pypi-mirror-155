@@ -1,0 +1,122 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# FULL NAME <EMAIL@ADDRESS>, 2015.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-26 16:10+0300\n"
+"PO-Revision-Date: 2015-10-28 12:09+0300\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Gtranslator 2.91.6\n"
+
+msgid "Yes"
+msgstr "Si"
+
+msgid "No"
+msgstr "No"
+
+msgid "Home"
+msgstr "Inicio"
+
+msgid "First page"
+msgstr "Primera pagina"
+
+msgid "Previous"
+msgstr "Anterior"
+
+#, python-format
+msgid "Page %(number)d of %(numpages)d"
+msgstr "Pagina %(number)d de %(numpages)d"
+
+msgid "Next"
+msgstr "Siguiente"
+
+msgid "Last page"
+msgstr "Ultima pagina"
+
+#, python-format
+msgid "Add \"%(verbose_name)s\""
+msgstr "Añadir \"%(verbose_name)s\""
+
+msgid "Close"
+msgstr "Cerrar"
+
+msgid "Delete non-builtin records"
+msgstr "Borrar registros no embebidos"
+
+msgid "Access to current url is denied"
+msgstr "Se deniega el acceso a la url actual"
+
+#, python-format
+msgid "Error \"%(code)s\" \"%(msg)s\" while sending email."
+msgstr "Error \"%(code)s\" \"%(msg)s\" enviado email."
+
+msgid "Move"
+msgstr "Mover"
+
+msgid "Unknown action"
+msgstr "Accion desconocida"
+
+msgid "Action \"{}\" is not implemented"
+msgstr "La accion \"{}\" no esta implementada"
+
+#, python-format
+msgid "Action \"%(action)s\" is not allowed"
+msgstr "La accion \"%(action)s\" no esta permitida"
+
+#, python-format
+msgid "There is no \"%(heading)s\" to display."
+msgstr "No hay \"%(heading)s\" que mostrar."
+
+#, python-format
+msgid "There is no \"%(heading)s\" with %(filters_str)s to display."
+msgstr "No hay \"%(heading)s\" con %(filters_str)s a mostrar."
+
+msgid "Not allowed filter field: \"{}\""
+msgstr "No se permite filtrar por campo: \"{}\""
+
+msgid "Not allowed sorting order: \"{}\""
+msgstr "No se permite ordenar por: \"{}\""
+
+msgid "Invalid value of sorting order: {}"
+msgstr "Valor invalido de ordenacion: {}"
+
+msgid "Invalid value of list filter: {}"
+msgstr "Valor invalido de la lista de filtros {}"
+
+msgid "Invalid type of sorting order"
+msgstr "Tipo invalido de ordenacion"
+
+msgid "Invalid type of list filter"
+msgstr "Tipo invalido de filtro de lista"
+
+msgid "Cannot determine the type of filter for the field \"{}\""
+msgstr "No se puede determinar el tipo de filtro para el campo \"{}\""
+
+msgid "Unsupported field lookup for filter field '%(field)s'"
+msgstr "Busqueda en el campo no soportada para campo de filtro '%(field)s'"
+
+msgid "Rows per page"
+msgstr "Filas por pagina"
+
+msgid "Highlight mode"
+msgstr "Modo de resaltado"
+
+#, python-format
+msgid "No %(verbose_name)s found matching the query for the selected filters"
+msgstr "No se encontro %(verbose_name)s que coincida con los filtros seleccionados"
+
+#, python-format
+msgid "Please wait until the query is loading"
+msgstr "Por favor espere mientra se cargan los datos"

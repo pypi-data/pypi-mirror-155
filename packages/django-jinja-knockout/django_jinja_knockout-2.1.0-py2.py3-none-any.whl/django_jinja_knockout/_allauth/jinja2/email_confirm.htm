@@ -1,0 +1,33 @@
+{% extends "base.htm" %}
+{% from 'bs_page_header.htm' import bs_page_header with context %}
+
+{% block main %}
+{{ bs_page_header(page_context.get_view_title()) }}
+
+{% if confirmation %}
+
+{% set card_title=_(
+    'Please confirm that <a href="mailto:%(email)s">%(email)s</a> is an e-mail address for user %(user_display)s.',
+    user_display=confirmation.email_address.user,
+    email=confirmation.email_address.email
+) %}
+
+<card-default>
+    <card-header>
+        <card-title>{{ card_title }}</card-title>
+    </card-header>
+    <card-body>
+        <form role="form" method="post" action="{{ tpl.url('account_confirm_email', confirmation.key) }}">
+            <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+            <button class="btn btn-primary" type="submit">{{ _('Confirm') }}</button>
+        </form>
+    </card-body>
+</card-default>
+
+{% else %}
+
+<p>{{ _('This e-mail confirmation link expired or is invalid. Please <a href="%(email_url)s">issue a new e-mail confirmation request</a>.', email_url=tpl.url('account_email')) }}</p>
+
+{% endif %}
+
+{% endblock main %}

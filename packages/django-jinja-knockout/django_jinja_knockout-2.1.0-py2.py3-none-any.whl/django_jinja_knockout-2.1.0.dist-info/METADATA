@@ -1,0 +1,202 @@
+Metadata-Version: 2.1
+Name: django-jinja-knockout
+Version: 2.1.0
+Summary: Django AJAX ModelForms. Read-only display ModelForms. Django AJAX datatables with CRUD and custom actions. Supports Django Templates.
+Home-page: https://github.com/Dmitri-Sintsov/django-jinja-knockout
+Author: Dmitriy Sintsov
+Author-email: questpc256@gmail.com
+License: LGPL-3.0
+Keywords: django,jinja,knockout.js,ajax,forms,datatable,datatables,datagrid
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+License-File: AUTHORS.rst
+Requires-Dist: django (>=2.2.0)
+Requires-Dist: Jinja2
+Requires-Dist: bleach
+Requires-Dist: lxml
+Requires-Dist: ensure
+Requires-Dist: sqlparse
+Requires-Dist: pytz
+
+=====================
+django-jinja-knockout
+=====================
+
+.. _custom elements: https://github.com/Dmitri-Sintsov/django-jinja-knockout/blob/master/django_jinja_knockout/static/djk/js/elements.js
+.. _renderValue: https://github.com/Dmitri-Sintsov/django-jinja-knockout/search?q=renderValue&unscoped_q=renderValue
+.. _renderNestedList: https://django-jinja-knockout.readthedocs.io/en/latest/datatables.html#nested-verbose-field-names
+.. _Bootstrap 3: https://github.com/Dmitri-Sintsov/djk-bootstrap3
+.. _Bootstrap 4: https://github.com/Dmitri-Sintsov/djk-bootstrap4
+.. _Bootstrap 5: https://github.com/Dmitri-Sintsov/djk-bootstrap5
+.. _data-bind: https://knockoutjs.com/documentation/binding-syntax.html
+.. _datatables: https://django-jinja-knockout.readthedocs.io/en/latest/datatables.html
+.. _django_deno: https://github.com/Dmitri-Sintsov/django-deno
+.. _django-jinja-knockout python localization: https://poeditor.com/join/project/9hqQrFEdDM
+.. _django-jinja-knockout javascript localization: https://poeditor.com/join/project/049HWzP3eb
+.. _empty_form: https://docs.djangoproject.com/en/dev/topics/forms/formsets/#empty-form
+.. _es6 modules: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
+.. _FilteredRawQuerySet: https://django-jinja-knockout.readthedocs.io/en/latest/query.html#filteredrawqueryset
+.. _ForeignKeyGridWidget: https://django-jinja-knockout.readthedocs.io/en/latest/widgets.html#foreignkeygridwidget
+.. _ForeignKeyRawIdWidget: https://github.com/django/django/search?l=Python&q=ForeignKeyRawIdWidget
+.. _get_absolute_url: https://github.com/Dmitri-Sintsov/django-jinja-knockout/search?l=Python&q=get_absolute_url
+.. _Jinja2: http://jinja.pocoo.org/docs/dev/
+.. _kiwnix: https://github.com/Dmitri-Sintsov/django-jinja-knockout/commits?author=kiwnix
+.. _Knockout.js: http://knockoutjs.com/
+.. _ListView: https://docs.djangoproject.com/en/dev/ref/class-based-views/generic-display/#listview
+.. _ListRangeFilter: https://github.com/Dmitri-Sintsov/django-jinja-knockout/search?q=ListRangeFilter&type=code
+.. _ListSortingView: https://django-jinja-knockout.readthedocs.io/en/latest/views.html#listsortingview
+.. _KoGridView: https://django-jinja-knockout.readthedocs.io/en/latest/datatables.html
+.. _ListQuerySet: https://django-jinja-knockout.readthedocs.io/en/latest/query.html#listqueryset
+.. _many to many relationships: https://docs.djangoproject.com/en/dev/topics/db/examples/many_to_many/
+.. _ModelForm: https://docs.djangoproject.com/en/dev/topics/forms/modelforms/#modelform
+.. _MultipleKeyGridWidget: https://django-jinja-knockout.readthedocs.io/en/latest/datatables.html#multiplekeygridwidget
+.. _Nested components: https://django-jinja-knockout.readthedocs.io/en/latest/clientside.html#clientside-nested-components
+.. _ObjDict: https://github.com/Dmitri-Sintsov/django-jinja-knockout/search?l=Python&q=objdict
+.. _PageContext: https://django-jinja-knockout.readthedocs.io/en/latest/context_processors.html#pagecontext-page-context
+.. _pageRouteKwargsKeys: https://github.com/Dmitri-Sintsov/django-jinja-knockout/search?l=Python&q=pageRouteKwargsKeys&type=code
+.. _pageRouteKwargsKeys example: https://github.com/Dmitri-Sintsov/djk-sample/search?q=pageRouteKwargsKeys&type=code
+.. _prefetch_related(): https://docs.djangoproject.com/en/dev/ref/models/querysets/#django.db.models.Prefetch
+.. _sample project: https://github.com/Dmitri-Sintsov/djk-sample
+.. _SystemJS: https://github.com/systemjs/systemjs
+.. _TemplateResponse: https://docs.djangoproject.com/en/dev/ref/template-response/
+.. _terser: https://terser.org
+.. _UrlPath: https://github.com/Dmitri-Sintsov/djk-sample/search?l=Python&q=UrlPath
+.. _viewmodels: https://django-jinja-knockout.readthedocs.io/en/latest/viewmodels.html
+
+.. image:: https://badge.fury.io/py/django-jinja-knockout.png
+   :alt: PyPI package
+   :target: https://badge.fury.io/py/django-jinja-knockout
+
+.. image:: https://readthedocs.org/projects/django-jinja-knockout/badge/?version=latest
+    :alt: Documentation Status
+    :target: https://django-jinja-knockout.readthedocs.io/en/latest/?badge=latest
+
+.. image:: https://icons.iconarchive.com/icons/dtafalonso/android-lollipop/24/Youtube-icon.png
+    :alt: Watch selenium tests recorded videos.
+    :target: https://www.youtube.com/channel/UCZTrByxVSXdyW0z3e3qjTsQ
+
+.. image:: https://badges.gitter.im/django-jinja-knockout/Lobby.svg
+   :alt: Join the chat at https://gitter.im/django-jinja-knockout/Lobby
+   :target: https://gitter.im/django-jinja-knockout/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
+
+Screenshot of the `sample project`_:
+
+.. image:: https://raw.githubusercontent.com/wiki/Dmitri-Sintsov/djk-sample/djk_edit_inline.png
+   :width: 740px
+
+More screenshots with descriptions are available at: https://github.com/Dmitri-Sintsov/djk-sample/wiki
+
+Documentation (in development): https://django-jinja-knockout.readthedocs.org/
+
+* Supports Django 2.2 LTS, 3.2 LTS, 4.0; Python 3.8 / 3.9 / 3.10.
+
+Please contribute to the localization of the project:
+
+* `django-jinja-knockout python localization`_
+* `django-jinja-knockout javascript localization`_
+
+Localization:
+
+* Chinese: ``goldmonkey``
+* Dutch: ``Melvyn Sopacua``
+* Polish: ``pawelkoston``
+* Spanish: ``Julio Cesar Cabrera Cabrera``, `kiwnix`_
+
+Key features
+------------
+
+* AJAX based django.admin-like paginated `datatables`_ (grids) with sorting / filters and custom actions.
+* Integrates Jinja2 into existing Django templates (DTL).
+* `Bootstrap 3`_ / `Bootstrap 4`_ / `Bootstrap 5`_ / `Jinja2`_ / `Knockout.js`_ for Django projects.
+* No deep knowledge of Knockout.js is required: it has ready working components.
+* Dynamic adding / removing of inline formsets with Knockout.js, protected from XSS.
+* Default template renderers for Django forms / related forms / inline formsets with the possibility to override these
+  to customize the visual layout.
+* `ForeignKeyGridWidget`_ provides `ForeignKeyRawIdWidget`_-like functionality to select `ModelForm`_ foreign key
+  field value via AJAX query / response.
+* Django raw queries with ``filter()`` / ``exclude()`` / ``order()`` / ``values()`` / ``values_list()`` and SQL slicing
+  support via `FilteredRawQuerySet`_, suitable for usage in `ListView`_ / `ListSortingView`_ / `KoGridView`_ derived
+  classes.
+* `ListQuerySet`_ to query Python lists, including `prefetch_related()`_ results.
+* Jinja2 templates can be integrated into existing Django templates via custom template library tag::
+
+    {% extends 'base_min.html' %}
+    {% load jinja %}
+    {% load static %}
+
+    {% block main %}
+    {% jinja 'bs_list.htm' with _render_=1 view=view object_list=object_list is_paginated=is_paginated page_obj=page_obj %}
+    {% endblock main %}
+
+Overview
+--------
+
+Knockout.js uses unobtrusive `data-bind`_ HTML attributes with JSON-like values with causes no conflict to server-side
+double braces template syntax of DTL / Jinja2: no need to escape templates.
+
+Combining client-side Knockout.js templates and server-side Jinja2 templates allows to write more powerful and compact
+template code.
+
+Jinja2 is faster and is more powerful than built-in DTL templates. Jinja2 templates may be called from DTL templates
+by using custom template tag library ``{% load jinja %}``.
+
+Uses
+----
+
+* https://github.com/knockout/knockout
+* https://github.com/mitsuhiko/jinja2
+* Provides DTL tag library to include Jinja2 templates into DTL templates.
+* Knockout.js is used to provide `datatables`_ and for XSS-safe `empty_form`_ handling.
+* AJAX form validation, AJAX `viewmodels`_ response routing are implemented via bundled client-side scripts.
+
+It's not a pure SPA framework, but a mixed approach of server-side pages with embedded AJAX content and client-side
+scripts. Although it may be used for SPA as well. Classical Web applications aren't "outdated" in any way - because such
+applications are much better indexable by web crawlers, Python is better language than Javascript in general, also
+server-side rendering generally is more robust.
+
+Version 2.1.0
+-------------
+Built-in `custom elements`_, including es5 IE11 polyfills.
+
+`Bootstrap 5`_ compatibility.
+
+`ObjDict`_ Django model serializer with built-in field permissions check for AJAX `viewmodels`_, including `datatables`_.
+
+`get_absolute_url`_ with optional user permission check / link title generation.
+
+Version 2.0.0
+-------------
+Built-in `es6 modules`_ support for modern browsers.
+
+Optional `SystemJS`_ loader support for IE11 via `django_deno`_.
+
+Optional minified `terser`_ bundles support both for `es6 modules`_ and for `SystemJS`_ loader via `django_deno`_.
+
+`datatables`_ support separate cell click actions, not just row actions.
+
+More throughout support for `datatables`_ annotated fields / virtual fields via ``grid_fields`` dicts.
+
+Optional lazy registration of client-side components.
+
+Numerous fixes, including improved related grid view kwargs auto-detection, see `pageRouteKwargsKeys`_ and
+`pageRouteKwargsKeys example`_.
+
+`ListRangeFilter`_ for `ListSortingView`_ range fields.
+
+.. _History: HISTORY.rst
+
+.. _Changes: CHANGES.rst
+
+Documentation
+-------------
+
+The full documentation is at https://django-jinja-knockout.readthedocs.org.
+
