@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: python-chargepoint
+Version: 1.6.0
+Summary: A simple, Pythonic wrapper for the ChargePoint API.
+License: MIT
+Author: Marc Billow
+Author-email: mbillow@users.noreply.github.compoetry
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: requests (>=2.27.1,<3.0.0)
