@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+metatrim/__init__.py
+metatrim/command_line.py
+metatrim/metatrim.py
+metatrim/metatrim_module.py
+metatrim.egg-info/PKG-INFO
+metatrim.egg-info/SOURCES.txt
+metatrim.egg-info/dependency_links.txt
+metatrim.egg-info/entry_points.txt
+metatrim.egg-info/top_level.txt
