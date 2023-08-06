@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: python-tiktok
+Version: 0.1.1
+Summary: A simple Python wrapper for Tiktok API. ✨ 🍰 ✨
+Home-page: https://github.com/sns-sdks/python-tiktok
+License: MIT
+Keywords: tiktok,tiktok sdk,tiktok api
+Author: ikaroskun
+Author-email: merle.liukun@gmail.com
+Requires-Python: >=3.6.2,<4.0.0
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: dataclasses-json (>=0.5.7,<0.6.0)
+Requires-Dist: requests (>=2.24,<3.0)
+Project-URL: Repository, https://github.com/sns-sdks/python-tiktok
+Description-Content-Type: text/x-rst
+
+python-tiktok
+
+A simple Python wrapper around for Tiktok API :sparkles: :cake: :sparkles:.
+
+
