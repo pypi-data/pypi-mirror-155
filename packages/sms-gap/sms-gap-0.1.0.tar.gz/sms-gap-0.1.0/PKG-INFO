@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: sms-gap
+Version: 0.1.0
+Summary: Library for finding floor gaps in Super Mario Sunshine
+Home-page: https://github.com/sup39/sms-gap
+Author: sup39
+Author-email: sms@sup39.dev
+Project-URL: Bug Tracker, https://github.com/sup39/sms-gap/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# sms-gap
+## Usage
+See [the sample Jupyter notebook](https://github.com/sup39/SMS-Geography/blob/main/gap.ipynb) for more information.
