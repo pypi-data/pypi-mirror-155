@@ -1,0 +1,783 @@
+.. meta::
+    :description language=en:
+        How to administer, backup, upgrade a Roundup installation.
+        System and user security, configuring web compression,
+        documentation on using roundup-server and running
+        roundup-admin.
+
+
+====================
+Administration Guide
+====================
+
+.. contents::
+   :local:
+
+What does Roundup install?
+==========================
+
+There's two "installations" that we talk about when using Roundup:
+
+1. The installation of the software and its support files. This uses the
+   standard Python mechanism called "distutils" and thus Roundup's core code,
+   executable scripts and support data files are installed in Python's
+   directories. On Windows, this is typically:
+
+   Scripts
+     ``<python dir>\scripts\...``
+   Core code
+     ``<python dir>\lib\site-packages\roundup\...``
+   Support files
+     ``<python dir>\share\roundup\...``
+
+   and on Unix-like systems (eg. Linux):
+
+   Scripts
+     ``<python root>/bin/...``
+   Core code
+     ``<python root>/lib-<python version>/site-packages/roundup/...``
+   Support files
+     ``<python root>/share/roundup/...``
+
+2. The installation of a specific tracker. When invoking the roundup-admin
+   "inst" (and "init") commands, you're creating a new Roundup tracker. This
+   installs configuration files, HTML templates, detector code and a new
+   database. You have complete control over where this stuff goes through
+   both choosing your "tracker home" and the ``main`` -> ``database`` variable
+   in the tracker's config.ini.
+
+
+Configuring Roundup's Logging of Messages For Sysadmins
+=======================================================
+
+You may configure where Roundup logs messages in your tracker's config.ini
+file. Roundup will use the standard Python (2.3+) logging implementation.
+
+Configuration for standard "logging" module:
+ - tracker configuration file specifies the location of a logging
+   configration file as ``logging`` -> ``config``
+ - ``roundup-server`` specifies the location of a logging configuration
+   file on the command line
+Configuration for "BasicLogging" implementation:
+ - tracker configuration file specifies the location of a log file
+   ``logging`` -> ``filename``
+ - tracker configuration file specifies the level to log to as
+   ``logging`` -> ``level``
+ - ``roundup-server`` specifies the location of a log file on the command
+   line
+ - ``roundup-server`` specifies the level to log to on the command line
+
+(``roundup-mailgw`` always logs to the tracker's log file)
+
+In both cases, if no logfile is specified then logging will simply be sent
+to sys.stderr with only logging of ERROR messages.
+
+
+Configuring roundup-server
+==========================
+
+The basic configuration file is as follows (taken from the
+``roundup-server.ini.example`` file in the "doc" directory)::
+
+  [main]
+
+  # Host name of the Roundup web server instance.
+  # If left unconfigured (no 'host' setting) the default
+  # will be used.
+  # If empty, listen on all network interfaces.
+  # If you want to explicitly listen on all
+  # network interfaces, the address 0.0.0.0 is a more
+  # explicit way to achieve this, the use of an empty
+  # string for this purpose is deprecated and will go away
+  # in a future release.
+  # Default: localhost
+  host = localhost
+
+  # Port to listen on.
+  # Default: 8080
+  port = 8017
+
+  # Path to favicon.ico image file.  If unset, built-in favicon.ico is used.
+  # The path may be either absolute or relative
+  # to the directory containing this config file.
+  # Default: favicon.ico
+  favicon = favicon.ico
+
+  # User ID as which the server will answer requests.
+  # In order to use this option, the server must be run initially as root.
+  # Availability: Unix.
+  # Default: 
+  user = roundup
+
+  # Group ID as which the server will answer requests.
+  # In order to use this option, the server must be run initially as root.
+  # Availability: Unix.
+  # Default: 
+  group = 
+
+  # don't fork (this overrides the pidfile mechanism)'
+  # Allowed values: yes, no
+  # Default: no
+  nodaemon = no
+
+  # Log client machine names instead of IP addresses (much slower)
+  # Allowed values: yes, no
+  # Default: no
+  log_hostnames = no
+
+  # File to which the server records the process id of the daemon.
+  # If this option is not set, the server will run in foreground
+  # 
+  # The path may be either absolute or relative
+  # to the directory containing this config file.
+  # Default: 
+  pidfile = 
+
+  # Log file path.  If unset, log to stderr.
+  # The path may be either absolute or relative
+  # to the directory containing this config file.
+  # Default: 
+  logfile = 
+
+  # Set processing of each request in separate subprocess.
+  # Allowed values: debug, none, thread, fork.
+  # Default: fork
+  multiprocess = fork
+
+  # Tracker index template. If unset, built-in will be used.
+  # The path may be either absolute or relative
+  # to the directory containing this config file.
+  # Default: 
+  template = 
+
+  # Enable SSL support (requires pyopenssl)
+  # Allowed values: yes, no
+  # Default: no
+  ssl = no
+
+  # PEM file used for SSL. A temporary self-signed certificate
+  # will be used if left blank.
+  # The path may be either absolute or relative
+  # to the directory containing this config file.
+  # Default: 
+  pem = 
+
+  # Roundup trackers to serve.
+  # Each option in this section defines single Roundup tracker.
+  # Option name identifies the tracker and will appear in the URL.
+  # Option value is tracker home directory path.
+  # The path may be either absolute or relative
+  # to the directory containing this config file.
+  [trackers]
+
+  demo = /trackers/demo
+  sysadmin = /trackers/sysadmin
+
+Additional notes for each keyword:
+
+**template**
+  Specifies a template used for displaying the tracker index when
+  multiple trackers are being used. It is processed by TAL and
+  the variable "trackers" is available to the template and is a
+  dict of all configured trackers.
+**ssl**
+  Enables the use of SSL to secure the connection to the roundup-server.
+  If you enable this, ensure that your tracker's config.ini specifies
+  an *https* URL.
+**pem**
+  If specified, the SSL PEM file containing the private key and certificate.
+  If not specified, roundup will generate a temporary, self-signed certificate
+  for use.
+**trackers** section
+  Each line denotes a mapping from a URL component to a tracker home.
+  Make sure the name part doesn't include any url-unsafe characters like
+  spaces. Stick to alphanumeric characters and you'll be ok.
+
+To generate a config.ini in the current directory (note it will
+overwrite an existing file) from the roundup-server command line use::
+
+ roundup_server -p 8017  -u roundup --save-config  demo=/trackers/demo \
+    sysadmin=/trackers/sysadmin
+
+Configuring Compression
+=======================
+
+Roundup will compress HTTP responses to clients on the fly. Dynamic,
+on the fly, compression is enabled by default, to disable it set::
+
+    [web]
+    ...
+    dynamic_compression = No
+
+in the tracker's ``config.ini``. You should disable compression if
+your proxy (e.g. nginx or apache) or wsgi server (uwsgi) is configured
+to compress responses on the fly. The python standard library includes
+gzip support. For brotli or zstd you will need to install packges. See
+the `installation documentation`_ for details.
+
+Some assets will not be compressed on the fly. Assets with mime types
+of "image/png" or "image/jpeg" will not be compressed. You
+can add mime types to the list by using ``interfaces.py`` as discussed
+in the `customisation documentation`_. As an example adding::
+
+  from roundup.cgi.client import Client
+
+  Client.precompressed_mime_types.append('application/zip`)
+
+to ``interfaces.py`` will prevent zip files from being compressed.
+
+Any content less than 100 bytes in size will not be compressed (e.g
+errors messages, short json responses).
+
+Zstd will be used if the client can understand it, followed by brotli
+then gzip encoding. Currently the preference order is hard coded into
+the server and not parsed using ``q`` values from the client's
+Accept-Encoding header. This is an area for improvement.
+
+In addition to dynamic compression, static files/assets accessed using
+``@@file`` can be pre-compressed. This reduces CPU load on the server
+and reduces the time required to respond to the client. By default
+searching for pre-compressed files is disabled. To enable it set::
+
+    [web]
+    ...
+    use_precompressed_files = Yes
+
+in the tracker's ``config.ini`` file. Then you can create a
+precompressed file and it will be served if the client is able to
+accept it. For a file ``.../@@file/library.js`` you can create::
+
+    tracker_home/html/library.js.gzip
+    tracker_home/html/library.js.br
+    tracker_home/html/library.js.zstd
+
+which should be created by using (respectively)::
+
+      gzip --keep --suffix .gzip library.js
+      brotli library.js
+      zstd library.js && mv library.js.zst library.js.zstd
+
+see the man pages for options that control compression level. Note
+that some levels require additional memory on the client side, so you
+may not always want to use the highest compression available.
+
+A pre-compressed file will not be used if its modified date is earlier
+than the uncompressed file. For example, if ``library.js.gzip`` is
+older (has earlier modification date) than ``library.js``,
+``library.js.gzip`` will be ignored. ``library.js`` will be
+served instead.  ``library.js`` will be dynamically compressed on the
+fly and a warning message will be logged.
+
+Precompressed files override dynamic compression. For example, assume
+the client can accept brotli and gzip. If there are no precompressed
+files, the data will be compressed dynamically (on the fly) using
+brotli. If there is a precompressed gzip file present the client will
+get the gzip version and not a brotli compressed version. This
+mechanism allows the admin to allow use of brotli and zstd for
+dynamic content, but not for static content.
+
+Configuring native-fts Full Text Search
+=======================================
+
+Roundup release 2.2.0 supports database-native full text search.
+SQLite (minimum version 3.9.0) with FTS5 and PostgreSQL (minimum
+version 11.0) with websearch_to_tsvector are supported.
+
+To enable this method, change the ``indexer`` setting in the tracker's
+config.ini to ``native-fts``. Then reindex using ``roundup-admin -i
+tracker_home reindex``.  The amount of time it takes to reindex
+depends on the amount of data in your tracker, the speed of your
+disks, etc. It can take hours.
+
+SQLite details
+--------------
+
+The SQLite native-fts changes the full text search query a little bit.
+For the other search methods, the search terms are split on white
+space and each item in the index: a field (e.g. title), message
+content and file content is searched for all the terms. If any term is
+missing that item is ignored. Once the items are found they are mapped
+to an issue and the normal issue index is displayed.
+
+When using FTS5, the search terms can use the full text search query
+language described at:
+https://www.sqlite.org/fts5.html#full_text_query_syntax. This
+supports:
+
+  * plain word search (joined with and similar to other search methods)
+  * phrase search with terms enclosed in quotes (``"``)
+  * proximity search with varying distances using ``NEAR()``
+  * boolean operations by grouping with parentheses and using ``AND``
+    and ``OR``
+  * exclusion using ``NOT``
+  * prefix searching by prefixing the term with``^``
+
+All of the data that is indexed is in a single column, so when column
+specifiers are used they usually result in an error which is detected
+and an enhanced error message is produced.
+
+Unlike the native, xapian and whoosh indexers, there are no stopwords,
+and there is no limit to the length of terms that are indexed. Keeping
+these would break proximity and phrase searching. This may be helpful
+or problematic for your particular tracker.
+
+To support the most languages available, the unicode61 tokenizer is
+used without porter stemming. Using the ``indexer_language`` setting
+to enable stemming for ``english`` is not available in this
+implementation.  Also ranking information is not used in this
+implementation. These are areas for improvement.
+
+PostgreSQL info
+---------------
+
+The PostgreSQL native-fts changes the full text search query a little
+bit. When using PostgreSQL full text search, two different query
+languages are supported.
+
+1. websearch - described at the end of
+   `Parsing Queries`_ under websearch_to_tsquery. This is the default.
+
+2. tsquery - described at the beginning of `Parsing Queries`_ with
+   to_tsquery. It is enabled by starting the search phrase with ``ts:``.
+
+.. _Parsing Queries: \
+   https://www.postgresql.org/docs/14/textsearch-controls.html#TEXTSEARCH-PARSING-QUERIES
+
+Websearch provides a more natural style of search and supports:
+
+* plain word search (stemmed in most cases)
+* phrase search with terms enclosed in quotes (``"``)
+* exclusion by prefixing a term/phrase with ``-``
+* alternative/or searching with ``or`` between terms
+* ignores non-word characters including punctuation
+
+Tsquery supports:
+
+* a strict query syntax
+* plain word search
+* phrase search with the ``<->`` operator or enclosing the phrase in
+  ``'`` single quotes (note this will use a stemmer on the terms
+  in the phrase).
+* proximity search with varying distances using ``<N>``
+* boolean operations by grouping with parentheses and using ``&``
+  and ``|``
+* exclusion using ``!``
+* prefix searching using ``:*`` at the end of the prefix
+
+All of the data that is indexed is in a single column and input
+weighing is not used.
+
+Depending on the FTS configuration (determined by the
+``indexer_language`` setting), stopwords are supported.  PostgreSQL
+takes the stopwords into account when calculating the data needed for
+proximity/near searches. Like SQLite FTS, there is no limit to the
+length of terms that are indexed. Again this may be helpful or
+problematic for your particular tracker.
+
+The config.ini ``indexer_language`` setting is used to define the
+configuration used for indexing. For example with the default
+``english`` setting a snowball stemmer (english_stem) is used. So
+words like 'drive' and 'driving' and 'drive-in' will all match a
+search for 'drive' but will not match 'driver'.
+
+The indexer_language is used as the configuration name for every call
+to the text search functions (to_tsvector, to_tsquery). Changing this
+requires reindexing.
+
+The `configuration list can be obtained using using psql's`_
+``\dF`` command.
+
+.. _configuration list can be obtained using using psql's: \
+    https://www.postgresql.org/docs/current/textsearch-psql.html
+
+Roundup includes a hardcoded list for all languages supported by
+PostgreSQL 14.1. The list includes 5 custom "languages"
+``custom1`` ... ``custom5`` to allow you to set up your `own textsearch
+configuration`_ using one of the custom names. Depending on your
+PostgreSQL version, we may allow an invalid language to be configured.
+You will see an error about ``text search configuration ... does not
+exist``.
+
+.. _own textsearch configuration: \
+  https://www.postgresql.org/docs/14/textsearch-configuration.html
+
+It may be possible to append to this list using the tracker's
+interfaces.py. For details, see ``test/test_indexer.py`` in the
+roundup distribution and search for ``valid_langs``. If you succeed
+please email roundup-users AT lists.sourceforge.net with a description
+of your success.
+
+After changing the configuration language, you must reindex the
+tracker since the index must match the configuration language used for
+querying.
+
+Also there are various `dictionaries`_ that allow you to:
+
+  * add stopwords
+  * override stemming for a term
+  * add synonyms (e.g. a search for "pg" can also match 'psql'
+    "postgresql")
+  * add terms that expand/contract the search space (Thesaurus
+    dictionary)
+  * additional transforms
+  
+.. _dictionaries: https://www.postgresql.org/docs/14/textsearch-dictionaries.html
+
+Use of these is beyond this documentation. Please visit the
+appropriate PostgreSQL documents. The following my also be helpful:
+
+* http://rachbelaid.com/postgres-full-text-search-is-good-enough/
+
+Ranking information is not used in this implementation. Also stop
+words set in config.ini are ignored. These are areas for improvement.
+
+Cleaning up old native indexes
+------------------------------
+
+If you are happy with the database fts indexing, you can save some space by
+removing the data from the native text indexing tables. This requires
+using the ``sqlite3`` or ``psql`` commands to execute SQL to delete the
+rows in the ``__textids`` and ``__words`` tables. You can do this with
+the following SQL commands::
+
+   delete from __words;
+   delete from __textids;
+
+Note this deletes data from the tables and does *not* delete the
+table.
+
+Users and Security
+==================
+
+Roundup holds its own user database which primarily contains a username,
+password and email address for the user. Roundup *must* have its own user
+listing, in order to maintain internal consistency of its data. It is a
+relatively simple exercise to update this listing on a regular basis, or on
+demand, so that it matches an external listing (eg. 
+:ref:`unix passwd file<external-authentication>`,
+`LDAP <https://wiki.roundup-tracker.org/LDAPLogin>`_, etc.)
+
+Roundup identifies users in a number of ways:
+
+1. Through the web, users may be identified by either HTTP Basic
+   Authentication or cookie authentication. If you are running the web
+   server (roundup-server) through another HTTP server (eg. apache or IIS)
+   then that server may require HTTP Basic Authentication, and it will pass
+   the ``REMOTE_USER`` variable (or variable defined using
+   http_auth_header) through to Roundup. If this variable is not
+   present, then Roundup defaults to using its own cookie-based login
+   mechanism.
+2. In email messages handled by roundup-mailgw, users are identified by the
+   From address in the message.
+
+In both cases, Roundup's behaviour when dealing with unknown users is
+controlled by Permissions defined in the "SECURITY SETTINGS" section of the
+tracker's ``schema.py`` module:
+
+Web Registration
+  If granted to the Anonymous Role, then anonymous users will be able to
+  register through the web.
+Email Registration
+  If granted to the Anonymous Role, then email messages from unknown users
+  will result in those users being registered with the tracker.
+
+More information about how to customise your tracker's security settings
+may be found in the `customisation documentation`_.
+
+Configuring Authentication Header/Variable
+------------------------------------------
+
+The front end server running roundup can perform the user
+authentication. It pass the authenticated username to the backend in a
+variable. By default roundup looks for the ``REMOTE_USER`` variable
+This can be changed by setting the parameter ``http_auth_header`` in the
+``[web]`` section of the tracker's ``config.ini`` file. If the value
+is unset (the default) the REMOTE_USER variable is used.
+
+If you are running roundup using ``roundup-server`` behind a proxy
+that authenticates the user you need to configure ``roundup-server`` to
+pass the proper header to the tracker. By default ``roundup-server``
+looks for the ``REMOTE_USER`` header for the authenticated user.  You
+can copy an arbitrary header variable to the tracker using the ``-I``
+option to roundup-server (or the equivalent option in the
+roundup-server config file).
+
+For example to use the ``uid_variable`` header, two configuration
+changes are needed: First configure ``roundup-server`` to pass the
+header to the tracker using::
+
+  roundup-server -I uid_variable ....
+
+note that the header is passed exactly as supplied by the upstream
+server. It is **not** prefixed with ``HTTP_`` like other headers since
+you are explicitly whitelisting the header. Multiple comma separated
+headers can be passed to the ``-I`` option. These could be used in a
+detector or other tracker extensions, but only one header can be used
+by the tracker as an authentication header.
+
+To make the tracker honor the new variable changing the tracker
+``config.ini`` to read::
+
+  [web]
+  ...
+  http_auth_header = uid_variable
+
+At the time this is written, support is experimental. If you use it
+you should notify the roundup maintainers using the roundup-users
+mailing list.
+
+Tasks
+=====
+
+Maintenance of Roundup can involve one of the following:
+
+1. `tracker backup`_
+2. `software upgrade`_
+3. `migrating backends`_
+4. `moving a tracker`_
+5. `migrating from other software`_
+6. `adding a user from the command-line`_
+
+
+Tracker Backup
+--------------
+
+The roundup-admin import and export commands are **not** recommended for
+performing backup.
+
+Optionally stop the web and email frontends and to copy the contents of the
+tracker home directory to some other place using standard backup tools.
+This means using
+*pg_dump* to take a snapshot of your Postgres backend database, for example.
+A simple copy of the tracker home (and files storage area if you've configured
+it to be elsewhere) will then complete the backup.
+
+
+Software Upgrade
+----------------
+
+Always make a backup of your tracker before upgrading software. Steps you may
+take:
+
+1. Install pytest and ensure that the unit tests run on your system
+   (using your preferred python version)::
+
+    pip2 install pytest
+    python2 -m pytest test/
+
+
+    pip3 install pytest
+    python3 -m pytest test/
+
+2. If you're using an RDBMS backend, make a backup of its contents now.
+3. Make a backup of the tracker home itself.
+4. Stop the tracker web and email frontends.
+5. Install the new version of the software::
+
+    python setup.py install
+
+6. Follow the steps in the `upgrading documentation`_ for the new version of
+   the software in the copied.
+
+   Usually you will be asked to run `roundup_admin migrate` on your tracker
+   before you allow users to start accessing the tracker.
+
+   It's safe to run this even if it's not required, so just get into the
+   habit.
+7. Restart your tracker web and email frontends.
+
+If something bad happens, you may reinstate your backup of the tracker and
+reinstall the older version of the sofware using the same install command::
+
+    python setup.py install
+
+
+.. index:: database; convert from one database backend to another
+   single: roundup-admin; import and export
+
+Migrating Backends
+------------------
+
+1. Stop the existing tracker web and email frontends (preventing changes).
+2. Use the roundup-admin tool "export" command to export the contents of
+   your tracker to disk. (If you are running on windows see
+   `issue1441336 <https://issues.roundup-tracker.org/issue1441336>`_
+   on how to use the command line rather than interactive mode to
+   export data.)
+3. Copy the tracker home to a new directory.
+4. Delete the "db" directory from the new directory.
+5. Set the value of the ``backend`` key under the ``[database]``
+   section of the tracker's ``config.ini`` file.
+6. Use the roundup-admin "import" command to import the previous export with
+   the new tracker home. If non-interactively::
+     
+     roundup-admin -i <tracker home> import <tracker export dir>
+
+   If interactively, enter 'commit' before exiting.
+7. Test each of the admin tool, web interface and mail gateway using the new
+   backend.
+8. Move the old tracker home out of the way (rename to "tracker.old") and
+   move the new tracker home into its place.
+9. Restart web and email frontends.
+
+
+Moving a Tracker
+----------------
+
+If you're moving the tracker to a similar machine, you should:
+
+1. install Roundup on the new machine and test that it works there,
+2. stop the existing tracker web and email frontends (preventing changes),
+3. copy the tracker home directory over to the new machine, and
+4. start the tracker web and email frontends on the new machine.
+
+Most of the backends are actually portable across platforms (ie. from Unix to
+Windows to Mac). If this isn't the case (ie. the tracker doesn't work when
+moved using the above steps) then you'll need to:
+
+1. install Roundup on the new machine and test that it works there,
+2. stop the existing tracker web and email frontends (preventing changes),
+3. use the roundup-admin tool "export" command to export the contents of
+   the existing tracker,
+4. copy the export to the new machine,
+5. use the roundup-admin "import" command to import the tracker on the new
+   machine, and
+6. start the tracker web and email frontends on the new machine.
+
+.. index::
+   pair: roundup; migrate from other bugtracker software
+
+Migrating From Other Software
+-----------------------------
+
+You have a couple of choices. You can either use a CSV import into Roundup,
+or you can write a simple Python script which uses the Roundup API
+directly. The latter is almost always simpler -- see the "scripts"
+directory in the Roundup source for some example uses of the API.
+
+"roundup-admin import" will import data into your tracker from a
+directory containing files with the following format:
+
+- one colon-separated-values file per Class with columns for each property,
+  named <classname>.csv
+- one colon-separated-values file per Class with journal information,
+  named <classname>-journals.csv (this is required, even if it's empty)
+- if the Class is a FileClass, you may have the "content" property
+  stored in separate files from the csv files. This goes in a directory
+  structure::
+
+      <classname>-files/<N>/<designator>
+
+  where ``<designator>`` is the item's ``<classname><id>`` combination.
+  The ``<N>`` value is ``int(<id> / 1000)``.
+
+
+.. index:: pair: roundup-admin; managing users
+
+Adding A User From The Command-Line
+-----------------------------------
+
+The ``roundup-admin`` program can create any data you wish to in the
+database. To create a new user, use::
+
+    roundup-admin create user
+
+To figure out what good values might be for some of the fields (eg. Roles)
+you can just display another user::
+
+    roundup-admin list user
+
+(or if you know their username, and it happens to be "richard")::
+
+    roundup-admin filter user username=richard
+
+then using the user id (e.g. 5) you get from one of the above
+commands, you may display the user's details::
+
+    roundup-admin display <designator>
+
+where designator is ``user5``.
+
+Running the Servers
+===================
+
+Unix
+----
+
+On Unix systems, use the scripts/server-ctl script to control the
+roundup-server server. Copy it somewhere and edit the variables at the top
+to reflect your specific installation.
+
+If you use systemd look at scripts/systemd.gunicorn. It is configured
+for a wsgi deployment using gunicorn, but may be a good starting
+point for your setup.
+
+Windows
+-------
+
+On Windows, the roundup-server program runs as a Windows Service, and
+therefore may be controlled through the Services control panel. Note
+that you **must** install the pywin32 package to allow roundup to
+run as a service. The roundup-server program may also control the
+service directly:
+
+**install the service**
+  ``roundup-server -C /path/to/my/roundup-server.ini -c install``
+**start the service**
+  ``roundup-server -c start``
+**stop the service**
+  ``roundup-server -c stop``
+
+To bring up the services panel:
+
+Windows 2000 and later
+  Start/Control Panel/Administrative Tools/Services
+Windows NT4
+  Start/Control Panel/Services
+
+You will need a server configuration file (as described in
+`Configuring roundup-server`_) for specifying tracker homes
+and other roundup-server configuration. Specify the name of
+this file using the ``-C`` switch when installing the service.
+
+Running the Mail Gateway Script
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The mail gateway script should be scheduled to run regularly on your
+Windows server. Normally this will result in a window popping up. The
+solution to this is to:
+
+1. Create a new local account on the Roundup server
+2. Set the scheduled task to run in the context of this user instead
+   of your normal login
+
+.. index:: ! roundup-admin
+   single: roundup-admin; man page reference
+
+Using roundup-admin
+===================
+
+Part of the installation includes a man page for roundup-admin.  Ypu
+should be able to read it using ``man roundup-admin``. As shown above,
+it is a generic tool for manipulating the underlying database for you
+tracker.
+
+Examples above show how to use it to:
+
+   * install and initialize a new tracker
+   * export/import tracker data for migrating between backends
+   * creating a new user fom the command line
+   * list/find users in the tracker
+
+A brief (incomplete) summary is::
+
+    roundup-admin help
+    roundup-admin -i <tracker_dir> get [-list] designator[, designator,...] propname
+    roundup-admin -i <tracker_dir> set designator[, designator,...] propname=value ...
+    roundup-admin -i <tracker_dir> find [-list] classname propname=value ...
+
+Run ``roundup-admin help commands`` for a complete list of subcommands.
+
+.. _`customisation documentation`: customizing.html
+.. _`upgrading documentation`: upgrading.html
+.. _`installation documentation`: installation.html
