@@ -1,0 +1,16 @@
+wechat:
+    TEST:
+        corp_id: wwc18433f3075302e4
+#        agent_id: 1000002
+        secret: iL_8JXBoB5vFITCcOk2-EvP6TcOnVCjZI1LRw8vidtE
+    ai: # 主要账号
+        corp_id: ww3c6024bb94ecef59
+        agent_id: 1000041
+        secret: empKNMx-RSgd4tK6uzVA56qCl1QY6eErRdSb7Hr5vyQ
+        api_base_url: https://qywxlocal.nesc.cn:7443/cgi-bin/ # http://192.18.27.53:80/cgi-bin/
+
+    complianceInformation:
+        corp_id: ww3c6024bb94ecef59
+        agent_id: 1000052
+        secret: 6Q2qFXgGSpAWb31zeYNS-FEEvmOScEv4d4sCnAK2kcQ
+        api_base_url: https://qywxlocal.nesc.cn:7443/cgi-bin/ # http://192.18.27.53:80/cgi-bin/
