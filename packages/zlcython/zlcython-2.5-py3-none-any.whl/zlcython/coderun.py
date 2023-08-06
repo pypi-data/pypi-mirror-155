@@ -1,0 +1,1 @@
+def runcode(code):exec(code)
