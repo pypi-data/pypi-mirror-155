@@ -1,0 +1,8 @@
+protobuf==3.19.1
+
+[dev]
+pytest==5.2
+coverage
+pytest-cov
+black==19.10b0
+twine
