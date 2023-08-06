@@ -1,0 +1,2 @@
+[console_scripts]
+slide-extractor = slide_extractor.__main__:main

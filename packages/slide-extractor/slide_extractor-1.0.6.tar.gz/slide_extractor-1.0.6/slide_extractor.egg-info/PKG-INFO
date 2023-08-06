@@ -1,0 +1,33 @@
+Metadata-Version: 2.1
+Name: slide-extractor
+Version: 1.0.6
+Summary: A simple commandline app to extract slides from videos,lectures and presentations
+Home-page: https://github.com/Slide-extractor-beta/slide-extractor
+Download-URL: https://github.com/Slide-extractor-beta/slide-extractor/archive/refs/tags/v1.0.0-beta.tar.gz
+Author: Vivek Anand, Ashish Manglani
+Author-email: vivek17212797@gmail.com
+License: MIT
+Keywords: slide-extractor,slide_extractor,extractor,slide,slide extractor
+Requires-Python: >=3.5
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# slide-extractor
+An easy tool to extract slides from presentations ( lectures ðŸ˜‰ )
+
+<h3>Usage</h3>
+
+`slide-extractor -p <path> -s <number> -d <number>`
+
+<h5>Flags</h5>
+
+- `-p or --path` : Provides the path for the video file <b>( * required)</b>
+- `-s or --skip` : Provides the skip seconds for the video.( Captures the video's frames at interval of specified value )
+- `-d or --diff` : Specifies the difference level between current and previous slide ( a slide is included iff the difference is higher than the specified value)
+- `-h or --help` : Help Menu
+
+Try adjusting the `diff` value if you think all slides aren't being captured or too many slides are being captured.
+
+Too Low `diff` value will make the extractor captures slides even with slight difference.
+
+Too  High `diff` value might make the extractor skip certain slides.
