@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>fhirpack.pack &#8212; fhirpack 0.0.2b0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for fhirpack.pack</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">base64</span>
+<span class="kn">import</span> <span class="nn">importlib</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">DataFrame</span>
+<span class="kn">from</span> <span class="nn">fhirpy</span> <span class="kn">import</span> <span class="n">SyncFHIRClient</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+
+<span class="kn">from</span> <span class="nn">fhirpack.auth</span> <span class="kn">import</span> <span class="n">AUTH_PARAMS_PRESETS</span>
+<span class="kn">from</span> <span class="nn">fhirpack.auth</span> <span class="kn">import</span> <span class="n">Auth</span>
+
+<span class="kn">import</span> <span class="nn">fhirpack.base</span>
+<span class="kn">import</span> <span class="nn">fhirpack.extraction</span>
+<span class="kn">import</span> <span class="nn">fhirpack.transformation</span>
+<span class="kn">import</span> <span class="nn">fhirpack.load</span>
+<span class="kn">import</span> <span class="nn">fhirpack.custom</span>
+<span class="kn">import</span> <span class="nn">fhirpack.utils</span> <span class="k">as</span> <span class="nn">utils</span>
+<span class="kn">from</span> <span class="nn">fhirpack.constants</span> <span class="kn">import</span> <span class="n">CONFIG</span>
+
+<span class="n">LOGGER</span> <span class="o">=</span> <span class="n">CONFIG</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="PACK"><a class="viewcode-back" href="../../api/fhirpack.html#fhirpack.pack.PACK">[docs]</a><span class="k">class</span> <span class="nc">PACK</span><span class="p">(</span>
+    <span class="n">fhirpack</span><span class="o">.</span><span class="n">base</span><span class="o">.</span><span class="n">BaseMixin</span><span class="p">,</span>
+    <span class="n">fhirpack</span><span class="o">.</span><span class="n">extraction</span><span class="o">.</span><span class="n">ExtractorMixin</span><span class="p">,</span>
+    <span class="n">fhirpack</span><span class="o">.</span><span class="n">transformation</span><span class="o">.</span><span class="n">TransformerMixin</span><span class="p">,</span>
+    <span class="n">fhirpack</span><span class="o">.</span><span class="n">load</span><span class="o">.</span><span class="n">LoaderMixin</span><span class="p">,</span>
+    <span class="n">fhirpack</span><span class="o">.</span><span class="n">custom</span><span class="o">.</span><span class="n">PluginMixin</span><span class="p">,</span>
+<span class="p">):</span>
+<div class="viewcode-block" id="PACK.__init__"><a class="viewcode-back" href="../../api/fhirpack.html#fhirpack.pack.PACK.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">apiBase</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">client</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">envFile</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">unconnected</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">authMethod</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">authParams</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span> <span class="o">=</span> <span class="n">CONFIG</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;PACK initialization started.&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">envFile</span><span class="p">:</span>
+            <span class="n">CONFIG</span><span class="o">.</span><span class="n">loadConfig</span><span class="p">(</span><span class="n">envFile</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">CONFIG</span><span class="o">.</span><span class="n">loadConfig</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">client</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">client</span> <span class="o">=</span> <span class="n">client</span>
+        <span class="k">elif</span> <span class="n">unconnected</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">client</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__setupClient</span><span class="p">(</span>
+                <span class="n">apiBase</span><span class="o">=</span><span class="n">apiBase</span><span class="p">,</span> <span class="n">authMethod</span><span class="o">=</span><span class="n">authMethod</span><span class="p">,</span> <span class="n">authParams</span><span class="o">=</span><span class="n">authParams</span>
+            <span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">_do_request</span><span class="p">(</span><span class="s2">&quot;get&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="s2">/metadata&quot;</span><span class="p">)</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;PACK is not connected to server.&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;PACK is not connected to server.&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">client</span> <span class="o">=</span> <span class="n">SyncFHIRClient</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">client</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;pack initialization finished&quot;</span><span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">__setupClient</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">apiBase</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">authMethod</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">authParams</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="n">authMethod</span><span class="p">:</span>
+            <span class="n">CONFIG</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;AUTH_METHOD&quot;</span><span class="p">,</span> <span class="n">authMethod</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">authParams</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span> <span class="ow">and</span> <span class="n">authParams</span><span class="p">:</span>
+            <span class="k">pass</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">authParams</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="n">authParams</span><span class="p">:</span>
+            <span class="n">authParams</span> <span class="o">=</span> <span class="n">AUTH_PARAMS_PRESETS</span><span class="p">[</span><span class="n">authParams</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="n">CONFIG</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;AUTH_PARAMS_PRESET&quot;</span><span class="p">):</span>
+            <span class="n">authParams</span> <span class="o">=</span> <span class="n">AUTH_PARAMS_PRESETS</span><span class="p">[</span><span class="n">CONFIG</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;AUTH_PARAMS_PRESET&quot;</span><span class="p">)]</span>
+
+        <span class="n">authorization</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">if</span> <span class="n">CONFIG</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;AUTH_METHOD&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;oauth_password&quot;</span><span class="p">:</span>
+            <span class="n">token</span> <span class="o">=</span> <span class="n">Auth</span><span class="o">.</span><span class="n">getToken</span><span class="p">(</span><span class="s2">&quot;password&quot;</span><span class="p">,</span> <span class="n">authParams</span><span class="p">)</span>
+            <span class="n">CONFIG</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;OAUTH_TOKEN&quot;</span><span class="p">,</span> <span class="n">token</span><span class="p">[</span><span class="s2">&quot;access_token&quot;</span><span class="p">]),</span>
+            <span class="n">authorization</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">token</span><span class="p">[</span><span class="s1">&#39;access_token&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="k">elif</span> <span class="n">CONFIG</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;AUTH_METHOD&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;oauth_token&quot;</span><span class="p">:</span>
+            <span class="n">token</span> <span class="o">=</span> <span class="n">CONFIG</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;OAUTH_TOKEN&quot;</span><span class="p">)</span>
+            <span class="n">authorization</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">token</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="k">elif</span> <span class="n">authMethod</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">authorization</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+        <span class="k">if</span> <span class="n">apiBase</span><span class="p">:</span>
+            <span class="n">CONFIG</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;APIBASE&quot;</span><span class="p">,</span> <span class="n">apiBase</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span> <span class="o">=</span> <span class="n">SyncFHIRClient</span><span class="p">(</span><span class="n">CONFIG</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;APIBASE&quot;</span><span class="p">),</span> <span class="n">authorization</span><span class="o">=</span><span class="n">authorization</span><span class="p">)</span>
+
+<div class="viewcode-block" id="PACK.countServerResources"><a class="viewcode-back" href="../../api/fhirpack.html#fhirpack.pack.PACK.countServerResources">[docs]</a>    <span class="k">def</span> <span class="nf">countServerResources</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="c1"># TODO write function in utils to retrieve current installation path</span>
+        <span class="c1"># TODO move path with others to common location, CONFIG?</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">utils</span><span class="o">.</span><span class="n">getInstallationPath</span><span class="p">()</span><span class="si">}</span><span class="s2">/data/supported.list&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+                <span class="n">resource</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">resource</span><span class="p">:</span>
+                    <span class="k">break</span>
+
+                <span class="n">count</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+                    <span class="c1"># TODO handle and test when slash at the end of APIBASE in .env and without</span>
+                    <span class="c1"># WARNING path must either:</span>
+                    <span class="c1"># 1. be relative and allow FHIRPy to parametrize the URL</span>
+                    <span class="c1"># 2. be absolute and contain the params already as they will otherwise be ignored</span>
+                    <span class="n">resource</span><span class="p">,</span>
+                    <span class="n">method</span><span class="o">=</span><span class="s2">&quot;get&quot;</span><span class="p">,</span>
+                    <span class="c1"># if _count has the value 0, this shall be treated the same as _summary=count</span>
+                    <span class="c1"># https://www.hl7.org/fhir/search.html#count</span>
+                    <span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;_count&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span>
+                <span class="p">)</span><span class="o">.</span><span class="n">total</span>
+                <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">resource</span><span class="p">,</span> <span class="n">count</span><span class="p">))</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;resourceType&quot;</span><span class="p">,</span> <span class="s2">&quot;count&quot;</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">results</span></div></div>
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">fhirpack</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, Jayson Salazar.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

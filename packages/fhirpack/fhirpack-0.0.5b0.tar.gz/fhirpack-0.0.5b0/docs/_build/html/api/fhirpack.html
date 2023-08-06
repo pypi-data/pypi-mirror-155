@@ -1,0 +1,982 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>fhirpack package &#8212; fhirpack 0.0.2b0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="fhirpack-package">
+<h1>fhirpack package<a class="headerlink" href="#fhirpack-package" title="Permalink to this heading">¶</a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="fhirpack.custom.html">fhirpack.custom package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fhirpack.custom.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="fhirpack.custom.extraction.html">fhirpack.custom.extraction package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="fhirpack.custom.extraction.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fhirpack.custom.extraction.html#module-fhirpack.custom.extraction.base">fhirpack.custom.extraction.base module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fhirpack.custom.extraction.html#module-fhirpack.custom.extraction.sample">fhirpack.custom.extraction.sample module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fhirpack.custom.extraction.html#module-fhirpack.custom.extraction">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="fhirpack.custom.load.html">fhirpack.custom.load package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="fhirpack.custom.load.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fhirpack.custom.load.html#module-fhirpack.custom.load.base">fhirpack.custom.load.base module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fhirpack.custom.load.html#module-fhirpack.custom.load.sample">fhirpack.custom.load.sample module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fhirpack.custom.load.html#module-fhirpack.custom.load">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="fhirpack.custom.transformation.html">fhirpack.custom.transformation package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="fhirpack.custom.transformation.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fhirpack.custom.transformation.html#module-fhirpack.custom.transformation.base">fhirpack.custom.transformation.base module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fhirpack.custom.transformation.html#module-fhirpack.custom.transformation.sample">fhirpack.custom.transformation.sample module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fhirpack.custom.transformation.html#module-fhirpack.custom.transformation">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="fhirpack.custom.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fhirpack.custom.html#module-fhirpack.custom.base">fhirpack.custom.base module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fhirpack.custom.html#module-fhirpack.custom.utils">fhirpack.custom.utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fhirpack.custom.html#module-fhirpack.custom">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fhirpack.extraction.html">fhirpack.extraction package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fhirpack.extraction.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fhirpack.extraction.html#module-fhirpack.extraction.base">fhirpack.extraction.base module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fhirpack.extraction.html#module-fhirpack.extraction.base_test">fhirpack.extraction.base_test module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fhirpack.extraction.html#module-fhirpack.extraction.condition">fhirpack.extraction.condition module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fhirpack.extraction.html#module-fhirpack.extraction.condition_test">fhirpack.extraction.condition_test module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fhirpack.extraction.html#module-fhirpack.extraction.diagnosticreport">fhirpack.extraction.diagnosticreport module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fhirpack.extraction.html#module-fhirpack.extraction.endpoint">fhirpack.extraction.endpoint module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fhirpack.extraction.html#module-fhirpack.extraction.episodeofcare">fhirpack.extraction.episodeofcare module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fhirpack.extraction.html#module-fhirpack.extraction.familymemberhistory">fhirpack.extraction.familymemberhistory module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fhirpack.extraction.html#module-fhirpack.extraction.imagingstudy">fhirpack.extraction.imagingstudy module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fhirpack.extraction.html#module-fhirpack.extraction.list">fhirpack.extraction.list module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fhirpack.extraction.html#module-fhirpack.extraction.medicationadministration">fhirpack.extraction.medicationadministration module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fhirpack.extraction.html#module-fhirpack.extraction.medicationrequest">fhirpack.extraction.medicationrequest module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fhirpack.extraction.html#module-fhirpack.extraction.observation">fhirpack.extraction.observation module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fhirpack.extraction.html#module-fhirpack.extraction.patient">fhirpack.extraction.patient module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fhirpack.extraction.html#module-fhirpack.extraction.patient_test">fhirpack.extraction.patient_test module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fhirpack.extraction.html#module-fhirpack.extraction.sample">fhirpack.extraction.sample module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fhirpack.extraction.html#module-fhirpack.extraction">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fhirpack.load.html">fhirpack.load package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fhirpack.load.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fhirpack.load.html#module-fhirpack.load.base">fhirpack.load.base module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fhirpack.load.html#module-fhirpack.load.condition">fhirpack.load.condition module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fhirpack.load.html#module-fhirpack.load.observation">fhirpack.load.observation module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fhirpack.load.html#module-fhirpack.load.patient">fhirpack.load.patient module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fhirpack.load.html#module-fhirpack.load">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fhirpack.transformation.html">fhirpack.transformation package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fhirpack.transformation.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fhirpack.transformation.html#module-fhirpack.transformation.base">fhirpack.transformation.base module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fhirpack.transformation.html#module-fhirpack.transformation.base_test">fhirpack.transformation.base_test module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fhirpack.transformation.html#module-fhirpack.transformation.condition">fhirpack.transformation.condition module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fhirpack.transformation.html#module-fhirpack.transformation.observation">fhirpack.transformation.observation module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fhirpack.transformation.html#module-fhirpack.transformation.patient">fhirpack.transformation.patient module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fhirpack.transformation.html#module-fhirpack.transformation">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="module-fhirpack.auth">
+<span id="fhirpack-auth-module"></span><h2>fhirpack.auth module<a class="headerlink" href="#module-fhirpack.auth" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="fhirpack.auth.Auth">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">fhirpack.auth.</span></span><span class="sig-name descname"><span class="pre">Auth</span></span><a class="reference internal" href="../_modules/fhirpack/auth.html#Auth"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.auth.Auth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3.9/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.auth.Auth.__dict__">
+<span class="sig-name descname"><span class="pre">__dict__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">mappingproxy({'__module__':</span> <span class="pre">'fhirpack.auth',</span> <span class="pre">'getToken':</span> <span class="pre">&lt;staticmethod</span> <span class="pre">object&gt;,</span> <span class="pre">'tokenViaPasswordGrant':</span> <span class="pre">&lt;staticmethod</span> <span class="pre">object&gt;,</span> <span class="pre">'oAuthTokenFromJWT':</span> <span class="pre">&lt;staticmethod</span> <span class="pre">object&gt;,</span> <span class="pre">'parseSHIPTokenEndpointResponse':</span> <span class="pre">&lt;staticmethod</span> <span class="pre">object&gt;,</span> <span class="pre">'__dict__':</span> <span class="pre">&lt;attribute</span> <span class="pre">'__dict__'</span> <span class="pre">of</span> <span class="pre">'Auth'</span> <span class="pre">objects&gt;,</span> <span class="pre">'__weakref__':</span> <span class="pre">&lt;attribute</span> <span class="pre">'__weakref__'</span> <span class="pre">of</span> <span class="pre">'Auth'</span> <span class="pre">objects&gt;,</span> <span class="pre">'__doc__':</span> <span class="pre">None,</span> <span class="pre">'__annotations__':</span> <span class="pre">{}})</span></em><a class="headerlink" href="#fhirpack.auth.Auth.__dict__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.auth.Auth.__doc__">
+<span class="sig-name descname"><span class="pre">__doc__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#fhirpack.auth.Auth.__doc__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.auth.Auth.__module__">
+<span class="sig-name descname"><span class="pre">__module__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'fhirpack.auth'</span></em><a class="headerlink" href="#fhirpack.auth.Auth.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.auth.Auth.__weakref__">
+<span class="sig-name descname"><span class="pre">__weakref__</span></span><a class="headerlink" href="#fhirpack.auth.Auth.__weakref__" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fhirpack.auth.Auth.getToken">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getToken</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grant_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/auth.html#Auth.getToken"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.auth.Auth.getToken" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fhirpack.auth.Auth.oAuthTokenFromJWT">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">oAuthTokenFromJWT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">token</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/auth.html#Auth.oAuthTokenFromJWT"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.auth.Auth.oAuthTokenFromJWT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fhirpack.auth.Auth.parseSHIPTokenEndpointResponse">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parseSHIPTokenEndpointResponse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">response</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/auth.html#Auth.parseSHIPTokenEndpointResponse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.auth.Auth.parseSHIPTokenEndpointResponse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fhirpack.auth.Auth.tokenViaPasswordGrant">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tokenViaPasswordGrant</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/auth.html#Auth.tokenViaPasswordGrant"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.auth.Auth.tokenViaPasswordGrant" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-fhirpack.base">
+<span id="fhirpack-base-module"></span><h2>fhirpack.base module<a class="headerlink" href="#module-fhirpack.base" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="fhirpack.base.BaseMixin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">fhirpack.base.</span></span><span class="sig-name descname"><span class="pre">BaseMixin</span></span><a class="reference internal" href="../_modules/fhirpack/base.html#BaseMixin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.base.BaseMixin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3.9/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.base.BaseMixin.__dict__">
+<span class="sig-name descname"><span class="pre">__dict__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">mappingproxy({'__module__':</span> <span class="pre">'fhirpack.base',</span> <span class="pre">'guessOutputResourceType':</span> <span class="pre">&lt;function</span> <span class="pre">BaseMixin.guessOutputResourceType&gt;,</span> <span class="pre">'prepareCompositeOutput':</span> <span class="pre">&lt;function</span> <span class="pre">BaseMixin.prepareCompositeOutput&gt;,</span> <span class="pre">'prepareOutput':</span> <span class="pre">&lt;function</span> <span class="pre">BaseMixin.prepareOutput&gt;,</span> <span class="pre">'parseReference':</span> <span class="pre">&lt;function</span> <span class="pre">BaseMixin.parseReference&gt;,</span> <span class="pre">'prepareReferences':</span> <span class="pre">&lt;function</span> <span class="pre">BaseMixin.prepareReferences&gt;,</span> <span class="pre">'prepareOperationInput':</span> <span class="pre">&lt;function</span> <span class="pre">BaseMixin.prepareOperationInput&gt;,</span> <span class="pre">'castOperand':</span> <span class="pre">&lt;function</span> <span class="pre">BaseMixin.castOperand&gt;,</span> <span class="pre">'referencesToIds':</span> <span class="pre">&lt;function</span> <span class="pre">BaseMixin.referencesToIds&gt;,</span> <span class="pre">'referencesToResources':</span> <span class="pre">&lt;function</span> <span class="pre">BaseMixin.referencesToResources&gt;,</span> <span class="pre">'prepareInput':</span> <span class="pre">&lt;function</span> <span class="pre">BaseMixin.prepareInput&gt;,</span> <span class="pre">'isFrame':</span> <span class="pre">&lt;property</span> <span class="pre">object&gt;,</span> <span class="pre">'__dict__':</span> <span class="pre">&lt;attribute</span> <span class="pre">'__dict__'</span> <span class="pre">of</span> <span class="pre">'BaseMixin'</span> <span class="pre">objects&gt;,</span> <span class="pre">'__weakref__':</span> <span class="pre">&lt;attribute</span> <span class="pre">'__weakref__'</span> <span class="pre">of</span> <span class="pre">'BaseMixin'</span> <span class="pre">objects&gt;,</span> <span class="pre">'__doc__':</span> <span class="pre">None,</span> <span class="pre">'__annotations__':</span> <span class="pre">{}})</span></em><a class="headerlink" href="#fhirpack.base.BaseMixin.__dict__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.base.BaseMixin.__doc__">
+<span class="sig-name descname"><span class="pre">__doc__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#fhirpack.base.BaseMixin.__doc__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.base.BaseMixin.__module__">
+<span class="sig-name descname"><span class="pre">__module__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'fhirpack.base'</span></em><a class="headerlink" href="#fhirpack.base.BaseMixin.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.base.BaseMixin.__weakref__">
+<span class="sig-name descname"><span class="pre">__weakref__</span></span><a class="headerlink" href="#fhirpack.base.BaseMixin.__weakref__" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fhirpack.base.BaseMixin.castOperand">
+<span class="sig-name descname"><span class="pre">castOperand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resourceType</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/base.html#BaseMixin.castOperand"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.base.BaseMixin.castOperand" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fhirpack.base.BaseMixin.guessOutputResourceType">
+<span class="sig-name descname"><span class="pre">guessOutputResourceType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/base.html#BaseMixin.guessOutputResourceType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.base.BaseMixin.guessOutputResourceType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="fhirpack.base.BaseMixin.isFrame">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">isFrame</span></span><a class="headerlink" href="#fhirpack.base.BaseMixin.isFrame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fhirpack.base.BaseMixin.parseReference">
+<span class="sig-name descname"><span class="pre">parseReference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reference</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.9/library/typing.html#typing.Union" title="(in Python v3.9)"><span class="pre">Union</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.9/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">SyncFHIRReference</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resourceType</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/base.html#BaseMixin.parseReference"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.base.BaseMixin.parseReference" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fhirpack.base.BaseMixin.prepareCompositeOutput">
+<span class="sig-name descname"><span class="pre">prepareCompositeOutput</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.9/library/stdtypes.html#dict" title="(in Python v3.9)"><span class="pre">dict</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/base.html#BaseMixin.prepareCompositeOutput"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.base.BaseMixin.prepareCompositeOutput" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fhirpack.base.BaseMixin.prepareInput">
+<span class="sig-name descname"><span class="pre">prepareInput</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resourceType</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/base.html#BaseMixin.prepareInput"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.base.BaseMixin.prepareInput" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fhirpack.base.BaseMixin.prepareOperationInput">
+<span class="sig-name descname"><span class="pre">prepareOperationInput</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resourceType</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/base.html#BaseMixin.prepareOperationInput"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.base.BaseMixin.prepareOperationInput" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fhirpack.base.BaseMixin.prepareOutput">
+<span class="sig-name descname"><span class="pre">prepareOutput</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resourceType</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['data']</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wrap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/base.html#BaseMixin.prepareOutput"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.base.BaseMixin.prepareOutput" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fhirpack.base.BaseMixin.prepareReferences">
+<span class="sig-name descname"><span class="pre">prepareReferences</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">referenceList</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resourceType</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/base.html#BaseMixin.prepareReferences"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.base.BaseMixin.prepareReferences" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fhirpack.base.BaseMixin.referencesToIds">
+<span class="sig-name descname"><span class="pre">referencesToIds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">referenceList</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/base.html#BaseMixin.referencesToIds"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.base.BaseMixin.referencesToIds" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fhirpack.base.BaseMixin.referencesToResources">
+<span class="sig-name descname"><span class="pre">referencesToResources</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">referenceList</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/base.html#BaseMixin.referencesToResources"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.base.BaseMixin.referencesToResources" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="fhirpack.base.Frame">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">fhirpack.base.</span></span><span class="sig-name descname"><span class="pre">Frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/base.html#Frame"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.base.Frame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v1.4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></a>, <a class="reference internal" href="#fhirpack.base.BaseMixin" title="fhirpack.base.BaseMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseMixin</span></code></a>, <a class="reference internal" href="fhirpack.extraction.html#fhirpack.extraction.ExtractorMixin" title="fhirpack.extraction.ExtractorMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExtractorMixin</span></code></a>, <a class="reference internal" href="fhirpack.transformation.html#fhirpack.transformation.TransformerMixin" title="fhirpack.transformation.TransformerMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">TransformerMixin</span></code></a>, <a class="reference internal" href="fhirpack.load.html#fhirpack.load.LoaderMixin" title="fhirpack.load.LoaderMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">LoaderMixin</span></code></a>, <a class="reference internal" href="fhirpack.custom.html#fhirpack.custom.PluginMixin" title="fhirpack.custom.PluginMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">PluginMixin</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.base.Frame.__doc__">
+<span class="sig-name descname"><span class="pre">__doc__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#fhirpack.base.Frame.__doc__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fhirpack.base.Frame.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/base.html#Frame.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.base.Frame.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.base.Frame.__module__">
+<span class="sig-name descname"><span class="pre">__module__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'fhirpack.base'</span></em><a class="headerlink" href="#fhirpack.base.Frame.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="fhirpack.base.Frame._constructor">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_constructor</span></span><a class="headerlink" href="#fhirpack.base.Frame._constructor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used when a manipulation result has the same dimensions as the
+original.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="fhirpack.base.Frame._constructor_expanddim">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_constructor_expanddim</span></span><a class="headerlink" href="#fhirpack.base.Frame._constructor_expanddim" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.base.Frame._metadata">
+<span class="sig-name descname"><span class="pre">_metadata</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.9/library/stdtypes.html#list" title="(in Python v3.9)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.9/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['client',</span> <span class="pre">'resourceType']</span></em><a class="headerlink" href="#fhirpack.base.Frame._metadata" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.base.Frame._mgr">
+<span class="sig-name descname"><span class="pre">_mgr</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">BlockManager</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ArrayManager</span></em><a class="headerlink" href="#fhirpack.base.Frame._mgr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fhirpack.base.Frame.cast">
+<span class="sig-name descname"><span class="pre">cast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">format</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/base.html#Frame.cast"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.base.Frame.cast" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fhirpack.base.Frame.explode">
+<span class="sig-name descname"><span class="pre">explode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/base.html#Frame.explode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.base.Frame.explode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transform each element of a list-like to a row, replicating index values.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.25.0.</span></p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>column</strong> (<em>IndexLabel</em>) – <p>Column(s) to explode.
+For multiple columns, specify a non-empty list with each element
+be str or tuple, and all specified columns their list-like data
+on same row of the frame must have matching length.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.3.0: </span>Multi-column explode</p>
+</div>
+</p></li>
+<li><p><strong>ignore_index</strong> (<a class="reference external" href="https://docs.python.org/3.9/library/functions.html#bool" title="(in Python v3.9)"><em>bool</em></a><em>, </em><em>default False</em>) – <p>If True, the resulting index will be labeled 0, 1, …, n - 1.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.1.0.</span></p>
+</div>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Exploded lists to rows of the subset columns;
+index will be duplicated for these rows.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DataFrame</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError :</strong> – <ul class="simple">
+<li><p>If columns of the frame are not unique.
+    * If specified columns to explode is empty list.
+    * If specified columns to explode have not matching count of
+      elements rowwise in the frame.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.unstack</span></code></dt><dd><p>Pivot a level of the (necessarily hierarchical) index labels.</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.melt</span></code></dt><dd><p>Unpivot a DataFrame from wide format to long format.</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.explode</span></code></dt><dd><p>Explode a DataFrame from list-like columns to long format.</p>
+</dd>
+</dl>
+</div>
+<p class="rubric">Notes</p>
+<p>This routine will explode list-likes including lists, tuples, sets,
+Series, and np.ndarray. The result dtype of the subset rows will
+be object. Scalars will be returned unchanged, and empty list-likes will
+result in a np.nan for that row. In addition, the ordering of rows in the
+output will be non-deterministic when exploding sets.</p>
+<p>Reference <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/reshaping.html#reshaping-explode" title="(in pandas v1.4.2)"><span class="xref std std-ref">the user guide</span></a> for more examples.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="p">[],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]],</span>
+<span class="gp">... </span>                   <span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+<span class="gp">... </span>                   <span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="p">[[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="p">[],</span> <span class="p">[</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">]]})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span>
+<span class="go">           A  B          C</span>
+<span class="go">0  [0, 1, 2]  1  [a, b, c]</span>
+<span class="go">1        foo  1        NaN</span>
+<span class="go">2         []  1         []</span>
+<span class="go">3     [3, 4]  1     [d, e]</span>
+</pre></div>
+</div>
+<p>Single-column explode.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">explode</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+<span class="go">     A  B          C</span>
+<span class="go">0    0  1  [a, b, c]</span>
+<span class="go">0    1  1  [a, b, c]</span>
+<span class="go">0    2  1  [a, b, c]</span>
+<span class="go">1  foo  1        NaN</span>
+<span class="go">2  NaN  1         []</span>
+<span class="go">3    3  1     [d, e]</span>
+<span class="go">3    4  1     [d, e]</span>
+</pre></div>
+</div>
+<p>Multi-column explode.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">explode</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="s1">&#39;AC&#39;</span><span class="p">))</span>
+<span class="go">     A  B    C</span>
+<span class="go">0    0  1    a</span>
+<span class="go">0    1  1    b</span>
+<span class="go">0    2  1    c</span>
+<span class="go">1  foo  1  NaN</span>
+<span class="go">2  NaN  1  NaN</span>
+<span class="go">3    3  1    d</span>
+<span class="go">3    4  1    e</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="fhirpack.base.Frame.getResourceType">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getResourceType</span></span><a class="headerlink" href="#fhirpack.base.Frame.getResourceType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="fhirpack.base.Frame.keys">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">keys</span></span><a class="headerlink" href="#fhirpack.base.Frame.keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the ‘info axis’ (see Indexing for more).</p>
+<p>This is index for Series, columns for DataFrame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Info axis.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Index</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="fhirpack.base.Frame.pretty">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pretty</span></span><a class="headerlink" href="#fhirpack.base.Frame.pretty" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fhirpack.base.Frame.resourceTypeIs">
+<span class="sig-name descname"><span class="pre">resourceTypeIs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resourceType</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/base.html#Frame.resourceTypeIs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.base.Frame.resourceTypeIs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fhirpack.base.Frame.setResourceType">
+<span class="sig-name descname"><span class="pre">setResourceType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resourceType</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/base.html#Frame.setResourceType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.base.Frame.setResourceType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-fhirpack.base_test">
+<span id="fhirpack-base-test-module"></span><h2>fhirpack.base_test module<a class="headerlink" href="#module-fhirpack.base_test" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="module-fhirpack.cli">
+<span id="fhirpack-cli-module"></span><h2>fhirpack.cli module<a class="headerlink" href="#module-fhirpack.cli" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="fhirpack.cli.info">
+<span class="sig-prename descclassname"><span class="pre">fhirpack.cli.</span></span><span class="sig-name descname"><span class="pre">info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">msg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/cli.html#info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.cli.info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fhirpack.cli.loadToDestination">
+<span class="sig-prename descclassname"><span class="pre">fhirpack.cli.</span></span><span class="sig-name descname"><span class="pre">loadToDestination</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.9/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3.9/library/constants.html#None" title="(in Python v3.9)"><span class="pre">None</span></a></span></span><a class="reference internal" href="../_modules/fhirpack/cli.html#loadToDestination"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.cli.loadToDestination" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fhirpack.cli.processParams">
+<span class="sig-prename descclassname"><span class="pre">fhirpack.cli.</span></span><span class="sig-name descname"><span class="pre">processParams</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.9/library/stdtypes.html#str" title="(in Python v3.9)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3.9/library/stdtypes.html#dict" title="(in Python v3.9)"><span class="pre">dict</span></a></span></span><a class="reference internal" href="../_modules/fhirpack/cli.html#processParams"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.cli.processParams" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fhirpack.cli.run">
+<span class="sig-prename descclassname"><span class="pre">fhirpack.cli.</span></span><span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/cli.html#run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.cli.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calls <code class="xref py py-func docutils literal notranslate"><span class="pre">main()</span></code> passing the CLI arguments extracted from <a class="reference external" href="https://docs.python.org/3.9/library/sys.html#sys.argv" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sys.argv</span></code></a></p>
+<p>This function can be used as entry point to create console scripts with setuptools.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fhirpack.cli.setupLogging">
+<span class="sig-prename descclassname"><span class="pre">fhirpack.cli.</span></span><span class="sig-name descname"><span class="pre">setupLogging</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/cli.html#setupLogging"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.cli.setupLogging" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-fhirpack.cli_test">
+<span id="fhirpack-cli-test-module"></span><h2>fhirpack.cli_test module<a class="headerlink" href="#module-fhirpack.cli_test" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="module-fhirpack.config">
+<span id="fhirpack-config-module"></span><h2>fhirpack.config module<a class="headerlink" href="#module-fhirpack.config" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="fhirpack.config.Config">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">fhirpack.config.</span></span><span class="sig-name descname"><span class="pre">Config</span></span><a class="reference internal" href="../_modules/fhirpack/config.html#Config"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.config.Config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3.9/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.config.Config.__CONFIG">
+<span class="sig-name descname"><span class="pre">__CONFIG</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#fhirpack.config.Config.__CONFIG" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.config.Config.__DOTENVPATH">
+<span class="sig-name descname"><span class="pre">__DOTENVPATH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#fhirpack.config.Config.__DOTENVPATH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fhirpack.config.Config.__configLogger">
+<span class="sig-name descname"><span class="pre">__configLogger</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fhirpack.config.Config.__configLogger" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.config.Config.__dict__">
+<span class="sig-name descname"><span class="pre">__dict__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">mappingproxy({'__module__':</span> <span class="pre">'fhirpack.config',</span> <span class="pre">'_Config__CONFIG':</span> <span class="pre">{},</span> <span class="pre">'_Config__DOTENVPATH':</span> <span class="pre">None,</span> <span class="pre">'__init__':</span> <span class="pre">&lt;function</span> <span class="pre">Config.__init__&gt;,</span> <span class="pre">'loadConfig':</span> <span class="pre">&lt;function</span> <span class="pre">Config.loadConfig&gt;,</span> <span class="pre">'globalExceptionHandler':</span> <span class="pre">&lt;function</span> <span class="pre">Config.globalExceptionHandler&gt;,</span> <span class="pre">'data':</span> <span class="pre">&lt;property</span> <span class="pre">object&gt;,</span> <span class="pre">'_Config__configLogger':</span> <span class="pre">&lt;staticmethod</span> <span class="pre">object&gt;,</span> <span class="pre">'set':</span> <span class="pre">&lt;function</span> <span class="pre">Config.set&gt;,</span> <span class="pre">'get':</span> <span class="pre">&lt;function</span> <span class="pre">Config.get&gt;,</span> <span class="pre">'getLogger':</span> <span class="pre">&lt;function</span> <span class="pre">Config.getLogger&gt;,</span> <span class="pre">'__dict__':</span> <span class="pre">&lt;attribute</span> <span class="pre">'__dict__'</span> <span class="pre">of</span> <span class="pre">'Config'</span> <span class="pre">objects&gt;,</span> <span class="pre">'__weakref__':</span> <span class="pre">&lt;attribute</span> <span class="pre">'__weakref__'</span> <span class="pre">of</span> <span class="pre">'Config'</span> <span class="pre">objects&gt;,</span> <span class="pre">'__doc__':</span> <span class="pre">None,</span> <span class="pre">'__annotations__':</span> <span class="pre">{}})</span></em><a class="headerlink" href="#fhirpack.config.Config.__dict__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.config.Config.__doc__">
+<span class="sig-name descname"><span class="pre">__doc__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#fhirpack.config.Config.__doc__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fhirpack.config.Config.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/config.html#Config.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.config.Config.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.config.Config.__module__">
+<span class="sig-name descname"><span class="pre">__module__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'fhirpack.config'</span></em><a class="headerlink" href="#fhirpack.config.Config.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.config.Config.__weakref__">
+<span class="sig-name descname"><span class="pre">__weakref__</span></span><a class="headerlink" href="#fhirpack.config.Config.__weakref__" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="fhirpack.config.Config.data">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">data</span></span><a class="headerlink" href="#fhirpack.config.Config.data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fhirpack.config.Config.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/config.html#Config.get"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.config.Config.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fhirpack.config.Config.getLogger">
+<span class="sig-name descname"><span class="pre">getLogger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/config.html#Config.getLogger"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.config.Config.getLogger" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fhirpack.config.Config.globalExceptionHandler">
+<span class="sig-name descname"><span class="pre">globalExceptionHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exctype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tb</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/config.html#Config.globalExceptionHandler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.config.Config.globalExceptionHandler" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fhirpack.config.Config.loadConfig">
+<span class="sig-name descname"><span class="pre">loadConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dotenvPath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/config.html#Config.loadConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.config.Config.loadConfig" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fhirpack.config.Config.set">
+<span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">saveToEnv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/config.html#Config.set"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.config.Config.set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-fhirpack.config_test">
+<span id="fhirpack-config-test-module"></span><h2>fhirpack.config_test module<a class="headerlink" href="#module-fhirpack.config_test" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="fhirpack.config_test.envFile">
+<span class="sig-prename descclassname"><span class="pre">fhirpack.config_test.</span></span><span class="sig-name descname"><span class="pre">envFile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tmp_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/config_test.html#envFile"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.config_test.envFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Crates a temporary dot env file so the original one is not manipulated</p>
+</dd></dl>
+
+</section>
+<section id="module-fhirpack.conftest">
+<span id="fhirpack-conftest-module"></span><h2>fhirpack.conftest module<a class="headerlink" href="#module-fhirpack.conftest" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="fhirpack.conftest.observationFrame">
+<span class="sig-prename descclassname"><span class="pre">fhirpack.conftest.</span></span><span class="sig-name descname"><span class="pre">observationFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">packUnconnected</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/conftest.html#observationFrame"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.conftest.observationFrame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fhirpack.conftest.observationResourceList">
+<span class="sig-prename descclassname"><span class="pre">fhirpack.conftest.</span></span><span class="sig-name descname"><span class="pre">observationResourceList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">observationFrame</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/conftest.html#observationResourceList"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.conftest.observationResourceList" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fhirpack.conftest.packageSessionFixture">
+<span class="sig-prename descclassname"><span class="pre">fhirpack.conftest.</span></span><span class="sig-name descname"><span class="pre">packageSessionFixture</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/conftest.html#packageSessionFixture"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.conftest.packageSessionFixture" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fhirpack.conftest.patientAsDict">
+<span class="sig-prename descclassname"><span class="pre">fhirpack.conftest.</span></span><span class="sig-name descname"><span class="pre">patientAsDict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">patientResourceList</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/conftest.html#patientAsDict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.conftest.patientAsDict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fhirpack.conftest.patientFrame">
+<span class="sig-prename descclassname"><span class="pre">fhirpack.conftest.</span></span><span class="sig-name descname"><span class="pre">patientFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">packUnconnected</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/conftest.html#patientFrame"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.conftest.patientFrame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fhirpack.conftest.patientReference">
+<span class="sig-prename descclassname"><span class="pre">fhirpack.conftest.</span></span><span class="sig-name descname"><span class="pre">patientReference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">patientReferenceList</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/conftest.html#patientReference"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.conftest.patientReference" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fhirpack.conftest.patientReferenceList">
+<span class="sig-prename descclassname"><span class="pre">fhirpack.conftest.</span></span><span class="sig-name descname"><span class="pre">patientReferenceList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">patientResourceList</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/conftest.html#patientReferenceList"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.conftest.patientReferenceList" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fhirpack.conftest.patientResource">
+<span class="sig-prename descclassname"><span class="pre">fhirpack.conftest.</span></span><span class="sig-name descname"><span class="pre">patientResource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">patientResourceList</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/conftest.html#patientResource"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.conftest.patientResource" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fhirpack.conftest.patientResourceList">
+<span class="sig-prename descclassname"><span class="pre">fhirpack.conftest.</span></span><span class="sig-name descname"><span class="pre">patientResourceList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">patientFrame</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/conftest.html#patientResourceList"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.conftest.patientResourceList" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-fhirpack.constants">
+<span id="fhirpack-constants-module"></span><h2>fhirpack.constants module<a class="headerlink" href="#module-fhirpack.constants" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="fhirpack.constants.SampleEnum">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">fhirpack.constants.</span></span><span class="sig-name descname"><span class="pre">SampleEnum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/constants.html#SampleEnum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.constants.SampleEnum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3.9/library/enum.html#enum.Enum" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></a></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.constants.SampleEnum.__doc__">
+<span class="sig-name descname"><span class="pre">__doc__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'An</span> <span class="pre">enumeration.'</span></em><a class="headerlink" href="#fhirpack.constants.SampleEnum.__doc__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.constants.SampleEnum.__module__">
+<span class="sig-name descname"><span class="pre">__module__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'fhirpack.constants'</span></em><a class="headerlink" href="#fhirpack.constants.SampleEnum.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.constants.SampleEnum.sample">
+<span class="sig-name descname"><span class="pre">sample</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'sample'</span></em><a class="headerlink" href="#fhirpack.constants.SampleEnum.sample" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-fhirpack.exceptions">
+<span id="fhirpack-exceptions-module"></span><h2>fhirpack.exceptions module<a class="headerlink" href="#module-fhirpack.exceptions" title="Permalink to this heading">¶</a></h2>
+<dl class="py exception">
+<dt class="sig sig-object py" id="fhirpack.exceptions.BaseError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">fhirpack.exceptions.</span></span><span class="sig-name descname"><span class="pre">BaseError</span></span><a class="reference internal" href="../_modules/fhirpack/exceptions.html#BaseError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.exceptions.BaseError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3.9/library/exceptions.html#Exception" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.exceptions.BaseError.__doc__">
+<span class="sig-name descname"><span class="pre">__doc__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#fhirpack.exceptions.BaseError.__doc__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.exceptions.BaseError.__module__">
+<span class="sig-name descname"><span class="pre">__module__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'fhirpack.exceptions'</span></em><a class="headerlink" href="#fhirpack.exceptions.BaseError.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.exceptions.BaseError.__weakref__">
+<span class="sig-name descname"><span class="pre">__weakref__</span></span><a class="headerlink" href="#fhirpack.exceptions.BaseError.__weakref__" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="fhirpack.exceptions.ErrorSeverity">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">fhirpack.exceptions.</span></span><span class="sig-name descname"><span class="pre">ErrorSeverity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/exceptions.html#ErrorSeverity"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.exceptions.ErrorSeverity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3.9/library/enum.html#enum.Enum" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></a></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.exceptions.ErrorSeverity.__doc__">
+<span class="sig-name descname"><span class="pre">__doc__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'An</span> <span class="pre">enumeration.'</span></em><a class="headerlink" href="#fhirpack.exceptions.ErrorSeverity.__doc__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.exceptions.ErrorSeverity.__module__">
+<span class="sig-name descname"><span class="pre">__module__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'fhirpack.exceptions'</span></em><a class="headerlink" href="#fhirpack.exceptions.ErrorSeverity.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.exceptions.ErrorSeverity.error">
+<span class="sig-name descname"><span class="pre">error</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'error'</span></em><a class="headerlink" href="#fhirpack.exceptions.ErrorSeverity.error" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.exceptions.ErrorSeverity.fatal">
+<span class="sig-name descname"><span class="pre">fatal</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'fatal'</span></em><a class="headerlink" href="#fhirpack.exceptions.ErrorSeverity.fatal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.exceptions.ErrorSeverity.information">
+<span class="sig-name descname"><span class="pre">information</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'information'</span></em><a class="headerlink" href="#fhirpack.exceptions.ErrorSeverity.information" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.exceptions.ErrorSeverity.warning">
+<span class="sig-name descname"><span class="pre">warning</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'warning'</span></em><a class="headerlink" href="#fhirpack.exceptions.ErrorSeverity.warning" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="fhirpack.exceptions.InvalidConfigurationException">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">fhirpack.exceptions.</span></span><span class="sig-name descname"><span class="pre">InvalidConfigurationException</span></span><a class="reference internal" href="../_modules/fhirpack/exceptions.html#InvalidConfigurationException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.exceptions.InvalidConfigurationException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3.9/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.exceptions.InvalidConfigurationException.__dict__">
+<span class="sig-name descname"><span class="pre">__dict__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">mappingproxy({'__module__':</span> <span class="pre">'fhirpack.exceptions',</span> <span class="pre">'__dict__':</span> <span class="pre">&lt;attribute</span> <span class="pre">'__dict__'</span> <span class="pre">of</span> <span class="pre">'InvalidConfigurationException'</span> <span class="pre">objects&gt;,</span> <span class="pre">'__weakref__':</span> <span class="pre">&lt;attribute</span> <span class="pre">'__weakref__'</span> <span class="pre">of</span> <span class="pre">'InvalidConfigurationException'</span> <span class="pre">objects&gt;,</span> <span class="pre">'__doc__':</span> <span class="pre">None,</span> <span class="pre">'__annotations__':</span> <span class="pre">{}})</span></em><a class="headerlink" href="#fhirpack.exceptions.InvalidConfigurationException.__dict__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.exceptions.InvalidConfigurationException.__doc__">
+<span class="sig-name descname"><span class="pre">__doc__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#fhirpack.exceptions.InvalidConfigurationException.__doc__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.exceptions.InvalidConfigurationException.__module__">
+<span class="sig-name descname"><span class="pre">__module__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'fhirpack.exceptions'</span></em><a class="headerlink" href="#fhirpack.exceptions.InvalidConfigurationException.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.exceptions.InvalidConfigurationException.__weakref__">
+<span class="sig-name descname"><span class="pre">__weakref__</span></span><a class="headerlink" href="#fhirpack.exceptions.InvalidConfigurationException.__weakref__" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="fhirpack.exceptions.InvalidInputDataException">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">fhirpack.exceptions.</span></span><span class="sig-name descname"><span class="pre">InvalidInputDataException</span></span><a class="reference internal" href="../_modules/fhirpack/exceptions.html#InvalidInputDataException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.exceptions.InvalidInputDataException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3.9/library/exceptions.html#ValueError" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValueError</span></code></a></p>
+<p>Raised when invalid input types are passed.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.exceptions.InvalidInputDataException.__doc__">
+<span class="sig-name descname"><span class="pre">__doc__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Raised</span> <span class="pre">when</span> <span class="pre">invalid</span> <span class="pre">input</span> <span class="pre">types</span> <span class="pre">are</span> <span class="pre">passed.'</span></em><a class="headerlink" href="#fhirpack.exceptions.InvalidInputDataException.__doc__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.exceptions.InvalidInputDataException.__module__">
+<span class="sig-name descname"><span class="pre">__module__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'fhirpack.exceptions'</span></em><a class="headerlink" href="#fhirpack.exceptions.InvalidInputDataException.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.exceptions.InvalidInputDataException.__weakref__">
+<span class="sig-name descname"><span class="pre">__weakref__</span></span><a class="headerlink" href="#fhirpack.exceptions.InvalidInputDataException.__weakref__" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="fhirpack.exceptions.InvalidOperationException">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">fhirpack.exceptions.</span></span><span class="sig-name descname"><span class="pre">InvalidOperationException</span></span><a class="reference internal" href="../_modules/fhirpack/exceptions.html#InvalidOperationException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.exceptions.InvalidOperationException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3.9/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Raised when operation is invalid for data.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.exceptions.InvalidOperationException.__dict__">
+<span class="sig-name descname"><span class="pre">__dict__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">mappingproxy({'__module__':</span> <span class="pre">'fhirpack.exceptions',</span> <span class="pre">'__doc__':</span> <span class="pre">'Raised</span> <span class="pre">when</span> <span class="pre">operation</span> <span class="pre">is</span> <span class="pre">invalid</span> <span class="pre">for</span> <span class="pre">data.',</span> <span class="pre">'__dict__':</span> <span class="pre">&lt;attribute</span> <span class="pre">'__dict__'</span> <span class="pre">of</span> <span class="pre">'InvalidOperationException'</span> <span class="pre">objects&gt;,</span> <span class="pre">'__weakref__':</span> <span class="pre">&lt;attribute</span> <span class="pre">'__weakref__'</span> <span class="pre">of</span> <span class="pre">'InvalidOperationException'</span> <span class="pre">objects&gt;,</span> <span class="pre">'__annotations__':</span> <span class="pre">{}})</span></em><a class="headerlink" href="#fhirpack.exceptions.InvalidOperationException.__dict__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.exceptions.InvalidOperationException.__doc__">
+<span class="sig-name descname"><span class="pre">__doc__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Raised</span> <span class="pre">when</span> <span class="pre">operation</span> <span class="pre">is</span> <span class="pre">invalid</span> <span class="pre">for</span> <span class="pre">data.'</span></em><a class="headerlink" href="#fhirpack.exceptions.InvalidOperationException.__doc__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.exceptions.InvalidOperationException.__module__">
+<span class="sig-name descname"><span class="pre">__module__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'fhirpack.exceptions'</span></em><a class="headerlink" href="#fhirpack.exceptions.InvalidOperationException.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.exceptions.InvalidOperationException.__weakref__">
+<span class="sig-name descname"><span class="pre">__weakref__</span></span><a class="headerlink" href="#fhirpack.exceptions.InvalidOperationException.__weakref__" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="fhirpack.exceptions.InvalidSearchParams">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">fhirpack.exceptions.</span></span><span class="sig-name descname"><span class="pre">InvalidSearchParams</span></span><a class="reference internal" href="../_modules/fhirpack/exceptions.html#InvalidSearchParams"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.exceptions.InvalidSearchParams" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3.9/library/exceptions.html#ValueError" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ValueError</span></code></a></p>
+<p>Raised when invalid key is used for searchParams</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.exceptions.InvalidSearchParams.__doc__">
+<span class="sig-name descname"><span class="pre">__doc__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Raised</span> <span class="pre">when</span> <span class="pre">invalid</span> <span class="pre">key</span> <span class="pre">is</span> <span class="pre">used</span> <span class="pre">for</span> <span class="pre">searchParams'</span></em><a class="headerlink" href="#fhirpack.exceptions.InvalidSearchParams.__doc__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.exceptions.InvalidSearchParams.__module__">
+<span class="sig-name descname"><span class="pre">__module__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'fhirpack.exceptions'</span></em><a class="headerlink" href="#fhirpack.exceptions.InvalidSearchParams.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.exceptions.InvalidSearchParams.__weakref__">
+<span class="sig-name descname"><span class="pre">__weakref__</span></span><a class="headerlink" href="#fhirpack.exceptions.InvalidSearchParams.__weakref__" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="fhirpack.exceptions.SampleError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">fhirpack.exceptions.</span></span><span class="sig-name descname"><span class="pre">SampleError</span></span><a class="reference internal" href="../_modules/fhirpack/exceptions.html#SampleError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.exceptions.SampleError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#fhirpack.exceptions.BaseError" title="fhirpack.exceptions.BaseError"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseError</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.exceptions.SampleError.__doc__">
+<span class="sig-name descname"><span class="pre">__doc__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#fhirpack.exceptions.SampleError.__doc__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.exceptions.SampleError.__module__">
+<span class="sig-name descname"><span class="pre">__module__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'fhirpack.exceptions'</span></em><a class="headerlink" href="#fhirpack.exceptions.SampleError.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="fhirpack.exceptions.ServerConnectionException">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">fhirpack.exceptions.</span></span><span class="sig-name descname"><span class="pre">ServerConnectionException</span></span><a class="reference internal" href="../_modules/fhirpack/exceptions.html#ServerConnectionException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.exceptions.ServerConnectionException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3.9/library/exceptions.html#ConnectionError" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ConnectionError</span></code></a></p>
+<p>Raised when pack does not have connection to server.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.exceptions.ServerConnectionException.__doc__">
+<span class="sig-name descname"><span class="pre">__doc__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Raised</span> <span class="pre">when</span> <span class="pre">pack</span> <span class="pre">does</span> <span class="pre">not</span> <span class="pre">have</span> <span class="pre">connection</span> <span class="pre">to</span> <span class="pre">server.'</span></em><a class="headerlink" href="#fhirpack.exceptions.ServerConnectionException.__doc__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.exceptions.ServerConnectionException.__module__">
+<span class="sig-name descname"><span class="pre">__module__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'fhirpack.exceptions'</span></em><a class="headerlink" href="#fhirpack.exceptions.ServerConnectionException.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.exceptions.ServerConnectionException.__weakref__">
+<span class="sig-name descname"><span class="pre">__weakref__</span></span><a class="headerlink" href="#fhirpack.exceptions.ServerConnectionException.__weakref__" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-fhirpack.pack">
+<span id="fhirpack-pack-module"></span><h2>fhirpack.pack module<a class="headerlink" href="#module-fhirpack.pack" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="fhirpack.pack.PACK">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">fhirpack.pack.</span></span><span class="sig-name descname"><span class="pre">PACK</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">apiBase</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">envFile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unconnected</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">authMethod</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">authParams</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/pack.html#PACK"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.pack.PACK" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#fhirpack.base.BaseMixin" title="fhirpack.base.BaseMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseMixin</span></code></a>, <a class="reference internal" href="fhirpack.extraction.html#fhirpack.extraction.ExtractorMixin" title="fhirpack.extraction.ExtractorMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExtractorMixin</span></code></a>, <a class="reference internal" href="fhirpack.transformation.html#fhirpack.transformation.TransformerMixin" title="fhirpack.transformation.TransformerMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">TransformerMixin</span></code></a>, <a class="reference internal" href="fhirpack.load.html#fhirpack.load.LoaderMixin" title="fhirpack.load.LoaderMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">LoaderMixin</span></code></a>, <a class="reference internal" href="fhirpack.custom.html#fhirpack.custom.PluginMixin" title="fhirpack.custom.PluginMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">PluginMixin</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.pack.PACK.__doc__">
+<span class="sig-name descname"><span class="pre">__doc__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#fhirpack.pack.PACK.__doc__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fhirpack.pack.PACK.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">apiBase</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">envFile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unconnected</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">authMethod</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">authParams</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/pack.html#PACK.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.pack.PACK.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="fhirpack.pack.PACK.__module__">
+<span class="sig-name descname"><span class="pre">__module__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'fhirpack.pack'</span></em><a class="headerlink" href="#fhirpack.pack.PACK.__module__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fhirpack.pack.PACK.__setupClient">
+<span class="sig-name descname"><span class="pre">__setupClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">apiBase</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">authMethod</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">authParams</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fhirpack.pack.PACK.__setupClient" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fhirpack.pack.PACK.countServerResources">
+<span class="sig-name descname"><span class="pre">countServerResources</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/pack.html#PACK.countServerResources"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.pack.PACK.countServerResources" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-fhirpack.utils">
+<span id="fhirpack-utils-module"></span><h2>fhirpack.utils module<a class="headerlink" href="#module-fhirpack.utils" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="fhirpack.utils.clientFromEnv">
+<span class="sig-prename descclassname"><span class="pre">fhirpack.utils.</span></span><span class="sig-name descname"><span class="pre">clientFromEnv</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/utils.html#clientFromEnv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.utils.clientFromEnv" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fhirpack.utils.flattenList">
+<span class="sig-prename descclassname"><span class="pre">fhirpack.utils.</span></span><span class="sig-name descname"><span class="pre">flattenList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.9/library/stdtypes.html#list" title="(in Python v3.9)"><span class="pre">list</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/utils.html#flattenList"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.utils.flattenList" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fhirpack.utils.getInstallationPath">
+<span class="sig-prename descclassname"><span class="pre">fhirpack.utils.</span></span><span class="sig-name descname"><span class="pre">getInstallationPath</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/utils.html#getInstallationPath"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.utils.getInstallationPath" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fhirpack.utils.guessBufferMIMEType">
+<span class="sig-prename descclassname"><span class="pre">fhirpack.utils.</span></span><span class="sig-name descname"><span class="pre">guessBufferMIMEType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bytes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.9/library/stdtypes.html#bytes" title="(in Python v3.9)"><span class="pre">bytes</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/utils.html#guessBufferMIMEType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.utils.guessBufferMIMEType" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fhirpack.utils.keys">
+<span class="sig-prename descclassname"><span class="pre">fhirpack.utils.</span></span><span class="sig-name descname"><span class="pre">keys</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/utils.html#keys"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.utils.keys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fhirpack.utils.textToAscii">
+<span class="sig-prename descclassname"><span class="pre">fhirpack.utils.</span></span><span class="sig-name descname"><span class="pre">textToAscii</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/utils.html#textToAscii"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.utils.textToAscii" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fhirpack.utils.validateFrame">
+<span class="sig-prename descclassname"><span class="pre">fhirpack.utils.</span></span><span class="sig-name descname"><span class="pre">validateFrame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/utils.html#validateFrame"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.utils.validateFrame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fhirpack.utils.valuesForKeys">
+<span class="sig-prename descclassname"><span class="pre">fhirpack.utils.</span></span><span class="sig-name descname"><span class="pre">valuesForKeys</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.9/library/typing.html#typing.Union" title="(in Python v3.9)"><span class="pre">Union</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3.9/library/stdtypes.html#dict" title="(in Python v3.9)"><span class="pre">dict</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3.9/library/stdtypes.html#list" title="(in Python v3.9)"><span class="pre">list</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lookupKeys</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3.9/library/stdtypes.html#list" title="(in Python v3.9)"><span class="pre">list</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhirpack/utils.html#valuesForKeys"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhirpack.utils.valuesForKeys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-fhirpack.utils_test">
+<span id="fhirpack-utils-test-module"></span><h2>fhirpack.utils_test module<a class="headerlink" href="#module-fhirpack.utils_test" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="module-fhirpack">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-fhirpack" title="Permalink to this heading">¶</a></h2>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">fhirpack</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, Jayson Salazar.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/api/fhirpack.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

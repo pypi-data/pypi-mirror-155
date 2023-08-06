@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>fhirpack.conftest &#8212; fhirpack 0.0.2b0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css" />
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for fhirpack.conftest</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">pytest</span> <span class="k">as</span> <span class="nn">pt</span>
+<span class="kn">import</span> <span class="nn">tests</span> <span class="k">as</span> <span class="nn">ts</span>
+
+<span class="c1"># this is an example fixture with session scope,</span>
+<span class="c1"># only for the fhirpack package, with autouse enabled and a finalizer</span>
+<span class="c1"># this fixture can be used by any test under src/fhirpack</span>
+
+
+<div class="viewcode-block" id="packageSessionFixture"><a class="viewcode-back" href="../../api/fhirpack.html#fhirpack.conftest.packageSessionFixture">[docs]</a><span class="nd">@pt</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s2">&quot;session&quot;</span><span class="p">,</span> <span class="n">autouse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">packageSessionFixture</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="n">ts</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;fhirpack session confSetup&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">packageSessionFixtureFin</span><span class="p">():</span>
+        <span class="n">ts</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;fhirpack session confTeardown&quot;</span><span class="p">)</span>
+        <span class="k">pass</span>
+
+    <span class="n">request</span><span class="o">.</span><span class="n">addfinalizer</span><span class="p">(</span><span class="n">packageSessionFixtureFin</span><span class="p">)</span></div>
+
+
+<span class="c1"># uncomment to use start the test FHIR server in docker and  build your frame</span>
+<span class="c1"># @pt.fixture(scope=&quot;session&quot;)</span>
+<span class="c1"># def patientFrame(packDocker):</span>
+<span class="c1">#     f = packDocker.getPatients([&quot;1&quot;,&quot;181&quot;,&quot;525&quot;,&quot;821&quot;])</span>
+
+<span class="c1"># uncomment to use .env to connect to the configured FHIR server and  build your frame</span>
+<span class="c1"># @pt.fixture(scope=&quot;session&quot;)</span>
+<span class="c1"># def patientFrame(packEnv):</span>
+<span class="c1">#     f = packEnv.getPatients([&quot;1&quot;,&quot;181&quot;,&quot;525&quot;,&quot;821&quot;])</span>
+
+<span class="c1"># uncomment to use files in /tests/data to build your frame</span>
+<div class="viewcode-block" id="patientFrame"><a class="viewcode-back" href="../../api/fhirpack.html#fhirpack.conftest.patientFrame">[docs]</a><span class="nd">@pt</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s2">&quot;session&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">patientFrame</span><span class="p">(</span><span class="n">packUnconnected</span><span class="p">):</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">packUnconnected</span><span class="o">.</span><span class="n">getFromFiles</span><span class="p">(</span>
+        <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ts</span><span class="o">.</span><span class="n">TEST_DATA_DIR</span><span class="si">}</span><span class="s2">/fhirpack.extraction.base.getFromFiles.patients.00.in&quot;</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">f</span>
+    <span class="k">return</span> <span class="n">result</span></div>
+
+
+<div class="viewcode-block" id="patientResourceList"><a class="viewcode-back" href="../../api/fhirpack.html#fhirpack.conftest.patientResourceList">[docs]</a><span class="nd">@pt</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s2">&quot;session&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">patientResourceList</span><span class="p">(</span><span class="n">patientFrame</span><span class="p">):</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">patientFrame</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">values</span>
+    <span class="k">return</span> <span class="n">p</span></div>
+
+
+<span class="c1"># uncomment to use start the test FHIR server in docker and  build your frame</span>
+<span class="c1"># def observationFrame(packDocker):</span>
+<span class="c1">#     f = packDocker.getObservations([&quot;9&quot;,&quot;10&quot;,&quot;11&quot;,&quot;12&quot;])</span>
+
+<span class="c1"># uncomment to use .env to connect to the configured FHIR server and  build your frame</span>
+<span class="c1"># def observationFrame(packEnv):</span>
+<span class="c1">#     f = packEnv.getObservations([&quot;9&quot;,&quot;10&quot;,&quot;11&quot;,&quot;12&quot;])</span>
+
+<span class="c1"># uncomment to use files in /tests/data to build your frame</span>
+<div class="viewcode-block" id="observationFrame"><a class="viewcode-back" href="../../api/fhirpack.html#fhirpack.conftest.observationFrame">[docs]</a><span class="nd">@pt</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s2">&quot;session&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">observationFrame</span><span class="p">(</span><span class="n">packUnconnected</span><span class="p">):</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">packUnconnected</span><span class="o">.</span><span class="n">getFromFiles</span><span class="p">(</span>
+        <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ts</span><span class="o">.</span><span class="n">TEST_DATA_DIR</span><span class="si">}</span><span class="s2">/fhirpack.observations.00.in&quot;</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">f</span>
+    <span class="k">return</span> <span class="n">result</span></div>
+
+
+<div class="viewcode-block" id="observationResourceList"><a class="viewcode-back" href="../../api/fhirpack.html#fhirpack.conftest.observationResourceList">[docs]</a><span class="nd">@pt</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s2">&quot;session&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">observationResourceList</span><span class="p">(</span><span class="n">observationFrame</span><span class="p">):</span>
+    <span class="n">o</span> <span class="o">=</span> <span class="n">observationFrame</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">values</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">o</span>
+    <span class="k">return</span> <span class="n">result</span></div>
+
+
+<div class="viewcode-block" id="patientReferenceList"><a class="viewcode-back" href="../../api/fhirpack.html#fhirpack.conftest.patientReferenceList">[docs]</a><span class="nd">@pt</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s2">&quot;session&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">patientReferenceList</span><span class="p">(</span><span class="n">patientResourceList</span><span class="p">):</span>
+    <span class="c1"># pt.set_trace()</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">to_reference</span><span class="p">()</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">patientResourceList</span><span class="p">]</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">r</span>
+    <span class="k">return</span> <span class="n">result</span></div>
+
+
+<div class="viewcode-block" id="patientResource"><a class="viewcode-back" href="../../api/fhirpack.html#fhirpack.conftest.patientResource">[docs]</a><span class="nd">@pt</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s2">&quot;session&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">patientResource</span><span class="p">(</span><span class="n">patientResourceList</span><span class="p">):</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">patientResourceList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">p</span></div>
+
+
+<div class="viewcode-block" id="patientReference"><a class="viewcode-back" href="../../api/fhirpack.html#fhirpack.conftest.patientReference">[docs]</a><span class="nd">@pt</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s2">&quot;session&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">patientReference</span><span class="p">(</span><span class="n">patientReferenceList</span><span class="p">):</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">patientReferenceList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">r</span>
+    <span class="k">return</span> <span class="n">result</span></div>
+
+
+<div class="viewcode-block" id="patientAsDict"><a class="viewcode-back" href="../../api/fhirpack.html#fhirpack.conftest.patientAsDict">[docs]</a><span class="nd">@pt</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">scope</span><span class="o">=</span><span class="s2">&quot;session&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">patientAsDict</span><span class="p">(</span><span class="n">patientResourceList</span><span class="p">):</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">patientResourceList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">serialize</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">p</span></div>
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">fhirpack</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, Jayson Salazar.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 5.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
