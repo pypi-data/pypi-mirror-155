@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: terrorform
+Version: 0.1.0
+Summary: Terraform wrapper for python
+Home-page: https://github.com/bengetch/terrorform
+Author: bengetch
+Author-email: bengetch@gmail.com
+License: MIT
+Platform: UNKNOWN
+Requires-Python: >=3.5
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pytest
+
+## terrorform
+
+Thin python wrapper for [Terraform](https://www.terraform.io/)
+
+### Purpose
+
+### Package Installation and Usage
+
+### Examples
+
+### Testing
+
+
