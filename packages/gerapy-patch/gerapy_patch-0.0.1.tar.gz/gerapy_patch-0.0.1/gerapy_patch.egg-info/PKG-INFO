@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: gerapy-patch
+Version: 0.0.1
+Summary: fix gerapy build egg can't pack cfg/xlsx/txt etc type files
+Home-page: https://scrapy.org
+Author: buliqioqiolibusdo
+Author-email: dingyeran@163.com
+License: BSD
+Requires-Python: >=3.6
