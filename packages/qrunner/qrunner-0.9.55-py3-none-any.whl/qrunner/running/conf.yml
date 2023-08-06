@@ -1,0 +1,26 @@
+api:
+  login_key:
+  - accessToken
+  - signature
+app:
+  android_alert:
+  - "\u5141\u8BB8"
+  - "\u59CB\u7EC8\u5141\u8BB8"
+  - "\u4EC5\u4F7F\u7528\u671F\u95F4\u5141\u8BB8"
+  - "\u4EC5\u5728\u4F7F\u7528\u4E2D\u5141\u8BB8"
+  - id/bottom_btn
+  ios_alert:
+  - "\u4F7F\u7528App\u65F6\u5141\u8BB8"
+  - "\u5141\u8BB8"
+  - "\u59CB\u7EC8\u5141\u8BB8"
+  - close white big
+  pkg_name: com.qizhidao.clientapp
+  serial_no: UMXDU20A10018714
+common:
+  base_url: https://patents-pre.qizhidao.com/
+  headers: {}
+  platform: web
+  timeout: '30'
+  report_path: report
+web:
+  browser_name: chrome
