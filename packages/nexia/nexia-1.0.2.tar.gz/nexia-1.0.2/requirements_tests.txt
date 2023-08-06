@@ -1,0 +1,9 @@
+flake8
+mock
+mypy
+pylint
+pytest
+pytest-asyncio
+pytest-cov
+aioresponses
+tox
