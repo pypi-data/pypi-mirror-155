@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: STcreateFigure
+Version: 0.1.4
+Summary: Fensterbemaßung
+Home-page: UNKNOWN
+Author: Richard Oberreitecr
+License: UNKNOWN
+Keywords: python,first package
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Education
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Requires-Dist: matplotlib
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: PyQt5
+Requires-Dist: setuptools-changelog
+Requires-Dist: python-barcode
+
+Programm zum automatisierten Bemaßen von Fenster- und Rahmenteilen die als XML formatiert vorliegen
+
