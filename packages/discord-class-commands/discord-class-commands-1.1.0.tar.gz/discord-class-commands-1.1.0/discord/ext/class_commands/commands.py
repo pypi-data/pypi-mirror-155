@@ -1,0 +1,586 @@
+"""
+The MIT License (MIT)
+
+
+Copyright (c) 2022-present Dolfies
+
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the "Software"),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+"""
+
+from __future__ import annotations
+
+import traceback
+from types import FunctionType
+
+from typing import (
+    Optional,
+    TypeVar,
+    Dict,
+    Any,
+    List,
+    TYPE_CHECKING,
+    Union,
+    Sequence,
+    Generic,
+)
+from discord import AppCommandType, Interaction, Member, Message, User
+from discord.app_commands.commands import _shorten, Command as _Command, ContextMenu
+from discord.utils import MISSING
+
+from .interop import _generate_callback, _inject_class_based_information
+from .option import _Option, ParameterData
+
+if TYPE_CHECKING:
+    from discord import AllowedMentions, File, Embed, Permissions
+    from discord.ui import View
+    from discord.abc import Snowflake
+    from discord.app_commands.commands import AppCommandError, Choice, ChoiceT, Group
+
+__all__ = ('Command', 'UserCommand', 'MessageCommand', 'SlashCommand')
+
+CommandT = TypeVar('CommandT', bound='Command')
+
+
+if TYPE_CHECKING:
+    meta = _Command
+else:
+    meta = object
+
+
+class CommandMeta(type, meta):
+    __discord_app_commands_type__: AppCommandType = MISSING
+    if TYPE_CHECKING:
+        __discord_app_commands_params__: List[ParameterData]
+        __discord_app_commands_param_description__: Dict[str, str]
+        __discord_app_commands_param_rename__: Dict[str, str]
+        __discord_app_commands_param_choices__: Dict[str, List[Choice]]
+        __discord_app_commands_param_autocompleted__: List[str]
+        __discord_app_commands_param_autocomplete__: Dict[str, Any]
+        __discord_app_commands_guild_only__: bool
+        __discord_app_commands_default_permissions__: Optional[Permissions]
+
+    def __new__(
+        cls,
+        classname: str,
+        bases: tuple,
+        attrs: Dict[str, Any],
+        *,
+        name: str = MISSING,
+        description: str = MISSING,
+        guild: Optional[Snowflake] = MISSING,
+        guilds: Sequence[Snowflake] = MISSING,
+        parent: Optional[Group] = MISSING,
+        guild_only: bool = MISSING,
+        default_permissions: Optional[Permissions] = MISSING,
+        nsfw: bool = False,
+    ) -> Union[_Command, ContextMenu]:
+        if not bases or bases == (Command, Generic):  # This metaclass should only operate on subclasses
+            return super().__new__(cls, classname, bases, attrs)
+
+        if guild is not MISSING and guilds is not MISSING:
+            raise TypeError('Cannot mix guild and guilds keyword arguments')
+
+        if not guild:
+            if not guilds:
+                guild_ids = None
+            else:
+                guild_ids = [g.id for g in guilds]
+        else:
+            guild_ids = [guild.id] if guild else None
+
+        arguments = attrs['__discord_app_commands_params__'] = []
+        descriptions = {}
+        renames = {}
+        extra_choices = {}
+        autocompleted = []
+
+        annotations = attrs.get('__annotations__', {})
+        for k, v in attrs.items():
+            if k.startswith('_') or k == 'interaction' or type(v) in {FunctionType, classmethod, staticmethod}:
+                continue
+
+            annotation = annotations.get(k, 'str')
+            autocomplete = False
+            _name = default = _description = choices = MISSING
+            if isinstance(v, _Option):
+                _name = v.name
+                default = v.default
+                _description = v.description
+                choices = v.choices
+                autocomplete = v.autocomplete
+            elif v is not MISSING:
+                default = v
+
+            arguments.append(ParameterData(k, default, annotation))
+            if _name is not MISSING:
+                renames[k] = _name
+            if _description is not MISSING:
+                descriptions[k] = _description
+            if choices is not MISSING:
+                extra_choices[k] = choices
+            if autocomplete:
+                autocompleted.append(k)
+
+        if type in {AppCommandType.user, AppCommandType.message} and len(arguments) > 1:
+            raise TypeError('Context menu commands must take exactly one argument')
+
+        if renames:
+            attrs['__discord_app_commands_param_rename__'] = renames
+        if descriptions:
+            attrs['__discord_app_commands_param_description__'] = descriptions
+        if extra_choices:
+            attrs['__discord_app_commands_param_choices__'] = extra_choices
+        if autocompleted:
+            attrs['__discord_app_commands_param_autocompleted__'] = autocompleted
+        if guild_only is not MISSING:
+            attrs['__discord_app_commands_guild_only__'] = guild_only
+        if default_permissions is not MISSING:
+            attrs['__discord_app_commands_default_permissions__'] = default_permissions
+
+        # After all of that, we turn the class into a Command
+        sub = super().__new__(cls, classname, bases, attrs)
+
+        if sub.__discord_app_commands_type__ is AppCommandType.chat_input:
+            if description is MISSING:
+                docstring = attrs.get('__doc__')
+                if docstring is None:
+                    description = '…'
+                else:
+                    description = _shorten(docstring)
+
+            command = _Command(
+                name=name if name is not MISSING else classname.lower(),
+                description=description,
+                callback=_generate_callback(sub, fake=True),  # type: ignore # The cls type is correct
+                parent=parent or None,
+                guild_ids=guild_ids,
+                nsfw=nsfw,
+            )
+        else:
+            if description or parent:
+                raise TypeError('Context menu commands cannot have a description or parent')
+            command = ContextMenu(
+                name=name if name is not MISSING else classname,
+                callback=_generate_callback(sub),  # type: ignore # The cls type is correct
+                guild_ids=guild_ids,
+                nsfw=nsfw,
+            )
+
+        _inject_class_based_information(sub, command)
+        return command
+
+    @property
+    def type(cls) -> AppCommandType:
+        """:class:`~discord.AppCommandType`: Returns the command's type."""
+        return cls.__discord_app_commands_type__
+
+
+class Command(metaclass=CommandMeta):
+    """Represents a class-based application command.
+
+    .. note::
+
+        Instances of this class are created on every command invocation.
+
+        This means that relying on the state of this class to be
+        the same between command invocations would not work as expected.
+
+    Parameters
+    -----------
+    name: :class:`str`
+        The name of the group. If not given, it defaults to a lower-case
+        kebab-case version of the class name.
+    description: :class:`str`
+        The description of the group. This shows up in the UI to describe
+        the group. If not given, it defaults to the docstring of the
+        class shortened to 100 characters.
+
+        Due to a Discord limitation, context menu commands cannot have descriptions.
+    guild: :class:`~discord.abc.Snowflake`
+        The guild to restrict the command to.
+    guilds: List[:class:`~discord.abc.Snowflake`]
+        A list of guilds to restrict the command to.
+        Cannot be used with ``guild``.
+    default_permissions: Optional[:class:`~discord.Permissions`]
+        The default permissions that can execute this group on Discord. Note
+        that server administrators can override this value in the client.
+        Setting an empty permissions field will disallow anyone except server
+        administrators from using the command in a guild.
+
+        Due to a Discord limitation, this does not work on subcommands.
+    guild_only: :class:`bool`
+        Whether the group should only be usable in guild contexts.
+        Defaults to ``False``.
+
+        Due to a Discord limitation, this does not work on subcommands.
+    parent: :class:`~discord.app_commands.Group`
+        The command's parent.
+
+        Due to a Discord limitation, context menu commands cannot have parents.
+    nsfw: :class:`bool`
+        Whether the command is NSFW and should only work in NSFW channels. Defaults to ``False``.
+
+        Due to a Discord limitation, this does not work on subcommands.
+
+        .. versionadded:: 1.1
+
+
+    Attributes
+    -----------
+    interaction: :class:`~discord.Interaction`
+        The interaction that triggered the command.
+    """
+
+    interaction: Interaction
+
+    async def callback(self) -> None:
+        """|coro|
+
+        This method is called when the command is used.
+
+        All the parameters and :attr:`.interaction` will be available at this point.
+        """
+        pass
+
+    async def check(self) -> bool:
+        r"""|maybecoro|
+
+        This method is called before the callback is called.
+
+        If it returns a ``False``\-like value then during invocation a
+        :exc:`~discord.app_commands.CheckFailure` exception is raised and sent to the appropriate error handlers.
+
+        :attr:`.interaction` will be available at this point.
+        """
+        return True
+
+    async def on_error(self, exception: AppCommandError) -> None:
+        """|maybecoro|
+
+        This method is called whenever an exception occurs in :meth:`.autocomplete` or :meth:`.callback`.
+
+        By default this prints to :data:`sys.stderr` however it could be
+        overridden to have a different implementation.
+
+        :attr:`.interaction` will be available at this point.
+
+        Parameters
+        -----------
+        exception: :class:`~discord.app_commands.AppCommandError`
+            The exception that was thrown.
+        """
+        traceback.print_exception(type(exception), exception, exception.__traceback__)
+
+    async def send(
+        self,
+        content: Optional[str] = None,
+        *,
+        tts: bool = False,
+        embed: Optional[Embed] = None,
+        embeds: Optional[Sequence[Embed]] = None,
+        file: Optional[File] = None,
+        files: Optional[Sequence[File]] = None,
+        nonce: Optional[Union[str, int]] = None,
+        allowed_mentions: Optional[AllowedMentions] = None,
+        view: Optional[View] = None,
+        suppress_embeds: bool = False,
+        ephemeral: bool = False,
+    ) -> Message:
+        """|coro|
+
+        Responds to the interaction with the content given.
+
+        This does one of the following:
+
+        - :meth:`~discord.InteractionResponse.send_message` if no response has been given.
+        - A followup message if a response has been given.
+        - Regular send if the interaction has expired
+
+        Parameters
+        ------------
+        content: Optional[:class:`str`]
+            The content of the message to send.
+        tts: :class:`bool`
+            Indicates if the message should be sent using text-to-speech.
+        embed: :class:`~discord.Embed`
+            The rich embed for the content.
+        file: :class:`~discord.File`
+            The file to upload.
+        files: List[:class:`~discord.File`]
+            A list of files to upload. Must be a maximum of 10.
+        nonce: :class:`int`
+            The nonce to use for sending this message. If the message was successfully sent,
+            then the message will have a nonce with this value.
+        allowed_mentions: :class:`~discord.AllowedMentions`
+            Controls the mentions being processed in this message. If this is
+            passed, then the object is merged with :attr:`~discord.Client.allowed_mentions`.
+            The merging behaviour only overrides attributes that have been explicitly passed
+            to the object, otherwise it uses the attributes set in :attr:`~discord.Client.allowed_mentions`.
+            If no object is passed at all then the defaults given by :attr:`~discord.Client.allowed_mentions`
+            are used instead.
+        view: :class:`discord.ui.View`
+            A Discord UI View to add to the message.
+        embeds: List[:class:`~discord.Embed`]
+            A list of embeds to upload. Must be a maximum of 10.
+        suppress_embeds: :class:`bool`
+            Whether to suppress embeds for the message. This sends the message without any embeds if set to ``True``.
+        ephemeral: :class:`bool`
+            Indicates if the message should only be visible to the user who started the interaction.
+            If a view is sent with an ephemeral message and it has no timeout set then the timeout
+            is set to 15 minutes.
+
+        Raises
+        --------
+        ~discord.HTTPException
+            Sending the message failed.
+        ~discord.Forbidden
+            You do not have the proper permissions to send the message.
+        ValueError
+            The ``files`` list is not of the appropriate size.
+        TypeError
+            You specified both ``file`` and ``files``,
+            or you specified both ``embed`` and ``embeds``,
+            or the ``reference`` object is not a :class:`~discord.Message`,
+            :class:`~discord.MessageReference` or :class:`~discord.PartialMessage`.
+
+        Returns
+        ---------
+        :class:`~discord.Message`
+            The message that was sent.
+        """
+        interaction = self.interaction
+
+        if interaction.is_expired():
+            return await interaction.channel.send(  # type: ignore # Should always support send in this context
+                content=content,
+                tts=tts,
+                embed=embed,
+                embeds=embeds,
+                file=file,
+                files=files,
+                nonce=nonce,
+                allowed_mentions=allowed_mentions,
+                view=view,
+                suppress_embeds=suppress_embeds,
+            )
+
+        # Convert the kwargs from None to MISSING to appease the remaining implementations
+        kwargs = {
+            'content': content,
+            'tts': tts,
+            'embed': MISSING if embed is None else embed,
+            'embeds': MISSING if embeds is None else embeds,
+            'file': MISSING if file is None else file,
+            'files': MISSING if files is None else files,
+            'allowed_mentions': MISSING if allowed_mentions is None else allowed_mentions,
+            'view': MISSING if view is None else view,
+            'suppress_embeds': suppress_embeds,
+            'ephemeral': ephemeral,
+        }
+
+        if interaction.response.is_done():
+            return await interaction.followup.send(**kwargs, wait=True)
+
+        await interaction.response.send_message(**kwargs)
+        return await interaction.original_message()
+
+    async def defer(self, *, ephemeral: bool = False) -> None:
+        """|coro|
+
+        Defers the interaction based contexts.
+
+        This is typically used when the interaction is acknowledged
+        and a secondary action will be done later.
+
+        Parameters
+        -----------
+        ephemeral: :class:`bool`
+            Indicates whether the deferred message will eventually be ephemeral.
+
+        Raises
+        -------
+        ~discord.HTTPException
+            Deferring the interaction failed.
+        ~discord.InteractionResponded
+            This interaction has already been responded to before.
+        """
+        await self.interaction.response.defer(ephemeral=ephemeral)
+
+
+class SlashCommand(Command, Generic[CommandT]):
+    """Represents a class-based slash command.
+
+    .. note::
+
+        Instances of this class are created on every command invocation.
+
+        This means that relying on the state of this class to be
+        the same between command invocations would not work as expected.
+
+    Parameters here refer to class parameters.
+
+    Parameters
+    -----------
+    name: :class:`str`
+        The name of the group. If not given, it defaults to a lower-case
+        kebab-case version of the class name.
+    description: :class:`str`
+        The description of the group. This shows up in the UI to describe
+        the group. If not given, it defaults to the docstring of the
+        class shortened to 100 characters.
+    guild: :class:`~discord.abc.Snowflake`
+        The guild to restrict the command to.
+    guilds: List[:class:`~discord.abc.Snowflake`]
+        A list of guilds to restrict the command to.
+        Cannot be used with ``guild``.
+    default_permissions: Optional[:class:`~discord.Permissions`]
+        The default permissions that can execute this group on Discord. Note
+        that server administrators can override this value in the client.
+        Setting an empty permissions field will disallow anyone except server
+        administrators from using the command in a guild.
+
+        Due to a Discord limitation, this does not work on subcommands.
+    guild_only: :class:`bool`
+        Whether the group should only be usable in guild contexts.
+        Defaults to ``False``.
+
+        Due to a Discord limitation, this does not work on subcommands.
+    parent: :class:`~discord.app_commands.Group`
+        The command's parent.
+
+    """
+
+    __discord_app_commands_type__ = AppCommandType.chat_input
+
+    async def autocomplete(self, focused: str) -> List[Choice[ChoiceT]]:
+        """|coro|
+
+        This method is called when an autocomplete interaction is triggered.
+
+        Some of the parameters and :attr:`.interaction` will be available at this point.
+
+        .. note::
+
+            In autocomplete interactions, parameter values might not be validated or filled in. Discord
+            does not send the resolved data as well, so this means that certain fields end up just as IDs
+            rather than the resolved data. In these cases, a :class:`~discord.Object` is returned instead.
+
+            This is a Discord limitation.
+
+        Parameters
+        -----------
+        focused: :class:`str`
+            The name of the option that is currently focused.
+
+        Returns
+        --------
+        List[:class:`~discord.app_commands.Choice`]
+            A list of choices to display.
+        """
+        return []
+
+
+class UserCommand(Command, Generic[CommandT]):
+    """Represents a class-based user command.
+
+    .. note::
+
+        Instances of this class are created on every command invocation.
+
+        This means that relying on the state of this class to be
+        the same between command invocations would not work as expected.
+
+    Parameters here refer to class parameters.
+
+    Parameters
+    -----------
+    name: :class:`str`
+        The name of the group. If not given, it defaults to a lower-case
+        kebab-case version of the class name.
+    guild: :class:`~discord.abc.Snowflake`
+        The guild to restrict the command to.
+    guilds: List[:class:`~discord.abc.Snowflake`]
+        A list of guilds to restrict the command to.
+        Cannot be used with ``guild``.
+    default_permissions: Optional[:class:`~discord.Permissions`]
+        The default permissions that can execute this group on Discord. Note
+        that server administrators can override this value in the client.
+        Setting an empty permissions field will disallow anyone except server
+        administrators from using the command in a guild.
+
+        Due to a Discord limitation, this does not work on subcommands.
+    guild_only: :class:`bool`
+        Whether the group should only be usable in guild contexts.
+        Defaults to ``False``.
+
+        Due to a Discord limitation, this does not work on subcommands.
+
+    Attributes
+    -----------
+    target: Union[:class:`~discord.abc.User`, :class:`~discord.Member`]
+        The user that the command is executed on.
+    """
+
+    __discord_app_commands_type__ = AppCommandType.user
+    target: Union[Member, User]
+
+
+class MessageCommand(Command, Generic[CommandT]):
+    """Represents a class-based message command.
+
+    .. note::
+
+        Instances of this class are created on every command invocation.
+
+        This means that relying on the state of this class to be
+        the same between command invocations would not work as expected.
+
+    Parameters here refer to class parameters.
+
+    Parameters
+    -----------
+    name: :class:`str`
+        The name of the group. If not given, it defaults to a lower-case
+        kebab-case version of the class name.
+    guild: :class:`~discord.abc.Snowflake`
+        The guild to restrict the command to.
+    guilds: List[:class:`~discord.abc.Snowflake`]
+        A list of guilds to restrict the command to.
+        Cannot be used with ``guild``.
+    default_permissions: Optional[:class:`~discord.Permissions`]
+        The default permissions that can execute this group on Discord. Note
+        that server administrators can override this value in the client.
+        Setting an empty permissions field will disallow anyone except server
+        administrators from using the command in a guild.
+
+        Due to a Discord limitation, this does not work on subcommands.
+    guild_only: :class:`bool`
+        Whether the group should only be usable in guild contexts.
+        Defaults to ``False``.
+
+        Due to a Discord limitation, this does not work on subcommands.
+
+    Attributes
+    -----------
+    target: :class:`~discord.Message`
+        The message that the command is executed on.
+    """
+
+    __discord_app_commands_type__ = AppCommandType.message
+    target: Message
