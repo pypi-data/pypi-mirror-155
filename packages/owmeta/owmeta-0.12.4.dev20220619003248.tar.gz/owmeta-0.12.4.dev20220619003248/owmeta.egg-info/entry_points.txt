@@ -1,0 +1,7 @@
+[owmeta_core.cli_hints]
+hints = owmeta.cli_hints:CLI_HINTS
+
+[owmeta_core.commands]
+cell = owmeta.commands.biology:CellCmd
+evidence = owmeta.command:OWMEvidence
+
