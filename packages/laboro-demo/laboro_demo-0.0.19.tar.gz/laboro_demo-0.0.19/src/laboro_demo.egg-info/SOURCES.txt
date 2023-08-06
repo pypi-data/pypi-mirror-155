@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+src/laboro_demo/__init__.py
+src/laboro_demo.egg-info/PKG-INFO
+src/laboro_demo.egg-info/SOURCES.txt
+src/laboro_demo.egg-info/dependency_links.txt
+src/laboro_demo.egg-info/requires.txt
+src/laboro_demo.egg-info/top_level.txt
+src/laboro_demo/schema/__init__.py
+src/laboro_demo/schema/specification.yml
+src/laboro_demo/submodule/__init__.py
+src/laboro_demo/submodule/schema/__init__.py
+src/laboro_demo/submodule/schema/specification.yml

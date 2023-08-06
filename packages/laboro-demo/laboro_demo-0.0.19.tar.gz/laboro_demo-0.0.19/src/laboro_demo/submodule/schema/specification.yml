@@ -1,0 +1,20 @@
+---
+class: submodule.SubDemo
+methods:
+  - name: get_random_list
+    args:
+      - name: size
+        required: True
+        type: int
+        implied: []
+        excluded: []
+        secret: False
+  - name: get_random_dict
+    args:
+      - name: size
+        required: True
+        type: int
+        implied: []
+        excluded: []
+        secret: False
+args: []

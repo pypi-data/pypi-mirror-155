@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: laboro_demo
+Version: 0.0.19
+Summary: The Laboro demonstration module
+Home-page: https://git.mcos.nc/laboro/laboro_demo
+Author: Michaël Costa
+Author-email: michael.costa@mcos.nc
+Project-URL: Bug Tracker, https://git.mcos.nc/laboro/laboro_demo/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Libraries :: Application Frameworks
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: Environment :: Console
+Classifier: Development Status :: 3 - Alpha
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Provides-Extra: tests
+Provides-Extra: dev
+License-File: LICENSE
+
+---
+gitea: none
+include_toc: true
+---
+![Build Status](https://drone.mcos.nc/api/badges/laboro/laboro_demo/status.svg) ![License](https://img.shields.io/static/v1?label=license&color=orange&message=MIT) ![Language](https://img.shields.io/static/v1?label=language&color=informational&message=Python)
+
+# laboro_demo
+
+The Laboro demonstration module
