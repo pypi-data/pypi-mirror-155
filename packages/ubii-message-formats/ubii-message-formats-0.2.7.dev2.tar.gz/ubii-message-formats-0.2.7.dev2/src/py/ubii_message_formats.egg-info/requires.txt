@@ -1,0 +1,15 @@
+proto-plus>=1.19.0
+generic-proto-plus-stubs
+more-itertools
+
+[compiler]
+codestare-msg-compiler[protoplus]>=0.0.5a1dev4
+
+[docs]
+sphinx==4.2.0
+
+[docs:python_version < "3.8"]
+importlib_metadata
+
+[test]
+pytest
