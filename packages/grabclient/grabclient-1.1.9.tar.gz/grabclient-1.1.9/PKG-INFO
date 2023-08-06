@@ -1,0 +1,65 @@
+Metadata-Version: 2.1
+Name: grabclient
+Version: 1.1.9
+Summary: Python library to consume GRABExpress API
+Home-page: UNKNOWN
+Author: Heri Priyatno
+Author-email: heri.priyatno@staff.gramedia.com
+License: MIT license
+Keywords: grabclient
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+License-File: LICENSE
+License-File: AUTHORS.rst
+
+==========
+GrabClient
+==========
+
+Python library for communicating with GrabExpress API
+Still work in progress
+
+Features
+--------
+
+* Get delivery quote
+
+Roadmap
+-------
+
+
+Links
+-----
+* [GrabExpress Swagger Doc](https://app.swaggerhub.com/apis-docs/Grab-Express/Grab-Express-API/2.1.0)
+
+
+Credits
+-------
+
+
+Disclaimer
+----------
+
+This software is not provided by or in any way associated with or endorsed by GRAB. It is a 3rd party library to ease communication with the Grab API from Python Code.
+
+It is entirely USE AT YOUR OWN RISK.
+
+Read the license and documentation for full details.
+
+
+=======
+History
+=======
+
+0.1.0 (2018-11-09)
+------------------
+
+* First release
+
+
