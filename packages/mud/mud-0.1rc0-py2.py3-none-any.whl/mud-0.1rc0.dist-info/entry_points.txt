@@ -1,0 +1,3 @@
+[console_scripts]
+mud = mud.funs:run
+
