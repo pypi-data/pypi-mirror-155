@@ -1,0 +1,79 @@
+name: Python tests
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+    # run this gha if...
+    paths:
+      # anything in the pylamine Python namespace
+      - 'pylamine/**'
+      # any testing changes
+      - 'tests/**'
+      # any changes to this gha
+      - '.github/workflows/python-tests.yaml'
+      # any changes to the Python dependencies/metadata/other project toml data
+      - 'pyproject.toml'
+      # changes to Rust code needs to trigger tests for Python bindings
+      - 'src/**'
+      # changes to the Rust dependencies/metadata/other project toml datas
+      - 'Cargo.toml'
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.8"]
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Setup python
+        uses: actions/setup-python@v1
+        with:
+          python-version: ${{ matrix.python-version }}
+          architecture: x64
+
+      - name: Install and configure Poetry
+        uses: snok/install-poetry@v1
+        with:
+          version: 1.1.13
+          virtualenvs-create: true
+          virtualenvs-in-project: true
+          virtualenvs-path: .venv
+          installer-parallel: true
+
+      - name: Load cached venv
+        id: cached-poetry-dependencies
+        uses: actions/cache@v2
+        with:
+          path: .venv
+          key: venv-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
+
+      - name: Install dependencies
+        if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
+        run: poetry install --no-interaction --no-root
+
+      - name: Install library
+        run: |
+          poetry install --no-interaction
+          make develop
+
+      - name: Run lint
+        run: |
+          make lint
+
+      - name: Run mypy
+        run: |
+          make tests
+
+      - name: Run fmt check
+        run: |
+          make fmt-check
+
+      - name: Run tests
+        run: |
+          poetry run pytest
