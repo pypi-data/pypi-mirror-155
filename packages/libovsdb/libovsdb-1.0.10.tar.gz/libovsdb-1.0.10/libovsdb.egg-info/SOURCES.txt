@@ -1,0 +1,10 @@
+MANIFEST.in
+README.rst
+setup.cfg
+setup.py
+libovsdb/__init__.py
+libovsdb/libovsdb.py
+libovsdb.egg-info/PKG-INFO
+libovsdb.egg-info/SOURCES.txt
+libovsdb.egg-info/dependency_links.txt
+libovsdb.egg-info/top_level.txt
