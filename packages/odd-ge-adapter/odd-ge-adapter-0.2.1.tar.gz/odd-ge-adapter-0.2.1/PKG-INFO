@@ -1,0 +1,100 @@
+Metadata-Version: 2.1
+Name: odd-ge-adapter
+Version: 0.2.1
+Summary: ODD adapter to Great Expectations
+Home-page: https://github.com/opendatadiscovery/odd-ge-adapter
+License: Apache-2.0
+Keywords: great expectations,metadata,odd,open data discovery
+Author: Open Data Discovery
+Author-email: pypi@opendatadiscovery.org
+Requires-Python: >=3.8,<4.0
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: black (>=22.3.0,<23.0.0)
+Requires-Dist: boto3 (>=1.23.7,<2.0.0)
+Requires-Dist: odd-collector-sdk (>=0.2.3,<0.3.0)
+Requires-Dist: odd-models (==2.0.3)
+Requires-Dist: oddrn-generator (>=0.1.37,<0.2.0)
+Requires-Dist: pytest (>=7.1.2,<8.0.0)
+Requires-Dist: s3 (>=3.0.0,<4.0.0)
+Project-URL: Repository, https://github.com/opendatadiscovery/odd-ge-adapter
+Description-Content-Type: text/markdown
+
+## ODD GreatExpectation adapter
+
+Library for GreatExpectation schema compatible json files for suites and validation, reads them from s3 storage and ingests to OpenDataDiscovery platform.
+
+Suites must include special metadata about folder with data which will be validated in the future.
+Example 
+```json
+{
+  "expectation_suite_name": "notification",
+  ...
+  "meta": {
+    "batch_kwargs": {
+      ...
+      "odd_metadata": [
+        "s3://bucket/folder"
+      ]
+    }
+  }
+}
+```
+
+Validation results must include metadata about which file was validated.
+Example
+```json
+{
+  "meta": {
+    "batch_kwargs": {
+      ...
+      "odd_metadata": [
+        "s3://bucket/folder/file.csv"
+      ]
+    },
+    ...
+    "validation_time": "20220525T174015.717924Z"
+  },
+  "results": [...],
+  "success": true
+}
+```
+
+### Library usage
+Install package
+```bash
+pip install odd-ge-adapter
+```
+
+Example:
+```
+from odd_models.api_client import ODDApiClient
+from odd_ge_adapter.domain.plugin import S3StoragePlugin
+from odd_ge_adapter.adapters.s3.adapter import Adapter
+
+platform = ODDApiClient(<PLATFORM_URL>)
+
+# aws credentials can be omitted and taken from the ENV variables 
+config = S3StoragePlugin(
+    type="s3",
+    name="s3_storage",
+    bucket="",
+    results_key="",
+    suites_key="",
+    # aws_region="",
+    # aws_access_key_id="",
+    # aws_secret_access_key="",
+)
+
+adapter = Adapter(config)
+platform.post_data_entity_list(data=adapter.get_data_entity_list())
+```
+
+
+### As collector usage
+In progress...
+
+
