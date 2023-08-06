@@ -1,0 +1,49 @@
+Metadata-Version: 2.1
+Name: libpythonpronew-ghc
+Version: 0.3
+Summary: Módulo para exemplificar construção de projetos Python no curso PyTools
+Home-page: https://github.com/Gh-Cunha/libpythonpro1
+Author: Gabriel Cunha
+Author-email: ghcweb@hotmail.com
+License: GNU AFFERO GENERAL PUBLIC LICENSE
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Framework :: Pytest
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Libpythonpro
+Projeto que visa mexer com o virtualenv
+
+Nesse projeto Ã© apresentado como contribuir com projetos de cÃ³digo aberto
+
+Suportada a versÃ£o 3 do Python
+[![Python 3](https://pyup.io/repos/github/Gh-Cunha/libpythonpro-1/python-3-shield.svg)](https://pyup.io/repos/github/Gh-Cunha/libpythonpro-1/)
+[![Updates](https://pyup.io/repos/github/Gh-Cunha/libpythonpro-1/shield.svg)](https://pyup.io/repos/github/Gh-Cunha/libpythonpro-1/)
+
+Para instalar: 
+
+'''console
+py -m venv .venv
+source .venv/Scripts/activate
+pip install -r requirements-dev.txt
+'''
+
+
+Para conferir qualidade de cÃ³digo:
+'''console
+flake8
+
+'''
+
+TÃ³picos a serem abordados:
+ 1. Git
+ 2. Virtualenv
+ 3. pip
+
