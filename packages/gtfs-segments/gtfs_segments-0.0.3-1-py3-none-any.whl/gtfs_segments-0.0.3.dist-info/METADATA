@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: gtfs-segments
+Version: 0.0.3
+Summary: GTFS segments
+Author: Saipraneeth Devunuri
+Author-email: <sd37@illinois.edu>
+Keywords: python,gtfs,geodata
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Education
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: License :: OSI Approved :: MIT License
+License-File: LICENSE
+Requires-Dist: geopandas
+Requires-Dist: partridge
+Requires-Dist: statsmodels
+Requires-Dist: shapely
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: seaborn
+Requires-Dist: matplotlib
+Requires-Dist: utm
+
+A fast and efficient library to generate bus stop spacings
