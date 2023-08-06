@@ -1,0 +1,54 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "schematics-py310-plus"
+authors = [
+    {name="James Dennis", email="jdennis@gmail.com"},
+    {name="Jóhann Þorvaldur Bergþórsson", email="johann@plainvanillagames.com"},
+    {name="Jökull Sólberg", email="jokull@plainvanillagames.com"},
+    {name="Kalle Tuure", email="kalle@goodtimes.fi"},
+    {name="Kirk Strauser", email="kirk@strauser.com"},
+    {name="Paul Eipper", email="paul@nkey.com.br"}
+]
+readme = "README.rst"
+description = "Forked from schematics/schematics: Python Data Structures for Humans, supporting python 3.10 plus."
+license = {file="LICENSE"}
+homepage='https://github.com/schematics/schematics'
+repository='https://github.com/schematics/schematics/'
+documentation = 'https://schematics.readthedocs.io/en/latest/'
+classifiers=[
+    'Intended Audience :: Developers',
+    'License :: OSI Approved :: BSD License',
+    'Programming Language :: Python',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.9',
+    'Programming Language :: Python :: 3.10',
+    # 'Programming Language :: Python :: 3.11',
+]
+include = [
+    "AUTHORS",
+    "HISTORY.rst",
+    "LICENSE",
+    "README.rst",
+]
+dynamic = ["version"]
+
+[project.urls]
+Home = "http://github.com/averagechris/schematics/"
+Docs = "http://schematics.readthedocs.org/"
+
+[tool.flit.module]
+name = "schematics"
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+ensure_newline_before_comments = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
