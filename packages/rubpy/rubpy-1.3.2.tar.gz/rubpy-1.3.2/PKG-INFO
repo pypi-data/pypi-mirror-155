@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: rubpy
+Version: 1.3.2
+Summary: This is an unofficial library for deploying robots on Rubika accounts
+Home-page: https://github.com/snipe4kill/rubika/
+Author: Shayan Heidari
+Author-email: snipe4kill.tg@gmail.com
+License: UNKNOWN
+Description: how to import module/library
+        
+        --> from rubpy import Bot
+        
+        How to activate the robot?
+        
+        from rubpy import Bot
+        
+        
+        auth = Bot("your auth")
+        
+        guid = "your group guid"
+        
+        bot.sendMessage(guid, "hello")
+        
+        For more training and to see the document, visit @rubika_library in Telegram
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: License :: OSI Approved :: MIT License
+Description-Content-Type: text/markdown
