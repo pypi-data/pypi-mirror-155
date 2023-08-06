@@ -1,0 +1,85 @@
+#!python
+
+""" CLI script for plotting SQLite files """
+
+import argparse
+import os
+
+import matplotlib.pyplot as plt
+
+import gfdlvitals
+
+COUNT = 1
+
+def arguments():
+    """
+    Function to capture the user-specified command line options
+    """
+    description = """
+    Program for plotting global mean statistics
+
+    For help, contact John.Krasting@noaa.gov
+
+    """
+
+    parser = argparse.ArgumentParser(
+        description=description, formatter_class=argparse.RawTextHelpFormatter
+    )
+
+    parser.add_argument(
+        "dbfiles",
+        nargs="+",
+        metavar="DB FILES",
+        type=str,
+        default=os.getcwd(),
+        help="Path to input database files",
+    )
+
+    parser.add_argument(
+        "-a",
+        "--align",
+        action="store_true",
+        default=False,
+        help="Align different time axes",
+    )
+
+    parser.add_argument(
+        "-t",
+        "--trend",
+        action="store_true",
+        default=False,
+        help="Add trend lines to plots",
+    )
+
+    parser.add_argument(
+        "-s",
+        "--smooth",
+        type=int,
+        default=None,
+        help="Apply a n-years smoother to all plots",
+    )
+
+    parser.add_argument(
+        "-l",
+        "--labels",
+        type=str,
+        default=None,
+        help="Comma-separated list of dataset labels",
+    )
+
+    parser.add_argument(
+        "-n",
+        "--nyears",
+        type=int,
+        default=None,
+        help="Limit the plotting to a set number of n years",
+    )
+
+    args = parser.parse_args()
+    return args
+
+
+
+if __name__ == "__main__":
+    cliargs = arguments()
+    gfdlvitals.plot.run_plotdb(cliargs)

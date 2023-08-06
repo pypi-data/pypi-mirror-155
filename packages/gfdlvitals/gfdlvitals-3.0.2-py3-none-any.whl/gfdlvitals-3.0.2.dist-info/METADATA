@@ -1,0 +1,38 @@
+Metadata-Version: 2.1
+Name: gfdlvitals
+Version: 3.0.2
+Summary: Tools for calculating scalar diagnostics from GFDL models
+Home-page: https://github.com/jkrasting/gfdlvitals
+Author: John Krasting
+Author-email: john.krasting@noaa.gov
+Keywords: climate model analysis scalar diagnostics gfdl AM4 CM4 ESM4 OM4 LM4
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering
+Classifier: License :: Public Domain
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Python: >=3.7
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+Requires-Dist: setuptools
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: h5netcdf
+Requires-Dist: pandas
+Requires-Dist: netCDF4
+Requires-Dist: matplotlib
+Requires-Dist: xarray
+Requires-Dist: cftime
+Requires-Dist: nc-time-axis
+
+
+**gfdlvitals** is a Python package in the public domain
+that provides tools for calculating, storing, and analyzing
+scalar diagnostics from GFDL's CM4-class models.
+
+More Information
+----------------
+- Source code: `<https://github.com/jkrasting/gfdlvitals>`_
+- Documentation: `<https://gfdlvitals.readthedocs.io/en/latest/>`_
