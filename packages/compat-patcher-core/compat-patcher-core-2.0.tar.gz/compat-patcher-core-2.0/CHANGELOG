@@ -1,0 +1,27 @@
+
+Version 2.0
+============
+
+* Fix encoding and error reporting bugs
+* Extend test coverage to Python3.10
+* Drop support for Python2.7 and Python3.5
+
+
+Version 1.2
+============
+
+* Fix import-proxifier to remove AssertionError on module `__name__` when interfering with other custom
+  importers (ex. when importing "six.moves.urllib.parse")
+
+
+Version 1.1
+==================
+
+* Support for Pytest 6
+* Slight logging improvements
+
+
+Version 1.0
+==================
+
+* Generic Compat-Patcher system, improved from existing django-compat-patcher0.6 package
