@@ -1,0 +1,3 @@
+[console_scripts]
+stlearn = stlearn.app.cli:main
+
