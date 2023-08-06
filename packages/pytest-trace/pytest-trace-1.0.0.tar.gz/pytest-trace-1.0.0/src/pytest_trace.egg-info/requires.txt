@@ -1,0 +1,10 @@
+pytest>=4.6
+opentelemetry-api>=1.11
+opentelemetry-sdk>=1.11
+
+[dev]
+black
+bumpver
+isort
+pip-tools
+pytest
