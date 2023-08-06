@@ -1,0 +1,61 @@
+[tool.poetry]
+authors = ["Konstantin-Dudersky <Konstantin.Dudersky@gmail.com>"]
+description = ""
+name = "konstantin_docs"
+version = "0.0.2"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+requests = "2.28.0"
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core>=1.0.0"]
+
+[tool.poetry.dev-dependencies]
+black = "*"
+flake8 = "*"
+flake8-annotations = "*"
+flake8-broken-line = "*"
+flake8-commas = "*"
+flake8-docstrings = "*"
+flake8-import-order = "*"
+flake8-multiline-containers = "*"
+flake8-print = "*"
+flake8-return = "*"
+flake8-variables-names = "*"
+mypy = "*"
+pep8-naming = "*"
+pylint = "*"
+
+[tool.poe.tasks]
+main = {script = "src.main:entry"}
+
+[tool.pylint.BASIC]
+good-names = 'db'
+
+[tool.pylint.'MESSAGES CONTROL']
+extension-pkg-whitelist = "pydantic"
+
+[tool.pylint.logging]
+logging-format-style = "old"
+logging-modules = ["logging"]
+
+# настройки mypy с сайта pydantic
+[tool.mypy]
+check_untyped_defs = true
+disallow_any_generics = true
+disallow_untyped_defs = true
+follow_imports = "silent"
+no_implicit_reexport = true
+plugins = [
+  "pydantic.mypy",
+]
+warn_redundant_casts = true
+warn_unused_ignores = true
+
+[tool.pydantic-mypy]
+init_forbid_extra = true
+init_typed = true
+warn_required_dynamic_aliases = true
+warn_untyped_fields = true
