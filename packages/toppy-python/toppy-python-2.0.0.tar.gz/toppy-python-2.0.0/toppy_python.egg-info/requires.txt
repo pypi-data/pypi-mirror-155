@@ -1,0 +1,5 @@
+aiohttp<=4.0
+
+[cache]
+aiosqlite
+aiofiles
