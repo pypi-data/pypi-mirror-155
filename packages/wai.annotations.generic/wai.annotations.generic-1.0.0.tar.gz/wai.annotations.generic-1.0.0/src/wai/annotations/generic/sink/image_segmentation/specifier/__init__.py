@@ -1,0 +1,1 @@
+from ._ImageSegmentationSinkSpecifier import ImageSegmentationSinkSpecifier

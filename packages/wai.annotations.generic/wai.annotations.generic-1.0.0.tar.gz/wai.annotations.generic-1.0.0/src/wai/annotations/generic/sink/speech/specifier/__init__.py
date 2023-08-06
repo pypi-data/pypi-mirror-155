@@ -1,0 +1,1 @@
+from ._SpeechSinkSpecifier import SpeechSinkSpecifier

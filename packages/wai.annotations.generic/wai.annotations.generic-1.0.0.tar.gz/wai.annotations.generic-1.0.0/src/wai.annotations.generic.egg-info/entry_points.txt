@@ -1,0 +1,16 @@
+[wai.annotations.plugins]
+generic-isp-ac = wai.annotations.generic.isp.audio_classification.specifier:AudioClassificationISPSpecifier
+generic-isp-ic = wai.annotations.generic.isp.image_classification.specifier:ImageClassificationISPSpecifier
+generic-isp-is = wai.annotations.generic.isp.image_segmentation.specifier:ImageSegmentationISPSpecifier
+generic-isp-od = wai.annotations.generic.isp.object_detection.specifier:ObjectDetectionISPSpecifier
+generic-isp-sp = wai.annotations.generic.isp.speech.specifier:SpeechISPSpecifier
+generic-sink-ac = wai.annotations.generic.sink.audio_classification.specifier:AudioClassificationSinkSpecifier
+generic-sink-ic = wai.annotations.generic.sink.image_classification.specifier:ImageClassificationSinkSpecifier
+generic-sink-is = wai.annotations.generic.sink.image_segmentation.specifier:ImageSegmentationSinkSpecifier
+generic-sink-od = wai.annotations.generic.sink.object_detection.specifier:ObjectDetectionSinkSpecifier
+generic-sink-sp = wai.annotations.generic.sink.speech.specifier:SpeechSinkSpecifier
+generic-source-ac = wai.annotations.generic.source.audio_classification.specifier:AudioClassificationSourceSpecifier
+generic-source-ic = wai.annotations.generic.source.image_classification.specifier:ImageClassificationSourceSpecifier
+generic-source-is = wai.annotations.generic.source.image_segmentation.specifier:ImageSegmentationSourceSpecifier
+generic-source-od = wai.annotations.generic.source.object_detection.specifier:ObjectDetectionSourceSpecifier
+generic-source-sp = wai.annotations.generic.source.speech.specifier:SpeechSourceSpecifier
