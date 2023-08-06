@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: gt
+Version: 0.3.15
+Summary: A simple tool for managing repositories located accross various git sources (e.g gitlab/github/unix boxes).
+Home-page: http://gitlab.com/rvaiya/gt
+Author: Raheman Vaiya
+Author-email: r.vaiya@gmail.com
+License: UNKNOWN
+Keywords: git github gitlab ssh cli console management
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Development Status :: 3 - Alpha
+License-File: LICENSE
+
+See https://gitlab.com/rvaiya/gt for documentation.
+
+

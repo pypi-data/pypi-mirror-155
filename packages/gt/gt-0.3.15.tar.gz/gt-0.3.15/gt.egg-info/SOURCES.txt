@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.rst
+setup.py
+bin/gt
+gt.egg-info/PKG-INFO
+gt.egg-info/SOURCES.txt
+gt.egg-info/dependency_links.txt
+gt.egg-info/requires.txt
+gt.egg-info/top_level.txt
+gt/sources/__init__.py
+gt/sources/base.py
+gt/sources/github.py
+gt/sources/gitlab.py
+gt/sources/ssh.py

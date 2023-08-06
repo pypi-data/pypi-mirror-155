@@ -1,0 +1,223 @@
+#!/usr/bin/env python3
+
+import os
+import re
+import sys
+import subprocess
+from threading import Thread
+import gt.sources
+
+def die(*args, **kwargs):
+    kwargs['file']=sys.stderr
+    print("ERROR:", *args, **kwargs)
+    sys.exit(-1)
+
+
+GITCMD = None
+
+for cmd in os.environ['PATH'].split(":"):
+    cmd = os.path.join(cmd, "git")
+    if os.path.exists(cmd):
+        GITCMD = cmd
+
+if not GITCMD:
+    die('Could not find git in PATH, please ensure it is installed.')
+
+CFG_FILE = os.path.join(os.environ['HOME'], '.gtrc')
+
+def assert_existence(repos):
+    for src, repo in repos:
+        if repo not in [ r[0] for r in src.repos ]:
+            die('%s/%s does not exist.' % (src.name, repo))
+
+# Returns a list of tuples of the form (<source name>/<repo name>, <visibility>)
+def get_repos(sources):
+    results = {}
+    for src in set(sources):
+        if src not in g_sources:
+            die('%s is not a valid git source.' % src)
+
+    def _(src):
+        results[src] = g_sources[src].repos
+
+    threads = [ Thread(target=_, args=(src,)) for src in sources ]
+    for t in threads: t.start()
+    for t in threads: t.join()
+
+    return results
+
+#Returns a list of tuples of the form (<GitSource>, <Repo Name>)
+
+def parse_repos(args):
+    processed = []
+    for arg in args:
+        if arg and arg[0] == '*':
+            if '/' in arg:
+                die('Invalid source format (wildcards are not allowed in the source name).\n'
+                     'To match all sources try omitting the source name altogether like so: "*partial*".')
+
+            for src in g_sources.keys():
+                processed.append(src + '/' + arg)
+        else:
+            if '/' not in arg:
+                die('%s must be of the form <source name>/<repo pattern>' % arg)
+
+            processed.append(arg)
+
+    sources = set()
+    for arg in processed:
+        src, repo = arg.split('/')
+        if '*' in repo:
+            sources.add(src)
+
+    results = []
+    src_repos = get_repos(sources)
+    for arg in processed:
+        src, repo = arg.split('/')
+        if '*' in repo:
+            pattern = '^' + repo.replace('*', '.*') + '$'
+            for repo, visibility in src_repos[src]:
+                if re.match(pattern, repo):
+                    results.append((g_sources[src], repo))
+        else:
+            results.append((g_sources[src], repo))
+
+    return results
+
+def init(args):
+    public = False
+    if args[0] == '-p' or args[0] == '--public':
+        args.pop(0)
+        public = True
+
+    if len(args) != 1:
+        print('Usage: gt init [-p | --public] <git source>/<repo>')
+        exit(1)
+
+    src, repo = parse_repos(args)[0]
+
+    if os.path.exists('.git'):
+        die('.git already exists, refusing to initialize.')
+
+    create((['-p'] if public else []) + args)
+
+    rc = subprocess.call([GITCMD, 'init'])
+    if rc != 0:
+        die('git process failed, aborting.')
+
+    loc = src.git_url(repo)
+    print('Setting %s as origin' % loc)
+    rc = subprocess.call([GITCMD, 'remote', 'add', 'origin', loc])
+    if rc != 0:
+        die('git process failed, aborting.')
+
+def delete(args):
+    if len(args) == 0:
+        die('Usage: gt create <source>/<repo name>...')
+
+    repos = parse_repos(args)
+    assert_existence(repos)
+
+    for src, repo in repos:
+        print(src.name + '/' + repo)
+
+    r = input('The repos listed above will be deleted type YES to confirm: ')
+    if r != 'YES':
+        print('ABORTING')
+        exit(1)
+
+    for src, repo in repos:
+        print('Deleting %s/%s' % (src.name, repo))
+        src.delete(repo)
+
+def create(args):
+    private = True
+
+    if args[0] == '--public' or args[0] == '-p':
+        args.pop(0)
+        private = False
+
+    if len(args) == 0:
+        die('Usage: gt create [-p|--public] <source>/<repo name>...')
+
+    for src,repo in parse_repos(args):
+        print('Creating %s repo %s/%s' % ('private' if private else 'public', src.name, repo))
+        src.create(repo, is_private=private)
+
+def ls(args):
+    list_visibility_flag = False
+    if args and (args[0] == '-l' or args[0] == '--list-visibility'):
+        list_visibility_flag = True
+        args.pop(0)
+
+    if len(args) == 0:
+        die('Usage: gt ls [ -l | --list-visibility ] [ <source> | <repo pattern> | <source>/<repo pattern>... ]\n\n'
+        'Valid Sources:\n\n\t%s' % '\n\t'.join(g_sources.keys()))
+
+    repo_patterns = []
+    for arg in args:
+        if '/' not in arg and '*' not in arg:
+            repo_patterns.append(arg + '/*')
+        else:
+            repo_patterns.append(arg)
+
+    repos = parse_repos(repo_patterns)
+    assert_existence(repos)
+
+    if list_visibility_flag:
+        _max = 0
+        for src,repo in repos:
+            l = len('%s/%s' % (src.name, repo))
+            if l > _max: _max = l
+
+        for src,repo in repos:
+            private = dict(src.repos)[repo]
+            print('%-*s %s' % (_max, '%s/%s' % (src.name, repo), 'private' if private else 'public'))
+
+        return
+
+    for src,repo in repos:
+        print('%s/%s' % (src.name, repo))
+
+def path(args):
+    if len(args) == 0:
+        die('Usage: gt path <git source/repo> [<git source/repo>...]')
+
+    for src, repo in parse_repos(args):
+        print(src.git_url(repo))
+
+def clone(args):
+    if len(args) == 0:
+        print('Usage: gt clone <git source/repo> [<git source/repo>...]')
+        return
+
+    for src,repo in parse_repos(args):
+        git_url = src.git_url(repo)
+        subprocess.call(['git', 'clone', git_url])
+
+
+#Main
+
+usage = 'Usage: gt <ls|create|rm|clone> [args]'
+
+if len(sys.argv) < 2:
+    die(usage)
+    
+target = sys.argv[1]
+args = sys.argv[2:]
+
+commands = {
+        'ls': ls,
+        'create': create,
+        'delete': delete,
+        'rm': delete,
+        'clone': clone,
+        'path': path,
+        'loc': path,
+        'init': init,
+}
+if target not in commands:
+    die('ERROR: %s is not a valid command.' % target)
+
+g_sources = gt.sources.get_sources('%s/.gtrc' % os.getenv('HOME'))
+commands[target](args)
