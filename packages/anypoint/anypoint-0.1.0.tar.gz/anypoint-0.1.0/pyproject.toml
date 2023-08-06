@@ -1,0 +1,14 @@
+[build-system]
+requires = ["flit"]
+build-backend = "flit.buildapi"
+
+[project]
+name = "anypoint"
+authors = [{ name = "dlopes7", email = "davidribeirolopes@gmail.com" }]
+license = { file = "LICENSE" }
+classifiers = ["License :: OSI Approved :: MIT License"]
+dynamic = ["version", "description"]
+
+
+[project.urls]
+Home = "https://github.com/dlopes7/anypoint-api-python-client"
