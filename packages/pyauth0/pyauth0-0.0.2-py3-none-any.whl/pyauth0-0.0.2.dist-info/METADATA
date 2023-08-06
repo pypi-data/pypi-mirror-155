@@ -1,0 +1,50 @@
+Metadata-Version: 2.1
+Name: pyauth0
+Version: 0.0.2
+Summary: Auth0 integration library for Python
+Home-page: https://github.com/svaponi/pyauth0
+Author: Samuel Vaponi
+Author-email: samuel.vaponi.developer@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: ecdsa (==0.17.0)
+Requires-Dist: pyasn1 (==0.4.8)
+Requires-Dist: python-jose (==3.3.0)
+Requires-Dist: rsa (==4.8)
+Requires-Dist: six (==1.16.0)
+
+# pyauth0
+
+Library for Auth0 token validation.
+
+## Usage
+
+```python
+from pyauth0 import Auth0, Auth0Error
+
+auth0 = Auth0(
+    auth0_domain="your-tenant-dev.us.pyauth0.com",
+    api_audience="https://api-dev.your-tenant.com",
+    jwks_cache_ttl=60,  # optional
+)
+try:
+    token_payload = auth0.validate_auth_header(
+        "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...."
+    )
+except Auth0Error as error:
+    status_code = error.status_code  # suggested status code (401 or 403)
+    code = error.code  # pyauth0 error code (example "invalid_header")
+    description = error.description  # pyauth0 error description (example "Unable to parse authentication token")
+    raise
+
+claim_value = token_payload.get_claim("http://your-tenant.com/claim_name", "default value")
+```
+
+
