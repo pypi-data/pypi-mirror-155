@@ -1,0 +1,17 @@
+activations/__init__.py,sha256=415G4FH3BMtcPIyDvn8nqsa8yv-nzHI_nVAazUDkAm0,221
+activations/activations_hdw.py,sha256=Oi2nPSK6rb10VuyBPMTw463JmePn840ykcuUGFFM4wg,2717
+activations/activations_sfw.py,sha256=d_aZRmN3dlaQZwq8kEfmUPNdIeqV3WgxN1MW3XF9EDY,971
+core/__init__.py,sha256=u-cLlQ_OCOsxPqi4KbG85Kaj12W_yMTaQGzj2DHsgd0,137
+core/framework.py,sha256=dwJi4Ojy3iWyyimrL6tWJA__-yisKbJLCLZ52s7JcJU,1002
+layers/__init__.py,sha256=9-GAKk3BjyFGnHd72WODqWcb0MdPmaS_AjxZr6DY0TA,329
+layers/base_layer.py,sha256=ZAQX25GhWIzUgjbFJc678flI8HHa8fcePGG4euhcLls,273
+layers/dense_hdw.py,sha256=3RSVFAthPXmO3jRiReAdFka-W0muWJQTE-ACjPio1uQ,1659
+layers/dense_sfw.py,sha256=pE9nBt4p8WTXBe3uCEV_1ZxbyENP7aXNAt-GOx4pMsE,1185
+layers/lstm_hdw.py,sha256=9aHA5O0vywFey8kOHIc9B2QCRNktmariSAUnrvSBwSo,4542
+layers/lstm_sfw.py,sha256=LzS5GGqwB8hgiMDig4kdG3YkmhgpEQCDvgGC6uBuPxY,3503
+preprocessing/__init__.py,sha256=grAkivhQU_QyzgF3YEPlbN2ym44SxgUviwC_FMU35CY,144
+preprocessing/quantize.py,sha256=kBmgplA_q7hPKFLLqx2w4fiUXHwTYr9yPkBj8xnsuYA,617
+DigiNet-0.1.1.dist-info/METADATA,sha256=-cTIiJL5vr6BnsGa3u6VHF8uHDPK3T9yvMoJRNbDOOw,519
+DigiNet-0.1.1.dist-info/WHEEL,sha256=ewwEueio1C2XeHTvT17n8dZUJgOvyCWCt0WVNLClP9o,92
+DigiNet-0.1.1.dist-info/top_level.txt,sha256=cSQVDAavTmt8wtXMJ5uV5ai-FQ_X61Atwp-7WSCSSJk,38
+DigiNet-0.1.1.dist-info/RECORD,,
