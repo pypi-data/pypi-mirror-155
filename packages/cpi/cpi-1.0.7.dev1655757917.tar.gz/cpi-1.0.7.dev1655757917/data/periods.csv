@@ -1,0 +1,17 @@
+id,code,abbreviation,name,month,type
+M01,M01,JAN,January,1,monthly
+M02,M02,FEB,February,2,monthly
+M03,M03,MAR,March,3,monthly
+M04,M04,APR,April,4,monthly
+M05,M05,MAY,May,5,monthly
+M06,M06,JUN,June,6,monthly
+M07,M07,JUL,July,7,monthly
+M08,M08,AUG,August,8,monthly
+M09,M09,SEP,September,9,monthly
+M10,M10,OCT,October,10,monthly
+M11,M11,NOV,November,11,monthly
+M12,M12,DEC,December,12,monthly
+M13,M13,AN AV,Annual Average,1,annual
+S01,S01,HALF1,First Half,1,semiannual
+S02,S02,HALF2,Second Half,7,semiannual
+S03,S03,AN AV,Annual Average,1,annual

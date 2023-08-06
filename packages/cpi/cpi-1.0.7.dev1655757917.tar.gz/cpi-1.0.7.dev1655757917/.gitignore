@@ -1,0 +1,11 @@
+*.pyc
+cpi/*.tsv
+cpi/*.csv
+cpi/cpi.db
+*.egg-info
+dist
+build
+.coverage
+.eggs
+*.*#
+.ipynb_checkpoints
