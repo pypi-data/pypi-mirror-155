@@ -1,0 +1,16 @@
+src/__init__.py,sha256=rDn8SC-xUziT4AtROCCoI3g1z7QQoREEbw_mV-8XD3k,165
+src/_version.py,sha256=k5tJXhBQJ4l9fKHJ76K5w98zBHoYvNk9r-UNH6eQ2-k,21
+src/subgradient_descent.py,sha256=WZx92mDrWyTdbmY7lHghol4Bz0VwL--_aP6E3AfdKBQ,3024
+src/svm.py,sha256=O5rYVk2ILfN7Asnse8BYFYTXBULtZlglTSASgEZHjtM,7851
+src/benchmarks/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+src/benchmarks/benchmarks.py,sha256=5PCfORI73pvhbdMF_djX3NofYcMmQ4VDx85okn-q0Sk,6342
+src/benchmarks/data_loader.py,sha256=1TEWKnL9VaC23hIh59AU0XY7xfrPhOYCOq_dBfiiYaI,2211
+src/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+src/tests/test_breast_cancer.py,sha256=vzEmzIjwsiWkCyw3H800nlF8id5WZWXvcrH9HC8QPas,1480
+src/tests/test_common.py,sha256=tWvd80MWPHDUVaven3NLHbh_Wkn62r-BPqKckO2SGlA,283
+src/tests/test_iris.py,sha256=VMfhVr_T0qEn5YWPKljbDezQ8UseS8djbPpBNv0c1MQ,866
+subgradient_svm_classifier-0.0.3.dist-info/LICENSE,sha256=LoV48WtuomVBIWbotLHaBF_MEfKNsD1mSQhBASSi8B4,35801
+subgradient_svm_classifier-0.0.3.dist-info/METADATA,sha256=0C17WtDaaPyMqLzDlBDwH-ToeoZuGc55md1zgqH2rOA,1428
+subgradient_svm_classifier-0.0.3.dist-info/WHEEL,sha256=G16H4A3IeoQmnOrYV4ueZGKSjhipXx8zc8nu9FGlvMA,92
+subgradient_svm_classifier-0.0.3.dist-info/top_level.txt,sha256=74rtVfumQlgAPzR5_2CgYN24MB0XARCg0t-gzk6gTrM,4
+subgradient_svm_classifier-0.0.3.dist-info/RECORD,,
