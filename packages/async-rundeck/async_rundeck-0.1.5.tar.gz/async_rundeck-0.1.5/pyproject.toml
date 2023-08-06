@@ -1,0 +1,40 @@
+[tool.poetry]
+name = "async_rundeck"
+version = "0.1.5"
+description = "Asynchronous rundeck API client"
+authors = ["elda27 <kaz.birdstick@gmail.com>"]
+readme = "README.md"
+repository = "https://github.com/elda27/async_rundeck"
+homepage = "https://github.com/elda27/async_rundeck"
+
+keywords = ["rundeck", "asyncio"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pydantic = "^1.9.0"
+aiohttp = "^3.8.1"
+pytest-asyncio = "^0.18.3"
+
+[tool.poetry.dev-dependencies]
+black = "^22.3.0"
+pytest = "^7.1.1"
+pytest-docker = "^0.12.0"
+astor = "^0.8.1"
+stringcase = "^1.2.0"
+poethepoet = "^0.13.1"
+mypy = "^0.942"
+pytest-asyncio = "^0.18.3"
+xmltodict = "^0.12.0"
+pytest-coverage = "^0.0"
+
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+
+[tool.poe.tasks]
+test = "pytest --cov=async_rundeck --cov-report=html"
+build_proto = "python build_proto.py"
