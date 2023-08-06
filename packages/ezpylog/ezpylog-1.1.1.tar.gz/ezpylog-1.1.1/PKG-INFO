@@ -1,0 +1,96 @@
+Metadata-Version: 2.1
+Name: ezpylog
+Version: 1.1.1
+Summary: A nice-looking, minimalist and easy-to-use Python library for logging your Python programs.
+Home-page: https://github.com/JRodez/ezpylog
+Author: Jérémie Rodez
+Author-email: jeremierodez@outlook.com
+License: GPLv3
+Keywords: tool print ezpylog logger logging log level debug info warning error critical color terminal cli magnificient colorful beautiful filter filter_by_level filter_by_context filter_by_message
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Welcome
+ezpylog is a minimalistic and easy to use python logger
+## Installation
+Using pip :
+ - directly from command line with : `pip install ezpylog` 
+ - manually by [downloading ezpylog](https://github.com/JRodez/ezpylog/releases) and install it with `pip install ezpylog-X.X.tar.gz`
+
+## How to use ?
+### Import :
+Import logger.py the way you want, personnaly I do : 
+
+```python
+from ezpylog import Logger, LogLevel
+```
+
+### Logging Levels :
+The level can be as following :
+```python
+LogLevel.DEBUG
+LogLevel.INFO
+LogLevel.WARNING
+LogLevel.ERROR
+LogLevel.CRITICAL
+```
+
+### Initialisation :
+```python
+logger = Logger(min_level = LogLevel.INFO, context = "", inf_file="stdout", error_file="stderr")
+```
+
+- `min_level` is a `LogLevel` enum and filters log messages on the console (ex : `WARNING` will not print `INFO` messages). Default is `INFO`
+- `context` is the logging context, you can use `"main()"` if you use it in `__main__` for example. Default is `""`
+- `inf_file` is the name of your output file  for `DEBUG`,`INFO` and `DEBUG` messages. Default is `stdout`
+- `error_file` is the name of your output file  for `ERROR` and `CRITICAL` messages. Default is `stderr`
+
+### logging : 
+```python
+logger.log(msg)
+# or
+logger.log(msg, level)
+# or
+logger.log(msg, level, subcontext)
+```
+with default `level = LogLevel.INFO` and `subcontext = ""`
+
+## Example :
+You can find this exemple by calling `Logger.loggerdemo()`
+
+```python
+from ezpylog import Logger, LogLevel
+
+a = 1234567
+
+logger = Logger(LogLevel.DEBUG)
+logger.log("Debug message", LogLevel.DEBUG, "context")
+logger.log("Info message")
+logger.log("Warning message", LogLevel.WARNING, "context")
+logger.log(f"Error message {a}", LogLevel.ERROR, "context")
+logger.log("Critical message", LogLevel.CRITICAL, "context")
+
+logger2 = Logger(LogLevel.WARNING, "__main__")
+logger2.log("Debug message", LogLevel.DEBUG, "subcontextA()")
+logger2.log("Info message", LogLevel.INFO, "subcontextB()")
+logger2.log("Warning message", LogLevel.WARNING, "subcontextA()")
+logger2.log(f"Error message {a}", LogLevel.ERROR, "subcontextB()")
+logger2.log("Critical message", LogLevel.CRITICAL)
+```	
+
+prints the following : 
+
+![image](https://user-images.githubusercontent.com/80471345/163835427-f5b3306f-9ebe-46d4-9da6-1e5413f8af0e.png)
+
+
