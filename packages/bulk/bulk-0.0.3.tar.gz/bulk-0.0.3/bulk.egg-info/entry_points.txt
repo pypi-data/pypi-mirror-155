@@ -1,0 +1,3 @@
+[console_scripts]
+bulk = bulk.__main__:app
+
