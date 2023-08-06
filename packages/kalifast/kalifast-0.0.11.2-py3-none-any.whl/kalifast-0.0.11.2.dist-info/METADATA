@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: kalifast
+Version: 0.0.11.2
+Summary: Python package for kalifast record npp plugin
+Author: EISGE
+Author-email: e@eisge.com
+License: MIT
+Requires-Dist: mpi4py (>=2.0)
+Requires-Dist: numpy
+Requires-Dist: wheel
+Requires-Dist: shutil
+
