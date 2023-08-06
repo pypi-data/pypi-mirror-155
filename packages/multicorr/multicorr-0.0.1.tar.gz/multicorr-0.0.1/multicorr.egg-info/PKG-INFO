@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: multicorr
+Version: 0.0.1
+Summary: Description: multicorrelation to identify multicollinearity
+Home-page: UNKNOWN
+Author: sarath babu
+Author-email: babusarath05@gmail.com
+License: UNKNOWN
+Description: 
+        #multi_corr helps to identify multicollinearity in a simple and straight manner.
+        
+        Input
+        1. DataFrame with target feature in case of regression
+        2. Threshold for correlation
+        
+        Output
+        1. Dataframe with correlation of two features
+        2. Dataframe with features which correlate with each other
+        
+        Insight
+        1. Identify multicollinearity by looking at the target column (Regression) 
+        2. Discard features which are not relevant
+        
+Keywords: python,correlation,multi-collinearity
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Description-Content-Type: text/markdown
