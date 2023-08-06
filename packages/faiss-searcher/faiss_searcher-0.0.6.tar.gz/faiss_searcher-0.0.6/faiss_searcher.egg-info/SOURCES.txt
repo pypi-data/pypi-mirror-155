@@ -1,0 +1,12 @@
+README.md
+setup.py
+faiss_searcher/__init__.py
+faiss_searcher/base_encoder.py
+faiss_searcher/bert_encoder.py
+faiss_searcher/faiss_searcher.py
+faiss_searcher/vecs_whitening.py
+faiss_searcher.egg-info/PKG-INFO
+faiss_searcher.egg-info/SOURCES.txt
+faiss_searcher.egg-info/dependency_links.txt
+faiss_searcher.egg-info/requires.txt
+faiss_searcher.egg-info/top_level.txt

@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: faiss_searcher
+Version: 0.0.6
+Summary: 基于Pandas的Faiss检索小工具
+Home-page: https://github.com/mechsihao/FaissSearcher
+Author: MECH
+Author-email: sihaomech@icloud.com
+License: MIT
+Keywords: pip,faiss_searcher
+Platform: any
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: System :: Logging
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+
+基于Pandas的Faiss检索小工具
+
