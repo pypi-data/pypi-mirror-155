@@ -1,0 +1,1 @@
+from .script import find_average,count_occurence

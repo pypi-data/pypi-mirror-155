@@ -1,0 +1,33 @@
+Metadata-Version: 2.1
+Name: geolidar
+Version: 0.0.3
+Summary: A package that helps interact with lidar data from satelites
+Home-page: https://github.com/10xac/PythonPackageStructure
+Author: Martin Luther Bironga
+License: UNKNOWN
+Keywords: geolidar
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.6
+Requires-Dist: numpy (>=1.19.0)
+Requires-Dist: pandas (>=1.1.0)
+
+# PythonPackageStructure
+
+### General Instruction 
+ - Your datasets should be stored in the data folder
+ - Your scripts should be stored in the script folder
+ - Your notebooks should be stored in the notebook folder
+ - Your models should be stored in the model folder
+ - Your test files/scripts should be stored in the tests folder
+ - All travis yml files should be stored in the root folder
+ - Any other files should be placed in the appropriate folder or directory
+
