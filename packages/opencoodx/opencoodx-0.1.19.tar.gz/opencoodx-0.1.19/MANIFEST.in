@@ -1,0 +1,6 @@
+include opencood/utils/__init__.pyx
+include opencood/utils/box_overlaps.pyx
+include opencood/hypes_yaml/*
+include requirements.txt
+include opv2v_data_dumping/README.md
+include images/*
