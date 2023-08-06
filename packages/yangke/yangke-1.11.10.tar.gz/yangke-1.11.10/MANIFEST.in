@@ -1,0 +1,8 @@
+include yangke/spider/*.py
+include yangke/spider/*/*.py
+include yangke/spider/*/*.cfg
+include yangke/spider/*/*/*.py
+include yangke/spider/*/*/spiders/*.py
+include yangke/sis/resource/dbpapi_x64.dll
+include yangke/sis/resource/ISO6976.xlsx
+include yangke/sis/write_sis.bat
