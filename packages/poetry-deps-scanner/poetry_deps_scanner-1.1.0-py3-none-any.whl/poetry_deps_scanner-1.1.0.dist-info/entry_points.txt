@@ -1,0 +1,4 @@
+[console_scripts]
+comment-gitlab=poetry_deps_scanner.comment_gitlab:main
+scan-deps=poetry_deps_scanner.scan_deps:main
+
