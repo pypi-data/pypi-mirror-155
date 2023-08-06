@@ -1,0 +1,3 @@
+[console_scripts]
+heaserver-activity = heaserver.activity.service:main
+
