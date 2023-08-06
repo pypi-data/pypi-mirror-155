@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: quantizeml
+Version: 0.0.1
+Summary: Base layers and calibration/quantization tools
+Home-page: https://doc.brainchipinc.com
+Author: David Corvoysier
+Author-email: dcorvoysier@brainchip.com
+License: Apache 2.0
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# QuantizeML
+
+This package contains base layers and calibration/quantization tools for Akida.
