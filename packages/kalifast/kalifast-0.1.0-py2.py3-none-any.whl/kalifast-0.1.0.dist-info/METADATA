@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: kalifast
+Version: 0.1.0
+Summary: Python package for kalifast record npp plugin
+Author-email: EISGE <e@eisge.com>
+Requires-Dist: mpi4py>=2.0
+Requires-Dist: numpy
+Requires-Dist: wheel
+Requires-Dist: shutil
+Requires-Dist: pynput
+Requires-Dist: tkinter
+Requires-Dist: turtle
+Requires-Dist: urllib
+Requires-Dist: pyautogui
+Requires-Dist: numpy
+Requires-Dist: cv2
+Requires-Dist: os
+Requires-Dist: PIL
+Requires-Dist: threading
+Requires-Dist: time
