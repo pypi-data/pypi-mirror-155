@@ -1,0 +1,6 @@
+#!python
+
+
+
+import chromecast_volumecontrol
+chromecast_volumecontrol.gui.start_guiapp()
