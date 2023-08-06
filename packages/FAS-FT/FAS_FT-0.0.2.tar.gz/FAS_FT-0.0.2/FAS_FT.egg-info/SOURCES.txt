@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+pyproject.toml
+setup.cfg
+FAS_FT.egg-info/PKG-INFO
+FAS_FT.egg-info/SOURCES.txt
+FAS_FT.egg-info/dependency_links.txt
+FAS_FT.egg-info/top_level.txt
+Face_Anti_Spoofing/__init__.py
+Face_Anti_Spoofing/inference_onnx.py
+Face_Anti_Spoofing/model/FAS_256s_v10.2.onnx
+test/test.py
