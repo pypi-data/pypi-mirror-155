@@ -1,0 +1,13 @@
+MANIFEST.in
+setup.py
+stonemark/CHANGES
+stonemark/LICENSE
+stonemark/__init__.py
+stonemark/__main__.py
+stonemark/test.py
+stonemark.egg-info/PKG-INFO
+stonemark.egg-info/SOURCES.txt
+stonemark.egg-info/dependency_links.txt
+stonemark.egg-info/entry_points.txt
+stonemark.egg-info/requires.txt
+stonemark.egg-info/top_level.txt

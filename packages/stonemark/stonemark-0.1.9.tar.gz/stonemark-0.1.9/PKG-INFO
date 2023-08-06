@@ -1,0 +1,96 @@
+Metadata-Version: 2.1
+Name: stonemark
+Version: 0.1.9
+Summary: a markup language similar to markdown
+Home-page: https://bitbucket.org/stoneleaf/stonemark
+Author: Ethan Furman
+Author-email: ethan@stoneleaf.us
+License: BSD License
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Topic :: Software Development
+Classifier: Topic :: Text Processing :: Markup
+Classifier: Topic :: Text Processing :: Markup :: Markdown
+Description-Content-Type: text/markdown
+
+stonemark -- a strict markup language similar to MarkDown
+=========================================================
+
+A much less forgiving markdown implementation, which is to say: if I can't tell
+what the document layout is supposed to be in text format, I don't want the
+converter guessing for me.
+
+The basic indentation is four spaces, although lists start at either zero or
+two space indentation.  Indented code blocks are not allowed after a list.
+
+Currently supported syntax:
+
+```
+    Element                 StoneMark Syntax
+
+                            ==========
+    Heading                 H1 Heading    H2 Heading   H3 Heading
+                            ==========    ==========   ----------
+
+    Bold                    **bold text**
+
+    Italic                  *italicized text*
+
+    Bold & Italic           ***bold, italicized text***
+
+    Ordered List            1. First item
+                            2. Second item
+                            3. Third item
+
+    Unordered List          - First item
+                            - Second item
+                            - Third item
+
+    Code                    `code`
+
+    Horizontal Rule         --- or ***
+
+    Link         (in-line)  [title](https://www.example.com)
+
+                (separate)  [title][id]
+                            ...
+                            [id]: <https://www.example.com>
+
+    Image                   ![alt text](image.jpg)
+
+
+    Fenced Code Block       ``` or ~~~
+                            {
+                              "firstName": "John",
+                              "lastName": "Smith",
+                              "age": 25
+                            }
+                            ``` or ~~~
+
+    Footnote                Here's a sentence with a footnote. [^1]
+    
+                            [^1]: This is the footnote.
+
+    Strikethrough           ~~The world is flat.~~
+
+    Underline               __Pay attention.__
+
+    Highlight               I need to highlight these ==very important words==.
+
+    Subscript               H~2~O
+    Superscript             X^2^
+```
+
+
