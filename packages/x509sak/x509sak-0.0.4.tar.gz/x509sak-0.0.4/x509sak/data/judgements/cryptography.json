@@ -1,0 +1,128 @@
+{
+	"Cryptography": {
+		"_export": true,
+		"Asymmetric Cryptosystem": {
+			"RSA": {
+				"_short_id": "rsa_crypto",
+				"Exponent": {
+					"Negative": { "_desc": "exponent is negative" },
+					"Zero": { "_desc": "exponent is 0" },
+					"One": { "_desc": "exponent is 1" },
+					"Small": { "_desc": "exponent is small" },
+					"Small and Uncommon": { "_desc": "exponent is small and uncommon" },
+					"Most Common Value": { "_desc": "exponent is most common value" },
+					"Large": { "_desc": "exponent is atypically large" }
+				},
+				"Modulus": {
+					"_import": "random_compound/*",
+					"Negative": { "_desc": "modulus is negative" },
+					"Zero": { "_desc": "modulus is zero" },
+					"One": { "_desc": "modulus is 1"	},
+					"Length in Bits": {
+						"_desc": "modulus length in bits",
+						"_flags": [ "datapoint" ]
+					}
+				}
+			},
+			"DSA": {
+				"_short_id": "dsa_crypto",
+				"Parameters": {
+					"P": {
+						"_import": "random_prime/*"
+					},
+					"Q": {
+						"_import": "random_prime/*",
+						"No Divisor Of P-1": { "_desc": "q does not divide (p - 1)" }
+					},
+					"G": {
+						"Invalid": { "_desc": "generator g does not fulfill g^q = 1 mod p" },
+						"Invalid Range": { "_desc": "generator g outside valid range" }
+					}
+				},
+				"L/N": {
+					"_flags": [ "datapoint" ],
+					"_desc": "DSA security level L/N",
+					"Uncommon": { "_desc": "parameter values L/N are uncommon" },
+					"Common": { "_desc": "parameter values L/N are common" }
+				}
+			},
+			"ECC": {
+				"_short_id": "ecc_crypto",
+				"Curve Order in Bits": {
+					"_desc": "curve order in bits",
+					"_flags": [ "datapoint" ]
+				},
+				"Domain Parameters": {
+					"Binary Field": { "_desc": "curve domain is over binary field" },
+					"Prime Field": { "_desc": "curve domain is over prime field" },
+					"Curve Property": {
+						"Anomalous Curve": { "_desc": "curve is anomalous, #E(F_p) = p" },
+						"Weil Descent": { "_desc": "Weil Descent attack possible, F_2^m with non-prime m" },
+						"Koblitz Curve": { "_desc": "is a Koblitz curve" },
+						"Supersingular Curve": { "_desc": "curve is supersingular, #E(F_p^m) = 1 mod p" },
+						"Singular Curve": { "_desc": "curve is singular, 4a^3 + 27b^2 = 0 mod p" },
+						"Low Embedding Degree": { "_desc": "curve has low embedding degree and fails MOV condition" },
+						"Cofactor": {
+							"Large": { "_desc": "curve has unusually large cofactor" },
+							"Invalid": { "_desc": "cofactor is zero or negative" },
+							"Outside Hasse Bound": { "_desc": "curve has cofactor outside Hasse bound" }
+						}
+					}
+				},
+				"Public Key Point": {
+					"Is Generator": { "_desc": "public key point is equal to the generator of the curve" },
+					"Not on Curve": { "_desc": "public key point is not on curve" },
+					"__On Quadratic Twist": { "_desc": "public key point is on quadratic twist of curve" },
+					"X Coordinate": {
+						"_label": "X",
+						"_import": "random_value/*"
+					},
+					"Y Coordinate": {
+						"_label": "Y",
+						"_import": "random_value/*"
+					}
+				}
+			}
+		},
+		"Algortihms": {
+			"Signature Algorithms": {
+				"RSA": {
+					"_short_id": "rsa_algorithm",
+					"RSA Encryption": {
+					},
+					"RSA/PSS": {
+						"No Salt Used": { "_desc": "short salt value used" },
+						"Short Salt Used": { "_desc": "short salt value used" },
+						"Multiple Hash Functions": { "_desc": "multiple hash functions used" },
+						"Unknown Trailer Field": { "_desc": "unknown trailer field specified" },
+						"Unknown Mask Function": { "_desc": "unknown mask function user specified" },
+						"Salt Length in Bytes": {
+							"_desc": "salt length in bytes",
+							"_flags": [ "datapoint" ]
+						}
+					}
+				},
+				"DSA / ECDSA": {
+					"_short_id": "dsa_signature",
+					"R": {
+						"_import": "random_value/*"
+					},
+					"S": {
+						"_import": "random_value/*"
+					}
+				}
+			}
+		},
+		"Symmetric Cryptography": {
+			"Hash Function": {
+				"_short_id": "crypto_hash",
+				"Digest Length in Bits": {
+					"_flags": [ "datapoint" ],
+					"_desc": "hash function digest length in bits"
+				},
+				"Unknown": { "_desc": "unknown hash function used" },
+				"Derated": { "_desc": "hash function security derated because of cryptographic weakness" }
+			}
+		}
+	}
+}

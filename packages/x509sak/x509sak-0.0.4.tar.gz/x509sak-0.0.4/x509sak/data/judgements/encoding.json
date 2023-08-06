@@ -1,0 +1,156 @@
+{
+	"Encoding": {
+		"_export": true,
+		"_label": "Enc",
+		"ASN.1 DER": {
+			"_label": "DER",
+			"Encoding Issues": {
+				"_short_id": "asn1_encoding_issues",
+				"Trailing Data": {
+					"_desc": "trailing data present", "_require": "!never_trailing_data"
+				},
+				"Malformed": {
+					"Undecodable": { "_desc": "no valid DER encoding", "_require": "!always_decodable" },
+					"Non-DER Encoding": { "_desc": "decodable, but no valid DER" },
+					"Unexpected Type": { "_desc": "decoding resulted in unexpected type", "_require": "!always_correct_type" }
+				}
+			},
+			"Structures": {
+				"_label": "Struct",
+				"Distinguished Name": {
+					"_short_id": "dn_issues",
+					"_label": "DN",
+					"Empty": { "_desc": "$name distinguished name contains no relative distinguished names" },
+					"Unusually Many RDNs": { "_desc": "$name distinguished name contains an unusually high amount of RDNs" },
+					"Duplicate RDNs": { "_desc": "$name distinguished name contains duplicate RDNs" },
+					"No CN": { "_desc": "$name distinguished name contains no CN RDN" },
+					"Multiple CN": { "_desc": "$name distinguished name contains multiple CN RDNs" },
+					"Relative Distinguished Name": {
+						"_label": "RDN",
+						"Malformed": { "_desc": "$name relative distinguished name is malformed", "_require": "rdn_only", "__comment": "RDN can never be malformed as part of a DN (the DN or higher-level structure would be malformed instead)" },
+						"Empty String": { "_desc": "$name relative distinguished name contains an empty string" },
+						"Illegal Character": { "_desc": "$name relative distinguished name contains illegal character" },
+						"Deprecated Type": { "_desc": "$name relative distinguished name contains deprecated type" },
+						"Non-Printable": { "_desc": "$name relative distinguished name contains non-printable type" },
+						"Length exceeded": { "_desc": "$name realative distinguished name exceeds maximum character length" },
+						"Multi-Valued RDN": { "_desc": "$name distinguished name contains multivalued RDN" },
+						"Duplicate Set": {
+							"Key": { "_desc": "$name realative distinguished name contains same key OID at least twice in set" },
+							"Key/Value": { "_desc": "$name relative distinguished name contains same key OID and value at least twice in set" }
+						}
+					}
+				},
+				"Timestamp": {
+					"_short_id": "timestamp_encoding_issues",
+					"Malformed": { "_desc": "Malformed encoding used" },
+					"Invalid Type": { "_desc": "GeneralizedTime data type used for timestamp before year 2050" }
+				},
+				"RSA Public Key": {
+					"_import": "asn1_encoding_issues/*",
+					"_short_id": "rsa_pubkey_encoding_issues",
+					"Parameter field not present": { "_desc": "parameter field is not present" },
+					"RSA Encryption": {
+						"Parameter field not NULL": { "_desc": "parameter field is not NULL" }
+					},
+					"RSA/PSS": {
+						"_label": "RSAPSS",
+						"Invalid salt length": { "_desc": "invalid salt length specified" },
+						"Parameters": {
+							"_import": "asn1_encoding_issues/*:never_trailing_data,always_decodable"
+						}
+					}
+				},
+				"DSA Public Key": {
+					"_short_id": "dsa_pubkey_encoding_issues"
+				},
+				"ECDSA Public Key": {
+					"_short_id": "ecdsa_pubkey_encoding_issues",
+					"Domain Parameters": {
+						"Cofactor": {
+							"Missing": { "_desc": "curve does not include optional cofactor" }
+						},
+						"Seed": {
+							"Present": { "_desc": "seed is present in public key encoding" },
+							"Empty": { "_desc": "zero bytes seed present" },
+							"Long": { "_desc": "unusually long seed present" },
+							"No Byte String": { "_desc": "seed length in bits is not divisible by 8" }
+						},
+						"Binary Field": {
+							"Duplicate Polynomial Power": { "_desc": "duplicate power in field polynomial" },
+							"Invalid Polynomial Power": { "_desc": "invalid power in field polynomial" }
+						}
+					}
+				},
+				"ECDSA Signature": {
+					"_short_id": "ecdsa_signature_encoding_issues",
+					"_import": "asn1_encoding_issues/*"
+				},
+				"BitString": {
+					"_short_id": "bitstring_issues",
+					"Trailing Zeros": { "_desc": "BitString has trailing zeros" }
+				},
+				"GeneralName Validation": {
+					"_label": "GenName",
+					"_short_id": "general_name_issues",
+					"Email": {
+						"Unexpected": { "_desc": "$name email address is an unexpected type", "_require": "!allow_email" },
+						"Malformed": { "_desc": "$name email address is malformed" }
+					},
+					"IP Address": {
+						"Unexpected": { "_desc": "$name IP address is an unexpected type", "_require": "!allow_ip" },
+						"Private Address Space": { "_desc": "$name IP address falls in private address space" },
+						"Malformed": { "_desc": "$name IP address is malformed" },
+						"Malformed Subnet": { "_desc": "$name IP subnet is malformed", "_require": "allow_ip_subnet" },
+						"Non-CIDR Block": { "_desc": "$name IP subnet is not a CIDR block", "_require": "allow_ip_subnet" }
+					},
+					"Directory Address": {
+						"Empty": { "_desc": "$name directory name contains no RDNs" },
+						"Unexpected": { "_desc": "$name directory name is an unexpected type", "_require": "!allow_dirname" }
+					},
+					"URI": {
+						"_short_id": "uri_issues",
+						"Unexpected": { "_desc": "$name URI is an unexpected type", "_require": "!allow_uri" },
+						"Malformed": { "_desc": "$name URI is malformed" },
+						"Uncommon URI Scheme": { "_desc": "$name URI uses uncommon URI scheme" },
+						"LDAP": {
+							"_require": "ldap_validation",
+							"Malformed DN": { "_desc": "$name URI has malformed LDAP URI distinguished name" },
+							"No DN": { "_desc": "$name URI has no LDAP URI distinguished name present" },
+							"No hostname": { "_desc": "$name URI has no LDAP URI hostname present" },
+							"No attrdesc": { "_desc": "$name URI has no LDAP URI attrdesc present" }
+						}
+					},
+					"Domain Name": {
+						"_label": "DNS",
+						"Malformed": { "_desc": "$name domain name domain name malformed" },
+						"Unexpected": { "_desc": "$name domain name unexpected data type", "_require": "!allow_dns" },
+						"Only Whitespace": { "_desc": "$name domain name domain name consists only of space character" },
+						"Single Label": { "_desc": "$name domain name domain name consists only of a single label" },
+						"Wildcard": {
+							"Not Permitted": { "_desc": "$name domain name wildcard not permitted in domain name", "_require": "!allow_dns_wc" },
+							"Not Leftmost": { "_desc": "$name domain name wildcard appears not leftmost in label", "_require": "allow_dns_wc" },
+							"Mulitple Wildcards": { "_desc": "$name domain name multiple wildcard present in label", "_require": "allow_dns_wc" },
+							"International Label": { "_desc": "$name domain name wildcard used in international label", "_require": "allow_dns_wc" },
+							"Broad Match": { "_desc": "$name domain name wildcard matches broadly", "_require": "allow_dns_wc" }
+						}
+					},
+					"Registered ID": {
+						"Unexpected": { "_desc": "$name unexpected data type \"registeredID\"", "_require": "!allow_regid" }
+					},
+					"Other Name": {
+						"Unexpected": { "_desc": "$name unexpected data type \"otherName\"", "_require": "!allow_othername" }
+					},
+					"X.400 Address": {
+						"Unexpected": { "_desc": "$name unexpected data type X.400 address", "_require": "!allow_x400address" }
+					},
+					"EDI Party Name": {
+						"Unexpected": { "_desc": "$name unexpected data type \"EDI Party Name\"", "_require": "!allow_edipartyname" }
+					}
+				}
+			}
+		},
+		"RFC5246": {
+
+		}
+	}
+}

@@ -1,0 +1,416 @@
+{
+	"X.509 Certificate": {
+		"_label": "X509Cert",
+		"_import": "asn1_encoding_issues/*:always_decodable,always_correct_type",
+		"Public Key": {
+			"_topic": "Certificate Public Key",
+			"RSA": {
+				"_import": [ "rsa_algorithm/*", "rsa_crypto/*", "+rsa_pubkey_encoding_issues/*" ]
+			},
+			"ECC": {
+				"_import": [ "ecc_crypto/*", "ecdsa_pubkey_encoding_issues/*" ],
+				"Domain Parameters": {
+					"Name": {
+						"Named Curve": { "_desc": "curve is named by its OID" },
+						"Explicit Curve": { "_desc": "curve has explicitly encoded domain parameters" },
+						"Implicit Curve": { "_desc": "curve is implicit, parameter field is NULL" },
+						"Unkown Name": { "_desc": "curve name OID unknown" },
+						"Unknown Explicit": { "_desc": "explicit curve domain parameters are entirely unknown" },
+						"Unused Name": { "_desc": "explicit curve domain parameters are equal to named curve" }
+					}
+				}
+			},
+			"DSA": {
+				"_import": [ "dsa_crypto/*", "dsa_pubkey_encoding_issues/*" ]
+			},
+			"Unknown Key Type": { "_desc": "unknown public key type" }
+		},
+		"Metadata": {
+			"_label": "Body",
+			"_topic": "Certificate Body",
+			"Version": {
+				"Not 2": { "_desc": "certificate version is not v2" },
+				"Not 3": { "_desc": "certificate version is not v3" }
+			},
+			"Validity": {
+				"_topic": "Certificate Validity",
+				"Status": {
+					"Never valid": { "_desc": "certificate can never be valid" },
+					"Not yet valid": { "_desc": "certificate is not yet valid" },
+					"Expired": { "_desc": "certificate has expire" },
+					"Currently valid": { "_desc": "certificate is currently valid" }
+				},
+				"Length": {
+					"Conservative": { "_desc": "conservative certificate lifetime" },
+					"Long": { "_desc": "long certificate lifetime" },
+					"Very long": { "_desc": "very long certificate lifetime" },
+					"Exceptionally Long": { "_desc": "exceptionally long certificate lifetime" }
+				},
+				"Not Before": {
+					"_import": "timestamp_encoding_issues/*"
+				},
+				"Not After": {
+					"_import": "timestamp_encoding_issues/*"
+				}
+			},
+			"Issuer": {
+				"_topic": "Certificate Issuer",
+				"_import": "+dn_issues/*{name=certificate issuer}"
+			},
+			"Subject": {
+				"_topic": "Certificate Subject",
+				"_import": "+dn_issues/*{name=certificate subject}"
+			},
+			"Serial Number": {
+				"_topic": "Certificate Serial Number",
+				"_import": "integer_checks:zero,neg,large{name=serial number}"
+			},
+			"Issuer Unique ID": {
+				"_import": "+unique_id_issues/*{name=issuer}"
+			},
+			"Subject Unique ID": {
+				"_import": "+unique_id_issues/*{name=subject}"
+			},
+			"X.509 Extensions": {
+				"_label": "X509Exts",
+				"_topic": "Certificate Extensions",
+				"All Unique": { "_desc": "all extensions unique" },
+				"Duplicates Present": { "_desc": "duplicate extensions present" },
+				"Empty Sequence": { "_desc": "extensions field is an empty sequence" },
+				"Disallowed": { "_desc": "extension are not permitted in this certificate" },
+
+				"Known Extensions": {
+					"_label": "Ext",
+					"Basic Constraints": {
+						"_label": "BC",
+						"_import": [ "+asn1_encoding_issues/*", "x509_ext_checks/*:missing,notcritical,critical{name=BC}" ],
+						"_topic": "X.509 Basic Constraints Extension",
+						"PathLen without CA": { "_desc": "BC extension contains pathLen constraint without CA attribute" },
+						"PathLen without keyCertSign": { "_desc": "BC extension contains pathLen constraint without keyCertSign key usage" }
+					},
+					"Subject Key Identifier": {
+						"_label": "SKI",
+						"_import": [ "+asn1_encoding_issues/*", "x509_ext_checks/*:missing,critical{name=SKI}" ],
+						"_topic": "X.509 Subject Key Identifier Extension",
+						"Hashfunction": {
+							"SHA1": { "_desc": "SKI extension has SHA-1 key ID" },
+							"Other": { "_desc": "SKI extension has hash based key ID other than SHA-1" },
+							"Arbitrary": { "_desc": "SKI extension has key ID that is not based on a known hash" }
+					  }
+					},
+					"Authority Key Identifier": {
+						"_label": "AKI",
+						"_import": [ "+asn1_encoding_issues/*", "x509_ext_checks/*:empty,missing,critical{name=AKI}" ],
+						"_topic": "X.509 Authority Key Identifier Extension",
+						"CA name": {
+							"_import": "+general_name_issues/*:allow_dirname",
+							"Empty": { "_desc": "AKI CAname empty" }
+						},
+						"Serial without CAName": { "_desc": "AKI extension has serial without CA name" },
+						"CAname without Serial": { "_desc": "AKI extension has CA name without serial" },
+						"No Key ID": { "_desc": "AKI extension contains no key ID" },
+						"Empty Key ID": { "_desc": "AKI extension contains empty key ID" },
+						"Long Key ID": { "_desc": "AKI extension contains long key ID" }
+					},
+					"Name Constraints": {
+						"_label": "NC",
+						"_import": [ "+asn1_encoding_issues/*", "x509_ext_checks/*:empty,notcritical,noca{name=NC}" ],
+						"_topic": "X.509 Name Constraints Extension",
+						"Subtree Template": {
+							"_export": true,
+							"_short_id": "ext_nc_subtree",
+							"Minimum not Zero": { "_desc": "$name minimum attribute is non-zero" },
+							"Maximum present": { "_desc": "$name maximum attribute is present" },
+							"Name": {
+								"_import": "general_name_issues/*:allow_dirname,allow_dns,allow_dns_wc,allow_ip,allow_ip_subnet"
+							}
+						},
+						"Permitted Subtree": {
+							"_import": "+ext_nc_subtree/*{name=NC extension permitted subtree}"
+						},
+						"Excluded Subtree": {
+							"_import": "+ext_nc_subtree/*{name=NC extension excluded subtree}"
+						}
+					},
+					"Key Usage": {
+						"_label": "KU",
+						"_import": [ "bitstring_issues/*", "+asn1_encoding_issues/*", "x509_ext_checks/*:missing,empty,notcritical{name=KU}" ],
+						"_topic": "X.509 Key Usage Extension",
+						"Too Long": { "_desc": "KU extension too long" },
+						"SignCert but no CA": { "_desc": "KU extension contains signCert flag but is no CA" },
+						"SignCert but no Basic Constraints": { "_desc": "KU extension contains signCert flag but has no Basic Constraints extension" },
+						"Undefined Bit Combination": { "_desc": "KU extension contains encipherOnly or decipherOnly without keyAgreement" },
+						"No Perfect Forward Secrecy": { "_desc": "KU extension contains keyEncipherment but not keyAgreement" }
+					},
+					"Extended Key Usage": {
+						"_label": "EKU",
+						"_import": [ "+asn1_encoding_issues/*", "x509_ext_checks/*:empty{name=EKU}" ],
+						"_topic": "X.509 Extended Key Usage Extension",
+						"Duplicate": { "_desc": "EKU extension contains duplicate usage OID" },
+						"Any Usage Criticial": { "_desc": "EKU extension contains anyUsage flag but extension is marked critical" }
+					},
+					"Issuer Alternative Name": {
+						"_label": "IAN",
+						"_import": [ "+asn1_encoding_issues/*", "x509_ext_checks/*:critical,empty{name=IAN}" ],
+						"_topic": "X.509 Issuer Alternative Name Extension",
+						"Missing": { "_desc": "IAN extension missing although certificate issue header is empty" },
+						"Name": {
+							"_import": "+general_name_issues/*:allow_dirname"
+						}
+					},
+					"Subject Alternative Name": {
+						"_label": "SAN",
+						"_import": [ "+asn1_encoding_issues/*", "x509_ext_checks/*:empty,missing,critical,notcritical{name=SAN}" ],
+						"_topic": "X.509 Subject Alternative Name Extension",
+						"Name": {
+							"_import": "+general_name_issues/*:allow_dns,allow_dns_wc,allow_ip"
+						},
+						"Email Only": { "_desc": "SAN extension contains only email names" }
+					},
+					"Authority Information Access": {
+						"_label": "AIA",
+						"_import": [ "+asn1_encoding_issues/*", "x509_ext_checks/*:empty,critical{name=AIA}" ],
+						"_topic": "X.509 Authority Information Access Extension"
+					},
+					"Certificate Policies": {
+						"_label": "CP",
+						"_import": "+asn1_encoding_issues/*",
+						"_topic": "X.509 Certificate Policies Extension",
+						"Deprecated OID": { "_desc": "CP extension OID is deprecated" },
+						"Duplicate OID": { "_desc": "CP extension contains duplicate policy OID" },
+						"Qualifier": {
+							"Present": { "_desc": "CP extension contains policy which has a qualifier" },
+							"Duplicate": { "_desc": "CP extension contains duplicate qualifier OID" },
+							"Unknown": { "_desc": "CP extension contains unknown qualifier OID" },
+							"AnyPolicy with Unknown Qualifier": { "_desc": "CP extension contains anyPolicy with unknown qualifier" }
+						},
+						"User Notice": {
+							"_import": "+asn1_encoding_issues/*:always_decodable,never_trailing_data",
+							"Empty": { "_desc": "CP extension user notice is empty" },
+							"Constraint Violation": { "_desc": "CP extension user notice violates ASN.1 constraint" },
+							"noticeRef Present": { "_desc": "CP extension user notice contains noticeRef attribute" },
+							"Explicit Text": {
+								"Invalid String Type": { "_desc": "invalid explicitText string type used" },
+								"IA5String": { "_desc": "explicitText uses IA5String instead of UTF8String" },
+								"ControlCharacter": { "_desc": "explicitText contains control character" },
+								"Absent": { "_desc": "explicitText field absent" }
+							}
+						},
+						"Certification Practice Statement": {
+							"_label": "CPS",
+							"_import": [ "+asn1_encoding_issues/*:always_decodable,never_trailing_data", "uri_issues:allow_uri" ],
+							"Constraint Violation": { "_desc": "CP extension CPS violates ASN.1 constraint" }
+						}
+					},
+					"Netscape Certificate Type": {
+						"_label": "NSCT",
+						"_import": [ "+asn1_encoding_issues/*", "bitstring_issues/*" ],
+						"_topic": "X.509 Netscape Certificate Type Extension",
+						"Empty": { "_desc": "NSCT extension has no bits set" },
+						"Unused Bit Set": { "_desc": "NSCT extension has 'unused' bit set" }
+					},
+					"CRL Distribution Points": {
+						"_label": "CRLDP",
+						"_import": [ "+asn1_encoding_issues/*", "x509_ext_checks/*:empty,critical{name=CRLDP}" ],
+						"_topic": "X.509 CRL Distribution Points Extension",
+						"No Point with all reason bits": { "_desc": "CRLDP extension contains no point that has all reason bits set" },
+						"Point with only Reasons": { "_desc": "CDLDP extension contains a point that only has the 'reason' bit set" },
+						"Segmentation used": { "_desc": "CRLDP contains points that contain CRLs that are not universal" },
+						"NoLDAPorHTTPURI": { "_desc": "CRLDP point contains point with no HTTP or LDAP URI" },
+						"Point Name": {
+							"_import": "+general_name_issues/*:allow_dirname,allow_uri,ldap_validation",
+							"Possibly no DER CRL served": { "_desc": "CRLDP point serves potentialla non-DER CRL" },
+							"Relative Distinguished Name": {
+								"_label": "RDN",
+								"Malformed": { "_desc": "relative distinguished name is malformed" },
+								"Present": { "_desc": "relative distinguished name present" },
+								"Ambiguous": { "_desc": "relative distinguished name is ambiguous" }
+							}
+						},
+						"Reasons": {
+							"_import": "bitstring_issues/*",
+							"Unused Bits Asserted": { "_desc": "unused reason bits asserted" },
+							"Undefined Bits Asserted": { "_desc": "undefined reason bits asserted" }
+						},
+						"CRL Issuer": {
+							"_import": "+general_name_issues/*:allow_dirname",
+							"Redundant": { "_desc": "redundant use of cRLIssuer field" }
+						}
+					},
+					"Certificate Transparency Precertificate Poison": {
+						"_label": "CTPP",
+						"_import": [ "+asn1_encoding_issues/*", "x509_ext_checks/*:notcritical{name=CTPP}" ],
+						"_topic": "X.509 Certificate Transparency Precertificate Poison Extension",
+						"Is Precertificate": { "_desc": "CTPP extension indicates precertificate" }
+					},
+					"Certificate Transparency Signed Certificate Timestamps": {
+						"_label": "CTSCT",
+						"_import": "+asn1_encoding_issues/*",
+						"_topic": "X.509 Certificate Transparency Signed Certificate Timestamps Extension",
+						"Malformed": {
+							"Content": { "_desc": "CTSCT content malformed" }
+						},
+						"SCT": {
+							"Unknown version": { "_desc": "CTSCTs extension contains SCT with unknown version" },
+							"Implausible timestamp": { "_desc": "CTSCTs extension contains SCT with implausible timestamp" },
+							"Invalid Signature Function": { "_desc": "CTSCTs extension contains SCT with invalid signature function" },
+							"Invalid Hash Function": { "_desc": "CTSCTs extension contains SCT with invalid hash function" }
+						}
+					},
+					"Inhibit Any Policy": {
+						"_label": "IAP",
+						"_import": [ "+asn1_encoding_issues/*", "x509_ext_checks/*:notcritical{name=IAP}" ],
+						"_topic": "X.509 Inhibit anyPolicy Extension"
+					},
+					"Policy Mappings": {
+						"_label": "PM",
+						"_import": [ "+asn1_encoding_issues/*", "x509_ext_checks/*:notcritical{name=PM}" ],
+						"_topic": "X.509 Policy Mappings Extension",
+						"Empty": { "_desc": "no mappings present" },
+						"Unreferenced": { "_desc": "issuer policy mapping not included as policy" },
+						"From AnyPolicy": { "_desc": "mapping from anyPolicy" },
+						"To AnyPolicy": { "_desc": "mapping to anyPolicy" }
+					},
+					"Subject Information Access": {
+						"_label": "SIA",
+						"_import": [ "+asn1_encoding_issues/*", "x509_ext_checks/*:critical{name=SIA}" ],
+						"_topic": "X.509 Subject Information Access Extension",
+						"Empty": { "_desc": "no information present" }
+					},
+					"Subject Directory Attributes": {
+						"_label": "SDA",
+						"_import": [ "+asn1_encoding_issues/*", "x509_ext_checks/*:critical{name=SDA}" ],
+						"_topic": "X.509 Subject Directory Attributes Extension",
+						"Empty": { "_desc": "no attributes present" }
+					},
+					"Policy Constraints": {
+						"_label": "PC",
+						"_import": [ "+asn1_encoding_issues/*", "x509_ext_checks/*:notcritical{name=PC}" ],
+						"_topic": "X.509 Policy Constraints Extension",
+						"Empty": { "_desc": "no constraints present" }
+					},
+					"Freshest CRL": {
+						"_label": "FCRL",
+						"_import": [ "+asn1_encoding_issues/*", "x509_ext_checks/*:critical{name=FCRL}" ],
+						"_topic": "X.509 Freshest CRL Extension"
+					}
+				},
+				"Unknown Extension": {
+					"_label": "Unknown",
+					"_topic": "Unknown X.509 Extension",
+					"_import": [ "+asn1_encoding_issues/*:always_correct_type", "x509_ext_checks/*:critical,notcritical{name=unknown}" ]
+				}
+			}
+		},
+		"Signature": {
+			"_import": "crypto_hash{name=signature}",
+			"_topic": "Certificate Signature",
+			"Function": {
+				"Common": { "_desc": "commonly used signature function" },
+				"Unknown": { "_desc": "unknown signature function used" },
+				"Deprecated OID": { "_desc": "deprecated OID used" },
+				"Body Mismatch": { "_desc": "signature function indicated in body of certificate does not match that indicated in signature portion" },
+				"Uncommon Padding": { "_desc": "uncommon padding scheme used" },
+				"Uncommon Cryptosystem": { "_desc": "uncommon cryptosystem used" }
+			},
+			"ECDSA": {
+				"_import": [ "dsa_signature/*", "+asn1_encoding_issues/*" ]
+			},
+			"DSA": {
+				"_import": [ "dsa_signature/*", "+asn1_encoding_issues/*" ]
+			}
+		}
+	},
+
+	"Certificate Usage": {
+		"_label": "Cert Usage",
+		"Purposes": {
+			"_label": "Purpose",
+			"_topic": "Certificate Purpose",
+			"Client Certificate": {
+				"_label": "Client Cert",
+				"_import": "x509_ku_check{name=client certificate}",
+				"Is CA Cert": { "_desc": "certificate is a CA certificate" },
+				"Extended Key Usage Mismatch": {
+					"_label": "EKU Mismatch",
+					"_desc": "extended key usage does not include clientAuth"
+				},
+				"Netscape Certificate Type": {
+					"_label": "NSCT",
+					"No SSL Client": { "_desc": "NSCT extension does not contain sslClient flag" }
+				}
+			},
+			"Server Certificate": {
+				"_label": "Server Cert",
+				"_import": "x509_ku_check{name=server certificate}",
+				"Is CA Cert": { "_desc": "certificate is a CA certificate" },
+				"Name Verification Failed": { "_desc": "certificate name verification failed against given server name" },
+				"Subject Alternative Name": {
+					"_label": "SAN",
+					"Match": { "_desc": "SKI extension name matches given server name" },
+					"Mismatch": { "_desc": "SKI extension name does not match given server name" }
+				},
+				"Common Name": {
+					"_label": "CN",
+					"Match": { "_desc": "common name matches given server name" },
+					"Match Multivalue RDN": { "_desc": "common name matches given server name, but as part of a multi-valued RDN" },
+					"Mismatch": { "_desc": "common name does not match given server name" }
+				},
+				"Extended Key Usage Mismatch": {
+					"_label": "EKU Mismatch",
+					"_desc": "extended key usage does not include serverAuth"
+				},
+				"Netscape Certificate Type": {
+					"_label": "NSCT",
+					"No SSL Server": { "_desc": "NSCT extension does not contain sslServer flag" }
+				}
+			},
+			"CA Certificate": {
+				"_label": "CA Cert",
+				"_import": "x509_ku_check{name=CA certificate}",
+				"No CA Cert": { "_desc": "certificate is not a CA certificate" },
+				"Netscape Certificate Type": {
+					"_label": "NSCT",
+					"No SSL CA": { "_desc": "NSCT extension does not contain sslCA flag" },
+					"No CA": { "_desc": "NSCT extension does not contain any CA flag" }
+				}
+			}
+		},
+		"CA Relationship": {
+			"_topic": "Certificate/CA Relationship",
+			"CA Certificate invalid as CA": { "_desc": "CA certificate is invalid for use as a CA" },
+			"Signature": {
+				"Verification Failure": { "_desc": "signature verification failure" },
+				"Verification Success": { "_desc": "signature verification success" }
+			},
+			"Subject / Issuer": {
+				"Match": { "_desc": "issuer of certificate equal to subject of CA certifiate" },
+				"Mismatch": { "_desc": "issuer of certificate not equal to subject of CA certifiate" }
+			},
+			"Authority Key Identifier": {
+				"_label": "AKI",
+				"CA name": {
+					"Match": { "_desc": "CA name in AKI extension matches subject of CA certifiate" },
+					"Mismatch": { "_desc": "CA name in AKI extension does not match subject of CA certifiate" }
+				},
+				"Serial Number": {
+					"_label": "Serial",
+					"Match": { "_desc": "serial number in AKI extension matches serial of CA certifiate" },
+					"Mismatch": { "_desc": "serial number in AKI extension does not match serial of CA certifiate" }
+				},
+				"Key ID": {
+					"Match": { "_desc": "key ID in AKI extension matches key ID of CA certifiate SKI extension" },
+					"Mismatch": { "_desc": "key ID in AKI extension does not match key ID of CA certifiate SKI extension" },
+					"Uncheckable": { "_desc": "key ID in AKI extension cannot be checked against CA because CA contains no SKI extension" }
+				}
+			},
+			"Validity Periods": {
+				"_label": "Validity",
+				"Full Overlap": { "_desc": "full overlap in validity periods" },
+				"Partial Overlap": { "_desc": "partial overlap in validity periods" },
+				"No Overlap": { "_desc": "no overlap in validity periods" },
+				"Malformed Timestamp": { "_desc": "either certificate or CA certificate contains malformed timestamp which prevent assessment of validity period" }
+			}
+		}
+	}
+}

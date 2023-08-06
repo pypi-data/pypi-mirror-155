@@ -1,0 +1,3 @@
+[console_scripts]
+x509sak = x509sak.__main__:main
+

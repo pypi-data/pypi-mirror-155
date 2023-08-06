@@ -1,0 +1,32 @@
+{
+	"Number Theoretical": {
+		"_export": true,
+		"Basic Checks": {
+			"_short_id": "integer_checks",
+			"Zero": { "_desc": "$name is zero", "_require": "zero" },
+			"One": { "_desc": "$name is one", "_require": "one" },
+			"Negative": { "_desc": "$name is negative", "_require": "neg" },
+			"Large": {  "_desc": "$name is large", "_require": "large" }
+		},
+		"Random": {
+			"_short_id": "random_value",
+			"Bit Bias Present": { "_desc": "bit bias present" }
+		},
+		"Random Primes": {
+			"_short_id": "random_prime",
+			"_import": "random_value/*",
+			"Not Prime": { "_desc": "value is not prime" }
+		},
+		"Random Non-primes": {
+			"_short_id": "random_nonprime",
+			"_import": "random_value/*",
+			"Prime": { "_desc": "value is prime" }
+		},
+		"Random Unfactorable Compound": {
+			"_short_id": "random_compound",
+			"_import": "random_nonprime/*",
+			"Factorable": { "_desc": "compound value has small factor" },
+			"Factorization Known": { "_desc": "compound value has publicly known factorization" }
+		}
+	}
+}

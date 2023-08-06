@@ -1,0 +1,35 @@
+{
+	"X.509 Extension Basic Checks": {
+		"_export": true,
+		"_short_id": "x509_ext_checks",
+		"Empty": { "_desc": "$name extension is empty", "_require": "empty" },
+		"Missing": { "_desc": "$name extension is missing", "_require": "missing" },
+		"Present": { "_desc": "$name extension is present", "_require": "present" },
+		"Critical": { "_desc": "$name extension is marked critical", "_require": "critical" },
+		"Not Critical": { "_desc": "$name extension is not marked critical", "_require": "notcritical" },
+		"No CA Certificate": { "_label": "NoCA", "_desc": "$name extension present, but not CA certificate", "_require": "noca" }
+	},
+
+	"X.509 Purpose Check": {
+		"_export": true,
+		"Key Usage": {
+			"_short_id": "x509_ku_check",
+			"_label": "KU",
+			"Missing Bits": { "_desc": "key usage extension missing bits for $purpose" },
+			"Excess Bits": { "_desc": "key usage extension contains excess bits for $purpose" },
+			"Unusual Bits": { "_desc": "key usage extension contains unusual bits for $purpose" }
+		}
+	},
+	"X.509 Structure": {
+		"_export": true,
+		"Unique ID Issues": {
+			"_short_id": "unique_id_issues",
+			"Not Allowed v1": { "_desc": "$name unique ID not allowed in version 1 certificate" },
+			"Not Allowed CA": { "_desc": "$name unique ID not allowed in CA certificate" }
+		}
+	},
+
+	"x509sak Issues": {
+		"Analysis Not Implemented": { "_desc": "analysis not implemented" }
+	}
+}
