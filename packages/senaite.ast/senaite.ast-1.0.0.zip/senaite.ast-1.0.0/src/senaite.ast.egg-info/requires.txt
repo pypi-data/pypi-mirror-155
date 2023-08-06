@@ -1,0 +1,7 @@
+senaite.abx
+senaite.lims>=2.1.0
+senaite.microorganism
+
+[test]
+plone.app.testing
+unittest2

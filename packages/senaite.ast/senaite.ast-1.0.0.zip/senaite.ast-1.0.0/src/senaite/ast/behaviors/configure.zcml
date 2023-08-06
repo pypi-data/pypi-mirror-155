@@ -1,0 +1,34 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="senaite.ast">
+
+  <include package="plone.behavior" file="meta.zcml"/>
+
+  <plone:behavior
+      name="senaite.ast.panel"
+      title="ASTPanel"
+      description="Adds AST Panel behavior"
+      provides=".astpanel.IASTPanelBehavior"
+      factory=".astpanel.ASTPanel"
+      for="plone.dexterity.interfaces.IDexterityContent"
+      marker="senaite.ast.interfaces.IASTPanel" />
+
+  <plone:behavior
+      name="senaite.ast.behavior.breakpointstable"
+      title="BreakpointsTable"
+      description="Adds AST Breakpoints Table behavior"
+      provides=".breakpointstable.IBreakpointsTableBehavior"
+      factory=".breakpointstable.BreakpointsTable"
+      for="plone.dexterity.interfaces.IDexterityContent"
+      marker="senaite.ast.interfaces.IBreakpointsTable" />
+
+  <plone:behavior
+      name="senaite.ast.behavior.extrapolatedantibiotics"
+      title="ExtrapolatedAntibiotics"
+      description="Adds the ability to assign extrapolated antibiotics"
+      provides=".abx.IExtrapolatedAntibioticsBehavior"
+      factory=".abx.ExtendedAntibiotic"
+      for="senaite.abx.interfaces.IAntibiotic" />
+
+</configure>

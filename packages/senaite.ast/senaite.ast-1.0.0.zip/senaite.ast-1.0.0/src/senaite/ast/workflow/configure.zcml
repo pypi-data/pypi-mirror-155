@@ -1,0 +1,11 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    i18n_domain="senaite.ast">
+
+  <!-- After event handler for AST Analyses -->
+  <subscriber
+    for="bika.lims.interfaces.IAnalysis
+         Products.DCWorkflow.interfaces.IAfterTransitionEvent"
+    handler=".AfterAnalysisTransitionEventHandler" />
+
+</configure>

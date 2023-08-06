@@ -1,0 +1,67 @@
+<configure
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns="http://namespaces.zope.org/zope"
+    i18n_domain="senaite.ast">
+
+  <!-- Package includes -->
+  <include package=".content"/>
+  <include package=".theme"/>
+
+  <!-- Static directory for js, css and image resources -->
+  <plone:static
+    directory="static"
+    type="plone"
+    name="senaite.ast.static" />
+
+  <!-- Static Resources Viewlet -->
+  <browser:viewlet
+    name="senaite.ast.static"
+    manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
+    class="senaite.core.browser.viewlets.resources.ResourcesViewlet"
+    permission="zope2.View"
+    template="./static/resources.pt"
+    layer="senaite.ast.interfaces.ISenaiteASTLayer" />
+
+  <!-- Section for AST Analyses in Sample View-->
+  <browser:viewlet
+    for="bika.lims.interfaces.IAnalysisRequest"
+    name="senaite.core.section.ast_analyses"
+    manager="senaite.core.browser.viewlets.interfaces.ISampleSection"
+    class=".results.ASTAnalysesViewlet"
+    layer="senaite.core.interfaces.ISenaiteCore"
+    permission="zope2.View" />
+
+  <!-- AST results entry in Sample view -->
+  <browser:page
+    for="bika.lims.interfaces.IAnalysisRequest"
+    name="table_ast_analyses"
+    class=".results.ManageResultsView"
+    permission="senaite.core.permissions.ManageAnalysisRequests"
+    layer="senaite.ast.interfaces.ISenaiteASTLayer" />
+
+  <!-- AST Panel configuration view -->
+  <browser:page
+    for="bika.lims.interfaces.IAnalysisRequest"
+    name="ast_panel"
+    class=".panel.ASTPanelView"
+    permission="senaite.core.permissions.ManageAnalysisRequests"
+    layer="senaite.ast.interfaces.ISenaiteASTLayer" />
+
+  <!-- AST Panel selective reporting view -->
+  <browser:page
+    for="bika.lims.interfaces.IAnalysisRequest"
+    name="ast_reporting"
+    class=".reporting.ASTPanelReportingView"
+    permission="senaite.core.permissions.ManageAnalysisRequests"
+    layer="senaite.ast.interfaces.ISenaiteASTLayer" />
+
+  <!-- End-point for the addition of a Panel to the Sample -->
+  <browser:page
+    for="bika.lims.interfaces.IAnalysisRequest"
+    name="add_ast_panel"
+    class=".addpanel.AddPanelView"
+    permission="senaite.core.permissions.ManageAnalysisRequests"
+    layer="senaite.ast.interfaces.ISenaiteASTLayer" />
+
+</configure>
