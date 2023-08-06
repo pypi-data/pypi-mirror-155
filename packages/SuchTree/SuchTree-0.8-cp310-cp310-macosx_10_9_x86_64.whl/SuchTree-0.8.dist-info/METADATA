@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: SuchTree
+Version: 0.8
+Summary: A python library for doing fast, thread-safe computations on phylogenetic trees
+Home-page: https://github.com/ryneches/SuchTree
+Author: Russell Neches
+Author-email: ryneches@ucdavis.edu
+License: BSD
+Keywords: biology,bio,phylogenetics,phylogeny,tree
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python :: 3
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: cython
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: pandas
+Requires-Dist: dendropy
+
+file : README.md
