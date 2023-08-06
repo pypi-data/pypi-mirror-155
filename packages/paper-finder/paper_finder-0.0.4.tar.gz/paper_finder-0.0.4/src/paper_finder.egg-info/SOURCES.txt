@@ -1,0 +1,16 @@
+LICENSE
+README.md
+setup.py
+src/paper_finder/__init__.py
+src/paper_finder/api.py
+src/paper_finder/download.py
+src/paper_finder/search.py
+src/paper_finder.egg-info/PKG-INFO
+src/paper_finder.egg-info/SOURCES.txt
+src/paper_finder.egg-info/dependency_links.txt
+src/paper_finder.egg-info/requires.txt
+src/paper_finder.egg-info/top_level.txt
+src/paper_finder/utils/__init__.py
+src/paper_finder/utils/config.py
+src/paper_finder/utils/download.py
+src/paper_finder/utils/search.py
