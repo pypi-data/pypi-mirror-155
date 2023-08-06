@@ -1,0 +1,2 @@
+[console_scripts]
+django-sso-app = django_sso_app.skeleton:run
