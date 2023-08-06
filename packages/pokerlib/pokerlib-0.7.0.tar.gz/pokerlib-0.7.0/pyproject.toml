@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "pokerlib"
+version = "0.7.0"
+description = "Python poker library"
+repository = "https://github.com/kuco23/integer-pairing/"
+authors = ["kuco23 <nseverkar@gmail.com>"]
+keywords = ['python', 'poker', 'library']
+readme = "README.md"
+classifiers=  [
+    'Development Status :: 3 - Alpha',
+    'Intended Audience :: Developers',
+    'Topic :: Software Development :: Build Tools',
+    'License :: Free For Home Use',
+    'Programming Language :: Python :: 3'
+  ]
+include = ["LICENSE"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
