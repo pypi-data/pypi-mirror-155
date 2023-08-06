@@ -1,0 +1,1 @@
+This helps you view an entire DataFrame in PyCharm. It also formats column headers to be easier to use.
