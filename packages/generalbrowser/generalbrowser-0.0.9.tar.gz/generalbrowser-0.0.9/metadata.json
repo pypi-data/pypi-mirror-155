@@ -1,0 +1,19 @@
+{
+    "enabled": true,
+    "private": false,
+    "name": "generalbrowser",
+    "version": "0.0.9",
+    "description": "Missing description.",
+    "install_requires": [
+        "generallibrary",
+        "generalfile",
+        "generalgui",
+        "django",
+        "djangorestframework",
+        "dill",
+        "requests"
+    ],
+    "extras_require": {},
+    "topics": [],
+    "manifest": []
+}
