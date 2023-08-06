@@ -1,0 +1,4 @@
+include *.txt
+include schemafy
+recursive-include src *.py
+recursive-include tests *.py
