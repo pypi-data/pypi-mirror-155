@@ -1,0 +1,2 @@
+[console_scripts]
+med_dataloader = med_dataloader.cli:main
