@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: marcopolo-pytorch
+Version: 1.0.0
+Summary: MarcoPolo - Pytorch
+Home-page: https://github.com/chanwkim/MarcoPolo
+Author: Chanwoo Kim
+Author-email: ch6845@gmail.com
+Keywords: single-cell,bioinformatics,pytorch
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: einops (>=0.3)
+Requires-Dist: numpy (>=1.19.2)
+Requires-Dist: torch (>=1.4.0)
+Requires-Dist: pandas (>=1.2.0)
+Requires-Dist: scikit-learn (>=0.24.1)
+Requires-Dist: scipy (>=1.6.1)
+Requires-Dist: matplotlib (>=3.3.0)
+Requires-Dist: Jinja2 (>=2.11.2)
+
