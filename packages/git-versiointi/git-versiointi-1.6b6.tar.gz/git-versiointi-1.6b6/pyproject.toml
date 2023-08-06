@@ -1,0 +1,4 @@
+[build-system]
+requires = ["GitPython", "setuptools", "wheel"]
+build-backend = "setuptools_build_meta:__legacy__"
+backend-path = ["."]
