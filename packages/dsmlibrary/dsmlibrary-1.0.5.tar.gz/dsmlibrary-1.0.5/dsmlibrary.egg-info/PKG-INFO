@@ -1,0 +1,28 @@
+Metadata-Version: 1.1
+Name: dsmlibrary
+Version: 1.0.5
+Summary: A simple way to use Dataset. for dsm
+Home-page: https://gitlab.com/public-project2/dsm-library
+Author: DigitalStoreMesh Co.,Ltd
+Author-email: contact@storemesh.com
+License: MIT License
+Description: required
+        - twine 
+        ```
+        pip install twine
+        ```
+        
+        ```
+        python setup.py sdist
+        ```
+        
+        ```
+        twine upload dist/<target file>
+        ```
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
