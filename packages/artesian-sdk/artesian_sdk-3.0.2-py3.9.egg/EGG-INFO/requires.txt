@@ -1,0 +1,12 @@
+requests
+six
+asyncio
+jsons>=1.6.1
+python-dateutil
+
+[release]
+twine
+wheel
+
+[test]
+responses>=0.18
