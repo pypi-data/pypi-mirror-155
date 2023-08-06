@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=42"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+log_level = "DEBUG"
+log_cli = "True"
+# The log format is setup to mirror cogment's
+log_format = "%(asctime)s [%(levelname)s] %(message)s"
+log_date_format = "%Y-%m-%dT%H:%M:%S%z"
+addopts = "-rfs --capture=no --junit-xml=integration_test_report.xml"
+junit_suite_name = "cogment_py_sdk_tests"
+timeout = 15
+
+[tool.mypy]
+python_version = 3.7
+warn_return_any = true
+warn_unused_configs = true
+strict_optional = false
+exclude = [
+    '.*_pb2\.py$'
+]
+
+[[tool.mypy.overrides]]
+module = "cogment.*"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "grpc"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "prometheus_client"
+ignore_missing_imports = true
