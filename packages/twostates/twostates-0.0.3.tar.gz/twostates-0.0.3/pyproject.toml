@@ -1,0 +1,16 @@
+[build-system]
+requires = [
+    "setuptools>=42",
+    "wheel"
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "twostates"
+version = "0.0.3"
+description = "Allows simulation of two level systems."
+keywords=["quantum mechanics"]
+dependencies = [
+    "mylog",
+    "numpy >= 1.17.0"
+]
