@@ -1,0 +1,28 @@
+Metadata-Version: 2.1
+Name: ts4uc
+Version: 0.0.1
+Summary: Tree search and reinforcement learning for the unit commitment problem
+Author: Patrick de Mars
+Author-email: pwdemars@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# ts4uc
+Tree Search for the UC Problem
+
+This repo documents the research conducted for my PhD in RL for the Unit Commitment problem.
+
+In particular, this gives the code I used to solve the UC problem with a variety of tree search methods, aided by RL agents trained in a simulated environment of the power system. The simulation environment can be found separately in the RL4UC package. 
+
+### Tests
+
+To run tests: 
+
+```
+cd tests
+pytest
+```
