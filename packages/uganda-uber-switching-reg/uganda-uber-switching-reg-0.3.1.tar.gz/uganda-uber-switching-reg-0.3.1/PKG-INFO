@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: uganda-uber-switching-reg
+Version: 0.3.1
+Summary: A robust estimator to machine learning prediction misclassification
+License: MIT
+Author: Aleksandr Michuda
+Author-email: amichuda@gmail.com
+Requires-Python: >=3.8,<=3.10
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Dist: linearmodels (==4.26)
+Requires-Dist: matplotlib (==3.4.3)
+Requires-Dist: numpy (==1.22.3)
+Requires-Dist: pandas (==1.4.2)
+Requires-Dist: patsy (==0.5.2)
+Requires-Dist: scikit-learn (==0.24.2)
+Requires-Dist: scipy (==1.8.0)
+Requires-Dist: statsmodels (==0.13.2)
+Requires-Dist: tqdm (==4.56.0)
