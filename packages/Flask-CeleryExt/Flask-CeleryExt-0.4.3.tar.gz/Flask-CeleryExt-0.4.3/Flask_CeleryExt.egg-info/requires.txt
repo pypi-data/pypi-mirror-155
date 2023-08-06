@@ -1,0 +1,17 @@
+Flask>=1.1
+celery>=5.1.0
+
+[tests]
+check-manifest>=0.42
+coverage<6,>=5.3
+docker-services-cli>=0.4.0
+msgpack-python>=0.5.6
+pytest-cov>=3.0.0
+pytest-flask>=1.2.0
+pytest-isort>=3.0.0
+pytest-mock>=2.0.0
+pytest-black>=0.3.12
+pytest-pydocstyle>=2.2.0
+pytest<7,>=6
+redis>=4.1.4
+Sphinx>=4.2.0
