@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: koobro
+Version: 0.0.7
+Summary: python utils package
+Home-page: https://github.com/pypa/sampleproject
+Author: KooBro
+Author-email: koobro@qq.com
+Project-URL: Bug Tracker, https://github.com/pypa/sampleproject/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
+# 介绍
+
+## 安装
+
+```commandline
+pip install koobro
+```
