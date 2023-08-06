@@ -1,0 +1,44 @@
+[tool.black]
+exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+  | env
+  | venv
+)/
+'''
+include = '\.pyi?$'
+line-length = 79
+target-version = ['py38', ]
+
+[tool.isort]
+profile = "black"
+line_length = 79
+skip_gitignore = true
+filter_files = true
+
+[tool.interrogate]
+fail-under = 10 
+exclude = ["tests", "docs", "examples", "resources"]
+paths = ["mappymatch"]
+# Ignore the docs configuration file.
+ignore-regex = ["conf.py"]
+
+[tool.coverage.run]
+# Ensures coverage for all if, elif, else branches. 
+# https://coverage.readthedocs.io/en/6.3.2/branch.html#branch
+branch = true
+
+[tool.coverage.report]
+precision = 1
+fail_under = 50.0
+skip_covered = false
+skip_empty = true
+
