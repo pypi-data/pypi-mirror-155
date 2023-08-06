@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: braillert
+Version: 0.0.3
+Home-page: https://github.com/ov3rwrite/braillert
+Author: ov3rwrite
+Author-email: ilyabelykh123@gmail.com
+License: MIT
+License-File: LICENSE
+Requires-Dist: rich (~=12.4.4)
+Requires-Dist: pillow (~=9.1.1)
+Requires-Dist: colorama (~=0.4.4)
+
