@@ -1,0 +1,77 @@
+Metadata-Version: 2.1
+Name: pyrlprob
+Version: 1.7.0
+Summary: Train easily Gym-derived environments in python/C++ through Ray RLlib
+Home-page: https://github.com/LorenzoFederici/pyrlprob
+Author: Lorenzo Federici
+Author-email: federicilorenzo94@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: dm-tree
+Requires-Dist: gym
+Requires-Dist: lz4
+Requires-Dist: matplotlib
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: pybind11
+Requires-Dist: pytest
+Requires-Dist: ray (>=1.6.0)
+Requires-Dist: scipy
+Requires-Dist: scikit-image
+Requires-Dist: tabulate
+Requires-Dist: tensorflow
+Requires-Dist: torch
+Requires-Dist: typing
+Requires-Dist: PyYAML
+Requires-Dist: opencv-python ; platform_machine == "x86_64"
+Requires-Dist: tensorboardx ; platform_machine == "x86_64"
+
+<div align="center"> <h1><b> pyRLprob </b></div>
+
+<div align="center">
+
+![GitHub Repo stars](https://img.shields.io/github/stars/LorenzoFederici/pyrlprob?style=social)
+![GitHub last commit](https://img.shields.io/github/last-commit/LorenzoFederici/pyrlprob)
+![GitHub Release Date](https://img.shields.io/github/release-date/LorenzoFederici/pyrlprob)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/LorenzoFederici/pyrlprob)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/pyrlprob)
+
+</div>
+
+PyRLprob is an open-source python library for easy training, evaluation, and postprocessing of [Gym](https://gym.openai.com/)-based environments, written in python or c++, through [Ray-RLlib](https://docs.ray.io/en/master/rllib.html) reinforcement learning library.
+
+## Installation
+
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the latest stable release of pyRLprob, with all its dependencies:
+
+```bash
+pip install pyrlprob
+```
+
+To test if the package is installed correctly, run the following tests:
+
+
+```python
+import pyrlprob
+from pyrlprob.tests import test_train, test_train_eval
+
+test_train()
+test_train_eval()
+```
+
+If the code exits without errors, a folder named `results/` with the test results will be created in your current directory.
+
+## User Guide
+Coming soon...
+
+## Credits
+pyRLprob has been created by [Lorenzo Federici](https://github.com/LorenzoFederici) in 2021.
+For any problem, clarification or suggestion, you can contact the author at [lorenzo.federici@uniroma1.it](mailto:lorenzo.federici@uniroma1.it).
+
+## License
+The package is under the [MIT](https://choosealicense.com/licenses/mit/) license.
+
