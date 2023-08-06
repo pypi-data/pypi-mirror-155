@@ -1,0 +1,34 @@
+Metadata-Version: 2.1
+Name: pipetorch
+Version: 0.1b1
+Summary: A data pipeline library for PyTorch and Machine Learning projects
+Home-page: https://github.com/jeroenvuurens/pipetorch
+Download-URL: https://github.com/jeroenvuurens/pipetorch/archive/refs/tags/v0.1a.tar.gz
+Author: Jeroen Vuurens
+Author-email: jbpvuurens@gmail.com
+License: UNKNOWN
+Keywords: PyTorch,SKLearn,Machine Learning,Neural Network,Predictive Analytics
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+License-File: LICENSE.txt
+Requires-Dist: torch
+Requires-Dist: torchvision
+Requires-Dist: numpy
+Requires-Dist: sklearn
+Requires-Dist: matplotlib
+Requires-Dist: pandas
+Requires-Dist: pathlib
+Requires-Dist: tqdm
+Requires-Dist: statistics
+Requires-Dist: iterative-stratification
+Requires-Dist: optuna
+
+UNKNOWN
+
