@@ -1,0 +1,94 @@
+Metadata-Version: 2.1
+Name: fw-logging
+Version: 1.0.10
+Summary: Logging helper library.
+Home-page: https://gitlab.com/flywheel-io/tools/lib/fw-logging
+License: MIT
+Keywords: Flywheel,helper,logging
+Author: Flywheel
+Author-email: support@flywheel.io
+Requires-Python: >=3.7,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: crayons (>=0,<1)
+Requires-Dist: pydantic (>=1.6.1,<2.0.0)
+Requires-Dist: python-dateutil (>=2.8.2,<3.0.0)
+Requires-Dist: striprtf (>=0,<1)
+Project-URL: Repository, https://gitlab.com/flywheel-io/tools/lib/fw-logging
+Description-Content-Type: text/markdown
+
+# fw-logging
+
+Logging helper module standardizing logging and reducing boilerplate.
+
+## Usage
+
+### Dev
+
+Add as a `poetry` dependency to your project:
+
+```bash
+poetry add fw-logging
+```
+
+The default config is recommended for development, sending logs to `stdout` and
+colorizing level names if a TTY is detected.
+
+```python
+import fw_logging
+fw_logging.setup_logging()
+```
+
+### Prod
+
+Production apps should emit JSON-formatted structured logs, which can be enabled
+by setting the `FW_LOG_FORMATTER=json` environment variable, preferably within a
+k8s ConfigMap for applications with a Helm chart.
+
+### logformat
+
+`fw-logging` comes with a command-line entrypoint called `logformat`. This
+utility pretty-prints structured JSON log records read from a file or `stdin`:
+
+```bash
+# install globally or in your venv
+pip install fw-logging
+
+# format a given file or read from stdin
+logformat log.jsonl
+cat log.jsonl | logformat
+```
+
+### Config
+
+`fw_logging` may be further configured using envvars and/or kwargs passed to
+`setup_logging` or `get_log_config`, where keyword arguments take precedence
+using the `LogConfig` pydantic model. See the most important envvars with their
+defaults below or check out [`fw_logging.py`](fw_logging.py) for more details.
+
+| Envvar             | Default  | Example/alternative     |
+|:-------------------|:---------|:------------------------|
+| `FW_LOG_HANDLER`   | `stdout` | `stderr`                |
+| `FW_LOG_FORMATTER` | `text`   | `json`                  |
+| `FW_LOG_LEVEL`     | `INFO`   | `DEBUG`                 |
+| `FW_LOG_LOGGERS`   |          | `{"pika":"ERROR"}`      |
+| `FW_LOG_FILTERS`   |          | `{"fk1":{"msg":"foo"}}` |
+
+## Development
+
+Install the project using `poetry` and enable `pre-commit`:
+
+```bash
+poetry install
+pre-commit install
+```
+
+## License
+
+[![MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+
