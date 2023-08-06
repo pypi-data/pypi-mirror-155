@@ -1,0 +1,43 @@
+Metadata-Version: 2.1
+Name: pyimaz
+Version: 0.0.8b10
+Summary: pyIMAZ is a Python3 implementation of the  a semi-empirical IMAZ model of the auroral Earth's ionosphere D-Region.
+Home-page: https://gitlab.com/zolotov/pyimaz
+Author: Denis Sakaev, Oleg Zolotov
+Author-email: denissackaev@yandex.ru
+License: Apache Software License
+Keywords: lower ionosphere of the Earth,D-region,D-layer,model,FIRI
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Physics
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3 :: Only
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: numpy
+
+
+pyimaz is a Python3 implementation of the IMAZ model of the auroral Earth's ionosphere D-Region."
+
+Reference: McKinnel, L.A. and M. Friedrich, Results from a new lower ionosphere model, Adv. Space Res., 37, #5, 1045-1050, 2006. https://doi.org/10.1016/j.asr.2004.11.008
+
+Input: 
+- a) geographic Latitude; 
+- b) geographic Longitude;
+- c) year;
+- d) day number;
+- e) hour, in universal time (UT);
+- f) the 3-hourly planetary magnetic A index; 
+- g) the daily F10.7 solar flux value;
+- h) the altitude (50km-150 km).
+
+Output:
+- electron density in [m-3].
+
+
