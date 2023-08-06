@@ -1,0 +1,3 @@
+[console_scripts]
+notebuild = notebuild.core:notebuild
+
