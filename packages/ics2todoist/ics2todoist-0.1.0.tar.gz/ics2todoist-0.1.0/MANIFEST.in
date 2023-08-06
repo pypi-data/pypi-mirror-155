@@ -1,0 +1,15 @@
+# Additional files to include in package source distribution
+# https://packaging.python.org/en/latest/guides/using-manifest-in/
+
+include LICENSE.txt
+include README.rst
+
+# Minimally-constrained requirements files are used by setup.py,
+# so must be included.  See https://stackoverflow.com/a/38533721
+include requirements/*.in
+
+# Include documentation and tests in source package
+# See https://github.com/PyCQA/pydocstyle/pull/252#issuecomment-297987794
+recursive-include docs *.py *.rst
+recursive-include tests *.py
+include tox.ini

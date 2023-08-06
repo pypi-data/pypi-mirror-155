@@ -1,0 +1,186 @@
+[build-system]
+# Minimum requirements for the build system to execute.
+# See https://www.python.org/dev/peps/pep-0518/
+requires = [
+    # Support for setup.cfg was added in 30.3.0 by
+    # https://github.com/pypa/setuptools/pull/862
+    # Support for setuptools.build_meta was added in 36.6.0 by
+    # https://github.com/pypa/setuptools/pull/1143
+    'setuptools>=36.6.0',
+    # For building wheels
+    'wheel',
+]
+# Specify build-backend to avoid causing tox 3.7.0 to fail with:
+# ERROR: missing build-backend key at build-system section inside pyproject.toml
+# Note: pip would use 'setuptools.build_meta:__legacy__' from
+#       setuptools >=40.8.0 if build-backend is not specified.
+# https://pip.pypa.io/en/stable/reference/pip/#pep-517-and-518-support
+build-backend = 'setuptools.build_meta'
+
+[tool.bandit]
+# Note: exclude is ignored by bandit 1.6.3 and later.
+# See https://github.com/PyCQA/bandit/issues/657
+exclude = [
+    '/.tox/',
+    '/.venv/',
+]
+skips = [
+    'B101', # assert_used (needed for pytest, arguably useful outside)
+    'B321', # ftplib (not actionable)
+    'B402', # import_ftplib (not actionable)
+    'B404', # import_subprocess (not actionable)
+    'B603', # subprocess_without_shell_equals_true (misleading and not actionable)
+    'B606', # start_process_with_no_shell (misleading and not actionable)
+    'B607', # start_process_with_partial_path (usually desirable for portability)
+]
+
+[tool.black]
+line-length = 80
+# Note: Would prefer normalization to single quote strings, double docstrings
+# Not supported:  https://github.com/ambv/black/issues/373
+skip-string-normalization = true
+
+[tool.coverage.run]
+branch = true
+omit = [
+    'docs/*',
+    'setup.py',
+    'tests/*',
+    '.vulture/*',
+]
+
+[tool.isort]
+known_first_party = 'ics2todoist'
+# For compatibility with black (from black README.md) and
+# https://pycqa.github.io/isort/docs/configuration/profiles/#black
+ensure_newline_before_comments = true
+force_grid_wrap = 0
+include_trailing_comma = true
+line_length = 80
+lines_between_types = 1
+multi_line_output = 3
+use_parentheses = true
+
+[tool.mypy]
+strict = true
+warn_return_any = true
+warn_unreachable = true
+
+[tool.pydocstyle]
+# Several errors are ignored by default pep257 convention:
+# https://github.com/PyCQA/pydocstyle/blob/3.0.0/src/pydocstyle/violations.py#L242-L244
+# Re-add them by selecting all D errors.
+add_select = 'D'
+add_ignore = [
+    'D203',
+    'D212',
+]
+
+[tool.pylint.basic]
+bad-names = [
+    # _LOGGER is too loud, even if it is more consistent
+    '_LOGGER',
+    'bar',
+    'baz',
+    'foo',
+    'tata',
+    'toto',
+    'tutu',
+]
+good-names = [
+    # Ok for throw-away values
+    '_',
+    # _LOGGER is too loud, even if it is more consistent
+    '_logger',
+    # Single-letter index names with small scopes are ok
+    'i',
+    'j',
+    'k',
+    'src/ics2todoist',
+]
+
+# pylint.extensions.docparams options
+# https://pylint.readthedocs.io/en/latest/technical_reference/extensions.html#parameter-documentation-checker-options
+accept-no-param-doc = false
+accept-no-raise-doc = false
+accept-no-return-doc = false
+accept-no-yields-doc = false
+default-docstring-type = 'sphinx'
+
+[tool.pylint.format]
+max-line-length = 80
+ignore-long-lines = '^\s*(# )?<?https?://\S+>?$'
+
+[tool.pylint.master]
+ignore = [
+    '.tox',
+    '.venv',
+    '.vulture',
+]
+# Add src to $PYTHONPATH so modules can be resolved during linting
+# See https://stackoverflow.com/q/1899436
+# FIXME: Can't get path to this file if specified using --rcfile option
+init-hook = '''
+import os.path
+import sys
+from pylint.config import find_default_config_files
+# Find this file by UUID
+for config_file in find_default_config_files():
+    if b'11773e58-e61a-4366-ba2b-0b75481de6de' in open(config_file, 'rb').read():
+        sys.path.append(os.path.join(os.path.dirname(config_file), 'src'))
+        break
+else:
+    sys.stderr.write('Error: init-hook unable to find config file\n')
+'''
+load-plugins = [
+    'pylint.extensions.bad_builtin',
+    'pylint.extensions.check_elif',
+    'pylint.extensions.docparams',
+    'pylint.extensions.emptystring',
+    'pylint.extensions.eq_without_hash',
+    'pylint.extensions.overlapping_exceptions',
+    'pylint.extensions.redefined_variable_type',
+    'pylint_quotes',
+]
+
+[tool.pylint.messages_control]
+disable = [
+    'fixme',
+    'locally-disabled',
+    # Covered by pydocstyle/flake8-docstrings which can easily ignore tests
+    # See https://github.com/PyCQA/pylint/issues/618
+    'missing-docstring',
+    # Conflicts with isort when separately importing specific sub-modules:
+    #     import a
+    #     import b
+    #     from a import c
+    # Above is correct for isort, causes ungrouped-imports from pylint.
+    'ungrouped-imports',
+]
+enable = [
+    'useless-suppression',
+]
+
+[tool.pylint.string_quotes]
+# Enforce string quoting style
+# Follow PEP 257 recommendation to use double quotes around docstrings
+docstring-quote = 'double'
+string-quote = 'single-avoid-escape'
+triple-quote = 'single'
+
+[tool.pytest.ini_options]
+addopts = [
+    '--strict-config',
+    '--strict-markers',
+]
+# https://docs.pytest.org/en/stable/warnings.html
+# Note: last matches first (opposite of python -W)
+# Note: matches before python -W options passed in pytest invocation
+filterwarnings = [
+    # Treat warnings caused by this module (or submodules) as errors
+    'error:::ics2todoist(\.|$)',
+    # Treat warnings caused by the tests module (or submodules) as errors
+    'error:::tests(\.|$)',
+]
+markers = [
+]

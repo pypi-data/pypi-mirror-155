@@ -1,0 +1,116 @@
+===========
+ics2todoist
+===========
+
+.. image:: https://img.shields.io/gitlab/pipeline-status/kevinoid/ics2todoist.svg?branch=main&style=flat&label=build
+   :alt: Build Status
+   :target: https://gitlab.com/kevinoid/ics2todoist/-/pipelines?ref=main
+.. image:: https://readthedocs.org/projects/ics2todoist/badge/?version=latest
+   :target: https://python-project-template.readthedocs.io/en/latest/
+   :alt: Documentation Status
+.. image:: https://img.shields.io/pypi/pyversions/ics2todoist.svg?style=flat
+   :alt: Python Versions
+   :target: https://pypi.org/project/ics2todoist/
+.. image:: https://img.shields.io/pypi/v/ics2todoist.svg?style=flat
+   :alt: Version on PyPI
+   :target: https://pypi.org/project/ics2todoist/
+
+A tool (and library) to convert tasks in iCalendar format (`RFC 5545`_) to CSV
+format (`RFC 4180`_) for `import into Todoist`_.
+
+
+Installation
+============
+
+`This package`_ can be installed using pip_, by running:
+
+.. code:: sh
+
+   pip install ics2todoist
+
+
+Command-Line Examples
+=====================
+
+To convert iCalendar files with extension ``.ics`` to a CSV file named
+``todo.csv``:
+
+.. code:: sh
+
+   ics2todoist -o todo.csv *.ics
+
+To convert iCalendar files with extension ``.ics`` to a CSV file named
+``todo.csv`` using redirection:
+
+.. code:: sh
+
+   cat *.ics | ics2todoist >todo.csv
+
+
+API Examples
+============
+
+To convert iCalendar in ``todo.ics`` to CSV on ``stdout``:
+
+.. code:: python
+
+   from ics2todoist import ics_to_todoist
+   ics_to_todoist(['todo.ics'], sys.stdout)
+
+To convert iCalendar files with extension ``.ics`` to a CSV file named
+``todo.csv``:
+
+.. code:: python
+
+   from glob import glob
+   from ics2todoist import ics_to_todoist
+   with open('todo.csv', 'w', encoding='utf-8') as csvfile:
+       ics_to_todoist(glob('*.ics'), csvfile)
+
+To convert a string of iCalendar data into a ``TodoistCsvRow``:
+
+.. code:: python
+
+   from ics2todoist import Ics2TodoistConverter
+   converter = Ics2TodoistConverter()
+   row = converter.ical_to_todoist(get_ical_string())
+
+
+.. === End of Sphinx index content ===
+
+
+Documentation
+=============
+
+The `project documentation`_ is hosted on `Read the Docs`_.  See the `CLI
+documentation`_ for command-line options and usage, and the `API documentation`_
+for the Python API.
+
+
+Contributing
+============
+
+Contributions are welcome and very much appreciated!  See the `contributing
+guidelines`_ for recommendations.
+
+
+License
+=======
+
+This project is available under the terms of the `MIT License`_.
+See the `summary at TLDRLegal`_
+
+.. === Begin reference names ===
+
+.. _API documentation: https://ics2todoist.readthedocs.io/en/latest/api/ics2todoist.html
+.. _CLI documentation: https://ics2todoist.readthedocs.io/en/latest/cli.html
+.. _MIT License: https://gitlab.com/kevinoid/ics2todoist/-/blob/main/LICENSE.txt
+.. _Read the Docs: https://readthedocs.org/
+.. _RFC 4180: https://www.rfc-editor.org/rfc/rfc4180
+.. _RFC 5545: https://www.rfc-editor.org/rfc/rfc5545
+.. _contributing guidelines: https://gitlab.com/kevinoid/ics2todoist/-/blob/main/CONTRIBUTING.rst
+.. _import into Todoist: https://todoist.com/help/articles/importing-or-exporting-project-templates#importing-project-templates-from-a-csv-file
+.. _pip: https://pip.pypa.io/
+.. _project documentation: https://ics2todoist.readthedocs.io/
+.. _summary at TLDRLegal: https://tldrlegal.com/license/mit-license
+.. _this package: https://pypi.org/project/ics2todoist
