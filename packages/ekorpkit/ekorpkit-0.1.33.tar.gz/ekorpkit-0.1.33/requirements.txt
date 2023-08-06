@@ -1,0 +1,14 @@
+numpy
+tqdm
+openpyxl
+pandas
+hydra-core>=1.2.0
+hydra-colorlog
+python-dotenv
+gdown
+chardet
+rehash
+requests
+scipy
+cached-path
+pytablewriter>=0.64.0

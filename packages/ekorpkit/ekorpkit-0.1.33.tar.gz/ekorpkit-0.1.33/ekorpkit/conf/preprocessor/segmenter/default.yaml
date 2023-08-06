@@ -1,0 +1,12 @@
+defaults:
+  - separators: default
+  - merge: default
+  - split: default
+  - filter_language: default
+  - filter_sentence_length: default
+  - chunk: default
+
+filter_programming_language: false
+return_as_list: false
+print_args: false
+verbose: ${oc.select:..verbose, true}

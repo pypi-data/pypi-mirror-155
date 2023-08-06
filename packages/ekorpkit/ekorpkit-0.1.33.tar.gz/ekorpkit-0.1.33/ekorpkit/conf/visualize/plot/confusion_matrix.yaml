@@ -1,0 +1,8 @@
+defaults:
+  - default
+  - confusion_matrix: default
+
+name: confusion_matrix
+plot: ${.confusion_matrix}
+# axes should be null for confusion matrix
+axes:

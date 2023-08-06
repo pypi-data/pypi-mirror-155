@@ -1,0 +1,10 @@
+defaults:
+  - default
+
+_target_: ekorpkit.preprocessors.segmenter.Segmenter
+split:
+  keep_segment: ${oc.select:..keep_segment, false}
+chunk:
+  chunk_size: ${oc.select:..chunk_size, 300}
+  chunk_overlap: ${oc.select:..chunk_overlap, false}
+  len_func: ${oc.select:..len_func, len_bytes}

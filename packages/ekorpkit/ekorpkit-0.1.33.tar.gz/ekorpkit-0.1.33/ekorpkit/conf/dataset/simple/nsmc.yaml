@@ -1,0 +1,31 @@
+defaults:
+  - _build_classification
+  - override /io/loader: hfds
+
+name: nsmc
+domain: general
+lang: ko
+
+io:
+  data_sources: 
+    train: train
+    test: test
+  loader:
+    name: nsmc
+
+pipeline:
+  _transform_:
+    - rename_columns
+    - reset_index
+    - replace
+  rename_columns:
+    new_names:
+      document: text
+      label: labels
+      id: idx
+  replace:
+    apply_to: labels
+    parameters:
+      to_replace:
+        0: negative
+        1: positive

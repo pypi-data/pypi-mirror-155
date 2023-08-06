@@ -1,0 +1,25 @@
+output_dir: ${..model_dir}
+best_model_dir: ${.output_dir}/best_model
+cache_dir: ${dir.cache}/models
+max_seq_length: 512
+train_batch_size: 48
+eval_batch_size: 48
+num_train_epochs: 7
+evaluate_during_training: true
+evaluate_during_training_steps: 15000
+evaluate_during_training_verbose: true
+use_multiprocessing: false
+use_multiprocessed_decoding: false
+use_multiprocessing_for_evaluation: false
+fp16: false
+save_steps: -1
+save_eval_checkpoints: false
+save_model_every_epoch: false
+reprocess_input_data: true
+overwrite_output_dir: true
+wandb_project: ${oc.select:..wandb_project, {}}
+wandb_kwargs: ${oc.select:..wandb_kwargs, {}}
+regression: false
+sliding_window: true
+stride: 0.8
+tie_value: 1

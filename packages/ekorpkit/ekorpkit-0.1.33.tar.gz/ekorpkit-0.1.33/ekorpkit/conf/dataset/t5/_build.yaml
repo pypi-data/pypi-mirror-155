@@ -1,0 +1,19 @@
+defaults:
+  - /io: t5
+  - /info: _build_t5
+  - /pipeline: _build_dataset
+  - /auto: load
+
+_target_: ekorpkit.datasets.build.DatasetBuilder
+name:
+category: general
+data_dir: ${dir.dataset}/t5/${.name}
+filetype: .parquet
+verbose: ${oc.select:..verbose, true}
+
+normalize:
+  preprocessor:
+    normalizer: ${oc.select:dataset.t5.preprocessor.normalizer,null}
+segment:
+  preprocessor:
+    segmenter: ${oc.select:dataset.t5.preprocessor.segmenter,null}

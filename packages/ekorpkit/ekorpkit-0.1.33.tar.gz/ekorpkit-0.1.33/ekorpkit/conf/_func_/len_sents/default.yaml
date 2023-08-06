@@ -1,0 +1,3 @@
+_partial_: true
+_target_: ekorpkit.utils.func.len_sents
+sep: ${oc.select:corpus.sentence_separator, '\n'}

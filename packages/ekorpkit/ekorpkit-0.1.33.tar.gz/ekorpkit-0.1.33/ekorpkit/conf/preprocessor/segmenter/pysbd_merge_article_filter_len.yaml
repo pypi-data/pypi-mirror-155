@@ -1,0 +1,10 @@
+defaults:
+  - pysbd
+
+merge:
+  merge_lines: true
+  merge_level: article
+filter_sentence_length:
+  filte: true
+  min_num_words: 3
+  min_length: 10

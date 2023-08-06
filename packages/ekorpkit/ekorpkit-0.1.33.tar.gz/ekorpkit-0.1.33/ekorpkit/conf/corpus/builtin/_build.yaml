@@ -1,0 +1,21 @@
+defaults:
+  - /column_info: _build_corpus
+  - /io: _build_corpus
+  - /info: _build_corpus
+  - /pipeline: _build_corpus
+  - /auto: load
+
+_target_: ekorpkit.datasets.build.DatasetBuilder
+name:
+data_dir: ${dir.corpus}/${.name}
+# data_dir: ${dir.archive}/datasets/lmdata/${.name}
+filetype: .parquet
+verbose: ${oc.select:..verbose, true}
+
+pipeline:
+  normalize:
+    preprocessor:
+      normalizer: ${oc.select:corpus.builtin.preprocessor.normalizer,null}
+  segment:
+    preprocessor:
+      segmenter: ${oc.select:corpus.builtin.preprocessor.segmenter,null}

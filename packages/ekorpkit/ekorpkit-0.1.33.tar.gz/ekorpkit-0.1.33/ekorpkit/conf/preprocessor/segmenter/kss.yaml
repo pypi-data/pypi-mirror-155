@@ -1,0 +1,8 @@
+defaults:
+  - default
+
+_target_: ekorpkit.preprocessors.segmenter.KSSSegmenter
+kss:
+  use_heuristic: false
+  backend: mecab-python3  # fugashi
+  use_quotes_brackets_processing: false

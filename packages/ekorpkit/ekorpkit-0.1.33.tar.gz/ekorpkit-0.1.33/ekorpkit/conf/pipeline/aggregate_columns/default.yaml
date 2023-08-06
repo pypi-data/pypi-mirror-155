@@ -1,0 +1,9 @@
+defaults:
+  - /_func_: aggregate_columns
+
+onto: text
+groupby:
+separator: '\n\n'
+aggregations:
+reset_index: false
+verbose: ${oc.select:..verbose, true}

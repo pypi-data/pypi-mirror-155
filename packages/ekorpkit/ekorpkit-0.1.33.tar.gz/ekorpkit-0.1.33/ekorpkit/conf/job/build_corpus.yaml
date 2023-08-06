@@ -1,0 +1,21 @@
+# @package _global_
+defaults:
+  - _job_
+
+name:
+cmd: fetch_builtin_corpus
+num_workers: 10
+force:
+  download: false
+  build: true
+  summarize: true
+  preprocess: true
+ekorpkit:
+  num_workers: ${..num_workers}
+  cmd: ${..cmd}
+  project: ${oc.env:EKORPKIT_PROJECT,default}
+  +corpus/builtin: ${..name}
+  corpus.builtin.io.force.summarize: ${..force.summarize}
+  corpus.builtin.io.force.preprocess: ${..force.preprocess}
+  corpus.builtin.io.force.build: ${..force.build}
+  corpus.builtin.io.force.download: ${..force.download}

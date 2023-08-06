@@ -1,0 +1,22 @@
+defaults:
+  - _default
+  - fomc: _base
+
+_target_: ekorpkit.io.fetch.fomc.build_fomc
+name: ${oc.select:..name, fomc}
+from_year: 1990
+contents:
+  - content_type: fomc_statement
+    _target_: ekorpkit.io.fetch.fomc.Statement
+  - content_type: fomc_minutes
+    _target_: ekorpkit.io.fetch.fomc.Minutes
+  # - content_type: fomc_beigebook
+  #   _target_: ekorpkit.io.fetch.fomc.BeigeBook
+  - content_type: fomc_speech
+    _target_: ekorpkit.io.fetch.fomc.Speech
+  - content_type: fomc_testimony
+    _target_: ekorpkit.io.fetch.fomc.Testimony
+  - content_type: fomc_meeting_script
+    _target_: ekorpkit.io.fetch.fomc.MeetingScript
+  - content_type: fomc_press_conf
+    _target_: ekorpkit.io.fetch.fomc.PresConfScript

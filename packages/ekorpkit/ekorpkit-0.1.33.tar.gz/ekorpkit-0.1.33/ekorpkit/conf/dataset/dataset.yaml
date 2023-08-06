@@ -1,0 +1,6 @@
+defaults:
+  - default
+
+_target_: ekorpkit.datasets.dataset.Dataset
+auto:
+  load: true

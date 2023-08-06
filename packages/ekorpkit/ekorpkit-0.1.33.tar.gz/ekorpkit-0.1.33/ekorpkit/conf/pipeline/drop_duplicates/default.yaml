@@ -1,0 +1,5 @@
+defaults:
+  - /_func_: drop_duplicates
+
+apply_to: ${oc.select:..apply_to, text}
+verbose: ${oc.select:..verbose, true}
