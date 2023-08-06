@@ -1,0 +1,14 @@
+py:meth dask.distributed.Adaptive
+py:class dask_jobqueue.core.JobQueueCluster
+py:class distributed.deploy.adaptive.Adaptive
+py:class dask_jobqueue.core.Job
+py:class sklearn.preprocessing._function_transformer.FunctionTransformer
+py:class sklearn.base.MetaEstimatorMixin
+py:class sklearn.utils.metaestimators._BaseComposition
+py:class bob.pipelines.sample._ReprMixin
+py:obj dask.distributed.Adaptive
+py:class PeriodicCallback
+py:class defaultdict
+py:class WorkerState
+py:class deque
+py:class sklearn.BaseEstimator
