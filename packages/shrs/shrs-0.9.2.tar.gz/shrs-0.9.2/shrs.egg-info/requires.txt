@@ -1,0 +1,11 @@
+psutil
+numpy
+pandas
+scipy
+tqdm
+chardet
+biopython
+matplotlib
+
+[GPU]
+cupy
