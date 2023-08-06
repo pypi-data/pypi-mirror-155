@@ -1,0 +1,45 @@
+Metadata-Version: 2.1
+Name: whist-core
+Version: 0.1.1
+Summary: Game implementation of Whist.
+Home-page: https://github.com/Whist-Team/Whist-Core
+Author: Whist Team
+Project-URL: Bug Tracker, https://github.com/Whist-Team/Whist-Core/issues
+Keywords: game whist
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Provides-Extra: testing
+License-File: LICENSE
+
+[![Documentation Status](https://readthedocs.org/projects/pip/badge/?version=stable)](https://pip.pypa.io/en/stable/?badge=stable)
+[![codecov](https://codecov.io/gh/Whist-Team/Whist-Core/branch/main/graph/badge.svg)](https://codecov.io/gh/Whist-Team/Whist-Core)
+![PyPI](https://img.shields.io/pypi/v/whist-core)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/whist-core)
+![PyPI - Wheel](https://img.shields.io/pypi/wheel/whist-core)
+![GitHub repo size](https://img.shields.io/github/repo-size/whist-team/whist-core)
+![Lines of code](https://img.shields.io/tokei/lines/github/whist-team/whist-core)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/whist-core)
+![PyPI - License](https://img.shields.io/pypi/l/whist-core)
+
+
+# Whist-Core
+Rules implementation
+
+## Run tests
+```bash
+# Create venv
+python3 -m venv venv
+source venv/bin/activate
+pip install -U pip setuptools wheel
+
+# Install with 'testing' extras
+pip install -e .[testing]
+
+# Run tests
+python -m pytest
+```
