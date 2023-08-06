@@ -1,0 +1,6 @@
+include Makefile
+include src/*.c
+include include/*.h
+include README.md
+include VERSION
+include requirements.txt

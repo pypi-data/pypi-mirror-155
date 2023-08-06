@@ -1,0 +1,6 @@
+[tool.black]
+target-version = ['py36']
+
+[tool.coverage]
+#omit =
+#    test_*.py
