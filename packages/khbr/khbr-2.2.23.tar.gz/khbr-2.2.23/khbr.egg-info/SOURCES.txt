@@ -1,0 +1,54 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+khbr/__init__.py
+khbr/_config.py
+khbr/bossrush.py
+khbr/longtests.py
+khbr/randomizer.py
+khbr/randutils.py
+khbr/tests.py
+khbr/testutils.py
+khbr/textutils.py
+khbr/utils.py
+khbr.egg-info/PKG-INFO
+khbr.egg-info/SOURCES.txt
+khbr.egg-info/dependency_links.txt
+khbr.egg-info/requires.txt
+khbr.egg-info/top_level.txt
+khbr/KH2/AiManager.py
+khbr/KH2/AreaDataScript.py
+khbr/KH2/AssetGenerator.py
+khbr/KH2/EnemyManager.py
+khbr/KH2/EnmpManager.py
+khbr/KH2/KingdomHearts2.py
+khbr/KH2/LocationManager.py
+khbr/KH2/Mission.py
+khbr/KH2/MissionManager.py
+khbr/KH2/ModWriter.py
+khbr/KH2/SpawnManager.py
+khbr/KH2/__init__.py
+khbr/KH2/data/ai_mods/Armor Xemnas I
+khbr/KH2/data/ai_mods/Barbossa
+khbr/KH2/data/ai_mods/Demyx
+khbr/KH2/data/ai_mods/Demyx (Data)
+khbr/KH2/data/ai_mods/Final Xemnas
+khbr/KH2/data/ai_mods/Grim Reaper II
+khbr/KH2/data/ai_mods/Hayner
+khbr/KH2/data/ai_mods/Illuminator
+khbr/KH2/data/ai_mods/Riku
+khbr/KH2/data/ai_mods/Setzer
+khbr/KH2/data/ai_mods/The Beast
+khbr/KH2/data/ai_mods/Twilight Thorn
+khbr/KH2/data/ai_mods/Vivi
+khbr/KH2/data/ai_mods/Xemnas
+khbr/KH2/data/ai_mods/Xemnas (Data)
+khbr/KH2/data/ai_mods/Zexion
+khbr/KH2/data/ai_mods/Zexion (Data)
+khbr/KH2/data/testdata/zexion.json
+khbr/KH2/schemas/__init__.py
+khbr/KH2/schemas/enemy_records.py
+khbr/KH2/schemas/enemyseed.py
+khbr/KH2/schemas/random_config.py
