@@ -1,0 +1,7 @@
+#!python
+
+import dirhashcalc
+import sys
+
+dirhashcalc.main(sys.argv[1:])
+
