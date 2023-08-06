@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: notionizer
+Version: 0.0.1
+Summary: Python wrapper for Notion API
+Home-page: https://github.com/kimsg1984/notionize
+Author: SeonGyo Kim
+Author-email: kimsg1984@gmail.com
+License: UNKNOWN
+Description: # notionizer
+        
+        Notionize your life with python module **notionizer**!
+        
+        
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
