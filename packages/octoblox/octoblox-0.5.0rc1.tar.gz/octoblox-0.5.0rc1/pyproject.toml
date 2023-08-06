@@ -1,0 +1,10 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm>=6.2", "setuptools-pipfile>=0.5"]
+build-backend = "setuptools.build_meta"
+
+[tool.black]
+skip-string-normalization = true
+
+[tool]
+setuptools_scm = {}
+setuptools-pipfile = 3

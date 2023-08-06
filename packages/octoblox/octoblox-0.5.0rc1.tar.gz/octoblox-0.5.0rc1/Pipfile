@@ -1,0 +1,21 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+pytest = "*"
+pytest-cov = "*"
+requests-mock = "*"
+octoblox = {editable = true, path = "."}
+black = "*"
+flake8 = "*"
+flake8-bugbear = "*"
+
+[packages]
+requests = "*"
+octodns = "*"
+
+[scripts]
+setup = "pipenv install --dev --skip-lock"
+clean = "git clean -fX ."
