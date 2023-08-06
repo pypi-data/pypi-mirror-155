@@ -1,0 +1,3 @@
+recursive-include tecton_snowflake/templates *.sql
+recursive-include tecton_spark/jars *.jar
+include README.md
