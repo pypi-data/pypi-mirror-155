@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: dummy-localstack-ext
+Version: 0.16.9.dev20220615160409
+Summary: Extensions for LocalStack
+Home-page: https://github.com/thrau/dummy-localstack-ext
+Author: LocalStack Team
+Author-email: info@localstack.cloud
+License: Proprietary
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: License :: Other/Proprietary License
+Classifier: Topic :: Software Development :: Testing
+Provides-Extra: runtime
+Provides-Extra: test
+Provides-Extra: test_overrides
+Provides-Extra: test_ext
+Provides-Extra: package
