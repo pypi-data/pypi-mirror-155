@@ -1,0 +1,44 @@
+# Package Overview
+package_name: bookRecommender
+
+# Data Files
+data_file_book: BX-Books.csv
+data_file_user: BX-Users.csv
+data_file_ratings: BX-Book-Ratings.csv
+
+pipeline_name: book_recommender_model
+pipeline_save_file: book_recommender_model_output_v
+
+# to set the random seed
+random_state: 0
+
+alpha: 0.001
+
+features_to_drop:
+  - yearOfPublication
+  - publisher
+  - bookAuthor
+  - imageUrlS
+  - imageUrlM
+  - imageUrlL
+  - Age
+
+subject: bookTitle
+
+user: userID
+
+rating_variable: bookRating
+
+popularity_threshold: 50
+
+new_feature: totalRatingCount
+
+location: Location
+
+specific_location: usa|canada
+
+knn_metric: cosine
+
+knn_algorithm: brute
+
+num_neighbors: 6
