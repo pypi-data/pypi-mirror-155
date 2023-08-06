@@ -1,0 +1,11 @@
+pytest
+requests
+networkx
+scikit-learn-extra
+pre-commit
+black
+isort
+cython>=0.29.14
+setuptools_scm[toml]>=3.4
+setuptools>=48.0
+wheel
