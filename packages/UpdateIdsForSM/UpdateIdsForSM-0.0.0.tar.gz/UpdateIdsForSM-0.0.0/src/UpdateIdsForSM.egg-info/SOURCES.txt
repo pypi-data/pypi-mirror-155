@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.rst
+pyproject.toml
+requirements.txt
+setup.cfg
+setup.py
+src/UpdateIdsForSM.egg-info/PKG-INFO
+src/UpdateIdsForSM.egg-info/SOURCES.txt
+src/UpdateIdsForSM.egg-info/dependency_links.txt
+src/UpdateIdsForSM.egg-info/requires.txt
+src/UpdateIdsForSM.egg-info/top_level.txt
+src/updateidsforsm/__init__.py
+src/updateidsforsm/updateidsforsm.py
