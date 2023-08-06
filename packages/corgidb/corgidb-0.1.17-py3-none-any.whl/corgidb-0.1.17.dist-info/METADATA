@@ -1,0 +1,38 @@
+Metadata-Version: 2.1
+Name: corgidb
+Version: 0.1.17
+Summary: Basic sqlite3 wrapper write as short as a corgi legs and as fast as a corgi
+Home-page: https://github.com/WasinUddy/CorgiDB
+Author: Wasin Silakong
+Author-email: wasin.silakong@gmail.com
+License: MIT
+Download-URL: https://github.com/WasinUddy/CorgiDB/archive/refs/tags/v0.1.17-alpha.tar.gz
+Project-URL: Documentation, https://wasin-silakong.gitbook.io/corgidb-docs/
+Project-URL: Source Code, https://github.com/WasinUddy/CorgiDB
+Keywords: sql python,python database,SQL,python sqlite
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+
+
+# CorgiDB
+
+<img src="https://github.com/WasinUddy/CorgiDB/blob/main/corgidb/CorgiDBlogo.png?raw=true" alt="CorgiDB logo" style="height:300px; width:300px;" />
+
+Documentation
+https://wasin-silakong.gitbook.io/corgidb-docs/
+
+https://pypi.org/project/corgidb/
+
+Code as short as Corgi's legs but and as fast as a Corgi
+
+CorgiDB is a wrapper of python3's sqlite3 package
+
+
+
