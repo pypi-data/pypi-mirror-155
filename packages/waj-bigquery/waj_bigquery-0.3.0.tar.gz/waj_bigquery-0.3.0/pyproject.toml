@@ -1,0 +1,48 @@
+[tool.poetry]
+name = "waj_bigquery"
+version = "0.3.0"
+description = ""
+authors = ["Gabriel González <gabriel@whaleandjaguar.co>"]
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.10"
+google-cloud-bigquery = "^3.0.1"
+pydantic = "^1.9.0"
+pandas = "1.3.2"
+pandas-gbq = "^0.17.6"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+gitlint = "^0.15.1"
+flake8 = "^3.9.2"
+flake8-bugbear = "^21.9.1"
+black = "^21.9b0"
+nox = "^2021.6.12"
+isort = "^5.9.3"
+autoflake = "^1.4"
+flake8-gl-codeclimate = "^0.1.4"
+python-semantic-release = "^7.19.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+include = '\.pyi?$'
+extend-exclude = 'app/.venv/*'
+
+[tool.isort]
+profile = "black"
+
+[tool.semantic_release]
+version_variable = [
+  "__init__.py:__version__",
+  "pyproject.toml:version"
+]
+
+branch = "main"
+upload_to_pypi = true
+upload_to_release = true
+build_command = "poetry build"
