@@ -1,0 +1,12 @@
+fastcore>=1.4.2
+tinykernel
+execnb
+
+[dev]
+nbdev-numpy
+nbdev-stdlib
+pandas
+matplotlib
+ipython
+black
+ghapi

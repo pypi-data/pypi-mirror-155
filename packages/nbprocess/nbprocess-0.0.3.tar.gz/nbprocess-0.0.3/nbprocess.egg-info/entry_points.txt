@@ -1,0 +1,22 @@
+[console_scripts]
+nbprocess_bump_version = nbprocess.cli:nbprocess_bump_version
+nbprocess_clean = nbprocess.clean:nbprocess_clean
+nbprocess_create_config = nbprocess.read:nbprocess_create_config
+nbprocess_export = nbprocess.doclinks:nbprocess_export
+nbprocess_filter = nbprocess.cli:nbprocess_filter
+nbprocess_fix = nbprocess.merge:nbprocess_fix
+nbprocess_ghp_deploy = nbprocess.cli:nbprocess_ghp_deploy
+nbprocess_install_hooks = nbprocess.clean:nbprocess_install_hooks
+nbprocess_migrate_directives = nbprocess.migrate:nbprocess_migrate_directives
+nbprocess_new = nbprocess.cli:nbprocess_new
+nbprocess_quarto = nbprocess.cli:nbprocess_quarto
+nbprocess_sidebar = nbprocess.cli:nbprocess_sidebar
+nbprocess_test = nbprocess.test:nbprocess_test
+nbprocess_trust = nbprocess.clean:nbprocess_trust
+nbprocess_update = nbprocess.sync:nbprocess_update
+
+[mkdocs.plugins]
+rm_num_prefix = nbprocess.mkdocs:RmNumPrefix
+
+[nbdev]
+nbprocess = nbprocess._modidx:d
