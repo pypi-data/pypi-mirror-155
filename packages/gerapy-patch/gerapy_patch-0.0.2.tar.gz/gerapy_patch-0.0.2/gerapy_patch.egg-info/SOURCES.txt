@@ -1,0 +1,10 @@
+setup.py
+gerapy/__init__.py
+gerapy/server/__init__.py
+gerapy/server/core/__init__.py
+gerapy/server/core/build.py
+gerapy/server/core/middlewares.py
+gerapy_patch.egg-info/PKG-INFO
+gerapy_patch.egg-info/SOURCES.txt
+gerapy_patch.egg-info/dependency_links.txt
+gerapy_patch.egg-info/top_level.txt
