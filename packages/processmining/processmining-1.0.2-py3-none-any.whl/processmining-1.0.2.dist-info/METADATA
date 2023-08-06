@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: processmining
+Version: 1.0.2
+Summary: Python processmining Package
+Home-page: UNKNOWN
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: pandas (<=1.3.5)
+Requires-Dist: numpy (<=1.21.6)
+Requires-Dist: pm4py (<=2.2.22)
+Requires-Dist: matplotlib (<=3.2.2)
+Requires-Dist: seaborn (<=0.11.2)
+
+UNKNOWN
+
+
