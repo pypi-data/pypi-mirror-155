@@ -1,0 +1,6 @@
+[console_scripts]
+preacher-cli=preacher.app.cli.main:main
+
+[preacher]
+preacher-plugin-default=preacher.plugin.impl
+

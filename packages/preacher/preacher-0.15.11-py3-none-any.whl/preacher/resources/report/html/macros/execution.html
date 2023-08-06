@@ -1,0 +1,11 @@
+{% from "./macros/request.html" import show_request %}
+
+{% macro show_execution(item) %}
+  {% if item.request %}
+    {{ show_request(item.request) }}
+  {% endif %}
+
+  {% if item.message %}
+    <pre>{{ item.message }}</pre>
+  {% endif %}
+{% endmacro %}
