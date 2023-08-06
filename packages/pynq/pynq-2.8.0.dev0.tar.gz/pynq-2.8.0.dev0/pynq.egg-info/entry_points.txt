@@ -1,0 +1,10 @@
+[console_scripts]
+pynq = pynq._cli.cmd:main
+pynq-get-notebooks = pynq._cli.get_notebooks:main
+pynq-server = pynq._cli.manage_global_server:main
+start_pl_server.py = pynq.pl_server.server:_start_server
+stop_pl_server.py = pynq.pl_server.server:_stop_server
+
+[distutils.commands]
+download_overlays = pynq.utils:_download_overlays
+

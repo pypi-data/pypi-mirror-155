@@ -1,0 +1,10 @@
+setuptools>=24.2.0
+cffi
+numpy
+nest_asyncio
+
+[:python_version<="3.5.2"]
+pandas==0.24.2
+
+[:python_version>="3.5.3"]
+pandas
