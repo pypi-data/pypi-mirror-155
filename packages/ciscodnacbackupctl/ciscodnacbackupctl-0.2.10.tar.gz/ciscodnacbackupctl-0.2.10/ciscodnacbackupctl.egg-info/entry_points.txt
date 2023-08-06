@@ -1,0 +1,4 @@
+
+        [console_scripts]
+        ciscodnacbackupctl=ciscodnacbackupctl.cli:entry
+    
