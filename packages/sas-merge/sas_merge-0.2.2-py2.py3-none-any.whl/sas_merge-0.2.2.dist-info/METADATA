@@ -1,0 +1,56 @@
+Metadata-Version: 2.1
+Name: sas-merge
+Version: 0.2.2
+Summary: replicate SAS merge function using pyspark
+Home-page: https://github.com/joshylchen/sas_merge
+Author: Josh Chen
+Author-email: jcpythonlib@gmail.com
+License: MIT
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+License-File: LICENSE
+Requires-Dist: pyspark (>=2.6)
+
+sas_merge
+=========
+
+.. image:: https://img.shields.io/pypi/v/sas_merge.svg
+    :target: https://pypi.python.org/pypi/sas_merge
+    :alt: Latest PyPI version
+
+.. image:: n/a.png
+   :target: n/a
+   :alt: Latest Travis CI build status
+
+replicate SAS merge function using pyspark
+
+Usage
+-----
+
+Installation
+------------
+
+Requirements
+^^^^^^^^^^^^
+
+Compatibility
+-------------
+
+Licence
+-------
+
+Authors
+-------
+
+`sas_merge` was written by `Josh Chen <jcpythonlib@gmail.com>`_.
+
+
