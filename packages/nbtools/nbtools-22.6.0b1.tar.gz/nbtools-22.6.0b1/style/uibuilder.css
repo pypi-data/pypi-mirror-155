@@ -1,0 +1,262 @@
+.nbtools-uibuilder .nbtools-description {
+    min-height: 18px;
+    padding-right: 60px;
+    width: calc(100% - 50px);
+}
+
+.nbtools-error {
+    padding: var(--jp-notebook-padding);
+    border: var(--jp-error-color2) var(--jp-border-width) solid transparent;
+    border-radius: var(--jp-border-radius);
+    color: var(--jp-error-color0);
+    background-color: var(--jp-error-color3);
+    margin-bottom: 10px;
+}
+
+.nbtools-info {
+    padding: var(--jp-notebook-padding);
+    border: var(--jp-info-color2) var(--jp-border-width) solid transparent;
+    border-radius: var(--jp-border-radius);
+    color: var(--jp-info-color0);
+    background-color: var(--jp-info-color3);
+    margin-bottom: 10px;
+}
+
+.nbtools-run {
+    z-index: 1;
+    background-color: var(--jp-layout-color4);
+    color: #FFFFFF;
+    border: 1px solid var(--jp-border-color1);
+    padding: 6px 12px;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+.nbtools-buttons {
+    position: absolute;
+    z-index: 1;
+}
+
+.nbtools-buttons > button {
+    z-index: 1;
+    background-color: var(--jp-layout-color3);
+    border: 1px solid var(--jp-border-color1);
+    padding: 4px 12px;
+    font-size: 0.9em;
+    cursor: pointer;
+    color: #FFFFFF;
+}
+
+.nbtools-buttons > button:hover,
+.nbtools-buttons > button:active {
+    background-color: var(--jp-layout-color4);
+}
+
+.nbtools-buttons:first-child {
+    right: 5px;
+    top: 4px;
+}
+
+.nbtools-buttons:last-child {
+    right: 5px;
+    bottom: 5px;
+}
+
+.nbtools-uibuilder .widget-interact {
+    overflow: visible;
+}
+
+.nbtools .jupyter-button.hidden {
+    display: none;
+}
+
+.nbtools-input > div.widget-label:first-child {
+    font-weight: bold;
+    text-align: right;
+    padding-right: 20px;
+}
+
+.nbtools-input > div.widget-label:last-child {
+    height: auto;
+    min-height: 5px;
+    max-width: 100%;
+    overflow: hidden !important;
+}
+
+.nbtools-input.missing {
+    border: red solid 2px;
+}
+
+.nbtools-input .widget-upload {
+    width: 100px;
+    top: 2px;
+}
+
+.nbtools-passwordinput input[type=password] {
+    box-sizing: border-box;
+    border: var(--jp-widgets-input-border-width) solid var(--jp-widgets-input-border-color);
+    background-color: var(--jp-widgets-input-background-color);
+    color: var(--jp-widgets-input-color);
+    font-size: var(--jp-widgets-font-size);
+    flex-grow: 1;
+    min-width: 0;
+    flex-shrink: 1;
+    outline: currentcolor none medium !important;
+    height: var(--jp-widgets-inline-height);
+    line-height: var(--jp-widgets-inline-height);
+}
+
+.nbtools .widget-dropdown > select,
+.nbtools .widget-dropdown > input {
+  width: 100%;
+}
+
+.nbtools .widget-upload {
+  margin-right: 2px;
+}
+
+.nbtools-fileinput .widget-vbox,
+.nbtools-fileinput .widget-text {
+    width: 100%;
+}
+
+.widget-interact > .nbtools-input:last-child {
+    position: relative;
+    top: 13px;
+    z-index: 1;
+    height: 0;
+    overflow: visible;
+}
+
+.nbtools-footer {
+    position: relative;
+    left: -10px;
+    top: 10px;
+    width: 100%;
+    background-color: var(--jp-layout-color2);
+    padding: 10px;
+    min-height: 18px;
+    box-sizing: content-box;
+}
+
+.nbtools-dropdown {
+    position: relative;
+    display: inline-flex;
+    width: 100%;
+}
+
+.nbtools-dropdown::before{
+    position: absolute;
+    content: " \f078";
+    top: 5px;
+    right: 0;
+    height: 20px;
+    width: 20px;
+    font-size: 14px;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+}
+.nbtools-uibuilder .nbtools-file-menu {
+    left: 0;
+    right: 0;
+    top: 27px;
+    max-height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 7;
+}
+
+.nbtools-group-header {
+    background-color: var(--jp-layout-color4);
+    color: var(--jp-ui-inverse-font-color0);
+    font-weight: bold;
+    padding: 5px 5px 5px 10px;
+    margin: 5px 0 5px 0;
+    min-height: 25px;
+    line-height: 25px;
+    position: relative;
+}
+
+.nbtools-group > .nbtools-description {
+    top: -5px;
+    left: 0;
+    padding: 10px;
+    width: calc(100% - 20px);
+}
+
+.nbtools-advanced {
+    display: none;
+}
+
+.nbtools-advanced.nbtools-advanced-show {
+    display: block;
+}
+
+.nbtools-busy {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 3;
+    font-size: 100px;
+    overflow: hidden;
+    display: none;
+}
+
+.nbtools-busy > div {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.nbtools-busy > div > i {
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    margin: 0;
+    margin-right: -50%;
+}
+
+.nbtools-dialog {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--jp-ui-inverse-font-color3);
+    z-index: 2;
+}
+
+.nbtools-dialog > .nbtools-panel {
+    height: auto;
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.nbtools-dialog > .nbtools-panel > .nbtools-body {
+    height: calc(100% - 60px);
+}
+
+.nbtools-dialog > .nbtools-panel > .nbtools-body > p {
+    height: calc(100% - 30px);
+    max-height: 300px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.nbtools-panel-cancel {
+    border: 1px solid var(--jp-border-color1);
+    padding: 6px 12px;
+    font-size: 0.9em;
+    cursor: pointer;
+}
