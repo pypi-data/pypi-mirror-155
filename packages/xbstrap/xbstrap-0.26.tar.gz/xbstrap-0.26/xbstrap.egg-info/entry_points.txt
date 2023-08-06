@@ -1,0 +1,5 @@
+[console_scripts]
+xbstrap = xbstrap:main
+xbstrap-mirror = xbstrap.mirror:main
+xbstrap-pipeline = xbstrap.pipeline:main
+
