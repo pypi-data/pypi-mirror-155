@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+drt_gui/__init__.py
+drt_gui/__main__.py
+drt_gui/eraser.png
+drt_gui/pencil.png
+drt_gui/widget.py
+drt_gui.egg-info/PKG-INFO
+drt_gui.egg-info/SOURCES.txt
+drt_gui.egg-info/dependency_links.txt
+drt_gui.egg-info/requires.txt
+drt_gui.egg-info/top_level.txt
