@@ -1,0 +1,10 @@
+pandas>=1.3.0
+requests
+iso8601
+setuptools
+
+[extras]
+numpy
+matplotlib
+scipy
+mlfinlab
