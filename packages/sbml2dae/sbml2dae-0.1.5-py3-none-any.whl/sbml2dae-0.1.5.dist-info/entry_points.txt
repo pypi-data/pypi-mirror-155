@@ -1,0 +1,3 @@
+[console_scripts]
+sbml2dae=sbml2dae.cli:main
+
