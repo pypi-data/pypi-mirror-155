@@ -1,0 +1,135 @@
+Metadata-Version: 2.1
+Name: Volume
+Version: 0.0.0
+Summary: Volume Compression and Rendering implementations
+Home-page: https://github.com/aivclab/Volume
+Download-URL: https://github.com/aivclab/Volume/releases
+Author: Christian Heider Nielsen
+Author-email: christian.heider@alexandra.dk
+Maintainer: Christian Heider Nielsen
+Maintainer-email: christian.heider@alexandra.dk
+License: Apache License, Version 2.0
+Keywords: python interface api
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Natural Language :: English
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE.md
+Requires-Dist: apppath
+Requires-Dist: warg
+Requires-Dist: numpy
+Requires-Dist: psutil
+Requires-Dist: six
+Requires-Dist: wrapt
+Provides-Extra: all
+Requires-Dist: pip (>=20.2.3) ; extra == 'all'
+Requires-Dist: pylint ; extra == 'all'
+Requires-Dist: tox (>=3.20.0) ; extra == 'all'
+Requires-Dist: black ; extra == 'all'
+Requires-Dist: pytest-runner ; extra == 'all'
+Requires-Dist: sphinxcontrib-programoutput ; extra == 'all'
+Requires-Dist: doc8 ; extra == 'all'
+Requires-Dist: tqdm ; extra == 'all'
+Requires-Dist: bandit ; extra == 'all'
+Requires-Dist: flake8 ; extra == 'all'
+Requires-Dist: draugr ; extra == 'all'
+Requires-Dist: pyperf ; extra == 'all'
+Requires-Dist: pre-commit ; extra == 'all'
+Requires-Dist: matplotlib ; extra == 'all'
+Requires-Dist: pytest (>=4.4.1) ; extra == 'all'
+Requires-Dist: pycodestyle ; extra == 'all'
+Requires-Dist: wheel (>=0.35.1) ; extra == 'all'
+Requires-Dist: pytest-cov (>=2.10.1) ; extra == 'all'
+Requires-Dist: coveralls (>=2.1.2) ; extra == 'all'
+Requires-Dist: pytest (>=6.1.0) ; extra == 'all'
+Requires-Dist: mock ; extra == 'all'
+Requires-Dist: mccabe ; extra == 'all'
+Requires-Dist: pydocstyle ; extra == 'all'
+Requires-Dist: isort ; extra == 'all'
+Requires-Dist: twine (>=3.2.0) ; extra == 'all'
+Provides-Extra: dev
+Requires-Dist: pip (>=20.2.3) ; extra == 'dev'
+Requires-Dist: pylint ; extra == 'dev'
+Requires-Dist: tox (>=3.20.0) ; extra == 'dev'
+Requires-Dist: black ; extra == 'dev'
+Requires-Dist: pytest-runner ; extra == 'dev'
+Requires-Dist: doc8 ; extra == 'dev'
+Requires-Dist: tqdm ; extra == 'dev'
+Requires-Dist: bandit ; extra == 'dev'
+Requires-Dist: flake8 ; extra == 'dev'
+Requires-Dist: pyperf ; extra == 'dev'
+Requires-Dist: pre-commit ; extra == 'dev'
+Requires-Dist: matplotlib ; extra == 'dev'
+Requires-Dist: pycodestyle ; extra == 'dev'
+Requires-Dist: wheel (>=0.35.1) ; extra == 'dev'
+Requires-Dist: pytest-cov (>=2.10.1) ; extra == 'dev'
+Requires-Dist: coveralls (>=2.1.2) ; extra == 'dev'
+Requires-Dist: pytest (>=6.1.0) ; extra == 'dev'
+Requires-Dist: mccabe ; extra == 'dev'
+Requires-Dist: pydocstyle ; extra == 'dev'
+Requires-Dist: isort ; extra == 'dev'
+Requires-Dist: twine (>=3.2.0) ; extra == 'dev'
+Provides-Extra: docs
+Requires-Dist: pip (>=20.2.3) ; extra == 'docs'
+Requires-Dist: pylint ; extra == 'docs'
+Requires-Dist: tox (>=3.20.0) ; extra == 'docs'
+Requires-Dist: black ; extra == 'docs'
+Requires-Dist: pytest-runner ; extra == 'docs'
+Requires-Dist: sphinxcontrib-programoutput ; extra == 'docs'
+Requires-Dist: doc8 ; extra == 'docs'
+Requires-Dist: tqdm ; extra == 'docs'
+Requires-Dist: bandit ; extra == 'docs'
+Requires-Dist: flake8 ; extra == 'docs'
+Requires-Dist: draugr ; extra == 'docs'
+Requires-Dist: pyperf ; extra == 'docs'
+Requires-Dist: pre-commit ; extra == 'docs'
+Requires-Dist: matplotlib ; extra == 'docs'
+Requires-Dist: pycodestyle ; extra == 'docs'
+Requires-Dist: wheel (>=0.35.1) ; extra == 'docs'
+Requires-Dist: pytest-cov (>=2.10.1) ; extra == 'docs'
+Requires-Dist: coveralls (>=2.1.2) ; extra == 'docs'
+Requires-Dist: pytest (>=6.1.0) ; extra == 'docs'
+Requires-Dist: mccabe ; extra == 'docs'
+Requires-Dist: pydocstyle ; extra == 'docs'
+Requires-Dist: isort ; extra == 'docs'
+Requires-Dist: twine (>=3.2.0) ; extra == 'docs'
+Provides-Extra: setup
+Requires-Dist: tqdm ; extra == 'setup'
+Requires-Dist: pytest-runner ; extra == 'setup'
+Provides-Extra: tests
+Requires-Dist: pip (>=20.2.3) ; extra == 'tests'
+Requires-Dist: pylint ; extra == 'tests'
+Requires-Dist: tox (>=3.20.0) ; extra == 'tests'
+Requires-Dist: black ; extra == 'tests'
+Requires-Dist: pytest-runner ; extra == 'tests'
+Requires-Dist: doc8 ; extra == 'tests'
+Requires-Dist: tqdm ; extra == 'tests'
+Requires-Dist: bandit ; extra == 'tests'
+Requires-Dist: flake8 ; extra == 'tests'
+Requires-Dist: pyperf ; extra == 'tests'
+Requires-Dist: pre-commit ; extra == 'tests'
+Requires-Dist: matplotlib ; extra == 'tests'
+Requires-Dist: pytest (>=4.4.1) ; extra == 'tests'
+Requires-Dist: pycodestyle ; extra == 'tests'
+Requires-Dist: wheel (>=0.35.1) ; extra == 'tests'
+Requires-Dist: pytest-cov (>=2.10.1) ; extra == 'tests'
+Requires-Dist: coveralls (>=2.1.2) ; extra == 'tests'
+Requires-Dist: pytest (>=6.1.0) ; extra == 'tests'
+Requires-Dist: mock ; extra == 'tests'
+Requires-Dist: mccabe ; extra == 'tests'
+Requires-Dist: pydocstyle ; extra == 'tests'
+Requires-Dist: isort ; extra == 'tests'
+Requires-Dist: twine (>=3.2.0) ; extra == 'tests'
+
+# EFFORTS in Volumes
+
