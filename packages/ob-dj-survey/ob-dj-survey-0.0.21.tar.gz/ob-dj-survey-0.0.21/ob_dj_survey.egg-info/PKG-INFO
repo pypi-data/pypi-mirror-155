@@ -1,0 +1,63 @@
+Metadata-Version: 2.1
+Name: ob-dj-survey
+Version: 0.0.21
+Summary: OBytes django application for managing surveys, questions and answers
+Home-page: https://www.obytes.com/
+Author: OBytes
+Author-email: hello@obytes.com
+License: BSD-3-Clause
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
+# OBytes Django Survey App
+
+[![Build & Test](https://github.com/obytes/ob-dj-survey/actions/workflows/test-build.yml/badge.svg)](https://github.com/obytes/ob-dj-survey/actions/workflows/test-build.yml)
+[![Publish to PyPI](https://github.com/obytes/ob-dj-survey/actions/workflows/release.yml/badge.svg)](https://github.com/obytes/ob-dj-survey/actions/workflows/release.yml)
+
+Survey Django Application is designed to be a simple and easy to use survey application for Django, which can be used to collect data from users.
+
+## Quick start
+
+1. Install `ob-dj-survey` latest version `pip install ob-dj-survey`
+
+2. Add "ob_dj_survey" to your `INSTALLED_APPS` setting like this:
+
+```python
+   # settings.py
+   INSTALLED_APPS = [
+        ...
+        "ob_dj_survey.core.survey",
+   ]
+```
+
+3. Include the  URLs in your project urls.py like this:
+
+```python
+   # urls.py
+   path("survey/", include("ob_dj_survey.apis.survey.urls")),
+```
+
+4. Run ``python manage.py migrate`` to create the survey models.
+
+## Developer Guide
+
+1. Clone github repo `git clone [url]`
+
+2. `pipenv install --dev`
+
+3. `pre-commit install`
+
+4. Run unit tests `make test`
