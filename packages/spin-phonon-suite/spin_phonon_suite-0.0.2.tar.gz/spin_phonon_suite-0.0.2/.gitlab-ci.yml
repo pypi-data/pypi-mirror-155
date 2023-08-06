@@ -1,0 +1,81 @@
+# change pip's cache location to inside the project
+variables:
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+
+# GitLab authentication step
+# This gets pre-appended to every step
+before_script:
+  - echo "machine gitlab.com" > ~/.netrc
+  - echo "login gitlab-ci-token" >> ~/.netrc
+  - echo "password ${CI_JOB_TOKEN}" >> ~/.netrc
+
+# Make a release
+# Build whl and .tar.gz for package, tag release
+# and upload to GitLab package registry
+build_and_release:
+  image: python:3.8
+  stage: build
+  allow_failure: true
+  cache:
+    paths:
+      - .cache/pip
+      - build_venv/
+  script:
+  - git config --global user.email "chiltronbot@gmail.com"
+  - git config --global user.name "chiltron"
+  - pip install virtualenv
+  - virtualenv build_venv
+  - source build_venv/bin/activate
+  # Increment version number and build package
+  - pip install python-semantic-release build twine
+  # Create release and force version number change if requested
+  # uses $force variable defined in manual pipeline trigger
+  - if [[ $force = "major" ]] || [[ $force = "minor" ]] || [[ $force = "patch" ]]; then
+  -   semantic-release publish --${force} 2>&1 | tee tmp.out
+  - else
+  -   semantic-release publish 2>&1 | tee tmp.out
+  - fi
+  - if grep -q "No release will be made" tmp.out; then exit 1; fi
+  # Ignore changes to non-package files
+  rules:
+    - if: '$GITLAB_USER_NAME == "chiltron" || $GITLAB_USER_NAME == "semantic-release"'
+      when: never
+    - if: '$CI_COMMIT_BRANCH != "main"'
+      when: never
+    - if: '$CI_PIPELINE_SOURCE == "push" && $CI_BUILD_REF_NAME == "main"'
+      when: always
+    - if: '$force == "major" || $force == "minor" || $force == "patch" && $CI_BUILD_REF_NAME == "main"'
+      when: manual
+    - when:
+        never
+
+# Documentation
+pages:
+  image: python:3.8
+  stage: deploy
+  cache:
+    paths:
+      - .cache/pip
+      - docs_venv/
+  script:
+  - export PKG_NAME=spin_phonon_suite
+  - pip install virtualenv
+  - virtualenv docs_venv
+  - source docs_venv/bin/activate
+  - pip install ${PKG_NAME} --no-cache-dir --force-reinstall
+  - pip install pdoc3
+  - pdoc ${PKG_NAME} --html --output-dir public --config "syntax_highlighting=False"
+  - mv public/${PKG_NAME}/* public/
+  artifacts:
+    paths:
+    - public
+    expire_in: 1 day
+  rules:
+    - if: '$CI_COMMIT_BRANCH != "main"'
+      when: never
+    - if: '$CI_PIPELINE_SOURCE == "push" && $CI_BUILD_REF_NAME == "main" && $GITLAB_USER_NAME == "chiltron"'
+      when: always
+    - if: '$force == "major" || $force == "minor" || $force == "patch" && $CI_BUILD_REF_NAME == "main"'
+      when: manual
+    - when:
+        never
