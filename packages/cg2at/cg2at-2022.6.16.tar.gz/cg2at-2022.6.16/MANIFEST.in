@@ -1,0 +1,4 @@
+graft cg2at/forcefields/*
+graft cg2at/fragments/*
+recursive-include cg2at/forcefields/*
+recursive-include cg2at/fragments/*
