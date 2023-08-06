@@ -1,0 +1,6 @@
+[pyprocessors.plugins]
+rules_segmenter=pysegmenters_rules_segmenter.rules_segmenter:RulesSegmenter
+
+[pysegmenters.plugins]
+rules_segmenter=pysegmenters_rules_segmenter.rules_segmenter:RulesSegmenter
+
