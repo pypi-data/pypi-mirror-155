@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: hmcscanner
+Version: 0.8
+Summary: Scan one or more IBM Power System's HMC and produce a report
+Home-page: https://github.com/vagfed/hmcscanner-py
+Author: Federico Vagnini
+Author-email: vagnini@it.ibm.com
+Project-URL: Bug Tracker, https://github.com/vagfed/hmcscanner-py/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: paramiko (>=2.7.2)
+Requires-Dist: PyYAML (>=6.0)
+Requires-Dist: tqdm (>=4.62.3)
+Requires-Dist: XlsxWriter (>=3.0.2)
+
+# hmcscannner
+
+hmcscanner scans one or more IBM Power Systems's HMCs to download the configuration of tghe managed hardware and it then generates a single Excel reports organized in to tabs.
+
+
