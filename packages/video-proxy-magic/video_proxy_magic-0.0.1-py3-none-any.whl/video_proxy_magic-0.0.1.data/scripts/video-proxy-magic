@@ -1,0 +1,228 @@
+#!python
+# coding: utf-8
+
+"""Transcodes files into "proxy" files which, in video-editing jargon,
+are intermediate, lower-resolution files that are faster to process
+for editing. The SOURCE path gets simply transcoded into the TARGET
+path if it's a file. If it is a directory, the SOURCE path gets
+*REPLACED* by the TARGET path, keeping the directory structure. So,
+for example, calling `video-proxy-magic.py FOO/ PROXIES/FOO/` will
+transcode a file in `FOO/BAR/baz.MOV` into
+`PROXIES/FOO/BAR/baz_proxy.mp4`.
+"""
+
+# Copyright (C) 2020 Antoine Beaupré <anarcat@debian.org>
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as
+# published by the Free Software Foundation, either version 3 of the
+# License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+from __future__ import division, absolute_import
+from __future__ import print_function, unicode_literals
+
+import argparse
+import fnmatch
+import logging
+import os.path
+import shlex
+
+try:
+    # Python 3.8
+    from shlex import join as shlex_join
+except ImportError:
+    def shlex_join(split_command):  # type: ignore
+        """Return a shell-escaped string from *split_command*."""
+        return " ".join(shlex.quote(arg) for arg in split_command)
+
+
+import subprocess
+import sys
+
+
+def parse_args(args=sys.argv[1:]):
+    parser = argparse.ArgumentParser(
+        description="generate proxy files for video editing with ffmpeg", epilog=__doc__
+    )
+    parser.add_argument(
+        "--verbose",
+        "-v",
+        dest="log_level",
+        action="store_const",
+        const="info",
+        default="warning",
+    )
+    parser.add_argument(
+        "--debug",
+        "-d",
+        dest="log_level",
+        action="store_const",
+        const="debug",
+        default="warning",
+    )
+    parser.add_argument(
+        "--exclude",
+        nargs="+",
+        default=[],
+        help="exclude files matching glob pattern (e.g. *.MXF)",
+    )
+    parser.add_argument(
+        "--include",
+        nargs="+",
+        default=[],
+        help="include files matching glob pattern (e.g. *.MOV), defaults to all",
+    )
+    parser.add_argument(
+        "--suffix",
+        default="_proxy",
+        help="suffix to replace the current file extension with, default: %(default)s",
+    )
+    parser.add_argument(
+        "--format", choices=("prores", "h264"), help="file format",
+    )
+    parser.add_argument(
+        "--extra", help="extra args to pass to ffmpeg, e.g. -ss 10 -t 10", default=""
+    )
+    parser.add_argument("--dryrun", "-n", action="store_true", help="do nothing")
+    parser.add_argument("source", help="source path")
+    parser.add_argument("target", help="target (proxy) path")
+    return parser.parse_args(args=args)
+
+
+def fnmatch_patterns(name, patterns):
+    for pattern in patterns:
+        if fnmatch.fnmatch(name, pattern):
+            yield pattern
+
+
+def main(args):
+    if args.extra:
+        args.extra = shlex.split(args.extra)
+    if os.path.isdir(args.source):
+        for root, dirs, files in os.walk(args.source, onerror=walk_handler):
+            for name in files:
+                source = os.path.join(root, name)
+                if name.startswith("."):
+                    logging.info("skipping hidden file: %s", source)
+                    continue
+                if args.include:
+                    matched = list(fnmatch_patterns(name, args.include))
+                    if not matched:
+                        logging.info(
+                            "skipping file %s because it does not match include patterns %s",
+                            source,
+                            args.include,
+                        )
+                        continue
+                matched = list(fnmatch_patterns(name, args.exclude))
+                if matched:
+                    logging.info(
+                        "skipping excluded file %s from patterns %s", source, matched
+                    )
+                    continue
+                target = source.replace(args.source, args.target, 1)
+                # add suffix
+                if args.format == "prores":
+                    target = os.path.splitext(target)[0] + args.suffix + ".mov"
+                else:
+                    target = os.path.splitext(target)[0] + args.suffix + ".mp4"
+                logging.info("# transcoding %s to %s", source, target)
+
+                if os.path.exists(target):
+                    logging.warning(
+                        "skipping already processed file: %s (source: %s)",
+                        target,
+                        source,
+                    )
+                    continue
+                dir = os.path.dirname(target)
+                if dir and not args.dryrun:
+                    os.makedirs(dir, exist_ok=True)
+                # TODO: trim canon shit
+                xcode_path(source, target, args.dryrun, args.extra)
+    else:
+        logging.info("# transcoding %s to %s", args.source, args.target)
+        xcode_path(args.source, args.target, args.dryrun, args.extra)
+
+
+def xcode_path(source, target, dryrun=True, extras=""):
+    basename = os.path.basename(source)
+    # see also https://ffmpeg.org/ffmpeg-filters.html#drawtext-1
+    drawtext_style = (
+        "fontsize=16 : fontcolor=white : box=1: boxcolor=black@0.6 : font=Monospace"
+    )
+    # fmt: off
+    command = [
+        "ffmpeg",
+        "-loglevel", "warning",
+        "-stats",
+        # read from source file
+        "-i", source,
+    ]
+    # transcoding
+    if args.format == "prores":
+        # canon files are weird 4-channel audio shit
+        command += [
+            # transcode to prores: https://trac.ffmpeg.org/wiki/Encode/VFX#Prores
+            #
+            # "-profile:v 0" is "proxy": https://en.wikipedia.org/wiki/Apple_ProRes#ProRes-Overview
+            #
+            # "-vendor apl0" tricks quicktime and Final Cut Pro into
+            # thinking that the movie was generated on using a
+            # quicktime prores encoder
+            #
+            # "-qscale:v 11" is magic, described as a "good bet" in the ffmpeg docs
+            #
+            # "-pix_fmt yuv422p10le" is even more magic, taken from
+            # the ffprobe of a Final Cut Pro generated proxy
+            "-c:v", "prores_ks", "-profile:v", "0", "-vendor", "apl0", "-qscale:v", "11", "-pix_fmt", "yuv422p10le",
+            # make raw audio, 24 bits little endian, 48KHz, 4 channels
+            "-c:a", "pcm_s24le", "-ar", "48000", "-ac", "4",
+        ]
+    else:
+        command += [
+            # transcode to h264, max 6mbps, see https://trac.ffmpeg.org/wiki/Encode/H.264
+            "-c:v", "libx264", "-crf", "23", "-maxrate", "6M", "-bufsize", "2M",
+            # make AAC audio, defaults to 128kbps
+            "-c:a", "aac",
+        ]
+    # filters
+    command += [
+        # start filter definition, see https://trac.ffmpeg.org/wiki/FilteringGuide
+        "-vf",
+        # rescale to 720p
+        "scale=1280x720 , " +
+        # add timecode overlay, to the right, stolen from
+        # https://ottverse.com/ffmpeg-drawtext-filter-dynamic-overlays-timecode-scrolling-text-credits/
+        "drawtext=text='timestamp: %%{pts \\: hms}': x=1150 : y=10 : %s ,"
+        % drawtext_style
+        +
+        # add filename overlay, to the left
+        "drawtext=text='%s': x=10: y=10 : %s" % (basename, drawtext_style),
+    ]
+    # fmt: on
+    # extras need to happen before the output file
+    command += extras
+    # finish with the output file
+    command.append(target)
+    logging.debug("running %s", shlex_join(command))
+    if not args.dryrun:
+        subprocess.check_call(command)
+
+
+def walk_handler(exc):
+    logging.warning("scandir failed on %s: %s", exc.filename, exc)
+
+
+if __name__ == "__main__":
+    args = parse_args()
+    logging.basicConfig(format="%(message)s", level=args.log_level.upper())
+    main(args)

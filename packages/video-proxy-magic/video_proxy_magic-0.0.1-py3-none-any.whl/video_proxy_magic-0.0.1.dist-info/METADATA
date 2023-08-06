@@ -1,0 +1,138 @@
+Metadata-Version: 2.1
+Name: video-proxy-magic
+Version: 0.0.1
+Summary: transcode video files in batch
+Home-page: https://gitlab.com/anarcat/video-proxy-magic
+Author: Antoine Beaupré
+Author-email: anarcat@debian.org
+License: AGPLv3
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)
+Classifier: Natural Language :: English
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Topic :: Multimedia :: Video :: Conversion
+Description-Content-Type: text/markdown
+
+# video-proxy-magic
+
+This tool allows you to generate smaller videos from a collection of
+existing videos, something post-production video people call
+"proxies". Those are lower-resolution files that are faster to process
+for editing movies.
+
+## Features
+
+ * batch, automated conversion of large collections of video files
+ * preserves directory structure
+ * adds timecode overlays
+ * transcodes files to 720p H264
+ * minimalist, no GUI
+ * ~300 lines of code, easy to audit
+
+TODO: screenshots
+
+TODO: testimonials
+
+## Installation
+
+This program is a [Python][] program which runs exclusively from the
+command line interface, so it's a bit of an advanced tool. It depends
+on [ffmpeg](https://ffmpeg.org/) to do all its work so the first step is to make sure
+that is installed.
+
+ [Python][]: https://en.wikipedia.org/wiki/Python_(programming_language)
+
+In Debian GNU/Linux, for example, that would be:
+
+    apt install ffmpeg python3
+
+On Mac or Windows, use the ffmpeg [Mac](https://ffmpeg.org/download.html#build-mac) or [Windows builds](https://ffmpeg.org/download.html#build-windows) and
+the Python [Mac](https://www.python.org/downloads/macos/) or [Windows installers](https://www.python.org/downloads/windows/). 
+
+There's probably a way to install those through [Homebrew](https://brew.sh/) or
+[Chocolatey](https://chocolatey.org/), but if you know what those are, you probably already
+know how to use them.
+
+Once you have all those dependencies installed, you need install the
+actual program. Normally, you should have [pip](https://pip.pypa.io/) installed, so
+installing the program should be as simple as:
+
+    pip install video-proxy-magic
+
+## Usage
+
+The program has a `--help` flag which has details on the various
+options. An example run would be:
+
+    video-proxy-magic.py FOO/ PROXIES/FOO/
+
+... which would take *all* the files in `FOO/` and transcode them into
+the `PROXIES/FOO/` directory, keeping the directory structure in
+`FOO/`. Assuming you have a file in `FOO/BAR/baz.MOV`, it will create
+a proxy in `PROXIES/FOO/BAR/baz_proxy.mp4`.
+
+On Windows, you might have to meddle around with drive letters and
+other horrors, for example:
+
+    py videos/magic/video-proxy-magic.py H:\SOURCE H:\DESTINATION
+
+The program is pretty silent by default, so you will probably want to
+use `-v` to make it verbose. You can also run a simulation with `-n`,
+and limit the search to specific files. This, for example, will run a
+simulation of the transcoding with *only* the `MXF`, `MP4`, or `MOV`
+files it finds:
+
+    py videos/magic/video-proxy-magic.py H:\SOURCE H:\DESTINATION -n -v --include "*.MXF" "*.MP4" "*.MOV"
+
+You can also *exclude* specific files with the `--exclude` flag of
+course, but it's typically easier to tell it what you want than play
+whack-a-mole with the various garbage you might have lying around.
+
+Originals are, of course, not touched. 
+
+## Contributing
+
+See the [contribution guide](CONTRIBUTING.md) for more information. In
+short: this is a free software project and you are welcome to join us
+in improving it, both by fixing things, reporting issues or
+documentation.
+
+## Authors and acknowledgment
+
+This tool was written by The Anarcat in 2020. Many thanks to my friend
+for tests, feedback, and motivation.
+
+I actually don't know much about video editing, post-production, and
+barely some cinema. I just built this thing because a friend of mine
+was repeatedly clicking through their video editors to generate files
+like this, wasting literally days of work for something that could
+obviously be automated.
+
+## License
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or any later version.
+
+## Project status
+
+Keep in mind I don't really offer any support for this tool. I only
+wrote it to save my friend some time, and it's reluctantly that I have
+created this project to make it more visible. So no warranties.
+
+
