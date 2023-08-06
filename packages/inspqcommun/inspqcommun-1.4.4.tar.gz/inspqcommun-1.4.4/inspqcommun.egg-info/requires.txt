@@ -1,0 +1,10 @@
+fhirclient==1.0.3
+wheel
+urllib3
+requests
+pyjwt
+jinja2
+PyYAML
+confluent_kafka
+pygelf
+six
