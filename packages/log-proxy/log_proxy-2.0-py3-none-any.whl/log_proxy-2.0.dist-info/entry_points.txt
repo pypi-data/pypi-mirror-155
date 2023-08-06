@@ -1,0 +1,3 @@
+[console_scripts]
+log_proxy = log_proxy.__main__:main
+
