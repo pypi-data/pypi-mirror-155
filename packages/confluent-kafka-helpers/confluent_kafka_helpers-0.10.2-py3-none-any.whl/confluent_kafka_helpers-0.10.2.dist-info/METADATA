@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: confluent-kafka-helpers
+Version: 0.10.2
+Summary: Helpers for Confluent's Kafka Python client
+Home-page: https://github.com/fyndiq/confluent_kafka_helpers
+Author: Fyndiq AB
+Author-email: support@fyndiq.com
+License: MIT
+Platform: UNKNOWN
+Requires-Dist: structlog (>=17.2.0)
+Requires-Dist: confluent-kafka (<=1.9.0,>=1.0.0)
+Requires-Dist: fastavro (<=1.5.1,>=0.18.0)
+Requires-Dist: avro-python3 (<=1.10.2,>=1.8.2)
+Provides-Extra: opentracing
+Requires-Dist: opentracing (>=2.4.0) ; extra == 'opentracing'
+
+UNKNOWN
+
