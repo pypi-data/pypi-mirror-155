@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: TracWikiImporter
+Version: 0.5.0
+Summary: Trac Wiki Importer plugin for the Allura platform
+Home-page: http://sf.net/p/tracwikiimporter
+Author: Tim Van Steenburgh
+Author-email: tvansteenburgh@gmail.com
+License: GPLv3
+Platform: UNKNOWN
+Requires-Python: >=3.7
+Requires-Dist: html2text
+
+UNKNOWN
+
+
