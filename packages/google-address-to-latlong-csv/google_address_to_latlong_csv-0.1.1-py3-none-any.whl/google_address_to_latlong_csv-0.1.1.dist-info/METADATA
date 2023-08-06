@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: google-address-to-latlong-csv
+Version: 0.1.1
+Summary: This is an Python 3 Program which gets the list of data of addresses from an csv file and gives an output as csv with additional fields of latitude and longitude of the address provided by google GeoCoding API.
+Home-page: https://github.com/shriekdj/google_address_to_latlong_csv
+License: MIT
+Keywords: google,address,geocoding
+Author: Shrikant Dhayje
+Author-email: shrikantdhayaje@gmail.com
+Requires-Python: >=3.8,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: requests (>=2.28.0,<3.0.0)
+Project-URL: Repository, https://github.com/shriekdj/google_address_to_latlong_csv
+Description-Content-Type: text/markdown
+
+# google_address_to_latlong_csv
+
+## What it does
+
+This is an Python 3 Program which gets the list of data of addresses from an csv file and gives an output as csv with additional fields of latitude and longitude of the address provided by google GeoCoding API.
+
+## Requirements
+
+- Python 3 Installed
+- Have Google API Key of `Google GeoCoding API` You can get it from Google Cloud Console
+
+
+## Same Package for venv, pipenv and poetry
