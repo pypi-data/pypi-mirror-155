@@ -1,0 +1,26 @@
+Metadata-Version: 1.1
+Name: get-btc-price
+Version: 1.0.0
+Summary: A python script that allows to get the current BTC price.
+Home-page: UNKNOWN
+Author: meth1337
+Author-email: zx630c@mail.ru
+License: MIT
+Description: A python script that allows to get the current BTC price.
+        
+        
+        Change Log
+        ==========
+        
+        1.0.0 (18.06.22)
+        ----------------
+        - First release
+        
+        
+Keywords: btc
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Education
+Classifier: Operating System :: POSIX :: Linux
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
