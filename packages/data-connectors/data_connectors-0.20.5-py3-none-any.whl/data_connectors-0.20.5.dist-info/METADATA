@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: data-connectors
+Version: 0.20.5
+Summary: 
+Author: CA Lee
+Author-email: flowstate_crypto@protonmail.com
+Requires-Python: >=3.8,<3.11
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: SQLAlchemy (>=1.4.37,<2.0.0)
+Requires-Dist: db-dtypes (>=1.0.2,<2.0.0)
+Requires-Dist: google-cloud-bigquery (>=3.2.0,<4.0.0)
+Requires-Dist: pandas (>=1.4.2,<2.0.0)
+Requires-Dist: pygsheets (>=2.0.5,<3.0.0)
+Requires-Dist: pyodbc (>=4.0.32,<5.0.0)
+Requires-Dist: python-dotenv (>=0.20.0,<0.21.0)
