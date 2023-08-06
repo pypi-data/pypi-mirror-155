@@ -1,0 +1,4 @@
+[console_scripts]
+automl_search = autonml.main:main_search
+autonml_main = autonml.main:main_run
+create_d3m_dataset = autonml.create_d3m_dataset:main
