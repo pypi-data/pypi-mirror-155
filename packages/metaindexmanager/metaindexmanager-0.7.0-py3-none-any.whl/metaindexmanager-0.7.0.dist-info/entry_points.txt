@@ -1,0 +1,6 @@
+[console_scripts]
+metaindexmanager = metaindexmanager.main:run
+
+[gui_scripts]
+
+

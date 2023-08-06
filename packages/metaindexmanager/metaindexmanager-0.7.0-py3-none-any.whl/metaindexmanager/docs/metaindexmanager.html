@@ -1,0 +1,1056 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+<title>metaindexmanager</title>
+<style type="text/css">
+
+/*
+:Author: David Goodger (goodger@python.org)
+:Id: $Id: html4css1.css 7952 2016-07-26 18:15:59Z milde $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+.subscript {
+  vertical-align: sub;
+  font-size: smaller }
+
+.superscript {
+  vertical-align: super;
+  font-size: smaller }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+object[type="image/svg+xml"], object[type="application/x-shockwave-flash"] {
+  overflow: hidden;
+}
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title, .code .error {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left, .figure.align-left, object.align-left, table.align-left {
+  clear: left ;
+  float: left ;
+  margin-right: 1em }
+
+img.align-right, .figure.align-right, object.align-right, table.align-right {
+  clear: right ;
+  float: right ;
+  margin-left: 1em }
+
+img.align-center, .figure.align-center, object.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table.align-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.align-left {
+  text-align: left }
+
+.align-center {
+  clear: both ;
+  text-align: center }
+
+.align-right {
+  text-align: right }
+
+/* reset inner alignment in figures */
+div.align-right {
+  text-align: inherit }
+
+/* div.align-center * { */
+/*   text-align: left } */
+
+.align-top    {
+  vertical-align: top }
+
+.align-middle {
+  vertical-align: middle }
+
+.align-bottom {
+  vertical-align: bottom }
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+pre.literal-block, pre.doctest-block, pre.math, pre.code {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+pre.code .ln { color: grey; } /* line numbers */
+pre.code, code { background-color: #eeeeee }
+pre.code .comment, code .comment { color: #5C6576 }
+pre.code .keyword, code .keyword { color: #3B0D06; font-weight: bold }
+pre.code .literal.string, code .literal.string { color: #0C5404 }
+pre.code .name.builtin, code .name.builtin { color: #352B84 }
+pre.code .deleted, code .deleted { background-color: #DEB0A1}
+pre.code .inserted, code .inserted { background-color: #A3D289}
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+/* "booktabs" style (no vertical lines) */
+table.docutils.booktabs {
+  border: 0px;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-collapse: collapse;
+}
+table.docutils.booktabs * {
+  border: 0px;
+}
+table.docutils.booktabs th {
+  border-bottom: thin solid;
+  text-align: left;
+}
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+</head>
+<body>
+<div class="document" id="metaindexmanager">
+<h1 class="title">metaindexmanager</h1>
+<h2 class="subtitle" id="extendable-metaindex-file-manager">extendable metaindex file manager</h2>
+
+<div class="section" id="synopsis">
+<h1>Synopsis</h1>
+<pre class="literal-block">
+metaindexmanager [-h] [-v] [--check-for-update] [-m metaindex config file] [-l loglevel] [--log-file logfile] [--select-file-mode] [--select-file-output file] [location ...]
+</pre>
+</div>
+<div class="section" id="description">
+<h1>Description</h1>
+<p>metaindexmanager is a text user interface (TUI) file manager that allows
+you to browse and manipulate your documents and files by their metadata
+tags.</p>
+<p>You can also use metaindexmanager from other applications to select files.
+See below in <a class="reference internal" href="#select-file-mode">Select file mode</a>.</p>
+</div>
+<div class="section" id="options">
+<h1>Options</h1>
+<p>The general parameters are:</p>
+<blockquote>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">-h</span></tt></dt>
+<dd>Show the help and exit.</dd>
+<dt><tt class="docutils literal"><span class="pre">-v</span></tt></dt>
+<dd>Show the version and exit.</dd>
+<dt><tt class="docutils literal"><span class="pre">--check-for-update</span></tt></dt>
+<dd>Check online on vonshednob.cc whether your version of metaindexmaneger
+is up to date with the most recent published version.</dd>
+<dt><tt class="docutils literal"><span class="pre">-m</span> metaindex config file</tt></dt>
+<dd>Location of your metaindex config file. If not specified, the default
+location is used. Usually that’s <tt class="docutils literal"><span class="pre">~/.config/metaindex.conf</span></tt>.</dd>
+<dt><tt class="docutils literal"><span class="pre">-l</span> loglevel</tt></dt>
+<dd>The the level of details shown in the log file. Your options are
+<tt class="docutils literal">fatal</tt>, <tt class="docutils literal">error</tt>, <tt class="docutils literal">warning</tt>, <tt class="docutils literal">info</tt>, and <tt class="docutils literal">debug</tt>. Defaults to
+<tt class="docutils literal">warning</tt>.</dd>
+<dt><tt class="docutils literal"><span class="pre">--log-file</span> logfile</tt></dt>
+<dd><p class="first">Where to write the log to. Defaults to <tt class="docutils literal"><span class="pre">~/.local/share/metaindexmenager/ui.log</span></tt></p>
+<p class="last">Very useful if the application crashes or shows errors in the status
+line.</p>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">--select-file-mode</span></tt></dt>
+<dd><p class="first">Run in select file mode. See below in <a class="reference internal" href="#select-file-mode">Select file mode</a> for details.</p>
+<p class="last">Not used by default.</p>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">--select-file-output</span> file</tt></dt>
+<dd><p class="first">What file to write the selected file(s) to. See <a class="reference internal" href="#select-file-mode">Select file mode</a>
+for details on how to use this.</p>
+<p class="last">Defaults to <tt class="docutils literal">-</tt> (standard output).</p>
+</dd>
+<dt><tt class="docutils literal">location</tt></dt>
+<dd><p class="first">Provide any locations or search queries to open on startup.</p>
+<p>If the location you provide is a path to a folder, it will open a file
+panel. Otherwise the location is interpreted as a search query and a
+metadata panel is opened with that search query.</p>
+<p>This, for example, will open two panels. One in your home folder and
+one showing all indexed files that are images:</p>
+<pre class="last literal-block">
+metaindexmanager ~ &quot;mimetype:image&quot;
+</pre>
+</dd>
+</dl>
+</blockquote>
+</div>
+<div class="section" id="shortcuts">
+<h1>Shortcuts</h1>
+<p>All shortcuts and their respective help are available by typing <tt class="docutils literal">?</tt>,
+<tt class="docutils literal">F1</tt>, or <tt class="docutils literal">:help</tt>.</p>
+<div class="section" id="general">
+<h2>General</h2>
+<p>These shortcuts work in every panel:</p>
+<ul class="simple">
+<li><tt class="docutils literal">q</tt>, close the current panel</li>
+<li><tt class="docutils literal">X</tt>, quit metaindexmanager</li>
+<li><tt class="docutils literal">?</tt>, show the help,</li>
+<li><tt class="docutils literal">F1</tt>, show the help,</li>
+<li><tt class="docutils literal">:</tt>, enter a command</li>
+<li><tt class="docutils literal">Tab</tt>, next panel</li>
+<li><tt class="docutils literal">gt</tt>, next panel</li>
+<li><tt class="docutils literal">gT</tt>, previous panel</li>
+<li><tt class="docutils literal">gp</tt>, go to panel by number</li>
+<li><tt class="docutils literal">gnf</tt>, new file browser panel</li>
+<li><tt class="docutils literal">gnd</tt>, new document browser panel</li>
+<li><tt class="docutils literal">y0</tt>, clear clipboard</li>
+<li><tt class="docutils literal">zs</tt>, use the horizontal split layout</li>
+<li><tt class="docutils literal">zt</tt>, use the tabbed layout</li>
+<li><tt class="docutils literal">^L</tt>, repaint</li>
+<li><tt class="docutils literal">'</tt>, jump to mark</li>
+<li><tt class="docutils literal">arrow down</tt>, next item</li>
+<li><tt class="docutils literal">arrow up</tt>, previous item</li>
+<li><tt class="docutils literal">page down</tt>, next page</li>
+<li><tt class="docutils literal">page up</tt>, previous page</li>
+<li><tt class="docutils literal">home</tt>, go to start</li>
+<li><tt class="docutils literal">end</tt>, go to end</li>
+<li><tt class="docutils literal">/</tt>, find item by text</li>
+<li><tt class="docutils literal">n</tt>, find next item (uses text of <tt class="docutils literal">/</tt>)</li>
+<li><tt class="docutils literal">N</tt>, find previous item (uses text of <tt class="docutils literal">/</tt>)</li>
+</ul>
+<p>These shortcuts only work in the file browser:</p>
+<ul class="simple">
+<li><tt class="docutils literal">R</tt>, refresh</li>
+<li><tt class="docutils literal">arrow right</tt>, open the file in an external viewer or enter the folder</li>
+<li><tt class="docutils literal">arrow left</tt>, go up in the folder hierarchy</li>
+<li><tt class="docutils literal">zh</tt>, toggle display of hidden files</li>
+<li><tt class="docutils literal">gh</tt>, go to your home folder</li>
+<li><tt class="docutils literal">gd</tt>, show the metadata details for the selected item</li>
+<li><tt class="docutils literal">e</tt>, edit metadata of the selected item</li>
+<li><tt class="docutils literal">E</tt>, edit metadata with an external text editor</li>
+<li><tt class="docutils literal">!</tt>, run a shell command or open a shell</li>
+<li><tt class="docutils literal">O</tt>, open the selected file with another program of your choice</li>
+<li><tt class="docutils literal">cd</tt>, change directory</li>
+<li><tt class="docutils literal">dD</tt>, delete the selected item (experimental)</li>
+<li><tt class="docutils literal">yy</tt>, copy the selected path to clipboard</li>
+<li><tt class="docutils literal">ya</tt>, append the selected path to clipboard</li>
+<li><tt class="docutils literal">m</tt>, mark the selected item for quick access</li>
+<li><tt class="docutils literal">space</tt>, select the item</li>
+<li><tt class="docutils literal">uv</tt>, clear selection</li>
+<li><tt class="docutils literal">v</tt>, invert selection</li>
+</ul>
+<p>These shortcuts only work in the document browser:</p>
+<ul class="simple">
+<li><tt class="docutils literal">R</tt>, refresh</li>
+<li><tt class="docutils literal">arrow right</tt>, open the selected item in an external viewer</li>
+<li><tt class="docutils literal">F3</tt>, enter a new search term</li>
+<li><tt class="docutils literal">gs</tt>, enter a new search term</li>
+<li><tt class="docutils literal">gl</tt>, open currently selected item in new file browser</li>
+<li><tt class="docutils literal">gd</tt>, open the metadata viewer for the selected item</li>
+<li><tt class="docutils literal">yy</tt>, copy the path of the selected item to clipboard</li>
+<li><tt class="docutils literal">ya</tt>, append the path of the selected item to clipboard</li>
+<li><tt class="docutils literal">m</tt>, mark the selected item for quick access</li>
+<li><tt class="docutils literal">e</tt>, edit metadata of the selected item</li>
+<li><tt class="docutils literal">E</tt>, edit metadata with an external text editor</li>
+<li><tt class="docutils literal">O</tt>, open the selected file with another program of your choice</li>
+</ul>
+<p>These shortcuts only work in the metadata editor:</p>
+<ul class="simple">
+<li><tt class="docutils literal">arrow right</tt>, open the file in an external viewer</li>
+<li><tt class="docutils literal">gl</tt>, open currently selected item in new file browser</li>
+<li><tt class="docutils literal">E</tt>, edit metadata with an external text editor</li>
+<li><tt class="docutils literal">return</tt>, edit the selected metadata tag</li>
+<li><tt class="docutils literal">i</tt>, edit the selected metadata tag</li>
+<li><tt class="docutils literal">o</tt>, add a new value with the same tag</li>
+<li><tt class="docutils literal">c</tt>, clear the selected metadata tag value and start editing</li>
+<li><tt class="docutils literal">a</tt>, add a new tag</li>
+<li><tt class="docutils literal">dd</tt>, delete the selected tag</li>
+<li><tt class="docutils literal">u</tt>, undo the most recent change</li>
+<li><tt class="docutils literal">U</tt>, undo all changes</li>
+<li><tt class="docutils literal">r</tt>, redo change</li>
+<li><tt class="docutils literal">^R</tt>, redo change</li>
+<li><tt class="docutils literal">yy</tt>, copy tag to clipboard</li>
+<li><tt class="docutils literal">ya</tt>, append tag to clipboard</li>
+<li><tt class="docutils literal">pp</tt>, paste tag from clipboard</li>
+<li><tt class="docutils literal">pP</tt>, paste tag from clipboard</li>
+<li><tt class="docutils literal">O</tt>, open the file with another program of your choice</li>
+</ul>
+</div>
+</div>
+<div class="section" id="files">
+<h1>Files</h1>
+<p>The configuration file of metaindexmanager is by default expected at
+<tt class="docutils literal"><span class="pre">~/.config/metaindexmanager/config.rc</span></tt> and consists of one command per
+line (usually <tt class="docutils literal">bind</tt> and <tt class="docutils literal">set</tt> commands, see <a class="reference internal" href="#commands">Commands</a> below).
+Empty or commented lines (starting with a <tt class="docutils literal">#</tt>) are ignored.</p>
+<p>Python files in <tt class="docutils literal"><span class="pre">~/.local/share/metaindexmanager/addons/</span></tt> are considered
+addons and will be loaded upon startup. See <a class="reference internal" href="#addons">Addons</a> below for details.</p>
+<p>metaindexmanager will create a logfile to report unexpected or erroneous
+behaviour. The location of that logfile can be manually configured by
+providing the <tt class="docutils literal"><span class="pre">--log-file</span></tt> parameter upon startup. The default location
+is <tt class="docutils literal"><span class="pre">~/.local/share/metaindexmanager/ui.log</span></tt>.</p>
+</div>
+<div class="section" id="select-file-mode">
+<h1>Select file mode</h1>
+<p>You can run metaindexmanager in <tt class="docutils literal"><span class="pre">--select-file-mode</span></tt> to use it as an
+&quot;open file dialog&quot; in various applications, like (neo)mutt.</p>
+<p>When running in select file mode, the <tt class="docutils literal">&lt;Return&gt;</tt> key will be used to
+select the current file, exit the program and write the full path to the
+selected file into <tt class="docutils literal"><span class="pre">--select-file-output</span></tt> (by default the standard
+output).</p>
+<p>To select any indexed text file or something from your home folder you
+could run this:</p>
+<pre class="literal-block">
+metaindexmanager --select-file-mode &quot;mimetype:plain/text&quot; &quot;~&quot;
+</pre>
+<p>In actual use cases, you will likely have to write the result to a file
+with the <tt class="docutils literal"><span class="pre">--select-file-output=file</span></tt> parameter.</p>
+<div class="section" id="example-use-case-neo-mutt">
+<h2>Example use case: (neo)mutt</h2>
+<p>If you wanted to use this in (neo)mutt to select email attachments, you
+could use the script file <tt class="docutils literal">mtattach.sh</tt> (in <tt class="docutils literal">extras</tt>) and set
+it up in mutt with this macro:</p>
+<pre class="literal-block">
+# example (neo)mutt configuration to use 'a' in the mail composition
+# screen to attach a file using metaindexmanager select file mode
+macro  compose  a  &quot;&lt;shell-escape&gt;mtattach.sh&lt;return&gt;&lt;enter-command&gt;source /run/user/`id -u`/mtattach.rc&lt;return&gt;&lt;shell-escape&gt;rm /run/user/`id -u`/mtattach.rc&lt;return&gt;&quot; &quot;Attach file&quot;
+</pre>
+<p>The <tt class="docutils literal">mtattach.sh</tt> script launches metaindexmanager with the
+<tt class="docutils literal"><span class="pre">--select-file--mode</span></tt> and writes the selected file name into
+<tt class="docutils literal"><span class="pre">/run/user/`id</span> <span class="pre">-u`/mtattach.rc</span></tt>. (neo)mutt will then read that file as a
+command to execute the attaching.</p>
+</div>
+</div>
+<div class="section" id="addons">
+<h1>Addons</h1>
+<p><strong>Beware</strong> that addons are just python files. They can in theory do
+anything on your computer with your permissions. If you install a malicious
+addon, it could upload all your files to the internet and/or encrypt all
+your files and ask you for ransom.</p>
+<p><strong>Never install addons from untrusted sources!</strong></p>
+<div class="section" id="installing">
+<h2>Installing</h2>
+<p>To install an addon, copy the corresponding <tt class="docutils literal">.py</tt> file or the module
+folder (the one containing the <tt class="docutils literal">__init__.py</tt> file) into your addons
+folder (usually at <tt class="docutils literal"><span class="pre">~/.local/share/metaindexmanager/addons/</span></tt>).</p>
+</div>
+<div class="section" id="writing-your-own">
+<h2>Writing your own</h2>
+<p>Currently there are three possible types of addons:</p>
+<blockquote>
+<ul class="simple">
+<li>panels, extending <tt class="docutils literal">metaindexmanager.panel.ListPanel</tt> or using the
+<tt class="docutils literal">metaindexmanager.panel.register</tt> decorator,</li>
+<li>commands, extending <tt class="docutils literal">metaindexmanager.command.Command</tt>,</li>
+<li>layouts, extending <tt class="docutils literal">metaindexmanager.layouts.Layout</tt>, and</li>
+<li>humanizer, providing formatters for tags, see <tt class="docutils literal">metaindexmanager.humanize</tt></li>
+</ul>
+</blockquote>
+<p>Be sure to add the <tt class="docutils literal">&#64;registered_command</tt>, <tt class="docutils literal">&#64;registered_layout</tt>, or
+<tt class="docutils literal">&#64;register_humanizer</tt> decorators to your classes or functions.</p>
+<p>Have a look at the layouts in <tt class="docutils literal">metaindexmanager.layouts</tt> and the commands
+in <tt class="docutils literal">metaindexmanager.commands</tt> to understand how commands work.
+<tt class="docutils literal">metaindexmanager.docpanel</tt> and <tt class="docutils literal">metaindexmanager.filepanel</tt> also have
+a bunch of commands defined that are restricted to these panels.</p>
+<p>At the end of <tt class="docutils literal">metaindexmanager.humanize</tt> you can find a few examples of
+how to write tag value formatters.</p>
+<p>The use of the <tt class="docutils literal">metaindexmanager.panel.register</tt> decorator allows you to
+create a new type of panel for use in bookmarks and as an option for
+<tt class="docutils literal"><span class="pre">all.default-panel</span></tt>. The constructor of your panel type must accept these
+parameters in order: <tt class="docutils literal">application</tt> and <tt class="docutils literal">location</tt>. <tt class="docutils literal">application</tt> is
+needed anyway for the underlying <tt class="docutils literal">cursedspace.Panel</tt>. <tt class="docutils literal">location</tt> might
+be <tt class="docutils literal">None</tt> or missing and you should be able to create the panel anyway.</p>
+<p>If you add a new panel, make sure there is also a command to open that panel
+one way or the other.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples</h2>
+<p>Here is an example of a humanizer to transform the value for XMP's
+<tt class="docutils literal">orientation</tt> tag into a human-readable value:</p>
+<pre class="literal-block">
+from metaindexmanager import humanize
+
+&#64;humanize.register_humanizer('Xmp.tiff.orientation')
+def format_tiff_orientation(value):
+    mapping = {
+        '1': 'Horizontal',
+        '2': 'Mirrore horizontal',
+        '3': 'Rotate by 180°',
+        '4': 'Mirror vertical',
+        '5': 'Mirror horizontal and rotate 270° CW',
+        '6': 'Rotate 90° CW',
+        '7': 'Mirror horizontal and rotate 90° CW',
+        '8': 'Rotate 270° CW'
+    }
+
+    return mapping.get(str(value))
+</pre>
+</div>
+</div>
+<div class="section" id="configuration-options">
+<h1>Configuration options</h1>
+<p>Configuration options can be set using the <tt class="docutils literal">set</tt> command. Either during
+runtime from the command line or in the configuration file.</p>
+<p>The following options exist:</p>
+<blockquote>
+<dl class="docutils">
+<dt><tt class="docutils literal">all.editor</tt></dt>
+<dd>What text editor to use when a text editor should be launched from
+within metaindexmanager.</dd>
+<dt><tt class="docutils literal">all.opener</tt></dt>
+<dd><p class="first">What program to use to open files for viewing in an external program.</p>
+<p>A good program to use is <tt class="docutils literal">rifle</tt> of the ranger file manager.</p>
+<p class="last">The default is <tt class="docutils literal"><span class="pre">xdg-open</span></tt>.</p>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">all.history-size</span></tt></dt>
+<dd><p class="first">How many entries should be remembered in the command history.</p>
+<p class="last">Defaults to <tt class="docutils literal">1000</tt>.</p>
+</dd>
+<dt><tt class="docutils literal">all.border</tt></dt>
+<dd><p class="first">How much space should be wasted on drawing borders. Can be set to
+either <tt class="docutils literal">full</tt> or <tt class="docutils literal">minimal</tt>.</p>
+<p class="last">Defaults to <tt class="docutils literal">full</tt>.</p>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">all.info-timeout</span></tt></dt>
+<dd><p class="first">How long should errors or info messages be displayed at the bottom of
+the screen. A duration of 4 days, 3 hours, 2 minutes, and 1 second
+would be written like this: <tt class="docutils literal">4d3h2m1s</tt>.</p>
+<p class="last">Defaults to <tt class="docutils literal">10s</tt>.</p>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">all.default-panel</span></tt></dt>
+<dd><p class="first">What panel type should be opened by default when starting
+<em>metaindexmanager</em> and no location has been specified?</p>
+<p>Possible values are <tt class="docutils literal">files</tt>, and <tt class="docutils literal">documents</tt>.
+Addons might add to the list of possible values, please refer to the
+documentation of these addons.</p>
+<p class="last">Defaults to <tt class="docutils literal">documents</tt>.</p>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">all.find-case-sensitive</span></tt></dt>
+<dd><p class="first">Whether or not the <tt class="docutils literal">find</tt> command should work case sensitive.</p>
+<p class="last">Defaults to <tt class="docutils literal">no</tt>.</p>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">files.use-icons</span></tt></dt>
+<dd><p class="first">Set this to <tt class="docutils literal">yes</tt> (or <tt class="docutils literal">1</tt>, <tt class="docutils literal">y</tt>, <tt class="docutils literal">on</tt>) to use icons in the
+file and folder listing. That means that the shell variables
+<tt class="docutils literal">USERDIR_ICONS</tt> and <tt class="docutils literal">LS_ICONS</tt> will be used to find out what icon
+to show per entry.</p>
+<p>The format of <tt class="docutils literal">LS_ICONS</tt> and <tt class="docutils literal">USERDIR_ICONS</tt> is based on
+<tt class="docutils literal">LS_COLORS</tt>: a <tt class="docutils literal">:</tt> separated list of filetype/folder names assigned
+to font awesome/nerdfont icons (the following examples will look broken
+if you don’t have font awesome or nerdfont installed).
+For example, if you want to use a special icon for your downloads and
+music folders, you could set your <tt class="docutils literal">USERDIR_ICONS</tt> variable to
+<tt class="docutils literal"><span class="pre">downloads=:music=</span></tt>.
+Similarly, to show all normal files as <tt class="docutils literal">f</tt>, folders as <tt class="docutils literal">F</tt> and only
+JPEG files as <tt class="docutils literal"></tt>, you could set your <tt class="docutils literal">LS_ICONS</tt> variable to
+<tt class="docutils literal"><span class="pre">fi=f:di=F:*.jpeg=:*.jpg=</span></tt>.</p>
+<p class="last">metaindexmanager has some defaults built-in.</p>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">files.selection-icon</span></tt></dt>
+<dd>What text symbol (or icon) to use to indicate selected files or
+folders. The default is a blank space, but you could also use a
+checkmark (<tt class="docutils literal">✔</tt>).</dd>
+<dt><tt class="docutils literal">files.info</tt></dt>
+<dd><p class="first">What extra information columns to show on the right side. Separate the
+options with a comma. Possible options are:</p>
+<ul class="last simple">
+<li><tt class="docutils literal">size</tt>, the human-readable file size</li>
+<li><tt class="docutils literal">bytes</tt>, the file size in bytes</li>
+<li><tt class="docutils literal">owner</tt>, the owner's name or uid (only on *nix)</li>
+<li><tt class="docutils literal">group</tt>, the group's name or gid (only on *nix)</li>
+<li><tt class="docutils literal">rights</tt> or <tt class="docutils literal">mode</tt>, the access rights in the form of <tt class="docutils literal"><span class="pre">-rw-r--r--</span></tt> (only on *nix)</li>
+<li><tt class="docutils literal">num_rights</tt> or <tt class="docutils literal">octmode</tt>, the access rights as octal number</li>
+<li><tt class="docutils literal">lm_abs</tt>, absolute date and time when the file was last modified</li>
+<li><tt class="docutils literal">lm_duration</tt>, how long ago this file was last modified</li>
+</ul>
+</dd>
+<dt><tt class="docutils literal">documents.columns</tt></dt>
+<dd><p class="first">Defines the default columns for any new documents panel.</p>
+<p>Columns are metadata tag names, like <tt class="docutils literal">extra.title</tt> or <tt class="docutils literal">mimetype</tt>.
+You may also use synonyms (<tt class="docutils literal">author</tt> instead of only
+<tt class="docutils literal">extra.author</tt>).
+To show more than just the first value (in case a document has multiple
+values for one metadata tag), you can add a <tt class="docutils literal">+</tt> after the tag name.</p>
+<p>The special column <tt class="docutils literal">icon</tt> is not a metadata tag, but instead shows an
+icon (see <tt class="docutils literal"><span class="pre">files.use-icons</span></tt> option above) based on the file type.</p>
+<p class="last">The default is <tt class="docutils literal">title filename tags+ mimetype</tt>.</p>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">editor.multiline-indicator</span></tt></dt>
+<dd><p class="first">What single character to show when a metadata tag has line breaks.</p>
+<p class="last">Defaults to <tt class="docutils literal">…</tt>.</p>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">editor.cutoff-indicator</span></tt></dt>
+<dd><p class="first">What single character to show when a metadata tag is longer than can be
+shown with the screen size.</p>
+<p class="last">Defaults to <tt class="docutils literal">→</tt>.</p>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">dictionary.&lt;tag&gt;</span></tt></dt>
+<dd><p class="first">The <tt class="docutils literal">dictionary</tt> namespace of configuration options can be used by
+you to define the allowed (or suggested) words for <tt class="docutils literal">extra.</tt> metadata
+values.</p>
+<p>For example, if you set the <tt class="docutils literal">dictionary.location</tt> to the values
+<tt class="docutils literal">home, work, cabin</tt> you will see a completion suggesting these values
+when you add or edit a <tt class="docutils literal">location</tt> tag using the editor panel.</p>
+<p>If you want to allow all existing values of a given tag, and a few
+suggestions, you can add the special value <tt class="docutils literal">*</tt>, like this:</p>
+<pre class="literal-block">
+set dictionary.rating &quot;good, bad, ugly, *&quot;
+</pre>
+<p>In this example if you had rated some file as <tt class="docutils literal">meh</tt>, this value would
+also show in the completion when you add or edit a <tt class="docutils literal">rating</tt> tag using
+the editor panel.</p>
+<p class="last">If you don't define a dictionary for a tag, metaindexmanager will
+always show the existing values as suggestions.</p>
+</dd>
+</dl>
+</blockquote>
+</div>
+<div class="section" id="commands">
+<h1>Commands</h1>
+<p>Commands can be bound to shortcuts or entered directly in the command line.
+The command to open the command line is called <tt class="docutils literal"><span class="pre">enter-command</span></tt> and
+usually bound to <tt class="docutils literal">:</tt>.</p>
+<p>Based on what panel is currently in focus (file browser, document browser,
+editor, etc.) different commands may be available.
+The autocompletion in the command line should be aware of that and provide
+only valid suggestions.</p>
+<p>Some commands accept or even require additional parameters that can be
+given on the commandline, but are a bit more tricky when bound to
+shortcuts. See details for that below in the <tt class="docutils literal">bind</tt> command.</p>
+<p>Here is a list of all commands:</p>
+<blockquote>
+<dl class="docutils">
+<dt><tt class="docutils literal">close</tt></dt>
+<dd>Closes the currently focused panel. Once the last panel is closed,
+metaindexmanager will end.</dd>
+<dt><tt class="docutils literal">quit</tt></dt>
+<dd>Quit metaindexmanager.</dd>
+<dt><tt class="docutils literal"><span class="pre">next-panel</span></tt></dt>
+<dd>Focus the next panel.</dd>
+<dt><tt class="docutils literal"><span class="pre">previous-panel</span></tt></dt>
+<dd>Focus the previous panel.</dd>
+<dt><tt class="docutils literal">focus</tt></dt>
+<dd>Focus the given panel. If called with a parameter, e.g. <tt class="docutils literal">focus 2</tt>, it
+will focus panel with label <tt class="docutils literal">2</tt>. If called without a parameter, it
+will ask the user for the panel to focus on.</dd>
+<dt><tt class="docutils literal"><span class="pre">new-file-panel</span></tt></dt>
+<dd>Open a new file browser panel.</dd>
+<dt><tt class="docutils literal"><span class="pre">new-documents-panel</span></tt></dt>
+<dd>Open a new document browser panel.</dd>
+<dt><tt class="docutils literal"><span class="pre">enter-command</span></tt></dt>
+<dd>Open the command line so the user can enter commands.</dd>
+<dt><tt class="docutils literal"><span class="pre">cancel-command</span></tt></dt>
+<dd>Close the command line and return focus to the previous panel.</dd>
+<dt><tt class="docutils literal">repaint</tt></dt>
+<dd>Enforce a repaint of the screen.</dd>
+<dt><tt class="docutils literal">layout</tt></dt>
+<dd>Change the layout of the panels. Provide the name of the layout you
+want to use as the first parameter. If you don't give a parameter, the
+available layouts will be listed for you.</dd>
+<dt><tt class="docutils literal">source</tt></dt>
+<dd>Load the configuration file given in the first parameter to this
+command. Usually only used from your configuration file.</dd>
+<dt><tt class="docutils literal">bind</tt></dt>
+<dd><p class="first">Bind a command to a shortcut. Expects three parameters: scope, key(s),
+and command.</p>
+<p>The scope is either <tt class="docutils literal">any</tt> (meaning any panel; file browser, document
+browser, metadata editor, etc.) or either of <tt class="docutils literal">documents</tt> (a document
+browser panel), <tt class="docutils literal">files</tt> (a file browser panel), <tt class="docutils literal">editor</tt> (a
+metadata editor panel).</p>
+<p>Keys can be single keys, like <tt class="docutils literal">c</tt> or <tt class="docutils literal">C</tt> (to indicate the use of
+the shift key), <tt class="docutils literal">^H</tt> (to indicate the use of a control key), or
+special key names like <tt class="docutils literal">&lt;return&gt;</tt> or <tt class="docutils literal">&lt;escape&gt;</tt>.
+Keys can also be sequences of keys, like <tt class="docutils literal"><span class="pre">gTx&lt;backspace&gt;^Y</span></tt> to
+indicate the the user must do this magic dance on the keyboard in
+sequence to call the bound command.</p>
+<p>Commands can be given in three different ways. The basic case is to
+just give a command name, like <tt class="docutils literal"><span class="pre">enter-command</span></tt>. This command does not
+expect any parameters, to nothing more is required.
+If a command expects parameters, you can provide them right in this
+parameter, but you must prefix the command with <tt class="docutils literal">::</tt>, for example to
+bind a shortcut to switch to the tabbed layout, you could write <tt class="docutils literal">bind
+any LT <span class="pre">&quot;::layout</span> tabbed&quot;</tt>.
+The third possibility is to only open the command line, type the first
+part of the command and let the user input the rest, like this: <tt class="docutils literal">bind
+any L? :layout</tt>.</p>
+<p class="last">An optional last parameter may be used to give a command a nice help
+text.</p>
+</dd>
+<dt><tt class="docutils literal">set</tt></dt>
+<dd><p class="first">Set a configuration option. Expects two parameters: configuration
+option name and value. If only the configuration name is given, the
+current value is shown.
+The configuration option name is <tt class="docutils literal">scope.name</tt>, with scope either
+being <tt class="docutils literal">all</tt> (meaning, generic application level configuration) or
+either of the panel scopes (<tt class="docutils literal">documents</tt>, <tt class="docutils literal">files</tt>, <tt class="docutils literal">editor</tt>,
+etc.).</p>
+<p>Example: <tt class="docutils literal">set all.opener <span class="pre">xdg-open</span></tt></p>
+<p class="last">For available configuration options, see above in <a class="reference internal" href="#configuration-options">Configuration options</a></p>
+</dd>
+<dt><tt class="docutils literal">find</tt></dt>
+<dd><p class="first">Find the entry that matches what you are trying to find.</p>
+<p class="last">Example: if you are in the file panel and want to find the next text
+file in the listing, you could type <tt class="docutils literal">:find .txt</tt></p>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">find-next</span></tt></dt>
+<dd><p class="first">Find the next entry that matches the previous <tt class="docutils literal">find</tt> command.</p>
+<p class="last">Example: if you tried to <tt class="docutils literal">:find .txt</tt> before and now execute
+<tt class="docutils literal"><span class="pre">find-next</span></tt>, it will repeat the <tt class="docutils literal">find</tt> command and find the next
+entry that matches <tt class="docutils literal">.txt</tt>.</p>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">find-prev</span></tt></dt>
+<dd>Much like <tt class="docutils literal"><span class="pre">find-next</span></tt>, but goes backwards rather than forwards.</dd>
+<dt><tt class="docutils literal">details</tt></dt>
+<dd><p class="first">Open the metadata viewer to show all metadata for the currently
+selected file.</p>
+<p class="last">Only available in document browser and file browser.</p>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">edit-metadata</span></tt></dt>
+<dd><p class="first">Edit the metadata of the currently selected file.</p>
+<p class="last">Only available in document browser, metadata viewer, and file browser.</p>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">edit-metadata-external</span></tt></dt>
+<dd><p class="first">Edit the metadata of the selected item in an external text editor. If
+you set the configuration option <tt class="docutils literal">all.editor</tt>, this text editor will
+be used. Otherwise the environment variables <tt class="docutils literal">VISUAL</tt> and <tt class="docutils literal">EDITOR</tt>
+are checked in that order to find an existing program.</p>
+<p class="last">Only available in document browser, metadata editor, and file browser.</p>
+</dd>
+<dt><tt class="docutils literal">open</tt></dt>
+<dd><p class="first">Open the selected item in the currently selected panel. This will
+usually open the file in an external program or, if a folder is
+selected, navigate to that folder.</p>
+<p class="last">Only available in document browser, metadata editor, and file browser.</p>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">open-with</span></tt></dt>
+<dd><p class="first">Open the selected item with another program.</p>
+<p class="last">Only available in document browser, metadata editor, and file browser.</p>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">select-and-exit</span></tt></dt>
+<dd><p class="first">If started in <tt class="docutils literal"><span class="pre">--select-file-mode</span></tt> this command can be called to quit
+metaindexmanager and have the currently selected item be the file to
+use (for whatever purpose you called metaindexmanager with that
+option).</p>
+<p class="last">Only available in document browser and file browser.</p>
+</dd>
+<dt><tt class="docutils literal">copy</tt></dt>
+<dd><p class="first">Copy the currently selected item to the metaindexmanager
+internal clipboard.
+This command accepts a parameter to identify the clipboard that you
+want to copy the path into. If no parameter is provided, the default
+clipboard is used.</p>
+<p class="last">Only available in document browser and file browser.</p>
+</dd>
+<dt><tt class="docutils literal">append</tt></dt>
+<dd><p class="first">Append the currently selected item to the metaindexmanager
+internal clipboard.
+This command accepts a parameter to identift the clipboard that you
+want to use. See <tt class="docutils literal">copy</tt> for more details on clipboard naming.</p>
+<p class="last">Only available in document browser and file browser.</p>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">clear-clipboard</span></tt></dt>
+<dd>Clear the named clipboard (identified by the first parameter), or clear
+the default clipboard. See <tt class="docutils literal">copy</tt> for more details on clipboards.</dd>
+<dt><tt class="docutils literal">paste</tt></dt>
+<dd>Paste the content of the clipboard (identified by the first parameter)
+into the current panel, if the panel supports it.</dd>
+<dt><tt class="docutils literal">refresh</tt></dt>
+<dd><p class="first">Refresh the current panel. This means reloading the content, not just
+redrawing.</p>
+<p class="last">Only available in document browser and file browser.</p>
+</dd>
+<dt><tt class="docutils literal">mark</tt></dt>
+<dd><p class="first">Bookmark the currently selected item. If no parameter is given, the
+user will be asked to provide an identifier for that bookmark (single
+ASCII letters only). Otherwise the parameter will be used as the
+identifier.</p>
+<p class="last">Only available in document browser and file browser.</p>
+</dd>
+<dt><tt class="docutils literal">ocr</tt></dt>
+<dd><p class="first">Run optical character recognition on the selected item. This requires
+that OCR is configured.</p>
+<p class="last">Only available in document browser, file browser, and metadata editor.</p>
+</dd>
+<dt><tt class="docutils literal">index</tt></dt>
+<dd><p class="first">Run the indexer on the selected item. If a folder is selected, the
+indexer is run in recursive mode, indexing everything in the folder and
+the subfolders.</p>
+<p class="last">Only available in document browser, file browser, and metadata editor.</p>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">jump-to-mark</span></tt></dt>
+<dd><p class="first">Jump to the bookmark identified by the first parameter to this command.
+If no parameter is given, the user will be asked to select from the
+available bookmarks.
+If the current panel is suitable to display that bookmark, the bookmark
+will be opened in it. Otherwise a new panel will open.</p>
+<p class="last">Only available in document browser and file browser.</p>
+</dd>
+<dt><tt class="docutils literal">select</tt></dt>
+<dd><p class="first">Toggle the selection of the current item.</p>
+<p class="last">Only available in document browser and file browser.</p>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">clear-selection</span></tt></dt>
+<dd><p class="first">Unselect all selected items.</p>
+<p class="last">Only available in document browser and file browser.</p>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">invert-selection</span></tt></dt>
+<dd><p class="first">Invert the selection of the currently visible items.</p>
+<p class="last">Only available in document browser and file browser.</p>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">go-to-location</span></tt></dt>
+<dd><p class="first">Open the path to the currently selected item in a new file browser
+panel.</p>
+<p class="last">Only available in document browser, metadata viewer, and metadata
+editor.</p>
+</dd>
+<dt><tt class="docutils literal">rm</tt></dt>
+<dd><p class="first">Delete the selected item.</p>
+<p class="last">Only available in the file browser.</p>
+</dd>
+<dt><tt class="docutils literal">mkdir</tt></dt>
+<dd><p class="first">Create a new folder here. The first parameter is the name of the
+folder.</p>
+<p class="last">Only available in the file browser.</p>
+</dd>
+<dt><tt class="docutils literal">cd</tt></dt>
+<dd><p class="first">Open the path given as the first parameter to this command.</p>
+<p class="last">Only available in the file browser.</p>
+</dd>
+<dt><tt class="docutils literal">shell</tt></dt>
+<dd>Execute a command in the shell in this folder. Either the command is
+given as the parameter(s) to <tt class="docutils literal">shell</tt> or a shell is simply being
+launched at this point, which you will have to exit to return to the
+metaindexmanager.</dd>
+<dt><tt class="docutils literal"><span class="pre">toggle-hidden</span></tt></dt>
+<dd><p class="first">Toggle whether or not hidden files should be shown.</p>
+<p class="last">Only available in the file browser.</p>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">go-to-parent</span></tt></dt>
+<dd><p class="first">Go up in the file hierarchy.</p>
+<p class="last">Only available in the file browser.</p>
+</dd>
+<dt><tt class="docutils literal">search</tt></dt>
+<dd><p class="first">Search your documents using the search term given as the first
+parameter.</p>
+<p>The search term is passed into metaindex. Please check the syntax of
+search queries there. You can also find the documentation here:
+<a class="reference external" href="https://vonshednob.cc/metaindex/documentation.html#search-query-syntax">https://vonshednob.cc/metaindex/documentation.html#search-query-syntax</a></p>
+<p class="last">Only available in the document browser.</p>
+</dd>
+<dt><tt class="docutils literal">columns</tt></dt>
+<dd><p class="first">Set the visible columns to the parameters. If no parameters are given,
+the current configuration is shown.</p>
+<p>This commands overrides the default column configuration that is set
+through <tt class="docutils literal">set documents.columns</tt> (see <a class="reference internal" href="#configuration-options">Configuration options</a> above)
+for the current panel.</p>
+<p class="last">Only available in the document browser.</p>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">edit-mode</span></tt></dt>
+<dd><p class="first">Edit the value of the selected metadata tag.</p>
+<p class="last">Only available in the metadata editor.</p>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">edit-multiline</span></tt></dt>
+<dd><p class="first">Edit this metadata tag value in an external editor to allow editing
+values that have line breaks.
+See configuration option <tt class="docutils literal">all.editor</tt>.</p>
+<p class="last">Only available in the metadata editor.</p>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">add-tag</span></tt></dt>
+<dd><p class="first">Add the first parameter as a metadata tag.</p>
+<p class="last">Only available in the metadata editor.</p>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">add-value</span></tt></dt>
+<dd><p class="first">Add a new value of the metadata tag that you have currently selected.</p>
+<p class="last">Only available in the metadata editor.</p>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">replace-value</span></tt></dt>
+<dd><p class="first">Clear the selected metadata value and start editing.</p>
+<p class="last">Only available in the metadata editor.</p>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">del-tag</span></tt></dt>
+<dd><p class="first">Delete the selected tag and value.</p>
+<p class="last">Only available in the metadata editor.</p>
+</dd>
+<dt><tt class="docutils literal">write</tt></dt>
+<dd><p class="first">Save all changes made in the metadata editor.</p>
+<p class="last">Only available in the metadata editor.</p>
+</dd>
+<dt><tt class="docutils literal">rules</tt></dt>
+<dd><p class="first">Run the rule-based indexers on the current document.</p>
+<p class="last">Only available in the metadata editor.</p>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">undo-change</span></tt></dt>
+<dd><p class="first">Undo the most recent change.</p>
+<p class="last">Only available in the metadata editor.</p>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">redo-change</span></tt></dt>
+<dd><p class="first">Redo the most recently undone change.</p>
+<p class="last">Only available in the metadata editor.</p>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">undo-all-changes</span></tt></dt>
+<dd><p class="first">Discards all changes.</p>
+<p class="last">Only available in the metadata editor.</p>
+</dd>
+<dt><tt class="docutils literal">reset</tt></dt>
+<dd><p class="first">Discards all changes, but also deletes the edit history.
+<tt class="docutils literal"><span class="pre">redo-change</span></tt> will not work after this.</p>
+<p class="last">Only available in the metadata editor.</p>
+</dd>
+</dl>
+</blockquote>
+</div>
+<div class="section" id="usage-examples">
+<h1>Usage Examples</h1>
+</div>
+<div class="section" id="bugs">
+<h1>Bugs</h1>
+<p>To be expected. Please report anything that you find at
+<a class="reference external" href="https://github.com/vonshednob/metaindexmanager">https://github.com/vonshednob/metaindexmanager</a> or via email to the authors
+at <a class="reference external" href="https://vonshednob.cc/metaindexmanager">https://vonshednob.cc/metaindexmanager</a> .</p>
+<p>Be sure to inspect your logfile for crash reports and add them to the bug
+report!</p>
+</div>
+</div>
+</body>
+</html>
