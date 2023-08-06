@@ -1,0 +1,2 @@
+[console_scripts]
+drope = drope.cmdline:main

@@ -1,0 +1,6 @@
+aiofiles~=0.8
+aiohttp~=3.8
+
+[dev]
+pytest
+pytest-aiohttp
