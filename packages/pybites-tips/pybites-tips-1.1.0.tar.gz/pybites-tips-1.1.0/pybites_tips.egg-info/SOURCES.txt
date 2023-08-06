@@ -1,0 +1,13 @@
+LICENSE
+README.md
+setup.py
+pybites_tips.egg-info/PKG-INFO
+pybites_tips.egg-info/SOURCES.txt
+pybites_tips.egg-info/dependency_links.txt
+pybites_tips.egg-info/entry_points.txt
+pybites_tips.egg-info/requires.txt
+pybites_tips.egg-info/top_level.txt
+pytip/__init__.py
+pytip/__main__.py
+pytip/conftest.py
+pytip/tips.py
