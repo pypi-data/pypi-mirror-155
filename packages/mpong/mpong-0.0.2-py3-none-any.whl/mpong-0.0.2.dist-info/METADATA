@@ -1,0 +1,55 @@
+Metadata-Version: 2.1
+Name: mpong
+Version: 0.0.2
+Summary: A simple pong game in Python
+Home-page: https://github.com/manorajesh/mpong
+Author: Me
+Author-email: shapely_indexes0d@icloud.com
+Project-URL: Bug Tracker, https://github.com/manorajesh/mpong/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: readchar (>=3.0.5)
+
+# mpong
+
+It's Pong, by me.
+
+                                                                           
+```                                                                          
+┃                                                                         ┃
+┃                                                                         ┃
+┃                                                                         ┃
+┃                                                                         ┃
+┃                                                                         ┃
+┃                                                                         ┃
+┃                                                                         ┃
+                                                                           
+                                                                           
+                                                                           
+                                                                           
+                                                                           
+                                                                           
+               ●                                                           
+                                                                           
+                                                                           
+                                 Misses: 2 
+```
+<hr>
+
+## Installation
+`python3 -m pip install mpong`
+
+## Usage
+`python3 -m mpong.mpong`
+
+## Tutorial
+Use `wasd` to control both paddles. Press `q` followed by any key to exit.
+
+##### Contents of requirements.txt
+`readchar==3.0.5`
+
+<sub>Part of the M-Commands Line</sub>
