@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: kgcl-schema
+Version: 0.1.0
+Summary: Schema fro the KGCL project.
+License: MIT
+Author: Chris Mungall
+Author-email: cjmungall@lbl.gov
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.9
+Provides-Extra: docs
+Requires-Dist: linkml-runtime (>=1.1.24,<2.0.0)
+Description-Content-Type: text/markdown
+
+# KGCL-schema
+
+This is the schema to the KGCL project.
+
+## Documentation
+[Read more here.](https://incatools.github.io/kgcl/)
+
+
