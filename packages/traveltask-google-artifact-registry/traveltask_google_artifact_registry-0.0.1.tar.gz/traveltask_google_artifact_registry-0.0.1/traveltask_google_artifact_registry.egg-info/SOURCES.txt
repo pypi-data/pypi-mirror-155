@@ -1,0 +1,13 @@
+MANIFEST.in
+requirements.txt
+setup.py
+traveltask_google_artifact_registry/__init__.py
+traveltask_google_artifact_registry/__main__.py
+traveltask_google_artifact_registry/config.py
+traveltask_google_artifact_registry/task.py
+traveltask_google_artifact_registry.egg-info/PKG-INFO
+traveltask_google_artifact_registry.egg-info/SOURCES.txt
+traveltask_google_artifact_registry.egg-info/dependency_links.txt
+traveltask_google_artifact_registry.egg-info/requires.txt
+traveltask_google_artifact_registry.egg-info/top_level.txt
+traveltask_google_artifact_registry/resources/.gitkeep
