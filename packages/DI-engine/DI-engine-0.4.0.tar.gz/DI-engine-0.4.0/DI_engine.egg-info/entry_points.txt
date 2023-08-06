@@ -1,0 +1,4 @@
+[console_scripts]
+ding = ding.entry.cli:cli
+ditask = ding.entry.cli_ditask:cli_ditask
+

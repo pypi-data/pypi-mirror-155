@@ -1,0 +1,38 @@
+Metadata-Version: 2.1
+Name: DI-engine
+Version: 0.4.0
+Summary: Decision AI Engine
+Home-page: https://github.com/opendilab/DI-engine
+Author: OpenDILab Contributors
+Author-email: opendilab.contact@gmail.com
+License: Apache License, Version 2.0
+Keywords: Decision AI Engine
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.6
+Provides-Extra: test
+Provides-Extra: style
+Provides-Extra: fast
+Provides-Extra: dist
+Provides-Extra: common_env
+Provides-Extra: gfootball_env
+Provides-Extra: procgen_env
+Provides-Extra: bsuite_env
+Provides-Extra: minigrid_env
+Provides-Extra: slimevolleygym_env
+Provides-Extra: smac_env
+Provides-Extra: k8s
+Provides-Extra: envpool
+License-File: LICENSE
+
+UNKNOWN
+
