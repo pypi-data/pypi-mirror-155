@@ -1,0 +1,4 @@
+[console_scripts]
+zau=zipapp_utils.cli:main
+zipapp-utils=zipapp_utils.cli:main
+
