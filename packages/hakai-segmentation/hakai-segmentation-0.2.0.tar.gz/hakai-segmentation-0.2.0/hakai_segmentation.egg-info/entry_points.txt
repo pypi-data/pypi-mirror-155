@@ -1,0 +1,3 @@
+[console_scripts]
+kom = hakai_segmentation.cli:cli
+
