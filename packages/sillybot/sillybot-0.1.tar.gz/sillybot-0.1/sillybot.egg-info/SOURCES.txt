@@ -1,0 +1,15 @@
+LICENSE
+README.rst
+setup.py
+sillybot/__init__.py
+sillybot/bot.py
+sillybot/facebookBot.py
+sillybot/googleBot.py
+sillybot/network.py
+sillybot.egg-info/PKG-INFO
+sillybot.egg-info/SOURCES.txt
+sillybot.egg-info/dependency_links.txt
+sillybot.egg-info/requires.txt
+sillybot.egg-info/top_level.txt
+test/test.py
+test/testBot.py
