@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "trk"
+version = "0.1.7"
+description = ""
+authors = ["nick <nickmcmillanproductions@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.scripts]
+trk = "trk.cli:app"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+typer = {extras = ["all"], version = "^0.4.0"}
+pandas = "^1.4.1"
+requests = "^2.27.1"
+tabulate = "^0.8.9"
+plotext = "^4.2.0"
+archieml = "^0.3.5"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
