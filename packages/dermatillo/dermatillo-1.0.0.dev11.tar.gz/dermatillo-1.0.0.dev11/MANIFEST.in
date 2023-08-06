@@ -1,0 +1,4 @@
+include dermatillo/files/behavior_classifier.tflite
+include dermatillo/files/config.json
+include dermatillo/files/LICENSE
+include requirements/dermatillo.txt
