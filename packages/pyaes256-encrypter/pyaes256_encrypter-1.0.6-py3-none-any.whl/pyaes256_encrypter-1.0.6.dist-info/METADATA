@@ -1,0 +1,42 @@
+Metadata-Version: 2.1
+Name: pyaes256-encrypter
+Version: 1.0.6
+Summary: A package to simplify the use of AES-256 encryption with random initialization vector.
+License: MIT
+Keywords: cryptography,AES
+Author: Maicon Renildo
+Author-email: maicon.renildo1@gmail.com
+Requires-Python: >=3.6.2,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: cryptography (>=37.0.0)
+Description-Content-Type: text/markdown
+
+# pyaes256_encrypter
+A package to simplify the use of AES-256 encryption with random initialization vector.
+
+## Install
+```
+pip install pyaes256-encrypter
+```
+
+## Usage
+~~~python
+from pyaes256_encrypter import encode_text, decode_text
+
+# text to be encrypted
+text = 'hello world'
+# encryption key
+key = 'key'
+
+
+# RANDOM ENCODED e.g. 'Dx3dCTUSXzzM8wn1L/+NHVbyaDxZFpdqe+SN2NVZgfE='
+encoded = encode_text(text, key)
+# 'hello world'
+decoded = decode_text(encoded, key)
+~~~
+
