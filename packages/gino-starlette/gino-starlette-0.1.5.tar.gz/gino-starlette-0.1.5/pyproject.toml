@@ -1,0 +1,48 @@
+[tool.poetry]
+name = "gino-starlette"
+version = "0.1.5"
+description = "An extension for GINO to integrate with Starlette"
+license = "BSD-3-Clause"
+authors = ["Tony Wang <wwwjfy@gmail.com>"]
+maintainers = ["Aobo Shi <shiaobo8@gmail.com>"]
+readme = "README.md"
+homepage = "https://github.com/python-gino/gino-starlette"
+repository = "https://github.com/python-gino/gino-starlette"
+documentation = "https://python-gino.org/docs/"
+keywords = ["sqlalchemy", "python3", "starlette", "gino"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: BSD License",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+]
+
+[tool.poetry.dependencies]
+python = "^3.6.2"
+starlette = "^0.19"
+gino = "^1.0.1"
+
+[tool.poetry.dev-dependencies]
+black = "^21.9b0"
+
+# tests
+pytest = "^6.2.0"
+pytest-asyncio = "^0.15.0"
+pytest-cov = "^3.0.0"
+pytest-mock = "^3.6.0"
+pytest-virtualenv = "^1.7.0"
+requests = "^2.26.0"
+
+[tool.poetry.plugins."gino.extensions"]
+"starlette" = "gino_starlette"
+
+[tool.black]
+line-length = 80
+
+[build-system]
+requires = ["poetry>=1.0.0"]
+build-backend = "poetry.masonry.api"
