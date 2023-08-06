@@ -1,0 +1,39 @@
+<configure
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns="http://namespaces.zope.org/zope">
+
+  <!--
+    This is loaded by the z3c.autoinclude.plugin entry point.
+
+    Normally you'll want to "install" the package by means of Zope/Plone as
+    well,
+
+    - either explicitly (using the "QuickInstaller" or the Plone add-ons form)
+    - or implicitly (by including the package in some other package's configure.zcml).
+
+    Our Plone-specific functionality extends the basic Plone integration from the
+    pdfreactor.plone package, if present; this will give you e.g. an @@as.pdf
+    view as well.  To have it installed by your build tool,
+    install the 'plone' extra, e.g. in your buildout.cfg:
+
+      eggs =
+	  ...
+	  pdfreactor.parsecfg [plone]
+
+    Or just install pdfreactor.plone yourself.
+    Otherwise you'd be on your own, regarding the core conversion
+    functionality.
+    -->
+
+
+    <browser:page
+        name="pdfreactor-config"
+        for="Products.CMFCore.interfaces.IContentish"
+        class=".plone.parsed.SettingsView"
+        permission="zope2.View"
+        /><!-- gf: plone/parsed.py
+                   plone/interfaces.py
+            -->
+    <include file="profiles.zcml" />
+
+</configure>

@@ -1,0 +1,40 @@
+<configure
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns="http://namespaces.zope.org/zope">
+
+  <!--
+    This is loaded when "installing" the package in a Plone site,
+    either explicitly (using the "QuickInstaller" or the Plone add-ons form)
+    or implicitly (by including the package in some other package's configure.zcml).
+
+    Our Plone-specific functionality extends the basic Plone integration from the
+    pdfreactor.plone package, if present.
+    -->
+
+  <include package="Products.GenericSetup" file="meta.zcml" />
+
+  <genericsetup:registerProfile
+      name="default"
+      title="pdfreactor.parsecfg"
+      directory="profiles/default"
+      description="Textually configurable PDFreactor conversion settings"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <!-- [ Upgrade steps ... [
+       - adjust the version in ./profiles/default/metadata.xml
+         (this will be headed for automatically during installation)
+       - Python functionality in setuphandlers.py
+    -->
+  <genericsetup:upgradeStep
+      title="Register PDFreactor conversion settings"
+      description="Registers the settings interface,
+                   giving you a parsable text to create a config dict
+                   e.g. for the PDFreactor.convert method"
+      source="*"
+      destination="1"
+      handler=".setuphandlers.register_settings"
+      profile="pdfreactor.parsecfg:default"
+      />
+
+</configure>
