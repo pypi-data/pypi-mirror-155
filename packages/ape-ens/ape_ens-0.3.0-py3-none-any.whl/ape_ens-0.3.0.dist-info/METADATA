@@ -1,0 +1,121 @@
+Metadata-Version: 2.1
+Name: ape-ens
+Version: 0.3.0
+Summary: ape-ens: Ape plugin for ENS argument conversion and contracts
+Home-page: https://github.com/ApeWorX/ape-ens
+Author: ApeWorX Ltd.
+Author-email: admin@apeworx.io
+License: Apache-2.0
+Keywords: ethereum
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Natural Language :: English
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: POSIX
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Python: >=3.7.2,<4
+Description-Content-Type: text/markdown
+Requires-Dist: eth-ape (<0.4.0,>=0.3.0)
+Requires-Dist: web3 (<6.0,>=5.28.0)
+Requires-Dist: importlib-metadata ; python_version < "3.8"
+Provides-Extra: dev
+Requires-Dist: pytest (<7.0,>=6.0) ; extra == 'dev'
+Requires-Dist: pytest-xdist ; extra == 'dev'
+Requires-Dist: pytest-cov ; extra == 'dev'
+Requires-Dist: pytest-mock ; extra == 'dev'
+Requires-Dist: black (<23.0,>=22.3.0) ; extra == 'dev'
+Requires-Dist: mypy (<1.0,>=0.910) ; extra == 'dev'
+Requires-Dist: flake8 (<4.0,>=3.9.2) ; extra == 'dev'
+Requires-Dist: isort (<6.0,>=5.10.1) ; extra == 'dev'
+Requires-Dist: Sphinx (<4,>=3.4.3) ; extra == 'dev'
+Requires-Dist: sphinx-rtd-theme (<1,>=0.1.9) ; extra == 'dev'
+Requires-Dist: towncrier (<20,>=19.2.0) ; extra == 'dev'
+Requires-Dist: setuptools ; extra == 'dev'
+Requires-Dist: setuptools-scm ; extra == 'dev'
+Requires-Dist: wheel ; extra == 'dev'
+Requires-Dist: twine ; extra == 'dev'
+Requires-Dist: commitizen (<2.20,>=2.19) ; extra == 'dev'
+Requires-Dist: pre-commit ; extra == 'dev'
+Requires-Dist: pytest-watch ; extra == 'dev'
+Requires-Dist: IPython ; extra == 'dev'
+Requires-Dist: ipdb ; extra == 'dev'
+Provides-Extra: doc
+Requires-Dist: Sphinx (<4,>=3.4.3) ; extra == 'doc'
+Requires-Dist: sphinx-rtd-theme (<1,>=0.1.9) ; extra == 'doc'
+Requires-Dist: towncrier (<20,>=19.2.0) ; extra == 'doc'
+Provides-Extra: lint
+Requires-Dist: black (<23.0,>=22.3.0) ; extra == 'lint'
+Requires-Dist: mypy (<1.0,>=0.910) ; extra == 'lint'
+Requires-Dist: flake8 (<4.0,>=3.9.2) ; extra == 'lint'
+Requires-Dist: isort (<6.0,>=5.10.1) ; extra == 'lint'
+Provides-Extra: release
+Requires-Dist: setuptools ; extra == 'release'
+Requires-Dist: setuptools-scm ; extra == 'release'
+Requires-Dist: wheel ; extra == 'release'
+Requires-Dist: twine ; extra == 'release'
+Provides-Extra: test
+Requires-Dist: pytest (<7.0,>=6.0) ; extra == 'test'
+Requires-Dist: pytest-xdist ; extra == 'test'
+Requires-Dist: pytest-cov ; extra == 'test'
+Requires-Dist: pytest-mock ; extra == 'test'
+
+# Ape ENS Plugin
+
+Ape plugin for ENS argument conversion and contracts
+
+## Dependencies
+
+* [python3](https://www.python.org/downloads) version 3.7 or greater, python3-dev
+
+## Installation
+
+### via `pip`
+
+You can install the latest release via [`pip`](https://pypi.org/project/pip/):
+
+```bash
+pip install ape-ens
+```
+
+### via `setuptools`
+
+You can clone the repository and use [`setuptools`](https://github.com/pypa/setuptools) for the most up-to-date version:
+
+```bash
+git clone https://github.com/ApeWorX/ape-ens.git
+cd ape-ens
+python3 setup.py install
+```
+
+## Quick Usage
+
+First, start the ape console using the network of your choice:
+
+```bash
+ape console --network :mainnet:infura
+```
+
+Then, convert an `ens` domain to an `AddressType`:
+
+```python
+In [1]: from ape.types import AddressType
+In [2]: convert("vitalik.eth", AddressType)
+Out[2]: '0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045'
+```
+
+## Development
+
+This project is in development and should be considered a beta.
+Things might not be in their final state and breaking changes may occur.
+Comments, questions, criticisms and pull requests are welcomed.
+
+## License
+
+This project is licensed under the [Apache 2.0](LICENSE).
+
+
