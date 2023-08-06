@@ -1,0 +1,3 @@
+[console_scripts]
+dpdata = dpdata.cli:dpdata_cli
+
