@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: chromedriverdownloaderandchecker
+Version: 0.0.2
+Summary: Simple chromedriver downloader and checker
+Home-page: UNKNOWN
+Author: Hrithik Joshi V
+Author-email: hrithikjoshi987@gmail.com
+License: MIT
+Keywords: python,selenium
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Education
+Classifier: Operating System :: Microsoft :: Windows :: Windows 10
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+License-File: LICENCE.txt
+
+This is simple chromedriver version checker
+
+Change Log
+==========
+0.0.1(19/06/2022)
+-----------------
+First Release
+
