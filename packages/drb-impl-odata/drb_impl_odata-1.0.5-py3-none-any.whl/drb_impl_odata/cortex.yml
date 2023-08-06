@@ -1,0 +1,10 @@
+id: a32c5d56-409e-11ec-973a-0242ac130003
+label: 'OData Copernicus Space Component'
+category: PROTOCOL
+factory:
+  name: odata
+  classpath: 'drb_impl_odata.factory:OdataFactory'
+signatures:
+  - python: |
+      return '+odata' in node.path.scheme 
+
