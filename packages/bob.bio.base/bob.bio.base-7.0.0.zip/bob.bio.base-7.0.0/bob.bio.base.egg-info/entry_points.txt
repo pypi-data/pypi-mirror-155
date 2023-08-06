@@ -1,0 +1,53 @@
+[bob.bio.annotator]
+dummy = bob.bio.base.test.dummy.annotator:annotator
+
+[bob.bio.cli]
+annotate = bob.bio.base.script.annotate:annotate
+annotate-samples = bob.bio.base.script.annotate:annotate_samples
+cmc = bob.bio.base.script.commands:cmc
+compare-samples = bob.bio.base.script.compare_samples:compare_samples
+det = bob.bio.base.script.commands:det
+dir = bob.bio.base.script.commands:dir
+epc = bob.bio.base.script.commands:epc
+evaluate = bob.bio.base.script.commands:evaluate
+gen = bob.bio.base.script.gen:gen
+hist = bob.bio.base.script.commands:hist
+metrics = bob.bio.base.script.commands:metrics
+multi-metrics = bob.bio.base.script.commands:multi_metrics
+pipeline = bob.bio.base.script.pipeline:pipeline
+roc = bob.bio.base.script.commands:roc
+sort = bob.bio.base.script.sort:sort
+
+[bob.bio.config]
+atnt = bob.bio.base.config.database.atnt
+dummy = bob.bio.base.test.dummy.config
+dummy2 = bob.bio.base.test.dummy.config2
+dummy_samples = bob.bio.base.test.dummy.samples_list
+
+[bob.bio.database]
+atnt = bob.bio.base.config.database.atnt:database
+dummy = bob.bio.base.test.dummy.database:database
+
+[bob.bio.pipeline.cli]
+score-norm = bob.bio.base.script.pipeline_score_norm:pipeline_score_norm
+simple = bob.bio.base.script.pipeline_simple:pipeline_simple
+transform = bob.bio.base.script.pipeline_transform:pipeline_transform
+
+[bob.cli]
+bio = bob.bio.base.script.bio:bio
+vulnerability = bob.bio.base.script.vulnerability:vulnerability
+
+[bob.vuln.cli]
+det = bob.bio.base.script.vuln_commands:det
+epc = bob.bio.base.script.vuln_commands:epc
+epsc = bob.bio.base.script.vuln_commands:epsc
+evaluate = bob.bio.base.script.vuln_commands:evaluate
+fmr_iapmr = bob.bio.base.script.vuln_commands:fmr_iapmr
+gen = bob.bio.base.script.vuln_commands:gen
+hist = bob.bio.base.script.vuln_commands:hist
+metrics = bob.bio.base.script.vuln_commands:metrics
+roc = bob.bio.base.script.vuln_commands:roc
+
+[console_scripts]
+resources.py = bob.bio.base.script.resources:resources
+
