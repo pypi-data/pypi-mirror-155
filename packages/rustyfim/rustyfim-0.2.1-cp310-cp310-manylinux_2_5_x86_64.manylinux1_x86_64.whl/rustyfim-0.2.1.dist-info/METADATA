@@ -1,0 +1,42 @@
+Metadata-Version: 2.1
+Name: rustyfim
+Version: 0.2.1
+Classifier: Programming Language :: Rust
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown; charset=UTF-8; variant=GFM
+
+rusty-py-fim enables you to run fpgrowth in Python
+
+## Setup
+
+```bash
+pip install maturin
+maturin develop
+```
+
+## Running FIM in python
+
+```py
+from rustyfim import fpgrowth, dci
+
+res = fpgrowth(min_support=0.3, transactions=[[1,2,3],[2,3,4],[3,4,10],[3,4,20]])
+# in dci algorithm, n_features is required for creating the bitmatrix in the first place
+res = dci(min_support=0.3, transactions=[[1,2,3],[2,3,4],[3,4,10],[3,4,20]], n_features=21)
+```
+
+Result:
+
+```
+First pass took 0 ms, num_transactions=4.
+Total runtime: 1 ms
+[([3], 4), ([3, 4], 3), ([4], 3)]
+```
+
+## Build wheel
+
+```bash
+maturin build
+```
+
