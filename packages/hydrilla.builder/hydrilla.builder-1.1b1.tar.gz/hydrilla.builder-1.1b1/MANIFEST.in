@@ -1,0 +1,12 @@
+# SPDX-License-Identifier: CC0-1.0
+
+# Copyright (C) 2022 Wojtek Kosior <koszko@koszko.org>
+#
+# Available under the terms of Creative Commons Zero v1.0 Universal.
+
+include src/hydrilla/schemas/*/*.schema.json*
+include src/hydrilla/builder/locales/*/LC_MESSAGES/hydrilla-messages.po
+include tests/source-package-example/*
+include tests/source-package-example/LICENSES/*
+include tests/source-package-example/.reuse/*
+global-exclude .git .gitignore .gitmodules

@@ -1,0 +1,17 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: Hydrilla builder
+Upstream-Contact: Wojtek Kosior <koszko@koszko.org>
+Source: https://git.koszko.org/hydrilla-builder
+
+Files: PKG-INFO setup.cfg src/hydrilla/builder/_version.py
+       src/hydrilla.builder.egg-info/*
+Copyright: 2022 Wojtek Kosior <koszko@koszko.org>
+License: CC0-1.0
+Comment: Those are files that setuptools generate in sdist.
+ `setup.cfg` gets stripped of comments during generation of
+ sdist, so we include it here as well.
+
+Files: debian/*
+Copyright: 2021,2022 Wojtek Kosior <koszko@koszko.org>
+License: CC0-1.0
+Comment: debian packaging (files only present in debian-debian branch)

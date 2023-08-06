@@ -1,0 +1,66 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://hydrilla.koszko.org/schemas/api_source_description-1.0.1.schema.json",
+    "title": "Source description",
+    "description": "Built description of a Hydrilla source package",
+    "type": "object",
+    "required": [
+	"$schema",
+	"source_name",
+	"source_copyright",
+	"source_archives",
+	"upstream_url",
+	"definitions"
+    ],
+    "properties": {
+	"$schema": {
+	    "description": "Mark this instance as conforming to source description schema 1.x",
+	    "type": "string",
+	    "pattern": "^https://hydrilla\\.koszko\\.org/schemas/api_source_description-1\\.(([1-9][0-9]*|0)\\.)*schema\\.json$"
+	},
+	"source_name": {
+	    "$ref": "./common_definitions-1.0.1.schema.json#/definitions/source_name"
+	},
+	"source_copyright":  {
+	    "description": "Which files indicate license terms of the source package",
+	    "$ref": "./common_definitions-1.0.1.schema.json#/definitions/file_ref_list_sha256"
+	},
+	"source_archives": {
+	    "description": "What archive extensions are available for this package's sources",
+	    "type": "object",
+	    "required": ["zip"],
+	    "additionalProperties": {
+		"description": "What is the SHA256 sum of given source archive",
+		"type": "object",
+		"required": ["sha256"],
+		"properties": {
+		    "sha256": {
+			"$ref": "./common_definitions-1.0.1.schema.json#/definitions/sha256"
+		    }
+		}
+	    },
+	    "examples": [{
+		"zip": {
+		    "sha256": "688461da362ffe2fc8e85db73e709a5356d41c8aeb7d1eee7170c64ee21dd2a2"
+		}
+	    }]
+	},
+	"upstream_url": {
+	    "description": "Where this software/work initially comes from",
+	    "type": "string"
+	},
+	"comment": {
+	    "$ref": "./common_definitions-1.0.1.schema.json#/definitions/comment"
+	},
+	"definitions": {
+	    "description": "References to site resources and pattern->payload mappings",
+	    "type": "array",
+	    "items": {
+		"$ref": "./common_definitions-1.0.1.schema.json#/definitions/typed_item_ref"
+	    }
+	},
+	"generated_by": {
+	    "$ref": "./common_definitions-1.0.1.schema.json#/definitions/generated_by"
+	}
+    }
+}

@@ -1,0 +1,22 @@
+# SPDX-License-Identifier: CC0-1.0
+
+# Copyright (C) 2022 Wojtek Kosior <koszko@koszko.org>
+#
+# Available under the terms of Creative Commons Zero v1.0 Universal.
+
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = ["setuptools>=44", "wheel", "setuptools_scm>=5.0", "babel"]
+
+[tool.setuptools_scm]
+write_to = "src/hydrilla/builder/_version.py"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra"
+testpaths = [
+    "tests"
+]
+markers = [
+    "subprocess_run: define how mocked subprocess.run should behave"
+]

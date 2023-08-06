@@ -1,0 +1,12 @@
+click
+jsonschema>=3.0
+
+[setup]
+babel
+setuptools_scm
+
+[spdx]
+reuse
+
+[test]
+pytest

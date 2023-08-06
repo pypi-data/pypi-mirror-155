@@ -1,0 +1,107 @@
+.\" SPDX-License-Identifier: CC0-1.0
+.\"
+.\" Man page for Hydrilla builder.
+.\"
+.\" Copyright (C) 2022 Wojtek Kosior <koszko@koszko.org>
+.\"
+.\" Available under the terms of Creative Commons Zero v1.0 Universal.
+
+.TH HYDRILLA-BUILDER 1 2022-06-14 "Hydrilla 1.1" "Hydrilla Manual"
+
+.SH NAME
+hydrilla\-builder \- Generate packages to be served by Hydrilla
+
+.SH SYNOPSIS
+.B "hydrilla\-builder \-\-help"
+.br
+.B "hydrilla\-builder [\-s \fISOURCE\/\fP] [\-i\ \fIINDEX_PATH\/\fP]"
+.B "\-d \fIDESTINATION\/\fP"
+.br
+(See the OPTIONS section for alternate option syntax with long option
+names.)
+
+.SH DESCRIPTION
+.I hydrilla\-builder
+is a tool which takes a Hydrilla source package and generates files of a
+built package, suitable for serving by the Hydrilla server.
+
+The main function of
+.I hydrilla\-builder
+is to automate the process of computing SHA256 cryptographic sums of package
+files and including them in JSON definitions.
+
+This tool does not perform nor trigger actions like compilation, minification or
+bundling of source code files. When this is needed,
+.I hydrilla\-builder
+instead relies on facilities already provided by other software distribution
+systems like APT and extracts the requested files from .deb packages. This
+feature is called \*(lqpiggybacking\*(rq.
+
+In addition,
+.I hydrilla\-builder
+can generate an SPDX report from source package if the
+\*(lqreuse_generate_spdx_report\*(rq property is set to true in index.json.
+
+.SH OPTIONS
+.TP
+.B \-\^\-help
+Output a usage message and exit.
+
+.TP
+.BI \-s " SOURCE" "\fR,\fP \-\^\-srcdir=" SOURCE
+Use
+.I SOURCE
+as source package directory to build from.
+If not specified, current directory is used.
+
+.TP
+.BI \-i " INDEX_PATH" "\fR,\fP \-\^\-index\-json=" INDEX_PATH
+Process the JSON file under
+.I INDEX_PATH
+instead of index.json inside source directory.
+.I INDEX_PATH
+may be either absolute or relative.
+In the latter case it is resolved with respect to the source directory.
+
+File provided as
+.I INDEX_PATH
+will also be included in the generated source archive as
+\*(lqindex.json\*(rq, substituting any file with such name that could be
+present in the source directory.
+
+.TP
+.BI \-p " PIGGYBACK_PATH" "\fR,\fP \-\^\-piggyback\-files=" PIGGYBACK_PATH
+Read and write foreign package archives under
+.IR PIGGYBACK_PATH .
+If not specified, a default value is computed by appending
+\*(lq.foreign-packages\*(rq to the
+.I SOURCE
+directory path.
+
+.TP
+.BI \-d " DESTINATION" "\fR,\fP \-\^\-dstdir=" DESTINATION
+Write generated files under
+.IR DESTINATION .
+.I DESTINATION
+can then be passed to Hydrilla to serve packages from.
+
+.TP
+.B \-\^\-version
+Show version information for this instance of
+.I hydrilla\-builder
+on the standard output and exit successfully.
+
+.SH "EXIT STATUS"
+The exit status is 0 if build was performed successfully or if the
+.B \-\^\-help
+option was passed. It is a number different from 0 in all other cases.
+
+.SH "SEE ALSO"
+.SS "Manual Pages"
+.BR hydrilla (1).
+
+.SS "Full Documentation"
+.UR https://hydrillabugs.koszko.org/projects/hydrilla/wiki
+Online documentation
+.UE
+is available on Hydrilla issue tracker.
