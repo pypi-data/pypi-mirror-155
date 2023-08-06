@@ -1,0 +1,57 @@
+Metadata-Version: 2.1
+Name: jsonschema-default
+Version: 1.3.1
+Summary: Create default objects from a JSON schema
+Home-page: https://github.com/mnboos/jsonschema-default
+License: GNU AGPL v3
+Author: Martin Boos
+Author-email: mboos@outlook.com
+Maintainer: Martin Boos
+Maintainer-email: mboos@outlook.com
+Requires-Python: >=3.7,<4.0
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: xeger (>=0.3.5,<0.4.0)
+Project-URL: Repository, https://github.com/mnboos/jsonschema-default
+Description-Content-Type: text/markdown
+
+# jsonschema-instance
+
+A Python package that creates default objects from a JSON schema.
+
+## Note
+This is not a validator. Inputs should be valid JSON schemas. For Python you can use the [jsonschema](https://github.com/Julian/jsonschema) package to validate schemas.
+
+## Installation
+```
+pip install jsonschema-default
+```
+
+## Usage
+```python
+import jsonschema_default
+
+default_obj = jsonschema_default.create_from("<schema>")
+```
+
+## Development
+- Install and configure [Poetry](https://python-poetry.org/)
+
+```bash
+pip install --user poetry
+```
+
+See [Installation](https://python-poetry.org/docs/#installation) for the official guide.
+
+- Install the dependencies using 
+
+```bash
+# Configure poetry to create a local venv directory
+poetry config virtualenvs.in-project true
+
+poetry install
+```
