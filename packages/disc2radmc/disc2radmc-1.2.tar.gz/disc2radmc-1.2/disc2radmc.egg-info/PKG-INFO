@@ -1,0 +1,22 @@
+Metadata-Version: 1.1
+Name: disc2radmc
+Version: 1.2
+Summary: Disc2radmc is a package to create parametric models of debris discs that can be fed into RADMC3D and simulate images of dust and gas emission.
+Home-page: https://github.com/SebaMarino/disc2radmc
+Author: Sebastian Marino
+Author-email: sebastian.marino.estay@gmail.com
+License: MIT
+Download-URL: https://github.com/SebaMarino/disc2radmc/archive/refs/tags/v1.2.tar.gz
+Description: UNKNOWN
+Keywords: radiative transfer,debris disc,radmc3d,circumstellar disc
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
