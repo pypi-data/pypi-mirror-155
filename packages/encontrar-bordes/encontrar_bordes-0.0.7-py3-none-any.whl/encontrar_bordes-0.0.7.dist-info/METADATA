@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: encontrar-bordes
+Version: 0.0.7
+Summary: Librería para extraer los contornos de una imagen, mostrarla y graficarla sobre la imagen original
+Home-page: https://github.com/Ezequiel2003/UNSL---Proyecto-DSP2---Cordoba-Romero
+Author: Paul Andres Romero Coronado <paulssj14@gmail.com>Pablo Ezequiel Cordoba <ezequielcordoba39@gmail.com>
+License: UNSL
+Description-Content-Type: text/markdown
+Requires-Dist: cv2
+Requires-Dist: numpy
+
+IEOSD - UNSL - DSP2 
+
+Función para encontrar los bordes de una imagen
+
+Implementada por los estudiantes Paul Andrés Romero Coronado (paulssj14@gmail.com) y Pablo Ezequiel Córdoba (ezequielcordoba39@gmail.com) 
