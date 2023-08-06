@@ -1,0 +1,10 @@
+[build-system]
+requires = [
+    "setuptools>=45.2.0",
+    "wheel"
+]
+
+include = ["version_notes.md"]
+exclude = ["example.py", "jamfAuth.py", ".gitignore", ".git", ".DS_Store"]
+
+build-backend = "setuptools.build_meta"

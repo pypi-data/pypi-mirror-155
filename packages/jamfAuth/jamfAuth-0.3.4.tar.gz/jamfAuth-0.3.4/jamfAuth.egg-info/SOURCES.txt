@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.cfg
+jamfAuth/__init__.py
+jamfAuth.egg-info/PKG-INFO
+jamfAuth.egg-info/SOURCES.txt
+jamfAuth.egg-info/dependency_links.txt
+jamfAuth.egg-info/requires.txt
+jamfAuth.egg-info/top_level.txt
+support/__init__.py
+support/configCheck.py
+support/getToken.py
