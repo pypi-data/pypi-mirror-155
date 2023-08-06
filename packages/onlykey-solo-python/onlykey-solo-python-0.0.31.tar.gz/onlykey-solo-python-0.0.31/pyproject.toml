@@ -1,0 +1,34 @@
+[build-system]
+requires = ["flit_core >=2,<4"]
+build-backend = "flit_core.buildapi"
+
+[tool.flit.metadata]
+module = "solo"
+dist-name = "onlykey-solo-python"
+author = "CryptoTrust"
+author-email = "admin@crp.to"
+home-page = "https://github.com/trustcrypto/onlykey-solo-python"
+requires-python = ">=3.6"
+description-file = "README.md"
+requires = [
+  "click >= 7.1",
+  "cryptography",
+  "ecdsa",
+  "fido2 >= 1.0.0",
+  "intelhex",
+  "pyserial",
+  "pyusb",
+  "requests",
+]
+classifiers=[
+    "License :: OSI Approved :: MIT License",
+    "License :: OSI Approved :: Apache Software License",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+]
+
+[tool.flit.scripts]
+solo = "solo.cli:solo_cli"
