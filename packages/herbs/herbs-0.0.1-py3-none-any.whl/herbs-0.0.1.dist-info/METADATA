@@ -1,0 +1,34 @@
+Metadata-Version: 2.1
+Name: herbs
+Version: 0.0.1
+Summary: A toolkit for Histological E-data Registration in Brain Space
+Home-page: https://github.com/JingyiGF/HERBS
+Author: Jingyi GF
+Author-email: jingyi.g.fuglstad@gmail.com
+Project-URL: Bug Tracker, https://github.com/JingyiGF/HERBS/issues
+Keywords: brain atlas,histological image registration,probe coordinates
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+
+# HERBS
+A toolkit for Histological E-data Registration in Brain Space
+
+
+## Install
+
+```python
+$ pip install herbs
+```
+
+## Usage
+
+```python
+import herbs
+herbs.run_herbs()
+```
+
+<img src="./herbs.jpg" width="800px"></img>
