@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: cv2cuda
+Version: 1.0.2
+Requires-Python: >=3.8.12
+Requires-Dist: opencv-python
+Requires-Dist: numpy
+Requires-Dist: psutil
+Provides-Extra: profile
+Requires-Dist: pynvml ; extra == 'profile'
+Provides-Extra: test
+Requires-Dist: progressbar ; extra == 'test'
+
