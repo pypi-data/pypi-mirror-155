@@ -1,0 +1,1 @@
+BUILD_STATUS = {'BUILD_ID': 'uncommitted-buildkite-agent-1655751553', 'BUILD_TIMESTAMP': '1655751553', 'GIT_COMMIT': 'c65cacf7c92c572939159ff37e589a123373d16c', 'BUILD_EMBED_LABEL': '', 'BUILD_HOST': 'buildkite-agent-medium-c44979dd-2b29r', 'BUILD_USER': 'buildkite-agent'}
