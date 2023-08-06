@@ -1,0 +1,35 @@
+Metadata-Version: 2.1
+Name: federpy
+Version: 0.8.0
+Summary: Feder for python
+Home-page: https://github.com/zilliztech/feder
+Author: min.tian@zilliz
+Author-email: min.tian@zilliz.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Feder for Python
+
+## 0.6.0
+
+Support search-by-vector
+
+*searchByVec(vector [, imgUrl=None, isDisplayed=True])*
+
+## 0.7.0
+
+Each action (search or overview) command generates a new div with a random id.
+
+Different actions will no longer share an output cell.
+
+## 0.8.0
+
+Support chain functions.
+
+```
+federPy.setSearchParams(params).search()
+```
