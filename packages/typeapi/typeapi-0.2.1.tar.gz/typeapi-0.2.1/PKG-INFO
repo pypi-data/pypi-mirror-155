@@ -1,0 +1,37 @@
+Metadata-Version: 2.1
+Name: typeapi
+Version: 0.2.1
+Summary: 
+License: MIT
+Author: Niklas Rosenstein
+Author-email: rosensteinniklas@gmail.com
+Requires-Python: >=3.7,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Provides-Extra: docs
+Requires-Dist: typing-extensions (>=3.0.0)
+Project-URL: Bug Tracker, https://github.com/NiklasRosenstein/python-typeapi/issues
+Project-URL: Documentation, https://niklasrosenstein.github.io/python-typeapi/
+Project-URL: Homepage, https://github.com/NiklasRosenstein/python-typeapi
+Description-Content-Type: text/markdown
+
+# typeapi
+
+This library provides a stable API to introspect Python's `typing` and `typing_extensions` type hints.
+
+## Installation
+
+    $ pip install typeapi
+
+## Example
+
+```py
+import typing, typeapi
+print(typeapi.of(typing.Mapping[typing.Annotated[str, "key"], typing.Literal[True, None, 'false']]))
+# Type(collections.abc.Mapping, nparams=2, args=(Annotated(Type(str, nparams=0), 'key'), Literal(values=(True, None, 'false'))))
+```
+
