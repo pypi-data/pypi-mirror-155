@@ -1,0 +1,50 @@
+Metadata-Version: 2.1
+Name: TeraApp
+Version: 0.2.7
+Summary: A very simple app creator
+Home-page: 
+Author: oren
+Author-email: orennadle@gmail.com
+License: MIT
+Keywords: appcreator phoneapp app computerapps phoneapps iosapps iosapp
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Education
+Classifier: Operating System :: Microsoft :: Windows :: Windows 10
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+License-File: LICENCE.txt
+
+This package is for creating simple applications.
+Platforms - Ios,Android,Windows
+
+``# app = TeraApp('title', x, y 'color')``
+
+``# app = TeraAppWIcon('title', x, y 'logo', 'color')``
+
+``# app = TeraAppPhone(R,G,B,Icon)``
+
+``app.txt()``
+
+``app.icon()``
+
+``app.img()``
+
+``app.input()``
+
+``app.button()``
+
+``app.sidebar``
+
+``app.appbar``
+
+``app.buttonf() - button with function``
+
+``app.inputr() - input with resize``
+
+``app.buttonfr() - button with function and resize``
+
+``app.txtc() - text with color``
+
+``app.app.exec()``
+
