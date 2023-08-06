@@ -1,0 +1,40 @@
+{
+  "list": {
+    "title": "Users",
+    "id": "ID",
+    "email": "Email address",
+    "tenant": "Tenant",
+    "create": "Create User"
+  },
+  "create": {
+    "title": "Create User",
+    "cancel": "Cancel",
+    "submit": "Create",
+    "email": "Email address",
+    "password": "Password",
+    "tenant": "Tenant"
+  },
+  "details": {
+    "tabs": {
+      "ACCOUNT": "Account",
+      "ROLES": "Roles",
+      "PERMISSIONS": "Permissions"
+    },
+    "roles": {
+      "add": "Add role",
+      "name": "Name",
+      "no_role": "No role granted yet"
+    },
+    "permissions": {
+      "add": "Add permission",
+      "codename": "Codename",
+      "from_role": "From role",
+      "no_permission": "No permission granted yet"
+    },
+    "tenant": "Tenant",
+    "id": "ID",
+    "created_at": "Created at",
+    "updated_at": "Updated at",
+    "submit": "Update"
+  }
+}

@@ -1,0 +1,57 @@
+Metadata-Version: 2.1
+Name: fief-server
+Version: 0.16.0
+Summary: Users and authentication management SaaS
+Author-email: François Voron <contact@fief.dev>
+Requires-Python: >=3.10
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3 :: Only
+Requires-Dist: aiomysql ==0.1.1
+Requires-Dist: aiosqlite ==0.17.0
+Requires-Dist: alembic ==1.7.7
+Requires-Dist: argon2_cffi ==21.3.0
+Requires-Dist: asyncpg ==0.25.0
+Requires-Dist: Babel ==2.9.1
+Requires-Dist: dramatiq[redis] ==1.12.3
+Requires-Dist: fastapi ==0.78.0
+Requires-Dist: fastapi-users[sqlalchemy] ==10.0.4
+Requires-Dist: fief-client ==0.11.0
+Requires-Dist: furl ==2.1.3
+Requires-Dist: greenlet==1.1.2
+Requires-Dist: gunicorn ==20.1.0
+Requires-Dist: Jinja2 ==3.0.3
+Requires-Dist: jwcrypto ==1.3
+Requires-Dist: loguru ==0.6.0
+Requires-Dist: phonenumbers >=8.12.48,<8.13
+Requires-Dist: postmarker ==1.0
+Requires-Dist: psycopg2 ==2.9.3
+Requires-Dist: pycountry >=22.3.5,<22.4
+Requires-Dist: pydantic[dotenv] ==1.9.0
+Requires-Dist: python-slugify ==6.1.2
+Requires-Dist: pytz ==2022.1
+Requires-Dist: rich ==12.4.1
+Requires-Dist: sentry_dramatiq ==0.3.2
+Requires-Dist: sentry-sdk ==1.5.12
+Requires-Dist: sqlalchemy[mypy] ==1.4.36
+Requires-Dist: typer ==0.4.1
+Requires-Dist: uvicorn[standard]==0.17.6
+Requires-Dist: asgi-lifespan ; extra == "dev"
+Requires-Dist: black ; extra == "dev"
+Requires-Dist: bumpversion ; extra == "dev"
+Requires-Dist: coverage[toml] ; extra == "dev"
+Requires-Dist: flit ; extra == "dev"
+Requires-Dist: gevent ; extra == "dev"
+Requires-Dist: httpx ; extra == "dev"
+Requires-Dist: isort ; extra == "dev"
+Requires-Dist: mypy ; extra == "dev"
+Requires-Dist: pytest ; extra == "dev"
+Requires-Dist: pytest-cov ; extra == "dev"
+Requires-Dist: pytest-asyncio ; extra == "dev"
+Requires-Dist: pytest-mock ; extra == "dev"
+Requires-Dist: sqlalchemy-utils ; extra == "dev"
+Requires-Dist: tryceratops ; extra == "dev"
+Requires-Dist: types-python-slugify ; extra == "dev"
+Requires-Dist: types-pytz ; extra == "dev"
+Project-URL: Documentation, https://docs.fief.dev
+Provides-Extra: dev
