@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: blindecdh
+Version: 0.1.3
+Summary: A simple implementation of unauthenticated ECDH
+Home-page: https://github.com/Rudd-O/blindecdh
+Author: Manuel Amador (Rudd-O)
+Author-email: rudd-o@rudd-o.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v2 (LGPLv2)
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# A simple implementation of unauthenticated ECDH
+
+This package implements unauthenticated ECDH between two endpoints.
+Authentication can then later be added by, for example, mutual short string
+authentication (as exemplified by the simpleauthstrings package).
+
+See [module](src/blindecdh/__init__.py) for more documentation.
+
+This package is distributed under the GNU Lesser General Public License v2.1.
+For relicensing, contact the package author.
