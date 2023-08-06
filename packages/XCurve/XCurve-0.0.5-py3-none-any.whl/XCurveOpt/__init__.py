@@ -1,0 +1,5 @@
+__name__ = 'XCurveOpt'
+__author__ = 'qqgroup'
+__version__ = '1.0.0'
+__website__ = 'url'
+__contact__ = 'baoshilong@iie.ac.cn'
