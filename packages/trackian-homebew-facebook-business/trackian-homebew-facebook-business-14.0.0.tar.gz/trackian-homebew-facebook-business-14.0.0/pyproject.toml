@@ -1,0 +1,3 @@
+[build-system]
+requires = ["requests", "six", "curlify", "pycountry", "enum34", "aiohttp"]
+build-backend = "setuptools.build_meta"
