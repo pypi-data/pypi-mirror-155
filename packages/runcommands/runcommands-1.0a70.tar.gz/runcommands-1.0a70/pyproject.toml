@@ -1,0 +1,60 @@
+[tool.poetry]
+name = "runcommands"
+version = "1.0a70"
+license = "MIT"
+description = "A framework for writing console scripts and running commands"
+readme = "README.rst"
+authors = ["Wyatt Baldwin <self@wyattbaldwin.com>"]
+homepage = "https://runcommands.readthedocs.io"
+repository = "https://github.com/wylee/runcommands"
+keywords = ["run", "commands", "console", "scripts", "terminal"]
+
+packages = [
+    { include = "runcommands", from = "src" }
+]
+
+include = [
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.rst",
+    "commands.py",
+    "commands.toml",
+    "runcommands/completion/bash/*.fish",
+    "runcommands/completion/bash/*.rc",
+]
+
+[tool.poetry.dependencies]
+python = "^3.6"
+rich = "^10.3.0"
+toml = "^0.10.2"
+"com.wyattbaldwin.cached_property" = "^1.0"
+
+[tool.poetry.dev-dependencies]
+black = { version = "*", allow-prereleases = true }
+coverage = "*"
+flake8 = "<3.8"
+Sphinx = "*"
+tox = "*"
+twine = "*"
+"com.wyattbaldwin.make_release" = { version = "*", allow-prereleases = true }
+
+[tool.poetry.scripts]
+run = "runcommands.__main__:main"
+runcommand = "runcommands.__main__:main"
+runcommands = "runcommands.__main__:main"
+runcommands-complete = "runcommands.completion:complete.console_script"
+runcommands-complete-base-command = "runcommands.completion:complete_base_command.console_script"
+
+[tool.black]
+target-version = ["py36"]
+
+[tool.make-release.args]
+test-command = "run test"
+
+[tool.runcommands.globals]
+package = "runcommands"
+distribution = "{{ package }}"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
