@@ -1,0 +1,104 @@
+{
+  "name": "山东省建设项目登记备案证明",
+  "imageHeight": 2550,
+  "imageWidth": 3510,
+  "anchors": [
+    {
+      "text": "山东省建设项目",
+      "left": 1241,
+      "top": 301,
+      "width": 1008,
+      "height": 120
+    },
+    {
+      "text": "登记备案证明",
+      "left": 973,
+      "top": 509,
+      "width": 1504,
+      "height": 220
+    },
+    {
+      "text": "登记机关",
+      "left": 1969,
+      "top": 1989,
+      "width": 372,
+      "height": 124
+    }
+  ],
+  "recognition_areas": [
+    {
+      "field_name": "企业全称",
+      "show_name": "company",
+      "left": 345,
+      "top": 1057,
+      "width": 1332,
+      "height": 176
+    },
+    {
+      "field_name": "登记备案号",
+      "show_name": "registration_no",
+      "left": 2169,
+      "top": 813,
+      "width": 1028,
+      "height": 188,
+      "replace_re": "[：]",
+      "replace_val": ""
+    },
+    {
+      "field_name": "项目名称",
+      "show_name": "project_name",
+      "left": 329,
+      "top": 1237,
+      "width": 1412,
+      "height": 200
+    },
+    {
+      "field_name": "建设地点",
+      "show_name": "construction_address",
+      "left": 1741,
+      "top": 1233,
+      "width": 1416,
+      "height": 216
+    },
+    {
+      "field_name": "建设内容",
+      "show_name": "construction_content",
+      "left": 337,
+      "top": 1453,
+      "width": 2936,
+      "height": 240
+    },
+    {
+      "field_name": "总投资额",
+      "show_name": "total_investment_money",
+      "left": 333,
+      "top": 1725,
+      "width": 1360,
+      "height": 144
+    },
+    {
+      "field_name": "项目执行年限",
+      "show_name": "project_period",
+      "left": 1729,
+      "top": 1725,
+      "width": 1464,
+      "height": 148
+    },
+    {
+      "field_name": "登记日期",
+      "show_name": "registration_date",
+      "left": 2361,
+      "top": 2177,
+      "width": 736,
+      "height": 124
+    },
+    {
+      "field_name": "项目法人",
+      "show_name": "project_legal_person",
+      "left": 1717,
+      "top": 1037,
+      "width": 1488,
+      "height": 188
+    }
+  ]
+}
