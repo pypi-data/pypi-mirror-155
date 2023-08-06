@@ -1,0 +1,6 @@
+numpy>=1.22.3
+requests
+
+[dev]
+pytest
+requests_mock
