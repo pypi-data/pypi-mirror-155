@@ -1,0 +1,8 @@
+geopandas
+lxml
+pathlib
+typing
+
+[test]
+pytest
+pytest-cov
