@@ -1,0 +1,8 @@
+pytorch_lightning==1.5.10
+torchmetrics==0.9.1
+torch==1.9.*
+numpy
+scipy
+pandas
+scikit-learn
+tqdm
