@@ -1,0 +1,93 @@
+Metadata-Version: 2.1
+Name: iofstream
+Version: 0.0.6
+Summary: Input/Output File Stream
+Home-page: UNKNOWN
+Author: ST
+Author-email: arrowsoul@protonmail.com
+License: UNKNOWN
+Keywords: python,input,output,file,stream,handling
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Description-Content-Type: text/markdown
+
+
+# <span style="color: white">__iofstream__</span> 
+
+#### __Version 0.0.6__
+
+### *Input Output FileStream*
+
+#### Under Experimentation, Not Fully Developed As Of 2022
+
+Developed by ST 2022
+
+## Installation
+
+```console
+pip install iofstream
+```
+
+
+## How To Use - <span style="color: red">[Alpha Version]</span>
+
+*__Using The File Functions__*
+
+```python
+from iofstream import <function_name>
+function_name('<file_name.txt>', '<filetext>', '<other_parameters>')
+# And ... Done!
+```
+*__An Example__*
+
+```python
+from iofstream import write_file
+write_file('myfile.txt', 'mytextstring!')
+# And ... Done!
+```
+
+### The Logger - <span style="color: red">[*__Extreme__ Alpha Version*] </span>
+
+```python
+from iofstream import Log
+
+# Create Instance/Log
+
+log = Log('<log_name>', '<log_message>', '<log_level>', '<log_file>', True)
+
+# The Boolean Is Whether It Should Print The Log Message Onto The Screen Or Not
+# And ... Done!
+```
+
+*__An Example__*
+
+```python
+from iofstream import Log
+
+# Create Instance/Log
+
+servercrash = Log('VaultLog', 'Server Crashed!', 'CRITICAL', 'servercrashes.log', False)
+
+# There Is A 'default' Parameter For The Log File; It Will Create A Log File With The Current Date 
+# And ... Done!
+```
+
+### Logger Class
+
+
+```python
+from iofstream import Logger
+
+logger = Logger('<logger_name>')
+
+logger.<level>('<message>', '<filename>', True)
+
+# The Boolean Is Whether It Should Print The Log Message Onto The Screen Or Not
+# And ... Done!
+```
+
