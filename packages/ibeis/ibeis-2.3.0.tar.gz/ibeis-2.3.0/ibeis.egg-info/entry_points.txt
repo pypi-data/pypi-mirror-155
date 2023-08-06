@@ -1,0 +1,2 @@
+[console_scripts]
+ibeis = ibeis.__main__:run_ibeis
