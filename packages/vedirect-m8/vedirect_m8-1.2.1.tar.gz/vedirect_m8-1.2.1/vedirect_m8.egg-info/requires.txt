@@ -1,0 +1,6 @@
+pyserial>=3.5
+ve_utils>=2.5.0
+
+[TEST]
+pytest>=7.1.2
+coverage
