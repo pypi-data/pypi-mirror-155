@@ -1,0 +1,9 @@
+pyyaml
+requests-oauthlib
+python-dateutil
+responses
+mock
+setuptools_scm
+MarkupSafe
+setuptools>=40.0
+configparser>=3.5
