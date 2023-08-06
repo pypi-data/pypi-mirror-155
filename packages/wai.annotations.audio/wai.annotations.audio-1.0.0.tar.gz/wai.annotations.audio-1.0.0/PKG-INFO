@@ -1,0 +1,35 @@
+Metadata-Version: 2.1
+Name: wai.annotations.audio
+Version: 1.0.0
+Summary: Module with audio plugins for wai.annotations.
+Home-page: https://github.com/waikato-datamining/wai-annotations-audio
+Author: Peter Reutemann
+Author-email: fracpete@waikato.ac.nz
+License: Apache License Version 2.0
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Classifier: Programming Language :: Python :: 3
+License-File: LICENSE
+
+Audio processing plugins for wai.annotations:
+
+* `audio-info-ac`: sink for collating/outputting information on the audio classification files
+* `audio-info-sp`: sink for collating/outputting information on the speech files
+* `convert-to-mono`: ISP for converting MP3/OGG/FLAC/WAV to mono WAV
+* `convert-to-wav`: ISP for converting MP3/OGG/FLAC to WAV
+* `mel-spectrogram`: XDC for generating plot from a mel spectrogram (outputs image classification instance)
+* `pitch-shift`: augmentation ISP for shifting the pitch
+* `resample-audio`: ISP for resampling MP3/OGG/FLAC/WAV
+* `stft-spectrogram`: XDC for generating plot from a short-time fourier-transform spectrogram (outputs image classification instance)
+* `time-stretch`: augmentation ISP for time-stretching audio (speed up/slow down)
+* `trim-audio`: ISP for trimming silence from audio
+
+Changelog
+=========
+
+1.0.0 (2022-06-21)
+------------------
+
+- Initial release.
+

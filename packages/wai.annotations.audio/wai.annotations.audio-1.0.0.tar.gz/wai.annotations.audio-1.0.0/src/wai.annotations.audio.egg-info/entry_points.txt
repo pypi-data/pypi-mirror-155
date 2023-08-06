@@ -1,0 +1,11 @@
+[wai.annotations.plugins]
+audio-info-ac = wai.annotations.audio.format.audio_info.specifier:AudioInfoACOutputFormatSpecifier
+audio-info-sp = wai.annotations.audio.format.audio_info.specifier:AudioInfoSPOutputFormatSpecifier
+convert-to-mono = wai.annotations.audio.isp.convert_to_mono.specifier:ConvertToMonoISPSpecifier
+convert-to-wav = wai.annotations.audio.isp.convert_to_wav.specifier:ConvertToWavISPSpecifier
+mel-spectrogram = wai.annotations.audio.xdc.mel_spectrogram.specifier:MelSpectrogramISPSpecifier
+pitch-shift = wai.annotations.audio.isp.pitch_shift.specifier:PitchShiftISPSpecifier
+resample-audio = wai.annotations.audio.isp.resample.specifier:ResampleAudioISPSpecifier
+stft-spectrogram = wai.annotations.audio.xdc.stft_spectrogram.specifier:STFTSpectrogramISPSpecifier
+time-stretch = wai.annotations.audio.isp.time_stretch.specifier:TimeStretchISPSpecifier
+trim-audio = wai.annotations.audio.isp.trim.specifier:TrimAudioISPSpecifier
