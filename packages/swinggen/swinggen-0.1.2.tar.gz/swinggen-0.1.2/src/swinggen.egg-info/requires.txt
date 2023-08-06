@@ -1,0 +1,5 @@
+numpy>=1.8
+matplotlib>=3.0.0
+
+[dev]
+pytest>=3.7
