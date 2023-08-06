@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: flask-does-redis
+Version: 0.3.5
+Summary: Flask extension to easily reuse redis connection pools
+License: MIT
+Keywords: api,auth
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Flask
+Classifier: License :: OSI Approved :: MIT License
+Description-Content-Type: text/markdown
+License-File: LICENSE
