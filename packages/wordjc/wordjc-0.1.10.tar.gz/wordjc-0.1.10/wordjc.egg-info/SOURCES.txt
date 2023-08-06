@@ -1,0 +1,11 @@
+MANIFEST.in
+setup.py
+wordjc/__init__.py
+wordjc/load.py
+wordjc/pivot.py
+wordjc.egg-info/PKG-INFO
+wordjc.egg-info/SOURCES.txt
+wordjc.egg-info/dependency_links.txt
+wordjc.egg-info/requires.txt
+wordjc.egg-info/top_level.txt
+wordjc/data/web4.csv
