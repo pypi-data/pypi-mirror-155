@@ -1,0 +1,38 @@
+[tool.poetry]
+name = "dask-janelia"
+version = "0.1.5"
+description = "Simple dask distributed deployment for the Janelia Research Campus compute cluster."
+authors = ["Davis Vann Bennett <davis.v.bennett@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = ">=3.8, <4.0"
+dask-jobqueue = "^0.7.1"
+distributed = "^2022.6.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.4.1"
+pre-commit = "^2.3.0"
+black = "^19.10b0"
+mypy = "^0.782"
+flake8 = "^3.8.4"
+
+[tool.black]
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+[build-system]
+requires = ["poetry-core>=1.0.0a5"]
+build-backend = "poetry.core.masonry.api"
