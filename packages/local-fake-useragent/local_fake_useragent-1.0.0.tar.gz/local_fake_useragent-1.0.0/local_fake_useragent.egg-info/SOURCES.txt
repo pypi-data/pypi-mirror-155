@@ -1,0 +1,13 @@
+LICENSE
+README.rst
+setup.py
+local_fake_useragent.egg-info/PKG-INFO
+local_fake_useragent.egg-info/SOURCES.txt
+local_fake_useragent.egg-info/dependency_links.txt
+local_fake_useragent.egg-info/top_level.txt
+user_agent/__init__.py
+user_agent/all_ua.py
+user_agent/errors.py
+user_agent/featured_ua.py
+user_agent/main.py
+user_agent/normal_ua.py
