@@ -1,0 +1,72 @@
+{% extends 'roycebulksms/base.html' %}
+
+{% block content %}
+
+
+<div class="container">
+<form action="sender-id" method="post">
+    <div class="row">
+        <div class="col-sm-5">
+            
+                {% csrf_token %}
+               
+            <div class="form-group">
+                <label>
+                    Sender Id
+                </label>
+                {{ form.sender_id }}
+            </div>
+                
+
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-sm-4">
+            <input type="submit" value="Add sender id" class="btn btn-primary">
+
+
+        </div>
+
+    </div>
+    
+</form>
+
+<div class="row table-responsive">
+
+    <table class="table table-bordered">
+        <tr>
+            <th>
+                Sender Id
+            </th>
+            <th>
+                Date
+            </th>
+            <th>
+                Action
+            </th>
+        </tr>
+
+        {%for sendeid in senderids %}
+        <tr>
+            <td>
+                {{sendeid.sender_id}}
+            </td>
+            <td>
+                {{sendeid.created_at}}
+            </td>
+            <td>
+                
+                <a href="{% url 'dl-sender-id' sendeid.id  %}" class="btn btn-warning btn-sm">Delete</a>
+            </td>
+        </tr>
+
+        {% endfor %}
+        
+    </table>
+
+</div>
+
+</div>
+
+{% endblock %}

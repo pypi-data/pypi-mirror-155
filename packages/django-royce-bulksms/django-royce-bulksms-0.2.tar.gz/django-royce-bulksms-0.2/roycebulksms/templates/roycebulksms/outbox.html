@@ -1,0 +1,123 @@
+{% extends 'roycebulksms/base.html' %}
+
+{% block content %}
+
+
+<div class="container">
+    <h3>Outbox</h3>
+<div class="row table-responsive">
+
+    <table class="table table-bordered">
+        <tr>
+            <th>
+                Message
+            </th>
+            <th>
+                Phone Number
+            </th>
+            <th>
+                Status
+            </th>
+            <th>
+                Sender Id
+            </th>
+            <th>
+                Message Id
+            </th>
+           
+            <th>
+                Delivery
+            </th>
+            <th>
+                TAT
+            </th>
+            <th>
+                Delivery Time
+            </th>
+            <th>
+                Date
+            </th>
+            <!-- <th>
+                Action
+            </th> -->
+        </tr>
+
+        {%for text in texts %}
+        <tr>
+            <td>
+                {{text.text_message}}
+            </td>
+            <td>
+                {{text.phone_number}}
+            </td>
+            <td>
+                {{text.status}}
+            </td>
+            <td>
+                {{text.sender_id.sender_id}}
+            </td>
+            <!-- <td>
+                {{text.sender_id.sender_id}}
+            </td> -->
+            <td>
+                {{text.message_id}}
+            </td>
+            <!-- <td>
+                {{text.message_id}}
+            </td> -->
+            <!-- <td>
+                {{text.response_description}}
+            </td> -->
+            <td>
+                {{text.delivery_description}}
+            </td>
+            <td>
+                {{text.delivery_tat}}
+            </td>
+            <td>
+                {{text.delivery_time}}
+            </td>
+            <td>
+                {{text.created_at}}
+            </td>
+            <!-- <td>
+                
+                
+            </td> -->
+        </tr>
+
+        {% endfor %}
+        
+    </table>
+
+</div>
+
+{% if texts.has_other_pages %}
+  <ul class="pagination">
+    {% if texts.has_previous %}
+      <li class="page-item"><a class="page-link" href="?page={{ texts.previous_page_number }}">&laquo;</a></li>
+    {% else %}
+      <li class=" page-item disabled"><span class="page-link">&laquo;</span></li>
+    {% endif %}
+    {% for i in texts.paginator.page_range %}
+      {% if texts.number == i %}
+        <li class="page-item active">
+            <!-- <span class="sr-only">{{ i }} </span> -->
+            <a class="page-link" href="#">{{ i }} </a>
+        </li>
+        
+      {% else %}
+        <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if texts.has_next %}
+      <li class="page-item"><a class="page-link" href="?page={{ texts.next_page_number }}">&raquo;</a></li>
+    {% else %}
+      <li class=" page-item disabled"><span class="page-link">&raquo;</span></li>
+    {% endif %}
+  </ul>
+{% endif %}
+
+</div>
+
+{% endblock %}

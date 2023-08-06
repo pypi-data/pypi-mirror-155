@@ -1,0 +1,4 @@
+include LICENSE
+include README.rst
+recursive-include roycebulksms/static *
+recursive-include roycebulksms/templates *
