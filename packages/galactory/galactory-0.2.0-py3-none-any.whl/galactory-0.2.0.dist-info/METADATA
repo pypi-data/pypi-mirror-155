@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: galactory
+Version: 0.2.0
+Summary: Ansible Galaxy proxy using Artifactory as a backend
+Home-page: https://github.com/briantist/galactory
+Author: Brian Scholer
+License: GPLv3+
+Keywords: ansible,galaxy,artifactory
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: dohq-artifactory (<0.9,>=0.8)
+Requires-Dist: Flask (<3,>=2.1)
+Requires-Dist: semver (<3,>=2)
+Requires-Dist: base64io (<2,>=1)
+
+# galactory
+galactory is An Ansible Galaxy proxy for Artifactory.
+
+Using an Artifactory Generic repository as its backend, galactory implements a limited subset of the Galaxy v2 API to allow for installing and publishing collections.
+
+# Acknowledgements
+This project is _heavily_ inspired by [amanda](https://github.com/sivel/amanda/).
