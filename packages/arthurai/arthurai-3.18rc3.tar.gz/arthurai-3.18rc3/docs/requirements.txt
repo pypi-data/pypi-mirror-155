@@ -1,0 +1,3 @@
+-r ../requirements.txt
+azure-mgmt-datalake-store
+azure-storage-file-datalake

@@ -1,0 +1,21 @@
+{
+  "name": "attr_1",
+  "value_type": "INTEGER",
+  "stage": "PIPELINE_INPUT",
+  "id": "8514e278-24d1-4e20-b209-3c77eb2b247f",
+  "categorical": true,
+  "monitor_for_bias": false,
+  "categories": [
+    {
+      "value": "value1"
+    },
+    {
+      "value": "value2"
+    },
+    {
+      "value": "value3"
+    }
+  ],
+  "is_unique": false,
+  "is_positive_predicted_attribute": false
+}

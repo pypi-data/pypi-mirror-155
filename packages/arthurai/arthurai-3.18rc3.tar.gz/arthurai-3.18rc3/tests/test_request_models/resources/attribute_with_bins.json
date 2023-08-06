@@ -1,0 +1,34 @@
+{
+  "name": "attr_3",
+  "value_type": "INTEGER",
+  "stage": "PIPELINE_INPUT",
+  "id": "04418f36-529b-451e-8524-c57d09d9b02f",
+  "categorical": false,
+  "min_range": 0,
+  "max_range": 100,
+  "monitor_for_bias": false,
+  "bins": [
+    {
+      "continuous_start": 0,
+      "continuous_end": 5
+    },
+    {
+      "continuous_start": 5,
+      "continuous_end": 18
+    },
+    {
+      "continuous_start": 18,
+      "continuous_end": 30
+    },
+    {
+      "continuous_start": 30,
+      "continuous_end": 65
+    },
+    {
+      "continuous_start": 65,
+      "continuous_end": 100
+    }
+  ],
+  "is_unique": false,
+  "is_positive_predicted_attribute": false
+}

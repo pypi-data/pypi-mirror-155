@@ -1,0 +1,44 @@
+build-docs:
+  stage: build
+  image: python:3.8
+  after_script: []
+  before_script:
+    - cd python/docs
+    - pip3 install -r requirements.txt --no-cache
+  script:
+    - sphinx-build -M html source build -E -a -W --keep-going
+    - ls -al
+  cache: &cacheDocs
+    key: ${CI_PIPELINE_IID}
+    untracked: true
+    paths:
+      - python/docs/build
+    policy: push
+  only:
+    refs:
+      - merge_requests
+      - master
+
+deploy-docs:
+  variables:
+    CLONE_PATH: /build/ArthurAI/documentation-site.git
+    DESTINATION_PATH: _sdk_v3
+  stage: deploy
+  after_script: []
+  before_script:
+    - hack/configure-git.sh
+    - cd python/docs
+  script:
+    - git clone https://private-token:${PRIVATE_TOKEN}@gitlab.com/ArthurAI/documentation-site.git "${CLONE_PATH}"
+    - rm -rf "${CLONE_PATH}/${DESTINATION_PATH}"
+    - cp -R build/html "${CLONE_PATH}/${DESTINATION_PATH}"
+    - cd "${CLONE_PATH}"
+    - git add "${CLONE_PATH}/${DESTINATION_PATH}"
+    - git commit --allow-empty -m "deploying latest arthur-ai-sdk documentation"
+    - git push origin master
+  cache:
+    << : *cacheDocs
+    policy: pull
+  only:
+    refs:
+      - master
