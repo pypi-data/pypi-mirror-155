@@ -1,0 +1,19 @@
+avro~=1.10
+orjson~=3.5
+typeguard~=2.12
+
+[:python_version < "3.8"]
+importlib-metadata<4
+
+[linting]
+black
+flake8
+interrogate
+isort
+mypy
+pre-commit
+
+[testing]
+pydantic
+pytest
+pytest-cov
