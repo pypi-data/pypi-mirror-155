@@ -1,0 +1,43 @@
+Metadata-Version: 2.1
+Name: python-exemplary
+Version: 0.0.1a1
+Summary: Embed your documentation inside runnable examples
+Home-page: https://github.com/shacham6/exemplary
+Author: Shacham Ginat
+Author-email: shacham6@gmail.com
+License: MIT license
+Classifier: Programming Language :: Python :: 3
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pyyaml
+Requires-Dist: pydantic
+Requires-Dist: click
+Requires-Dist: rich
+Requires-Dist: rich-click
+
+# Exemplary
+
+A tool which provides extremely simple way to generate markdown documentation
+from actual source code examples!
+
+## Requirements
+
+The requirements for using this package are:
+
+- Python (>= 3.8).
+
+## Installation Guide
+
+Install the package as you would any other, using `pip`:
+
+``` sh
+> pip install exemplary
+# or use `pipx` for virtual-env isolation
+> pipx install exemplary
+```
+
+And that's it, you're good to go.
+
+## Usage Guide
+
+
