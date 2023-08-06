@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+src/finx/__init__.py
+src/finx/client.py
+src/finx/run_tests.py
+src/finx/tick_client.py
+src/finx_io.egg-info/PKG-INFO
+src/finx_io.egg-info/SOURCES.txt
+src/finx_io.egg-info/dependency_links.txt
+src/finx_io.egg-info/requires.txt
+src/finx_io.egg-info/top_level.txt
