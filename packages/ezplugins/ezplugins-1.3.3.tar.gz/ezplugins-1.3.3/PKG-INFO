@@ -1,0 +1,57 @@
+Metadata-Version: 2.1
+Name: ezplugins
+Version: 1.3.3
+Summary: EZPlugins is an easy to use plugin framework.
+Keywords: framework,plugin,plugins
+Author-email: Nigel Kukard <nkukard@LBSD.net>
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Plugins
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Topic :: Software Development
+Project-URL: Documentation, https://software.pages.oscdev.io/ezplugins
+Project-URL: Homepage, https://gitlab.oscdev.io/software/ezplugins
+Project-URL: Issue Tracker, https://gitlab.oscdev.io/software/ezplugins/-/issues
+Project-URL: Source Code, https://gitlab.oscdev.io/software/ezplugins
+
+[![pipeline status](https://gitlab.oscdev.io/software/ezplugins/badges/master/pipeline.svg)](https://gitlab.oscdev.io/software/ezplugins/commits/master)
+[![coverage report](https://gitlab.oscdev.io/software/ezplugins/badges/master/coverage.svg)](https://gitlab.oscdev.io/software/ezplugins/commits/master)
+
+# EZPlugins
+
+EZPlugins is an easy to use plugin framework with a great deal of flexibility.
+
+
+# Installing
+
+EZPlugins can be simply installed by running:
+
+    pip install ezplugins
+
+Or if you prefer the development branch, one could use:
+
+    pip install git+https://gitlab.oscdev.io/software/ezplugins.git
+
+If you want to install from a source distribution (extract the tarball first), or checked-out git repository run the following
+command:
+
+    python setup.py install
+
+
+# Documentation
+
+  * [EZPlugins Documentation](https://software.pages.oscdev.io/ezplugins)
+  * [Contributing](https://gitlab.oscdev.io/oscdev/contributing/-/blob/master/README.md)
+
+# Support
+
+  * [Issue Tracker](https://gitlab.oscdev.io/software/ezplugins)
+
+
+# License
+
+EZPlugins is licensed under the [MIT License](LICENSE).
+

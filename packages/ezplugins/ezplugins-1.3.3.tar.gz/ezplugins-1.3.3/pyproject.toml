@@ -1,0 +1,66 @@
+[build-system]
+#build-backend = "poetry.core.masonry.api"
+#requires = ["poetry-core", "setuptools"]
+requires = ["flit_core"]
+build-backend = "flit_core.buildapi"
+
+
+[project]
+name = "ezplugins"
+description = "EZPlugins is an easy to use plugin framework."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Nigel Kukard", email = "nkukard@LBSD.net" }
+]
+keywords = ["framework", "plugin", "plugins"]
+classifiers=[
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Plugins",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Software Development",
+]
+dynamic = ["version"]
+
+
+[project.urls]
+Homepage = "https://gitlab.oscdev.io/software/ezplugins"
+"Issue Tracker" = "https://gitlab.oscdev.io/software/ezplugins/-/issues"
+"Source Code" = "https://gitlab.oscdev.io/software/ezplugins"
+Documentation = "https://software.pages.oscdev.io/ezplugins"
+
+
+[tox]
+isolated_build = true
+
+
+[tool.poetry]
+name = "ezplugins"
+#version = "x.x.x"
+description = "EZPlugins is an easy to use plugin framework."
+authors = ["Nigel Kukard <nkukard@LBSD.net>"]
+packages = [
+    { include = "ezplugins" }
+]
+
+
+[tool.black]
+line-length = 132
+
+
+[tool.isort]
+line_length = 120
+profile = "black"
+
+
+[tool.mypy]
+ignore_missing_imports = true
+strict = true
+
+
+[tool.pylint.message_control]
+max-line-length = 132
+disable = "R0801"
