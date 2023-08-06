@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: big-fiubrother-core-application
+Version: 0.0.1
+Summary: Frame for a micro service in the Big Fiubrother ecosystem
+Home-page: https://github.com/BigFiuBrother/big-fiubrother-core
+Author: Eduardo Neira
+Author-email: aneira@fi.uba.ar
+Project-URL: Bug Tracker, https://github.com/BigFiuBrother/big-fiubrother-core/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
+# big-fiubrother-core-application
+
+*big-fiubrother-core-application* module is a basic frame to be used in all the applications from the Big Fiubrother project.
+This module concentrates common tasks that are needed in all the microservices, for example:
+- Parsing arguments
+- Loading configuration
+- Starting (distributed) logging
+- Handle Linux signals
+
+## Usage
+
+```python
+from big_fiubrother_core_application import run
+
+
+with run('application_name') as application:
+    while not application.is_stopped():
+        work()
+```
