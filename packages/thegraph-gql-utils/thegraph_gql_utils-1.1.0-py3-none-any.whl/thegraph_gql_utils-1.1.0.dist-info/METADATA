@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: thegraph-gql-utils
+Version: 1.1.0
+Summary: GraphQL language utilities for The Graph
+Home-page: https://gitlab.com/semiotic-ai/thegraph-gql-utils
+License: Apache 2.0
+Author: Alexis Asseman
+Author-email: alexis@semiotic.ai
+Requires-Python: >=3.8,<4.0
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: License :: Other/Proprietary License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.8
+Requires-Dist: graphql-core (>=3.2,<3.3)
+Requires-Dist: more-itertools (>=8.12,<8.13)
+Requires-Dist: twine (>=4.0.1,<5.0.0)
+Project-URL: Repository, https://gitlab.com/semiotic-ai/thegraph-gql-utils
