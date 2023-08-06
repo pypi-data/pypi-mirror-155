@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: patches-patch
+Version: 0.0.1
+Summary: Instruments for patches
+Home-page: UNKNOWN
+Author: Teodor Markov
+Author-email: <mail@teddymarkov.com>
+License: UNKNOWN
+Keywords: python,patch,custom
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: opencv-python
+Requires-Dist: pyautogui
+Requires-Dist: pyaudio
+
+Instruments for patches.
+
