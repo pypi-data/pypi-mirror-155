@@ -1,0 +1,8 @@
+numpy>=1.21
+numba>=0.55.0
+scipy>=1.6.1
+ase>=3.22.0
+joblib>=1.1.0
+
+[ccdc]
+csd-python-api
