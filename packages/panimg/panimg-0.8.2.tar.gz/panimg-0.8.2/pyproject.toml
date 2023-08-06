@@ -1,0 +1,88 @@
+[tool.poetry]
+name = "panimg"
+version = "0.8.2"
+description = "Conversion of medical images to MHA and TIFF."
+license = "Apache-2.0"
+authors = ["James Meakin <panimg@jmsmkn.com>"]
+readme = "README.md"
+repository = "https://github.com/DIAGNijmegen/rse-panimg"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Healthcare Industry",
+    "Operating System :: POSIX",
+]
+
+[tool.poetry.scripts]
+panimg = "panimg.cli:cli"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+pydantic = "*"
+numpy = [
+  { version = "^1.21", python = "<3.8" },
+  { version = "^1.22", python = "^3.8" }
+]
+# Exclude 2.1.1.1 due to
+# https://github.com/SimpleITK/SimpleITK/issues/1627
+# and https://github.com/python-poetry/poetry/issues/2453
+SimpleITK = ">=2.0,!=2.1.1.1"
+pydicom = ">=2.2"
+Pillow = "*"
+openslide-python = "*"
+pyvips = "*"
+tifffile = "*"
+construct = "*"
+click = "*"
+pylibjpeg = "*"
+pylibjpeg-libjpeg = "*"
+pylibjpeg-openjpeg = "*"
+pylibjpeg-rle = "*"
+setuptools = { version = "*", python = "~3.7" }
+
+[tool.poetry.dev-dependencies]
+pytest = "*"
+pytest-xdist = "*"
+pytest-randomly = "*"
+pytest-cov = "*"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.isort]
+profile = "black"
+known_first_party = ["panimg", "tests"]
+line_length = 79
+
+[tool.black]
+line-length = 79
+target-version = ['py37']
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+testpaths = [
+    "tests",
+]
+python_files = "tests.py test_*.py *_tests.py"
+addopts = "--strict-markers --showlocals -n auto --dist loadscope"
+
+[tool.tox]
+legacy_tox_ini = """
+[tox]
+isolated_build = True
+envlist = py37, py38, py39, py310
+
+[gh-actions]
+python =
+    3.7: py37
+    3.8: py38
+    3.9: py39
+    3.10: py310
+
+[testenv]
+allowlist_externals = poetry
+commands =
+    poetry install -v
+    poetry run pytest --cov-branch --cov-report term-missing --cov=tests/ --cov=panimg/ {posargs}
+"""
