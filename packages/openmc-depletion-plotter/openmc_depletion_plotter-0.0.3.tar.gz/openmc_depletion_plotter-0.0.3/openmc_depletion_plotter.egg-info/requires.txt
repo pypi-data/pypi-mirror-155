@@ -1,0 +1,7 @@
+numpy>=1.21.1
+matplotlib
+seaborn
+pint
+
+[tests]
+pytest>=5.4.3
