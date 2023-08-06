@@ -1,0 +1,49 @@
+protocol = "rgb-qmini"
+doc = "Sensor daemon for RGB Photonics QMini spectrometer"
+traits = ["has-mapping", "has-measure-trigger", "is-sensor", "is-daemon"]
+hardware = ["rgb-photonics:qmini"]
+
+[links]
+source = "https://github.com/yaq-project/yaqd-rgb"
+bugtracker = "https://github.com/yaq-project/yaqd-rgb/issues"
+manufacturer = "https://broadcom.com/products/optical-sensors/spectrometers/spectrometers-qmini"
+
+[installation]
+PyPI = "https://pypi.org/project/yaqd-rgb"
+conda-forge = "https://anaconda.org/project/yaqd-rgb"
+
+[config]
+
+[state]
+exposure_time.type = "float"
+exposure_time.default = 0.1
+exposure_time.doc = "Exposure time in seconds"
+
+[messages]
+
+[messages.set_exposure_time]
+request = [{"name"="exposure_time", "type"="float"}]
+doc = "Set exposure time in seconds"
+
+[messages.get_exposure_time]
+response = "float"
+doc = "Get exposure time in seconds"
+
+[messages.get_exposure_time_units]
+response = "string"
+doc = "Get exposure time units (seconds)"
+
+[messages.get_exposure_time_limits]
+response = {"type"="array", "items"="float"}
+doc = "Get exposure time limits in seconds"
+
+[properties]
+[properties.exposure_time]
+getter = "get_exposure_time"
+setter = "set_exposure_time"
+units_getter = "get_exposure_time_units"
+limits_getter = "get_exposure_time_limits"
+type = "float"
+control_kind = "normal"
+record_kind = "metadata"
+

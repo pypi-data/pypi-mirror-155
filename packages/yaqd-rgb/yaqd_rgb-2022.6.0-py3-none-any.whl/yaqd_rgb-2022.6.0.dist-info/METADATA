@@ -1,0 +1,44 @@
+Metadata-Version: 2.1
+Name: yaqd-rgb
+Version: 2022.6.0
+Summary: yaq daemons for RGB Photonics hardware
+Home-page: https://yaq.fyi
+Author: yaq developers
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Topic :: Scientific/Engineering
+Requires-Dist: numpy
+Requires-Dist: pyusb
+Requires-Dist: yaqd-core>=2020.06.3
+Requires-Dist: black ; extra == "dev"
+Requires-Dist: pre-commit ; extra == "dev"
+Project-URL: Issues, https://github.com/yaq-project/yaqd-rgb/issues
+Project-URL: Source, https://github.com/yaq-project/yaqd-rgb
+Provides-Extra: dev
+
+# yaqd-rgb
+
+[![PyPI](https://img.shields.io/pypi/v/yaqd-rgb)](https://pypi.org/project/yaqd-rgb)
+[![Conda](https://img.shields.io/conda/vn/conda-forge/yaqd-rgb)](https://anaconda.org/conda-forge/yaqd-rgb)
+[![yaq](https://img.shields.io/badge/framework-yaq-orange)](https://yaq.fyi/)
+[![black](https://img.shields.io/badge/code--style-black-black)](https://black.readthedocs.io/)
+[![ver](https://img.shields.io/badge/calver-YYYY.M.MICRO-blue)](https://calver.org/)
+[![log](https://img.shields.io/badge/change-log-informational)](https://github.com/yaq-project/yaqd-rgb/blob/main/CHANGELOG.md)
+
+yaq daemons for RGB Photonics hardware
+
+This package contains the following daemon(s):
+
+- https://yaq.fyi/daemons/rgb-qmini
+
+## maintainers
+
+- [Kent Meyer](https://github.com/kameyer226)
+

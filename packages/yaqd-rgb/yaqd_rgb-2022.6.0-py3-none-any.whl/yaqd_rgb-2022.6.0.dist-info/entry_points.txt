@@ -1,0 +1,3 @@
+[console_scripts]
+yaqd-rgb-qmini=yaqd_rgb._rgb_qmini:RGBQmini.main
+
