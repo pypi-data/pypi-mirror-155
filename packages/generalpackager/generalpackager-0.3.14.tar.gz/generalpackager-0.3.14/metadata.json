@@ -1,0 +1,23 @@
+{
+    "enabled": true,
+    "private": false,
+    "name": "generalpackager",
+    "version": "0.3.14",
+    "description": "Tools to interface GitHub, PyPI and local modules / repos. Used for generating files to keep projects dry and synced. Tailored for my general packages.",
+    "install_requires": [
+        "generallibrary",
+        "generalfile",
+        "generalmainframe",
+        "pandas",
+        "gitpython",
+        "requests",
+        "pyinstaller"
+    ],
+    "extras_require": {},
+    "topics": [
+        "tool"
+    ],
+    "manifest": [
+        "generalpackager/licenses/*"
+    ]
+}
