@@ -1,0 +1,3 @@
+[dynatrace_metric_utils]
+dynatrace = dynatrace.metric.utils:DynatraceMetricSerializer
+
