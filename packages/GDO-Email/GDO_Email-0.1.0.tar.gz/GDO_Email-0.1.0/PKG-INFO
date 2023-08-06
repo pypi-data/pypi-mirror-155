@@ -1,0 +1,148 @@
+Metadata-Version: 2.1
+Name: GDO_Email
+Version: 0.1.0
+Summary: • Script To Check Email .
+Home-page: https://github.com/GDOTools/GDO-Email
+Author: GDOTools
+Author-email: GDOTools@gmail.com
+Project-URL: Bug Tracker, https://github.com/pypa/sampleproject/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+
+<h1 align="center">GDO-Email</h1>
+<p align="center">It's a Usefull Project for Developers ... It checkers Emails Found Or Not Found</p>
+
+<p align="center"> • DevVloper The Lib BY GDØ • </p>
+
+## Installing :
+```
+pip install GDO-Email
+
+```
+## • Domains •
+
+⌯ Gmail 
+
+⌯ Hotmail 
+
+⌯ Outlook
+
+⌯ Yahoo 
+
+⌯ mail.ru
+
+⌯ Aol
+
+
+• Gmail Email Check
+
+``` python
+from GDO_Email import Azoz
+
+email = "<your email>"
+
+check = Azoz.gmail(str(email))
+
+if check == True:
+	print ("• Email is GooD ")
+	
+elif check == False:
+	print("• Email is BaD ")
+
+	
+```
+
+### Hotmail Email Check
+
+``` python
+from GDO_Email import Azoz
+
+email = "<your email>"
+
+check = Azoz.hotmail(str(email))
+
+if check == True:
+	print ("• Email is GooD ")
+	
+elif check == False:
+	print("• Email is BaD ")
+
+	
+```
+
+• Outlook email check
+
+``` python
+from GDO_Email import Azoz
+
+email = "<your email>"
+
+check = Azoz.outlook(str(email))
+
+if check == True:
+	print ("• Email is GooD ")
+	
+elif check == False:
+	print("• Email is BaD ")
+	
+```
+
+• Yahoo email check
+
+``` python
+from GDO_Email import Azoz
+
+email = "<your email>"
+
+check = Azoz.Gmail(str(email))
+
+if check == True:
+	print ("• Email is GooD ")
+	
+elif check == False:
+	print("• Email is BaD ")
+
+	
+```
+
+• mail.ru Email Check
+
+
+``` python
+from GDO_Email import Azoz
+
+email = "<your email>"
+
+check = Azoz.mailru(str(email))
+
+if check == True:
+	print ("• Email is GooD ")
+	
+elif check == False:
+	print("• Email is BaD ")
+
+	
+```
+
+
+• Aol Email Check
+
+
+``` python
+from GDO_Email import Azoz
+
+email = "<your email>"
+
+check = Azoz.aol(str(email))
+
+if check == True:
+	print ("• Email is GooD ")
+	
+elif check == False:
+	print("• Email is BaD ")
+
+	
+```
