@@ -1,0 +1,33 @@
+Metadata-Version: 2.1
+Name: NEMO
+Version: 4.1.0
+Summary: NEMO is a laboratory logistics web application. Use it to schedule reservations, control tool access, track maintenance issues, and more.
+Home-page: https://github.com/usnistgov/NEMO
+Author: Center for Nanoscale Science and Technology
+Author-email: CNSTapplications@nist.gov
+License: Public domain
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: Public Domain
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.7
+Requires-Python: >=3.7
+License-File: LICENSE.md
+Requires-Dist: cryptography (==37.0.2)
+Requires-Dist: Django (==3.2.13)
+Requires-Dist: django-filter (==21.1)
+Requires-Dist: djangorestframework (==3.13.1)
+Requires-Dist: drf-flex-fields (==0.9.8)
+Requires-Dist: drf-excel (==2.1.0)
+Requires-Dist: ldap3 (==2.9.1)
+Requires-Dist: python-dateutil (==2.8.2)
+Requires-Dist: requests (==2.27.1)
+Requires-Dist: Pillow (==9.1.1)
+Requires-Dist: django-mptt (==0.13.4)
+Requires-Dist: pymodbus (==2.5.3)
+
+Find out more about NEMO on the GitHub project page https://github.com/usnistgov/NEMO
