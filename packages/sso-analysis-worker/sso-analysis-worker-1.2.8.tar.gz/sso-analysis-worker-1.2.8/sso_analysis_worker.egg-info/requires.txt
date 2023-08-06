@@ -1,0 +1,14 @@
+psycopg~=3.0.8
+requests~=2.27.1
+selenium~=4.1.0
+selenium_stealth~=1.0.6
+webdriver_manager~=3.5.2
+selenium-wire~=4.6.0
+pyvirtualdisplay~=3.0
+tldextract~=3.2.0
+urllib3~=1.26
+Pillow~=9.1.0
+imutils==0.5.4
+opencv-python==4.5.5.62
+numpy==1.22.2
+pebble==4.6.3
