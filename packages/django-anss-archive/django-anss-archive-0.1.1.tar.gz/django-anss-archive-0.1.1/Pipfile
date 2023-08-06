@@ -1,0 +1,20 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+twine = "*"
+flake8 = "*"
+django = ">=4.0.*"
+psycopg2 = "*"
+setuptools-scm = "*"
+pre-commit = "*"
+sphinx = "*"
+myst-parser = "*"
+
+[packages]
+requests = "*"
+
+[requires]
+python_version = "3.9"
