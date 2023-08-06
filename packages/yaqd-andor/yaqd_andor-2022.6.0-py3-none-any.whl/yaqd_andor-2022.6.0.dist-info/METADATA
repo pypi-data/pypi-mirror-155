@@ -1,0 +1,60 @@
+Metadata-Version: 2.1
+Name: yaqd-andor
+Version: 2022.6.0
+Summary: Daemons for [Andor](https://andor.oxinst.com) cameras
+Home-page: https://yaq.fyi
+Author: yaq developers
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Topic :: Scientific/Engineering
+Requires-Dist: yaqd-core>=2021.03.0
+Requires-Dist: setuptools
+Requires-Dist: cffi>=1.13
+Requires-Dist: numpy>=1.20
+Requires-Dist: black ; extra == "dev"
+Requires-Dist: pre-commit ; extra == "dev"
+Project-URL: Issues, https://github.com/yaq-project/yaqd-andor/issues
+Project-URL: Source, https://github.com/yaq-project/yaqd-andor
+Provides-Extra: dev
+
+# yaqd-andor
+
+[![PyPI](https://img.shields.io/pypi/v/yaqd-andor)](https://pypi.org/project/yaqd-andor)
+[![Conda](https://img.shields.io/conda/vn/conda-forge/yaqd-andor)](https://anaconda.org/conda-forge/yaqd-andor)
+[![yaq](https://img.shields.io/badge/framework-yaq-orange)](https://yaq.fyi/)
+[![black](https://img.shields.io/badge/code--style-black-black)](https://black.readthedocs.io/)
+[![ver](https://img.shields.io/badge/calver-YYYY.0M.MICRO-blue)](https://calver.org/)
+[![log](https://img.shields.io/badge/change-log-informational)](https://github.com/yaq-project/yaqd-andor)
+
+Daemons for [Andor](https://andor.oxinst.com/) cameras
+
+This package contains the following daemon(s):
+
+- https://yaq.fyi/daemons/andor-neo
+- https://yaq.fyi/daemons/andor-simcam
+
+To run these daemons, you must also have access to the ANDOR sdk3 driver files:
+
+- atcore.h
+- atcore.lib
+- atblklx.dll
+- actl_bitflow.dll
+- atcore.dll
+- atdevregcam.dll (andor-neo daemon)
+- atdevsimcam.dll (andor-simcam daemon)
+- atusb_libusb10.dll
+
+`andor-simcam` uses Andor's virtual camera, which is useful for remote development.
+For Windows, these libraries require [Microsoft Build tools for Visual Studio](https://visualstudio.microsoft.com/downloads/) (specifically, the Windows SDK and C++ x64/x86 build tools are needed).
+
+## maintainers
+
+[Dan Kohler](https://github.com/ddkohler)
+

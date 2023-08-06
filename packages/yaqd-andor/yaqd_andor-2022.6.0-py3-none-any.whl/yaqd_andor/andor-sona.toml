@@ -1,0 +1,33 @@
+protocol = "andor-sona"
+doc = ""
+traits = ["has-mapping", "has-measure-trigger", "is-sensor", "is-daemon"]
+
+[links]
+source = "https://github.com/yaq-project/yaqd-andor"
+bugtracker = "https://github.com/yaq-project/yaqd-andor/issues"
+
+[installation]
+PyPI = "https://pypi.org/project/yaqd-andor"
+
+[config]
+
+[config.make]
+default = "andor"
+
+[config.model]
+default = "sona"
+
+[state]
+
+[state.accumulate_count]
+type = "int"
+doc = "Number of images that should be summed to obtain each image."
+default = 1
+
+[state.exposure_time]
+type = "float"
+doc = "Requested Exposure time, in seconds."
+default = 1
+
+[messages]
+
