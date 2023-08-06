@@ -1,0 +1,40 @@
+Metadata-Version: 2.1
+Name: dict-util
+Version: 1.4.2
+Summary: python dict utility package
+Home-page: https://github.com/katsudonik/dict_util
+Author: katsudonik
+Author-email: kaikeda.work@gmail.com
+License: MIT
+Keywords: dict,df,dict to df,df to dict,compare dict
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.7
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: numpy
+Requires-Dist: pandas
+
+# dict_util
+python dict utility
+
+## install
+
+```
+pip install dict_util
+```
+
+
+## functions
+
+- convert dict to dataframe
+- convert dataframe to dict
+- compare dict on dataframe
+- compare dict on dataframe & merge differences
+
+## usage
+
+See: [usage.ipynb](https://github.com/katsudonik/dict_util/blob/main/usage.ipynb)
+
+
+
