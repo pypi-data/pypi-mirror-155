@@ -1,0 +1,2 @@
+[console_scripts]
+newrelic-introspector-python = newrelic_introspector:main
