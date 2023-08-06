@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: odoo14-addons-oca-rest-framework
+Version: 14.0.20220614.0
+Summary: Meta package for oca-rest-framework Odoo addons
+Home-page: UNKNOWN
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Framework :: Odoo
+Classifier: Framework :: Odoo :: 14.0
+Requires-Dist: odoo14-addon-base-rest
+Requires-Dist: odoo14-addon-base-rest-auth-api-key
+Requires-Dist: odoo14-addon-base-rest-auth-jwt
+Requires-Dist: odoo14-addon-base-rest-auth-user-service
+Requires-Dist: odoo14-addon-base-rest-datamodel
+Requires-Dist: odoo14-addon-base-rest-demo
+Requires-Dist: odoo14-addon-base-rest-pydantic
+Requires-Dist: odoo14-addon-datamodel
+Requires-Dist: odoo14-addon-extendable
+Requires-Dist: odoo14-addon-graphql-base
+Requires-Dist: odoo14-addon-graphql-demo
+Requires-Dist: odoo14-addon-model-serializer
+Requires-Dist: odoo14-addon-pydantic
+Requires-Dist: odoo14-addon-rest-log
+
+UNKNOWN
+
