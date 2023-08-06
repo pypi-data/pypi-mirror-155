@@ -1,0 +1,53 @@
+Metadata-Version: 2.1
+Name: skipulagsstofnun
+Version: 0.2.1
+Summary: Library to lookup polygons, coordinates and metadata of approved local site plans in Iceland
+Home-page: https://github.com/jokull/skipulagsstofnun
+License: MIT
+Author: Jökull Sólberg
+Author-email: jokull@solberg.is
+Requires-Python: >=3.7,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: fiona (>=1.8.21,<2.0.0)
+Requires-Dist: shapely (>=1.8.2,<2.0.0)
+Project-URL: Repository, https://github.com/jokull/skipulagsstofnun
+Description-Content-Type: text/markdown
+
+# skipulagsstofnun
+
+Library to lookup polygons, coordinates and metadata of approved local site plans in Iceland.
+
+Used by [Planitor](https://www.planitor.io).
+
+## Install
+
+```bash
+brew install gdal  # or similar
+poetry add skipulagsstofnun
+```
+
+or
+
+```bash
+pip install skipulagsstofnun
+```
+
+## Use
+
+```python
+>>> from skipulagsstofnun import plans
+>>> shape, plan = plans.get_plan(64.1525571, -21.9508792)
+>>> plan
+{'id': 'skipulag_deiliskipulag.198969', 'type': 'Feature', 'skipnr': '8136', 'nrsveitarf': '0', 'sveitarfelag': 'Reykjavíkurborg', 'heiti': 'Deiliskipulag stgr. 1.116 og 1.115.3, Slippa- og Ellingsensreitur', 'skipstig': 'deiliskipulag', 'malsmed': 'nytt', 'dagsinnsett': None, 'dagsleidrett': datetime.date(2016, 4, 14), 'gagnaeigandi': 'Skipulagsstofnun', 'dagsheimild': None, 'heimild': None, 'nakvaemnix': '0', 'vinnslufer': None}
+```
+
+You can construct a link to a page hosted by Skipulagsstofnun with the PDF
+scans for this local site plan.
+
+`http://skipulagsaaetlanir.skipulagsstofnun.is/skipulagvefur/display.aspx?numer={skipnr}`
+
