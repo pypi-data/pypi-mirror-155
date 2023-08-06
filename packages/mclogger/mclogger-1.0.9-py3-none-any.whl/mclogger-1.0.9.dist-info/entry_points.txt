@@ -1,0 +1,3 @@
+[console_scripts]
+mclogger=mclogger.__main__:main
+
