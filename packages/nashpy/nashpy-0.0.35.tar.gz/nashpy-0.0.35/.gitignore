@@ -1,0 +1,13 @@
+nashpy.egg-info
+*pyc
+.eggs
+.coverage
+dist/
+.hypothesis/
+docs/_build/
+.wily/
+coverage.xml
+build/
+env/
+.tox/
+*.DS_Store
