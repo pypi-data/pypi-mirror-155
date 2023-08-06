@@ -1,0 +1,21 @@
+version: 0.2
+phases:
+  pre_build:
+    commands:
+      - echo [$(date)] Pre-build started
+      - $(aws ecr get-login --region $AWS_REGION --no-include-email)
+      - echo [$(date)] Pre-build finished
+  build:
+    commands:
+      - echo [$(date)] Build started
+      - docker build -t $REPOSITORY_URI:$IMAGE_TAG .
+      - echo [$(date)] Build completed
+  post_build:
+    commands:
+      - echo [$(date)] Post build starting
+      - echo [$(date)] Pushing docker image to $REPOSITORY_URI
+      - docker push $REPOSITORY_URI:$IMAGE_TAG
+      - echo [$(date)] Post build finished
+artifacts:
+  files:
+    - packaged.yaml

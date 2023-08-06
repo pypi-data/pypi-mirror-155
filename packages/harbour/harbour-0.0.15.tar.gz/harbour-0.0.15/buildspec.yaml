@@ -1,0 +1,35 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo [$(date)] Pre-build started
+      - pip install --upgrade --user aws-sam-cli
+      - USER_BASE_PATH=$(python -m site --user-base)
+      - export PATH=$PATH:$USER_BASE_PATH/bin
+      - echo [$(date)] Pre-build finished
+  build:
+    commands:
+      - echo [$(date)] Copying harbour to layer
+      - cp -r ./harbour ./layer/python/lib/python3.8/site-packages
+      - cp -r ./harbour ./layer/python/lib/python3.9/site-packages
+      - echo [$(date)] Installing harbour dependencies for layer
+      - python3 -m pip install --target ./layer/python/lib/python3.8/site-packages --no-compile --requirement ./requirements.txt
+      - python3 -m pip install --target ./layer/python/lib/python3.9/site-packages --no-compile --requirement ./requirements.txt
+      - echo [$(date)] Build started
+      - echo [$(date)] Building SAM template
+      - |
+        sam package \
+          --template-file ./cloudformation/template.yaml \
+          --output-template-file ./packaged.yaml \
+          --s3-bucket $ARTIFACTS_BUCKET \
+          --s3-prefix sam/harbour
+      - echo [$(date)] Build completed
+  post_build:
+    commands:
+      - echo [$(date)] Post build starting
+      - echo [$(date)] Post build finished
+
+artifacts:
+  files:
+    - packaged.yaml
