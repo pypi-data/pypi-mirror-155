@@ -1,0 +1,13 @@
+unit:
+# Context unit
+- ampel.alert.AlertConsumer
+ 
+# Aux unit
+- ampel.alert.FilteringAlertSupplier
+- ampel.dev.UnitTestAlertSupplier
+- ampel.alert.load.TarAlertLoader
+- ampel.alert.load.FileAlertLoader
+- ampel.alert.load.DirAlertLoader
+  
+# Logical unit
+- ampel.alert.filter.BasicMultiFilter
