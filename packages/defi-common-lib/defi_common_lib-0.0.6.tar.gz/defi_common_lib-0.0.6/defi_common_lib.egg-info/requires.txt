@@ -1,0 +1,17 @@
+python-dotenv
+dataclasses
+pymysql
+contracts-lib-py==0.11.0
+boto3
+botocore
+requests
+nevermined-sdk-py==0.12.0
+nevermined-metadata-driver-filecoin==0.3.0
+web3
+retry
+pytest
+pytest-mock
+awswrangler
+
+[test]
+pytest
