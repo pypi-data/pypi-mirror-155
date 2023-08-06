@@ -1,0 +1,12 @@
+LICENCE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+disagree/disagree.egg-info/PKG-INFO
+disagree/disagree.egg-info/SOURCES.txt
+disagree/disagree.egg-info/dependency_links.txt
+disagree/disagree.egg-info/requires.txt
+disagree/disagree.egg-info/top_level.txt
+test/test_metrics.py
+test/test_visualisation.py
