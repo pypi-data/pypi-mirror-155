@@ -1,0 +1,16 @@
+Metadata-Version: 1.1
+Name: ttlecs
+Version: 0.0.1
+Summary: create ttl ecs on cloud
+Home-page: https://github.com/shenyubao/ttlecs
+Author: shenyubao
+Author-email: ssybb1988@gmail.com
+License: MIT
+Description: # TTLECS
+        
+        create ttl(time to alive) ecs instance on cloud provider
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3.5
