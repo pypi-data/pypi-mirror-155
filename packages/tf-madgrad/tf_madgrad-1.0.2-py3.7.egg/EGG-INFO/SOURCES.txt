@@ -1,0 +1,15 @@
+.deepsource.toml
+.gitignore
+LICENSE
+README.md
+requirements.txt
+setup.py
+examples/mnist_example.py
+madgrad/__init__.py
+madgrad/madgrad.py
+tests/madgrad_test.py
+tf_madgrad.egg-info/PKG-INFO
+tf_madgrad.egg-info/SOURCES.txt
+tf_madgrad.egg-info/dependency_links.txt
+tf_madgrad.egg-info/requires.txt
+tf_madgrad.egg-info/top_level.txt
