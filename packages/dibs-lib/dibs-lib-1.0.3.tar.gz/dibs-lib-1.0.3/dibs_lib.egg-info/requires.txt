@@ -1,0 +1,9 @@
+jax>=0.2.8
+jaxlib>=0.1.59
+numpy
+pandas
+python-igraph
+imageio
+jupyter
+tqdm
+matplotlib
