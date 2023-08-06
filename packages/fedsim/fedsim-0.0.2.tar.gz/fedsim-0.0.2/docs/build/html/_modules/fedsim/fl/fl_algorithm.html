@@ -1,0 +1,550 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>fedsim.fl.fl_algorithm &#8212; fedsim 0.1 documentation</title>
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="None">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
+
+    
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
+
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">fedsim 0.1 documentation</p>
+  
+</a>
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fas fa-bars"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../notebooks/tutorial.html">
+  Tutorial
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../modules.html">
+  fedsim
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../customization.html">
+  Customization
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../contributing.html">
+  Contributing
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../authors.html">
+  Authors
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../changelog.html">
+  ChangeLog
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
+          
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+<h3><a href="../../../index.html">Table of Contents</a></h3>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../notebooks/tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">fedsim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../customization.html">Customization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../authors.html">Authors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../changelog.html">ChangeLog</a></li>
+</ul>
+
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
+
+          
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+</div>
+
+
+          
+          
+          <div class="bd-content col-12 col-md-9 col-xl-7">
+              
+              <article class="bd-article" role="main">
+                
+  <h1>Source code for fedsim.fl.fl_algorithm</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">http</span> <span class="kn">import</span> <span class="n">client</span>
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">trange</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">from</span> <span class="nn">torch</span> <span class="kn">import</span> <span class="n">nn</span>
+<span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Hashable</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">,</span> <span class="n">Mapping</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Union</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">inspect</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pformat</span>
+
+<span class="kn">from</span> <span class="nn">.aggregators</span> <span class="kn">import</span> <span class="n">SerialAggregator</span>
+<span class="kn">from</span> <span class="nn">fedsim.utils</span> <span class="kn">import</span> <span class="n">search_in_submodules</span>
+
+
+<div class="viewcode-block" id="FLAlgorithm"><a class="viewcode-back" href="../../../fedsim.fl.html#fedsim.fl.fl_algorithm.FLAlgorithm">[docs]</a><span class="k">class</span> <span class="nc">FLAlgorithm</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">data_manager</span><span class="p">,</span>
+        <span class="n">metric_logger</span><span class="p">,</span>
+        <span class="n">num_clients</span><span class="p">,</span>
+        <span class="n">sample_scheme</span><span class="p">,</span>
+        <span class="n">sample_rate</span><span class="p">,</span>
+        <span class="n">model_class</span><span class="p">,</span>
+        <span class="n">epochs</span><span class="p">,</span>
+        <span class="n">loss_fn</span><span class="p">,</span>
+        <span class="n">batch_size</span><span class="p">,</span>
+        <span class="n">test_batch_size</span><span class="p">,</span>
+        <span class="n">local_weight_decay</span><span class="p">,</span>
+        <span class="n">slr</span><span class="p">,</span>
+        <span class="n">clr</span><span class="p">,</span>
+        <span class="n">clr_decay</span><span class="p">,</span>
+        <span class="n">clr_decay_type</span><span class="p">,</span>
+        <span class="n">min_clr</span><span class="p">,</span>
+        <span class="n">clr_step_size</span><span class="p">,</span>
+        <span class="n">device</span><span class="p">,</span>
+        <span class="n">log_freq</span><span class="p">,</span>
+        <span class="o">*</span><span class="n">args</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="n">grandpa</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getmro</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+        <span class="bp">cls</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span>
+
+        <span class="n">grandpa_args</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">inspect</span><span class="o">.</span><span class="n">signature</span><span class="p">(</span><span class="n">grandpa</span><span class="p">)</span><span class="o">.</span><span class="n">parameters</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+        <span class="n">self_args</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">inspect</span><span class="o">.</span><span class="n">signature</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span><span class="o">.</span><span class="n">parameters</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+
+        <span class="n">added_args</span> <span class="o">=</span> <span class="n">self_args</span> <span class="o">-</span> <span class="n">grandpa_args</span>
+        <span class="n">added_args_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">added_args</span><span class="p">}</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">added_args_dict</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;algorithm arguments: &#39;</span> <span class="o">+</span> <span class="n">pformat</span><span class="p">(</span><span class="n">added_args_dict</span><span class="p">))</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_data_manager</span> <span class="o">=</span> <span class="n">data_manager</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_clients</span> <span class="o">=</span> <span class="n">num_clients</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sample_scheme</span> <span class="o">=</span> <span class="n">sample_scheme</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sample_count</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sample_rate</span> <span class="o">*</span> <span class="n">num_clients</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="mi">1</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sample_count</span> <span class="o">&lt;=</span> <span class="n">num_clients</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span>
+                <span class="s1">&#39;invalid client sample size for </span><span class="si">{}% o</span><span class="s1">f </span><span class="si">{}</span><span class="s1"> clients&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="n">sample_rate</span><span class="p">,</span> <span class="n">num_clients</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">model_class</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">model_class</span> <span class="o">=</span> <span class="n">search_in_submodules</span><span class="p">(</span><span class="s1">&#39;fedsim.models&#39;</span><span class="p">,</span>
+                                                    <span class="n">model_class</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">model_class</span><span class="p">,</span> <span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">model_class</span> <span class="o">=</span> <span class="n">model_class</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;incompatiple model!&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">epochs</span> <span class="o">=</span> <span class="n">epochs</span>
+        <span class="k">if</span> <span class="n">loss_fn</span> <span class="o">==</span> <span class="s1">&#39;ce&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">loss_fn</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="n">loss_fn</span> <span class="o">==</span> <span class="s1">&#39;mse&#39;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">loss_fn</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span> <span class="o">=</span> <span class="n">batch_size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">test_batch_size</span> <span class="o">=</span> <span class="n">test_batch_size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">local_weight_decay</span> <span class="o">=</span> <span class="n">local_weight_decay</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">slr</span> <span class="o">=</span> <span class="n">slr</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clr</span> <span class="o">=</span> <span class="n">clr</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clr_decay</span> <span class="o">=</span> <span class="n">clr_decay</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clr_decay_type</span> <span class="o">=</span> <span class="n">clr_decay_type</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">min_clr</span> <span class="o">=</span> <span class="n">min_clr</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clr_step_size</span> <span class="o">=</span> <span class="n">clr_step_size</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">metric_logger</span> <span class="o">=</span> <span class="n">metric_logger</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">device</span> <span class="o">=</span> <span class="n">device</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">log_freq</span> <span class="o">=</span> <span class="n">log_freq</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_server_memory</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="nb">object</span><span class="p">]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_client_memory</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">object</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">k</span><span class="p">:</span> <span class="nb">dict</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_clients</span><span class="p">)</span>
+        <span class="p">}</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">global_dataloaders</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">key</span><span class="p">:</span> <span class="n">DataLoader</span><span class="p">(</span>
+                <span class="n">dataset</span><span class="p">,</span>
+                <span class="n">batch_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">test_batch_size</span><span class="p">,</span>
+                <span class="n">pin_memory</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">dataset</span> <span class="ow">in</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_data_manager</span><span class="o">.</span><span class="n">get_global_dataset</span><span class="p">()</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+        <span class="p">}</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">oracle_dataset</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data_manager</span><span class="o">.</span><span class="n">get_oracle_dataset</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rounds</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="c1"># for internal use only</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_last_client_sampled</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="FLAlgorithm.write_server"><a class="viewcode-back" href="../../../fedsim.fl.html#fedsim.fl.fl_algorithm.FLAlgorithm.write_server">[docs]</a>    <span class="k">def</span> <span class="nf">write_server</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_server_memory</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">obj</span></div>
+
+<div class="viewcode-block" id="FLAlgorithm.write_client"><a class="viewcode-back" href="../../../fedsim.fl.html#fedsim.fl.fl_algorithm.FLAlgorithm.write_client">[docs]</a>    <span class="k">def</span> <span class="nf">write_client</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client_id</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_client_memory</span><span class="p">[</span><span class="n">client_id</span><span class="p">][</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">obj</span></div>
+
+<div class="viewcode-block" id="FLAlgorithm.read_server"><a class="viewcode-back" href="../../../fedsim.fl.html#fedsim.fl.fl_algorithm.FLAlgorithm.read_server">[docs]</a>    <span class="k">def</span> <span class="nf">read_server</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_server_memory</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_server_memory</span> <span class="k">else</span> <span class="kc">None</span></div>
+
+<div class="viewcode-block" id="FLAlgorithm.read_client"><a class="viewcode-back" href="../../../fedsim.fl.html#fedsim.fl.fl_algorithm.FLAlgorithm.read_client">[docs]</a>    <span class="k">def</span> <span class="nf">read_client</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client_id</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">client_id</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_clients</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;invalid client id </span><span class="si">{}</span><span class="s2"> &gt;=&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="nb">id</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_clients</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client_memory</span><span class="p">[</span><span class="n">client_id</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client_memory</span><span class="p">[</span><span class="n">client_id</span><span class="p">][</span><span class="n">key</span><span class="p">]</span>
+        <span class="k">return</span> <span class="kc">None</span></div>
+
+    <span class="k">def</span> <span class="nf">_sample_clients</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">sample_scheme</span> <span class="o">==</span> <span class="s1">&#39;uniform&#39;</span><span class="p">:</span>
+            <span class="n">clients</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">num_clients</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">sample_count</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">sample_scheme</span> <span class="o">==</span> <span class="s1">&#39;sequential&#39;</span><span class="p">:</span>
+            <span class="n">last_sampled</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_client_sampled</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">_last_client_sampled</span>
+            <span class="n">clients</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_clients</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">last_sampled</span><span class="p">,</span> <span class="n">last_sampled</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">sample_count</span><span class="p">)</span>
+            <span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_last_client_sampled</span> <span class="o">=</span> <span class="n">clients</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+        <span class="k">return</span> <span class="n">clients</span>
+
+    <span class="k">def</span> <span class="nf">_send_to_client</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client_id</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">send_to_client</span><span class="p">(</span><span class="n">client_id</span><span class="o">=</span><span class="n">client_id</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_send_to_server</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client_id</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">clr_decay_type</span> <span class="o">==</span> <span class="s1">&#39;step&#39;</span><span class="p">:</span>
+            <span class="n">decayed_clr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">clr</span> <span class="o">*</span> \
+                <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">clr_decay</span> <span class="o">**</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rounds</span> <span class="o">//</span> <span class="bp">self</span><span class="o">.</span><span class="n">clr_step_size</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">clr_decay_type</span> <span class="o">==</span> <span class="s1">&#39;cosine&#39;</span><span class="p">:</span>
+            <span class="n">T_i</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">clr_step_size</span>
+            <span class="n">T_cur</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rounds</span> <span class="o">%</span> <span class="n">T_i</span>
+            <span class="n">decayed_clr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_clr</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> \
+                            <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">clr</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">min_clr</span><span class="p">)</span> <span class="o">*</span> \
+                                <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">T_cur</span> <span class="o">/</span> <span class="n">T_i</span><span class="p">))</span>
+
+        <span class="n">client_ctx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">send_to_server</span><span class="p">(</span>
+            <span class="n">client_id</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_data_manager</span><span class="o">.</span><span class="n">get_local_dataset</span><span class="p">(</span><span class="n">client_id</span><span class="p">),</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">epochs</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">loss_fn</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span><span class="p">,</span>
+            <span class="n">decayed_clr</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">local_weight_decay</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">,</span>
+            <span class="n">ctx</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_send_to_client</span><span class="p">(</span><span class="n">client_id</span><span class="p">))</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">client_ctx</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;client should only return a dict!&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">{</span><span class="o">**</span><span class="n">client_ctx</span><span class="p">,</span> <span class="s1">&#39;client_id&#39;</span><span class="p">:</span> <span class="n">client_id</span><span class="p">}</span>
+
+    <span class="k">def</span> <span class="nf">_receive_from_client</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client_msg</span><span class="p">,</span> <span class="n">aggregator</span><span class="p">):</span>
+        <span class="n">client_id</span> <span class="o">=</span> <span class="n">client_msg</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;client_id&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">receive_from_client</span><span class="p">(</span><span class="n">client_id</span><span class="p">,</span> <span class="n">client_msg</span><span class="p">,</span> <span class="n">aggregator</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_optimize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">aggregator</span><span class="p">):</span>
+        <span class="n">reports</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="n">aggregator</span><span class="p">)</span>
+        <span class="c1"># purge aggregated results</span>
+        <span class="k">del</span> <span class="n">aggregator</span>
+        <span class="k">return</span> <span class="n">reports</span>
+
+    <span class="k">def</span> <span class="nf">_report</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">optimize_reports</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">deployment_points</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">report</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">global_dataloaders</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">metric_logger</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">,</span>
+                    <span class="n">optimize_reports</span><span class="p">,</span> <span class="n">deployment_points</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_train</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rounds</span><span class="p">):</span>
+        <span class="k">for</span> <span class="bp">self</span><span class="o">.</span><span class="n">rounds</span> <span class="ow">in</span> <span class="n">trange</span><span class="p">(</span><span class="n">rounds</span><span class="p">):</span>
+            <span class="n">aggregator</span> <span class="o">=</span> <span class="n">SerialAggregator</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">client_id</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sample_clients</span><span class="p">():</span>
+                <span class="n">client_msg</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_send_to_server</span><span class="p">(</span><span class="n">client_id</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_receive_from_client</span><span class="p">(</span><span class="n">client_msg</span><span class="p">,</span> <span class="n">aggregator</span><span class="p">)</span>
+            <span class="n">opt_reports</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_optimize</span><span class="p">(</span><span class="n">aggregator</span><span class="p">)</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rounds</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">log_freq</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">deploy_poiont</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">deploy</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_report</span><span class="p">(</span><span class="n">opt_reports</span><span class="p">,</span> <span class="n">deploy_poiont</span><span class="p">)</span>
+        <span class="c1"># one last report</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rounds</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">log_freq</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">deploy_poiont</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">deploy</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_report</span><span class="p">(</span><span class="n">opt_reports</span><span class="p">,</span> <span class="n">deploy_poiont</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">0</span>
+
+<div class="viewcode-block" id="FLAlgorithm.train"><a class="viewcode-back" href="../../../fedsim.fl.html#fedsim.fl.fl_algorithm.FLAlgorithm.train">[docs]</a>    <span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rounds</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_train</span><span class="p">(</span><span class="n">rounds</span><span class="o">=</span><span class="n">rounds</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="FLAlgorithm.get_model_class"><a class="viewcode-back" href="../../../fedsim.fl.html#fedsim.fl.fl_algorithm.FLAlgorithm.get_model_class">[docs]</a>    <span class="k">def</span> <span class="nf">get_model_class</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">model_class</span></div>
+
+    <span class="c1"># we do not do type hinting, however, the hints for avstract</span>
+    <span class="c1"># methods are provided to help clarity for users</span>
+
+<div class="viewcode-block" id="FLAlgorithm.send_to_client"><a class="viewcode-back" href="../../../fedsim.fl.html#fedsim.fl.fl_algorithm.FLAlgorithm.send_to_client">[docs]</a>    <span class="k">def</span> <span class="nf">send_to_client</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Mapping</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot; returns context to send to the client corresponding to client_id.</span>
+<span class="sd">            Do not send shared objects like server model if you made any </span>
+<span class="sd">            before you deepcopy it.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            client_id (int): id of the receiving client</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            NotImplementedError: abstract class to be implemented by child</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Mapping[Hashable, Any]: the context to be sent in form of a Mapping</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+<div class="viewcode-block" id="FLAlgorithm.send_to_server"><a class="viewcode-back" href="../../../fedsim.fl.html#fedsim.fl.fl_algorithm.FLAlgorithm.send_to_server">[docs]</a>    <span class="k">def</span> <span class="nf">send_to_server</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">client_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+        <span class="n">datasets</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">],</span>
+        <span class="n">epochs</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+        <span class="n">loss_fn</span><span class="p">:</span> <span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">,</span>
+        <span class="n">batch_size</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+        <span class="n">lr</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+        <span class="n">weight_decay</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="n">device</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;cuda&#39;</span><span class="p">,</span>
+        <span class="n">ctx</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="o">*</span><span class="n">args</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot; client operation on the recieved information.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            client_id (int): id of the client</span>
+<span class="sd">            datasets (Dict[str, Iterable]): this comes from Data Manager</span>
+<span class="sd">            epochs (int): number of epochs to train</span>
+<span class="sd">            loss_fn (nn.Module): either &#39;ce&#39; (for cross-entropy) or &#39;mse&#39;</span>
+<span class="sd">            batch_size (int): training batch_size</span>
+<span class="sd">            lr (float): client learning rate</span>
+<span class="sd">            weight_decay (float, optional): weight decay for SGD. Defaults to 0.</span>
+<span class="sd">            device (Union[int, str], optional): Defaults to &#39;cuda&#39;.</span>
+<span class="sd">            ctx (Optional[Dict[Hashable, Any]], optional): context reveived from server. Defaults to None.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            NotImplementedError: abstract class to be implemented by child</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Mapping[str, Any]: client context to be sent to the server</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+<div class="viewcode-block" id="FLAlgorithm.receive_from_client"><a class="viewcode-back" href="../../../fedsim.fl.html#fedsim.fl.fl_algorithm.FLAlgorithm.receive_from_client">[docs]</a>    <span class="k">def</span> <span class="nf">receive_from_client</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">client_msg</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span>
+                                                                      <span class="n">Any</span><span class="p">],</span>
+                            <span class="n">aggregator</span><span class="p">:</span> <span class="n">Any</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;receive and aggregate info from selected clients </span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            client_id (int): id of the sender (client)</span>
+<span class="sd">            client_msg (Mapping[Hashable, Any]): client context that is sent</span>
+<span class="sd">            aggregator (Any): aggregator instance to collect info</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            NotImplementedError: abstract class to be implemented by child</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+<div class="viewcode-block" id="FLAlgorithm.optimize"><a class="viewcode-back" href="../../../fedsim.fl.html#fedsim.fl.fl_algorithm.FLAlgorithm.optimize">[docs]</a>    <span class="k">def</span> <span class="nf">optimize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">aggregator</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Mapping</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+        <span class="sd">&quot;&quot;&quot; optimize server mdoel(s) and return metrics to be reported</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            aggregator (Any): Aggregator instance</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            NotImplementedError: abstract class to be implemented by child</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Mapping[Hashable, Any]: context to be reported</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+<div class="viewcode-block" id="FLAlgorithm.deploy"><a class="viewcode-back" href="../../../fedsim.fl.html#fedsim.fl.fl_algorithm.FLAlgorithm.deploy">[docs]</a>    <span class="k">def</span> <span class="nf">deploy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Mapping</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
+        <span class="sd">&quot;&quot;&quot; return Mapping of name -&gt; parameters_set to test the model</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            NotImplementedError: abstract class to be implemented by child</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div>
+
+<div class="viewcode-block" id="FLAlgorithm.report"><a class="viewcode-back" href="../../../fedsim.fl.html#fedsim.fl.fl_algorithm.FLAlgorithm.report">[docs]</a>    <span class="k">def</span> <span class="nf">report</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">dataloaders</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
+        <span class="n">metric_logger</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+        <span class="n">device</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">optimize_reports</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
+        <span class="n">deployment_points</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Mapping</span><span class="p">[</span><span class="n">Hashable</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;test on global data and report info</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            dataloaders (Any): dict of data loaders to test the global model(s)</span>
+<span class="sd">            metric_logger (Any): the logging object (e.g., SummaryWriter)</span>
+<span class="sd">            device (str): &#39;cuda&#39;, &#39;cpu&#39; or gpu number</span>
+<span class="sd">            optimize_reports (Mapping[Hashable, Any]): dict returned by optimzier</span>
+<span class="sd">            deployment_points (Mapping[Hashable, torch.Tensor], optional): output of deploy method</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            NotImplementedError: abstract class to be implemented by child</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div></div>
+</pre></div>
+
+              </article>
+              
+
+              
+              <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+              </footer>
+              
+          </div>
+          
+      </div>
+    </div>
+
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
+
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
+    &copy; Copyright 2022, Farshid Varno.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+</p>
+  </div>
+  
+</div>
+</footer>
+  </body>
+</html>

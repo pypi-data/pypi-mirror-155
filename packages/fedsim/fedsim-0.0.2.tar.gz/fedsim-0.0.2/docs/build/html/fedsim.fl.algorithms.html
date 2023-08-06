@@ -1,0 +1,719 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>fedsim.fl.algorithms package &#8212; fedsim 0.1 documentation</title>
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="fedsim.fl.mtl_algorithms package" href="fedsim.fl.mtl_algorithms.html" />
+    <link rel="prev" title="fedsim.fl package" href="fedsim.fl.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="None">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
+
+    
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
+
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">fedsim 0.1 documentation</p>
+  
+</a>
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fas fa-bars"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="notebooks/tutorial.html">
+  Tutorial
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="modules.html">
+  fedsim
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="customization.html">
+  Customization
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="contributing.html">
+  Contributing
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="authors.html">
+  Authors
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="changelog.html">
+  ChangeLog
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
+          
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+<h3><a href="index.html">Table of Contents</a></h3>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="notebooks/tutorial.html">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">fedsim</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="fedsim.html">Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="customization.html">Customization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authors.html">Authors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">ChangeLog</a></li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/fedsim.fl.algorithms.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
+
+          
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#submodules">
+   Submodules
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-fedsim.fl.algorithms.adabest">
+   fedsim.fl.algorithms.adabest module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-fedsim.fl.algorithms.fedavg">
+   fedsim.fl.algorithms.fedavg module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-fedsim.fl.algorithms.fedavgm">
+   fedsim.fl.algorithms.fedavgm module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-fedsim.fl.algorithms.feddyn">
+   fedsim.fl.algorithms.feddyn module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-fedsim.fl.algorithms.fednova">
+   fedsim.fl.algorithms.fednova module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-fedsim.fl.algorithms.fedprox">
+   fedsim.fl.algorithms.fedprox module
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-fedsim.fl.algorithms">
+   Module contents
+  </a>
+ </li>
+</ul>
+
+</nav>
+    </div>
+    
+    <div class="toc-item">
+      
+    </div>
+    
+  
+</div>
+
+
+          
+          
+          <div class="bd-content col-12 col-md-9 col-xl-7">
+              
+              <article class="bd-article" role="main">
+                
+  <section id="fedsim-fl-algorithms-package">
+<h1>fedsim.fl.algorithms package<a class="headerlink" href="#fedsim-fl-algorithms-package" title="Permalink to this headline">#</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="module-fedsim.fl.algorithms.adabest">
+<span id="fedsim-fl-algorithms-adabest-module"></span><h2>fedsim.fl.algorithms.adabest module<a class="headerlink" href="#module-fedsim.fl.algorithms.adabest" title="Permalink to this headline">#</a></h2>
+<p>This file contains an implementation of the following paper:
+Title: “Minimizing Client Drift in Federated Learning via Adaptive Bias Estimation”
+Authors: Farshid Varno, Marzie Saghayi, Laya Rafiee, Sharut Gupta, Stan Matwin, Mohammad Havaei
+Publication date: [Submitted on 27 Apr 2022 (v1), last revised 23 May 2022 (this version, v2)]
+Link: <a class="reference external" href="https://arxiv.org/abs/2204.13170">https://arxiv.org/abs/2204.13170</a></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="fedsim.fl.algorithms.adabest.AdaBest">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">fedsim.fl.algorithms.adabest.</span></span><span class="sig-name descname"><span class="pre">AdaBest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_manager</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metric_logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_clients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_scheme</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_class</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epochs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loss_fn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">32</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">64</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local_weight_decay</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clr_decay</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clr_decay_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'step'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_clr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-12</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clr_step_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cuda'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.02</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.98</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fedsim/fl/algorithms/adabest.html#AdaBest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.algorithms.adabest.AdaBest" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#fedsim.fl.algorithms.fedavg.FedAvg" title="fedsim.fl.algorithms.fedavg.FedAvg"><code class="xref py py-class docutils literal notranslate"><span class="pre">fedsim.fl.algorithms.fedavg.FedAvg</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="fedsim.fl.algorithms.adabest.AdaBest.deploy">
+<span class="sig-name descname"><span class="pre">deploy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fedsim/fl/algorithms/adabest.html#AdaBest.deploy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.algorithms.adabest.AdaBest.deploy" title="Permalink to this definition">#</a></dt>
+<dd><p>return Mapping of name -&gt; parameters_set to test the model</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>NotImplementedError</strong> – abstract class to be implemented by child</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fedsim.fl.algorithms.adabest.AdaBest.optimize">
+<span class="sig-name descname"><span class="pre">optimize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">aggregator</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fedsim/fl/algorithms/adabest.html#AdaBest.optimize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.algorithms.adabest.AdaBest.optimize" title="Permalink to this definition">#</a></dt>
+<dd><p>optimize server mdoel(s) and return metrics to be reported</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>aggregator</strong> (<em>Any</em>) – Aggregator instance</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>NotImplementedError</strong> – abstract class to be implemented by child</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>Mapping[Hashable, Any]</em> – context to be reported</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fedsim.fl.algorithms.adabest.AdaBest.receive_from_client">
+<span class="sig-name descname"><span class="pre">receive_from_client</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client_msg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aggregation_results</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fedsim/fl/algorithms/adabest.html#AdaBest.receive_from_client"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.algorithms.adabest.AdaBest.receive_from_client" title="Permalink to this definition">#</a></dt>
+<dd><p>receive and aggregate info from selected clients</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>client_id</strong> (<em>int</em>) – id of the sender (client)</p></li>
+<li><p><strong>client_msg</strong> (<em>Mapping[Hashable, Any]</em>) – client context that is sent</p></li>
+<li><p><strong>aggregator</strong> (<em>Any</em>) – aggregator instance to collect info</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>NotImplementedError</strong> – abstract class to be implemented by child</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fedsim.fl.algorithms.adabest.AdaBest.send_to_server">
+<span class="sig-name descname"><span class="pre">send_to_server</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datasets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epochs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loss_fn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_decay</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cuda'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fedsim/fl/algorithms/adabest.html#AdaBest.send_to_server"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.algorithms.adabest.AdaBest.send_to_server" title="Permalink to this definition">#</a></dt>
+<dd><p>client operation on the recieved information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>client_id</strong> (<em>int</em>) – id of the client</p></li>
+<li><p><strong>datasets</strong> (<em>Dict[str, Iterable]</em>) – this comes from Data Manager</p></li>
+<li><p><strong>epochs</strong> (<em>int</em>) – number of epochs to train</p></li>
+<li><p><strong>loss_fn</strong> (<em>nn.Module</em>) – either ‘ce’ (for cross-entropy) or ‘mse’</p></li>
+<li><p><strong>batch_size</strong> (<em>int</em>) – training batch_size</p></li>
+<li><p><strong>lr</strong> (<em>float</em>) – client learning rate</p></li>
+<li><p><strong>weight_decay</strong> (<em>float, optional</em>) – weight decay for SGD. Defaults to 0.</p></li>
+<li><p><strong>device</strong> (<em>Union[int, str], optional</em>) – Defaults to ‘cuda’.</p></li>
+<li><p><strong>ctx</strong> (<em>Optional[Dict[Hashable, Any]], optional</em>) – context reveived from server. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>NotImplementedError</strong> – abstract class to be implemented by child</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>Mapping[str, Any]</em> – client context to be sent to the server</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-fedsim.fl.algorithms.fedavg">
+<span id="fedsim-fl-algorithms-fedavg-module"></span><h2>fedsim.fl.algorithms.fedavg module<a class="headerlink" href="#module-fedsim.fl.algorithms.fedavg" title="Permalink to this headline">#</a></h2>
+<p>This file contains an implementation of the following paper:
+Title: “Communication-Efficient Learning of Deep Networks from Decentralized Data”
+Authors: H. Brendan McMahan, Eider Moore, Daniel Ramage, Seth Hampson, Blaise Agüera y Arcas
+Publication date: February 17th, 2016
+Link: <a class="reference external" href="https://arxiv.org/abs/1602.05629">https://arxiv.org/abs/1602.05629</a></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="fedsim.fl.algorithms.fedavg.FedAvg">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">fedsim.fl.algorithms.fedavg.</span></span><span class="sig-name descname"><span class="pre">FedAvg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_manager</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metric_logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_clients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_scheme</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_class</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epochs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loss_fn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">32</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">64</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local_weight_decay</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clr_decay</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clr_decay_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'step'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_clr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-12</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clr_step_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cuda'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fedsim/fl/algorithms/fedavg.html#FedAvg"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.algorithms.fedavg.FedAvg" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="fedsim.fl.html#fedsim.fl.fl_algorithm.FLAlgorithm" title="fedsim.fl.fl_algorithm.FLAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">fedsim.fl.fl_algorithm.FLAlgorithm</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="fedsim.fl.algorithms.fedavg.FedAvg.agg">
+<span class="sig-name descname"><span class="pre">agg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client_msg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aggregator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fedsim/fl/algorithms/fedavg.html#FedAvg.agg"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.algorithms.fedavg.FedAvg.agg" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fedsim.fl.algorithms.fedavg.FedAvg.deploy">
+<span class="sig-name descname"><span class="pre">deploy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fedsim/fl/algorithms/fedavg.html#FedAvg.deploy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.algorithms.fedavg.FedAvg.deploy" title="Permalink to this definition">#</a></dt>
+<dd><p>return Mapping of name -&gt; parameters_set to test the model</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>NotImplementedError</strong> – abstract class to be implemented by child</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fedsim.fl.algorithms.fedavg.FedAvg.optimize">
+<span class="sig-name descname"><span class="pre">optimize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">aggregator</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fedsim/fl/algorithms/fedavg.html#FedAvg.optimize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.algorithms.fedavg.FedAvg.optimize" title="Permalink to this definition">#</a></dt>
+<dd><p>optimize server mdoel(s) and return metrics to be reported</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>aggregator</strong> (<em>Any</em>) – Aggregator instance</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>NotImplementedError</strong> – abstract class to be implemented by child</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>Mapping[Hashable, Any]</em> – context to be reported</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fedsim.fl.algorithms.fedavg.FedAvg.receive_from_client">
+<span class="sig-name descname"><span class="pre">receive_from_client</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client_msg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aggregation_results</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fedsim/fl/algorithms/fedavg.html#FedAvg.receive_from_client"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.algorithms.fedavg.FedAvg.receive_from_client" title="Permalink to this definition">#</a></dt>
+<dd><p>receive and aggregate info from selected clients</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>client_id</strong> (<em>int</em>) – id of the sender (client)</p></li>
+<li><p><strong>client_msg</strong> (<em>Mapping[Hashable, Any]</em>) – client context that is sent</p></li>
+<li><p><strong>aggregator</strong> (<em>Any</em>) – aggregator instance to collect info</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>NotImplementedError</strong> – abstract class to be implemented by child</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fedsim.fl.algorithms.fedavg.FedAvg.report">
+<span class="sig-name descname"><span class="pre">report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataloaders</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metric_logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">optimize_reports</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deployment_points</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fedsim/fl/algorithms/fedavg.html#FedAvg.report"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.algorithms.fedavg.FedAvg.report" title="Permalink to this definition">#</a></dt>
+<dd><p>test on global data and report info</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataloaders</strong> (<em>Any</em>) – dict of data loaders to test the global model(s)</p></li>
+<li><p><strong>metric_logger</strong> (<em>Any</em>) – the logging object (e.g., SummaryWriter)</p></li>
+<li><p><strong>device</strong> (<em>str</em>) – ‘cuda’, ‘cpu’ or gpu number</p></li>
+<li><p><strong>optimize_reports</strong> (<em>Mapping[Hashable, Any]</em>) – dict returned by optimzier</p></li>
+<li><p><strong>deployment_points</strong> (<em>Mapping[Hashable, torch.Tensor], optional</em>) – output of deploy method</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>NotImplementedError</strong> – abstract class to be implemented by child</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fedsim.fl.algorithms.fedavg.FedAvg.send_to_client">
+<span class="sig-name descname"><span class="pre">send_to_client</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fedsim/fl/algorithms/fedavg.html#FedAvg.send_to_client"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.algorithms.fedavg.FedAvg.send_to_client" title="Permalink to this definition">#</a></dt>
+<dd><dl class="simple">
+<dt>returns context to send to the client corresponding to client_id.</dt><dd><p>Do not send shared objects like server model if you made any
+before you deepcopy it.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>client_id</strong> (<em>int</em>) – id of the receiving client</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>NotImplementedError</strong> – abstract class to be implemented by child</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>Mapping[Hashable, Any]</em> – the context to be sent in form of a Mapping</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fedsim.fl.algorithms.fedavg.FedAvg.send_to_server">
+<span class="sig-name descname"><span class="pre">send_to_server</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datasets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epochs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loss_fn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_decay</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cuda'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step_closure</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fedsim/fl/algorithms/fedavg.html#FedAvg.send_to_server"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.algorithms.fedavg.FedAvg.send_to_server" title="Permalink to this definition">#</a></dt>
+<dd><p>client operation on the recieved information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>client_id</strong> (<em>int</em>) – id of the client</p></li>
+<li><p><strong>datasets</strong> (<em>Dict[str, Iterable]</em>) – this comes from Data Manager</p></li>
+<li><p><strong>epochs</strong> (<em>int</em>) – number of epochs to train</p></li>
+<li><p><strong>loss_fn</strong> (<em>nn.Module</em>) – either ‘ce’ (for cross-entropy) or ‘mse’</p></li>
+<li><p><strong>batch_size</strong> (<em>int</em>) – training batch_size</p></li>
+<li><p><strong>lr</strong> (<em>float</em>) – client learning rate</p></li>
+<li><p><strong>weight_decay</strong> (<em>float, optional</em>) – weight decay for SGD. Defaults to 0.</p></li>
+<li><p><strong>device</strong> (<em>Union[int, str], optional</em>) – Defaults to ‘cuda’.</p></li>
+<li><p><strong>ctx</strong> (<em>Optional[Dict[Hashable, Any]], optional</em>) – context reveived from server. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>NotImplementedError</strong> – abstract class to be implemented by child</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>Mapping[str, Any]</em> – client context to be sent to the server</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-fedsim.fl.algorithms.fedavgm">
+<span id="fedsim-fl-algorithms-fedavgm-module"></span><h2>fedsim.fl.algorithms.fedavgm module<a class="headerlink" href="#module-fedsim.fl.algorithms.fedavgm" title="Permalink to this headline">#</a></h2>
+<p>This file contains an implementation of the following paper:
+Title: “Measuring the Effects of Non-Identical Data Distribution for Federated Visual Classification”
+Authors: Tzu-Ming Harry Hsu, Hang Qi, Matthew Brown
+Publication date: September 13th, 2019
+Link: <a class="reference external" href="https://arxiv.org/abs/1909.06335">https://arxiv.org/abs/1909.06335</a></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="fedsim.fl.algorithms.fedavgm.FedAvgM">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">fedsim.fl.algorithms.fedavgm.</span></span><span class="sig-name descname"><span class="pre">FedAvgM</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_manager</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metric_logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_clients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_scheme</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_class</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epochs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loss_fn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">32</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">64</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local_weight_decay</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clr_decay</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clr_decay_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'step'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_clr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-12</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clr_step_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cuda'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">momentum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.9</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fedsim/fl/algorithms/fedavgm.html#FedAvgM"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.algorithms.fedavgm.FedAvgM" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#fedsim.fl.algorithms.fedavg.FedAvg" title="fedsim.fl.algorithms.fedavg.FedAvg"><code class="xref py py-class docutils literal notranslate"><span class="pre">fedsim.fl.algorithms.fedavg.FedAvg</span></code></a></p>
+</dd></dl>
+
+</section>
+<section id="module-fedsim.fl.algorithms.feddyn">
+<span id="fedsim-fl-algorithms-feddyn-module"></span><h2>fedsim.fl.algorithms.feddyn module<a class="headerlink" href="#module-fedsim.fl.algorithms.feddyn" title="Permalink to this headline">#</a></h2>
+<p>This file contains an implementation of the following paper:
+Title: “Federated Learning Based on Dynamic Regularization”
+Authors: Durmus Alp Emre Acar, Yue Zhao, Ramon Matas, Matthew Mattina, Paul Whatmough, Venkatesh Saligrama
+Publication date: [28 Sept 2020 (modified: 25 Mar 2021)]
+Link: <a class="reference external" href="https://openreview.net/forum?id=B7v4QMR6Z9w">https://openreview.net/forum?id=B7v4QMR6Z9w</a></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="fedsim.fl.algorithms.feddyn.FedDyn">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">fedsim.fl.algorithms.feddyn.</span></span><span class="sig-name descname"><span class="pre">FedDyn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_manager</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metric_logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_clients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_scheme</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_class</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epochs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loss_fn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">32</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">64</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local_weight_decay</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clr_decay</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clr_decay_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'step'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_clr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-12</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clr_step_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cuda'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.02</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fedsim/fl/algorithms/feddyn.html#FedDyn"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.algorithms.feddyn.FedDyn" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#fedsim.fl.algorithms.fedavg.FedAvg" title="fedsim.fl.algorithms.fedavg.FedAvg"><code class="xref py py-class docutils literal notranslate"><span class="pre">fedsim.fl.algorithms.fedavg.FedAvg</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="fedsim.fl.algorithms.feddyn.FedDyn.deploy">
+<span class="sig-name descname"><span class="pre">deploy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fedsim/fl/algorithms/feddyn.html#FedDyn.deploy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.algorithms.feddyn.FedDyn.deploy" title="Permalink to this definition">#</a></dt>
+<dd><p>return Mapping of name -&gt; parameters_set to test the model</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>NotImplementedError</strong> – abstract class to be implemented by child</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fedsim.fl.algorithms.feddyn.FedDyn.optimize">
+<span class="sig-name descname"><span class="pre">optimize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">aggregator</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fedsim/fl/algorithms/feddyn.html#FedDyn.optimize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.algorithms.feddyn.FedDyn.optimize" title="Permalink to this definition">#</a></dt>
+<dd><p>optimize server mdoel(s) and return metrics to be reported</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>aggregator</strong> (<em>Any</em>) – Aggregator instance</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>NotImplementedError</strong> – abstract class to be implemented by child</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>Mapping[Hashable, Any]</em> – context to be reported</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fedsim.fl.algorithms.feddyn.FedDyn.receive_from_client">
+<span class="sig-name descname"><span class="pre">receive_from_client</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client_msg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aggregation_results</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fedsim/fl/algorithms/feddyn.html#FedDyn.receive_from_client"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.algorithms.feddyn.FedDyn.receive_from_client" title="Permalink to this definition">#</a></dt>
+<dd><p>receive and aggregate info from selected clients</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>client_id</strong> (<em>int</em>) – id of the sender (client)</p></li>
+<li><p><strong>client_msg</strong> (<em>Mapping[Hashable, Any]</em>) – client context that is sent</p></li>
+<li><p><strong>aggregator</strong> (<em>Any</em>) – aggregator instance to collect info</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>NotImplementedError</strong> – abstract class to be implemented by child</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="fedsim.fl.algorithms.feddyn.FedDyn.send_to_server">
+<span class="sig-name descname"><span class="pre">send_to_server</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datasets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epochs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loss_fn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_decay</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cuda'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fedsim/fl/algorithms/feddyn.html#FedDyn.send_to_server"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.algorithms.feddyn.FedDyn.send_to_server" title="Permalink to this definition">#</a></dt>
+<dd><p>client operation on the recieved information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>client_id</strong> (<em>int</em>) – id of the client</p></li>
+<li><p><strong>datasets</strong> (<em>Dict[str, Iterable]</em>) – this comes from Data Manager</p></li>
+<li><p><strong>epochs</strong> (<em>int</em>) – number of epochs to train</p></li>
+<li><p><strong>loss_fn</strong> (<em>nn.Module</em>) – either ‘ce’ (for cross-entropy) or ‘mse’</p></li>
+<li><p><strong>batch_size</strong> (<em>int</em>) – training batch_size</p></li>
+<li><p><strong>lr</strong> (<em>float</em>) – client learning rate</p></li>
+<li><p><strong>weight_decay</strong> (<em>float, optional</em>) – weight decay for SGD. Defaults to 0.</p></li>
+<li><p><strong>device</strong> (<em>Union[int, str], optional</em>) – Defaults to ‘cuda’.</p></li>
+<li><p><strong>ctx</strong> (<em>Optional[Dict[Hashable, Any]], optional</em>) – context reveived from server. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>NotImplementedError</strong> – abstract class to be implemented by child</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>Mapping[str, Any]</em> – client context to be sent to the server</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-fedsim.fl.algorithms.fednova">
+<span id="fedsim-fl-algorithms-fednova-module"></span><h2>fedsim.fl.algorithms.fednova module<a class="headerlink" href="#module-fedsim.fl.algorithms.fednova" title="Permalink to this headline">#</a></h2>
+<p>This file contains an implementation of the following paper:
+Title: “Tackling the Objective Inconsistency Problem in Heterogeneous Federated Optimization”
+Authors: Jianyu Wang, Qinghua Liu, Hao Liang, Gauri Joshi, H. Vincent Poor
+Publication date: 15 Jul 2020
+Link: <a class="reference external" href="https://arxiv.org/abs/2007.07481">https://arxiv.org/abs/2007.07481</a></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="fedsim.fl.algorithms.fednova.FedNova">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">fedsim.fl.algorithms.fednova.</span></span><span class="sig-name descname"><span class="pre">FedNova</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_manager</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metric_logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_clients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_scheme</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_class</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epochs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loss_fn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">32</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">64</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local_weight_decay</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clr_decay</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clr_decay_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'step'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_clr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-12</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clr_step_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cuda'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fedsim/fl/algorithms/fednova.html#FedNova"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.algorithms.fednova.FedNova" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#fedsim.fl.algorithms.fedavg.FedAvg" title="fedsim.fl.algorithms.fedavg.FedAvg"><code class="xref py py-class docutils literal notranslate"><span class="pre">fedsim.fl.algorithms.fedavg.FedAvg</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="fedsim.fl.algorithms.fednova.FedNova.receive_from_client">
+<span class="sig-name descname"><span class="pre">receive_from_client</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client_msg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aggregation_results</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fedsim/fl/algorithms/fednova.html#FedNova.receive_from_client"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.algorithms.fednova.FedNova.receive_from_client" title="Permalink to this definition">#</a></dt>
+<dd><p>receive and aggregate info from selected clients</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>client_id</strong> (<em>int</em>) – id of the sender (client)</p></li>
+<li><p><strong>client_msg</strong> (<em>Mapping[Hashable, Any]</em>) – client context that is sent</p></li>
+<li><p><strong>aggregator</strong> (<em>Any</em>) – aggregator instance to collect info</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>NotImplementedError</strong> – abstract class to be implemented by child</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-fedsim.fl.algorithms.fedprox">
+<span id="fedsim-fl-algorithms-fedprox-module"></span><h2>fedsim.fl.algorithms.fedprox module<a class="headerlink" href="#module-fedsim.fl.algorithms.fedprox" title="Permalink to this headline">#</a></h2>
+<p>This file contains an implementation of the following paper:
+Title: “Federated Optimization in Heterogeneous Networks”
+Authors: Tian Li, Anit Kumar Sahu, Manzil Zaheer, Maziar Sanjabi, Ameet Talwalkar, Virginia Smith
+Publication date: [Submitted on 14 Dec 2018 (v1), last revised 21 Apr 2020 (this version, v5)]
+Link: <a class="reference external" href="https://arxiv.org/abs/1812.06127">https://arxiv.org/abs/1812.06127</a></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="fedsim.fl.algorithms.fedprox.FedProx">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">fedsim.fl.algorithms.fedprox.</span></span><span class="sig-name descname"><span class="pre">FedProx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_manager</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metric_logger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_clients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_scheme</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_class</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epochs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loss_fn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">32</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">64</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local_weight_decay</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clr_decay</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clr_decay_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'step'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_clr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-12</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clr_step_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cuda'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0001</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fedsim/fl/algorithms/fedprox.html#FedProx"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.algorithms.fedprox.FedProx" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#fedsim.fl.algorithms.fedavg.FedAvg" title="fedsim.fl.algorithms.fedavg.FedAvg"><code class="xref py py-class docutils literal notranslate"><span class="pre">fedsim.fl.algorithms.fedavg.FedAvg</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="fedsim.fl.algorithms.fedprox.FedProx.send_to_server">
+<span class="sig-name descname"><span class="pre">send_to_server</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datasets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epochs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loss_fn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_decay</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cuda'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fedsim/fl/algorithms/fedprox.html#FedProx.send_to_server"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fedsim.fl.algorithms.fedprox.FedProx.send_to_server" title="Permalink to this definition">#</a></dt>
+<dd><p>client operation on the recieved information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>client_id</strong> (<em>int</em>) – id of the client</p></li>
+<li><p><strong>datasets</strong> (<em>Dict[str, Iterable]</em>) – this comes from Data Manager</p></li>
+<li><p><strong>epochs</strong> (<em>int</em>) – number of epochs to train</p></li>
+<li><p><strong>loss_fn</strong> (<em>nn.Module</em>) – either ‘ce’ (for cross-entropy) or ‘mse’</p></li>
+<li><p><strong>batch_size</strong> (<em>int</em>) – training batch_size</p></li>
+<li><p><strong>lr</strong> (<em>float</em>) – client learning rate</p></li>
+<li><p><strong>weight_decay</strong> (<em>float, optional</em>) – weight decay for SGD. Defaults to 0.</p></li>
+<li><p><strong>device</strong> (<em>Union[int, str], optional</em>) – Defaults to ‘cuda’.</p></li>
+<li><p><strong>ctx</strong> (<em>Optional[Dict[Hashable, Any]], optional</em>) – context reveived from server. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>NotImplementedError</strong> – abstract class to be implemented by child</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>Mapping[str, Any]</em> – client context to be sent to the server</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-fedsim.fl.algorithms">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-fedsim.fl.algorithms" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+
+
+              </article>
+              
+
+              
+              <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="fedsim.fl.html" title="previous page">
+      <i class="fas fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">fedsim.fl package</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="fedsim.fl.mtl_algorithms.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">fedsim.fl.mtl_algorithms package</p>
+  </div>
+  <i class="fas fa-angle-right"></i>
+  </a>
+</div>
+              </footer>
+              
+          </div>
+          
+      </div>
+    </div>
+
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
+
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
+    &copy; Copyright 2022, Farshid Varno.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+</p>
+  </div>
+  
+</div>
+</footer>
+  </body>
+</html>
