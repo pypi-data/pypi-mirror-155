@@ -1,0 +1,48 @@
+Metadata-Version: 2.1
+Name: pc-jamf
+Version: 0.4.6
+Summary: Wrapper library to connect to a JAMF Pro Server using the beta and classic API
+Home-page: https://github.com/pinecrest/pc_jamf
+Author: Sean Tibor
+Author-email: sean.tibor@pinecrest.edu
+License: GPLv3
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: System Administrators
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests
+Requires-Dist: python-decouple
+
+# Pinecrest JAMF Python API
+
+Scripts and API Objects to interact with the JAMF server to manage iPads
+
+## JAMF Versions
+
+    Tested with version 10.25
+    Uses a combination of the Classic and Pro (Beta) APIs
+
+## TODO
+
+- ~~Initial Object Creation~~
+- ~~Authentication to JAMF Server~~
+- ~~Configuration file for credentials and settings~~
+- ~~List all devices~~
+- ~~Integration with pygsheets~~
+- ~~Jupyter Notebook Analytics~~
+- ~~Naming update function~~
+- ~~Search devices by serial number~~
+- ~~Get Device by ID~~
+- ~~search devices by name~~
+- ~~search devices by udid~~
+- add token validation/invalidation commands
+
+
