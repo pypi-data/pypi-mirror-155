@@ -1,0 +1,10 @@
+MANIFEST.in
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+lib/python/cs/context.py
+lib/python/cs.context.egg-info/PKG-INFO
+lib/python/cs.context.egg-info/SOURCES.txt
+lib/python/cs.context.egg-info/dependency_links.txt
+lib/python/cs.context.egg-info/top_level.txt
