@@ -1,0 +1,17 @@
+python-debian
+pyxdg
+requests
+flask
+PyYAML
+
+[dev]
+pre-commit~=2.15
+pytest~=6.2
+black==21.9b0
+isort~=5.9
+mypy~=0.910
+types-requests
+build
+types-setuptools
+sphinx
+furo
