@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+src/sudokuku/__init__.py
+src/sudokuku/manager.py
+src/sudokuku/sudokuwrapped.py
+src/sudokuku.egg-info/PKG-INFO
+src/sudokuku.egg-info/SOURCES.txt
+src/sudokuku.egg-info/dependency_links.txt
+src/sudokuku.egg-info/top_level.txt
