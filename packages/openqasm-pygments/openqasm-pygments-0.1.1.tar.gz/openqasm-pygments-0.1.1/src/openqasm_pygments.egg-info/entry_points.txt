@@ -1,0 +1,4 @@
+[pygments.lexers]
+openpulse_lexer = openqasm_pygments:OpenPulseLexer
+openqasm2_lexer = openqasm_pygments:OpenQASM2Lexer
+openqasm3_lexer = openqasm_pygments:OpenQASM3Lexer
