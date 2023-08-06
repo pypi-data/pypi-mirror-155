@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: jeckin
+Version: 0.0.1b0
+Summary: http injector
+Home-page: UNKNOWN
+License: UNKNOWN
+Keywords: python,http,http injector
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Requires-Python: >=3.7, <4
+Description-Content-Type: text/markdown
+
+# jeckin
+HTTP Injector
+```
+$ jeckin -h
+```
+
+
