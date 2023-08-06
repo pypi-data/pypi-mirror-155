@@ -1,0 +1,2 @@
+[console_scripts]
+es-rebalance = elasticsearch_rebalancer.__main__:rebalance_elasticsearch
