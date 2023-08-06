@@ -1,0 +1,3 @@
+[console_scripts]
+heaserver-folders = heaserver.folder.service:main
+
