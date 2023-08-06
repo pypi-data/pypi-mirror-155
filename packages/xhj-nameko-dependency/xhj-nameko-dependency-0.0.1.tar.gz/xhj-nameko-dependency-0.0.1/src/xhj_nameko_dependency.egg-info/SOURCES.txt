@@ -1,0 +1,12 @@
+MANIFEST.in
+NEWS.txt
+README.md
+setup.py
+src/xhj_nameko_dependency/__init__.py
+src/xhj_nameko_dependency/xhj.py
+src/xhj_nameko_dependency.egg-info/PKG-INFO
+src/xhj_nameko_dependency.egg-info/SOURCES.txt
+src/xhj_nameko_dependency.egg-info/dependency_links.txt
+src/xhj_nameko_dependency.egg-info/not-zip-safe
+src/xhj_nameko_dependency.egg-info/requires.txt
+src/xhj_nameko_dependency.egg-info/top_level.txt
