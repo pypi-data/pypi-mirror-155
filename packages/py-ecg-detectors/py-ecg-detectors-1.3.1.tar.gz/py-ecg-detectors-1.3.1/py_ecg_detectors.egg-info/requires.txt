@@ -1,0 +1,7 @@
+gatspy
+numpy
+pywavelets
+scipy
+
+[:python_version < "3.4"]
+pathlib2
