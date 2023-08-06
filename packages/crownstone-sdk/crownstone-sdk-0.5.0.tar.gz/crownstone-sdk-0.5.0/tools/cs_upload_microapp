@@ -1,0 +1,146 @@
+#!/usr/bin/env python3
+
+""" Experimental tool to upload a microapp to a Crownstone. """
+
+import asyncio
+import logging
+from os import path
+import datetime
+
+from bluenet_logs import BluenetLogs
+from crownstone_ble import CrownstoneBle, BleEventBus, BleTopics
+from crownstone_uart import CrownstoneUart
+
+from tools.util.config import getToolConfig, loadKeysFromConfig, setupDefaultCommandLineArguments, macFilterPassed
+
+tool_version = "1.0.0"
+
+argParser = setupDefaultCommandLineArguments('Upload, validate, and enable a microapp on a Crownstone.')
+argParser.add_argument('-a', '--bleAddress',
+                       default=None,
+                       help='To upload via BLE: the MAC address/handle of the Crownstone you want to connect to. Example: 11:22:33:AA:BB:CC')
+argParser.add_argument('-d', '--device',
+                       default=None,
+                       help='The UART device of the Crownstone you want to connect to. Example: /dev/ttyACM0')
+argParser.add_argument('-f', '--file',
+                       required=True,
+                       help='Microapp binary to upload')
+argParser.add_argument('--verbose', '-v',
+                       dest="verbose",
+                       action='store_true',
+                       help='Show verbose output')
+argParser.add_argument('--logStringsFile', '-l',
+                       default=None,
+                       dest='logStringsFileName',
+                       metavar='path',
+                       type=str,
+                       help='The path of the file with the extracted firmware logs on your system.')
+
+try:
+    file_path = path.dirname(path.realpath(__file__))
+    [tool_config, args] = getToolConfig(file_path, argParser)
+except Exception as e:
+    print("ERROR", e)
+    quit()
+
+if args.verbose:
+    logging.basicConfig(format='%(asctime)s %(levelname)-7s: %(message)s', level=logging.DEBUG)
+
+core = None
+bluenetLogs = BluenetLogs()
+useBle = False
+
+if args.bleAddress is not None:
+    # Use BLE for communication.
+    useBle = True
+
+    # Create the library instance.
+    print(f'Initializing tool with bleAdapterAddress={tool_config["bleAdapterAddress"]}')
+    core = CrownstoneBle(bleAdapterAddress=tool_config["bleAdapterAddress"])
+
+    # Load the encryption keys into the library.
+    loadKeysFromConfig(core, tool_config)
+
+else:
+    # Use UART for communication.
+
+    # Create the library instance.
+    print(f'Initializing tool with device={args.device}')
+    core = CrownstoneUart()
+    core.initialize_usb_sync(port=args.device)
+
+    if args.logStringsFileName:
+        bluenetLogs.setLogStringsFile(args.logStringsFileName)
+
+# The preferred chunk size. The library or the crownstone may make it a smaller size.
+maxChunkSize = 256
+
+# The index where we want to put our microapp.
+appIndex = 0
+
+# The microapp upload protocol version
+protocol = 1
+
+
+async def upload():
+    with open(args.file, "rb") as f:
+        appData = f.read()
+
+    print("First 32 bytes of the binary:")
+    print(list(appData[0:32]))
+
+    info = await core.microapp.getMicroappInfo()
+    print("Information obtained from Crownstone:")
+    print(info)
+
+    # Perform some checks with the info we received.
+    if appIndex >= info.maxApps:
+        print(f"This crownstone doesn't have room for index {appIndex}")
+        return
+
+    if len(appData) > info.maxAppSize:
+        print(f"This crownstone doesn't have room for a binary size of {len(appData)}")
+        return
+
+    # If there is already some data at this index, it has to be removed first.
+    if info.appsStatus[appIndex].tests.hasData:
+        print(f"Remove data at index {appIndex}")
+        await core.microapp.removeMicroapp(appIndex, protocol)
+
+    # Determine the chunk size by taking the minimum of our max, and the crownstones max.
+    chunkSize = min(maxChunkSize, info.maxChunkSize)
+
+    print(f"{datetime.datetime.now()} Start upload with a chunkSize of maximum {chunkSize}")
+    await core.microapp.uploadMicroapp(appData, appIndex, protocol, chunkSize)
+    print(f"{datetime.datetime.now()} Upload done")
+
+    print("Validate..")
+    await core.microapp.validateMicroapp(appIndex, protocol)
+    print("Validate done")
+
+    print("Enable..")
+    await core.microapp.enableMicroapp(appIndex, protocol)
+    print("Enable done")
+
+
+async def main():
+    if useBle:
+        await core.connect(args.bleAddress)
+
+    await upload()
+
+    if useBle:
+        await core.disconnect()
+        await core.shutDown()
+
+    print("Done!")
+
+try:
+    # asyncio.run does not work here.
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(main())
+except KeyboardInterrupt:
+    print("Stopping")
+
+if not useBle:
+    core.stop()
