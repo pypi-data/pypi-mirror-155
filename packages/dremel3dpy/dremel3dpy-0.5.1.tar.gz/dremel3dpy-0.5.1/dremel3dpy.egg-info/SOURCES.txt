@@ -1,0 +1,12 @@
+LICENSE
+setup.py
+dremel3dpy/__init__.py
+dremel3dpy/camera.py
+dremel3dpy.egg-info/PKG-INFO
+dremel3dpy.egg-info/SOURCES.txt
+dremel3dpy.egg-info/dependency_links.txt
+dremel3dpy.egg-info/requires.txt
+dremel3dpy.egg-info/top_level.txt
+dremel3dpy/helpers/__init__.py
+dremel3dpy/helpers/constants.py
+dremel3dpy/helpers/timer.py
