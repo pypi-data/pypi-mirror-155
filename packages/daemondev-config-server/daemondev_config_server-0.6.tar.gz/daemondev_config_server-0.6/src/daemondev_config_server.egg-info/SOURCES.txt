@@ -1,0 +1,16 @@
+LICENSE.txt
+README.md
+setup.cfg
+setup.py
+src/config_server/__init__.py
+src/config_server/app.py
+src/config_server/attribute_dict.py
+src/config_server/colors.py
+src/config_server/config_server.py
+src/config_server/core/__init__.py
+src/config_server/core/request.py
+src/daemondev_config_server.egg-info/PKG-INFO
+src/daemondev_config_server.egg-info/SOURCES.txt
+src/daemondev_config_server.egg-info/dependency_links.txt
+src/daemondev_config_server.egg-info/requires.txt
+src/daemondev_config_server.egg-info/top_level.txt
