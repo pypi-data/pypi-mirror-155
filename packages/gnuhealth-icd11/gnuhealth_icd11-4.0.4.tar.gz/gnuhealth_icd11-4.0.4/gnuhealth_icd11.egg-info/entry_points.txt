@@ -1,0 +1,4 @@
+
+    [trytond.modules]
+    health_icd11 = trytond.modules.health_icd11
+    
