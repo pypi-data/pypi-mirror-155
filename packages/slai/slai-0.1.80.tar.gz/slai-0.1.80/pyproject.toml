@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "slai"
+version = "0.1.80"
+description = ""
+authors = ["slai <luke@slai.io>"]
+
+[tool.poetry.dependencies]
+python = ">=3.6.1,<4.0.0"
+python-dotenv = "^0.15.0"
+requests = "^2.26.0"
+urllib3 = "^1.26.7"
+PyYAML = "^6.0"
+
+[tool.poetry.dev-dependencies]
+flake8-black = "0.2.1"
+Flask = "1.1.2"
+Flask-Cors = "3.0.9"
+flake8 = "3.8.4"
+black = {version = "20.8b1", allow-prereleases = true}
+pytest = "6.2.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
