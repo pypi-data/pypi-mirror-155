@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: context-predeployed
+Version: 1.0.0.dev0
+Summary: A tool for generating predeployed context smart contract
+Home-page: https://github.com/skalenetwork/config-controller
+Author: SKALE Labs
+Author-email: support@skalelabs.com
+License: UNKNOWN
+Description: UNKNOWN
+Keywords: skale,predeployed
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3.7
+Requires-Python: >=3.7,<4
+Description-Content-Type: text/markdown
+Provides-Extra: linter
+Provides-Extra: dev

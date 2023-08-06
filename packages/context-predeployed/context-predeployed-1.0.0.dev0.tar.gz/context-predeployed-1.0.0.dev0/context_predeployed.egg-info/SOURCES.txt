@@ -1,0 +1,16 @@
+README.md
+setup.py
+context_predeployed/__init__.py
+context_predeployed/address.py
+context_predeployed/context_generator.py
+context_predeployed.egg-info/PKG-INFO
+context_predeployed.egg-info/SOURCES.txt
+context_predeployed.egg-info/dependency_links.txt
+context_predeployed.egg-info/requires.txt
+context_predeployed.egg-info/top_level.txt
+context_predeployed/artifacts/Context.json
+test/__init__.py
+test/test_context_generator.py
+test/tools/__init__.py
+test/tools/test_predeployed.py
+test/tools/test_solidity_project.py
