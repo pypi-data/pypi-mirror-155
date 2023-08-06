@@ -1,0 +1,10 @@
+[grafana.mutator]
+null = grafana.mutators.null:Null
+refresh = grafana.mutators.refresh:Refresh
+
+[powerplug.apps]
+grafana = grafana
+
+[powerplug.urls]
+grafana = grafana.urls
+

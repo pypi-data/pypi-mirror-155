@@ -1,0 +1,20 @@
+Metadata-Version: 1.2
+Name: django-grafana
+Version: 0.2.0
+Summary: Management app for Grafana
+Home-page: https://github.com/kfdm/django-grafana
+Author: Paul Traylor
+License: MIT License
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Classifier: Topic :: Internet :: WWW/HTTP
+Requires-Python: <4,>=3.6
