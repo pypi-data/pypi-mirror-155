@@ -1,0 +1,46 @@
+Metadata-Version: 2.1
+Name: pyevmosaddressconverter
+Version: 1.0.1
+Summary: Evmos address converter
+Home-page: https://github.com/hanchon-live/py-evmos-address-converter
+Author: Hanchon
+Author-email: guillermo.paoletti@gmail.com
+License: MIT
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Evmos address converter
+
+Evmos address converter from `python3+`.
+
+## Installation
+
+```sh
+pip install pyevmosaddressconverter
+```
+
+## Usage:
+
+```python
+from pyevmosaddressconverter import eth_to_evmos
+from pyevmosaddressconverter import evmos_to_eth
+
+eth_to_evmos('0xe7e3654bc1ea915e7216d8193ef8dd7d5dae987f')
+# 'evmos1ul3k2j7pa2g4uuskmqvna7xa04w6axrl85alz5'
+
+evmos_to_eth('evmos1ul3k2j7pa2g4uuskmqvna7xa04w6axrl85alz5')
+# '0xe7e3654bc1ea915e7216d8193ef8dd7d5dae987f'
+```
+
+
