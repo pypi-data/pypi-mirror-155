@@ -1,0 +1,3 @@
+[console_scripts]
+jsonconvert=dataops_toolkits.scripts.jsonconvert:main
+
