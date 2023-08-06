@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+evaluate_dfs/__init__.py
+evaluate_dfs/dfs_evaluator.py
+evaluate_dfs/match.py
+evaluate_dfs/series_evaluator.py
+evaluate_dfs.egg-info/PKG-INFO
+evaluate_dfs.egg-info/SOURCES.txt
+evaluate_dfs.egg-info/dependency_links.txt
+evaluate_dfs.egg-info/requires.txt
+evaluate_dfs.egg-info/top_level.txt
