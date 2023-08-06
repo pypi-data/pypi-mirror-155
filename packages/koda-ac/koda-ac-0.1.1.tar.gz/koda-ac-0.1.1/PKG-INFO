@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: koda-ac
+Version: 0.1.1
+Summary: 
+Author: Michał Rokita
+Author-email: mrokita@mrokita.pl
+Requires-Python: >=3.9,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: matplotlib (>=3.5.2,<4.0.0)
+Requires-Dist: rich (>=12.4.4,<13.0.0)
+Requires-Dist: typer (>=0.4.1,<0.5.0)
+Description-Content-Type: text/markdown
+
+# Development setup
+
+[Poetry](https://python-poetry.org) is used for dependency management, see https://python-poetry.org/docs/master/#installation for installation instructions.
+
+After installing Poetry, use `poetry install` to install project dependencies.
+
+## Makefile tasks
+
+- use `make format` to format code with `black` and `isort`
+- use `make lint` to lint code with `mypy` and `flake8`
+- use `make test` to run tests in `tests/` with `pytest`
