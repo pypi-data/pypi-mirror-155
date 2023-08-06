@@ -1,0 +1,3 @@
+[console_scripts]
+emerge = emerge.main:run
+

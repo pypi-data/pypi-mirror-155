@@ -1,0 +1,73 @@
+---
+project_name: spring boot
+loglevel: info
+analyses:
+- analysis_name: java analysis
+  #source_directory: /Users/grzegorz.lato/Private/Code/github/Signal-Android/app/src
+  source_directory: /Users/grzegorz.lato/Private/Code/github/spring-boot/spring-boot-project/spring-boot/src/main/java/org/springframework/boot
+  only_permit_languages:
+  - java
+  - kotlin
+  only_permit_file_extensions:
+  - .java
+  - .kt
+  ignore_dependencies_containing:
+  - java.util
+  - java.lang
+  - java.io
+  - java.nio
+  - java.net
+  - java.time
+  - java.beans
+  - java.math
+  - java.awt
+  - java.security
+  - java.sql
+  - javax
+  - org.apache
+  - android.util
+  - android.database
+  - android.text
+  - androidx.annotation
+  - android.content
+  - org.thoughtcrime.securesms.r
+  - android.view.view
+  - android.view.viewgroup
+  - androidx.lifecycle
+  - org.signal.core.util.logging
+  - androidx.net
+  - android.widget
+  - com.fasterxml.jackson
+  - android.os
+  - androidx.recyclerview
+  - android.graphics
+  - android.net
+  - org.junit
+  - android.
+  - androidx.
+  - stringutils
+  - assert
+  file_scan:
+  - number_of_methods
+  - source_lines_of_code
+  - dependency_graph
+  - fan_in_out
+  - louvain_modularity
+  - tfidf
+  entity_scan:
+  - dependency_graph
+  - inheritance_graph
+  - complete_graph
+  - source_lines_of_code
+  - number_of_methods
+  - fan_in_out
+  - louvain_modularity
+  - tfidf
+  export:
+  - directory: /Users/grzegorz.lato/temp/java-export
+  - graphml
+  - dot
+  - json
+  - tabular_file
+  - tabular_console_overall
+  - d3

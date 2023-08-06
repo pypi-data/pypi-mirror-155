@@ -1,0 +1,25 @@
+---
+project_name: ruby_example_project
+loglevel: info
+analyses:
+- analysis_name: ruby check
+  source_directory: /Users/grzegorz.lato/Private/Code/github/CocoaPods
+  only_permit_languages:
+  - ruby
+  only_permit_file_extensions:
+  - .rb
+  file_scan:
+  - number_of_methods
+  - source_lines_of_code
+  - dependency_graph
+  - fan_in_out
+  - louvain_modularity
+  - tfidf
+  export:
+  - directory: /Users/grzegorz.lato/temp/ruby-export
+  - graphml
+  - dot
+  - json
+  - tabular_file
+  - tabular_console_overall
+  - d3
