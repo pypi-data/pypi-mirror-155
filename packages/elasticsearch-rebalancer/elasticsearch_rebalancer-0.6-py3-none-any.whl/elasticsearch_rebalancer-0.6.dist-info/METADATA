@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: elasticsearch-rebalancer
+Version: 0.6
+Summary: Pokes Elasticsearch to balance itself sensibly.
+Home-page: https://github.com/EDITD/elasticsearch-rebalancer
+Author: EDITED devs
+Author-email: dev@edited.com
+Requires-Python: >=3.6
+License-File: LICENSE.md
+Requires-Dist: click
+Requires-Dist: humanize
+Requires-Dist: requests
+
