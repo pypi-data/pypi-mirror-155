@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/pyfin_sentiment/__init__.py
+src/pyfin_sentiment/model.py
+src/pyfin_sentiment/preprocessing.py
+src/pyfin_sentiment.egg-info/PKG-INFO
+src/pyfin_sentiment.egg-info/SOURCES.txt
+src/pyfin_sentiment.egg-info/dependency_links.txt
+src/pyfin_sentiment.egg-info/top_level.txt
