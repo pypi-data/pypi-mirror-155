@@ -1,0 +1,5 @@
+numpy>=1.16
+mrcfile
+scipy>=1.3
+pyfftw
+finufft
