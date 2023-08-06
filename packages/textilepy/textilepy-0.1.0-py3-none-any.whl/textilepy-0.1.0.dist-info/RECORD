@@ -1,0 +1,15 @@
+CF/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+CF/textile.py,sha256=xyLeSVHvcCHu4HHsh9p8I9oTkmnJipiZGQDxtwYlNWo,1248
+CF/pipeline/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+CF/pipeline/pipeline.py,sha256=YYtWyV-WqbGZzKiI_sZVNo0-LrIJvbBdeB8LYWi695g,742
+CF/pipeline/steps/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+CF/pipeline/steps/filter_.py,sha256=LcXZvSIBfDwwKR5fUkhkF8QDnNBnuILYv73QiQjnT4s,1197
+CF/pipeline/steps/preflight.py,sha256=Mgh3sa-BIgy6finLMgU0V4PmGCpAr_Ez3PUKv3Kx7VE,267
+CF/pipeline/steps/process.py,sha256=bN62TbCxBiObZc_x11gr_EnFP1lG_haDywVsvEUc4Qw,1823
+CF/pipeline/steps/step.py,sha256=kOQ1-EfjTrVfEKczA1HkPBgsP6rGElfCIjCZ3TJ8Zd8,330
+CF/pipeline/steps/transform.py,sha256=G2mspXk_sbL9ByWZzp6-74O0qACsnOZcWygfpPiTgRM,1292
+textilepy-0.1.0.dist-info/LICENSE,sha256=GxEwvKba3eOGKLjpHRykzOwLrNwAteax8MNqeh-jlwQ,1113
+textilepy-0.1.0.dist-info/METADATA,sha256=aeL0AqiDNu5CQNZCh4eI3QHHppR7AjhqEzUQ7rm-8Rg,727
+textilepy-0.1.0.dist-info/WHEEL,sha256=v8slff5hmCpvciQ3G55d2d1CnOBupjDFJHDE2dUb1Ao,97
+textilepy-0.1.0.dist-info/top_level.txt,sha256=7yAg78uUPlKVjcg17BG5hrCXR9jMXHxxbBQxZvz1oqc,3
+textilepy-0.1.0.dist-info/RECORD,,
