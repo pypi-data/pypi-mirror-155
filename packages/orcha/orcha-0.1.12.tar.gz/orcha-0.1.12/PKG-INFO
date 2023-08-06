@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: orcha
+Version: 0.1.12
+Summary: System handler and orchestrator of multiple environments
+Author: Javier Alonso
+Author-email: jalonso@teldat.com
+Requires-Python: >=3.7,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Provides-Extra: docs
+Requires-Dist: Sphinx (>=4.3.2,<5.0.0); extra == "docs"
+Requires-Dist: psutil (>=5.8.0,<6.0.0)
+Requires-Dist: python-daemon (>=2.3.0,<3.0.0)
+Requires-Dist: sphinx-autodoc-annotation (>=1.0-1,<2.0); extra == "docs"
+Requires-Dist: sphinx-rtd-theme (>=1.0.0,<2.0.0); extra == "docs"
+Requires-Dist: systemd-python (>=234,<235)
