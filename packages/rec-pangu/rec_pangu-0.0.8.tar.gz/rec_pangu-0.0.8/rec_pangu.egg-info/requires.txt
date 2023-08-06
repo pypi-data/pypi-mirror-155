@@ -1,0 +1,5 @@
+numpy>=1.19.0
+torch>=1.7.0
+pandas>=1.0.5
+tqdm
+scikit_learn>=0.23.2
