@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+pc_jamf/__init__.py
+pc_jamf.egg-info/PKG-INFO
+pc_jamf.egg-info/SOURCES.txt
+pc_jamf.egg-info/dependency_links.txt
+pc_jamf.egg-info/not-zip-safe
+pc_jamf.egg-info/requires.txt
+pc_jamf.egg-info/top_level.txt
+test/test_pcjamf.py
