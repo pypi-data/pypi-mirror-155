@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load i18n static model_tags %}
+
+{% block cssextra %}
+<style>
+textarea {
+    resize: both;
+}
+</style>
+{% endblock cssextra %}
+
+
+{% block content %}
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="main-tab" data-bs-toggle="tab" data-bs-target="#main" type="button" role="tab" aria-controls="home" aria-selected="true">{% trans "Main" %}</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#xml" type="button" role="tab" aria-controls="xml" aria-selected="false">{% trans "XML Content" %}</button>
+    </li>
+   
+</ul>
+
+  
+<div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="main" role="tabpanel" aria-labelledby="main-tab">
+        {% include 'odk/_xform_detail_main.html' %}
+    </div>
+    <div class="tab-pane fade" id="xml" role="tabpanel" aria-labelledby="contact-tab">
+        <textarea name="xml_content" cols="100" rows="35" class="form-input" readonly="true">
+            {{ object.xml_content }}
+        </textarea>
+    </div>
+</div>
+
+
+<div class="m-2">
+{% if user.is_authenticated %}
+    {% if "/delete" in request.path %}
+        <br />
+        <h4 class="text-danger">{{view.confirm_message}}</h4>
+        <form action="" method="post">{% csrf_token %}
+            <button type="submit" class="btn btn-primary m-1">{% trans 'Yes' %}</button>
+            <a class="btn btn-secondary m-1" href="{% url 'odk:xform_detail' object.id %}">{% trans 'No/Cancel' %}</a>
+        </form>
+    {% else %}
+        <a class="btn btn-primary" href="{% url 'odk:xform_del' object.id %}">{% trans 'Delete' %}</a>
+        {% if not object.xml_content %}
+            <p class="my-2">
+            <a class="btn btn-danger" href="{% url 'odk:xform_conv2xml' object.id %}">Convert2XML</a>
+                {% trans "Wait until the page is refreshed" %}
+            </p>
+        {% else %}
+            {% if not object.model_created_on %}
+                <p class="my-2">
+                    <a class="btn btn-success" href="{% url 'odk:xform_createmodel' object.id %}">CreateModel</a>
+                        {% trans "Wait until the page is refreshed" %}
+                </p>                
+            {% endif %}
+        {% endif %}
+    {% endif %}
+{% endif %}
+<a class="btn btn-secondary" href="{% url 'odk:xform_list' %}">{% trans 'Back' %}</a>
+
+
+
+</div>
+
+
+
+{% endblock content %}
