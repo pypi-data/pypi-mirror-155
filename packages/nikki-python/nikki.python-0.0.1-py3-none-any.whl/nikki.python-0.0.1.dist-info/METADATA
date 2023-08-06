@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: nikki.python
+Version: 0.0.1
+Summary: init version of python client
+Home-page: https://github.com/nikki-build/nikki.python
+Author: dev nikki
+Author-email: dev.nikki.build@gmail.com
+Project-URL: Bug Tracker, https://github.com/pypa/sampleproject/issues
+Keywords: python,nikki
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: websocket
+Requires-Dist: websocket-client
+
+
+# nikki.python
