@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+upsilonconf/__init__.py
+upsilonconf/_optional_dependency.py
+upsilonconf/_yaml.py
+upsilonconf/config.py
+upsilonconf/io.py
+upsilonconf.egg-info/PKG-INFO
+upsilonconf.egg-info/SOURCES.txt
+upsilonconf.egg-info/dependency_links.txt
+upsilonconf.egg-info/requires.txt
+upsilonconf.egg-info/top_level.txt
