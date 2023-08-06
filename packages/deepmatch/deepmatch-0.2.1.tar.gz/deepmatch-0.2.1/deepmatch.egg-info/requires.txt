@@ -1,0 +1,8 @@
+requests
+deepctr==0.9.1
+
+[cpu]
+tensorflow!=1.7.*,!=1.8.*,>=1.4.0
+
+[gpu]
+tensorflow-gpu!=1.7.*,!=1.8.*,>=1.4.0
