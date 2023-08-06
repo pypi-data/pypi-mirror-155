@@ -1,0 +1,117 @@
+Metadata-Version: 2.1
+Name: honeycheck
+Version: 0.2.0
+Summary: Honeycheck detects rogue dhcp servers and provides a modular and fully configurable action environment in case they are found
+Home-page: https://github.com/elchicodepython/HoneyCheck
+Author: Samuel López Saura
+Author-email: samuellopezsaura@gmail.com
+License: MIT
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# HoneyCheck - Detect Rogue DHCP Servers in your network
+
+![Honeycheck logo](assets/honeycheck_horizontal.png)
+
+Honeycheck detects rogue DHCP servers and provides a modular and fully
+configurable action environment in case they are found.
+
+### Doc Index
+
+- [System requirements](#system-requirements)
+- [Honeycheck installaton](#honeycheck-installation)
+- [Configuring honeycheck](#configuring-honeycheck)
+- [Running honeycheck](#running-honeycheck)
+- [Donations and Sponsorships](#donations-and-sponsorships)
+
+
+## System requirements
+
+```bash
+apt-get install -y python3 virtualenv bridge-utils tcpdump
+```
+
+## Honeycheck Installation
+
+```bash
+pip install honeycheck
+```
+
+## Configuring Honeycheck
+
+Honeycheck requires a configuration file as a parameter.
+
+The interfaces on which it will work must be indicated in the configuration
+file.
+
+For each interface, you must define which control module will be executed when
+a malicious `test_fail` server is detected or when it apparently stops being
+detected test_pass.
+
+Control objects are highly customizable pieces of software. Each module
+receives parameters that must be configured.
+
+The control object `honeycheck.modules.script.Script` allows the execution of
+scripts and receives the script to execute as a parameter.
+
+Depending on the check, the parameter will be prefixed with `test_fail` or 
+`test_pass`.
+
+```
+### Sample configuration
+
+[wlp0s20f3]
+	# Less than 30 seconds can give flapping false negatives
+	discover_timeout = 30
+
+    # test syntax: module.ControlClass
+	fail_test =    honeycheck.modules.script.Script
+	fail_test_script_path = scripts/zenity_fail.sh
+
+	pass_test = honeycheck.modules.script.Script
+	pass_test_script_path = scripts/zenity_pass.sh
+
+```
+
+## Running Honeycheck
+
+Once Honeycheck is configured it can be started running `python3 -m honeycheck
+-c our_conf_file.cnf`
+
+## Donations and Sponsorships
+
+![Donations](assets/donations.png)
+
+### Donations from people/companies
+
+If this tool is useful to you, please consider making a donation to support my
+work.
+
+Donations allow me to continue developing open source software to contribute
+and grow our community.
+
+I wish some day I could focus only on creating quality open source with a
+strong community
+supporting my projects.
+
+You support me on https://ko-fi.com/elchicodepython.
+
+### Sponsorships
+
+If your company uses this tool and would like it to have a specific feature,
+your company can sponsor its development.
+
+To sponsor the development of a feature [contact
+me](https://es.linkedin.com/in/sam-sec).
+
+### Product integration advertising
+
+If you want the integration of this tool with your solution to appear in this
+Readme, [contact me](https://es.linkedin.com/in/sam-sec).
+
+
+
