@@ -1,0 +1,54 @@
+[tool.poetry]
+name = "Emmett-REST"
+version = "1.4.4"
+description = "REST extension for Emmett framework"
+authors = ["Giovanni Barillari <gi0baro@d4net.org>"]
+license = "BSD-3-Clause"
+
+readme = "README.md"
+homepage = "https://github.com/emmett-framework/rest"
+repository = "https://github.com/emmett-framework/rest"
+
+keywords = ["rest", "web", "emmett"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Web Environment",
+    "Framework :: AsyncIO",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+    "Topic :: Software Development :: Libraries :: Python Modules"
+]
+
+packages = [
+    {include = "emmett_rest/**/*.*", format = "sdist"},
+    {include = "tests", format = "sdist"}
+]
+include = [
+    "CHANGES.md",
+    "LICENSE"
+]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+emmett = "^2.4"
+pydantic = "^1.9.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2"
+pytest-asyncio = "^0.15"
+psycopg2-binary = "~2.8.4"
+pylint = "^2.4.4"
+
+[tool.poetry.urls]
+"Issue Tracker" = "https://github.com/emmett-framework/rest/issues"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
