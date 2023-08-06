@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+Makefile
+README.md
+build_ffi_module.py
+miniaudio.c
+miniaudio.py
+setup.cfg
+setup.py
+miniaudio/miniaudio.h
+miniaudio/stb_vorbis.c
+miniaudio.egg-info/PKG-INFO
+miniaudio.egg-info/SOURCES.txt
+miniaudio.egg-info/dependency_links.txt
+miniaudio.egg-info/not-zip-safe
+miniaudio.egg-info/requires.txt
+miniaudio.egg-info/top_level.txt
