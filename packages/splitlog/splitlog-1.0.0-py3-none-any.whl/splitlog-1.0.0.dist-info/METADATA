@@ -1,0 +1,76 @@
+Metadata-Version: 2.1
+Name: splitlog
+Version: 1.0.0
+Summary: Utility to split aggregated logs from Apache Hadoop Yarn applications into a folder hierarchy
+Home-page: https://github.com/splitlog/splitlog.git
+License: MIT
+Author: Sebastian Klemke
+Author-email: pypi@nerdheim.de
+Requires-Python: >=3.6.2,<4.0.0
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: System :: Distributed Computing
+Classifier: Topic :: System :: Logging
+Classifier: Topic :: Utilities
+Requires-Dist: importlib-metadata (>=4.8,<5.0)
+Requires-Dist: python-dateutil (>=2.8.2,<3.0.0)
+Requires-Dist: pytz (>=2022.1,<2023.0)
+Project-URL: Repository, https://github.com/splitlog/splitlog.git
+Description-Content-Type: text/markdown
+
+splitlog
+========
+ 
+Hadoop Yarn application logs aggregate all container logs of a Yarn application into a single file. This makes it very
+difficult to use Unix command line tools to analyze these logs: Grep will search over all containers and context
+provided for hits often does not include Yarn container name or host name. `splitlog` splits a combined logfile for all
+containers of an application into a file system hierarchy suitable for further analysis:
+
+```
+outputfolder
+|--. hadoopnode1
+|  |--. container_a_b
+|  |  |--> stderr.log
+|  |  '--> stdout.log
+|  |  
+|  '--. container_x_y
+|     |--> stderr.log
+|     '--> stdout.log
+|
+'--. hadoopnode2
+   `--. container_p_q
+      |--> stderr.log
+      `--> stdout.log
+```
+ 
+Installation
+------------
+Python 3.6+ must be available.
+
+1. Create a a new venv using `python -m venv .venv`
+2. Activate venv using `. .venv/bin/activate`
+3. Run `python -m pip install -e splitlog`
+ 
+How to use
+----------
+
+Read logs from standard input:
+```shell script
+yarn logs -applicationId application_1582815261257_232080 | python -m splitlog application_1582815261257_232080
+```
+
+Read logs from file `application_1582815261257_232080.log`:
+```shell script
+python -m splitlog -i application_1582815261257_232080.log application_1582815261257_232080 
+```
+
