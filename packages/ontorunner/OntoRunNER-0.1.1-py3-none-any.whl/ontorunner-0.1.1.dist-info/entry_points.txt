@@ -1,0 +1,5 @@
+[console_scripts]
+onto-util=ontorunner.pre.util:cli
+ontoger=ontorunner.oger_module:cli
+ontospacy=ontorunner.spacy_module:main
+
