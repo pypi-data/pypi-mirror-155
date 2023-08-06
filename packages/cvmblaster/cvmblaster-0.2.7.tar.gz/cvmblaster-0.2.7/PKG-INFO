@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: cvmblaster
+Version: 0.2.7
+Summary: find antimcirobial resistance genes
+Home-page: https://github.com/hbucqp/cvmblaster
+Author: Jake Cui
+Author-email: cqp@cau.edu.cn
+License: MIT Licence
+Keywords: pip,wgs,blastn,resfinder
+Platform: any
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+
+The biopython blast class
+
