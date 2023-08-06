@@ -1,0 +1,14 @@
+LICENSE
+README.md
+setup.py
+mogp/__init__.py
+mogp/allocmodel.py
+mogp/mogp_constrained.py
+mogp/neg_linear.py
+mogp/obsmodel.py
+mogp/utils.py
+mogp.egg-info/PKG-INFO
+mogp.egg-info/SOURCES.txt
+mogp.egg-info/dependency_links.txt
+mogp.egg-info/requires.txt
+mogp.egg-info/top_level.txt
