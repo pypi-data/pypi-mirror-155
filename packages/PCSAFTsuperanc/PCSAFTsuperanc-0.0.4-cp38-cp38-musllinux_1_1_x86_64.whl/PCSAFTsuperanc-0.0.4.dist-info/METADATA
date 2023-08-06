@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: PCSAFTsuperanc
+Version: 0.0.4
+Summary: Superancillary functions for the PC-SAFT EOS of Gross and Sadowski
+Home-page: UNKNOWN
+Author: Ian Bell
+Author-email: ian.bell@nist.gov
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >=3.6
+Provides-Extra: test
+Requires-Dist: pytest (>=6.0) ; extra == 'test'
+
+UNKNOWN
+
