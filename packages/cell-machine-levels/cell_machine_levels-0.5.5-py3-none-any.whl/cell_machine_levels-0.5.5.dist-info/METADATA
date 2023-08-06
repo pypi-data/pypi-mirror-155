@@ -1,0 +1,46 @@
+Metadata-Version: 2.1
+Name: cell-machine-levels
+Version: 0.5.5
+Summary: A library for manipulating modded cell machine level codes.
+Home-page: https://github.com/BlockOG/cell_machine_levels
+Author: BlockOG
+Author-email: blockofgamingreal@gmail.com
+Project-URL: Bug Tracker, https://github.com/BlockOG/cell_machine_levels/issues
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
+# Cell Machine Levels
+
+A library for manipulating modded cell machine level codes.
+
+To install do:
+
+```bash
+pip3 install cell_machine_levels
+```
+
+Or just `pip` on some OSes
+
+## Level class
+
+Currently supports only V1 and V2, support is going to be added for much more than just these
+
+Level creation example:
+
+```py
+from cell_machine_levels import level
+test = level.Level(10, 10, "test", level.WallEffect.wrap)
+print(test.save("V1"))
+```
+
+Level importing example:
+
+```py
+from cell_machine_levels import level
+test = level.open("V1;10;10;;;test;2")
+print(f"{test.name}: {test.size}, {test.wall_effect}")
+```
