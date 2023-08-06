@@ -1,0 +1,57 @@
+Metadata-Version: 2.1
+Name: pagexml-tools
+Version: 0.1.1
+Summary: Utility functions for reading PageXML files
+Home-page: https://github.com/knaw-huc/pagexml
+License: MIT
+Author: Marijn Koolen
+Author-email: marijn.koolen@huygens.knaw.nl
+Requires-Python: >=3.8,<3.11
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Scientific/Engineering
+Requires-Dist: icecream (>=2.1.2,<3.0.0)
+Requires-Dist: numpy (>=1.22.3,<2.0.0)
+Requires-Dist: python-dateutil (>=2.8.2,<3.0.0)
+Requires-Dist: scipy (>=1.7.0,<2.0.0)
+Requires-Dist: xmltodict (>=0.12.0,<0.13.0)
+Project-URL: Bug Tracker, https://github.com/knaw-huc/pagexml/issues
+Project-URL: Repository, https://github.com/knaw-huc/pagexml
+Description-Content-Type: text/markdown
+
+# pagexml-tools
+
+[![GitHub Actions](https://github.com/knaw-huc/pagexml/workflows/tests/badge.svg)](https://github.com/knaw-huc/pagexml/actions)
+[![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
+[![Documentation Status](https://readthedocs.org/projects/pagexml/badge/?version=latest)](https://pagexml.readthedocs.io/en/latest/?badge=latest)
+[![PyPI](https://img.shields.io/pypi/v/pagexml-tools)](https://pypi.org/project/pagexml-tools/)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/pagexml-tools)](https://pypi.org/project/pagexml-tools/)
+
+Utility functions for reading [PageXML](https://www.primaresearch.org/tools/PAGELibraries) files
+
+## installing
+
+### using poetry
+
+```commandline
+poetry add pagexml-tools
+```
+
+### using pip
+
+```commandline
+pip install pagexml-tools
+```
+
+----
+
+[USAGE](https://pagexml.readthedocs.io/en/latest/) |
+[CONTRIBUTING](CONTRIBUTING.md) |
+[LICENSE](LICENSE)
+
