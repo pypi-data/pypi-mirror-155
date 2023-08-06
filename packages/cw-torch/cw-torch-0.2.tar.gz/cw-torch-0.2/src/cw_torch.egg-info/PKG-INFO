@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: cw-torch
+Version: 0.2
+Summary: Implementation of a Cramer-Wold distance in PyTorch
+Home-page: https://github.com/EszKnop/cw-torch
+Author: EszKnop
+Author-email: eszknop@gmail.com
+License: MIT
+Description: # cw-torch
+        Implementation of a Cramer-Wold distance in PyTorch
+        
+Keywords: cramerwold cwae lcw autoencoder cramer wold
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
