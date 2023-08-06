@@ -1,0 +1,3 @@
+[console_scripts]
+tap-userflow=tap_userflow.tap:TapUserFlow.cli
+

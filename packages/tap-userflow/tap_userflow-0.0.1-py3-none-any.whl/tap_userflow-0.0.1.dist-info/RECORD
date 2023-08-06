@@ -1,0 +1,11 @@
+tap_userflow/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tap_userflow/client.py,sha256=103yKjeL5idpx1qoQzaFKHRpTjtUuvHCEgWfaTiuSus,4089
+tap_userflow/schemas/content.json,sha256=PYhvBC4oKrYUCt_hfZadCoqBN9QXn8TD5N_Mq7tmAKg,728
+tap_userflow/streams.py,sha256=TrA4Ll3k9DDv8s0lULf98prigtYALCGsUJ6gKFnm6Dw,885
+tap_userflow/tap.py,sha256=YG8BJIqlJx91VVfNeaIxuAY2mxgKaISzvEmTO8ITAKM,1038
+tap_userflow/tests/__init__.py,sha256=V3TrDLjVd8MW-9W42quoOx2Q8ylcJxYyUUgWFr4tu0E,36
+tap_userflow/tests/test_core.py,sha256=3aI7Xx2W_RrPkjFj-mQuqPXkv3RmfBWIDWfawMf--ik,680
+tap_userflow-0.0.1.dist-info/entry_points.txt,sha256=pxaBKLmjfEfZ_Q1wC2S6g8q7j_tXdSm2m9BzYDIrb34,65
+tap_userflow-0.0.1.dist-info/WHEEL,sha256=DA86_h4QwwzGeRoz62o1svYt5kGEXpoUTuTtwzoTb30,83
+tap_userflow-0.0.1.dist-info/METADATA,sha256=RedzhDug8RMtpbQcE6hsagf7rSz0nhnyrxR0N-Itt_c,583
+tap_userflow-0.0.1.dist-info/RECORD,,
