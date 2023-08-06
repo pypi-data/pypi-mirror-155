@@ -1,0 +1,3 @@
+[console_scripts]
+fetch-radio-embed=fetch_radio_embed.__main__:app
+
