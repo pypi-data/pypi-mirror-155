@@ -1,0 +1,16 @@
+LICENSE
+README.md
+setup.py
+gitirods/__init__.py
+gitirods/check_point.py
+gitirods/main.py
+gitirods/project.py
+gitirods/util.py
+gitirods/iinit/__init__.py
+gitirods/iinit/iinit.py
+gitirods/iinit/session.py
+vsc_gitirods.egg-info/PKG-INFO
+vsc_gitirods.egg-info/SOURCES.txt
+vsc_gitirods.egg-info/dependency_links.txt
+vsc_gitirods.egg-info/requires.txt
+vsc_gitirods.egg-info/top_level.txt
