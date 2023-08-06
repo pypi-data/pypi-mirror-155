@@ -1,0 +1,107 @@
+2022-05-19 15:30:02,906 DEBUG Initializing HTTP session.
+2022-05-19 15:30:02,909 DEBUG Starting new HTTPS connection (1): api-testnet.bybit.com:443
+2022-05-19 15:30:03,183 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/private/v1/get-mmp-state HTTP/1.1" 200 208
+2022-05-19 15:31:02,912 DEBUG Initializing HTTP session.
+2022-05-19 15:31:02,915 DEBUG Starting new HTTPS connection (1): api-testnet.bybit.com:443
+2022-05-19 15:31:03,207 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/private/v1/get-mmp-state HTTP/1.1" 200 78
+2022-05-19 15:33:29,167 DEBUG Initializing HTTP session.
+2022-05-19 15:33:29,170 DEBUG Starting new HTTPS connection (1): api-testnet.bybit.com:443
+2022-05-19 15:33:29,412 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/private/v1/get-mmp-state HTTP/1.1" 200 40
+2022-05-19 15:33:34,959 DEBUG Initializing HTTP session.
+2022-05-19 15:33:34,962 DEBUG Starting new HTTPS connection (1): api-testnet.bybit.com:443
+2022-05-19 15:33:35,186 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/private/v1/get-mmp-state HTTP/1.1" 200 208
+2022-05-19 15:34:24,455 DEBUG Initializing HTTP session.
+2022-05-19 15:34:24,459 DEBUG Starting new HTTPS connection (1): api-testnet.bybit.com:443
+2022-05-19 15:34:24,780 DEBUG Initializing HTTP session.
+2022-05-19 15:34:24,782 DEBUG Starting new HTTPS connection (1): api-testnet.bybit.com:443
+2022-05-19 15:34:25,028 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/private/v1/get-mmp-state HTTP/1.1" 200 208
+2022-05-19 15:34:32,006 DEBUG Initializing HTTP session.
+2022-05-19 15:34:32,009 DEBUG Starting new HTTPS connection (1): api-testnet.bybit.com:443
+2022-05-19 15:34:32,239 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/private/v1/get-mmp-state HTTP/1.1" 200 208
+2022-05-19 15:35:07,287 DEBUG Initializing HTTP session.
+2022-05-19 15:35:07,292 DEBUG Starting new HTTPS connection (1): api-testnet.bybit.com:443
+2022-05-19 15:35:07,571 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/private/v1/get-mmp-state HTTP/1.1" 200 78
+2022-05-19 15:51:38,884 DEBUG Initializing HTTP session.
+2022-05-19 15:51:38,891 DEBUG Starting new HTTPS connection (1): api-testnet.bybit.com:443
+2022-05-19 15:51:39,171 DEBUG https://api-testnet.bybit.com:443 "GET /option/usdc/openapi/public/v1/order-book?symbol=BTC-29JUL22-10000-C HTTP/1.1" 200 44
+2022-05-19 15:51:39,364 DEBUG https://api-testnet.bybit.com:443 "GET /option/usdc/openapi/public/v1/symbols?symbol=BTC-29JUL22-10000-C HTTP/1.1" 200 486
+2022-05-19 15:51:39,540 DEBUG https://api-testnet.bybit.com:443 "GET /option/usdc/openapi/public/v1/tick?symbol=BTC-29JUL22-10000-C HTTP/1.1" 200 516
+2022-05-19 15:51:39,722 DEBUG https://api-testnet.bybit.com:443 "GET /option/usdc/openapi/public/v1/delivery-price HTTP/1.1" 200 4997
+2022-05-19 15:51:40,089 DEBUG https://api-testnet.bybit.com:443 "GET /option/usdc/openapi/public/v1/query-trade-latest?category=OPTION HTTP/1.1" 200 49008
+2022-05-19 15:51:40,466 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/private/v1/place-order HTTP/1.1" 200 232
+2022-05-19 15:51:40,649 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/private/v1/batch-place-orders HTTP/1.1" 200 1025
+2022-05-19 15:51:40,844 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/private/v1/query-active-orders HTTP/1.1" 200 92
+2022-05-19 15:51:41,025 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/private/v1/cancel-order HTTP/1.1" 200 168
+2022-05-19 15:51:41,209 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/private/v1/batch-cancel-orders HTTP/1.1" 200 745
+2022-05-19 15:51:41,392 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/private/v1/cancel-all HTTP/1.1" 200 83
+2022-05-24 16:01:46,166 DEBUG Initializing HTTP session.
+2022-05-24 16:01:46,172 DEBUG Starting new HTTPS connection (1): api-testnet.bybit.com:443
+2022-05-24 16:01:47,357 DEBUG https://api-testnet.bybit.com:443 "GET /option/usdc/openapi/public/v1/order-book?symbol=BTC-29JUL22-10000-C HTTP/1.1" 200 44
+2022-05-24 16:01:47,895 DEBUG https://api-testnet.bybit.com:443 "GET /option/usdc/openapi/public/v1/symbols?symbol=BTC-29JUL22-10000-C HTTP/1.1" 200 486
+2022-05-24 16:01:48,098 DEBUG https://api-testnet.bybit.com:443 "GET /option/usdc/openapi/public/v1/tick?symbol=BTC-29JUL22-10000-C HTTP/1.1" 200 516
+2022-05-24 16:01:48,310 DEBUG https://api-testnet.bybit.com:443 "GET /option/usdc/openapi/public/v1/delivery-price HTTP/1.1" 200 4997
+2022-05-24 16:01:48,612 DEBUG https://api-testnet.bybit.com:443 "GET /option/usdc/openapi/public/v1/query-trade-latest?category=OPTION HTTP/1.1" 200 48739
+2022-05-24 16:01:49,020 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/private/v1/place-order HTTP/1.1" 200 232
+2022-05-24 16:01:49,244 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/private/v1/batch-place-orders HTTP/1.1" 200 1025
+2022-05-24 16:01:49,478 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/private/v1/query-active-orders HTTP/1.1" 200 776
+2022-05-24 16:01:49,680 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/private/v1/cancel-order HTTP/1.1" 200 168
+2022-05-24 16:01:49,876 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/private/v1/batch-cancel-orders HTTP/1.1" 200 40
+2022-05-24 16:01:53,963 DEBUG Initializing HTTP session.
+2022-05-24 16:01:53,965 DEBUG Starting new HTTPS connection (1): api-testnet.bybit.com:443
+2022-05-24 16:01:54,825 DEBUG https://api-testnet.bybit.com:443 "GET /option/usdc/openapi/public/v1/order-book?symbol=BTC-29JUL22-10000-C HTTP/1.1" 200 44
+2022-05-24 16:01:55,370 DEBUG https://api-testnet.bybit.com:443 "GET /option/usdc/openapi/public/v1/symbols?symbol=BTC-29JUL22-10000-C HTTP/1.1" 200 486
+2022-05-24 16:01:55,572 DEBUG https://api-testnet.bybit.com:443 "GET /option/usdc/openapi/public/v1/tick?symbol=BTC-29JUL22-10000-C HTTP/1.1" 200 514
+2022-05-24 16:01:55,806 DEBUG https://api-testnet.bybit.com:443 "GET /option/usdc/openapi/public/v1/delivery-price HTTP/1.1" 200 4997
+2022-05-24 16:01:56,110 DEBUG https://api-testnet.bybit.com:443 "GET /option/usdc/openapi/public/v1/query-trade-latest?category=OPTION HTTP/1.1" 200 48739
+2022-05-24 16:01:56,488 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/private/v1/place-order HTTP/1.1" 200 232
+2022-05-24 16:01:56,701 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/private/v1/batch-place-orders HTTP/1.1" 200 1025
+2022-05-24 16:01:56,925 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/private/v1/query-active-orders HTTP/1.1" 200 92
+2022-05-24 16:01:57,184 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/private/v1/cancel-order HTTP/1.1" 200 168
+2022-05-24 16:01:57,390 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/private/v1/batch-cancel-orders HTTP/1.1" 200 745
+2022-05-24 16:01:57,592 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/private/v1/cancel-all HTTP/1.1" 200 83
+2022-05-24 16:06:58,395 DEBUG Initializing HTTP session.
+2022-05-24 16:06:58,400 DEBUG Starting new HTTPS connection (1): api-testnet.bybit.com:443
+2022-05-24 16:06:58,801 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/private/v1/mmp-modify HTTP/1.1" 200 44
+2022-05-24 16:07:28,396 DEBUG Initializing HTTP session.
+2022-05-24 16:07:28,399 DEBUG Starting new HTTPS connection (1): api-testnet.bybit.com:443
+2022-05-24 16:07:28,816 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/private/v1/query-active-orders HTTP/1.1" 200 44
+2022-05-24 16:08:10,728 DEBUG Initializing HTTP session.
+2022-05-24 16:08:10,730 DEBUG Starting new HTTPS connection (1): api-testnet.bybit.com:443
+2022-05-24 16:08:11,041 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/private/v1/get-mmp-state HTTP/1.1" 200 44
+2022-05-25 09:12:44,852 DEBUG Initializing HTTP session.
+2022-05-25 09:12:44,858 DEBUG Starting new HTTPS connection (1): api-testnet.bybit.com:443
+2022-05-25 09:12:45,845 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/ex/private/v1/get-mmp-state HTTP/1.1" 404 43
+2022-05-25 09:13:42,319 DEBUG Initializing HTTP session.
+2022-05-25 09:13:42,322 DEBUG Starting new HTTPS connection (1): api-testnet.bybit.com:443
+2022-05-25 09:13:42,958 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/private/v1/get-mmp-state HTTP/1.1" 200 44
+2022-05-25 09:14:01,290 DEBUG Initializing HTTP session.
+2022-05-25 09:14:01,294 DEBUG Starting new HTTPS connection (1): api-testnet.bybit.com:443
+2022-05-25 09:14:01,947 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/ex/private/v1/get-mmp-state HTTP/1.1" 404 43
+2022-05-25 10:22:39,321 DEBUG Initializing HTTP session.
+2022-05-25 10:22:39,325 DEBUG Starting new HTTPS connection (1): api-testnet.bybit.com:443
+2022-05-25 10:22:40,206 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/ex/private/v1/get-mmp-state HTTP/1.1" 404 43
+2022-05-25 10:23:03,064 DEBUG Initializing HTTP session.
+2022-05-25 10:23:03,069 DEBUG Starting new HTTPS connection (1): api-testnet.bybit.com:443
+2022-05-25 10:23:03,388 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/private/v1/get-mmp-state HTTP/1.1" 200 44
+2022-05-25 10:23:54,296 DEBUG Initializing HTTP session.
+2022-05-25 10:23:54,298 DEBUG Starting new HTTPS connection (1): api-testnet.bybit.com:443
+2022-05-25 10:23:55,041 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/private/v1/get-mmp-state HTTP/1.1" 200 44
+2022-05-25 10:24:59,301 DEBUG Initializing HTTP session.
+2022-05-25 10:24:59,305 DEBUG Starting new HTTPS connection (1): api-testnet.bybit.com:443
+2022-05-25 10:24:59,667 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/private/v1/get-mmp-state HTTP/1.1" 200 220
+2022-05-25 10:24:59,882 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/private/v1/mmp-modify HTTP/1.1" 200 67
+2022-05-25 16:16:23,753 DEBUG Initializing HTTP session.
+2022-05-25 16:16:23,759 DEBUG Starting new HTTPS connection (1): api-testnet.bybit.com:443
+2022-05-25 16:16:24,531 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/private/v1/get-mmp-state HTTP/1.1" 200 220
+2022-05-25 16:16:24,721 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/private/v1/mmp-modify HTTP/1.1" 200 40
+2022-05-25 16:18:10,060 DEBUG Initializing HTTP session.
+2022-05-25 16:18:10,064 DEBUG Starting new HTTPS connection (1): api-testnet.bybit.com:443
+2022-05-25 16:18:10,402 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/private/v1/get-mmp-state HTTP/1.1" 200 220
+2022-05-25 16:18:11,274 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/private/v1/mmp-modify HTTP/1.1" 200 32
+2022-05-25 16:18:11,537 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/private/v1/query-position HTTP/1.1" 200 66
+2022-05-25 16:20:46,827 DEBUG Initializing HTTP session.
+2022-05-25 16:20:46,832 DEBUG Starting new HTTPS connection (1): api-testnet.bybit.com:443
+2022-05-25 16:20:47,704 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/private/v1/mmp-reset HTTP/1.1" 200 66
+2022-05-25 16:20:56,729 DEBUG Initializing HTTP session.
+2022-05-25 16:20:56,732 DEBUG Starting new HTTPS connection (1): api-testnet.bybit.com:443
+2022-05-25 16:20:57,523 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/private/v1/mmp-reset HTTP/1.1" 200 32

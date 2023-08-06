@@ -1,0 +1,57 @@
+CHANGELOG.md
+LICENSE
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+examples/2022-06-10 requests debug logging.py
+examples/2022-06-10 requests debug logging.py.log
+examples/23.py
+examples/28.py
+examples/http_example.py
+examples/http_logging_test.py
+examples/my_http_example.log
+examples/my_http_example.py
+examples/my_http_example_2022-06-01.py
+examples/my_http_example_2022-06-01.py.log
+examples/my_http_example_universal_transfer.py
+examples/my_options_http.log
+examples/my_websocket_example.py
+examples/my_wss_test.py
+examples/pybit.log
+examples/websocket_example.py
+examples/resub/inverse_test.py
+examples/resub/linear_test.py
+examples/resub/pybit.log
+examples/resub/spot_test.py
+examples/resub/usdc_options_test.py
+examples/resub/usdc_perpetual_test.py
+examples/tests/my_options_http.log
+examples/tests/my_options_http.py
+examples/tests/my_withdraw_http_example.py
+examples/tests/pybit.log
+examples/tests/websocket_example 1.py
+examples/tests/websocket_example 2.py
+examples/tests/websocket_example 2022-05-09 200 sub disconnect.py
+examples/tests/websocket_example orderbook test.py
+examples/tests/websocket_example usdc options.py
+examples/tests/websocket_example usdc perp.py
+examples/tests/websocket_example wildcard.py
+pybit/__init__.py
+pybit/_http_manager.py
+pybit/_websocket_stream.py
+pybit/account_asset.py
+pybit/exceptions.py
+pybit/inverse_futures.py
+pybit/inverse_perpetual.py
+pybit/spot.py
+pybit/test.py
+pybit/usdc_options.py
+pybit/usdc_perpetual.py
+pybit/usdt_perpetual.py
+pybit.egg-info/PKG-INFO
+pybit.egg-info/SOURCES.txt
+pybit.egg-info/dependency_links.txt
+pybit.egg-info/not-zip-safe
+pybit.egg-info/requires.txt
+pybit.egg-info/top_level.txt

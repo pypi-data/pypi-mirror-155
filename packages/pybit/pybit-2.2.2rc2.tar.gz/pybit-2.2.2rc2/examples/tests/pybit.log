@@ -1,0 +1,181 @@
+2022-05-25 16:32:12,121 DEBUG WebSocket USDC Options closed.
+2022-05-25 16:32:12,121 DEBUG WebSocket USDC Options opened.
+2022-05-25 16:32:12,264 DEBUG --- request header ---
+2022-05-25 16:32:12,264 DEBUG GET /trade/option/usdc/public/v1 HTTP/1.1
+Upgrade: websocket
+Host: stream-testnet.bybit.com
+Origin: http://stream-testnet.bybit.com
+Sec-WebSocket-Key: KaJzBOJl3k37/5HLNXsNmw==
+Sec-WebSocket-Version: 13
+Connection: Upgrade
+
+
+2022-05-25 16:32:12,264 DEBUG -----------------------
+2022-05-25 16:32:12,264 DEBUG --- response header ---
+2022-05-25 16:32:13,228 DEBUG HTTP/1.1 101 Switching Protocols
+2022-05-25 16:32:13,229 DEBUG Server: nginx
+2022-05-25 16:32:13,229 DEBUG sec-websocket-accept: MPm0I+NBjhCePM6Z0GBYpSf/Pbw=
+2022-05-25 16:32:13,229 DEBUG Expires: Wed, 25 May 2022 15:32:13 GMT
+2022-05-25 16:32:13,230 DEBUG Cache-Control: max-age=0, no-cache, no-store
+2022-05-25 16:32:13,230 DEBUG Pragma: no-cache
+2022-05-25 16:32:13,230 DEBUG Date: Wed, 25 May 2022 15:32:13 GMT
+2022-05-25 16:32:13,230 DEBUG Upgrade: websocket
+2022-05-25 16:32:13,230 DEBUG Connection: Upgrade
+2022-05-25 16:32:13,230 DEBUG -----------------------
+2022-05-25 16:32:14,132 DEBUG ++Sent raw: b'\x81\xc7\xb9\xc0\xb3\xea\xc2\xe2\xdc\x9a\x9b\xfa\x93\xc8\xca\xb5\xd1\x99\xda\xb2\xda\x88\xdc\xe2\x9f\xca\x9b\xa1\xc1\x8d\xca\xe2\x89\xca\xe2\xe2\xd7\x8f\xd5\xb4\xd2\xc4\xd6\xb2\xd7\x8f\xcb\xa2\xdc\x85\xd2\xf1\x83\xda\x97\x82\xe7\xa9\x94\xf1\x80\xa7\xf8\x99\x81\xd8\x94\xf2\x86\xda\x89\xf0\x9e\xa9\x9b\x9d\xce'
+2022-05-25 16:32:14,132 DEBUG ++Sent decoded: fin=1 opcode=1 data=b'{"op": "subscribe", "args": ["delta.orderbook100.BTC-13MAY22-25000-C"]}'
+2022-05-25 16:32:14,133 DEBUG WebSocket USDC Options (Auth) closed.
+2022-05-25 16:32:14,133 DEBUG WebSocket USDC Options (Auth) opened.
+2022-05-25 16:32:14,212 DEBUG --- request header ---
+2022-05-25 16:32:14,212 DEBUG GET /trade/option/usdc/private/v1 HTTP/1.1
+Upgrade: websocket
+Host: stream-testnet.bybit.com
+Origin: http://stream-testnet.bybit.com
+Sec-WebSocket-Key: yE9o4T/F6rQD99W/jgJccw==
+Sec-WebSocket-Version: 13
+Connection: Upgrade
+
+
+2022-05-25 16:32:14,212 DEBUG -----------------------
+2022-05-25 16:32:14,212 DEBUG --- response header ---
+2022-05-25 16:32:14,382 DEBUG ++Rcv raw: b'\x81~\x00\xc3{"success":true,"conn_id":"0af4d6fffe1e2188-00000b72-0000032d-ff32a3793f84c6ec-2d5bc1da","data":{"failTopics":[],"successTopics":["delta.orderbook100.BTC-13MAY22-25000-C"]},"type":"COMMAND_RESP"}'
+2022-05-25 16:32:14,382 DEBUG ++Rcv decoded: fin=1 opcode=1 data=b'{"success":true,"conn_id":"0af4d6fffe1e2188-00000b72-0000032d-ff32a3793f84c6ec-2d5bc1da","data":{"failTopics":[],"successTopics":["delta.orderbook100.BTC-13MAY22-25000-C"]},"type":"COMMAND_RESP"}'
+2022-05-25 16:32:14,382 DEBUG Subscription to ['delta.orderbook100.BTC-13MAY22-25000-C'] successful.
+2022-05-25 16:32:15,202 DEBUG HTTP/1.1 101 Switching Protocols
+2022-05-25 16:32:15,202 DEBUG Server: nginx
+2022-05-25 16:32:15,202 DEBUG sec-websocket-accept: 3oNpdY/cCQoFmIK0XUR262JwyxA=
+2022-05-25 16:32:15,203 DEBUG Expires: Wed, 25 May 2022 15:32:15 GMT
+2022-05-25 16:32:15,203 DEBUG Cache-Control: max-age=0, no-cache, no-store
+2022-05-25 16:32:15,203 DEBUG Pragma: no-cache
+2022-05-25 16:32:15,203 DEBUG Date: Wed, 25 May 2022 15:32:15 GMT
+2022-05-25 16:32:15,203 DEBUG Upgrade: websocket
+2022-05-25 16:32:15,203 DEBUG Connection: Upgrade
+2022-05-25 16:32:15,203 DEBUG -----------------------
+2022-05-25 16:32:16,141 DEBUG ++Sent raw: b'\x81\xfe\x00\x81\xc1\x10\x00\xfb\xba2o\x8b\xe3* \xd9\xa0et\x93\xe3< \xd9\xa0bg\x88\xe3* \xa0\xe3Bd\xb3\xb9}h\xa1\x80qq\x8a\x87~3\x9a\x88!9\xd9\xed01\xcd\xf4#4\xc2\xf3\'3\xcc\xf0$1\xd7\xe12a\xca\xf3!b\xcf\xa2%a\xcb\xa5%f\xcc\xa7s8\xcd\xa5\'f\xcb\xf8%c\x9e\xf2%9\xc2\xf4q6\xc8\xa3u2\x99\xa3q0\xc3\xf3te\x9e\xa4ub\xc8\xf8 1\xc8\xa7&4\x9d\xf3"c\x9e\xa5t"\xa6\xbc'
+2022-05-25 16:32:16,141 DEBUG ++Sent decoded: fin=1 opcode=1 data=b'{"op": "auth", "args": ["RdHxmhZAaqqFn3aI19", 1653492737141, "a121b4c5a0d5f7fc86d7f095ce35995a63be2bba082deeeeb39013f64f22cedd"]}'
+2022-05-25 16:32:16,141 DEBUG ++Sent raw: b"\x81\xbd\x8cB\xa0\x06\xf7`\xcfv\xaex\x80$\xff7\xc2u\xef0\xc9d\xe9`\x8c&\xae#\xd2a\xff`\x9a&\xd7`\xd5u\xe90\x8ei\xfc'\xceg\xfc+\x8ei\xfc6\xc9i\xe2l\xd0i\xff+\xd4o\xe3,\x82[\xf1"
+2022-05-25 16:32:16,142 DEBUG ++Sent decoded: fin=1 opcode=1 data=b'{"op": "subscribe", "args": ["user.openapi.option.position"]}'
+2022-05-25 16:32:16,475 DEBUG ++Rcv raw: b'\x81z{"success":true,"conn_id":"0a0e8bfffe717d68-00005ffc-00000691-b4683593c750fc95-b7d473f7","ret_msg":"0","type":"AUTH_RESP"}'
+2022-05-25 16:32:16,476 DEBUG ++Rcv decoded: fin=1 opcode=1 data=b'{"success":true,"conn_id":"0a0e8bfffe717d68-00005ffc-00000691-b4683593c750fc95-b7d473f7","ret_msg":"0","type":"AUTH_RESP"}'
+2022-05-25 16:32:16,476 DEBUG Authorization for USDC Options (Auth) successful.
+2022-05-25 16:32:16,476 DEBUG ++Rcv raw: b'\x81~\x00\xb9{"success":true,"conn_id":"0a0e8bfffe717d68-00005ffc-00000691-b4683593c750fc95-b7d473f7","data":{"failTopics":[],"successTopics":["user.openapi.option.position"]},"type":"COMMAND_RESP"}'
+2022-05-25 16:32:16,476 DEBUG ++Rcv decoded: fin=1 opcode=1 data=b'{"success":true,"conn_id":"0a0e8bfffe717d68-00005ffc-00000691-b4683593c750fc95-b7d473f7","data":{"failTopics":[],"successTopics":["user.openapi.option.position"]},"type":"COMMAND_RESP"}'
+2022-05-25 16:32:16,476 DEBUG Subscription to ['user.openapi.option.position'] successful.
+2022-05-25 16:32:16,533 DEBUG ++Rcv raw: b'\x81~\x00\xb0{"id":"205b9b54-fbd6-495b-84e6-84f6426ad7fc","topic":"user.openapi.option.position","creationTime":1653492736463,"data":{"result":[],"version":1,"baseLine":9,"dataType":"NEW"}}'
+2022-05-25 16:32:16,533 DEBUG ++Rcv decoded: fin=1 opcode=1 data=b'{"id":"205b9b54-fbd6-495b-84e6-84f6426ad7fc","topic":"user.openapi.option.position","creationTime":1653492736463,"data":{"result":[],"version":1,"baseLine":9,"dataType":"NEW"}}'
+2022-05-25 16:32:27,827 DEBUG WebSocket USDC Options closed.
+2022-05-25 16:32:27,827 DEBUG WebSocket USDC Options opened.
+2022-05-25 16:32:27,929 DEBUG --- request header ---
+2022-05-25 16:32:27,929 DEBUG GET /trade/option/usdc/public/v1 HTTP/1.1
+Upgrade: websocket
+Host: stream-testnet.bybit.com
+Origin: http://stream-testnet.bybit.com
+Sec-WebSocket-Key: 9jw4TG/7qdjU7HQUBw2Lig==
+Sec-WebSocket-Version: 13
+Connection: Upgrade
+
+
+2022-05-25 16:32:27,929 DEBUG -----------------------
+2022-05-25 16:32:27,929 DEBUG --- response header ---
+2022-05-25 16:32:28,883 DEBUG HTTP/1.1 101 Switching Protocols
+2022-05-25 16:32:28,884 DEBUG Server: nginx
+2022-05-25 16:32:28,884 DEBUG sec-websocket-accept: N00/+w50nk3SU1rikp1+I9KApds=
+2022-05-25 16:32:28,884 DEBUG Expires: Wed, 25 May 2022 15:32:28 GMT
+2022-05-25 16:32:28,884 DEBUG Cache-Control: max-age=0, no-cache, no-store
+2022-05-25 16:32:28,885 DEBUG Pragma: no-cache
+2022-05-25 16:32:28,885 DEBUG Date: Wed, 25 May 2022 15:32:28 GMT
+2022-05-25 16:32:28,885 DEBUG Upgrade: websocket
+2022-05-25 16:32:28,885 DEBUG Connection: Upgrade
+2022-05-25 16:32:28,885 DEBUG -----------------------
+2022-05-25 16:32:29,837 DEBUG ++Sent raw: b'\x81\xc7^?V\x8c%\x1d9\xfc|\x05v\xae-J4\xff=M?\xee;\x1dz\xac|^$\xeb-\x1dl\xac\x05\x1d2\xe92K7\xa21M2\xe9,]9\xe35\x0ef\xbcp}\x02\xcfs\x0ee\xc1\x1ffd\xbes\rc\xbcn\x0f{\xcf|b+'
+2022-05-25 16:32:29,838 DEBUG ++Sent decoded: fin=1 opcode=1 data=b'{"op": "subscribe", "args": ["delta.orderbook100.BTC-13MAY22-25000-C"]}'
+2022-05-25 16:32:29,838 DEBUG WebSocket USDC Options (Auth) closed.
+2022-05-25 16:32:29,838 DEBUG WebSocket USDC Options (Auth) opened.
+2022-05-25 16:32:29,950 DEBUG --- request header ---
+2022-05-25 16:32:29,950 DEBUG GET /trade/option/usdc/private/v1 HTTP/1.1
+Upgrade: websocket
+Host: stream-testnet.bybit.com
+Origin: http://stream-testnet.bybit.com
+Sec-WebSocket-Key: Jjb+OoI9gD+Chgq5VZNUkA==
+Sec-WebSocket-Version: 13
+Connection: Upgrade
+
+
+2022-05-25 16:32:29,950 DEBUG -----------------------
+2022-05-25 16:32:29,950 DEBUG --- response header ---
+2022-05-25 16:32:30,100 DEBUG ++Rcv raw: b'\x81~\x00\xc3{"success":true,"conn_id":"0af4d6fffe1e2188-00000b72-0000032e-d66337a21f850014-d67fd7c7","data":{"failTopics":[],"successTopics":["delta.orderbook100.BTC-13MAY22-25000-C"]},"type":"COMMAND_RESP"}'
+2022-05-25 16:32:30,100 DEBUG ++Rcv decoded: fin=1 opcode=1 data=b'{"success":true,"conn_id":"0af4d6fffe1e2188-00000b72-0000032e-d66337a21f850014-d67fd7c7","data":{"failTopics":[],"successTopics":["delta.orderbook100.BTC-13MAY22-25000-C"]},"type":"COMMAND_RESP"}'
+2022-05-25 16:32:30,100 DEBUG Subscription to ['delta.orderbook100.BTC-13MAY22-25000-C'] successful.
+2022-05-25 16:32:30,942 DEBUG HTTP/1.1 101 Switching Protocols
+2022-05-25 16:32:30,942 DEBUG Server: nginx
+2022-05-25 16:32:30,942 DEBUG sec-websocket-accept: 1qEpLwyKICN5N1UgqgHRtBJTydE=
+2022-05-25 16:32:30,943 DEBUG Expires: Wed, 25 May 2022 15:32:30 GMT
+2022-05-25 16:32:30,943 DEBUG Cache-Control: max-age=0, no-cache, no-store
+2022-05-25 16:32:30,943 DEBUG Pragma: no-cache
+2022-05-25 16:32:30,943 DEBUG Date: Wed, 25 May 2022 15:32:30 GMT
+2022-05-25 16:32:30,943 DEBUG Upgrade: websocket
+2022-05-25 16:32:30,943 DEBUG Connection: Upgrade
+2022-05-25 16:32:30,943 DEBUG -----------------------
+2022-05-25 16:32:31,846 DEBUG ++Sent raw: b'\x81\xfe\x00\x81\x9a?\xfe\xb5\xe1\x1d\x91\xc5\xb8\x05\xde\x97\xfbJ\x8a\xdd\xb8\x13\xde\x97\xfbM\x99\xc6\xb8\x05\xde\xee\xb8m\x9a\xfd\xe2R\x96\xef\xdb^\x8f\xc4\xdcQ\xcd\xd4\xd3\x0e\xc7\x97\xb6\x1f\xcf\x83\xaf\x0c\xca\x8c\xa8\x08\xcb\x87\xa2\x0b\xcb\x99\xba\x1d\x98\x8d\xab\t\x9c\x8d\xa8\x0f\xcd\xd7\xab\x08\xca\xd0\xaa\n\x9a\xd6\xff\x0f\x9f\xd3\xa9\\\xcf\x86\xac\x0f\x9d\x8c\xae^\x98\x80\xaa\x0f\x9b\xd1\xa3\t\xc7\xd0\xaa\x06\xc9\x87\xfe^\xcb\x82\xfe\\\xcc\x82\xa2\x0f\x9b\xd3\xaa\t\xc8\x86\xa9\\\xdc\xe8\xe7'
+2022-05-25 16:32:31,846 DEBUG ++Sent decoded: fin=1 opcode=1 data=b'{"op": "auth", "args": ["RdHxmhZAaqqFn3aI19", 1653492752845, "f816b8203b174e05dce0af3c1360c94af500ed969e0972da57dc2780ef06633c"]}'
+2022-05-25 16:32:31,846 DEBUG ++Sent raw: b"\x81\xbd|\xb0\xe8j\x07\x92\x87\x1a^\x8a\xc8H\x0f\xc5\x8a\x19\x1f\xc2\x81\x08\x19\x92\xc4J^\xd1\x9a\r\x0f\x92\xd2J'\x92\x9d\x19\x19\xc2\xc6\x05\x0c\xd5\x86\x0b\x0c\xd9\xc6\x05\x0c\xc4\x81\x05\x12\x9e\x98\x05\x0f\xd9\x9c\x03\x13\xde\xca7\x01"
+2022-05-25 16:32:31,846 DEBUG ++Sent decoded: fin=1 opcode=1 data=b'{"op": "subscribe", "args": ["user.openapi.option.position"]}'
+2022-05-25 16:32:31,846 DEBUG ++Sent raw: b'\x81\xba\xf1Q\xf1\xb0\x8as\x9e\xc0\xd3k\xd1\x92\x82$\x93\xc3\x92#\x98\xd2\x94s\xdd\x90\xd30\x83\xd7\x82s\xcb\x90\xaas\x84\xc3\x94#\xdf\xdf\x814\x9f\xd1\x818\xdf\xdf\x81%\x98\xdf\x9f\x7f\x85\xc2\x905\x94\x92\xac,'
+2022-05-25 16:32:31,847 DEBUG ++Sent decoded: fin=1 opcode=1 data=b'{"op": "subscribe", "args": ["user.openapi.option.trade"]}'
+2022-05-25 16:32:31,847 DEBUG ++Sent raw: b'\x81\xba\xcfH\xe6\xf6\xb4j\x89\x86\xedr\xc6\xd4\xbc=\x84\x85\xac:\x8f\x94\xaaj\xca\xd6\xed)\x94\x91\xbcj\xdc\xd6\x94j\x93\x85\xaa:\xc8\x99\xbf-\x88\x97\xbf!\xc8\x99\xbf<\x8f\x99\xa1f\x89\x84\xab-\x94\xd4\x925'
+2022-05-25 16:32:31,847 DEBUG ++Sent decoded: fin=1 opcode=1 data=b'{"op": "subscribe", "args": ["user.openapi.option.order"]}'
+2022-05-25 16:32:32,117 DEBUG ++Rcv raw: b'\x81z{"success":true,"conn_id":"0a0e8bfffe717d68-00005ffc-00000692-ffae14cef9513a16-82fdba24","ret_msg":"0","type":"AUTH_RESP"}'
+2022-05-25 16:32:32,118 DEBUG ++Rcv decoded: fin=1 opcode=1 data=b'{"success":true,"conn_id":"0a0e8bfffe717d68-00005ffc-00000692-ffae14cef9513a16-82fdba24","ret_msg":"0","type":"AUTH_RESP"}'
+2022-05-25 16:32:32,118 DEBUG Authorization for USDC Options (Auth) successful.
+2022-05-25 16:32:32,118 DEBUG ++Rcv raw: b'\x81~\x00\xb9{"success":true,"conn_id":"0a0e8bfffe717d68-00005ffc-00000692-ffae14cef9513a16-82fdba24","data":{"failTopics":[],"successTopics":["user.openapi.option.position"]},"type":"COMMAND_RESP"}'
+2022-05-25 16:32:32,118 DEBUG ++Rcv decoded: fin=1 opcode=1 data=b'{"success":true,"conn_id":"0a0e8bfffe717d68-00005ffc-00000692-ffae14cef9513a16-82fdba24","data":{"failTopics":[],"successTopics":["user.openapi.option.position"]},"type":"COMMAND_RESP"}'
+2022-05-25 16:32:32,118 DEBUG Subscription to ['user.openapi.option.position'] successful.
+2022-05-25 16:32:32,118 DEBUG ++Rcv raw: b'\x81~\x00\xb6{"success":true,"conn_id":"0a0e8bfffe717d68-00005ffc-00000692-ffae14cef9513a16-82fdba24","data":{"failTopics":[],"successTopics":["user.openapi.option.trade"]},"type":"COMMAND_RESP"}'
+2022-05-25 16:32:32,118 DEBUG ++Rcv decoded: fin=1 opcode=1 data=b'{"success":true,"conn_id":"0a0e8bfffe717d68-00005ffc-00000692-ffae14cef9513a16-82fdba24","data":{"failTopics":[],"successTopics":["user.openapi.option.trade"]},"type":"COMMAND_RESP"}'
+2022-05-25 16:32:32,118 DEBUG Subscription to ['user.openapi.option.trade'] successful.
+2022-05-25 16:32:32,119 DEBUG ++Rcv raw: b'\x81~\x00\xb6{"success":true,"conn_id":"0a0e8bfffe717d68-00005ffc-00000692-ffae14cef9513a16-82fdba24","data":{"failTopics":[],"successTopics":["user.openapi.option.order"]},"type":"COMMAND_RESP"}'
+2022-05-25 16:32:32,119 DEBUG ++Rcv decoded: fin=1 opcode=1 data=b'{"success":true,"conn_id":"0a0e8bfffe717d68-00005ffc-00000692-ffae14cef9513a16-82fdba24","data":{"failTopics":[],"successTopics":["user.openapi.option.order"]},"type":"COMMAND_RESP"}'
+2022-05-25 16:32:32,119 DEBUG Subscription to ['user.openapi.option.order'] successful.
+2022-05-25 16:32:32,131 DEBUG ++Rcv raw: b'\x81~\x00\xb0{"id":"8d34c3ca-28c3-4fd9-a169-18accad73c70","topic":"user.openapi.option.position","creationTime":1653492752063,"data":{"result":[],"version":1,"baseLine":9,"dataType":"NEW"}}'
+2022-05-25 16:32:32,131 DEBUG ++Rcv decoded: fin=1 opcode=1 data=b'{"id":"8d34c3ca-28c3-4fd9-a169-18accad73c70","topic":"user.openapi.option.position","creationTime":1653492752063,"data":{"result":[],"version":1,"baseLine":9,"dataType":"NEW"}}'
+2022-05-25 16:32:32,138 DEBUG ++Rcv raw: b'\x81~\x00\xad{"id":"6de58ac5-4933-4b43-855f-08a44ad86f68","topic":"user.openapi.option.order","creationTime":1653492752068,"data":{"result":[],"baseLine":9,"dataType":"NEW","version":1}}'
+2022-05-25 16:32:32,138 DEBUG ++Rcv decoded: fin=1 opcode=1 data=b'{"id":"6de58ac5-4933-4b43-855f-08a44ad86f68","topic":"user.openapi.option.order","creationTime":1653492752068,"data":{"result":[],"baseLine":9,"dataType":"NEW","version":1}}'
+2022-05-25 16:32:58,889 DEBUG ++Sent raw: b'\x89\x80~\xf63\xd7'
+2022-05-25 16:32:58,889 DEBUG ++Sent decoded: fin=1 opcode=9 data=b''
+2022-05-25 16:32:59,159 DEBUG ++Rcv raw: b'\x8a\x00'
+2022-05-25 16:32:59,160 DEBUG ++Rcv decoded: fin=1 opcode=10 data=b''
+2022-05-25 16:33:00,948 DEBUG ++Sent raw: b'\x89\x80\xdf\x89D\r'
+2022-05-25 16:33:00,948 DEBUG ++Sent decoded: fin=1 opcode=9 data=b''
+2022-05-25 16:33:01,331 DEBUG ++Rcv raw: b'\x8a\x00'
+2022-05-25 16:33:01,331 DEBUG ++Rcv decoded: fin=1 opcode=10 data=b''
+2022-05-25 16:33:28,893 DEBUG ++Sent raw: b'\x89\x80\xc3\xc8K\x7f'
+2022-05-25 16:33:28,893 DEBUG ++Sent decoded: fin=1 opcode=9 data=b''
+2022-05-25 16:33:29,145 ERROR WebSocket USDC Options encountered error: Connection to remote host was lost..
+2022-05-25 16:33:29,145 DEBUG WebSocket USDC Options closed.
+2022-05-25 16:33:29,145 DEBUG WebSocket USDC Options opened.
+2022-05-25 16:33:29,259 DEBUG --- request header ---
+2022-05-25 16:33:29,259 DEBUG GET /trade/option/usdc/public/v1 HTTP/1.1
+Upgrade: websocket
+Host: stream-testnet.bybit.com
+Origin: http://stream-testnet.bybit.com
+Sec-WebSocket-Key: eIxq+UWsTcx41QHOe+C3rg==
+Sec-WebSocket-Version: 13
+Connection: Upgrade
+
+
+2022-05-25 16:33:29,259 DEBUG -----------------------
+2022-05-25 16:33:29,259 DEBUG --- response header ---
+2022-05-25 16:33:29,992 DEBUG HTTP/1.1 101 Switching Protocols
+2022-05-25 16:33:29,993 DEBUG Server: nginx
+2022-05-25 16:33:29,993 DEBUG sec-websocket-accept: LBEZFtSjRl0uym3Yq/TkK8Qo4GQ=
+2022-05-25 16:33:29,993 DEBUG Expires: Wed, 25 May 2022 15:33:30 GMT
+2022-05-25 16:33:29,994 DEBUG Cache-Control: max-age=0, no-cache, no-store
+2022-05-25 16:33:29,994 DEBUG Pragma: no-cache
+2022-05-25 16:33:29,994 DEBUG Date: Wed, 25 May 2022 15:33:30 GMT
+2022-05-25 16:33:29,994 DEBUG Upgrade: websocket
+2022-05-25 16:33:29,994 DEBUG Connection: Upgrade
+2022-05-25 16:33:29,994 DEBUG -----------------------
+2022-05-25 16:33:30,954 DEBUG ++Sent raw: b'\x89\x80\x1aq\xad\x04'
+2022-05-25 16:33:30,954 DEBUG ++Sent decoded: fin=1 opcode=9 data=b''
+2022-05-25 16:33:31,218 DEBUG ++Rcv raw: b'\x8a\x00'
+2022-05-25 16:33:31,218 DEBUG ++Rcv decoded: fin=1 opcode=10 data=b''

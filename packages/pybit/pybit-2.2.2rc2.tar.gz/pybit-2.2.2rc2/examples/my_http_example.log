@@ -1,0 +1,49 @@
+2022-06-10 15:28:16,646 DEBUG Initializing HTTP session.
+2022-06-10 15:28:16,655 DEBUG Starting new HTTPS connection (1): api-testnet.bybit.com:443
+2022-06-10 15:28:17,275 DEBUG https://api-testnet.bybit.com:443 "GET /v2/public/symbols HTTP/1.1" 200 None
+2022-06-10 15:28:17,513 DEBUG https://api-testnet.bybit.com:443 "GET /v2/private/wallet/balance?api_key=RdHxmhZAaqqFn3aI19&recv_window=5000&timestamp=1654871297306&sign=29e6a26b513ec3e363641603965ef5c2623e9d7f435881fc5094149836762826 HTTP/1.1" 200 3336
+2022-06-10 15:30:34,705 DEBUG Initializing HTTP session.
+2022-06-10 15:30:34,709 DEBUG Starting new HTTPS connection (1): api-testnet.bybit.com:443
+2022-06-10 15:30:35,222 DEBUG https://api-testnet.bybit.com:443 "GET /v2/public/symbols HTTP/1.1" 200 None
+2022-06-10 15:30:35,559 DEBUG https://api-testnet.bybit.com:443 "GET /v2/private/wallet/balance?api_key=RdHxmhZAaqqFn3aI19&recv_window=5000&timestamp=1654871435374&sign=6803f7b2774460d3218181768a52a7b1159cfcbfa939c196f3b4e21929ffddd8 HTTP/1.1" 200 3336
+2022-06-10 15:55:57,836 DEBUG Initializing HTTP session.
+2022-06-10 15:55:57,840 DEBUG Starting new HTTPS connection (1): api-testnet.bybit.com:443
+2022-06-10 15:55:59,269 DEBUG https://api-testnet.bybit.com:443 "GET /v2/public/symbols HTTP/1.1" 200 None
+2022-06-10 15:55:59,734 DEBUG https://api-testnet.bybit.com:443 "GET /v2/private/wallet/balance?api_key=RdHxmhZAaqqFn3aI19&recv_window=5000&timestamp=1654872959516&sign=71005c89a602e319fb6f414bc110b290fa6ac2b5bb0bbc8dca90acbfa1ac8880 HTTP/1.1" 200 3336
+2022-06-14 14:39:16,809 DEBUG Initializing HTTP session.
+2022-06-14 14:39:16,817 DEBUG Starting new HTTPS connection (1): api-testnet.bybit.com:443
+2022-06-14 14:39:17,543 DEBUG https://api-testnet.bybit.com:443 "GET /spot/v1/symbols HTTP/1.1" 200 21896
+2022-06-14 14:39:17,901 DEBUG https://api-testnet.bybit.com:443 "GET /spot/v1/account?api_key=RdHxmhZAaqqFn3aI19&recv_window=5000&timestamp=1655213957703&sign=e1c193ca157b577ee09c10a7a3a95fd1d1d7c7018c94ada0853d7a70bc0b3e14 HTTP/1.1" 200 512
+2022-06-14 14:39:18,104 DEBUG https://api-testnet.bybit.com:443 "POST /spot/v1/order?api_key=RdHxmhZAaqqFn3aI19&price=18000&qty=10&recv_window=5000&side=Buy&sign=58cb6d7f144dbe78d7371d432b6c8da3b18db3e95bab0c6b13c493f70aa78e24&symbol=BTCUSDT&timestamp=1655213957902&type=LIMIT HTTP/1.1" 200 341
+2022-06-14 14:41:11,694 DEBUG Initializing HTTP session.
+2022-06-14 14:41:11,703 DEBUG Starting new HTTPS connection (1): api-testnet.bybit.com:443
+2022-06-14 14:41:11,967 DEBUG https://api-testnet.bybit.com:443 "GET /spot/v1/symbols HTTP/1.1" 200 21896
+2022-06-14 14:41:12,166 DEBUG https://api-testnet.bybit.com:443 "GET /spot/v1/account?api_key=RdHxmhZAaqqFn3aI19&recv_window=5000&timestamp=1655214071968&sign=d6ad4dc8ab336bc28f2945f6f5f22e969668bda88e6e8fb1761cd9b54e3c2b69 HTTP/1.1" 200 517
+2022-06-14 14:41:12,366 DEBUG https://api-testnet.bybit.com:443 "POST /spot/v1/order?api_key=RdHxmhZAaqqFn3aI19&price=18000&qty=10&recv_window=5000&side=Buy&sign=e719541e082e45fd21288f389a16762ed142ad64c8695d909a9e20ae633a9d3e&symbol=BTCUSDT&timestamp=1655214072167&type=LIMIT HTTP/1.1" 200 341
+2022-06-14 14:41:39,358 DEBUG Initializing HTTP session.
+2022-06-14 14:41:39,364 DEBUG Starting new HTTPS connection (1): api-testnet.bybit.com:443
+2022-06-14 14:41:40,337 DEBUG https://api-testnet.bybit.com:443 "GET /spot/v1/symbols HTTP/1.1" 200 21896
+2022-06-14 14:41:40,701 DEBUG https://api-testnet.bybit.com:443 "GET /spot/v1/account?api_key=RdHxmhZAaqqFn3aI19&recv_window=5000&timestamp=1655214100502&sign=1925cdc1b6b7f2ee3d4fa8543bf29be5955c46887cc857b751dd703d6bc15ce6 HTTP/1.1" 200 517
+2022-06-14 14:42:00,387 DEBUG Initializing HTTP session.
+2022-06-14 14:42:00,392 DEBUG Starting new HTTPS connection (1): api-testnet.bybit.com:443
+2022-06-14 14:42:00,984 DEBUG https://api-testnet.bybit.com:443 "GET /spot/v1/symbols HTTP/1.1" 200 21896
+2022-06-14 14:42:01,333 DEBUG https://api-testnet.bybit.com:443 "GET /spot/v1/account?api_key=RdHxmhZAaqqFn3aI19&recv_window=5000&timestamp=1655214121140&sign=2eb0ea4a3856bfcbf57f178b49dbb721aab147004319869ab8084bc98b753c6c HTTP/1.1" 200 517
+2022-06-14 14:42:01,529 DEBUG https://api-testnet.bybit.com:443 "POST /spot/v1/order?agentSource=dextertest&api_key=RdHxmhZAaqqFn3aI19&price=18000&qty=10&recv_window=5000&side=Buy&sign=07dc2379e7ce6d6c2d79d22b9f82c51d43d4dbc2e6506b6403731a009f70530a&symbol=BTCUSDT&timestamp=1655214121334&type=LIMIT HTTP/1.1" 200 341
+2022-06-15 11:18:56,636 DEBUG Initializing HTTP session.
+2022-06-15 11:18:56,647 DEBUG Starting new HTTPS connection (1): api-testnet.bybit.com:443
+2022-06-15 11:18:57,469 DEBUG https://api-testnet.bybit.com:443 "GET /asset/v1/private/sub-member/member-ids?api_key=RdHxmhZAaqqFn3aI19&recv_window=5000&timestamp=1655288336638&sign=9750da1b84ec37490f46e479400f2e7526d1ec439d6ad92b0375fe892f481a4c HTTP/1.1" 200 232
+2022-06-15 11:20:06,213 DEBUG Initializing HTTP session.
+2022-06-15 11:20:06,216 DEBUG Starting new HTTPS connection (1): api-testnet.bybit.com:443
+2022-06-15 11:20:06,930 DEBUG https://api-testnet.bybit.com:443 "POST /asset/v1/private/transferable-subs/save HTTP/1.1" 200 170
+2022-06-15 11:20:09,931 DEBUG Initializing HTTP session.
+2022-06-15 11:20:09,937 DEBUG Starting new HTTPS connection (1): api-testnet.bybit.com:443
+2022-06-15 11:20:10,197 DEBUG https://api-testnet.bybit.com:443 "POST /asset/v1/private/transferable-subs/save HTTP/1.1" 200 170
+2022-06-15 11:24:52,670 DEBUG Initializing HTTP session.
+2022-06-15 11:24:52,681 DEBUG Starting new HTTPS connection (1): api-testnet.bybit.com:443
+2022-06-15 11:24:53,482 DEBUG https://api-testnet.bybit.com:443 "POST /asset/v1/private/universal/transfer HTTP/1.1" 200 222
+2022-06-15 11:25:37,722 DEBUG Initializing HTTP session.
+2022-06-15 11:25:37,728 DEBUG Starting new HTTPS connection (1): api-testnet.bybit.com:443
+2022-06-15 11:25:38,066 DEBUG https://api-testnet.bybit.com:443 "POST /asset/v1/private/universal/transfer HTTP/1.1" 200 222
+2022-06-15 11:28:05,394 DEBUG Initializing HTTP session.
+2022-06-15 11:28:05,400 DEBUG Starting new HTTPS connection (1): api-testnet.bybit.com:443
+2022-06-15 11:28:05,866 DEBUG https://api-testnet.bybit.com:443 "POST /asset/v1/private/universal/transfer HTTP/1.1" 200 222

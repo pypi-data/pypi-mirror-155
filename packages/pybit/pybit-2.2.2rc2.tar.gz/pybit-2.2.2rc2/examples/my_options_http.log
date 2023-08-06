@@ -1,0 +1,14 @@
+2022-05-25 16:28:52,173 DEBUG Initializing HTTP session.
+2022-05-25 16:28:52,177 DEBUG Starting new HTTPS connection (1): api-testnet.bybit.com:443
+2022-05-25 16:28:52,755 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/private/v1/execution-list HTTP/1.1" 200 456
+2022-05-25 16:29:12,771 DEBUG Initializing HTTP session.
+2022-05-25 16:29:12,775 DEBUG Starting new HTTPS connection (1): api-testnet.bybit.com:443
+2022-05-25 16:29:13,527 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/private/v1/execution-list HTTP/1.1" 200 443
+2022-05-25 16:29:15,304 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/private/v1/query-order-history HTTP/1.1" 200 12835
+2022-05-25 16:29:15,939 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/private/v1/query-transaction-log HTTP/1.1" 200 5946
+2022-05-25 16:29:16,148 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/private/v1/query-wallet-balance HTTP/1.1" 200 294
+2022-05-25 16:29:16,355 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/private/v1/query-asset-info HTTP/1.1" 200 258
+2022-05-25 16:29:16,568 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/private/v1/query-margin-info HTTP/1.1" 200 74
+2022-05-25 16:29:16,787 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/private/v1/query-position HTTP/1.1" 200 92
+2022-05-25 16:29:17,753 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/private/v1/query-delivery-list HTTP/1.1" 200 90
+2022-05-25 16:29:17,964 DEBUG https://api-testnet.bybit.com:443 "POST /option/usdc/openapi/private/v1/query-position-exp-date HTTP/1.1" 200 90
