@@ -1,0 +1,36 @@
+Metadata-Version: 2.1
+Name: alephs
+Version: 0.5
+Summary: (A) (L)ist of (E)mergency (P)akistani (H)elp (S)ervices.
+Author: siphr
+Author-email: pypi@techtum.dev
+Project-URL: Homepage, https://www.techtum.dev/work-alephs-220621.html
+Project-URL: Source, https://github.com/siphr/alephs
+Project-URL: Tracker, https://github.com/siphr/alephs/issues
+Keywords: Pakistani,emergency,services,internet
+Platform: any
+
+ALEPHS
+======
+
+Pakistan's emergency services.
+
+
+Details
+-------
+
+Catalogue of emergency services in Pakistan for a consolidated lookup.
+
+
+Package Usage
+-------------
+
+from alephs import alephs
+
+\# Get version
+
+alephs.get_version()
+
+\# get list of institutions
+
+insts = alephs.get_institutes()
