@@ -1,0 +1,54 @@
+Metadata-Version: 2.1
+Name: pytest-spec2md
+Version: 0.1.4
+Summary: Library pytest-spec2md is a pytest plugin to create a markdown specification while running pytest.
+Home-page: https://github.com/mh7d/pytest-spec2md
+License: GPL-2.0-or-later
+Keywords: pytest,test,unittest,specification,markdown
+Author: mh7d
+Maintainer: mh7d
+Requires-Python: >3.8
+Classifier: License :: OSI Approved :: GNU General Public License v2 or later (GPLv2+)
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Testing
+Classifier: Topic :: Utilities
+Requires-Dist: pytest (>7.0)
+Requires-Dist: six
+Project-URL: Repository, https://github.com/mh7d/pytest-spec2md
+Description-Content-Type: text/markdown
+
+# pytest-spec2md
+
+This project is an add-on to pytest. It generates a markdown file as specification, while running the tests.
+
+This project is inspired by [pytest-spec](https://github.com/pchomik/pytest-spec).
+
+## Getting started
+
+Install the module using pip.
+
+```
+pip install pytest-spec2md
+```
+
+Then you can activate the module using *--spec* Parameter when calling pytest. You find the generated markdown file
+under *documentation/spec.md*.
+
+## Configuration
+
+You can change the target directory using the parameter *spec_target_file*.
+
+```ini
+[pytest]
+spec_target_file = path/to/target/doc/file
+```
+
+## Examples
+
+Examples for the usage can be found here: 
+[UseCases on GitHub](https://github.com/mh7d/pytest-spec2md/tree/main/pytester_cases)
+
