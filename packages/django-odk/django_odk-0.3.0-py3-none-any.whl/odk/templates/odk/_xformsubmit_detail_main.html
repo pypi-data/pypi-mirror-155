@@ -1,0 +1,49 @@
+{% load i18n model_tags %}
+<div class="mb-3 row">
+    <div class="col-sm-2 form-label">{% get_verbose_field_name object "xml_file" %}</div>
+    <div class="col-sm-10 form-input"><a href="{{ object.xml_file.url }}" target="_blank">{{ object.xml_file.name }}</a></div>
+</div>
+
+<div class="mb-3 row text-danger">
+    <div class="col-sm-2 form-label">{% get_verbose_field_name object "form_id" %}</div>
+    <div class="col-sm-10 form-input">{{ object.form_id }}</div>
+</div>
+<div class="mb-3 row text-danger">
+    <div class="col-sm-2 form-label">{% get_verbose_field_name object "version" %}</div>
+    <div class="col-sm-10 form-input">{{ object.version }}</div>
+</div>
+<div class="mb-3 row text-danger">
+    <div class="col-sm-2 form-label">{% get_verbose_field_name object "instanceid" %}</div>
+    <div class="col-sm-10 form-input">{{ object.instanceid }}</div>
+</div>
+<div class="mb-3 row">
+    <div class="col-sm-2 form-label">{% get_verbose_field_name object "survey_date" %}</div>
+    <div class="col-sm-10 form-input">{{ object.survey_date }}</div>
+</div>
+
+{% for pic in object.picture_files %}
+<div class="mb-3 row">
+    <div class="col-sm-2 form-label">{% trans "Picture" %} {{forloop.counter}}</div>
+    <div class="col-sm-10 form-input"><a href="{{object.rm_xmlext_from_url}}{{pic}}" target="_blank">{{ pic }}</a></div>
+</div>
+{% endfor %}
+
+<div class="mb-3 row">
+    <div class="col-sm-2 form-label">{% get_verbose_field_name object "deviceid" %}</div>
+    <div class="col-sm-10 form-input">{{ object.deviceid|default_if_none:"" }}</div>
+</div>
+
+<div class="row mb-3">
+    <div class="col-sm-2 form-label">{% get_verbose_field_name object "submitted_by" %}</div>
+    <div class="col-sm-10 form-input">{{ object.submitted_by|default_if_none:"username not in survey tab of xlsx form" }}</div>
+</div>
+
+<div class="row mb-3">    
+    <div class="col-sm-2 form-label">{% get_verbose_field_name object "submitted_on" %}</div>
+    <div class="col-sm-10 form-input">{{ object.submitted_on|date:"Y-m-d H:i:s" }}</div>
+</div>
+
+<div class="row mb-3">    
+    <div class="col-sm-2 form-label">{% get_verbose_field_name object "inserted_on" %}</div>
+    <div class="col-sm-10 form-input">{{ object.inserted_on|date:"Y-m-d H:i:s" }}</div>
+</div>
