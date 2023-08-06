@@ -1,0 +1,71 @@
+Metadata-Version: 2.1
+Name: python-docx-oss
+Version: 0.0.1
+Summary: Create and update Microsoft Word .docx files.
+Home-page: https://github.com/lsaint/python-docx-oss
+Author: Ethan St. Lee
+Author-email: ethan@ginolegaltech.cn
+License: The MIT License (MIT)
+        Copyright (c) 2013 Steve Canny, https://github.com/scanny
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in
+        all copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+        THE SOFTWARE.
+        
+Keywords: docx office openxml word python-docx
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Topic :: Office/Business :: Office Suites
+Classifier: Topic :: Software Development :: Libraries
+License-File: LICENSE
+
+.. image:: https://travis-ci.org/python-openxml/python-docx.svg?branch=master
+   :target: https://travis-ci.org/python-openxml/python-docx
+
+*python-docx* is a Python library for creating and updating Microsoft Word
+(.docx) files.
+
+More information is available in the `python-docx documentation`_.
+
+.. _`python-docx documentation`:
+   https://python-docx.readthedocs.org/en/latest/
+
+
+.. :changelog:
+
+Release History
+---------------
+
+0.0.1 (2022-06-16)
++++++++++++++++++++
+
+- Only support Python3.8, 3.9 and 3.10.
+- Add custom properties support. PR-#2
+- Add drop_rels in Package. PR-#5
+- Add drop_rels in Part. PR-#5
+- Add default NumberingPart. PR-#4
+- Fix Python3.8+ __dict__ TypeError. PR-#6
+- Add some typehint.
+
+
