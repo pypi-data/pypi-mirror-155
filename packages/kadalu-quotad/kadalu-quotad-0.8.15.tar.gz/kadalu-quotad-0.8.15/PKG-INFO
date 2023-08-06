@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: kadalu-quotad
+Version: 0.8.15
+Summary: Kadalu Quota Daemon
+Home-page: https://github.com/kadalu/kadalu
+Author: Kadalu Authors
+Author-email: support@kadalu.io
+License: Apache-2.0
+Keywords: kadalu,container,kubernetes,kubectl,storage
+Platform: linux
+Classifier: Development Status :: 4 - Beta
+Classifier: Topic :: Utilities
+Classifier: Environment :: Console
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3 :: Only
+Provides-Extra: gluster
+
+
+    Kadalu Quota Daemon - , to be used when External storage
+    is used with kadalu k8s operator.
+    
+
