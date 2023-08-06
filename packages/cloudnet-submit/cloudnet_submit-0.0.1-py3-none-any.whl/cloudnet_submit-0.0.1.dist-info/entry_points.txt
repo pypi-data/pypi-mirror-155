@@ -1,0 +1,3 @@
+[console_scripts]
+cloudnet-submit = cloudnet_submit.main:main
+cloudnet-submit-generate-config = cloudnet_submit.generate_config:generate_config

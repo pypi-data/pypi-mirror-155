@@ -1,0 +1,19 @@
+[user_account]
+username = "alice"
+password = "alicesSecretPassword"
+
+[[instrument]]
+site    =  "hyytiala"
+instrument =  "rpg-fmcw-94"
+instrument_pid = "https://hdl.handle.net/21.12132/3.191564170f8a4686"
+path_fmt   =  "/home/alice/data/hyytiala/rpg-fmcw-94/%Y/%m/%Y%m%d_hyytiala.nc"
+
+[[instrument]]
+site    =  "granada"
+instrument =  "chm15k"
+path_fmt   =  "/home/alice/data/granada/chm/%Y-%m/chm_grandada_%Y-%m-%d-*.nc"
+
+[[model]]
+site    =  "hyytiala"
+model      =  "ecmwf"
+path_fmt   =  "/home/alice/data/hyytiala/ecmwf/%Y/%Y%m%d_hyytiala_ecmwf.nc"
