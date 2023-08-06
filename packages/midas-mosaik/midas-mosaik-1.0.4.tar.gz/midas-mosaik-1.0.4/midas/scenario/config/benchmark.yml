@@ -1,0 +1,162 @@
+#######################################################################
+# Benchmark Scenario
+# This scenario makes use of most of the features that are provided
+# by MIDAS
+#######################################################################
+midas_benchmark:
+  parent:
+  start_date: 2017-01-01 00:00:00+0100
+  end: 1*24*60*60
+  step_size: 15*60
+  cmd: cmd
+  modules:
+    - store
+    - timesim
+    - powergrid
+    - sbdata
+    - sndata
+    - pwdata
+    - dlpdata
+    - comdata
+    - weather
+    - der
+  store_params:
+    filename: midas-benchmark.hdf5
+    buffer_size: 50
+  powergrid_params:
+    midasmv:
+      gridfile: midasmv
+    fourbus:
+      gridfile: simple_four_bus_system
+    bremerhaven:
+      gridfile: bhv
+    rural3:
+      gridfile: 1-LV-rural3--0-sw
+  sbdata_params:
+    rural3:
+      interpolate: True
+      randomize_data: True
+      load_mapping: default
+      sgen_mapping: default
+      storage_mapping: default
+  sndata_params:
+    midasmv:
+      randomize_data: True
+      randomize_cos_phi: True
+      land_mapping:
+        1: [[0, 1.0], [2, 1.0], [3, 2.0], [6, 2.0], [7, 1.0]]
+        3: [[2, 1.0], [3, 1.0], [6, 1.0], [7, 1.0]]
+        4: [[0, 2.0], [3, 2.0], [7, 1.0]]
+        5: [[3, 2.0], [7, 1.0]]
+        6: [[0, 2.0], [3, 1.0]]
+        7: [[0, 2.0], [2, 1.0], [3, 2.0], [7, 1.0]]
+        8: [[0, 1.0], [3, 1.0], [6, 1.0]]
+        9: [[2, 1.0], [3, 1.0], [6, 2.0], [7, 1.0]]
+        10: [[0, 2.0], [2, 1.0], [3, 1.0], [6, 2.0], [7, 1.0]]
+        11: [[0, 1.0], [2, 1.0], [3, 1.0], [6, 2.0], [7, 1.0]]
+  comdata_params:
+    midasmv:
+      interpolate: True
+      randomize_data: True
+      randomize_cos_phi: True
+      mapping:
+        13: [[SuperMarket, 3.0]]
+        14: [[SmallHotel, 2.0]]
+  weather_params:
+    bremen:
+      weather_mapping:
+        WeatherCurrent:
+          - interpolate: True
+            randomize: True
+  der_params:
+    midasmv:
+      grid_name: midasmv
+      mapping:
+        3: [[PV, 1], [HVAC, 1.279], [HVAC, 0.343]]
+        4: [[CHP, 0.4], [HVAC, 0.343]]
+        7: [[DIESEL, 1]]
+        8: [[CHP, 0.4], [PV, 1]]
+        9: [[HVAC, 0.23], [BAT, 0.08]]
+        11: [[Biogas, 2.05], [BAT, 0.555], [PV, 1]]
+        13: [[HVAC, 0.23], [PV, 1]]
+        14: [[PV, 1], [HVAC, 1.279]]
+      weather_provider_mapping:
+        PV: [bremen, 0]
+        HVAC: [bremen, 0]
+        BAT: [bremen, 0]
+        CHP: [bremen, 0]
+        Biogas: [bremen, 0]
+        DIESEL: [bremen, 0]
+  pwdata_params:
+    bremerhaven:
+      sgen_scaling: 0.45
+      peak_mapping:
+        16: [[Wind, 5]] # Windpark Speckenbüttel 2
+        17: [[PV, 0.03]] # PV Weddewarden
+        20: [[PV, 0.41]] # PV Lehe - 0
+        22: [[Wind, 5]] # Windpark Speckenbüttel 1
+        23: [[Wind, 5]] # Windpark Multibrid
+        25: [[PV, 0.83]] # PV PV Geesemünde - 0
+        28: [[PV, 0.44]] # PV Lehe - 1
+        30: [[PV, 0.49]] # PV Lehe - 2
+        32: [[Wind, 17.1]] # Unkown (CCGT)
+        33: [[PV, 0.83]] # PV Geesemünde - 1
+        35: [[PV, 0.45]] # PV Lehe - 3
+        37: [[PV, 0.44]] # PV Lehe - 4
+        39: [[Wind, 5.0]] # Windpark Repower
+        40: [[PV, 0.46]] # PV Leherheide
+        43: [[Wind, 10]] # Windpark Lehe
+        45: [[PV, 0.13]] # PV Schiffdorferdamm
+        50: [[PV, 0.33]] # PV Mitte - 0
+        53: [[PV, 0.33]] # PV Wulsdorf - 0
+        55: [[Wind, 14]] # Unkown (WIP)
+        57: [[PV, 0.16]] # PV Surheide
+        63: [[PV, 0.32]] # PV Mitte - 1
+        65: [[PV, 0.28]] # PV Leherheide - 1
+        67: [[PV, 0.25]] # PV Wulsdorf - 1
+        71: [[PV, 0.83]] # PV Geesemünde - 2
+        80: [[PV, 0.01]] # PV Fischereihafen
+  dlpdata_params:
+    bremerhaven:
+      load_scaling: 0.75
+      mapping:
+        15: [[G4, 262.8]] # Weddewarden Industrielast
+        17: [[H0, 1038.06]] # Weddewarden Households
+        19: [[G4, 17103.9]] # Lehe Industrielast
+        20: [[H0, 14454.0]] # Lehe Households - 0
+        24: [[G4, 15067.2]] # Geestemünde Industrielast
+        25: [[H0, 15111]] # Geestemünde Households - 0
+        28: [[H0, 13271.4]] # Lehe Households - 1
+        30: [[H0, 14454]] # Lehe Households - 2
+        32: [[G1, 175.2]] # Erdgas Kronos Titan GmbH
+        33: [[H0, 18615]] # Geestemünde Households - 1
+        35: [[H0, 13140]] # Lehe Households - 3
+        37: [[H0, 13140]] # Lehe Households - 4
+        40: [[H0, 16206]] # Leherheide Households - 0
+        44: [[G3, 4108.44]] # Klinikum Bremerhaven 
+        45: [[H0, 4568.34]] # Schifferdorferdamm Households
+        47: [[G4, 1165.08]] # Schifferdorferdamm Industrielast
+        48: [[G4, 2365.2]] # Eisarena, Stadthalle
+        49: [[G4, 5676.48]] # Mitte Industrielast
+        50: [[H0, 11169]] # Mitte Households - 0
+        52: [[G4, 7450.38]] # Leherheide Industrielast
+        53: [[H0, 11388]] # Wulsdorf Households - 0
+        56: [[G4, 1362.18]] # Surheide Industrielast
+        57: [[H0, 5343.6]] # Surheide Households
+        59: [[G3, 1226.4]] # AMEOS Klinikum Am Bürgerpark
+        60: [[G4, 1554.9]] # Innenstadt
+        61: [[G3, 1182.6]] # Zoo
+        62: [[G3, 1033.68]] # AMEOS Klinikum Mitte
+        63: [[H0, 11169]] # Mitte Households - 1
+        65: [[H0, 9636]] # Leherheide Households - 1
+        67: [[H0, 8760]] # Wulsdorf Households - 1
+        69: [[G4, 87.6]] # Fischereihafen Industrielast
+        70: [[G4, 5150.88]] # Wulsdorf Industrielast
+        71: [[H0, 12702]] # Geestemünde Households - 2
+        73: [[G4, 2334.54]] # Bremerhaven Süd
+        74: [[G3, 1095]] # Fischereihafen - 4
+        75: [[G3, 1095]] # Fischereihafen - 3
+        76: [[G3, 1095]] # Fischereihafen - 2
+        77: [[G3, 1095]] # Fischereihafen - 1
+        78: [[G3, 1095]] # Fischereihafen - 0
+        80: [[H0, 341.64]] # Fischereihafen - Households
