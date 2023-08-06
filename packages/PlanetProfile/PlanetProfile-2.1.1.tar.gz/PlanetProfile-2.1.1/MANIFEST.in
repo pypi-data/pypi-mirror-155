@@ -1,0 +1,7 @@
+recursive-include src/PlanetProfile/* *.py
+recursive-include src/PlanetProfile/* *.txt
+recursive-include src/PlanetProfile/* *.tab
+recursive-include src/PlanetProfile/* *.mat
+global-exclude *Ref.txt
+global-exclude Test*Profile*.txt
+global-exclude Test*.mat
