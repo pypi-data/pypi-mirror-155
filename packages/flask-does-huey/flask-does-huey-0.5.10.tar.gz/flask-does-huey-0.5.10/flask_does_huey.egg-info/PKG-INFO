@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: flask-does-huey
+Version: 0.5.10
+Summary: Flask extension to use huey task queues
+License: MIT
+Keywords: api,auth
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Flask
+Classifier: License :: OSI Approved :: MIT License
+Description-Content-Type: text/markdown
+License-File: LICENSE
