@@ -1,0 +1,20 @@
+Metadata-Version: 1.2
+Name: aiomodbus
+Version: 0.5.2
+Summary: Lightweight Modbus library using asyncio
+Home-page: UNKNOWN
+Author: Ryan Parry-Jones
+Author-email: ryanspj+github@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Intended Audience :: Manufacturing
+Classifier: Intended Audience :: Telecommunications Industry
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Development Status :: 2 - Pre-Alpha
+Requires-Python: >=3.6
