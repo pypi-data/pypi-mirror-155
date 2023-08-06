@@ -1,0 +1,10 @@
+pytz>=2021.3
+amqpstorm
+apacheconfig~=0.3
+file-magic
+holidays
+jsonpointer
+jsonschema
+python-statsd
+redis
+pydantic
