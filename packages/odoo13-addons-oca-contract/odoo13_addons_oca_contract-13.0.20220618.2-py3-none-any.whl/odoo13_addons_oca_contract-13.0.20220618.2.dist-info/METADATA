@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: odoo13-addons-oca-contract
+Version: 13.0.20220618.2
+Summary: Meta package for oca-contract Odoo addons
+Home-page: UNKNOWN
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Framework :: Odoo
+Classifier: Framework :: Odoo :: 13.0
+Requires-Dist: odoo13-addon-agreement
+Requires-Dist: odoo13-addon-agreement-legal
+Requires-Dist: odoo13-addon-agreement-maintenance
+Requires-Dist: odoo13-addon-agreement-rebate
+Requires-Dist: odoo13-addon-agreement-sale
+Requires-Dist: odoo13-addon-agreement-serviceprofile
+Requires-Dist: odoo13-addon-contract
+Requires-Dist: odoo13-addon-contract-layout-category-hide-detail
+Requires-Dist: odoo13-addon-contract-mandate
+Requires-Dist: odoo13-addon-contract-payment-mode
+Requires-Dist: odoo13-addon-contract-sale
+Requires-Dist: odoo13-addon-contract-variable-qty-timesheet
+Requires-Dist: odoo13-addon-contract-variable-quantity
+Requires-Dist: odoo13-addon-product-contract
+
+UNKNOWN
+
