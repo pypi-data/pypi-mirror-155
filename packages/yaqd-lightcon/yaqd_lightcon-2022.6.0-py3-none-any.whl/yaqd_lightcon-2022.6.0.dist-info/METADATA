@@ -1,0 +1,43 @@
+Metadata-Version: 2.1
+Name: yaqd-lightcon
+Version: 2022.6.0
+Summary: yaq daemons for hardware from Light Conversion
+Home-page: https://yaq.fyi
+Author: yaq developers
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Topic :: Scientific/Engineering
+Requires-Dist: yaqd-core>=2020.10.1
+Requires-Dist: aiohttp
+Requires-Dist: black ; extra == "dev"
+Requires-Dist: pre-commit ; extra == "dev"
+Project-URL: Issues, https://github.com/yaq-project/yaqd-lightcon/issues
+Project-URL: Source, https://github.com/yaq-project/yaqd-lightcon
+Provides-Extra: dev
+
+# yaqd-lightcon
+
+[![PyPI version](https://badge.fury.io/py/yaqd-lightcon.svg)](https://badge.fury.io/py/yaqd-lightcon)
+[![Conda](https://img.shields.io/conda/vn/conda-forge/yaqd-lightcon)](https://anaconda.org/conda-forge/yaqd-lightcon)
+[![yaq](https://img.shields.io/badge/framework-yaq-orange)](https://yaq.fyi/)
+[![black](https://img.shields.io/badge/code--style-black-black)](https://black.readthedocs.io/)
+[![ver](https://img.shields.io/badge/calver-YYYY.0M.MICRO-blue)](https://calver.org/)
+[![log](https://img.shields.io/badge/change-log-informational)](https://github.com/yaq-project/yaqd-lightcon/blob/main/CHANGELOG.md)
+
+yaq daemons for Light Conversion hardware
+
+This package contains the following daemon(s):
+- [lightcon-topas4-motor](https://yaq.fyi/daemons/lightcon-topas4-motor/)
+- [lightcon-topas4-shutter](https://yaq.fyi/daemons/lightcon-topas4-shutter/)
+
+## maintainers
+
+- [Kent Meyer](https://github.com/kameyer226)
+

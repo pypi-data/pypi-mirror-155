@@ -1,0 +1,4 @@
+[console_scripts]
+yaqd-lightcon-topas4-motor=yaqd_lightcon._lightcon_topas4_motor:LightconTopas4Motor.main
+yaqd-lightcon-topas4-shutter=yaqd_lightcon._lightcon_topas4_shutter:LightconTopas4Shutter.main
+
