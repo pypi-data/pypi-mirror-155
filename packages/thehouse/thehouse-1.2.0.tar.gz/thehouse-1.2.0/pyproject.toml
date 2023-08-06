@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "thehouse"
+version = "1.2.0"
+description = "A text-based game written in python"
+authors = ["Davide Di Criscito <davide.dicriscito@gmail.com>"]
+repository = "https://github.com/ctrlmaniac/the-house/"
+readme = "README.md"
+license = "MIT"
+classifiers = [
+    "Topic :: Games/Entertainment"
+]
+
+[tool.isort]
+profile = "black"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+commitizen = "^2.27.1"
+black = "^22.3.0"
+flake8 = "^4.0.1"
+isort = "^5.10.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
