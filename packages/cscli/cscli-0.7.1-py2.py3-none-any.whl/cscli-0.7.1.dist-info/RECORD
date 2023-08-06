@@ -1,0 +1,17 @@
+cscli/__init__.py,sha256=IdtHVRDOQFw1HCpQVlUYJbNUgaldivGgLy_wKu4z4ys,379
+cscli/__main__.py,sha256=1AGRHEcsG4Acrj8ioZRI44Ixis7qHXM6JdZ9S17BbOo,83
+cscli/api_client.py,sha256=uN1rdgU2bLsUtHtc0CVGU_76-Jf6jr77YV4U3vJvprE,17136
+cscli/cli.py,sha256=3JzKQ5EdbmWRggpjejXpL_RS_bd9BqBcxNa85GWpTBw,3560
+cscli/error.py,sha256=bXLAt6ly20Tz-kvgMWOIsHGaCdmdcRSTsU_cOW-Lurw,243
+cscli/commands/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+cscli/commands/cmd_drive.py,sha256=BJ8Vj-tw2FRE5jS9ED3pC93RElhI59ISmACitmvMb5c,4118
+cscli/commands/cmd_ip.py,sha256=DIwkC95snU-iXCYZ3TflDehJvD3SIGMqEx0baPRhR5M,2029
+cscli/commands/cmd_list.py,sha256=rJjPp1bnsFESjhoktT8xkP9VZlGIedxBUkoCgVD_Rdw,2670
+cscli/commands/cmd_server.py,sha256=aS_Xn_JsKuqgxprLo66ygqM5clGXqHcViz2HdQuOTns,10055
+cscli/commands/cmd_vlan.py,sha256=DP61RhXFRqBrs_Wajc-Q-UI8VA0oTu_8wndSuG0gaxs,2033
+cscli-0.7.1.dist-info/LICENSE,sha256=L0lapF0FyKRD3II7z9Wl7OIJakmE1UPDymksA9DtbQI,1071
+cscli-0.7.1.dist-info/METADATA,sha256=6Ii9bf9ulkT59RWjXcyWtgQE5z1A1nTz6OxtKSU38nk,1846
+cscli-0.7.1.dist-info/WHEEL,sha256=WzZ8cwjh8l0jtULNjYq1Hpr-WCqCRgPr--TX4P5I1Wo,110
+cscli-0.7.1.dist-info/entry_points.txt,sha256=oxEbw9XeRcLsMok9ByCzEUfGIErv0T4JAjr999wVDM8,41
+cscli-0.7.1.dist-info/top_level.txt,sha256=iDdbZyzIUM3Ill_rSQpopUIpZw50-XcZbyrvtagrVaI,6
+cscli-0.7.1.dist-info/RECORD,,
