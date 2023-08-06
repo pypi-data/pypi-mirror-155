@@ -1,0 +1,16 @@
+LICENSE.md
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+src/compmec/strct/__init__.py
+src/compmec/strct/beam.py
+src/compmec/strct/material.py
+src/compmec/strct/section.py
+src/compmec/strct/solver.py
+src/compmec_strct.egg-info/PKG-INFO
+src/compmec_strct.egg-info/SOURCES.txt
+src/compmec_strct.egg-info/dependency_links.txt
+src/compmec_strct.egg-info/not-zip-safe
+src/compmec_strct.egg-info/requires.txt
+src/compmec_strct.egg-info/top_level.txt
