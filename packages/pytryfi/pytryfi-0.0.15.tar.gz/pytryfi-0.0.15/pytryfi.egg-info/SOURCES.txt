@@ -1,0 +1,17 @@
+LICENSE
+README.md
+setup.py
+pytryfi/__init__.py
+pytryfi/const.py
+pytryfi/exceptions.py
+pytryfi/fiBase.py
+pytryfi/fiDevice.py
+pytryfi/fiPet.py
+pytryfi/fiUser.py
+pytryfi/ledColors.py
+pytryfi.egg-info/PKG-INFO
+pytryfi.egg-info/SOURCES.txt
+pytryfi.egg-info/dependency_links.txt
+pytryfi.egg-info/requires.txt
+pytryfi.egg-info/top_level.txt
+pytryfi/common/query.py
