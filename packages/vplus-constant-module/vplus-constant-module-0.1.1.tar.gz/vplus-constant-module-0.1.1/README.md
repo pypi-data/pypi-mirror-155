@@ -1,0 +1,1 @@
+# Vdb constant for all services
