@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: pears
+Version: 0.1.3
+Summary: 
+Author: Jeff Shen
+Author-email: jshen2014@hotmail.com
+Requires-Python: >=3.7.1,<3.11
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Dist: fastkde (>=1.0.19,<2.0.0)
+Requires-Dist: matplotlib (>=3.5.1,<4.0.0)
+Requires-Dist: numpy (>=1.21,<2.0)
