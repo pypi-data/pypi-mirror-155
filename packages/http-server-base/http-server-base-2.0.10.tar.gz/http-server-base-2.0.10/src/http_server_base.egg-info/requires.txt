@@ -1,0 +1,13 @@
+parse~=1.19.0
+dataclasses-json~=0.5.6
+typing-inspect~=0.7.1
+tornado~=6.1
+camel-case-switcher>=2.0
+
+[all]
+lxml
+unittest-xml-reporting
+
+[test]
+lxml
+unittest-xml-reporting
