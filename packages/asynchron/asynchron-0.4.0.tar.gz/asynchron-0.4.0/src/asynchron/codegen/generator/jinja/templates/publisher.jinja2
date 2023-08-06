@@ -1,0 +1,60 @@
+{# @formatter:off #}
+{% extends "base/python_module.jinja2" %}
+
+{% block imports %}
+from asynchron.amqp.controller import AioPikaBasedAmqpController
+from asynchron.amqp.serializer.pydantic import PydanticMessageSerializer
+from asynchron.core.amqp import AmqpPublisherBindings
+from asynchron.core.publisher import MessagePublisher
+
+    {% if app.publishers %}
+from .message import (
+        {% for publisher in app.publishers|sorted("name") %}
+    {{ publisher.message.path|pascalcase }},
+        {% endfor %}
+)
+    {% endif %}
+{% endblock %}
+
+{% block classes %}
+class {{ app.name|pascalcase }}PublisherFacade:
+    {% if app.description %}
+    """{{ app.description }}"""
+
+    {% endif %}
+    def __init__(
+            self,
+            controller: AioPikaBasedAmqpController,
+    ) -> None:
+        {% if app.publishers %}
+        {% for publisher in app.publishers|sorted("name") %}
+        self.__{{ publisher.name|snakecase }}_publisher: MessagePublisher[{{ publisher.message.path|pascalcase }}] = controller.bind_publisher(
+            encoder=PydanticMessageSerializer(
+                model={{ publisher.message.path|pascalcase }},  # type: ignore[misc]
+            ),
+            bindings=AmqpPublisherBindings(
+                exchange_name={{ publisher.exchange_name|quotes }},
+                routing_key={{ publisher.routing_key|quotes }},
+                is_mandatory={{ publisher.is_mandatory|default(None) }},
+                prefetch_count={{ publisher.prefetch_count|default(None) }},
+            ),
+        )
+        {% endfor %}
+        {% else %}
+        pass
+        {% endif %}
+
+    {% if app.publishers %}
+        {% for publisher in app.publishers|sorted("name") %}
+    async def publish_{{ publisher.name|snakecase }}(
+            self,
+            message: {{ publisher.message.path|pascalcase }},
+    ) -> None:
+            {% if publisher.description %}
+        """{{ publisher.description }}"""
+            {% endif %}
+        await self.__{{ publisher.name|snakecase }}_publisher.publish(message)
+
+        {% endfor %}
+    {% endif %}
+{% endblock %}

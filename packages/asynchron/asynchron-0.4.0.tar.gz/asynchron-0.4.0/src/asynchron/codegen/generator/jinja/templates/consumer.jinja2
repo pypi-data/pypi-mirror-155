@@ -1,0 +1,74 @@
+{# @formatter:off #}
+{% extends "base/python_module.jinja2" %}
+
+{% block imports %}
+import abc
+
+from asynchron.amqp.controller import AioPikaBasedAmqpController
+from asynchron.amqp.serializer.pydantic import PydanticMessageSerializer
+from asynchron.core.amqp import AmqpConsumerBindings
+from asynchron.core.consumer import CallableMessageConsumer
+
+    {% if app.consumers %}
+from .message import (
+        {% for consumer in app.consumers|sorted("name") %}
+    {{ consumer.message.path|pascalcase }},
+        {% endfor %}
+)
+    {% endif %}
+{% endblock %}
+
+{% block classes %}
+class {{ app.name|pascalcase }}ConsumerFacade(metaclass=abc.ABCMeta):
+    {% if app.description %}
+    """{{ app.description }}"""
+
+    {% endif %}
+    def __init__(
+            self,
+            controller: AioPikaBasedAmqpController,
+    ) -> None:
+        {% if app.consumers %}
+        {% for consumer in app.consumers|sorted("name") %}
+        controller.bind_consumer(
+            decoder=PydanticMessageSerializer(
+                model={{ consumer.message.path|pascalcase }},  # type: ignore[misc]
+            ),
+            consumer=CallableMessageConsumer(
+                consumer=self.consume_{{ consumer.name|snakecase }},
+            ),
+            bindings=AmqpConsumerBindings(
+                exchange_name={{ consumer.exchange_name|quotes }},
+                binding_keys=(
+                {% for binding_key in consumer.binding_keys %}
+                    {{ binding_key|quotes }},
+                {% endfor %}
+                ),
+                queue_name={{ consumer.queue_name|quotes|default(None) }},
+                is_auto_delete_enabled={{ consumer.is_auto_delete_enabled|default(None) }},
+                is_exclusive={{ consumer.is_exclusive|default(None) }},
+                is_durable={{ consumer.is_durable|default(None) }},
+                prefetch_count={{ consumer.prefetch_count|default(None) }},
+            ),
+        )
+        {% endfor %}
+        {% else %}
+        pass
+        {% endif %}
+
+    {% if app.consumers %}
+        {% for consumer in app.consumers|sorted("name") %}
+    @abc.abstractmethod
+    async def consume_{{ consumer.name|snakecase }}(
+            self,
+            message: {{ consumer.message.path|pascalcase }},
+    ) -> None:
+            {% if consumer.description %}
+        """{{ consumer.description }}"""
+            {% endif %}
+        raise NotImplementedError
+
+        {% endfor %}
+    {% endif %}
+{% endblock %}
+{# @formatter:on #}
