@@ -1,0 +1,40 @@
+Metadata-Version: 2.1
+Name: Final-library-of-optimization-problems
+Version: 0.0.2
+Summary: A package with optimization functions
+Home-page: https://github.com/Romzezz/Final_library_of_optimization_problems/
+Author: Daniil Belotserkovskiy
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.7
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Description-Content-Type: text/markdown
+Requires-Dist: ipython (>=6)
+Requires-Dist: nbformat (>=4)
+Requires-Dist: nbconvert (>=5)
+Requires-Dist: requests (>=2)
+
+<html>
+	<body>
+		<h2>РћРїС‚РёРјРёР·Р°С†РёРѕРЅРЅС‹Рµ Р·Р°РґР°С‡Рё РІ РјР°С€РёРЅРЅРѕРј РѕР±СѓС‡РµРЅРёРё. <br> РџСЂРѕРµРєС‚ в„– 9: Final library of optimization problems.</h2>
+		<hr>
+		<h3>Р”РѕРєСѓРјРµРЅС‚Р°С†РёСЏ</h3>
+		<h4>Р’СЃСЋ РґРѕРєСѓРјРµРЅС‚Р°С†РёСЋ Рѕ РїСЂРѕРµРєС‚Рµ РІС‹ РјРѕР¶РµС‚Рµ РЅР°Р№С‚Рё <a href = "documentation.pdf">Р·РґРµСЃСЊ</a></h4>
+		<hr>
+		<h4>РџСЂРёРјРµСЂС‹ СЂРµС€РµРЅРёСЏ Р·Р°РґР°С‡ РјРѕР¶РЅРѕ СѓРІРёРґРµС‚СЊ РІ <a href="https://colab.research.google.com/drive/1Jh_mwS2dF3HvwdRFIzZRMcY3_pU8OFlV?usp=sharing">Google Colab</a> </h4>
+		<hr>
+		<h3>РЈС‡Р°СЃС‚РЅРёРєРё РїСЂРѕРµРєС‚Р°</h3>
+		<h4>
+		<li>Р‘РµР»РѕС†РµСЂРєРѕРІСЃРєРёР№ Р”Р°РЅРёРёР» - РњРµРЅРµРґР¶РµСЂ РїСЂРѕРµРєС‚a</li>
+		<li>РҐР°СЃС‹РєРѕРІ Р‘Р°С‚Р° - РџСЂРѕРіСЂР°РјРјРёСЃС‚</li>
+		<li>РџСѓС‡РєРѕРІ РђР»РµРєСЃР°РЅРґСЂ - РђРЅР°Р»РёС‚РёРє</li>
+		<li>РџРѕРїР»РµРІРёРЅ Р РѕРјР°РЅ - РђРЅР°Р»РёС‚РёРє, РўРµСЃС‚РёСЂРѕРІС‰РёРє</li>
+		<li>Р‘Р°РґС‹ Р”РµРЅРёСЃ - РўРµСЃС‚РёСЂРѕРІС‰РёРє</li>
+		<br>
+		Р“СЂСѓРїРїР° РџРњ19-3
+		</h4>
+  </body>
+
+</html>
+
+
