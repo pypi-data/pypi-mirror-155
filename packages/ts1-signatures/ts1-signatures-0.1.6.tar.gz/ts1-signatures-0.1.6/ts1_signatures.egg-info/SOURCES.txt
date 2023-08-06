@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+ts1/__init__.py
+ts1/http2.py
+ts1/signature.py
+ts1/tls.py
+ts1/utils.py
+ts1_signatures.egg-info/PKG-INFO
+ts1_signatures.egg-info/SOURCES.txt
+ts1_signatures.egg-info/dependency_links.txt
+ts1_signatures.egg-info/requires.txt
+ts1_signatures.egg-info/top_level.txt
