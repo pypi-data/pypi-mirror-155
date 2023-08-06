@@ -1,0 +1,13 @@
+Metadata-Version: 1.2
+Name: ccf-openapi
+Version: 1.1.0
+Summary: CCF-API
+Home-page: UNKNOWN
+Author: OpenAPI Generator community
+Author-email: team@openapitools.org
+License: UNKNOWN
+Description:     This API provides programmatic access to data registered to the CCF. See the [HuBMAP CCF Portal](https://hubmapconsortium.github.io/ccf/) for details.   # noqa: E501
+            
+Keywords: OpenAPI,OpenAPI-Generator,CCF-API
+Platform: UNKNOWN
+Requires-Python: >=3.6
