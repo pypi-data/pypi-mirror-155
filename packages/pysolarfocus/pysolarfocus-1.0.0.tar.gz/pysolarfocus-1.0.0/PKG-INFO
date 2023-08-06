@@ -1,0 +1,39 @@
+Metadata-Version: 2.1
+Name: pysolarfocus
+Version: 1.0.0
+Summary: Unofficial, local Solarfocus client
+Home-page: https://github.com/lavermanjj/pysolarfocus
+License: Apache-2.0
+Keywords: solarfocus,api client
+Author: Jeroen Laverman
+Author-email: jjlaverman@web.de
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: pymodbus (>=2.5.3,<3.0.0)
+Project-URL: Repository, https://github.com/lavermanjj/pysolarfocus
+Description-Content-Type: text/markdown
+
+# pysolarfocus: Python Client for Solarfocus eco<sup>_manager-touch_</sup>
+
+## What's Supported 
+
+### Software Version
+
+This integration has been tested with Solarfocus eco<sup>manager-touch</sup> version `21.040`.
+
+### Solarfocus Components
+
+| Components | Supported |
+|---|---|
+| Heating Circuit 1 (_Heizkreis_)| :white_check_mark: |
+| Buffer 1 (_Puffer_) | :white_check_mark: |
+| Solar (_Solar_)| :x:|
+| Boiler 1 (_Boiler_) | :white_check_mark: |
+| Heatpump (_Wärmepumpe_) | :white_check_mark: |
+| Pelletsboiler (_Kessel_) | :x: | 
+
+_Note: The number of supported Heating Circuits, Buffers, and Boilers could be extended in the future_
+
