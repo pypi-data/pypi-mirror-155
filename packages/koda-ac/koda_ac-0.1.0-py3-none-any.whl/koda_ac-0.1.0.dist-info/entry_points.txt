@@ -1,0 +1,3 @@
+[console_scripts]
+koda=koda_ac.__main__:cli
+
