@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: electronic-package-descriptor-by-sporniket
+Version: 0.0.0
+Summary: Electronic Package Descriptor, an abstract model to describe electronic components for my generator of symbols for Kicad.
+Home-page: https://github.com/sporniket/electronic-package-descriptor
+Author: Sporniket
+Author-email: sporniket.studio@gmail.com
+Project-URL: Bug Tracker, https://github.com/sporniket/electronic-package-descriptor/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# electronic-package-descriptor
+An abstract model to describe electronic components for my generator of symbols for Kicad
