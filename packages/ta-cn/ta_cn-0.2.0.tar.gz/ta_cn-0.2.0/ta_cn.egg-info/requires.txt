@@ -1,0 +1,8 @@
+TA-Lib
+numpy
+
+[all]
+pandas
+bottleneck
+TA-Lib>=0.4.19
+numba
