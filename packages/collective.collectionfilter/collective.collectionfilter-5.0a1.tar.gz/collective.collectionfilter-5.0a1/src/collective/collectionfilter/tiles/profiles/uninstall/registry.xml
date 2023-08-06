@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<registry>
+  <record name="plone.app.tiles">
+    <value purge="false">
+      <element remove="True">collective.collectionfilter.tiles.filter</element>
+      <element remove="True">collective.collectionfilter.tiles.search</element>
+      <element remove="True">collective.collectionfilter.tiles.sortOn</element>
+      <element remove="True">collective.collectionfilter.tiles.maps</element>
+    </value>
+  </record>
+
+  <records
+      remove="True"
+      prefix="plone.app.mosaic.app_tiles.collective_collectionfilter_tiles_filter"
+      interface="plone.app.mosaic.interfaces.ITile"/>
+
+  <records
+      remove="True"
+      prefix="plone.app.mosaic.app_tiles.collective_collectionfilter_tiles_search"
+      interface="plone.app.mosaic.interfaces.ITile"/>
+
+  <records
+      remove="True"
+      prefix="plone.app.mosaic.app_tiles.collective_collectionfilter_tiles_sort_on"
+      interface="plone.app.mosaic.interfaces.ITile"/>
+
+  <records
+      remove="True"
+      prefix="plone.app.mosaic.app_tiles.collective_collectionfilter_tiles_maps"
+      interface="plone.app.mosaic.interfaces.ITile"/>
+
+</registry>
