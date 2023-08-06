@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: dpgen2
+Version: 0.0.3
+Summary: DPGEN2: concurrent learning workflow generating the machine learning potential energy models.
+Home-page: https://github.com/deepmodeling/dpgen2
+Author: Han Wang
+Author-email: wang_han@iapcm.ac.cn
+Keywords: deep potential concurrent learning
+Classifier: Programming Language :: Python :: 3.6
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)
+Description-Content-Type: text/markdown
+Requires-Dist: numpy
+Requires-Dist: dpdata
+Requires-Dist: pydflow
+Requires-Dist: dargs
+Provides-Extra: docs
+Requires-Dist: sphinx ; extra == 'docs'
+Requires-Dist: recommonmark ; extra == 'docs'
+Requires-Dist: sphinx-rtd-theme (>=1.0.0rc1) ; extra == 'docs'
+Requires-Dist: numpydoc ; extra == 'docs'
+Requires-Dist: m2r2 ; extra == 'docs'
+
+DPGEN2 is the 2nd generation of the Deep Potential GENerator.
+
+For developers please read the [developers guide](docs/developer.md)
+
