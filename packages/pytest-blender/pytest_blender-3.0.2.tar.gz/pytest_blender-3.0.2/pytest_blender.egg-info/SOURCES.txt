@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+pytest_blender/__init__.py
+pytest_blender/__main__.py
+pytest_blender/options.py
+pytest_blender/plugin.py
+pytest_blender/run_pytest.py
+pytest_blender/utils.py
+pytest_blender.egg-info/PKG-INFO
+pytest_blender.egg-info/SOURCES.txt
+pytest_blender.egg-info/dependency_links.txt
+pytest_blender.egg-info/entry_points.txt
+pytest_blender.egg-info/requires.txt
+pytest_blender.egg-info/top_level.txt
