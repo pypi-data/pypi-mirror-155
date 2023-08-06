@@ -1,0 +1,2 @@
+[console_scripts]
+gha_python_packaging_test = gha_python_packaging_test.app:entry_point
