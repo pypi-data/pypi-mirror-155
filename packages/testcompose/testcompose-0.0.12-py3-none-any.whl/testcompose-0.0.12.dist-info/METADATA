@@ -1,0 +1,165 @@
+Metadata-Version: 2.1
+Name: testcompose
+Version: 0.0.12
+Summary: "Provide an easy way to perform integration testing with docker and python"
+Home-page: https://github.com/rugging24/python-testcompose
+Author: Olakunle Olaniyi
+Author-email: rugging24@gmail.com
+License: Apache License 2.0
+Project-URL: Documentation, https://github.com/rugging24/python-testcompose/blob/main/README.md
+Project-URL: Bug Tracker, https://github.com/rugging24/python-testcompose/issues
+Project-URL: Source Code, https://github.com/rugging24/python-testcompose
+Keywords: docker,testcontainers
+Platform: UNKNOWN
+Classifier: Topic :: Software Development :: Testing
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: Intended Audience :: Information Technology
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: ~=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: docker (>=5.0.3)
+Requires-Dist: pydantic (==1.9.0)
+Requires-Dist: pyyaml (>=5.4.1)
+Provides-Extra: dev
+Requires-Dist: mypy-extensions (>=0.4.3) ; extra == 'dev'
+Requires-Dist: mypy (>=0.910) ; extra == 'dev'
+Requires-Dist: typed-ast (>=1.4.3) ; extra == 'dev'
+Requires-Dist: types-pyyaml (>=5.4.12) ; extra == 'dev'
+Requires-Dist: types-requests (>=2.27.20) ; extra == 'dev'
+Requires-Dist: typing-extensions (>=4.0.0) ; extra == 'dev'
+Requires-Dist: black (>=21.12b0) ; extra == 'dev'
+Requires-Dist: pyproject-toml (>=0.0.11) ; extra == 'dev'
+Requires-Dist: pre-commit (>=2.18.1) ; extra == 'dev'
+Requires-Dist: mkdocs-git-revision-date-plugin (>=0.3.1) ; extra == 'dev'
+Requires-Dist: mkdocs-material (>=8.2.9) ; extra == 'dev'
+Requires-Dist: mkdocs-material-extensions (>=1.0.3) ; extra == 'dev'
+Requires-Dist: mkdocstrings (>=0.16.2) ; extra == 'dev'
+Requires-Dist: mkdocs-autorefs (>=0.3.0) ; extra == 'dev'
+Requires-Dist: mkdocs (>=1.3.0) ; extra == 'dev'
+Requires-Dist: markdown (>=3.3.6) ; extra == 'dev'
+Requires-Dist: markupsafe (>=2.0.1) ; extra == 'dev'
+Provides-Extra: doc
+Requires-Dist: mkdocs-material ; extra == 'doc'
+Requires-Dist: mkdocs-git-revision-date-plugin ; extra == 'doc'
+Requires-Dist: mkdocs-material-extensions ; extra == 'doc'
+Requires-Dist: mkdocstrings ; extra == 'doc'
+Requires-Dist: mkdocs-autorefs ; extra == 'doc'
+Requires-Dist: mkdocs ; extra == 'doc'
+Provides-Extra: test
+Requires-Dist: requests (>=2.26.0) ; extra == 'test'
+Requires-Dist: kafka-python (>=2.0.2) ; extra == 'test'
+Requires-Dist: pytest-cov (>=3.0.0) ; extra == 'test'
+Requires-Dist: pytest-mock (>=3.6.1) ; extra == 'test'
+Requires-Dist: pytest (>=6.2.5) ; extra == 'test'
+Requires-Dist: setuptools ; extra == 'test'
+
+<h1 align="center" style="font-size: 3rem; margin: -15px 0">
+Testcompose
+</h1>
+
+
+
+<p align="center" style="margin: 30px 0 10px">
+  <img width="350" height="208" src="docs/images/testcompose.png" alt='Testcompose'>
+</p>
+
+<p align="center"><strong>Testcompose</strong> <em>- A clean and better way to test your Python containerized applications.</em></p>
+
+
+
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/testcompose)
+![PyPI - Implementation](https://img.shields.io/pypi/implementation/testcompose)
+![PyPI](https://img.shields.io/pypi/v/testcompose)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/testcompose)
+[![Tests](https://github.com/rugging24/python-testcompose/workflows/RunningTests/badge.svg)](https://github.com/rugging24/python-testcompose/blob/main/.github/workflows/tests.yaml)
+
+
+---
+**Testcompose** provides an easy way of using docker containers for functional and integration testing. It allows for combination of more than one containers and allows for interactions with these containers from your test code without having to write extra scripts for such interactions. I.e providing a docker compose kind of functionality with the extra benefit of being able to fully control the containers from test codes.
+
+This is inspired by the [testcontainers-python](https://testcontainers-python.readthedocs.io/en/latest/index.html#) project and goes further to add a few additional functionalities to improve software integration testing while allowing the engineer to control every aspect of the test.
+
+---
+
+Install testcompose using pip:
+
+```shell
+$ pip install testcompose
+```
+
+testcompose requires Python 3.7+.
+
+Using a config file. See the [Quickstart](https://github.com/rugging24/python-testcompose/blob/main/docs/quickstart.md) for other options
+
+```yaml
+services:
+  - name: db1
+    image: "postgres:13"
+    command: ""
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
+      POSTGRES_PASSWORD: password
+    exposed_ports:
+      - 5432
+    volumes:
+      - host: "data_volume"
+        container: "/data"
+        mode: "rw"
+        source: "dockervolume" # possible values are `dockervolume` or `filesystem`
+    log_wait_parameters:
+      log_line_regex: "database system is ready to accept connections"
+      wait_timeout_ms: 30
+      poll_interval_ms: 2
+```
+
+Verify it as follows:
+
+```python
+from testcompose.parse_config import TestConfigParser
+from testcompose.configs.service_config import Config
+from testcompose.run_containers import RunContainers
+from testcompose.models.config.config_services import ConfigServices, Service
+
+my_test_service: ConfigServices = TestConfigParser.parse_config(
+    file_name='some-file-name'
+)
+my_config: Config =  Config(test_services=my_test_service)
+
+with RunContainers(
+        services=running_config.ranked_itest_config_services
+) as runner:
+    # Interract with the running containers
+
+    assert runner.running_containers
+
+    # Use some special parameters of the running containers
+
+    app_container = runner.running_containers["app_container_config_name"].config_environment_variables
+
+    # Get the host port a certain exposed container port is mapped to
+    mapped_port = app_container.generic_container.get_exposed_port("8000")
+
+    # where `port` is the exposed port of the container
+
+
+```
+
+
+## Documentation
+
+[Quickstart](https://github.com/rugging24/python-testcompose/blob/main/docs/quickstart.md)
+
+[Special-Variables](https://github.com/rugging24/python-testcompose/blob/main/docs/environment_variables.md)
+
+[Full-Doc](https://rugging24.github.io/python-testcompose/)
+
+
