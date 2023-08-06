@@ -1,0 +1,51 @@
+Metadata-Version: 2.1
+Name: wd_pytools
+Version: 0.0.3
+Summary: This is the tools for python.
+Home-page: http://pypi.org
+Author: teshin
+Author-email: 1443965173@qq.com
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# wd_pytools
+
+### Introduce
+
+This is the tools for python.
+
+### wdcmd
+```python
+import time
+
+from wdcmd import Info, entity
+
+
+class TestServer:
+    config_path = 'config.yaml'
+    status = True
+
+    def info_run(self):
+        return Info("run", "run application") \
+                   .set_args("c", self.config_path, "閰嶇疆鏂囦欢鍦板潃"), self.run
+
+    def run(self, ctx):
+        print(f"閰嶇疆鏂囦欢鍦板潃锛歿ctx.get('c')}")
+        while self.status:
+            print("test run ....")
+            time.sleep(1)
+
+    def exit(self):
+        self.status = False
+        print("server stop over")
+
+
+if __name__ == "__main__":
+    server = TestServer()
+    entity.register(*server.info_run()).on_exits(server.exit).launch()
+```
