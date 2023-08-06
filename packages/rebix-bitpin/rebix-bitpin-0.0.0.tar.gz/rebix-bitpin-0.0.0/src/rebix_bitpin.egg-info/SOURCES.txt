@@ -1,0 +1,12 @@
+pyproject.toml
+setup.cfg
+setup.py
+src/rebix-bitpin/__init__.py
+src/rebix-bitpin/exceptions.py
+src/rebix-bitpin/helpers.py
+src/rebix-bitpin/main.py
+src/rebix_bitpin.egg-info/PKG-INFO
+src/rebix_bitpin.egg-info/SOURCES.txt
+src/rebix_bitpin.egg-info/dependency_links.txt
+src/rebix_bitpin.egg-info/requires.txt
+src/rebix_bitpin.egg-info/top_level.txt
