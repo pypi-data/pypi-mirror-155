@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: p360-export
+Version: 1.0.0
+Summary: Persona360 data export
+License: Proprietary
+Author: Datasentics
+Author-email: jiri.koutny@datasentics.com
+Requires-Python: >=3.8.10,<4.0.0
+Classifier: License :: Other/Proprietary License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: Salesforce-FuelSDK (>=1.3.0,<2.0.0)
+Requires-Dist: console-bundle (==0.5.1)
+Requires-Dist: daipe-core (>=1.2,<2.0)
+Requires-Dist: databricks-bundle (>=1.4.5,<2.0.0)
+Requires-Dist: facebook-business (>=13.0.0,<14.0.0)
+Requires-Dist: google-ads (>=16.0.0,<17.0.0)
+Requires-Dist: jsonschema (>=4.4.0,<5.0.0)
+Requires-Dist: paramiko (>=2.11.0,<3.0.0)
+Requires-Dist: pyarrow (==4.0.0)
+Requires-Dist: pyfony-bundles (==0.4.4)
+Requires-Dist: pyfony-core (>=0.8.0,<0.9.0)
+Description-Content-Type: text/markdown
+
+# p360-export
+
+Persona360 exporters.
+
