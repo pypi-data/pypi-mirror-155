@@ -1,0 +1,139 @@
+Metadata-Version: 2.1
+Name: custom-workflow-solutions
+Version: 2.2.5
+Summary: Programmatically author, schedule and monitor data pipelines
+Home-page: https://custom.workflow.com/
+Author: Custom Foundation
+Author-email: email@example.com
+License: MIT
+Download-URL: https://archive.apache.org/dist/airflow/2.2.5
+Description: Custom Workflow Solution
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: System :: Monitoring
+Requires-Python: ~=3.6
+Description-Content-Type: text/markdown
+Provides-Extra: mssql
+Provides-Extra: apache.beam
+Provides-Extra: amazon
+Provides-Extra: datadog
+Provides-Extra: ftp
+Provides-Extra: alibaba
+Provides-Extra: jira
+Provides-Extra: oracle
+Provides-Extra: snowflake
+Provides-Extra: tableau
+Provides-Extra: apache.kylin
+Provides-Extra: odbc
+Provides-Extra: leveldb
+Provides-Extra: atlas
+Provides-Extra: rabbitmq
+Provides-Extra: microsoft.mssql
+Provides-Extra: discord
+Provides-Extra: all
+Provides-Extra: apache.drill
+Provides-Extra: all_dbs
+Provides-Extra: dask
+Provides-Extra: postgres
+Provides-Extra: cncf.kubernetes
+Provides-Extra: opsgenie
+Provides-Extra: samba
+Provides-Extra: apache.webhdfs
+Provides-Extra: imap
+Provides-Extra: druid
+Provides-Extra: apache.livy
+Provides-Extra: deprecated_api
+Provides-Extra: gcp
+Provides-Extra: grpc
+Provides-Extra: segment
+Provides-Extra: apache.druid
+Provides-Extra: trino
+Provides-Extra: vertica
+Provides-Extra: spark
+Provides-Extra: ssh
+Provides-Extra: celery
+Provides-Extra: aws
+Provides-Extra: apache.hdfs
+Provides-Extra: webhdfs
+Provides-Extra: neo4j
+Provides-Extra: apache.pig
+Provides-Extra: cgroups
+Provides-Extra: redis
+Provides-Extra: qubole
+Provides-Extra: winrm
+Provides-Extra: apache.cassandra
+Provides-Extra: hashicorp
+Provides-Extra: apache.atlas
+Provides-Extra: doc
+Provides-Extra: github
+Provides-Extra: docker
+Provides-Extra: slack
+Provides-Extra: hive
+Provides-Extra: asana
+Provides-Extra: kerberos
+Provides-Extra: dbt.cloud
+Provides-Extra: devel_hadoop
+Provides-Extra: telegram
+Provides-Extra: apache.hive
+Provides-Extra: presto
+Provides-Extra: jenkins
+Provides-Extra: devel_all
+Provides-Extra: google
+Provides-Extra: http
+Provides-Extra: papermill
+Provides-Extra: apache.spark
+Provides-Extra: microsoft.azure
+Provides-Extra: airbyte
+Provides-Extra: github_enterprise
+Provides-Extra: databricks
+Provides-Extra: sqlite
+Provides-Extra: password
+Provides-Extra: devel_ci
+Provides-Extra: singularity
+Provides-Extra: zendesk
+Provides-Extra: sendgrid
+Provides-Extra: salesforce
+Provides-Extra: pagerduty
+Provides-Extra: mysql
+Provides-Extra: sentry
+Provides-Extra: qds
+Provides-Extra: cassandra
+Provides-Extra: jdbc
+Provides-Extra: kubernetes
+Provides-Extra: elasticsearch
+Provides-Extra: dingding
+Provides-Extra: yandex
+Provides-Extra: statsd
+Provides-Extra: devel
+Provides-Extra: influxdb
+Provides-Extra: apache.sqoop
+Provides-Extra: microsoft.winrm
+Provides-Extra: openfaas
+Provides-Extra: pandas
+Provides-Extra: gcp_api
+Provides-Extra: sftp
+Provides-Extra: hdfs
+Provides-Extra: s3
+Provides-Extra: ldap
+Provides-Extra: apache.pinot
+Provides-Extra: microsoft.psrp
+Provides-Extra: exasol
+Provides-Extra: plexus
+Provides-Extra: async
+Provides-Extra: mongo
+Provides-Extra: virtualenv
+Provides-Extra: facebook
+Provides-Extra: crypto
+Provides-Extra: pinot
+Provides-Extra: azure
+Provides-Extra: cloudant
+Provides-Extra: google_auth
