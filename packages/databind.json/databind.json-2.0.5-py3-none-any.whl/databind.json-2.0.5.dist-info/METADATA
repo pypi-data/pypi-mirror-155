@@ -1,0 +1,51 @@
+Metadata-Version: 2.1
+Name: databind.json
+Version: 2.0.5
+Summary: De-/serialize Python dataclasses to or from JSON payloads. Compatible with Python 3.7 and newer.
+License: MIT
+Author: Niklas Rosenstein
+Author-email: rosensteinniklas@gmail.com
+Requires-Python: >=3.7,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Dist: databind.core (>=2.0.5,<3.0.0)
+Requires-Dist: nr.util (>=0.8.6,<1.0.0)
+Requires-Dist: typing-extensions (>=3.10.0)
+Project-URL: Bug Tracker, https://github.com/NiklasRosenstein/python-databind/issues
+Project-URL: Documentation, https://niklasrosenstein.github.io/python-databind/
+Project-URL: Repository, https://github.com/NiklasRosenstein/python-databind
+Description-Content-Type: text/markdown
+
+# databind.json
+
+The `databind.json` package implements the de-/serialization to or from JSON payloads using
+the `databind.core` framework.
+
+## Quickstart
+
+```py
+import databind.json
+import dataclasses
+
+@dataclasses.dataclass
+class ServerConfig:
+  host: str
+  port: int = 8080
+
+@dataclasses.dataclass
+class MainConfig:
+  server: ServerConfig
+
+payload = { 'server': { 'host': '127.0.0.1' } }
+config = databind.json.load(payload, MainConfig)
+assert config == MainConfig(ServerConfig('127.0.0.1'))
+```
+
+---
+
+<p align="center">Copyright &copy; 2020 &ndash; Niklas Rosenstein</p>
+
