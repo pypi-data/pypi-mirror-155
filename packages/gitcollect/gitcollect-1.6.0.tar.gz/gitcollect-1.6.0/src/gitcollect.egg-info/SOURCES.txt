@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/gitcollect/__init__.py
+src/gitcollect/main.py
+src/gitcollect.egg-info/PKG-INFO
+src/gitcollect.egg-info/SOURCES.txt
+src/gitcollect.egg-info/dependency_links.txt
+src/gitcollect.egg-info/top_level.txt
