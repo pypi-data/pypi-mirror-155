@@ -1,0 +1,171 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: EKS cluster for managed nodegroup
+Resources:
+  ClusterSharedNodeSecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      GroupName: {{clusterName}}-nodes-sg
+      GroupDescription: Communication between all nodes in the cluster
+      Tags:
+        - Key: Name
+          Value: '{{clusterName}}-nodes-sg'
+      VpcId: !ImportValue {{clusterName}}-vpc
+  ControlPlane:
+    Type: 'AWS::EKS::Cluster'
+    Properties:
+      Name: {{clusterName}}-cluster
+      Version: {{eksVersion}}
+      ResourcesVpcConfig:
+        SecurityGroupIds:
+          - !Ref ControlPlaneSecurityGroup
+        SubnetIds: !Split
+          - ','
+          - !Join
+            - ','
+            - - !ImportValue {{clusterName}}-private-subnets
+              - !ImportValue {{clusterName}}-public-subnets
+      RoleArn: !GetAtt ServiceRole.Arn
+  ControlPlaneSecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      GroupName: {{clusterName}}-cp-sg
+      GroupDescription: Communication between the control plane and worker nodegroups
+      Tags:
+        - Key: Name
+          Value: '{{clusterName}}-cp-sg'
+      VpcId: !ImportValue {{clusterName}}-vpc
+  IngressDefaultClusterToNodeSG:
+    Type: 'AWS::EC2::SecurityGroupIngress'
+    Properties:
+      Description: >-
+        Allow managed and unmanaged nodes to communicate with each other (all
+        ports)
+      FromPort: 0
+      GroupId: !Ref ClusterSharedNodeSecurityGroup
+      IpProtocol: '-1'
+      SourceSecurityGroupId: !GetAtt ControlPlane.ClusterSecurityGroupId
+      ToPort: 65535
+  IngressInterNodeGroupSG:
+    Type: 'AWS::EC2::SecurityGroupIngress'
+    Properties:
+      Description: Allow nodes to communicate with each other (all ports)
+      FromPort: 0
+      GroupId: !Ref ClusterSharedNodeSecurityGroup
+      IpProtocol: '-1'
+      SourceSecurityGroupId: !Ref ClusterSharedNodeSecurityGroup
+      ToPort: 65535
+  IngressNodeToDefaultClusterSG:
+    Type: 'AWS::EC2::SecurityGroupIngress'
+    Properties:
+      Description: Allow unmanaged nodes to communicate with control plane (all ports)
+      FromPort: 0
+      GroupId: !GetAtt ControlPlane.ClusterSecurityGroupId
+      IpProtocol: '-1'
+      SourceSecurityGroupId: !Ref ClusterSharedNodeSecurityGroup
+      ToPort: 65535
+  CloudWatchMetricsPolicy:
+    Type: 'AWS::IAM::Policy'
+    Properties:
+      PolicyDocument:
+        Statement:
+          - Action:
+              - 'cloudwatch:PutMetricData'
+            Effect: Allow
+            Resource: '*'
+        Version: 2012-10-17
+      PolicyName: '{{clusterName}}-cw-metrics-policy'
+      Roles:
+        - !Ref ServiceRole
+  NLBPolicy:
+    Type: 'AWS::IAM::Policy'
+    Properties:
+      PolicyDocument:
+        Statement:
+          - Action:
+              - 'elasticloadbalancing:*'
+              - 'ec2:CreateSecurityGroup'
+              - 'ec2:Describe*'
+            Effect: Allow
+            Resource: '*'
+        Version: 2012-10-17
+      PolicyName: '{{clusterName}}-nlb-policy'
+      Roles:
+        - !Ref ServiceRole
+  ServiceRole:
+    Type: 'AWS::IAM::Role'
+    Properties:
+      RoleName: {{clusterName}}-cp-role
+      AssumeRolePolicyDocument:
+        Statement:
+          - Action:
+              - 'sts:AssumeRole'
+            Effect: Allow
+            Principal:
+              Service:
+                - ec2.amazonaws.com
+                - eks.amazonaws.com
+                - eks-fargate-pods.amazonaws.com
+        Version: 2012-10-17
+      ManagedPolicyArns:
+        - !Sub 'arn:${AWS::Partition}:iam::aws:policy/AmazonEKSClusterPolicy'
+  AccessRole:
+    Type: 'AWS::IAM::Role'
+    Properties:
+      Tags:
+        - Key: ClusterAccessRole
+          Value: '{{clusterName}}'
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - ec2.amazonaws.com
+            Action:
+              - 'sts:AssumeRole'
+      Policies:
+        - PolicyName: {{clusterName}}-eks-access-policy
+          PolicyDocument:
+            Version: 2012-10-17
+            Statement:
+              - Effect: Allow
+                Action: eks:*
+                Resource: !GetAtt ControlPlane.Arn
+      Description: A role to access the EKS cluster through kubectl. Must be added to aws-ath ConfigMap manually or through k9.
+      RoleName: {{clusterName}}-eks-access-role
+
+Outputs:
+  AccessRoleName:
+    Value: !Ref 'AccessRole'
+  AccessRoleArn:
+    Value: !GetAtt AccessRole.Arn
+  ARN:
+    Export:
+      Name: '{{clusterName}}-cp-arn'
+    Value: !GetAtt ControlPlane.Arn
+  CertificateAuthorityData:
+    Value: !GetAtt ControlPlane.CertificateAuthorityData
+  Cluster:
+    Value: !Ref 'ControlPlane'
+  ClusterSecurityGroupId:
+    Export:
+      Name:  '{{clusterName}}-cp-cluster-sg-id'
+    Value: !GetAtt ControlPlane.ClusterSecurityGroupId
+  ClusterStackName:
+    Value: !Ref 'AWS::StackName'
+  Endpoint:
+    Export:
+      Name: '{{clusterName}}-endpoint'
+    Value: !GetAtt ControlPlane.Endpoint
+  SecurityGroup:
+    Export:
+      Name: '{{clusterName}}-cp-sg'
+    Value: !Ref ControlPlaneSecurityGroup
+  ServiceRoleARN:
+    Export:
+      Name: '{{clusterName}}-svc-role-arn'
+    Value: !GetAtt ServiceRole.Arn
+  SharedNodeSecurityGroup:
+    Export:
+      Name: '{{clusterName}}-nodes-sg'
+    Value: !Ref ClusterSharedNodeSecurityGroup

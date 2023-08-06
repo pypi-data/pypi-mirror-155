@@ -1,0 +1,114 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: S3 host bucket and CloudFront distribution for {{appName}} in the {{clusterName}} cluster
+Resources:
+  Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      AccessControl: Private
+      BucketName: {{bucketName}}
+      WebsiteConfiguration:
+        IndexDocument: 'index.html'
+        ErrorDocument: 'index.html'
+      PublicAccessBlockConfiguration: 
+        BlockPublicAcls: 'true'
+        BlockPublicPolicy: 'true'
+        IgnorePublicAcls: 'true'
+        RestrictPublicBuckets: 'true'
+    DeletionPolicy: Retain
+
+  CloudFrontOriginIdentity:
+    Type: AWS::CloudFront::CloudFrontOriginAccessIdentity
+    Properties:
+      CloudFrontOriginAccessIdentityConfig:
+        Comment: "origin identity"
+
+  Distribution:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      DistributionConfig:
+        Aliases:
+        - '*.{{domainName}}'
+        - '{{domainName}}'
+        DefaultRootObject: index.html
+        PriceClass: PriceClass_All
+        ViewerCertificate:
+          AcmCertificateArn: {{certArn}}
+          MinimumProtocolVersion: TLSv1.2_2018
+          SslSupportMethod: sni-only
+        Enabled: True
+        CustomErrorResponses:
+        - ErrorCachingMinTTL: 0
+          ErrorCode: 403
+          ResponseCode: 200
+          ResponsePagePath: '/index.html'
+        - ErrorCachingMinTTL: 0
+          ErrorCode: 404
+          ResponseCode: 200
+          ResponsePagePath: '/index.html'
+        DefaultCacheBehavior:
+          ForwardedValues:
+            QueryString: True
+            Cookies:
+              Forward: none
+          AllowedMethods:
+          - HEAD
+          - GET
+          CachedMethods:
+          - HEAD
+          - GET
+          TargetOriginId: 'def-o'
+          MinTTL: 0
+          ViewerProtocolPolicy: 'redirect-to-https'
+        Origins:
+        - S3OriginConfig:
+            OriginAccessIdentity: !Sub 'origin-access-identity/cloudfront/${CloudFrontOriginIdentity}'
+          DomainName: !GetAtt Bucket.DomainName
+          Id: 'def-o'
+        Restrictions:
+          GeoRestriction:
+            Locations:
+            - US
+            RestrictionType: 'whitelist'
+      Tags:
+      - Key: appName
+        Value: {{appName}}
+      - Key: clusterName
+        Value: {{clusterName}}
+      - Key: envName
+        Value: {{envName}}
+
+  BucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties: 
+      Bucket: !Ref Bucket
+      PolicyDocument:
+        Version: 2012-10-17
+        Id: 'PolicyForCloudFrontPrivateContent'
+        Statement:
+          - Action:
+              - 's3:GetObject'
+            Effect: Allow
+            Resource: !Sub '${Bucket.Arn}/*'
+            Principal:
+              CanonicalUser:
+                Fn::GetAtt: [ CloudFrontOriginIdentity , S3CanonicalUserId ]
+
+Outputs:
+  Bucket:
+    Value: !Ref Bucket
+  DomainName:
+    Value: !GetAtt Bucket.DomainName
+    Export:
+      Name: {{appName}}-{{envName}}-domain-name
+  FrontendS3URL:
+    Value: !GetAtt [Bucket, WebsiteURL]
+    Description: URL for static site hosted on S3
+    Export:
+      Name: {{appName}}-{{envName}}-s3-url
+  Distribution:
+    Value: !Ref Distribution
+  CloudfrontUrl:
+    Value: !GetAtt [Distribution, DomainName]
+    Description: The URL of the cloudfront distribution
+    Export:
+      Name: {{appName}}-{{envName}}-cloudfront-url
