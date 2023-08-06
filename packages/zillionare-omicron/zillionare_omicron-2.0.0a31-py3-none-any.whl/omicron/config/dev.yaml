@@ -1,0 +1,24 @@
+tz: Asia/Shanghai
+redis:
+  dsn: redis://localhost:6379
+influxdb:
+  url: http://localhost:8086
+  token: my-token
+  org: my-org
+  bucket_name: my-bucket
+  enable_compress: true
+postgres:
+  dsn: postgres://zillionare:123456@localhost:5432/zillionare
+  enabled: true
+omega:
+  home: ~/.zillionare/omega
+  urls:
+    quotes_server: http://localhost:3181
+
+notify:
+    mail_from: ${MAIL_FROM}
+    mail_to:
+        - ${MAIL_TO}
+    mail_server: ${MAIL_SERVER}
+    dingtalk_access_token: {DINGTALK_ACCESS_TOKEN}
+    dingtalk_secret: {DINGTALK_SECRET}
