@@ -1,0 +1,17 @@
+wsterm/__init__.py,sha256=LQJGd4yQv3pNW7o6qRWPgP4CZaCGyU4jYH4i5AMgdVI,77
+wsterm/__main__.py,sha256=Xu-Pa1EljUbg2qfli-e0n-NLQGOS8ghUWZ3NFmscSdE,5577
+wsterm/client.py,sha256=NyVL6IqviDge7O3jHZGVhYaf1IsXqLI1gEALXNaasuA,20188
+wsterm/proto.py,sha256=wZgAi1YxvMTZZkUTaTeAFUsG7CSsm0-vFwgynSyuADo,1546
+wsterm/server.py,sha256=D4Qhn7eeW8pY1qJK0NADhvFcEsAjYBhdO0A70bKaHPU,15285
+wsterm/shell.py,sha256=i7WpmfbVOGFDDk7PFToxIbXy7ejEyG-C6jlA9JjC-CA,3312
+wsterm/utils.py,sha256=h01NtVfFY8p06ryXtuo5VHsWmYJAPJVIq64ODa4nLBI,9427
+wsterm/workspace.py,sha256=um22LxUxuPLENZ_1F7K1wTs8kK1kbkX4nn9ofh7lg-E,7526
+wsterm/aiowatch/__init__.py,sha256=brD1jWgVBbgBmJZPUab3IiFRUZYFG1BPooMcV2bqPJU,3395
+wsterm/aiowatch/inotify.py,sha256=Xm5-UZXu6qdyLG4qol0mgWwUTXdSbw4MJsqGQ3hqIBQ,8323
+wsterm/aiowatch/kevents.py,sha256=4hqP8HfSgOF7C6cTWikmyGgnli5ok9MTh_t-JYgjRws,6928
+wsterm/aiowatch/win32.py,sha256=rsAcV2eFUgpby3hgLLbGk6PgeL_cfYSqDdlaXtT1YH0,10523
+wsterm-0.6.0.dist-info/METADATA,sha256=NqRfURF_yU3wBKBsoz6HKKQm0K8e5jRhMTc9ESc74bU,2604
+wsterm-0.6.0.dist-info/WHEEL,sha256=G16H4A3IeoQmnOrYV4ueZGKSjhipXx8zc8nu9FGlvMA,92
+wsterm-0.6.0.dist-info/entry_points.txt,sha256=ZQOXX3AHJcsrXjtm4LudE5F7CNf9JbfbH3zu3KqLslc,49
+wsterm-0.6.0.dist-info/top_level.txt,sha256=HxZroBd_Qo-a-Cmfrz58DxrsuuF_oBdKmEd7hAvkpYY,7
+wsterm-0.6.0.dist-info/RECORD,,
