@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "rm2trash"
+version = "0.1.1"
+description = "Simple trash commands."
+authors = ["Kuangye Chen <chen.kuangye@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+termcolor = "^1.1.0"
+
+[tool.poetry.dev-dependencies]
+black = "^22.3.0"
+ipython = "^8.4.0"
+pytest = "^7.1.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+rm2trash = "rm2trash.commands.rm2trash:main"

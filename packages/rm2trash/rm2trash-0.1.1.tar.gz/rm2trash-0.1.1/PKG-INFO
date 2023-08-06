@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: rm2trash
+Version: 0.1.1
+Summary: Simple trash commands.
+Author: Kuangye Chen
+Author-email: chen.kuangye@gmail.com
+Requires-Python: >=3.10,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Requires-Dist: termcolor (>=1.1.0,<2.0.0)
