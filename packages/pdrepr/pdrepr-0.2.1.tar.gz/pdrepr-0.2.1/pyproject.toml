@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "pdrepr"
+version = "0.2.1"
+description = "eval-able string representation of pandas objects"
+readme = "README.md"
+repository = "https://github.com/danhje/pdrepr"
+homepage = "https://github.com/danhje/pdrepr"
+authors = ["Daniel Hjertholm <daniel.hjertholm@icloud.com>"]
+license = "MIT"
+keywords = ["pandas", "dataframe", "repr", "string", "eval"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Software Development :: Testing",
+    "Intended Audience :: Developers",
+    "Natural Language :: English"
+]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pandas = "*"
+
+[tool.poetry.dev-dependencies]
+pytest = "*"
+numpy = "*"
+mock = "*"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
