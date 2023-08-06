@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+versioneer.py
+helics_apps/__init__.py
+helics_apps/_version.py
+helics_apps.egg-info/PKG-INFO
+helics_apps.egg-info/SOURCES.txt
+helics_apps.egg-info/dependency_links.txt
+helics_apps.egg-info/entry_points.txt
+helics_apps.egg-info/not-zip-safe
+helics_apps.egg-info/top_level.txt
+helics_apps/data/.gitkeep
+helics_apps/data/bin/.gitkeep
