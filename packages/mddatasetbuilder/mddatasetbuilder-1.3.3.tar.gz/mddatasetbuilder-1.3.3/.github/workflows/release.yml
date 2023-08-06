@@ -1,0 +1,18 @@
+on: release
+name: Release to pypi
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Setup python
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.7
+        architecture: x64
+    - run: python setup.py sdist
+    - name: Publish a Python distribution to PyPI
+      uses: pypa/gh-action-pypi-publish@master
+      with:
+        user: __token__
+        password: ${{ secrets.pypi_password }}
