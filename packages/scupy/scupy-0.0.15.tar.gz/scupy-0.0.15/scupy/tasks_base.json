@@ -1,0 +1,1 @@
+{"id": 1, "unit": "test", "task_text": "сложите два числа", "task_solution_code_analytics": "\n        a = 1\n        b = 5\n        print(a + b)\n        ", "task_solution_code": "\n        a = 1\n        b = 5\n        print(sum(a, b))\n        "}
