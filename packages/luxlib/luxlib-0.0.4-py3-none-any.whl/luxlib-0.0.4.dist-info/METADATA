@@ -1,0 +1,47 @@
+Metadata-Version: 2.1
+Name: luxlib
+Version: 0.0.4
+Summary: LuxLIB est une librairie Python permettant la mise à jour automatique depuis un serveur. Mais aussi de pouvoir mettre à jour son serveur depuis le client.
+Home-page: https://github.com/TheAngelLCF/LuxLIB
+Author: Valentin Thuillier
+Author-email: valentinrthuillier@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: MIT License
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# LuxLIB
+
+LuxLIB est une librairie Python permettant la mise Ã  jour automatique depuis un serveur. Mais aussi de pouvoir mettre Ã  jour son serveur depuis le client.
+
+## Installation
+
+Pour installer LuxLIB, il faudra utiliser [pip](https://pip.pypa.io/en/stable/).
+
+```bash
+pip install luxlib
+```
+
+## Utilisation
+
+```python
+import luxlib
+
+# Pour le tÃ©lÃ©charger
+#Initialisation de la classe
+downloader = luxlib.Downloader("LIEN (ip ou url)", "NAME_FOLDER_CLIENT", custom_java=True or False, logger=True or False, sftp=True or False, user="USERNAME SFTP", password="PASSWORD SFTP", main_dir="DIRECTORY SERVER")
+
+#Affichage du rÃ©capitulatif
+downloader.get_recap()
+
+# DÃ©marrage de la mise Ã  jour
+downloader.update()
+
+# Pour la mise Ã  jour serveur
+# Initialisation de la classe
+updater = luxlib.Updater("IP", "USERNAME", "PASSWORD", dir='CLIENT', dir_server='SERVER', logger=True or False)
+```
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
