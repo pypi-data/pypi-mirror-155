@@ -1,0 +1,7 @@
+[
+  "tests/test_transformers.py::test_fft_transformer_normalization",
+  "tests/test_transformers.py::test_periodic_grid_transformer_grids",
+  "tests/test_transformers.py::test_periodic_grid_transformer_transforms",
+  "tests/test_transformers.py::test_psc_inverse_transform",
+  "tests/test_transformers.py::test_psc_transform"
+]
