@@ -1,0 +1,41 @@
+[tool.poetry]
+name = "Dippy.bot"
+version = "0.1.1-alpha.26"
+description = "A Discord bot framework built to simplify the complicated parts of bot development."
+authors = ["Zech Zimmerman <hi@zech.codes>"]
+license = "MIT"
+packages = [
+    { include = "dippy" }
+]
+readme = "README.md"
+keywords = ["discord", "framework", "bot"]
+repository = "https://github.com/ZechCodes/Dippy"
+homepage = "https://github.com/ZechCodes/Dippy"
+documentation = "https://github.com/ZechCodes/Dippy/blob/main/README.md"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Software Development :: Libraries :: Application Frameworks"
+]
+
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pyyaml = {version="^5.3.1", optional = true}
+bevy = "^0.4.5"
+SQLAlchemy = {version = "^1.3.23", optional = true}
+psycopg2-binary = {version = "^2.8.6", optional = true}
+pydantic = "^1.8.1"
+nextcord = "^2.0.0-alpha.2"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.4.3"
+
+[tool.poetry.extras]
+sqlalchemy = ["SQLAlchemy"]
+postgres = ["psycopg2-binary"]
+yaml = ["pyyaml"]
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
