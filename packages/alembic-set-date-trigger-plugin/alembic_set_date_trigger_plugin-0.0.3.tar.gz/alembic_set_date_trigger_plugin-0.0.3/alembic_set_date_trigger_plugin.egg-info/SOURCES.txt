@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.py
+alembic_set_date_trigger_plugin/__init__.py
+alembic_set_date_trigger_plugin/function_op.py
+alembic_set_date_trigger_plugin/sqlalchemy_types.py
+alembic_set_date_trigger_plugin/trigger_op.py
+alembic_set_date_trigger_plugin.egg-info/PKG-INFO
+alembic_set_date_trigger_plugin.egg-info/SOURCES.txt
+alembic_set_date_trigger_plugin.egg-info/dependency_links.txt
+alembic_set_date_trigger_plugin.egg-info/requires.txt
+alembic_set_date_trigger_plugin.egg-info/top_level.txt
