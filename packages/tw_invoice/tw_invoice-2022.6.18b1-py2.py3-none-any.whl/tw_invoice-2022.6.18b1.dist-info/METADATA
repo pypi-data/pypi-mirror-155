@@ -1,0 +1,54 @@
+Metadata-Version: 2.1
+Name: tw_invoice
+Version: 2022.6.18b1
+Summary: 🇹🇼🧾 Python SDK for accessing Taiwan E-Inovice API
+Keywords: taiwan,tw,invoice,tax,taxation,tax-invoice,invoice-api
+Author-email: Tomy Hsieh <pypi@tomy.me>
+Requires-Python: ~=3.7
+Description-Content-Type: text/markdown
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Financial and Insurance Industry
+Classifier: Intended Audience :: Information Technology
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Topic :: Office/Business :: Financial :: Accounting
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: requests >=2.6
+Requires-Dist: black ~=22.1.0 ; extra == "dev"
+Requires-Dist: isort ~=5.3.0 ; extra == "dev"
+Requires-Dist: flake8 ~=3.8.0 ; extra == "dev"
+Requires-Dist: pytest >=2.7.3 ; extra == "test"
+Project-URL: Source, https://github.com/tomy0000000/tw-invoice
+Project-URL: Tracker, https://github.com/tomy0000000/tw-invoice/issues
+Provides-Extra: dev
+Provides-Extra: test
+
+# 🇹🇼 Taiwan Invoice
+
+[![PyPI](https://img.shields.io/pypi/v/tw_invoice?logo=pypi)](https://pypi.org/project/tw_invoice)
+[![Test and Build](https://github.com/tomy0000000/tw-invoice/actions/workflows/test-build.yml/badge.svg)](https://github.com/tomy0000000/tw-invoice/actions/workflows/test-build.yml)
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/tomy0000000/tw-invoice/main.svg)](https://results.pre-commit.ci/latest/github/tomy0000000/tw-invoice/main)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/tw_invoice?logo=python&logoColor=white)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/tw_invoice)
+![PyPI - License](https://img.shields.io/pypi/l/tw_invoice)
+
+[中文版 README](https://github.com/tomy0000000/tw-invoice/blob/main/README_zh.md)
+
+SDK for Ministry of Finance, R.O.C. [E-invoice platform](https://www.einvoice.nat.gov.tw/)
+
+## Usage
+
+See [Wiki](https://github.com/tomy0000000/tw-invoice/wiki)
+
+## LICENSE and disclaimer
+
+The source code is released under MIT license, versions with suffix b represent beta version, use at your own risk.
+
+The author is not affiliated in any kind to the platform, or MoF in any kind.
+
