@@ -1,0 +1,42 @@
+Metadata-Version: 2.1
+Name: pcs-log
+Version: 0.1.1
+Summary: Generic logger
+Home-page: https://github.com/rpietsch1953/pcs-pylibs
+Author: Rainer Pietsch
+Author-email: r.pietsch@pcs-at.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License v2 (GPLv2)
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+Module LogP
+===========
+Set up a logging-environment for daemons or console-programs
+
+Functions
+---------
+
+    
+`SetupLogging(AppName: str, Verbose: int = 0, NoDaemon: bool = True, StdErr: bool = False, LogFile: str = '', Quiet: bool = False, ProcInfo: bool = False, LevelInfo: bool = True, LevelType: int = 2, MultiProc: bool = False, MultiThread: bool = False, StackOnDebug: str = 'NONE', StackDepth: int = 5, NoReset: bool = False)`
+:   Erzeugt eine definierte Log-Umgebung
+    
+    Args:
+        AppName (str): Name of application
+        Verbose (int, optional): Detail of logging. Defaults to 0.
+        NoDaemon (bool, optional): Is this an terminal-task. Defaults to True.
+        StdErr (bool, optional): Log to StdErr. Defaults to False.
+        LogFile (str, optional): Log to a Log-file. Defaults to ''.
+        Quiet (bool, optional): Output only errors. Defaults to False.
+        ProcInfo (bool, optional): Show process and thread. Defaults to False.
+        LevelType (int, optional): Format of LevelInfo. 0=None, 1=Number, 2=Name, 3=Both. Defaults to 2.
+        MultiProc (bool, optional): Show process-names. Defaults to False.
+        MultiThread (bool, optional): Show thread-names. Defaults to False.
+        StackOnDebug (str, optional): Log-level below or equal a stacktrace is included. Defaults to -1 => Disabled.
+        StackDepth (int, optional): Maximum number of stack-lines to display. Defaults to 5.
+        NoReset (bool, optional): Do not reset logger on init. Defaults to False.
+
+
