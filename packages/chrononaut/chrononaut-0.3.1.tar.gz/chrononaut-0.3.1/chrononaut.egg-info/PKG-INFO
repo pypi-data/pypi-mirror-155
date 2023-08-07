@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: chrononaut
+Version: 0.3.1
+Home-page: https://github.com/onecodex/chrononaut
+Author: Nick Greenfield
+Author-email: opensource@onecodex.com
+License: MIT License
+Keywords: Chrononaut
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Framework :: Flask
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Description-Content-Type: text/markdown
+Provides-Extra: user_info
+License-File: LICENSE
+
+
+``chrononaut``
+------------
+
+``chrononaut`` is a simple history mixin for SQLAlchemy models,
+adding support for audit logging, record locking, and time travel!
