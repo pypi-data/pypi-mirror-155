@@ -1,0 +1,170 @@
+<!--#  ________  _________  ________  ________  _______   ________  _______   ________        ___    ___-->
+<!--# |\   ____\|\___   ___\\   __  \|\   ____\|\  ___ \ |\   ____\|\  ___ \ |\   __  \      |\  \  /  /|-->
+<!--# \ \  \___|\|___ \  \_\ \  \|\  \ \  \___|\ \   __/|\ \  \___|\ \   __/|\ \  \|\  \     \ \  \/  / /-->
+<!--#  \ \_____  \   \ \  \ \ \   __  \ \  \  __\ \  \_|/_\ \_____  \ \  \_|/_\ \   ____\     \ \    / /-->
+<!--#   \|____|\  \   \ \  \ \ \  \ \  \ \  \|\  \ \  \_|\ \|____|\  \ \  \_|\ \ \  \___|      /     \/-->
+<!--#     ____\_\  \   \ \__\ \ \__\ \__\ \_______\ \_______\____\_\  \ \_______\ \__\        /  /\   \-->
+<!--#    |\_________\   \|__|  \|__|\|__|\|_______|\|_______|\_________\|_______|\|__|       /__/ /\ __\-->
+<!--#    \|_________|                                       \|_________|                     |__|/ \|__|-->
+<!-- https://github.com/williamfzc/stagesepx -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>stagesep-x report</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
+</head>
+
+<style>
+    .container {
+        margin: 20px;
+        background-color: {{ background_color }};
+    }
+    .card-body {
+        background-color: {{ background_color }};
+    }
+    .footer {
+        position: relative;
+        height: 40px;
+        bottom: 20px;
+        left: 0px;
+        right: 0px;
+        text-align: center;
+        background-color: {{ background_color }};
+    }
+    body {
+        background-color: {{ background_color }};
+        margin-bottom: 40px;
+    }
+</style>
+
+<body>
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="https://github.com/williamfzc/stagesepx">stagesep x report</a>
+</nav>
+
+<nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link active" data-toggle="tab" href="#nav-stages" role="tab"
+           aria-controls="nav-stages" aria-selected="true">Stages</a>
+        <a class="nav-item nav-link" data-toggle="tab" href="#nav-charts" role="tab"
+           aria-controls="nav-charts" aria-selected="false">Charts</a>
+        <a class="nav-item nav-link" data-toggle="tab" href="#nav-others" role="tab"
+           aria-controls="nav-others" aria-selected="false">Others</a>
+        <a class="nav-item nav-link" data-toggle="tab" href="#nav-helper" role="tab"
+           aria-controls="nav-helper" aria-selected="false">Help</a>
+    </div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="nav-stages" role="tabpanel">
+        {% if thumbnail_list %}
+        <div class="container">
+            <div class="card border-light">
+                <div class="card-body">
+                    <ul style="margin-top: 10px;">
+                        {% for name, each_thumbnail in thumbnail_list %}
+                        <li>
+                            <h5> {{ name }} </h5>
+                            <img src="data:image/png;base64,{{ each_thumbnail }}"/>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+    <div class="tab-pane fade" id="nav-charts" role="tabpanel">
+        <div class="container">
+            <div class="card border-light">
+                <div class="card-body">
+                    <h2>Charts</h2>
+                    <div>
+                        {{ chart }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="nav-others" role="tabpanel">
+        <div class="container">
+        <h2>WARNING: Result in this page may contains some incorrect parts which cause by deprecated API.
+            Please use `Stages` tab instead or handle `ClassierResult` by yourself.
+            View <a href="https://github.com/williamfzc/stagesepx/issues/115">issue #115</a> for more details.
+        </h2>
+        </div>
+        {% if cost_dict %}
+        <div class="container">
+            <div class="card border-light">
+                <div class="card-body">
+                    <h2>Time Cost between stages</h2>
+                    <p> Calculate the time spent on stage changes. </p>
+                    {% for name, result in cost_dict.items() %}
+                    <h4> stage {{ name }} </h4>
+                    <ul>
+                        <li>range: {{ result[0].frame_id }} - {{ result[1].frame_id }} ({{ result[0].timestamp }} - {{
+                            result[1].timestamp }})
+                        </li>
+                        <li>time cost: {{ result[1].timestamp - result[0].timestamp }}</li>
+                    </ul>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if extras %}
+        <div class="container">
+            <div class="card border-light">
+                <div class="card-body">
+                    <h2>Extras</h2>
+                    {% for name, value in extras.items() %}
+                    <h4> {{ name }} </h4>
+                    <p> {{ value }} </p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="tab-pane fade" id="nav-helper" role="tabpanel">
+        <div class="container">
+            <h5 class="card-title">Stages</h5>
+            <span class="card-text">Page `stages` will show what happened in your video, with precise timestamp and thumbnail.</span><br>
+            <span class="card-text">
+                <br>
+                - `stable` means nothing happened (nearly) during this period<br>
+                - `unstable` means something happened<br>
+                - `unspecific` means your model has no idea about `which class this frame should be` (lower than threshold)<br>
+                <br>
+            </span>
+
+            <span class="card-text">You can view <a href="https://github.com/williamfzc/stagesepx/issues/75">#75</a> for more details.</span><br>
+            <br>
+        </div>
+        <div class="container">
+            <h5 class="card-title">Need more help?</h5>
+            <span class="card-text">View <a href="https://github.com/williamfzc/stagesepx">our main page</a> for more support, or contact us by leaving issues.</span><br>
+            <br>
+        </div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <div class="container-fluid">
+        <HR>
+        <span class="text-muted">
+            Built with <a href="https://github.com/williamfzc/stagesepx">@stagesepx</a> ver {{ version_code }}.
+            Page generated: {{ timestamp }}
+        </span>
+    </div>
+</footer>
+
+<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</body>
+</html>
