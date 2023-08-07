@@ -1,0 +1,61 @@
+Metadata-Version: 2.1
+Name: week-by-week
+Version: 3.14.0
+Summary: This Library accept pandas dataframe, date_column and optional end date If end date is not provide, current today will be use internally by the library
+Home-page: https://github.com/blueband/week_by_week
+License: MIT
+Keywords: Pandas,Week by Week,Dataframe
+Author: Qamarudeen Muhammad
+Author-email: qamarudeen.m@gmail.com
+Requires-Python: >=2.7,<3.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Topic :: Software Development :: Documentation
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Software Development :: Quality Assurance
+Requires-Dist: pandas (>=1.4.2,<2.0.0)
+Project-URL: Repository, https://github.com/blueband/week_by_week
+Description-Content-Type: text/markdown
+
+# This package "week by Week" 
+is attempt to have Python library that 
+1. Generate week range from pandas dataframe from the first
+   data point date to the current or a given date
+2. Group pandas row into weekly base on the date/timestamp column
+
+# Usage after installation
+```from week_by_week import WeekRange```
+
+Instantiate the class
+```get_weeks = WeekRange(df, 'timestamp','2022/06/01', WK_start='sun')```
+
+Required parameter are:
+    1. df -- pandas dataframe
+    2. timestamp -- date columnin your df
+    3. WK_start change between 'Mon' to 'Sun'
+Optional parameter:
+    1. end_date
+
+call ```getAllweeks()`` method to retrieve all weeks       
+```weeks = get_weeks.getAllweeks()```
+
+
+And to retrieve data splitted into week range,
+invoke ```getWeekData()``` 
+
+`print(get_weeks.getWeekData())`
+
+
+To retrieved Pandas Dataframe splited into week
+invoke the following interface method 
+```
+for week in get_weeks.retunpandasDF():
+    print(week)
+
+```
+
+
+
+
