@@ -1,0 +1,67 @@
+[bdt.ci.cli]
+base-build = bob.devtools.scripts.ci:base_build
+base-deploy = bob.devtools.scripts.ci:base_deploy
+build = bob.devtools.scripts.ci:build
+check = bob.devtools.scripts.ci:check
+clean = bob.devtools.scripts.ci:clean
+clean-betas = bob.devtools.scripts.ci:clean_betas
+deploy = bob.devtools.scripts.ci:deploy
+docs = bob.devtools.scripts.ci:docs
+nightlies = bob.devtools.scripts.ci:nightlies
+pypi = bob.devtools.scripts.ci:pypi
+readme = bob.devtools.scripts.ci:readme
+test = bob.devtools.scripts.ci:test
+
+[bdt.cli]
+build = bob.devtools.scripts.build:build
+caupdate = bob.devtools.scripts.caupdate:caupdate
+ci = bob.devtools.scripts.ci:ci
+create = bob.devtools.scripts.create:create
+dav = bob.devtools.scripts.dav:dav
+dev = bob.devtools.scripts.development:dev
+dumpsphinx = bob.devtools.scripts.dumpsphinx:dumpsphinx
+gitlab = bob.devtools.scripts.gitlab:gitlab
+local = bob.devtools.scripts.local:local
+mirror = bob.devtools.scripts.mirror:mirror
+new = bob.devtools.scripts.new:new
+rebuild = bob.devtools.scripts.rebuild:rebuild
+sphinx = bob.devtools.scripts.sphinx:sphinx
+test = bob.devtools.scripts.test:test
+
+[bdt.dav.cli]
+clean-betas = bob.devtools.scripts.dav:clean_betas
+list = bob.devtools.scripts.dav:list
+makedirs = bob.devtools.scripts.dav:makedirs
+rmtree = bob.devtools.scripts.dav:rmtree
+upload = bob.devtools.scripts.dav:upload
+
+[bdt.dev.cli]
+checkout = bob.devtools.scripts.development:checkout
+create = bob.devtools.scripts.create:create
+install = bob.devtools.scripts.development:install
+new = bob.devtools.scripts.new:new
+
+[bdt.gitlab.cli]
+alt-nightlies = bob.devtools.scripts.alternative_nightlies:alt_nightlies
+badges = bob.devtools.scripts.badges:badges
+changelog = bob.devtools.scripts.changelog:changelog
+commitfile = bob.devtools.scripts.commitfile:commitfile
+get-pipelines = bob.devtools.scripts.pipelines:get_pipelines
+getpath = bob.devtools.scripts.getpath:getpath
+graph = bob.devtools.scripts.graph:graph
+jobs = bob.devtools.scripts.jobs:jobs
+lasttag = bob.devtools.scripts.lasttag:lasttag
+process-pipelines = bob.devtools.scripts.pipelines:process_pipelines
+release = bob.devtools.scripts.release:release
+runners = bob.devtools.scripts.runners:runners
+settings = bob.devtools.scripts.settings:settings
+update-bob = bob.devtools.scripts.update_bob:update_bob
+visibility = bob.devtools.scripts.visibility:visibility
+
+[bdt.local.cli]
+base-build = bob.devtools.scripts.local:base_build
+build = bob.devtools.scripts.local:build
+docs = bob.devtools.scripts.local:docs
+
+[console_scripts]
+bdt = bob.devtools.scripts.bdt:main

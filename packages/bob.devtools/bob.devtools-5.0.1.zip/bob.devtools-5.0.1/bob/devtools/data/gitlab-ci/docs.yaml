@@ -1,0 +1,85 @@
+# This YAML file contains descriptions for the CI of most of our Bob/BEAT/BATL
+# packages - do **not** modify it unless you know what you're doing (and up
+# to!)
+
+# Definition of global variables (all stages)
+variables:
+  PYTHONUNBUFFERED: "1"
+  CONDA_ROOT: "${CI_PROJECT_DIR}/miniconda"
+  BOOTSTRAP: "https://gitlab.idiap.ch/bob/bob.devtools/raw/master/bob/devtools/bootstrap.py"
+  TORCH_HOME: "${CI_PROJECT_DIR}/torch"
+  # The version of cuda at Idiap
+  CONDA_OVERRIDE_CUDA: "11.6"
+
+
+# Definition of our build pipeline order
+stages:
+  - build
+  - deploy
+
+
+# All stages are prepared the same, with a base set of commands
+.bootstrap:
+  tags:
+    - bob
+    - docker
+  image: quay.io/condaforge/linux-anvil-cos7-x86_64
+  before_script:
+    - curl --silent "${BOOTSTRAP}" --output "bootstrap.py"
+    - python3 bootstrap.py -vv channel base
+    - source ${CONDA_ROOT}/etc/profile.d/conda.sh
+    - conda activate base
+    - if [[ $CI_RUNNER_TAGS == *"docker,"* ]]; then git config --global --add safe.directory ${CI_PROJECT_DIR}; fi
+    - conda clean --all
+  cache:
+    paths:
+      - torch
+
+
+# Build target
+build:
+  extends: .bootstrap
+  stage: build
+  variables:
+    GITLAB_CHECKOUT_STRATEGY: "https://gitlab-ci-token:${CI_BUILD_TOKEN}@gitlab.idiap.ch/"
+    PYTHON_VERSION: "3.9"
+    BUILD_EGG: "true"
+  script:
+    - bdt ci docs -vv packages.txt
+    - bdt ci clean -vv
+  artifacts:
+    expire_in: 1 week
+    paths:
+      - sphinx
+      - ${CONDA_ROOT}/conda-bld/linux-64/*.conda
+      - ${CONDA_ROOT}/conda-bld/linux-64/*.tar.bz2
+  cache:
+    key: "build"
+
+
+# Deploy target
+.deploy:
+  extends: .bootstrap
+  stage: deploy
+  script:
+    - bdt ci deploy -vv
+    - bdt ci clean -vv
+  dependencies:
+    - build
+  cache:
+    key: "deploy"
+
+deploy_beta:
+  extends: .deploy
+  environment: beta
+  only:
+    - master
+    - main
+
+deploy_stable:
+  extends: .deploy
+  environment: stable
+  only:
+    - /^v\d+\.\d+\.\d+([abc]\d*)?$/  # PEP-440 compliant version (tags)
+  except:
+    - branches
