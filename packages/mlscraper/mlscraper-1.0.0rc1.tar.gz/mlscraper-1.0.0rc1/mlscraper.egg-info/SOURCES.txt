@@ -1,0 +1,17 @@
+AUTHORS.rst
+README.rst
+setup.cfg
+setup.py
+mlscraper/__init__.py
+mlscraper/html.py
+mlscraper/matches.py
+mlscraper/samples.py
+mlscraper/scrapers.py
+mlscraper/selectors.py
+mlscraper/training.py
+mlscraper/util.py
+mlscraper.egg-info/PKG-INFO
+mlscraper.egg-info/SOURCES.txt
+mlscraper.egg-info/dependency_links.txt
+mlscraper.egg-info/requires.txt
+mlscraper.egg-info/top_level.txt
