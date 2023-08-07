@@ -1,0 +1,167 @@
+name: python tests+artifacts+release
+
+on:
+  pull_request:
+  push:
+    branches:
+    - main
+    tags:
+    - "v*"
+  release:
+    types: [published]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        python_version: ['3.7', '3.8', '3.9', '3.10', '3.11.0-alpha - 3.11.0', 'pypy-3.8' ]
+        os: [windows-latest, ubuntu-latest] #, macos-latest]
+        include:
+        - os: windows-latest
+          python_version: 'msys2'
+
+    name: ${{ matrix.os }} - Python ${{ matrix.python_version }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup python
+        uses: actions/setup-python@v4
+        if: matrix.python_version != 'msys2'
+        with:
+          python-version: ${{ matrix.python_version }}
+          architecture: x64
+      - name: Setup MSYS2
+        uses: msys2/setup-msys2@v2
+        if: matrix.python_version == 'msys2'
+        with:
+          msystem: MINGW64
+          install: git mingw-w64-x86_64-python mingw-w64-x86_64-python-setuptools
+          update: true
+      - name: Setup GnuPG
+        # At present, the Windows VMs only come with the copy of GnuPG that's bundled
+        # with Git for Windows. If we want to use this version _and_ be able to set
+        # arbitrary GnuPG home directories, then the test would need to figure out when
+        # to convert Windows-style paths into Unix-style paths with cygpath, which is
+        # unreasonable.
+        #
+        # Instead, we'll install a version of GnuPG that can handle Windows-style paths.
+        # However, due to <https://dev.gnupg.org/T5593>, installation fails if the PATH
+        # environment variable is too long. Consequently, we need to shorten PATH to
+        # something minimal before we can install GnuPG. For further details, see
+        # <https://github.com/actions/virtual-environments/issues/2876>.
+        #
+        # Additionally, we'll explicitly set `gpg.program` to ensure Git for Windows
+        # doesn't invoke the bundled GnuPG, otherwise we'll run into
+        # <https://dev.gnupg.org/T5504>. See also: <https://dev.gnupg.org/T3020>.
+        run: |
+          $env:PATH = "C:\Program Files\Git\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\ProgramData\Chocolatey\bin"
+          [Environment]::SetEnvironmentVariable("Path", $env:PATH, "Machine")
+          choco install gnupg -y --no-progress
+          echo "C:\Program Files (x86)\gnupg\bin" >> $env:GITHUB_PATH
+          git config --system gpg.program "C:\Program Files (x86)\gnupg\bin\gpg.exe"
+        if: runner.os == 'Windows'
+      - run: pip install -U 'setuptools>=45'
+        if: matrix.python_version != 'msys2'
+      - run: pip install -e .[toml,test]
+      # pip2 is needed because Mercurial uses python2 on Ubuntu 20.04
+      - run: |
+          curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
+          sudo python2 get-pip.py
+          $(hg debuginstall --template "{pythonexe}") -m pip install hg-git --user
+        if: matrix.os == 'ubuntu-latest'
+      - run: pytest
+
+  test_legacy_setuptools:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.7"
+          architecture: x64
+      - run: pip install -e .[toml,test] pytest virtualenv
+      - run: pytest --test-legacy testing/test_setuptools_support.py || true # ignore fail flaky on ci
+  check_selfinstall:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python_version: [  '3.7', '3.9', 'pypy-3.8' ]
+        installer: ["pip install"]
+    name: check self install - Python ${{ matrix.python_version }} via ${{ matrix.installer }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python_version }}
+          architecture: x64
+      # self install testing needs some clarity
+      # so its being executed without any other tools running
+      # setuptools smaller 52 is needed to do easy_install
+      - run: pip install -U "setuptools<52" tomli packaging typing_extensions importlib_metadata
+      - run: python setup.py egg_info
+      - run: python setup.py sdist
+      - run: ${{ matrix.installer }} dist/*
+      - run: python testing/check_self_install.py
+
+
+  dist:
+    runs-on: ubuntu-latest
+
+    needs: [test]
+    name: Python sdist/wheel
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-python@v2
+      with:
+        python-version: "3.8"
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install --upgrade wheel setuptools build
+
+    - name: Build package
+      run: python -m build -o dist/
+    - uses: actions/upload-artifact@v2
+      with:
+        name: dist
+        path: dist
+
+
+  dist_check:
+    runs-on: ubuntu-latest
+    needs: [dist]
+    steps:
+    - uses: actions/setup-python@v2
+      with:
+        python-version: "3.8"
+    - name: Install dependencies
+      run: pip install twine
+    - uses: actions/download-artifact@v2
+      with:
+        name: dist
+        path: dist
+    - run: twine check --strict dist/*
+
+  dist_upload:
+
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags')
+    needs: [dist_check]
+    steps:
+    - uses: actions/download-artifact@v2
+      with:
+        name: dist
+        path: dist
+    - name: Publish package to PyPI
+      uses: pypa/gh-action-pypi-publish@master
+      with:
+        user: __token__
+        password: ${{ secrets.pypi_token }}
