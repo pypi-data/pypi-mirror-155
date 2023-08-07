@@ -1,0 +1,12 @@
+numpy
+opencv-python
+sympy
+torch
+
+[dev]
+pytest
+pylint
+pdoc3
+pyreverse
+context-verbose
+matplotlib
